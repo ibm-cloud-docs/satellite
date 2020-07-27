@@ -11,7 +11,6 @@ Satellite
     {: .navgroup id="howto"}
     locations.md
     hosts.md
-    link-endpoints.md
     health.md
 
     {: .topicgroup}
