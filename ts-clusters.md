@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2020-07-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -45,7 +45,7 @@ See the [{{site.data.keyword.openshiftlong_notm}} troubleshooting documentation]
 {: #kubectl-cert-errors}
 
 {: tsSymptoms}
-When you run `kubectl` or `oc` commands against your , you see the following error message:
+When you run `kubectl` or `oc` commands against your {{site.data.keyword.satelliteshort}} cluster, you see the following error message:
 ```
 Unable to connect to the server: x509: certificate signed by unknown authority
 ```

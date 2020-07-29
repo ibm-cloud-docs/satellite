@@ -54,7 +54,7 @@ The following diagram presents the initial setup steps for hosts.
 
 1.  **Add**: Your machine becomes a {{site.data.keyword.satelliteshort}} after you successfully [add the host](#add-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-limitations#limits-host). After the host is added, its health is **unknown** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
 2.  **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not do anything until you assign them to a {{site.data.keyword.satelliteshort}} resource, to use for compute capacity. For example, each location must have at least 3 hosts that are assigned to run control plane operations. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
-3.  **Bootstrap**: When you assign a host to a {{site.data.keyword.satelliteshort}} cluster, the host is bootstrapped to become part of a managed {{site.data.keyword.openshiftlong_notm}} cluster. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host, which requires public connectivity to pull the images from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts). 
+3.  **Bootstrap**: When you assign a host to a {{site.data.keyword.satelliteshort}} cluster, the host is bootstrapped to become part of a managed {{site.data.keyword.openshiftlong_notm}} cluster. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host, which requires public connectivity to pull the images from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts).
 
 Now, your hosts are worker nodes in the {{site.data.keyword.openshiftlong_notm}} cluster, with the masters running in your {{site.data.keyword.satelliteshort}} location control plane. You can log in to the clusters and use Kubernetes or {{site.data.keyword.openshiftshort}} APIs to manage your containerized workloads, or use [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) to manage your workloads across clusters.
 
@@ -171,83 +171,6 @@ After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can 
 4. Select the cluster that you created and choose one of the available zones. When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the Health of your machine changes from **Ready** to **Unknown**.
 5. Verify that your hosts are successfully assigned to the cluster. The assignment is successful when a public IP address is added to your host and the **Health** status changes to **Normal**.
 
-1.  List the hosts that are **unassigned** in your location.
-    ```
-    ibmcloud sat host ls --location <location_name_or_ID>
-    ```
-    {: pre}
-2. Assign at least 3 compute hosts from your location as worker nodes to your {{site.data.keyword.satelliteshort}} cluster to complete the cluster setup. When you assign the host to the cluster, IBM bootstraps your machine. This process might take a few minutes to complete. You can choose to assign a host by using the host ID, or you can also define the label that the host must have to be assigned to the location.
-
-   **Example for assigning a host by using the host ID:**
-   ```
-   ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host <host_name_or_ID> --worker-pool default --zone us-south-1
-   ```
-   {: pre}
-
-   **Example for assigning a host by using the `use=satcluster` label:**
-   ```
-   ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --label "use=satcluster" --worker-pool default --zone us-south-1
-   ```
-   {: pre}
-
-   <table summary="This table is read from left to right. The first column has the command component. The second column has the description of the component.">
-    <caption>Understanding this command's components</caption>
-      <thead>
-      <th>Component</th>
-      <th>Description</th>
-      </thead>
-      <tbody>
-      <tr>
-      <td><code>--location &lt;location_name_or_ID&gt;</code></td>
-      <td>Enter the name or ID of the location where you created the cluster. To retrieve the location name or ID, run <code>ibmcloud sat location ls</code>.</td>
-      </tr>
-      <tr>
-      <td><code>--cluster &lt;cluster_name_or_ID&gt;</code></td>
-      <td>Enter the name or ID of the {{site.data.keyword.openshiftlong_notm}} cluster that you created earlier. To retrieve the cluster name or ID, run <code>ibmcloud ks cluster ls</code>.</td>
-      </tr>
-       <tr>
-      <td><code>--host &lt;host_name_or_ID&gt;</em></code></td>
-      <td>Enter the host ID or name to assign as worker nodes to the cluster. To view the host ID or name, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can also use the <code>--label</code> option to identify the host that you want to assign to your cluster.</td>
-      </tr>
-      <tr>
-      <td><code>--label &lt;label&gt;</code></td>
-      <td>Enter the label that you want to use to identify the host that you want to assign. The label must be a key-value pair, and must exist on the host machine. When you run this command with the `label` option, the first host that is in an `unassigned` state and matches the label is assigned to your control plane. </td>
-      </tr>
-        <tr>
-      <td><code>--worker-pool &lt;worker-pool&gt;</code></td>
-      <td>Enter the name of the worker pool where you want to add your compute hosts. To find available worker pools in your cluster, run <code>ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID&gt;</code>. If you do not specify this option, your compute host is automatically added to the default worker pool. </td>
-      </tr>
-      <tr>
-      <td><code>--zone us-south-1</code></td>
-      <td>Enter the zone where you want to add your compute hosts. At the moment, <code>us-south-1</code> is supported only. </td>
-      </tr>
-      </tbody>
-    </table>
-3. Repeat the previous step for all compute hosts that you want to assign as worker nodes to your cluster.
-4. Wait a few minutes until the bootstrapping process for all computes hosts is complete and your hosts are successfully assigned to your cluster. All hosts are assigned a cluster, a worker node ID, and a public IP address.
-
-   You can monitor the bootstrapping process of your compute hosts by running `ibmcloud ks worker get --cluster <cluster_name_or_ID> --worker <worker_ID>`.
-   {: tip}
-
-   ```
-   ibmcloud sat host ls --location <location_name_or_ID>
-   ```
-   {: pre}
-
-   Example output:  
-   ```
-   Retrieving hosts...
-   OK
-   Name              ID                     State      Status   Cluster             Worker ID                                                 Worker IP   
-   satcluster        brkijjq20r3nd89b1sog   assigned   Ready    satcluster          sat-satc-dd629ca11947c4aaec1a0208e0a37ca790475ee0   169.62.196.24   
-   satcluster2       brkiku2202thnmhb1sp0   assigned   Ready    satcluster          sat-satc-69f2410d3ecfea9127aeec07f01475f241728a16   169.62.196.22   
-   satcluster3       brkiltb20m0oqr29mo2g   assigned   Ready    satcluster          sat-satc-9985014f499827ddde3ce3e5bedad26af5a73263   169.62.196.29   
-   controlplane01    brjrgp920bg4u254brr0   assigned   Ready    infrastructure      sat-virtualser-4d7fa07cd3446b1f9d8131420f7011e60d372ca2   169.62.196.30   
-   controlplane02    brjrdmd20dfjgaai4vc0   assigned   Ready    infrastructure      sat-virtualser-9826f0927254b12b4018a95327bd0b45d0513f59   169.62.196.23   
-   controlplane03    brjs18u20ohqh54svnog   assigned   Ready    infrastructure      sat-virtualser-948b454ea091bd9aeb8f0542c2e8c19b82c5bf7a   169.62.196.20   
-   ```
-   {: screen}
-
 <br />
 
 
@@ -273,12 +196,6 @@ When you remove a host from your location, the host is unassigned from a cluster
 
 Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after your remove the host, or back up any data that you want to keep. Note that the underlying host infrastructure is not deleted because you manage the infrastructure yourself.
 {: important}
-
-### Removing hosts from the console
-{: #host-remove-console}
-
-Use the {{site.data.keyword.satelliteshort}} console to remove your hosts from the {{site.data.keyword.satelliteshort}} location.
-{: shortdesc}
 
 1. Make sure that your cluster or location control plane has enough compute resources to continue running even after your remove the host, or back up any data that you want to keep.
 2. From the [{{site.data.keyword.satelliteshort}} console](https://test.cloud.ibm.com/satellite/){: external}, click **Locations** and then click your location.

@@ -52,15 +52,13 @@ See [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?t
 {: shortdesc}
 
 ### IBM monitoring to resolve and report location alerts
-{: #monitoring-default} 
+{: #monitoring-default}
 
 When you create a {{site.data.keyword.satelliteshort}} location and set up the location control plane, IBM automatically monitors and resolves certain alerts for issues with your location setup and host infrastructure. The following table describes different scenarios and the actions that IBM takes to address the scenarios.
 {: shortdesc}
 
-
-
 | Scenario | Action |
-| --- | --- | 
+| --- | --- |
 | Location control plane does not have a host in three separate zones. | Check for attached, unassigned hosts in the location. If a host is available, assign the host to the location control plane for the missing zone, giving preference to hosts with a label that matches the zone. |
 | Cluster capacity exceeds 80% in a zone. | Prevent or allow {{site.data.keyword.openshiftshort}} clusters to be created. Assign available hosts to a location control plane for more compute resources. |
 | {{site.data.keyword.openshiftshort}} clusters are in an unhealthy state. | Resolve certain healthy issues with {{site.data.keyword.openshiftshort}} clusters. |
@@ -100,9 +98,6 @@ You can review the host health from the **Locations** table in the [{{site.data.
 {: caption="Location health states" caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the health state of the location. The second column describes what the health state means."}
 
-<br />
-
-
 ### Viewing host health
 {: #host-health}
 
@@ -122,9 +117,6 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 | `unresponsive` | The host did not check in with the {{site.data.keyword.satelliteshort}} location control plane within the past 5 minutes. The host cannot be assigned when it is unresponsive. Try [debugging the health of the host](/docs/satellite?topic=satellite-ts-hosts), particularly the network connectivity. |
 {: caption="Host health states" caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the health state of the host. The second column describes what the health state means."}
-
-<br />
-
 
 ### Viewing cluster health
 {: #cluster-health}
