@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-07-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -93,6 +93,7 @@ You can review the host health from the **Locations** table in the [{{site.data.
 | `critical` | The {{site.data.keyword.satelliteshort}} location control plane needs your attention. Check the status and message for more information, and try [debugging your location control plane](/docs/satellite?topic=satellite-ts-locations#ts-locations-control-plane).|
 | `failed` | {{site.data.keyword.satelliteshort}} did not successfully resolve issues in your location. For more information, see the status message. |
 | `host required` | The {{site.data.keyword.satelliteshort}} location is created, but you must [add at least 3 hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).|
+| `normal` | The {{site.data.keyword.satelliteshort}} location is ready to use. |
 | `provisioning` | The control plane for the {{site.data.keyword.satelliteshort}} is provisioning. You cannot assign hosts to other {{site.data.keyword.satelliteshort}} resources, such as clusters, in the location until the control plane is ready.|
 | `resolving` | {{site.data.keyword.satelliteshort}} is trying to resolve issues for you, such as by assigning available hosts to the control plane to relieve capacity issues. For more information, see the status message. |
 {: caption="Location health states" caption-side="top"}
