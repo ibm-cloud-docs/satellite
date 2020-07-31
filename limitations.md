@@ -33,7 +33,7 @@ subcollection: satellite
 {:tsSymptoms: .tsSymptoms}
 
 
-# Service limitations
+# Usage requirements
 {: #limitations}
 
 {{site.data.keyword.satellitelong}} comes with default service settings and limitations to ensure security, convenience, and basic functionality. Limitations are subject to change, and might differ from beta to generally available releases.
