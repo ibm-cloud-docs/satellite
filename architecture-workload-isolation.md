@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-07-31"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -112,5 +112,4 @@ Review the list of third-party services that {{site.data.keyword.satellitelong}}
 |Akamai, Cloudflare|Akamai and Cloudflare are used as the primary providers for DNS, global load balancing, and web firewall capabilities in {{site.data.keyword.satellitelong_notm}}.|
 |Launch Darkly|To manage the roll out of new features in {{site.data.keyword.satellitelong_notm}}, Launch Darkly feature flags are used. A feature flag controls the visibility and availability of a feature to a selected user base.|
 |Let's Encrypt|This service is used as the Certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_long_notm}}.|
-|Razee|Razee is an open-source project that was developed by IBM to automate and manage the deployment of Kubernetes resources, versions, features, and security patches across {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.satellitelong_notm}} clusters, and to visualize deployment information. Razee integrates with Launch Darkly to control the visibility of these features to the {{site.data.keyword.satellitelong_notm}} user base. Razee is integrated into the {{site.data.keyword.satelliteshort}} configuration component. For more information about Razee, see the [Razee documentation](https://github.com/razee-io/Razee).
 |Slack|Slack is used as the IBM-internal communication medium to troubleshoot issues and bring together internal SMEs to resolve customer issues. Diagnostic information about a {{site.data.keyword.satelliteshort}} location are sent to a private Slack channel and include the customer account ID, location ID, and details about the {{site.data.keyword.satelliteshort}} control plane.|
