@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-24"
+lastupdated: "2020-07-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -41,6 +41,12 @@ subcollection: satellite
 
 {{site.data.keyword.satellitelong}} is available as a tech preview and subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
 {: preview}
+
+## Locations
+{: #limits-locations}
+
+You can create up to 20 {{site.data.keyword.satelliteshort}} locations per {{site.data.keyword.cloud_notm}} region that the location is managed from.
+{: shortdesc}
 
 ## Hosts
 {: #limits-host}
