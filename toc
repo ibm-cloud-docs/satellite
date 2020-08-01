@@ -8,6 +8,10 @@ Satellite
     getting-started.md
     {: .navgroup-end}
 
+    {: .navgroup id="tutorials"}
+    tutorial.md
+    {: .navgroup-end}
+
     {: .navgroup id="howto"}
     locations.md
     hosts.md
