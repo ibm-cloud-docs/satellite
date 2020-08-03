@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -82,7 +82,7 @@ Review the health of your hosts, and use the error messages to resolve any issue
 You might need to log in to your host machine to debug a host issue further.
 {: shortdesc}
 
-You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-locations#host-remove) and reload the operating system to restore the ability to SSH into the machine.
+You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
 {: note}
 
 1.  Log in to the machine.
@@ -126,7 +126,7 @@ You can only SSH into the machine if you did not assign the host to a cluster, o
     echo ‘Failed to untar bootstrap.tar’
     Failed to untar bootstrap.tar
     + rm -rf /tmp/bootstrap</code></pre></td>
-    <td>The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-limitations#limits-host), [remove the host](/docs/satellite?topic=satellite-locations#host-remove), and try to [add](/docs/satellite?topic=satellite-locations#add-hosts) and [assign](/docs/satellite?topic=satellite-satellite-cli-reference#host-assign) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.</td>
+    <td>The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-limitations#limits-host), [remove the host](/docs/satellite?topic=satellite-hosts#host-remove), and try to [add](/docs/satellite?topic=satellite-hosts#add-hosts) and [assign](/docs/satellite?topic=satellite-hosts#host-assign) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.</td>
     </tr>
     </tbody>
     </table>
@@ -202,7 +202,7 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
         ```
         {: pre}
 2.  Make sure that your machine meets the other [host minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host), such as minimum CPU and memory sizes and public network connectivity.
-3.  [Run the registration script](/docs/satellite?topic=satellite-locations#add-hosts) on your machine again.
+3.  [Run the registration script](/docs/satellite?topic=satellite-hosts#add-hosts) on your machine again.
 
 <br />
 

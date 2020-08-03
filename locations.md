@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -43,7 +43,7 @@ Set up an {{site.data.keyword.satellitelong}} location to represent a data cente
 {: preview}
 
 **Steps to set up your first location**
-1. [Create a location](/docs/satellite?topic=satellite-locations#creating-satellite-locations).
+1. [Create a location](#location-create).
 2. [Add 3 hosts to the location](/docs/satellite?topic=satellite-hosts#add-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host).
 3. [Set up the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) with the 3 hosts.
 4. [Add more hosts to the location](/docs/satellite?topic=satellite-hosts#add-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host).
@@ -121,7 +121,7 @@ The location control plane runs resources that are managed by {{site.data.keywor
 {: shortdesc}
 
 **Before you begin**:
-- Make sure that you [added at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts-console) to use for your {{site.data.keyword.satelliteshort}} control plane.
+- Make sure that you [added at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts) to use for your {{site.data.keyword.satelliteshort}} control plane.
 - Verify that your location is in an **Action required** state.
 
 **To create the control plane**:
@@ -155,7 +155,7 @@ You can remove a {{site.data.keyword.satelliteshort}} location if you no longer 
 Removing a location cannot be undone. Before you remove a location, back up any information that you want to keep and remove any hosts and clusters that run in the location. Note that the underlying host infrastructure is not deleted because you manage the infrastructure yourself.
 {: important}
 
-1. [Remove all hosts](/docs/satellite?topic=satellite-hosts#host-remove-console) from your location.
+1. [Remove all hosts](/docs/satellite?topic=satellite-hosts#host-remove) from your location.
 2. [Remove all clusters](/docs/openshift?topic=openshift-remove) from your location.
 3. From the [{{site.data.keyword.satelliteshort}} console](https://test.cloud.ibm.com/satellite/){: external} **Locations** table, hover over the location that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 4. Click **Remove location**, enter the location name to confirm deletion, and click **Remove**.

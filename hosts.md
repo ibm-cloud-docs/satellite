@@ -180,10 +180,10 @@ After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can 
 Because you own the underlying infrastructure, you are responsible for updating your hosts. To update a host, you must remove the host from {{site.data.keyword.satelliteshort}} so that you can can reload the operating system. Then, you reattach and reassign the host to your cluster.
 {: shortdesc}
 
-1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove-console-location) so that you can update the host.
+1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
 2. From your infrastructure provider, reload the operating system with the latest updates.
-3. [Add the host](#add-hosts-console) back to your {{site.data.keyword.satelliteshort}} location.
-4. [Assign the host](#host-assign-ui) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.satelliteshort}} cluster.
+3. [Add the host](#add-hosts) back to your {{site.data.keyword.satelliteshort}} location.
+4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.satelliteshort}} cluster.
 
 <br />
 
