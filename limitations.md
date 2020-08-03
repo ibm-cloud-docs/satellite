@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-31"
+lastupdated: "2020-08-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -149,12 +149,3 @@ Review the following storage limitations for {{site.data.keyword.satellitelong_n
 
 <br />
 
-
-## Application configuration
-{: #limits-config}
-
-Review the following application configuration limitations for {{site.data.keyword.satellitelong_notm}}.
-{: shortdesc}
-
-* You can upload only an individual configuration file of Kubernetes resources per release version. You cannot upload a directory or several different configuration files.
-* Configuration files are subject to Kubernetes limitations, such as that the manifest must be expressed in YAML or JSON format.
