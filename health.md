@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -39,19 +39,7 @@ subcollection: satellite
 {{site.data.keyword.satellitelong}} comes with basic tools to help you manage the health of your {{site.data.keyword.satelliteshort}} resources, such as reviewing location and host health.
 {: shortdesc}
 
-## Understanding what is logged and monitored by default
-{: #health-default}
-
-By default, {{site.data.keyword.satelliteshort}} generates certain activity events and monitors the state of your location and host resources.
-{: shortdesc}
-
-### Auditing events for {{site.data.keyword.satelliteshort}} actions
-{: #audit-events}
-
-See [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
-{: shortdesc}
-
-### IBM monitoring to resolve and report location alerts
+## IBM monitoring to resolve and report location alerts
 {: #monitoring-default}
 
 When you create a {{site.data.keyword.satelliteshort}} location and set up the location control plane, IBM automatically monitors and resolves certain alerts for issues with your location setup and host infrastructure. The following table describes different scenarios and the actions that IBM takes to address the scenarios.
@@ -125,11 +113,4 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 To review the health of {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-health#states_cluster).
 {: shortdesc}
 
-### Viewing Kubernetes resources in clusters
-{: #kubernetes-resources-health}
 
-When you add your clusters to {{site.data.keyword.satelliteshort}} Configuration, the Kubernetes resources are automatically added to an inventory that you can review.
-{: shortdesc}
-
-Adding clusters to {{site.data.keyword.satelliteshort}} Configuration does not automatically set up logging and monitoring solutions, such as {{site.data.keyword.loganalysislong_notm}} and {{site.data.keyword.mon_full_notm}}.
-{: note}

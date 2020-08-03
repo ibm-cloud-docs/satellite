@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-30"
+lastupdated: "2020-08-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -56,7 +56,7 @@ The following diagram presents the initial setup steps for hosts.
 2.  **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not do anything until you assign them to a {{site.data.keyword.satelliteshort}} resource, to use for compute capacity. For example, each location must have at least 3 hosts that are assigned to run control plane operations. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
 3.  **Bootstrap**: When you assign a host to a {{site.data.keyword.satelliteshort}} cluster, the host is bootstrapped to become part of a managed {{site.data.keyword.openshiftlong_notm}} cluster. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host, which requires public connectivity to pull the images from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts).
 
-Now, your hosts are worker nodes in the {{site.data.keyword.satelliteshort}} location control plane, {{site.data.keyword.openshiftlong_notm}} cluster, or other {{site.data.keyword.satelliteshort}}-enabled service that you assigned the host to. The master of the cluster runs in your {{site.data.keyword.satelliteshort}} location control plane. You can log in to the clusters and use Kubernetes or {{site.data.keyword.openshiftshort}} APIs to manage your containerized workloads, or use [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) to manage your workloads across clusters.
+Now, your hosts are worker nodes in the {{site.data.keyword.satelliteshort}} location control plane, {{site.data.keyword.openshiftlong_notm}} cluster, or other {{site.data.keyword.satelliteshort}}-enabled service that you assigned the host to. The master of the cluster runs in your {{site.data.keyword.satelliteshort}} location control plane. You can log in to the clusters and use Kubernetes or {{site.data.keyword.openshiftshort}} APIs to manage your containerized workloads.
 
 <br />
 
