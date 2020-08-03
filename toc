@@ -1,0 +1,42 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="satellite" category="containers" audience="compute" href="/docs/satellite?topic=satellite-getting-started" console-page="/satellite/overview" product-page="https://www.ibm.com/cloud/satellite" path="satellite"}
+Satellite
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    {: .navgroup-end}
+
+    {: .navgroup id="tutorials"}
+    tutorial.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    locations.md
+    hosts.md
+    health.md
+
+    {: .topicgroup}
+    Enhancing security
+        architecture-workload-isolation.md
+        ha-dr.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    limitations.md
+    supported-regions.md
+    responsibilities.md
+    license-notices.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faqs.md
+
+    {: .topicgroup}
+    Troubleshooting Satellite components
+        ts-location.md
+        ts-host.md
+        ts-clusters.md
+        getting-help.md
+    {: .navgroup-end}
