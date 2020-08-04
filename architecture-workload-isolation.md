@@ -111,6 +111,7 @@ Review the list of third-party services that {{site.data.keyword.satellitelong}}
 |Service name|Description|
 |------------|-------------------------------------|
 |Akamai, Cloudflare|Akamai and Cloudflare are used as the primary providers for DNS, global load balancing, and web firewall capabilities in {{site.data.keyword.satellitelong_notm}}.|
+|Amplitude, Segment|Amplitude and Segment are used to monitor user behavior in the {{site.data.keyword.cloud_notm}} dashboard, such as page hits or click-through paths. This information is used for IBM-internal marketing and data analytics purposes.|
 |Launch Darkly|To manage the roll out of new features in {{site.data.keyword.satellitelong_notm}}, Launch Darkly feature flags are used. A feature flag controls the visibility and availability of a feature to a selected user base.|
 |Let's Encrypt|This service is used as the Certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_long_notm}}.|
 |Slack|Slack is used as the IBM-internal communication medium to troubleshoot issues and bring together internal SMEs to resolve customer issues. Diagnostic information about a {{site.data.keyword.satelliteshort}} location are sent to a private Slack channel and include the customer account ID, location ID, and details about the {{site.data.keyword.satelliteshort}} control plane.|
