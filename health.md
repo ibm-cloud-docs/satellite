@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -71,7 +71,7 @@ You can review the health of {{site.data.keyword.satelliteshort}} resources such
 When you set up a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your location healthy. For more information, see [IBM monitoring to resolve and report location alerts](#monitoring-default). For troubleshooting help, see [Debugging location health](/docs/satellite?topic=satellite-ts-locations).
 {: shortdesc}
 
-You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](https://test.cloud.ibm.com/satellite/){: external}.
+You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}.
 
 | Health state | Description
 | --- | --- |
@@ -93,7 +93,7 @@ You can review the host health from the **Locations** table in the [{{site.data.
 When you add hosts to a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your hosts healthy. For more information, see [IBM monitoring to resolve and report location alerts](#monitoring-default). For troubleshooting help, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts).
 {: shortdesc}
 
-You can review the host health from the **Hosts** table in the [{{site.data.keyword.satelliteshort}} console](https://test.cloud.ibm.com/satellite/){: external}.
+You can review the host health from the **Hosts** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}.
 
 | Health state | Description
 | --- | --- |

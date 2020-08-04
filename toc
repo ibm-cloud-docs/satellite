@@ -7,10 +7,7 @@ Satellite
     {: .navgroup id="learn"}
     getting-started.md
     {: .navgroup-end}
-
-    {: .navgroup id="tutorials"}
-    tutorial.md
-    {: .navgroup-end}
+    
 
     {: .navgroup id="howto"}
     locations.md
@@ -19,6 +16,7 @@ Satellite
 
     {: .topicgroup}
     Enhancing security
+        iam.md
         architecture-workload-isolation.md
         ha-dr.md
     {: .navgroup-end}
