@@ -65,6 +65,8 @@ You can use {{site.data.keyword.cloud_notm}} IAM to assign access to [different 
 For information about assigning user roles in the console, see [Managing access to resources](/docs/iam?topic=iam-iammanidaccser#iammanidaccser).
 {: shortdesc}
 
+**Process to set up access to {{site.data.keyword.satellitelong_notm}} in your {{site.data.keyword.cloud_notm}} account:**<br>
+
 1.  [Invite users to your account](/docs/account?topic=account-iamuserinv).
 2.  [Create an access group](/docs/account?topic=account-groups#create_ag) to add users to.
 3.  [Assign the access group](/docs/account?topic=account-groups#access_ag) with the appropriate scope for the {{site.data.keyword.satelliteshort}} resources and IAM platform and service roles for the actions you want to let users in your access group perform.
@@ -82,6 +84,9 @@ For information about assigning user roles in the console, see [Managing access 
     * {{site.data.keyword.registrylong_notm}} for a private registry across clusters: **Container Registry** in the UI, **container-registry** in the API and CLI.
     * {{site.data.keyword.cos_full_notm}} for the backing storage for your location information: **Cloud Object Storage** in the UI, **cos** in the API and CLI.
 5.  [Assign the access group](/docs/account?topic=account-groups#access_ag) with the **Viewer** platform access role to any resource groups that you plan to use with {{site.data.keyword.satelliteshort}}.
+
+<br />
+
 
 ### Example UI steps
 {: #iam-assign-ui}
@@ -102,6 +107,9 @@ For information about assigning user roles in the console, see [Managing access 
 10. Click **Add+**.
 11. In the **Access summary** pane, review the access policy, and then click **Assign**.
 12. From the access group **Access policies** table, verify that the Editor policy is added to the access group.
+
+<br />
+
 
 ### Example CLI steps
 {: #iam-assign-cli}
