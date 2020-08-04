@@ -19,6 +19,7 @@ Satellite
 
     {: .topicgroup}
     Enhancing security
+        iam.md
         architecture-workload-isolation.md
         ha-dr.md
     {: .navgroup-end}
