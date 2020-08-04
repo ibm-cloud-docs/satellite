@@ -31,6 +31,7 @@ subcollection: satellite
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:step: data-tutorial-type='step'}
 
 
 # Setting up {{site.data.keyword.satelliteshort}} hosts

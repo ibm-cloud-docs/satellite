@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -31,6 +31,7 @@ subcollection: satellite
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:step: data-tutorial-type='step'}
 
 
 # Hosts
