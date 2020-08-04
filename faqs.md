@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-29"
+lastupdated: "2020-08-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -79,21 +79,15 @@ The {{site.data.keyword.satellitelong_notm}} service architecture and infrastruc
 
 Every location is securely connected to the {{site.data.keyword.cloud_notm}} region that manages your location by using the {{site.data.keyword.satelliteshort}} Link component. The link component runs in your control plane and is the main gateway for any communication between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. If your {{site.data.keyword.satelliteshort}} location cannot communicate with the {{site.data.keyword.cloud_notm}} region anymore, your existing location workloads continue to run, but you cannot make any configuration changes or roll out updates to the services and apps that run in your location.
 
-For an overview of your options to make the {{site.data.keyword.satelliteshort}} control plane more highly available to prevent connectivity issues with your {{site.data.keyword.cloud_notm}} region, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
-
-## What options do I have to secure my {{site.data.keyword.satelliteshort}} location?
-{: secure-location}
-{: faq}
-{: support}
-
-SSH is disabled by default, link endpoints to control connectivity to endpoints, define sources to limit the endpoint reach
-also they can set up firewalls on their end as an additional layer of security > question: what ports need to be opened?
+For an overview of your options to make the {{site.data.keyword.satelliteshort}} control plane more highly available to prevent connectivity issues with your {{site.data.keyword.cloud_notm}} region, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha). 
 
 ## Does IBM support third-party and open source tools that I use with {{site.data.keyword.satelliteshort}}?
 {: #faq_thirdparty_oss}
 {: faq}
 
 See the [IBM Open Source and Third Party policy](https://www.ibm.com/support/pages/node/737271){: external}.
+
+
 
 ## What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} cluster?
 {: #supported-services}
