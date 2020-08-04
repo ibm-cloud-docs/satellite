@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -157,5 +157,5 @@ Removing a location cannot be undone. Before you remove a location, back up any 
 
 1. [Remove all hosts](/docs/satellite?topic=satellite-hosts#host-remove) from your location.
 2. [Remove all clusters](/docs/openshift?topic=openshift-remove) from your location.
-3. From the [{{site.data.keyword.satelliteshort}} console](https://test.cloud.ibm.com/satellite/){: external} **Locations** table, hover over the location that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
+3. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external} **Locations** table, hover over the location that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 4. Click **Remove location**, enter the location name to confirm deletion, and click **Remove**.

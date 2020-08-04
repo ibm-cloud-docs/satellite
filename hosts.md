@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -165,7 +165,7 @@ After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can 
 2.   [Add hosts to your {{site.data.keyword.satelliteshort}} location](#add-hosts), and check that the hosts are healthy and **unassigned**.
 3.   Create the {{site.data.keyword.satelliteshort}} resource that you want to assign hosts to, such as [a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in {{site.data.keyword.openshiftlong_not}}.
 
-1.  From the [{{site.data.keyword.satelliteshort}} console](https://test.cloud.ibm.com/satellite/){: external}, click **Locations**.
+1.  From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, click **Locations**.
 2.  Select the location where you added the host machines that you want to assign to your {{site.data.keyword.satelliteshort}} resource.
 3. In the **Hosts** tab, from the actions menu of each host machine that you want to add to your resource, click **Assign host**.
 4. Select the cluster that you created and choose one of the available zones. When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the Health of your machine changes from **Ready** to **Unknown**.
@@ -198,7 +198,7 @@ Removing a host cannot be undone. Before you remove a host, make sure that your 
 {: important}
 
 1. Make sure that your cluster or location control plane has enough compute resources to continue running even after your remove the host, or back up any data that you want to keep.
-2. From the [{{site.data.keyword.satelliteshort}} console](https://test.cloud.ibm.com/satellite/){: external}, click **Locations** and then click your location.
+2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, click **Locations** and then click your location.
 3. From the **Hosts** table, find the host that you want to remove.
 4. Depending on the type of host, remove the host from a cluster before you remove the host.
    1. If the host **Cluster** is `Control plane`, continue to the next step.
