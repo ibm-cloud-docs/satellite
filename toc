@@ -19,6 +19,7 @@ Satellite
         iam.md
         architecture-workload-isolation.md
         ha-dr.md
+        data-security.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
