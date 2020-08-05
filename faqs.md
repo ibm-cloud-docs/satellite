@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -45,7 +45,7 @@ Review frequently asked questions (FAQs) for using {{site.data.keyword.satellite
 {: faq}
 {: support}
 
-With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute infrastructure that resides in your on-premises data center, at other cloud providers, or in edge networks as a {{site.data.keyword.satelliteshort}} Location to {{site.data.keyword.cloud_notm}}. Then, you use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on this infrastructure, and consistently deploy, manage, and control your app workloads.  
+With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute infrastructure that meets the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-limitations#limits-host-system) and that resides in your on-premises data center, at other cloud providers, or in edge networks as a {{site.data.keyword.satelliteshort}} Location to {{site.data.keyword.cloud_notm}}. Then, you use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on this infrastructure, and consistently deploy, manage, and control your app workloads.  
 
 For more information, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/cloud/satellite){: external}.
 
