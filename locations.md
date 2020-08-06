@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -65,7 +65,7 @@ The following diagram presents the concept of setting up your own {{site.data.ke
 
 **{{site.data.keyword.satelliteshort}} control plane master**: When you create a location, you get a highly available control plane in one of the {{site.data.keyword.cloud_notm}} multizone regions, that runs the master components of the location control plane, to store the location configuration and provide updates and management from {{site.data.keyword.cloud_notm}} to the resources that you set up later in your location. The location metadata is automatically backed up to an {{site.data.keyword.cos_full_notm}} instance in your account.
 
-**{{site.data.keyword.satelliteshort}} control plane worker**: After you create the location, you must add at least 3 hosts to the location control plane as worker nodes. Then, the location control plane worker is ready to manage your location resoruces. Other components are also set up, such as IBM monitoring components to monitor the health of your location and hosts and automatically resolve certain issues. For more information, see the [service architecture](/docs/satellite?topic=satellite-service-architecture).
+**{{site.data.keyword.satelliteshort}} control plane worker**: After you create the location, you must add at least 3 hosts to the location control plane as worker nodes. Then, the location control plane worker is ready to manage your location resources. Other components are also set up, such as IBM monitoring components to monitor the health of your location and hosts and automatically resolve certain issues. For more information, see the [service architecture](/docs/satellite?topic=satellite-service-architecture).
 
 **{{site.data.keyword.satelliteshort}} Link**: A {{site.data.keyword.satelliteshort}} Link is automatically created in the location control plane worker to connect the location back to the control plane master in {{site.data.keyword.cloud_notm}}. You can use Link to control and audit network traffic in and out of the location.
 
