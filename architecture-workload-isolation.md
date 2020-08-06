@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-05"
+lastupdated: "2020-08-06"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -107,7 +107,7 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.sa
 | Business Support Services for {{site.data.keyword.cloud_notm}} (BSS) | The `BSS` component is used to access information about the {{site.data.keyword.cloud_notm}} account, service subscription, service usage, and billing. |
 |{{site.data.keyword.cloudcerts_short}}|This service is used to retrieve the TLS certificates for custom domains that {{site.data.keyword.satellitelong_notm}} users set up.|
 | Global Search and Tagging (Ghost) | The `Ghost` component is used to look up information about other {{site.data.keyword.cloud_notm}} services, such as IDs, tags, or service attributes. |
-| Hypersync and hyperwarp | This {{site.data.keyword.cloud_notm}} component is used to provide information about {{site.data.keyword.satelliteshort}} locations so that the location is visible to other {{site.data.keyword.cloud_notm}} services and location information can be searched and displayed. |
+| Hypersync and Hyperwarp | This {{site.data.keyword.cloud_notm}} component is used to provide information about {{site.data.keyword.satelliteshort}} locations so that the location is visible to other {{site.data.keyword.cloud_notm}} services and location information can be searched and displayed. |
 |{{site.data.keyword.cloud_notm}} Command Line (CLI)|When you use the CLI plug-in to perform {{site.data.keyword.satellitelong_notm}} operations, the {{site.data.keyword.satelliteshort}} plug-in connects to the {{site.data.keyword.cloud_notm}} CLI service over the public service endpoint.|
 |{{site.data.keyword.registrylong_notm}}|This service is used to store the container images that {{site.data.keyword.satellitelong_notm}} uses to run the service.|
 |{{site.data.keyword.la_full_notm}}|{{site.data.keyword.satellitelong_notm}} sends location logs to {{site.data.keyword.la_full_notm}}. These logs are monitored and analyzed by the service team to detect service issues and malicious activities. |
