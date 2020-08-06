@@ -119,7 +119,7 @@ Review the health of your location, and use the error messages to resolve any is
     <td>R0011 Make sure that all hosts for your Satellite location are in a normal state. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.</td>
     <td><ol><li>Check the **Status** of your hosts by running <code>ibmcloud sat host ls --location <location_name_or_ID><code></li>
     <li>If you have no hosts, add hosts to your location.</li>
-    <li>Make sure that you have at least 3 hosts that are assigned to the **infrastructure** cluster for the location, to runlocation control plane operations.</li>
+    <li>Make sure that you have at least 3 hosts that are assigned to the **infrastructure** cluster for the location, to run location control plane operations.</li>
     <li>If your hosts have no status, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-login).</li>
     <li>Review the host status to [resolve the host issue](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-debug).</li></ol></td>
     </tr>
@@ -160,7 +160,7 @@ Review the health of your location, and use the error messages to resolve any is
     <tr>
      <td>R0026 Hosts in the location control plane are running out of disk space. Assign more hosts to the location control plane, or reload the hosts with disk space issues.</td>
      <td><ol><li>List the hosts that are assigned to the control plane by running `ibmcloud sat host ls --location <location_name_or_ID> | grep infrastructure`.</li>
-     <li>Check the details of your host by running `ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>`.</li>
+     <li>Check the details of your host by running `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.</li>
      <li>In the infrastructure provider, check the disk space of your host machine. [Update the host](/docs/satellite?topic=satellite-hosts#host-update) to see if the host issue is resolved.</li>
      <li>If debugging and updating the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).</li></ol></td>
     </tr>
