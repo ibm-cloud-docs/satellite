@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -78,7 +78,7 @@ Still having issues? Review different ways to get help and support for {{site.da
       {: pre}
 
       ```
-      ibmcloud sat host get --location <location_name_or_ID> --host <host_name_or_ID>
+      ibmcloud sat host get --location <location_name_or_ID> --host <host_ID>
       ```
       {: pre}
    2. For any hosts, include relevant details about the underlying infrastructure provider.

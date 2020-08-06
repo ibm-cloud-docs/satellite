@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -160,7 +160,7 @@ Review the health of your location, and use the error messages to resolve any is
     <tr>
      <td>R0026 Hosts in the location control plane are running out of disk space. Assign more hosts to the location control plane, or reload the hosts with disk space issues.</td>
      <td><ol><li>List the hosts that are assigned to the control plane by running `ibmcloud sat host ls --location <location_name_or_ID> | grep infrastructure`.</li>
-     <li>Check the details of your host by running `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.</li>
+     <li>Check the details of your host by running `ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>`.</li>
      <li>In the infrastructure provider, check the disk space of your host machine. [Update the host](/docs/satellite?topic=satellite-hosts#host-update) to see if the host issue is resolved.</li>
      <li>If debugging and updating the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).</li></ol></td>
     </tr>
