@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -53,9 +53,9 @@ You can use {{site.data.keyword.cloud_notm}} IAM to assign access to [different 
 | Resource type | IAM role | Scope | Description |
 | ------------- | ---------------- | ----- | ----------- |
 | {{site.data.keyword.satelliteshort}} Location | Platform | Account, resource group, or particular instances | [Locations](/docs/satellite?topic=satellite-locations) are places that you use to extend {{site.data.keyword.cloud_notm}} by attaching your own host compute machines to the location. Access to a location also gives access to manage hosts in the location, but does not grant access to other resources that run within the location, such as configurations, link endpoints, and {{site.data.keyword.openshiftshort}} clusters. |
-| {{site.data.keyword.satelliteshort}} Config | Platform, Service | Account, resource group, {{site.data.keyword.satelliteshort}} location, or particular instances | {{site.data.keyword.satelliteshort}} Config is a collection of configuration, release version, and subscriptions that you use to automatically deploy Kubernetes resources to groups clusters that are registered to {{site.data.keyword.satelliteshort}} Config. Note that access to {{site.data.keyword.satelliteshort}} Config does not give a user access to the clusters that run the Kubernetes resources of the configuration. |
+| {{site.data.keyword.satelliteshort}} Config | Platform, Service | Account, resource group, {{site.data.keyword.satelliteshort}} location, or particular instances | {{site.data.keyword.satelliteshort}} Config is a collection of configuration, release version, and subscriptions that you use to automatically deploy Kubernetes resources to groups clusters that are registered to {{site.data.keyword.satelliteshort}} Config. Note that access to {{site.data.keyword.satelliteshort}} Config does not give a user access to the clusters that run the Kubernetes resources of the configuration. You can scope access to the following {{site.data.keyword.satelliteshort}} Config resources:<ul><li>**Configurations**, where you upload the version of the configuration file for the Kubernetes resources that you want to deploy.</li><li>**Subscriptions**, which you use to use designate certain clusters or groups of clusters to receive the updates from a configuration.</li><li>**Clusters** or **cluster groups**, which are {{site.data.keyword.openshiftlong_notm}} that are registered with {{site.data.keyword.satelliteshort}} Config and can be subscribed to configurations.</li><li>**Resources**, which are Kubernetes resources such as pods or services that are described in a {{site.data.keyword.satelliteshort}} Config and run in a subscribed cluster.</li></ul> |
 | {{site.data.keyword.satelliteshort}} Link | Platform, Service | Account, resource group, or particular instances | Link endpoints are a connection between an endpoint to a {{site.data.keyword.satelliteshort}} location and any resource such as services that run in the location or {{site.data.keyword.cloud_notm}}. Note that access to a {{site.data.keyword.satelliteshort}} Link does not give a user access to the resources that the link connects, such as a location or service instance. |
-| {{site.data.keyword.openshiftshort}} clusters | Platform and service | Account, resource group, {{site.data.keyword.cloud_notm}} region, or particular instances | You do not assign access policies for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}. Instead, access to clusters is assigned in {{site.data.keyword.cloud_notm}} IAM through {{site.data.keyword.openshiftlong_notm}} (**Kubernetes Service** in the console or `containers-kubernetes` in the API or CLI). For more information, see [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](#iam-roles-clusters). If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration, but you might not be able to access the clusters if you do not have the appropriate roles to those clusters. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} configuration, you might be able to list all the Kubernetes resources that run in registered clusters via the {{site.data.keyword.satelliteshort}} configuration API. However, without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.openshiftshort}} APIs to list Kubernetes resources. |
+| {{site.data.keyword.openshiftshort}} clusters | Platform and service | Account, resource group, {{site.data.keyword.cloud_notm}} region, or particular instances | You do not assign access policies for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}. Instead, access to clusters is assigned in {{site.data.keyword.cloud_notm}} IAM through {{site.data.keyword.openshiftlong_notm}} (**Kubernetes Service** in the console or `containers-kubernetes` in the API or CLI). For more information, see [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](#iam-roles-clusters). If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration, but you might not be able to access the clusters if you do not have the appropriate roles to those clusters. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} Config, you might be able to list all the Kubernetes resources that run in registered clusters via the {{site.data.keyword.satelliteshort}} Config API. However, without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.openshiftshort}} APIs to list Kubernetes resources. |
 | Other {{site.data.keyword.satelliteshort}}-enabled services | Varies by service | Varies by service | Similar to {{site.data.keyword.openshiftshort}} clusters, authorization to other {{site.data.keyword.cloud_notm}} services that are enabled in {{site.data.keyword.satelliteshort}} is managed in {{site.data.keyword.cloud_notm}} IAM through those services. For more information, refer to each service's documentation. |
 {: caption="Resource types that you can manage access to" caption-side="top"}
 {: summary="The table shows information about the resource types that you can manage access to. Rows are read from the left to right. The first column is the resource type. The second column is the type of IAM role with which you assign access to the resource type. The third column is the scope that the access can be constrained to. The fourth column is a description of the resource type and access considerations."}
@@ -78,6 +78,8 @@ For information about assigning user roles in the console, see [Managing access 
       * **Link** in the UI, **link** in the API and CLI.
     * For help choosing the right platform and service roles, see the following reference information:
       *   [Platform management roles](#iam-roles-platform)
+      *   [Service access roles](#iam-roles-service)
+      *   [Common use cases and roles](#iam-roles-usecases)
 4.  [Assign the access group](/docs/account?topic=account-groups#access_ag) with the appropriate scope for any other {{site.data.keyword.cloud_notm}} services that you plan to use in your {{site.data.keyword.satelliteshort}} location. Refer to each service documentation for information about the level of access that you need. Common services include:
     * {{site.data.keyword.openshiftlong_notm}} clusters: **Kubernetes Service** in the UI, **containers-kubernetes** in the API and CLI.
     * {{site.data.keyword.registrylong_notm}} for a private registry across clusters: **Container Registry** in the UI, **container-registry** in the API and CLI.
@@ -160,7 +162,7 @@ For information about assigning user roles in the console, see [Managing access 
       <tr>
       <td>{{site.data.keyword.satelliteshort}} resource</td>
       <td>`--resource-type`</td>
-      <td>You can limit the policy to a type of resource within {{site.data.keyword.satellitelong_notm}}, such as {{site.data.keyword.satelliteshort}} Location or {{site.data.keyword.satelliteshort}} Config. To review resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types). Possible values include `location`.</td>
+      <td>You can limit the policy to a type of resource within {{site.data.keyword.satellitelong_notm}}, such as {{site.data.keyword.satelliteshort}} Location or {{site.data.keyword.satelliteshort}} Config. To review resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types). Possible values include `location` `configuration`, `cluster`, `clustergroup`, `subscription`, and `resource`.</td>
       </tr>
       <tr>
       <td>Resource instance</td>
@@ -171,7 +173,8 @@ For information about assigning user roles in the console, see [Managing access 
       <td>Role</td>
       <td>`--role`</td>
       <td>Choose the platform management or service access that you want to assign.
-      <ul><li>**Platform**: Grants access to {{site.data.keyword.satelliteshort}} platform resources so that users can manage infrastructure resources such as locations, hosts, or link endpoints. For more information, see [Platform management roles](#iam-roles-platform). Possible values are: `Administrator`, `Operator`, `Editor`, or `Viewer`.</li></ul></td>
+      <ul><li>**Platform**: Grants access to {{site.data.keyword.satelliteshort}} platform resources so that users can manage infrastructure resources such as locations, hosts, or link endpoints. For more information, see [Platform management roles](#iam-roles-platform). Possible values are: `Administrator`, `Operator`, `Editor`, or `Viewer`.</li>
+      <li>**Service**: Grants access to services that run within {{site.data.keyword.satelliteshort}} resources so that users can work with {{site.data.keyword.satelliteshort}} Config subscriptions and Kubernetes resources. For more information, see [Service access roles](#iam-roles-service). Possible values are: `Manager`, `Writer`, or `Reader`.</li></ul></td>
       </tr>
       </tbody>
       </table>
@@ -205,6 +208,12 @@ Policies enable access to be granted at different levels. Some of the options in
 * Access across all {{site.data.keyword.satelliteshort}} service instances of all resource types in your account.
 * Access to specific resource types within {{site.data.keyword.satelliteshort}}. For more information about resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types).
   * **Location** in the UI, **location** in the API and CLI.
+  * {{site.data.keyword.satelliteshort}} Config resources:
+    * **Cluster** in the UI, **cluster** in the API and CLI.
+    * **Clustergroup** in the UI, **clustergroup** in the API and CLI.
+    * **Configuration** in the UI, **configuration** in the API and CLI.
+    * **Resource** in the UI, **resource** in the API and CLI.
+    * **Subscription** in the UI, **subscription** in the API and CLI.
   
 * Access to an individual resource of a particular resource type, such as a particular location {{site.data.keyword.satelliteshort}}.
 
@@ -216,27 +225,89 @@ After you define the scope of the access policy, you assign a role, which determ
 Click the tabs in the following table to review the actions that are mapped to platform management roles for different components of {{site.data.keyword.satelliteshort}}. Platform management roles enable users to perform tasks on service resources at the platform level, for example, assign user access for the service, create or delete instances, and bind instances to applications.
 {: shortdesc}
 
-
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
 |-----|---|---|-----|-----|-----|--------|---|
-| Create a {{site.data.keyword.satelliteshort}} location | `/createController` | `location create` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| List {{site.data.keyword.satelliteshort}} locations | `/getControllers` | `location ls` | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Get the details of a {{site.data.keyword.satelliteshort}} location | `/getController` | `location get` | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  
-| Remove a {{site.data.keyword.satelliteshort}} location | `/removeController` | `location rm` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Attach a host to a {{site.data.keyword.satelliteshort}} location | `/hostqueue/createRegistrationScript` | `host attach` | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Assign a host to a {{site.data.keyword.satelliteshort}} location control plane or cluster | `/hostqueue/createAssignment`| `host assign` | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| List hosts in a {{site.data.keyword.satelliteshort}} location | `/hostqueue/getHosts` | `host ls` | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Update a host | `/hostqueue/updateHost` | `host update` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Remove a host from a {{site.data.keyword.satelliteshort}} location control plane or cluster| `/hostqueue/removeHost` |`host rm` | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Create a {{site.data.keyword.satelliteshort}} cluster | `/createCluster` | `ibmcloud ks cluster create satellite` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| List {{site.data.keyword.satelliteshort}} clusters | `/getClusters` | `ibmcloud sat cluster ls` | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Create a {{site.data.keyword.satelliteshort}} location | `/createController` | [`location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| List {{site.data.keyword.satelliteshort}} locations | `/getControllers` | [`location ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-ls) | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Get the details of a {{site.data.keyword.satelliteshort}} location | `/getController` | [`location get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-get) | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  
+| Remove a {{site.data.keyword.satelliteshort}} location | `/removeController` | [`location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Attach a host to a {{site.data.keyword.satelliteshort}} location | `/hostqueue/createRegistrationScript` | [`host attach`](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach) | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Assign a host to a {{site.data.keyword.satelliteshort}} location control plane or cluster | `/hostqueue/createAssignment`| [`host assign`](/docs/satellite?topic=satellite-satellite-cli-reference#host-assign) | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| List hosts in a {{site.data.keyword.satelliteshort}} location | `/hostqueue/getHosts` | [`host ls`](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Update a host | `/hostqueue/updateHost` | [`host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Remove a host from a {{site.data.keyword.satelliteshort}} location control plane or cluster| `/hostqueue/removeHost` |[`host rm`](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm) | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Create a {{site.data.keyword.satelliteshort}} cluster | `/createCluster` | [`ibmcloud ks cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| List {{site.data.keyword.satelliteshort}} clusters | `/getClusters` | [`ibmcloud sat cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls) | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
+{: #table1}
+{: tab-title="Locations and hosts"}
+{: class="comparison-tab-table"}
+{: tab-group="iam-platform"}
 {: caption="Actions that you can take with platform management roles" caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different platform roles in the following columns: none, viewer, editor, operator, and administrator."}
 
 
+| Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
+|-----|---|---|-----|-----|-----|--------|---|
+| Create a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addChannel`|`config create` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Delete a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config |`removeChannel` |`config rm` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Attach a cluster to {{site.data.keyword.satelliteshort}} Config | `registerCluster` | `cluster register`| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Get a script to register a cluster to {{site.data.keyword.satelliteshort}} Config | `enableRegistrationUrl`|`cluster register` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Remove a cluster from {{site.data.keyword.satelliteshort}} Config | `deleteCluster`|`cluster rm` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| View clusters that are attached to {{site.data.keyword.satelliteshort}} Config |`clusters` calls |`cluster ls` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config |`groups` |`cluster-group ls` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Manage cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config |`assign, unassign, editClusterGroup`<br>`group, ungroupClusters`<br>`add, removeGroup` |`cluster-group attach`, `cluster-group detach`, `cluster-group edit` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| View an organization in {{site.data.keyword.satelliteshort}} Config | `organization`| - | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Set the configuration version that a cluster group is subscribed to in {{site.data.keyword.satelliteshort}} Config | `setSubscription`| `subscription update --version`| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `resources` calls | `resource ls`| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+{: row-headers}
+{: #table3}
+{: tab-title="Config"}
+{: class="comparison-tab-table"}
+{: tab-group="iam-platform"}
+{: caption="Actions that you can take with platform management roles" caption-side="top"}
+{: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different platform roles in the following columns: none, viewer, editor, operator, and administrator."}
+
+### Service access roles
+{: #iam-roles-service}
+
+Click the tabs in the following table to review the actions that are mapped to service access roles for different components of {{site.data.keyword.satelliteshort}}. Service access roles enable users access to {{site.data.keyword.satelliteshort}} and the ability to call the {{site.data.keyword.satelliteshort}} APIs.
+{: shortdesc}
+
+{{site.data.keyword.satelliteshort}} Config uses a [custom IAM service access role](/docs/account?topic=account-custom-roles), **Deployer**, in addition to the standard **Reader**, **Writer**, and **Manager** roles. You can assign users the **Deployer** role so that they can deploy existing configurations to your clusters, but cannot add or edit the actual configurations for your apps.
+{: note}
 
 
+
+| Action | API | CLI | None | Reader | Writer | Deployer | Manager |
+|-----|---|---|-----|-----|-----|--------|
+| View clusters that are attached to {{site.data.keyword.satelliteshort}} Config | `clusters` calls | `cluster ls` | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config | `groups` | `cluster-group ls` | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| View a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `channel` | `config get`| |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| View a Kubernetes resource that is managed by {{site.data.keyword.satelliteshort}} Config | `resource` | `resource get`| |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| View an organization in {{site.data.keyword.satelliteshort}} Config |`organization` | - | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Create a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addChannel`|`config create`| | |  || <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Update a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `editChannel`| `config rename`| | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Add a version to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addChannelVersion`| `config version create`| | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Delete a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `removeChannel` |`config rm`| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| View a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `subscription`| `subscription get`| |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Create a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addSubscription`| `subscription create`| | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Update a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `editSubscription`| `subscription update`| | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Set the configuration version of Kubernetes resources for a subscription in {{site.data.keyword.satelliteshort}} Config | `setSubscription`|`subscription update --version` | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Delete a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config |`removeSubscription` |`subscription rm` | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Attach a cluster to {{site.data.keyword.satelliteshort}} Config | `registerCluster` | `cluster register` | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Get a script to register a cluster to {{site.data.keyword.satelliteshort}} Config | `enableRegistrationUrl`|`cluster register` | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Remove a cluster from {{site.data.keyword.satelliteshort}} Config | `deleteCluster`|`cluster rm` | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| View clusters that are attached to {{site.data.keyword.satelliteshort}} Config | `clusters` calls |`cluster ls` | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config | `groups` |`cluster-group ls` | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Manage cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config | `assign, unassign, editClusterGroup`<br>`group, ungroupClusters`<br>`add, removeGroup` |`cluster-group attach`, `cluster-group detach`, `cluster-group edit` | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| View an organization in {{site.data.keyword.satelliteshort}} Config | `organization`| - | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Manage an organization in {{site.data.keyword.satelliteshort}} Config | | | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Set the configuration version that a cluster group is subscribed to in {{site.data.keyword.satelliteshort}} Config | `setSubscription`| `subscription update --version` | | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `resources` calls | `resource ls` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+{: row-headers}
+{: caption="Actions that you can take with service access roles" caption-side="top"}
+{: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different service roles in the following columns: none, reader, writer, and manager."}
 
 ### Platform and service roles for {{site.data.keyword.openshiftshort}} clusters
 {: #iam-roles-clusters}
@@ -248,4 +319,19 @@ If you create {{site.data.keyword.openshiftlong_notm}} clusters to use in your {
 * [Assigning access to clusters](/docs/openshift?topic=openshift-users), such as setting up the API key for underlying infrastructure permissions and granting users access with {{site.data.keyword.cloud_notm}} IAM.
 * [Accessing clusters](/docs/openshift?topic=openshift-access_cluster) on the public or private service endpoints, or by using an {{site.data.keyword.cloud_notm}} IAM API key such as for automation purposes.
 
+### Common use cases and roles
+{: #iam-roles-usecases}
 
+Wondering which access roles to assign to your {{site.data.keyword.satelliteshort}} access groups and users? Use the examples in following table to determine which roles and scope to assign.
+{: shortdesc}
+
+| Use case | Example roles and scope |
+| --- | --- |
+| Location auditor | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location and link endpoints. **Reader** service role for the configuration resources in the location. |
+| App developers | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location. **Writer** or **Deployer** service access role for the configuration resources. **Editor** platform role and **Writer** service role to {{site.data.keyword.openshiftshort}} clusters or particular projects in a cluster.|
+| Billing | **Viewer** platform role for all the {{site.data.keyword.satelliteshort}} locations in the account. |
+| Location administrator | **Administrator** platform role for the location and link resources. **Administrator** platform role to {{site.data.keyword.openshiftshort}} clusters.|
+| DevOps operator | **Editor** platform role for the location and link resources. **Deployer** service role for the configurations. **Operator** platform role to {{site.data.keyword.openshiftshort}} clusters.|
+| Operator or site reliability engineer | **Administrator** platform role for the location and link resources. **Manager** service role for the configuration resources. **Administrator** platform role and **Manager** service role to {{site.data.keyword.openshiftshort}} clusters. |
+{: caption="Types of roles you might assign to meet different use cases." caption-side="top"}
+{: summary="The first column contains the use case, which is typically the role of an access group or user. The second column is the example role and scope of the role that you assign the user in {{site.data.keyword.cloud_notm}} IAM."}
