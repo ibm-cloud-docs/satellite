@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -37,6 +37,8 @@ subcollection: satellite
 # Getting started with {{site.data.keyword.satellitelong_notm}}
 {: #getting-started}
 
+With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute infrastructure that resides in your on-premises data center, at other cloud providers, or in edge networks as a {{site.data.keyword.satelliteshort}} Location to {{site.data.keyword.cloud_notm}}. Then, you use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on this infrastructure, and consistently deploy, manage, and control your app workloads.
+
 {{site.data.keyword.satellitelong}} is available as a tech preview and subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
 {: preview}
 
@@ -50,8 +52,9 @@ This getting started tutorial requires 3 compute hosts that meet the [minimum ha
 {: #create-location}
 
 1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click **Create location**.
-2. Select the {{site.data.keyword.cloud_notm}} multizone metro city that you want to use to manage your location.
-3. Enter a name and an optional description for your location, and click **Create location**. When you create the location, a location master is deployed to one of the zones that are located in the multizone metro city that you selected. During this process, the **State** of the location shows `Unknown`.
+2. Enter a name and an optional description for your location.
+3. Select the {{site.data.keyword.cloud_notm}} multizone metro city that you want to use to manage your location. For more information about why you must select a multizone metro city, see [Understanding supported {{site.data.keyword.cloud_notm}} regions in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions).
+4. Click **Create location**. When you create the location, a location master is deployed to one of the zones that are located in the multizone metro city that you selected. That process might take w rew minutes to complete.
 4. Wait for the master to be fully deployed and the location **State** to change to `action required`.
 
 
