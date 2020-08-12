@@ -77,7 +77,7 @@ You can review the host health from the **Locations** table in the [{{site.data.
 | Health state | Description
 | --- | --- |
 | `action required` | The location needs your attention. Check the status and message for more information, and try [debugging your location](/docs/satellite?topic=satellite-ts-locations). |
-| `completed` | {{site.data.keyword.satelliteshort}} completed the setup of the location control plane components on the hosts that you assigned to the control plane. The location is soon ready to use.|
+| `completed` | {{site.data.keyword.satelliteshort}} completed the setup of the location control plane components on the hosts that you assigned to the control plane. The location is soon ready to be used.|
 | `completing` | {{site.data.keyword.satelliteshort}} is setting up the location control plane components on the hosts that you assigned to the control plane. Check back in a little while.|
 | `critical` | The {{site.data.keyword.satelliteshort}} location control plane needs your attention. Check the status and message for more information, and try [debugging your location control plane](/docs/satellite?topic=satellite-ts-locations#ts-locations-control-plane).|
 | `failed` | {{site.data.keyword.satelliteshort}} did not successfully resolve issues in your location. For more information, see the status message. |
@@ -87,6 +87,7 @@ You can review the host health from the **Locations** table in the [{{site.data.
 | `resolving` | {{site.data.keyword.satelliteshort}} is trying to resolve issues for you, such as by assigning available hosts to the control plane to relieve capacity issues. For more information, see the status message. |
 {: caption="Location health states" caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the health state of the location. The second column describes what the health state means."}
+
 
 ### Viewing host health
 {: #host-health}
