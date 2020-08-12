@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -37,7 +37,7 @@ subcollection: satellite
 # Setting up {{site.data.keyword.satelliteshort}} hosts
 {: #hosts}
 
-Set up {{site.data.keyword.satellitelong}} hosts to bring your own infrastructure to a {{site.data.keyword.satelliteshort}} location. Then, your hosts can be used as compute machines to run {{site.data.keyword.cloud_notm}} services such as {{site.data.keyword.openshiftlong_notm}} clusters.
+Set up {{site.data.keyword.satellitelong}} hosts to bring your own infrastructure to a {{site.data.keyword.satelliteshort}} location. Then, your hosts can be used as compute capacity to run {{site.data.keyword.cloud_notm}} services such as {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
 {{site.data.keyword.satellitelong}} is available as a tech preview and subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
@@ -53,11 +53,11 @@ The following diagram presents the initial setup steps for hosts.
 
 ![Concept overview of Satellite host setup](/images/host-process.png){: caption="Figure 1. The initial setup process for {{site.data.keyword.satelliteshort}} hosts." caption-side="bottom"}
 
-1.  **Add**: Your machine becomes a {{site.data.keyword.satelliteshort}} after you successfully [add the host](#add-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-limitations#limits-host). After the host is added, its health is **unknown** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
-2.  **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not do anything until you assign them to a {{site.data.keyword.satelliteshort}} resource, to use for compute capacity. For example, each location must have at least 3 hosts that are assigned to run control plane operations. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
-3.  **Bootstrap**: When you assign a host to a {{site.data.keyword.satelliteshort}} cluster, the host is bootstrapped to become part of a managed {{site.data.keyword.openshiftlong_notm}} cluster. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host, which requires public connectivity to pull the images from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts).
+1.  **Add**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [add the host](#add-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-limitations#limits-host). After the host is added and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
+2.  **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service. For example, each location must have at least 3 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
+3.  **Bootstrap**: When you assign a host to a {{site.data.keyword.satelliteshort}} cluster, the host is bootstrapped to become a worker nodes in a managed {{site.data.keyword.openshiftlong_notm}} cluster. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host, which requires public connectivity to pull the images from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts).
 
-Now, your hosts are worker nodes in the {{site.data.keyword.satelliteshort}} location control plane, {{site.data.keyword.openshiftlong_notm}} cluster, or other {{site.data.keyword.satelliteshort}}-enabled service that you assigned the host to. The master of the cluster runs in your {{site.data.keyword.satelliteshort}} location control plane. You can log in to the clusters and use Kubernetes or {{site.data.keyword.openshiftshort}} APIs to manage your containerized workloads.
+Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshort}} location control plane, {{site.data.keyword.openshiftlong_notm}} cluster, or as compute capacity for other {{site.data.keyword.satelliteshort}}-enabled services. If you run an {{site.data.keyword.openshiftshort}} cluster, you can log in to the clusters and use Kubernetes or {{site.data.keyword.openshiftshort}} APIs to manage your containerized workloads.
 
 <br />
 
@@ -72,15 +72,16 @@ Before you begin, make sure that you have created host machines that meet the [m
 
 1. From the [**Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, select that location where you want to add hosts.  
 2. From the **Hosts** tab, click **Add host**.
-3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. For example, you can use `use=satloc` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster.
-4. Click **Download script** to generate the `addHost.sh` host script and download the script to your local machine.
-5. Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
+3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use:satcp` or `use:satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane a {{site.data.keyword.openshiftlong_notm}} cluster.
+4. Enter a file name for your script or use the name that is generated for you.
+5. Click **Download script** to generate the host script and download the script to your local machine.
+5. Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
 
    **General steps:**
    1. Retrieve the public IP address of your host.
    2. Copy the script from your local machine to your host.
       ```
-      scp <path_to_addHost.sh> root@<public_IP_address>:/tmp/attach.sh
+      scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
       ```
       {: pre}
 
@@ -112,7 +113,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 
    3. Copy the script from your local machine to the virtual server instance.
       ```
-      scp <path_to_addHost.sh> root@<public_IP_address>:/tmp/attach.sh
+      scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
       ```
       {: pre}
 
@@ -145,9 +146,9 @@ Before you begin, make sure that you have created host machines that meet the [m
       ```
       {: pre}
 
-6. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster.
+6. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 
-7. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
+7. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
 <br />
 
@@ -155,7 +156,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 ## Assigning hosts to {{site.data.keyword.satelliteshort}} resources
 {: #host-assign}
 
-After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity. Each location needs at least 3 hosts assigned to the [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane). Then, you can assign hosts to other resources, such as {{site.data.keyword.satelliteshort}} clusters.
+After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity. For example, each location needs at least 3 hosts to be assigned as worker nodes to the [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane). Any remaining hosts can be assigned as worker nodes to {{site.data.keyword.openshiftlong_notm}} clusters or as compute capacity to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services.
 <br />
 
 
@@ -164,13 +165,16 @@ After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can 
 
 1.   Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for {{site.data.keyword.satelliteshort}}.
 2.   [Add hosts to your {{site.data.keyword.satelliteshort}} location](#add-hosts), and check that the hosts are healthy and **unassigned**.
-3.   Create the {{site.data.keyword.satelliteshort}} resource that you want to assign hosts to, such as [a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in {{site.data.keyword.openshiftlong_not}}.
+3.   If you plan to use the host for a {{site.data.keyword.satelliteshort}}-enabled service, such as a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters), create this service instance in your {{site.data.keyword.cloud_notm}} account. 
 
 1.  From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, click **Locations**.
 2.  Select the location where you added the host machines that you want to assign to your {{site.data.keyword.satelliteshort}} resource.
 3. In the **Hosts** tab, from the actions menu of each host machine that you want to add to your resource, click **Assign host**.
-4. Select the cluster that you created and choose one of the available zones. When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the Health of your machine changes from **Ready** to **Unknown**.
+4. Select the cluster that you created and choose one of the available zones. When you assign the hosts to a cluster, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the Health of your machine changes from **Ready** to **Provisioning**.
 5. Verify that your hosts are successfully assigned to the cluster. The assignment is successful when a public IP address is added to your host and the **Health** status changes to **Normal**.
+
+   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Prometheus is not yet initialized` or `Verify that alb steps have been completed for this cluster`.
+   {: note}
 
 <br />
 
@@ -182,9 +186,9 @@ Because you own the underlying infrastructure, you are responsible for updating 
 {: shortdesc}
 
 1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
-2. From your infrastructure provider, reload the operating system with the latest updates.
+2. Use th guidelines from your infrastructure provider to reload the operating system of your host and apply the latest updates.
 3. [Add the host](#add-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.satelliteshort}} cluster.
+4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.openshiftlong_notm}} cluster.
 
 <br />
 
@@ -192,7 +196,7 @@ Because you own the underlying infrastructure, you are responsible for updating 
 ## Removing hosts
 {: #host-remove}
 
-When you remove a host from your location, the host is unassigned from a cluster, detached from the location, and no longer available to run workloads from {{site.data.keyword.satellitelong_notm}}. Hosts that are removed from a cluster, such as by deleting a cluster or resizing a worker pool, are still attached to your location, but you must [reload the hosts](#host-update) to return them to an available state.
+When you remove a host from your location, the host is unassigned from a {{site.data.keyword.openshiftlong_notm}} cluster or {{site.data.keyword.satellitelong_notm}} control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete an {{site.data.keyword.openshiftshort}} cluster or resize a worker pool, the hosts are still attached to your location, but you must [reload the hosts](#host-update) to use them with another {{site.data.keyword.satelliteshort}} resource. 
 {: shortdesc}
 
 Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after your remove the host, or back up any data that you want to keep. Note that the underlying host infrastructure is not deleted because you manage the infrastructure yourself.
@@ -203,7 +207,7 @@ Removing a host cannot be undone. Before you remove a host, make sure that your 
 3. From the **Hosts** table, find the host that you want to remove.
 4. Depending on the type of host, remove the host from a cluster before you remove the host.
    1. If the host **Cluster** is `Control plane`, continue to the next step.
-   2. If the host **Cluster** is a hyperlink to the name of a {{site.data.keyword.satelliteshort}} cluster, note the host **IP address** and click the cluster name hyperlink.
+   2. If the host **Cluster** is a hyperlink to the name of a {{site.data.keyword.openshiftlong_notm}} cluster, note the host **IP address** and click the cluster name hyperlink.
    3. From the cluster **Worker Nodes** tab, find the worker node with an **IP address** that matches the **IP address** of the host that you want to remove.
    4. Select the worker node.
    5. From the table action menu, click **Delete**.
