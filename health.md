@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-05"
+lastupdated: "2020-08-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -50,7 +50,7 @@ When you create a {{site.data.keyword.satelliteshort}} location and set up the l
 | --- | --- |
 | Location control plane does not have a host in three separate zones. | Check for attached, unassigned hosts in the location. If a host is available, assign the host to the location control plane for the missing zone, giving preference to hosts with a label that matches the zone. |
 | Cluster capacity exceeds 80% in a zone. | Prevent or allow {{site.data.keyword.openshiftshort}} clusters to be created. Assign available hosts to a location control plane for more compute resources. |
-| {{site.data.keyword.openshiftshort}} clusters are in an unhealthy state. | Resolve certain healthy issues with {{site.data.keyword.openshiftshort}} clusters. |
+| {{site.data.keyword.openshiftshort}} clusters are in an unhealthy state. | Resolve certain health issues with {{site.data.keyword.openshiftshort}} clusters. |
 | Default monitoring tools like Prometheus do not work. | Send alerts to your {{site.data.keyword.la_full_notm}} instance and return a status message with further troubleshooting information. |
 | Ingress subdomain registration fails. | Alert IBM engineers to troubleshoot the issues further and return a status message with further troubleshooting information. |
 | Other alerts | Alert IBM engineers to troubleshoot the issues further and return a status message. |
