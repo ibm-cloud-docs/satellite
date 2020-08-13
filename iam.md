@@ -247,6 +247,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different platform roles in the following columns: none, viewer, editor, operator, and administrator."}
 
 
+
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
 |-----|---|---|-----|-----|-----|--------|---|
 | Create a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addChannel`|[`config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-create) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
@@ -315,31 +316,75 @@ Click the tabs in the following table to review the actions that are mapped to s
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
 |-----|---|---|-----|-----|-----|--------|
-| View clusters that are attached to {{site.data.keyword.satelliteshort}} Config | `clusters` calls | `cluster ls` | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config | `groups` | `cluster-group ls` | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| View a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `channel` | `config get`| |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| View a Kubernetes resource that is managed by {{site.data.keyword.satelliteshort}} Config | `resource` | `resource get`| |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| View an organization in {{site.data.keyword.satelliteshort}} Config |`organization` | - | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Create a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addChannel`|`config create`| | |  || <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Update a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `editChannel`| `config rename`| | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Add a version to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addChannelVersion`| `config version create`| | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Delete a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `removeChannel` |`config rm`| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| View a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `subscription`| `subscription get`| |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Create a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addSubscription`| `subscription create`| | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Update a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `editSubscription`| `subscription update`| | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Set the configuration version of Kubernetes resources for a subscription in {{site.data.keyword.satelliteshort}} Config | `setSubscription`|`subscription update --version` | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Delete a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config |`removeSubscription` |`subscription rm` | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Attach a cluster to {{site.data.keyword.satelliteshort}} Config | `registerCluster` | `cluster register` | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Get a script to register a cluster to {{site.data.keyword.satelliteshort}} Config | `enableRegistrationUrl`|`cluster register` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Remove a cluster from {{site.data.keyword.satelliteshort}} Config | `deleteCluster`|`cluster rm` | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| View clusters that are attached to {{site.data.keyword.satelliteshort}} Config | `clusters` calls |`cluster ls` | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config | `groups` |`cluster-group ls` | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Manage cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config | `assign, unassign, editClusterGroup`<br>`group, ungroupClusters`<br>`add, removeGroup` |`cluster-group attach`, `cluster-group detach`, `cluster-group edit` | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| View an organization in {{site.data.keyword.satelliteshort}} Config | `organization`| - | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Manage an organization in {{site.data.keyword.satelliteshort}} Config | | | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Set the configuration version that a cluster group is subscribed to in {{site.data.keyword.satelliteshort}} Config | `setSubscription`| `subscription update --version` | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `resources` calls | `resource ls` | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| View a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `channel` | [`configuration get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-get) </br> [`configuration ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-ls)| |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Create a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addChannel`|[`configuration create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-create)| | |  || <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Update a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `editChannel`| [`configuration rename`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rename)| | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Delete a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `removeChannel` |[`configuration rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rm)| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Add a Kubernetes resource definition as a version to a {{site.data.keyword.satelliteshort}} configuration | `addChannelVersion`| [`configuration version create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-create)| | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Remove a version from a {{site.data.keyword.satelliteshort}} configuration | `removeChannelVersion`| [`configuration version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-create)| | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Get details for a version that you added to a {{site.data.keyword.satelliteshort}} configuration | `getChannelVersion`| [`configuration version get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-get)| | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />  | | |
+| View an organization in {{site.data.keyword.satelliteshort}} Config |`organization` | - | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Manage an organization in {{site.data.keyword.satelliteshort}} Config | - | | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
+{: #table2}
+{: tab-title="Configuration"}
+{: class="comparison-tab-table"}
+{: tab-group="iam-service"}
+{: caption="Actions that you can take with service access roles" caption-side="top"}
+{: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different service roles in the following columns: none, reader, writer, and manager."}
+
+| Action | API | CLI | None | Reader | Writer | Deployer | Manager |
+|-----|---|---|-----|-----|-----|--------|
+| View a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `subscription`| [`subscription get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-get) </br> [`subscription ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-ls)| |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Create a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addSubscription`| [`subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-create)| | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Update a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `editSubscription`| [`subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)| | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Set the configuration version of Kubernetes resources for a subscription in {{site.data.keyword.satelliteshort}} Config | `setSubscription`|[`subscription update --version`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update) | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Delete a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config |`removeSubscription` |[`subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-rm) | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+{: row-headers}
+{: #table3}
+{: tab-title="Subscription"}
+{: class="comparison-tab-table"}
+{: tab-group="iam-service"}
+{: caption="Actions that you can take with service access roles" caption-side="top"}
+{: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different service roles in the following columns: none, reader, writer, and manager."}
+
+| Action | API | CLI | None | Reader | Writer | Deployer | Manager |
+|-----|---|---|-----|-----|-----|--------|
+| Attach a cluster to {{site.data.keyword.satelliteshort}} Config | `registerCluster` | [`cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-register) | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Get a script to register a cluster to {{site.data.keyword.satelliteshort}} Config | `enableRegistrationUrl`|[`cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-register) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Remove a cluster from {{site.data.keyword.satelliteshort}} Config | `deleteCluster`|[`cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister) | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| View clusters that are attached to {{site.data.keyword.satelliteshort}} Config | `clusters` calls |[`cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls) </br> [`cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-get) | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+{: row-headers}
+{: #table4}
+{: tab-title="Cluster"}
+{: class="comparison-tab-table"}
+{: tab-group="iam-service"}
+{: caption="Actions that you can take with service access roles" caption-side="top"}
+{: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different service roles in the following columns: none, reader, writer, and manager."}
+
+| Action | API | CLI | None | Reader | Writer | Deployer | Manager |
+|-----|---|---|-----|-----|-----|--------|
+| Add clusters to a cluster group|`groupClusters`|[`cluster-group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-attach)| | | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| Remove clusters from a cluster group|`unGroupClusters`|[`cluster-group detach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-detach)| | | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+|Create a cluster group|`addGroup`|[`cluster-group create`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-create)| | | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
+| View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config |`groups` |[`cluster-group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls) </br>[`cluster-group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get) | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />| | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Remove a cluster group |`removeGroup` |[`cluster-group rm`](https://test.cloud.ibm.com/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+{: row-headers}
+{: #table5}
+{: tab-title="Clustergroup"}
+{: class="comparison-tab-table"}
+{: tab-group="iam-service"}
+{: caption="Actions that you can take with service access roles" caption-side="top"}
+{: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different service roles in the following columns: none, reader, writer, and manager."}
+
+| Action | API | CLI | None | Reader | Writer | Deployer | Manager |
+|-----|---|---|-----|-----|-----|--------|
+| View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `resources` calls | [`resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls) </br> [`resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get) | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+{: row-headers}
+{: #table6}
+{: tab-title="Resource"}
+{: class="comparison-tab-table"}
+{: tab-group="iam-service"}
 {: caption="Actions that you can take with service access roles" caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different service roles in the following columns: none, reader, writer, and manager."}
 
