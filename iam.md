@@ -315,7 +315,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
-|-----|---|---|-----|-----|-----|--------|
+|-----|---|---|-----|-----|-----|--------|----|
 | View a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `channel` | [`configuration get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-get) </br> [`configuration ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-ls)| |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Create a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addChannel`|[`configuration create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-create)| | |  || <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Update a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `editChannel`| [`configuration rename`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rename)| | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
@@ -334,7 +334,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different service roles in the following columns: none, reader, writer, and manager."}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
-|-----|---|---|-----|-----|-----|--------|
+|-----|---|---|-----|-----|-----|--------|----|
 | View a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `subscription`| [`subscription get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-get) </br> [`subscription ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-ls)| |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Create a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addSubscription`| [`subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-create)| | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Update a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `editSubscription`| [`subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)| | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
@@ -349,7 +349,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different service roles in the following columns: none, reader, writer, and manager."}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
-|-----|---|---|-----|-----|-----|--------|
+|-----|---|---|-----|-----|-----|--------|----|
 | Attach a cluster to {{site.data.keyword.satelliteshort}} Config | `registerCluster` | [`cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-register) | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Get a script to register a cluster to {{site.data.keyword.satelliteshort}} Config | `enableRegistrationUrl`|[`cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-register) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Remove a cluster from {{site.data.keyword.satelliteshort}} Config | `deleteCluster`|[`cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister) | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
@@ -363,7 +363,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different service roles in the following columns: none, reader, writer, and manager."}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
-|-----|---|---|-----|-----|-----|--------|
+|-----|---|---|-----|-----|-----|--------|----|
 | Add clusters to a cluster group|`groupClusters`|[`cluster-group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-attach)| | | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Remove clusters from a cluster group|`unGroupClusters`|[`cluster-group detach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-detach)| | | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Create a cluster group|`addGroup`|[`cluster-group create`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-create)| | | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
@@ -378,7 +378,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different service roles in the following columns: none, reader, writer, and manager."}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
-|-----|---|---|-----|-----|-----|--------|
+|-----|---|---|-----|-----|-----|--------|----|
 | View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `resources` calls | [`resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls) </br> [`resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get) | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
 {: #table6}
