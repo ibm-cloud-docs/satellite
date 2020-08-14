@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -40,8 +40,8 @@ subcollection: satellite
 {{site.data.keyword.satellitelong}} comes with default service settings and limitations to ensure security, convenience, and basic functionality. Limitations are subject to change, and might differ from beta to generally available releases.
 {: shortdesc}
 
-{{site.data.keyword.satellitelong}} is available as a tech preview and subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
-{: preview}
+{{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
+{: beta}
 
 ## Locations
 {: #limits-locations}

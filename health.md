@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-12"
+lastupdated: "2020-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -72,7 +72,7 @@ You can review the health of {{site.data.keyword.satelliteshort}} resources such
 When you set up a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your location healthy. For more information, see [IBM monitoring to resolve and report location alerts](#monitoring-default). For troubleshooting help, see [Debugging location health](/docs/satellite?topic=satellite-ts-locations).
 {: shortdesc}
 
-You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}.
+You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, or by running `ibmcloud sat location ls`.
 
 | Health state | Description
 | --- | --- |
@@ -95,7 +95,7 @@ You can review the host health from the **Locations** table in the [{{site.data.
 When you add hosts to a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your hosts healthy. For more information, see [IBM monitoring to resolve and report location alerts](#monitoring-default). For troubleshooting help, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts).
 {: shortdesc}
 
-You can review the host health from the **Hosts** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}.
+You can review the host health from the **Hosts** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, or by running `ibmcloud sat host ls --location <location_name_or_ID>`.
 
 | Health state | Description
 | --- | --- |
@@ -116,4 +116,8 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 To review the health of {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-health#states_cluster).
 {: shortdesc}
 
+### Viewing Kubernetes resources in clusters
+{: #kubernetes-resources-health}
 
+When you add your clusters to {{site.data.keyword.satelliteshort}} Configuration, the Kubernetes resources are automatically added to an inventory that you can review. For more information, see [Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config).
+{: shortdesc}
