@@ -191,8 +191,6 @@ For information about assigning user roles in the console, see [Managing access 
         ```
         {: pre}
 
-
-
 ## IAM platform and service roles
 {: #iam-roles}
 
