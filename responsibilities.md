@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -87,7 +87,7 @@ Change management includes tasks such as deployment, configuration, upgrades, pa
 ## Identity and access management
 {: #iam-responsibilities}
 
-Identity and access management includes tasks such as authentication, authorization, access control policies, and approving, granting, and revoking access.
+Identity and access management includes tasks such as authentication, authorization, access control policies, and approving, granting, and revoking access. For more information, see [Managing access for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-iam).
 {: shortdesc}
 
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |

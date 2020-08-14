@@ -10,8 +10,11 @@ Satellite
     
 
     {: .navgroup id="howto"}
+    setup-cli.md
     locations.md
     hosts.md
+    config-clusters.md
+    link-endpoints.md
     health.md
 
     {: .topicgroup}
@@ -23,6 +26,7 @@ Satellite
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
+    cli-reference.md
     limitations.md
     supported-regions.md
     responsibilities.md
@@ -36,6 +40,7 @@ Satellite
     Troubleshooting Satellite components
         ts-location.md
         ts-host.md
-        ts-clusters.md
         getting-help.md
+
+    relnotes.md
     {: .navgroup-end}

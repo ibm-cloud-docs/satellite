@@ -107,12 +107,73 @@ Because your {{site.data.keyword.satelliteshort}} location represents your own d
 You can create {{site.data.keyword.satelliteshort}} locations for each place that you like, such as your company's ports in the north and south of the country. A {{site.data.keyword.satellitelong}} location represents a data center that you fill with your own infrastructure resources to run your own workloads and {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
+### Creating locations from the console
+{: #location-create-console}
+
+Use the {{site.data.keyword.satelliteshort}} console to create your location.
+{: shortdesc}
+
 1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click **Create location**.
 2. Enter a name and an optional description for your location.
 3. Select the {{site.data.keyword.cloud_notm}} multizone metro city that you want to use to manage your location. For more information about why you must select a multizone metro city, see [Understanding supported {{site.data.keyword.cloud_notm}} regions in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the city that is closest to where your host machines physically reside that you plan to add to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
 4. Click **Create location**. When you create the location, a location control plane master is deployed to one of the zones that are located in the multizone metro city that you selected. That process might take a few minutes to complete.
 5. Wait for the master to be fully deployed and the location **State** to change to `Action required`.
-6. Continue with [adding hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts) to finish the setup of your  {{site.data.keyword.satelliteshort}} control plane. 
+6. Continue with [adding hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts) to finish the setup of your  {{site.data.keyword.satelliteshort}} control plane.
+
+### Creating locations from the CLI
+{: #locations-create-cli}
+
+Use the {{site.data.keyword.satelliteshort}} CLI to create your location.
+{: shortdesc}
+
+Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI](/docs/satellite?topic=satellite-setup-cli).
+
+1.  Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` flag, or create an API key to log in.
+    ```
+    ibmcloud login [-sso]
+    ```
+    {: pre}
+
+2.  Create a {{site.data.keyword.satelliteshort}} location. When you create the location, an {{site.data.keyword.cos_full_notm}} service instance and a bucket are created on your behalf to back up the {{site.data.keyword.satelliteshort}} control plane data. You can create your own {{site.data.keyword.cos_full_notm}} service instance and bucket, and provide this information during location creation. For more information, see the [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create) command.
+    ```
+    ibmcloud sat location create --managed-from <satellite-zone> --name <location_name>
+    ```
+    {: pre}
+
+    <table summary="This table is read from left to right. The first column has the command component. The second column has the description of the component.">
+    <caption>Understanding this command's components</caption>
+      <thead>
+      <th>Component</th>
+      <th>Description</th>
+      </thead>
+      <tbody>
+      <tr>
+      <td><code>--managed-from dal10</code></td>
+        <td>The zone in a multizone region in {{site.data.keyword.cloud_notm}} that your location is managed from. You can use any zone, but to reduce latency between {{site.data.keyword.cloud_notm}} and your location, choose the zone that is closest to the compute hosts that you plan to add to your location later. For a list of supported regions, see [Supported {{site.data.keyword.cloud_notm}} regions](/docs/satellite?topic=satellite-sat-regions). </td>
+      </tr>
+      <tr>
+      <td><code>--name &lt;location_name&gt;</code></td>
+      <td>Enter a name for your {{site.data.keyword.satelliteshort}} location.</td>
+      </tr>
+      </tbody>
+    </table>
+
+3. Verify that your location is created and wait for the location **Status** to change to `action required`. When you create the location, a location control plane master is deployed to the zone that you selected during location creation. During this process, the **Status** of the location shows `deploying`. When the master is fully deployed and you can now add compute capacity to your location to complete the setup of the {{site.data.keyword.satelliteshort}} control plane, the **Status** changes to `action required`.
+   ```
+   ibmcloud sat location ls
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   Name         ID                     Status            Ready   Created        Hosts (used/total)   Managed From   
+   mylocation   brhtfum2015a6mgqj16g   action required   no      1 minute ago   0 / 3                Dallas   
+   ```
+   {: screen}
+
+4. To finish the setup of your location:
+   1. [Add at least 3 compute hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts).
+   2. Assign these hosts as worker ndoes to the [{{site.data.keyword.satelliteshort}} control plane](#setup-control-plane).
 
 <br />
 
@@ -121,6 +182,12 @@ You can create {{site.data.keyword.satelliteshort}} locations for each place tha
 {: #setup-control-plane}
 
 The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources that you add to the location. To create the control plane, you must add at least 3 compute hosts to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host).
+{: shortdesc}
+
+### Setting up the control plane from the console
+{: #control-plane-ui}
+
+Use the {{site.data.keyword.satelliteshort}} console to set up a control plane for your location.
 {: shortdesc}
 
 **Before you begin**:
@@ -139,12 +206,173 @@ The location control plane runs resources that are managed by {{site.data.keywor
    After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Prometheus is not yet initialized` or `Verify that alb steps have been completed for this cluster`.
    {: note}
 
+7. Refer to step 7 in [Setting up the control plane from the CLI](#control-plane-cli) to verify that your DNS records were successfully created.
+
+### Setting up the control plane from the CLI
+{: #control-plane-cli}
+
+Use the {{site.data.keyword.satelliteshort}} command line to set up a control plane for your location.
+{: shortdesc}
+
+**Before you begin**:
+- Make sure that you [added at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts-cli) to use as worker nodes for your {{site.data.keyword.satelliteshort}} control plane.
+- Verify that your location is in a **Action required** state.
+
+**To create the control plane**:
+
+1.  Identify at least 3 machines that you want to use as worker nodes for your {{site.data.keyword.satelliteshort}} control plane. All hosts must be in an `unassigned` state.
+    ```
+    ibmcloud sat host ls --location <location_name_or_ID>
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    Name             ID                     State        Status   Cluster   Worker ID   Worker IP   
+    machine-name-1   aaaaa1a11aaaaaa111aa   unassigned   -        -         -           -   
+    machine-name-2   bbbbbbb22bb2bbb222b2   unassigned   -        -         -           -   
+    machine-name-3   ccccc3c33ccccc3333cc   unassigned   -        -         -           -  
+    ```
+    {: screen}
+
+2.  Optional: If you want to assign hosts to your control plane by using a host label, retrieve the details of your host. Available labels that you can use are listed in the **Labels** section of your CLI output.
+    ```
+    ibmcloud sat host get --location <location_name_or_ID> --host <host_name_or_ID>
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    Retrieving host details...
+
+    Name:     mymachine1   
+    ID:       brjrgp920bg4u254brr0   
+    State:    unassigned  
+    Status:   -   
+
+    Labels      
+    cpu      4   
+    memory   32774980  
+    use      satloc
+
+    Assignment        
+    Cluster:       -  
+    Worker Pool:   -  
+    Zone:          -  
+    Worker ID:     -
+    Worker IP:     -   
+    Date:          -   
+    OK
+    ```
+    {: screen}
+
+3.  Assign your host machine to the {{site.data.keyword.satelliteshort}} control plane. When you assign the host to the control plane, IBM bootstraps your machine. This process takes a few minutes to complete. You can choose to assign a host by using the host ID, or you can also define the label that the host must have to be assigned to the location.
+
+    **Example for assigning a host by using the host ID:**
+    ```
+    ibmcloud sat host assign --location <location_name_or_ID>  --cluster <location_ID> --host <host_ID>  --zone <zone>
+    ```
+    {: pre}
+
+    **Example for assigning a host by using the `use:satloc` label:**
+    ```
+    ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --label "use:satloc" --zone <zone>
+    ```
+    {: pre}
+
+    <table summary="This table is read from left to right. The first column has the command component. The second column has the description of the component".>
+    <caption>Understanding this command's components</caption>
+      <thead>
+      <th>Component</th>
+      <th>Description</th>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>--location <em>&lt;location_name_or_ID&gt;</em></code></td>
+      <td>Enter the name or ID of your {{site.data.keyword.satelliteshort}} location. To retrieve the location name or ID, run <code>ibmcloud sat location ls</code>.</td>
+      </tr>
+      <tr>
+      <td><code>--cluster <em>&lt;location_ID&gt;</em></code></td>
+      <td>Enter the ID of the {{site.data.keyword.satelliteshort}} location where you want to assign the hosts to run the {{site.data.keyword.satelliteshort}} control plane. To view your location ID, run <code>ibmcloud sat location ls</code>.</td>
+      </tr>
+      <tr>
+      <td><code>--host <em>&lt;host_ID&gt;</em></code></td>
+      <td>Enter the host ID to assign to the location control plane. To view the host ID, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can use the <code>--label</code> option to identify the host that you want to assign to your control plane.</td>
+      </tr>
+      <tr>
+      <td><code>--label <em>&lt;label&gt;</em></code></td>
+      <td>Enter the label that you want to use to identify the host that you want to assign. The label must be a key-value pair, and must exist on the host machine. When you run this command with the `label` option, the first host that is in an `unassigned` state and matches the label is assigned to your control plane. </td>
+      </tr>
+      <tr>
+      <td><code>--zone <em>&lt;zone&gt;</em></code></td>
+      <td>Enter the zone to assign the host in. When you repeat this command, change the zone so that you include all three zones in US South (`us-south-1`, `us-south-2`, and `us-south-3`).</td>
+      </tr>
+      </tbody>
+    </table>
+
+4.  Repeat the previous step for the other two hosts that you want to add to your {{site.data.keyword.satelliteshort}} control plane. Make sure that you assign your hosts to a different zone so that you spread all 3 hosts across all 3 zones in US South (`us-south-1`, `us-south-2`, and `us-south-3`).
+
+5. Verify that your hosts are successfully assigned to your location. The assignment is successful when all hosts show an **assigned** state and a **Ready** status, and a public IP address is assigned to the host. If the **Status** of your machines shows `-`, the bootstrapping process is not yet completed and the health status could not be retrieved. Wait a few minutes, and then try again.
+   ```
+   ibmcloud sat host ls --location <location_name>
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   Retrieving hosts...
+   OK
+   Name              ID                     State      Status   Cluster          Worker ID                                                 Worker IP   
+   machine-name-1    aaaaa1a11aaaaaa111aa   assigned   Ready    infrastructure   sat-virtualser-4d7fa07cd3446b1f9d8131420f7011e60d372ca2   169.xx.xxx.xxx   
+   machine-name-2    bbbbbbb22bb2bbb222b2   assigned   Ready    infrastructure   sat-virtualser-9826f0927254b12b4018a95327bd0b45d0513f59   169.xx.xxx.xxx   
+   machine-name-3    ccccc3c33ccccc3333cc   assigned   Ready    infrastructure   sat-virtualser-948b454ea091bd9aeb8f0542c2e8c19b82c5bf7a   169.xx.xxx.xxx   
+   ```
+   {: screen}
+
+6. Verify that your location status changed to **Normal**. You might see a location message about the location not having enough hosts until the bootstrapping process completes.
+
+   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show **action required**, and you might see intermittent errors, such as `Prometheus is not yet initialized` or `Verify that alb steps have been completed for this cluster`.
+   {: note}
+
+   ```
+   ibmcloud sat location ls
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   OK
+   Name         ID                     Status      Ready   Created      Hosts (used/total)   Managed From   
+   mylocation   brhtfum2015a6mgqj16g   normal      yes     4 days ago   3 / 3                Dallas   
+   ```
+   {: screen}
+
+7. Verify that the public IP addresses of all of your hosts were registered and added to the DNS record of your location. Check that the cert status is **created** and that the records are populated with the subdomains.
+   ```
+   ibmcloud sat location dns ls --location <location_ID_or_name>
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   Retrieving location subdomains...
+   OK
+   Hostname                                                                                              Records                                                                                               Health Monitor   SSL Cert Status   SSL Cert Secret Name                                          Secret Namespace   
+   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-south.stg.satellite.appdomain.cloud   169.62.196.20,169.62.196.23,169.62.196.30                                                             None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000   default   
+   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c001.us-south.stg.satellite.appdomain.cloud   169.62.196.30                                                                                         None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c001   default   
+   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c002.us-south.stg.satellite.appdomain.cloud   169.62.196.20                                                                                         None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c002   default   
+   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c003.us-south.stg.satellite.appdomain.cloud   169.62.196.23                                                                                         None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c003   default   
+   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00.us-south.stg.satellite.appdomain.cloud   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-south.satellite.appdomain.cloud        None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00   default  
+   ```
+   {: screen}
+
 ### What's next?
 {: #location-control-plane-next}
 
 Now that your location control plane is set up, you can choose among the following options:
 - [Add more compute capacity to your location to run {{site.data.keyword.openshiftlong_notm}} clusters](/docs/satellite?topic=satellite-hosts#add-hosts) on your own infrastructure.
 - [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
+- [Attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters) and start [deploying Kubernetes resources to these clusters](/docs/satellite?topic=satellite-cluster-config#create-satconfig) with {{site.data.keyword.satelliteshort}} configurations.
 - [Learn more about the {{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 <br />
@@ -159,7 +387,33 @@ You can remove a {{site.data.keyword.satelliteshort}} location if you no longer 
 Removing a location cannot be undone. Before you remove a location, back up any information that you want to keep and remove any hosts and clusters that run in the location. Note that the underlying host infrastructure is not automatically deleted when you delete a location because you manage the infrastructure yourself.
 {: important}
 
+### Removing locations from the console
+{: #location-remove-console}
+
+Use the {{site.data.keyword.satelliteshort}} console to remove your locations.
+{: shortdesc}
+
 1. [Remove all {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-remove) from your location.
 2. [Remove all hosts](/docs/satellite?topic=satellite-hosts#host-remove) from your location.
 3. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external} **Locations** table, hover over the location that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 4. Click **Remove location**, enter the location name to confirm the deletion, and click **Remove**.
+
+### Removing locations from the CLI
+{: #location-remove-cli}
+
+Use the {{site.data.keyword.satelliteshort}} CLI to remove your locations.
+{: shortdesc}
+
+1. [Remove all {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-remove) from your location.
+2. [Remove all hosts](/docs/satellite?topic=satellite-hosts#host-remove-cli) from your location.
+3. Remove the location.
+   ```
+   ibmcloud sat location rm --location <location_name_or_ID>
+   ```
+   {: pre}
+
+4. Confirm that your location is removed. The location no longer is displayed in the output of the following command.
+   ```
+   ibmcloud sat location ls
+   ```
+   {: pre}

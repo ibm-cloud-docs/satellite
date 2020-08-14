@@ -450,6 +450,12 @@ When you remove a host from your location, the host is unassigned from a {{site.
 Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after your remove the host, or back up any data that you want to keep. Note that the underlying host infrastructure is not deleted because you manage the infrastructure yourself.
 {: important}
 
+### Removing hosts from the console
+{: #host-remove-console}
+
+Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as compute capacity from the {{site.data.keyword.satelliteshort}} location.
+{: shortdesc}
+
 1. Make sure that your cluster or location control plane has enough compute resources to continue running even after your remove the host, or back up any data that you want to keep.
 2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, click **Locations** and then click your location.
 3. From the **Hosts** table, find the host that you want to remove.
@@ -463,4 +469,49 @@ Removing a host cannot be undone. Before you remove a host, make sure that your 
    7. Return to the {{site.data.keyword.satelliteshort}} **Locations > Hosts** table.
 5. From the **Hosts** table, hover over the host that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 6. Click **Remove host**, enter the host name to confirm deletion, and click **Remove**.
+7. Optional: To delete the host machine, follow the instructions from your underlying infrastructure provider.
+
+### Removing hosts from the CLI
+{: #host-remove-cli}
+
+Use the {{site.data.keyword.satelliteshort}} CLI to remove your hosts as compute capacity from the {{site.data.keyword.satelliteshort}} location.
+{: shortdesc}
+
+1. Make sure that your cluster or location control plane has enough compute resources to continue running even after your remove the host, or back up any data that you want to keep.
+2. Log in your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` flag, or create an API key to log in.
+   ```
+   ibmcloud login [--sso]
+   ```
+   {: pre}
+3. List your locations and note the name of the location for the host that you want to remove.
+   ```
+   ibmcloud sat location ls
+   ```
+   {: pre}
+4. List your hosts. If the host is assigned to a cluster (and not to **infrastructure**) note the worker **ID** of the host that you want to remove.
+   ```
+   ibmcloud sat host ls --location <location_name_or_ID>
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   Retrieving hosts...
+   OK
+   Name              ID                     State      Status   Cluster          Worker ID                                                 Worker IP   
+   machine-name-1    aaaaa1a11aaaaaa111aa   assigned   Ready    infrastructure   sat-virtualser-4d7fa07cd3446b1f9d8131420f7011e60d372ca2   169.xx.xxx.xxx   
+   machine-name-2    bbbbbbb22bb2bbb222b2   assigned   Ready    infrastructure   sat-virtualser-9826f0927254b12b4018a95327bd0b45d0513f59   169.xx.xxx.xxx   
+   machine-name-3    ccccc3c33ccccc3333cc   assigned   Ready    mycluster12345   sat-virtualser-948b454ea091bd9aeb8f0542c2e8c19b82c5bf7a   169.xx.xxx.xxx   
+   ```
+   {: screen}
+5. If your host is assigned to a cluster, remove the worker node of the host by using the cluster name and worker ID that you previously retrieved.
+   ```
+   ibmcloud ks worker rm --cluster <cluster_name> --worker <worker_ID>
+   ```
+   {: pre}
+6. Remove the host from your {{site.data.keyword.satelliteshort}} location.
+   ```
+   ibmcloud sat host rm --location <location_name_or_ID> --host <host_name_or_ID>
+   ```
+   {: pre}
 7. Optional: To delete the host machine, follow the instructions from your underlying infrastructure provider.
