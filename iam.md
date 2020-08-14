@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-13"
+lastupdated: "2020-08-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -236,7 +236,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 | List hosts in a {{site.data.keyword.satelliteshort}} location | `/hostqueue/getHosts` | [`host ls`](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Update a host | `/hostqueue/updateHost` | [`host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Remove a host from a {{site.data.keyword.satelliteshort}} location control plane or cluster| `/hostqueue/removeHost` |[`host rm`](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm) | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Create an {{site.data.keyword.openshiftshort}} cluster in {{sie.data.keyword.satelliteshort}} | `/createCluster` | [`ibmcloud ks cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Create an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}} | `/createCluster` | [`ibmcloud ks cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | List {{site.data.keyword.satelliteshort}} clusters | `/getClusters` | [`ibmcloud sat cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls) | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
 {: #table1}
@@ -264,7 +264,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
 |-----|---|---|-----|-----|-----|--------|---|
-| Set the configuration version that a cluster group is subscribed to in {{site.data.keyword.satelliteshort}} Config | `setSubscription`| `subscription update --version`| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Set the configuration version that a cluster group is subscribed to in {{site.data.keyword.satelliteshort}} Config | `setSubscription`| [`subscription update --version`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
 {: #table4}
 {: tab-title="Subscription"}
