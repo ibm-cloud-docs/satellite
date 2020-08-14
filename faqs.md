@@ -67,6 +67,14 @@ Review some of the key benefits for using {{site.data.keyword.satellitelong_notm
 
 For more information about {{site.data.keyword.satelliteshort}}, how it works and the service benefits, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/cloud/satellite){: external}.
 
+## How can I get access to the {{site.data.keyword.satelliteshort}} beta?
+{: #satellite-beta-access}
+{: faq}
+{: support}
+
+{{site.data.keyword.satellitelong_notm}} is currently available as a closed beta and subject to change. To register for the beta, see [{{site.data.keyword.satellitelong_notm}} beta](https://cloud.ibm.com/satellite/beta){: external}.
+{: beta}
+
 ## Where is the service available?
 {: #satellite-locations}
 {: faq}
