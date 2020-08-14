@@ -253,7 +253,6 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Create a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `addChannel`|[`config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-create) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Delete a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config |`removeChannel` |[`config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rm) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | View an organization in {{site.data.keyword.satelliteshort}} Config | `organization`| - | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `resources` calls | `resource ls`| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
 {: #table3}
 {: tab-title="Configuration"}
@@ -302,6 +301,16 @@ Click the tabs in the following table to review the actions that are mapped to p
 {: caption="Actions that you can take with platform management roles" caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different platform roles in the following columns: none, viewer, editor, operator, and administrator."}
 
+| Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
+|-----|---|---|-----|-----|-----|--------|---|
+| View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `resources` calls | `resource ls`| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+{: row-headers}
+{: #table7}
+{: tab-title="Resource"}
+{: class="comparison-tab-table"}
+{: tab-group="iam-platform"}
+{: caption="Actions that you can take with platform management roles" caption-side="top"}
+{: summary="The table shows user permissions by access role. Rows are to be read from the left to right, with the action in the first column, the API for the action in the second column, the CLI for the action in the third column, and the different platform roles in the following columns: none, viewer, editor, operator, and administrator."}
 
 ### Service access roles
 {: #iam-roles-service}
@@ -322,7 +331,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 | Delete a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config | `removeChannel` |[`configuration rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rm)| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Add a Kubernetes resource definition as a version to a {{site.data.keyword.satelliteshort}} configuration | `addChannelVersion`| [`configuration version create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-create)| | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Remove a version from a {{site.data.keyword.satelliteshort}} configuration | `removeChannelVersion`| [`configuration version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-create)| | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Get details for a version that you added to a {{site.data.keyword.satelliteshort}} configuration | `getChannelVersion`| [`configuration version get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-get)| | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />  | | |
+| Get details for a version that you added to a {{site.data.keyword.satelliteshort}} configuration | `getChannelVersion`| [`configuration version get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-get)| | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|  | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | View an organization in {{site.data.keyword.satelliteshort}} Config |`organization` | - | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Manage an organization in {{site.data.keyword.satelliteshort}} Config | - | | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
