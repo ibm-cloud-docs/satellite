@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -173,7 +173,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI](/docs/s
 
 4. To finish the setup of your location:
    1. [Add at least 3 compute hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts).
-   2. Assign these hosts as worker ndoes to the [{{site.data.keyword.satelliteshort}} control plane](#setup-control-plane).
+   2. Assign these hosts as worker nodes to the [{{site.data.keyword.satelliteshort}} control plane](#setup-control-plane).
 
 <br />
 

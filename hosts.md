@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -417,7 +417,7 @@ Use the {{site.data.keyword.satelliteshort}} console to update your hosts.
 {: shortdesc}
 
 1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
-2. Use th guidelines from your infrastructure provider to reload the operating system of your host and apply the latest updates.
+2. Use the guidelines from your infrastructure provider to reload the operating system of your host and apply the latest updates.
 3. [Add the host](#add-hosts) back to your {{site.data.keyword.satelliteshort}} location.
 4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.openshiftlong_notm}} cluster.
 
@@ -428,7 +428,7 @@ Use the {{site.data.keyword.satelliteshort}} CLI to update your hosts.
 {: shortdesc}
 
 1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove-cli) so that you can update the host.
-2. Use th guidelines from your infrastructure provider to reload the operating system of your host and apply the latest updates.
+2. Use the guidelines from your infrastructure provider to reload the operating system of your host and apply the latest updates.
 3. [Add the host](#add-hosts-cli) back to your {{site.data.keyword.satelliteshort}} location.
 4. [Assign the host](#host-assign-cli) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.openshiftlong_notm}} cluster.
 
