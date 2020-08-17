@@ -43,7 +43,7 @@ Set up an {{site.data.keyword.satellitelong}} location to represent a data cente
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
 {: beta}
 
-**Steps to set up your first location**
+**Steps to set up your first location.**
 1. [Create a location](#location-create).
 2. [Add 3 hosts to the location](/docs/satellite?topic=satellite-hosts#add-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host).
 3. [Assign at least 3 hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
@@ -91,7 +91,7 @@ Because your {{site.data.keyword.satelliteshort}} location represents your own d
    *  **High availability**: When you assign hosts to the location control plane, you must assign at least 1 host to each of the 3 available zones of your {{site.data.keyword.cloud_notm}} multizone metro that you selected during location creation. To make the location control plane highly available, make sure that the underlying hosts are in separate zones in your physical infrastructure environment. For example, you might use 3 hosts that run in separate availability zones in your cloud provider, or that run in three separate physical systems in your own data center. You do not have to meet specific requirements for a "zone," but the separate zones must provide availability for system maintenance operations. For example, if 1 zone becomes unavailable due to a failure, or if 1 host becomes unavailable due to updating, the remaining 2 zones are still available to run control plane operations. A poor high availability setup is 2 hosts that are virtual machines on the same hypervisor, because servicing the underlying hardware such as to update the machine would make both hosts become unavailable. For more information, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
    *  **Compute capacity**: {{site.data.keyword.satelliteshort}} monitors your location for capacity. When the location reaches 70% capacity, you see a warning status to notify you to add more hosts to the location. If the location reaches 80% capacity, the state changes to **critical** and you see another warning that tells you to add more hosts to the location.
 2. Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then IBM can assign the hosts to your location control plane automatically when the location reaches the warning capacity threshold or an unhealthy host needs to be replaced.
-3. To decide on the size and amount of hosts to add to your clusters, consider the workloads that you want to run in the location. Review the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-strategy#sizing) for guidance about the following considerations:
+3. To decide on the size and number of hosts to add to your clusters, consider the workloads that you want to run in the location. Review the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-strategy#sizing) for guidance about the following considerations:
    * How many resources does my app require?
    * What else besides my app might use resources in the cluster?
    * What type of availability do I want my workload to have?
@@ -216,7 +216,7 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
 
 **Before you begin**:
 - Make sure that you [added at least 3 hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts-cli) to use as worker nodes for your {{site.data.keyword.satelliteshort}} control plane.
-- Verify that your location is in a **Action required** state.
+- Verify that your location is in an **Action required** state.
 
 **To create the control plane**:
 

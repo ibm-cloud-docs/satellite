@@ -53,7 +53,7 @@ Review some frequently asked questions about why and how you choose an {{site.da
 {: shortdesc}
 
 **Why is my location managed by an {{site.data.keyword.cloud_notm}} multizone metro?** </br>
-Running {{site.data.keyword.cloud_notm}} services on your own infrastructure requires a secure connection to {{site.data.keyword.cloud_notm}} that is controlled, monitored, and managed by IBM to ensure that security and compliance standards for each of the services are met and to roll out updates to these services.
+Running {{site.data.keyword.cloud_notm}} services on your own infrastructure requires a secure connection to {{site.data.keyword.cloud_notm}}. The connection is controlled, monitored, and managed by IBM to ensure that security and compliance standards for each of the services are met and to roll out updates to these services.
 
 Every {{site.data.keyword.satelliteshort}} location is set up with a control plane that establishes the secure connection back to {{site.data.keyword.cloud_notm}}. The control plane consists of a highly available control plane master that runs in the {{site.data.keyword.cloud_notm}} multizone metro that you choose and that is controlled and managed by IBM. The control plane worker nodes run on your own compute hosts that you added to your {{site.data.keyword.satelliteshort}} location.
 
@@ -61,8 +61,8 @@ IBM uses this connection to monitor your {{site.data.keyword.satelliteshort}} lo
 
 For more information, see the [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture).
 
-**What {{site.data.keyword.cloud_notm}} multizone metro should I choose for my {{site.data.keyword.satelliteshort}} location?** </br>
-You can choose any of the supported {{site.data.keyword.cloud_notm}} multizone metros to manage your {{site.data.keyword.satelliteshort}} location. The metro determines where the master of your {{site.data.keyword.satelliteshort}} control plane runs. For more information, see the [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture). To reduce latency between the {{site.data.keyword.cloud_notm}} multizone metro and your {{site.data.keyword.satelliteshort}} location, choose the metro that is closest to where your physical compute infrastructure resides.
+**What {{site.data.keyword.cloud_notm}} multizone metro do I choose for my {{site.data.keyword.satelliteshort}} location?** </br>
+You can choose any of the supported {{site.data.keyword.cloud_notm}} multizone metros to manage your {{site.data.keyword.satelliteshort}} location. The metro determines where the master of your {{site.data.keyword.satelliteshort}} control plane runs. For more information, see the [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture). To reduce latency between the {{site.data.keyword.cloud_notm}} region and your {{site.data.keyword.satelliteshort}} location, choose the region that is closest to where your physical compute infrastructure is.
 
 **Is there a limitation where my compute hosts can reside?** </br>
-No. Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. This can include hosts in your own on-premises data center, hosts that you set up with cloud providers, or edge computing devices as long as they meet the [minimum host requirements](/docs/satellite?topic=satellite-limitations#limits-host-system) for {{site.data.keyword.satelliteshort}}.
+No. Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. Hosts can be in your own on-premises data center, other cloud providers, or edge computing devices if they meet the [minimum host requirements](/docs/satellite?topic=satellite-limitations#limits-host-system) for {{site.data.keyword.satelliteshort}}.

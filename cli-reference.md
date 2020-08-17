@@ -1518,7 +1518,7 @@ ibmcloud sat location dns ls --location aaaaaaaa1111a1aaaa11a
 ### `ibmcloud sat location dns register`
 {: #location-dns-register}
 
-Create a DNS record for your location and register the public IP addressses of your compute hosts that you added to the {{site.data.keyword.satelliteshort}} control plane to enable load balancing and health checking of your location.
+Create a DNS record for your location and register the public IP addresses of your compute hosts that you added to the {{site.data.keyword.satelliteshort}} control plane to enable load balancing and health checking of your location.
 
 A DNS record is automatically created for your location when you add compute hosts to your {{site.data.keyword.satelliteshort}} control plane with the public IP addresses that are assigned to your compute hosts. Use this command only if you want to register different public IP addresses for your {{site.data.keyword.satelliteshort}} control plane hosts.
 {: important}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,7 +44,7 @@ Still having issues? Review different ways to get help and support for {{site.da
 {: #help-general}
 
 1. Keep the clusters and hosts in your {{site.data.keyword.satelliteshort}} location up to date.
-2. Make sure that your command line tools are up to date.
+2. Make sure that your command-line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up to date so that you can use all available commands and flags.
    * Make sure that your `kubectl` and `oc` CLI client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
 
@@ -54,7 +54,7 @@ Still having issues? Review different ways to get help and support for {{site.da
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 2. Filter for the **Satellite** component and review any cloud status issue.
 3. Review the [limitations and known issues documentation](/docs/satellite?topic=satellite-limitations).
-4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM Open Source and Third Party policy](https://www.ibm.com/support/pages/node/737271){: external}.
+4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
 
 ## Feedback and questions
 {: #feedback-qs}
@@ -71,14 +71,14 @@ Still having issues? Review different ways to get help and support for {{site.da
 {: #help-support}
 
 1. Before you open a support case, gather relevant information about your {{site.data.keyword.satelliteshort}} environment.
-   1. Get the details of the resource that you want help to troubleshoot, such as your {{site.data.keyword.satelliteshort}} location or a host.
+   1. Get the details of the resource that you want help with troubleshooting, such as your {{site.data.keyword.satelliteshort}} location or a host.
       ```
       ibmcloud sat location get --location <location_name_or_ID>
       ```
       {: pre}
 
       ```
-      ibmcloud sat host get --location <location_name_or_ID> --host <host_ID>
+      ibmcloud sat host get --location <location_name_or_ID> --host <host_name_or_ID>
       ```
       {: pre}
    2. For any hosts, include relevant details about the underlying infrastructure provider.

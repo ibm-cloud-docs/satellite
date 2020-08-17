@@ -292,7 +292,7 @@ After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can 
 1.  From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, click **Locations**.
 2.  Select the location where you added the host machines that you want to assign to your {{site.data.keyword.satelliteshort}} resource.
 3. In the **Hosts** tab, from the actions menu of each host machine that you want to add to your resource, click **Assign host**.
-4. Select the cluster that you created and choose one of the available zones. When you assign the hosts to a cluster, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the Health of your machine changes from **Ready** to **Provisioning**.
+4. Select the cluster that you created, and choose one of the available zones. When you assign the hosts to a cluster, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the Health of your machine changes from **Ready** to **Provisioning**.
 5. Verify that your hosts are successfully assigned to the cluster. The assignment is successful when a public IP address is added to your host and the **Health** status changes to **Normal**.
 
    After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Prometheus is not yet initialized` or `Verify that alb steps have been completed for this cluster`.
@@ -384,7 +384,7 @@ After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can 
 ## Updating hosts
 {: #host-update}
 
-Because you own the underlying infrastructure, you are responsible for updating your hosts. To update a host, you must remove the host from {{site.data.keyword.satelliteshort}} so that you can can reload the operating system. Then, you reattach and reassign the host to your cluster.
+Because you own the underlying infrastructure, you are responsible for updating your hosts. To update a host, you must remove the host from {{site.data.keyword.satelliteshort}} so that you can reload the operating system. Then, you reattach and reassign the host to your cluster.
 {: shortdesc}
 
 The following diagram describes the process for updating hosts.
@@ -447,7 +447,7 @@ If you want to update metadata about a host, such as labels, see the [`ibmcloud 
 When you remove a host from your location, the host is unassigned from a {{site.data.keyword.openshiftlong_notm}} cluster or {{site.data.keyword.satellitelong_notm}} control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete an {{site.data.keyword.openshiftshort}} cluster or resize a worker pool, the hosts are still attached to your location, but you must [reload the hosts](#host-update) to use them with another {{site.data.keyword.satelliteshort}} resource.
 {: shortdesc}
 
-Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after your remove the host, or back up any data that you want to keep. Note that the underlying host infrastructure is not deleted because you manage the infrastructure yourself.
+Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep. Note that the underlying host infrastructure is not deleted because you manage the infrastructure yourself.
 {: important}
 
 ### Removing hosts from the console
@@ -456,7 +456,7 @@ Removing a host cannot be undone. Before you remove a host, make sure that your 
 Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as compute capacity from the {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
-1. Make sure that your cluster or location control plane has enough compute resources to continue running even after your remove the host, or back up any data that you want to keep.
+1. Make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep.
 2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, click **Locations** and then click your location.
 3. From the **Hosts** table, find the host that you want to remove.
 4. Depending on the type of host, remove the host from a cluster before you remove the host.
@@ -477,7 +477,7 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as com
 Use the {{site.data.keyword.satelliteshort}} CLI to remove your hosts as compute capacity from the {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
-1. Make sure that your cluster or location control plane has enough compute resources to continue running even after your remove the host, or back up any data that you want to keep.
+1. Make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep.
 2. Log in your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` flag, or create an API key to log in.
    ```
    ibmcloud login [--sso]

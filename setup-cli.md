@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: satellite cli, install satellite cli, satellite cli commands
 
@@ -38,10 +38,10 @@ subcollection: satellite
 # Setting up the {{site.data.keyword.satelliteshort}} CLI
 {: #setup-cli}
 
-Set up the {{site.data.keyword.cloud_notm}} command line interface (CLI), the {{site.data.keyword.satelliteshort}} plug-in, and other related CLIs.
+Set up the {{site.data.keyword.cloud_notm}} command-line interface (CLI), the {{site.data.keyword.satelliteshort}} plug-in, and other related CLIs.
 {: shortdesc}
 
-By installing the {{site.data.keyword.cloud_notm}} CLI, you automatically install all of the CLI plug-ins that you need to work with {{site.data.keyword.satelliteslong_notm}}.
+By installing the {{site.data.keyword.cloud_notm}} CLI, you automatically install all of the CLI plug-ins that you need to work with {{site.data.keyword.satellitelong_notm}}.
 {: note}
 
 1.  Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started#idt-prereq). This installation includes:
