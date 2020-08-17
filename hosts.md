@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-16"
+lastupdated: "2020-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -310,13 +310,13 @@ After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can 
 
    **Example for assigning a host by using the host ID:**
    ```
-   ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host <host_name_or_ID> --worker-pool default --zone us-south-1
+   ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host <host_name_or_ID> --worker-pool default --zone <zone>
    ```
    {: pre}
 
    **Example for assigning a host by using the `use:satcluster` label:**
    ```
-   ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --label "use:satcluster" --worker-pool default --zone us-south-1
+   ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --label "use:satcluster" --worker-pool default --zone us-east-1
    ```
    {: pre}
 
@@ -348,8 +348,8 @@ After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can 
       <td>Enter the name of the worker pool where you want to add your compute hosts. To find available worker pools in your cluster, run <code>ibmcloud oc worker-pool ls --cluster &lt;cluster_name_or_ID&gt;</code>. If you do not specify this option, your compute host is automatically added to the default worker pool. </td>
       </tr>
       <tr>
-      <td><code>--zone us-south-1</code></td>
-      <td>Enter the zone where you want to add your compute hosts. At the moment, <code>us-south-1</code> is supported only. </td>
+      <td><code>--zone &lt;worker-pool&gt;</code></td>
+      <td>Enter the zone where you want to add your compute hosts. The zone must belong to the {{site.data.keyword.cloud_notm}} multizone metro that you selected when you created the location.</td>
       </tr>
       </tbody>
     </table>

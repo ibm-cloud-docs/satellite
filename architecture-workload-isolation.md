@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-17"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -50,7 +50,7 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 
 |Master components|Description|
 |-----------------|-----------------------|
-|{{site.data.keyword.satelliteshort}} Link tunnel|The {{site.data.keyword.satelliteshort}} Link tunnel creates a secure TLS connection to the {{site.data.keyword.satelliteshort}} Link connector that runs on the control plane worker nodes in your {{site.data.keyword.satelliteshort}} location. All communication that leaves and enters your location is proxied by the Link tunnel server, and is captured and monitored by IBM to detect malicious activity. To control the network connections between the workloads that run in your location and the {{site.data.keyword.cloud_notm}} region that manages your location, you can set up {{site.data.keyword.satelliteshort}} Link endpoints.  |
+|{{site.data.keyword.satelliteshort}} Link tunnel|The {{site.data.keyword.satelliteshort}} Link tunnel creates a secure TLS connection to the {{site.data.keyword.satelliteshort}} Link connector that runs on the control plane worker nodes in your {{site.data.keyword.satelliteshort}} location. All communication that leaves and enters your location is proxied by the Link tunnel server, and is captured and monitored by IBM to detect malicious activity. To control the network connections between the workloads that run in your location and the {{site.data.keyword.cloud_notm}} multizone metro that manages your location, you can set up {{site.data.keyword.satelliteshort}} Link endpoints.  |
 |IBM Monitoring|The IBM Monitoring component monitors the compute capacity in your {{site.data.keyword.satelliteshort}} location and the components that run in your {{site.data.keyword.satelliteshort}} control plane to detect issues and automatically resolve them if possible. These actions can include assigning additional hosts to the control plane or restart components that keep on failing. For issues that cannot be resolved, IBM Site Reliability Engineers are automatically informed for further investigation. |
 |{{site.data.keyword.satelliteshort}} Config|With {{site.data.keyword.satelliteshort}} Config, you can consistently deploy Kubernetes resource configurations across {{site.data.keyword.openshiftlong}} clusters that run on the infrastructure of your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}. You can monitor the health of these resources by using the location dashboard.|
 {: summary="Overview of the {{site.data.keyword.satelliteshort}} control plane master components"}
@@ -78,20 +78,20 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 ## Workload isolation in {{site.data.keyword.satellitelong_notm}}
 {: #workload-isolation}
 
-Learn how your workloads are isolated from other IBM customers in {{site.data.keyword.satelliteshort}}. 
+Learn how your workloads are isolated from other IBM customers in {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
-### Workload isolation in the {{site.data.keyword.cloud_notm}} region that manages your location
+### Workload isolation in the {{site.data.keyword.cloud_notm}} multizone metro that manages your location
 {: #workload-isolation-cloud}
 
-When you create a {{site.data.keyword.satelliteshort}} location, a {{site.data.keyword.satelliteshort}} control plane master is automatically created in the {{site.data.keyword.cloud_notm}} region that manages your location. The master and all the components that run inside the master are dedicated to your {{site.data.keyword.satelliteshort}} location only and are managed by IBM in an IBM-owned {{site.data.keyword.cloud_notm}} account. 
+When you create a {{site.data.keyword.satelliteshort}} location, a {{site.data.keyword.satelliteshort}} control plane master is automatically created in the {{site.data.keyword.cloud_notm}} multizone metro that manages your location. The master and all the components that run inside the master are dedicated to your {{site.data.keyword.satelliteshort}} location only and are managed by IBM in an IBM-owned {{site.data.keyword.cloud_notm}} account.
 
-One of the components that is set up in the {{site.data.keyword.satelliteshort}} control plane master is an etcd database where IBM stores personal and sensitive data of the customer account that created the location. The etcd database is not shared across locations or with other IBM customers. For more information, see [What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data) and [How is my information stored and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption). 
+One of the components that is set up in the {{site.data.keyword.satelliteshort}} control plane master is an etcd database where IBM stores personal and sensitive data of the customer account that created the location. The etcd database is not shared across locations or with other IBM customers. For more information, see [What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data) and [How is my information stored and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption).
 
 ### Workload isolation in your {{site.data.keyword.satelliteshort}} location
 {: #workload-isolation-location}
 
-Because you manage the host infrastructure that you bring to your {{site.data.keyword.satelliteshort}} location, you are responsible to isolate app workloads that run on your infrastructure. If you host and run {{site.data.keyword.cloud_notm}} services in your location, such as {{site.data.keyword.openshiftlong_notm}}, you can leverage the tools and features that this service provides to isolate your workloads. For more information about available options, refer to the service documentation. 
+Because you manage the host infrastructure that you bring to your {{site.data.keyword.satelliteshort}} location, you are responsible to isolate app workloads that run on your infrastructure. If you host and run {{site.data.keyword.cloud_notm}} services in your location, such as {{site.data.keyword.openshiftlong_notm}}, you can leverage the tools and features that this service provides to isolate your workloads. For more information about available options, refer to the service documentation.
 
 <br />
 

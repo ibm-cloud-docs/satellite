@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -59,13 +59,13 @@ The following image shows potential points of failure in the {{site.data.keyword
 ### High availability of the {{site.data.keyword.satelliteshort}} control plane master
 {: #ha-control-plane-master}
 
-When you create a {{site.data.keyword.satelliteshort}} location, you must choose an {{site.data.keyword.cloud_notm}} region that runs and manages the {{site.data.keyword.satelliteshort}} control plane master of your location. The control plane master resides in an IBM account and is managed by {{site.data.keyword.cloud_notm}}.
+When you create a {{site.data.keyword.satelliteshort}} location, you must choose an {{site.data.keyword.cloud_notm}} multizone metro that runs and manages the {{site.data.keyword.satelliteshort}} control plane master of your location. The control plane master resides in an IBM account and is managed by {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 IBM provides high availability for your control plane master in the following ways:
 
 - **Multiple instances:** By default, every {{site.data.keyword.satelliteshort}} control plane master is automatically set up with multiple instances to ensure availability and sufficient compute capacity to manage your location. IBM monitors the availability and compute capacity for your {{site.data.keyword.satelliteshort}} control plane master and automatically scales the master instances if necessary.
-- **Spread across zones:** IBM automatically spreads the control plane master instances across multiple zones within the same {{site.data.keyword.cloud_notm}} region. For example, if you choose to manage your location from the `us-east` region, your control plane master instances are spread across the `us-east-1`, `us-east-2`, and `us-east-3` zones to ensure that your control plane master is available, even if one zone becomes unavailable.
+- **Spread across zones:** IBM automatically spreads the control plane master instances across multiple zones within the same {{site.data.keyword.cloud_notm}} multizone metro. For example, if you choose to manage your location from the `us-east` metro, your control plane master instances are spread across the `us-east-1`, `us-east-2`, and `us-east-3` zones to ensure that your control plane master is available, even if one zone becomes unavailable.
 - **Automatic backups to Object Storage:** All {{site.data.keyword.satelliteshort}} control plane data is backed up to an {{site.data.keyword.cos_full_notm}} service instance so that your location can be restored after a disaster. Access to this instance is protected by {{site.data.keyword.iamshort}} and all data is automatically encrypted during transit and at rest.
 
 Because the {{site.data.keyword.satelliteshort}} control plane master is managed by IBM, you cannot change the number of master instances or how high availability is configured. However, to ensure that your location and all the workloads that run in your location have enough compute capacity, even if compute hosts become unavailable, you must ensure that your control plane worker nodes are configured for high availability.
@@ -134,7 +134,7 @@ The following image shows a high availability setup of your control plane worker
 ### Example for a high availability setup in another cloud provider
 {: #example-ha-cloudprovider}
 
-The following image shows a highly available setup for compute hosts that reside in another cloud provider. All virtual machines are hosted on a separate physical machine that is dedicated to you only. To ensure further isolation and availability, all compute hosts are spread across multiple availability zones within the same region. Because the availability zones belong to the same region, the requirements for networking speed and latency between the hosts are met.
+The following image shows a highly available setup for compute hosts that reside in another cloud provider. All virtual machines are hosted on a separate physical machine that is dedicated to you only. To ensure further isolation and availability, all compute hosts are spread across multiple availability zones within the same metro. Because the availability zones belong to the same metro, the requirements for networking speed and latency between the hosts are met.
 {: shortdesc}
 
 <img src="/images/satellite_ha_aws.png" alt="High availability setup with compute hosts that reside at another cloud provider" width="550" style="width: 550px; border-style: none"/>

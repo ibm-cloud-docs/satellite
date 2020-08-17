@@ -1185,7 +1185,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 <dd>Required. Enter the ID or name of the host that you want to assign to the {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. To retrieve the host ID or name, run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code>.  </dd>
 
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>Required. Enter the name of the zone where you want to assign the compute host. The zone must belong to the multizone metro city that you selected when you created the location. </dd>
+<dd>Required. Enter the name of the zone where you want to assign the compute host. The zone must belong to the {{site.data.keyword.cloud_notm}} multizone metro that you selected when you created the location. </dd>
 
 <dt><code>--worker-pool <em>WORKER_POOL</em></code></dt>
 <dd>Optional. Enter the name or ID of the worker pool in your {{site.data.keyword.openshiftshort}} cluster to which you want to add your compute host. If you want to assign hosts to your {{site.data.keyword.satelliteshort}} control plane, this flag is not required. When you assign hosts to an {{site.data.keyword.openshiftshort}} cluster, you can include this flag to specify the worker pool. If no worker pool is specified, the host is assigned to the default worker pool of the cluster.  </dd>
@@ -1200,7 +1200,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 
 **Example:**
 ```
-ibmcloud sat host assign --location aaaaaaaa1111a1aaaa11a --host myhost1 --zone us-south1 --cluster aaaaaaaa1111a1aaaa11a --label "use=satloc"
+ibmcloud sat host assign --location aaaaaaaa1111a1aaaa11a --host myhost1 --zone us-east-1 --cluster aaaaaaaa1111a1aaaa11a --label "use=satloc"
 ```
 {: pre}
 
@@ -1427,11 +1427,11 @@ Use these commands to create and manage {{site.data.keyword.satelliteshort}} loc
 ### `ibmcloud sat location create`
 {: #location-create}
 
-Create a {{site.data.keyword.satelliteshort}} location. When you create a location, a location master is automatically deployed in one of the multizone metro city zones that you select during location creation. The location master is used to manage the location from the public {{site.data.keyword.cloud_notm}}.
+Create a {{site.data.keyword.satelliteshort}} location. When you create a location, a location master is automatically deployed in one of the {{site.data.keyword.cloud_notm}} multizone metro zones that you select during location creation. The location master is used to manage the location from the public {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 ```
-ibmcloud sat location create --managed-from ZONE --name NAME [--cos-key COS_SECRET_KEY] [--cos-key-id COS_ACCESS_KEY_ID] [--cos-region COS__BUCKET_REGION] [--cos-bucket COS_BUCKET_NAME] [--cos-endpoint COS_BUCKET_ENDPOINT] [--logging-account-id LOGGING_ACCOUNT] [-q]
+ibmcloud sat location create --managed-from METRO --name NAME [--cos-key COS_SECRET_KEY] [--cos-key-id COS_ACCESS_KEY_ID] [--cos-region COS__BUCKET_REGION] [--cos-bucket COS_BUCKET_NAME] [--cos-endpoint COS_BUCKET_ENDPOINT] [--logging-account-id LOGGING_ACCOUNT] [-q]
 ```
 {: pre}
 
@@ -1442,8 +1442,8 @@ ibmcloud sat location create --managed-from ZONE --name NAME [--cos-key COS_SECR
 **Command options:**
 
 <dl>
-<dt><code>--managed-from <em>ZONE</em></code></dt>
-<dd>Required. The zone in an {{site.data.keyword.cloud_notm}} multizone metro city that your {{site.data.keyword.satelliteshort}} control plane resources are managed from. Select the zone that is nearest to where your physical machines are. To list supported zones, run <code>ibmcloud ks locations</code>.</dd>
+<dt><code>--managed-from <em>METRO</em></code></dt>
+<dd>Required. The {{site.data.keyword.cloud_notm}} multizone metro that your {{site.data.keyword.satelliteshort}} control plane resources are managed from. Select the {{site.data.keyword.cloud_notm}} multizone metro that is nearest to where your physical machines are. For a list of supported metros, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
 <dd>Required. Enter a name for your location.  </dd>
@@ -1470,7 +1470,7 @@ ibmcloud sat location create --managed-from ZONE --name NAME [--cos-key COS_SECR
 
 **Example:**
 ```
-ibmcloud sat location create --managed-from dal10 --name mylocation
+ibmcloud sat location create --managed-from us-east --name mylocation
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-06"
+lastupdated: "2020-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -58,7 +58,7 @@ Review the health of your location, and use the error messages to resolve any is
     Example output:
     ```
     Name         ID                     Status            Ready   Created      Hosts (used/total)   Managed From   
-    Port-North   aaaaa1a11aaaaaa111aa   action required   no      6 days ago   3 / 5                Dallas  
+    Port-North   aaaaa1a11aaaaaa111aa   action required   no      6 days ago   3 / 5                Washington DC  
     ```
     {: screen}
 
@@ -74,7 +74,7 @@ Review the health of your location, and use the error messages to resolve any is
     ID:                             aaaaa1a11aaaaaa111aa   
     Created:                        2020-06-05 13:50:58 -0400 (6 days ago)   
     Creator:                        name@email.com   
-    Managed From:                   Dallas   
+    Managed From:                   Washington DC   
     State:                          action required   
     Ready for deployments:          no   
     Message:                        R0015: Could not assign hosts because no hosts are available. Attach more hosts to the location and try again. For more information, see the docs: 'http://ibm.biz/sat-loc'

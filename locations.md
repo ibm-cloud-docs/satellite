@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-16"
+lastupdated: "2020-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -59,11 +59,11 @@ Set up an {{site.data.keyword.satellitelong}} location to represent a data cente
 A {{site.data.keyword.satelliteshort}} location represents a data center that you can fill with your own infrastructure resources to run and extend {{site.data.keyword.cloud_notm}} services in your location.
 {: shortdesc}
 
-The following diagram presents the concept of setting up your own {{site.data.keyword.satelliteshort}} locations in the Asia Pacific region, and running the same application in your location as well as in {{site.data.keyword.cloud_notm}}.
+The following diagram presents the concept of setting up your own {{site.data.keyword.satelliteshort}} locations in the Asia Pacific metro, and running the same application in your location as well as in {{site.data.keyword.cloud_notm}}.
 
 ![Concept overview of Satellite locations in Asia Pacific](/images/location-ov.png){: caption="Figure 1. A conceptual overview of setting up {{site.data.keyword.satelliteshort}} locations." caption-side="bottom"}
 
-**{{site.data.keyword.satelliteshort}} control plane master**: When you create a location, a highly available control plane master is automatically created in one of the {{site.data.keyword.cloud_notm}} multizone regions that you selected during location creation. The control plane master securely connects your location to {{site.data.keyword.cloud_notm}} and stores the configuration of your location. If service updates are available, the control plane master automatically makes these updates available to the control plane worker nodes. All location metadata is automatically backed up to an {{site.data.keyword.cos_full_notm}} instance in your account.
+**{{site.data.keyword.satelliteshort}} control plane master**: When you create a location, a highly available control plane master is automatically created in one of the {{site.data.keyword.cloud_notm}} multizone metros that you selected during location creation. The control plane master securely connects your location to {{site.data.keyword.cloud_notm}} and stores the configuration of your location. If service updates are available, the control plane master automatically makes these updates available to the control plane worker nodes. All location metadata is automatically backed up to an {{site.data.keyword.cos_full_notm}} instance in your account.
 
 **{{site.data.keyword.satelliteshort}} control plane worker**: After you create the location, you must add at least 3 hosts to the location control plane as worker nodes. Then, the location control plane worker is ready to manage your location resources. Other components are also set up, such as IBM monitoring components to monitor the health of your location and hosts and automatically resolve issues. For more information, see the [service architecture](/docs/satellite?topic=satellite-service-architecture).
 
@@ -88,7 +88,7 @@ Because your {{site.data.keyword.satelliteshort}} location represents your own d
 
 1. Set up a highly available location control plane worker with enough compute capacity to manage the resources in your {{site.data.keyword.satelliteshort}} location.
    *  **Minimum size**: To get started, you must add and assign at least 3 hosts that meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host) of 4 CPU, 16 GB memory, and 100 GB storage. You assign these hosts to 3 separate zones.
-   *  **High availability**: When you assign hosts to the location control plane, you must assign at least 1 host to each of the 3 available zones of your multizone metro city that you selected during location creation. To make the location control plane highly available, make sure that the underlying hosts are in separate zones in your physical infrastructure environment. For example, you might use 3 hosts that run in separate availability zones in your cloud provider, or that run in three separate physical systems in your own data center. You do not have to meet specific requirements for a "zone," but the separate zones must provide availability for system maintenance operations. For example, if 1 zone becomes unavailable due to a failure, or if 1 host becomes unavailable due to updating, the remaining 2 zones are still available to run control plane operations. A poor high availability setup is 2 hosts that are virtual machines on the same hypervisor, because servicing the underlying hardware such as to update the machine would make both hosts become unavailable. For more information, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
+   *  **High availability**: When you assign hosts to the location control plane, you must assign at least 1 host to each of the 3 available zones of your {{site.data.keyword.cloud_notm}} multizone metro that you selected during location creation. To make the location control plane highly available, make sure that the underlying hosts are in separate zones in your physical infrastructure environment. For example, you might use 3 hosts that run in separate availability zones in your cloud provider, or that run in three separate physical systems in your own data center. You do not have to meet specific requirements for a "zone," but the separate zones must provide availability for system maintenance operations. For example, if 1 zone becomes unavailable due to a failure, or if 1 host becomes unavailable due to updating, the remaining 2 zones are still available to run control plane operations. A poor high availability setup is 2 hosts that are virtual machines on the same hypervisor, because servicing the underlying hardware such as to update the machine would make both hosts become unavailable. For more information, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
    *  **Compute capacity**: {{site.data.keyword.satelliteshort}} monitors your location for capacity. When the location reaches 70% capacity, you see a warning status to notify you to add more hosts to the location. If the location reaches 80% capacity, the state changes to **critical** and you see another warning that tells you to add more hosts to the location.
 2. Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then IBM can assign the hosts to your location control plane automatically when the location reaches the warning capacity threshold or an unhealthy host needs to be replaced.
 3. To decide on the size and amount of hosts to add to your clusters, consider the workloads that you want to run in the location. Review the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-strategy#sizing) for guidance about the following considerations:
@@ -115,8 +115,8 @@ Use the {{site.data.keyword.satelliteshort}} console to create your location.
 
 1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click **Create location**.
 2. Enter a name and an optional description for your location.
-3. Select the {{site.data.keyword.cloud_notm}} multizone metro city that you want to use to manage your location. For more information about why you must select a multizone metro city, see [Understanding supported {{site.data.keyword.cloud_notm}} regions in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the city that is closest to where your host machines physically reside that you plan to add to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
-4. Click **Create location**. When you create the location, a location control plane master is deployed to one of the zones that are located in the multizone metro city that you selected. That process might take a few minutes to complete.
+3. Select the {{site.data.keyword.cloud_notm}} multizone metro that you want to use to manage your location. For more information about why you must select a {{site.data.keyword.cloud_notm}} multizone metro, see [Understanding supported {{site.data.keyword.cloud_notm}} multizone metros in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the metro that is closest to where your host machines physically reside that you plan to add to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
+4. Click **Create location**. When you create the location, a location control plane master is deployed to one of the zones that are located in the {{site.data.keyword.cloud_notm}} multizone metro that you selected. That process might take a few minutes to complete.
 5. Wait for the master to be fully deployed and the location **State** to change to `Action required`.
 6. Continue with [adding hosts to your location](/docs/satellite?topic=satellite-hosts#add-hosts) to finish the setup of your  {{site.data.keyword.satelliteshort}} control plane.
 
@@ -136,7 +136,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI](/docs/s
 
 2.  Create a {{site.data.keyword.satelliteshort}} location. When you create the location, an {{site.data.keyword.cos_full_notm}} service instance and a bucket are created on your behalf to back up the {{site.data.keyword.satelliteshort}} control plane data. You can create your own {{site.data.keyword.cos_full_notm}} service instance and bucket, and provide this information during location creation. For more information, see the [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create) command.
     ```
-    ibmcloud sat location create --managed-from <satellite-zone> --name <location_name>
+    ibmcloud sat location create --managed-from <satellite-metro> --name <location_name>
     ```
     {: pre}
 
@@ -148,8 +148,8 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI](/docs/s
       </thead>
       <tbody>
       <tr>
-      <td><code>--managed-from dal10</code></td>
-        <td>The zone in a multizone region in {{site.data.keyword.cloud_notm}} that your location is managed from. You can use any zone, but to reduce latency between {{site.data.keyword.cloud_notm}} and your location, choose the zone that is closest to the compute hosts that you plan to add to your location later. For a list of supported regions, see [Supported {{site.data.keyword.cloud_notm}} regions](/docs/satellite?topic=satellite-sat-regions). </td>
+      <td><code>--managed-from us-east</code></td>
+        <td>The {{site.data.keyword.cloud_notm}} multizone metro that your location is managed from. You can use any metro, but to reduce latency between {{site.data.keyword.cloud_notm}} and your location, choose the metro that is closest to the compute hosts that you plan to add to your location later. For a list of supported {{site.data.keyword.cloud_notm}} multizone metros, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions). </td>
       </tr>
       <tr>
       <td><code>--name &lt;location_name&gt;</code></td>
@@ -158,7 +158,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI](/docs/s
       </tbody>
     </table>
 
-3. Verify that your location is created and wait for the location **Status** to change to `action required`. When you create the location, a location control plane master is deployed to the zone that you selected during location creation. During this process, the **Status** of the location shows `deploying`. When the master is fully deployed and you can now add compute capacity to your location to complete the setup of the {{site.data.keyword.satelliteshort}} control plane, the **Status** changes to `action required`.
+3. Verify that your location is created and wait for the location **Status** to change to `action required`. When you create the location, a location control plane master is deployed to the metro that you selected during location creation. During this process, the **Status** of the location shows `deploying`. When the master is fully deployed and you can now add compute capacity to your location to complete the setup of the {{site.data.keyword.satelliteshort}} control plane, the **Status** changes to `action required`.
    ```
    ibmcloud sat location ls
    ```
@@ -167,7 +167,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI](/docs/s
    Example output:
    ```
    Name         ID                     Status            Ready   Created        Hosts (used/total)   Managed From   
-   mylocation   brhtfum2015a6mgqj16g   action required   no      1 minute ago   0 / 3                Dallas   
+   mylocation   brhtfum2015a6mgqj16g   action required   no      1 minute ago   0 / 3                Washington DC   
    ```
    {: screen}
 
@@ -199,7 +199,7 @@ Use the {{site.data.keyword.satelliteshort}} console to set up a control plane f
 1. From the {{site.data.keyword.satelliteshort}} [**Locations** dashboard](https://cloud.ibm.com/satellite/locations), select the location where you want to finish the setup of your control plane.
 2. From the **Hosts** tab, identify at least 3 hosts that you can assign as worker nodes to your control plane. All hosts must be in an **Unassigned** status.
 3. From the actions menu of each host, click **Assign host**.
-4. Select **Control plane** as your cluster and choose one of the available zones. Make sure that you assign each host to a different zone so that you spread all 3 hosts across all 3 zones in US South (`us-south-1`, `us-south-2`, and `us-south-3`). When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
+4. Select **Control plane** as your cluster and choose one of the available zones. Make sure that you assign each host to a different zone so that you spread all 3 hosts across all 3 zones in US East (`us-east-1`, `us-east-2`, and `us-east-3`). When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
 5. From the **Hosts** tab, verify that your hosts are successfully assigned to the {{site.data.keyword.satelliteshort}} control plane. The assignment is successful when a public IP address is added to your host and the **Health** status changes to **Normal**.
 6. Verify that your location status changed to **Normal**. You might see a location message about the location not having enough hosts until the bootstrapping process completes.
 
@@ -305,12 +305,12 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
       </tr>
       <tr>
       <td><code>--zone <em>&lt;zone&gt;</em></code></td>
-      <td>Enter the zone to assign the host in. When you repeat this command, change the zone so that you include all three zones in US South (`us-south-1`, `us-south-2`, and `us-south-3`).</td>
+      <td>Enter the zone to assign the host in. When you repeat this command, change the zone so that you include all three zones in US East (`us-east-1`, `us-east-2`, and `us-east-3`).</td>
       </tr>
       </tbody>
     </table>
 
-4.  Repeat the previous step for the other two hosts that you want to add to your {{site.data.keyword.satelliteshort}} control plane. Make sure that you assign your hosts to a different zone so that you spread all 3 hosts across all 3 zones in US South (`us-south-1`, `us-south-2`, and `us-south-3`).
+4.  Repeat the previous step for the other two hosts that you want to add to your {{site.data.keyword.satelliteshort}} control plane. Make sure that you assign your hosts to a different zone so that you spread all 3 hosts across all 3 zones in US East (`us-east-1`, `us-east-2`, and `us-east-3`).
 
 5. Verify that your hosts are successfully assigned to your location. The assignment is successful when all hosts show an **assigned** state and a **Ready** status, and a public IP address is assigned to the host. If the **Status** of your machines shows `-`, the bootstrapping process is not yet completed and the health status could not be retrieved. Wait a few minutes, and then try again.
    ```
@@ -343,7 +343,7 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
    ```
    OK
    Name         ID                     Status      Ready   Created      Hosts (used/total)   Managed From   
-   mylocation   brhtfum2015a6mgqj16g   normal      yes     4 days ago   3 / 3                Dallas   
+   mylocation   brhtfum2015a6mgqj16g   normal      yes     4 days ago   3 / 3                Washington DC   
    ```
    {: screen}
 
@@ -358,11 +358,11 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
    Retrieving location subdomains...
    OK
    Hostname                                                                                              Records                                                                                               Health Monitor   SSL Cert Status   SSL Cert Secret Name                                          Secret Namespace   
-   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-south.stg.satellite.appdomain.cloud   169.62.196.20,169.62.196.23,169.62.196.30                                                             None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000   default   
-   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c001.us-south.stg.satellite.appdomain.cloud   169.62.196.30                                                                                         None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c001   default   
-   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c002.us-south.stg.satellite.appdomain.cloud   169.62.196.20                                                                                         None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c002   default   
-   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c003.us-south.stg.satellite.appdomain.cloud   169.62.196.23                                                                                         None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c003   default   
-   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00.us-south.stg.satellite.appdomain.cloud   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-south.satellite.appdomain.cloud        None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00   default  
+   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud   169.62.196.20,169.62.196.23,169.62.196.30                                                             None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000   default   
+   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c001.us-east.satellite.appdomain.cloud   169.62.196.30                                                                                         None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c001   default   
+   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c002.us-east.satellite.appdomain.cloud   169.62.196.20                                                                                         None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c002   default   
+   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c003.us-east.satellite.appdomain.cloud   169.62.196.23                                                                                         None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c003   default   
+   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00.us-east.satellite.appdomain.cloud   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud        None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00   default  
    ```
    {: screen}
 

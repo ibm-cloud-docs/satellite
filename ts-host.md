@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-05"
+lastupdated: "2020-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -226,7 +226,7 @@ In particular, the bootstrapping process depends upon the following access.
 {: tsResolve}
 If you want, you can debug the connectivity issues for your host. Otherwise, remove the host, reload the operating system, and add the host back.
 
-1.  Get the location ID where your host is attached, and note the {{site.data.keyword.cloud_notm}} multizone region that the location is managed from. From the console, click your location, and then click the **Overview** tab. From the CLI, run the following command.
+1.  Get the location ID where your host is attached, and note the {{site.data.keyword.cloud_notm}} multizone metro that the location is managed from. From the console, click your location, and then click the **Overview** tab. From the CLI, run the following command.
     ```
     ibmcloud sat location ls
     ```
@@ -239,7 +239,7 @@ If you want, you can debug the connectivity issues for your host. Otherwise, rem
         yum install rh-python36 -y
         ```
         {: pre}
-    3.  Check access to the required [{{site.data.keyword.cloud_notm}} multizone region endpoints](#endpoints-to-verify).
+    3.  Check access to the required [{{site.data.keyword.cloud_notm}} multizone metro endpoints](#endpoints-to-verify).
     4.  For hosts that are assigned to clusters, get the details of the cluster master endpoint.
         ```
         ibmcloud ks cluster get -c <cluster_name_or_ID> | grep "Master URL"
@@ -286,7 +286,7 @@ If you want, you can debug the connectivity issues for your host. Otherwise, rem
         ```
         {: pre}
 
-### Endpoints to verify connectivity by {{site.data.keyword.cloud_notm}} region
+### Endpoints to verify connectivity by {{site.data.keyword.cloud_notm}} multizone metro
 {: #endpoints-to-verify}
 
 Review the following table to help troubleshoot network connectivity issues to {{site.data.keyword.cloud_notm}} endpoints that are required for the bootstrapping process of a {{site.data.keyword.satelliteshort}} host.
@@ -300,9 +300,9 @@ Review the following table to help troubleshoot network connectivity issues to {
 | `curl -v https://origin.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
 | `curl -v https://private.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
 | `curl -v https://uk.icr.io` |
-{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} region."}
+{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
 {: class="simple-tab-table"}
-{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Dallas." caption-side="top"}
+{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from London." caption-side="top"}
 {: #check-ep-london}
 {: tab-title="London"}
 {: tab-group="check-ep"}
@@ -313,9 +313,9 @@ Review the following table to help troubleshoot network connectivity issues to {
 | `curl -v https://origin.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
 | `curl -v https://private.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
 | `curl -v https://us.icr.io` |
-{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} region."}
+{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
 {: class="simple-tab-table"}
-{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Dallas." caption-side="top"}
+{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Washington DC." caption-side="top"}
 {: #check-ep-dc}
 {: tab-title="Washington, DC"}
 {: tab-group="check-ep"}

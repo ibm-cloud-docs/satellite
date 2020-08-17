@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-04"
+lastupdated: "2020-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -61,7 +61,7 @@ In addition to the data that IBM stores on behalf of the customer, all {{site.da
 ## Where is my information stored?
 {: #sat_data-location}
 
-The location where your information is stored depends on the {{site.data.keyword.cloud_notm}} region that manages the control plane of your {{site.data.keyword.satelliteshort}} location. By selecting the {{site.data.keyword.cloud_notm}} region that is closest to your {{site.data.keyword.satelliteshort}} location, your data is automatically spread across a multizone metro area for high availability. Because the {{site.data.keyword.cloud_notm}} region might be in a different city or country than the infrastructure hosts that you bring to your {{site.data.keyword.satelliteshort}} location, make sure that your data can be stored in the selected {{site.data.keyword.cloud_notm}} region. 
+The location where your information is stored depends on the {{site.data.keyword.cloud_notm}} multizone metro that manages the control plane of your {{site.data.keyword.satelliteshort}} location. By selecting the {{site.data.keyword.cloud_notm}} multizone metro that is closest to your {{site.data.keyword.satelliteshort}} location, your data is automatically spread across a multizone metro area for high availability. Because the {{site.data.keyword.cloud_notm}} multizone metro might be in a different city or country than the infrastructure hosts that you bring to your {{site.data.keyword.satelliteshort}} location, make sure that your data can be stored in the selected {{site.data.keyword.cloud_notm}} multizone metro. 
 
 ## How can I remove my information?
 {: #sat-data-removal}
