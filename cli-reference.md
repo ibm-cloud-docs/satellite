@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-17"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1443,7 +1443,7 @@ ibmcloud sat location create --managed-from ZONE --name NAME [--cos-key COS_SECR
 
 <dl>
 <dt><code>--managed-from <em>ZONE</em></code></dt>
-<dd>Required. The zone in an {{site.data.keyword.cloud_notm}} multizone metro citry that your {{site.data.keyword.satelliteshort}} control plane resources are managed from. Select the zone that is nearest to where your physical machines are. To list supported zones, run <code>ibmcloud ks locations</code>.</dd>
+<dd>Required. The zone in an {{site.data.keyword.cloud_notm}} multizone metro city that your {{site.data.keyword.satelliteshort}} control plane resources are managed from. Select the zone that is nearest to where your physical machines are. To list supported zones, run <code>ibmcloud ks locations</code>.</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
 <dd>Required. Enter a name for your location.  </dd>
