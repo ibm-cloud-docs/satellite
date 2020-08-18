@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -42,6 +42,8 @@ subcollection: satellite
 
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
 {: beta}
+
+
 
 ## Locations
 {: #limits-locations}
