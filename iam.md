@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -237,7 +237,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Create an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}}. | `/createCluster` | [`ibmcloud ks cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | List {{site.data.keyword.satelliteshort}} clusters. | `/getClusters` | [`ibmcloud sat cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls) | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
-{: #table1}
+{: #platform-table1}
 {: tab-title="Locations and hosts"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
@@ -252,7 +252,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Delete a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. |`removeChannel` |[`config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rm) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | View an organization in {{site.data.keyword.satelliteshort}} Config. | `organization`| - | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
-{: #table3}
+{: #platform-table3}
 {: tab-title="Configuration"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
@@ -263,7 +263,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 |-----|---|---|-----|-----|-----|--------|---|
 | Set the configuration version that a cluster group is subscribed to in {{site.data.keyword.satelliteshort}} Config. | `setSubscription`| [`subscription update --version`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
-{: #table4}
+{: #platform-table4}
 {: tab-title="Subscription"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
@@ -277,7 +277,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Remove a cluster from {{site.data.keyword.satelliteshort}} Config. | `deleteCluster`|[`cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | View clusters that are attached to {{site.data.keyword.satelliteshort}} Config. |`clusters` calls |[`cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls)</br> [`cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-get) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
-{: #table5}
+{: #platform-table5}
 {: tab-title="Cluster"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
@@ -292,7 +292,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 | View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config. |`groups` |[`cluster-group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls) </br>[`cluster-group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Remove a cluster group. |`removeGroup` |[`cluster-group rm`](https://test.cloud.ibm.com/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
-{: #table6}
+{: #platform-table6}
 {: tab-title="Clustergroup"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
@@ -303,7 +303,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 |-----|---|---|-----|-----|-----|--------|---|
 | View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. | `resources` calls | `resource ls`| | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
-{: #table7}
+{: #platform-table7}
 {: tab-title="Resource"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
@@ -333,7 +333,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 | View an organization in {{site.data.keyword.satelliteshort}} Config. |`organization` | - | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Manage an organization in {{site.data.keyword.satelliteshort}} Config | - | | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
-{: #table2}
+{: #service-table2}
 {: tab-title="Configuration"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-service"}
@@ -348,7 +348,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 | Set the configuration version of Kubernetes resources for a subscription in {{site.data.keyword.satelliteshort}} Config. | `setSubscription`|[`subscription update --version`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update) | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Delete a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. |`removeSubscription` |[`subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-rm) | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 {: row-headers}
-{: #table3}
+{: #service-table3}
 {: tab-title="Subscription"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-service"}
@@ -362,7 +362,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 | Remove a cluster from {{site.data.keyword.satelliteshort}} Config. | `deleteCluster`|[`cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister) | | | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | View clusters that are attached to {{site.data.keyword.satelliteshort}} Config. | `clusters` calls |[`cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls) </br> [`cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-get) | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | |  |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
-{: #table4}
+{: #service-table4}
 {: tab-title="Cluster"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-service"}
@@ -377,7 +377,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 | View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config. |`groups` |[`cluster-group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls) </br>[`cluster-group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get) | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />| | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Remove a cluster group. |`removeGroup` |[`cluster-group rm`](https://test.cloud.ibm.com/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
-{: #table5}
+{: #service-table5}
 {: tab-title="Clustergroup"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-service"}
@@ -388,7 +388,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 |-----|---|---|-----|-----|-----|--------|----|
 | View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. | `resources` calls | [`resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls) </br> [`resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get) | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
-{: #table6}
+{: #service-table6}
 {: tab-title="Resource"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-service"}
