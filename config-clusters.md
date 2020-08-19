@@ -132,7 +132,11 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
    5. Copy the `oc login` token command.
    6. Run the `oc login` token command in your CLI to log in to your cluster.
 2. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, custom access that is cluster-wide, or custom access that is scoped to a project. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/){: external}.
-   *  **Cluster admin access**: Grant {{site.data.keyword.satelliteshort}} Config access to the appropriate service accounts. 
+
+   If you choose a custom access option, some {{site.data.keyword.satelliteshort}} Config components might not work. For example, if you grant access only to view certain resources, you cannot use subscriptions to create Kubernetes resources in your cluster group. To view an inventory of your Kubernetes resources in a cluster, {{site.data.keyword.satelliteshort}} Config must have an appropriate role that is bound to the `razee-viewer` service account. To deploy Kubernetes resources to a cluster via subscriptions, {{site.data.keyword.satelliteshort}} Config must have an appropriate role that is bound to the `razee-editor` service account.
+   {: note}
+
+   *  **Cluster admin access**: Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role. 
       ```
       kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
       ```
@@ -188,7 +192,7 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
          </tr>
          <tr>
          <td><code>--serviceaccount=razeedeploy:razee-viewer</code></td>
-         <td>The name of the {{site.data.keyword.satelliteshort}} Config service account. To list possible service accounts, run <code>kubectl get sa --namespace razeedeploy</code>.</td>
+         <td>The name of one of the service accounts that the {{site.data.keyword.satelliteshort}} Config components are set up by default to use, either <code>razeedeploy:razee-viewer</code> or <code>razeedeploy:razee-editor</code>.</td>
          </tr>
          </tbody>
          </table>
@@ -252,7 +256,7 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
          </tr>
          <tr>
          <td><code>--serviceaccount=razeedeploy:razee-editor</code></td>
-         <td>The name of the {{site.data.keyword.satelliteshort}} Config service account. To list possible service accounts, run <code>kubectl get sa --namespace razeedeploy</code>.</td>
+         <td>The name of one of the service accounts that the {{site.data.keyword.satelliteshort}} Config components are set up by default to use, either <code>razeedeploy:razee-viewer</code> or <code>razeedeploy:razee-editor</code>.</td>
          </tr>
          </tbody>
          </table>
