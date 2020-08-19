@@ -173,7 +173,7 @@ Review the following application configuration limitations for {{site.data.keywo
 {: shortdesc}
 
 **{{site.data.keyword.satelliteshort}} Config access to modify Kubernetes resources within a cluster**<br>
-By default, {{site.data.keyword.satelliteshort}} Config is limited to what resources it can read and modify. You must grant {{site.data.keyword.satelliteshort}} Config access in each cluster that you want to use {{site.data.keyword.satelliteshort}} Config to manage your Kubernetes resources.
+By default, {{site.data.keyword.satelliteshort}} Config is limited to what Kubernetes resources it can read and modify in your clusters. You must grant {{site.data.keyword.satelliteshort}} Config access in each cluster where you want to use {{site.data.keyword.satelliteshort}} Config to manage your Kubernetes resources.
 
 Choose from the following options:
 *   **Cluster admin access**: Create a cluster role binding to grant {{site.data.keyword.satelliteshort}} Config access to the appropriate service accounts.

@@ -77,8 +77,11 @@ Review the following key concepts that are used when you create a {{site.data.ke
 ## Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config
 {: #setup-clusters-satconfig}
 
-By default, clusters that you create in a {{site.data.keyword.satelliteshort}} location have {{site.data.keyword.satelliteshort}} Config components automatically installed. You can optionally create cluster groups and set up service account access for {{site.data.keyword.satelliteshort}} Config to manage Kubernetes resources in your clusters.
+By default, clusters that you create in a {{site.data.keyword.satelliteshort}} location have {{site.data.keyword.satelliteshort}} Config components automatically installed. However, you must grant the service accounts that {{site.data.keyword.satelliteshort}} Config uses the appropriate access to view and manage Kubernetes resources in each cluster. You can also optionally create cluster groups to deploy resources to several clusters at once.
 {: shortdesc}
+
+If you do not grant {{site.data.keyword.satelliteshort}} Config access in each cluster, {{site.data.keyword.satelliteshort}} Config functionality does not work, such as not viewing or deploying Kubernetes resources for your clusters.
+{: important}
 
 * [Prerequisites](#setup-clusters-satconfig-prereq)
 * [Setting up cluster groups](#setup-clusters-satconfig-groups)
@@ -88,7 +91,7 @@ By default, clusters that you create in a {{site.data.keyword.satelliteshort}} l
 {: #setup-clusters-satconfig-prereq}
 
 *  If you have {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} (not your {{site.data.keyword.satelliteshort}} location), [register the clusters](#existing-openshift-clusters).
-*  Make sure that you have the following permissions:
+*  Make sure that you [have the following permissions](/docs/satellite?topic=satellite-iam#iam-assign) in {{site.data.keyword.cloud_notm}} IAM.
    - The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Cluster** resource in {{site.data.keyword.satellitelong_notm}}.
    - The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Clustergroup** resource in {{site.data.keyword.satellitelong_notm}}.
    - The **Manager** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.openshiftlong_notm}}.
@@ -164,8 +167,8 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
          <td>A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for a viewer or auditor, <code>get,list,watch</code>. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}.</td>
          </tr>
          <tr>
-         <td><code>--resource="*.*"</code></td>
-         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, <code>*.*</code>. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
+         <td><code>--resource="&#42;.&#42;"</code></td>
+         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, <code>&#42;.&#42;</code>. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
          </tr>
          </tbody>
          </table>
@@ -224,8 +227,8 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
          <td>A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for an editor, <code>get,list,watch,create,update,patch,delete</code>. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}.</td>
          </tr>
          <tr>
-         <td><code>--resource="*.*"</code></td>
-         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, <code>*.*</code>. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
+         <td><code>--resource="&#42;.&#42;"</code></td>
+         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, <code>&#42;.&#42;</code>. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
          </tr>
          </tbody>
          </table>
@@ -262,6 +265,9 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
          </table>
 
 3. Create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters[from the console](#create-satconfig-ui) or [the CLI](#create-satconfig-cli).
+
+<br />
+
 
 ## Creating {{site.data.keyword.satelliteshort}} configurations from the console
 {: #create-satconfig-ui}

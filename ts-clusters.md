@@ -42,7 +42,7 @@ subcollection: satellite
 
 See the [{{site.data.keyword.openshiftlong_notm}} troubleshooting documentation](/docs/openshift?topic=openshift-cs_troubleshoot).
 
-## Kubernetes resources and subscribed configuration updates do not happen
+## Clusters cannot view or get updates to Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config
 {: #satconfig-cluster-access-error}
 
 {: tsSymptoms}
