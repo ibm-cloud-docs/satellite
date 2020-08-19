@@ -156,7 +156,7 @@ Review the following storage limitations for {{site.data.keyword.satellitelong_n
 ## Link and endpoints
 {: #limits-link}
 
-The {{site.data.keyword.satelliteshort}} Link connector instances that run in your [{{site.data.keyword.satelliteshort}} location control plane worker nodes](/docs/satellite?topic=satellite-service-architecture) are limited to 3 instances, one per host. Even if you add hosts to the location control plane, the {{site.data.keyword.satelliteshort}} Link connector is sent only over 3 hosts.
+The {{site.data.keyword.satelliteshort}} Link connector instances that run in your [{{site.data.keyword.satelliteshort}} location control plane worker nodes](/docs/satellite?topic=satellite-service-architecture) are limited to 3 instances, one per host. Even if you add hosts to the location control plane, network traffic that is routed through the {{site.data.keyword.satelliteshort}} Link connector is sent only over 3 hosts.
 
 ## Cluster and infrastructure network
 {: #limits-cluster-network}
