@@ -172,17 +172,6 @@ Review the following storage limitations for {{site.data.keyword.satellitelong_n
 Review the following application configuration limitations for {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
 
-**{{site.data.keyword.satelliteshort}} Config access to modify Kubernetes resources within a cluster**<br>
-By default, {{site.data.keyword.satelliteshort}} Config is limited to what resources it can read and modify. You must grant {{site.data.keyword.satelliteshort}} Config access in each cluster that you want to use {{site.data.keyword.satelliteshort}} Config to manage your Kubernetes resources.
-
-Choose from the following options:
-*   **Cluster admin access**: Create a cluster role binding to grant {{site.data.keyword.satelliteshort}} Config access to the appropriate service accounts.
-    ```
-    kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
-    ```
-    {: pre}
-*   **Project-scoped access**: You can create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access to the projects (namespaces) and resources that you want {{site.data.keyword.satelliteshort}} Config to manage.
-
-**Configuration files in {{site.data.keyword.satelliteshort}} Config**
+**Configuration files**
 * You can upload only an individual configuration file of Kubernetes resources per release version. You cannot upload a directory or several different configuration files.
 * Configuration files are subject to Kubernetes limitations, such as that the manifest must be expressed in YAML or JSON format.

@@ -1210,7 +1210,7 @@ ibmcloud sat host assign --location aaaaaaaa1111a1aaaa11a --host myhost1 --zone 
 ### `ibmcloud sat host attach`
 {: #host-attach}
 
-Create and download a script that you run on all the compute hosts that you want to make visible to your location. For an example of how to run the script on a classic {{site.data.keyword.cloud_notm}} virtual server, see [Setting up the control plane from the CLI](/docs/satellite?topic=satellite-locations#control-plane-cli).
+Create and download a script that you run on all the compute hosts that you want to make visible to your location.
 {: shortdesc}
 
 ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -71,8 +71,6 @@ With your location set up, you can now add host machines to your location. All h
 3. Enter a file name for your script or use the name that is generated for you.
 4. Click **Download script** to generate the host script and download the script to your local machine.
 5. Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane.
-
-   **General steps:**
    1. Retrieve the public IP address of your host.
    2. Copy the script from your local machine to your host.
       ```
@@ -91,57 +89,7 @@ With your location set up, you can now add host machines to your location. All h
       nohup bash /tmp/attach.sh &
       ```
       {: pre}
-      </br>
-
-   **Example for adding {{site.data.keyword.cloud_notm}} classic virtual servers**:
-   1. Retrieve the **public_ip** address and **id** of your machine.
-      ```
-      ibmcloud sl vs list
-      ```
-      {: pre}
-
-   2. Retrieve the credentials to log in to your virtual machine.
-      ```
-      ibmcloud sl vs credentials <vm_ID>
-      ```
-      {: pre}
-
-   3. Copy the script from your local machine to the virtual server instance.
-      ```
-      scp <path_to_addHost.sh> root@<public_IP_address>:/tmp/attach.sh
-      ```
-      {: pre}
-
-   4. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
-      ```
-      ssh root@<public_IP_address>
-      ```
-      {: pre}
-
-   5. Refresh the Red Hat packages on your machine.
-      ```
-      subscription-manager refresh
-      ```
-      {: pre}
-
-      ```
-      subscription-manager repos --enable=*
-      ```
-      {: pre}
-
-   6. Run the script on your machine.
-      ```
-      nohup bash /tmp/attach.sh &
-      ```
-      {: pre}
-
-   7. Exit the SSH session.  
-      ```
-      exit
-      ```
-      {: pre}
-
-5. As you run the scripts on each machine, check that your hosts show in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane. You must add at least 3 compute hosts to your location to continue with the setup of your {{site.data.keyword.satelliteshort}} control plane.
+6. As you run the scripts on each machine, check that your hosts show in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane. You must add at least 3 compute hosts to your location to continue with the setup of your {{site.data.keyword.satelliteshort}} control plane.
 
 
 ## Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} control plane

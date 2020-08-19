@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -81,80 +81,25 @@ Before you begin, make sure that you have created host machines that meet the [m
 3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 4. Enter a file name for your script or use the name that is generated for you.
 5. Click **Download script** to generate the host script and download the script to your local machine.
-5. Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
-
-   **General steps:**
+6. Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
    1. Retrieve the public IP address of your host.
    2. Copy the script from your local machine to your host.
       ```
       scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
       ```
       {: pre}
-
    3. Log in to your host.
       ```
       ssh root@<public_IP_address>
       ```
       {: pre}
-
    4. Run the script.
       ```
       nohup bash /tmp/attach.sh &
       ```
       {: pre}
-      </br>
-
-   **Example for adding {{site.data.keyword.cloud_notm}} classic virtual servers**:
-   1. Retrieve the **public_ip** address and **id** of your machine.
-      ```
-      ibmcloud sl vs list
-      ```
-      {: pre}
-
-   2. Retrieve the credentials to log in to your virtual machine.
-      ```
-      ibmcloud sl vs credentials <vm_ID>
-      ```
-      {: pre}
-
-   3. Copy the script from your local machine to the virtual server instance.
-      ```
-      scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
-      ```
-      {: pre}
-
-   4. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
-      ```
-      ssh root@<public_IP_address>
-      ```
-      {: pre}
-
-   5. Refresh the Red Hat packages on your machine.
-      ```
-      subscription-manager refresh
-      ```
-      {: pre}
-
-      ```
-      subscription-manager repos --enable=*
-      ```
-      {: pre}
-
-   6. Run the script on your machine.
-      ```
-      nohup bash /tmp/attach.sh &
-      ```
-      {: pre}
-
-   7. Exit the SSH session.  
-      ```
-      exit
-      ```
-      {: pre}
-
-6. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
-
-7. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
+7. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+8. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
 ### Adding hosts from the CLI
 {: #add-hosts-cli}
@@ -182,8 +127,6 @@ Before you begin, make sure that you have created host machines that meet the [m
 
 2.  On your local machine, find the script.
 3.  Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
-
-    **General steps:**
     1. Retrieve the public IP address of your host.
     2. Copy the script from your local machine to your host.
        ```
@@ -200,55 +143,6 @@ Before you begin, make sure that you have created host machines that meet the [m
     4. Run the script.
        ```
        nohup bash /tmp/attach.sh &
-       ```
-       {: pre}
-       </br>
-
-    **Example for adding {{site.data.keyword.cloud_notm}} classic virtual servers**:
-    1. Retrieve the **public_ip** address and **id** of your machine.
-       ```
-       ibmcloud sl vs list
-       ```
-       {: pre}
-
-    2. Retrieve the credentials to log in to your virtual machine.
-       ```
-       ibmcloud sl vs credentials <vm_ID>
-       ```
-       {: pre}
-
-    3. Copy the script from your local machine to the virtual server instance.
-       ```
-       scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
-       ```
-       {: pre}
-
-    4. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
-       ```
-       ssh root@<public_IP_address>
-       ```
-       {: pre}
-
-    5. Refresh the Red Hat packages on your machine.
-       ```
-       subscription-manager refresh
-       ```
-       {: pre}
-
-       ```
-       subscription-manager repos --enable=*
-       ```
-       {: pre}
-
-    6. Run the script on your machine.
-       ```
-       nohup bash /tmp/attach.sh &
-       ```
-       {: pre}
-
-    7. Exit the SSH session.  
-       ```
-       exit
        ```
        {: pre}
 
