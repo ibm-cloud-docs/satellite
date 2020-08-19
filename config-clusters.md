@@ -273,7 +273,7 @@ Before you begin, make sure that you have the following permissions:
 
 To create the configuration:
 
-1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](#setup-clusters-satconfig).
+1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](#setup-clusters-satconfig). The setup includes creating a cluster group and granting {{site.data.keyword.satelliteshort}} Config access to your clusters.
 2. Create a {{site.data.keyword.satelliteshort}} configuration.
    1. From the [{{site.data.keyword.satelliteshort}} configurations dashboard](https://cloud.ibm.com/satellite/configuration){: external}, click **Create configuration**.
    2. Enter a name for your configuration and click **Create**.
@@ -306,7 +306,7 @@ Before you begin, make sure that you have the following permissions:
 
 To create the configuration:
 
-1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](#setup-clusters-satconfig).
+1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](#setup-clusters-satconfig). The setup includes creating a cluster group and granting {{site.data.keyword.satelliteshort}} Config access to your clusters.
 2. Add {{site.data.keyword.openshiftlong_notm}} clusters to your cluster group. The clusters can run in your location or in {{site.data.keyword.cloud_notm}}.
    1. List the {{site.data.keyword.openshiftlong_notm}} clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component and note their ID.
       ```
