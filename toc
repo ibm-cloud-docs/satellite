@@ -40,6 +40,7 @@ Satellite
     Troubleshooting Satellite components
         ts-location.md
         ts-host.md
+        ts-clusters.md
         getting-help.md
 
     relnotes.md

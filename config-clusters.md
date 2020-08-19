@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-14"
+lastupdated: "2020-08-19"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -74,14 +74,83 @@ Review the following key concepts that are used when you create a {{site.data.ke
 <br />
 
 
+## Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config
+{: #setup-clusters-satconfig}
+
+By default, clusters that you create in a {{site.data.keyword.satelliteshort}} location have {{site.data.keyword.satelliteshort}} Config components automatically installed. You can optionally create cluster groups and set up service account access for {{site.data.keyword.satelliteshort}} Config to manage Kubernetes resources in your clusters.
+{: shortdesc}
+
+Before you begin, make sure that you have the following permissions:
+- The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Cluster** resource in {{site.data.keyword.satellitelong_notm}}.
+- The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Clustergroup** resource in {{site.data.keyword.satellitelong_notm}}.
+- The **Manager** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.openshiftlong_notm}}.
+
+### Setting up {{site.data.keyword.satelliteshort}} Config clusters from the console
+{: #setup-clusters-satconfig-ui}
+
+1. If you have {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} (not your {{site.data.keyword.satelliteshort}} location), [register the clusters](#existing-openshift-clusters).
+2. Create a cluster group. The cluster group specifies all {{site.data.keyword.openshiftlong_notm}} clusters that you want to include into the deployment of your Kubernetes resources. The clusters can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}.
+   1. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, switch to the **Cluster group** tab and click **Create cluster group**.
+   2. Enter a name for your cluster group and click **Create**.
+   3. Go to the **Clusters** tab and find the {{site.data.keyword.openshiftlong_notm}} clusters that you want to add to your cluster group.
+   4. From the actions menu, click **Add to group** and choose the name of the cluster group where you want to add the cluster.
+3. Access each cluster in the cluster group. For more access options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
+   1. From the [{{site.data.keyword.openshiftlong_notm}} clusters page](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click the cluster.
+   2. Click **OpenShift web console**.
+   3. Verify that you are in the **Administrator** perspective.
+4. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, or project-scoped access.
+   *  **Cluster admin access**: Grant {{site.data.keyword.satelliteshort}} Config access to the appropriate service accounts. 
+      1. From the **OpenShift web console** administrator perspective, click **User Management > Role Bindings**.
+      2. Click **Create Binding**.
+      3. For **Binding Type**, click **Cluster-wide Role Binding (ClusterRoleBinding)**.
+      4. For **Name**, enter `razee-cluster-admin`.
+      5. For **Role Name**, select `razeedeploy-admin-cr`.
+      6. Click **Service Account** subject.
+      7. For **Subject Namespace**, select `razeedeploy`.
+      8. For **Subject Name**, enter `razee-satcon`.
+   *  **Project-scoped access**: Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access to manage the projects (namespaces) and Kubernetes resources that you want.
+      1. TODO
+5. [Create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters](#create-satconfig-ui).
+
+### Setting up {{site.data.keyword.satelliteshort}} Config clusters from the CLI
+{: #setup-clusters-satconfig-cli}
+
+1. If you have {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} (not your {{site.data.keyword.satelliteshort}} location), [register the clusters](#existing-openshift-clusters).
+2. Create a cluster group. The cluster group holds all {{site.data.keyword.openshiftlong_notm}} clusters that you want to include into the deployment of your Kubernetes resources.
+   ```
+   ibmcloud sat cluster-group create --name <cluster_group_name>
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   Creating cluster group...
+   OK
+   Created cluster group 'mygroup' with ID '6492111d-3211-4ed2-8f2e-4b99907476a9'.
+   ```
+   {: screen}
+3. Access each cluster in the cluster group. For more access options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
+   1. From the [{{site.data.keyword.openshiftlong_notm}} clusters page](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click the cluster.
+   2. Click **OpenShift web console**.
+   3. Click **IAM#username@email.com > Copy Login Command**.
+   4. Click **Display Token**.
+   5. Copy the `oc login` token command.
+   6. Run the `oc login` token command in your CLI to log in to your cluster.
+4. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, or project-scoped access.
+   *  **Cluster admin access**: Grant {{site.data.keyword.satelliteshort}} Config access to the appropriate service accounts. 
+      ```
+      kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
+      ```
+      {: pre}
+   *  **Project-scoped access**: Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access to manage the projects (namespaces) and Kubernetes resources that you want.
+      1. TODO
+5. [Create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters](#create-satconfig-cli).
+
 ## Creating {{site.data.keyword.satelliteshort}} configurations from the console
 {: #create-satconfig-ui}
 
 Use the {{site.data.keyword.satelliteshort}} console to create a configuration and upload the Kubernetes resource definition that you want to deploy to your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
-
-If you want to include {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} into your  {{site.data.keyword.satelliteshort}} configuration, you must first [register these clusters with the {{site.data.keyword.satelliteshort}} Config component](#existing-openshift-clusters).
-{: note}
 
 Before you begin, make sure that you have the following permissions:
 - The **Editor** {{site.data.keyword.cloud_notm}} IAM platform role for the **Configuration** resource in {{site.data.keyword.satellitelong_notm}}.
@@ -91,11 +160,7 @@ Before you begin, make sure that you have the following permissions:
 
 To create the configuration:
 
-1. Create a cluster group. The cluster group specifies all {{site.data.keyword.openshiftlong_notm}} clusters that you want to include into the deployment of your Kubernetes resources. The clusters can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}.
-   1. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, switch to the **Cluster group** tab and click **Create cluster group**.
-   2. Enter a name for your cluster group and click **Create**.
-   3. Go to the **Clusters** tab and find the {{site.data.keyword.openshiftlong_notm}} clusters that you want to add to your cluster group.
-   4. From the actions menu, click **Add to group** and choose the name of the cluster group where you want to add the cluster.
+1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](#setup-clusters-satconfig).
 2. Create a {{site.data.keyword.satelliteshort}} configuration.
    1. From the [{{site.data.keyword.satelliteshort}} configurations dashboard](https://cloud.ibm.com/satellite/configuration){: external}, click **Create configuration**.
    2. Enter a name for your configuration and click **Create**.
@@ -120,9 +185,6 @@ To create the configuration:
 Use the {{site.data.keyword.satelliteshort}} CLI to create a configuration and upload the Kubernetes resource definition that you want to deploy to your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
-If you want to include {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} into your  {{site.data.keyword.satelliteshort}} configuration, you must first [register these clusters with the {{site.data.keyword.satelliteshort}} Config component](#existing-openshift-clusters).
-{: note}
-
 Before you begin, make sure that you have the following permissions:
 - The **Editor** {{site.data.keyword.cloud_notm}} IAM platform role for the **Configuration** resource in {{site.data.keyword.satellitelong_notm}}.
 - The **Editor** {{site.data.keyword.cloud_notm}} IAM platform role for the **Subscription** resource in {{site.data.keyword.satellitelong_notm}}.
@@ -131,20 +193,7 @@ Before you begin, make sure that you have the following permissions:
 
 To create the configuration:
 
-1. Create a cluster group. The cluster group holds all {{site.data.keyword.openshiftlong_notm}} clusters that you want to include into the deployment of your Kubernetes resources.
-   ```
-   ibmcloud sat cluster-group create --name <cluster_group_name>
-   ```
-   {: pre}
-
-   Example output:
-   ```
-   Creating cluster group...
-   OK
-   Created cluster group 'mygroup' with ID '6492111d-3211-4ed2-8f2e-4b99907476a9'.
-   ```
-   {: screen}
-
+1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](#setup-clusters-satconfig).
 2. Add {{site.data.keyword.openshiftlong_notm}} clusters to your cluster group. The clusters can run in your location or in {{site.data.keyword.cloud_notm}}.
    1. List the {{site.data.keyword.openshiftlong_notm}} clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component and note their ID.
       ```
