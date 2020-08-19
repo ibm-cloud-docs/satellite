@@ -80,71 +80,184 @@ Review the following key concepts that are used when you create a {{site.data.ke
 By default, clusters that you create in a {{site.data.keyword.satelliteshort}} location have {{site.data.keyword.satelliteshort}} Config components automatically installed. You can optionally create cluster groups and set up service account access for {{site.data.keyword.satelliteshort}} Config to manage Kubernetes resources in your clusters.
 {: shortdesc}
 
-Before you begin, make sure that you have the following permissions:
-- The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Cluster** resource in {{site.data.keyword.satellitelong_notm}}.
-- The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Clustergroup** resource in {{site.data.keyword.satellitelong_notm}}.
-- The **Manager** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.openshiftlong_notm}}.
+* [Prerequisites](#setup-clusters-satconfig-prereq)
+* [Setting up cluster groups](#setup-clusters-satconfig-groups)
+* [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](#setup-clusters-satconfig-access)
 
-### Setting up {{site.data.keyword.satelliteshort}} Config clusters from the console
-{: #setup-clusters-satconfig-ui}
+### Prerequisites
+{: #setup-clusters-satconfig-prereq}
 
-1. If you have {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} (not your {{site.data.keyword.satelliteshort}} location), [register the clusters](#existing-openshift-clusters).
-2. Create a cluster group. The cluster group specifies all {{site.data.keyword.openshiftlong_notm}} clusters that you want to include into the deployment of your Kubernetes resources. The clusters can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}.
-   1. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, switch to the **Cluster group** tab and click **Create cluster group**.
-   2. Enter a name for your cluster group and click **Create**.
-   3. Go to the **Clusters** tab and find the {{site.data.keyword.openshiftlong_notm}} clusters that you want to add to your cluster group.
-   4. From the actions menu, click **Add to group** and choose the name of the cluster group where you want to add the cluster.
-3. Access each cluster in the cluster group. For more access options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
-   1. From the [{{site.data.keyword.openshiftlong_notm}} clusters page](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click the cluster.
-   2. Click **OpenShift web console**.
-   3. Verify that you are in the **Administrator** perspective.
-4. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, or project-scoped access.
-   *  **Cluster admin access**: Grant {{site.data.keyword.satelliteshort}} Config access to the appropriate service accounts. 
-      1. From the **OpenShift web console** administrator perspective, click **User Management > Role Bindings**.
-      2. Click **Create Binding**.
-      3. For **Binding Type**, click **Cluster-wide Role Binding (ClusterRoleBinding)**.
-      4. For **Name**, enter `razee-cluster-admin`.
-      5. For **Role Name**, select `razeedeploy-admin-cr`.
-      6. Click **Service Account** subject.
-      7. For **Subject Namespace**, select `razeedeploy`.
-      8. For **Subject Name**, enter `razee-satcon`.
-   *  **Project-scoped access**: Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access to manage the projects (namespaces) and Kubernetes resources that you want.
-      1. TODO
-5. [Create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters](#create-satconfig-ui).
+*  If you have {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} (not your {{site.data.keyword.satelliteshort}} location), [register the clusters](#existing-openshift-clusters).
+*  Make sure that you have the following permissions:
+   - The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Cluster** resource in {{site.data.keyword.satellitelong_notm}}.
+   - The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Clustergroup** resource in {{site.data.keyword.satellitelong_notm}}.
+   - The **Manager** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.openshiftlong_notm}}.
 
-### Setting up {{site.data.keyword.satelliteshort}} Config clusters from the CLI
-{: #setup-clusters-satconfig-cli}
+### Setting up cluster groups
+{: #setup-clusters-satconfig-groups}
 
-1. If you have {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} (not your {{site.data.keyword.satelliteshort}} location), [register the clusters](#existing-openshift-clusters).
-2. Create a cluster group. The cluster group holds all {{site.data.keyword.openshiftlong_notm}} clusters that you want to include into the deployment of your Kubernetes resources.
-   ```
-   ibmcloud sat cluster-group create --name <cluster_group_name>
-   ```
-   {: pre}
+Create a cluster group. The cluster group specifies all {{site.data.keyword.openshiftlong_notm}} clusters that you want to include into the deployment of your Kubernetes resources. The clusters can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}.
+{: shortdesc}
 
-   Example output:
-   ```
-   Creating cluster group...
-   OK
-   Created cluster group 'mygroup' with ID '6492111d-3211-4ed2-8f2e-4b99907476a9'.
-   ```
-   {: screen}
-3. Access each cluster in the cluster group. For more access options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
+**From the console**:
+1. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satelliteclusters){: external}, switch to the **Cluster group** tab and click **Create cluster group**.
+2. Enter a name for your cluster group and click **Create**.
+3. Go to the **Clusters** tab and find the {{site.data.keyword.openshiftlong_notm}} clusters that youwant to add to your cluster group.
+4. From the actions menu, click **Add to group** and choose the name of the cluster group where you wantto add the cluster.
+
+**From the CLI**:
+```
+ibmcloud sat cluster-group create --name <cluster_group_name>
+```
+{: pre}
+Example output:
+```
+Creating cluster group...
+OK
+Created cluster group 'mygroup' with ID '6492111d-3211-4ed2-8f2e-4b99907476a9'.
+```
+{: screen}
+
+### Granting {{site.data.keyword.satelliteshort}} Config access to your clusters
+{: #setup-clusters-satconfig-access}
+
+For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources.
+{: shortdesc}
+
+1. Access each cluster in the cluster group. For more access options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
    1. From the [{{site.data.keyword.openshiftlong_notm}} clusters page](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click the cluster.
    2. Click **OpenShift web console**.
    3. Click **IAM#username@email.com > Copy Login Command**.
    4. Click **Display Token**.
    5. Copy the `oc login` token command.
    6. Run the `oc login` token command in your CLI to log in to your cluster.
-4. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, or project-scoped access.
+2. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, custom access that is cluster-wide, or custom access that is scoped to a project. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/){: external}.
    *  **Cluster admin access**: Grant {{site.data.keyword.satelliteshort}} Config access to the appropriate service accounts. 
       ```
       kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
       ```
       {: pre}
-   *  **Project-scoped access**: Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access to manage the projects (namespaces) and Kubernetes resources that you want.
-      1. TODO
-5. [Create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters](#create-satconfig-cli).
+   *  **Custom access, cluster-wide**: Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access to the actions and Kubernetes resources that you want for the cluster.
+      1. Create a cluster role with the actions and resources that you want to grant. For example, the following command creates a viewer role so that {{site.data.keyword.satelliteshort}} Config can list all the Kubernetes resources in a cluster, but cannot modify them.
+         ```
+         kubectl create clusterrole razee-viewer --verb=get,list,watch --resource="*.*"
+         ```
+         {: pre}
+
+         <table summary="This table is read from left to right. The first column has the error message. The second column has the description of the how to resolve the error.">
+         <caption>Understanding this command's components</caption>
+         <thead>
+         <th>Component</th>
+         <th>Description</th>
+         </thead>
+         <tbody>
+         <tr>
+         <td><code>razee-viewer</code></td>
+         <td>The name of the cluster role, such as <code>razee-viewer</code>.</td>
+         </tr>
+         <tr>
+         <td><code>--verb=get,list,watch</code></td>
+         <td>A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for a viewer or auditor, <code>get,list,watch</code>. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}.</td>
+         </tr>
+         <tr>
+         <td><code>--resource="*.*"</code></td>
+         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, <code>*.*</code>. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
+         </tr>
+         </tbody>
+         </table>
+      2. Create a cluster role binding that binds the {{site.data.keyword.satelliteshort}} Config service account to the cluster role that you previously created. Now, {{site.data.keyword.satelliteshort}} Config has the custom access to the cluster.
+         ```
+         kubectl create clusterrolebinding razee-viewer --clusterrole=razee-viewer --serviceaccount=razeedeploy:razee-viewer
+         ```
+         {: pre}
+
+         <table summary="This table is read from left to right. The first column has the error message. The second column has the description of the how to resolve the error.">
+         <caption>Understanding this command's components</caption>
+         <thead>
+         <th>Component</th>
+         <th>Description</th>
+         </thead>
+         <tbody>
+         <tr>
+         <td><code>razee-viewer</code></td>
+         <td>The name of the cluster role binding, such as <code>razee-viewer</code>.</td>
+         </tr>
+         <tr>
+         <td><code>--clusterrole=razee-viewer</code></td>
+         <td>The name of the cluster role that you previously created, such as <code>razee-viewer</code>.</td>
+         </tr>
+         <tr>
+         <td><code>--serviceaccount=razeedeploy:razee-viewer</code></td>
+         <td>The name of the {{site.data.keyword.satelliteshort}} Config service account. To list possible service accounts, run <code>kubectl get sa --namespace razeedeploy</code>.</td>
+         </tr>
+         </tbody>
+         </table>
+
+   *  **Custom access, scoped to a project**: Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access to the actions, Kubernetes resources, and projects (namespaces) that you want.
+      1. Create a role with the actions and resources that you want to grant in the project that you want to scope the role to. For example, the following command creates an editor role so that {{site.data.keyword.satelliteshort}} Config can deploy and update all the Kubernetes resources in the project.
+         ```
+         kubectl create role razee-editor --namespace=default --verb=get,list,watch,create,update,patch,delete --resource="*.*"
+         ```
+         {: pre}
+
+         <table summary="This table is read from left to right. The first column has the error message. The second column has the description of the how to resolve the error.">
+         <caption>Understanding this command's components</caption>
+         <thead>
+         <th>Component</th>
+         <th>Description</th>
+         </thead>
+         <tbody>
+         <tr>
+         <td><code>razee-editor</code></td>
+         <td>The name of the cluster role, such as <code>razee-editor</code>.</td>
+         </tr>
+         <tr>
+         <td><code>--namespace default</code></td>
+         <td>The project (namespace) to scope the role to, such as <code>default</code>.</td>
+         </tr>
+         <tr>
+         <td><code>--verb=get,list,watch,create,update,patch,delete</code></td>
+         <td>A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for an editor, <code>get,list,watch,create,update,patch,delete</code>. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}.</td>
+         </tr>
+         <tr>
+         <td><code>--resource="*.*"</code></td>
+         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, <code>*.*</code>. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
+         </tr>
+         </tbody>
+         </table>
+      2. Create a role binding that binds the {{site.data.keyword.satelliteshort}} Config service account to the cluster role that you previously created. Now, {{site.data.keyword.satelliteshort}} Config has the custom access to the cluster.
+         ```
+         kubectl create rolebinding razee-editor --namespace=default --role=razee-editor --serviceaccount=razeedeploy:razee-editor
+         ```
+         {: pre}
+
+         <table summary="This table is read from left to right. The first column has the error message. The second column has the description of the how to resolve the error.">
+         <caption>Understanding this command's components</caption>
+         <thead>
+         <th>Component</th>
+         <th>Description</th>
+         </thead>
+         <tbody>
+         <tr>
+         <td><code>razee-editor</code></td>
+         <td>The name of the role binding, such as <code>razee-editor</code>.</td>
+         </tr>
+         <tr>
+         <td><code>--namespace default</code></td>
+         <td>The project (namespace) to scope the role binding to, such as <code>default</code>. The namespace much match the namespace that the role is in.</td>
+         </tr>
+         <tr>
+         <td><code>--role=razee-editor</code></td>
+         <td>The name of the role that you previously created, such as <code>razee-editor</code>.</td>
+         </tr>
+         <tr>
+         <td><code>--serviceaccount=razeedeploy:razee-editor</code></td>
+         <td>The name of the {{site.data.keyword.satelliteshort}} Config service account. To list possible service accounts, run <code>kubectl get sa --namespace razeedeploy</code>.</td>
+         </tr>
+         </tbody>
+         </table>
+
+3. Create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters[from the console](#create-satconfig-ui) or [the CLI](#create-satconfig-cli).
 
 ## Creating {{site.data.keyword.satelliteshort}} configurations from the console
 {: #create-satconfig-ui}

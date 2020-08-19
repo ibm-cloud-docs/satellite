@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -84,7 +84,7 @@ Review the health of your location, and use the error messages to resolve any is
 3.  Review the following messages and the steps to resolve the issue.
 
     <table summary="This table is read from left to right. The first column has the error message. The second column has the description of the how to resolve the error.">
-    <caption>Understanding this command's components</caption>
+    <caption>Steps to resolve error messages</caption>
     <thead>
     <th>Message</th>
     <th>Description</th>
