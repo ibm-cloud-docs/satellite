@@ -53,7 +53,7 @@ The following diagram presents the initial setup steps for hosts.
 
 ![Concept overview of Satellite host setup](/images/host-process.png){: caption="Figure 1. The initial setup process for {{site.data.keyword.satelliteshort}} hosts." caption-side="bottom"}
 
-1.  **Add**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [add the host](#add-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-limitations#limits-host). After the host is added and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
+1.  **Add**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [add the host](#add-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-limitations#limits-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers). After the host is added and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
 2.  **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service. For example, each location must have at least 3 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
 3.  **Bootstrap**: When you assign a host, the host is bootstrapped to become a worker node in a managed {{site.data.keyword.openshiftlong_notm}} cluster or your {{site.data.keyword.satelliteshort}} control plane. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host, which requires public connectivity to pull the images from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts).
 
@@ -68,38 +68,96 @@ Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshor
 After you create the location, you must add compute capacity to your location so that you can run the {{site.data.keyword.satelliteshort}} control plane or set up {{site.data.keyword.openshiftshort}} clusters.
 {: shortdesc}
 
+Not sure how many hosts to add to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-sizing).
+{: tip}
+
 ### Adding hosts from the console
 {: #add-hosts-console}
 
 Use the {{site.data.keyword.satelliteshort}} console to add hosts to your location.
 {: shortdesc}
 
-Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
+Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
 
 1. From the [**Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, select that location where you want to add hosts.  
 2. From the **Hosts** tab, click **Add host**.
 3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 4. Enter a file name for your script or use the name that is generated for you.
 5. Click **Download script** to generate the host script and download the script to your local machine.
-6. Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
+5. Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
+
+   **General steps:**
    1. Retrieve the public IP address of your host.
    2. Copy the script from your local machine to your host.
       ```
       scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
       ```
       {: pre}
+
    3. Log in to your host.
       ```
       ssh root@<public_IP_address>
       ```
       {: pre}
+
    4. Run the script.
       ```
       nohup bash /tmp/attach.sh &
       ```
       {: pre}
-7. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
-8. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
+      </br>
+
+   **Example for adding {{site.data.keyword.cloud_notm}} classic virtual servers**:
+   1. Retrieve the **public_ip** address and **id** of your machine.
+      ```
+      ibmcloud sl vs list
+      ```
+      {: pre}
+
+   2. Retrieve the credentials to log in to your virtual machine.
+      ```
+      ibmcloud sl vs credentials <vm_ID>
+      ```
+      {: pre}
+
+   3. Copy the script from your local machine to the virtual server instance.
+      ```
+      scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
+      ```
+      {: pre}
+
+   4. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
+      ```
+      ssh root@<public_IP_address>
+      ```
+      {: pre}
+
+   5. Refresh the Red Hat packages on your machine.
+      ```
+      subscription-manager refresh
+      ```
+      {: pre}
+
+      ```
+      subscription-manager repos --enable=*
+      ```
+      {: pre}
+
+   6. Run the script on your machine.
+      ```
+      nohup bash /tmp/attach.sh &
+      ```
+      {: pre}
+
+   7. Exit the SSH session.  
+      ```
+      exit
+      ```
+      {: pre}
+
+6. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+
+7. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
 ### Adding hosts from the CLI
 {: #add-hosts-cli}
@@ -107,7 +165,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 Use the {{site.data.keyword.satelliteshort}} CLI to add hosts to your location.
 {: shortdesc}
 
-Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
+Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
 
 1.  Generate a script that you can copy and run on your machines to add them as hosts to your location. You might want to include a label to identify the purpose of the hosts, such as `use:satloc`, because the hosts provide compute capacity for the {{site.data.keyword.satelliteshort}} location. Your hosts automatically are assigned labels for the CPU and memory size if these values can be detected on the machine.
     ```
@@ -127,6 +185,8 @@ Before you begin, make sure that you have created host machines that meet the [m
 
 2.  On your local machine, find the script.
 3.  Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
+
+    **General steps:**
     1. Retrieve the public IP address of your host.
     2. Copy the script from your local machine to your host.
        ```
@@ -143,6 +203,55 @@ Before you begin, make sure that you have created host machines that meet the [m
     4. Run the script.
        ```
        nohup bash /tmp/attach.sh &
+       ```
+       {: pre}
+       </br>
+
+    **Example for adding {{site.data.keyword.cloud_notm}} classic virtual servers**:
+    1. Retrieve the **public_ip** address and **id** of your machine.
+       ```
+       ibmcloud sl vs list
+       ```
+       {: pre}
+
+    2. Retrieve the credentials to log in to your virtual machine.
+       ```
+       ibmcloud sl vs credentials <vm_ID>
+       ```
+       {: pre}
+
+    3. Copy the script from your local machine to the virtual server instance.
+       ```
+       scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
+       ```
+       {: pre}
+
+    4. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
+       ```
+       ssh root@<public_IP_address>
+       ```
+       {: pre}
+
+    5. Refresh the Red Hat packages on your machine.
+       ```
+       subscription-manager refresh
+       ```
+       {: pre}
+
+       ```
+       subscription-manager repos --enable=*
+       ```
+       {: pre}
+
+    6. Run the script on your machine.
+       ```
+       nohup bash /tmp/attach.sh &
+       ```
+       {: pre}
+
+    7. Exit the SSH session.  
+       ```
+       exit
        ```
        {: pre}
 
@@ -189,7 +298,7 @@ After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can 
 4. Select the cluster that you created, and choose one of the available zones. When you assign the hosts to a cluster, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the Health of your machine changes from **Ready** to **Provisioning**.
 5. Verify that your hosts are successfully assigned to the cluster. The assignment is successful when a public IP address is added to your host and the **Health** status changes to **Normal**.
 
-   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Prometheus is not yet initialized` or `Verify that alb steps have been completed for this cluster`.
+   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
    {: note}
 
 ### Assigning hosts from the CLI

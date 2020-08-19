@@ -45,7 +45,7 @@ With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute in
 ## Prerequisites
 {: #sat-prereqs}
 
-This getting started tutorial requires 3 compute hosts that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) so that you can create the control plane of the {{site.data.keyword.satelliteshort}} location. The compute hosts can reside in an on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. To use these machines with {{site.data.keyword.satelliteshort}}, they must have public network connectivity and you must have sufficient permissions to log in to the machine and run a script to add them to your location.
+This getting started tutorial requires 3 compute hosts that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) so that you can create the control plane of the {{site.data.keyword.satelliteshort}} location. The compute hosts can reside in an on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. To use these machines with {{site.data.keyword.satelliteshort}}, they must have public network connectivity and you must have sufficient permissions to log in to the machine and run a script to add them to your location.
 
 ## Step 1: Create your location
 {: #create-location}
@@ -63,7 +63,7 @@ To use {{site.data.keyword.satelliteshort}}, you must create a location. A locat
 ## Step 2: Add compute hosts to your location
 {: #add-hosts-to-location}
 
-With your location set up, you can now add host machines to your location. All host machines must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) for {{site.data.keyword.satelliteshort}} and can physically reside in your own on-premises data center, in other cloud providers, or in edge networks.
+With your location set up, you can now add host machines to your location. All host machines must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) for {{site.data.keyword.satelliteshort}} and can physically reside in your own on-premises data center, in other cloud providers, or in edge networks.
 {: shortdesc}
 
 1. From the **Hosts** tab, click **Add host**.
@@ -71,6 +71,8 @@ With your location set up, you can now add host machines to your location. All h
 3. Enter a file name for your script or use the name that is generated for you.
 4. Click **Download script** to generate the host script and download the script to your local machine.
 5. Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane.
+
+   **General steps:**
    1. Retrieve the public IP address of your host.
    2. Copy the script from your local machine to your host.
       ```
@@ -89,7 +91,57 @@ With your location set up, you can now add host machines to your location. All h
       nohup bash /tmp/attach.sh &
       ```
       {: pre}
-6. As you run the scripts on each machine, check that your hosts show in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane. You must add at least 3 compute hosts to your location to continue with the setup of your {{site.data.keyword.satelliteshort}} control plane.
+      </br>
+
+   **Example for adding {{site.data.keyword.cloud_notm}} classic virtual servers**:
+   1. Retrieve the **public_ip** address and **id** of your machine.
+      ```
+      ibmcloud sl vs list
+      ```
+      {: pre}
+
+   2. Retrieve the credentials to log in to your virtual machine.
+      ```
+      ibmcloud sl vs credentials <vm_ID>
+      ```
+      {: pre}
+
+   3. Copy the script from your local machine to the virtual server instance.
+      ```
+      scp <path_to_addHost.sh> root@<public_IP_address>:/tmp/attach.sh
+      ```
+      {: pre}
+
+   4. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
+      ```
+      ssh root@<public_IP_address>
+      ```
+      {: pre}
+
+   5. Refresh the Red Hat packages on your machine.
+      ```
+      subscription-manager refresh
+      ```
+      {: pre}
+
+      ```
+      subscription-manager repos --enable=*
+      ```
+      {: pre}
+
+   6. Run the script on your machine.
+      ```
+      nohup bash /tmp/attach.sh &
+      ```
+      {: pre}
+
+   7. Exit the SSH session.  
+      ```
+      exit
+      ```
+      {: pre}
+
+5. As you run the scripts on each machine, check that your hosts show in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane. You must add at least 3 compute hosts to your location to continue with the setup of your {{site.data.keyword.satelliteshort}} control plane.
 
 
 ## Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} control plane
@@ -102,8 +154,10 @@ To complete the setup of your {{site.data.keyword.satelliteshort}} location, you
 2. Select **Control plane** as your cluster and choose one of the available zones. Make sure that you assign each host to a different zone so that you spread all 3 hosts across all 3 zones in US East (`us-east-1`, `us-east-2`, and `us-east-3`). When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
 3. From the **Hosts** tab, verify that your hosts are successfully assigned to the {{site.data.keyword.satelliteshort}} control plane. The assignment is successful when a public IP address is added to your host and the **Health** status changes to **Normal**.
 
-   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Prometheus is not yet initialized` or `Verify that alb steps have been completed for this cluster`.
+   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
    {: note}
+
+4. Optional: If your hosts are from Amazon Web Services or Google Cloud Platform, you must manually register the DNS for the location control plane. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-control-plane) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-control-plane) provider topics.
 
 ## What's next
 {: #whats-next}

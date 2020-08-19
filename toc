@@ -28,6 +28,7 @@ Satellite
     {: .navgroup id="reference"}
     cli-reference.md
     limitations.md
+    providers.md
     supported-regions.md
     responsibilities.md
     license-notices.md
