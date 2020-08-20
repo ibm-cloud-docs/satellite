@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -54,7 +54,7 @@ You can create up to 20 {{site.data.keyword.satelliteshort}} locations per {{sit
 ## Hosts
 {: #limits-host}
 
-Review the following host requirements for {{site.data.keyword.satellitelong_notm}}. For provider-specific requirements, see [Provider requirements](/docs/satellite?topic=satellite-providers).
+Review the following host limitations for {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
 
 Can't meet these host requirements? Contact IBM Support and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
@@ -88,6 +88,7 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
     Permission denied, please try again.
     ```
     {: screen}
+
 
 ### Host storage and attached devices
 {: #limits-host-storage}
