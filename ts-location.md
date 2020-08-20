@@ -269,6 +269,9 @@ The location control plane is not publicly accessible. The IP addresses that are
 * The hosts are from cloud providers like AWS or GCP that automatically register the private IP addresses of the hosts, so you must update the DNS records to use the public IP addresses.
 
 {: tsResolve}
+
+Update the location subdomain DNS entries.
+
 1.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
     ```
     ibmcloud sat location dns ls --location <location_name_or_ID>
