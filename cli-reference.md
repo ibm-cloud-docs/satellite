@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-20"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1182,7 +1182,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 <dd>Required. Enter the ID or name of the cluster where you want to assign your compute host. If you want to assign your compute host to the {{site.data.keyword.satelliteshort}} control plane, use the location ID or name. To assign the compute host to an {{site.data.keyword.openshiftshort}} cluster, use the ID or name of the cluster. To retrieve the cluster ID or name, run <code>ibmcloud sat cluster ls</code>.  </dd>
 
 <dt><code>--host <em>HOST</em></code></dt>
-<dd>Required. Enter the ID or name of the host that you want to assign to the {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. To retrieve the host ID or name, run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code>.  </dd>
+<dd>Required. Enter the ID of the host that you want to assign to the {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. To retrieve the host ID, run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code>.  </dd>
 
 <dt><code>--zone <em>ZONE</em></code></dt>
 <dd>Required. Enter the name of the zone where you want to assign the compute host. The zone must belong to the {{site.data.keyword.cloud_notm}} multizone metro that you selected when you created the location. </dd>
@@ -1272,7 +1272,7 @@ ibmcloud sat host get --location LOCATION --host HOST [--output json] [-q]
 <dd>Required. Enter the ID or name of the location that the host belongs to. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.  </dd>
 
 <dt><code>--host <em>HOST</em></code></dt>
-<dd>Required. Enter the ID or name of the host that you want to retrieve details for. To retrieve the host ID or name, run <code>ibmcloud sat host ls &lt;location_ID_or_name&gt;</code>.  </dd>
+<dd>Required. Enter the ID of the host that you want to retrieve details for. To retrieve the host ID, run <code>ibmcloud sat host ls &lt;location_ID_or_name&gt;</code>.  </dd>
 
 <dt><code>--output json</code></dt>
  <dd>Optional. Prints the command output in JSON format.</dd>
@@ -1356,7 +1356,7 @@ ibmcloud sat host rm --location LOCATION --host HOST [-f ] [-q]
 <dd>Required. Enter the ID or name of the location where you want to remove a compute host. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.  </dd>
 
 <dt><code>--host <em>HOST</em></code></dt>
-<dd>Required. Enter the ID or name of the host that you want to remove. To retrieve the host ID or name, run <code>ibmcloud sat host ls &lt;location_ID_or_name&gt;</code>.  </dd>
+<dd>Required. Enter the ID of the host that you want to remove. To retrieve the host ID, run <code>ibmcloud sat host ls &lt;location_ID_or_name&gt;</code>.  </dd>
 
 <dt><code>-f</code></dt>
  <dd>Optional. Force the command to run with no user prompts.</dd>
@@ -1399,7 +1399,7 @@ ibmcloud sat host update --location LOCATION --host HOST [--label "LABEL"] [-q]
 <dd>Required. Enter the ID or name of the location that the compute host is assigned to. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.  </dd>
 
 <dt><code>--host <em>HOST</em></code></dt>
-<dd>Required. Enter the ID or name of the host that you want to update. To retrieve the host ID or name, run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code>.  </dd>
+<dd>Required. Enter the ID of the host that you want to update. To retrieve the host ID, run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code>.  </dd>
 
 <dt><code>--label <em>LABEL</em></code>, <code>-l <em>LABEL</em></code></dt>
 <dd>Optional. Enter any labels as a key-value-pair that you want to use to identify the hosts that you want to update. To find available host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>.  </dd>

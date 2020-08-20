@@ -242,7 +242,7 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
 
 2.  Optional: If you want to assign hosts to your control plane by using a host label, retrieve the details of your host. Available labels that you can use are listed in the **Labels** section of your CLI output.
     ```
-    ibmcloud sat host get --location <location_name_or_ID> --host <host_name_or_ID>
+    ibmcloud sat host get --location <location_name_or_ID> --host <host_ID>
     ```
     {: pre}
 

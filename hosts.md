@@ -208,7 +208,7 @@ After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can 
 
    **Example for assigning a host by using the host ID:**
    ```
-   ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host <host_name_or_ID> --worker-pool default --zone <zone>
+   ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host <host_ID> --worker-pool default --zone <zone>
    ```
    {: pre}
 
@@ -235,7 +235,7 @@ After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can 
       </tr>
        <tr>
       <td><code>--host &lt;host_name_or_ID&gt;</em></code></td>
-      <td>Enter the host ID or name to assign as worker nodes to the {{site.data.keyword.satelliteshort}} resource. To view the host ID or name, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can also use the <code>--label</code> option to identify the host that you want to assign to your cluster.</td>
+      <td>Enter the host ID to assign as worker nodes to the {{site.data.keyword.satelliteshort}} resource. To view the host ID, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can also use the <code>--label</code> option to identify the host that you want to assign to your cluster.</td>
       </tr>
       <tr>
       <td><code>--label &lt;label&gt;</code></td>
@@ -409,7 +409,7 @@ Use the {{site.data.keyword.satelliteshort}} CLI to remove your hosts as compute
    {: pre}
 6. Remove the host from your {{site.data.keyword.satelliteshort}} location.
    ```
-   ibmcloud sat host rm --location <location_name_or_ID> --host <host_name_or_ID>
+   ibmcloud sat host rm --location <location_name_or_ID> --host <host_ID>
    ```
    {: pre}
 7. Optional: To delete the host machine, follow the instructions from your underlying infrastructure provider.
