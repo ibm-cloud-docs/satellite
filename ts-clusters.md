@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -41,6 +41,18 @@ subcollection: satellite
 {: #ts-clusters-debug}
 
 See the [{{site.data.keyword.openshiftlong_notm}} troubleshooting documentation](/docs/openshift?topic=openshift-cs_troubleshoot).
+
+## Cluster does not get Ingress subdomain
+{: #cluster-subdomain-providers}
+
+{: tsSymptoms}
+After you create a cluster in your {{site.data.keyword.satelliteshort}} location, you assign hosts from your AWS or GCP cloud providers to the cluster. However, the cluster does not get an Ingress subdomain.
+
+{: tsCauses}
+The worker nodes for your cluster set the private IP of the AWS and GCP cloud provider hosts as the public IP for the Ingress subdomain DNS registration, which causes the registration to fail.
+
+{: tsResolve}
+Manually register the DNS subdomain for your cloud provider hosts. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) topics.
 
 ## Clusters cannot view or get updates to Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config
 {: #satconfig-cluster-access-error}

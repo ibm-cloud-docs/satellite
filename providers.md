@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -239,6 +239,31 @@ If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location
 3.  Register the floating IP addresses for the location DNS. Include the `--ip` flag for each host in the control plane.
     ```
     ibmcloud sat location dns register --location <location_ID> --ip <gcp_host_floating_IP>
+    ```
+    {: pre}
+
+### DNS for cluster network load balancer
+{: #gcp-reqs-dns-cluster-nlb}
+
+The IP addresses for your GCP hosts are not automatically set up in the DNS for the cluster network load balancer.
+{: shortdesc}
+
+1.  [Add GCP hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
+2.  [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in your {{site.data.keyword.satellitelong_notm}} location.
+3.  [Assign your GCP hosts to your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli).
+4.  Get the IP address of the GCP hosts that are worker nodes in your cluster.
+    ```
+    ibmcloud oc worker ls -c <cluster_name_or_ID>
+    ```
+    {: pre}
+5.  Get the network load balancer **Hostname** for your cluster.
+    ```
+    ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
+    ```
+    {: pre}
+6.  Register the IP address of your GCP host worker nodes for the cluster DNS.
+    ```
+    ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <aws_worker_IP>
     ```
     {: pre}
 
