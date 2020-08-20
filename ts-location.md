@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -109,7 +109,8 @@ Review the health of your location, and use the error messages to resolve any is
     <tr>
      <td>R0010 Assign more hosts to the location control plane, or replace unhealthy hosts.<br><br>
      R0030 A zone for the {{site.data.keyword.satelliteshort}} location control plane is reaching a critical capacity. If critical capacity is reached, you cannot add more clusters to location. Add more hosts to the control plane zone, or replace unhealthy hosts.<br><br>
-     R0031 A zone for the {{site.data.keyword.satelliteshort}} location control plane is reaching a warning capacity. Add more hosts to the control plane zone, or replace unhealthy hosts.</td>
+     R0031 A zone for the {{site.data.keyword.satelliteshort}} location control plane is reaching a warning capacity. Add more hosts to the control plane zone, or replace unhealthy hosts.<br><br>
+     R0032 Manually assign hosts to the control plane across all 3 zones.</td>
      <td>Your location has no available hosts for {{site.data.keyword.satelliteshort}} to automatically assign to the location control plane, and might be reaching capacity limits. You can choose among the following options:
      <ul><li>[Add more hosts to the location](/docs/satellite?topic=satellite-hosts#add-hosts) with labels for the control plane and zone, so that {{site.data.keyword.satelliteshort}} can automatically assign the hosts to the location control plane.</li>
      <li>[Assign hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).</li>
@@ -163,6 +164,19 @@ Review the health of your location, and use the error messages to resolve any is
      <li>Check the details of your host by running `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.</li>
      <li>In the infrastructure provider, check the disk space of your host machine. [Update the host](/docs/satellite?topic=satellite-hosts#host-update) to see if the host issue is resolved.</li>
      <li>If debugging and updating the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).</li></ol></td>
+    </tr>
+    <tr>
+     <td>R0033 Hosts in the location control plane have critical memory usage issues. Add more hosts to the location control plane and wait for the location to return to normal.<br><br>
+     R0034 Hosts in the location control plane have critical CPU usage issues. Add more hosts to the location control plane and wait for the location to return to normal.<br><br>
+     R0035 The location control plane is running at max capacity and cannot support any more workloads. Add hosts to each zone and wait for the location to return to normal.</td>
+     <td><ol><li>Check the CPU and memory size of the hosts. The hosts must have at least 4 CPU and 16 memory.</li>
+     <li>[Add 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#add-hosts).</li>
+     <li>[Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones for the location itself, to add capacity for control plane operations.</li></ol>
+    </td>
+    </tr>
+    <tr>
+     <td>R0036 The location subdomains are not correctly routing traffic to your control plane hosts. Verify that the location subdomains are registered with the correct IP addresses for your control plane hosts with the 'ibmcloud sat location dns' commands.</td>
+     <td>See [Location subdomain not routing traffic to control plane hosts](#ts-location-subdomain).</td>
     </tr>
     </tbody>
     </table>
@@ -236,3 +250,37 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
 4.  [Add a host to the control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) in the same zone so that the location control plane has enough compute resources to continue running when you remove the unhealthy host.
 5.  [Remove the unhealthy host from the location control plane](/docs/satellite?topic=satellite-hosts#host-remove).
 6.  Optional: You can reload the operating system on the unhealthy host and try to attach and assign the host to {{site.data.keyword.satellitelong_notm}} again.
+
+## Location subdomain not routing traffic to control plane hosts
+{: #ts-location-subdomain}
+
+{: tsSymptoms}
+After you assign hosts to your {{site.data.keyword.satelliteshort}} location control plane, you see a message similar to the following.
+
+```
+R0036 The location subdomains are not correctly routing traffic to your control plane hosts. Verify that the location subdomains are registered with the correct IP addresses for your control plane hosts with the 'ibmcloud sat location dns' commands.
+```
+{: screen}
+
+{: tsCauses}
+The location control plane is not publicly accessible. The IP addresses that are registered with the DNS for your location subdomains might have one of the following issues:
+* The IP addresses are not the correct public IP addresses of the hosts that run the location control plane.
+* The hosts are behind a firewall that blocks traffic to the location control plane.
+* The hosts are from cloud providers like AWS or GCP that automatically register the private IP addresses of the hosts, so you must update the DNS records to use the public IP addresses.
+
+{: tsResolve}
+1.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
+    ```
+    ibmcloud sat location dns ls --location <location_name_or_ID>
+    ```
+    {: pre}
+2.  If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall.
+3.  Get the public IP addresses of your hosts. Refer to your provider documentation. For example steps, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-control-plane) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-control-plane) topics.
+4.  Update the location subdomain DNS records with the correct public IP addresses of each host in the control plane.
+    ```
+    ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
+    ```
+    {: pre}
+
+    If you use hosts from cloud providers like AWS and GCP, you might also need to update the your cluster Ingress subdomain DNS entries. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics.
+    {: note}
