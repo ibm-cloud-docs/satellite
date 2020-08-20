@@ -63,25 +63,26 @@ If you use AWS hosts for your [{{site.data.keyword.satellitelong_notm}} location
 ### DNS for cluster network load balancer
 {: #aws-reqs-dns-cluster-nlb}
 
-The IP addresses for your AWS hosts are not automatically set up in the DNS for the cluster network load balancer.
+The private IP addresses for your AWS hosts are used for the cluster DNS registration, but you must use the public IP addresses of the hosts instead.
 {: shortdesc}
 
 1.  [Add AWS hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
 2.  [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in your {{site.data.keyword.satellitelong_notm}} location.
 3.  [Assign your AWS hosts to your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli).
-4.  Get the IP address of the AWS hosts that are worker nodes in your cluster.
-    ```
-    ibmcloud oc worker ls -c <cluster_name_or_ID>
-    ```
-    {: pre}
-5.  Get the network load balancer **Hostname** for your cluster.
+4.  Get the **Hostname** and private **IP** addresses of the cluster network load balancer DNS.
     ```
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
     {: pre}
-6.  Register the IP address of your AWS host worker nodes for the cluster DNS.
+4.  In your AWS portal, find the host with the matching private IP address that you retrieved and note the public IP address. Repeat this step for each private IP address that you retrieved.
+5.  Register the public IP address of your AWS host worker nodes for the cluster DNS.
     ```
-    ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <aws_worker_IP>
+    ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <aws_public_IP>
+    ```
+    {: pre}
+6.  Remove the private IP addresses from the cluster DNS.
+    ```
+    ibmcloud oc nlb-dns rm classic -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <aws_private_IP>
     ```
     {: pre}
 
@@ -245,25 +246,26 @@ If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location
 ### DNS for cluster network load balancer
 {: #gcp-reqs-dns-cluster-nlb}
 
-The IP addresses for your GCP hosts are not automatically set up in the DNS for the cluster network load balancer.
+The private IP addresses for your GCP hosts are used for the cluster DNS registration, but you must use the public IP addresses of the hosts instead.
 {: shortdesc}
 
-1.  [Add GCP hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
+1.  [Add AWS hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
 2.  [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in your {{site.data.keyword.satellitelong_notm}} location.
 3.  [Assign your GCP hosts to your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli).
-4.  Get the IP address of the GCP hosts that are worker nodes in your cluster.
-    ```
-    ibmcloud oc worker ls -c <cluster_name_or_ID>
-    ```
-    {: pre}
-5.  Get the network load balancer **Hostname** for your cluster.
+4.  Get the **Hostname** and private **IP** addresses of the cluster network load balancer DNS.
     ```
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
     {: pre}
-6.  Register the IP address of your GCP host worker nodes for the cluster DNS.
+4.  In your GCP portal, find the host with the matching private IP address that you retrieved and note the public IP address. Repeat this step for each private IP address that you retrieved.
+5.  Register the public IP address of your GCP host worker nodes for the cluster DNS.
     ```
-    ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <aws_worker_IP>
+    ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <gcp_public_IP>
+    ```
+    {: pre}
+6.  Remove the private IP addresses from the cluster DNS.
+    ```
+    ibmcloud oc nlb-dns rm classic -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <gcp_private_IP>
     ```
     {: pre}
 
