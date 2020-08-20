@@ -191,9 +191,28 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     ibmcloud sat location ls
     ```
     {: pre}
-2.  Check the health of the control plane location by curling a `NodePort` endpoint on the control plane hosts. If the endpoint returns a `200` response for each host, the control plane worker node is healthy and serving Kubernetes traffic. If not, continue to the next step.
+2.  List the **Hostnames** of the subdomains for your location control plane hosts.
     ```
-    ibmcloud sat host ls --location <location_ID> | grep infrastructure | awk '{print $7}' | xargs -I {} curl -v http://{}:30000
+    ibmcloud sat location dns ls --location <location_name_or_ID>
+    ```
+    {: pre}
+
+    Example output:
+    ```
+    Retrieving location subdomains...
+    OK
+    Hostname                                                                                                 Records                                                                                                Health Monitor   SSL Cert Status   SSL Cert Secret Name                                          Secret  Namespace   
+    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud   169.62.  196.20,169.62.196.23,169.62.196.30                                                                None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000     default   
+    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c001.us-east.satellite.appdomain.cloud   169.62.  196.30                                                                                            None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c001     default   
+    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c002.us-east.satellite.appdomain.cloud   169.62.  196.20                                                                                            None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c002     default   
+    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c003.us-east.satellite.appdomain.cloud   169.62.  196.23                                                                                            None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c003     default   
+    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00.us-east.satellite.appdomain.cloud    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud            None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00      default  
+    ```
+    {: screen}
+   
+3.  Check the health of the control plane location subdomains by curling each hostname endpoint. If the endpoint returns a `200` response for each host, the control plane worker node is healthy and serving Kubernetes traffic. If not, continue to the next step.
+    ```
+    curl https://<hostname>:30000
     ```
     {: pre}
 
