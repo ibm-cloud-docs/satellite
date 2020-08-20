@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-20"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -105,8 +105,8 @@ Create a cluster group. The cluster group specifies all {{site.data.keyword.open
 **From the console**:
 1. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satelliteclusters){: external}, switch to the **Cluster group** tab and click **Create cluster group**.
 2. Enter a name for your cluster group and click **Create**.
-3. Go to the **Clusters** tab and find the {{site.data.keyword.openshiftlong_notm}} clusters that youwant to add to your cluster group.
-4. From the actions menu, click **Add to group** and choose the name of the cluster group where you wantto add the cluster.
+3. Go to the **Clusters** tab and find the {{site.data.keyword.openshiftlong_notm}} clusters that you want to add to your cluster group.
+4. From the actions menu, click **Add to group** and choose the name of the cluster group where you want to add the cluster.
 
 **From the CLI**:
 ```
