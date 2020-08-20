@@ -186,4 +186,4 @@ Choose from the following options:
 
 **Configuration files in {{site.data.keyword.satelliteshort}} Config**
 * You can upload only an individual configuration file of Kubernetes resources per release version. You cannot upload a directory or several different configuration files.
-* Configuration files are subject to Kubernetes limitations, such as that the manifest must be expressed in YAML or JSON format.
+* Configuration files are subject to Kubernetes limitations, such as that the manifest must be expressed in YAML format.

@@ -251,13 +251,13 @@ ibmcloud sat config configuration version create --name NAME --read-config FILEP
 <dd>Required. A name for your version, such as `1.0` or `black friday`.</dd>
 
 <dt><code>--read-config <em>FILEPATH</em></code></dt>
-<dd>Required. The filepath to the Kubernetes resource configuration file that you want to upload as a version. You can upload only one configuration file, but the configuration file can have multiple Kubernetes resource definitions, such as a deployment, service, and security context constraint. Supported file types are YAML and JSON.</dd>
+<dd>Required. The filepath to the Kubernetes resource configuration file that you want to upload as a version. You can upload only one configuration file, but the configuration file can have multiple Kubernetes resource definitions, such as a deployment, service, and security context constraint. Supported file types are YAML.</dd>
 
 <dt><code>--configuration <em>configuration</em></code></dt>
 <dd>Required. The name of the configuration to add the version to. To list available configurations, run <code>ibmcloud sat config configuration ls</code>.</dd>
 
 <dt><code>--type <em>TYPE</em></code></dt>
-<dd>Required. The file extension of the Kubernetes resource file that you want to add. Supported file types are <code>yaml</code> and <code>json</code>.</dd>
+<dd>Required. The file extension of the Kubernetes resource file that you want to add. Supported file types are <code>yaml</code>.</dd>
 
 <dt><code>--description <em>DESCRIPTION</em></code></dt>
 <dd>Optional. A description for your version, such as the purpose of the Kubernetes resources that the version contains. For example, `Added replicas and zone affinity for HA version of app for multizone clusters`.</dd>

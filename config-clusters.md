@@ -382,7 +382,7 @@ To create the configuration:
    </tr>
    <tr>
    <td><code>--type <em>&lt;type&gt;</em></code></td>
-   <td>Enter the file extension of your Kubernetes resource file. Supported extensions are <code>yaml</code> and <code>json</code>. </td>
+   <td>Enter the file extension of your Kubernetes resource file. Supported extensions are <code>yaml</code>. </td>
    </tr>
    <tr>
    <td><code>--read-config <em>&lt;file_path&gt;</em></code></td>
