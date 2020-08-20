@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -211,6 +211,8 @@ Use the {{site.data.keyword.satelliteshort}} console to set up a control plane f
    If your hosts are from Amazon Web Services or Google Cloud Platform, you must manually register the DNS for the location control plane. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-control-plane) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-control-plane) provider topics.
    {: note}
 
+8. **Google Cloud Platform only**: If you use GCP hosts for your {{site.data.keyword.satellitelong_notm}} location control plane, you must request modified maximum transmission unit (MTU) settings. [Open a support case](/docs/satellite?topic=satellite-get-help#help-support).
+
 ### Setting up the control plane from the CLI
 {: #control-plane-cli}
 
@@ -372,6 +374,8 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00.us-east.satellite.appdomain.cloud   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud        None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00   default  
    ```
    {: screen}
+
+8. **Google Cloud Platform only**: If you use GCP hosts for your {{site.data.keyword.satellitelong_notm}} location control plane, you must request modified maximum transmission unit (MTU) settings. [Open a support case](/docs/satellite?topic=satellite-get-help#help-support).
 
 ### What's next?
 {: #location-control-plane-next}

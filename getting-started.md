@@ -45,7 +45,7 @@ With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute in
 ## Prerequisites
 {: #sat-prereqs}
 
-This getting started tutorial requires 3 compute hosts that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) so that you can create the control plane of the {{site.data.keyword.satelliteshort}} location. The compute hosts can reside in an on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. To use these machines with {{site.data.keyword.satelliteshort}}, they must have public network connectivity and you must have sufficient permissions to log in to the machine and run a script to add them to your location.
+This getting started tutorial requires 3 compute hosts that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) so that you can create the control plane of the {{site.data.keyword.satelliteshort}} location. The compute hosts can reside in an on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. To use these hosts with the {{site.data.keyword.satellitelong_notm}} beta, the hosts must have public network connectivity and you must have sufficient permissions to log in to the host machine and run a script to add them to your location.
 
 ## Step 1: Create your location
 {: #create-location}
@@ -63,7 +63,7 @@ To use {{site.data.keyword.satelliteshort}}, you must create a location. A locat
 ## Step 2: Add compute hosts to your location
 {: #add-hosts-to-location}
 
-With your location set up, you can now add host machines to your location. All host machines must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) for {{site.data.keyword.satelliteshort}} and can physically reside in your own on-premises data center, in other cloud providers, or in edge networks.
+With your location set up, you can now add host machines to your location. All host machines must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-limitations#limits-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) for {{site.data.keyword.satelliteshort}} and can physically reside in your own on-premises data center, in other cloud providers, or in edge networks.
 {: shortdesc}
 
 1. From the **Hosts** tab, click **Add host**.
@@ -102,8 +102,12 @@ To complete the setup of your {{site.data.keyword.satelliteshort}} location, you
 2. Select **Control plane** as your cluster and choose one of the available zones. Make sure that you assign each host to a different zone so that you spread all 3 hosts across all 3 zones in US East (`us-east-1`, `us-east-2`, and `us-east-3`). When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
 3. From the **Hosts** tab, verify that your hosts are successfully assigned to the {{site.data.keyword.satelliteshort}} control plane. The assignment is successful when a public IP address is added to your host and the **Health** status changes to **Normal**.
 
-   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Prometheus is not yet initialized` or `Verify that alb steps have been completed for this cluster`.
+   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
    {: note}
+
+4. **For hosts from Amazon Web Services or Google Cloud Platform**: Manually register the DNS for the location control plane. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-control-plane) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-control-plane) provider topics.
+
+5. **Google Cloud Platform only**: If you use GCP hosts for your {{site.data.keyword.satellitelong_notm}} location control plane, you must request modified maximum transmission unit (MTU) settings. [Open a support case](/docs/satellite?topic=satellite-get-help#help-support).
 
 ## What's next
 {: #whats-next}

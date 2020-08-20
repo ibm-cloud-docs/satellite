@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -81,7 +81,7 @@ Still having issues? Review different ways to get help and support for {{site.da
       ibmcloud sat host get --location <location_name_or_ID> --host <host_name_or_ID>
       ```
       {: pre}
-   2. For any hosts, include relevant details about the underlying infrastructure provider.
+   2. For any hosts, include relevant details about the underlying infrastructure provider, such as if the host is in an Amazon Web Services, Google Cloud Platform, or other environment.
    3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them. If the resources are managed by {{site.data.keyword.satelliteshort}} configuration, get the details of your configuration and subscription.
 
    You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.

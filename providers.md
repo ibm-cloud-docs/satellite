@@ -37,8 +37,14 @@ subcollection: satellite
 # Provider requirements
 {: #providers}
 
-Review the following requirements that are specific to providers when you add hosts to your {{site.data.keyword.satellitelong}} location. For general requirements common across providers, see [Hosts](/docs/satellite?topic=satellite-limitations#limits-host).
+Review the following requirements that are specific to providers when you add hosts to your {{site.data.keyword.satellitelong}} location. For general requirements that are common across providers, see [Host requirements](/docs/satellite?topic=satellite-limitations#limits-host).
 {: shortdesc}
+
+{{site.data.keyword.satellitelong_notm}} is available as a closed beta and subject to change. To register for the beta, see [{{site.data.keyword.satellitelong_notm}} beta](https://cloud.ibm.com/satellite/beta){: external}.
+{: beta}
+
+Provider requirements are subject to change. You are responsible for your infrastructure in your provider environment.
+{: note}
 
 ## Amazon Web Services
 {: #aws-reqs}
@@ -49,7 +55,7 @@ Review the following host requirements that are specific to hosts that are in th
 ### DNS for location control plane
 {: #aws-reqs-dns-control-plane}
 
-If you use AWS hosts for your [{{site.data.keyword.satellitelong_notm}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane), the location subdomain and DNS is not automatically registered for you. Instead, you must manually set up the DNS.
+If you use AWS hosts for your [{{site.data.keyword.satellitelong_notm}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane), the location subdomain is not automatically registered for you. Instead, you must manually set up the DNS entries.
 {: shortdesc}
 
 1.  [Add your hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
@@ -60,27 +66,27 @@ If you use AWS hosts for your [{{site.data.keyword.satellitelong_notm}} location
     ```
     {: pre}
 
-### DNS for cluster network load balancer
+### DNS for cluster load balancing
 {: #aws-reqs-dns-cluster-nlb}
 
-The private IP addresses for your AWS hosts are used for the cluster DNS registration, but you must use the public IP addresses of the hosts instead.
+By default, the private IP addresses for your AWS hosts are used for the DNS registration of {{site.data.keyword.openshift_short}} clusters that you create in your {{site.data.keyword.satellite_short}} location. However, you must register the public IP addresses of the hosts instead.
 {: shortdesc}
 
 1.  [Add AWS hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
 2.  [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in your {{site.data.keyword.satellitelong_notm}} location.
 3.  [Assign your AWS hosts to your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli).
-4.  Get the **Hostname** and private **IP** addresses of the cluster network load balancer DNS.
+4.  Get the **Hostname** and private **IP** addresses of the cluster's default Ingress subdomain.
     ```
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
     {: pre}
 4.  In your AWS portal, find the host with the matching private IP address that you retrieved and note the public IP address. Repeat this step for each private IP address that you retrieved.
-5.  Register the public IP address of your AWS host worker nodes for the cluster DNS.
+5.  Register the public IP address of your AWS host worker nodes for the cluster's Ingress subdomain.
     ```
     ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <aws_public_IP>
     ```
     {: pre}
-6.  Remove the private IP addresses from the cluster DNS.
+6.  Remove the private IP addresses from the cluster's Ingress subdomain.
     ```
     ibmcloud oc nlb-dns rm classic -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <aws_private_IP>
     ```
@@ -232,7 +238,7 @@ Review the following host requirements that are specific to hosts that are in th
 ### DNS for location control plane
 {: #gcp-reqs-dns-control-plane}
 
-If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane), the location subdomain and DNS is not automatically registered for you. Instead, you must manually set up the DNS.
+If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane), the location subdomain is not automatically registered for you. Instead, you must manually set up the DNS entries.
 {: shortdesc}
 
 1.  [Add your hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
@@ -243,27 +249,27 @@ If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location
     ```
     {: pre}
 
-### DNS for cluster network load balancer
+### DNS for cluster load balancing
 {: #gcp-reqs-dns-cluster-nlb}
 
-The private IP addresses for your GCP hosts are used for the cluster DNS registration, but you must use the public IP addresses of the hosts instead.
+By default, the private IP addresses for your AWS hosts are used for the DNS registration of {{site.data.keyword.openshift_short}} clusters that you create in your {{site.data.keyword.satellite_short}} location. However, you must register the public IP addresses of the hosts instead.
 {: shortdesc}
 
 1.  [Add AWS hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
 2.  [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in your {{site.data.keyword.satellitelong_notm}} location.
 3.  [Assign your GCP hosts to your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli).
-4.  Get the **Hostname** and private **IP** addresses of the cluster network load balancer DNS.
+4.  Get the **Hostname** and private **IP** addresses of the cluster's default Ingress subdomain.
     ```
     ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
     ```
     {: pre}
 4.  In your GCP portal, find the host with the matching private IP address that you retrieved and note the public IP address. Repeat this step for each private IP address that you retrieved.
-5.  Register the public IP address of your GCP host worker nodes for the cluster DNS.
+5.  Register the public IP address of your GCP host worker nodes for the cluster's Ingress subdomain.
     ```
     ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <gcp_public_IP>
     ```
     {: pre}
-6.  Remove the private IP addresses from the cluster DNS.
+6.  Remove the private IP addresses from the cluster's Ingress subdomain.
     ```
     ibmcloud oc nlb-dns rm classic -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <gcp_private_IP>
     ```
