@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-20"
+lastupdated: "2020-08-21"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -962,10 +962,10 @@ ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOU
 <dd>Required. The port that the destination resource listens on for incoming requests. Make sure that the port matches the destination protocol.</dd>
 
 <dt><code>--dest-protocol <em>PROTOCOL</em></code></dt>
-<dd>Optional. The protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</dd>
+<dd>Optional. The protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).</dd>
 
 <dt><code>--source-protocol <em>PROTOCOL</em></code></dt>
-<dd>Required. The protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</dd>
+<dd>Required. The protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).</dd>
 
 <dt><code>--output <em>JSON</em></code></dt>
 <dd>Optional. Displays the command output in JSON format.</dd>
@@ -1134,10 +1134,10 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 <dd>Optional. The port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol.</dd>
 
 <dt><code>--dest-protocol <em>PROTOCOL</em></code></dt>
-<dd>Optional. The protocol of the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</dd>
+<dd>Optional. The protocol of the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).</dd>
 
 <dt><code>--source-protocol <em>PROTOCOL</em></code></dt>
-<dd>Optional. The protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</dd>
+<dd>Optional. The protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>

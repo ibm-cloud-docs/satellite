@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-20"
+lastupdated: "2020-08-21"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -103,7 +103,7 @@ Create a cluster group. The cluster group specifies all {{site.data.keyword.open
 {: shortdesc}
 
 **From the console**:
-1. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satelliteclusters){: external}, switch to the **Cluster group** tab and click **Create cluster group**.
+1. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, switch to the **Cluster group** tab and click **Create cluster group**.
 2. Enter a name for your cluster group and click **Create**.
 3. Go to the **Clusters** tab and find the {{site.data.keyword.openshiftlong_notm}} clusters that you want to add to your cluster group.
 4. From the actions menu, click **Add to group** and choose the name of the cluster group where you want to add the cluster.
@@ -443,7 +443,7 @@ To create the configuration:
 You can make existing {{site.data.keyword.openshiftlong_notm}} clusters that you run in {{site.data.keyword.cloud_notm}} available to the {{site.data.keyword.satelliteshort}} Config component so that you can include them when you roll out Kubernetes resource versions across your clusters.
 {: shortdesc}
 
-After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](#create-satconfig). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
+After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](#create-satconfig-ui). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
 {: note}
 
 1. Find the {{site.data.keyword.openshiftlong_notm}} cluster that you want to attach to your location. To list available clusters, run `ibmcloud oc cluster ls` or go to the [{{site.data.keyword.openshiftshort}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.

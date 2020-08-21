@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-18"
+lastupdated: "2020-08-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -63,7 +63,7 @@ You can use {{site.data.keyword.cloud_notm}} IAM to assign access to [different 
 ## Assigning access with {{site.data.keyword.cloud_notm}} IAM
 {: #iam-assign}
 
-For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources#iammanidaccser).
+For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 {: shortdesc}
 
 **Process to set up access to {{site.data.keyword.satellitelong_notm}} in your {{site.data.keyword.cloud_notm}} account:**<br>
@@ -290,7 +290,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Remove clusters from a cluster group.|`unGroupClusters`|[`cluster-group detach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-detach)| | | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Create a cluster group.|`addGroup`|[`cluster-group create`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-create)| | | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config. |`groups` |[`cluster-group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls) </br>[`cluster-group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Remove a cluster group. |`removeGroup` |[`cluster-group rm`](https://test.cloud.ibm.com/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Remove a cluster group. |`removeGroup` |[`cluster-group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
 {: #platform-table6}
 {: tab-title="Clustergroup"}
@@ -375,7 +375,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 | Remove clusters from a cluster group.|`unGroupClusters`|[`cluster-group detach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-detach)| | | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 |Create a cluster group.|`addGroup`|[`cluster-group create`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-create)| | | | |<img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />|
 | View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config. |`groups` |[`cluster-group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls) </br>[`cluster-group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get) | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" />| | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Remove a cluster group. |`removeGroup` |[`cluster-group rm`](https://test.cloud.ibm.com/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Remove a cluster group. |`removeGroup` |[`cluster-group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm) | | | | | <img src="images/icon-confirm.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
 {: #service-table5}
 {: tab-title="Clustergroup"}
