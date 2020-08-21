@@ -335,10 +335,10 @@ To [add {{site.data.keyword.cloud_notm}} infrastructure hosts to your {{site.dat
     ```
     {: pre}
 2. Retrieve the **public_ip** address and **id** of your machine.	
-      ```	
-      ibmcloud sl vs list	
-      ```	
-      {: pre}	
+   ```	
+   ibmcloud sl vs list	
+   ```	
+   {: pre}	
 3. Retrieve the credentials to log in to your virtual machine.	
    ```	
    ibmcloud sl vs credentials <vm_ID>	
