@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-20"
+lastupdated: "2020-08-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -69,7 +69,7 @@ If you use AWS hosts for your [{{site.data.keyword.satellitelong_notm}} location
 ### DNS for cluster load balancing
 {: #aws-reqs-dns-cluster-nlb}
 
-By default, the private IP addresses for your AWS hosts are used for the DNS registration of {{site.data.keyword.openshift_short}} clusters that you create in your {{site.data.keyword.satellite_short}} location. However, you must register the public IP addresses of the hosts instead.
+By default, the private IP addresses for your AWS hosts are used for the DNS registration of {{site.data.keyword.openshiftshort}} clusters that you create in your {{site.data.keyword.satelliteshort}} location. However, you must register the public IP addresses of the hosts instead.
 {: shortdesc}
 
 1.  [Add AWS hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
@@ -252,7 +252,7 @@ If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location
 ### DNS for cluster load balancing
 {: #gcp-reqs-dns-cluster-nlb}
 
-By default, the private IP addresses for your AWS hosts are used for the DNS registration of {{site.data.keyword.openshift_short}} clusters that you create in your {{site.data.keyword.satellite_short}} location. However, you must register the public IP addresses of the hosts instead.
+By default, the private IP addresses for your AWS hosts are used for the DNS registration of {{site.data.keyword.openshiftshort}} clusters that you create in your {{site.data.keyword.satelliteshort}} location. However, you must register the public IP addresses of the hosts instead.
 {: shortdesc}
 
 1.  [Add AWS hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
