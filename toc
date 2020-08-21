@@ -10,8 +10,11 @@ Satellite
     
 
     {: .navgroup id="howto"}
+    setup-cli.md
     locations.md
     hosts.md
+    config-clusters.md
+    link-endpoints.md
     health.md
 
     {: .topicgroup}
@@ -19,10 +22,13 @@ Satellite
         iam.md
         architecture-workload-isolation.md
         ha-dr.md
+        data-security.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
+    cli-reference.md
     limitations.md
+    providers.md
     supported-regions.md
     responsibilities.md
     license-notices.md
@@ -37,4 +43,6 @@ Satellite
         ts-host.md
         ts-clusters.md
         getting-help.md
+
+    relnotes.md
     {: .navgroup-end}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -31,6 +31,7 @@ subcollection: satellite
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:step: data-tutorial-type='step'}
 
 
 # Hosts
@@ -58,7 +59,7 @@ Review the health of your hosts, and use the error messages to resolve any issue
     ```
     {: screen}
 2.  Review the states and the steps to resolve the issue in the following table.
-3.  Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host), such as for network connectivity. For example, if you change the underlying infrastructure environment where the host machine resides to block access on the public network, you might make the host unsupported.
+3.  Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host), such as for network connectivity. For example, if you change the underlying infrastructure environment where the host machine is to block access on the public network, you might make the host unsupported.
 4.  If your host still has issues, try to [remove, update, and re-add the host](/docs/satellite?topic=satellite-hosts#host-update).
 
 | Health state | Description
@@ -66,7 +67,8 @@ Review the health of your hosts, and use the error messages to resolve any issue
 | `assigned` | The host is assigned to a {{site.data.keyword.satelliteshort}} resource, such as a location control plane or cluster. View the status for more information. If the status is `-`, the hosts did not complete the bootstrapping process to the {{site.data.keyword.satelliteshort}} resource. For hosts that you just assigned, wait an hour or so for the process to complete. If you still see the status, [log in to the host to continue debugging](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-login).| 
 | `provisioning` | The host is attached to the {{site.data.keyword.satelliteshort}} location and is in the process of bootstrapping to become part of a {{site.data.keyword.satelliteshort}} resource, such as the worker node of a {{site.data.keyword.openshiftlong_notm}} cluster.|
 | `ready` | The host is attached to the {{site.data.keyword.satelliteshort}} location and ready to be [assigned to a {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-hosts#host-assign).|
-| `reload-required` | The host is attached to the {{site.data.keyword.satelliteshort}} location, but requires a reload before it can be assigned to assigned to a {{site.data.keyword.satelliteshort}} resource. For example, you might have deleted a {{site.data.keyword.satelliteshort}} cluster, and now all of the hosts from the cluster require a reload. To reload a host, you must [remove the host from the location](/docs/satellite?topic=satellite-hosts#host-remove), reload the operating system in the underlying infrastructure provider, and [add the host](/docs/satellite?topic=satellite-hosts#add-hosts) back to the location. |
+| `normal` | The host is assigned to a {{site.data.keyword.satelliteshort}} resource, such as a location control plane or cluster, and ready for usage. |
+| `reload-required` | The host is attached to the {{site.data.keyword.satelliteshort}} location, but requires a reload before it can be assigned to a {{site.data.keyword.satelliteshort}} resource. For example, you might have deleted a {{site.data.keyword.satelliteshort}} cluster, and now all of the hosts from the cluster require a reload. To reload a host, you must [remove the host from the location](/docs/satellite?topic=satellite-hosts#host-remove), reload the operating system in the underlying infrastructure provider, and [add the host](/docs/satellite?topic=satellite-hosts#add-hosts) back to the location. |
 | `unassigned` | The host is attached to the {{site.data.keyword.satelliteshort}} location and ready to be [assigned to a {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-hosts#host-assign). If you tried to assign the host unsuccessfully, see [Cannot assign hosts to a cluster](/docs/satellite?topic=satellite-ts-hosts#assign-fails).|
 | `unknown` | The health of the host is unknown. If the host is unassigned, try [assigning the host](/docs/satellite?topic=satellite-hosts#host-assign) to a {{site.data.keyword.satelliteshort}} resource, such as a cluster. If the host is assigned, try [debugging the health of the host](/docs/satellite?topic=satellite-ts-hosts). |
 | `unresponsive` | The host did not check in with the {{site.data.keyword.satelliteshort}} location control plane within the past 5 minutes. The host cannot be assigned when it is unresponsive. Try [debugging the health of the host](/docs/satellite?topic=satellite-ts-hosts), particularly the network connectivity. |
@@ -224,7 +226,7 @@ In particular, the bootstrapping process depends upon the following access.
 {: tsResolve}
 If you want, you can debug the connectivity issues for your host. Otherwise, remove the host, reload the operating system, and add the host back.
 
-1.  Get the location ID where your host is attached, and note the {{site.data.keyword.cloud_notm}} multizone region that the location is managed from. From the console, click your location, and then click the **Overview** tab. From the CLI, run the following command.
+1.  Get the location ID where your host is attached, and note the {{site.data.keyword.cloud_notm}} multizone metro that the location is managed from. From the console, click your location, and then click the **Overview** tab. From the CLI, run the following command.
     ```
     ibmcloud sat location ls
     ```
@@ -237,7 +239,7 @@ If you want, you can debug the connectivity issues for your host. Otherwise, rem
         yum install rh-python36 -y
         ```
         {: pre}
-    3.  Check access to the required [{{site.data.keyword.cloud_notm}} multizone region endpoints](#endpoints-to-verify).
+    3.  Check access to the required [{{site.data.keyword.cloud_notm}} multizone metro endpoints](#endpoints-to-verify).
     4.  For hosts that are assigned to clusters, get the details of the cluster master endpoint.
         ```
         ibmcloud ks cluster get -c <cluster_name_or_ID> | grep "Master URL"
@@ -284,7 +286,7 @@ If you want, you can debug the connectivity issues for your host. Otherwise, rem
         ```
         {: pre}
 
-### Endpoints to verify connectivity by {{site.data.keyword.cloud_notm}} region
+### Endpoints to verify connectivity by {{site.data.keyword.cloud_notm}} multizone metro
 {: #endpoints-to-verify}
 
 Review the following table to help troubleshoot network connectivity issues to {{site.data.keyword.cloud_notm}} endpoints that are required for the bootstrapping process of a {{site.data.keyword.satelliteshort}} host.
@@ -298,9 +300,9 @@ Review the following table to help troubleshoot network connectivity issues to {
 | `curl -v https://origin.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
 | `curl -v https://private.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
 | `curl -v https://uk.icr.io` |
-{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} region."}
+{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
 {: class="simple-tab-table"}
-{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Dallas." caption-side="top"}
+{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from London." caption-side="top"}
 {: #check-ep-london}
 {: tab-title="London"}
 {: tab-group="check-ep"}
@@ -311,9 +313,9 @@ Review the following table to help troubleshoot network connectivity issues to {
 | `curl -v https://origin.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
 | `curl -v https://private.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
 | `curl -v https://us.icr.io` |
-{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} region."}
+{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
 {: class="simple-tab-table"}
-{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Dallas." caption-side="top"}
+{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Washington DC." caption-side="top"}
 {: #check-ep-dc}
 {: tab-title="Washington, DC"}
 {: tab-group="check-ep"}

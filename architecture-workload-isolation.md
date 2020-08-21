@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-03"
+lastupdated: "2020-08-17"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -31,6 +31,7 @@ subcollection: satellite
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
+{:step: data-tutorial-type='step'}
 
 
 # Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies
@@ -49,7 +50,7 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 
 |Master components|Description|
 |-----------------|-----------------------|
-|{{site.data.keyword.satelliteshort}} Link tunnel|The {{site.data.keyword.satelliteshort}} Link tunnel creates a secure TLS connection to the {{site.data.keyword.satelliteshort}} Link connector that runs on the control plane worker nodes in your {{site.data.keyword.satelliteshort}} location. All communication that leaves and enters your location is proxied by the Link tunnel server, and is captured and monitored by IBM to detect malicious activity. To control the network connections between the workloads that run in your location and the {{site.data.keyword.cloud_notm}} region that manages your location, you can set up {{site.data.keyword.satelliteshort}} Link endpoints.  |
+|{{site.data.keyword.satelliteshort}} Link tunnel|The {{site.data.keyword.satelliteshort}} Link tunnel creates a secure TLS connection to the {{site.data.keyword.satelliteshort}} Link connector that runs on the control plane worker nodes in your {{site.data.keyword.satelliteshort}} location. All communication that leaves and enters your location is proxied by the Link tunnel server, and is captured and monitored by IBM to detect malicious activity. To control the network connections between the workloads that run in your location and the {{site.data.keyword.cloud_notm}} multizone metro that manages your location, you can set up {{site.data.keyword.satelliteshort}} Link endpoints.  |
 |IBM Monitoring|The IBM Monitoring component monitors the compute capacity in your {{site.data.keyword.satelliteshort}} location and the components that run in your {{site.data.keyword.satelliteshort}} control plane to detect issues and automatically resolve them if possible. These actions can include assigning additional hosts to the control plane or restart components that keep on failing. For issues that cannot be resolved, IBM Site Reliability Engineers are automatically informed for further investigation. |
 |{{site.data.keyword.satelliteshort}} Config|With {{site.data.keyword.satelliteshort}} Config, you can consistently deploy Kubernetes resource configurations across {{site.data.keyword.openshiftlong}} clusters that run on the infrastructure of your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}. You can monitor the health of these resources by using the location dashboard.|
 {: summary="Overview of the {{site.data.keyword.satelliteshort}} control plane master components"}
@@ -61,7 +62,7 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 
 |Worker node components|Description|
 |-----------------|-----------------------|
-|{{site.data.keyword.satelliteshort}} Link connector|The {{site.data.keyword.satelliteshort}} link connector component is the main gateway for any communication between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. All workloads that run in your location and that must connect to an app, service or server that runs in {{site.data.keyword.cloud_notm}} must send their requests to the {{site.data.keyword.satelliteshort}} Link connector. The {{site.data.keyword.satelliteshort}} Link connector securely forwards your request to the {{site.data.keyword.satelliteshort}} Link tunnel server where the request is proxied and forwarded to the desired target. To enable DNS resolution between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}, you must create a {{site.data.keyword.satelliteshort}} Link endpoint. By default, all network traffic that enters and leaves your location is automatically captured to allow network monitoring and auditing. |
+|{{site.data.keyword.satelliteshort}} Link connector|The {{site.data.keyword.satelliteshort}} link connector component is the main gateway for any communication between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. All workloads that run in your location and that must connect to an app, service or server that runs in {{site.data.keyword.cloud_notm}} must send their requests to the {{site.data.keyword.satelliteshort}} Link connector. The {{site.data.keyword.satelliteshort}} Link connector securely forwards your request to the {{site.data.keyword.satelliteshort}} Link tunnel server where the request is proxied and forwarded to the destination target. To enable DNS resolution between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}, you must create a {{site.data.keyword.satelliteshort}} Link endpoint. By default, all network traffic that enters and leaves your location is automatically captured to allow network monitoring and auditing. |
 |IBM Monitoring|The IBM Monitoring component monitors the compute capacity in your {{site.data.keyword.satelliteshort}} location and the components that run in your {{site.data.keyword.satelliteshort}} control plane to detect issues and automatically resolve them if possible. These actions can include assigning additional hosts to the control plane or restart components that keep on failing. For issues that cannot be resolved, IBM Site Reliability Engineers are automatically informed for further investigation. |
 |Cluster master|When you create a {{site.data.keyword.satelliteshort}} cluster in your location, the master of this cluster is deployed onto your {{site.data.keyword.satelliteshort}} control plane worker nodes to allow communication to {{site.data.keyword.cloud_notm}} and monitoring through IBM. For more information, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters).|
 {: summary="Overview of the {{site.data.keyword.satelliteshort}} control plane worker node components"}
@@ -70,6 +71,27 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 {: #worker-node-components}
 {: tab-title="Worker node components"}
 {: tab-group="satellite-components"}
+
+<br />
+
+
+## Workload isolation in {{site.data.keyword.satellitelong_notm}}
+{: #workload-isolation}
+
+Learn how your workloads are isolated from other IBM customers in {{site.data.keyword.satelliteshort}}.
+{: shortdesc}
+
+### Workload isolation in the {{site.data.keyword.cloud_notm}} multizone metro that manages your location
+{: #workload-isolation-cloud}
+
+When you create a {{site.data.keyword.satelliteshort}} location, a {{site.data.keyword.satelliteshort}} control plane master is automatically created in the {{site.data.keyword.cloud_notm}} multizone metro that manages your location. The master and all the components that run inside the master are dedicated to your {{site.data.keyword.satelliteshort}} location only and are managed by IBM in an IBM-owned {{site.data.keyword.cloud_notm}} account.
+
+One of the components that is set up in the {{site.data.keyword.satelliteshort}} control plane master is an etcd database where IBM stores personal and sensitive data of the customer account that created the location. The etcd database is not shared across locations or with other IBM customers. For more information, see [What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data) and [How is my information stored and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption).
+
+### Workload isolation in your {{site.data.keyword.satelliteshort}} location
+{: #workload-isolation-location}
+
+Because you manage the host infrastructure that you bring to your {{site.data.keyword.satelliteshort}} location, you are responsible to isolate app workloads that run on your infrastructure. If you host and run {{site.data.keyword.cloud_notm}} services in your location, such as {{site.data.keyword.openshiftlong_notm}}, you can leverage the tools and features that this service provides to isolate your workloads. For more information about available options, refer to the service documentation.
 
 <br />
 
@@ -85,7 +107,7 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.sa
 | Business Support Services for {{site.data.keyword.cloud_notm}} (BSS) | The `BSS` component is used to access information about the {{site.data.keyword.cloud_notm}} account, service subscription, service usage, and billing. |
 |{{site.data.keyword.cloudcerts_short}}|This service is used to retrieve the TLS certificates for custom domains that {{site.data.keyword.satellitelong_notm}} users set up.|
 | Global Search and Tagging (Ghost) | The `Ghost` component is used to look up information about other {{site.data.keyword.cloud_notm}} services, such as IDs, tags, or service attributes. |
-| Hypersync and hyperwarp | This {{site.data.keyword.cloud_notm}} component is used to provide information about {{site.data.keyword.satelliteshort}} locations so that the location is visible to other {{site.data.keyword.cloud_notm}} services and location information can be searched and displayed. |
+| Hypersync and Hyperwarp | This {{site.data.keyword.cloud_notm}} component is used to provide information about {{site.data.keyword.satelliteshort}} locations so that the location is visible to other {{site.data.keyword.cloud_notm}} services and location information can be searched and displayed. |
 |{{site.data.keyword.cloud_notm}} Command Line (CLI)|When you use the CLI plug-in to perform {{site.data.keyword.satellitelong_notm}} operations, the {{site.data.keyword.satelliteshort}} plug-in connects to the {{site.data.keyword.cloud_notm}} CLI service over the public service endpoint.|
 |{{site.data.keyword.registrylong_notm}}|This service is used to store the container images that {{site.data.keyword.satellitelong_notm}} uses to run the service.|
 |{{site.data.keyword.la_full_notm}}|{{site.data.keyword.satellitelong_notm}} sends location logs to {{site.data.keyword.la_full_notm}}. These logs are monitored and analyzed by the service team to detect service issues and malicious activities. |
@@ -104,12 +126,13 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.sa
 ## Dependencies to 3rd party services
 {: #3rd-party-dependencies}
 
-Review the list of third-party services that {{site.data.keyword.satellitelong}} connects to over the public network.
+Review the list of third-party services that {{site.data.keyword.satellitelong_notm}} connects to over the public network.
 {: shortdesc}
 
 |Service name|Description|
 |------------|-------------------------------------|
 |Akamai, Cloudflare|Akamai and Cloudflare are used as the primary providers for DNS, global load balancing, and web firewall capabilities in {{site.data.keyword.satellitelong_notm}}.|
+|Amplitude, Segment|Amplitude and Segment are used to monitor user behavior in the {{site.data.keyword.cloud_notm}} console, such as page hits or click-through paths. This information is used for IBM-internal marketing and data analytics purposes.|
 |Launch Darkly|To manage the roll out of new features in {{site.data.keyword.satellitelong_notm}}, Launch Darkly feature flags are used. A feature flag controls the visibility and availability of a feature to a selected user base.|
 |Let's Encrypt|This service is used as the Certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_long_notm}}.|
 |Slack|Slack is used as the IBM-internal communication medium to troubleshoot issues and bring together internal SMEs to resolve customer issues. Diagnostic information about a {{site.data.keyword.satelliteshort}} location are sent to a private Slack channel and include the customer account ID, location ID, and details about the {{site.data.keyword.satelliteshort}} control plane.|
