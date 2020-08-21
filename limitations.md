@@ -162,14 +162,17 @@ curl -k [node 1-n]:22
 <br />
 
 
-## Storage
-{: #limits-storage}
+## Clusters
+{: #limits-clusters}
 
-Review the following storage limitations for {{site.data.keyword.satellitelong_notm}}.
+See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation.
 {: shortdesc}
 
-* No support for persistent volumes. You must bring your own storage driver.
-* No location-wide storage solution.
+## Storage for apps in your clusters
+{: #limits-storage}
+
+See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation.
+{: shortdesc}
 
 <br />
 
@@ -182,8 +185,8 @@ The {{site.data.keyword.satelliteshort}} Link connector instances that run in yo
 ## Cluster and infrastructure network
 {: #limits-cluster-network}
 
-* No support for Kubernetes load balancers.
-* No support for private service endpoints for {{site.data.keyword.satelliteshort}} clusters.
+See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation.
+{: shortdesc}
 
 
 <br />
