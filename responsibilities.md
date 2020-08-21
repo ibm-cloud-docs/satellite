@@ -10,28 +10,84 @@ subcollection: satellite
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-{:step: data-tutorial-type='step'}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 
@@ -60,7 +116,7 @@ Incident and operations management includes tasks such as monitoring, event mana
 |{{site.data.keyword.satelliteshort}} Configuration| <ul><li>Provide a highly available configuration management service that you can use to manage the deployment of Kubernetes resources across clusters that are registered with the location.</li><li>Provide a suite of API, CLI, and UI tools to initiate operational activities, such as to create and delete configurations.</li><li>Provide a `kubectl` command that users can run in an {{site.data.keyword.openshiftshort}} cluster to register the cluster to {{site.data.keyword.satelliteshort}} Configuration.</li><li>Provide the ability to create Kubernetes resource configurations, upload new versions, and subscribe a subset of cluster to a version, including to a previous version.</li><li>Store app configuration files in a highly available, back-end data store (`etcd`).</li><li>Automatically forward configuration events to your {{site.data.keyword.at_full_notm}} instance.</li></ul> | <ul><li>Use the provided tools to upload your Kubernetes configuration file content as versions in the configuration and to subscribe your clusters to the configuration. You are responsible for any applications that run in your clusters.</li></ul> |
 |{{site.data.keyword.satelliteshort}} Link | <ul><li>Set up the {{site.data.keyword.satelliteshort}} link connector in the {{site.data.keyword.satelliteshort}} location to connect the control plane worker nodes to the control plane master.</li><li>Provide a suite of API, CLI, and UI tools to allow connections between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} or any publicly accessible endpoint.</li><li>Provide the ability to enable and disable connections between your location and an endpoint.</li><li>Automatically collect incoming and outgoing network traffic for an endpoint.</li><li>Provide a dashboard to review endpoint metrics, and automatically send endpoint logs to your {{site.data.keyword.la_full_notm}} instance.</li><li>Automatically forward link events to your {{site.data.keyword.at_full_notm}} instance.</li></ul> | <ul><li>Use the provided tools to create and manage {{site.data.keyword.satelliteshort}} location endpoints.</li><li>Ensure that the {{site.data.keyword.satelliteshort}} link connector in the {{site.data.keyword.satelliteshort}} control plane is enabled to allow network traffic between your location and endpoints outside your location.</li><li>Enable all connections that are required to successfully run the apps in your location and debug any connection issues for your endpoints.</li></ul> |
 | {{site.data.keyword.satelliteshort}}-enabled services | <ul><li>Provide the ability to deploy a select group of {{site.data.keyword.cloud_notm}} services such as {{site.data.keyword.openshiftshort}} clusters to a {{site.data.keyword.satelliteshort}} location.</li><li>Review each service's documentation for additional responsibilities that IBM maintains.</li></ul> | <ul><li>Use the provided tools to set up additional services as needed.</li><li>Provide enough hosts for the services to use as compute capacity, per the service documentation.</li><li>Review each service's documentation for additional responsibilities that you fulfill when you use these services.</li></ul> |
-{: caption="Table 1. Responsibilities for incident and operations" caption-side="top"}
+{: caption="Table 1. Responsibilities for incident and operations." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
 <br />
@@ -79,7 +135,7 @@ Change management includes tasks such as deployment, configuration, upgrades, pa
 |{{site.data.keyword.satelliteshort}} Configuration| <ul><li>Provide a suite of API, CLI, and UI tools to initiate change management activities, such as to update configurations or subscriptions.</li><li>Automatically deploy any changes to a configuration to subscribed clusters.</li><li>Automatically delete Kubernetes resources that run in subscribed clusters when you delete a configuration.</li></ul> | <ul><li>Use the provided {{site.data.keyword.satelliteshort}} configuration and {{site.data.keyword.openshiftshort}} tools to manage all changes to your apps. You are completely responsible for your app lifecycle, including any downtime that might occur when you update an app version, depending on your update rollout strategy.</li></ul> |
 |{{site.data.keyword.satelliteshort}} Link | <ul><li>Maintain {{site.data.keyword.satelliteshort}} link connector versions.</li></ul> | <ul><li>Use the provided tools to create, update, or delete the endpoints that you need.</li><li>Enable and disable endpoints to allow or block network traffic between your location and the endpoint.</li></ul> |
 | {{site.data.keyword.satelliteshort}}-enabled services | <ul><li>Review each service's documentation for additional responsibilities that IBM maintains. For example, with {{site.data.keyword.openshiftlong_notm}} clusters, IBM provides patch version updates for the masters automatically and for the worker nodes that you initiate.</li></ul> | <ul><li>Review each service's documentation for additional responsibilities that you fulfill when you use these services.</li></ul> |
-{: caption="Table 2. Responsibilities for change management" caption-side="top"}
+{: caption="Table 2. Responsibilities for change management." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
 <br />
@@ -98,7 +154,7 @@ Identity and access management includes tasks such as authentication, authorizat
 |{{site.data.keyword.satelliteshort}} Configuration| <ul><li>Provide a suite of API, CLI, and UI tools to assign access control to configurations via IAM.</li></ul> | <ul><li>Use the provided tools to manage authentication, authorization, and access control policies.</li><li>With configurations, you can create, update, and delete Kubernetes resources that run in your cluster. However, keep in mind that access in IAM to a configuration does not give users access to the clusters, nor the ability to log in and manage the Kubernetes resources from the cluster. Users with access to a cluster might log in and manually change the Kubernetes resources.</li></ul> |
 |{{site.data.keyword.satelliteshort}} Link | <ul><li>Provide a suite of API, CLI, and UI tools to assign access control to endpoints via IAM.</li></ul> | <ul><li>Use the provided tools to manage authentication, authorization, and access control policies.</li></ul> |
 | {{site.data.keyword.satelliteshort}}-enabled services | <ul><li>Review each service's documentation for additional responsibilities that IBM maintains.</li></ul> | <ul><li>Review each service's documentation for additional responsibilities that you fulfill when you use these services.</li></ul> |
-{: caption="Table 3. Responsibilities for identity and access management" caption-side="top"}
+{: caption="Table 3. Responsibilities for identity and access management." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
 <br />
@@ -118,7 +174,7 @@ Security and regulation compliance includes tasks such as security controls impl
 |{{site.data.keyword.satelliteshort}} Configuration | <ul><li>Deploy apps consistently across clusters and locations.</li><li>Provide the ability to control access to configurations via {{site.data.keyword.cloud_notm}} IAM.</li></ul> | <ul><li>Create your Kubernetes configuration files by following the security standards that you want to comply to, such as by using security context constraints. You are responsible for the security and compliance of your apps.</li></ul> |
 |{{site.data.keyword.satelliteshort}} Link | <ul><li>Establish a secure connection between {{site.data.keyword.cloud_notm}} and {{site.data.keyword.satelliteshort}} locations by using the {{site.data.keyword.satelliteshort}} link connector.</li><li>Provide the ability to control access to endpoints via {{site.data.keyword.cloud_notm}} IAM.</li><li>Provide the ability to monitor network traffic between your location and endpoints outside of your location.</li></ul> | <ul><li>Set up and audit link endpoints across locations.</li></ul> |
 | {{site.data.keyword.satelliteshort}}-enabled services | <ul><li>Review each service's documentation for additional responsibilities that IBM maintains.</li></ul> | <ul><li>Review each service's documentation for additional responsibilities that you fulfill when you use these services.</li></ul> |
-{: caption="Table 4. Responsibilities for security and regulation compliance" caption-side="top"}
+{: caption="Table 4. Responsibilities for security and regulation compliance." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
 <br />
@@ -137,5 +193,5 @@ Disaster recovery includes tasks such as providing dependencies on disaster reco
 |{{site.data.keyword.satelliteshort}} Configuration| <ul><li>Back up information about saved {{site.data.keyword.satelliteshort}} configurations in etcd.</li><li>When service is restored, automatically deploy configuration files to available clusters.</li></ul> | <ul><li>You are responsible for your apps and data, which includes designing your apps for data storage, failover, disaster recovery, and other highly available situations.</ul> |
 |{{site.data.keyword.satelliteshort}} Link | <ul><li>N/A</li></ul> | <ul><li>Reinstate any necessary endpoints to your resources after recovering from a disaster.</ul> |
 | {{site.data.keyword.satelliteshort}}-enabled services | <ul><li>Review each service's documentation for additional responsibilities that IBM maintains.</li></ul> | <ul><li>Review each service's documentation for additional responsibilities that you fulfill when you use these services.</li></ul> |
-{: caption="Table 5. Responsibilities for disaster recovery" caption-side="top"}
+{: caption="Table 5. Responsibilities for disaster recovery." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
