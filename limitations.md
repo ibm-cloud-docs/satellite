@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-20"
+lastupdated: "2020-08-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -66,7 +66,7 @@ Can't meet these host requirements? Contact IBM Support and include the followin
 *   Hosts must run Red Hat Enterprise Linux 7 on x86 architecture. Other operating systems, such as Windows, and mainframe systems, such as IBM Z or Power, are not supported.
 *   Hosts must have at least 4 CPU, 16 GB memory, and 100 GB attached storage device. 
 *   The hosts must not have any additional packages, configuration, or other customizations.
-*   Hosts must have the following packages. You might need to refresh your packages on the host machine. For example, on an IBM Cloud infrastructure virtual server instance, you can run `subscription-manager refresh` and then `subscription-manager repos --enable=*`.
+*   Hosts must have access to Red Hat updates and the following packages. You might need to refresh your packages on the host machine. For example, on an IBM Cloud infrastructure virtual server instance, you can run `subscription-manager refresh` and then `subscription-manager repos --enable=*`.
     ```
 Repository 'rhel-ha-for-rhel-7-server-eus-rpms' is enabled for this system.
 Repository 'rhel-server-rhscl-7-rpms' is enabled for this system.
@@ -101,7 +101,29 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 *   Do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
 *   All hosts must have the same MTU values.
 *   Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
-*   Hosts must have outbound connectivity on the public network, via the default gateway of the system. The ports that must be open are TCP ports 30000-32767. You cannot use custom iptables to route traffic to the public network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables.
+*   Hosts must have inbound and outbound connectivity on the public network, via the default gateway of the system. You cannot use custom iptables to route traffic to the public network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables. 
+    **Inbound**: The following ports must be open.
+    ```
+    TCP ports 30000-32767
+    Port 80
+    Port 443
+    ```
+    {: screen}
+
+    **Outbound**: Allow connectivity to all ports and IP addresses.
+*   If you do not open outbound connectivity, you must [allow all the required ports in your firewall](/docs/containers?topic=containers-firewall#vyatta_firewall), as well as to the following Red Hat network time protocol (NTP) servers.
+    ```
+    0.rhel.pool.ntp.org
+    1.rhel.pool.ntp.org
+    2.rhel.pool.ntp.org
+    3.rhel.pool.ntp.org
+    ```
+    {: screen} 
+*   The following IP address ranges are reserved, and must not be used in any of the networks that you want to use in {{site.data.keyword.satellitelong_notm}}, including the host networks.
+    ```
+    172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, and 172.20.0.0/16
+    ```
+    {: screen}
 *   Hosts must have a single, primary IPv4 network interface, such as the following example. However, you can use hosts from IBM Cloud infrastructure classic virtual service instances, even though these machines have two network interfaces: one each for the public and private networks.
     ```
     root@kube-tok02-credfdd3e356854f39b15fb191224b0a16-w1:~# ip addr
