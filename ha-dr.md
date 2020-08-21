@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-19"
+lastupdated: "2020-08-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -122,6 +122,7 @@ Depending on where your hosts are, the options that are available to you to incr
 |Add redundant power, network, and storage.|To account for a power, network, or storage outage on one of your physical compute hosts, add redundant power, network, and storage configurations. This setup ensures that your compute hosts continue to run, even if hardware or software issues occur on the physical machine.|
 |Isolate machines within one data center.|Compute hosts that are in the same data center or with the same cloud provider are often connected to the same power, network, and storage server. If one of these components experiences an outage, all compute hosts that are connected to the same component might be affected by the outage. To ensure that your compute hosts continue to run, plan to isolate your compute hosts as much as possible and not to share the same power, network, or storage devices. |
 |Spread hosts across physical locations.|To account for a data center or cloud provider outage, you can spread your compute hosts across different physical locations. Keep in mind that compute hosts can only be in different physical locations if they still meet the networking speed and latency requirements that are defined in the [minimum host requirements](/docs/satellite?topic=satellite-limitations#limits-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers).|
+
 
 ### Example for a high availability setup in an on-premises data center
 {: #example-ha-onprem}

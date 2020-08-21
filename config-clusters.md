@@ -34,6 +34,7 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 
 
+
 # Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations
 {: #cluster-config}
 

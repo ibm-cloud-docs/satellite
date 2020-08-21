@@ -34,6 +34,7 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 
 
+
 # Setting up {{site.data.keyword.satelliteshort}} locations
 {: #locations}
 

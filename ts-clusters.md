@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-20"
+lastupdated: "2020-08-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -32,6 +32,7 @@ subcollection: satellite
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:step: data-tutorial-type='step'}
+
 
 
 # Clusters
