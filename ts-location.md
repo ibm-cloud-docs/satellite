@@ -289,7 +289,6 @@ The location control plane is not publicly accessible. The IP addresses that are
 * You reused the name of the location, and the location subdomains are still using the IP addresses of the previous location hosts.
 
 {: tsResolve}
-
 Update the location subdomain DNS entries.
 
 1.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
