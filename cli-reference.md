@@ -34,6 +34,7 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 
 
+
 # {{site.data.keyword.satelliteshort}} CLI command reference
 {: #satellite-cli-reference}
 

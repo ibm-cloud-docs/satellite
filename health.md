@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -39,6 +39,7 @@ subcollection: satellite
 
 {{site.data.keyword.satellitelong}} comes with basic tools to help you manage the health of your {{site.data.keyword.satelliteshort}} resources, such as reviewing location and host health.
 {: shortdesc}
+
 
 ## IBM monitoring to resolve and report location alerts
 {: #monitoring-default}

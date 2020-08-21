@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-17"
+lastupdated: "2020-08-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -66,3 +66,4 @@ You can choose any of the supported {{site.data.keyword.cloud_notm}} multizone m
 
 **Is there a limitation where my compute hosts can reside?** </br>
 No. Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. Hosts can be in your own on-premises data center, other cloud providers, or edge computing devices if they meet the [minimum host requirements](/docs/satellite?topic=satellite-limitations#limits-host-system) for {{site.data.keyword.satelliteshort}}.
+

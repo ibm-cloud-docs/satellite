@@ -34,6 +34,7 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 
 
+
 # Locations
 {: #ts-locations}
 

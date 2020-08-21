@@ -34,6 +34,7 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 
 
+
 # Managing access for {{site.data.keyword.satelliteshort}}
 {: #iam}
 

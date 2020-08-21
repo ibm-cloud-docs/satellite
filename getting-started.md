@@ -34,6 +34,7 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 
 
+
 # Getting started with {{site.data.keyword.satellitelong_notm}}
 {: #getting-started}
 
