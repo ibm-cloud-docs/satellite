@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-20"
+lastupdated: "2020-08-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -286,6 +286,7 @@ The location control plane is not publicly accessible. The IP addresses that are
 * The IP addresses are not the correct public IP addresses of the hosts that run the location control plane.
 * The hosts are behind a firewall that blocks traffic to the location control plane.
 * The hosts are from cloud providers like AWS or GCP that automatically register the private IP addresses of the hosts, so you must update the DNS records to use the public IP addresses.
+* You reused the name of the location, and the location subdomains are still using the IP addresses of the previous location hosts.
 
 {: tsResolve}
 
