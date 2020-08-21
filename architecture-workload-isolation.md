@@ -10,28 +10,84 @@ subcollection: satellite
 
 ---
 
+{:DomainName: data-hd-keyref="APPDomain"}
+{:DomainName: data-hd-keyref="DomainName"}
+{:android: data-hd-operatingsystem="android"}
+{:apikey: data-credential-placeholder='apikey'}
+{:app_key: data-hd-keyref="app_key"}
+{:app_name: data-hd-keyref="app_name"}
+{:app_secret: data-hd-keyref="app_secret"}
+{:app_url: data-hd-keyref="app_url"}
+{:authenticated-content: .authenticated-content}
+{:beta: .beta}
+{:c#: data-hd-programlang="c#"}
 {:codeblock: .codeblock}
+{:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
+{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
+{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
+{:generic: data-hd-operatingsystem="generic"}
+{:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
+{:go: .ph data-hd-programlang='go'}
 {:help: data-hd-content-type='help'}
+{:hide-dashboard: .hide-dashboard}
+{:hide-in-docs: .hide-in-docs}
 {:important: .important}
+{:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
+{:java: .ph data-hd-programlang='java'}
+{:java: data-hd-programlang="java"}
+{:javascript: .ph data-hd-programlang='javascript'}
+{:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
 {:note: .note}
+{:objectc data-hd-programlang="objectc"}
+{:org_name: data-hd-keyref="org_name"}
+{:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
+{:python: .ph data-hd-programlang='python'}
+{:python: data-hd-programlang="python"}
+{:route: data-hd-keyref="route"}
+{:row-headers: .row-headers}
+{:ruby: .ph data-hd-programlang='ruby'}
+{:ruby: data-hd-programlang="ruby"}
+{:runtime: architecture="runtime"}
+{:runtimeIcon: .runtimeIcon}
+{:runtimeIconList: .runtimeIconList}
+{:runtimeLink: .runtimeLink}
+{:runtimeTitle: .runtimeTitle}
 {:screen: .screen}
+{:script: data-hd-video='script'}
+{:service: architecture="service"}
+{:service_instance_name: data-hd-keyref="service_instance_name"}
+{:service_name: data-hd-keyref="service_name"}
 {:shortdesc: .shortdesc}
+{:space_name: data-hd-keyref="space_name"}
+{:step: data-tutorial-type='step'}
+{:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
+{:swift: .ph data-hd-programlang='swift'}
+{:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
+{:term: .term}
 {:tip: .tip}
+{:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
-{:step: data-tutorial-type='step'}
+{:tutorial: data-hd-content-type='tutorial'}
+{:unity: .ph data-hd-programlang='unity'}
+{:url: data-credential-placeholder='url'}
+{:user_ID: data-hd-keyref="user_ID"}
+{:vb.net: .ph data-hd-programlang='vb.net'}
+{:video: .video}
 
 
 # Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies
@@ -55,7 +111,7 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 |{{site.data.keyword.satelliteshort}} Config|With {{site.data.keyword.satelliteshort}} Config, you can consistently deploy Kubernetes resource configurations across {{site.data.keyword.openshiftlong}} clusters that run on the infrastructure of your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}. You can monitor the health of these resources by using the location dashboard.|
 {: summary="Overview of the {{site.data.keyword.satelliteshort}} control plane master components"}
 {: class="simple-tab-table"}
-{: caption="Overview of {{site.data.keyword.satelliteshort}} control plane master components" caption-side="top"}
+{: caption="Overview of {{site.data.keyword.satelliteshort}} control plane master components." caption-side="top"}
 {: #master-components}
 {: tab-title="Master components"}
 {: tab-group="satellite-components"}
@@ -67,7 +123,7 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 |Cluster master|When you create a {{site.data.keyword.satelliteshort}} cluster in your location, the master of this cluster is deployed onto your {{site.data.keyword.satelliteshort}} control plane worker nodes to allow communication to {{site.data.keyword.cloud_notm}} and monitoring through IBM. For more information, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters).|
 {: summary="Overview of the {{site.data.keyword.satelliteshort}} control plane worker node components"}
 {: class="simple-tab-table"}
-{: caption="Overview of {{site.data.keyword.satelliteshort}} control plane worker node components" caption-side="top"}
+{: caption="Overview of {{site.data.keyword.satelliteshort}} control plane worker node components." caption-side="top"}
 {: #worker-node-components}
 {: tab-title="Worker node components"}
 {: tab-group="satellite-components"}
@@ -119,6 +175,8 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.sa
 | IBM QRadar Log Manager|To enable monitoring of the network traffic that flows between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}, the {{site.data.keyword.satelliteshort}} Link component uses IBM QRadar Log Manager. The log manager creates networking events, analyzes and correlates these events to identify compliance risks, anomalies, potential attacks and insider threats.  |
 | Identity and Access Management (IAM) | To authenticate requests to the service and authorize user actions, {{site.data.keyword.satellitelong_notm}} implements platform and service access roles in Identity and Access Management (IAM).  |
 |{{site.data.keyword.cos_short}} (COS)|This service is used to back up the control plane data of a {{site.data.keyword.satelliteshort}} location. The service instance is owned by the customer who controls access to the instance by using IAM policies. All data is encrypted in transit and at rest.|
+{: caption="{{site.data.keyword.satelliteshort}} dependencies to other {{site.data.keyword.cloud_notm}} services." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
 
 <br />
 
@@ -136,4 +194,6 @@ Review the list of third-party services that {{site.data.keyword.satellitelong_n
 |Launch Darkly|To manage the roll out of new features in {{site.data.keyword.satellitelong_notm}}, Launch Darkly feature flags are used. A feature flag controls the visibility and availability of a feature to a selected user base.|
 |Let's Encrypt|This service is used as the Certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_long_notm}}.|
 |Slack|Slack is used as the IBM-internal communication medium to troubleshoot issues and bring together internal SMEs to resolve customer issues. Diagnostic information about a {{site.data.keyword.satelliteshort}} location are sent to a private Slack channel and include the customer account ID, location ID, and details about the {{site.data.keyword.satelliteshort}} control plane.|
+{: caption="{{site.data.keyword.satelliteshort}} dependencies to third-party services." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
 
