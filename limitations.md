@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-08-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -126,7 +126,7 @@ Can't meet these host requirements? Contact IBM Support and include the followin
 {: #limits-host-system}
 
 *   Hosts must run Red Hat Enterprise Linux 7 on x86 architecture. Other operating systems, such as Windows, and mainframe systems, such as IBM Z or Power, are not supported.
-*   Hosts must have at least 4 CPU, 16 GB memory, and 100 GB attached storage device. 
+*   Hosts must have at least 4 vCPU, 16 GB memory, and 100 GB attached storage device. 
 *   The hosts must not have any additional packages, configuration, or other customizations.
 *   Hosts must have access to Red Hat updates and the following packages. You might need to refresh your packages on the host machine. For example, on an IBM Cloud infrastructure virtual server instance, you can run `subscription-manager refresh` and then `subscription-manager repos --enable=*`.
     ```
