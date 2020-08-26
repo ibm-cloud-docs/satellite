@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-25"
+lastupdated: "2020-08-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -92,9 +92,9 @@ subcollection: satellite
 
 
 # Usage requirements
-{: #limitations}
+{: #requirements}
 
-{{site.data.keyword.satellitelong}} comes with default service settings and limitations to ensure security, convenience, and basic functionality. Limitations are subject to change, and might differ from beta to generally available releases.
+{{site.data.keyword.satellitelong}} comes with usage requirements, default service settings, and limitations to ensure security, convenience, and basic functionality. Requirements are subject to change, and might differ from beta to generally available releases.
 {: shortdesc}
 
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
@@ -103,7 +103,7 @@ subcollection: satellite
 
 
 ## Locations
-{: #limits-locations}
+{: #reqs-locations}
 
 You can create up to 20 {{site.data.keyword.satelliteshort}} locations per {{site.data.keyword.cloud_notm}} multizone metro that the location is managed from.
 {: shortdesc}
@@ -114,7 +114,7 @@ Do not reuse the name of a previously deleted location. If you do reuse the name
 
 
 ## Hosts
-{: #limits-host}
+{: #reqs-host}
 
 Review the following host requirements for {{site.data.keyword.satellitelong_notm}}. For provider-specific requirements, see [Provider requirements](/docs/satellite?topic=satellite-providers).
 {: shortdesc}
@@ -123,7 +123,7 @@ Can't meet these host requirements? Contact IBM Support and include the followin
 {: note}
 
 ### Host system requirements
-{: #limits-host-system}
+{: #reqs-host-system}
 
 *   Hosts must run Red Hat Enterprise Linux 7 on x86 architecture. Other operating systems, such as Windows, and mainframe systems, such as IBM Z or Power, are not supported.
 *   Hosts must have at least 4 vCPU, 16 GB memory, and 100 GB attached storage device. 
@@ -152,13 +152,13 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
     {: screen}
 
 ### Host storage and attached devices
-{: #limits-host-storage}
+{: #reqs-host-storage}
 
 * Hosts cannot have a device that is mounted to `/var/data`.
 * To set up LUKS encryption, your hosts must have two attached disks: a primary boot disk that is mounted to `/`, and a secondary disk that is unmounted.
 
 ### Host network
-{: #limits-host-network}
+{: #reqs-host-network}
 
 *   Do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
 *   All hosts must have the same MTU values.
@@ -225,7 +225,7 @@ curl -k [node 1-n]:22
 
 
 ## Clusters
-{: #limits-clusters}
+{: #reqs-clusters}
 
 See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation. The limitations include information related to the following components.
 {: shortdesc}
@@ -239,7 +239,7 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 
 
 ## Link and endpoints
-{: #limits-link}
+{: #reqs-link}
 
 The {{site.data.keyword.satelliteshort}} Link connector instances that run in your [{{site.data.keyword.satelliteshort}} location control plane worker nodes](/docs/satellite?topic=satellite-service-architecture) are limited to 3 instances, one per host. Even if you add hosts to the location control plane, network traffic that is routed through the {{site.data.keyword.satelliteshort}} Link connector is sent only over 3 hosts.
 
@@ -247,9 +247,9 @@ The {{site.data.keyword.satelliteshort}} Link connector instances that run in yo
 
 
 ## Config
-{: #limits-config}
+{: #reqs-config}
 
-Review the following application configuration limitations for {{site.data.keyword.satelliteshort}} Config.
+Review the following application configuration requirements for {{site.data.keyword.satelliteshort}} Config.
 {: shortdesc}
 
 **{{site.data.keyword.satelliteshort}} Config access to modify Kubernetes resources within a cluster**<br>
@@ -265,4 +265,4 @@ Choose from the following options:
 
 **Configuration files in {{site.data.keyword.satelliteshort}} Config**
 * You can upload only an individual configuration file of Kubernetes resources per release version. You cannot upload a directory or several different configuration files.
-* Configuration files are subject to Kubernetes limitations, such as that the manifest must be expressed in YAML format.
+* Configuration files are subject to Kubernetes requirements, such as that the manifest must be expressed in YAML format.

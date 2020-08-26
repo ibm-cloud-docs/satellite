@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-08-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -110,7 +110,7 @@ Still having issues? Review different ways to get help and support for {{site.da
 
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 2. Filter for the **Satellite** component and review any cloud status issue.
-3. Review the [limitations and known issues documentation](/docs/satellite?topic=satellite-limitations).
+3. Review the [requirements, limitations, and known issues documentation](/docs/satellite?topic=satellite-requirements).
 4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
 
 ## Feedback and questions
