@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-08-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -353,12 +353,21 @@ The following diagram describes the process for updating hosts.
 3. **Add**: To reuse the host, [add the host](/docs/satellite?topic=satellite-hosts#add-hosts) back to your {{site.data.keyword.satelliteshort}} location.
 4. **Assign**: [Assign the host](/docs/satellite?topic=satellite-hosts#host-assign) back to your {{site.data.keyword.satelliteshort}} resource, such as a {{site.data.keyword.openshiftlong_notm}} cluster. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
-<br>
+### Considerations before you update
+{: #host-update-considerations}
+
+Review the following considerations before you update your {{site.data.keyword.satelliteshort}} hosts.
+{: shortdesc}
 
 **Does updating the {{site.data.keyword.satelliteshort}} location control plane worker nodes impact the cluster masters that run in the location control plane?**<br>
 Yes. Because the cluster masters run in your location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts.
 
 The location control plane worker nodes and cluster worker nodes do not have to run the same version of {{site.data.keyword.openshiftshort}}, but your hosts must run a supported version.
+
+**Is my location control plane subdomain still reachable when I update the hosts?**<br>
+If your location subdomain was created automatically for you, the host IPs that are registered for the subdomain are automatically managed for you, such as during an update.
+
+However, when you created the location control plane, you might have manually registered the host IPs for the location subdomain with the `ibmcloud sat location dns register` command. Manually registering the subdomain is common if you use hosts from other cloud providers, like Amazon Web Services or Google Cloud Platform. If you manually registered the subdomain, make sure that you add three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.
 
 **Who provides the update for my hosts?**<br>
 IBM provides updates for the IBM-managed components, such as the {{site.data.keyword.openshiftshort}} version that worker nodes run or the {{site.data.keyword.satelliteshort}} control plane. For master components, IBM automatically applies these updates, but for components that run on worker nodes, such as the location control plane or cluster worker nodes, you choose when to apply the updates.
@@ -371,6 +380,8 @@ For updates to the operating system, you are responsible to remove your hosts, u
 Use the {{site.data.keyword.satelliteshort}} console to update your hosts.
 {: shortdesc}
 
+Before you begin, consider [adding](/docs/satellite?topic=satellite-hosts#add-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) hosts to your resources to handle the compute capacity while your existing hosts are updating. Especially if you update the hosts in the location control plane, you might need additional compute capacity to keep your resources running and accessible. See [Considerations before you update](#host-update-considerations).
+
 1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
 2. Use the guidelines from your infrastructure provider to reload the operating system of your host and apply the latest updates.
 3. [Add the host](#add-hosts) back to your {{site.data.keyword.satelliteshort}} location.
@@ -381,6 +392,8 @@ Use the {{site.data.keyword.satelliteshort}} console to update your hosts.
 
 Use the {{site.data.keyword.satelliteshort}} CLI to update your hosts.
 {: shortdesc}
+
+Before you begin, consider [adding](/docs/satellite?topic=satellite-hosts#add-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) hosts to your resources to handle the compute capacity while your existing hosts are updating. Especially if you update the hosts in the location control plane, you might need additional compute capacity to keep your resources running and accessible. See [Considerations before you update](#host-update-considerations).
 
 1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove-cli) so that you can update the host.
 2. Use the guidelines from your infrastructure provider to reload the operating system of your host and apply the latest updates.
