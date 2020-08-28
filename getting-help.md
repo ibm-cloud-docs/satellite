@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-26"
+lastupdated: "2020-08-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -116,9 +116,7 @@ Still having issues? Review different ways to get help and support for {{site.da
 ## Feedback and questions
 {: #feedback-qs}
 
-1. Search for your question and post in the {{site.data.keyword.cloud_notm}} Slack.
-   * If you are an external user, post in the [#general](https://ibm-cloud-success.slack.com/archives/C4G6362ER){: external} channel.
-   * If you are an IBMer, use the [internal Slack channel](/docs/containers?topic=containers-cs_internal#internal_help).<p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack){: external} to this Slack.</p>
+1. Search for your question and post in the {{site.data.keyword.cloud_notm}} [Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
 2. Review forums such as Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
    * For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
    * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.openshiftshort}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
