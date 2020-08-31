@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-26"
+lastupdated: "2020-08-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -351,26 +351,26 @@ Review the following table to help troubleshoot network connectivity issues to {
 
 
 
-| Command to check endpoint |
-| ------------------------- |
-| `nslookup origin.eu-gb.containers.cloud.ibm.com` |
-| `curl -v https://origin.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
-| `curl -v https://private.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
-| `curl -v https://uk.icr.io` |
-{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
+| Endpoint | Command to check endpoint |
+| --- | ------------------------- |
+| Public regional endpoint | `nslookup origin.eu-gb.containers.cloud.ibm.com` |
+| Public regional bootstrap endpoint | `curl -v https://origin.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
+| Private regional bootstrap endpoint | `curl -v https://private.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
+|{{site.data.keyword.registrylong_notm}} region | `curl -v https://uk.icr.io` |
+{: summary="The rows are read from left to right. The first row contains an endpoint to check. The second row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
 {: class="simple-tab-table"}
 {: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from London." caption-side="top"}
 {: #check-ep-london}
 {: tab-title="London"}
 {: tab-group="check-ep"}
 
-| Command to check endpoint |
-| ------------------------- |
-| `nslookup origin.us-east.containers.cloud.ibm.com` |
-| `curl -v https://origin.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
-| `curl -v https://private.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
-| `curl -v https://us.icr.io` |
-{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
+| Endpoint | Command to check endpoint |
+| --- | ------------------------- |
+| Public regional endpoint | `nslookup origin.us-east.containers.cloud.ibm.com` |
+| Public regional bootstrap endpoint | `curl -v https://origin.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
+| Private regional bootstrap endpoint | `curl -v https://private.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
+|{{site.data.keyword.registrylong_notm}} region | `curl -v https://us.icr.io` |
+{: summary="The rows are read from left to right. The first row contains an endpoint to check. The second row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
 {: class="simple-tab-table"}
 {: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Washington DC." caption-side="top"}
 {: #check-ep-dc}
