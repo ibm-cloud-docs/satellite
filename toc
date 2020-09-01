@@ -12,7 +12,17 @@ Satellite
     {: .navgroup id="howto"}
     setup-cli.md
     locations.md
-    hosts.md
+    
+    {: .topicgroup}
+    Managing Satellite hosts
+        
+        {: .topicgroup}
+        Preparing hosts to meet requirements
+            host-reqs.md
+            providers.md
+
+        hosts.md
+    
     config-clusters.md
     link-endpoints.md
     health.md
@@ -28,7 +38,6 @@ Satellite
     {: .navgroup id="reference"}
     cli-reference.md
     limitations.md
-    providers.md
     supported-regions.md
     responsibilities.md
     license-notices.md

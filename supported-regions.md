@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-26"
+lastupdated: "2020-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -123,5 +123,5 @@ For more information, see the [{{site.data.keyword.satelliteshort}} architecture
 You can choose any of the supported {{site.data.keyword.cloud_notm}} multizone metros to manage your {{site.data.keyword.satelliteshort}} location. The metro determines where the master of your {{site.data.keyword.satelliteshort}} control plane runs. For more information, see the [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture). To reduce latency between the {{site.data.keyword.cloud_notm}} region and your {{site.data.keyword.satelliteshort}} location, choose the region that is closest to where your physical compute infrastructure is.
 
 **Is there a limitation where my compute hosts can reside?** </br>
-No. Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. Hosts can be in your own on-premises data center, other cloud providers, or edge computing devices if they meet the [minimum host requirements](/docs/satellite?topic=satellite-requirements#reqs-host-system) for {{site.data.keyword.satelliteshort}}.
+No. Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. Hosts can be in your own on-premises data center, other cloud providers, or edge computing devices if they meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) for {{site.data.keyword.satelliteshort}}.
 
