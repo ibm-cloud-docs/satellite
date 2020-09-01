@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -110,7 +110,7 @@ You can use {{site.data.keyword.cloud_notm}} IAM to assign access to [different 
 | {{site.data.keyword.satelliteshort}} component | Resource type | IAM role | Scope | Description |
 | ------------- | ------------- | ---------------- | ----- | ----------- |
 |{{site.data.keyword.satelliteshort}} Location| Location| Platform | Account, resource group, or particular instances | [Locations](/docs/satellite?topic=satellite-locations) are places that you use to extend {{site.data.keyword.cloud_notm}} by attaching your own host compute machines to the location.  Access to a location also gives access to manage hosts and link endpoints in the location. However, location access does not grant access to other resources that run within the location, such as configurations or {{site.data.keyword.openshiftshort}} clusters. |
-|{{site.data.keyword.satelliteshort}} Config | Configuration </br> Subscription </br> Cluster </br> Clustergroup </br> Resource | Platform, Service | Account, resource group, {{site.data.keyword.satelliteshort}} location, or particular instances | [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) is a collection of configurations, versions, and subscriptions that you use to automatically deploy Kubernetes resources to groups of clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component. However, access to {{site.data.keyword.satelliteshort}} Config does not give a user access to the clusters that run the Kubernetes resources of the configuration. You can scope access to the following {{site.data.keyword.satelliteshort}} Config resources:<ul><li>**Configurations**, where you upload the version of the configuration file for the Kubernetes resources that you want to deploy.</li><li>**Subscriptions**, which you use to use to specify the cluster group where you want to deploy the Kubernetes resource definition that you added as a version to your configuration.</li><li>**Clusters** or **cluster groups**, which are {{site.data.keyword.openshiftlong_notm}} that are registered with {{site.data.keyword.satelliteshort}} Config and can be subscribed to configurations.</li><li>**Resources**, which are Kubernetes resources such as pods or services that are described in a {{site.data.keyword.satelliteshort}} Config and run in a subscribed cluster.</li></ul> |
+|{{site.data.keyword.satelliteshort}} Config | Configuration </br> Subscription </br> Cluster </br> Clustergroup </br> Resource | Platform, Service | Account or particular instances | [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) is a collection of configurations, versions, and subscriptions that you use to automatically deploy Kubernetes resources to groups of clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component. However, access to {{site.data.keyword.satelliteshort}} Config does not give a user access to the clusters that run the Kubernetes resources of the configuration. You can scope access to the following {{site.data.keyword.satelliteshort}} Config resources:<ul><li>**Configurations**, where you upload the version of the configuration file for the Kubernetes resources that you want to deploy.</li><li>**Subscriptions**, which you use to use to specify the cluster group where you want to deploy the Kubernetes resource definition that you added as a version to your configuration.</li><li>**Clusters** or **cluster groups**, which are {{site.data.keyword.openshiftlong_notm}} that are registered with {{site.data.keyword.satelliteshort}} Config and can be subscribed to configurations.</li><li>**Resources**, which are Kubernetes resources such as pods or services that are described in a {{site.data.keyword.satelliteshort}} Config and run in a subscribed cluster. Certain roles permit access to view and manage Kubernetes resource through {{site.data.keyword.satelliteshort}} Config, but you cannot scope an access policy to a particular resource.</li></ul> |
 |{{site.data.keyword.satelliteshort}} Link | Link | Platform, Service | Account, resource group, or particular instances | [Link endpoints](/docs/satellite?topic=satellite-link-location-cloud) connect services, servers, or apps that run in your {{site.data.keyword.satelliteshort}} location with an endpoint that runs in {{site.data.keyword.cloud_notm}}. Access to a {{site.data.keyword.satelliteshort}} Link does not give a user access to the resources that the endpoint connects, such as a location or service instance. You grant access to {{site.data.keyword.satelliteshort}} Link by assign a platform role to the {{site.data.keyword.satelliteshort}} location. |
 | N/A| {{site.data.keyword.openshiftshort}} clusters | Platform and service | Account, resource group, {{site.data.keyword.cloud_notm}} region, or particular instances | You do not assign access policies for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}. Instead, access to clusters is assigned in {{site.data.keyword.cloud_notm}} IAM through {{site.data.keyword.openshiftlong_notm}} (**Kubernetes Service** in the console or `containers-kubernetes` in the API or CLI). For more information, see [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](#iam-roles-clusters). If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration. However, you might not be able to access the clusters if you do not have the appropriate roles to those clusters. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} configuration, you might be able to list all the Kubernetes resources that run in registered clusters via the {{site.data.keyword.satelliteshort}} Config API. Without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.openshiftshort}} APIs to list Kubernetes resources. |
 |N/A| Other {{site.data.keyword.satelliteshort}}-enabled services | Varies by service | Varies by service | Similar to {{site.data.keyword.openshiftshort}} clusters, authorization to other {{site.data.keyword.cloud_notm}} services that are enabled in {{site.data.keyword.satelliteshort}} is managed in {{site.data.keyword.cloud_notm}} IAM through those services. For more information, see each service's documentation. |
@@ -129,10 +129,15 @@ For information about assigning user roles in the console, see [Managing access 
 2.  [Create an access group](/docs/account?topic=account-groups#create_ag) to add users to.
 3.  [Assign the access group](/docs/account?topic=account-groups#access_ag) with the appropriate scope for the {{site.data.keyword.satelliteshort}} resources and IAM platform and service roles for the actions you want to let users in your access group perform.
     * To scope access to the service, use **IBM Cloud Satellite** in the UI or **satellite** in the API or CLI.
-    * For help with scoping the role to the right {{site.data.keyword.satelliteshort}} resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types). You can scope the access policy to the following {{site.data.keyword.satelliteshort}} resources:
-      * **Location** in the UI, **location** in the API and CLI.
-      * **Configuration** in the UI, **configuration** in the API and CLI.
-      * **Link** in the UI, **link** in the API and CLI.
+    * You can scope access to the account or particular resource groups. Keep in mind the following points.
+      * Account-level access is not the same as access to all resource groups.
+      * Not all {{site.data.keyword.satelliteshort}} resource types support scoping to resource groups. For example, you cannot scope {{site.data.keyword.satelliteshort}} Config resource types (configuration, subscription, cluster, or cluster group) to resource groups, only to the account.
+    * For help with scoping the role to the right {{site.data.keyword.satelliteshort}} resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types). You can scope access policies to the following resource types:
+      * Configuration
+      * Cluster
+      * Cluster group
+      * Location (which includes Link) 
+      * Subscription
     * For help with choosing the right platform and service roles, see the following reference information:
       *   [Platform management roles](#iam-roles-platform)
       *   [Service access roles](#iam-roles-service)
@@ -159,8 +164,8 @@ For information about assigning user roles in the console, see [Managing access 
     {: tip}
 
 6.  Leave the setting in **Account** so that you can scope the resource to a specific instance.
-7.  For **Resource Type** string equals field, select **Location**.
-8.  For the **Resource** string equals field, enter the name of your {{site.data.keyword.satelliteshort}} location, such as **Port-NewYork**.
+7.  For **Resource Type** string equals field, scope the policy to a {{site.data.keyword.satelliteshort}} resource, such as **Location**.
+8.  For the **Resource** string equals field, enter the name of your {{site.data.keyword.satelliteshort}} location, such as **Port-NewYork**. If you leave the field blank, the user gets access to all the locations, which is needed to create a location.
 9.  For **Platform access**, select the **Editor** role so that all users in your access group can add and remove hosts and endpoints from the {{site.data.keyword.satelliteshort}} location, but cannot create or delete locations. For other roles by resource type, see [IAM platform and service roles](#iam-roles).
 10. Click **Add+**.
 11. In the **Access summary** pane, review the access policy, and then click **Assign**.
@@ -219,12 +224,12 @@ For information about assigning user roles in the console, see [Managing access 
       <tr>
       <td>{{site.data.keyword.satelliteshort}} resource</td>
       <td>`--resource-type`</td>
-      <td>You can limit the policy to a type of resource within {{site.data.keyword.satellitelong_notm}}, such as all {{site.data.keyword.satelliteshort}} locations or {{site.data.keyword.satelliteshort}} configurations. To review resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types). Possible values include `location` `configuration`, `cluster`, `clustergroup`, `subscription`, and `resource`.</td>
+      <td>You can limit the policy to a type of resource within {{site.data.keyword.satellitelong_notm}}, such as all {{site.data.keyword.satelliteshort}} locations or {{site.data.keyword.satelliteshort}} configurations. To review resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types). Possible values include `location` `configuration`, `cluster`, `clustergroup`, and `subscription`.</td>
       </tr>
       <tr>
       <td>Resource instance</td>
       <td>`--resource`</td>
-      <td>If you scope the policy to a resource type, you can further limit the policy to a particular instance of the resource. To list available instances, run [the CLI commands](/docs/satellite?topic=satellite-satellite-cli-reference) for that resource type. For example, to list available locations, run `ibmcloud sat location ls`. </td>
+      <td>If you scope the policy to a resource type, you can further limit the policy to a particular instance of the resource. To list available instances, run [the CLI commands](/docs/satellite?topic=satellite-satellite-cli-reference) for that resource type. For example, to list available locations, run `ibmcloud sat location ls`.<p class="note">To grant permissions to create a location, do not include the <code>--resource</code> flag, which limits access only to a particular location.</p></td>
       </tr>
       <tr>
       <td>Role</td>
@@ -267,7 +272,6 @@ Policies enable access at different levels. Some of the options include the foll
     * **Cluster** in the UI, **cluster** in the API and CLI.
     * **Clustergroup** in the UI, **clustergroup** in the API and CLI.
     * **Configuration** in the UI, **configuration** in the API and CLI.
-    * **Resource** in the UI, **resource** in the API and CLI.
     * **Subscription** in the UI, **subscription** in the API and CLI.
 
 * Access to an individual resource of a particular resource type, such as a particular location {{site.data.keyword.satelliteshort}}.
@@ -462,7 +466,7 @@ If you create {{site.data.keyword.openshiftlong_notm}} clusters to use in your {
 * [Assigning access to clusters](/docs/openshift?topic=openshift-users), such as setting up the API key for underlying infrastructure permissions and granting users access with {{site.data.keyword.cloud_notm}} IAM.
 * [Accessing clusters](/docs/openshift?topic=openshift-access_cluster) on the public or private service endpoints, or by using an {{site.data.keyword.cloud_notm}} IAM API key such as for automation purposes.
 
-### Common use cases and roles
+## Common use cases and roles
 {: #iam-roles-usecases}
 
 Wondering which access roles to assign to your {{site.data.keyword.satelliteshort}} access groups and users? Use the examples in following table to determine which roles and scope to assign.
@@ -470,10 +474,12 @@ Wondering which access roles to assign to your {{site.data.keyword.satelliteshor
 
 | Use case | Example roles and scope |
 | --- | --- |
-| Location auditor | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location and link endpoints. **Reader** service role for the configuration resources in the location. |
+| Creating a location | **Administrator** platform role for all {{site.data.keyword.satelliteshort}} locations. **Writer** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. For additional permissions to set up the location control plane, see [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
+| Creating a cluster in a location | See [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
+| Location auditor | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location and link endpoints. **Reader** service role for the configuration resources in the location. **Reader** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. |
 | App developers | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location. **Writer** or **Deployer** service access role for the configuration resources. **Editor** platform role and **Writer** service role to {{site.data.keyword.openshiftshort}} clusters or particular projects in a cluster.|
 | Billing | **Viewer** platform role for all the {{site.data.keyword.satelliteshort}} locations in the account. |
-| Location administrator | **Administrator** platform role for the location and link resources. **Administrator** platform role to {{site.data.keyword.openshiftshort}} clusters.|
+| Location administrator | **Administrator** platform role for the location and link resources. **Administrator** platform role to {{site.data.keyword.openshiftshort}} clusters. **Manager** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data.|
 | DevOps operator | **Editor** platform role for the location and link resources. **Deployer** service role for the configurations. **Operator** platform role to {{site.data.keyword.openshiftshort}} clusters.|
 | Operator or site reliability engineer | **Administrator** platform role for the location and link resources. **Manager** service role for the configuration resources. **Administrator** platform role and **Manager** service role to {{site.data.keyword.openshiftshort}} clusters. |
 {: caption="Types of roles you might assign to meet different use cases." caption-side="top"}

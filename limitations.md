@@ -161,6 +161,9 @@ Choose from the following options:
     {: pre}
 *   **Custom access, cluster-wide or scoped to a project**: You can create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access only to the projects (namespaces), actions, and resources that you want {{site.data.keyword.satelliteshort}} Config to manage. For more information and examples, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access).
 
+**{{site.data.keyword.satelliteshort}} Config and {{site.data.keyword.cloud_notm}} IAM**<br>
+You cannot scope access policies for {{site.data.keyword.satelliteshort}} Config resources (configuration, subscription, cluster, or cluster group) to an {{site.data.keyword.cloud_notm}} resource group. {{site.data.keyword.satelliteshort}} Config uses the open source Razee project, which authenticates users by using the organization. The organization supports only the account ID, not resource groups.
+
 **Configuration files in {{site.data.keyword.satelliteshort}} Config**
 * You can upload only an individual configuration file of Kubernetes resources per release version. You cannot upload a directory or several different configuration files.
 * Configuration files are subject to Kubernetes requirements, such as that the manifest must be expressed in YAML format.

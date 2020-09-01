@@ -170,6 +170,8 @@ You can create {{site.data.keyword.satelliteshort}} locations for each place tha
 Use the {{site.data.keyword.satelliteshort}} console to create your location.
 {: shortdesc}
 
+Before you begin, make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations.
+
 1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click **Create location**.
 2. Enter a name and an optional description for your location. Do not reuse the name of a previously deleted location.
 3. Select the {{site.data.keyword.cloud_notm}} multizone metro that you want to use to manage your location. For more information about why you must select a {{site.data.keyword.cloud_notm}} multizone metro, see [Understanding supported {{site.data.keyword.cloud_notm}} multizone metros in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the metro that is closest to where your host machines physically reside that you plan to add to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
@@ -183,7 +185,11 @@ Use the {{site.data.keyword.satelliteshort}} console to create your location.
 Use the {{site.data.keyword.satelliteshort}} CLI to create your location.
 {: shortdesc}
 
-Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI](/docs/satellite?topic=satellite-setup-cli).
+Before you begin:
+* [Install the {{site.data.keyword.satelliteshort}} CLI](/docs/satellite?topic=satellite-setup-cli).
+* Make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations.
+
+To create a {{site.data.keyword.satelliteshort}} location from the CLI:
 
 1.  Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` flag, or create an API key to log in.
     ```
