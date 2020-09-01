@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-26"
+lastupdated: "2020-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -309,10 +309,10 @@ If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location
 ### DNS for cluster load balancing
 {: #gcp-reqs-dns-cluster-nlb}
 
-By default, the private IP addresses for your AWS hosts are used for the DNS registration of {{site.data.keyword.openshiftshort}} clusters that you create in your {{site.data.keyword.satelliteshort}} location. However, you must register the public IP addresses of the hosts instead.
+By default, the private IP addresses for your GCP hosts are used for the DNS registration of {{site.data.keyword.openshiftshort}} clusters that you create in your {{site.data.keyword.satelliteshort}} location. However, you must register the public IP addresses of the hosts instead.
 {: shortdesc}
 
-1.  [Add AWS hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
+1.  [Add GCP hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
 2.  [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in your {{site.data.keyword.satellitelong_notm}} location.
 3.  [Assign your GCP hosts to your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli).
 4.  Get the **Hostname** and private **IP** addresses of the cluster's default Ingress subdomain.
