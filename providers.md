@@ -119,8 +119,13 @@ If you use AWS hosts for your [{{site.data.keyword.satellitelong_notm}} location
 {: shortdesc}
 
 1.  [Add your hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
-2.  Get the public floating IP addresses for your hosts from the AWS provider.
-3.  Register the floating IP addresses for the location DNS. Include the `--ip` flag for each host in the control plane.
+2.  Wait for the hosts to provision as worker nodes in the control plane cluster. You see a message similar to the following for the location.
+    ```
+    R0014 Verify that the Satellite location has a DNS record for load balancing requests to the location control plane.
+    ```
+    {: screen}
+3.  Get the public floating IP addresses for your hosts from the AWS provider.
+4.  Register the floating IP addresses for the location DNS. Include the `--ip` flag for each host in the control plane.
     ```
     ibmcloud sat location dns register --location <location_ID> --ip <aws_host_floating_IP>
     ```
@@ -305,8 +310,13 @@ If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location
 {: shortdesc}
 
 1.  [Add your hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
-2.  Get the public floating IP addresses for your hosts from the GCP provider.
-3.  Register the floating IP addresses for the location DNS. Include the `--ip` flag for each host in the control plane.
+2.  Wait for the hosts to provision as worker nodes in the control plane cluster. You see a message similar to the following for the location.
+    ```
+    R0014 Verify that the Satellite location has a DNS record for load balancing requests to the location control plane.
+    ```
+    {: screen}
+3.  Get the public floating IP addresses for your hosts from the GCP provider.
+4.  Register the floating IP addresses for the location DNS. Include the `--ip` flag for each host in the control plane.
     ```
     ibmcloud sat location dns register --location <location_ID> --ip <gcp_host_floating_IP>
     ```

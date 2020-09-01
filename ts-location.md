@@ -198,8 +198,9 @@ Review the health of your location, and use the error messages to resolve any is
     </tr>
     <tr>
     <td>R0014 Verify that the {{site.data.keyword.satelliteshort}} location has a DNS record for load balancing requests to the location control plane.</td>
-    <td><ol><li>Run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code> and verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of <code>assigned</code> and a **Status** of <code>Ready</code>. </li>
+    <td><ol><li>Run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code> and verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of <code>assigned</code> and a **Status** of <code>Ready</code>.</li>
     <li>If all hosts show the correct state and status, the DNS record for your location is not yet created. This process can take up to 30 minutes to complete after all hosts are successfully assigned to your location. </li>
+    <li>If your hosts are from a cloud provider such as AWS or GCP, you must manually register the DNS. For more information, see [Provider requirements](/docs/satellite?topic=satellite-providers).</li>
     <li>If one or more hosts do not show the correct state or status, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-debug).</li>
     </ol></td>
     </tr>
