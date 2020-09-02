@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -99,13 +99,13 @@ With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute in
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
 {: beta}
 
-In this getting started tutorial, you create your first {{site.data.keyword.satellitelong_notm}} location. Then, you create the location control plane with 3 compute hosts from your own infrastructure environment. These compute hosts can reside in an on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. 
+In this getting started tutorial, you create your first {{site.data.keyword.satellitelong_notm}} location. Then, you create the location control plane with 3 compute hosts from your own infrastructure environment. These compute hosts can reside in an on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
 
 ## Prerequisites
 {: #sat-prereqs}
 
 1. You must have 3 compute hosts in your own infrastructure environment that meet certain requirements, such as RHEL 7 packages, public network connectivity, and the ability to log in to the host machines and run a script.
-   *  All hosts must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host).
+   *  All hosts must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs).
    *  Depending on the provider, your hosts also might have [provider-specific requirements](/docs/satellite?topic=satellite-providers).
 
    If your hosts cannot meet these host and provider requirements, you cannot add the hosts to {{site.data.keyword.satellitelong_notm}}. {{site.data.keyword.satelliteshort}} beta requirements are subject to change.
@@ -129,7 +129,7 @@ To use {{site.data.keyword.satelliteshort}}, you must create a location. A locat
 ## Step 2: Add compute hosts to your location
 {: #add-hosts-to-location}
 
-With your location set up, you can now add host machines to your location. All host machines must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) for {{site.data.keyword.satelliteshort}} and can physically reside in your own on-premises data center, in other cloud providers, or in edge networks.
+With your location set up, you can now add host machines to your location. All host machines must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) for {{site.data.keyword.satelliteshort}} and can physically reside in your own on-premises data center, in other cloud providers, or in edge networks.
 {: shortdesc}
 
 1. From the **Hosts** tab, click **Add host**.
@@ -149,7 +149,7 @@ With your location set up, you can now add host machines to your location. All h
       ssh root@<public_IP_address>
       ```
       {: pre}
-   4. Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see [RHEL package updates](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages).
+   4. Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs-system) on your hosts before you can run the script. For example, see [RHEL package updates](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages).
    5. Run the script.
       ```
       nohup bash /tmp/attach.sh &

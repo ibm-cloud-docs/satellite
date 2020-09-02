@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -94,7 +94,7 @@ subcollection: satellite
 # Provider requirements
 {: #providers}
 
-Review the following requirements that are specific to providers when you add hosts to your {{site.data.keyword.satellitelong}} location. For general requirements that are common across providers, see [Host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host).
+Review the following requirements that are specific to providers when you add hosts to your {{site.data.keyword.satellitelong}} location. For general requirements that are common across providers, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: shortdesc}
 
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and subject to change. To register for the beta, see [{{site.data.keyword.satellitelong_notm}} beta](https://cloud.ibm.com/satellite/beta){: external}.
@@ -109,7 +109,7 @@ Provider requirements are subject to change. You are responsible for your infras
 Review the following host requirements that are specific to hosts that are in the Amazon Web Services (AWS) cloud.
 {: shortdesc}
 
-Your hosts also must meet the general requirements that are common across providers, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host).
+Your hosts also must meet the general requirements that are common across providers, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
 ### DNS for location control plane
@@ -160,7 +160,7 @@ By default, the private IP addresses for your AWS hosts are used for the DNS reg
 ### Security group
 {: #aws-reqs-secgroup}
 
-As described in the [host networking requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network), your AWS hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. If you use hosts in a virtual private cloud (VPC), you can create a security group similar to the following example. You can get the owner, group, user, and VPC IDs from your AWS provider resources.
+As described in the [host networking requirements](/docs/satellite?topic=satellite-host-reqs-network), your AWS hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. If you use hosts in a virtual private cloud (VPC), you can create a security group similar to the following example. You can get the owner, group, user, and VPC IDs from your AWS provider resources.
 {: shortdesc}
 
 **Example security group for AWS**
@@ -300,7 +300,7 @@ You can use [AWS launch templates](https://docs.aws.amazon.com/AWSEC2/latest/Use
 Review the following host requirements that are specific to hosts that are in the Google Cloud Platform (GCP) cloud.
 {: shortdesc}
 
-Your hosts also must meet the general requirements that are common across providers, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host).
+Your hosts also must meet the general requirements that are common across providers, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
 ### DNS for location control plane
@@ -357,7 +357,7 @@ If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location
 ### Firewall settings
 {: #gcp-reqs-firewall}
 
-As described in the [host networking requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network), your GCP hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. You might find that you need to update your firewall settings in GCP, similar to the following example.
+As described in the [host networking requirements](/docs/satellite?topic=satellite-host-reqs-network), your GCP hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. You might find that you need to update your firewall settings in GCP, similar to the following example.
 {: shortdesc}
 
 **Example firewall settings**
@@ -395,7 +395,7 @@ udp:30000-32767
 Review the following host requirements that are specific to hosts that are in {{site.data.keyword.cloud_notm}} infrastructure.
 {: shortdesc}
 
-Your hosts also must meet the general requirements that are common across providers, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host).
+Your hosts also must meet the general requirements that are common across providers, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
 ### RHEL package updates

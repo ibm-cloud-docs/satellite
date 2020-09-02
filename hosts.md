@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -110,7 +110,7 @@ The following diagram presents the initial setup steps for hosts.
 
 ![Concept overview of Satellite host setup](/images/host-process.png){: caption="Figure 1. The initial setup process for {{site.data.keyword.satelliteshort}} hosts." caption-side="bottom"}
 
-1.  **Add**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [add the host](#add-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers). After the host is added and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
+1.  **Add**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [add the host](#add-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers). After the host is added and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
 2.  **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service. For example, each location must have at least 3 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
 3.  **Bootstrap**: When you assign a host, the host is bootstrapped to become a worker node in a managed {{site.data.keyword.openshiftlong_notm}} cluster or your {{site.data.keyword.satelliteshort}} control plane. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host, which requires public connectivity to pull the images from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts).
 
@@ -135,7 +135,7 @@ Using AWS hosts? You can use a [launch template](/docs/satellite?topic=satellite
 Use the {{site.data.keyword.satelliteshort}} console to add hosts to your location.
 {: shortdesc}
 
-Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
+Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
 {: important}
 
 1. From the [**Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, select that location where you want to add hosts.  
@@ -169,7 +169,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 Use the {{site.data.keyword.satelliteshort}} CLI to add hosts to your location.
 {: shortdesc}
 
-Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
+Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
 {: important}
 
 1.  Generate a script that you can copy and run on your machines to add them as hosts to your location. You might want to include a label to identify the purpose of the hosts, such as `use:satloc`, because the hosts provide compute capacity for the {{site.data.keyword.satelliteshort}} location. Your hosts automatically are assigned labels for the CPU and memory size if these values can be detected on the machine.
@@ -374,7 +374,7 @@ However, when you created the location control plane, you might have manually re
 **Who provides the update for my hosts?**<br>
 IBM provides updates for the IBM-managed components, such as the {{site.data.keyword.openshiftshort}} version that worker nodes run or the {{site.data.keyword.satelliteshort}} control plane. For master components, IBM automatically applies these updates, but for components that run on worker nodes, such as the location control plane or cluster worker nodes, you choose when to apply the updates.
 
-For updates to the operating system, you are responsible to remove your hosts, update and reload the hosts, add the hosts back to your {{site.data.keyword.satelliteshort}} location, and assign the hosts to your {{site.data.keyword.satelliteshort}} resources. You can only install [supported operating system versions](/docs/satellite?topic=satellite-host-reqs#reqs-host).
+For updates to the operating system, you are responsible to remove your hosts, update and reload the hosts, add the hosts back to your {{site.data.keyword.satelliteshort}} location, and assign the hosts to your {{site.data.keyword.satelliteshort}} resources. You can only install [supported operating system versions](/docs/satellite?topic=satellite-host-reqs).
 
 ### Updating hosts from the console
 {: #host-update-console}
