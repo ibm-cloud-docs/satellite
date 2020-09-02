@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -116,7 +116,7 @@ Review the health of your hosts, and use the error messages to resolve any issue
     ```
     {: screen}
 2.  Review the states and the steps to resolve the issue in the following table.
-3.  Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host), such as for network connectivity. For example, if you change the underlying infrastructure environment where the host machine is to block access on the public network, you might make the host unsupported.
+3.  Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity. For example, if you change the underlying infrastructure environment where the host machine is to block access on the public network, you might make the host unsupported.
 4.  If your host still has issues, try to [remove, update, and re-add the host](/docs/satellite?topic=satellite-hosts#host-update).
 
 | Health state | Description
@@ -185,7 +185,7 @@ You can only SSH into the machine if you did not assign the host to a cluster, o
     echo ‘Failed to untar bootstrap.tar’
     Failed to untar bootstrap.tar
     + rm -rf /tmp/bootstrap</code></pre></td>
-    <td>The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-limitations#limits-host), [remove the host](/docs/satellite?topic=satellite-hosts#host-remove), and try to [add](/docs/satellite?topic=satellite-hosts#add-hosts) and [assign](/docs/satellite?topic=satellite-hosts#host-assign) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.</td>
+    <td>The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-hosts#host-remove), and try to [add](/docs/satellite?topic=satellite-hosts#add-hosts) and [assign](/docs/satellite?topic=satellite-hosts#host-assign) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.</td>
     </tr>
     </tbody>
     </table>
@@ -260,7 +260,7 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
         subscription-manager repos --enable=*
         ```
         {: pre}
-2.  Make sure that your machine meets the other [host minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host), such as minimum CPU and memory sizes and public network connectivity.
+2.  Make sure that your machine meets the other [host minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as minimum CPU and memory sizes and public network connectivity.
 3.  [Run the registration script](/docs/satellite?topic=satellite-hosts#add-hosts) on your machine again.
 
 <br />
@@ -273,7 +273,7 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 You try to assign a host to {{site.data.keyword.satelliteshort}} resource such as a cluster, but the assignment does not succeed. When you check your host, the health state might be `unresponsive`, `unknown`, or `reload-required`.
 
 {: tsCauses}
-Your host might have encountered an issue during the bootstrapping process. For example, the underlying infrastructure of the host machine changed and no longer meets the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host), such as for network connectivity. You might have set up a firewall or other change that prevents access to a dependency.
+Your host might have encountered an issue during the bootstrapping process. For example, the underlying infrastructure of the host machine changed and no longer meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity. You might have set up a firewall or other change that prevents access to a dependency.
 
 In particular, the bootstrapping process depends upon the following access.
 *   Access to RHEL Satellite servers and the required packages installed on the host machine.
@@ -288,7 +288,7 @@ If you want, you can debug the connectivity issues for your host. Otherwise, rem
     ibmcloud sat location ls
     ```
     {: pre}
-2.  Confirm that your host meets the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host).
+2.  Confirm that your host meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
 2.  Check your host for connectivity issues.
     1.  Log in to your host machine, such as via SSH.
     2.  Check access to RHEL Satellite servers. If the following command succeeds, your host can access the servers. If the command fails, your host might not have access to the public network, such as blocked by a security group or firewall.
@@ -329,7 +329,7 @@ If you want, you can debug the connectivity issues for your host. Otherwise, rem
         /etc/satelittemachineidgeneration/machineidgenerated: empty
         ```
         {: screen}
-    4.  Confirm that your host meets the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host).
+    4.  Confirm that your host meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
     5.  [Add the host](/docs/satellite?topic=satellite-hosts#add-hosts) back to your {{site.data.keyword.satelliteshort}} location.
     6.  Check that the host is added to your location and **unassigned**. From the console, click your location, and then click the **Hosts** tab. From the CLI, run the following command.
         ```
@@ -351,26 +351,26 @@ Review the following table to help troubleshoot network connectivity issues to {
 
 
 
-| Command to check endpoint |
-| ------------------------- |
-| `nslookup origin.eu-gb.containers.cloud.ibm.com` |
-| `curl -v https://origin.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
-| `curl -v https://private.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
-| `curl -v https://uk.icr.io` |
-{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
+| Endpoint | Command to check endpoint |
+| --- | ------------------------- |
+| Public regional endpoint | `nslookup origin.eu-gb.containers.cloud.ibm.com` |
+| Public regional bootstrap endpoint | `curl -v https://origin.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
+| Private regional bootstrap endpoint | `curl -v https://private.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
+|{{site.data.keyword.registrylong_notm}} region | `curl -v https://uk.icr.io` |
+{: summary="The rows are read from left to right. The first row contains an endpoint to check. The second row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
 {: class="simple-tab-table"}
 {: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from London." caption-side="top"}
 {: #check-ep-london}
 {: tab-title="London"}
 {: tab-group="check-ep"}
 
-| Command to check endpoint |
-| ------------------------- |
-| `nslookup origin.us-east.containers.cloud.ibm.com` |
-| `curl -v https://origin.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
-| `curl -v https://private.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
-| `curl -v https://us.icr.io` |
-{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
+| Endpoint | Command to check endpoint |
+| --- | ------------------------- |
+| Public regional endpoint | `nslookup origin.us-east.containers.cloud.ibm.com` |
+| Public regional bootstrap endpoint | `curl -v https://origin.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
+| Private regional bootstrap endpoint | `curl -v https://private.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
+|{{site.data.keyword.registrylong_notm}} region | `curl -v https://us.icr.io` |
+{: summary="The rows are read from left to right. The first row contains an endpoint to check. The second row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
 {: class="simple-tab-table"}
 {: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Washington DC." caption-side="top"}
 {: #check-ep-dc}

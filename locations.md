@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -102,9 +102,9 @@ Set up an {{site.data.keyword.satellitelong}} location to represent a data cente
 
 **Steps to set up your first location.**
 1. [Create a location](#location-create).
-2. [Add 3 hosts to the location](/docs/satellite?topic=satellite-hosts#add-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host).
+2. [Add 3 hosts to the location](/docs/satellite?topic=satellite-hosts#add-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
 3. [Assign at least 3 hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
-4. [Add more hosts to the location](/docs/satellite?topic=satellite-hosts#add-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host).
+4. [Add more hosts to the location](/docs/satellite?topic=satellite-hosts#add-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
 5. [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) and assign the hosts to the cluster, so that you can run OpenShift workloads in your location.
 
 <br />
@@ -126,7 +126,7 @@ The following diagram presents the concept of setting up your own {{site.data.ke
 
 **{{site.data.keyword.satelliteshort}} Link**: A {{site.data.keyword.satelliteshort}} Link connector component is automatically created in the location control plane worker to securely connect the location back to the control plane master in {{site.data.keyword.cloud_notm}}. You can use the Link component to control and audit network traffic in and out of the location.
 
-**Hosts**: To fill the {{site.data.keyword.satelliteshort}} location with your own infrastructure, you attach hosts such as on-prem bare metal, virtual machines in other cloud providers, edge computing devices, and more. All hosts must the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host). The hosts become the compute capacity in your location. You must assign at least three of these hosts as worker nodes to the {{site.data.keyword.satelliteshort}} control plane. All other hosts can be used to run {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.openshiftlong_notm}} clusters on your own infrastructure.
+**Hosts**: To fill the {{site.data.keyword.satelliteshort}} location with your own infrastructure, you attach hosts such as on-prem bare metal, virtual machines in other cloud providers, edge computing devices, and more. All hosts must the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). The hosts become the compute capacity in your location. You must assign at least three of these hosts as worker nodes to the {{site.data.keyword.satelliteshort}} control plane. All other hosts can be used to run {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.openshiftlong_notm}} clusters on your own infrastructure.
 
 **{{site.data.keyword.openshiftlong_notm}} clusters**: You can use host capacity in your location to run {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.openshiftlong_notm}} clusters. Your hosts become the worker nodes of your cluster in a `upi` (or user-provided infrastructure) worker pool. The cluster master runs on and is managed from your {{site.data.keyword.satelliteshort}} control plane worker nodes. {{site.data.keyword.openshiftshort}} is automatically set up for these clusters, and you can run any Kubernetes workload that you want on the clusters.
 
@@ -144,7 +144,7 @@ Because your {{site.data.keyword.satelliteshort}} location represents your own d
 {: shortdesc}
 
 1. Set up a highly available location control plane worker with enough compute capacity to manage the resources in your {{site.data.keyword.satelliteshort}} location.
-   *  **Minimum size**: To get started, you must add and assign at least 3 hosts that meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host) of 4 CPU, 16 GB memory, and 100 GB storage. You assign these hosts to 3 separate zones.
+   *  **Minimum size**: To get started, you must add and assign at least 3 hosts that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) of 4 vCPU, 16 GB memory, and 100 GB storage. You assign these hosts to 3 separate zones.
    *  **High availability**: When you assign hosts to the location control plane, you must assign at least 1 host to each of the 3 available zones of your {{site.data.keyword.cloud_notm}} multizone metro that you selected during location creation. To make the location control plane highly available, make sure that the underlying hosts are in separate zones in your physical infrastructure environment. For example, you might use 3 hosts that run in separate availability zones in your cloud provider, or that run in three separate physical systems in your own data center. You do not have to meet specific requirements for a "zone," but the separate zones must provide availability for system maintenance operations. For example, if 1 zone becomes unavailable due to a failure, or if 1 host becomes unavailable due to updating, the remaining 2 zones are still available to run control plane operations. A poor high availability setup is 2 hosts that are virtual machines on the same hypervisor, because servicing the underlying hardware such as to update the machine would make both hosts become unavailable. For more information, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
    *  **Compute capacity**: {{site.data.keyword.satelliteshort}} monitors your location for capacity. When the location reaches 70% capacity, you see a warning status to notify you to add more hosts to the location. If the location reaches 80% capacity, the state changes to **critical** and you see another warning that tells you to add more hosts to the location.
 2. Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then IBM can assign the hosts to your location control plane automatically when the location reaches the warning capacity threshold or an unhealthy host needs to be replaced.
@@ -170,6 +170,8 @@ You can create {{site.data.keyword.satelliteshort}} locations for each place tha
 Use the {{site.data.keyword.satelliteshort}} console to create your location.
 {: shortdesc}
 
+Before you begin, make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations.
+
 1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click **Create location**.
 2. Enter a name and an optional description for your location. Do not reuse the name of a previously deleted location.
 3. Select the {{site.data.keyword.cloud_notm}} multizone metro that you want to use to manage your location. For more information about why you must select a {{site.data.keyword.cloud_notm}} multizone metro, see [Understanding supported {{site.data.keyword.cloud_notm}} multizone metros in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the metro that is closest to where your host machines physically reside that you plan to add to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
@@ -183,7 +185,11 @@ Use the {{site.data.keyword.satelliteshort}} console to create your location.
 Use the {{site.data.keyword.satelliteshort}} CLI to create your location.
 {: shortdesc}
 
-Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI](/docs/satellite?topic=satellite-setup-cli).
+Before you begin:
+* [Install the {{site.data.keyword.satelliteshort}} CLI](/docs/satellite?topic=satellite-setup-cli).
+* Make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations.
+
+To create a {{site.data.keyword.satelliteshort}} location from the CLI:
 
 1.  Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` flag, or create an API key to log in.
     ```
@@ -238,8 +244,11 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI](/docs/s
 ## Setting up the {{site.data.keyword.satelliteshort}} control plane for the location
 {: #setup-control-plane}
 
-The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources that you add to the location. To create the control plane, you must add at least 3 compute hosts to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host).
+The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources that you add to the location. 
 {: shortdesc}
+
+To create the control plane, you must add at least 3 compute hosts to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers).
+{: important}
 
 ### Setting up the control plane from the console
 {: #control-plane-ui}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -184,22 +184,23 @@ Review the health of your location, and use the error messages to resolve any is
     <tr>
     <td>R0012 The location control plane does not have hosts in all 3 zones. Add available hosts to your location for the control plane. Then, wait for {{site.data.keyword.satelliteshort}} to automatically assign the hosts to control plane zones, or you can assign the hosts.</td>
     <td>If you just assigned hosts to the control plane, wait a while for the bootstrapping process to complete. Otherwise, [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones for the location itself, to run control plane operations.<ul>
-    <li>If you did assign at least one host in each of the 3 zones, check the CPU and memory size of the hosts. The hosts must have at least 4 CPU and 16 memory.</li>
-    <li>If you did assign at least one host per zone, make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host) to use in {{site.data.keyword.satelliteshort}}, such as operating system, networking configuration, and public network access.</li>
+    <li>If you did assign at least one host in each of the 3 zones, check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.</li>
+    <li>If you did assign at least one host per zone, make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system, networking configuration, and public network access.</li>
     <li>If you did assign at least one host in each of the 3 zones but the bootstrapping process failed, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-login).</li></ul></td>
     </tr>
     <tr>
     <td>R0013 A zone in the location control plane is unavailable. Add more hosts to the location and assign the hosts to the zone, or replace unhealthy hosts.</td>
     <td>[Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones for the location itself, to run control plane operations. If you did assign at least one host in each of the 3 zones:<ul>
-    <li>Check the CPU and memory size of the hosts. The hosts must have at least 4 CPU and 16 memory.</li>
-    <li>Make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-limitations#limits-host) to use in {{site.data.keyword.satelliteshort}}, such as operating system, networking configuration, and public network access.</li>
+    <li>Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.</li>
+    <li>Make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system, networking configuration, and public network access.</li>
     <li>[Log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-login).</li>
     <li>[Update the host](/docs/satellite?topic=satellite-hosts#host-update). When you update a host, the host is unassigned from the location control plane, and you must assign another host to the zone.</li></ul></td>
     </tr>
     <tr>
     <td>R0014 Verify that the {{site.data.keyword.satelliteshort}} location has a DNS record for load balancing requests to the location control plane.</td>
-    <td><ol><li>Run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code> and verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of <code>assigned</code> and a **Status** of <code>Ready</code>. </li>
+    <td><ol><li>Run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code> and verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of <code>assigned</code> and a **Status** of <code>Ready</code>.</li>
     <li>If all hosts show the correct state and status, the DNS record for your location is not yet created. This process can take up to 30 minutes to complete after all hosts are successfully assigned to your location. </li>
+    <li>If your hosts are from a cloud provider such as AWS or GCP, you must manually register the DNS. For more information, see [Provider requirements](/docs/satellite?topic=satellite-providers).</li>
     <li>If one or more hosts do not show the correct state or status, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-debug).</li>
     </ol></td>
     </tr>
@@ -226,7 +227,7 @@ Review the health of your location, and use the error messages to resolve any is
      <td>R0033 Hosts in the location control plane have critical memory usage issues. Add more hosts to the location control plane and wait for the location to return to normal.<br><br>
      R0034 Hosts in the location control plane have critical CPU usage issues. Add more hosts to the location control plane and wait for the location to return to normal.<br><br>
      R0035 The location control plane is running at max capacity and cannot support any more workloads. Add hosts to each zone and wait for the location to return to normal.</td>
-     <td><ol><li>Check the CPU and memory size of the hosts. The hosts must have at least 4 CPU and 16 memory.</li>
+     <td><ol><li>Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.</li>
      <li>[Add 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#add-hosts).</li>
      <li>[Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones for the location itself, to add capacity for control plane operations.</li></ol>
     </td>
@@ -266,7 +267,7 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00.us-east.satellite.appdomain.cloud    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud            None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00      default  
     ```
     {: screen}
-   
+
 3.  Check the health of the control plane location subdomains by curling each hostname endpoint. If the endpoint returns a `200` response for each host, the control plane worker node is healthy and serving Kubernetes traffic. If not, continue to the next step.
     ```
     curl -v http://<hostname>:30000

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-08-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -110,15 +110,13 @@ Still having issues? Review different ways to get help and support for {{site.da
 
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 2. Filter for the **Satellite** component and review any cloud status issue.
-3. Review the [limitations and known issues documentation](/docs/satellite?topic=satellite-limitations).
+3. Review the [requirements, limitations, and known issues documentation](/docs/satellite?topic=satellite-requirements).
 4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
 
 ## Feedback and questions
 {: #feedback-qs}
 
-1. Search for your question and post in the {{site.data.keyword.cloud_notm}} Slack.
-   * If you are an external user, post in the [#general](https://ibm-cloud-success.slack.com/archives/C4G6362ER){: external} channel.
-   * If you are an IBMer, use the [internal Slack channel](/docs/containers?topic=containers-cs_internal#internal_help).<p class="tip">If you do not use an IBMid for your {{site.data.keyword.cloud_notm}} account, [request an invitation](https://cloud.ibm.com/kubernetes/slack){: external} to this Slack.</p>
+1. Search for your question and post in the {{site.data.keyword.cloud_notm}} [Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
 2. Review forums such as Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
    * For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
    * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.openshiftshort}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
