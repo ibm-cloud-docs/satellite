@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -145,6 +145,7 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 
 *   Do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
 *   All hosts must have the same MTU values.
+*   The `localhost` value must resolve to a valid local host IP address, typically `127.0.0.1`.
 *   Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
 *   Hosts must have inbound and outbound connectivity on the public network, via the default gateway of the system. You cannot use custom iptables to route traffic to the public network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables. 
     **Inbound**: The following ports must be open.
