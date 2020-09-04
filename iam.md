@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -278,6 +278,9 @@ Policies enable access at different levels. Some of the options include the foll
 
 After you define the scope of the access policy, you assign a role, which determines the user's level of access. Review the following sections that outline what actions each platform and service role allows within the {{site.data.keyword.satelliteshort}} service.
 
+Keep in mind that you need permissions to {{site.data.keyword.cloud_notm}} services if you use the services with {{site.data.keyword.satelliteshort}}. For example, to create and manage clusters in your {{site.data.keyword.satelliteshort}} location, you must have the [appropriate permissions to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-access_reference) in IAM (**Kubernetes Service** in the UI, **containers-kubernetes** in the API and CLI).
+{: note}
+
 ### Platform management roles
 {: #iam-roles-platform}
 
@@ -293,10 +296,8 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Attach a host to a {{site.data.keyword.satelliteshort}} location. | `/hostqueue/createRegistrationScript` | [`host attach`](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach) | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Assign a host to a {{site.data.keyword.satelliteshort}} location control plane or cluster. | `/hostqueue/createAssignment`| [`host assign`](/docs/satellite?topic=satellite-satellite-cli-reference#host-assign) | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | List hosts in a {{site.data.keyword.satelliteshort}} location. | `/hostqueue/getHosts` | [`host ls`](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Update a host. | `/hostqueue/updateHost` | [`host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update) | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Update a host. | `/hostqueue/updateHost` | [`host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update) | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Remove a host from a {{site.data.keyword.satelliteshort}} location control plane or cluster.| `/hostqueue/removeHost` |[`host rm`](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm) | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|
-| Create an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}}. | `/createCluster` | [`ibmcloud ks cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite) | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| List {{site.data.keyword.satelliteshort}} clusters. | `/getClusters` | [`ibmcloud sat cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls) | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
 {: #platform-table1}
 {: tab-title="Locations and hosts"}
