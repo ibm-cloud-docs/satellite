@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -107,6 +107,7 @@ In this getting started tutorial, you create your first {{site.data.keyword.sate
 1. You must have 3 compute hosts in your own infrastructure environment that meet certain requirements, such as RHEL 7 packages, public network connectivity, and the ability to log in to the host machines and run a script.
    *  All hosts must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs).
    *  Depending on the provider, your hosts also might have [provider-specific requirements](/docs/satellite?topic=satellite-providers).
+   *  3 hosts at a minimum are needed for the location control plane, for demonstration purposes. If you want to continue to use the location, add more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts.
 
    If your hosts cannot meet these host and provider requirements, you cannot add the hosts to {{site.data.keyword.satellitelong_notm}}. {{site.data.keyword.satelliteshort}} beta requirements are subject to change.
    {: important}
