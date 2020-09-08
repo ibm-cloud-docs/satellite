@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -110,7 +110,7 @@ You can use {{site.data.keyword.cloud_notm}} IAM to assign access to [different 
 | {{site.data.keyword.satelliteshort}} component | Resource type | IAM role | Scope | Description |
 | ------------- | ------------- | ---------------- | ----- | ----------- |
 |{{site.data.keyword.satelliteshort}} Location| Location| Platform | Account, resource group, or particular instances | [Locations](/docs/satellite?topic=satellite-locations) are places that you use to extend {{site.data.keyword.cloud_notm}} by attaching your own host compute machines to the location.  Access to a location also gives access to manage hosts and link endpoints in the location. However, location access does not grant access to other resources that run within the location, such as configurations or {{site.data.keyword.openshiftshort}} clusters. |
-|{{site.data.keyword.satelliteshort}} Config | Configuration </br> Subscription </br> Cluster </br> Clustergroup </br> Resource | Platform, Service | Account or particular instances | [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) is a collection of configurations, versions, and subscriptions that you use to automatically deploy Kubernetes resources to groups of clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component. However, access to {{site.data.keyword.satelliteshort}} Config does not give a user access to the clusters that run the Kubernetes resources of the configuration. You can scope access to the following {{site.data.keyword.satelliteshort}} Config resources:<ul><li>**Configurations**, where you upload the version of the configuration file for the Kubernetes resources that you want to deploy.</li><li>**Subscriptions**, which you use to use to specify the cluster group where you want to deploy the Kubernetes resource definition that you added as a version to your configuration.</li><li>**Clusters** or **cluster groups**, which are {{site.data.keyword.openshiftlong_notm}} that are registered with {{site.data.keyword.satelliteshort}} Config and can be subscribed to configurations.</li><li>**Resources**, which are Kubernetes resources such as pods or services that are described in a {{site.data.keyword.satelliteshort}} Config and run in a subscribed cluster. Certain roles permit access to view and manage Kubernetes resource through {{site.data.keyword.satelliteshort}} Config, but you cannot scope an access policy to a particular resource.</li></ul> |
+|{{site.data.keyword.satelliteshort}} Config | Configuration </br> Subscription </br> Cluster </br> Clustergroup </br> Resource | Platform, Service | Account or particular cluster or cluster group instances | [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) is a collection of configurations, versions, and subscriptions that you use to automatically deploy Kubernetes resources to groups of clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component. However, access to {{site.data.keyword.satelliteshort}} Config does not give a user access to the clusters that run the Kubernetes resources of the configuration. You can scope access to the following {{site.data.keyword.satelliteshort}} Config resources:<ul><li>**Configurations**, where you upload the version of the configuration file for the Kubernetes resources that you want to deploy. You cannot scope a policy to a particular configuration.</li><li>**Subscriptions**, which you use to use to specify the cluster group where you want to deploy the Kubernetes resource definition that you added as a version to your configuration. You cannot scope a policy to a particular configuration.</li><li>**Clusters** or **cluster groups**, which are {{site.data.keyword.openshiftlong_notm}} that are registered with {{site.data.keyword.satelliteshort}} Config and can be subscribed to configurations.</li><li>**Resources**, which are Kubernetes resources such as pods or services that are described in a {{site.data.keyword.satelliteshort}} Config and run in a subscribed cluster. Certain roles permit access to view and manage Kubernetes resource through {{site.data.keyword.satelliteshort}} Config, but you cannot scope an access policy to a particular resource.</li></ul> |
 |{{site.data.keyword.satelliteshort}} Link | Link | Platform, Service | Account, resource group, or particular instances | [Link endpoints](/docs/satellite?topic=satellite-link-location-cloud) connect services, servers, or apps that run in your {{site.data.keyword.satelliteshort}} location with an endpoint that runs in {{site.data.keyword.cloud_notm}}. Access to a {{site.data.keyword.satelliteshort}} Link does not give a user access to the resources that the endpoint connects, such as a location or service instance. You grant access to {{site.data.keyword.satelliteshort}} Link by assign a platform role to the {{site.data.keyword.satelliteshort}} location. |
 | N/A| {{site.data.keyword.openshiftshort}} clusters | Platform and service | Account, resource group, {{site.data.keyword.cloud_notm}} region, or particular instances | You do not assign access policies for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}. Instead, access to clusters is assigned in {{site.data.keyword.cloud_notm}} IAM through {{site.data.keyword.openshiftlong_notm}} (**Kubernetes Service** in the console or `containers-kubernetes` in the API or CLI). For more information, see [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](#iam-roles-clusters). If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration. However, you might not be able to access the clusters if you do not have the appropriate roles to those clusters. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} configuration, you might be able to list all the Kubernetes resources that run in registered clusters via the {{site.data.keyword.satelliteshort}} Config API. Without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.openshiftshort}} APIs to list Kubernetes resources. |
 |N/A| Other {{site.data.keyword.satelliteshort}}-enabled services | Varies by service | Varies by service | Similar to {{site.data.keyword.openshiftshort}} clusters, authorization to other {{site.data.keyword.cloud_notm}} services that are enabled in {{site.data.keyword.satelliteshort}} is managed in {{site.data.keyword.cloud_notm}} IAM through those services. For more information, see each service's documentation. |
@@ -138,6 +138,10 @@ For information about assigning user roles in the console, see [Managing access 
       * Cluster group
       * Location (which includes Link) 
       * Subscription
+    * You can further scope access to a particular resource for the following resource types:
+      * Cluster
+      * Cluster group
+      * Location (which includes Link)
     * For help with choosing the right platform and service roles, see the following reference information:
       *   [Platform management roles](#iam-roles-platform)
       *   [Service access roles](#iam-roles-service)
@@ -165,7 +169,11 @@ For information about assigning user roles in the console, see [Managing access 
 
 6.  Leave the setting in **Account** so that you can scope the resource to a specific instance.
 7.  For **Resource Type** string equals field, scope the policy to a {{site.data.keyword.satelliteshort}} resource, such as **Location**.
-8.  For the **Resource** string equals field, enter the name of your {{site.data.keyword.satelliteshort}} location, such as **Port-NewYork**. If you leave the field blank, the user gets access to all the locations, which is needed to create a location.
+8.  For the **Resource** string equals field, enter the name of your {{site.data.keyword.satelliteshort}} location, such as **Port-NewYork**. 
+    
+    If you leave the **Resource** field blank, the user gets access to all the locations, which is needed for the user to create a location. Also, you cannot scope a policy to individual `configuration` or `subscription` resources. Instead, leave the **Resource** field blank and control access to your {{site.data.keyword.satelliteshort}} Config resources at the `clustergroup` level.
+    {: note}
+
 9.  For **Platform access**, select the **Editor** role so that all users in your access group can add and remove hosts and endpoints from the {{site.data.keyword.satelliteshort}} location, but cannot create or delete locations. For other roles by resource type, see [IAM platform and service roles](#iam-roles).
 10. Click **Add+**.
 11. In the **Access summary** pane, review the access policy, and then click **Assign**.
@@ -229,7 +237,7 @@ For information about assigning user roles in the console, see [Managing access 
       <tr>
       <td>Resource instance</td>
       <td>`--resource`</td>
-      <td>If you scope the policy to a resource type, you can further limit the policy to a particular instance of the resource. To list available instances, run [the CLI commands](/docs/satellite?topic=satellite-satellite-cli-reference) for that resource type. For example, to list available locations, run `ibmcloud sat location ls`.<p class="note">To grant permissions to create a location, do not include the <code>--resource</code> flag, which limits access only to a particular location.</p></td>
+      <td>If you scope the policy to a resource type, you can further limit the policy to a particular instance of the resource. To list available instances, run [the CLI commands](/docs/satellite?topic=satellite-satellite-cli-reference) for that resource type, such as `ibmcloud sat location ls`.<p class="note">To grant permissions to create a location, do not include the <code>--resource</code> flag, which limits access only to a particular location.<br><br>You cannot scope a policy to individual `configuration` or `subscription` resources. Instead, control access to your {{site.data.keyword.satelliteshort}} Config resources at the `clustergroup` level.</p></td>
       </tr>
       <tr>
       <td>Role</td>
@@ -274,7 +282,11 @@ Policies enable access at different levels. Some of the options include the foll
     * **Configuration** in the UI, **configuration** in the API and CLI.
     * **Subscription** in the UI, **subscription** in the API and CLI.
 
-* Access to an individual resource of a particular resource type, such as a particular location {{site.data.keyword.satelliteshort}}.
+* Access to an individual resource of a particular resource type, such as a particular location {{site.data.keyword.satelliteshort}}. The following resource types can be scoped to particular instances.
+  * **Location** in the UI, **location** in the API and CLI.
+  * {{site.data.keyword.satelliteshort}} Config resource types:
+    * **Cluster** in the UI, **cluster** in the API and CLI.
+    * **Clustergroup** in the UI, **clustergroup** in the API and CLI.
 
 After you define the scope of the access policy, you assign a role, which determines the user's level of access. Review the following sections that outline what actions each platform and service role allows within the {{site.data.keyword.satelliteshort}} service.
 
