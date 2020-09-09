@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -173,7 +173,7 @@ Use the {{site.data.keyword.satelliteshort}} console to create your location.
 Before you begin, make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations.
 
 1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click **Create location**.
-2. Enter a name and an optional description for your location. Do not reuse the name of a previously deleted location.
+2. Enter a name and an optional description for your location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Do not reuse the name of a previously deleted location.
 3. Select the {{site.data.keyword.cloud_notm}} multizone metro that you want to use to manage your location. For more information about why you must select a {{site.data.keyword.cloud_notm}} multizone metro, see [Understanding supported {{site.data.keyword.cloud_notm}} multizone metros in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the metro that is closest to where your host machines physically reside that you plan to add to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
 4. Click **Create location**. When you create the location, a location control plane master is deployed to one of the zones that are located in the {{site.data.keyword.cloud_notm}} multizone metro that you selected. That process might take a few minutes to complete.
 5. Wait for the master to be fully deployed and the location **State** to change to `Action required`.
@@ -216,7 +216,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI:
       </tr>
       <tr>
       <td><code>--name &lt;location_name&gt;</code></td>
-      <td>Enter a name for your {{site.data.keyword.satelliteshort}} location. Do not reuse the name of a previously deleted location.</td>
+      <td>Enter a name for your {{site.data.keyword.satelliteshort}} location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Do not reuse the name of a previously deleted location.</td>
       </tr>
       </tbody>
     </table>
@@ -244,7 +244,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI:
 ## Setting up the {{site.data.keyword.satelliteshort}} control plane for the location
 {: #setup-control-plane}
 
-The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources that you add to the location. 
+The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources that you add to the location.
 {: shortdesc}
 
 To create the control plane, you must add at least 3 compute hosts to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers). The minimum of 3 hosts for the location control plane is for demonstration purposes. To continue to use the location for production workloads, [add more hosts to the location control plane](#control-plane-scale) in multiples of 3, such as 6, 9, or 12 hosts.
@@ -273,7 +273,7 @@ Use the {{site.data.keyword.satelliteshort}} console to set up a control plane f
    {: note}
 
 7. Refer to step 7 in [Setting up the control plane from the CLI](#control-plane-cli) to verify that your DNS records were successfully created.
-   
+
    If your hosts are from Amazon Web Services or Google Cloud Platform, you must manually register the DNS for the location control plane. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-control-plane) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-control-plane) provider topics.
    {: note}
 
