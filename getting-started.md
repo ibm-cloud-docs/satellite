@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -137,6 +137,10 @@ With your location set up, you can now add host machines to your location. All h
 2. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use:satcp` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane.
 3. Enter a file name for your script or use the name that is generated for you.
 4. Click **Download script** to generate the host script and download the script to your local machine.
+
+   Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
+   {: note}
+
 5. Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane.
    1. Retrieve the public IP address of your host.
    2. Copy the script from your local machine to your host.
@@ -150,7 +154,6 @@ With your location set up, you can now add host machines to your location. All h
       ssh root@<public_IP_address>
       ```
       {: pre}
-   4. Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs-system) on your hosts before you can run the script. For example, see [RHEL package updates](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages).
    5. Run the script.
       ```
       nohup bash /tmp/attach.sh &

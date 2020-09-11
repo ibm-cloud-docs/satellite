@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -111,6 +111,41 @@ Review the following host requirements that are specific to hosts that are in th
 
 Your hosts also must meet the general requirements that are common across providers, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
+
+### RHEL package updates in example launch template
+{: #aws-reqs-launch-template}
+
+To [add AWS hosts to your {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-hosts#add-hosts), you must update the RHEL packages on the host machines. You can also use [AWS launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html){: external} to add hosts to your {{site.data.keyword.satellitelong_notm}} location.
+{: shortdesc}
+
+1.  Get a registration script to add hosts to your {{site.data.keyword.satellitelong_notm}} location.
+    ```
+    ibmcloud sat host attach --location <location_name_or_ID>
+    ```
+    {: pre}
+2.  Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
+    ```
+    API_URL="https://containers.cloud.ibm.com/"
+    # Enable AWS RHEL package updates
+    yum update -y
+    yum-config-manager --enable '*'
+    yum repolist all
+    yum install container-selinux -y
+    echo "repos enabled"
+    ```
+    {: codeblock}
+3.  In the `UserData` section of your AWS launch template, add the registration script.
+    ```
+    ...
+    "DisableApiTermination": false,
+    "InstanceInitiatedShutdownBehavior": "stop",
+    "UserData": "<registration_script>",
+    "CapacityReservationSpecification": {
+        "CapacityReservationPreference": "open"
+    },
+    ...
+    ```
+    {: screen}
 
 ### DNS for location control plane
 {: #aws-reqs-dns-control-plane}
@@ -256,41 +291,6 @@ As described in the [host networking requirements](/docs/satellite?topic=satelli
 ```
 {: screen}
 
-### Example launch template
-{: #aws-reqs-launch-template}
-
-You can use [AWS launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html){: external} to add hosts to your {{site.data.keyword.satellitelong_notm}} location.
-{: shortdesc}
-
-1.  Get a registration script to add hosts to your {{site.data.keyword.satellitelong_notm}} location.
-    ```
-    ibmcloud sat host attach --location <location_name_or_ID>
-    ```
-    {: pre}
-2.  Open the registration script. After the `API_URL` section, add a section to pull the required RHEL packages with the subscription manager.
-    ```
-    API_URL="https://containers.cloud.ibm.com/"
-    # Enable AWS RHEL package updates
-    yum update -y
-    yum-config-manager --enable '*'
-    yum repolist all
-    yum install container-selinux -y
-    echo "repos enabled"
-    ```
-    {: codeblock}
-3.  In the `UserData` section of your AWS launch template, add the registration script.
-    ```
-    ...
-    "DisableApiTermination": false,
-    "InstanceInitiatedShutdownBehavior": "stop",
-    "UserData": "<registration_script>",
-    "CapacityReservationSpecification": {
-        "CapacityReservationPreference": "open"
-    },
-    ...
-    ```
-    {: screen}
-
 <br />
 
 
@@ -302,6 +302,31 @@ Review the following host requirements that are specific to hosts that are in th
 
 Your hosts also must meet the general requirements that are common across providers, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
+
+### RHEL package updates
+{: #gcp-reqs-rhel-packages}
+
+To [add GCP hosts to your {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-hosts#add-hosts), you must update the RHEL packages on the host machines as in the following example steps.
+{: shortdesc}
+
+Want to automate the provisioning of GCP hosts in {{site.data.keyword.satellitelong_notm}}? Try out a [Terraform script](https://github.ibm.com/davetropeano/terraform-satellite-gcp){: external}.
+{: tip}
+
+1.  Get a registration script to add hosts to your {{site.data.keyword.satellitelong_notm}} location.
+    ```
+    ibmcloud sat host attach --location <location_name_or_ID>
+    ```
+    {: pre}
+2.  Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
+    ```
+    ...
+    API_URL="https://containers.cloud.ibm.com/"
+    
+    # Enable GCP RHEL package updates
+    yum install subscription-manager -y
+    ```
+    {: codeblock}
+3.  Continue with the [steps to copy and run the script on your hosts](/docs/satellite?topic=satellite-hosts#add-hosts).
 
 ### DNS for location control plane
 {: #gcp-reqs-dns-control-plane}
