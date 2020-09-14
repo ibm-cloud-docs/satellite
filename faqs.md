@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -177,7 +177,7 @@ During the beta, you are not charged for using {{site.data.keyword.satellitelong
 {: faq}
 {: support}
 
-During the {{site.data.keyword.satelliteshort}} beta, you can run the following {{site.data.keyword.cloud_notm}} services in your {{site.data.keyword.satelliteshort}} location:
+During the {{site.data.keyword.satelliteshort}} beta, you can run the {{site.data.keyword.cloud_notm}} services in your {{site.data.keyword.satelliteshort}} location as described in the following table. Keep in mind that each service might have its own [limitations for use in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-requirements#reqs-services).  
 
 |Service name|Description|
 |------------|----------------------------------|

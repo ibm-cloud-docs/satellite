@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -169,3 +169,12 @@ You cannot scope access policies to particular configuration or subscription res
 **Configuration files in {{site.data.keyword.satelliteshort}} Config**
 * You can upload only an individual configuration file of Kubernetes resources per release version. You cannot upload a directory or several different configuration files.
 * Configuration files are subject to Kubernetes requirements, such as that the manifest must be expressed in YAML format.
+
+## {{site.data.keyword.cloud_notm}} services
+{: #reqs-services}
+
+You can have up to 40 instances of a supported {{site.data.keyword.cloud_notm}} service per {{site.data.keyword.satelliteshort}} location. For example, you might have a {{site.data.keyword.satelliteshort}} location that has 40 {{site.data.keyword.openshiftlong_notm}} clusters in it.
+{: shortdesc}
+
+Each supported service might have its own limitations to run in {{site.data.keyword.satelliteshort}}.
+* {{site.data.keyword.openshiftlong_notm}}: See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation.
