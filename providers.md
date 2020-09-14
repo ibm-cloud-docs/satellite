@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-11"
+lastupdated: "2020-09-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -195,7 +195,7 @@ By default, the private IP addresses for your AWS hosts are used for the DNS reg
 ### Security group
 {: #aws-reqs-secgroup}
 
-As described in the [host networking requirements](/docs/satellite?topic=satellite-host-reqs-network), your AWS hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. If you use hosts in a virtual private cloud (VPC), you can create a security group similar to the following example. You can get the owner, group, user, and VPC IDs from your AWS provider resources.
+As described in the [host networking requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network), your AWS hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. If you use hosts in a virtual private cloud (VPC), you can create a security group similar to the following example. You can get the owner, group, user, and VPC IDs from your AWS provider resources.
 {: shortdesc}
 
 **Example security group for AWS**
@@ -382,7 +382,7 @@ If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location
 ### Firewall settings
 {: #gcp-reqs-firewall}
 
-As described in the [host networking requirements](/docs/satellite?topic=satellite-host-reqs-network), your GCP hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. You might find that you need to update your firewall settings in GCP, similar to the following example.
+As described in the [host networking requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network), your GCP hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. You might find that you need to update your firewall settings in GCP, similar to the following example.
 {: shortdesc}
 
 **Example firewall settings**

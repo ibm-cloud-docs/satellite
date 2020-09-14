@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-03"
+lastupdated: "2020-09-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -96,7 +96,7 @@ subcollection: satellite
 Review the following host requirements for {{site.data.keyword.satellitelong_notm}}. For provider-specific requirements, see [Provider requirements](/docs/satellite?topic=satellite-providers).
 {: shortdesc}
 
-Can't meet these host requirements? [Contact IBM Support](/docs/get-support?topic=get-support-getting-customer-support) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
+Can't meet these host requirements? [Contact IBM Support](/docs/get-support?topic=get-support-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
 {: note}
 
 ## Host system requirements
