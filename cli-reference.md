@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-09"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1503,7 +1503,7 @@ ibmcloud sat location create --managed-from METRO --name NAME [--cos-key COS_SEC
 <dd>Required. The {{site.data.keyword.cloud_notm}} multizone metro that your {{site.data.keyword.satelliteshort}} control plane resources are managed from. Select the {{site.data.keyword.cloud_notm}} multizone metro that is nearest to where your physical machines are. For a list of supported metros, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. Enter a name for your location.  </dd>
+<dd>Required. Enter a name for your location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Do not reuse the name of a previously deleted location.</dd>
 
 <dt><code>--cos-key <em>COS_SECRET_KEY</em></code></dt>
 <dd>Optional. Enter the HMAC secret access key credentials of the {{site.data.keyword.cos_full_notm}} service instance that you want to use to back up data of your {{site.data.keyword.satelliteshort}} control plane. If you specify the secret access key, make sure to also specify the HMAC access key ID, bucket name, bucket endpoint, and bucket region of your {{site.data.keyword.cos_full_notm}} service instance.   </dd>

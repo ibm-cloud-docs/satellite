@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-28"
+lastupdated: "2020-09-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -120,7 +120,7 @@ Still having issues? Review different ways to get help and support for {{site.da
 2. Review forums such as Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
    * For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
    * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.openshiftshort}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
-   * See [Getting help](/docs/get-support?topic=get-support-getting-customer-support#using-avatar) for more details about using the forums.
+   * See [Getting help](/docs/get-support?topic=get-support-using-avatar#using-avatar) for more details about using the forums.
 
 ## Contacting support
 {: #help-support}
@@ -142,7 +142,7 @@ Still having issues? Review different ways to get help and support for {{site.da
    You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
    {: tip}
 
-2.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-getting-customer-support).
+2.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
 3.  In your support case, for **Category**, select **Containers**.
 4.  For the **Offering**, select your {{site.data.keyword.satelliteshort}} resource. Include the relevant information that you previously gathered.
 

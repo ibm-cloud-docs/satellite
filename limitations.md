@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-01"
+lastupdated: "2020-09-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -164,6 +164,17 @@ Choose from the following options:
 **{{site.data.keyword.satelliteshort}} Config and {{site.data.keyword.cloud_notm}} IAM**<br>
 You cannot scope access policies for {{site.data.keyword.satelliteshort}} Config resources (configuration, subscription, cluster, or cluster group) to an {{site.data.keyword.cloud_notm}} resource group. {{site.data.keyword.satelliteshort}} Config uses the open source Razee project, which authenticates users by using the organization. The organization supports only the account ID, not resource groups.
 
+You cannot scope access policies to particular configuration or subscription resources. When you assign a policy in the {{site.data.keyword.cloud_notm}} IAM console, leave the **Resource** field blank for configurations or subscriptions. Instead, you can scope the access policy to a cluster group for more control of how your {{site.data.keyword.satelliteshort}} Config resources are deployed.
+
 **Configuration files in {{site.data.keyword.satelliteshort}} Config**
 * You can upload only an individual configuration file of Kubernetes resources per release version. You cannot upload a directory or several different configuration files.
 * Configuration files are subject to Kubernetes requirements, such as that the manifest must be expressed in YAML format.
+
+## {{site.data.keyword.cloud_notm}} services
+{: #reqs-services}
+
+You can have up to 40 instances of a supported {{site.data.keyword.cloud_notm}} service per {{site.data.keyword.satelliteshort}} location. For example, you might have a {{site.data.keyword.satelliteshort}} location that has 40 {{site.data.keyword.openshiftlong_notm}} clusters in it.
+{: shortdesc}
+
+Each supported service might have its own limitations to run in {{site.data.keyword.satelliteshort}}.
+* {{site.data.keyword.openshiftlong_notm}}: See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation.

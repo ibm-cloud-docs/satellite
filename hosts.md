@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-02"
+lastupdated: "2020-09-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -111,7 +111,7 @@ The following diagram presents the initial setup steps for hosts.
 ![Concept overview of Satellite host setup](/images/host-process.png){: caption="Figure 1. The initial setup process for {{site.data.keyword.satelliteshort}} hosts." caption-side="bottom"}
 
 1.  **Add**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [add the host](#add-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers). After the host is added and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
-2.  **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service. For example, each location must have at least 3 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
+2.  **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service. For example, a basic setup has 6 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} location control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
 3.  **Bootstrap**: When you assign a host, the host is bootstrapped to become a worker node in a managed {{site.data.keyword.openshiftlong_notm}} cluster or your {{site.data.keyword.satelliteshort}} control plane. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host, which requires public connectivity to pull the images from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts).
 
 Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshort}} location control plane, {{site.data.keyword.openshiftlong_notm}} cluster, or as compute capacity for other {{site.data.keyword.satelliteshort}}-enabled services. If you run an {{site.data.keyword.openshiftshort}} cluster, you can log in to the clusters and use Kubernetes or {{site.data.keyword.openshiftshort}} APIs to manage your containerized workloads, or use [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) to manage your workloads across clusters.
@@ -143,6 +143,10 @@ Before you begin, make sure that you have created host machines that meet the [m
 3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 4. Enter a file name for your script or use the name that is generated for you.
 5. Click **Download script** to generate the host script and download the script to your local machine.
+   
+   Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
+   {: note}
+
 6. Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
    1. Retrieve the public IP address of your host.
    2. Copy the script from your local machine to your host.
@@ -188,6 +192,9 @@ Before you begin, make sure that you have created host machines that meet the [m
     ```
     {: screen}
 
+   Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
+   {: note}
+
 2.  On your local machine, find the script.
 3.  Log in to each host machine that you want to add to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
     1. Retrieve the public IP address of your host.
@@ -232,7 +239,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 ## Assigning hosts to {{site.data.keyword.satelliteshort}} resources
 {: #host-assign}
 
-After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity. For example, each location needs at least 3 hosts to be assigned as worker nodes to the [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane). Any remaining hosts can be assigned as worker nodes to {{site.data.keyword.openshiftlong_notm}} clusters or as compute capacity to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services.
+After you add hosts to a {{site.data.keyword.satelliteshort}} location, you can assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity. For example, a basic setup has 6 hosts that are assigned as worker nodes to the [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane). Any remaining hosts can be assigned as worker nodes to {{site.data.keyword.openshiftlong_notm}} clusters or as compute capacity to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services.
 <br />
 
 
@@ -362,7 +369,7 @@ Review the following considerations before you update your {{site.data.keyword.s
 {: shortdesc}
 
 **Does updating the {{site.data.keyword.satelliteshort}} location control plane worker nodes impact the cluster masters that run in the location control plane?**<br>
-Yes. Because the cluster masters run in your location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts.
+Yes. Because the cluster masters run in your location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To add extra hosts, see [Adding capacity to your location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).
 
 The location control plane worker nodes and cluster worker nodes do not have to run the same version of {{site.data.keyword.openshiftshort}}, but your hosts must run a supported version.
 
