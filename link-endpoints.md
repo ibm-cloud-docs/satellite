@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -119,7 +119,7 @@ By default, after you set up an endpoint, any client can connect to the destinat
 Two {{site.data.keyword.satelliteshort}} Link components, the tunnel server and the connector, proxy network traffic over a secure TLS connection between cloud services and resources in your {{site.data.keyword.satelliteshort}} location. For more information about the {{site.data.keyword.satelliteshort}} Link components, see the [Satellite architecture](/docs/satellite?topic=satellite-service-architecture#architecture).
 {: shortdesc}
 
-**Destination resource runs outside of the location.**
+**Destination resource runs outside of the location**
 
 By default, source clients in your {{site.data.keyword.satelliteshort}} location cannot reach destination resources that run outside of the location because the destination resource's IP address is not routable from within the location. Review the following architecture diagram and steps, which demonstrate how {{site.data.keyword.satelliteshort}} Link enables communication from {{site.data.keyword.satelliteshort}} locations to services that run outside of locations through {{site.data.keyword.satelliteshort}} endpoints.
 
@@ -136,7 +136,7 @@ By default, source clients in your {{site.data.keyword.satelliteshort}} location
 
 3. The {{site.data.keyword.satelliteshort}} Link tunnel server resolves the request to the destination's IP address and port, and forwards the request to the destination resource.
 
-**Destination resource runs in {{site.data.keyword.satelliteshort}} location.**
+**Destination resource runs in {{site.data.keyword.satelliteshort}} location**
 
 By default, source clients that run outside of the location cannot reach destination resources that run in your {{site.data.keyword.satelliteshort}} location because the destination resource's IP address is not routable from outside the location. Review the following architecture diagram and steps, which demonstrate how {{site.data.keyword.satelliteshort}} Link enables communication from services that run outside of {{site.data.keyword.satelliteshort}} locations to locations through {{site.data.keyword.satelliteshort}} endpoints.
 
