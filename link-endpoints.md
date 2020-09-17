@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-16"
+lastupdated: "2020-09-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -125,7 +125,7 @@ By default, source clients in your {{site.data.keyword.satelliteshort}} location
 
 <p>
 <figure>
- <img src="/images/sat_link_cloud.png" alt="Network traffic flow from {{site.data.keyword.satelliteshort}} resources to a {{site.data.keyword.cloud_notm}} resource through an endpoint">
+ <img src="/images/sat_link_cloud.png" alt="Network traffic flow from {{site.data.keyword.satelliteshort}} resources to an {{site.data.keyword.cloud_notm}} resource through an endpoint">
  <figcaption>Network traffic flow from a source in your {{site.data.keyword.satellitelong_notm}} location to a destination resource in {{site.data.keyword.cloud_notm}} through {{site.data.keyword.satelliteshort}} Link</figcaption>
 </figure>
 </p>
