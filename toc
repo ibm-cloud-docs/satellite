@@ -47,7 +47,7 @@ Satellite
     faqs.md
 
     {: .topicgroup}
-    Troubleshooting Satellite components
+    Troubleshooting
         ts-location.md
         ts-host.md
         ts-clusters.md
