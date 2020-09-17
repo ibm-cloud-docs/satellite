@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -97,10 +97,10 @@ subcollection: satellite
 Review the {{site.data.keyword.cloud_notm}} multizone metros that you can choose from to manage your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
-|Geography|Country|Multizone Metro|Region|Zone|
-|---------|--------------|-------------|----------|-------------|
-|North America|United States|Washington DC|`us-east`|`us-east-1` </br> `us-east-2` </br> `us-east-3`|
-|Europe|United Kingdom|London|`eu-gb`|`eu-gb-1` </br> `eu-gb-2` </br> `eu-gb-3`|
+|Geography|Country|Multizone Metro|Location|Region|Zone|
+|---------|-------|---------------|--------|------|----|
+|North America|United States|Washington DC| `wdc`| `us-east`|`us-east-1` </br> `us-east-2` </br> `us-east-3`|
+|Europe|United Kingdom|London| `lon` | `eu-gb`|`eu-gb-1` </br> `eu-gb-2` </br> `eu-gb-3`|
 {: caption="Supported {{site.data.keyword.cloud_notm}} locations to manage your {{site.data.keyword.satelliteshort}} location." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the geography. The second column is the country. The third column is the multizone metro. The fourth column is the region. The fifth column has the possible zones."}
 

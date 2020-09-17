@@ -1527,7 +1527,7 @@ ibmcloud sat location create --managed-from METRO --name NAME [--cos-key COS_SEC
 
 **Example:**
 ```
-ibmcloud sat location create --managed-from us-east --name mylocation
+ibmcloud sat location create --managed-from wdc --name mylocation
 ```
 {: pre}
 

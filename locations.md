@@ -212,7 +212,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI:
       <tbody>
       <tr>
       <td><code>--managed-from us-east</code></td>
-        <td>The {{site.data.keyword.cloud_notm}} multizone metro that your location is managed from. You can use any metro, but to reduce latency between {{site.data.keyword.cloud_notm}} and your location, choose the metro that is closest to the compute hosts that you plan to add to your location later. For a list of supported {{site.data.keyword.cloud_notm}} multizone metros, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions). </td>
+        <td>The {{site.data.keyword.cloud_notm}} multizone metro location, such as `wdc`, that your {{site.data.keyword.satelliteshort}} location is managed from. You can use any metro, but to reduce latency between {{site.data.keyword.cloud_notm}} and your location, choose the metro that is closest to the compute hosts that you plan to add to your location later. For a list of supported {{site.data.keyword.cloud_notm}} multizone metros, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions). </td>
       </tr>
       <tr>
       <td><code>--name &lt;location_name&gt;</code></td>
@@ -265,7 +265,7 @@ Use the {{site.data.keyword.satelliteshort}} console to set up a control plane f
 1. From the {{site.data.keyword.satelliteshort}} [**Locations** dashboard](https://cloud.ibm.com/satellite/locations), select the location where you want to finish the setup of your control plane.
 2. From the **Hosts** tab, identify at least 3 hosts that you can assign as worker nodes to your control plane. All hosts must be in an **Unassigned** status.
 3. From the actions menu of each host, click **Assign host**.
-4. Select **Control plane** as your cluster and choose one of the available zones. Make sure that you assign each host to a different zone so that you spread all 3 hosts across all 3 zones in US East (`us-east-1`, `us-east-2`, and `us-east-3`). When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
+4. Select **Control plane** as your cluster and choose one of the available zones. Make sure that you assign each host to a different zone so that you spread all 3 hosts across all 3 zones in the `wdc` US East region (`us-east-1`, `us-east-2`, and `us-east-3`). When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
 5. From the **Hosts** tab, verify that your hosts are successfully assigned to the {{site.data.keyword.satelliteshort}} control plane. The assignment is successful when a public IP address is added to your host and the **Health** status changes to **Normal**.
 6. Verify that your location status changed to **Normal**. You might see a location message about the location not having enough hosts until the bootstrapping process completes.
 
@@ -495,7 +495,7 @@ The following table provides an example of the number hosts that the control pla
 
 
 **How do I scale up my control plane location to be highly available?**<br>
-See [Highly available control plane worker setup](/docs/satellite?topic=satellite-ha#satellite-ha-setup). Make sure to add hosts to the control plane location in each zone, in multiples of three. For example, you might have 6 hosts that are assigned to your control plane location that is managed from {{site.data.keyword.cloud_notm}} multizone metro `us-east`, with 2 hosts each zone (`us-east-1`, `us-east-2`, and `us-east-3`).
+See [Highly available control plane worker setup](/docs/satellite?topic=satellite-ha#satellite-ha-setup). Make sure to add hosts to the control plane location in each zone, in multiples of three. For example, you might have 6 hosts that are assigned to your control plane location that is managed from {{site.data.keyword.cloud_notm}} multizone metro `wdc` US East region, with 2 hosts each zone (`us-east-1`, `us-east-2`, and `us-east-3`).
 
 **I am ready to scale up my location control plane. How do I start?**<br>
 You can follow the same steps to [Set up the {{site.data.keyword.satelliteshort}} control plane for the location](/docs/satellite?topic=satellite-locations#setup-control-plane).
