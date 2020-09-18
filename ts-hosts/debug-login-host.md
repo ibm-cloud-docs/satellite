@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-09-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -129,7 +129,7 @@ You can only SSH into the machine if you did not assign the host to a cluster, o
     </tr>
     <tr>
     <td><code>No package matching '\''container-selinux'\'' found available, installed or updated</code>.<br><br><code>No package rh-python36 available. Error: Nothing to do</code>.<br><br>(Note that the package name might be replaced with another package name.)</td>
-    <td>See [Host registration script fails](#host-registration-script-fails).</td>
+    <td>See [Host registration script fails](/docs/satellite?topic=satellite-host-registration-script-fails).</td>
     </tr>
     <tr>
     <td><pre class="screen"><code>curl: (6) Could not resolve host: <URL>.com; Unknown error

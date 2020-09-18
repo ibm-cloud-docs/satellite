@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-09-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -135,7 +135,7 @@ If you want, you can debug the connectivity issues for your host. Otherwise, rem
         ```
         {: pre}
     6.  If you think you might have a webhook in the cluster that block access to the API server, see [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-cs_troubleshoot#webhooks_update). Webhooks are often components for additional capabilities in your cluster, such as Cloud Paks, Istio, or container image security enforcement.
-3.  After you resolve any connectivity issues, [check the health of your host](#ts-hosts-debug) for further information.
+3.  After you resolve any connectivity issues, [check the health of your host](/docs/satellite?topic=satellite-ts-hosts-debug) for further information.
 4.  Reassign your hosts if you continue to have issues.
     1.  [Remove the host](/docs/satellite?topic=satellite-hosts#host-remove) from your {{site.data.keyword.satelliteshort}} location.
     2.  Reload the operating system of your host by following the procedure of the underlying infrastructure provider.
