@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-08"
+lastupdated: "2020-09-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -146,6 +146,7 @@ For information about assigning user roles in the console, see [Managing access 
       *   [Platform management roles](#iam-roles-platform)
       *   [Service access roles](#iam-roles-service)
       *   [Common use cases and roles](#iam-roles-usecases)
+    * Consider creating a **Reader** service policy to {{site.data.keyword.satellitelong_notm}} (and not scoped to a particular resource type or resource) so that users can view the {{site.data.keyword.satelliteshort}} Config resources that run in {{site.data.keyword.satelliteshort}} clusters, such as pods or deployments.
 4.  [Assign the access group](/docs/account?topic=account-groups#access_ag) with the appropriate scope for any other {{site.data.keyword.cloud_notm}} services that you plan to use in your {{site.data.keyword.satelliteshort}} location. Refer to each service documentation for the level of access that you need. Common services include:
     * {{site.data.keyword.openshiftlong_notm}} clusters: **Kubernetes Service** in the UI, **containers-kubernetes** in the API and CLI.
     * {{site.data.keyword.registrylong_notm}} for a private registry across clusters: **Container Registry** in the UI, **container-registry** in the API and CLI.
@@ -381,8 +382,11 @@ Click the tabs in the following table to review the actions that are mapped to p
 {: tab-title="Resource"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform management roles." caption-side="top"}
+{: caption="`*` Actions that you can take with platform management roles." caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
+
+`*` You cannot scope access policies to a particular {{site.data.keyword.satelliteshort}} Config **resource**. Instead, scope the policy to the {{site.data.keyword.satellitelong_notm}} service so that users can list {{site.data.keyword.satelliteshort}} Config resources.
+{: note}
 
 ### Service access roles
 {: #iam-roles-service}
@@ -466,8 +470,11 @@ Click the tabs in the following table to review the actions that are mapped to s
 {: tab-title="Resource"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-service"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: caption="`*` Actions that you can take with service access roles." caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different service roles are in the following columns: none, reader, writer, deployer, and manager."}
+
+`*` You cannot scope access policies to a particular {{site.data.keyword.satelliteshort}} Config **resource**. Instead, scope the policy to the {{site.data.keyword.satellitelong_notm}} service so that users can list {{site.data.keyword.satelliteshort}} Config resources.
+{: note}
 
 ### Platform and service roles for {{site.data.keyword.openshiftshort}} clusters
 {: #iam-roles-clusters}
