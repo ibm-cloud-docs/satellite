@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -90,16 +90,7 @@ subcollection: satellite
 {:video: .video}
 
 
-
-# Clusters
-{: #ts-clusters}
-
-## Debugging clusters
-{: #ts-clusters-debug}
-
-See the [{{site.data.keyword.openshiftlong_notm}} troubleshooting documentation](/docs/openshift?topic=openshift-cs_troubleshoot).
-
-## Cluster does not get Ingress subdomain
+# Why doesn't my cluster get an Ingress subdomain?
 {: #cluster-subdomain-providers}
 
 {: tsSymptoms}
@@ -110,39 +101,3 @@ The worker nodes for your cluster set the private IP of the AWS and GCP cloud pr
 
 {: tsResolve}
 Manually register the DNS subdomain for your cloud provider hosts. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) topics.
-
-## Clusters cannot view or get updates to Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config
-{: #satconfig-cluster-access-error}
-
-{: tsSymptoms}
-When you register a cluster to use with {{site.data.keyword.satelliteshort}} Config, you do not see the cluster resources show up in the resources list. Even though you subscribe the cluster to a configuration, no Kubernetes resources are created or updated in the cluster. 
-
-{: tsCauses}
-To use a cluster to use with {{site.data.keyword.satelliteshort}} Config, the proper components must be installed, and you must grant {{site.data.keyword.satelliteshort}} Config permissions in your cluster to manage Kubernetes resources.
-
-{: tsResolve}
-1.  Re-attach the cluster to {{site.data.keyword.satelliteshort}} Config. For more information, see [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters).
-    1.  Get a `kubectl` command to register your cluster with {{site.data.keyword.satelliteshort}} Config.
-        ```
-        ibmcloud sat cluster register
-        ```
-        {: pre}
-
-        Example output:
-        ```
-        kubectl apply -f "https://config.satellite.cloud.ibm.com/api/install/razeedeploy-job?orgKey=<orgApiKey>&args=--clustersubscription=<number>&args=--featureflagsetld=<number>&args=--mustachetemplate=<number>&args=--managedset=<number>&args=--remoteresources<number>&args=--remoteresource=<number>&args=--watch-keeper=<number>"
-        ```
-        {: screen}
-    2.  Log in to your cluster. For more login options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
-        ```
-        ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
-        ```
-        {: pre}
-    3.  Run the `kubectl` command that you previously retrieved.
-2.  Grant {{site.data.keyword.satelliteshort}} Config permissions in your cluster to manage Kubernetes resources. The following command grants `cluster-admin` permissions for the entire cluster. For more options, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access).
-    ```
-    kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
-    ```
-    {: pre}
-
-

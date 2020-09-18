@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-09-17"
 
-keywords: satellite license, satellite notices, satellite license notices
+keywords: satellite, hybrid, multicloud
 
 subcollection: satellite
 
@@ -90,18 +90,7 @@ subcollection: satellite
 {:video: .video}
 
 
+# Debugging clusters
+{: #ts-clusters-debug}
 
-# {{site.data.keyword.satellitelong_notm}} notices
-{: #sat-notices}
-
-The following notices are included in this document: 
-- CC-BY-SA-4.0
-
-## Creative Commons Attribution Share Alike 4.0 Generic
-The Program includes some or all of the following works licensed under the Creative Commons. The URL to the license is `https://creativecommons.org/licenses/by-sa/4.0/legalcode`. 
-
-GLOB LOGO [Glob](http://registry.npmjs.org/glob/-/glob-7.1.4.tgz){: external}.
-
-
-
-
+See the [{{site.data.keyword.openshiftlong_notm}} troubleshooting documentation](/docs/openshift?topic=openshift-cs_troubleshoot).

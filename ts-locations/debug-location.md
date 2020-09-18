@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -90,21 +90,11 @@ subcollection: satellite
 {:video: .video}
 
 
-
-# Locations
-{: #ts-locations}
+# Debugging location health
+{: #ts-locations-debug}
 
 By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your locations and tries to resolve issues automatically for you. For issues that cannot be resolved automatically, you can debug the location by reviewing the provided health information.
 {: shortdesc}
-
-
-
-## Debugging location health
-{: #ts-locations-debug}
-
-Review the health of your location, and use the error messages to resolve any issues that you might have.
-{: shortdesc}
-
 
 1.  View your locations in the console or list your locations in the CLI, and review the **Status**. If the status is not healthy, continue to the next step. For more information, see [Viewing location health](/docs/satellite?topic=satellite-health#location-health).
     ```
@@ -237,129 +227,3 @@ Review the health of your location, and use the error messages to resolve any is
     </tr>
     </tbody>
     </table>
-
-## Debugging the health of the location control plane
-{: #ts-locations-control-plane}
-
-When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-concept), IBM automatically sets up a master for the location control plane in {{site.data.keyword.cloud_notm}}. Additionally, you must assign at least three hosts to the {{site.data.keyword.satelliteshort}} location control plane as worker nodes to run location components that IBM configures. If the location control plane that runs on your hosts has issues, you can debug the location control plane.
-
-1.  Get your {{site.data.keyword.satelliteshort}} location ID.
-    ```
-    ibmcloud sat location ls
-    ```
-    {: pre}
-2.  List the **Hostnames** of the subdomains for your location control plane hosts.
-    ```
-    ibmcloud sat location dns ls --location <location_name_or_ID>
-    ```
-    {: pre}
-
-    Example output:
-    ```
-    Retrieving location subdomains...
-    OK
-    Hostname                                                                                                 Records                                                                                                Health Monitor   SSL Cert Status   SSL Cert Secret Name                                          Secret  Namespace   
-    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud   169.62.  196.20,169.62.196.23,169.62.196.30                                                                None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000     default   
-    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c001.us-east.satellite.appdomain.cloud   169.62.  196.30                                                                                            None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c001     default   
-    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c002.us-east.satellite.appdomain.cloud   169.62.  196.20                                                                                            None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c002     default   
-    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c003.us-east.satellite.appdomain.cloud   169.62.  196.23                                                                                            None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c003     default   
-    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00.us-east.satellite.appdomain.cloud    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud            None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00      default  
-    ```
-    {: screen}
-
-3.  Check the health of the control plane location subdomains by curling each hostname endpoint. If the endpoint returns a `200` response for each host, the control plane worker node is healthy and serving Kubernetes traffic. If not, continue to the next step.
-    ```
-    curl -v http://<hostname>:30000
-    ```
-    {: pre}
-
-    Example output of a failed response:
-    ```
-    * Rebuilt URL to: http://169.xx.xxx.xxx:30000/
-    *   Trying 169.xx.xxx.xxx...
-    * TCP_NODELAY set
-    * Connection failed
-    * connect to 169.xx.xxx.xxx port 30000 failed: Operation timed out
-    * Failed to connect to 169.xx.xxx.xxx port 30000: Operation timed out
-    * Closing connection 0
-    curl: (7) Failed to connect to 169.xx.xxx.xxx port 30000: Operation timed out
-    ```
-    {: screen}
-
-    Example output of a `200` response:
-    ```
-    * Rebuilt URL to: http://169.xx.xxx.xxx:30000/
-    *   Trying 169.xx.xxx.xxx...
-    * TCP_NODELAY set
-    * Connected to 169.xx.xxx.xxx (169.xx.xxx.xxx) port 30000 (#0)
-    > GET / HTTP/1.1
-    > Host: 169.xx.xxx.xxx:30000
-    > User-Agent: curl/7.54.0
-    > Accept: */*
-    >
-    < HTTP/1.1 200 OK
-    < content-length: 58
-    < cache-control: no-cache
-    < content-type: text/html
-    < connection: close
-    <
-    <html><body><h1>200 OK</h1>
-    Service ready.
-    </body></html>
-    * Closing connection 0
-    ```
-    {: screen}
-3.  Find the **ID** of the host that did not return a `200` response. You can compare the `Host: 169.xx.xxx.xxx` from the previous step with the **Worker IP** in the output of the following command.
-    ```
-    ibmcloud sat host ls --location <location_ID> | grep infrastructure
-    ```
-    {: pre}
-
-    Example output:
-    ```
-    Name     ID                     State        Status   Cluster          Worker ID                Worker IP   
-    host1    aaaaa1a11aaaaaa111aa   assigned     Ready    infrastructure   sat-virtualser-1234...   169.xx.xxx.xxx   
-    host2    bbbbbbb22bb2bbb222b2   assigned     Ready    infrastructure   sat-virtualser-1234...   169.xx.xxx.xxx  
-    host3    ccccc3c33ccccc3333cc   assigned     Ready    infrastructure   sat-virtualser-1234...   169.xx.xxx.xxx  
-    ```
-    {: screen}
-4.  [Add a host to the control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) in the same zone so that the location control plane has enough compute resources to continue running when you remove the unhealthy host.
-5.  [Remove the unhealthy host from the location control plane](/docs/satellite?topic=satellite-hosts#host-remove).
-6.  Optional: You can reload the operating system on the unhealthy host and try to attach and assign the host to {{site.data.keyword.satellitelong_notm}} again.
-
-## Location subdomain not routing traffic to control plane hosts
-{: #ts-location-subdomain}
-
-{: tsSymptoms}
-After you assign hosts to your {{site.data.keyword.satelliteshort}} location control plane, you see a message similar to the following.
-
-```
-R0036 The location subdomains are not correctly routing traffic to your control plane hosts. Verify that the location subdomains are registered with the correct IP addresses for your control plane hosts with the 'ibmcloud sat location dns' commands.
-```
-{: screen}
-
-{: tsCauses}
-The location control plane is not publicly accessible. The IP addresses that are registered with the DNS for your location subdomains might have one of the following issues:
-* The IP addresses are not the correct public IP addresses of the hosts that run the location control plane.
-* The hosts are behind a firewall that blocks traffic to the location control plane.
-* The hosts are from cloud providers like AWS or GCP that automatically register the private IP addresses of the hosts, so you must update the DNS records to use the public IP addresses.
-* You reused the name of the location, and the location subdomains are still using the IP addresses of the previous location hosts.
-
-{: tsResolve}
-Update the location subdomain DNS entries.
-
-1.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
-    ```
-    ibmcloud sat location dns ls --location <location_name_or_ID>
-    ```
-    {: pre}
-2.  If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall.
-3.  Get the public IP addresses of your hosts. Refer to your provider documentation. For example steps, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-control-plane) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-control-plane) topics.
-4.  Update the location subdomain DNS records with the correct public IP addresses of each host in the control plane.
-    ```
-    ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
-    ```
-    {: pre}
-
-    If you use hosts from cloud providers like AWS and GCP, you might also need to update the your cluster Ingress subdomain DNS entries. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics.
-    {: note}

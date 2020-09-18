@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-09-17"
 
-keywords: satellite license, satellite notices, satellite license notices
+keywords: satellite, hybrid, multicloud
 
 subcollection: satellite
 
@@ -90,18 +90,20 @@ subcollection: satellite
 {:video: .video}
 
 
+# Why can't I SSH into my host machines?
+{: #ssh-login-denied}
 
-# {{site.data.keyword.satellitelong_notm}} notices
-{: #sat-notices}
+{: tsSymptoms}
+When you try to SSH into a host machine that is assigned in {{site.data.keyword.satelliteshort}}, you see a message similar to the following.
+```
+Permission denied, please try again.
+```
+{: screen}
 
-The following notices are included in this document: 
-- CC-BY-SA-4.0
+{: tsCauses}
+After the host is successfully assigned to a {{site.data.keyword.satelliteshort}} location control plane or cluster, {{site.data.keyword.satelliteshort}} disables the ability to SSH into the host for security purposes.
 
-## Creative Commons Attribution Share Alike 4.0 Generic
-The Program includes some or all of the following works licensed under the Creative Commons. The URL to the license is `https://creativecommons.org/licenses/by-sa/4.0/legalcode`. 
+{: tsResolve}
+You cannot SSH into the host. If you need to modify settings on host machines in a cluster, try deploying a daemon set, such as in the [Tuning performance](/docs/containers?topic=containers-kernel) example.
 
-GLOB LOGO [Glob](http://registry.npmjs.org/glob/-/glob-7.1.4.tgz){: external}.
-
-
-
-
+If you remove a host from your location or remove the entire location, you must reload the machine in your host infrastructure provider to SSH into the host again.

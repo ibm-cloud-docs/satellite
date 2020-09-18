@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-17"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -323,7 +323,7 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
          </tbody>
          </table>
 
-3. Create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters[from the console](#create-satconfig-ui) or [the CLI](#create-satconfig-cli).
+3. Create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters [from the console](#create-satconfig-ui) or [the CLI](#create-satconfig-cli).
 
 <br />
 

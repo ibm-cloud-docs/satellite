@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-09-17"
 
-keywords: satellite license, satellite notices, satellite license notices
+keywords: satellite, hybrid, multicloud
 
 subcollection: satellite
 
@@ -90,18 +90,39 @@ subcollection: satellite
 {:video: .video}
 
 
+# Why does the location subdomain not route traffic to control plane hosts?
+{: #ts-location-subdomain}
 
-# {{site.data.keyword.satellitelong_notm}} notices
-{: #sat-notices}
+{: tsSymptoms}
+After you assign hosts to your {{site.data.keyword.satelliteshort}} location control plane, you see a message similar to the following.
 
-The following notices are included in this document: 
-- CC-BY-SA-4.0
+```
+R0036 The location subdomains are not correctly routing traffic to your control plane hosts. Verify that the location subdomains are registered with the correct IP addresses for your control plane hosts with the 'ibmcloud sat location dns' commands.
+```
+{: screen}
 
-## Creative Commons Attribution Share Alike 4.0 Generic
-The Program includes some or all of the following works licensed under the Creative Commons. The URL to the license is `https://creativecommons.org/licenses/by-sa/4.0/legalcode`. 
+{: tsCauses}
+The location control plane is not publicly accessible. The IP addresses that are registered with the DNS for your location subdomains might have one of the following issues:
+* The IP addresses are not the correct public IP addresses of the hosts that run the location control plane.
+* The hosts are behind a firewall that blocks traffic to the location control plane.
+* The hosts are from cloud providers like AWS or GCP that automatically register the private IP addresses of the hosts, so you must update the DNS records to use the public IP addresses.
+* You reused the name of the location, and the location subdomains are still using the IP addresses of the previous location hosts.
 
-GLOB LOGO [Glob](http://registry.npmjs.org/glob/-/glob-7.1.4.tgz){: external}.
+{: tsResolve}
+Update the location subdomain DNS entries.
 
+1.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
+    ```
+    ibmcloud sat location dns ls --location <location_name_or_ID>
+    ```
+    {: pre}
+2.  If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall.
+3.  Get the public IP addresses of your hosts. Refer to your provider documentation. For example steps, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-control-plane) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-control-plane) topics.
+4.  Update the location subdomain DNS records with the correct public IP addresses of each host in the control plane.
+    ```
+    ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
+    ```
+    {: pre}
 
-
-
+    If you use hosts from cloud providers like AWS and GCP, you might also need to update the your cluster Ingress subdomain DNS entries. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics.
+    {: note}

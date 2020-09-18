@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-04"
+lastupdated: "2020-09-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -121,7 +121,7 @@ When you create a {{site.data.keyword.satelliteshort}} location, you must choose
 IBM provides high availability for your control plane master in the following ways:
 
 - **Multiple instances:** By default, every {{site.data.keyword.satelliteshort}} control plane master is automatically set up with multiple instances to ensure availability and sufficient compute capacity to manage your location. IBM monitors the availability and compute capacity for your {{site.data.keyword.satelliteshort}} control plane master and automatically scales the master instances if necessary.
-- **Spread across zones:** IBM automatically spreads the control plane master instances across multiple zones within the same {{site.data.keyword.cloud_notm}} multizone metro. For example, if you choose to manage your location from the `us-east` metro, your control plane master instances are spread across the `us-east-1`, `us-east-2`, and `us-east-3` zones. This zonal spread ensures that your control plane master is available, even if one zone becomes unavailable.
+- **Spread across zones:** IBM automatically spreads the control plane master instances across multiple zones within the same {{site.data.keyword.cloud_notm}} multizone metro. For example, if you choose to manage your location from the `wdc` metro in US East region, your control plane master instances are spread across the `us-east-1`, `us-east-2`, and `us-east-3` zones. This zonal spread ensures that your control plane master is available, even if one zone becomes unavailable.
 - **Automatic backups to Object Storage:** All {{site.data.keyword.satelliteshort}} control plane data is backed up to an {{site.data.keyword.cos_full_notm}} service instance so that your location can be restored after a disaster. Access to this instance is protected by {{site.data.keyword.iamshort}} and all data is automatically encrypted during transit and at rest.
 
 Because the {{site.data.keyword.satelliteshort}} control plane master is managed by IBM, you cannot change the number of master instances or how high availability is configured. However, you must to ensure that your control plane worker nodes are configured for high availability. The control plan worker nodes can ensure that the workloads that run in your location have enough compute capacity, even if compute hosts become unavailable.

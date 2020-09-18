@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-09"
+lastupdated: "2020-09-17"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -308,7 +308,7 @@ ibmcloud sat config configuration version create --name NAME --read-config FILEP
 <dd>Required. A name for your version, such as `1.0` or `black friday`.</dd>
 
 <dt><code>--read-config <em>FILEPATH</em></code></dt>
-<dd>Required. The filepath to the Kubernetes resource configuration file that you want to upload as a version. You can upload only one configuration file, but the configuration file can have multiple Kubernetes resource definitions, such as a deployment, service, and security context constraint. Supported file types are YAML.</dd>
+<dd>Required. The file path to the Kubernetes resource configuration file that you want to upload as a version. You can upload only one configuration file, but the configuration file can have multiple Kubernetes resource definitions, such as a deployment, service, and security context constraint. Supported file types are YAML.</dd>
 
 <dt><code>--configuration <em>configuration</em></code></dt>
 <dd>Required. The name of the configuration to add the version to. To list available configurations, run <code>ibmcloud sat config configuration ls</code>.</dd>
@@ -1248,7 +1248,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 <dd>Optional. Enter the name or ID of the worker pool in your {{site.data.keyword.openshiftshort}} cluster to which you want to add your compute host. If you want to assign hosts to your {{site.data.keyword.satelliteshort}} control plane, this flag is not required. When you assign hosts to an {{site.data.keyword.openshiftshort}} cluster, you can include this flag to specify the worker pool. If no worker pool is specified, the host is assigned to the default worker pool of the cluster.  </dd>
 
 <dt><code>--label <em>LABEL</em></code>, <code>-l <em>LABEL</em></code></dt>
-<dd>Optional. Enter any labels as a key-value-pair that you want to use to identify the host that you want to assign to your  {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. The first host that has this label and is in an unassigned state it automatically assignd to the control plane or cluster. To find available host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>.  </dd>
+<dd>Optional. Enter any labels as a key-value-pair that you want to use to identify the host that you want to assign to your  {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. The first host that has this label and is in an unassigned state it automatically assigned to the control plane or cluster. To find available host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>.  </dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
@@ -1527,7 +1527,7 @@ ibmcloud sat location create --managed-from METRO --name NAME [--cos-key COS_SEC
 
 **Example:**
 ```
-ibmcloud sat location create --managed-from us-east --name mylocation
+ibmcloud sat location create --managed-from wdc --name mylocation
 ```
 {: pre}
 

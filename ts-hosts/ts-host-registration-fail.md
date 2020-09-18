@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-07-21"
+lastupdated: "2020-09-17"
 
-keywords: satellite license, satellite notices, satellite license notices
+keywords: satellite, hybrid, multicloud
 
 subcollection: satellite
 
@@ -90,18 +90,51 @@ subcollection: satellite
 {:video: .video}
 
 
+# Why does the host registration script fail?
+{: #host-registration-script-fails}
 
-# {{site.data.keyword.satellitelong_notm}} notices
-{: #sat-notices}
+{: tsSymptoms}
+When you SSH into your own infrastructure machine that you want to add as a {{site.data.keyword.satelliteshort}} host and run the host registration script, you see a message similar to the following.
+```
+No package rh-python36 available.
+Error: Nothing to do
+```
+{: screen}
 
-The following notices are included in this document: 
-- CC-BY-SA-4.0
+{: tsCauses}
+Your machine does not meet the minimum requirements to become a {{site.data.keyword.satelliteshort}} host. In particular, you must have the following packages installed on your RHEL 7 machine.
+```
+Repository 'rhel-ha-for-rhel-7-server-eus-rpms' is enabled for this system.
+Repository 'rhel-server-rhscl-7-rpms' is enabled for this system.
+Repository 'rhel-7-server-optional-rpms' is enabled for this system.
+Repository 'rhel-7-server-eus-optional-rpms' is enabled for this system.
+Repository 'rhel-7-server-rh-common-rpms' is enabled for this system.
+Repository 'rhel-7-server-eus-rpms' is enabled for this system.
+Repository 'rhel-ha-for-rhel-7-server-rpms' is enabled for this system.
+Repository 'rhel-rs-for-rhel-7-server-eus-rpms' is enabled for this system.
+Repository 'rhel-rs-for-rhel-7-server-rpms' is enabled for this system.
+Repository 'rhel-7-server-rpms' is enabled for this system.
+Repository 'rhel-7-server-supplementary-rpms' is enabled for this system.
+Repository 'rhel-7-server-extras-rpms' is enabled for this system.
+Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
+```
+{: screen}
 
-## Creative Commons Attribution Share Alike 4.0 Generic
-The Program includes some or all of the following works licensed under the Creative Commons. The URL to the license is `https://creativecommons.org/licenses/by-sa/4.0/legalcode`. 
+{: tsResolve}
+1.  Add the required packages to your machine. For example, in IBM Cloud infrastructure you can run the following commands to add the required packages.
+    1.  Refresh the Red Hat packages on your machine.
+        ```
+        subscription-manager refresh
+        ```
+        {: pre}
 
-GLOB LOGO [Glob](http://registry.npmjs.org/glob/-/glob-7.1.4.tgz){: external}.
+        If you see an error such as `Network error, unable to connect to server. Please see /var/log/rhsm/rhsm.log for more information.`, check the security group and other network settings for your machine to make sure that you have connectivity to the internet.
+        {: tip}
 
-
-
-
+    2.  Enable the package repositories on your machine.
+        ```
+        subscription-manager repos --enable=*
+        ```
+        {: pre}
+2.  Make sure that your machine meets the other [host minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as minimum CPU and memory sizes and public network connectivity.
+3.  [Run the registration script](/docs/satellite?topic=satellite-hosts#add-hosts) on your machine again.

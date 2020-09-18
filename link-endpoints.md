@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-09-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -108,8 +108,8 @@ With {{site.data.keyword.satelliteshort}} endpoints, you can allow any client th
 You can create two types of endpoints, depending on your use case: a cloud endpoint, or a location endpoint.
 {: shortdesc}
 
-* **Cloud endpoint**: You want to securely connect to a service, server, or app that runs outside of the location from a client within your {{site.data.keyword.satelliteshort}} location. For example, you might want to send data from a database in your {{site.data.keyword.satelliteshort}} location to a service that runs in {{site.data.keyword.cloud_notm}}, such as an {{site.data.keyword.speechtotextfull}} service instance. To establish this connection, you create a cloud endpoint by specifying the Watson service instance as the destination resource and your location database as a source.
-* **Location endpoint**: You want to securely connect to a server, service, or app that runs in your {{site.data.keyword.satelliteshort}} location from a client that runs outside of the location. For example, you might run a service in your {{site.data.keyword.satelliteshort}} location instead of in the public cloud because the service has legal requirements to run in your on-premises data center in a specific country. To establish this connection, you create a location endpoint by specifying the resource that runs in your {{site.data.keyword.satelliteshort}} location as the destination and the resource that runs outside of your location as the source.
+* **Cloud endpoint**: You want to securely connect to a service, server, or app that runs outside of the location from a client within your {{site.data.keyword.satelliteshort}} location. For example, you might want to send data from a host in your {{site.data.keyword.satelliteshort}} location to a service that runs in {{site.data.keyword.cloud_notm}}, such as an {{site.data.keyword.cos_full}} instance. To establish this connection, you create a cloud endpoint by specifying the {{site.data.keyword.cos_short}} instance as the destination resource. The host in your location can then connect directly to the {{site.data.keyword.satelliteshort}} Link connector on your location's control plane worker nodes, and {{site.data.keyword.satelliteshort}} Link forwards the request to the cloud endpoint for the {{site.data.keyword.cos_short}} instance.
+* **Location endpoint**: You want to securely connect to a server, service, or app that runs in your {{site.data.keyword.satelliteshort}} location from a client that runs outside of the location. For example, you might run a service in your {{site.data.keyword.satelliteshort}} location instead of in the public cloud because the service has legal requirements to run in your on-premises data center in a specific country. However, you still need to connect to the service in your {{site.data.keyword.satelliteshort}} location from the public cloud. To establish this connection, you create a location endpoint by specifying the resource that runs in your {{site.data.keyword.satelliteshort}} location as the destination resource. The resource in the public cloud can then connect directly to the {{site.data.keyword.satelliteshort}} Link tunnel server in {{site.data.keyword.cloud_notm}}, and {{site.data.keyword.satelliteshort}} Link forwards the request to the location endpoint for the on-location service instance.
 
 By default, after you set up an endpoint, any client can connect to the destination resource through the endpoint. To limit access to the destination resource, you can specify a list of source IP ranges so that only specific clients can access the endpoint.
 
@@ -119,13 +119,13 @@ By default, after you set up an endpoint, any client can connect to the destinat
 Two {{site.data.keyword.satelliteshort}} Link components, the tunnel server and the connector, proxy network traffic over a secure TLS connection between cloud services and resources in your {{site.data.keyword.satelliteshort}} location. For more information about the {{site.data.keyword.satelliteshort}} Link components, see the [Satellite architecture](/docs/satellite?topic=satellite-service-architecture#architecture).
 {: shortdesc}
 
-**Destination resource runs outside of the location.**
+**Destination resource runs outside of the location**
 
 By default, source clients in your {{site.data.keyword.satelliteshort}} location cannot reach destination resources that run outside of the location because the destination resource's IP address is not routable from within the location. Review the following architecture diagram and steps, which demonstrate how {{site.data.keyword.satelliteshort}} Link enables communication from {{site.data.keyword.satelliteshort}} locations to services that run outside of locations through {{site.data.keyword.satelliteshort}} endpoints.
 
 <p>
 <figure>
- <img src="/images/sat_link_cloud.png" alt="Network traffic flow from {{site.data.keyword.satelliteshort}} resources to a {{site.data.keyword.cloud_notm}} resource through an endpoint">
+ <img src="/images/sat_link_cloud.png" alt="Network traffic flow from {{site.data.keyword.satelliteshort}} resources to an {{site.data.keyword.cloud_notm}} resource through an endpoint">
  <figcaption>Network traffic flow from a source in your {{site.data.keyword.satellitelong_notm}} location to a destination resource in {{site.data.keyword.cloud_notm}} through {{site.data.keyword.satelliteshort}} Link</figcaption>
 </figure>
 </p>
@@ -136,7 +136,7 @@ By default, source clients in your {{site.data.keyword.satelliteshort}} location
 
 3. The {{site.data.keyword.satelliteshort}} Link tunnel server resolves the request to the destination's IP address and port, and forwards the request to the destination resource.
 
-**Destination resource runs in {{site.data.keyword.satelliteshort}} location.**
+**Destination resource runs in {{site.data.keyword.satelliteshort}} location**
 
 By default, source clients that run outside of the location cannot reach destination resources that run in your {{site.data.keyword.satelliteshort}} location because the destination resource's IP address is not routable from outside the location. Review the following architecture diagram and steps, which demonstrate how {{site.data.keyword.satelliteshort}} Link enables communication from services that run outside of {{site.data.keyword.satelliteshort}} locations to locations through {{site.data.keyword.satelliteshort}} endpoints.
 

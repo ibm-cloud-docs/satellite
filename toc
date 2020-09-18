@@ -47,11 +47,29 @@ Satellite
     faqs.md
 
     {: .topicgroup}
-    Troubleshooting Satellite components
-        ts-location.md
-        ts-host.md
-        ts-clusters.md
+    Troubleshooting
         getting-help.md
+
+        {: .topicgroup}
+        Locations
+            ts-locations/debug-location.md
+            ts-locations/debug-control-plane.md
+            ts-locations/ts-location-subdomain.md
+
+        {: .topicgroup}
+        Hosts
+            ts-hosts/debug-hosts.md
+            ts-hosts/debug-login-host.md
+            ts-hosts/ts-host-ssh-login.md
+            ts-hosts/ts-host-registration-fail.md
+            ts-hosts/ts-host-assign-fail.md
+
+        {: .topicgroup}
+        Clusters
+            ts-clusters/debug-clusters.md
+            ts-clusters/ts-cluster-ingress.md
+            ts-clusters/ts-cluster-satconfig-updates.md
+            ts-clusters/ts-kubectl-fail.md
 
     relnotes.md
     {: .navgroup-end}

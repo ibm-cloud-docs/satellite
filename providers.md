@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-09-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -309,8 +309,7 @@ Your hosts also must meet the general requirements that are common across provid
 To [add GCP hosts to your {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-hosts#add-hosts), you must update the RHEL packages on the host machines as in the following example steps.
 {: shortdesc}
 
-Want to automate the provisioning of GCP hosts in {{site.data.keyword.satellitelong_notm}}? Try out a [Terraform script](https://github.ibm.com/davetropeano/terraform-satellite-gcp){: external}.
-{: tip}
+
 
 1.  Get a registration script to add hosts to your {{site.data.keyword.satellitelong_notm}} location.
     ```
