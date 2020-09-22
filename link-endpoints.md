@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-09-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -211,7 +211,7 @@ Use the console to create a cloud endpoint so that sources in your {{site.data.k
 2. From the **Overview** tab, verify that your location has a **normal** status.
 3. From the **Endpoints** tab, click **Create endpoint**.
 4. Select **Cloud** to create an endpoint for a service, server, or app that runs outside of the location.
-5. Enter an endpoint name, the destination resource's URL or IP address, and the port that your destination resource listens on for incoming requests. Make sure to enter the URL without `http://` or `https://`.
+5. Enter an endpoint name, the destination resource's URL or IP address, and the port that your destination resource listens on for incoming requests. Make sure to enter the URL without `http://` or `https://`. The IP address or hostname must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}}, such as a private service endpoint.
 6. Select the protocol that a source must use to connect to the destination URL or IP address. This protocol must match the port for your destination resource. For more information, see [Endpoint protocols](#link-protocols).
   * If you selected the **TLS** or **HTTPS** protocols and want to require server-side authentication of the destination's certificate, select the **Verify destination certificate** checkbox.
   * If you selected the **TLS** or **HTTPS** protocols but the destination resource is still in development, you can click **Upload certificate** to add your self-signed, base-64 encoded certificate file.
