@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-18"
+lastupdated: "2020-09-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -101,7 +101,7 @@ The name for the {{site.data.keyword.satellitelong_notm}} service in IAM is:
 * **IBM Cloud Satellite** in the UI
 * **satellite** in the API and CLI
 
-## Understanding {{site.data.keyword.satelliteshort}} resource types for access
+## Understanding {{site.data.keyword.satelliteshort}} resource types in IAM
 {: #iam-resource-types}
 
 You can use {{site.data.keyword.cloud_notm}} IAM to assign access to [different resources in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-service-architecture). The way that access works varies depending on the resource that you want to authorize.
@@ -120,10 +120,14 @@ You can use {{site.data.keyword.cloud_notm}} IAM to assign access to [different 
 ## Assigning access with {{site.data.keyword.cloud_notm}} IAM
 {: #iam-assign}
 
-For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
+To grant access to {{site.data.keyword.satelliteshort}} resources, use {{site.data.keyword.cloud_notm}} IAM. For information about assigning user roles in the console, see [Managing access to resources](/docs/account?topic=account-assign-access-resources).
 {: shortdesc}
 
-**Process to set up access to {{site.data.keyword.satellitelong_notm}} in your {{site.data.keyword.cloud_notm}} account:**<br>
+### Overview of the process to set up access to {{site.data.keyword.satellitelong_notm}} in {{site.data.keyword.cloud_notm}} IAM
+{: #iam-assign-overview}
+
+As a general practice, you can invite users to your {{site.data.keyword.cloud_notm}} account, add them to an access group, and assign them access to {{site.data.keyword.satellitelong_notm}} resources in IAM. You might also add access policies for other {{site.data.keyword.cloud_notm}} services, or assign individual user access.
+{: shortdesc}
 
 1.  [Invite users to your account](/docs/account?topic=account-iamuserinv).
 2.  [Create an access group](/docs/account?topic=account-groups#create_ag) to add users to.
@@ -159,6 +163,9 @@ For information about assigning user roles in the console, see [Managing access 
 ### Example UI steps
 {: #iam-assign-ui}
 
+Use the {{site.data.keyword.cloud_notm}} IAM console to grant an access policy to an access group to manage {{site.data.keyword.satelliteshort}} locations, hosts, and endpoints as shown in the following example.
+{: shortdesc}
+
 1.  Log in to [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external}.
 2.  From the menu bar, click **Manage > Access (IAM)**.
 3.  Click **Access groups**, and then click the access group that you want to assign access to {{site.data.keyword.satellitelong_notm}}.
@@ -185,6 +192,9 @@ For information about assigning user roles in the console, see [Managing access 
 
 ### Example CLI steps
 {: #iam-assign-cli}
+
+Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an access group to manage {{site.data.keyword.satelliteshort}} resources as shown in the following example.
+{: shortdesc}
 
 1.  Log in to {{site.data.keyword.cloud_notm}}. If you have a federated account, include the `--sso` flag.
     ```
