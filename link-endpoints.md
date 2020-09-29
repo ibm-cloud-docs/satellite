@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-22"
+lastupdated: "2020-09-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -91,7 +91,7 @@ subcollection: satellite
 
 
 
-# Connecting {{site.data.keyword.satelliteshort}} locations with services outside of locations using endpoints
+# Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints
 {: #link-location-cloud}
 
 Open up {{site.data.keyword.satelliteshort}} endpoints in the {{site.data.keyword.satelliteshort}} control plane to allow network traffic between your {{site.data.keyword.satellitelong}} location and services, servers, or apps that run outside of the location.
