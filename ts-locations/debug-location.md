@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -223,7 +223,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     </tr>
     <tr>
      <td>R0036 The location subdomains are not correctly routing traffic to your control plane hosts. Verify that the location subdomains are registered with the correct IP addresses for your control plane hosts with the 'ibmcloud sat location dns' commands.</td>
-     <td>See [Location subdomain not routing traffic to control plane hosts](#ts-location-subdomain).</td>
+     <td>See [Location subdomain not routing traffic to control plane hosts](/docs/satellite?topic=satellite-ts-location-subdomain).</td>
     </tr>
     </tbody>
     </table>
