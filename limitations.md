@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-18"
+lastupdated: "2020-10-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -108,7 +108,7 @@ subcollection: satellite
 You can create up to 20 {{site.data.keyword.satelliteshort}} locations per {{site.data.keyword.cloud_notm}} multizone metro that the location is managed from.
 {: shortdesc}
 
-Do not reuse the name of a previously deleted location. If you do reuse the name, the location subdomains might still use the IP addresses of the previous location's hosts. To resolve that issue, see [Location subdomain not routing traffic to control plane hosts](/docs/satellite?topic=satellite-ts-locations#ts-location-subdomain).
+Do not reuse the name of a previously deleted location. If you do reuse the name, the location subdomains might still use the IP addresses of the previous location's hosts. To resolve that issue, see [Location subdomain not routing traffic to control plane hosts](/docs/satellite?topic=satellite-ts-location-subdomain).
 
 <br />
 
