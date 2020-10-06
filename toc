@@ -12,10 +12,10 @@ Satellite
     {: .navgroup id="howto"}
     setup-cli.md
     locations.md
-    
+
     {: .topicgroup}
     Managing Satellite hosts
-        
+
         {: .topicgroup}
         Preparing hosts to meet requirements
             host-reqs.md
@@ -23,7 +23,7 @@ Satellite
 
         hosts.md
         /openshift/openshift-satellite-clusters
-    
+
     config-clusters.md
     link-endpoints.md
     health.md
@@ -37,7 +37,10 @@ Satellite
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    cli-reference.md
+    {: .topicgroup}
+    CLI plug-in reference
+        cli-reference.md
+        cli-changelog.md
     limitations.md
     supported-regions.md
     responsibilities.md
