@@ -104,7 +104,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 | ---- | ----------- |
 | 06 October | <ul><li>**CLI changelog**: Added a CLI plug-in changelog page for the [release of version 1.0.178](/docs/satellite?topic=satellite-satellite-cli-changelog).</li><li>**Location subdomain troubleshooting**: Added steps for further troubleshooting when [the location subdomain not route traffic to control plane hosts](/docs/satellite?topic=satellite-ts-location-subdomain).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
-{: caption="Documentation updates in September 2020."}
+{: caption="Documentation updates in October 2020."}
 
 ## September 2020
 {: #september20}
