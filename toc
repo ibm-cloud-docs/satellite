@@ -22,8 +22,8 @@ Satellite
             providers.md
 
         hosts.md
+        /openshift/openshift-satellite-clusters
     
-    /openshift/openshift-satellite-clusters
     config-clusters.md
     link-endpoints.md
     health.md
