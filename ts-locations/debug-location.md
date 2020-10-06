@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-10-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -167,22 +167,22 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     <td><ol><li>Check the **Status** of your hosts by running <code>ibmcloud sat host ls --location <location_name_or_ID><code></li>
     <li>If you have no hosts, add hosts to your location.</li>
     <li>Make sure that you have at least 6 hosts (2 hosts per zone across 3 zones) that are assigned to the **infrastructure** cluster for the location, to run location control plane operations.</li>
-    <li>If your hosts have no status, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-login).</li>
-    <li>Review the host status to [resolve the host issue](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-debug).</li></ol></td>
+    <li>If your hosts have no status, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).</li>
+    <li>Review the host status to [resolve the host issue](/docs/satellite?topic=satellite-ts-hosts-debug).</li></ol></td>
     </tr>
     <tr>
     <td>R0012 The location control plane does not have hosts in all 3 zones. Add available hosts to your location for the control plane. Then, wait for {{site.data.keyword.satelliteshort}} to automatically assign the hosts to control plane zones, or you can assign the hosts.</td>
     <td>If you just assigned hosts to the control plane, wait a while for the bootstrapping process to complete. Otherwise, [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones for the location itself, to run control plane operations.<ul>
     <li>If you did assign at least 2 hosts in each of the 3 zones, check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.</li>
     <li>If you did assign at least one host per zone, make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system, networking configuration, and public network access.</li>
-    <li>If you did assign at least 2 hosts in each of the 3 zones but the bootstrapping process failed, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-login).</li></ul></td>
+    <li>If you did assign at least 2 hosts in each of the 3 zones but the bootstrapping process failed, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).</li></ul></td>
     </tr>
     <tr>
     <td>R0013 A zone in the location control plane is unavailable. Add more hosts to the location and assign the hosts to the zone, or replace unhealthy hosts.</td>
     <td>[Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least 2 hosts to each of the 3 zones for the location itself, to run control plane operations. If you did assign at least one host in each of the 3 zones:<ul>
     <li>Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.</li>
     <li>Make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system, networking configuration, and public network access.</li>
-    <li>[Log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-login).</li>
+    <li>[Log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).</li>
     <li>[Update the host](/docs/satellite?topic=satellite-hosts#host-update). When you update a host, the host is unassigned from the location control plane, and you must assign another host to the zone.</li></ul></td>
     </tr>
     <tr>
@@ -190,19 +190,19 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     <td><ol><li>Run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code> and verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of <code>assigned</code> and a **Status** of <code>Ready</code>.</li>
     <li>If all hosts show the correct state and status, the DNS record for your location is not yet created. This process can take up to 30 minutes to complete after all hosts are successfully assigned to your location. </li>
     <li>If your hosts are from a cloud provider such as AWS or GCP, you must manually register the DNS. For more information, see [Provider requirements](/docs/satellite?topic=satellite-providers).</li>
-    <li>If one or more hosts do not show the correct state or status, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-debug).</li>
+    <li>If one or more hosts do not show the correct state or status, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).</li>
     </ol></td>
     </tr>
     <tr>
     <td>R0015 Could not assign hosts because no hosts are available. Attach more hosts to the location and try again. For more information, see the docs: 'http://ibm.biz/sat-loc'<br><br>
     R0016 Unexpected error occurred after assigning host. To debug the host, see 'http://ibm.biz/sat-host-debug'. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.</td>
-    <td>[Add more hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to the location. If you added hosts that are not showing up as available, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts#ts-hosts-debug).</td>
+    <td>[Add more hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to the location. If you added hosts that are not showing up as available, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).</td>
     </tr>
     <tr>
      <td>R0024 The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.openshiftshort}} clusters in warning health.<br><br>
      R0025 The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.openshiftshort}} clusters in critical health.</td>
      <td><ol><li>Wait to see if another message is returned, such as a message about host capacity.</li>
-     <li>If a host message is returned, try [Debugging hosts](/docs/satellite?topic=satellite-ts-hosts).</li>
+     <li>If a host message is returned, try [Debugging hosts](/docs/satellite?topic=satellite-ts-hosts-debug).</li>
      <li>If no further message is returned, try [Debugging your {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-cs_troubleshoot).</li></ol></td>
     </tr>
     <tr>
@@ -223,7 +223,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     </tr>
     <tr>
      <td>R0036 The location subdomains are not correctly routing traffic to your control plane hosts. Verify that the location subdomains are registered with the correct IP addresses for your control plane hosts with the 'ibmcloud sat location dns' commands.</td>
-     <td>See [Location subdomain not routing traffic to control plane hosts](#ts-location-subdomain).</td>
+     <td>See [Location subdomain not routing traffic to control plane hosts](/docs/satellite?topic=satellite-ts-location-subdomain).</td>
     </tr>
     </tbody>
     </table>

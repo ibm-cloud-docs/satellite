@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -109,20 +109,39 @@ The location control plane is not publicly accessible. The IP addresses that are
 * You reused the name of the location, and the location subdomains are still using the IP addresses of the previous location hosts.
 
 {: tsResolve}
-Update the location subdomain DNS entries.
+Check and update the host IP addresses that are registered with the location subdomain DNS entries.
 
 1.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
     ```
     ibmcloud sat location dns ls --location <location_name_or_ID>
     ```
     {: pre}
-2.  If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall.
-3.  Get the public IP addresses of your hosts. Refer to your provider documentation. For example steps, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-control-plane) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-control-plane) topics.
-4.  Update the location subdomain DNS records with the correct public IP addresses of each host in the control plane.
+2.  If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall. For example, see [AWS Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup)
+3.  For each location subdomain, check whether the IP address that is actually registered with the subdomain matches the host IP addresses that you found in step 1. Only one host IP address is returned for the `c000` and `ce00` subdomains. If any of the registered IP addresses do not match the IP addresses from step 1, [open a support case](/docs/satellite?topic=satellite-get-help#help-support).
     ```
-    ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
+    nslookup <subdomain>
+    ```
+    {: pre}
+4.  Curl each location subdomain on port 30000.
+    ```
+    curl http://<subdomain>:30000
     ```
     {: pre}
 
-    If you use hosts from cloud providers like AWS and GCP, you might also need to update the your cluster Ingress subdomain DNS entries. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics.
-    {: note}
+    Example output:
+    ```
+    <html><body><h1>200 OK</h1>
+    Service ready.
+    </body></html>
+    ```
+    {: screen}
+5.  If any subdomains did not return a `200 OK` message, update the location subdomain DNS records with the correct host IP addresses.
+    1.  Get the IP addresses of your hosts. For hosts that are publicly available, get the public IP addresses. For hosts that are only privately available, get the private IP addresses. Refer to your provider documentation.
+    2.  Update the location subdomain DNS records with the correct public or private IP addresses of each host in the control plane.
+        ```
+        ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
+        ```
+        {: pre}
+
+        If you use hosts from cloud providers like AWS and GCP, you might also need to update your cluster Ingress subdomain DNS entries. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-cluster-nlb) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-cluster-nlb) provider topics.
+        {: note}
