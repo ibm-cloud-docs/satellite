@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-10-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,6 +44,7 @@ subcollection: satellite
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -147,24 +148,57 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 *   All hosts must have the same MTU values.
 *   The `localhost` value must resolve to a valid local host IP address, typically `127.0.0.1`.
 *   Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
-*   Hosts must have inbound and outbound connectivity on the public network, via the default gateway of the system. You cannot use custom iptables to route traffic to the public network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables. 
-    **Inbound**: The following ports must be open.
-    ```
-    TCP ports 30000-32767
-    Port 80
-    Port 443
-    ```
-    {: screen}
-
-    **Outbound**: Allow connectivity to all ports and IP addresses.
-*   If you do not open outbound connectivity, you must [allow all the required ports in your firewall](/docs/containers?topic=containers-firewall#vyatta_firewall), as well as to the following Red Hat network time protocol (NTP) servers.
-    ```
-    0.rhel.pool.ntp.org
-    1.rhel.pool.ntp.org
-    2.rhel.pool.ntp.org
-    3.rhel.pool.ntp.org
-    ```
-    {: screen} 
+*   Hosts must have inbound connectivity through the following ports on the public network via the default gateway of the system.
+    * Port `80`
+    * Port `443`
+    * For Washington DC (`wdc`) locations, `TCP` ports `30000-32767` for the following subnets:
+      ```
+      169.45.206.224/27
+      169.60.77.224/28
+      169.62.41.32/27
+      169.63.137.0/25
+      169.61.85.64/26
+      169.47.160.0/26
+      169.62.0.64/26
+      169.60.104.64/26
+      169.61.85.64/26
+      ```
+      {: screen}
+    * For London (`lon`) locations, `TCP` ports `30000-32767` for the following subnets:
+      ```
+      141.125.95.240/28
+      141.125.99.0/27
+      158.175.101.64/26
+      158.175.139.0/25
+      158.175.68.192/26
+      158.175.81.128/25
+      158.175.83.160/28
+      158.175.86.224/27
+      158.176.108.224/27
+      158.176.111.128/26
+      158.176.112.0/26
+      158.176.66.208/28
+      158.176.74.144/28
+      158.176.92.32/27
+      158.176.95.64/27
+      159.8.171.0/26
+      169.50.199.64/26
+      169.50.220.32/27
+      169.50.221.0/25
+      ```
+      {: screen}
+*   Hosts must have outbound connectivity to all ports and IP addresses on the public network via the default gateway of the system. If you do not open all outbound connectivity, you must allow the following ports in your firewall.
+    * For Washington DC (`wdc`) locations, `TCP/UDP` ports `30000-32767` and port `443` to the [**US East** public IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
+    * For London (`lon`) locations, `TCP/UDP` ports `30000-32767` and port `443` to the [**UK South** public IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
+    * Red Hat network time protocol (NTP) servers:
+      ```
+      0.rhel.pool.ntp.org
+      1.rhel.pool.ntp.org
+      2.rhel.pool.ntp.org
+      3.rhel.pool.ntp.org
+      ```
+      {: screen}
+* You cannot use custom iptables to route traffic to the public network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables.
 *   The following IP address ranges are reserved, and must not be used in any of the networks that you want to use in {{site.data.keyword.satellitelong_notm}}, including the host networks.
     ```
     172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, and 172.20.0.0/16
