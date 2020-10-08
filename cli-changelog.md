@@ -97,7 +97,7 @@ In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-in
 {: shortdesc}
 
 <br>
-Refer to the following tables for a summary of changes for each version of the [{{{site.data.keyword.satelliteshort}} CLI](/docs/satellite?topic=satellite-setup-cli), which uses the `ibmcloud sat` alias.
+Refer to the following tables for a summary of changes for each version of the [{{site.data.keyword.satelliteshort}} CLI](/docs/satellite?topic=satellite-setup-cli), which uses the `ibmcloud sat` alias.
 
 To see the CLI plug-in changes that pertain specifically to {{site.data.keyword.openshiftshort}} (`ibmcloud oc`) commands, see the [{{site.data.keyword.openshiftshort}} CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog).
 {: tip}
@@ -111,5 +111,5 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 |Version|Release date|Changes|
 |-------|------------|-------|
 | 1.0.178 | 06 Oct 2020 | <ul><li>Adds `http-tunnel` as a supported source or destination protocol in the `ibmcloud sat endpoint create` and `ibmcloud sat endpoint update` commands.</li><li>Updates the Go version to 1.15.2.</li><li>Updates the help text in various languages.</li></ul> |
-{: caption="Overview of version changes for version 1.0 of the {{site.data.keyword.containerlong_notm}} CLI plug-in" caption-side="top"}
+{: caption="Overview of version changes for version 1.0 of the {{site.data.keyword.satelliteshort}} CLI plug-in" caption-side="top"}
 {: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."}
