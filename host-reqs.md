@@ -179,7 +179,7 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 ### Inbound and outbound connectivity
 {: #reqs-host-network-firewall}
 
-**Inbound**: Hosts must have the following required inbound connectivity on the public network via the default gateway of the system.
+**Inbound**: Hosts must have inbound connectivity on the public network via the default gateway or firewall of the system. The required IP addresses vary with the {{site.data.keyword.cloud}} multizone region that your {{site.data.keyword.satelliteshort}} location is managed from.
 
 |Protocol|Ports|Source|
 |-------|-------|-----|
