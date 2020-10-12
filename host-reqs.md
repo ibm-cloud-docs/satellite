@@ -94,7 +94,7 @@ subcollection: satellite
 # Host requirements
 {: #host-reqs}
 
-Review the following host requirements for {{site.data.keyword.satellitelong_notm}}. For provider-specific requirements, see [Provider requirements](/docs/satellite?topic=satellite-providers).
+Review the following host requirements for {{site.data.keyword.satellitelong}}. For provider-specific requirements, see [Provider requirements](/docs/satellite?topic=satellite-providers).
 {: shortdesc}
 
 Can't meet these host requirements? [Contact IBM Support](/docs/get-support?topic=get-support-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
@@ -176,10 +176,13 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
     ```
     {: screen}
 
-### Inbound and outbound connectivity
-{: #reqs-host-network-firewall}
+### Inbound connectivity
+{: #reqs-host-network-firewall-outbound}
 
-**Inbound**: Hosts must have inbound connectivity on the public network via the default gateway or firewall of the system. The required IP addresses vary with the {{site.data.keyword.cloud}} multizone region that your {{site.data.keyword.satelliteshort}} location is managed from.
+Hosts must have inbound connectivity on the public network via the default gateway or firewall of the system.
+{: shortdesc}
+
+The required IP addresses vary with the {{site.data.keyword.cloud}} multizone region that your {{site.data.keyword.satelliteshort}} location is managed from.
 
 |Protocol|Ports|Source|
 |-------|-------|-----|
@@ -187,7 +190,7 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 |All|80|Any|
 |TCP|30000 - 32767|`169.45.206.224/27`</br>`169.60.77.224/28`</br>`169.62.41.32/27`</br>`169.63.137.0/25`</br>`169.61.85.64/26`</br>`169.47.160.0/26`</br>`169.62.0.64/26`</br>`169.60.104.64/26`</br>`169.61.85.64/26`|
 {: #firewall-inbound-wdc}
-{: tab-title="Washington DC (`wdc`)"}
+{: tab-title="Washington DC (<code>wdc</code>)"}
 {: class="comparison-tab-table"}
 {: tab-group="firewall-inbound"}
 {: caption="Required inbound connectivity for hosts on the public network" caption-side="top"}
@@ -199,13 +202,19 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 |All|80|Any|
 |TCP|30000 - 32767|`141.125.95.240/28`</br>`141.125.99.0/27`</br>`158.175.101.64/26`</br>`158.175.139.0/25`</br>`158.175.68.192/26`</br>`158.175.81.128/25`</br>`158.175.83.160/28`</br>`158.175.86.224/27`</br>`158.176.108.224/27`</br>`158.176.111.128/26`</br>`158.176.112.0/26`</br>`158.176.66.208/28`</br>`158.176.74.144/28`</br>`158.176.92.32/27`</br>`158.176.95.64/27`</br>`159.8.171.0/26`</br>`169.50.199.64/26`</br>`169.50.220.32/27`</br>`169.50.221.0/25`|
 {: #firewall-inbound-lon}
-{: tab-title="London (`lon`)"}
+{: tab-title="London (<code>lon</code>)"}
 {: class="comparison-tab-table"}
 {: tab-group="firewall-inbound"}
 {: caption="Required inbound connectivity for hosts on the public network" caption-side="top"}
 {: summary="The table shows the required inbound connectivity for hosts on the public network. Rows are to be read from the left to right. The protocol is in the first column. The ports are in the second column. The source IP ranges are in the third column."}
 
-**Outbound**: Hosts must have outbound connectivity to all ports and IP addresses on the public network via the default gateway of the system. To test that your host has outbound network connectivity on the public network, you can try these commands.
+### Outbound connectivity
+{: #reqs-host-network-firewall-outbound}
+
+Hosts must have outbound connectivity to all ports and IP addresses on the public network via the default gateway of the system.
+{: shortdec}
+
+To test that your host has outbound network connectivity on the public network, you can try these commands.
 ```
 ping 8.8.8.8
 nslookup google.com
@@ -228,4 +237,4 @@ If you do not open all outbound connectivity, you must allow the following outbo
   2.rhel.pool.ntp.org
   3.rhel.pool.ntp.org
   ```
-  {: screen}
+  {: codeblock}
