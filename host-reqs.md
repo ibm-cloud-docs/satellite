@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-08"
+lastupdated: "2020-10-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -144,67 +144,17 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 ## Host network
 {: #reqs-host-network}
 
-*   Do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
-*   All hosts must have the same MTU values.
-*   The `localhost` value must resolve to a valid local host IP address, typically `127.0.0.1`.
-*   Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
-*   Hosts must have inbound connectivity through the following ports on the public network via the default gateway of the system.
-    * Port `80`
-    * Port `443`
-    * For Washington DC (`wdc`) locations, `TCP` ports `30000-32767` for the following subnets:
-      ```
-      169.45.206.224/27
-      169.60.77.224/28
-      169.62.41.32/27
-      169.63.137.0/25
-      169.61.85.64/26
-      169.47.160.0/26
-      169.62.0.64/26
-      169.60.104.64/26
-      169.61.85.64/26
-      ```
-      {: screen}
-    * For London (`lon`) locations, `TCP` ports `30000-32767` for the following subnets:
-      ```
-      141.125.95.240/28
-      141.125.99.0/27
-      158.175.101.64/26
-      158.175.139.0/25
-      158.175.68.192/26
-      158.175.81.128/25
-      158.175.83.160/28
-      158.175.86.224/27
-      158.176.108.224/27
-      158.176.111.128/26
-      158.176.112.0/26
-      158.176.66.208/28
-      158.176.74.144/28
-      158.176.92.32/27
-      158.176.95.64/27
-      159.8.171.0/26
-      169.50.199.64/26
-      169.50.220.32/27
-      169.50.221.0/25
-      ```
-      {: screen}
-*   Hosts must have outbound connectivity to all ports and IP addresses on the public network via the default gateway of the system. If you do not open all outbound connectivity, you must allow the following ports in your firewall.
-    * For Washington DC (`wdc`) locations, `TCP/UDP` ports `30000-32767` and port `443` to the [**US East** public IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
-    * For London (`lon`) locations, `TCP/UDP` ports `30000-32767` and port `443` to the [**UK South** public IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound).
-    * Red Hat network time protocol (NTP) servers:
-      ```
-      0.rhel.pool.ntp.org
-      1.rhel.pool.ntp.org
-      2.rhel.pool.ntp.org
-      3.rhel.pool.ntp.org
-      ```
-      {: screen}
+* Do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
+* All hosts must have the same MTU values.
+* The `localhost` value must resolve to a valid local host IP address, typically `127.0.0.1`.
+* Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
 * You cannot use custom iptables to route traffic to the public network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables.
-*   The following IP address ranges are reserved, and must not be used in any of the networks that you want to use in {{site.data.keyword.satellitelong_notm}}, including the host networks.
+* The following IP address ranges are reserved, and must not be used in any of the networks that you want to use in {{site.data.keyword.satellitelong_notm}}, including the host networks.
     ```
     172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, and 172.20.0.0/16
     ```
     {: screen}
-*   Hosts must have a single, primary IPv4 network interface, such as the following example. However, you can use hosts from IBM Cloud infrastructure classic virtual service instances, even though these machines have two network interfaces: one each for the public and private networks.
+* Hosts must have a single, primary IPv4 network interface, such as the following example. However, you can use hosts from IBM Cloud infrastructure classic virtual service instances, even though these machines have two network interfaces: one each for the public and private networks.
     ```
     root@kube-tok02-credfdd3e356854f39b15fb191224b0a16-w1:~# ip addr
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
@@ -226,8 +176,36 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
     ```
     {: screen}
 
-To test that your host has outbound network connectivity on the public network, you can try these commands.
+### Inbound and outbound connectivity
+{: #reqs-host-network-firewall}
 
+**Inbound**: Hosts must have the following required inbound connectivity on the public network via the default gateway of the system.
+
+|Protocol|Ports|Source|
+|-------|-------|-----|
+|All|80|Any|
+|All|80|Any|
+|TCP|30000 - 32767|`169.45.206.224/27`</br>`169.60.77.224/28`</br>`169.62.41.32/27`</br>`169.63.137.0/25`</br>`169.61.85.64/26`</br>`169.47.160.0/26`</br>`169.62.0.64/26`</br>`169.60.104.64/26`</br>`169.61.85.64/26`|
+{: #firewall-inbound-wdc}
+{: tab-title="Washington DC (`wdc`)"}
+{: class="comparison-tab-table"}
+{: tab-group="firewall-inbound"}
+{: caption="Required inbound connectivity for hosts on the public network" caption-side="top"}
+{: summary="The table shows the required inbound connectivity for hosts on the public network. Rows are to be read from the left to right. The protocol is in the first column. The ports are in the second column. The source IP ranges are in the third column."}
+
+|Protocol|Ports|Source|
+|-------|-------|-----|
+|All|80|Any|
+|All|80|Any|
+|TCP|30000 - 32767|`141.125.95.240/28`</br>`141.125.99.0/27`</br>`158.175.101.64/26`</br>`158.175.139.0/25`</br>`158.175.68.192/26`</br>`158.175.81.128/25`</br>`158.175.83.160/28`</br>`158.175.86.224/27`</br>`158.176.108.224/27`</br>`158.176.111.128/26`</br>`158.176.112.0/26`</br>`158.176.66.208/28`</br>`158.176.74.144/28`</br>`158.176.92.32/27`</br>`158.176.95.64/27`</br>`159.8.171.0/26`</br>`169.50.199.64/26`</br>`169.50.220.32/27`</br>`169.50.221.0/25`|
+{: #firewall-inbound-lon}
+{: tab-title="London (`lon`)"}
+{: class="comparison-tab-table"}
+{: tab-group="firewall-inbound"}
+{: caption="Required inbound connectivity for hosts on the public network" caption-side="top"}
+{: summary="The table shows the required inbound connectivity for hosts on the public network. Rows are to be read from the left to right. The protocol is in the first column. The ports are in the second column. The source IP ranges are in the third column."}
+
+**Outbound**: Hosts must have outbound connectivity to all ports and IP addresses on the public network via the default gateway of the system. To test that your host has outbound network connectivity on the public network, you can try these commands.
 ```
 ping 8.8.8.8
 nslookup google.com
@@ -238,3 +216,16 @@ curl https://us.icr.io
 curl -k [node 1-n]:22
 ```
 {: codeblock}
+
+If you do not open all outbound connectivity, you must allow the following outbound connectivity in your firewall.
+* For Washington DC (`wdc`) locations, `TCP/UDP` ports `30000-32767` and port `443` to the [**US East** public IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound)
+* For London (`lon`) locations, `TCP/UDP` ports `30000-32767` and port `443` to the [**UK South** public IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound)
+* [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external}
+* Red Hat network time protocol (NTP) servers:
+  ```
+  0.rhel.pool.ntp.org
+  1.rhel.pool.ntp.org
+  2.rhel.pool.ntp.org
+  3.rhel.pool.ntp.org
+  ```
+  {: screen}
