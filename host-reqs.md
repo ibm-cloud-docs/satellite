@@ -188,9 +188,9 @@ The required IP addresses vary with the {{site.data.keyword.cloud}} multizone re
 |-------|-------|-----|
 |All|80|Any|
 |All|80|Any|
-|TCP|30000 - 32767|`169.45.206.224/27`</br>`169.60.77.224/28`</br>`169.62.41.32/27`</br>`169.63.137.0/25`</br>`169.61.85.64/26`</br>`169.47.160.0/26`</br>`169.62.0.64/26`</br>`169.60.104.64/26`</br>`169.61.85.64/26`|
+|TCP|30000 - 32767|169.45.206.224/27</br>169.60.77.224/28</br>169.62.41.32/27</br>169.63.137.0/25</br>169.61.85.64/26</br>169.47.160.0/26</br>169.62.0.64/26</br>169.60.104.64/26</br>169.61.85.64/26|
 {: #firewall-inbound-wdc}
-{: tab-title="Washington DC (<code>wdc</code>)"}
+{: tab-title="Washington DC (wdc)"}
 {: class="comparison-tab-table"}
 {: tab-group="firewall-inbound"}
 {: caption="Required inbound connectivity for hosts on the public network" caption-side="top"}
@@ -200,9 +200,9 @@ The required IP addresses vary with the {{site.data.keyword.cloud}} multizone re
 |-------|-------|-----|
 |All|80|Any|
 |All|80|Any|
-|TCP|30000 - 32767|`141.125.95.240/28`</br>`141.125.99.0/27`</br>`158.175.101.64/26`</br>`158.175.139.0/25`</br>`158.175.68.192/26`</br>`158.175.81.128/25`</br>`158.175.83.160/28`</br>`158.175.86.224/27`</br>`158.176.108.224/27`</br>`158.176.111.128/26`</br>`158.176.112.0/26`</br>`158.176.66.208/28`</br>`158.176.74.144/28`</br>`158.176.92.32/27`</br>`158.176.95.64/27`</br>`159.8.171.0/26`</br>`169.50.199.64/26`</br>`169.50.220.32/27`</br>`169.50.221.0/25`|
+|TCP|30000 - 32767|141.125.95.240/28</br>141.125.99.0/27</br>158.175.101.64/26</br>158.175.139.0/25</br>158.175.68.192/26</br>158.175.81.128/25</br>158.175.83.160/28</br>158.175.86.224/27</br>158.176.108.224/27</br>158.176.111.128/26</br>158.176.112.0/26</br>158.176.66.208/28</br>158.176.74.144/28</br>158.176.92.32/27</br>158.176.95.64/27</br>159.8.171.0/26</br>169.50.199.64/26</br>169.50.220.32/27</br>169.50.221.0/25|
 {: #firewall-inbound-lon}
-{: tab-title="London (<code>lon</code>)"}
+{: tab-title="London (lon)"}
 {: class="comparison-tab-table"}
 {: tab-group="firewall-inbound"}
 {: caption="Required inbound connectivity for hosts on the public network" caption-side="top"}
