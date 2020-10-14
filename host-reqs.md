@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-13"
+lastupdated: "2020-10-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -194,10 +194,10 @@ The required IP addresses vary with the {{site.data.keyword.cloud_notm}} multizo
 {: class="comparison-tab-table"}
 {: tab-group="firewall-inbound"}
 {: caption="Required inbound connectivity for hosts on the public network" caption-side="top"}
-{: summary="The table shows the required inbound connectivity for hosts on the public network. Rows are to be read from the left to right. The protocol is in the first column. The ports are in the second column. The source IP ranges are in the third column."}
+{: summary="The table shows the required inbound connectivity for hosts on the public network. Rows are to be read from the left to right. The description is in the first column. The protocol is in the second column. The ports are in the third column. The source IP ranges are in the fourth column."}
 
-|Protocol|Ports|Source|
-|-------|-------|-----|
+|Description|Protocol|Ports|Source|
+|-----------|--------|-----|------|
 |Required: Allow {{site.data.keyword.cloud_notm}} to set up and manage your {{site.data.keyword.satelliteshort}} location|TCP|30000 - 32767|141.125.95.240/28</br>141.125.99.0/27</br>158.175.101.64/26</br>158.175.139.0/25</br>158.175.68.192/26</br>158.175.81.128/25</br>158.175.83.160/28</br>158.175.86.224/27</br>158.176.108.224/27</br>158.176.111.128/26</br>158.176.112.0/26</br>158.176.66.208/28</br>158.176.74.144/28</br>158.176.92.32/27</br>158.176.95.64/27</br>159.8.171.0/26</br>169.50.199.64/26</br>169.50.220.32/27</br>169.50.221.0/25|
 |Optional: Access the {{site.data.keyword.openshiftlong_notm}} console on the public network|All|80|Any|
 |Optional: Access the {{site.data.keyword.openshiftlong_notm}} console on the public network|All|443|Any|
@@ -206,7 +206,7 @@ The required IP addresses vary with the {{site.data.keyword.cloud_notm}} multizo
 {: class="comparison-tab-table"}
 {: tab-group="firewall-inbound"}
 {: caption="Required inbound connectivity for hosts on the public network" caption-side="top"}
-{: summary="The table shows the required inbound connectivity for hosts on the public network. Rows are to be read from the left to right. The protocol is in the first column. The ports are in the second column. The source IP ranges are in the third column."}
+{: summary="The table shows the required inbound connectivity for hosts on the public network. Rows are to be read from the left to right. The description is in the first column. The protocol is in the second column. The ports are in the third column. The source IP ranges are in the fourth column."}
 
 ### Outbound connectivity
 {: #reqs-host-network-firewall-outbound}
@@ -226,15 +226,28 @@ curl -k [node 1-n]:22
 ```
 {: codeblock}
 
-If you do not open all outbound connectivity, you must allow the following outbound connectivity in your firewall.
-* For Washington DC (`wdc`) locations, `TCP/UDP` ports `30000-32767` and port `443` to the [**US East** public IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound)
-* For London (`lon`) locations, `TCP/UDP` ports `30000-32767` and port `443` to the [**UK South** public IP addresses](/docs/openshift?topic=openshift-firewall#firewall_outbound)
-* [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external}
-* Red Hat network time protocol (NTP) servers:
-  ```
-  0.rhel.pool.ntp.org
-  1.rhel.pool.ntp.org
-  2.rhel.pool.ntp.org
-  3.rhel.pool.ntp.org
-  ```
-  {: codeblock}
+If you do not open all outbound connectivity, you must allow the following outbound connectivity in your firewall. The required IP addresses vary with the {{site.data.keyword.cloud_notm}} multizone region that your {{site.data.keyword.satelliteshort}} location is managed from.
+
+|Description|Protocol|Ports|Destination|
+|-----------|--------|-----|------|
+|Allow worker nodes in your {{site.data.keyword.satelliteshort}} location to communicate with the {{site.data.keyword.satelliteshort}} control plane|TCP and UDP|443 and 30000 - 32767|169.63.123.154</br>169.60.123.162</br>52.117.93.26</br>[All public IP addresses listed in the **US East** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound)|
+|Allow Cloudflare proxied load balancers for {{site.data.keyword.satelliteshort}} Link and Config|TCP and UDP|80|[Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external}|
+|Allow Red Hat network time protocol (NTP) servers|-|-|0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org|
+{: #firewall-outbound-wdc}
+{: tab-title="Washington DC (wdc)"}
+{: class="comparison-tab-table"}
+{: tab-group="firewall-outbound"}
+{: caption="Required outbound connectivity for hosts on the public network" caption-side="top"}
+{: summary="The table shows the required outbound connectivity for hosts on the public network. Rows are to be read from the left to right. The description is in the first column. The protocol is in the second column. The ports are in the third column. The source IP ranges are in the fourth column."}
+
+|Description|Protocol|Ports|Destination|
+|-----------|--------|-----|------|
+|Allow worker nodes in your {{site.data.keyword.satelliteshort}} location to communicate with the {{site.data.keyword.satelliteshort}} control plane|TCP and UDP|443 and 30000 - 32767|158.175.120.210</br>141.125.97.106</br>158.176.139.66</br>[All public IP addresses listed in the **UK South** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound)|
+|Allow Cloudflare proxied load balancers for {{site.data.keyword.satelliteshort}} Link and Config|TCP and UDP|80|[Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external}|
+|Allow Red Hat network time protocol (NTP) servers|-|-|0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org|
+{: #firewall-outbound-lon}
+{: tab-title="London (lon)"}
+{: class="comparison-tab-table"}
+{: tab-group="firewall-outbound"}
+{: caption="Required outbound connectivity for hosts on the public network" caption-side="top"}
+{: summary="The table shows the required outbound connectivity for hosts on the public network. Rows are to be read from the left to right. The description is in the first column. The protocol is in the second column. The ports are in the third column. The source IP ranges are in the fourth column."}
