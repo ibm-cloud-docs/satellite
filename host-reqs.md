@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-14"
+lastupdated: "2020-10-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -177,7 +177,7 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
     {: screen}
 
 ### Inbound connectivity
-{: #reqs-host-network-firewall-outbound}
+{: #reqs-host-network-firewall-inbound}
 
 Hosts must have inbound connectivity on the public network via the default gateway or firewall of the system.
 {: shortdesc}
