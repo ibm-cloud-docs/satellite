@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-18"
+lastupdated: "2020-10-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,6 +44,7 @@ subcollection: satellite
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -140,7 +141,7 @@ You can only SSH into the machine if you did not assign the host to a cluster, o
     echo ‘Failed to untar bootstrap.tar’
     Failed to untar bootstrap.tar
     + rm -rf /tmp/bootstrap</code></pre></td>
-    <td>The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-hosts#host-remove), and try to [add](/docs/satellite?topic=satellite-hosts#add-hosts) and [assign](/docs/satellite?topic=satellite-hosts#host-assign) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.</td>
+    <td>The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-hosts#host-remove), and try to [add](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assign](/docs/satellite?topic=satellite-hosts#host-assign) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.</td>
     </tr>
     </tbody>
     </table>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-10-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,6 +44,7 @@ subcollection: satellite
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -174,7 +175,7 @@ Depending on where your hosts are, the options that are available to you to incr
 
 |High availability option|Description|
 |-----------|------------------------|
-|Add more compute hosts.|To increase compute capacity but also increase availability of your {{site.data.keyword.satelliteshort}} control plane, you can add more compute hosts as worker nodes to the control plane. Each host must meet the standards that are defined in the [basic control plane worker setup](#satellite-basic-setup). You can optionally add more hosts to your location without assigning them to your control plane. If the IBM Monitoring component detects a capacity issue in your location, unassigned hosts are automatically assigned as a worker node to your control plane.<p="note">Make sure to [add hosts](/docs/satellite?topic=satellite-locations#setup-control-plane) in each of the three zones to balance the compute capacity for increased high availability. Ideally, your location control plane has at least 6 hosts, and hosts are added in multiples of three, such as 6, 9, or 12 hosts.</p>|
+|Add more compute hosts.|To increase compute capacity but also increase availability of your {{site.data.keyword.satelliteshort}} control plane, you can add more compute hosts as worker nodes to the control plane. Each host must meet the standards that are defined in the [basic control plane worker setup](#satellite-basic-setup). You can optionally add more hosts to your location without assigning them to your control plane. If the IBM Monitoring component detects a capacity issue in your location, unassigned hosts are automatically assigned as a worker node to your control plane.<p="note">Make sure to [attach hosts](/docs/satellite?topic=satellite-locations#setup-control-plane) in each of the three zones to balance the compute capacity for increased high availability. Ideally, your location control plane has at least 6 hosts, and hosts are added in multiples of three, such as 6, 9, or 12 hosts.</p>|
 |Add redundant power, network, and storage.|To account for a power, network, or storage outage on one of your physical compute hosts, add redundant power, network, and storage configurations. This setup ensures that your compute hosts continue to run, even if hardware or software issues occur on the physical machine.|
 |Isolate machines within one data center.|Compute hosts that are in the same data center or with the same cloud provider are often connected to the same power, network, and storage server. If one of these components experiences an outage, all compute hosts that are connected to the same component might be affected by the outage. To ensure that your compute hosts continue to run, plan to isolate your compute hosts as much as possible and not to share the same power, network, or storage devices. |
 |Spread hosts across physical locations.|To account for a data center or cloud provider outage, you can spread your compute hosts across different physical locations. Keep in mind that compute hosts can only be in different physical locations if they still meet the networking speed and latency requirements that are defined in the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers).|

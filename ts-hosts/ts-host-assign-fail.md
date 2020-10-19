@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-18"
+lastupdated: "2020-10-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,6 +44,7 @@ subcollection: satellite
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -108,7 +109,7 @@ In particular, the bootstrapping process depends upon the following access.
 {: #debug-host-connectivity}
 
 {: tsResolve}
-If you want, you can debug the connectivity issues for your host. Otherwise, remove the host, reload the operating system, and add the host back.
+If you want, you can debug the connectivity issues for your host. Otherwise, remove the host, reload the operating system, and attach the host back.
 
 1.  Get the location ID where your host is attached, and note the {{site.data.keyword.cloud_notm}} multizone metro that the location is managed from. From the console, click your location, and then click the **Overview** tab. From the CLI, run the following command.
     ```
@@ -157,8 +158,8 @@ If you want, you can debug the connectivity issues for your host. Otherwise, rem
         ```
         {: screen}
     4.  Confirm that your host meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
-    5.  [Add the host](/docs/satellite?topic=satellite-hosts#add-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-    6.  Check that the host is added to your location and **unassigned**. From the console, click your location, and then click the **Hosts** tab. From the CLI, run the following command.
+    5.  [Attach the host](/docs/satellite?topic=satellite-hosts#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
+    6.  Check that the host is attached to your location and **unassigned**. From the console, click your location, and then click the **Hosts** tab. From the CLI, run the following command.
         ```
         ibmcloud sat host ls --location <location_name_or_ID>
         ```
