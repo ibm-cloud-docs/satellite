@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -278,8 +278,7 @@ Use the {{site.data.keyword.satelliteshort}} console to set up a control plane f
    If your hosts are from Amazon Web Services or Google Cloud Platform, you must manually register the DNS for the location control plane. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-control-plane) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-control-plane) provider topics.
    {: note}
 
-8. **Google Cloud Platform only**: If you use GCP hosts for your {{site.data.keyword.satellitelong_notm}} location control plane, you must request modified maximum transmission unit (MTU) settings. [Open a support case](/docs/satellite?topic=satellite-get-help#help-support).
-9. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Attaching capacity to your location control plane](#control-plane-scale).
+8. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Attaching capacity to your location control plane](#control-plane-scale).
 
 ### Setting up the control plane from the CLI
 {: #control-plane-cli}
@@ -443,8 +442,7 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
    ```
    {: screen}
 
-8. **Google Cloud Platform only**: If you use GCP hosts for your {{site.data.keyword.satellitelong_notm}} location control plane, you must request modified maximum transmission unit (MTU) settings. [Open a support case](/docs/satellite?topic=satellite-get-help#help-support).
-9. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Attaching capacity to your location control plane](#control-plane-scale).
+8. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Attaching capacity to your location control plane](#control-plane-scale).
 
 ### What's next?
 {: #location-control-plane-next}

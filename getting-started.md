@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -177,8 +177,6 @@ To complete the setup of your {{site.data.keyword.satelliteshort}} location, you
    {: note}
 
 4. **For hosts from Amazon Web Services or Google Cloud Platform**: Manually register the DNS for the location control plane. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-control-plane) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-control-plane) provider topics.
-
-5. **Google Cloud Platform only**: If you use GCP hosts for your {{site.data.keyword.satellitelong_notm}} location control plane, you must request modified maximum transmission unit (MTU) settings. [Open a support case](/docs/satellite?topic=satellite-get-help#help-support).
 
 ## What's next
 {: #whats-next}

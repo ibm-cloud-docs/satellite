@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -372,12 +372,6 @@ By default, the private IP addresses for your GCP hosts are used for the DNS reg
     ibmcloud oc nlb-dns rm classic -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <gcp_private_IP>
     ```
     {: pre}
-
-### MTU limitation for location control plane
-{: #gcp-reqs-control-plane}
-
-If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane), you must request modified maximum transmission unit (MTU) settings. [Open a support case](/docs/satellite?topic=satellite-get-help#help-support).
-{: shortdesc}
 
 ### Firewall settings
 {: #gcp-reqs-firewall}
