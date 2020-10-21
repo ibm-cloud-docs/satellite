@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -359,7 +359,7 @@ The following diagram describes the process for updating hosts.
 1. **Remove**: As you work with {{site.data.keyword.cloud_notm}} services that your hosts are assigned to, you might notice that an update is available. For example, when you list worker nodes in a {{site.data.keyword.openshiftlong_notm}} cluster, you might see an `update available` message. For the {{site.data.keyword.satelliteshort}} location control plane, you see available updates when you list hosts. When an update is available, you have a few options.
    * **Replace the host by assigning extra hosts**: Make sure that your {{site.data.keyword.cloud_notm}} service or the control plane has enough compute capacity to continue running your workloads by [assigning extra hosts to your service or control plane](#host-assign) before you remove the host that needs to be updated. If you do not have extra hosts available, consider [attach hosts](#attach-hosts) and then assigning them.
    *  **Reload the host that needs to be updated**: To reload and update your host, you must first [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) from your {{site.data.keyword.satelliteshort}} location. Any workloads that run on the host are automatically scheduled onto remaining hosts if possible.
-2. **Reload**: After your host is removed from your {{site.data.keyword.satelliteshort}} location, follow the guidance from your infrastructure provider to update and reload the operating system. For example, you might perform maintenance on the machine in your on-prem data center. After you reload the host machine, you can SSH into the host machine again, which was previously disabled while the host was assigned to a {{site.data.keyword.satelliteshort}} resource.
+2. **Reload**: After your host is removed from your {{site.data.keyword.satelliteshort}} location, follow the guidance from your infrastructure provider to reload the operating system. For example, you might perform maintenance on the machine in your on-prem data center. After you reload the host machine, you can SSH into the host machine again, which was previously disabled while the host was assigned to a {{site.data.keyword.satelliteshort}} resource.
 3. **Attach**: To reuse the host, [attach the host](/docs/satellite?topic=satellite-hosts#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
 4. **Assign**: [Assign the host](/docs/satellite?topic=satellite-hosts#host-assign) back to your {{site.data.keyword.satelliteshort}} resource, such as a {{site.data.keyword.openshiftlong_notm}} cluster. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
@@ -382,7 +382,7 @@ However, when you created the location control plane, you might have manually re
 **Who provides the update for my hosts?**<br>
 IBM provides updates for the IBM-managed components, such as the {{site.data.keyword.openshiftshort}} version that worker nodes run or the {{site.data.keyword.satelliteshort}} control plane. For master components, IBM automatically applies these updates, but for components that run on worker nodes, such as the location control plane or cluster worker nodes, you choose when to apply the updates.
 
-For updates to the operating system, you are responsible to remove your hosts, update and reload the hosts, attach the hosts back to your {{site.data.keyword.satelliteshort}} location, and assign the hosts to your {{site.data.keyword.satelliteshort}} resources. You can only install [supported operating system versions](/docs/satellite?topic=satellite-host-reqs).
+To update, you are responsible to remove your hosts, reload the hosts, attach the hosts back to your {{site.data.keyword.satelliteshort}} location, and assign the hosts to your {{site.data.keyword.satelliteshort}} resources. Keep in mind that your hosts must run only [supported operating system versions](/docs/satellite?topic=satellite-host-reqs).
 
 ### Updating hosts from the console
 {: #host-update-console}
@@ -393,9 +393,9 @@ Use the {{site.data.keyword.satelliteshort}} console to update your hosts.
 Before you begin, consider [attaching](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) hosts to your resources to handle the compute capacity while your existing hosts are updating. Especially if you update the hosts in the location control plane, you might need additional compute capacity to keep your resources running and accessible. See [Considerations before you update](#host-update-considerations).
 
 1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
-2. Use the guidelines from your infrastructure provider to reload the operating system of your host and apply the latest updates.
+2. Use the guidelines from your infrastructure provider to reload the operating system of your host.
 3. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.openshiftlong_notm}} cluster.
+4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.openshiftlong_notm}} cluster. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
 ### Updating hosts from the CLI
 {: #host-update-cli}
@@ -406,9 +406,9 @@ Use the {{site.data.keyword.satelliteshort}} CLI to update your hosts.
 Before you begin, consider [attaching](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) hosts to your resources to handle the compute capacity while your existing hosts are updating. Especially if you update the hosts in the location control plane, you might need additional compute capacity to keep your resources running and accessible. See [Considerations before you update](#host-update-considerations).
 
 1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove-cli) so that you can update the host.
-2. Use the guidelines from your infrastructure provider to reload the operating system of your host and apply the latest updates.
+2. Use the guidelines from your infrastructure provider to reload the operating system of your host.
 3. [Attach the host](#attach-hosts-cli) back to your {{site.data.keyword.satelliteshort}} location.
-4. [Assign the host](#host-assign-cli) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.openshiftlong_notm}} cluster.
+4. [Assign the host](#host-assign-cli) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.openshiftlong_notm}} cluster. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
 ### Updating host metadata
 {: #host-update-metadata}
