@@ -95,7 +95,7 @@ subcollection: satellite
 # Getting help
 {: #get-help}
 
-Still having issues? Review different ways to get help and support for {{site.data.keyword.satelliteshort}}. For any questions or feedback, post in Slack.
+Still having issues? Review different ways to get help and support for {{site.data.keyword.satelliteshort}}. For questions or feedback, post in Slack.
 {: shortdesc}
 
 ## General ways to resolve issues
@@ -117,7 +117,7 @@ Still having issues? Review different ways to get help and support for {{site.da
 ## Feedback and questions
 {: #feedback-qs}
 
-1. Search for your question and post in the {{site.data.keyword.cloud_notm}} [Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
+1. Search for your question and post in the {{site.data.keyword.cloud_notm}} [Slack](https://cloud.ibm.com/kubernetes/slack){: external}, in the `#satellite` channel.
 2. Review forums such as Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
    * For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
    * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.openshiftshort}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
