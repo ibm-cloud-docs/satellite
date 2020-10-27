@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-21"
+lastupdated: "2020-10-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -100,18 +100,17 @@ With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute in
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
 {: beta}
 
-In this getting started tutorial, you create your first {{site.data.keyword.satellitelong_notm}} location. Then, you create the location control plane with 3 compute hosts from your own infrastructure environment. These compute hosts can reside in an on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
+In this getting started tutorial, you create your first {{site.data.keyword.satellitelong_notm}} location for demonstration purposes. Then, you create the location control plane with at least 3 compute hosts from your own infrastructure environment. These compute hosts can reside in an on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
 
 ## Prerequisites
 {: #sat-prereqs}
 
-1. You must have 3 compute hosts in your own infrastructure environment that meet certain requirements, such as RHEL 7 packages, public network connectivity, and the ability to log in to the host machines and run a script.
+1. You must have at least 3 compute hosts in your own infrastructure environment that meet certain requirements, such as RHEL 7 packages, public network connectivity, and the ability to log in to the host machines and run a script.
    *  All hosts must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs).
    *  Depending on the provider, your hosts also might have [provider-specific requirements](/docs/satellite?topic=satellite-providers).
-   *  3 hosts at a minimum are needed for the location control plane, for demonstration purposes. If you want to continue to use the location, add more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts.
-
-   If your hosts cannot meet these host and provider requirements, you cannot attach the hosts to {{site.data.keyword.satellitelong_notm}}. {{site.data.keyword.satelliteshort}} beta requirements are subject to change.
-   {: important}
+   *  3 hosts at a minimum are needed for the location control plane, for demonstration purposes. 
+   
+   <p class="important">A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location, add more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts.<br><br>If your hosts cannot meet these host and provider requirements, you cannot attach the hosts to {{site.data.keyword.satellitelong_notm}}. {{site.data.keyword.satelliteshort}} beta requirements are subject to change.</p>
 
 2. You must be the {{site.data.keyword.cloud_notm}} account owner, or have the [administrator permissions permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to the required {{site.data.keyword.cloud_notm}} services in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).
 
@@ -182,7 +181,8 @@ To complete the setup of your {{site.data.keyword.satelliteshort}} location, you
 {: #whats-next}
 
 Now that your location is set up, you can choose among the following options:
-- [Attach more compute capacity to your location](/docs/satellite?topic=satellite-hosts#attach-hosts).
-- [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) on your own infrastructure.
+- Repeat these steps to add 3 more hosts to your location control plane, so that you can use the location for more than just demonstration purposes.
+- [Attach at least 3 more hosts location](/docs/satellite?topic=satellite-hosts#attach-hosts) to add compute capacity for creating clusters.
+- [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) on your own infrastructure, and assign your additional hosts as worker nodes in the cluster.
 - [Attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters) and start [deploying Kubernetes resources to these clusters](/docs/satellite?topic=satellite-cluster-config#create-satconfig-ui) with {{site.data.keyword.satelliteshort}} configurations.
 - [Learn more about the {{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-21"
+lastupdated: "2020-10-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -118,7 +118,6 @@ The following diagram presents the initial setup steps for hosts.
 Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshort}} location control plane, {{site.data.keyword.openshiftlong_notm}} cluster, or as compute capacity for other {{site.data.keyword.satelliteshort}}-enabled services. If you run an {{site.data.keyword.openshiftshort}} cluster, you can log in to the clusters and use Kubernetes or {{site.data.keyword.openshiftshort}} APIs to manage your containerized workloads, or use [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) to manage your workloads across clusters.
 
 <br />
-
 
 ## Attaching hosts to your {{site.data.keyword.satelliteshort}} location
 {: #attach-hosts}
@@ -236,13 +235,11 @@ Before you begin, make sure that you have created host machines that meet the [m
 
 <br />
 
-
 ## Assigning hosts to {{site.data.keyword.satelliteshort}} resources
 {: #host-assign}
 
-After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you can assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity. For example, a basic setup has 6 hosts that are assigned as worker nodes to the [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane). Any remaining hosts can be assigned as worker nodes to {{site.data.keyword.openshiftlong_notm}} clusters or as compute capacity to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services.
+After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity. For example, a basic setup has 6 hosts that are assigned as worker nodes to the [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane). Any remaining hosts can be assigned as worker nodes to {{site.data.keyword.openshiftlong_notm}} clusters or as compute capacity to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services.
 <br />
-
 
 ### Prerequisites
 {: #host-assign-prereq}
@@ -345,7 +342,6 @@ After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you c
 
 <br />
 
-
 ## Updating hosts
 {: #host-update}
 
@@ -417,7 +413,6 @@ If you want to update metadata about a host, such as labels, see the [`ibmcloud 
 {: shortdesc}
 
 <br />
-
 
 ## Removing hosts
 {: #host-remove}
