@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-10-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -147,7 +147,9 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     R0018 {{site.data.keyword.satelliteshort}} is attempting to recover.<br><br>
     R0020 Wait while {{site.data.keyword.satelliteshort}} completes a recovery action.<br><br>
     R0023 Wait while {{site.data.keyword.satelliteshort}} sets up the location control plane.<br><br>
-    R0029 Successfully initiated recovery action.</td>
+    R0029 Successfully initiated recovery action.<br><br>
+    R0037 The {{site.data.keyword.satelliteshort}} location has clusters that are in a failed state. {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later.<br><br>
+    R0039 The {{site.data.keyword.satelliteshort}} location control plane is currently unhealthy. {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later.</td>
     <td>Check back later to see if the issue is resolved. If the issue persists for a while, you can [open a support case](/docs/satellite?topic=satellite-get-help).</td>
     </tr>
     <tr>
@@ -164,8 +166,9 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
      <li>[Update any unhealthy hosts](/docs/satellite?topic=satellite-hosts#host-update) to replace them.</li></ul</td>
     </tr>
     <tr>
-    <td>R0011 Make sure that all hosts for your Satellite location are in a normal state. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.</td>
-    <td><ol><li>Check the **Status** of your hosts by running <code>ibmcloud sat host ls --location <location_name_or_ID><code></li>
+    <td>R0011 Make sure that all hosts for your {{site.data.keyword.satelliteshort}} location are in a normal state. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.<br><br>
+    R0040 The {{site.data.keyword.satelliteshort}} location data plane is currently unhealthy. To debug the host, see 'http://ibm.biz/sat-host-debug'. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.</td>
+    <td><ol><li>Check the **Status** of your hosts by running <code>ibmcloud sat host ls --location &lt;location_name_or_ID&gt;</code></li>
     <li>If you have no hosts, attach hosts to your location.</li>
     <li>Make sure that you have at least 6 hosts (2 hosts per zone across 3 zones) that are assigned to the **infrastructure** cluster for the location, to run location control plane operations.</li>
     <li>If your hosts have no status, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).</li>
@@ -201,7 +204,8 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     </tr>
     <tr>
      <td>R0024 The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.openshiftshort}} clusters in warning health.<br><br>
-     R0025 The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.openshiftshort}} clusters in critical health.</td>
+     R0025 The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.openshiftshort}} clusters in critical health.<br><br>
+     R0038 The {{site.data.keyword.satelliteshort}} location has clusters in the middle of an operation. Wait for them to finish and check back later</td>
      <td><ol><li>Wait to see if another message is returned, such as a message about host capacity.</li>
      <li>If a host message is returned, try [Debugging hosts](/docs/satellite?topic=satellite-ts-hosts-debug).</li>
      <li>If no further message is returned, try [Debugging your {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-cs_troubleshoot).</li></ol></td>
