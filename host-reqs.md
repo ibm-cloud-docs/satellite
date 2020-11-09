@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-16"
+lastupdated: "2020-11-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -131,7 +131,6 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 
 <br />
 
-
 ## Host storage and attached devices
 {: #reqs-host-storage}
 
@@ -139,7 +138,6 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 * To set up LUKS encryption, your hosts must have two attached disks: a primary boot disk that is mounted to `/`, and a secondary disk that is unmounted.
 
 <br />
-
 
 ## Host network
 {: #reqs-host-network}
@@ -186,7 +184,7 @@ The required IP addresses vary with the {{site.data.keyword.cloud_notm}} multizo
 
 |Description|Protocol|Ports|Source|
 |-----------|--------|-----|------|
-|Required: Allow {{site.data.keyword.cloud_notm}} to set up and manage your {{site.data.keyword.satelliteshort}} location|TCP|30000 - 32767|169.45.206.224/27</br>169.60.77.224/28</br>169.62.41.32/27</br>169.63.137.0/25</br>169.61.85.64/26</br>169.47.160.0/26</br>169.62.0.64/26</br>169.60.104.64/26</br>169.61.85.64/26|
+|Required: Allow {{site.data.keyword.cloud_notm}} to set up and manage your {{site.data.keyword.satelliteshort}} location|TCP|30000 - 32767|169.45.206.224/27</br>169.60.77.224/28</br>169.62.41.32/27</br>169.63.137.0/25</br>169.47.160.0/26</br>169.62.0.64/26</br>169.60.104.64/26</br>169.61.85.64/26|
 |Optional: Access the {{site.data.keyword.openshiftlong_notm}} console on the public network|All|80|Any|
 |Optional: Access the {{site.data.keyword.openshiftlong_notm}} console on the public network|All|443|Any|
 {: #firewall-inbound-wdc}
