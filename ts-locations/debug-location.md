@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-06"
+lastupdated: "2020-10-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,6 +44,7 @@ subcollection: satellite
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -146,7 +147,9 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     R0018 {{site.data.keyword.satelliteshort}} is attempting to recover.<br><br>
     R0020 Wait while {{site.data.keyword.satelliteshort}} completes a recovery action.<br><br>
     R0023 Wait while {{site.data.keyword.satelliteshort}} sets up the location control plane.<br><br>
-    R0029 Successfully initiated recovery action.</td>
+    R0029 Successfully initiated recovery action.<br><br>
+    R0037 The {{site.data.keyword.satelliteshort}} location has clusters that are in a failed state. {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later.<br><br>
+    R0039 The {{site.data.keyword.satelliteshort}} location control plane is currently unhealthy. {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later.</td>
     <td>Check back later to see if the issue is resolved. If the issue persists for a while, you can [open a support case](/docs/satellite?topic=satellite-get-help).</td>
     </tr>
     <tr>
@@ -159,26 +162,27 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
      R0031 A zone for the {{site.data.keyword.satelliteshort}} location control plane is reaching a warning capacity. Add more hosts to the control plane zone, or replace unhealthy hosts.<br><br>
      R0032 Manually assign hosts to the control plane across all 3 zones.</td>
      <td>Your location has no available hosts for {{site.data.keyword.satelliteshort}} to automatically assign to the location control plane, and might be reaching capacity limits. You can choose among the following options:
-     <ul><li>[Add](/docs/satellite?topic=satellite-hosts#add-hosts) and [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) more hosts to the location control plane. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.</li>
+     <ul><li>[Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) more hosts to the location control plane. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.</li>
      <li>[Update any unhealthy hosts](/docs/satellite?topic=satellite-hosts#host-update) to replace them.</li></ul</td>
     </tr>
     <tr>
-    <td>R0011 Make sure that all hosts for your Satellite location are in a normal state. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.</td>
-    <td><ol><li>Check the **Status** of your hosts by running <code>ibmcloud sat host ls --location <location_name_or_ID><code></li>
-    <li>If you have no hosts, add hosts to your location.</li>
+    <td>R0011 Make sure that all hosts for your {{site.data.keyword.satelliteshort}} location are in a normal state. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.<br><br>
+    R0040 The {{site.data.keyword.satelliteshort}} location data plane is currently unhealthy. To debug the host, see 'http://ibm.biz/sat-host-debug'. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.</td>
+    <td><ol><li>Check the **Status** of your hosts by running <code>ibmcloud sat host ls --location &lt;location_name_or_ID&gt;</code></li>
+    <li>If you have no hosts, attach hosts to your location.</li>
     <li>Make sure that you have at least 6 hosts (2 hosts per zone across 3 zones) that are assigned to the **infrastructure** cluster for the location, to run location control plane operations.</li>
     <li>If your hosts have no status, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).</li>
     <li>Review the host status to [resolve the host issue](/docs/satellite?topic=satellite-ts-hosts-debug).</li></ol></td>
     </tr>
     <tr>
-    <td>R0012 The location control plane does not have hosts in all 3 zones. Add available hosts to your location for the control plane. Then, wait for {{site.data.keyword.satelliteshort}} to automatically assign the hosts to control plane zones, or you can assign the hosts.</td>
+    <td>R0012 The location control plane does not have hosts in all 3 zones. Add available hosts to your location for the control plane.</td>
     <td>If you just assigned hosts to the control plane, wait a while for the bootstrapping process to complete. Otherwise, [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones for the location itself, to run control plane operations.<ul>
     <li>If you did assign at least 2 hosts in each of the 3 zones, check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.</li>
     <li>If you did assign at least one host per zone, make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system, networking configuration, and public network access.</li>
     <li>If you did assign at least 2 hosts in each of the 3 zones but the bootstrapping process failed, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).</li></ul></td>
     </tr>
     <tr>
-    <td>R0013 A zone in the location control plane is unavailable. Add more hosts to the location and assign the hosts to the zone, or replace unhealthy hosts.</td>
+    <td>R0013 A zone in the location control plane is unavailable. Attach more hosts to the location and assign the hosts to the zone, or replace unhealthy hosts.</td>
     <td>[Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least 2 hosts to each of the 3 zones for the location itself, to run control plane operations. If you did assign at least one host in each of the 3 zones:<ul>
     <li>Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.</li>
     <li>Make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system, networking configuration, and public network access.</li>
@@ -196,11 +200,12 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     <tr>
     <td>R0015 Could not assign hosts because no hosts are available. Attach more hosts to the location and try again. For more information, see the docs: 'http://ibm.biz/sat-loc'<br><br>
     R0016 Unexpected error occurred after assigning host. To debug the host, see 'http://ibm.biz/sat-host-debug'. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.</td>
-    <td>[Add more hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to the location. If you added hosts that are not showing up as available, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).</td>
+    <td>[Attach more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to the location. If you attached hosts that are not showing up as available, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).</td>
     </tr>
     <tr>
      <td>R0024 The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.openshiftshort}} clusters in warning health.<br><br>
-     R0025 The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.openshiftshort}} clusters in critical health.</td>
+     R0025 The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.openshiftshort}} clusters in critical health.<br><br>
+     R0038 The {{site.data.keyword.satelliteshort}} location has clusters in the middle of an operation. Wait for them to finish and check back later</td>
      <td><ol><li>Wait to see if another message is returned, such as a message about host capacity.</li>
      <li>If a host message is returned, try [Debugging hosts](/docs/satellite?topic=satellite-ts-hosts-debug).</li>
      <li>If no further message is returned, try [Debugging your {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-cs_troubleshoot).</li></ol></td>
@@ -217,7 +222,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
      R0034 Hosts in the location control plane have critical CPU usage issues. Add more hosts to the location control plane and wait for the location to return to normal.<br><br>
      R0035 The location control plane is running at max capacity and cannot support any more workloads. Add hosts to each zone and wait for the location to return to normal.</td>
      <td><ol><li>Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.</li>
-     <li>[Add 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#add-hosts).</li>
+     <li>[Attach 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts).</li>
      <li>[Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones for the location itself, to add capacity for control plane operations. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.</li></ol>
     </td>
     </tr>

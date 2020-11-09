@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-14"
+lastupdated: "2020-10-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,6 +44,7 @@ subcollection: satellite
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -94,7 +95,7 @@ subcollection: satellite
 # Getting help
 {: #get-help}
 
-Still having issues? Review different ways to get help and support for {{site.data.keyword.satelliteshort}}. For any questions or feedback, post in Slack.
+Still having issues? Review different ways to get help and support for {{site.data.keyword.satelliteshort}}. For questions or feedback, post in Slack.
 {: shortdesc}
 
 ## General ways to resolve issues
@@ -116,7 +117,7 @@ Still having issues? Review different ways to get help and support for {{site.da
 ## Feedback and questions
 {: #feedback-qs}
 
-1. Search for your question and post in the {{site.data.keyword.cloud_notm}} [Slack](https://cloud.ibm.com/kubernetes/slack){: external}.
+1. Search for your question and post in the {{site.data.keyword.cloud_notm}} [Slack](https://cloud.ibm.com/kubernetes/slack){: external}, in the `#satellite` channel.
 2. Review forums such as Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
    * For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
    * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.openshiftshort}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
@@ -142,7 +143,7 @@ Still having issues? Review different ways to get help and support for {{site.da
    You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-cs_troubleshoot#debug_utility) to gather and export pertinent information to share with IBM Support.
    {: tip}
 
-2.  Contact IBM Support by opening a case. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
-3.  In your support case, for **Category**, select **Containers**.
-4.  For the **Offering**, select your {{site.data.keyword.satelliteshort}} resource. Include the relevant information that you previously gathered.
+2.  Contact IBM Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
+3.  For the **Problem type**, search for or select **{{site.data.keyword.openshiftlong_notm}}**.
+4.  For the **Case details**, provide a descriptive title and include the details that you previously gathered. From the **Resources**, you can also select the cluster that the issue is related to, if any.
 

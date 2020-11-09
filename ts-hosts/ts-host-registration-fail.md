@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-10-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,6 +44,7 @@ subcollection: satellite
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -94,7 +95,7 @@ subcollection: satellite
 {: #host-registration-script-fails}
 
 {: tsSymptoms}
-When you SSH into your own infrastructure machine that you want to add as a {{site.data.keyword.satelliteshort}} host and run the host registration script, you see a message similar to the following.
+When you SSH into your own infrastructure machine that you want to attach as a {{site.data.keyword.satelliteshort}} host and run the host registration script, you see a message similar to the following.
 ```
 No package rh-python36 available.
 Error: Nothing to do
@@ -137,4 +138,4 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
         ```
         {: pre}
 2.  Make sure that your machine meets the other [host minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as minimum CPU and memory sizes and public network connectivity.
-3.  [Run the registration script](/docs/satellite?topic=satellite-hosts#add-hosts) on your machine again.
+3.  [Run the registration script](/docs/satellite?topic=satellite-hosts#attach-hosts) on your machine again.

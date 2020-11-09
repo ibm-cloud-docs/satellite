@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-29"
+lastupdated: "2020-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,6 +44,7 @@ subcollection: satellite
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -132,7 +133,7 @@ By default, source clients in your {{site.data.keyword.satelliteshort}} location
 
 1. When you create an endpoint for your destination resource, you open up a node port for the {{site.data.keyword.satelliteshort}} Link connector on your {{site.data.keyword.satelliteshort}} control plane worker nodes. Requests from sources in your {{site.data.keyword.satelliteshort}} location are made to the {{site.data.keyword.satelliteshort}} Link connector host name and the node port, such as `nae4dce0eb35957baff66-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud:30819`. This Link host name and node port are mapped to the destination resource's domain and port.
 
-2. The {{site.data.keyword.satelliteshort}} Link connector forwards the request to the {{site.data.keyword.satelliteshort}} Link tunnel server on the {{site.data.keyword.satelliteshort}} control plane master over a secured VPN connection.
+2. The {{site.data.keyword.satelliteshort}} Link connector forwards the request to the {{site.data.keyword.satelliteshort}} Link tunnel server on the {{site.data.keyword.satelliteshort}} control plane master over a secured TLS connection.
 
 3. The {{site.data.keyword.satelliteshort}} Link tunnel server resolves the request to the destination's IP address and port, and forwards the request to the destination resource.
 
@@ -149,7 +150,7 @@ By default, source clients that run outside of the location cannot reach destina
 
 1. When you create an endpoint for a resource that runs in your {{site.data.keyword.satelliteshort}} location, you open up a node port for the {{site.data.keyword.satelliteshort}} Link connector on your {{site.data.keyword.satelliteshort}} control plane worker nodes. Requests from sources that run outside of the location are made to the {{site.data.keyword.satelliteshort}} Link tunnel server host name and this node port, such as `c-01.us-east.link.satellite.cloud.ibm.com:30819`. This Link host name and node port are mapped to the destination resource's domain and port.
 
-2. The {{site.data.keyword.satelliteshort}} Link tunnel server resolves the request to the {{site.data.keyword.satelliteshort}} Link connector host name and endpoint node port, and forwards the request to the {{site.data.keyword.satelliteshort}} Link connector over a secured VPN connection.
+2. The {{site.data.keyword.satelliteshort}} Link tunnel server resolves the request to the {{site.data.keyword.satelliteshort}} Link connector host name and endpoint node port, and forwards the request to the {{site.data.keyword.satelliteshort}} Link connector over a secured TLS connection.
 
 3. The {{site.data.keyword.satelliteshort}} Link connector resolves the request to the destination's IP address and port, and forwards the request to the destination resource.
 
@@ -197,7 +198,7 @@ Create an endpoint of type `cloud` so that sources in your {{site.data.keyword.s
 {: shortdesc}
 
 **Before you begin**, ensure that you have the following:
-* Source client: A {{site.data.keyword.satelliteshort}} cluster or a host that you added to your location. For more information about how to create a {{site.data.keyword.satelliteshort}} cluster, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). To add a host to your location, see [Adding hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#add-hosts). Make sure that you do not assign the host to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster after you added the host. Assigning the host starts a bootstrapping process that removes SSH access to your host.
+* Source client: A {{site.data.keyword.satelliteshort}} cluster or a host that you attached to your location. For more information about how to create a {{site.data.keyword.satelliteshort}} cluster, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). To attach a host to your location, see [Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#attach-hosts). Make sure that you do not assign the host to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster after you attached the host. Assigning the host starts a bootstrapping process that removes SSH access to your host.
 * Destination resource: A service, server, or app that runs outside of the location but that is accessible from within {{site.data.keyword.cloud_notm}}. For example, you can use the private service endpoint for an {{site.data.keyword.cloud_notm}} service, because that private service endpoint is routable from within the {{site.data.keyword.cloud_notm}} network. If you want to connect to a service that runs outside of {{site.data.keyword.cloud_notm}}, this service must be accessible from within the {{site.data.keyword.cloud_notm}} network.
 * Permissions: The [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/satellite?topic=satellite-iam) for the **Location** resource in {{site.data.keyword.satellitelong_notm}}.
 
@@ -296,7 +297,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
 ### Testing connections through cloud endpoints
 {: #link-cloud-test}
 
-Use the {{site.data.keyword.satelliteshort}} Link connector host name and node port that are assigned to your endpoint to connect to your destination resource from a source in your location. The source can be a {{site.data.keyword.satelliteshort}} cluster that you previously created or a host that you added to your location.
+Use the {{site.data.keyword.satelliteshort}} Link connector host name and node port that are assigned to your endpoint to connect to your destination resource from a source in your location. The source can be a {{site.data.keyword.satelliteshort}} cluster that you previously created or a host that you assigned to your location.
 {: shortdesc}
 
 **Example for testing the connection from a host**:
@@ -409,7 +410,7 @@ Create an endpoint of type `location` so that sources that run outside of the lo
 
 **Before you begin**, ensure that you have the following:
 * Source client: A service, server, or app that runs outside of the location but that can access the {{site.data.keyword.cloud_notm}} network.
-* Destination resource: A service, server, or app that is externally accessible in a {{site.data.keyword.satelliteshort}} cluster or a host that you added to your location. For more information about how to create a {{site.data.keyword.satelliteshort}} cluster, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). To add a host to your location, see [Adding hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#add-hosts). Make sure that you do not assign the host to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster after you added the host. Assigning the host starts a bootstrapping process that removes SSH access to your host.
+* Destination resource: A service, server, or app that is externally accessible in a {{site.data.keyword.satelliteshort}} cluster or a host that you attached to your location. For more information about how to create a {{site.data.keyword.satelliteshort}} cluster, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). To attach a host to your location, see [Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#attach-hosts). Make sure that you do not assign the host to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster after you attached the host. Assigning the host starts a bootstrapping process that removes SSH access to your host.
 * Permissions: The [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/satellite?topic=satellite-iam) for the **Location** resource in {{site.data.keyword.satellitelong_notm}}
 
 ### Creating location endpoints by using the console

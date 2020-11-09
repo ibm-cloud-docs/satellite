@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,6 +44,7 @@ subcollection: satellite
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -94,7 +95,7 @@ subcollection: satellite
 # Provider requirements
 {: #providers}
 
-Review the following requirements that are specific to providers when you add hosts to your {{site.data.keyword.satellitelong}} location. For general requirements that are common across providers, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
+Review the following requirements that are specific to providers when you attach hosts to your {{site.data.keyword.satellitelong}} location. For general requirements that are common across providers, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: shortdesc}
 
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and subject to change. To register for the beta, see [{{site.data.keyword.satellitelong_notm}} beta](https://cloud.ibm.com/satellite/beta){: external}.
@@ -115,10 +116,10 @@ Your hosts also must meet the general requirements that are common across provid
 ### RHEL package updates in example launch template
 {: #aws-reqs-launch-template}
 
-To [add AWS hosts to your {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-hosts#add-hosts), you must update the RHEL packages on the host machines. You can also use [AWS launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html){: external} to add hosts to your {{site.data.keyword.satellitelong_notm}} location.
+To [attach AWS hosts to your {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-hosts#attach-hosts), you must update the RHEL packages on the host machines. You can also use [AWS launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html){: external} to attach hosts to your {{site.data.keyword.satellitelong_notm}} location.
 {: shortdesc}
 
-1.  Get a registration script to add hosts to your {{site.data.keyword.satellitelong_notm}} location.
+1.  Get a registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location.
     ```
     ibmcloud sat host attach --location <location_name_or_ID>
     ```
@@ -172,7 +173,7 @@ If you use AWS hosts for your [{{site.data.keyword.satellitelong_notm}} location
 By default, the private IP addresses for your AWS hosts are used for the DNS registration of {{site.data.keyword.openshiftshort}} clusters that you create in your {{site.data.keyword.satelliteshort}} location. However, you must register the public IP addresses of the hosts instead.
 {: shortdesc}
 
-1.  [Add AWS hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
+1.  [Attach AWS hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
 2.  [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in your {{site.data.keyword.satellitelong_notm}} location.
 3.  [Assign your AWS hosts to your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli).
 4.  Get the **Hostname** and private **IP** addresses of the cluster's default Ingress subdomain.
@@ -306,12 +307,12 @@ Your hosts also must meet the general requirements that are common across provid
 ### RHEL package updates
 {: #gcp-reqs-rhel-packages}
 
-To [add GCP hosts to your {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-hosts#add-hosts), you must update the RHEL packages on the host machines as in the following example steps.
+To [attach GCP hosts to your {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-hosts#attach-hosts), you must update the RHEL packages on the host machines as in the following example steps.
 {: shortdesc}
 
 
 
-1.  Get a registration script to add hosts to your {{site.data.keyword.satellitelong_notm}} location.
+1.  Get a registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location.
     ```
     ibmcloud sat host attach --location <location_name_or_ID>
     ```
@@ -325,7 +326,7 @@ To [add GCP hosts to your {{site.data.keyword.satellitelong_notm}} location](/do
     yum install subscription-manager -y
     ```
     {: codeblock}
-3.  Continue with the [steps to copy and run the script on your hosts](/docs/satellite?topic=satellite-hosts#add-hosts).
+3.  Continue with the [steps to copy and run the script on your hosts](/docs/satellite?topic=satellite-hosts#attach-hosts).
 
 ### DNS for location control plane
 {: #gcp-reqs-dns-control-plane}
@@ -333,7 +334,7 @@ To [add GCP hosts to your {{site.data.keyword.satellitelong_notm}} location](/do
 If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane), the location subdomain is not automatically registered for you. Instead, you must manually set up the DNS entries.
 {: shortdesc}
 
-1.  [Add your hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+1.  [Attach your hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
 2.  Wait for the hosts to provision as worker nodes in the control plane cluster. You see a message similar to the following for the location.
     ```
     R0014 Verify that the Satellite location has a DNS record for load balancing requests to the location control plane.
@@ -352,7 +353,7 @@ If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location
 By default, the private IP addresses for your GCP hosts are used for the DNS registration of {{site.data.keyword.openshiftshort}} clusters that you create in your {{site.data.keyword.satelliteshort}} location. However, you must register the public IP addresses of the hosts instead.
 {: shortdesc}
 
-1.  [Add GCP hosts](/docs/satellite?topic=satellite-hosts#add-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
+1.  [Attach GCP hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to your {{site.data.keyword.satellitelong_notm}} location.
 2.  [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in your {{site.data.keyword.satellitelong_notm}} location.
 3.  [Assign your GCP hosts to your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign-cli).
 4.  Get the **Hostname** and private **IP** addresses of the cluster's default Ingress subdomain.
@@ -371,12 +372,6 @@ By default, the private IP addresses for your GCP hosts are used for the DNS reg
     ibmcloud oc nlb-dns rm classic -c <cluster_name_or_ID> --nlb-host <cluster_hostname> --ip <gcp_private_IP>
     ```
     {: pre}
-
-### MTU limitation for location control plane
-{: #gcp-reqs-control-plane}
-
-If you use GCP hosts for your [{{site.data.keyword.satellitelong_notm}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane), you must request modified maximum transmission unit (MTU) settings. [Open a support case](/docs/satellite?topic=satellite-get-help#help-support).
-{: shortdesc}
 
 ### Firewall settings
 {: #gcp-reqs-firewall}
@@ -425,10 +420,10 @@ Your hosts also must meet the general requirements that are common across provid
 ### RHEL package updates
 {: #ibm-cloud-reqs-rhel-packages}
 
-To [add {{site.data.keyword.cloud_notm}} infrastructure hosts to your {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-hosts#add-hosts), you must update the RHEL packages on the host machines as in the following example steps.
+To [attach {{site.data.keyword.cloud_notm}} infrastructure hosts to your {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-hosts#attach-hosts), you must update the RHEL packages on the host machines as in the following example steps.
 {: shortdesc}
 
-1.  Get a registration script to add hosts to your {{site.data.keyword.satellitelong_notm}} location.
+1.  Get a registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location.
     ```
     ibmcloud sat host attach --location <location_name_or_ID>
     ```
@@ -445,7 +440,7 @@ To [add {{site.data.keyword.cloud_notm}} infrastructure hosts to your {{site.dat
    {: pre}	
 4. Copy the script from your local machine to the virtual server instance.	
    ```	
-   scp <path_to_addHost.sh> root@<public_IP_address>:/tmp/attach.sh	
+   scp <path_to_attachHost.sh> root@<public_IP_address>:/tmp/attach.sh	
    ```	
    {: pre}	
 5. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.	
