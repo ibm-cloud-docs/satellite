@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-11-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -111,7 +111,6 @@ When you create a {{site.data.keyword.satelliteshort}} location and set up the l
 | {{site.data.keyword.openshiftshort}} clusters are in an unhealthy state. | Resolve certain health issues with {{site.data.keyword.openshiftshort}} clusters. |
 | Default monitoring tools like Prometheus do not work. | Send alerts to your {{site.data.keyword.la_full_notm}} instance and return a status message with further troubleshooting information. |
 | Ingress subdomain registration fails. | Alert IBM engineers to troubleshoot the issues further and return a status message with further troubleshooting information. |
-| Other alerts | Alert IBM engineers to troubleshoot the issues further and return a status message. |
 {: caption="IBM monitoring actions to address certain scenarios." caption-side="top"}
 {: summary="Read this table from left to right. In the first column is the scenario. In the second column is the action that {{site.data.keyword.satelliteshort}} automatically takes to address the alert."}
 
