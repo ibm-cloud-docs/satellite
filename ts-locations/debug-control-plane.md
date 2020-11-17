@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-11-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,6 +44,7 @@ subcollection: satellite
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -93,7 +94,7 @@ subcollection: satellite
 # Debugging the health of the location control plane
 {: #ts-locations-control-plane}
 
-When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-concept), IBM automatically sets up a master for the location control plane in {{site.data.keyword.cloud_notm}}. Additionally, you must assign at least three hosts to the {{site.data.keyword.satelliteshort}} location control plane as worker nodes to run location components that IBM configures. If the location control plane that runs on your hosts has issues, you can debug the location control plane.
+When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations), IBM automatically sets up a master for the location control plane in {{site.data.keyword.cloud_notm}}. Additionally, you must assign at least three hosts to the {{site.data.keyword.satelliteshort}} location control plane as worker nodes to run location components that IBM configures. If the location control plane that runs on your hosts has issues, you can debug the location control plane.
 
 1.  Get your {{site.data.keyword.satelliteshort}} location ID.
     ```

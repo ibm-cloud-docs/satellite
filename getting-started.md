@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-11-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -96,6 +96,7 @@ subcollection: satellite
 {: #getting-started}
 
 With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute infrastructure that is in your on-premises data center, at other cloud providers, or in edge networks as a {{site.data.keyword.satelliteshort}} Location to {{site.data.keyword.cloud_notm}}. Then, you use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on this infrastructure, and consistently deploy, manage, and control your app workloads.
+{: shortdesc}
 
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
 {: beta}
@@ -108,8 +109,8 @@ In this getting started tutorial, you create your first {{site.data.keyword.sate
 1. You must have at least 3 compute hosts in your own infrastructure environment that meet certain requirements, such as RHEL 7 packages, public network connectivity, and the ability to log in to the host machines and run a script.
    *  All hosts must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs).
    *  Depending on the provider, your hosts also might have [provider-specific requirements](/docs/satellite?topic=satellite-providers).
-   *  3 hosts at a minimum are needed for the location control plane, for demonstration purposes. 
-   
+   *  3 hosts at a minimum are needed for the location control plane, for demonstration purposes.
+
    <p class="important">A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location, add more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts.<br><br>If your hosts cannot meet these host and provider requirements, you cannot attach the hosts to {{site.data.keyword.satellitelong_notm}}. {{site.data.keyword.satelliteshort}} beta requirements are subject to change.</p>
 
 2. You must be the {{site.data.keyword.cloud_notm}} account owner, or have the [administrator permissions permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to the required {{site.data.keyword.cloud_notm}} services in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).
