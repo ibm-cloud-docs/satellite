@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-21"
+lastupdated: "2020-11-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -190,7 +190,6 @@ If your destination resource has a certificate, you do not need to provide the c
 
 <br />
 
-
 ## Creating `cloud` endpoints to connect to resources outside of the location
 {: #link-cloud}
 
@@ -300,7 +299,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
 Use the {{site.data.keyword.satelliteshort}} Link connector host name and node port that are assigned to your endpoint to connect to your destination resource from a source in your location. The source can be a {{site.data.keyword.satelliteshort}} cluster that you previously created or a host that you assigned to your location.
 {: shortdesc}
 
-**Example for testing the connection from a host**:
+**Example for testing the connection from an unassigned host**:
 1. Log in to your host. Enter the password to access your host when prompted.
  ```
  ssh root@<public_IP_address>
@@ -340,7 +339,7 @@ Use the {{site.data.keyword.satelliteshort}} Link connector host name and node p
           spec:
             containers:
             - name: nginx
-              image: nginx
+              image: nginxinc/nginx-unprivileged
               ports:
               - containerPort: 80
       ```
@@ -400,7 +399,6 @@ Currently, you can create source lists only for endpoints of type `cloud`. You c
 
 
 <br />
-
 
 ## Creating `location` endpoints to connect to resources in a location
 {: #link-location}
@@ -514,7 +512,6 @@ Use the CLI to create an endpoint so that sources that run outside of the locati
   {: pre}
 
 <br />
-
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-28"
+lastupdated: "2020-11-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -163,7 +163,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
      R0032 Manually assign hosts to the control plane across all 3 zones.</td>
      <td>Your location has no available hosts for {{site.data.keyword.satelliteshort}} to automatically assign to the location control plane, and might be reaching capacity limits. You can choose among the following options:
      <ul><li>[Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) more hosts to the location control plane. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.</li>
-     <li>[Update any unhealthy hosts](/docs/satellite?topic=satellite-hosts#host-update) to replace them.</li></ul</td>
+     <li>[Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).</li></ul</td>
     </tr>
     <tr>
     <td>R0011 Make sure that all hosts for your {{site.data.keyword.satelliteshort}} location are in a normal state. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.<br><br>
@@ -187,7 +187,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     <li>Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.</li>
     <li>Make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system, networking configuration, and public network access.</li>
     <li>[Log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).</li>
-    <li>[Update the host](/docs/satellite?topic=satellite-hosts#host-update). When you update a host, the host is unassigned from the location control plane, and you must assign another host to the zone.</li></ul></td>
+    <li>[Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts). When you remove a host, the host is unassigned from the location control plane, and you must assign another host to the zone.</li></ul></td>
     </tr>
     <tr>
     <td>R0014 Verify that the {{site.data.keyword.satelliteshort}} location has a DNS record for load balancing requests to the location control plane.</td>
@@ -214,8 +214,8 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
      <td>R0026 Hosts in the location control plane are running out of disk space. Assign more hosts to the location control plane, or reload the hosts with disk space issues.</td>
      <td><ol><li>List the hosts that are assigned to the control plane by running `ibmcloud sat host ls --location <location_name_or_ID> | grep infrastructure`.</li>
      <li>Check the details of your host by running `ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>`.</li>
-     <li>In the infrastructure provider, check the disk space of your host machine. [Update the host](/docs/satellite?topic=satellite-hosts#host-update) to see if the host issue is resolved.</li>
-     <li>If debugging and updating the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).</li></ol></td>
+     <li>In the infrastructure provider, check the disk space of your host machine. [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).</li>
+     <li>If debugging and reattaching the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).</li></ol></td>
     </tr>
     <tr>
      <td>R0033 Hosts in the location control plane have critical memory usage issues. Add more hosts to the location control plane and wait for the location to return to normal.<br><br>

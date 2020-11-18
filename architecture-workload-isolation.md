@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-08-21"
+lastupdated: "2020-11-17"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -44,6 +44,7 @@ subcollection: satellite
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -130,7 +131,6 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 
 <br />
 
-
 ## Workload isolation in {{site.data.keyword.satellitelong_notm}}
 {: #workload-isolation}
 
@@ -150,7 +150,6 @@ One of the components that is set up in the {{site.data.keyword.satelliteshort}}
 Because you manage the host infrastructure that you bring to your {{site.data.keyword.satelliteshort}} location, you are responsible to isolate app workloads that run on your infrastructure. If you host and run {{site.data.keyword.cloud_notm}} services in your location, such as {{site.data.keyword.openshiftlong_notm}}, you can leverage the tools and features that this service provides to isolate your workloads. For more information about available options, refer to the service documentation.
 
 <br />
-
 
 ## Dependencies to other {{site.data.keyword.cloud_notm}} services
 {: #cloud-service-dependencies}
@@ -180,7 +179,6 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.sa
 
 <br />
 
-
 ## Dependencies to 3rd party services
 {: #3rd-party-dependencies}
 
@@ -196,4 +194,3 @@ Review the list of third-party services that {{site.data.keyword.satellitelong_n
 |Slack|Slack is used as the IBM-internal communication medium to troubleshoot issues and bring together internal SMEs to resolve customer issues. Diagnostic information about a {{site.data.keyword.satelliteshort}} location are sent to a private Slack channel and include the customer account ID, location ID, and details about the {{site.data.keyword.satelliteshort}} control plane.|
 {: caption="{{site.data.keyword.satelliteshort}} dependencies to third-party services." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
-

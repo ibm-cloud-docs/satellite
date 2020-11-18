@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-11-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -342,71 +342,7 @@ After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you a
 
 <br />
 
-## Updating hosts
-{: #host-update}
-
-Because you own the underlying infrastructure, you are responsible for updating your hosts. To update a host, you must remove the host from {{site.data.keyword.satelliteshort}} so that you can reload the operating system. Then, you reattach and reassign the host to your cluster.
-{: shortdesc}
-
-The following diagram describes the process for updating hosts.
-
-![Concept overview of Satellite host update process](/images/host-process-updates.png){: caption="Figure 2. The process for updating {{site.data.keyword.satelliteshort}} hosts." caption-side="bottom"}
-
-1. **Remove**: As you work with {{site.data.keyword.cloud_notm}} services that your hosts are assigned to, you might notice that an update is available. For example, when you list worker nodes in a {{site.data.keyword.openshiftlong_notm}} cluster, you might see an `update available` message. For the {{site.data.keyword.satelliteshort}} location control plane, you see available updates when you list hosts. When an update is available, you have a few options.
-   * **Replace the host by assigning extra hosts**: Make sure that your {{site.data.keyword.cloud_notm}} service or the control plane has enough compute capacity to continue running your workloads by [assigning extra hosts to your service or control plane](#host-assign) before you remove the host that needs to be updated. If you do not have extra hosts available, consider [attach hosts](#attach-hosts) and then assigning them.
-   *  **Reload the host that needs to be updated**: To reload and update your host, you must first [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) from your {{site.data.keyword.satelliteshort}} location. Any workloads that run on the host are automatically scheduled onto remaining hosts if possible.
-2. **Reload**: After your host is removed from your {{site.data.keyword.satelliteshort}} location, follow the guidance from your infrastructure provider to reload the operating system. For example, you might perform maintenance on the machine in your on-prem data center. After you reload the host machine, you can SSH into the host machine again, which was previously disabled while the host was assigned to a {{site.data.keyword.satelliteshort}} resource.
-3. **Attach**: To reuse the host, [attach the host](/docs/satellite?topic=satellite-hosts#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-4. **Assign**: [Assign the host](/docs/satellite?topic=satellite-hosts#host-assign) back to your {{site.data.keyword.satelliteshort}} resource, such as a {{site.data.keyword.openshiftlong_notm}} cluster. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
-
-### Considerations before you update
-{: #host-update-considerations}
-
-Review the following considerations before you update your {{site.data.keyword.satelliteshort}} hosts.
-{: shortdesc}
-
-**Does updating the {{site.data.keyword.satelliteshort}} location control plane worker nodes impact the cluster masters that run in the location control plane?**<br>
-Yes. Because the cluster masters run in your location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).
-
-The location control plane worker nodes and cluster worker nodes do not have to run the same version of {{site.data.keyword.openshiftshort}}, but your hosts must run a supported version.
-
-**Is my location control plane subdomain still reachable when I update the hosts?**<br>
-If your location subdomain was created automatically for you, the host IPs that are registered for the subdomain are automatically managed for you, such as during an update.
-
-However, when you created the location control plane, you might have manually registered the host IPs for the location subdomain with the `ibmcloud sat location dns register` command. Manually registering the subdomain is common if you use hosts from other cloud providers, like Amazon Web Services or Google Cloud Platform. If you manually registered the subdomain, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.
-
-**Who provides the update for my hosts?**<br>
-IBM provides updates for the IBM-managed components, such as the {{site.data.keyword.openshiftshort}} version that worker nodes run or the {{site.data.keyword.satelliteshort}} control plane. For master components, IBM automatically applies these updates, but for components that run on worker nodes, such as the location control plane or cluster worker nodes, you choose when to apply the updates.
-
-To update, you are responsible to remove your hosts, reload the hosts, attach the hosts back to your {{site.data.keyword.satelliteshort}} location, and assign the hosts to your {{site.data.keyword.satelliteshort}} resources. Keep in mind that your hosts must run only [supported operating system versions](/docs/satellite?topic=satellite-host-reqs).
-
-### Updating hosts from the console
-{: #host-update-console}
-
-Use the {{site.data.keyword.satelliteshort}} console to update your hosts.
-{: shortdesc}
-
-Before you begin, consider [attaching](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) hosts to your resources to handle the compute capacity while your existing hosts are updating. Especially if you update the hosts in the location control plane, you might need additional compute capacity to keep your resources running and accessible. See [Considerations before you update](#host-update-considerations).
-
-1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
-2. Use the guidelines from your infrastructure provider to reload the operating system of your host.
-3. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.openshiftlong_notm}} cluster. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
-
-### Updating hosts from the CLI
-{: #host-update-cli}
-
-Use the {{site.data.keyword.satelliteshort}} CLI to update your hosts.
-{: shortdesc}
-
-Before you begin, consider [attaching](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) hosts to your resources to handle the compute capacity while your existing hosts are updating. Especially if you update the hosts in the location control plane, you might need additional compute capacity to keep your resources running and accessible. See [Considerations before you update](#host-update-considerations).
-
-1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove-cli) so that you can update the host.
-2. Use the guidelines from your infrastructure provider to reload the operating system of your host.
-3. [Attach the host](#attach-hosts-cli) back to your {{site.data.keyword.satelliteshort}} location.
-4. [Assign the host](#host-assign-cli) back to your {{site.data.keyword.satelliteshort}} location control plane or to your {{site.data.keyword.openshiftlong_notm}} cluster. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
-
-### Updating host metadata
+## Updating host metadata
 {: #host-update-metadata}
 
 If you want to update metadata about a host, such as labels, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). The update does not apply security patches or operating system updates.
@@ -417,7 +353,7 @@ If you want to update metadata about a host, such as labels, see the [`ibmcloud 
 ## Removing hosts
 {: #host-remove}
 
-When you remove a host from your location, the host is unassigned from a {{site.data.keyword.openshiftlong_notm}} cluster or {{site.data.keyword.satellitelong_notm}} control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete an {{site.data.keyword.openshiftshort}} cluster or resize a worker pool, the hosts are still attached to your location, but you must [reload the hosts](#host-update) to use them with another {{site.data.keyword.satelliteshort}} resource.
+When you remove a host from your location, the host is unassigned from a {{site.data.keyword.openshiftlong_notm}} cluster or {{site.data.keyword.satellitelong_notm}} control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete an {{site.data.keyword.openshiftshort}} cluster or resize a worker pool, the hosts are still attached to your location, but you must detach and reattach the hosts to use them with another {{site.data.keyword.satelliteshort}} resource.
 {: shortdesc}
 
 Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep. Note that the underlying host infrastructure is not deleted because you manage the infrastructure yourself.

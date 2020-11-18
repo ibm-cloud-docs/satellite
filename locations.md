@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-27"
+lastupdated: "2020-11-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -102,37 +102,12 @@ Set up an {{site.data.keyword.satellitelong}} location to represent a data cente
 {: beta}
 
 **Steps to set up your first location.**
-1. [Create a location](#location-create).
-2. [Attach 6 hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
-3. [Assign the 6 hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
-4. [Attach at least 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
-5. [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) and assign the hosts as worker nodes to the cluster, so that you can run {{site.data.keyword.openshiftshort}} workloads in your location.
-
-<br />
-
-## Understanding {{site.data.keyword.satelliteshort}} locations
-{: #location-concept}
-
-A {{site.data.keyword.satelliteshort}} location represents a data center that you can fill with your own infrastructure resources to run and extend {{site.data.keyword.cloud_notm}} services in your location.
-{: shortdesc}
-
-The following diagram presents the concept of setting up your own {{site.data.keyword.satelliteshort}} locations in the Asia Pacific metro, and running the same application in your location as well as in {{site.data.keyword.cloud_notm}}.
-
-![Concept overview of Satellite locations in Asia Pacific](/images/location-ov.png){: caption="Figure 1. A conceptual overview of setting up {{site.data.keyword.satelliteshort}} locations." caption-side="bottom"}
-
-**{{site.data.keyword.satelliteshort}} control plane master**: When you create a location, a highly available control plane master is automatically created in one of the {{site.data.keyword.cloud_notm}} multizone metros that you selected during location creation. The control plane master securely connects your location to {{site.data.keyword.cloud_notm}} and stores the configuration of your location. If service updates are available, the control plane master automatically makes these updates available to the control plane worker nodes. All location metadata is automatically backed up to an {{site.data.keyword.cos_full_notm}} instance in your account.
-
-**{{site.data.keyword.satelliteshort}} control plane worker**: After you create the location, you must attach hosts in groups of 3 to the location control plane as worker nodes. The minimum of 3 hosts for the location control plane is for demonstration purposes only, so plan to have at least 6 hosts to run production workloads. Then, the location control plane worker is ready to manage your location resources. Other components are also set up, such as IBM monitoring components to monitor the health of your location and hosts and automatically resolve issues. For more information, see the [service architecture](/docs/satellite?topic=satellite-service-architecture).
-
-**{{site.data.keyword.satelliteshort}} Link**: A {{site.data.keyword.satelliteshort}} Link connector component is automatically created in the location control plane worker to securely connect the location back to the control plane master in {{site.data.keyword.cloud_notm}}. You can use the Link component to control and audit network traffic in and out of the location.
-
-**Hosts**: To fill the {{site.data.keyword.satelliteshort}} location with your own infrastructure, you attach hosts such as on-prem bare metal, virtual machines in other cloud providers, edge computing devices, and more. All hosts must the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). The hosts become the compute capacity in your location. You must assign at least three of these hosts as worker nodes to the {{site.data.keyword.satelliteshort}} control plane. All other hosts can be used to run {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.openshiftlong_notm}} clusters on your own infrastructure.
-
-**{{site.data.keyword.openshiftlong_notm}} clusters**: You can use host capacity in your location to run {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.openshiftlong_notm}} clusters. Your hosts become the worker nodes of your cluster in a `upi` (or user-provided infrastructure) worker pool. The cluster master runs on and is managed from your {{site.data.keyword.satelliteshort}} control plane worker nodes. {{site.data.keyword.openshiftshort}} is automatically set up for these clusters, and you can run any Kubernetes workload that you want on the clusters.
-
-**{{site.data.keyword.satelliteshort}} configurations**: To help you deploy and manage workloads across {{site.data.keyword.openshiftshort}} clusters in your location and in {{site.data.keyword.cloud_notm}}, you can use {{site.data.keyword.satelliteshort}} configurations. Simply upload a Kubernetes resource YAML file as a version to your configuration and subscribe the clusters where you want to deploy the resource. Your Kubernetes resources and subsequent version updates are automatically deployed to the subscribed clusters, and you also can view an inventory of all the Kubernetes resources that are managed by a {{site.data.keyword.satelliteshort}} configuration.
-
-**{{site.data.keyword.cloud_notm}} services**: You can use host capacity in your location to run {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services on your own infrastructure. Simply select the service that you want to run in your location from the {{site.data.keyword.cloud_notm}} catalog, and start creating service instances in your location. Additionally, you use the same {{site.data.keyword.cloud_notm}} platform tools to manage identity and access, key management, certificate management, logging and monitoring, and other security and compliance controls for these services.
+1. [Review the location terminology and architecture](/docs/satellite?topic=satellite-about).
+2. [Create a location](#location-create).
+3. [Attach 6 hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
+4. [Assign the 6 hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+5. [Attach at least 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
+6. [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) and assign the hosts as worker nodes to the cluster, so that you can run {{site.data.keyword.openshiftshort}} workloads in your location.
 
 <br />
 

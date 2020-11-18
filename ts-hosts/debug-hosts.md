@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-11-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -111,7 +111,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     {: screen}
 2.  Review the states and the steps to resolve the issue in the following table.
 3.  Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity. For example, if you change the underlying infrastructure environment where the host machine is to block access on the public network, you might make the host unsupported.
-4.  If your host still has issues, try to [remove, update, and re-attach the host](/docs/satellite?topic=satellite-hosts#host-update).
+4.  If your host still has issues, try to [remove](/docs/satellite?topic=satellite-hosts#host-remove), update, and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
 
 | Health state | Description
 | --- | --- |
