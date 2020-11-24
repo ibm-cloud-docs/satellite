@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-11-17"
+lastupdated: "2020-11-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -171,7 +171,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     <td><ol><li>Check the **Status** of your hosts by running <code>ibmcloud sat host ls --location &lt;location_name_or_ID&gt;</code></li>
     <li>If you have no hosts, attach hosts to your location.</li>
     <li>Make sure that you have at least 6 hosts (2 hosts per zone across 3 zones) that are assigned to the **infrastructure** cluster for the location, to run location control plane operations.</li>
-    <li>If your hosts have no status, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).</li>
+    <li>If your hosts have no status and are unassigned, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).</li>
     <li>Review the host status to [resolve the host issue](/docs/satellite?topic=satellite-ts-hosts-debug).</li></ol></td>
     </tr>
     <tr>
