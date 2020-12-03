@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-11-23"
+lastupdated: "2020-12-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -107,7 +107,7 @@ In this getting started tutorial, you create your first {{site.data.keyword.sate
 ## Prerequisites
 {: #sat-prereqs}
 
-1. You must have at least 3 compute hosts in your own infrastructure environment that meet certain requirements, such as RHEL 7 packages, public network connectivity, and the ability to log in to the host machines and run a script.
+1. You must have at least 3 compute hosts in your own infrastructure environment that meet certain requirements, such as RHEL 7 packages and the ability to log in to the host machines and run a script.
    *  All hosts must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs).
    *  Depending on the provider, your hosts also might have [provider-specific requirements](/docs/satellite?topic=satellite-providers).
    *  3 hosts at a minimum are needed for the location control plane, for demonstration purposes.
@@ -139,20 +139,20 @@ With your location set up, you can now attach host machines to your location. Al
 3. Enter a file name for your script or use the name that is generated for you.
 4. Click **Download script** to generate the host script and download the script to your local machine.
 
-   Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
+   Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages), [Azure](/docs/satellite?topic=satellite-providers#azure-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
    {: note}
 
 5. Log in to each host machine that you want to attach to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane.
-   1. Retrieve the public IP address of your host.
+   1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.
    2. Copy the script from your local machine to your host.
       ```
-      scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
+      scp <path_to_script> root@<IP_address>:/tmp/attach.sh
       ```
       {: pre}
 
    3. Log in to your host.
       ```
-      ssh root@<public_IP_address>
+      ssh root@<IP_address>
       ```
       {: pre}
    5. Run the script.
@@ -171,12 +171,10 @@ To complete the setup of your {{site.data.keyword.satelliteshort}} location, you
 
 1. From the actions menu of each host machine that you attached, click **Assign host**.
 2. Select **Control plane** as your cluster and choose one of the available zones. Make sure that you assign each host to a different zone so that you spread all 3 hosts across all 3 zones in US East (`us-east-1`, `us-east-2`, and `us-east-3`). When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
-3. From the **Hosts** tab, verify that your hosts are successfully assigned to the {{site.data.keyword.satelliteshort}} control plane. The assignment is successful when a public IP address is added to your host and the **Health** status changes to **Normal**.
+3. From the **Hosts** tab, verify that your hosts are successfully assigned to the {{site.data.keyword.satelliteshort}} control plane. The assignment is successful when an IP address is added to your host and the **Health** status changes to **Normal**.
 
-   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
+   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
    {: note}
-
-4. **For hosts from Amazon Web Services or Google Cloud Platform**: Manually register the DNS for the location control plane. For more information, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-dns-control-plane) or [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-dns-control-plane) provider topics.
 
 ## What's next
 {: #whats-next}

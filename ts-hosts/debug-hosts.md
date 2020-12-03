@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-11-17"
+lastupdated: "2020-12-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -13,6 +13,7 @@ subcollection: satellite
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: satellite
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: satellite
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -110,7 +111,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     ```
     {: screen}
 2.  Review the states and the steps to resolve the issue in the following table.
-3.  Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity. For example, if you change the underlying infrastructure environment where the host machine is to block access on the public network, you might make the host unsupported.
+3.  Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity. For example, if you change the firewall rules for the host machine's public or private network connectivity, you might make the host unsupported by blocking the necessary ports and IP addresses.
 4.  If your host still has issues, try to [remove](/docs/satellite?topic=satellite-hosts#host-remove), update, and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
 
 | Health state | Description

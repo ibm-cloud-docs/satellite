@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-11-17"
+lastupdated: "2020-12-03"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -13,6 +13,7 @@ subcollection: satellite
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: satellite
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: satellite
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -159,19 +160,9 @@ Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.sa
 
 |Service name|Description|
 |------------|-------------------------------------|
-| Business Support Services for {{site.data.keyword.cloud_notm}} (BSS) | The `BSS` component is used to access information about the {{site.data.keyword.cloud_notm}} account, service subscription, service usage, and billing. |
-|{{site.data.keyword.cloudcerts_short}}|This service is used to retrieve the TLS certificates for custom domains that {{site.data.keyword.satellitelong_notm}} users set up.|
-| Global Search and Tagging (Ghost) | The `Ghost` component is used to look up information about other {{site.data.keyword.cloud_notm}} services, such as IDs, tags, or service attributes. |
-| Hypersync and Hyperwarp | This {{site.data.keyword.cloud_notm}} component is used to provide information about {{site.data.keyword.satelliteshort}} locations so that the location is visible to other {{site.data.keyword.cloud_notm}} services and location information can be searched and displayed. |
-|{{site.data.keyword.cloud_notm}} Command Line (CLI)|When you use the CLI plug-in to perform {{site.data.keyword.satellitelong_notm}} operations, the {{site.data.keyword.satelliteshort}} plug-in connects to the {{site.data.keyword.cloud_notm}} CLI service over the public service endpoint.|
 |{{site.data.keyword.registrylong_notm}}|This service is used to store the container images that {{site.data.keyword.satellitelong_notm}} uses to run the service.|
 |{{site.data.keyword.la_full_notm}}|{{site.data.keyword.satellitelong_notm}} sends location logs to {{site.data.keyword.la_full_notm}}. These logs are monitored and analyzed by the service team to detect service issues and malicious activities. |
-|{{site.data.keyword.databases-for-mongodb_full_notm}}|All data that is sent to the {{site.data.keyword.satelliteshort}} Link or {{site.data.keyword.satellitelong_notm}} Config API is stored in a {{site.data.keyword.databases-for-mongodb}} service instance. Access to this instance is protected by IAM policies and available to the {{site.data.keyword.satelliteshort}} service team only to detect service issues and malicious activity.|
 |{{site.data.keyword.mon_full_notm}}|{{site.data.keyword.satellitelong_notm}} sends service metrics to {{site.data.keyword.mon_full_notm}}. These metrics are monitored by the service team to identify capacity and performance issues of the service. |
-| {{site.data.keyword.cloudaccesstraillong_notm}} | {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward location audit events to the {{site.data.keyword.at_full_notm}} service instance that is set up and owned by you.|
-| {{site.data.keyword.cloud_notm}} Service Endpoint (CSE)|This service is used to connect to the private service endpoints of other {{site.data.keyword.cloud_notm}} services and to set up a private service endpoint for the {{site.data.keyword.satelliteshort}} Link component. |
-| IBMid profile service | The IBMid component is used to look up the IBMid from an email address. The IBMid is used to authenticate with {{site.data.keyword.cloud_notm}} via Identity and Access Management (IAM). |
-| IBM QRadar Log Manager|To enable monitoring of the network traffic that flows between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}, the {{site.data.keyword.satelliteshort}} Link component uses IBM QRadar Log Manager. The log manager creates networking events, analyzes and correlates these events to identify compliance risks, anomalies, potential attacks and insider threats.  |
 | Identity and Access Management (IAM) | To authenticate requests to the service and authorize user actions, {{site.data.keyword.satellitelong_notm}} implements platform and service access roles in Identity and Access Management (IAM).  |
 |{{site.data.keyword.cos_short}} (COS)|This service is used to back up the control plane data of a {{site.data.keyword.satelliteshort}} location. The service instance is owned by the customer who controls access to the instance by using IAM policies. All data is encrypted in transit and at rest.|
 {: caption="{{site.data.keyword.satelliteshort}} dependencies to other {{site.data.keyword.cloud_notm}} services." caption-side="top"}

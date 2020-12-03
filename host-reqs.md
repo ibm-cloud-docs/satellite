@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-11-09"
+lastupdated: "2020-12-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -13,6 +13,7 @@ subcollection: satellite
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: satellite
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: satellite
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -146,13 +147,13 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 * All hosts must have the same MTU values.
 * The `localhost` value must resolve to a valid local host IP address, typically `127.0.0.1`.
 * Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
-* You cannot use custom iptables to route traffic to the public network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables.
+* You cannot use custom iptables to route traffic to the public or private network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables.
 * The following IP address ranges are reserved, and must not be used in any of the networks that you want to use in {{site.data.keyword.satellitelong_notm}}, including the host networks.
     ```
     172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, and 172.20.0.0/16
     ```
     {: screen}
-* Hosts must have a single, primary IPv4 network interface, such as the following example. However, you can use hosts from IBM Cloud infrastructure classic virtual service instances, even though these machines have two network interfaces: one each for the public and private networks.
+* Hosts must can have multiple IPv4 network interfaces. However, the lowest-order, non-loopback network interface with a valid IPv4 address is used as the primary network interface for the hosts, such as `eth0` in the following example. **Note**: If your hosts have private network connectivity only, authorized users must be in the private host network directly or through a VPN connection to access services that run in your location, such as {{site.data.keyword.openshiftlong_notm}} clusters.
     ```
     root@kube-tok02-credfdd3e356854f39b15fb191224b0a16-w1:~# ip addr
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
@@ -177,42 +178,26 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 ### Inbound connectivity
 {: #reqs-host-network-firewall-inbound}
 
-Hosts must have inbound connectivity on the public network via the default gateway or firewall of the system.
+Hosts must have inbound connectivity on the primary network interface via the default gateway or firewall of the system.
 {: shortdesc}
 
-The required IP addresses vary with the {{site.data.keyword.cloud_notm}} multizone region that your {{site.data.keyword.satelliteshort}} location is managed from.
+For example, if the lowest-order, non-loopback network interface with a valid IPv4 address is an `eth0` private network interface, you must open the following required IP addresses and ports on the default gateway or firewall on the `eth0` private network interface.
 
-|Description|Protocol|Ports|Source|
-|-----------|--------|-----|------|
-|Required: Allow {{site.data.keyword.cloud_notm}} to set up and manage your {{site.data.keyword.satelliteshort}} location|TCP|30000 - 32767|169.45.206.224/27</br>169.60.77.224/28</br>169.62.41.32/27</br>169.63.137.0/25</br>169.47.160.0/26</br>169.62.0.64/26</br>169.60.104.64/26</br>169.61.85.64/26|
-|Optional: Access the {{site.data.keyword.openshiftlong_notm}} console on the public network|All|80|Any|
-|Optional: Access the {{site.data.keyword.openshiftlong_notm}} console on the public network|All|443|Any|
-{: #firewall-inbound-wdc}
-{: tab-title="Washington DC (wdc)"}
-{: class="comparison-tab-table"}
-{: tab-group="firewall-inbound"}
-{: caption="Required inbound connectivity for hosts on the public network" caption-side="top"}
-{: summary="The table shows the required inbound connectivity for hosts on the public network. Rows are to be read from the left to right. The description is in the first column. The protocol is in the second column. The ports are in the third column. The source IP ranges are in the fourth column."}
-
-|Description|Protocol|Ports|Source|
-|-----------|--------|-----|------|
-|Required: Allow {{site.data.keyword.cloud_notm}} to set up and manage your {{site.data.keyword.satelliteshort}} location|TCP|30000 - 32767|141.125.95.240/28</br>141.125.99.0/27</br>158.175.101.64/26</br>158.175.139.0/25</br>158.175.68.192/26</br>158.175.81.128/25</br>158.175.83.160/28</br>158.175.86.224/27</br>158.176.108.224/27</br>158.176.111.128/26</br>158.176.112.0/26</br>158.176.66.208/28</br>158.176.74.144/28</br>158.176.92.32/27</br>158.176.95.64/27</br>159.8.171.0/26</br>169.50.199.64/26</br>169.50.220.32/27</br>169.50.221.0/25|
-|Optional: Access the {{site.data.keyword.openshiftlong_notm}} console on the public network|All|80|Any|
-|Optional: Access the {{site.data.keyword.openshiftlong_notm}} console on the public network|All|443|Any|
-{: #firewall-inbound-lon}
-{: tab-title="London (lon)"}
-{: class="comparison-tab-table"}
-{: tab-group="firewall-inbound"}
-{: caption="Required inbound connectivity for hosts on the public network" caption-side="top"}
-{: summary="The table shows the required inbound connectivity for hosts on the public network. Rows are to be read from the left to right. The description is in the first column. The protocol is in the second column. The ports are in the third column. The source IP ranges are in the fourth column."}
+|Description|Source IP|Destination IP|Protocol and ports|
+|-----------|---------|--------------|------------------|
+| Allow hosts that are assigned to services in your location to communicate with the {{site.data.keyword.satelliteshort}} control plane | All non-control plane hosts | Control plane hosts | TCP, UDP 30000 - 32767 |
+| Access the API to make changes in an {{site.data.keyword.openshiftshort}} cluster | {{site.data.keyword.openshiftshort}} cluster hosts | Client or authorized user | Control plane hosts | TCP 30000 - 32767 |
+| Access the web console for an {{site.data.keyword.openshiftshort}} cluster through the {{site.data.keyword.openshiftshort}} router | Client or authorized user | {{site.data.keyword.openshiftshort}} cluster hosts | TCP 443 |
+{: caption="Required inbound connectivity for hosts on the primary network interface" caption-side="top"}
+{: summary="The table shows the required inbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
 ### Outbound connectivity
 {: #reqs-host-network-firewall-outbound}
 
-Hosts must have outbound connectivity to all ports and IP addresses on the public network via the default gateway of the system.
+Hosts must have outbound connectivity to all ports and IP addresses on the primary network interface via the default gateway of the system.
 {: shortdec}
 
-To test that your host has outbound network connectivity on the public network, you can try these commands.
+For example, if the primary network interface is public, you can try these commands to test that your host has outbound network connectivity on the public network.
 ```
 ping 8.8.8.8
 nslookup google.com
@@ -226,26 +211,32 @@ curl -k [node 1-n]:22
 
 If you do not open all outbound connectivity, you must allow the following outbound connectivity in your firewall. The required IP addresses vary with the {{site.data.keyword.cloud_notm}} multizone region that your {{site.data.keyword.satelliteshort}} location is managed from.
 
-|Description|Protocol|Ports|Destination|
-|-----------|--------|-----|------|
-|Allow worker nodes in your {{site.data.keyword.satelliteshort}} location to communicate with the {{site.data.keyword.satelliteshort}} control plane|TCP and UDP|443 and 30000 - 32767|169.63.123.154</br>169.60.123.162</br>52.117.93.26</br>[All public IP addresses listed in the **US East** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound)|
-|Allow Cloudflare proxied load balancers for {{site.data.keyword.satelliteshort}} Link and Config|TCP and UDP|80|[Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external}|
-|Allow Red Hat network time protocol (NTP) servers|-|-|0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org|
+|Description|Source IP|Destination IP|Protocol and ports|
+|-----------|---------|--------------|------------------|
+| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 169.63.123.154</br>169.60.123.162</br>52.117.93.26 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
+| Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **US East** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | TCP 443 |
+| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for US East (`wdc`) in steps 3 - 5 of the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | See documentation |
+| Allow Cloudflare proxied load balancers for {{site.data.keyword.satelliteshort}} Config | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 443 |
+| Allow Cloudflare proxied load balancers for the {{site.data.keyword.satelliteshort}} Link API | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 80, 443 |
+| Allow access to Red Hat network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org | - |
 {: #firewall-outbound-wdc}
 {: tab-title="Washington DC (wdc)"}
 {: class="comparison-tab-table"}
 {: tab-group="firewall-outbound"}
-{: caption="Required outbound connectivity for hosts on the public network" caption-side="top"}
-{: summary="The table shows the required outbound connectivity for hosts on the public network. Rows are to be read from the left to right. The description is in the first column. The protocol is in the second column. The ports are in the third column. The source IP ranges are in the fourth column."}
+{: caption="Required outbound connectivity for hosts on the primary network interface" caption-side="top"}
+{: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
-|Description|Protocol|Ports|Destination|
-|-----------|--------|-----|------|
-|Allow worker nodes in your {{site.data.keyword.satelliteshort}} location to communicate with the {{site.data.keyword.satelliteshort}} control plane|TCP and UDP|443 and 30000 - 32767|158.175.120.210</br>141.125.97.106</br>158.176.139.66</br>[All public IP addresses listed in the **UK South** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound)|
-|Allow Cloudflare proxied load balancers for {{site.data.keyword.satelliteshort}} Link and Config|TCP and UDP|80|[Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external}|
-|Allow Red Hat network time protocol (NTP) servers|-|-|0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org|
+|Description|Source IP|Destination IP|Protocol and ports|
+|-----------|---------|--------------|------------------|
+| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 158.175.120.210</br>141.125.97.106</br>158.176.139.66 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
+| Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **UK South** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | TCP 443 |
+| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for UK South (`lon`) in steps 3 - 5 of the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | See documentation |
+| Allow Cloudflare proxied load balancers for {{site.data.keyword.satelliteshort}} Config | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 443 |
+| Allow Cloudflare proxied load balancers for the {{site.data.keyword.satelliteshort}} Link API | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 80, 443 |
+| Allow access to Red Hat network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org | - |
 {: #firewall-outbound-lon}
 {: tab-title="London (lon)"}
 {: class="comparison-tab-table"}
 {: tab-group="firewall-outbound"}
-{: caption="Required outbound connectivity for hosts on the public network" caption-side="top"}
-{: summary="The table shows the required outbound connectivity for hosts on the public network. Rows are to be read from the left to right. The description is in the first column. The protocol is in the second column. The ports are in the third column. The source IP ranges are in the fourth column."}
+{: caption="Required outbound connectivity for hosts on the primary network interface" caption-side="top"}
+{: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-10-19"
+lastupdated: "2020-12-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -13,6 +13,7 @@ subcollection: satellite
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: satellite
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: satellite
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -119,11 +120,7 @@ If you want, you can debug the connectivity issues for your host. Otherwise, rem
 2.  Confirm that your host meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
 2.  Check your host for connectivity issues.
     1.  Log in to your host machine, such as via SSH.
-    2.  Check access to RHEL Satellite servers. If the following command succeeds, your host can access the servers. If the command fails, your host might not have access to the public network, such as blocked by a security group or firewall.
-        ```
-        yum install rh-python36 -y
-        ```
-        {: pre}
+    2.  Check your [host network settings](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) to ensure that your host can access the required ports and IP addresses, which might be blocked by a security group or firewall.
     3.  Check access to the required [{{site.data.keyword.cloud_notm}} multizone metro endpoints](#endpoints-to-verify).
     4.  For hosts that are assigned to clusters, get the details of the cluster master endpoint.
         ```

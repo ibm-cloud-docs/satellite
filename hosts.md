@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-11-17"
+lastupdated: "2020-12-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -13,6 +13,7 @@ subcollection: satellite
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: satellite
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,6 +84,7 @@ subcollection: satellite
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -113,7 +114,7 @@ The following diagram presents the initial setup steps for hosts.
 
 1.  **Attach**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [attach the host](#attach-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers). After the host is attached and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
 2.  **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service. For example, a basic setup has 6 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} location control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
-3.  **Bootstrap**: When you assign a host, the host is bootstrapped to become a worker node in a managed {{site.data.keyword.openshiftlong_notm}} cluster or your {{site.data.keyword.satelliteshort}} control plane. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host, which requires public connectivity to pull the images from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
+3.  **Bootstrap**: When you assign a host, the host is bootstrapped to become a worker node in a managed {{site.data.keyword.openshiftlong_notm}} cluster or your {{site.data.keyword.satelliteshort}} control plane. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 
 Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshort}} location control plane, {{site.data.keyword.openshiftlong_notm}} cluster, or as compute capacity for other {{site.data.keyword.satelliteshort}}-enabled services. If you run an {{site.data.keyword.openshiftshort}} cluster, you can log in to the clusters and use Kubernetes or {{site.data.keyword.openshiftshort}} APIs to manage your containerized workloads, or use [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) to manage your workloads across clusters.
 
@@ -143,20 +144,20 @@ Before you begin, make sure that you have created host machines that meet the [m
 3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 4. Enter a file name for your script or use the name that is generated for you.
 5. Click **Download script** to generate the host script and download the script to your local machine.
-   
-   Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
+
+   Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages), [Azure](/docs/satellite?topic=satellite-providers#azure-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
    {: note}
 
 6. Log in to each host machine that you want to attach to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
-   1. Retrieve the public IP address of your host.
+   1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.
    2. Copy the script from your local machine to your host.
       ```
-      scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
+      scp <path_to_script> root@<IP_address>:/tmp/attach.sh
       ```
       {: pre}
    3. Log in to your host.
       ```
-      ssh root@<public_IP_address>
+      ssh root@<IP_address>
       ```
       {: pre}
    4. Run the script.
@@ -192,21 +193,21 @@ Before you begin, make sure that you have created host machines that meet the [m
     ```
     {: screen}
 
-   Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
+   Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages), [Azure](/docs/satellite?topic=satellite-providers#azure-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
    {: note}
 
 2.  On your local machine, find the script.
 3.  Log in to each host machine that you want to attach to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
-    1. Retrieve the public IP address of your host.
+    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.
     2. Copy the script from your local machine to your host.
        ```
-       scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
+       scp <path_to_script> root@<IP_address>:/tmp/attach.sh
        ```
        {: pre}
 
     3. Log in to your host.
        ```
-       ssh root@<public_IP_address>
+       ssh root@<IP_address>
        ```
        {: pre}
 
@@ -255,9 +256,9 @@ After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you a
 2.  Select the location where you attached the host machines that you want to assign to your {{site.data.keyword.satelliteshort}} resource.
 3. In the **Hosts** tab, from the actions menu of each host machine that you want to add to your resource, click **Assign host**.
 4. Select the cluster that you created, and choose one of the available zones. When you assign the hosts to a cluster, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the Health of your machine changes from **Ready** to **Provisioning**.
-5. Verify that your hosts are successfully assigned to the cluster. The assignment is successful when a public IP address is added to your host and the **Health** status changes to **Normal**.
+5. Verify that your hosts are successfully assigned to the cluster. The assignment is successful when an IP address is added to your host and the **Health** status changes to **Normal**.
 
-   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the public IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
+   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
    {: note}
 
 ### Assigning hosts from the CLI
@@ -316,7 +317,7 @@ After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you a
       </tbody>
     </table>
 3. Repeat the previous step for all compute hosts that you want to assign as worker nodes to your {{site.data.keyword.satelliteshort}} resource.
-4. Wait a few minutes until the bootstrapping process for all computes hosts is complete and your hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource. All hosts are assigned a cluster, a worker node ID, and a public IP address.
+4. Wait a few minutes until the bootstrapping process for all computes hosts is complete and your hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource. All hosts are assigned a cluster, a worker node ID, and an IP address.
 
    You can monitor the bootstrapping process of your compute hosts by running `ibmcloud ks worker get --cluster <cluster_name_or_ID> --worker <worker_ID>`.
    {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-12-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -303,7 +303,7 @@ Use the {{site.data.keyword.satelliteshort}} Link connector host name and node p
 **Example for testing the connection from an unassigned host**:
 1. Log in to your host. Enter the password to access your host when prompted.
  ```
- ssh root@<public_IP_address>
+ ssh root@<ip_address>
  ```
  {: pre}
 
