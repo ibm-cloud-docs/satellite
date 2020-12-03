@@ -153,7 +153,7 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
     172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, and 172.20.0.0/16
     ```
     {: screen}
-* Hosts must can have multiple IPv4 network interfaces. However, the lowest-order, non-loopback network interface with a valid IPv4 address is used as the primary network interface for the hosts, such as `eth0` in the following example. **Note**: If your hosts have private network connectivity only, authorized users must be in the private host network directly or through a VPN connection to access services that run in your location, such as {{site.data.keyword.openshiftlong_notm}} clusters.
+* Hosts can have multiple IPv4 network interfaces. However, the lowest-order, non-loopback network interface with a valid IPv4 address is used as the primary network interface for the hosts, such as `eth0` in the following example. **Note**: If your hosts have private network connectivity only, authorized users must be in the private host network directly or through a VPN connection to access services that run in your location, such as {{site.data.keyword.openshiftlong_notm}} clusters.
     ```
     root@kube-tok02-credfdd3e356854f39b15fb191224b0a16-w1:~# ip addr
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1

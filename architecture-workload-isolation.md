@@ -155,7 +155,7 @@ Because you manage the host infrastructure that you bring to your {{site.data.ke
 ## Dependencies to other {{site.data.keyword.cloud_notm}} services
 {: #cloud-service-dependencies}
 
-Review the {{site.data.keyword.cloud_notm}} services that {{site.data.keyword.satellitelong_notm}} connects to over the public network.
+Review the {{site.data.keyword.cloud_notm}} services that your {{site.data.keyword.satellitelong_notm}} location connects to over the public network.
 {: shortdesc}
 
 |Service name|Description|

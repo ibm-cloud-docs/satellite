@@ -385,13 +385,13 @@ udp:30000-32767
 ## {{site.data.keyword.cloud_notm}} infrastructure
 {: #ibm-cloud-reqs}
 
-Review the following host requirements that are specific to hosts that are in {{site.data.keyword.cloud_notm}} infrastructure.
+Review the following host requirements that are specific to hosts that are in {{site.data.keyword.cloud_notm}} classic or VPC infrastructure.
 {: shortdesc}
 
 Your hosts also must meet the general requirements that are common across providers, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
-Using {{site.data.keyword.cloud_notm}} infrastructure hosts in {{site.data.keyword.satelliteshort}} is supported only for testing or proof of concept purposes. For production workloads, directly use {{site.data.keyword.cloud_notm}} infrastructure services instead.
+Using {{site.data.keyword.cloud_notm}} infrastructure hosts in {{site.data.keyword.satelliteshort}} is supported only for testing or proof of concept purposes. For production workloads in your {{site.data.keyword.satelliteshort}} location, use on-premises, edge, or other cloud provider hosts. You can also create {{site.data.keyword.openshiftlong_notm}} clusters and add them to a {{site.data.keyword.satelliteshort}} Config cluster group to deploy the same app across your {{site.data.keyword.satelliteshort}} and {{site.data.keyword.cloud_notm}} clusters.
 {: important}
 
 ### RHEL package updates
@@ -400,21 +400,35 @@ Using {{site.data.keyword.cloud_notm}} infrastructure hosts in {{site.data.keywo
 To [attach {{site.data.keyword.cloud_notm}} infrastructure hosts to your {{site.data.keyword.satellitelong_notm}} location](/docs/satellite?topic=satellite-hosts#attach-hosts), you must update the RHEL packages on the host machines as in the following example steps.
 {: shortdesc}
 
-1.  Get a registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location.
-    ```
-    ibmcloud sat host attach --location <location_name_or_ID>
-    ```
-    {: pre}
-2. Retrieve the **public_ip** address and **id** of your machine.
+1. Get a registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location.
    ```
-   ibmcloud sl vs list
+   ibmcloud sat host attach --location <location_name_or_ID>
    ```
    {: pre}
+2. Retrieve the IP address and ID of your machine.
+    * Classic:
+       ```
+       ibmcloud sl vs list
+       ```
+       {: pre}
+    * VPC:
+       ```
+       ibmcloud is instances
+       ```
+       {: pre}
+
 3. Retrieve the credentials to log in to your virtual machine.
-   ```
-   ibmcloud sl vs credentials <vm_ID>
-   ```
-   {: pre}
+    * Classic:
+      ```
+      ibmcloud sl vs credentials <vm_ID>
+      ```
+      {: pre}
+    * VPC:
+       ```
+       ibmcloud is instance-initialization-values <instance_ID>
+       ```
+       {: pre}
+
 4. Copy the script from your local machine to the virtual server instance.
    ```
    scp <path_to_attachHost.sh> root@<ip_address>:/tmp/attach.sh
