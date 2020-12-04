@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-12-03"
+lastupdated: "2020-12-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -105,8 +105,10 @@ Can't meet these host requirements? [Contact IBM Support](/docs/get-support?topi
 {: #reqs-host-system}
 
 *   Hosts must run Red Hat Enterprise Linux 7 on x86 architecture. Other operating systems, such as Windows, and mainframe systems, such as IBM Z or Power, are not supported.
+*   Hosts can be physical or virtual machines.
 *   Hosts must have at least 4 vCPU, 16 GB memory, and 100 GB attached storage device. 
 *   The hosts must not have any additional packages, configuration, or other customizations.
+*   If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
 *   Hosts must have access to Red Hat updates and the following packages. You might need to refresh your packages on the host machine. For example, on an IBM Cloud infrastructure virtual server instance, you can run `subscription-manager refresh` and then `subscription-manager repos --enable=*`.
     ```
 Repository 'rhel-ha-for-rhel-7-server-eus-rpms' is enabled for this system.
