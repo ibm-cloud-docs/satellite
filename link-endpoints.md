@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-12-07"
+lastupdated: "2020-12-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -490,19 +490,21 @@ Use the CLI to create an endpoint so that sources that run outside of the locati
   ```
   {: pre}
 
-<br />
-
-## Setting up source lists to limit access to endpoints
+### Setting up source lists to limit access to endpoints
 {: #link-sources}
 
 Control which clients can access destination resources by creating a source list for an endpoint.
 {: shortdesc}
 
-If no sources are configured, any client can use an endpoint to connect to the destination resource. For example, for a cloud endpoint, any client in your {{site.data.keyword.satelliteshort}} location can use the endpoint to connect to the destination resource that runs outside of the location. You can restrict access to your destination resource by adding only the IP addresses or subnet CIDRs of specific clients to the endpoint's source list.
+If no sources are configured, any client can use an endpoint to connect to the destination resource. You can restrict access to your destination resource by adding only the IP addresses or subnet CIDRs of specific clients to the endpoint's source list.
+
+Currently, you can create source lists only for endpoints of type `location`. You cannot create source lists for endpoints of type `cloud`.	
+{: note}
+
 
 
 1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click the name of your location.
-2. From the **Endpoints** tab, click the name of your cloud endpoint.
+2. From the **Endpoints** tab, click the name of your endpoint.
 3. In the **Source list** section, click **Add a source**.
 4. Enter a name for the source, and enter the IP address or subnet CIDR for the client that you want to connect to the endpoint.
 5. Click **Add**.
