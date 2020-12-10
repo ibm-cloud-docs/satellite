@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-12-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -303,7 +303,7 @@ Use the {{site.data.keyword.satelliteshort}} Link connector host name and node p
 **Example for testing the connection from an unassigned host**:
 1. Log in to your host. Enter the password to access your host when prompted.
  ```
- ssh root@<public_IP_address>
+ ssh root@<ip_address>
  ```
  {: pre}
 
@@ -376,28 +376,6 @@ Use the {{site.data.keyword.satelliteshort}} Link connector host name and node p
  curl http://<linkconnector_hostname>:<nodeport>
  ```
  {: pre}
-
-### Setting up source lists to limit access to cloud endpoints
-{: #link-sources}
-
-Control which clients in your {{site.data.keyword.satelliteshort}} location can access destination resources that run outside of the location by creating a source list for an endpoint.
-{: shortdesc}
-
-If no sources are configured, any client in your {{site.data.keyword.satelliteshort}} location can use the endpoint to connect to the destination resource that runs outside of the location. You can restrict access to your destination resource by adding only the IP addresses or subnet CIDRs of specific clients in your {{site.data.keyword.satelliteshort}} location to the endpoint's source list.
-
-Currently, you can create source lists only for endpoints of type `cloud`. You cannot create source lists for endpoints of type `location`.
-{: note}
-
-
-1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click the name of your location.
-2. From the **Endpoints** tab, click the name of your cloud endpoint.
-3. In the **Source list** section, click **Add a source**.
-4. Enter a name for the source, and enter the IP address or subnet CIDR for the client that you want to connect to the endpoint.
-5. Click **Add**.
-6. Use the toggle to enable the source to connect to the destination resource. After you enable a source, network traffic to the destination through the endpoint is permitted only from clients that use an IP address in the range that you specified in the source. Network traffic from other clients that is sent to the destination resource through the endpoint is blocked.
-7. Repeat these steps for any sources that you want to grant access to the destination resource through the endpoint.
-
-
 
 <br />
 
@@ -511,6 +489,29 @@ Use the CLI to create an endpoint so that sources that run outside of the locati
   curl http://<linkserver_hostname>:<nodeport>
   ```
   {: pre}
+
+### Setting up source lists to limit access to endpoints
+{: #link-sources}
+
+Control which clients can access destination resources by creating a source list for an endpoint.
+{: shortdesc}
+
+If no sources are configured, any client can use an endpoint to connect to the destination resource. You can restrict access to your destination resource by adding only the IP addresses or subnet CIDRs of specific clients to the endpoint's source list.
+
+Currently, you can create source lists only for endpoints of type `location`. You cannot create source lists for endpoints of type `cloud`.	
+{: note}
+
+
+
+1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click the name of your location.
+2. From the **Endpoints** tab, click the name of your endpoint.
+3. In the **Source list** section, click **Add a source**.
+4. Enter a name for the source, and enter the IP address or subnet CIDR for the client that you want to connect to the endpoint.
+5. Click **Add**.
+6. Use the toggle to enable the source to connect to the destination resource. After you enable a source, network traffic to the destination through the endpoint is permitted only from clients that use an IP address in the range that you specified in the source. Network traffic from other clients that is sent to the destination resource through the endpoint is blocked.
+7. Repeat these steps for any sources that you want to grant access to the destination resource through the endpoint.
+
+
 
 <br />
 

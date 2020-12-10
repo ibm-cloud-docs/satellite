@@ -72,7 +72,6 @@ Satellite
         {: .topicgroup}
         Clusters
             ts-clusters/debug-clusters.md
-            ts-clusters/ts-cluster-ingress.md
             ts-clusters/ts-cluster-satconfig-updates.md
             ts-clusters/ts-kubectl-fail.md
 

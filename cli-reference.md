@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020
-lastupdated: "2020-09-17"
+lastupdated: "2020-12-03"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -13,6 +13,7 @@ subcollection: satellite
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: satellite
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,12 +40,12 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -71,7 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -83,6 +84,7 @@ subcollection: satellite
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
@@ -146,7 +148,6 @@ ibmcloud sat config configuration create --name myconfig
 
 <br />
 
-
 ### `ibmcloud sat config configuration get`
 {: #cli-config-configuration-get}
 
@@ -179,7 +180,6 @@ ibmcloud sat config configuration get --configuration myapp_prod
 
 <br />
 
-
 ### `ibmcloud sat config configuration ls`
 {: #cli-config-configuration-ls}
 
@@ -204,7 +204,6 @@ ibmcloud sat config configuration ls
 {: pre}
 
 <br />
-
 
 ### `ibmcloud sat config configuration rename`
 {: #cli-config-configuration-rename}
@@ -245,7 +244,6 @@ ibmcloud sat config configuration rename --configuration myapp_prod --name myapp
 
 <br />
 
-
 ### `ibmcloud sat config configuration rm`
 {: #cli-config-configuration-rm}
 
@@ -284,7 +282,6 @@ ibmcloud sat config configuration rm --configuration myapp_prod
 {: pre}
 
 <br />
-
 
 ### `ibmcloud sat config configuration version create`
 {: #cli-config-configuration-version-create}
@@ -331,7 +328,6 @@ ibmcloud sat config configuration version create --name 1.0 --read-config ~/file
 
 <br />
 
-
 ### `ibmcloud sat config configuration version get`
 {: #cli-config-configuration-version-get}
 
@@ -371,7 +367,6 @@ ibmcloud sat config configuration version get --configuration myapp_prod --versi
 
 <br />
 
-
 ### `ibmcloud sat config configuration version rm`
 {: #cli-config-configuration-version-rm}
 
@@ -410,7 +405,6 @@ ibmcloud sat config configuration version rm --configuration myapp_prod --versio
 {: pre}
 
 <br />
-
 
 ## Config subscription commands
 {: #sat-config-subscription-commands}
@@ -460,7 +454,6 @@ ibmcloud sat config subscription create --name myapp_prod_subscription --cluster
 
 <br />
 
-
 ### `ibmcloud sat config subscription get`
 {: #cli-config-subscription-get}
 
@@ -494,7 +487,6 @@ ibmcloud sat config subscription get --subscription myapp_prod_subscription
 
 <br />
 
-
 ### `ibmcloud sat config subscription ls`
 {: #cli-config-subscription-ls}
 
@@ -519,7 +511,6 @@ ibmcloud sat config subscription ls
 {: pre}
 
 <br />
-
 
 ### `ibmcloud sat config subscription rm`
 {: #cli-config-subscription-rm}
@@ -559,7 +550,6 @@ ibmcloud sat config subscription rm --subscription myapp_prod_subscription
 {: pre}
 
 <br />
-
 
 ### `ibmcloud sat config subscription update`
 {: #cli-config-subscription-update}
@@ -606,7 +596,6 @@ ibmcloud sat config subscription update --subscription myapp_prod_subscription -
 
 <br />
 
-
 ## Cluster commands
 {: #sat-cluster-commands}
 
@@ -646,7 +635,6 @@ ibmcloud sat cluster get -c mycluster
 
 <br />
 
-
 ### `ibmcloud sat cluster ls`
 {: #cli-cluster-ls}
 
@@ -683,7 +671,6 @@ ibmcloud sat cluster ls
 
 <br />
 
-
 ### `ibmcloud sat cluster register`
 {: #cli-cluster-register}
 
@@ -716,7 +703,6 @@ ibmcloud sat cluster register
 {: pre}
 
 <br />
-
 
 ### `ibmcloud sat cluster unregister`
 {: #cli-cluster-unregister}
@@ -753,7 +739,6 @@ ibmcloud sat cluster unregister -c mycluster
 {: pre}
 
 <br />
-
 
 ## Cluster group commands
 {: #cluster-group-commands}
@@ -798,7 +783,6 @@ ibmcloud sat cluster-group attach --cluster mycluster --cluster-group mygroup
 <br />
 
 
-
 ### `ibmcloud sat cluster-group create`
 {: #cluster-group-create}
 
@@ -834,7 +818,6 @@ ibmcloud sat cluster-group create --name mygroup
 {: pre}
 
 <br />
-
 
 ### `ibmcloud sat cluster-group detach`
 {: #cluster-group-detach}
@@ -875,7 +858,6 @@ ibmcloud sat cluster-group detach --cluster-group mygroup --cluster mycluster
 
 <br />
 
-
 ### `ibmcloud sat cluster-group get`
 {: #cluster-group-get}
 
@@ -909,7 +891,6 @@ ibmcloud sat cluster-group get --cluster-group mygroup
 
 <br />
 
-
 ### `ibmcloud sat cluster-group ls`
 {: #cluster-group-ls}
 
@@ -939,7 +920,6 @@ ibmcloud sat cluster-group ls
 {: pre}
 
 <br />
-
 
 
 ### `ibmcloud sat cluster-group rm`
@@ -977,7 +957,6 @@ ibmcloud sat cluster-group rm --cluster-group mygroup
 {: pre}
 
 <br />
-
 
 ## Endpoint commands
 {: #sat-endpoint-commands}
@@ -1039,7 +1018,6 @@ ibmcloud sat endpoint create --location aaaaaaaa1111a1aaaa11a --name demo-svc --
 
 <br />
 
-
 ### `ibmcloud sat endpoint get`
 {: #cli-endpoint-get}
 
@@ -1079,7 +1057,6 @@ ibmcloud sat endpoint get --endpoint aaaaaaaa1111a1aaaa11a_bb22b --location aaaa
 
 <br />
 
-
 ### `ibmcloud sat endpoint ls`
 {: #cli-endpoint-ls}
 
@@ -1116,7 +1093,6 @@ ibmcloud sat endpoint ls --location aaaaaaaa1111a1aaaa11a
 
 <br />
 
-
 ### `ibmcloud sat endpoint rm`
 {: #cli-endpoint-rm}
 
@@ -1152,7 +1128,6 @@ ibmcloud sat endpoint rm --endpoint aaaaaaaa1111a1aaaa11a_bb22b --location aaaaa
 {: pre}
 
 <br />
-
 
 ### `ibmcloud sat endpoint update`
 {: #cli-endpoint-update}
@@ -1209,7 +1184,6 @@ ibmcloud sat endpoint update --location aaaaaaaa1111a1aaaa11a --endpoint aaaaaaa
 <br />
 
 
-
 ## Host commands
 {: #sat-host-commands}
 
@@ -1263,7 +1237,6 @@ ibmcloud sat host assign --location aaaaaaaa1111a1aaaa11a --host myhost1 --zone 
 
 <br />
 
-
 ### `ibmcloud sat host attach`
 {: #host-attach}
 
@@ -1301,7 +1274,6 @@ ibmcloud sat host attach --location aaaaaaaa1111a1aaaa11a --label "use=satloc"
 {: pre}
 
 <br />
-
 
 ### `ibmcloud sat host get`
 {: #host-get}
@@ -1347,7 +1319,6 @@ ibmcloud sat host get --location aaaaaaaa1111a1aaaa11a --host myhost1
 
 <br />
 
-
 ### `ibmcloud sat host ls`
 {: #host-ls}
 
@@ -1388,7 +1359,6 @@ ibmcloud sat host ls --location aaaaaaaa1111a1aaaa11a
 {: pre}
 
 <br />
-
 
 ### `ibmcloud sat host rm`
 {: #host-rm}
@@ -1432,7 +1402,6 @@ ibmcloud sat host rm --location aaaaaaaa1111a1aaaa11a --host myhost1
 
 <br />
 
-
 ### `ibmcloud sat host update`
 {: #host-update}
 
@@ -1473,7 +1442,6 @@ ibmcloud sat host update --location aaaaaaaa1111a1aaaa11a --host myhost1
 {: pre}
 
 <br />
-
 
 ## Location commands
 {: #sat-location-commands}
@@ -1533,7 +1501,6 @@ ibmcloud sat location create --managed-from wdc --name mylocation
 
 <br />
 
-
 ### `ibmcloud sat location dns ls`
 {: #location-dns-ls}
 
@@ -1571,17 +1538,16 @@ ibmcloud sat location dns ls --location aaaaaaaa1111a1aaaa11a
 
 <br />
 
-
 ### `ibmcloud sat location dns register`
 {: #location-dns-register}
 
-Create a DNS record for your location and register the public IP addresses of your compute hosts that you added to the {{site.data.keyword.satelliteshort}} control plane to enable load balancing and health checking of your location.
+Create a DNS record for your location and register the public or private IP addresses of your compute hosts that you added to the {{site.data.keyword.satelliteshort}} control plane to enable load balancing and health checking of your location.
 
-A DNS record is automatically created for your location when you add compute hosts to your {{site.data.keyword.satelliteshort}} control plane with the public IP addresses that are assigned to your compute hosts. Use this command only if you want to register different public IP addresses for your {{site.data.keyword.satelliteshort}} control plane hosts.
+A DNS record is automatically created for your location when you add compute hosts to your {{site.data.keyword.satelliteshort}} control plane with the public or private IP addresses that are assigned to your compute hosts. Use this command only if you want to register different public or private IP addresses for your {{site.data.keyword.satelliteshort}} control plane hosts.
 {: important}
 
 ```
-ibmcloud sat location dns register --location LOCATION --ip HOST_PUBLIC_IP [--output json] [-q]
+ibmcloud sat location dns register --location LOCATION --ip HOST_IP_ADDRESS [--output json] [-q]
 ```
 {: pre}
 
@@ -1594,10 +1560,10 @@ ibmcloud sat location dns register --location LOCATION --ip HOST_PUBLIC_IP [--ou
 <dl>
 
 <dt><code>--location <em>LOCATION</em></code></dt>
-<dd>Required. Enter the name or ID of the location for which you want to create a DNS record and register the public IP addresses of your control plane hosts. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.  </dd>
+<dd>Required. Enter the name or ID of the location for which you want to create a DNS record and register the public or private IP addresses of your control plane hosts. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.  </dd>
 
-<dt><code>--ip <em>HOST_PUBLIC_IP</em></code></dt>
-<dd>Required. Enter the public IP address of your a compute host that you added to your {{site.data.keyword.satelliteshort}} control plane. To retrieve the IP, run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code>ID. To register multiple public IP addresses, you can use multiple <code>--ip</code> flags in the same command.   </dd>
+<dt><code>--ip <em>HOST_IP_ADDRESS</em></code></dt>
+<dd>Required. Enter the IP address of a compute host that you added to your {{site.data.keyword.satelliteshort}} control plane. To retrieve the IP, run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code>ID. To register multiple IP addresses, you can use multiple <code>--ip</code> flags in the same command.   </dd>
 
 <dt><code>--output json</code></dt>
  <dd>Optional. Prints the command output in JSON format.</dd>
@@ -1614,7 +1580,6 @@ ibmcloud sat location dns register --location aaaaaaaa1111a1aaaa11a --ip 169.67.
 {: pre}
 
 <br />
-
 
 ### `ibmcloud sat location get`
 {: #location-get}
@@ -1654,7 +1619,6 @@ ibmcloud sat location get --location aaaaaaaa1111a1aaaa11a
 
 <br />
 
-
 ### `ibmcloud sat location ls`
 {: #location-ls}
 
@@ -1690,7 +1654,6 @@ ibmcloud sat location ls
 {: pre}
 
 <br />
-
 
 ### `ibmcloud sat location rm`
 {: #location-rm}
@@ -1732,7 +1695,6 @@ ibmcloud sat location rm --location mylocation
 {: pre}
 
 <br />
-
 
 ## Resource commands
 {: #sat-resource-commands}
@@ -1776,7 +1738,6 @@ ibmcloud sat resource get --resource 1234567
 
 <br />
 
-
 ### `ibmcloud sat resource ls`
 {: #cli-resource-ls}
 
@@ -1815,7 +1776,6 @@ ibmcloud sat resource ls
 {: pre}
 
 <br />
-
 
 ## Other commands
 {: #other-commands}
