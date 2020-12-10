@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-12-04"
+lastupdated: "2020-12-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -88,7 +88,7 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -155,27 +155,19 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
     172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, and 172.20.0.0/16
     ```
     {: screen}
-* Hosts can have multiple IPv4 network interfaces. However, the lowest-order, non-loopback network interface with a valid IPv4 address is used as the primary network interface for the hosts, such as `eth0` in the following example. **Note**: If your hosts have private network connectivity only, authorized users must be in the private host network directly or through a VPN connection to access services that run in your location, such as {{site.data.keyword.openshiftlong_notm}} clusters.
-    ```
-    root@kube-tok02-credfdd3e356854f39b15fb191224b0a16-w1:~# ip addr
-    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
-        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-        inet 127.0.0.1/8 scope host lo
-        valid_lft forever preferred_lft forever
-        inet 172.20.0.1/32 brd 172.20.0.1 scope host lo
-        valid_lft forever preferred_lft forever
-        inet6 ::1/128 scope host
-        valid_lft forever preferred_lft forever
-    2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
-        link/ether 06:65:92:a1:c9:48 brd ff:ff:ff:ff:ff:ff
-        inet 161.202.250.13/27 brd 161.202.250.31 scope global eth0
-        valid_lft forever preferred_lft forever
-        inet6 fe80::465:92ff:fea1:c948/64 scope link
-        valid_lft forever preferred_lft forever
-    root@kube-tok02-credfdd3e356854f39b15fb191224b0a16-w1:~# ip route
-    default via 161.202.250.1 dev eth0 onlink
-    ```
-    {: screen}
+* All hosts must use the same default gateway.
+* Hosts can have multiple IPv4 network interfaces. However, each host must have full IPV4 backend connectivity to the other hosts in the location through the network interface that serves as the default route. To find the default network interface for a host, SSH into the host and run the following command:
+
+```
+ip route | grep default | awk '{print $5}'
+```
+{: pre}
+
+In this example output, `eth0` is the default network interface:
+```
+default via 161.202.250.1 dev eth0 onlink
+```
+{: screen}
 
 ### Inbound connectivity
 {: #reqs-host-network-firewall-inbound}
@@ -183,7 +175,7 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 Hosts must have inbound connectivity on the primary network interface via the default gateway or firewall of the system.
 {: shortdesc}
 
-For example, if the lowest-order, non-loopback network interface with a valid IPv4 address is an `eth0` private network interface, you must open the following required IP addresses and ports on the default gateway or firewall on the `eth0` private network interface.
+For example, if the primary network interface for a host is `eth0`, you must open the following required IP addresses and ports on the default gateway or firewall on the `eth0` private network interface.
 
 |Description|Source IP|Destination IP|Protocol and ports|
 |-----------|---------|--------------|------------------|
