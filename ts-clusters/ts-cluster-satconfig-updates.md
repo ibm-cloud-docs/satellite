@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2020
-lastupdated: "2020-11-19"
+lastupdated: "2020-12-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -88,11 +88,11 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
-# Why don't cluster list or get updates to Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config?
+# Why does the list of Kubernetes resources not show up or update after registering my cluster with {{site.data.keyword.satelliteshort}} Config?
 {: #satconfig-cluster-access-error}
 
 {: tsSymptoms}
