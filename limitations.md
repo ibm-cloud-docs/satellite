@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2020
-lastupdated: "2020-10-19"
+  years: 2020, 2021
+lastupdated: "2021-01-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -13,6 +13,7 @@ subcollection: satellite
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: satellite
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,10 +84,11 @@ subcollection: satellite
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -113,7 +114,6 @@ Do not reuse the name of a previously deleted location. If you do reuse the name
 
 <br />
 
-
 ## Hosts
 {: #reqs-host}
 
@@ -121,7 +121,6 @@ See [Host requirements](/docs/satellite?topic=satellite-host-reqs#host-reqs). Fo
 {: shortdesc}
 
 <br />
-
 
 ## Clusters
 {: #reqs-clusters}
@@ -136,14 +135,12 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 
 <br />
 
-
 ## Link and endpoints
 {: #reqs-link}
 
 The {{site.data.keyword.satelliteshort}} Link connector instances that run in your [{{site.data.keyword.satelliteshort}} location control plane worker nodes](/docs/satellite?topic=satellite-service-architecture) are limited to 3 instances, one per host. Even if you attach hosts to the location control plane, network traffic that is routed through the {{site.data.keyword.satelliteshort}} Link connector is sent only over 3 hosts.
 
 <br />
-
 
 ## Config
 {: #reqs-config}
