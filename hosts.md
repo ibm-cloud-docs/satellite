@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -348,6 +348,8 @@ After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you a
 
 If you want to update metadata about a host, such as labels, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). The update does not apply security patches or operating system updates.
 {: shortdesc}
+
+<br />
 
 ## Updating worker node hosts in clusters
 {: #host-update-workers}
