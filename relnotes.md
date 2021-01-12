@@ -104,9 +104,10 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| XX January | **Host updates**: Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-hosts#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-hosts#host-update-location). |
+| 12 January | <ul><li>**Calico VXLAN encapsulation**: If you use AWS, GCP, or {{site.data.keyword.vpc_short}} hosts to create an {{site.data.keyword.openshiftshort}} cluster, you must [update the cluster's Calico plug-in to use VXLAN encapsulation](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).</li><li>**Host updates**: Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-hosts#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-hosts#host-update-location).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
-{: caption="Documentation updates in January 2021."}
+{: caption="Documentation updates in January 2021
+
 ## December 2020
 {: #december20}
 

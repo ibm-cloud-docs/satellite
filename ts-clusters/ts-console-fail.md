@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -104,7 +104,7 @@ If you used Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.v
 {: tsResolve}
 Update the Calico network plug-in to use VXLAN encapsulation.
 
-1. [Access your cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+1. Follow [these steps](/docs/openshift?topic=openshift-network_policies#cli_install) to access your cluster, download the keys to run Calico commands, and install the `calicoctl` CLI.
 
 2. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
   ```
@@ -112,9 +112,25 @@ Update the Calico network plug-in to use VXLAN encapsulation.
   ```
   {: pre}
 
-3. Patch the `default-ipv4-ippool` IP pool to use VXLAN encapsulation.
+3. Create the following `IPPool` YAML file, which sets `ipipMode: Never` and `vxlanMode: Always`.
+  ```yaml
+  apiVersion: projectcalico.org/v3
+  kind: IPPool
+  metadata:
+    name: default-ipv4-ippool
+  spec:
+    blockSize: 26
+    cidr: 172.30.0.0/16
+    ipipMode: Never
+    natOutgoing: true
+    nodeSelector: all()
+    vxlanMode: Always
   ```
-  oc patch ippools.crd.projectcalico.org default-ipv4-ippool --type='merge' -p '{"spec":{"ipipMode":"Never","vxlanMode": "Always"}}'
+  {: codeblock}
+
+4. Apply the `IPPool` to update the Calico plug-in.
+  ```
+  calicoctl apply -f /<filepath>/pool.yaml
   ```
   {: pre}
 
