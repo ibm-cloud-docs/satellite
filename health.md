@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -169,7 +169,7 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 ### Viewing cluster health
 {: #cluster-health}
 
-To review the health of {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-health#states_cluster).
+To review the health of {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-health-monitor#states).
 {: shortdesc}
 
 ### Viewing Kubernetes resources in clusters
