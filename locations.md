@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -213,7 +213,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI:
 
 <br />
 
-## Setting up the {{site.data.keyword.satelliteshort}} location control planen
+## Setting up the {{site.data.keyword.satelliteshort}} location control plane
 {: #setup-control-plane}
 
 The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources that you attach to the location.

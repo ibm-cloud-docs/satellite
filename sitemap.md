@@ -150,7 +150,7 @@ subcollection: satellite
 * [Creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
 * [Creating locations from the CLI](/docs/satellite?topic=satellite-locations#locations-create-cli)
 
-[Setting up the {{site.data.keyword.satelliteshort}} location control planen](/docs/satellite?topic=satellite-locations#setup-control-plane)
+[Setting up the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane)
 * [Setting up the control plane from the console](/docs/satellite?topic=satellite-locations#control-plane-ui)
 * [Setting up the control plane from the CLI](/docs/satellite?topic=satellite-locations#control-plane-cli)
 * [What's next?](/docs/satellite?topic=satellite-locations#location-control-plane-next)
@@ -354,7 +354,7 @@ subcollection: satellite
 * [Creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
 * [Creating locations from the CLI](/docs/satellite?topic=satellite-locations#locations-create-cli)
 
-[Setting up the {{site.data.keyword.satelliteshort}} location control planen](/docs/satellite?topic=satellite-locations#setup-control-plane)
+[Setting up the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane)
 * [Setting up the control plane from the console](/docs/satellite?topic=satellite-locations#control-plane-ui)
 * [Setting up the control plane from the CLI](/docs/satellite?topic=satellite-locations#control-plane-cli)
 * [What's next?](/docs/satellite?topic=satellite-locations#location-control-plane-next)
