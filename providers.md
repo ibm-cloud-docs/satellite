@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2020
-lastupdated: "2020-12-03"
+  years: 2020, 2021
+lastupdated: "2021-01-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -88,7 +88,7 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -248,6 +248,12 @@ As described in the [host networking requirements](/docs/satellite?topic=satelli
 ```
 {: screen}
 
+### VXLAN encapsulation for AWS hosts
+{: #aws-reqs-vxlan}
+
+When you use hosts from this provider to set up a {{site.data.keyword.satelliteshort}} location and create a {{site.data.keyword.openshiftlong_notm}} cluster in that location, the cluster's Calico network plug-in is created with IP in IP encapsulation. To access the {{site.data.keyword.openshiftshort}} web console for your cluster, you must change the IP in IP encapsulation protocol to VXLAN encapsulation instead. For more information, see step 8 in [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).
+{: shortdesc}
+
 <br />
 
 ## Google Cloud Platform
@@ -314,6 +320,12 @@ tcp:30000-32767
 udp:30000-32767
 ```
 {: screen}
+
+### VXLAN encapsulation for GCP hosts
+{: #gcp-reqs-vxlan}
+
+When you use hosts from this provider to set up a {{site.data.keyword.satelliteshort}} location and create a {{site.data.keyword.openshiftlong_notm}} cluster in that location, the cluster's Calico network plug-in is created with IP in IP encapsulation. To access the {{site.data.keyword.openshiftshort}} web console for your cluster, you must change the IP in IP encapsulation protocol to VXLAN encapsulation instead. For more information, see step 8 in [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).
+{: shortdesc}
 
 <br />
 
@@ -458,3 +470,10 @@ To [attach {{site.data.keyword.cloud_notm}} infrastructure hosts to your {{site.
    exit
    ```
    {: pre}
+
+
+### VXLAN encapsulation for {{site.data.keyword.vpc_short}} hosts
+{: #ibm-cloud-reqs-vxlan}
+
+When you use hosts from this provider to set up a {{site.data.keyword.satelliteshort}} location and create a {{site.data.keyword.openshiftlong_notm}} cluster in that location, the cluster's Calico network plug-in is created with IP in IP encapsulation. To access the {{site.data.keyword.openshiftshort}} web console for your cluster, you must change the IP in IP encapsulation protocol to VXLAN encapsulation instead. For more information, see step 8 in [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).
+{: shortdesc}

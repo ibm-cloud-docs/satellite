@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2020
-lastupdated: "2020-12-09"
+  years: 2020, 2021
+lastupdated: "2021-01-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -88,7 +88,7 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -114,7 +114,7 @@ In this getting started tutorial, you create your first {{site.data.keyword.sate
 
    <p class="important">A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location, add more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts.<br><br>If your hosts cannot meet these host and provider requirements, you cannot attach the hosts to {{site.data.keyword.satellitelong_notm}}. {{site.data.keyword.satelliteshort}} beta requirements are subject to change.</p>
 
-2. You must be the {{site.data.keyword.cloud_notm}} account owner, or have the [administrator permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to the required {{site.data.keyword.cloud_notm}} services in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).
+2. You must be the {{site.data.keyword.cloud_notm}} account owner, or have the [administrator permissions](/docs/satellite?topic=satellite-iam#iam-roles-clusters) to the required {{site.data.keyword.cloud_notm}} services in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).
 
 ## Step 1: Create your location
 {: #create-location}

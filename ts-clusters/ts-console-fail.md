@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2020
-lastupdated: "2020-12-18"
+  years: 2020, 2021
+lastupdated: "2021-01-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -92,36 +92,47 @@ subcollection: satellite
 {:video: .video}
 
 
-# Why does the list of Kubernetes resources not show up or update after registering my cluster with {{site.data.keyword.satelliteshort}} Config?
-{: #satconfig-cluster-access-error}
+# Why can't I access the {{site.data.keyword.openshiftshort}} console?
+{: #ts-console-fail}
 
 {: tsSymptoms}
-When you register a cluster to use with {{site.data.keyword.satelliteshort}} Config, you do not see the cluster resources show up in the resources list. Even though you subscribe the cluster to a configuration, no Kubernetes resources are created or updated in the cluster.
+When you create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location, you cannot access the {{site.data.keyword.openshiftshort}} web console, or access to the console is intermittent.
 
 {: tsCauses}
-To use a cluster to use with {{site.data.keyword.satelliteshort}} Config, the proper components must be installed, and you must grant {{site.data.keyword.satelliteshort}} Config permissions in your cluster to manage Kubernetes resources.
+If you used Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts to create your location and cluster, the cluster's Calico network plug-in is created with IP in IP encapsulation. To access the {{site.data.keyword.openshiftshort}} web console for your cluster, the Calico plug-in must use VXLAN encapsulation instead.
 
 {: tsResolve}
-1.  Re-attach the cluster to {{site.data.keyword.satelliteshort}} Config. For more information, see [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters).
-    1.  Get a `kubectl` command to register your cluster with {{site.data.keyword.satelliteshort}} Config.
-        ```
-        ibmcloud sat cluster register
-        ```
-        {: pre}
+Update the Calico network plug-in to use VXLAN encapsulation.
 
-        Example output:
-        ```
-        kubectl apply -f "https://config.satellite.cloud.ibm.com/api/install/razeedeploy-job?orgKey=<orgApiKey>&args=--clustersubscription=<number>&args=--featureflagsetld=<number>&args=--mustachetemplate=<number>&args=--managedset=<number>&args=--remoteresources<number>&args=--remoteresource=<number>&args=--watch-keeper=<number>"
-        ```
-        {: screen}
-    2.  Log in to your cluster. If you are not connected to your location host network, include the `--endpoint link` flag. For more login options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
-        ```
-        ibmcloud oc cluster config -c <cluster_name_or_ID> --admin [--endpoint link]
-        ```
-        {: pre}
-    3.  Run the `kubectl` command that you previously retrieved.
-2.  Grant {{site.data.keyword.satelliteshort}} Config permissions in your cluster to manage Kubernetes resources. The following command grants `cluster-admin` permissions for the entire cluster. For more options, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access).
-    ```
-    kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
-    ```
-    {: pre}
+1. Follow [these steps](/docs/openshift?topic=openshift-network_policies#cli_install) to access your cluster, download the keys to run Calico commands, and install the `calicoctl` CLI.
+
+2. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
+  ```
+  export DATASTORE_TYPE=kubernetes
+  ```
+  {: pre}
+
+3. Create the following `IPPool` YAML file, which sets `ipipMode: Never` and `vxlanMode: Always`.
+  ```yaml
+  apiVersion: projectcalico.org/v3
+  kind: IPPool
+  metadata:
+    name: default-ipv4-ippool
+  spec:
+    blockSize: 26
+    cidr: 172.30.0.0/16
+    ipipMode: Never
+    natOutgoing: true
+    nodeSelector: all()
+    vxlanMode: Always
+  ```
+  {: codeblock}
+
+4. Apply the `IPPool` to update the Calico plug-in.
+  ```
+  calicoctl apply -f /<filepath>/pool.yaml
+  ```
+  {: pre}
+
+If you did not use Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts, or if you are still unable to access the {{site.data.keyword.openshiftshort}} web console after completeing these steps, see [Debugging the OpenShift web console](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails) in the {{site.data.keyword.openshiftlong_notm}} troubleshooting documentation.
+{: note}
