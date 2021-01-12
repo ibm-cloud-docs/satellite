@@ -77,4 +77,5 @@ Satellite
             ts-clusters/ts-console-fail.md
 
     relnotes.md
+    sitemap.md
     {: .navgroup-end}
