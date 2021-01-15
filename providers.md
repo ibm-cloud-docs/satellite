@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -451,7 +451,7 @@ To [attach {{site.data.keyword.cloud_notm}} infrastructure hosts to your {{site.
    ssh root@<ip_address>
    ```
    {: pre}
-6. Refresh the Red Hat packages on your machine.
+6. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
    ```
    subscription-manager refresh
    ```

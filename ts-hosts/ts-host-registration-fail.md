@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2020
-lastupdated: "2020-12-03"
+  years: 2020, 2021
+lastupdated: "2021-01-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -88,7 +88,7 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -106,25 +106,17 @@ Error: Nothing to do
 {: tsCauses}
 Your machine does not meet the minimum requirements to become a {{site.data.keyword.satelliteshort}} host. In particular, you must have the following packages installed on your RHEL 7 machine.
 ```
-Repository 'rhel-ha-for-rhel-7-server-eus-rpms' is enabled for this system.
 Repository 'rhel-server-rhscl-7-rpms' is enabled for this system.
 Repository 'rhel-7-server-optional-rpms' is enabled for this system.
-Repository 'rhel-7-server-eus-optional-rpms' is enabled for this system.
 Repository 'rhel-7-server-rh-common-rpms' is enabled for this system.
-Repository 'rhel-7-server-eus-rpms' is enabled for this system.
-Repository 'rhel-ha-for-rhel-7-server-rpms' is enabled for this system.
-Repository 'rhel-rs-for-rhel-7-server-eus-rpms' is enabled for this system.
-Repository 'rhel-rs-for-rhel-7-server-rpms' is enabled for this system.
-Repository 'rhel-7-server-rpms' is enabled for this system.
 Repository 'rhel-7-server-supplementary-rpms' is enabled for this system.
 Repository 'rhel-7-server-extras-rpms' is enabled for this system.
-Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 ```
 {: screen}
 
 {: tsResolve}
 1.  Add the required packages to your machine. For example, in IBM Cloud infrastructure you can run the following commands to add the required packages.
-    1.  Refresh the Red Hat packages on your machine.
+    1.  Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
         ```
         subscription-manager refresh
         ```
@@ -135,7 +127,11 @@ Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 
     2.  Enable the package repositories on your machine.
         ```
-        subscription-manager repos --enable=*
+        subscription-manager repos --enable rhel-server-rhscl-7-rpms
+        subscription-manager repos --enable rhel-7-server-optional-rpms
+        subscription-manager repos --enable rhel-7-server-rh-common-rpms
+        subscription-manager repos --enable rhel-7-server-supplementary-rpms
+        subscription-manager repos --enable rhel-7-server-extras-rpms
         ```
         {: pre}
 2.  Make sure that your machine meets the other [host minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as minimum CPU and memory sizes.
