@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-13"
+lastupdated: "2021-01-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -109,23 +109,31 @@ Can't meet these host requirements? [Contact IBM Support](/docs/get-support?topi
 *   Hosts must have at least 4 vCPU, 16 GB memory, and 100 GB attached storage device. 
 *   The hosts must not have any additional packages, configuration, or other customizations.
 *   If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
-*   Hosts must have access to Red Hat updates and the following packages. You might need to refresh your packages on the host machine. For example, on an IBM Cloud infrastructure virtual server instance, you can run `subscription-manager refresh` and then `subscription-manager repos --enable=*`.
+*   Hosts must have access to {{site.data.keyword.redhat_notm}} updates and the following packages.
     ```
-Repository 'rhel-ha-for-rhel-7-server-eus-rpms' is enabled for this system.
 Repository 'rhel-server-rhscl-7-rpms' is enabled for this system.
 Repository 'rhel-7-server-optional-rpms' is enabled for this system.
-Repository 'rhel-7-server-eus-optional-rpms' is enabled for this system.
 Repository 'rhel-7-server-rh-common-rpms' is enabled for this system.
-Repository 'rhel-7-server-eus-rpms' is enabled for this system.
-Repository 'rhel-ha-for-rhel-7-server-rpms' is enabled for this system.
-Repository 'rhel-rs-for-rhel-7-server-eus-rpms' is enabled for this system.
-Repository 'rhel-rs-for-rhel-7-server-rpms' is enabled for this system.
-Repository 'rhel-7-server-rpms' is enabled for this system.
 Repository 'rhel-7-server-supplementary-rpms' is enabled for this system.
 Repository 'rhel-7-server-extras-rpms' is enabled for this system.
-Repository 'rhel-7-server-eus-supplementary-rpms' is enabled for this system.
 ```
 {: screen}
+    You might need to refresh your packages on the host machine. For example, in IBM Cloud infrastructure you can run the following commands to add the required packages.
+      1.  Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
+          ```
+          subscription-manager refresh
+          ```
+          {: pre}
+
+      2.  Enable the package repositories on your machine.
+          ```
+          subscription-manager repos --enable rhel-server-rhscl-7-rpms
+          subscription-manager repos --enable rhel-7-server-optional-rpms
+          subscription-manager repos --enable rhel-7-server-rh-common-rpms
+          subscription-manager repos --enable rhel-7-server-supplementary-rpms
+          subscription-manager repos --enable rhel-7-server-extras-rpms
+          ```
+          {: pre}
 *   After the host is successfully assigned to a {{site.data.keyword.satelliteshort}} location control plane or cluster, {{site.data.keyword.satelliteshort}} disables the ability to SSH into the host for security purposes. If you remove a host from your location or remove the entire location, you must reload the machine in your host infrastructure provider to SSH into the host again. Otherwise, you might see an error similar to the following when you try to log in.
     ```
     Permission denied, please try again.
@@ -212,7 +220,7 @@ If you do not open all outbound connectivity, you must allow the following outbo
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for US East (`wdc`) in steps 3 - 5 of the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | See documentation |
 | Allow Cloudflare proxied load balancers for {{site.data.keyword.satelliteshort}} Config | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 443 |
 | Allow Cloudflare proxied load balancers for the {{site.data.keyword.satelliteshort}} Link API | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 80, 443 |
-| Allow access to Red Hat network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org | - |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org | - |
 {: #firewall-outbound-wdc}
 {: tab-title="Washington DC (wdc)"}
 {: class="comparison-tab-table"}
@@ -227,7 +235,7 @@ If you do not open all outbound connectivity, you must allow the following outbo
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for UK South (`lon`) in steps 3 - 5 of the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | See documentation |
 | Allow Cloudflare proxied load balancers for {{site.data.keyword.satelliteshort}} Config | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 443 |
 | Allow Cloudflare proxied load balancers for the {{site.data.keyword.satelliteshort}} Link API | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 80, 443 |
-| Allow access to Red Hat network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org | - |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org | - |
 {: #firewall-outbound-lon}
 {: tab-title="London (lon)"}
 {: class="comparison-tab-table"}
