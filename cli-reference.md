@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-14"
+lastupdated: "2021-01-15"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1221,7 +1221,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 <dt><code>--worker-pool <em>WORKER_POOL</em></code></dt>
 <dd>Optional. Enter the name or ID of the worker pool in your {{site.data.keyword.openshiftshort}} cluster to which you want to add your compute host. If you want to assign hosts to your {{site.data.keyword.satelliteshort}} control plane, this flag is not required. When you assign hosts to an {{site.data.keyword.openshiftshort}} cluster, you can include this flag to specify the worker pool. If no worker pool is specified, the host is assigned to the default worker pool of the cluster.  </dd>
 
-<dt><code>--label <em>LABEL</em></code>, <code>-l<em>LABEL</em></code></dt>
+<dt><code>--label <em>LABEL</em></code>, <code>-l <em>LABEL</em></code></dt>
 <dd>Optional. Enter any labels as a key-value pair that you want to use to identify the host that you want to assign to your {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. The first host that has this label and is in an unassigned state it automatically assigned to the control plane or cluster. To find available host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>.  </dd>
 
 <dt><code>-q</code></dt>
@@ -1259,7 +1259,7 @@ ibmcloud sat host attach --location LOCATION [--label "LABEL"] [-q]
 <dt><code>--location <em>LOCATION</em></code></dt>
 <dd>Required. Enter the ID or name of the {{site.data.keyword.satelliteshort}} location where you want to add compute hosts. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.  </dd>
 
-<dt><code>--label <em>LABEL</em></code>, <code>-l<em>LABEL</em></code></dt>
+<dt><code>--label <em>LABEL</em></code>, <code>-l <em>LABEL</em></code></dt>
 <dd>Optional. Enter any labels as a key-value-pair that you want to add to your compute hosts. Labels can help find hosts more easily later.  </dd>
 
 <dt><code>-q</code></dt>
@@ -1426,7 +1426,7 @@ ibmcloud sat host update --location LOCATION --host HOST [--label "LABEL"] [-q]
 <dt><code>--host <em>HOST</em></code></dt>
 <dd>Required. Enter the ID of the host that you want to update. To retrieve the host ID, run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code>.  </dd>
 
-<dt><code>--label <em>LABEL</em></code>, <code>-l<em>LABEL</em></code></dt>
+<dt><code>--label <em>LABEL</em></code>, <code>-l <em>LABEL</em></code></dt>
 <dd>Optional. Enter any labels as a key-value-pair that you want to use to identify the hosts that you want to update. To find available host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>.  </dd>
 
 <dt><code>-q</code></dt>
@@ -1474,6 +1474,9 @@ ibmcloud sat location create --managed-from METRO --name NAME [--cos-bucket COS_
 
 <dt><code>--cos-bucket <em>COS_BUCKET_NAME</em></code></dt>
 <dd>Optional. Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up the control plane data. If you specify the bucket name, make sure to also specify the HMAC secret access key, access key ID, bucket region, and bucket endpoint of your {{site.data.keyword.cos_full_notm}} service instance.   </dd>
+
+<dt><code>--logging-account-id <em>LOGGING_ACCOUNT</em></code></dt>
+<dd>Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.loganalysislong_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
