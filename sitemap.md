@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -120,7 +120,7 @@ subcollection: satellite
 
 [About {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about)
 
-[Understanding {{site.data.keyword.satelliteshort}} components and terminology](/docs/satellite?topic=satellite-about#location-concept)
+[{{site.data.keyword.satelliteshort}} concepts](/docs/satellite?topic=satellite-about#location-concept)
 
 [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-about#architecture)
 
