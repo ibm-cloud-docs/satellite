@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -160,7 +160,7 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 * You cannot use custom iptables to route traffic to the public or private network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables.
 * The following IP address ranges are reserved, and must not be used in any of the networks that you want to use in {{site.data.keyword.satellitelong_notm}}, including the host networks.
     ```
-    172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, and 172.20.0.0/16
+    172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, 172.20.0.0/16, and 192.168.255.0/24
     ```
     {: screen}
 * All hosts must use the same default gateway.
