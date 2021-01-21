@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-20"
+lastupdated: "2021-01-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -254,9 +254,10 @@ subcollection: satellite
 [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud)
 
 [About {{site.data.keyword.satelliteshort}} endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-about)
-* [Use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
 * [Architecture](/docs/satellite?topic=satellite-link-location-cloud#link-architecture)
-* [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
+* [Security and encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
+* [Access controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
+* [Example use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
 
 [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-location-cloud#link-cloud)
 * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-ui)
@@ -458,9 +459,10 @@ subcollection: satellite
 [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud)
 
 [About {{site.data.keyword.satelliteshort}} endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-about)
-* [Use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
 * [Architecture](/docs/satellite?topic=satellite-link-location-cloud#link-architecture)
-* [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
+* [Security and encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
+* [Access controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
+* [Example use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
 
 [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-location-cloud#link-cloud)
 * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-ui)
