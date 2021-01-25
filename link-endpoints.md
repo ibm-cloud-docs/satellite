@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2020
-lastupdated: "2020-12-09"
+  years: 2020, 2021
+lastupdated: "2021-01-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -88,7 +88,7 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -96,32 +96,29 @@ subcollection: satellite
 # Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints
 {: #link-location-cloud}
 
-Open up {{site.data.keyword.satelliteshort}} endpoints in the {{site.data.keyword.satelliteshort}} control plane to allow network traffic between your {{site.data.keyword.satellitelong}} location and services, servers, or apps that run outside of the location.
+Open up {{site.data.keyword.satelliteshort}} endpoints in the {{site.data.keyword.satelliteshort}} control plane to control network traffic between your {{site.data.keyword.satellitelong}} location and services, servers, or apps that run outside of the location.
 {: shortdesc}
 
 ## About {{site.data.keyword.satelliteshort}} endpoints
 {: #link-about}
 
-With {{site.data.keyword.satelliteshort}} endpoints, you can allow any client that runs in your {{site.data.keyword.satelliteshort}} location to use {{site.data.keyword.satelliteshort}} Link to connect to a service, server, or app that runs outside of the location, or vice versa. To establish the connection, you must specify the destination resource's URL or IP address and port, the connection protocol, and any authentication methods in the endpoint. The endpoint is registered with the {{site.data.keyword.satelliteshort}} Link component of your location's {{site.data.keyword.satelliteshort}} control plane.
-
-### Use cases
-{: #link-usecases}
-
-You can create two types of endpoints, depending on your use case: a cloud endpoint, or a location endpoint.
+With {{site.data.keyword.satelliteshort}} endpoints, you can allow any client that runs in your {{site.data.keyword.satelliteshort}} location to use {{site.data.keyword.satelliteshort}} Link to connect to a service, server, or app that runs outside of the location, or vice versa.
 {: shortdesc}
 
-* **Cloud endpoint**: You want to securely connect to a service, server, or app that runs outside of the location from a client within your {{site.data.keyword.satelliteshort}} location. For example, you might want to send data from a host in your {{site.data.keyword.satelliteshort}} location to a service that runs in {{site.data.keyword.cloud_notm}}, such as an {{site.data.keyword.cos_full}} instance. To establish this connection, you create a cloud endpoint by specifying the {{site.data.keyword.cos_short}} instance as the destination resource. The host in your location can then connect directly to the {{site.data.keyword.satelliteshort}} Link connector on your location's control plane worker nodes, and {{site.data.keyword.satelliteshort}} Link forwards the request to the cloud endpoint for the {{site.data.keyword.cos_short}} instance.
-* **Location endpoint**: You want to securely connect to a server, service, or app that runs in your {{site.data.keyword.satelliteshort}} location from a client that runs outside of the location. For example, you might run a service in your {{site.data.keyword.satelliteshort}} location instead of in the public cloud because the service has legal requirements to run in your on-premises data center in a specific country. However, you still need to connect to the service in your {{site.data.keyword.satelliteshort}} location from the public cloud. To establish this connection, you create a location endpoint by specifying the resource that runs in your {{site.data.keyword.satelliteshort}} location as the destination resource. The resource in the public cloud can then connect directly to the {{site.data.keyword.satelliteshort}} Link tunnel server in {{site.data.keyword.cloud_notm}}, and {{site.data.keyword.satelliteshort}} Link forwards the request to the location endpoint for the on-location service instance.
-
-By default, after you set up an endpoint, any client can connect to the destination resource through the endpoint. To limit access to the destination resource, you can specify a list of source IP ranges so that only specific clients can access the endpoint.
+To establish the connection, you must specify the destination resource's URL or IP address and port, the connection protocol, and any authentication methods in the endpoint. The endpoint is registered with the {{site.data.keyword.satelliteshort}} Link component of your location's {{site.data.keyword.satelliteshort}} control plane.
 
 ### Architecture
 {: #link-architecture}
 
-Two {{site.data.keyword.satelliteshort}} Link components, the tunnel server and the connector, proxy network traffic over a secure TLS connection between cloud services and resources in your {{site.data.keyword.satelliteshort}} location. For more information about the {{site.data.keyword.satelliteshort}} Link components, see the [Satellite architecture](/docs/satellite?topic=satellite-service-architecture#architecture).
+You can create two types of endpoints, depending on your use case: a cloud endpoint, or a location endpoint.
 {: shortdesc}
 
-**Destination resource runs outside of the location**
+* **Cloud endpoint: Destination resource runs outside of the {{site.data.keyword.satelliteshort}} location.** A cloud endpoint allows you to securely connect to a service, server, or app that runs outside of the location from a client within your {{site.data.keyword.satelliteshort}} location.
+* **Location endpoint: Destination resource runs in the {{site.data.keyword.satelliteshort}} location.** A location endpoint allows you to securely connect to a server, service, or app that runs in your {{site.data.keyword.satelliteshort}} location from a client that runs outside of the location.
+
+Two {{site.data.keyword.satelliteshort}} Link components, the tunnel server and the connector, proxy network traffic over a secure TLS connection between cloud services and resources in your {{site.data.keyword.satelliteshort}} location. For more information about the {{site.data.keyword.satelliteshort}} Link components, see the [Satellite architecture](/docs/satellite?topic=satellite-service-architecture#architecture).
+
+**Cloud endpoint**
 
 By default, source clients in your {{site.data.keyword.satelliteshort}} location cannot reach destination resources that run outside of the location because the destination resource's IP address is not routable from within the location. Review the following architecture diagram and steps, which demonstrate how {{site.data.keyword.satelliteshort}} Link enables communication from {{site.data.keyword.satelliteshort}} locations to services that run outside of locations through {{site.data.keyword.satelliteshort}} endpoints.
 
@@ -132,13 +129,13 @@ By default, source clients in your {{site.data.keyword.satelliteshort}} location
 </figure>
 </p>
 
-1. When you create an endpoint for your destination resource, you open up a node port for the {{site.data.keyword.satelliteshort}} Link connector on your {{site.data.keyword.satelliteshort}} control plane worker nodes. Requests from sources in your {{site.data.keyword.satelliteshort}} location are made to the {{site.data.keyword.satelliteshort}} Link connector host name and the node port, such as `nae4dce0eb35957baff66-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud:30819`. This Link host name and node port are mapped to the destination resource's domain and port.
+1. When you create an endpoint for your destination resource, a node port is opened for the {{site.data.keyword.satelliteshort}} Link connector on your {{site.data.keyword.satelliteshort}} control plane worker nodes. Requests from sources in your {{site.data.keyword.satelliteshort}} location are made to the {{site.data.keyword.satelliteshort}} Link connector host name and the node port, such as `nae4dce0eb35957baff66-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud:30819`. This Link host name and node port are mapped to the destination resource's domain and port.
 
 2. The {{site.data.keyword.satelliteshort}} Link connector forwards the request to the {{site.data.keyword.satelliteshort}} Link tunnel server on the {{site.data.keyword.satelliteshort}} control plane master over a secured TLS connection.
 
 3. The {{site.data.keyword.satelliteshort}} Link tunnel server resolves the request to the destination's IP address and port, and forwards the request to the destination resource.
 
-**Destination resource runs in {{site.data.keyword.satelliteshort}} location**
+**Location endpoint**
 
 By default, source clients that run outside of the location cannot reach destination resources that run in your {{site.data.keyword.satelliteshort}} location because the destination resource's IP address is not routable from outside the location. Review the following architecture diagram and steps, which demonstrate how {{site.data.keyword.satelliteshort}} Link enables communication from services that run outside of {{site.data.keyword.satelliteshort}} locations to locations through {{site.data.keyword.satelliteshort}} endpoints.
 
@@ -149,17 +146,23 @@ By default, source clients that run outside of the location cannot reach destina
 </figure>
 </p>
 
-1. When you create an endpoint for a resource that runs in your {{site.data.keyword.satelliteshort}} location, you open up a node port for the {{site.data.keyword.satelliteshort}} Link connector on your {{site.data.keyword.satelliteshort}} control plane worker nodes. Requests from sources that run outside of the location are made to the {{site.data.keyword.satelliteshort}} Link tunnel server host name and this node port, such as `c-01.us-east.link.satellite.cloud.ibm.com:30819`. This Link host name and node port are mapped to the destination resource's domain and port.
+1. When you create an endpoint for a resource that runs in your {{site.data.keyword.satelliteshort}} location, a node port is opened for the {{site.data.keyword.satelliteshort}} Link connector on your {{site.data.keyword.satelliteshort}} control plane worker nodes. Requests from sources that run outside of the location are made to the {{site.data.keyword.satelliteshort}} Link tunnel server host name and this node port, such as `c-01.us-east.link.satellite.cloud.ibm.com:30819`. This Link host name and node port are mapped to the destination resource's domain and port.
 
 2. The {{site.data.keyword.satelliteshort}} Link tunnel server resolves the request to the {{site.data.keyword.satelliteshort}} Link connector host name and endpoint node port, and forwards the request to the {{site.data.keyword.satelliteshort}} Link connector over a secured TLS connection.
 
 3. The {{site.data.keyword.satelliteshort}} Link connector resolves the request to the destination's IP address and port, and forwards the request to the destination resource.
 
-### Endpoint protocols
+### Security and encryption protocols
 {: #link-protocols}
 
-When you create the endpoint, you must select the protocol that the source uses to connect to the destination resource. Review the following information about how {{site.data.keyword.satelliteshort}} Link handles each type of connection protocol.
+Link endpoints are secured through two levels of encryption: a default encryption from the connector to tunnel server, and an optional encryption between the client source and destination resources.
 {: shortdesc}
+
+By default, the {{site.data.keyword.satelliteshort}} Link connector forwards client requests to the {{site.data.keyword.satelliteshort}} Link tunnel server on the {{site.data.keyword.satelliteshort}} control plane master over a secured VPN connection. This level of encryption is managed by IBM.
+
+When you create the endpoint, you can optionally provide another level of encryption by specifying data encryption protocols for the endpoint connection between the client source and destination resource. For example, even if the traffic is not encrypted on the source side, you can specify TLS encryption for the connection that goes over the Internet. IBM only transports the encrypted connection, and your resources must be configured for the data encryption protocols that you specify.
+
+Review the following information about how {{site.data.keyword.satelliteshort}} Link handles each type of connection protocol.
 
 If you use the {{site.data.keyword.satelliteshort}} console to create an endpoint, the destination protocol is inherited from the source protocol that you select. To specify a destination protocol, use the CLI to create an endpoint and include the `--dest-protocol` flag in the `ibmcloud sat endpoint create` command.
 {: note}
@@ -188,6 +191,39 @@ The {{site.data.keyword.satelliteshort}} Link component is not involved in TLS t
 If you select the TLS or HTTPS protocols, you can optionally require server-side verification of the destination's certificate. The certificate must be valid for the destination's host name and signed by a trusted Certificate Authority.
 
 If your destination resource has a certificate, you do not need to provide the certificate when you create the endpoint. However, if you are testing access to a destination resource that is still in development and you do not have a trusted certificate yet, you can upload a self-signed certificate for verification. This file must contain the base-64 encoded certificate for your resource's host name and must not contain the certificate key. To create a self-signed certificate for testing purposes by using OpenSSL, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external}.
+
+### Access controls
+{: #link-audit-about}
+
+{{site.data.keyword.satelliteshort}} Link provides built-in controls to help you restrict which clients can access endpoints.
+{: shortdesc}
+
+**Restricting access with source lists**
+
+By default, after you set up an endpoint, any client can connect to the destination resource through the endpoint. For example, for a location endpoint, any client can use the endpoint to connect to the destination resource that runs in your {{site.data.keyword.satelliteshort}} location. To limit access to the destination resource, you can [specify a list of source IP ranges](#link-sources) so that only trusted clients can access the endpoint. Note that currently you can create source lists only for endpoints of type `location` and cannot create source lists for endpoints of type `cloud`.
+
+### Example use cases
+{: #link-usecases}
+
+Review the following example use cases for {{site.data.keyword.satelliteshort}} Link endpoints.
+{: shortdesc}
+
+**Example: Connect from a {{site.data.keyword.satelliteshort}} location to a service in another cloud provider**:
+
+You want to send data from a server that runs on a host in your {{site.data.keyword.satelliteshort}} location to a service that runs in Amazon Web Services. The service must be publicly accessible so that the {{site.data.keyword.satelliteshort}} Link tunnel, which terminates within the {{site.data.keyword.cloud_notm}} network, can access the service in the AWS network.
+
+To establish this connection, you first create a `cloud` endpoint. You specify the service that runs in AWS as the destination resource. Then, the server on your on-location host connects directly to the host name of the {{site.data.keyword.satelliteshort}} Link connector on your location's control plane worker nodes. {{site.data.keyword.satelliteshort}} Link forwards this request to the cloud endpoint that you created for the service that runs in AWS.
+
+**Example: Enable limited access to a {{site.data.keyword.satelliteshort}} location from the public cloud**:
+
+You run a database in your {{site.data.keyword.satelliteshort}} location instead of in the public cloud, because the database has legal requirements to run in your on-premises data center in a specific country. However, you still need to connect to the database in your {{site.data.keyword.satelliteshort}} location from the public cloud.
+
+To establish this connection, you first create a `location` endpoint. You specify the database that runs in your {{site.data.keyword.satelliteshort}} location as the destination resource. Then, the client in the public cloud connects directly to the host name of the {{site.data.keyword.satelliteshort}} Link tunnel server in {{site.data.keyword.cloud_notm}}. {{site.data.keyword.satelliteshort}} Link forwards this request to the location endpoint that you created for your on-location database.
+
+Finally, to maintain enterprise security, you specify a list of source IP ranges so that only trusted clients in the public cloud can access your on-location database through the endpoint.
+
+**Looking to connect resources within the same {{site.data.keyword.satelliteshort}} location?** Link endpoints cannot be created between resources in the same location. Instead, resources can access each other directly. For example, an app that runs in an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}} does not need to communicate through {{site.data.keyword.satelliteshort}} Link to access a database that exists in the same location, and can instead access that database directly through the location's private network.
+{: tip}
 
 <br />
 
@@ -498,7 +534,7 @@ Control which clients can access destination resources by creating a source list
 
 If no sources are configured, any client can use an endpoint to connect to the destination resource. You can restrict access to your destination resource by adding only the IP addresses or subnet CIDRs of specific clients to the endpoint's source list.
 
-Currently, you can create source lists only for endpoints of type `location`. You cannot create source lists for endpoints of type `cloud`.	
+Currently, you can create source lists only for endpoints of type `location`. You cannot create source lists for endpoints of type `cloud`.
 {: note}
 
 
