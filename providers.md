@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -113,6 +113,20 @@ Review the following host requirements that are specific to hosts that are in th
 
 Your hosts also must meet the general requirements that are common across providers, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
+
+### Supported AWS instance types
+{: #aws-instance-types}
+
+Review the following [AWS EC2 instance types](https://aws.amazon.com/ec2/instance-types/){: external} that you can use as hosts in {{site.data.keyword.satellitelong_notm}}.
+{: shortdesc}
+
+| Instance | vCPU | Memory (GiB) | Storage disk (GiB) | Network bandwidth (Gbps) |
+| -------- | ---- | ------------ | ------------------ | ------------------------ |
+| m5d.xlarge | 4 | 16 | 1 x 150 NVMe SSD | Up to 10 |
+| m5d.2xlarge | 8 | 32 | 1 x 300 NVMe SSD | Up to 10 |
+| m5d.4xlarge | 16 | 64 | 2 x 300 NVMe SSD | Up to 10 |
+{: caption="Supported AWS instance types" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the name of the supported instance. The second column is the number of vCPUs. The third column is the memory in gibibytes (GiB). THe fourth column is the number of storage disks and their size in gibibytes (GiB). The fifth column is the network bandwidth in gigabits per second (Gbps)."}
 
 ### RHEL package updates in example launch template
 {: #aws-reqs-launch-template}

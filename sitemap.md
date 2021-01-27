@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-26"
+lastupdated: "2021-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -183,6 +183,7 @@ subcollection: satellite
 
 [Provider requirements](/docs/satellite?topic=satellite-providers)
 * [Amazon Web Services](/docs/satellite?topic=satellite-providers#aws-reqs)
+  * [Supported AWS instance types](/docs/satellite?topic=satellite-providers#aws-instance-types)
   * [RHEL package updates in example launch template](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template)
   * [Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup)
   * [VXLAN encapsulation for AWS hosts](/docs/satellite?topic=satellite-providers#aws-reqs-vxlan)
