@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -138,7 +138,13 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 ## Link and endpoints
 {: #reqs-link}
 
+**Link connector instances**</br>
 The {{site.data.keyword.satelliteshort}} Link connector instances that run in your [{{site.data.keyword.satelliteshort}} location control plane worker nodes](/docs/satellite?topic=satellite-service-architecture) are limited to 3 instances, one per host. Even if you attach hosts to the location control plane, network traffic that is routed through the {{site.data.keyword.satelliteshort}} Link connector is sent only over 3 hosts.
+
+**Cloud and location endpoints**</br>
+Review the maximum number of each type of Link endpoint that you can create for one {{site.data.keyword.satelliteshort}} location.
+* `cloud` endpoints: 1000 total, TCP and UDP combined. For example, you might create up to 650 TCP endpoints and 350 UDP endpoints through which clients in your location can connect to resources outside of the location network.
+* `location` endpoints: 100 TCP and 100 UDP. For example, you might create up to 100 TCP endpoints and 100 UDP endpoints through which clients outside of your location network can connect to resources inside the location.
 
 <br />
 

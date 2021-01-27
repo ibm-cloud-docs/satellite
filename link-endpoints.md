@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-25"
+lastupdated: "2021-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -129,7 +129,7 @@ By default, source clients in your {{site.data.keyword.satelliteshort}} location
 </figure>
 </p>
 
-1. When you create an endpoint for your destination resource, a node port is opened for the {{site.data.keyword.satelliteshort}} Link connector on your {{site.data.keyword.satelliteshort}} control plane worker nodes. Requests from sources in your {{site.data.keyword.satelliteshort}} location are made to the {{site.data.keyword.satelliteshort}} Link connector host name and the node port, such as `nae4dce0eb35957baff66-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud:30819`. This Link host name and node port are mapped to the destination resource's domain and port.
+1. When you create an endpoint for your destination resource, a port is opened for the {{site.data.keyword.satelliteshort}} Link connector on your {{site.data.keyword.satelliteshort}} control plane worker nodes. Requests from sources in your {{site.data.keyword.satelliteshort}} location are made to the {{site.data.keyword.satelliteshort}} Link connector host name and the port, such as `nae4dce0eb35957baff66-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud:30819`. This Link host name and port are mapped to the destination resource's domain and port.
 
 2. The {{site.data.keyword.satelliteshort}} Link connector forwards the request to the {{site.data.keyword.satelliteshort}} Link tunnel server on the {{site.data.keyword.satelliteshort}} control plane master over a secured TLS connection.
 
@@ -146,9 +146,9 @@ By default, source clients that run outside of the location cannot reach destina
 </figure>
 </p>
 
-1. When you create an endpoint for a resource that runs in your {{site.data.keyword.satelliteshort}} location, a node port is opened for the {{site.data.keyword.satelliteshort}} Link connector on your {{site.data.keyword.satelliteshort}} control plane worker nodes. Requests from sources that run outside of the location are made to the {{site.data.keyword.satelliteshort}} Link tunnel server host name and this node port, such as `c-01.us-east.link.satellite.cloud.ibm.com:30819`. This Link host name and node port are mapped to the destination resource's domain and port.
+1. When you create an endpoint for a resource that runs in your {{site.data.keyword.satelliteshort}} location, a port is opened on the {{site.data.keyword.satelliteshort}} Link tunnel server and added in the endpoint configuration. Requests from sources that run outside of the location are made to the {{site.data.keyword.satelliteshort}} Link tunnel server host name and this port, such as `c-01.us-east.link.satellite.cloud.ibm.com:30819`. This Link host name and port are mapped to the destination resource's domain and port.
 
-2. The {{site.data.keyword.satelliteshort}} Link tunnel server resolves the request to the {{site.data.keyword.satelliteshort}} Link connector host name and endpoint node port, and forwards the request to the {{site.data.keyword.satelliteshort}} Link connector over a secured TLS connection.
+2. The {{site.data.keyword.satelliteshort}} Link tunnel server resolves the request to the {{site.data.keyword.satelliteshort}} Link connector host name and endpoint port, and forwards the request to the {{site.data.keyword.satelliteshort}} Link connector over a secured TLS connection.
 
 3. The {{site.data.keyword.satelliteshort}} Link connector resolves the request to the destination's IP address and port, and forwards the request to the destination resource.
 
@@ -158,7 +158,7 @@ By default, source clients that run outside of the location cannot reach destina
 Link endpoints are secured through two levels of encryption: a default encryption from the connector to tunnel server, and an optional encryption between the client source and destination resources.
 {: shortdesc}
 
-By default, the {{site.data.keyword.satelliteshort}} Link connector forwards client requests to the {{site.data.keyword.satelliteshort}} Link tunnel server on the {{site.data.keyword.satelliteshort}} control plane master over a secured VPN connection. This level of encryption is managed by IBM.
+By default, the {{site.data.keyword.satelliteshort}} Link connector forwards client requests to the {{site.data.keyword.satelliteshort}} Link tunnel server on the {{site.data.keyword.satelliteshort}} control plane master over a secured TLS connection. This level of encryption is managed by IBM.
 
 When you create the endpoint, you can optionally provide another level of encryption by specifying data encryption protocols for the endpoint connection between the client source and destination resource. For example, even if the traffic is not encrypted on the source side, you can specify TLS encryption for the connection that goes over the Internet. IBM only transports the encrypted connection, and your resources must be configured for the data encryption protocols that you specify.
 
@@ -253,8 +253,8 @@ Use the console to create a cloud endpoint so that sources in your {{site.data.k
   * If you selected the **TLS** or **HTTPS** protocols and want to require server-side authentication of the destination's certificate, select the **Verify destination certificate** checkbox.
   * If you selected the **TLS** or **HTTPS** protocols but the destination resource is still in development, you can click **Upload certificate** to add your self-signed, base-64 encoded certificate file.
 7. Configure optional connection settings, such as enabling compression of data that is transferred through the endpoint or setting an inactivity timeout. The inactivity timeout is applied to both the connection between the source and {{site.data.keyword.satelliteshort}} Link and to the connection between {{site.data.keyword.satelliteshort}} Link and the destination. By default, no default inactivity timeout is set.
-8. Click **Create**. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a node port to your endpoint.
-9. In the table row for your endpoint, copy the host name for your {{site.data.keyword.satelliteshort}} Link connector and the node port for your endpoint in the **Address** field.
+8. Click **Create**. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a port to your endpoint.
+9. In the table row for your endpoint, copy the host name for your {{site.data.keyword.satelliteshort}} Link connector and the port for your endpoint in the **Address** field.
 10. Use the address to [connect to your destination from a source in your location](#link-cloud-test).
 
 ### Creating cloud endpoints by using the CLI
@@ -320,9 +320,9 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
       </tbody>
     </table>
 
-3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a node port to your endpoint.
+3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a port to your endpoint.
 
-4. Verify that your endpoint is created. In the output, copy the host name for your {{site.data.keyword.satelliteshort}} Link connector and the node port for your endpoint in the **Address** field.
+4. Verify that your endpoint is created. In the output, copy the host name for your {{site.data.keyword.satelliteshort}} Link connector and the port for your endpoint in the **Address** field.
    ```
    ibmcloud sat endpoint ls --location <location_ID>
    ```
@@ -333,7 +333,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
 ### Testing connections through cloud endpoints
 {: #link-cloud-test}
 
-Use the {{site.data.keyword.satelliteshort}} Link connector host name and node port that are assigned to your endpoint to connect to your destination resource from a source in your location. The source can be a {{site.data.keyword.satelliteshort}} cluster that you previously created or a host that you assigned to your location.
+Use the {{site.data.keyword.satelliteshort}} Link connector host name and port that are assigned to your endpoint to connect to your destination resource from a source in your location. The source can be a {{site.data.keyword.satelliteshort}} cluster that you previously created or a host that you assigned to your location.
 {: shortdesc}
 
 **Example for testing the connection from an unassigned host**:
@@ -343,7 +343,7 @@ Use the {{site.data.keyword.satelliteshort}} Link connector host name and node p
  ```
  {: pre}
 
-2. Use the {{site.data.keyword.satelliteshort}} Link connector host name and node port to test the connection to your destination resource.
+2. Use the {{site.data.keyword.satelliteshort}} Link connector host name and port to test the connection to your destination resource.
  ```
  curl http://<linkconnector_hostname>:<nodeport>
  ```
@@ -407,7 +407,7 @@ Use the {{site.data.keyword.satelliteshort}} Link connector host name and node p
  ```
  {: pre}
 
-4. Use the {{site.data.keyword.satelliteshort}} Link connector host name and node port to test the connection to your destination resource.
+4. Use the {{site.data.keyword.satelliteshort}} Link connector host name and port to test the connection to your destination resource.
  ```
  curl http://<linkconnector_hostname>:<nodeport>
  ```
@@ -441,8 +441,8 @@ Use the console to create an endpoint so that sources that run outside of the lo
   * If you selected the **TLS** or **HTTPS** protocols and want to require server-side authentication of the destination's certificate, select the **Verify destination certificate** checkbox.
   * If you selected the **TLS** or **HTTPS** protocols but the destination resource is still in development, you can click **Upload certificate** to add your self-signed, base-64 encoded certificate file.
 7. Configure optional connection settings, such as enabling compression of data that is transferred through the endpoint or setting an inactivity timeout. The inactivity timeout is applied to both the connection between the source and {{site.data.keyword.satelliteshort}} Link and to the connection between {{site.data.keyword.satelliteshort}} Link and the destination. By default, no default inactivity timeout is set.
-8. Click **Create**. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a node port to your endpoint.
-9. In the table row for your endpoint, copy the host name for your {{site.data.keyword.satelliteshort}} Link tunnel server and the node port for your endpoint in the **Address** field.
+8. Click **Create**. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a port to your endpoint.
+9. In the table row for your endpoint, copy the host name for your {{site.data.keyword.satelliteshort}} Link tunnel server and the port for your endpoint in the **Address** field.
 10. From your source client, test the connection to your {{site.data.keyword.satelliteshort}} endpoint by using the address. For example, depending on your source client, you might send a curl request to the endpoint:
    ```
    curl http://<linkserver_hostname>:<nodeport>
@@ -512,9 +512,9 @@ Use the CLI to create an endpoint so that sources that run outside of the locati
       </tbody>
     </table>
 
-3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a node port to your endpoint.
+3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a port to your endpoint.
 
-4. Verify that your endpoint is created. In the output, copy the host name for your {{site.data.keyword.satelliteshort}} Link tunnel server and the node port for your endpoint in the **Address** field.
+4. Verify that your endpoint is created. In the output, copy the host name for your {{site.data.keyword.satelliteshort}} Link tunnel server and the port for your endpoint in the **Address** field.
    ```
    ibmcloud sat endpoint ls --location <location_ID>
    ```
@@ -563,13 +563,13 @@ Run a packet capture to view the traffic that is flowing from your source to you
 
 **Before you begin**: Install a packet capture tool, such as [`tcpdump`](https://www.tcpdump.org/){: external}, on your local machine.
 
-1. Get the host name and node port for your endpoint in the **Address** field. For cloud endpoints, the host name is the {{site.data.keyword.satelliteshort}} Link connector host name. For location endpoints, the host name is the {{site.data.keyword.satelliteshort}} Link tunnel server host name.
+1. Get the host name and port for your endpoint in the **Address** field. For cloud endpoints, the host name is the {{site.data.keyword.satelliteshort}} Link connector host name. For location endpoints, the host name is the {{site.data.keyword.satelliteshort}} Link tunnel server host name.
    ```
    ibmcloud sat endpoint ls --location <location_ID>
    ```
    {: pre}
 
-2. Using the host name and node port, start a packet capture. The following command is an example for using `tcpdump`.
+2. Using the host name and port, start a packet capture. The following command is an example for using `tcpdump`.
     ```
     tcpdump -i <interface> host <link_host> and port <endpoint_nodeport> [-n] [-w <filename>.pcap]
     ```
@@ -592,7 +592,7 @@ Run a packet capture to view the traffic that is flowing from your source to you
        </tr>
        <tr>
        <td><code>port &lt;endpoint_nodeport&gt;</code></td>
-       <td>The node port that was assigned by {{site.data.keyword.satelliteshort}} Link to your endpoint.</td>
+       <td>The port that was assigned by {{site.data.keyword.satelliteshort}} Link to your endpoint.</td>
        </tr>
        <tr>
        <td><code>-n</code></td>
@@ -624,7 +624,7 @@ Run a packet capture to view the traffic that is flowing from your source to you
     ```
     {: screen}
 
-If you want to quickly generate traffic logs to test your endpoint, you can send 100 requests to your endpoint's host name and node port: `for ((i=1;i<=100;i++)); do curl -v --header "Connection: keep-alive" "<host>:<nodeport>"; done`.
+If you want to quickly generate traffic logs to test your endpoint, you can send 100 requests to your endpoint's host name and port: `for ((i=1;i<=100;i++)); do curl -v --header "Connection: keep-alive" "<host>:<nodeport>"; done`.
 {: tip}
 
 ## Enabling and disabling endpoints
