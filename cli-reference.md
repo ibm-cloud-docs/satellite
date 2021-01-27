@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-27"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1766,6 +1766,8 @@ ibmcloud sat resource ls
 {: pre}
 
 <br />
+
+
 
 ## Other commands
 {: #other-commands}
