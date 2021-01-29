@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-25"
+lastupdated: "2021-01-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -73,6 +73,8 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -104,11 +106,12 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 29 January | <ul><li>**AWS hosts**: Added the list of supported [supported AWS EC2 instance types](/docs/satellite?topic=satellite-providers#aws-instance-types) that can be used as hosts.</li><li>**{{site.data.keyword.satelliteshort}} link**: Added information about the [maximum number of endpoints](/docs/satellite?topic=satellite-requirements#reqs-link) that you can create for one location.</li></ul> |
 | 25 January | <ul><li>**About {{site.data.keyword.satelliteshort}}**: Updated the [About topic](/docs/satellite?topic=satellite-about#location-concept) with a new conceptual diagram and explanation of how {{site.data.keyword.satelliteshort}} locations relate to your infrastructure provider and {{site.data.keyword.cloud_notm}} environments.</li><li>**{{site.data.keyword.satelliteshort}} link**: Expanded information about endpoint security and access controls, and added example use cases.</li></ul> |
 | 15 January | **Host requirements**: Updated the [{{site.data.keyword.redhat_notm}} package repositories](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) that you must enable on hosts. |
 | 12 January | <ul><li>**Calico VXLAN encapsulation**: If you use AWS, GCP, or {{site.data.keyword.vpc_short}} hosts to create an {{site.data.keyword.openshiftshort}} cluster, you must [update the cluster's Calico plug-in to use VXLAN encapsulation](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).</li><li>**Host updates**: Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-hosts#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-hosts#host-update-location).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
-{: caption="Documentation updates in January 2021
+{: caption="Documentation updates in January 2021}
 
 ## December 2020
 {: #december20}

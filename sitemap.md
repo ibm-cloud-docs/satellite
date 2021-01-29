@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-25"
+lastupdated: "2021-01-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -73,6 +73,8 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -183,6 +185,7 @@ subcollection: satellite
 
 [Provider requirements](/docs/satellite?topic=satellite-providers)
 * [Amazon Web Services](/docs/satellite?topic=satellite-providers#aws-reqs)
+  * [Supported AWS instance types](/docs/satellite?topic=satellite-providers#aws-instance-types)
   * [RHEL package updates in example launch template](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template)
   * [Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup)
   * [VXLAN encapsulation for AWS hosts](/docs/satellite?topic=satellite-providers#aws-reqs-vxlan)
@@ -412,6 +415,17 @@ subcollection: satellite
 * [Resource commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands)
   * [`ibmcloud sat resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get)
   * [`ibmcloud sat resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls)
+* [Storage commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-storage-commands)
+  * [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create)
+  * [`ibmcloud sat storage assignment get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-get)
+  * [`ibmcloud sat storage assignment ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-ls)
+  * [`ibmcloud sat storage assignment rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-rm)
+  * [`ibmcloud sat storage assignment update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-update)
+  * [`ibmcloud sat storage config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create)
+  * [`ibmcloud sat storage config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-get)
+  * [`ibmcloud sat storage config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-ls)
+  * [`ibmcloud sat storage template get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-get)
+  * [`ibmcloud sat storage template ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-ls)
 * [Other commands](/docs/satellite?topic=satellite-satellite-cli-reference#other-commands)
   * [`ibmcloud ks cluster create satellite`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-create)
 

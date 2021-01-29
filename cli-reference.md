@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-15"
+lastupdated: "2021-01-29"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -73,6 +73,8 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift-ios: .ph data-hd-programlang='iOS Swift'}
+{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -1762,6 +1764,359 @@ ibmcloud sat resource ls [--cluster CLUSTER] [--limit NUMBER] [--search STRING] 
 **Example:**
 ```
 ibmcloud sat resource ls
+```
+{: pre}
+
+<br />
+
+## Storage commands
+{: #sat-storage-commands}
+
+Use these commands to view the storage resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config).
+{: shortdesc}
+
+
+The `ibmcloud sat storage` commands are available in beta.
+{: beta}
+
+### `ibmcloud sat storage assignment create`
+{: #cli-storage-assign-create}
+
+Create a {{site.data.keyword.satelliteshort}} storage assignment to deploy storage drivers to your clusters.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage assignment create --cluster-group GROUP [--cluster-group GROUP ...] --configuration CONFIGURATION --name NAME [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--cluster-group <em>GROUP</em></code></dt>
+<dd>Required. The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run <code>ibmcloud sat cluster-group ls</code>.</dd>
+
+<dt><code>--configuration <em>CONFIGURATION</em></code></dt>
+<dd>Required. The name of the storage configuration that you want to assign to your cluster group. To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage config ls</code>.</dd>
+
+<dt><code>--name <em>NAME</em></code></dt>
+<dd>Required. Enter a name for your storage assignment.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage assignment create --cluster-group staging --configuration file100 --name file100-staging
+```
+{: pre}
+
+### `ibmcloud sat storage assignment get`
+{: #cli-storage-assign-get}
+
+Get the details of a {{site.data.keyword.satelliteshort}} storage assignment.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage assignment get --assignment ASSIGNMENT
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--assignment <em>ASSIGNMENT</em></code></dt>
+<dd>Required. The name of the storage assignment.To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage assignment ls</code>.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage assignment get --assignment my-assignment
+```
+{: pre}
+
+### `ibmcloud sat storage assignment ls`
+{: #cli-storage-assign-ls}
+
+List your {{site.data.keyword.satelliteshort}} storage assignments.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage assignment ls [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage assignment ls [-q]
+```
+{: pre}
+
+### `ibmcloud sat storage assignment rm`
+{: #cli-storage-assign-rm}
+
+Remove a {{site.data.keyword.satelliteshort}} storage assignment. When you remove a storage assignment from a cluster or cluster groups, the storage configuration resources such as storage drivers and storage classes are removed.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--assignment <em>ASSIGNMENT</em></code></dt>
+<dd>Required. The name of the storage assignment that you want to remove. To list storage assignments, run <code>ibmcloud sat storage assignment ls</code>.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional. Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage assignment rm --assignment my-storage-assignment
+```
+{: pre}
+
+### `ibmcloud sat storage assignment update`
+{: #cli-storage-assign-update}
+
+Update a {{site.data.keyword.satelliteshort}} storage assignment. You can use the `assignment update` command to add clusters or cluster groups to your storage assignments or change the assignment name.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage assignment update --assignment ASSIGNMENT [--cluster-group GROUP] [--name NAME] [-f] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--assignment <em>ASSIGNMENT</em></code></dt>
+<dd>Required. The name of the storage assignment. To list storage assignments, run <code>ibmcloud sat storage assignment ls</code>.</dd>
+
+<dl>
+<dt><code>--cluster-group <em>GROUP</em></code></dt>
+<dd>Optional. The ID of the cluster group that you want to add to your assignment. To list cluster groups, run <code>ibmcloud sat cluster-group ls</code>.</dd>
+
+<dt><code>--name <em>NAME</em></code></dt>
+<dd>Optional. Enter a new name for your storage assignment.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional. Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage assignment update --assignment ASSIGNMENT --cluster-group GROUP --name NAME [-f] [-q]
+```
+{: pre}
+
+### `ibmcloud sat storage config create`
+{: #cli-storage-config-create}
+
+Create a {{site.data.keyword.satelliteshort}} storage configuration that you can assign to your cluster groups to install storage drivers in your clusters.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage config create --name NAME --template-name NAME --template-version VERSION [--param PARAM ...] [-q] [--source-branch BRANCH] [--source-org ORG]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--cluster-group <em>GROUP</em></code></dt>
+<dd>Required. The ID of the cluster group. To list cluster groups, run <code>ibmcloud sat cluster-group ls</code>.</dd>
+
+<dt><code>--template-name <em>TEMPLATE NAME</em></code></dt>
+<dd>Required. Enter the name of your storage template.</dd>
+
+<dt><code>--template-version<em>TEMPLATE VERSION</em></code></dt>
+<dd>Required. Enter the version of your storage template.</dd>
+
+<dt><code>--name <em>NAME</em></code></dt>
+<dd>Required. Enter a name for your storage configuration.</dd>
+
+<dt><code>--source-org <em>SOURCE ORG</em></code></dt>
+<dd>Optional. Enter the name of the GitHub organization where you forked the <code>ibm-satellite-storage</code> repo. You can use the templates in <code>ibm-satellite-storage</code> repo to test {{site.data.keyword.satelliteshort}} storage configurations in your cluster.</dd>
+
+<dt><code>--source-repo<em>SOURCE REPO</em></code></dt>
+<dd>Optional. Enter the name of the branch in your <code>ibm-satellite-storage</code> repo that contains the storage templates that you want to use for your configuration. You can use the templates in <code>ibm-satellite-storage</code> repo to test {{site.data.keyword.satelliteshort}} storage configurations in your clusters.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage config create --name ibm-ocs-config --template-name ocs --template-version 4.3 --source-branch main --source-org my-github-org
+```
+{: pre}
+
+### `ibmcloud sat storage config get`
+{: #cli-storage-config-get}
+
+Get the details of a {{site.data.keyword.satelliteshort}} storage config.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage config get --name NAME [--output OUTPUT] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--name <em>NAME</em></code></dt>
+<dd>Required. The name of the storage configuration.</code>.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage config get --name ocs-config
+```
+{: pre}
+
+### `ibmcloud sat storage config ls`
+{: #cli-storage-config-ls}
+
+List your {{site.data.keyword.satelliteshort}} storage configurations.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage config ls [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage config ls
+```
+{: pre}
+
+### `ibmcloud sat storage template get`
+{: #cli-storage-template-get}
+
+Get the details of a {{site.data.keyword.satelliteshort}} storage template.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage template get --name NAME --version VERSION
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--name <em>NAME</em></code></dt>
+<dd>Required. The name of the storage template that you want to retrieve.</code>.</dd>
+
+<dt><code>--version <em>VERSION</em></code></dt>
+<dd>Required. The version of the storage template.</code>.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage template get --name ocs --version 4.3
+```
+{: pre}
+
+### `ibmcloud sat storage template ls`
+{: #cli-storage-template-ls}
+
+List your {{site.data.keyword.satelliteshort}} storage templates.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage template ls [-q]
+```
+{: pre}
+
+You can run `ibmcloud sat storage templates` as an alias of the `ibmcloud sat storage template ls` command.
+{:tip}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage template ls
 ```
 {: pre}
 
