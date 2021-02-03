@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-03"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1968,22 +1968,19 @@ ibmcloud sat storage config create --name NAME --template-name NAME --template-v
 **Command options:**
 
 <dl>
-<dt><code>--cluster-group <em>GROUP</em></code></dt>
-<dd>Required. The ID of the cluster group. To list cluster groups, run <code>ibmcloud sat cluster-group ls</code>.</dd>
+<dt><code>--name <em>NAME</em></code></dt>
+<dd>Required. Enter a name for your storage configuration.</dd>
 
 <dt><code>--template-name <em>TEMPLATE NAME</em></code></dt>
 <dd>Required. Enter the name of your storage template.</dd>
 
-<dt><code>--template-version<em>TEMPLATE VERSION</em></code></dt>
+<dt><code>--template-version <em>TEMPLATE VERSION</em></code></dt>
 <dd>Required. Enter the version of your storage template.</dd>
-
-<dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. Enter a name for your storage configuration.</dd>
 
 <dt><code>--source-org <em>SOURCE ORG</em></code></dt>
 <dd>Optional. Enter the name of the GitHub organization where you forked the <code>ibm-satellite-storage</code> repo. You can use the templates in <code>ibm-satellite-storage</code> repo to test {{site.data.keyword.satelliteshort}} storage configurations in your cluster.</dd>
 
-<dt><code>--source-repo<em>SOURCE REPO</em></code></dt>
+<dt><code>--source-repo <em>SOURCE REPO</em></code></dt>
 <dd>Optional. Enter the name of the branch in your <code>ibm-satellite-storage</code> repo that contains the storage templates that you want to use for your configuration. You can use the templates in <code>ibm-satellite-storage</code> repo to test {{site.data.keyword.satelliteshort}} storage configurations in your clusters.</dd>
 
 <dt><code>-q</code></dt>
