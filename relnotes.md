@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -100,6 +100,15 @@ subcollection: satellite
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {:shortdesc}
+
+## February 2021
+{: #february21}
+
+| Date | Description |
+| ---- | ----------- |
+| 04 February | **CLI changelog**: Updated the CLI plug-in changelog page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog). |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in February 2021}
 
 ## January 2021
 {: #january21}

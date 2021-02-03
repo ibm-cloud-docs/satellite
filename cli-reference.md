@@ -112,10 +112,372 @@ The following image depicts the structure and grouping of the `ibmcloud sat` com
 
 ![Image of the structure and groupings of commands in the `ibmcloud sat` CLI plug-in.](images/cli_ref_imagemap.png)
 
+## Cluster commands
+{: #sat-cluster-commands}
+
+Use these commands to register {{site.data.keyword.openshiftshort}} clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config), to consistently deploy and update apps across clusters.
+{: shortdesc}
+
+### `ibmcloud sat cluster get`
+{: #cli-cluster-get}
+
+Get the details of a cluster that is registered with the {{site.data.keyword.satelliteshort}} Config component.
+{: shortdesc}
+
+```
+ibmcloud sat cluster get --cluster CLUSTER [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--cluster, -c <em>CLUSTER</em></code></dt>
+<dd>Required. The name or ID of the cluster. To list registered clusters, run <code>ibmcloud sat cluster ls</code>.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat cluster get -c mycluster
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat cluster ls`
+{: #cli-cluster-ls}
+
+View a list of clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component. You can use {{site.data.keyword.satelliteshort}} configurations to consistently deploy and update apps to these clusters.
+{: shortdesc}
+
+```
+ibmcloud sat cluster ls [--filter FILTER] [--limit NUMBER] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--filter <em>FILTER</em></code></dt>
+<dd>Optional. Filter results by a cluster property. Currently, the only supported cluster property is the cluster ID.</dd>
+
+<dt><code>--limit <em>NUMBER</em></code></dt>
+<dd>Optional. Limit the number of clusters that are returned. The default value is 50.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat cluster ls
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat cluster register`
+{: #cli-cluster-register}
+
+Get a `kubectl` command to run in your cluster to install the {{site.data.keyword.satelliteshort}} Config agent. The {{site.data.keyword.satelliteshort}} Config agent is automatically installed in clusters that you run in your {{site.data.keyword.satelliteshort}} location. For all clusters that run in {{site.data.keyword.cloud_notm}}, you must use this command to install the {{site.data.keyword.satelliteshort}} Config agent so that you can include these clusters in {{site.data.keyword.satelliteshort}} configurations. After you get the command, [log in to your cluster](/docs/openshift?topic=openshift-access_cluster#access_public_se) and run the command.
+{: shortdesc}
+
+```
+ibmcloud sat cluster register [--silent] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--silent</code></dt>
+  <dd>Return only the registration command in the CLI output.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat cluster register
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat cluster unregister`
+{: #cli-cluster-unregister}
+
+Unregister a cluster from the {{site.data.keyword.satelliteshort}} Config component. You can no longer subscribe the cluster to automatically deploy Kubernetes resources from a configuration, but the cluster and its existing resources still run.
+{: shortdesc}
+
+```
+ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--cluster, -c <em>CLUSTER</em></code></dt>
+<dd>Required. The cluster that you want to unregister from {{site.data.keyword.satelliteshort}}. To list registered clusters, run `ibmcloud sat cluster ls`.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional. Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat cluster unregister -c mycluster
+```
+{: pre}
+
+<br />
+
+## Cluster group commands
+{: #cluster-group-commands}
+
+Use these commands to create cluster groups. Then, subscribe your cluster group to a {{site.data.keyword.satelliteshort}} configuration to automatically deploy Kubernetes resources to these clusters.
+{: shortdesc}
+
+### `ibmcloud sat group attach`
+{: #cluster-group-attach}
+
+Add a {{site.data.keyword.openshiftlong_notm}} cluster to your cluster group. The cluster can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}. To add a cluster that runs in {{site.data.keyword.cloud_notm}}, you must first [register the cluster](#cli-cluster-register) with the {{site.data.keyword.satelliteshort}} Config component.
+{: shortdesc}
+
+```
+ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER] --group GROUP [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--cluster, -c <em>CLUSTER</em></code></dt>
+<dd>Required. The cluster that you want to add to the cluster group. To list registered clusters, run `ibmcloud sat cluster ls`.</dd>
+
+<dt><code>--group, -g <em>GROUP</em></code></dt>
+<dd>Required. The name or ID of the cluster group where you want to add the cluster. To list available cluster groups, run `ibmcloud sat group ls`.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat group attach --cluster mycluster --group mygroup
+```
+{: pre}
+
+<br />
+
+
+### `ibmcloud sat group create`
+{: #cluster-group-create}
+
+Create a cluster group. After you created the cluster group, you can subscribe the cluster group to a {{site.data.keyword.satelliteshort}} configuration.
+{: shortdesc}
+
+```
+ibmcloud sat group create --name NAME [--cluster CLUSTER] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--name <em>NAME</em></code></dt>
+<dd>Required. The name for the cluster group.</dd>  
+
+<dt><code>--cluster, -c <em>CLUSTER</em></code></dt>
+<dd>Optional. The name or ID of a cluster that you want to add to the cluster group. To list registered clusters, run `ibmcloud sat cluster ls`.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat group create --name mygroup
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat group detach`
+{: #cluster-group-detach}
+
+Remove a {{site.data.keyword.openshiftlong_notm}} cluster from a cluster group.
+{: shortdesc}
+
+```
+ibmcloud sat group detach --group GROUP --cluster CLUSTER [-f] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--group <em>GROUP</em></code></dt>
+<dd>Required. The name or ID of the cluster group where you want to remove a cluster. To list available cluster groups, run <code>ibmcloud sat group ls</code>.</dd>  
+
+<dt><code>--cluster, -c <em>CLUSTER</em></code></dt>
+<dd>Optional. The name or ID of the cluster that you want to remove from your cluster group. To list the clusters that are included in your cluster group, run <code>ibmcloud sat group get --group &lt;cluster_group_name_or_ID&gt;</code>.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional. Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat group detach --group mygroup --cluster mycluster
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat group get`
+{: #cluster-group-get}
+
+Retrieve details of a cluster group, such as the clusters that are included in your cluster group.
+{: shortdesc}
+
+```
+ibmcloud sat group get --group GROUP [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--group, -g <em>GROUP</em></code></dt>
+<dd>Required. The name or ID of the cluster group that you want to retrieve details for. To list available cluster groups, run <code>ibmcloud sat group ls</code>.</dd>  
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat group get --group mygroup
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat group ls`
+{: #cluster-group-ls}
+
+List all cluster groups in your {{site.data.keyword.cloud_notm}} account.
+{: shortdesc}
+
+```
+ibmcloud sat group ls [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat group ls
+```
+{: pre}
+
+<br />
+
+
+### `ibmcloud sat group rm`
+{: #cluster-group-rm}
+
+Remove a cluster group.
+{: shortdesc}
+
+```
+ibmcloud sat group rm --group GROUP [-f] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--group, -g <em>GROUP</em></code></dt>
+<dd>Required. The name or ID of the cluster group that you want to remove. To list available cluster groups, run <code>ibmcloud sat group ls</code>.</dd>  
+
+<dt><code>-f</code></dt>
+<dd>Optional. Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat group rm --group mygroup
+```
+{: pre}
+
+<br />
+
 ## Config commands
 {: #sat-config-configuration-commands}
 
-Use these commands to create and manage {{site.data.keyword.satelliteshort}} configurations and upload Kubernetes resource definitions as versions to the configuration. Then, use {{site.data.keyword.satelliteshort}} subscriptions to specify the {{site.data.keyword.openshiftlong_notm}} clusters where you want to deploy your Kubernetes resources. For more information, see [Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config).
+Use these commands to create and manage {{site.data.keyword.satelliteshort}} configurations and upload Kubernetes resource definitions as versions to the configuration. Then, use [{{site.data.keyword.satelliteshort}} subscription commands](#sat-config-subscription-commands) to specify the {{site.data.keyword.openshiftlong_notm}} clusters where you want to deploy your Kubernetes resources. For more information, see [Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config).
 {: shortdesc}
 
 ### `ibmcloud sat config create`
@@ -408,561 +770,6 @@ ibmcloud sat config version rm --config myapp_prod --version 1.0
 
 <br />
 
-## Subscription commands
-{: #sat-config-subscription-commands}
-
-Use these commands to manage subscriptions to {{site.data.keyword.satelliteshort}} configurations for your registered clusters.
-{: shortdesc}
-
-You can use the `sub` alias for `subscription` commands.
-{: tip}
-
-### `ibmcloud sat subscription create`
-{: #cli-config-subscription-create}
-
-Create a subscription for {{site.data.keyword.openshiftlong_notm}} clusters to deploy a {{site.data.keyword.satelliteshort}} configuration version. After you create the subscription, the associated {{site.data.keyword.satelliteshort}} configuration version is automatically deployed to the subscribed clusters.
-{: shortdesc}
-
-```
-ibmcloud sat subscription create --name NAME --group GROUP [--group GROUP] --config CONFIG --version VERSION [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. The name to give your subscription.</dd>
-
-<dt><code>--group <em>GROUP</em></code></dt>
-<dd>Required. The name or ID of the cluster group that includes the {{site.data.keyword.openshiftlong_notm}} clusters where you want to deploy the configuration version. To list available cluster groups, run <code>ibmcloud sat group ls</code>.</dd>
-
-<dt><code>--config <em>CONFIG</em></code></dt>
-<dd>Required. The name of the configuration where you added the Kubernetes resource definition as a version that you want to deploy to your clusters. To list available configurations, run <code>ibmcloud sat config ls</code>.</dd>
-
-<dt><code>--version <em>VERSION</em></code></dt>
-<dd>Required. The name or ID of the version that you want to deploy to the clusters in your cluster group. To list versions in your configuration, run <code>ibmcloud sat config get --config &lt;configuration_name_or_ID&gt;</code>.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat subscription create --name myapp_prod_subscription --group mygroup --config myapp_prod --version 1.0
-```
-{: pre}
-
-<br />
-
-### `ibmcloud sat subscription get`
-{: #cli-config-subscription-get}
-
-Get the details of a subscription, such as the {{site.data.keyword.satelliteshort}} configuration that the subscription is for or the registered clusters that are subscribed.
-{: shortdesc}
-
-```
-ibmcloud sat subscription get --subscription SUBSCRIPTION [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--subscription <em>SUBSCRIPTION</em></code></dt>
-<dd>Required. The name or ID of your subscription. To list subscriptions in your {{site.data.keyword.cloud_notm}} account, run <code>ibmcloud sat subscription ls</code>.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat subscription get --subscription myapp_prod_subscription
-```
-{: pre}
-
-<br />
-
-### `ibmcloud sat subscription ls`
-{: #cli-config-subscription-ls}
-
-List the subscriptions to {{site.data.keyword.satelliteshort}} configurations in your {{site.data.keyword.cloud_notm}} account.
-{: shortdesc}
-
-```
-ibmcloud sat subscription ls
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:** N/A
-
-**Example:**
-```
-ibmcloud sat subscription ls
-```
-{: pre}
-
-<br />
-
-### `ibmcloud sat subscription rm`
-{: #cli-config-subscription-rm}
-
-Remove a subscription.
-{: shortdesc}
-
-The Kubernetes resources for the subscription, such as pods and services, are deleted from all your subscribed clusters that are registered in {{site.data.keyword.satelliteshort}}. Before you remove a subscription, make sure that you do not need these resources. The {{site.data.keyword.satelliteshort}} configuration remains, so if you want to restore the resources, you can create another subscription.
-{: important}
-
-```
-ibmcloud sat subscription rm --subscription SUBSCRIPTION [-f] [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--subscription <em>SUBSCRIPTION</em></code></dt>
-<dd>Required. The name or ID of your subscription. To list subscriptions in your {{site.data.keyword.cloud_notm}} account, run <code>ibmcloud sat subscription ls</code>.</dd>
-
-<dt><code>-f</code></dt>
-<dd>Optional. Force the command to run with no user prompts.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat subscription rm --subscription myapp_prod_subscription
-```
-{: pre}
-
-<br />
-
-### `ibmcloud sat subscription update`
-{: #cli-config-subscription-update}
-
-Update a subscription, such as to change the subscription name, the configuration version, or the subscribed cluster group. After you update the subscription, the configuration version is automatically deployed to all subscribed clusters.
-{: shortdesc}
-
-```
-ibmcloud sat subscription update --subscription SUBSCRIPTION [--name NAME] [--group GROUP] [--version VERSION] [-f] [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--subscription <em>SUBSCRIPTION</em></code></dt>
-<dd>Required. The name or ID of the subscription that you want to update. To list subscriptions in your {{site.data.keyword.cloud_notm}} account, run <code>ibmcloud sat subscription ls</code>.</dd>
-
-<dt><code>--name <em>NAME</em></code></dt>
-<dd>Optional. The new name to give your subscription. </dd>
-
-<dt><code>--group <em>GROUP</em></code></dt>
-<dd>Optional. The name or ID of the cluster group that you want to subscribe. To list available cluster groups, run <code>ibmcloud sat group ls</code>.</dd>
-
-<dt><code>--version <em>VERSION</em></code></dt>
-<dd>Required. The name or ID of your configuration version that you want to subscribe clusters to. To list versions in your configuration, run <code>ibmcloud sat config get --config &lt;configuration_name_or_ID&gt;</code>.</dd>
-
-<dt><code>-f</code></dt>
-<dd>Optional. Force the command to run with no user prompts.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat subscription update --subscription myapp_prod_subscription --name myapp_staging_subscription --group mygroup --version 1.0
-```
-{: pre}
-
-<br />
-
-## Cluster commands
-{: #sat-cluster-commands}
-
-Use these commands to register {{site.data.keyword.openshiftshort}} clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config), to consistently deploy and update apps across clusters.
-{: shortdesc}
-
-### `ibmcloud sat cluster get`
-{: #cli-cluster-get}
-
-Get the details of a cluster that is registered with the {{site.data.keyword.satelliteshort}} Config component.
-{: shortdesc}
-
-```
-ibmcloud sat cluster get --cluster CLUSTER [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--cluster, -c <em>CLUSTER</em></code></dt>
-<dd>Required. The name or ID of the cluster. To list registered clusters, run <code>ibmcloud sat cluster ls</code>.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat cluster get -c mycluster
-```
-{: pre}
-
-<br />
-
-### `ibmcloud sat cluster ls`
-{: #cli-cluster-ls}
-
-View a list of clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component. You can use {{site.data.keyword.satelliteshort}} configurations to consistently deploy and update apps to these clusters.
-{: shortdesc}
-
-```
-ibmcloud sat cluster ls [--filter FILTER] [--limit NUMBER] [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--filter <em>FILTER</em></code></dt>
-<dd>Optional. Filter results by a cluster property. Currently, the only supported cluster property is the cluster ID.</dd>
-
-<dt><code>--limit <em>NUMBER</em></code></dt>
-<dd>Optional. Limit the number of clusters that are returned. The default value is 50.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat cluster ls
-```
-{: pre}
-
-<br />
-
-### `ibmcloud sat cluster register`
-{: #cli-cluster-register}
-
-Get a `kubectl` command to run in your cluster to install the {{site.data.keyword.satelliteshort}} Config agent. The {{site.data.keyword.satelliteshort}} Config agent is automatically installed in clusters that you run in your {{site.data.keyword.satelliteshort}} location. For all clusters that run in {{site.data.keyword.cloud_notm}}, you must use this command to install the {{site.data.keyword.satelliteshort}} Config agent so that you can include these clusters in {{site.data.keyword.satelliteshort}} configurations. After you get the command, [log in to your cluster](/docs/openshift?topic=openshift-access_cluster#access_public_se) and run the command.
-{: shortdesc}
-
-```
-ibmcloud sat cluster register [--silent] [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--silent</code></dt>
-  <dd>Return only the registration command in the CLI output.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat cluster register
-```
-{: pre}
-
-<br />
-
-### `ibmcloud sat cluster unregister`
-{: #cli-cluster-unregister}
-
-Unregister a cluster from the {{site.data.keyword.satelliteshort}} Config component. You can no longer subscribe the cluster to automatically deploy Kubernetes resources from a configuration, but the cluster and its existing resources still run.
-{: shortdesc}
-
-```
-ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--cluster, -c <em>CLUSTER</em></code></dt>
-<dd>Required. The cluster that you want to unregister from {{site.data.keyword.satelliteshort}}. To list registered clusters, run `ibmcloud sat cluster ls`.</dd>
-
-<dt><code>-f</code></dt>
-<dd>Optional. Force the command to run with no user prompts.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat cluster unregister -c mycluster
-```
-{: pre}
-
-<br />
-
-## Cluster group commands
-{: #group-commands}
-
-Use these commands to create cluster groups. Then, subscribe your cluster group to a {{site.data.keyword.satelliteshort}} configuration to automatically deploy Kubernetes resources to these clusters.
-{: shortdesc}
-
-### `ibmcloud sat group attach`
-{: #group-attach}
-
-Add a {{site.data.keyword.openshiftlong_notm}} cluster to your cluster group. The cluster can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}. To add a cluster that runs in {{site.data.keyword.cloud_notm}}, you must first [register the cluster](#cli-cluster-register) with the {{site.data.keyword.satelliteshort}} Config component.
-{: shortdesc}
-
-```
-ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER] --group GROUP [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--cluster, -c <em>CLUSTER</em></code></dt>
-<dd>Required. The cluster that you want to add to the cluster group. To list registered clusters, run `ibmcloud sat cluster ls`.</dd>
-
-<dt><code>--group, -g <em>GROUP</em></code></dt>
-<dd>Required. The name or ID of the cluster group where you want to add the cluster. To list available cluster groups, run `ibmcloud sat group ls`.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat group attach --cluster mycluster --group mygroup
-```
-{: pre}
-
-<br />
-
-
-### `ibmcloud sat group create`
-{: #group-create}
-
-Create a cluster group. After you created the cluster group, you can subscribe the cluster group to a {{site.data.keyword.satelliteshort}} configuration.
-{: shortdesc}
-
-```
-ibmcloud sat group create --name NAME [--cluster CLUSTER] [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. The name for the cluster group.</dd>  
-
-<dt><code>--cluster, -c <em>CLUSTER</em></code></dt>
-<dd>Optional. The name or ID of a cluster that you want to add to the cluster group. To list registered clusters, run `ibmcloud sat cluster ls`.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat group create --name mygroup
-```
-{: pre}
-
-<br />
-
-### `ibmcloud sat group detach`
-{: #group-detach}
-
-Remove a {{site.data.keyword.openshiftlong_notm}} cluster from a cluster group.
-{: shortdesc}
-
-```
-ibmcloud sat group detach --group GROUP --cluster CLUSTER [-f] [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--group <em>GROUP</em></code></dt>
-<dd>Required. The name or ID of the cluster group where you want to remove a cluster. To list available cluster groups, run <code>ibmcloud sat group ls</code>.</dd>  
-
-<dt><code>--cluster, -c <em>CLUSTER</em></code></dt>
-<dd>Optional. The name or ID of the cluster that you want to remove from your cluster group. To list the clusters that are included in your cluster group, run <code>ibmcloud sat group get --group &lt;cluster_group_name_or_ID&gt;</code>.</dd>
-
-<dt><code>-f</code></dt>
-<dd>Optional. Force the command to run with no user prompts.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat group detach --group mygroup --cluster mycluster
-```
-{: pre}
-
-<br />
-
-### `ibmcloud sat group get`
-{: #group-get}
-
-Retrieve details of a cluster group, such as the clusters that are included in your cluster group.
-{: shortdesc}
-
-```
-ibmcloud sat group get --group GROUP [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--group, -g <em>GROUP</em></code></dt>
-<dd>Required. The name or ID of the cluster group that you want to retrieve details for. To list available cluster groups, run <code>ibmcloud sat group ls</code>.</dd>  
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat group get --group mygroup
-```
-{: pre}
-
-<br />
-
-### `ibmcloud sat group ls`
-{: #group-ls}
-
-List all cluster groups in your {{site.data.keyword.cloud_notm}} account.
-{: shortdesc}
-
-```
-ibmcloud sat group ls [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat group ls
-```
-{: pre}
-
-<br />
-
-
-### `ibmcloud sat group rm`
-{: #group-rm}
-
-Remove a cluster group.
-{: shortdesc}
-
-```
-ibmcloud sat group rm --group GROUP [-f] [-q]
-```
-{: pre}
-
-</br>
-
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
-
-**Command options:**
-
-<dl>
-<dt><code>--group, -g <em>GROUP</em></code></dt>
-<dd>Required. The name or ID of the cluster group that you want to remove. To list available cluster groups, run <code>ibmcloud sat group ls</code>.</dd>  
-
-<dt><code>-f</code></dt>
-<dd>Optional. Force the command to run with no user prompts.</dd>
-
-<dt><code>-q</code></dt>
-<dd>Optional. Do not show the message of the day or update reminders.</dd>
-</dl>
-
-**Example:**
-```
-ibmcloud sat group rm --group mygroup
-```
-{: pre}
-
-<br />
-
 ## Endpoint commands
 {: #sat-endpoint-commands}
 
@@ -1199,7 +1006,7 @@ Add your compute host to the {{site.data.keyword.satelliteshort}} control plane 
 {: shortdesc}
 
 ```
-ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zone ZONE [--worker-pool WORKER_POOL] [--label "LABEL"] [-q]
+ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zone ZONE [--worker-pool WORKER_POOL] [--host-label "LABEL"] [-q]
 ```
 {: pre}
 
@@ -1226,7 +1033,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 <dt><code>--worker-pool <em>WORKER_POOL</em></code></dt>
 <dd>Optional. Enter the name or ID of the worker pool in your {{site.data.keyword.openshiftshort}} cluster to which you want to add your compute host. If you want to assign hosts to your {{site.data.keyword.satelliteshort}} control plane, this flag is not required. When you assign hosts to an {{site.data.keyword.openshiftshort}} cluster, you can include this flag to specify the worker pool. If no worker pool is specified, the host is assigned to the default worker pool of the cluster.  </dd>
 
-<dt><code>--label <em>LABEL</em></code>, <code>-l <em>LABEL</em></code></dt>
+<dt><code>--host-label <em>LABEL</em></code>, <code>-hl <em>LABEL</em></code></dt>
 <dd>Optional. Enter any labels as a key-value pair that you want to use to identify the host that you want to assign to your {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. The first host that has this label and is in an unassigned state it automatically assigned to the control plane or cluster. To find available host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>.  </dd>
 
 <dt><code>-q</code></dt>
@@ -1236,7 +1043,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 
 **Example:**
 ```
-ibmcloud sat host assign --location aaaaaaaa1111a1aaaa11a --host myhost1 --zone us-east-1 --cluster aaaaaaaa1111a1aaaa11a --label "use=satloc"
+ibmcloud sat host assign --location aaaaaaaa1111a1aaaa11a --host myhost1 --zone us-east-1 --cluster aaaaaaaa1111a1aaaa11a --host-label "use=satloc"
 ```
 {: pre}
 
@@ -1249,7 +1056,7 @@ Create and download a script that you run on all the compute hosts that you want
 {: shortdesc}
 
 ```
-ibmcloud sat host attach --location LOCATION [--label "LABEL"] [-q]
+ibmcloud sat host attach --location LOCATION [--host-label "LABEL"] [-q] [--reset-key]
 ```
 {: pre}
 
@@ -1264,16 +1071,19 @@ ibmcloud sat host attach --location LOCATION [--label "LABEL"] [-q]
 <dt><code>--location <em>LOCATION</em></code></dt>
 <dd>Required. Enter the ID or name of the {{site.data.keyword.satelliteshort}} location where you want to add compute hosts. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.  </dd>
 
-<dt><code>--label <em>LABEL</em></code>, <code>-l <em>LABEL</em></code></dt>
+<dt><code>--host-label <em>LABEL</em></code>, <code>-hl <em>LABEL</em></code></dt>
 <dd>Optional. Enter any labels as a key-value-pair that you want to add to your compute hosts. Labels can help find hosts more easily later.  </dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
+
+<dt><code>--reset-key</code></dt>
+<dd>Optional. Reset the key that the control plane uses to communicate with all of the hosts in the location. Then, run the script from this command to attach new hosts and all existing hosts back to the location. Until they are reattached, existing hosts have authentication errors and cannot be managed by the control plane, such as for updates.</dd>
 </dl>
 
 **Example:**
 ```
-ibmcloud sat host attach --location aaaaaaaa1111a1aaaa11a --label "use=satloc"
+ibmcloud sat host attach --location aaaaaaaa1111a1aaaa11a --host-label "use=satloc"
 ```
 {: pre}
 
@@ -1420,7 +1230,7 @@ Update information about your compute host, such as labels.
 {: shortdesc}
 
 ```
-ibmcloud sat host update --location LOCATION --host HOST [--label "LABEL"] [-q]
+ibmcloud sat host update --location LOCATION --host HOST [--host-label "LABEL"] [-q]
 ```
 {: pre}
 
@@ -1438,7 +1248,7 @@ ibmcloud sat host update --location LOCATION --host HOST [--label "LABEL"] [-q]
 <dt><code>--host <em>HOST</em></code></dt>
 <dd>Required. Enter the ID of the host that you want to update. To retrieve the host ID, run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code>.  </dd>
 
-<dt><code>--label <em>LABEL</em></code>, <code>-l <em>LABEL</em></code></dt>
+<dt><code>--host-label <em>LABEL</em></code>, <code>-hl <em>LABEL</em></code></dt>
 <dd>Optional. Enter any labels as a key-value-pair that you want to use to identify the hosts that you want to update. To find available host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>.  </dd>
 
 <dt><code>-q</code></dt>
@@ -1467,7 +1277,7 @@ Create a {{site.data.keyword.satelliteshort}} location. When you create a locati
 {: shortdesc}
 
 ```
-ibmcloud sat location create --managed-from METRO --name NAME [--cos-bucket COS_BUCKET_NAME] [--logging-account-id LOGGING_ACCOUNT] [-q]
+ibmcloud sat location create --managed-from METRO --name NAME [--cos-bucket COS_BUCKET_NAME] [--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME] [--logging-account-id LOGGING_ACCOUNT] [-q]
 ```
 {: pre}
 
@@ -1486,6 +1296,9 @@ ibmcloud sat location create --managed-from METRO --name NAME [--cos-bucket COS_
 
 <dt><code>--cos-bucket <em>COS_BUCKET_NAME</em></code></dt>
 <dd>Optional. Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up the control plane data. If you specify the bucket name, make sure to also specify the HMAC secret access key, access key ID, bucket region, and bucket endpoint of your {{site.data.keyword.cos_full_notm}} service instance.   </dd>
+
+<dt><code>--ha-zone <em>ZONE1_NAME</em> --ha-zone <em>ZONE2_NAME</em> --ha-zone <em>ZONE3_NAME</em></code></dt>
+<dd>Optional. Specify three names for high availability zones in your location. These zones are used for any {{site.data.keyword.openshiftlong_notm}} clusters that you create in your location, but the names are arbitrary; for example, if you use AWS hosts for your location, you might specify the name of the AWS high availability zones where your hosts exist. If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names such as `zone1`.</dd>
 
 <dt><code>--logging-account-id <em>LOGGING_ACCOUNT</em></code></dt>
 <dd>Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.loganalysislong_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.</dd>
@@ -1784,7 +1597,6 @@ ibmcloud sat resource ls
 
 Use these commands to view the storage resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config).
 {: shortdesc}
-
 
 The `ibmcloud sat storage` commands are available in beta.
 {: beta}
@@ -2124,6 +1936,199 @@ You can run `ibmcloud sat storage templates` as an alias of the `ibmcloud sat st
 **Example:**
 ```sh
 ibmcloud sat storage template ls
+```
+{: pre}
+
+<br />
+
+## Subscription commands
+{: #sat-config-subscription-commands}
+
+Use these commands to manage subscriptions to {{site.data.keyword.satelliteshort}} configurations for your registered clusters.
+{: shortdesc}
+
+You can use the `sub` alias for `subscription` commands.
+{: tip}
+
+### `ibmcloud sat subscription create`
+{: #cli-config-subscription-create}
+
+Create a subscription for {{site.data.keyword.openshiftlong_notm}} clusters to deploy a {{site.data.keyword.satelliteshort}} configuration version. After you create the subscription, the associated {{site.data.keyword.satelliteshort}} configuration version is automatically deployed to the subscribed clusters.
+{: shortdesc}
+
+```
+ibmcloud sat subscription create --name NAME --group GROUP [--group GROUP] --config CONFIG --version VERSION [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--name <em>NAME</em></code></dt>
+<dd>Required. The name to give your subscription.</dd>
+
+<dt><code>--group <em>GROUP</em></code></dt>
+<dd>Required. The name or ID of the cluster group that includes the {{site.data.keyword.openshiftlong_notm}} clusters where you want to deploy the configuration version. To list available cluster groups, run <code>ibmcloud sat group ls</code>.</dd>
+
+<dt><code>--config <em>CONFIG</em></code></dt>
+<dd>Required. The name of the configuration where you added the Kubernetes resource definition as a version that you want to deploy to your clusters. To list available configurations, run <code>ibmcloud sat config ls</code>.</dd>
+
+<dt><code>--version <em>VERSION</em></code></dt>
+<dd>Required. The name or ID of the version that you want to deploy to the clusters in your cluster group. To list versions in your configuration, run <code>ibmcloud sat config get --config &lt;configuration_name_or_ID&gt;</code>.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat subscription create --name myapp_prod_subscription --group mygroup --config myapp_prod --version 1.0
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat subscription get`
+{: #cli-config-subscription-get}
+
+Get the details of a subscription, such as the {{site.data.keyword.satelliteshort}} configuration that the subscription is for or the registered clusters that are subscribed.
+{: shortdesc}
+
+```
+ibmcloud sat subscription get --subscription SUBSCRIPTION [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--subscription <em>SUBSCRIPTION</em></code></dt>
+<dd>Required. The name or ID of your subscription. To list subscriptions in your {{site.data.keyword.cloud_notm}} account, run <code>ibmcloud sat subscription ls</code>.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat subscription get --subscription myapp_prod_subscription
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat subscription ls`
+{: #cli-config-subscription-ls}
+
+List the subscriptions to {{site.data.keyword.satelliteshort}} configurations in your {{site.data.keyword.cloud_notm}} account.
+{: shortdesc}
+
+```
+ibmcloud sat subscription ls
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:** N/A
+
+**Example:**
+```
+ibmcloud sat subscription ls
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat subscription rm`
+{: #cli-config-subscription-rm}
+
+Remove a subscription.
+{: shortdesc}
+
+The Kubernetes resources for the subscription, such as pods and services, are deleted from all your subscribed clusters that are registered in {{site.data.keyword.satelliteshort}}. Before you remove a subscription, make sure that you do not need these resources. The {{site.data.keyword.satelliteshort}} configuration remains, so if you want to restore the resources, you can create another subscription.
+{: important}
+
+```
+ibmcloud sat subscription rm --subscription SUBSCRIPTION [-f] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--subscription <em>SUBSCRIPTION</em></code></dt>
+<dd>Required. The name or ID of your subscription. To list subscriptions in your {{site.data.keyword.cloud_notm}} account, run <code>ibmcloud sat subscription ls</code>.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional. Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat subscription rm --subscription myapp_prod_subscription
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat subscription update`
+{: #cli-config-subscription-update}
+
+Update a subscription, such as to change the subscription name, the configuration version, or the subscribed cluster group. After you update the subscription, the configuration version is automatically deployed to all subscribed clusters.
+{: shortdesc}
+
+```
+ibmcloud sat subscription update --subscription SUBSCRIPTION [--name NAME] [--group GROUP] [--version VERSION] [-f] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--subscription <em>SUBSCRIPTION</em></code></dt>
+<dd>Required. The name or ID of the subscription that you want to update. To list subscriptions in your {{site.data.keyword.cloud_notm}} account, run <code>ibmcloud sat subscription ls</code>.</dd>
+
+<dt><code>--name <em>NAME</em></code></dt>
+<dd>Optional. The new name to give your subscription. </dd>
+
+<dt><code>--group <em>GROUP</em></code></dt>
+<dd>Optional. The name or ID of the cluster group that you want to subscribe. To list available cluster groups, run <code>ibmcloud sat group ls</code>.</dd>
+
+<dt><code>--version <em>VERSION</em></code></dt>
+<dd>Required. The name or ID of your configuration version that you want to subscribe clusters to. To list versions in your configuration, run <code>ibmcloud sat config get --config &lt;configuration_name_or_ID&gt;</code>.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional. Force the command to run with no user prompts.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```
+ibmcloud sat subscription update --subscription myapp_prod_subscription --name myapp_staging_subscription --group mygroup --version 1.0
 ```
 {: pre}
 

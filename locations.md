@@ -319,7 +319,7 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
 
     **Example for assigning a host by using the `use:satloc` label:**
     ```
-    ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --label "use:satloc" --zone <zone>
+    ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satloc" --zone <zone>
     ```
     {: pre}
 
@@ -340,10 +340,10 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
       </tr>
       <tr>
       <td><code>--host <em>&lt;host_ID&gt;</em></code></td>
-      <td>Enter the host ID to assign to the {{site.data.keyword.satelliteshort}} location control plane. To view the host ID, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can use the <code>--label</code> option to identify the host that you want to assign to your control plane.</td>
+      <td>Enter the host ID to assign to the {{site.data.keyword.satelliteshort}} location control plane. To view the host ID, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can use the <code>--host-label</code> option to identify the host that you want to assign to your control plane.</td>
       </tr>
       <tr>
-      <td><code>--label <em>&lt;label&gt;</em></code></td>
+      <td><code>--host-label <em>&lt;label&gt;</em></code></td>
       <td>Enter the label that you want to use to identify the host that you want to assign. The label must be a key-value pair, and must exist on the host machine. When you run this command with the `label` option, the first host that is in an `unassigned` state and matches the label is assigned to your control plane. </td>
       </tr>
       <tr>

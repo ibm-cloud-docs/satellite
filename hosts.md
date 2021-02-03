@@ -286,7 +286,7 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 
    **Example for assigning a host by using the `use:satcluster` label:**
    ```
-   ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --label "use:satcluster" --worker-pool default --zone us-east-1
+   ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satcluster" --worker-pool default --zone us-east-1
    ```
    {: pre}
 
@@ -307,10 +307,10 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
       </tr>
        <tr>
       <td><code>--host &lt;host_name_or_ID&gt;</em></code></td>
-      <td>Enter the host ID to assign as worker nodes to the {{site.data.keyword.satelliteshort}} resource. To view the host ID, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can also use the <code>--label</code> option to identify the host that you want to assign to your cluster.</td>
+      <td>Enter the host ID to assign as worker nodes to the {{site.data.keyword.satelliteshort}} resource. To view the host ID, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can also use the <code>--host-label</code> option to identify the host that you want to assign to your cluster.</td>
       </tr>
       <tr>
-      <td><code>--label &lt;label&gt;</code></td>
+      <td><code>--host-label &lt;label&gt;</code></td>
       <td>Enter the label that you want to use to identify the host that you want to assign. The label must be a key-value pair, and must exist on the host machine. When you run this command with the `label` option, the first host that is in an `unassigned` state and matches the label is assigned to your {{site.data.keyword.satelliteshort}} resource. </td>
       </tr>
         <tr>
