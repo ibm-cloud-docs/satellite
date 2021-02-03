@@ -1356,9 +1356,16 @@ ibmcloud sat host ls --location LOCATION [--output json] [-q]
 
 </dl>
 
-**Example:**
+**Example to list all hosts in a location:**
 ```
 ibmcloud sat host ls --location aaaaaaaa1111a1aaaa11a
+```
+{: pre}
+
+**Example to list available hosts in a location (unassigned):** If no hosts are returned, you do not have any available hosts in the location. You can [attach more hosts](#host-attach).
+
+```
+ibmcloud sat host ls --location aaaaaaaa1111a1aaaa11a | grep -i unassigned
 ```
 {: pre}
 

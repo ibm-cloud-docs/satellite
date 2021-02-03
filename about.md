@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-28"
+lastupdated: "2021-02-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -127,7 +127,7 @@ Your {{site.data.keyword.satelliteshort}} location starts with your actual infra
 The host instances in your infrastructure provider become the compute hosts to run the resources in your {{site.data.keyword.satelliteshort}} location. To add hosts to {{site.data.keyword.satelliteshort}}, the hosts must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers), such as running the RHEL 7 operating system.
 
 **Zones**<br>
-Your infrastructure environment might have multiple zones to increase [high availability](/docs/satellite?topic=satellite-ha). Typically, you have three zones to spread out hosts evenly across zones. You can replicate these zone names when you create your {{site.data.keyword.satelliteshort}} location.
+Your infrastructure environment might have multiple zones to increase [high availability](/docs/satellite?topic=satellite-ha). Typically, you have three zones that are physically separate to spread out hosts evenly across zones. For example, your cloud provider might have three different zones within the same region, or you might use three racks with three separate networking and power supply systems in an on-prem environment. You can represent these zone names when you create your {{site.data.keyword.satelliteshort}} location.
 
 ### {{site.data.keyword.satelliteshort}} locations
 {: #concept-satloc}
@@ -154,7 +154,7 @@ You can [create clusters in your {{site.data.keyword.satelliteshort}} location](
 [Attach as many hosts](/docs/satellite?topic=satellite-hosts) as you need to your {{site.data.keyword.satelliteshort}} location, and consider having a few extra in case resources such as services, clusters, or the control plane request extra capacity. You can use host labels to help manage capacity requests and automatically assign hosts to your resources. The hosts become the user-provided infrastructure (`upi`) worker nodes in your clusters, providing the compute capacity that is needed to run the cluster workloads.
 
 **Zones**<br>
-You must create at least 3 zones to spread hosts evenly across the {{site.data.keyword.satelliteshort}} location control plane, as well as for the worker pools in your clusters throughout the location. You can name these zones to represent the actual zones in your infrastructure provider.
+You must create at least 3 zones to spread hosts evenly across the {{site.data.keyword.satelliteshort}} location control plane, as well as for the worker pools in your clusters throughout the location. You can name these zones to represent the actual, physically separate zones in your infrastructure provider.
 
 ### {{site.data.keyword.cloud_notm}}
 {: #concept-ibm-cloud}

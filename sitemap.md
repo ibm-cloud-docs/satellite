@@ -213,7 +213,7 @@ subcollection: satellite
 * [Attaching hosts from the console](/docs/satellite?topic=satellite-hosts#attach-hosts-console)
 * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-hosts#attach-hosts-cli)
 
-[Assigning hosts to {{site.data.keyword.satelliteshort}} resources](/docs/satellite?topic=satellite-hosts#host-assign)
+[Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources](/docs/satellite?topic=satellite-hosts#host-assign)
 * [Prerequisites](/docs/satellite?topic=satellite-hosts#host-assign-prereq)
 * [Assigning hosts from the console](/docs/satellite?topic=satellite-hosts#host-assign-ui)
 * [Assigning hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-assign-cli)
@@ -472,6 +472,8 @@ subcollection: satellite
 [What happens if my {{site.data.keyword.satelliteshort}} control plane becomes unavailable?](/docs/satellite?topic=satellite-faqs#control-plane-unavailable)
 
 [Does IBM support third-party and open source tools that I use with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-faqs#faq_thirdparty_oss)
+
+[What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing)
 
 [What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} cluster?](/docs/satellite?topic=satellite-faqs#supported-services)
 
