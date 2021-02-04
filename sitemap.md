@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -73,8 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -212,6 +210,12 @@ subcollection: satellite
 [Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#attach-hosts)
 * [Attaching hosts from the console](/docs/satellite?topic=satellite-hosts#attach-hosts-console)
 * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-hosts#attach-hosts-cli)
+
+[Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov)
+* [Example host label scenario](/docs/satellite?topic=satellite-hosts#host-autoassign-example)
+* [Automatically assigning hosts](/docs/satellite?topic=satellite-hosts#host-autoassign)
+* [Disabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-disable)
+* [Re-enabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-enable)
 
 [Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources](/docs/satellite?topic=satellite-hosts#host-assign)
 * [Prerequisites](/docs/satellite?topic=satellite-hosts#host-assign-prereq)

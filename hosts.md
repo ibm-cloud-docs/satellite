@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-03"
+lastupdated: "2021-02-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -73,8 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -235,6 +233,108 @@ Before you begin, make sure that you have created host machines that meet the [m
     {: screen}
 
 5. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
+
+<br />
+
+## Using host autoassignment
+{: #host-autoassign-ov}
+
+By default, available hosts are automatically assigned to worker pools in {{site.data.keyword.satelliteshort}} resources, such as a cluster or a {{site.data.keyword.satelliteshort}}-enabled service. The worker pools use host labels to request compute capacity from available {{{site.data.keyword.satelliteshort}} hosts with matching labels. You can disable and enable host autoassignment.
+{: shortdesc}
+
+When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
+{: note} 
+
+Host autoassignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. 
+{: note}
+
+### Example host label scenario
+{: #host-autoassign-example}
+
+Host autoassignment works by matching requesting labels from worker pools in {{site.data.keyword.satelliteshort}} clusters to the host and zone labels on available {{site.data.keyword.satelliteshort}} hosts.
+{: shortdesc}
+
+For example, you might have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `zone1` and the following host labels. 
+* `cpu=8`
+* `memory=32`
+* `env=prod`
+
+Your {{site.data.keyword.satelliteshort}} location has available (unassigned) hosts with host labels as follows.
+* Host A: `cpu=8, memory=32, env=prod, zone=zone2`
+* Host B: `cpu=8, memory=32, zone=zone1`
+* Host C: `cpu=16, memory=64, env=prod`
+
+If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B. 
+* Host A meets the CPU, memory, and `env=prod` label request, but can only be assigned in `zone2`. Because the `default` worker pool is only in `zone1`, Host A is not assigned. 
+* Host B meets the CPU, memory, and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
+* Host C is automatically assigned because it meets the minimum CPU and memory requests, has the `env=prod` label, and does not have any zone restrictions.
+
+### Automatically assigning hosts
+{: #host-autoassign}
+
+{{site.data.keyword.satellitelong_notm}} can automatically assign hosts to worker pools in {{site.data.keyword.satelliteshort}} clusters that request compute capacity via host labels such as `cpu` and `memory`.
+{: shortdesc}
+
+Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts.
+
+1. Review the host labels that the worker pools use to request compute capacity. You have several options.
+   *  [Create a worker pool in a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels) with the host labels that you want to use for autoassignment.
+   *  Review existing worker pools for their host labels. Note that you cannot update the host labels that a worker pool has. You can review the **Host labels** by running the `ibmcloud oc worker-pool get -c <cluster> --worker-pool <worker_pool>` command.
+   *  Review the host labels that a {{site.data.keyword.satelliteshort}}-enabled service cluster uses to request resources from the {{site.data.keyword.satelliteshort}}-enabled service instance console.
+2. Review the host labels that your available hosts have. Remember that hosts automatically get `cpu` and `memory` labels when you attach the host to your {{site.data.keyword.satelliteshort}} location.
+   1. Get the {{site.data.keyword.satelliteshort}} location name.
+      ```
+      ibmcloud sat location ls
+      ```
+      {: pre}
+   2. List the available (unassigned) hosts in your location, and note the IDs of the hosts that you want to check the labels for.
+      ```
+      ibmcloud sat host ls --location <location_name_or_ID> | grep unassigned
+      ```
+      {: pre}
+   3. For each host that you want to check, get the host details and note the **Labels** in the output.
+      ```
+      ibmcloud sat host get --location <location_name_or_ID> --host <host_name_or_ID>
+      ```
+      {: pre}
+
+      Example output:
+      ```
+      ...
+      Labels      
+      app      webserver   
+      cpu      4   
+      memory   3874564   
+      ...
+      ```
+      {: screen}
+3. Update the labels of your available host to match the labels of the worker pool that you want the host to be available for automatic assignment. You can optionally specify a zone to make sure that the host only gets automatically assigned to that zone.
+
+   Include each matching label, even if the label already exists on the host. For `cpu` and `memory` requests, autoassignment can happen if the host has **at least** the requested amount as the host labels in the worker pools. 
+   {: note}
+
+   ```
+   ibmcloud sat host update --location <location_name_or_ID> --host <host_name_or_ID> -l <cpu=4> -l <memory=16874564> -l <key=value> [--zone <zone1>]
+   ```
+   {: pre}
+
+### Disabling host autoassignment
+{: #host-autoassign-disable}
+
+The following actions disable host autoassignment for a worker pool. Later, you can [reenable host autoassignment](#host-autoassign-enable).
+{: shortdesc}
+
+*  [Manually assign hosts to a worker pool](#host-assign).
+*  [Delete an individual worker node from a worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance).
+
+### Re-enabling host autoassignment
+{: #host-autoassign-enable}
+
+If you [disabled host autoassignment](#host-autoassign-disable), you can re-enable autoassignment.
+{: shortdesc}
+
+1. Make sure that you have [available hosts with labels that match the host labels of the worker pool](#host-autoassign).
+2. [Resize the worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance) to set the requested size per zone, rebalance the worker pool, and enable autoassignment again.
 
 <br />
 ## Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources
