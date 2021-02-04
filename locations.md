@@ -430,7 +430,8 @@ Now that your {{site.data.keyword.satelliteshort}} location control plane is set
 As you attach more resources to your {{site.data.keyword.satelliteshort}} location, such as {{site.data.keyword.openshiftlong_notm}} clusters, your location control plane needs more compute capacity to maintain the location. You can assign hosts to the control plane to increase the compute capacity.
 {: shortdesc}
 
-**How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?**<br>
+**How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?**
+
 When you list locations, such as with the `ibmcloud sat location ls` command or in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, the location enters an `Action required` health state. You see warning messages similar to the following.
 
 ```
@@ -442,7 +443,8 @@ The location control plane is running at max capacity and cannot support any mor
 ```
 {: screen}
 
-**How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?**<br>
+**How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?**
+
 The number of clusters depends on the size of your clusters and the size of the hosts that you use for the {{site.data.keyword.satelliteshort}} location control plane. You must scale up the control plane hosts in multiples of 3, such as 6, 9, or 12.
 
 The following table provides an example of the number hosts that the control plane needs to run the masters for a certain number of clusters. The calculation assumes:
@@ -461,10 +463,12 @@ The following table provides an example of the number hosts that the control pla
 
 
 
-**How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?**<br>
+**How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?**
+
 See [Highly available control plane worker setup](/docs/satellite?topic=satellite-ha#satellite-ha-setup). Make sure to attach hosts to the control plane location in each zone, in multiples of three. For example, you might have 6 hosts that are assigned to your control plane location that is managed from {{site.data.keyword.cloud_notm}} multizone metro `wdc` US East region, with 2 hosts each zone (`us-east-1`, `us-east-2`, and `us-east-3`).
 
-**I am ready to scale up my {{site.data.keyword.satelliteshort}} location control plane. How do I start?**<br>
+**I am ready to scale up my {{site.data.keyword.satelliteshort}} location control plane. How do I start?**
+
 You can follow the same steps to [Set up the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
 
 <br />

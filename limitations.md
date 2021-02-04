@@ -138,10 +138,12 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 ## Link and endpoints
 {: #reqs-link}
 
-**Link connector instances**</br>
+**Link connector instances**
+
 The {{site.data.keyword.satelliteshort}} Link connector instances that run in your [{{site.data.keyword.satelliteshort}} location control plane worker nodes](/docs/satellite?topic=satellite-service-architecture) are limited to 3 instances, one per host. Even if you attach hosts to the location control plane, network traffic that is routed through the {{site.data.keyword.satelliteshort}} Link connector is sent only over 3 hosts.
 
-**Cloud and location endpoints**</br>
+**Cloud and location endpoints**
+
 Review the maximum number of each type of Link endpoint that you can create for one {{site.data.keyword.satelliteshort}} location.
 * `cloud` endpoints: 1000 total, TCP and UDP combined. For example, you might create up to 650 TCP endpoints and 350 UDP endpoints through which clients in your location can connect to resources outside of the location network.
 * `location` endpoints: 100 TCP and 100 UDP. For example, you might create up to 100 TCP endpoints and 100 UDP endpoints through which clients outside of your location network can connect to resources inside the location.
@@ -154,7 +156,8 @@ Review the maximum number of each type of Link endpoint that you can create for 
 Review the following application configuration requirements for {{site.data.keyword.satelliteshort}} Config.
 {: shortdesc}
 
-**{{site.data.keyword.satelliteshort}} Config access to modify Kubernetes resources within a cluster**<br>
+**{{site.data.keyword.satelliteshort}} Config access to modify Kubernetes resources within a cluster**
+
 By default, {{site.data.keyword.satelliteshort}} Config is limited to what Kubernetes resources it can read and modify in your clusters. You must grant {{site.data.keyword.satelliteshort}} Config access in each cluster where you want to use {{site.data.keyword.satelliteshort}} Config to manage your Kubernetes resources.
 
 Choose from the following options:
@@ -165,7 +168,8 @@ Choose from the following options:
     {: pre}
 *   **Custom access, cluster-wide or scoped to a project**: You can create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access only to the projects (namespaces), actions, and resources that you want {{site.data.keyword.satelliteshort}} Config to manage. For more information and examples, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access).
 
-**{{site.data.keyword.satelliteshort}} Config and {{site.data.keyword.cloud_notm}} IAM**<br>
+**{{site.data.keyword.satelliteshort}} Config and {{site.data.keyword.cloud_notm}} IAM**
+
 You cannot scope access policies for {{site.data.keyword.satelliteshort}} Config resources (configuration, subscription, cluster, or cluster group) to an {{site.data.keyword.cloud_notm}} resource group. {{site.data.keyword.satelliteshort}} Config uses the open source Razee project, which authenticates users by using the organization. The organization supports only the account ID, not resource groups.
 
 You cannot scope access policies to particular configuration or subscription resources. When you assign a policy in the {{site.data.keyword.cloud_notm}} IAM console, leave the **Resource** field blank for configurations or subscriptions. Instead, you can scope the access policy to a cluster group for more control of how your {{site.data.keyword.satelliteshort}} Config resources are deployed.

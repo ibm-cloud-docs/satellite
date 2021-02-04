@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-02-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -117,8 +117,8 @@ Check and update the host IP addresses that are registered with the location sub
     ibmcloud sat location dns ls --location <location_name_or_ID>
     ```
     {: pre}
-2.  If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall. For example, see [AWS Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup)
-3.  For each location subdomain, check whether the IP address that is actually registered with the subdomain matches the host IP addresses that you found in step 1. Only one host IP address is returned for the `c000` and `ce00` subdomains. If any of the registered IP addresses do not match the IP addresses from step 1, [open a support case](/docs/satellite?topic=satellite-get-help#help-support).
+2.  If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall. For example, see [AWS Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup).
+3.  For each location subdomain, check whether the IP address that is actually registered with the subdomain matches the host IP addresses that you found in step 1. If any of the registered IP addresses do not match the IP addresses from step 1, [open a support case](/docs/satellite?topic=satellite-get-help#help-support).
     ```
     nslookup <subdomain>
     ```

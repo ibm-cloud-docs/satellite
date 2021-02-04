@@ -485,17 +485,20 @@ Some hosts are used to run the {{site.data.keyword.satelliteshort}} location con
 Review the following considerations before you update your {{site.data.keyword.satelliteshort}} hosts.	
 {: shortdesc}	
 
-**Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?**<br>	
+**Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?**
+	
 Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).	
 
 The {{site.data.keyword.satelliteshort}} location control plane and cluster hosts do not have to run the same version of {{site.data.keyword.openshiftshort}}, but your hosts must run a supported version.	
 
-**Is my {{site.data.keyword.satelliteshort}} location control plane subdomain still reachable when I update the hosts?**<br>	
+**Is my {{site.data.keyword.satelliteshort}} location control plane subdomain still reachable when I update the hosts?**
+	
 If your location subdomain was created automatically for you, the host IPs that are registered for the subdomain are automatically managed for you, such as during an update.	
 
 However, when you created the {{site.data.keyword.satelliteshort}} location control plane, you might have manually registered the host IPs for the location subdomain with the `ibmcloud sat location dns register` command. If you manually registered the subdomain, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.	
 
-**Who provides the update for my hosts?**<br>	
+**Who provides the update for my hosts?**
+	
 IBM provides updates for the IBM-managed components.
 * For master components, such as the {{site.data.keyword.satelliteshort}} location master or cluster masters, IBM automatically applies these updates.
 * For worker node components that run on hosts, such as the {{site.data.keyword.satelliteshort}} location control plane or cluster worker nodes, you choose when to apply the updates.

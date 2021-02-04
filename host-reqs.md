@@ -165,17 +165,16 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
     {: screen}
 * All hosts must use the same default gateway.
 * Hosts can have multiple IPv4 network interfaces. However, each host must have full IPV4 backend connectivity to the other hosts in the location through the network interface that serves as the default route. To find the default network interface for a host, SSH into the host and run the following command:
+  ```
+  ip route | grep default | awk '{print $5}'
+  ```
+  {: pre}
 
-```
-ip route | grep default | awk '{print $5}'
-```
-{: pre}
-
-In this example output, `eth0` is the default network interface:
-```
-default via 161.202.250.1 dev eth0 onlink
-```
-{: screen}
+  In this example output, `eth0` is the default network interface:
+  ```
+  default via 161.202.250.1 dev eth0 onlink
+  ```
+  {: screen}
 
 ### Inbound connectivity
 {: #reqs-host-network-firewall-inbound}
