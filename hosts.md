@@ -453,7 +453,7 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 ## Updating host metadata
 {: #host-update-metadata}
 
-If you want to update metadata about a host, such as labels, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). The update does not apply security patches or operating system updates.
+If you want to update metadata about a host, such as labels or zones, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). The update does not apply security patches or operating system updates.
 {: shortdesc}
 
 <br />

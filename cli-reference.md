@@ -1224,11 +1224,11 @@ ibmcloud sat host rm --location aaaaaaaa1111a1aaaa11a --host myhost1
 ### `ibmcloud sat host update`
 {: #host-update}
 
-Update information about your compute host, such as labels.
+Update information about your compute host, such as the zones and host labels that are used for [host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov). You can update only available hosts, not hosts that are assigned to a resource such as a cluster.
 {: shortdesc}
 
 ```
-ibmcloud sat host update --location LOCATION --host HOST [--host-label "LABEL"] [-q]
+ibmcloud sat host update --location LOCATION --host HOST [--host-label "KEY=VALUE"] [--zone ZONE] [-q]
 ```
 {: pre}
 
@@ -1246,8 +1246,11 @@ ibmcloud sat host update --location LOCATION --host HOST [--host-label "LABEL"] 
 <dt><code>--host <em>HOST</em></code></dt>
 <dd>Required. Enter the ID of the host that you want to update. To retrieve the host ID, run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code>.  </dd>
 
-<dt><code>--host-label <em>LABEL</em></code>, <code>-hl <em>LABEL</em></code></dt>
-<dd>Optional. Enter any labels as a key-value-pair that you want to use to identify the hosts that you want to update. To find available host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>.  </dd>
+<dt><code>--host-label <em>KEY=VALUE</em></code>, <code>-hl <em>KEY=VALUE</em></code></dt>
+<dd>Optional. Label the host with a key-value pair to use for host autoassignment. To find existing host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>. Repeat this flag for multiple host labels.</dd>
+
+<dt><code>--zone <em>ZONE</em></code></dt>
+<dd>Optional. Specify the zone that you want the host to use for autoassignment. Generally, this zone matches the zone of the infrastructure provider where the host machine is, such as a cloud provider zone or on-prem rack. To find the zones in your {{site.data.keyword.satellitshort}} location, run <code>ibmcloud sat location get --location &lt;location_name_or_ID&gt;</code> and check the **Host zones**.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
