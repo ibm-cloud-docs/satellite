@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-28"
+lastupdated: "2021-02-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -73,8 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -155,6 +153,7 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 ## Host network
 {: #reqs-host-network}
 
+* Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. 
 * Do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
 * All hosts must have the same MTU values.
 * The `localhost` value must resolve to a valid local host IP address, typically `127.0.0.1`.
@@ -167,17 +166,16 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
     {: screen}
 * All hosts must use the same default gateway.
 * Hosts can have multiple IPv4 network interfaces. However, each host must have full IPV4 backend connectivity to the other hosts in the location through the network interface that serves as the default route. To find the default network interface for a host, SSH into the host and run the following command:
+  ```
+  ip route | grep default | awk '{print $5}'
+  ```
+  {: pre}
 
-```
-ip route | grep default | awk '{print $5}'
-```
-{: pre}
-
-In this example output, `eth0` is the default network interface:
-```
-default via 161.202.250.1 dev eth0 onlink
-```
-{: screen}
+  In this example output, `eth0` is the default network interface:
+  ```
+  default via 161.202.250.1 dev eth0 onlink
+  ```
+  {: screen}
 
 ### Inbound connectivity
 {: #reqs-host-network-firewall-inbound}

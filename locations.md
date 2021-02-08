@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-02-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -219,8 +219,12 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI:
 The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources that you attach to the location.
 {: shortdesc}
 
-To create the {{site.data.keyword.satelliteshort}} location control plane, you must attach compute hosts in groups of 3 to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers). The minimum of 3 hosts for the control plane is for demonstration purposes. To continue to use the location for production workloads, [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale) in multiples of 3, such as 6, 9, or 12 hosts.
+When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.
 {: important}
+
+* You must attach compute hosts in groups of 3 to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers).
+* The minimum of 3 hosts for the control plane is for demonstration purposes. To continue to use the location for production workloads, [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale) in multiples of 3, such as 6, 9, or 12 hosts.
+* Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
 
 ### Setting up the control plane from the console
 {: #control-plane-ui}
@@ -237,9 +241,10 @@ Use the {{site.data.keyword.satelliteshort}} console to set up a control plane f
 1. From the {{site.data.keyword.satelliteshort}} [**Locations** dashboard](https://cloud.ibm.com/satellite/locations), select the location where you want to finish the setup of your control plane.
 2. From the **Hosts** tab, select the hosts to assign as worker nodes to your control plane. All hosts must be in an **Unassigned** status.
 3. From the actions menu of each host, click **Assign host**.
-4. Select **Control plane** as your cluster and choose one of the available zones. Make sure that you assign each host to a different zone so that you spread the hosts evenly across all 3 zones in the multizone region, such as the `wdc` US East region (`us-east-1`, `us-east-2`, and `us-east-3`). When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
-5. From the **Hosts** tab, verify that your hosts are successfully assigned to the {{site.data.keyword.satelliteshort}} location control plane. The assignment is successful when an IP address is added to your host and the **Health** status changes to **Normal**.
-6. Verify that your location status changed to **Normal**. You might see a location message about the location not having enough hosts until the bootstrapping process completes.
+4. Select **Control plane** as your cluster. 
+5. Assign hosts in groups of 3 evenly to the control plane cluster. For high availability, make sure that your hosts correspond to physically separate zones in your infrastructure provider. For example, if your infrastructure provider has `zone1`, `zone2`, and `zone3`, you can enter these names for your {{site.data.keyword.satelliteshort}} zones. Then, assign 2 hosts from `zone1` in your infrastructure provider to `zone1` in your {{site.data.keyword.satelliteshort}} control plane, and so on. When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
+6. From the **Hosts** tab, verify that your hosts are successfully assigned to the {{site.data.keyword.satelliteshort}} location control plane. The assignment is successful when an IP address is added to your host and the **Health** status changes to **Normal**.
+7. Verify that your location status changed to **Normal**. You might see a location message about the location not having enough hosts until the bootstrapping process completes.
 
    After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
    {: note}
@@ -316,7 +321,7 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
 
     **Example for assigning a host by using the `use:satloc` label:**
     ```
-    ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --label "use:satloc" --zone <zone>
+    ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satloc" --zone <zone>
     ```
     {: pre}
 
@@ -337,20 +342,20 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
       </tr>
       <tr>
       <td><code>--host <em>&lt;host_ID&gt;</em></code></td>
-      <td>Enter the host ID to assign to the {{site.data.keyword.satelliteshort}} location control plane. To view the host ID, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can use the <code>--label</code> option to identify the host that you want to assign to your control plane.</td>
+      <td>Enter the host ID to assign to the {{site.data.keyword.satelliteshort}} location control plane. To view the host ID, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can use the <code>--host-label</code> option to identify the host that you want to assign to your control plane.</td>
       </tr>
       <tr>
-      <td><code>--label <em>&lt;label&gt;</em></code></td>
+      <td><code>--host-label <em>&lt;label&gt;</em></code></td>
       <td>Enter the label that you want to use to identify the host that you want to assign. The label must be a key-value pair, and must exist on the host machine. When you run this command with the `label` option, the first host that is in an `unassigned` state and matches the label is assigned to your control plane. </td>
       </tr>
       <tr>
       <td><code>--zone <em>&lt;zone&gt;</em></code></td>
-      <td>Enter the zone to assign the host in. When you repeat this command, change the zone so that you include all three zones in a region, such as `wdc` US East (`us-east-1`, `us-east-2`, and `us-east-3`).</td>
+      <td>Enter the zone to assign the host in, which can correspond to a physically separate zone in your infrastructure provider. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the **Host Zones** field.</td>
       </tr>
       </tbody>
     </table>
 
-4.  Repeat the previous step for the other two hosts that you want to attach to your {{site.data.keyword.satelliteshort}} location control plane. Make sure that you assign your hosts to a different zone so that you spread the hosts evenly across all 3 zones in the multizone region, such as `wdc` US East (`us-east-1`, `us-east-2`, and `us-east-3`).
+4.  Repeat the previous step for the other hosts that you want to attach to your {{site.data.keyword.satelliteshort}} location control plane. For high availability, make sure that you assign hosts evenly across zones that correspond to physically separate zones in your infrastructure provider. For example, if your infrastructure provider has `zone1`, `zone2`, and `zone3`, you can enter these names for your {{site.data.keyword.satelliteshort}} zones. Then, assign 2 hosts from `zone1` in your infrastructure provider to `zone1` in your {{site.data.keyword.satelliteshort}} control plane, 2 hosts from `zone2`, and 2 hosts from `zone3`, for a total of 6 hosts in the control plane.
 
 5. Verify that your hosts are successfully assigned to your location. The assignment is successful when all hosts show an **assigned** state and a **Ready** status, and an IP address is assigned to the host. If the **Status** of your machines shows `-`, the bootstrapping process is not yet completed and the health status could not be retrieved. Wait a few minutes, and then try again.
    ```
@@ -429,8 +434,9 @@ Now that your {{site.data.keyword.satelliteshort}} location control plane is set
 As you attach more resources to your {{site.data.keyword.satelliteshort}} location, such as {{site.data.keyword.openshiftlong_notm}} clusters, your location control plane needs more compute capacity to maintain the location. You can assign hosts to the control plane to increase the compute capacity.
 {: shortdesc}
 
-**How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?**<br>
-When you list locations, such as with the `ibmcloud sat location ls` command or in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, the location enters an `Action required` health state. You see warning messages similar to the following.
+**How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?**
+
+When you list locations, such as with the `ibmcloud sat location ls` command or in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, the location enters an `Action required` health state. You see warning messages similar to the following.
 
 ```
 Hosts in the location control plane are running out of disk space.
@@ -441,7 +447,8 @@ The location control plane is running at max capacity and cannot support any mor
 ```
 {: screen}
 
-**How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?**<br>
+**How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?**
+
 The number of clusters depends on the size of your clusters and the size of the hosts that you use for the {{site.data.keyword.satelliteshort}} location control plane. You must scale up the control plane hosts in multiples of 3, such as 6, 9, or 12.
 
 The following table provides an example of the number hosts that the control plane needs to run the masters for a certain number of clusters. The calculation assumes:
@@ -460,10 +467,12 @@ The following table provides an example of the number hosts that the control pla
 
 
 
-**How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?**<br>
+**How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?**
+
 See [Highly available control plane worker setup](/docs/satellite?topic=satellite-ha#satellite-ha-setup). Make sure to attach hosts to the control plane location in each zone, in multiples of three. For example, you might have 6 hosts that are assigned to your control plane location that is managed from {{site.data.keyword.cloud_notm}} multizone metro `wdc` US East region, with 2 hosts each zone (`us-east-1`, `us-east-2`, and `us-east-3`).
 
-**I am ready to scale up my {{site.data.keyword.satelliteshort}} location control plane. How do I start?**<br>
+**I am ready to scale up my {{site.data.keyword.satelliteshort}} location control plane. How do I start?**
+
 You can follow the same steps to [Set up the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
 
 <br />
@@ -485,7 +494,7 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your locations.
 
 1. [Remove all {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-remove) from your location.
 2. [Remove all hosts](/docs/satellite?topic=satellite-hosts#host-remove) from your location.
-3. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external} **Locations** table, hover over the location that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
+3. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} **Locations** table, hover over the location that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 4. Click **Remove location**, enter the location name to confirm the deletion, and click **Remove**.
 
 ### Removing locations from the CLI

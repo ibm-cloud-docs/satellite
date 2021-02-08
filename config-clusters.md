@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2020
-lastupdated: "2020-09-17"
+  years: 2020, 2021
+lastupdated: "2021-02-04"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -13,6 +13,7 @@ subcollection: satellite
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: satellite
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,12 +40,12 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
 {:new_window: target="_blank"}
+{:note .note}
 {:note: .note}
 {:objectc data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -71,7 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -83,10 +84,11 @@ subcollection: satellite
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -132,7 +134,6 @@ Review the following key concepts that are used when you create a {{site.data.ke
 
 <br />
 
-
 ## Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config
 {: #setup-clusters-satconfig}
 
@@ -140,7 +141,9 @@ By default, clusters that you create in a {{site.data.keyword.satelliteshort}} l
 {: shortdesc}
 
 If you do not grant {{site.data.keyword.satelliteshort}} Config access in each cluster, {{site.data.keyword.satelliteshort}} Config functionality does not work, such as not viewing or deploying Kubernetes resources for your clusters.
-{: important}
+
+You do not need to configure access if you already gave {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources when you created the cluster. For example, you might have enabled admin access in the UI or in the CLI with the `--enable-admin-agent` flag.
+{: note}
 
 * [Prerequisites](#setup-clusters-satconfig-prereq)
 * [Setting up cluster groups](#setup-clusters-satconfig-groups)
@@ -169,7 +172,7 @@ Create a cluster group. The cluster group specifies all {{site.data.keyword.open
 
 **From the CLI**:
 ```
-ibmcloud sat cluster-group create --name <cluster_group_name>
+ibmcloud sat group create --name <cluster_group_name>
 ```
 {: pre}
 Example output:
@@ -186,6 +189,9 @@ Created cluster group 'mygroup' with ID '6492111d-3211-4ed2-8f2e-4b99907476a9'.
 For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources.
 {: shortdesc}
 
+If you used the `ibmcloud oc cluster create satellite` CLI command to create the cluster and specified the `--enable-admin-agent` flag, {{site.data.keyword.satelliteshort}} Config already has access to manage Kubernetes resources in your cluster.
+{: note}
+
 1. Access each cluster in the cluster group. For more access options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
    1. From the [{{site.data.keyword.openshiftlong_notm}} clusters page](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click the cluster.
    2. Click **OpenShift web console**.
@@ -198,7 +204,7 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
    If you choose a custom access option, some {{site.data.keyword.satelliteshort}} Config components might not work. For example, if you grant access only to view certain resources, you cannot use subscriptions to create Kubernetes resources in your cluster group. To view an inventory of your Kubernetes resources in a cluster, {{site.data.keyword.satelliteshort}} Config must have an appropriate role that is bound to the `razee-viewer` service account. To deploy Kubernetes resources to a cluster via subscriptions, {{site.data.keyword.satelliteshort}} Config must have an appropriate role that is bound to the `razee-editor` service account.
    {: note}
 
-   *  **Cluster admin access**: Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role. 
+   *  **Cluster admin access**: Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role.
       ```
       kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
       ```
@@ -327,7 +333,6 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
 
 <br />
 
-
 ## Creating {{site.data.keyword.satelliteshort}} configurations from the console
 {: #create-satconfig-ui}
 
@@ -360,7 +365,6 @@ To create the configuration:
 
 <br />
 
-
 ## Creating {{site.data.keyword.satelliteshort}} configurations from the CLI
 {: #create-satconfig-cli}
 
@@ -385,19 +389,19 @@ To create the configuration:
 
    2. Add the cluster to your cluster group.    
       ```
-      ibmcloud sat cluster-group attach --cluster <cluster_ID> --cluster-group <cluster_group_name>
+      ibmcloud sat group attach --cluster <cluster_ID> --group <cluster_group_name>
       ```
       {: pre}
 
    3. Verify that your cluster is successfully added to your cluster group.
       ```
-      ibmcloud sat cluster-group get --cluster-group <cluster_group_name>
+      ibmcloud sat group get --group <cluster_group_name>
       ```
       {: pre}
 
 3. Create a {{site.data.keyword.satelliteshort}} configuration.
    ```
-   ibmcloud sat config configuration create --name <configuration_name>
+   ibmcloud sat config create --name <configuration_name>
    ```
    {: pre}
 
@@ -411,7 +415,7 @@ To create the configuration:
 
 4. Upload a Kubernetes resource file to your configuration.
    ```
-   ibmcloud sat config configuration version create --name <version_name> --configuration <configuration_name_or_ID> --type <type> --read-config <file_path>
+   ibmcloud sat config version create --name <version_name> --config <configuration_name_or_ID> --file-format <type> --read-config <file_path>
    ```
    {: pre}
 
@@ -436,11 +440,11 @@ To create the configuration:
    <td>Enter a name for your version.</td>
    </tr>
    <tr>
-   <td><code>--configuration <em>&lt;configuration_name_or_ID&gt;</em></code></td>
+   <td><code>--config <em>&lt;configuration_name_or_ID&gt;</em></code></td>
    <td>Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier.</td>
    </tr>
    <tr>
-   <td><code>--type <em>&lt;type&gt;</em></code></td>
+   <td><code>--file-format <em>&lt;type&gt;</em></code></td>
    <td>Enter the file extension of your Kubernetes resource file. Supported extensions are <code>yaml</code>. </td>
    </tr>
    <tr>
@@ -452,7 +456,7 @@ To create the configuration:
 
 5. Subscribe your cluster group to the {{site.data.keyword.satelliteshort}} configuration. After you create the subscription, {{site.data.keyword.satelliteshort}} Config automatically downloads the Kubernetes resource file for the version that you specified and starts applying this file across all clusters that belong to the cluster group. This process takes a few minutes to complete. In addition, information about all Kubernetes resources that you create are sent back from your clusters to {{site.data.keyword.satelliteshort}} Config and can be reviewed in the {{site.data.keyword.satelliteshort}} [**Cluster resources**](https://cloud.ibm.com/satellite/resources) dashboard.
    ```
-   ibmcloud sat config subscription create --cluster-group <cluster_group_name> --configuration <configuration_name_or_ID> --name <subscription_name> --version <version_name_or_ID>
+   ibmcloud sat subscription create --group <cluster_group_name> --config <configuration_name_or_ID> --name <subscription_name> --version <version_name_or_ID>
    ```
    {: pre}
 
@@ -473,11 +477,11 @@ To create the configuration:
    </thead>
    <tbody>
    <tr>
-   <td><code>--cluster-group <em>&lt;cluster_group_name&gt;</em></code></td>
+   <td><code>--group <em>&lt;cluster_group_name&gt;</em></code></td>
    <td>Enter the name of the cluster group where you want to deploy your Kubernetes resources.</td>
    </tr>
    <tr>
-   <td><code>--configuration <em>&lt;configuration_name_or_ID&gt;</em></code></td>
+   <td><code>--config <em>&lt;configuration_name_or_ID&gt;</em></code></td>
    <td>Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier.</td>
    </tr>
    <tr>
@@ -486,7 +490,7 @@ To create the configuration:
    </tr>
    <tr>
    <td><code>--version <em>&lt;version_name_or_ID&gt;</em></code></td>
-   <td>Enter the name or ID of the Kubernetes resource definition that you added as a version to your configuration. To list available versions, run <code>ibmcloud sat config configuration get --configuration &lt;configuration_name_or_ID&gt;</code>.</td>
+   <td>Enter the name or ID of the Kubernetes resource definition that you added as a version to your configuration. To list available versions, run <code>ibmcloud sat config get --config &lt;configuration_name_or_ID&gt;</code>.</td>
    </tr>
   </tbody>
   </table>
@@ -494,7 +498,6 @@ To create the configuration:
 6. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](#create-satconfig-ui) to review the rollout status of your Kubernetes resources.
 
 <br />
-
 
 ## Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config
 {: #existing-openshift-clusters}

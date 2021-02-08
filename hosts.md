@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-02-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -130,6 +130,13 @@ Not sure how many hosts to attach to your location? See [Sizing your {{site.data
 Using AWS hosts? You can use a [launch template](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template) to attach hosts to your {{site.data.keyword.satelliteshort}} location.
 {: tip}
 
+When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.
+{: important}
+
+* Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers).
+* Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
+* Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then IBM can automatically assign hosts when clusters or the {{site.data.keyword.satelliteshort}} location control plane request more capacity.
+
 ### Attaching hosts from the console
 {: #attach-hosts-console}
 
@@ -236,11 +243,118 @@ Before you begin, make sure that you have created host machines that meet the [m
 
 <br />
 
-## Assigning hosts to {{site.data.keyword.satelliteshort}} resources
+## Using host autoassignment
+{: #host-autoassign-ov}
+
+By default, available hosts are automatically assigned to worker pools in {{site.data.keyword.satelliteshort}} resources, such as a cluster or a {{site.data.keyword.satelliteshort}}-enabled service. The worker pools use host labels to request compute capacity from available {{{site.data.keyword.satelliteshort}} hosts with matching labels. You can disable and enable host autoassignment.
+{: shortdesc}
+
+When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
+{: note} 
+
+Host autoassignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. 
+{: note}
+
+### Example host label scenario
+{: #host-autoassign-example}
+
+Host autoassignment works by matching requesting labels from worker pools in {{site.data.keyword.satelliteshort}} clusters to the host and zone labels on available {{site.data.keyword.satelliteshort}} hosts.
+{: shortdesc}
+
+For example, you might have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `zone1` and the following host labels. 
+* `cpu=8`
+* `memory=32`
+* `env=prod`
+
+Your {{site.data.keyword.satelliteshort}} location has available (unassigned) hosts with host labels as follows.
+* Host A: `cpu=8, memory=32, env=prod, zone=zone2`
+* Host B: `cpu=8, memory=32, zone=zone1`
+* Host C: `cpu=16, memory=64, env=prod`
+
+If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B. 
+* Host A meets the CPU, memory, and `env=prod` label request, but can only be assigned in `zone2`. Because the `default` worker pool is only in `zone1`, Host A is not assigned. 
+* Host B meets the CPU, memory, and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
+* Host C is automatically assigned because it meets the minimum CPU and memory requests, has the `env=prod` label, and does not have any zone restrictions.
+
+### Automatically assigning hosts
+{: #host-autoassign}
+
+{{site.data.keyword.satellitelong_notm}} can automatically assign hosts to worker pools in {{site.data.keyword.satelliteshort}} clusters that request compute capacity via host labels such as `cpu` and `memory`.
+{: shortdesc}
+
+Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts.
+
+1. Review the host labels that the worker pools use to request compute capacity. You have several options.
+   *  [Create a worker pool in a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels) with the host labels that you want to use for autoassignment.
+   *  Review existing worker pools for their host labels. Note that you cannot update the host labels that a worker pool has. You can review the **Host labels** by running the `ibmcloud oc worker-pool get -c <cluster> --worker-pool <worker_pool>` command.
+   *  Review the host labels that a {{site.data.keyword.satelliteshort}}-enabled service cluster uses to request resources from the {{site.data.keyword.satelliteshort}}-enabled service instance console.
+2. Review the host labels that your available hosts have. Remember that hosts automatically get `cpu` and `memory` labels when you attach the host to your {{site.data.keyword.satelliteshort}} location.
+   1. Get the {{site.data.keyword.satelliteshort}} location name.
+      ```
+      ibmcloud sat location ls
+      ```
+      {: pre}
+   2. List the available (unassigned) hosts in your location, and note the IDs of the hosts that you want to check the labels for.
+      ```
+      ibmcloud sat host ls --location <location_name_or_ID> | grep unassigned
+      ```
+      {: pre}
+   3. For each host that you want to check, get the host details and note the **Labels** in the output.
+      ```
+      ibmcloud sat host get --location <location_name_or_ID> --host <host_name_or_ID>
+      ```
+      {: pre}
+
+      Example output:
+      ```
+      ...
+      Labels      
+      app      webserver   
+      cpu      4   
+      memory   3874564   
+      ...
+      ```
+      {: screen}
+3. Update the labels of your available host to match the labels of the worker pool that you want the host to be available for automatic assignment. You can optionally specify a zone to make sure that the host only gets automatically assigned to that zone.
+
+   Include each matching label, even if the label already exists on the host. For `cpu` and `memory` requests, autoassignment can happen if the host has **at least** the requested amount as the host labels in the worker pools. 
+   {: note}
+
+   ```
+   ibmcloud sat host update --location <location_name_or_ID> --host <host_name_or_ID> -l <cpu=4> -l <memory=16874564> -l <key=value> [--zone <zone1>]
+   ```
+   {: pre}
+
+### Disabling host autoassignment
+{: #host-autoassign-disable}
+
+The following actions disable host autoassignment for a worker pool. Later, you can [reenable host autoassignment](#host-autoassign-enable).
+{: shortdesc}
+
+*  [Manually assign hosts to a worker pool](#host-assign).
+*  [Delete an individual worker node from a worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance).
+
+### Re-enabling host autoassignment
+{: #host-autoassign-enable}
+
+If you [disabled host autoassignment](#host-autoassign-disable), you can re-enable autoassignment.
+{: shortdesc}
+
+1. Make sure that you have [available hosts with labels that match the host labels of the worker pool](#host-autoassign).
+2. [Resize the worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance) to set the requested size per zone, rebalance the worker pool, and enable autoassignment again.
+
+<br />
+## Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources
 {: #host-assign}
 
-After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity. For example, a basic setup has 6 hosts that are assigned as worker nodes to the [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane). Any remaining hosts can be assigned as worker nodes to {{site.data.keyword.openshiftlong_notm}} clusters or as compute capacity to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services.
-<br />
+After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity, such as clusters or {{site.data.keyword.satelliteshort}}-enabled services. 
+{: shortdesc}
+
+You can also use [host autoassignment](#host-autoassign-ov) for worker pools in {{site.data.keyword.satelliteshort}} clusters. However, you must manually assign hosts to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+{: tip}
+
+When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
+{: note} 
 
 ### Prerequisites
 {: #host-assign-prereq}
@@ -252,7 +366,7 @@ After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you a
 ### Assigning hosts from the console
 {: #host-assign-ui}
 
-1.  From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, click **Locations**.
+1.  From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Locations**.
 2.  Select the location where you attached the host machines that you want to assign to your {{site.data.keyword.satelliteshort}} resource.
 3. In the **Hosts** tab, from the actions menu of each host machine that you want to add to your resource, click **Assign host**.
 4. Select the cluster that you created, and choose one of the available zones. When you assign the hosts to a cluster, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the Health of your machine changes from **Ready** to **Provisioning**.
@@ -279,7 +393,7 @@ After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you a
 
    **Example for assigning a host by using the `use:satcluster` label:**
    ```
-   ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --label "use:satcluster" --worker-pool default --zone us-east-1
+   ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satcluster" --worker-pool default --zone us-east-1
    ```
    {: pre}
 
@@ -300,10 +414,10 @@ After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you a
       </tr>
        <tr>
       <td><code>--host &lt;host_name_or_ID&gt;</em></code></td>
-      <td>Enter the host ID to assign as worker nodes to the {{site.data.keyword.satelliteshort}} resource. To view the host ID, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can also use the <code>--label</code> option to identify the host that you want to assign to your cluster.</td>
+      <td>Enter the host ID to assign as worker nodes to the {{site.data.keyword.satelliteshort}} resource. To view the host ID, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can also use the <code>--host-label</code> option to identify the host that you want to assign to your cluster.</td>
       </tr>
       <tr>
-      <td><code>--label &lt;label&gt;</code></td>
+      <td><code>--host-label &lt;label&gt;</code></td>
       <td>Enter the label that you want to use to identify the host that you want to assign. The label must be a key-value pair, and must exist on the host machine. When you run this command with the `label` option, the first host that is in an `unassigned` state and matches the label is assigned to your {{site.data.keyword.satelliteshort}} resource. </td>
       </tr>
         <tr>
@@ -346,7 +460,7 @@ After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you a
 ## Updating host metadata
 {: #host-update-metadata}
 
-If you want to update metadata about a host, such as labels, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). The update does not apply security patches or operating system updates.
+If you want to update metadata about a host, such as labels or zones, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). The update does not apply security patches or operating system updates.
 {: shortdesc}
 
 <br />
@@ -378,17 +492,20 @@ Some hosts are used to run the {{site.data.keyword.satelliteshort}} location con
 Review the following considerations before you update your {{site.data.keyword.satelliteshort}} hosts.	
 {: shortdesc}	
 
-**Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?**<br>	
+**Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?**
+	
 Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).	
 
 The {{site.data.keyword.satelliteshort}} location control plane and cluster hosts do not have to run the same version of {{site.data.keyword.openshiftshort}}, but your hosts must run a supported version.	
 
-**Is my {{site.data.keyword.satelliteshort}} location control plane subdomain still reachable when I update the hosts?**<br>	
+**Is my {{site.data.keyword.satelliteshort}} location control plane subdomain still reachable when I update the hosts?**
+	
 If your location subdomain was created automatically for you, the host IPs that are registered for the subdomain are automatically managed for you, such as during an update.	
 
 However, when you created the {{site.data.keyword.satelliteshort}} location control plane, you might have manually registered the host IPs for the location subdomain with the `ibmcloud sat location dns register` command. If you manually registered the subdomain, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.	
 
-**Who provides the update for my hosts?**<br>	
+**Who provides the update for my hosts?**
+	
 IBM provides updates for the IBM-managed components.
 * For master components, such as the {{site.data.keyword.satelliteshort}} location master or cluster masters, IBM automatically applies these updates.
 * For worker node components that run on hosts, such as the {{site.data.keyword.satelliteshort}} location control plane or cluster worker nodes, you choose when to apply the updates.
@@ -424,7 +541,7 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as com
 {: shortdesc}
 
 1. Make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep.
-2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, click **Locations** and then click your location.
+2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Locations** and then click your location.
 3. From the **Hosts** table, find the host that you want to remove.
 4. Depending on the type of host, remove the host from a cluster before you remove the host.
    1. If the host **Cluster** is `Control plane`, continue to the next step.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-29"
+lastupdated: "2021-02-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -73,8 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift-ios: .ph data-hd-programlang='iOS Swift'}
-{:swift-server: .ph data-hd-programlang='server-side Swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -213,7 +211,13 @@ subcollection: satellite
 * [Attaching hosts from the console](/docs/satellite?topic=satellite-hosts#attach-hosts-console)
 * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-hosts#attach-hosts-cli)
 
-[Assigning hosts to {{site.data.keyword.satelliteshort}} resources](/docs/satellite?topic=satellite-hosts#host-assign)
+[Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov)
+* [Example host label scenario](/docs/satellite?topic=satellite-hosts#host-autoassign-example)
+* [Automatically assigning hosts](/docs/satellite?topic=satellite-hosts#host-autoassign)
+* [Disabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-disable)
+* [Re-enabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-enable)
+
+[Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources](/docs/satellite?topic=satellite-hosts#host-assign)
 * [Prerequisites](/docs/satellite?topic=satellite-hosts#host-assign-prereq)
 * [Assigning hosts from the console](/docs/satellite?topic=satellite-hosts#host-assign-ui)
 * [Assigning hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-assign-cli)
@@ -311,6 +315,10 @@ subcollection: satellite
 
 [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-health#monitoring-default)
 
+[Setting up logging and monitoring in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-health#health-setup)
+* [Setting up LogDNA for {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-health#setup-logdna)
+* [Setting up logging and monitoring for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
+
 [Viewing location, host, and cluster health](/docs/satellite?topic=satellite-health#view-health)
 * [Viewing location health](/docs/satellite?topic=satellite-health#location-health)
 * [Viewing host health](/docs/satellite?topic=satellite-health#host-health)
@@ -365,33 +373,27 @@ subcollection: satellite
 
 [{{site.data.keyword.satelliteshort}} CLI command reference](/docs/satellite?topic=satellite-satellite-cli-reference)
 * [`ibmcloud sat` commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-map)
-* [Config configuration commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-config-configuration-commands)
-  * [`ibmcloud sat config configuration create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-create)
-  * [`ibmcloud sat config configuration get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-get)
-  * [`ibmcloud sat config configuration ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-ls)
-  * [`ibmcloud sat config configuration rename`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rename)
-  * [`ibmcloud sat config configuration rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rm)
-  * [`ibmcloud sat config configuration version create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-create)
-  * [`ibmcloud sat config configuration version get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-get)
-  * [`ibmcloud sat config configuration version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-rm)
-* [Config subscription commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-config-subscription-commands)
-  * [`ibmcloud sat config subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-create)
-  * [`ibmcloud sat config subscription get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-get)
-  * [`ibmcloud sat config subscription ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-ls)
-  * [`ibmcloud sat config subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-rm)
-  * [`ibmcloud sat config subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)
 * [Cluster commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-cluster-commands)
   * [`ibmcloud sat cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-get)
   * [`ibmcloud sat cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls)
   * [`ibmcloud sat cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-register)
   * [`ibmcloud sat cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister)
 * [Cluster group commands](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-commands)
-  * [`ibmcloud sat cluster-group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-attach)
-  * [`ibmcloud sat cluster-group create`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-create)
-  * [`ibmcloud sat cluster-group detach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-detach)
-  * [`ibmcloud sat cluster-group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get)
-  * [`ibmcloud sat cluster-group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls)
-  * [`ibmcloud sat cluster-group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm)
+  * [`ibmcloud sat group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-attach)
+  * [`ibmcloud sat group create`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-create)
+  * [`ibmcloud sat group detach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-detach)
+  * [`ibmcloud sat group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get)
+  * [`ibmcloud sat group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls)
+  * [`ibmcloud sat group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm)
+* [Config commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-config-configuration-commands)
+  * [`ibmcloud sat config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-create)
+  * [`ibmcloud sat config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-get)
+  * [`ibmcloud sat config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-ls)
+  * [`ibmcloud sat config rename`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rename)
+  * [`ibmcloud sat config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rm)
+  * [`ibmcloud sat config version create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-create)
+  * [`ibmcloud sat config version get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-get)
+  * [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-rm)
 * [Endpoint commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-endpoint-commands)
   * [`ibmcloud sat endpoint create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-create)
   * [`ibmcloud sat endpoint get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-get)
@@ -426,6 +428,12 @@ subcollection: satellite
   * [`ibmcloud sat storage config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-ls)
   * [`ibmcloud sat storage template get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-get)
   * [`ibmcloud sat storage template ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-ls)
+* [Subscription commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-config-subscription-commands)
+  * [`ibmcloud sat subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-create)
+  * [`ibmcloud sat subscription get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-get)
+  * [`ibmcloud sat subscription ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-ls)
+  * [`ibmcloud sat subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-rm)
+  * [`ibmcloud sat subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)
 * [Other commands](/docs/satellite?topic=satellite-satellite-cli-reference#other-commands)
   * [`ibmcloud ks cluster create satellite`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-create)
 
@@ -472,6 +480,8 @@ subcollection: satellite
 [What happens if my {{site.data.keyword.satelliteshort}} control plane becomes unavailable?](/docs/satellite?topic=satellite-faqs#control-plane-unavailable)
 
 [Does IBM support third-party and open source tools that I use with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-faqs#faq_thirdparty_oss)
+
+[What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing)
 
 [What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} cluster?](/docs/satellite?topic=satellite-faqs#supported-services)
 
@@ -531,6 +541,8 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-release-notes)
+
+[February 2021](/docs/satellite?topic=satellite-release-notes#february21)
 
 [January 2021](/docs/satellite?topic=satellite-release-notes#january21)
 

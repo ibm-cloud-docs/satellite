@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-11"
+lastupdated: "2021-02-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -112,17 +112,25 @@ The location control plane is not publicly accessible. The IP addresses that are
 {: tsResolve}
 Check and update the host IP addresses that are registered with the location subdomain DNS entries.
 
-1.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
+1. Verify that the {{site.data.keyword.satelliteshort}} link tunnel server endpoint is reachable.
+  1. [Set up LogDNA for {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-health#setup-logdna).
+  2. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){:external}, click **View LogDNA** for your {{site.data.keyword.la_short}} instance. The LogDNA dashboard opens.
+  3. Check the `Endpoint health status` logs. These logs report the results of health checks for the {{site.data.keyword.satelliteshort}} link tunnel server endpoint.
+      * If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} link tunnel server endpoint is reachable. Continue to the next step.
+      * If logs report `Failed to reach endpoint`, your {{site.data.keyword.satelliteshort}} link tunnel server endpoint is unreachable. If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall. For example, see [AWS Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup). If you do not have a firewall, or if after you modify your firewall you still see the `R0036` message or `Failed to reach endpoint` logs, continue to step 2.
+
+2.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
     ```
     ibmcloud sat location dns ls --location <location_name_or_ID>
     ```
     {: pre}
-2.  If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall. For example, see [AWS Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup)
-3.  For each location subdomain, check whether the IP address that is actually registered with the subdomain matches the host IP addresses that you found in step 1. Only one host IP address is returned for the `c000` and `ce00` subdomains. If any of the registered IP addresses do not match the IP addresses from step 1, [open a support case](/docs/satellite?topic=satellite-get-help#help-support).
+
+3.  For each location subdomain, check whether the IP address that is actually registered with the subdomain matches the host IP addresses that you found in step 1. If any of the registered IP addresses do not match the IP addresses from step 1, [open a support case](/docs/satellite?topic=satellite-get-help#help-support).
     ```
     nslookup <subdomain>
     ```
     {: pre}
+
 4.  Curl each location subdomain on port 30000.
     ```
     curl http://<subdomain>:30000
@@ -136,6 +144,7 @@ Check and update the host IP addresses that are registered with the location sub
     </body></html>
     ```
     {: screen}
+
 5.  If any subdomains did not return a `200 OK` message, update the location subdomain DNS records with the correct host IP addresses.
     1.  Get the IP addresses of your hosts. For hosts that are publicly available, get the public IP addresses. For hosts that are only privately available, get the private IP addresses. Refer to your provider documentation.
     2.  Update the location subdomain DNS records with the correct public or private IP addresses of each host in the control plane.

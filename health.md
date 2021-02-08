@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-02-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -95,15 +95,16 @@ subcollection: satellite
 # Logging and monitoring {{site.data.keyword.satelliteshort}} health
 {: #health}
 
-{{site.data.keyword.satellitelong}} comes with basic tools to help you manage the health of your {{site.data.keyword.satelliteshort}} resources, such as reviewing location and host health.
+{{site.data.keyword.satellitelong}} comes with basic tools to help you manage the health of your {{site.data.keyword.satelliteshort}} resources, such as reviewing location and host health. Additionally, you can integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.cloud_notm}} resources with {{site.data.keyword.la_full}} and {{site.data.keyword.mon_full}} to get a comprehensive view and tools to manage all your resources.
 {: shortdesc}
-
 
 ## IBM monitoring to resolve and report location alerts
 {: #monitoring-default}
 
 When you create a {{site.data.keyword.satelliteshort}} location and set up the location control plane, IBM automatically monitors and resolves certain alerts for issues with your location setup and host infrastructure. The following table describes different scenarios and the actions that IBM takes to address the scenarios.
 {: shortdesc}
+
+Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location to forward logs to {{site.data.keyword.la_full_notm}}](#setup-logdna), the messages and more detailed information from the IBM Monitoring component are captured and stored in your {{site.data.keyword.la_full_notm}} instance.
 
 | Scenario | Action |
 | --- | --- |
@@ -114,6 +115,47 @@ When you create a {{site.data.keyword.satelliteshort}} location and set up the l
 | Ingress subdomain registration fails. | Alert IBM engineers to troubleshoot the issues further and return a status message with further troubleshooting information. |
 {: caption="IBM monitoring actions to address certain scenarios." caption-side="top"}
 {: summary="Read this table from left to right. In the first column is the scenario. In the second column is the action that {{site.data.keyword.satelliteshort}} automatically takes to address the alert."}
+
+<br />
+
+## Setting up logging and monitoring in your {{site.data.keyword.satelliteshort}} location
+{: #health-setup}
+
+Integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.cloud_notm}} resources with {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} to get a comprehensive view and tools to manage the health of all your resources.
+{: shortdesc}
+
+Logging and monitoring for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect logs for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.la_short}} instance to collect platform logs in the same region that your location is managed from. Then, to collect logs for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a LogDNA agent in your cluster to automatically collect and forward pod logs to a {{site.data.keyword.la_short}} instance. Note that you can use the same LogDNA instance to collect logs for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
+
+### Setting up LogDNA for {{site.data.keyword.satelliteshort}} location logs
+{: #setup-logdna}
+
+Forward and view logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup in an {{site.data.keyword.la_full_notm}} instance that is enabled for platform-level logs.
+{: shortdesc}
+
+By default, the following logs are automatically generated for your {{site.data.keyword.satelliteshort}} location:
+* Messages and more detailed information from the IBM Monitoring component regarding certain alerts for issues with your location setup and host infrastructure
+* Health check status of the {{site.data.keyword.satelliteshort}} link tunnel server endpoint
+
+If you already have a {{site.data.keyword.la_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the LogDNA instance is configured to collect platform logs, the logs that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this LogDNA instance. Otherwise, follow these steps to set up LogDNA for your {{site.data.keyword.satelliteshort}} location.
+
+1. [Provision a {{site.data.keyword.la_short}} instance](https://cloud.ibm.com/catalog/services/ibm-log-analysis-with-logdna){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
+2. [Enable the instance for platform-level log collection](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs). Note that within one region, only one {{site.data.keyword.la_short}} instance can be enabled for platform logs.
+3. In the **Logging** dashboard, click **View LogDNA** for your {{site.data.keyword.la_short}} instance.
+4. In the LogDNA dashboard, review `satellite` logs for your location, which you can identify by searching for your location's ID.
+5. Review how you can [search and filter logs in the LogDNA dashboard](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs).
+
+
+
+
+
+### Setting up logging and monitoring for clusters
+{: #setup-clusters}
+
+To understand and set up logging and monitoring for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.la_full_notm}} documentation](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-kube#kube) and [{{site.data.keyword.mon_full_notm}} documentation](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster#kubernetes_cluster).
+{: shortdesc}
+
+You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging and monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy LogDNA and Sysdig agents to your cluster to forward logs and metrics to {{site.data.keyword.la_short}} and {{site.data.keyword.mon_short}}.
+{: note}
 
 <br />
 
@@ -129,7 +171,7 @@ You can review the health of {{site.data.keyword.satelliteshort}} resources such
 When you set up a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your location healthy. For more information, see [IBM monitoring to resolve and report location alerts](#monitoring-default). For troubleshooting help, see [Debugging location health](/docs/satellite?topic=satellite-ts-locations-debug).
 {: shortdesc}
 
-You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, or by running `ibmcloud sat location ls`.
+You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running `ibmcloud sat location ls`.
 
 | Health state | Description
 | --- | --- |
@@ -151,7 +193,7 @@ You can review the host health from the **Locations** table in the [{{site.data.
 When you attach hosts to a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your hosts healthy. For more information, see [IBM monitoring to resolve and report location alerts](#monitoring-default). For troubleshooting help, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 {: shortdesc}
 
-You can review the host health from the **Hosts** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/){: external}, or by running `ibmcloud sat host ls --location <location_name_or_ID>`.
+You can review the host health from the **Hosts** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running `ibmcloud sat host ls --location <location_name_or_ID>`.
 
 | Health state | Description
 | --- | --- |
@@ -177,3 +219,6 @@ To review the health of {{site.data.keyword.openshiftlong_notm}} clusters that r
 
 When you add your clusters to {{site.data.keyword.satelliteshort}} Configuration, the Kubernetes resources are automatically added to an inventory that you can review. For more information, see [Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config).
 {: shortdesc}
+
+Adding clusters to {{site.data.keyword.satelliteshort}} Configuration does not automatically set up logging and monitoring solutions, such as {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
+{: note}
