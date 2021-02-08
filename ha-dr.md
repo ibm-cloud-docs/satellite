@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2020
-lastupdated: "2020-11-17"
+  years: 2020, 2021
+lastupdated: "2021-02-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -13,6 +13,7 @@ subcollection: satellite
 {:DomainName: data-hd-keyref="APPDomain"}
 {:DomainName: data-hd-keyref="DomainName"}
 {:android: data-hd-operatingsystem="android"}
+{:api: .ph data-hd-interface='api'}
 {:apikey: data-credential-placeholder='apikey'}
 {:app_key: data-hd-keyref="app_key"}
 {:app_name: data-hd-keyref="app_name"}
@@ -21,6 +22,7 @@ subcollection: satellite
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: data-hd-programlang="c#"}
+{:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
@@ -38,7 +40,6 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
@@ -72,7 +73,6 @@ subcollection: satellite
 {:step: data-tutorial-type='step'}
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -84,10 +84,11 @@ subcollection: satellite
 {:tsResolve: .tsResolve}
 {:tsSymptoms: .tsSymptoms}
 {:tutorial: data-hd-content-type='tutorial'}
+{:ui: .ph data-hd-interface='ui'}
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -158,6 +159,7 @@ Review the characteristics of the basic setup:
 - **Groups of 3 compute hosts**: In the basic setup, you must assign at least 3 compute hosts as worker nodes to the {{site.data.keyword.satelliteshort}} control plane, in separate zones. With 3 hosts, you make sure that your control plane continues to run, even if one compute host becomes unavailable. The minimum of 3 hosts for the location control plane is for demonstration purposes only. To continue to use the location for production workloads, [add more hosts to the location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale) in multiples of 3, such as 6, 9, or 12 hosts.
 - **Host requirements**: All compute hosts must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers). Hosts can be in your own on-premises data center, in other cloud providers, or in edge computing environments. You can add compute hosts from different physical locations if you ensure that the requirements for the network speed and latency between the hosts are met.
 - **Separate physical hosts**: Every compute host must have a separate physical host. The host might be a bare metal machine or a virtual machine that does not share the hypervisor with another virtual machine that you plan to add to your control plane. With this setup, you ensure that the outage of one physical machine does not lead to all control plane worker nodes becoming unavailable.
+- **Latency across control plane and service hosts**: Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. 
 
 To make your control plane worker nodes more highly available, see the [Highly available control plane worker setup](#satellite-ha-setup).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -153,6 +153,7 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 ## Host network
 {: #reqs-host-network}
 
+* Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. 
 * Do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
 * All hosts must have the same MTU values.
 * The `localhost` value must resolve to a valid local host IP address, typically `127.0.0.1`.

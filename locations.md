@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -219,8 +219,12 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI:
 The location control plane runs resources that are managed by {{site.data.keyword.satelliteshort}} to help manage the hosts, clusters, and other resources that you attach to the location.
 {: shortdesc}
 
-To create the {{site.data.keyword.satelliteshort}} location control plane, you must attach compute hosts in groups of 3 to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers). The minimum of 3 hosts for the control plane is for demonstration purposes. To continue to use the location for production workloads, [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale) in multiples of 3, such as 6, 9, or 12 hosts.
+When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.
 {: important}
+
+* You must attach compute hosts in groups of 3 to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers).
+* The minimum of 3 hosts for the control plane is for demonstration purposes. To continue to use the location for production workloads, [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale) in multiples of 3, such as 6, 9, or 12 hosts.
+* Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
 
 ### Setting up the control plane from the console
 {: #control-plane-ui}

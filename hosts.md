@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -129,6 +129,13 @@ After you create the location, you must attach compute capacity to your location
 Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-sizing).<br><br>
 Using AWS hosts? You can use a [launch template](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template) to attach hosts to your {{site.data.keyword.satelliteshort}} location.
 {: tip}
+
+When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.
+{: important}
+
+* Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers).
+* Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
+* Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then IBM can automatically assign hosts when clusters or the {{site.data.keyword.satelliteshort}} location control plane request more capacity.
 
 ### Attaching hosts from the console
 {: #attach-hosts-console}
