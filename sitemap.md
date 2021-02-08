@@ -315,6 +315,10 @@ subcollection: satellite
 
 [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-health#monitoring-default)
 
+[Setting up logging and monitoring in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-health#health-setup)
+* [Setting up LogDNA for {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-health#setup-logdna)
+* [Setting up logging and monitoring for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
+
 [Viewing location, host, and cluster health](/docs/satellite?topic=satellite-health#view-health)
 * [Viewing location health](/docs/satellite?topic=satellite-health#location-health)
 * [Viewing host health](/docs/satellite?topic=satellite-health#host-health)
