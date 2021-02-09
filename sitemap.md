@@ -440,7 +440,7 @@ subcollection: satellite
   * [`ibmcloud sat subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-rm)
   * [`ibmcloud sat subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)
 * [Other commands](/docs/satellite?topic=satellite-satellite-cli-reference#other-commands)
-  * [`ibmcloud ks cluster create satellite`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-create)
+  * [{{site.data.keyword.openshiftlong_notm}} commands (`ibmcloud oc`)](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-create)
 
 [{{site.data.keyword.satelliteshort}} CLI changelog](/docs/satellite?topic=satellite-satellite-cli-changelog)
 * [Version 1.0](/docs/satellite?topic=satellite-satellite-cli-changelog#10)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-09"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -2141,8 +2141,8 @@ ibmcloud sat subscription update --subscription myapp_prod_subscription --name m
 Review other commands for managing {{site.data.keyword.satelliteshort}} resources, such as commands from other {{site.data.keyword.cloud_notm}} services that might be useful.
 {: shortdesc}
 
-### `ibmcloud ks cluster create satellite`
+### {{site.data.keyword.openshiftlong_notm}} commands (`ibmcloud oc`)
 {: #cluster-create}
 
-See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
+For commands to manage {{site.data.keyword.openshiftshort}} clusters in your {{site.data.keyword.satelliteshort}} locations, such as `ibmcloud oc cluster create satellite`, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#sat_commands).
 {: shortdesc}
