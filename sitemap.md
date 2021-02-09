@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-02-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -251,6 +251,10 @@ subcollection: satellite
 
 [Setting up the internal container image registry](/docs/satellite?topic=openshift-satellite-clusters#satcluster-internal-registry)
 
+[Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#satcluster-worker-pools)
+* [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels)
+* [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance)
+
 [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-limitations)
 
 [Storing application data in persistent storage](/docs/satellite?topic=openshift-satellite-clusters#satcluster-storage)
@@ -350,7 +354,8 @@ subcollection: satellite
 * [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies)
 * [Dependencies to 3rd party services](/docs/satellite?topic=satellite-service-architecture#3rd-party-dependencies)
 
-[High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha)
+[High availability and disaster recovery for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha)
+* [About high availability and disaster recovery](/docs/satellite?topic=satellite-ha#ha-about)
 * [Understanding high availability in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha#ha-understand)
   * [High availability of the {{site.data.keyword.satelliteshort}} control plane master](/docs/satellite?topic=satellite-ha#ha-control-plane-master)
   * [High availability of the {{site.data.keyword.satelliteshort}} control plane worker nodes](/docs/satellite?topic=satellite-ha#ha-control-plane-worker)
