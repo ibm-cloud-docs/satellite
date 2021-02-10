@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -237,7 +237,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     </tr>
     <tr>
      <td><a name="R0044"></a>R0044 DNS issues have been detected on one or more hosts. Verify that your DNS solution is working as expected. If you still have issues, contact IBM Cloud Support and include your Satellite location ID.</td>
-     <td>One or more hosts in your locations is unable to resolve DNS queries or a search domain is causing unexpected issues. Verify that your DNS solution is working as expected and that all hosts meet the network host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).</td>
+     <td>One or more hosts in your locations is unable to resolve DNS queries or a search domain is causing unexpected issues. Verify that your DNS solution is working as expected and that all hosts meet the [network host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).</td>
     </tr>
     <tr>
      <td><a name="R0045"></a>R0045 A read-only file system has been detected on one or more hosts. Replace the affected host(s).<br><br>
