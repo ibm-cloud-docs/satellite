@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-02-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -255,31 +255,37 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 Host autoassignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. 
 {: note}
 
-### Example host label scenario
-{: #host-autoassign-example}
+### About host labels
+{: #host-autoassign-about}
 
 Host autoassignment works by matching requesting labels from worker pools in {{site.data.keyword.satelliteshort}} clusters to the host and zone labels on available {{site.data.keyword.satelliteshort}} hosts.
 {: shortdesc}
 
-For example, you might have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `zone1` and the following host labels. 
-* `cpu=8`
-* `memory=32`
+Keep in mind the following information about the host labels that are used for autoassignment.
+* **Default host labels**: When you attach a host to a {{site.data.keyword.satelliteshort}} location, the host automatically gets labels for `cpu` and `memory` (in bytes). You cannot remove these labels. You can include additional host labels, or update the host metadata later.
+* **Hosts can have more labels than worker pools**: For example, your host might have `cpu`, `memory`, and `env` host labels, but the requesting worker pool has only a `cpu` host label. Host autoassignment matches just the `cpu` labels. Note that the reverse does not work. If a worker pool has more labels than a host, the host cannot be autoassigned to the worker pool.
+* **Matching is exact**: Host labels must equal (`=`) each other exactly. Even if the host label is a number, no less than (`<`), greater than (`>`), or other operators are used for matching.
+
+**Example scenario**
+
+Say that you have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `zone1` and the following host labels. 
+* `cpu=4`
 * `env=prod`
 
 Your {{site.data.keyword.satelliteshort}} location has available (unassigned) hosts with host labels as follows.
-* Host A: `cpu=8, memory=32, env=prod, zone=zone2`
-* Host B: `cpu=8, memory=32, zone=zone1`
-* Host C: `cpu=16, memory=64, env=prod`
+* Host A: `cpu=4, memory=32, env=prod, zone=zone2`
+* Host B: `cpu=4, memory=32, zone=zone1`
+* Host C: `cpu=4, memory=64, env=prod`
 
 If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B. 
-* Host A meets the CPU, memory, and `env=prod` label request, but can only be assigned in `zone2`. Because the `default` worker pool is only in `zone1`, Host A is not assigned. 
-* Host B meets the CPU, memory, and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
-* Host C is automatically assigned because it meets the minimum CPU and memory requests, has the `env=prod` label, and does not have any zone restrictions.
+* Host A meets the CPU and `env=prod` label requests, but can only be assigned in `zone2`. Because the `default` worker pool is only in `zone1`, Host A is not assigned. 
+* Host B meets the CPU and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
+* Host C is automatically assigned because it matches the `cpu=4` and `env=prod` host labels, and does not have any zone restrictions. The `memory=64` host label is not considered, because the worker pool does not request a `memory` label.
 
 ### Automatically assigning hosts
 {: #host-autoassign}
 
-{{site.data.keyword.satellitelong_notm}} can automatically assign hosts to worker pools in {{site.data.keyword.satelliteshort}} clusters that request compute capacity via host labels such as `cpu` and `memory`.
+{{site.data.keyword.satellitelong_notm}} can automatically assign hosts to worker pools in {{site.data.keyword.satelliteshort}} clusters that request compute capacity via host labels such as `cpu`.
 {: shortdesc}
 
 Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts.
@@ -315,13 +321,13 @@ Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{sit
       ...
       ```
       {: screen}
-3. Update the labels of your available host to match the labels of the worker pool that you want the host to be available for automatic assignment. You can optionally specify a zone to make sure that the host only gets automatically assigned to that zone.
+3. Update the labels of your available host to match all of the labels of the worker pool that you want the host to be available for automatic assignment. You can optionally specify a zone to make sure that the host only gets automatically assigned to that zone.
 
-   Include each matching label, even if the label already exists on the host. For `cpu` and `memory` requests, autoassignment can happen if the host has **at least** the requested amount as the host labels in the worker pools. 
+   The `cpu` and `memory` labels on the host are applied automatically and cannot be edited.
    {: note}
 
    ```
-   ibmcloud sat host update --location <location_name_or_ID> --host <host_name_or_ID> -l <cpu=4> -l <memory=16874564> -l <key=value> [--zone <zone1>]
+   ibmcloud sat host update --location <location_name_or_ID> --host <host_name_or_ID> -l <key=value> [-l <key=value>] [--zone <zone1>]
    ```
    {: pre}
 

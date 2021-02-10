@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -212,7 +212,7 @@ subcollection: satellite
 * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-hosts#attach-hosts-cli)
 
 [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov)
-* [Example host label scenario](/docs/satellite?topic=satellite-hosts#host-autoassign-example)
+* [About host labels](/docs/satellite?topic=satellite-hosts#host-autoassign-about)
 * [Automatically assigning hosts](/docs/satellite?topic=satellite-hosts#host-autoassign)
 * [Disabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-disable)
 * [Re-enabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-enable)
