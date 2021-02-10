@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-02-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -212,7 +212,7 @@ subcollection: satellite
 * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-hosts#attach-hosts-cli)
 
 [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov)
-* [Example host label scenario](/docs/satellite?topic=satellite-hosts#host-autoassign-example)
+* [About host labels](/docs/satellite?topic=satellite-hosts#host-autoassign-about)
 * [Automatically assigning hosts](/docs/satellite?topic=satellite-hosts#host-autoassign)
 * [Disabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-disable)
 * [Re-enabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-enable)
@@ -250,6 +250,10 @@ subcollection: satellite
 [Accessing and working with your {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-access)
 
 [Setting up the internal container image registry](/docs/satellite?topic=openshift-satellite-clusters#satcluster-internal-registry)
+
+[Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#satcluster-worker-pools)
+* [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels)
+* [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance)
 
 [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-limitations)
 
@@ -350,7 +354,8 @@ subcollection: satellite
 * [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies)
 * [Dependencies to 3rd party services](/docs/satellite?topic=satellite-service-architecture#3rd-party-dependencies)
 
-[High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha)
+[High availability and disaster recovery for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha)
+* [About high availability and disaster recovery](/docs/satellite?topic=satellite-ha#ha-about)
 * [Understanding high availability in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha#ha-understand)
   * [High availability of the {{site.data.keyword.satelliteshort}} control plane master](/docs/satellite?topic=satellite-ha#ha-control-plane-master)
   * [High availability of the {{site.data.keyword.satelliteshort}} control plane worker nodes](/docs/satellite?topic=satellite-ha#ha-control-plane-worker)
@@ -435,7 +440,7 @@ subcollection: satellite
   * [`ibmcloud sat subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-rm)
   * [`ibmcloud sat subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)
 * [Other commands](/docs/satellite?topic=satellite-satellite-cli-reference#other-commands)
-  * [`ibmcloud ks cluster create satellite`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-create)
+  * [{{site.data.keyword.openshiftlong_notm}} commands (`ibmcloud oc`)](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-create)
 
 [{{site.data.keyword.satelliteshort}} CLI changelog](/docs/satellite?topic=satellite-satellite-cli-changelog)
 * [Version 1.0](/docs/satellite?topic=satellite-satellite-cli-changelog#10)

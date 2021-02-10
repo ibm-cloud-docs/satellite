@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-02-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -92,13 +92,38 @@ subcollection: satellite
 {:video: .video}
 
 
-# High availability for {{site.data.keyword.satellitelong_notm}}
+# High availability and disaster recovery for {{site.data.keyword.satellitelong_notm}}
 {: #ha}
 
-Review what options you have to make your {{site.data.keyword.satelliteshort}} location highly available.
+Review what options you have to make your {{site.data.keyword.satellitelong}} location highly available.
 {: shortdesc}
 
-High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system component by adding redundancy and setting up failover mechanisms.
+## About high availability and disaster recovery
+{: #ha-about}
+
+High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms.
+{: shortdesc}
+
+**What level of availability do I need?**
+
+You can achieve high availability on different levels in your backing infrastructure for the {{site.data.keyword.satelliteshort}} location, the {{site.data.keyword.satelliteshort}} location control plane, and within the different components of the clusters that you deploy to the location. The level of availability that is right for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the resources that you want to expend.
+
+**What level of availability does {{site.data.keyword.cloud_notm}} offer?**
+
+For {{site.data.keyword.cloud_notm}}, see [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime). 
+
+For {{site.data.keyword.satelliteshort}}, review the following topics.
+* [High availability of the {{site.data.keyword.satelliteshort}} control plane master](#ha-control-plane-master).
+* [High availability of the {{site.data.keyword.satelliteshort}} control plane worker nodes](#ha-control-plane-worker).
+* [High availability of {{site.data.keyword.cloud_notm}} services](#ha-cloud-services).
+
+**Where is the service located?**
+
+See [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
+
+**What am I responsible to configure disaster recovery options for?**
+
+See [Your responsibilities](/docs/satellite?topic=satellite-responsibilities#disaster-recovery).
 
 ## Understanding high availability in {{site.data.keyword.satellitelong_notm}}
 {: #ha-understand}
@@ -159,7 +184,6 @@ Review the characteristics of the basic setup:
 - **Groups of 3 compute hosts**: In the basic setup, you must assign at least 3 compute hosts as worker nodes to the {{site.data.keyword.satelliteshort}} control plane, in separate zones. With 3 hosts, you make sure that your control plane continues to run, even if one compute host becomes unavailable. The minimum of 3 hosts for the location control plane is for demonstration purposes only. To continue to use the location for production workloads, [add more hosts to the location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale) in multiples of 3, such as 6, 9, or 12 hosts.
 - **Host requirements**: All compute hosts must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers). Hosts can be in your own on-premises data center, in other cloud providers, or in edge computing environments. You can add compute hosts from different physical locations if you ensure that the requirements for the network speed and latency between the hosts are met.
 - **Separate physical hosts**: Every compute host must have a separate physical host. The host might be a bare metal machine or a virtual machine that does not share the hypervisor with another virtual machine that you plan to add to your control plane. With this setup, you ensure that the outage of one physical machine does not lead to all control plane worker nodes becoming unavailable.
-- **Latency across control plane and service hosts**: Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. 
 
 To make your control plane worker nodes more highly available, see the [Highly available control plane worker setup](#satellite-ha-setup).
 
