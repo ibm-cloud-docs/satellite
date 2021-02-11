@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-02-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -559,7 +559,9 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as com
    7. Return to the {{site.data.keyword.satelliteshort}} **Locations > Hosts** table.
 5. From the **Hosts** table, hover over the host that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 6. Click **Remove host**, enter the host name to confirm deletion, and click **Remove**.
-7. Optional: To delete the host machine, follow the instructions from your underlying infrastructure provider.
+7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
+   * To reuse the host for other purposes, reload the operating system of the host. 
+   * To no longer use the host, delete the host from your infrastructure provider.
 
 ### Removing hosts from the CLI
 {: #host-remove-cli}
@@ -604,4 +606,6 @@ Use the {{site.data.keyword.satelliteshort}} CLI to remove your hosts as compute
    ibmcloud sat host rm --location <location_name_or_ID> --host <host_ID>
    ```
    {: pre}
-7. Optional: To delete the host machine, follow the instructions from your underlying infrastructure provider.
+7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
+   * To reuse the host for other purposes, reload the operating system of the host. 
+   * To no longer use the host, delete the host from your infrastructure provider.
