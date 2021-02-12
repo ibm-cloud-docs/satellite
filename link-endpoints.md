@@ -220,10 +220,7 @@ You run a database in your {{site.data.keyword.satelliteshort}} location instead
 
 To establish this connection, you first create a `location` endpoint. You specify the database that runs in your {{site.data.keyword.satelliteshort}} location as the destination resource. Then, the client in the {{site.data.keyword.cloud_notm}} private network connects directly to the host name of the {{site.data.keyword.satelliteshort}} Link tunnel server. {{site.data.keyword.satelliteshort}} Link forwards this request to the location endpoint that you created for your on-location database.
 
-Finally, to maintain enterprise security, you specify a list of source IP ranges so that only trusted clients in the public cloud can access your on-location database through the endpoint.<lb staging>
-
-**Looking to expose apps or services that run in an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}}?** Instead of using Link endpoints, expose your apps by using Kubernetes-native service discovery options, such as {{site.data.keyword.openshiftshort}} routers. For more information, see []().
-{: tip}</lb staging>
+Finally, to maintain enterprise security, you specify a list of source IP ranges so that only trusted clients in the public cloud can access your on-location database through the endpoint.
 
 **Looking to connect resources within the same {{site.data.keyword.satelliteshort}} location?** Link endpoints cannot be created between resources in the same location. Instead, resources can access each other directly. For example, an app that runs in an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}} does not need to communicate through {{site.data.keyword.satelliteshort}} Link to access a database that exists in the same location, and can instead access that database directly through the location's private network.
 {: tip}
@@ -238,9 +235,7 @@ Default {{site.data.keyword.satelliteshort}} link endpoints are created for your
 * When you set up a {{site.data.keyword.satelliteshort}}-enabled service in your location, such as a {{site.data.keyword.openshiftlong_notm}} cluster, a Link endpoint of type `location` is automatically created so that the master for the service cluster can communicate with {{site.data.keyword.cloud_notm}} and monitoring through IBM. This endpoint is named in the format `automated-control-plane-link-<clusterID>-<10_digit_hash>`.
 
 Do not disable the automated control plane endpoints. Because these endpoints connect your location to {{site.data.keyword.cloud_notm}}, they cannot be removed.
-{: important}<lb staging>
-
-For more information about what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [link tbd](TBD).</lb staging>
+{: important}
 
 <br />
 

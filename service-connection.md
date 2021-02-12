@@ -119,13 +119,7 @@ For more information about connecting to services that run in your {{site.data.k
 {: #user-access-loc-ep}
 
 If you have a resource on the IBM private network that requires access to your {{site.data.keyword.satelliteshort}} location, you can [create a `location` endpoint in {{site.data.keyword.satelliteshort}} link](/docs/satellite?topic=satellite-link-location-cloud#link-location).
-{: shortdesc}<lb staging>
-
-### Application workloads that run in clusters
-{: #user-access-apps}
-
-To make your apps available, see the options for [exposing apps in a {{site.data.keyword.satellitelong_notm}} cluster - link tbd](TBD).
-{: shortdesc}</lb staging>
+{: shortdesc}
 
 ## {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location
 {: #ibm-cloud-access}
@@ -137,6 +131,4 @@ Default {{site.data.keyword.satelliteshort}} link endpoints are created for your
 * When you set up a {{site.data.keyword.satelliteshort}}-enabled service in your location, such as a {{site.data.keyword.openshiftlong_notm}} cluster, a Link endpoint of type `location` is automatically created so that the master for the service cluster can communicate with {{site.data.keyword.cloud_notm}} and monitoring through IBM. This endpoint is named in the format `automated-control-plane-link-<clusterID>-<10_digit_hash>`.
 
 Do not disable the automated control plane endpoints. Because these endpoints connect your location to {{site.data.keyword.cloud_notm}}, they cannot be removed.
-{: important}<lb staging>
-
-For more information about what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [link tbd](TBD).</lb staging> For more information about {{site.data.keyword.satelliteshort}} link endpoints, see [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud).
+{: important} For more information about {{site.data.keyword.satelliteshort}} link endpoints, see [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud).

@@ -147,7 +147,7 @@ Review the following metrics that are available for your {{site.data.keyword.sat
 {: shortdesc}
 
 #### Location tunnel numbers
-{: #ibm_satellite_link_endpoint_total_data_rate}
+{: #ibm_satellite_link_location_tunnel_count}
 
 The total number of {{site.data.keyword.satelliteshort}} link tunnel servers present at the endpoint.
 
@@ -158,7 +158,7 @@ The total number of {{site.data.keyword.satelliteshort}} link tunnel servers pre
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
 {: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the ibm_satellite_link_endpoint_total_data_rate metric" caption-side="top"}
+{: caption="Metadata for the ibm_satellite_link_location_tunnel_count metric" caption-side="top"}
 
 #### Location latency
 {: #ibm_satellite_link_location_rtt_second}
@@ -311,6 +311,8 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 | `Service instance name` | `ibm_service_instance_name` | The user-provided name of the service instance, which might not be unique across regions in the account |
 {: summary="Read this table from left to right. In the first column is the attribute type. In the second column is the attribute name. In the third column is the attribute description."}
 {: caption="Additional attributes for metric segmentation" caption-side="top"}
+
+<br />
 
 ## Setting up monitoring for clusters
 {: #setup-clusters}

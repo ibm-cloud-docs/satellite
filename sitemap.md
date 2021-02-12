@@ -312,25 +312,25 @@ subcollection: satellite
 [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint)
 
 
-## Logging and monitoring
-{: #sitemap_logging_and_monitoring}
+## Logging and monitoring {{site.data.keyword.satelliteshort}} health
+{: #sitemap_logging_and_monitoring__health}
 
 
-[Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health)
-* [Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
-* [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
+[Logging and monitoring {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health)
 
-[Monitoring for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-monitor)
-* [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default)
-* [Setting up Sysdig for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-sysdig)
-  * [Available metrics](/docs/satellite?topic=satellite-monitor#available-metrics)
-  * [Attributes for segmentation](/docs/satellite?topic=satellite-monitor#attributes)
-* [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters)
-* [Viewing location, host, and cluster health](/docs/satellite?topic=satellite-monitor#view-health)
-  * [Viewing location health](/docs/satellite?topic=satellite-monitor#location-health)
-  * [Viewing host health](/docs/satellite?topic=satellite-monitor#host-health)
-  * [Viewing cluster health](/docs/satellite?topic=satellite-monitor#cluster-health)
-  * [Viewing Kubernetes resources in clusters](/docs/satellite?topic=satellite-monitor#kubernetes-resources-health)
+[IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-health#monitoring-default)
+
+[Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
+
+[Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
+
+[Setting up monitoring for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
+
+[Viewing location, host, and cluster health](/docs/satellite?topic=satellite-health#view-health)
+* [Viewing location health](/docs/satellite?topic=satellite-health#location-health)
+* [Viewing host health](/docs/satellite?topic=satellite-health#host-health)
+* [Viewing cluster health](/docs/satellite?topic=satellite-health#cluster-health)
+* [Viewing Kubernetes resources in clusters](/docs/satellite?topic=satellite-health#kubernetes-resources-health)
 
 
 ## Enhancing security
