@@ -158,7 +158,7 @@ The total number of {{site.data.keyword.satelliteshort}} link tunnel servers pre
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
 {: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the `ibm_satellite_link_endpoint_total_data_rate` metric" caption-side="top"}
+{: caption="Metadata for the ibm_satellite_link_endpoint_total_data_rate metric" caption-side="top"}
 
 #### Location latency
 {: #ibm_satellite_link_location_rtt_second}
@@ -172,7 +172,7 @@ The total round trip time of data in milliseconds for the location.
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
 {: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the `ibm_satellite_link_location_rtt_second` metric" caption-side="top"}
+{: caption="Metadata for the ibm_satellite_link_location_rtt_second metric" caption-side="top"}
 
 #### Location traffic to cloud
 {: #ibm_satellite_link_location_to_cloud_data_rate}
@@ -186,7 +186,7 @@ The total rate of data in bytes per second in the to-cloud direction for the loc
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
 {: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the `ibm_satellite_link_location_to_cloud_data_rate` metric" caption-side="top"}
+{: caption="Metadata for the ibm_satellite_link_location_to_cloud_data_rate metric" caption-side="top"}
 
 #### Location traffic from cloud
 {: #ibm_satellite_link_location_from_cloud_data_rate}
@@ -200,7 +200,7 @@ The total rate of data in bytes per second in the from-cloud direction for the l
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
 {: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the `ibm_satellite_link_location_from_cloud_data_rate` metric" caption-side="top"}
+{: caption="Metadata for the ibm_satellite_link_location_from_cloud_data_rate metric" caption-side="top"}
 
 #### Location traffic total
 {: #ibm_satellite_link_location_total_data_rate}
@@ -214,7 +214,7 @@ The total rate of data in bytes per second in to-cloud and from-cloud directions
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
 {: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the `ibm_satellite_link_location_total_data_rate` metric" caption-side="top"}
+{: caption="Metadata for the ibm_satellite_link_location_total_data_rate metric" caption-side="top"}
 
 #### Endpoint connection count
 {: #ibm_satellite_link_endpoint_connection_count}
@@ -228,7 +228,7 @@ The total number of connections present at the endpoint.
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
 {: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the `ibm_satellite_link_endpoint_connection_coun` metric" caption-side="top"}
+{: caption="Metadata for the ibm_satellite_link_endpoint_connection_coun metric" caption-side="top"}
 
 #### Endpoint traffic to cloud
 {: #ibm_satellite_link_endpoint_to_cloud_data_rate}
@@ -242,7 +242,7 @@ The rate of data in bytes per second in the to-cloud direction for the endpoint.
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
 {: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the `ibm_satellite_link_endpoint_to_cloud_data_rate` metric" caption-side="top"}
+{: caption="Metadata for the ibm_satellite_link_endpoint_to_cloud_data_rate metric" caption-side="top"}
 
 #### Endpoint traffic from cloud
 {: #ibm_satellite_link_endpoint_from_cloud_data_rate}
@@ -256,7 +256,7 @@ The rate of data in bytes per second in the from-cloud direction for the endpoin
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
 {: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the `ibm_satellite_link_endpoint_from_cloud_data_rate` metric" caption-side="top"}
+{: caption="Metadata for the ibm_satellite_link_endpoint_from_cloud_data_rate metric" caption-side="top"}
 
 #### Endpoint traffic total
 {: #ibm_satellite_link_endpoint_total_data_rate}
@@ -270,7 +270,7 @@ The total rate of data in bytes per second in to-cloud and from-cloud directions
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
 {: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the `ibm_satellite_link_endpoint_total_data_rate` metric" caption-side="top"}
+{: caption="Metadata for the ibm_satellite_link_endpoint_total_data_rate metric" caption-side="top"}
 
 ### Attributes for segmentation
 {: #attributes}
@@ -310,7 +310,7 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance the metric is associated with |
 | `Service instance name` | `ibm_service_instance_name` | The user-provided name of the service instance, which might not be unique across regions in the account |
 {: summary="Read this table from left to right. In the first column is the attribute type. In the second column is the attribute name. In the third column is the attribute description."}
-{: caption="Table 11: Additional attributes for metric segmentation" caption-side="top"}
+{: caption="Additional attributes for metric segmentation" caption-side="top"}
 
 ## Setting up monitoring for clusters
 {: #setup-clusters}
