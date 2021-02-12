@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-02-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -295,6 +295,7 @@ subcollection: satellite
 * [Security and encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
 * [Access controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
 * [Example use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
+* [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints)
 
 [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-location-cloud#link-cloud)
 * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-ui)
@@ -319,9 +320,11 @@ subcollection: satellite
 
 [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-health#monitoring-default)
 
-[Setting up logging and monitoring in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-health#health-setup)
-* [Setting up LogDNA for {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-health#setup-logdna)
-* [Setting up logging and monitoring for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
+[Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
+
+[Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
+
+[Setting up monitoring for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
 
 [Viewing location, host, and cluster health](/docs/satellite?topic=satellite-health#view-health)
 * [Viewing location health](/docs/satellite?topic=satellite-health#location-health)

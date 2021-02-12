@@ -92,17 +92,13 @@ subcollection: satellite
 {:video: .video}
 
 
-# Logging and monitoring {{site.data.keyword.satelliteshort}} health
-{: #health}
+# Monitoring for {{site.data.keyword.satelliteshort}}
+{: #monitor}
 
-Integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.cloud_notm}} resources with {{site.data.keyword.la_full}} and {{site.data.keyword.mon_full}}to get a comprehensive view and tools to manage all your resources.
+{{site.data.keyword.satellitelong}} comes with basic tools to help you manage the health of your {{site.data.keyword.satelliteshort}} resources, such as reviewing location and host health. Additionally, you can integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.cloud_notm}} resources with {{site.data.keyword.mon_full}} to get a comprehensive view and tools to manage all your resources.
 {: shortdesc}
 
-By default, the following logs are automatically generated for your {{site.data.keyword.satelliteshort}} location:
-* Messages and more detailed information from the IBM Monitoring component regarding certain alerts for issues with your location setup and host infrastructure
-* Health check status of the {{site.data.keyword.satelliteshort}} link tunnel server endpoint
-
-Logging for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect logs for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.la_short}} instance to collect platform logs in the same region that your location is managed from. Then, to collect logs for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a LogDNA agent in your cluster to automatically collect and forward pod logs to a {{site.data.keyword.la_short}} instance. Note that you can use the same LogDNA instance to collect logs for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
+Monitoring for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect metrics for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.mon_short}} instance to collect platform metrics in the same region that your location is managed from. Then, to collect metrics for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a Sysdig agent in your cluster to automatically collect and forward pod metrics to a {{site.data.keyword.mon_short}} instance. Note that you can use the same Sysdig instance to collect metrics for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
 
 ## IBM monitoring to resolve and report location alerts
 {: #monitoring-default}
@@ -124,32 +120,197 @@ Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location 
 
 <br />
 
-## Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs
-{: #setup-logdna}
+## Setting up Sysdig for {{site.data.keyword.satelliteshort}} location platform metrics
+{: #setup-sysdig}
 
-Forward and view logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup in an {{site.data.keyword.la_full_notm}} instance that is enabled for platform-level logs.
+Forward and view metrics for {{site.data.keyword.satelliteshort}} in an {{site.data.keyword.mon_full_notm}} instance that is enabled for platform-level metrics.
 {: shortdesc}
 
-If you already have a {{site.data.keyword.la_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the LogDNA instance is configured to collect platform logs, the logs that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this LogDNA instance. If you do not, first contact your account administrator to verify that a {{site.data.keyword.la_short}} instance with platform logs does not exist in the region. Otherwise, follow these steps to set up LogDNA for your {{site.data.keyword.satelliteshort}} location.
+Metrics are available for the {{site.data.keyword.satelliteshort}} link component of your location to help you monitor the performance of specific Link endpoints or of all Link endpoints for the location. For example, you can monitor the latency or throughput of a specific Link endpoint that you created.
 
-1. [Provision an {{site.data.keyword.la_full_notm}} instance](https://cloud.ibm.com/catalog/services/ibm-log-analysis-with-logdna){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
-2. [Enable the instance for platform-level log collection](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs). Note that within one region, only one {{site.data.keyword.la_short}} instance can be enabled for platform logs collection.
-3. In the **Logging** dashboard, click **View LogDNA** for your {{site.data.keyword.la_short}} instance.
-4. In the LogDNA dashboard, review `satellite` logs for your location, which you can identify by searching for your location's ID.
-5. Review how you can [search and filter logs in the LogDNA dashboard](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs).
+If you already have a {{site.data.keyword.mon_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the Sysdig instance is configured to collect platform metrics, the metrics that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this Sysdig instance. Otherwise, follow these steps to set up Sysdig for your {{site.data.keyword.satelliteshort}} location.
 
-<br />
+1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring-with-sysdig){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
+2. [Enable the instance for platform-level metrics collection](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs). Note that within one region, only one {{site.data.keyword.mon_short}} instance can be enabled for platform metrics collection.
+3. In the **Monitoring** dashboard, click **View Sysdig** for your {{site.data.keyword.mon_short}} instance.
+4. In the Sysdig dashboard, click **Dashboards** > **IBM** > **Satellite Link - Overview**. The pre-defined dashboard for {{site.data.keyword.satelliteshort}} link metrics opens.
 
+    You can create a copy of this dashboard to customize the metrics that are shown. To add metrics that are enabled for {{site.data.keyword.satellitelong_notm}}, search for the `ibm_satellite_link` prefix.
+    {: tip}
+5. Review the [available metrics](#available-metrics) and [attributes for segmentation](#attributes).
+6. Review more ways that you can [work with platform metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_working).
 
+### Available metrics
+{: #available-metrics}
 
-## Setting up logging for clusters
-{: #setup-clusters}
-
-To understand and set up logging for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.la_full_notm}} documentation](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-kube#kube).
+Review the following metrics that are available for your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
-You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy LogDNA agents to your cluster to forward logs to {{site.data.keyword.la_short}}.
-{: note}
+#### Location tunnel numbers
+{: #ibm_satellite_link_location_tunnel_count}
+
+The total number of {{site.data.keyword.satelliteshort}} link tunnel servers present at the endpoint.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_satellite_link_location_tunnel_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name, Location ID` |
+{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
+{: caption="Metadata for the ibm_satellite_link_location_tunnel_count metric" caption-side="top"}
+
+#### Location latency
+{: #ibm_satellite_link_location_rtt_second}
+
+The total round trip time of data in milliseconds for the location.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_satellite_link_location_rtt_second`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name, Location ID` |
+{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
+{: caption="Metadata for the ibm_satellite_link_location_rtt_second metric" caption-side="top"}
+
+#### Location traffic to cloud
+{: #ibm_satellite_link_location_to_cloud_data_rate}
+
+The total rate of data in bytes per second in the to-cloud direction for the location.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_satellite_link_location_to_cloud_data_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name, Location ID` |
+{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
+{: caption="Metadata for the ibm_satellite_link_location_to_cloud_data_rate metric" caption-side="top"}
+
+#### Location traffic from cloud
+{: #ibm_satellite_link_location_from_cloud_data_rate}
+
+The total rate of data in bytes per second in the from-cloud direction for the location.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_satellite_link_location_from_cloud_data_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name, Location ID` |
+{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
+{: caption="Metadata for the ibm_satellite_link_location_from_cloud_data_rate metric" caption-side="top"}
+
+#### Location traffic total
+{: #ibm_satellite_link_location_total_data_rate}
+
+The total rate of data in bytes per second in to-cloud and from-cloud directions for the location.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_satellite_link_location_total_data_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name, Location ID` |
+{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
+{: caption="Metadata for the ibm_satellite_link_location_total_data_rate metric" caption-side="top"}
+
+#### Endpoint connection count
+{: #ibm_satellite_link_endpoint_connection_count}
+
+The total number of connections present at the endpoint.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_satellite_link_endpoint_connection_count`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
+{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
+{: caption="Metadata for the ibm_satellite_link_endpoint_connection_coun metric" caption-side="top"}
+
+#### Endpoint traffic to cloud
+{: #ibm_satellite_link_endpoint_to_cloud_data_rate}
+
+The rate of data in bytes per second in the to-cloud direction for the endpoint.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_satellite_link_endpoint_to_cloud_data_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
+{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
+{: caption="Metadata for the ibm_satellite_link_endpoint_to_cloud_data_rate metric" caption-side="top"}
+
+#### Endpoint traffic from cloud
+{: #ibm_satellite_link_endpoint_from_cloud_data_rate}
+
+The rate of data in bytes per second in the from-cloud direction for the endpoint.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_satellite_link_endpoint_from_cloud_data_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
+{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
+{: caption="Metadata for the ibm_satellite_link_endpoint_from_cloud_data_rate metric" caption-side="top"}
+
+#### Endpoint traffic total
+{: #ibm_satellite_link_endpoint_total_data_rate}
+
+The total rate of data in bytes per second in to-cloud and from-cloud directions for the endpoint.
+
+| Metadata | Description |
+|----------|-------------|
+| `Metric Name` | `ibm_satellite_link_endpoint_total_data_rate`|
+| `Metric Type` | `gauge` |
+| `Value Type`  | `none` |
+| `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
+{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
+{: caption="Metadata for the ibm_satellite_link_endpoint_total_data_rate metric" caption-side="top"}
+
+### Attributes for segmentation
+{: #attributes}
+
+Review the following global and additional attributes that are available for segmentation of {{site.data.keyword.satelliteshort}} metrics.
+{: shortdesc}
+
+#### Global attributes
+{: #global-attributes}
+
+The following global attributes are available for segmenting all of the [available metrics](#available-metrics).
+{: shortdesc}
+
+| Attribute | Attribute Name | Attribute Description |
+|-----------|----------------|-----------------------|
+| `Cloud Type` | `ibm_ctype` | The cloud type, which can be public, dedicated, or local |
+| `Location` | `ibm_location` | The location of the monitored resource, which can be a region, data center, or global |
+| `Resource` | `ibm_resource` | The resource that is measured by the service, usually reported as an identifying name or GUID |
+| `Resource Type` | `ibm_resource_type` | The type of the resource that is measured by the service |
+| `Resource group` | `ibm_resource_group_name` | The resource group where the {{site.data.keyword.satelliteshort}} location was created |
+| `Scope` | `ibm_scope` | The account GUID associated with this metric |
+| `Service name` | `ibm_service_name` | The name of the service that generates this metric |
+{: summary="Read this table from left to right. In the first column is the attribute type. In the second column is the attribute name. In the third column is the attribute description."}
+{: caption="Global attributes for metric segmentation" caption-side="top"}
+
+#### Additional attributes
+{: #additional-attributes}
+
+The following additional attributes that are specific to {{site.data.keyword.satelliteshort}} are available for segmenting one or more of the [available metrics](#available-metrics). See the `Segment By` field for each metric to determine its available segmentation attributes.
+{: shortdesc}
+
+| Attribute | Attribute Name | Attribute Description |
+|-----------|----------------|-----------------------|
+| `Endpoint ID` | `ibm_satellite_link_endpoint_id` | The identifier of the endpoint |
+| `Endpoint Name` | `ibm_satellite_link_endpoint_name` | The name of the endpoint |
+| `Location ID` | `ibm_satellite_link_location_id` | The identifier of the location |
+| `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance the metric is associated with |
+| `Service instance name` | `ibm_service_instance_name` | The user-provided name of the service instance, which might not be unique across regions in the account |
+{: summary="Read this table from left to right. In the first column is the attribute type. In the second column is the attribute name. In the third column is the attribute description."}
+{: caption="Additional attributes for metric segmentation" caption-side="top"}
 
 <br />
 
@@ -227,5 +388,3 @@ When you add your clusters to {{site.data.keyword.satelliteshort}} Configuration
 
 Adding clusters to {{site.data.keyword.satelliteshort}} Configuration does not automatically set up logging and monitoring solutions, such as {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
 {: note}
-
-

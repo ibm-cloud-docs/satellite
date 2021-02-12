@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-02-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -497,6 +497,8 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your locations.
 3. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} **Locations** table, hover over the location that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 4. Click **Remove location**, enter the location name to confirm the deletion, and click **Remove**.
 
+Now that the location is removed, check the hosts in your underlying infrastructure provider. To reuse the hosts for other purposes, you must reload the operating system. If you no longer need the hosts, delete them from your infrastructure provider.
+
 ### Removing locations from the CLI
 {: #location-remove-cli}
 
@@ -516,3 +518,5 @@ Use the {{site.data.keyword.satelliteshort}} CLI to remove your locations.
    ibmcloud sat location ls
    ```
    {: pre}
+
+Now that the location is removed, check the hosts in your underlying infrastructure provider. To reuse the hosts for other purposes, you must reload the operating system. If you no longer need the hosts, delete them from your infrastructure provider.

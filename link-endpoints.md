@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -224,6 +224,18 @@ Finally, to maintain enterprise security, you specify a list of source IP ranges
 
 **Looking to connect resources within the same {{site.data.keyword.satelliteshort}} location?** Link endpoints cannot be created between resources in the same location. Instead, resources can access each other directly. For example, an app that runs in an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}} does not need to communicate through {{site.data.keyword.satelliteshort}} Link to access a database that exists in the same location, and can instead access that database directly through the location's private network.
 {: tip}
+
+### Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location
+{: #default-link-endpoints}
+
+Default {{site.data.keyword.satelliteshort}} link endpoints are created for your location's control plane cluster and for any other {{site.data.keyword.satelliteshort}}-enabled services that you run in your location. These default {{site.data.keyword.satelliteshort}} link endpoints are accessible only from within the {{site.data.keyword.cloud_notm}} private network.
+{: shortdesc}
+
+* When you set up a location, a Link endpoint of type `location` is automatically created so that the {{site.data.keyword.satelliteshort}} control plane master can communicate with and make requested changes to your location's control plane cluster. This endpoint is named in the format `automated-control-plane-link-<locationID>-<10_digit_hash>`.
+* When you set up a {{site.data.keyword.satelliteshort}}-enabled service in your location, such as a {{site.data.keyword.openshiftlong_notm}} cluster, a Link endpoint of type `location` is automatically created so that the master for the service cluster can communicate with {{site.data.keyword.cloud_notm}} and monitoring through IBM. This endpoint is named in the format `automated-control-plane-link-<clusterID>-<10_digit_hash>`.
+
+Do not disable the automated control plane endpoints. Because these endpoints connect your location to {{site.data.keyword.cloud_notm}}, they cannot be removed.
+{: important}
 
 <br />
 
