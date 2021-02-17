@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -248,7 +248,7 @@ Create an endpoint of type `cloud` so that sources in your {{site.data.keyword.s
 **Before you begin**, ensure that you have the following:
 * Source client: A {{site.data.keyword.satelliteshort}} cluster or a host that you attached to your location. For more information about how to create a {{site.data.keyword.satelliteshort}} cluster, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). To attach a host to your location, see [Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#attach-hosts). Make sure that you do not assign the host to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster after you attached the host. Assigning the host starts a bootstrapping process that removes SSH access to your host.
 * Destination resource: A service, server, or app that runs outside of the location but that is accessible from within {{site.data.keyword.cloud_notm}}. For example, you can use the private service endpoint for an {{site.data.keyword.cloud_notm}} service, because that private service endpoint is routable from within the {{site.data.keyword.cloud_notm}} network. If you want to connect to a service that runs outside of {{site.data.keyword.cloud_notm}}, this service must be accessible from within the {{site.data.keyword.cloud_notm}} network.
-* Permissions: The [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/satellite?topic=satellite-iam) for the **Location** resource in {{site.data.keyword.satellitelong_notm}}.
+* Permissions: The [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/satellite?topic=satellite-iam) for the **Link** resource in {{site.data.keyword.satellitelong_notm}}.
 
 ### Creating cloud endpoints by using the console
 {: #link-cloud-ui}
@@ -436,7 +436,7 @@ Create an endpoint of type `location` so that sources that are connected to the 
 **Before you begin**, ensure that you have the following:
 * Source client: A service, server, or app that that can access the {{site.data.keyword.cloud_notm}} private network.
 * Destination resource: A service, server, or app that runs in a {{site.data.keyword.satelliteshort}} cluster or a host that you attached to your location. For more information about how to create a {{site.data.keyword.satelliteshort}} cluster, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). To attach a host to your location, see [Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#attach-hosts). Make sure that you do not assign the host to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster after you attached the host. Assigning the host starts a bootstrapping process that removes SSH access to your host.
-* Permissions: The [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/satellite?topic=satellite-iam) for the **Location** resource in {{site.data.keyword.satellitelong_notm}}.
+* Permissions: The [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform role](/docs/satellite?topic=satellite-iam) for the **Link**resource in {{site.data.keyword.satellitelong_notm}}.
 
 ### Creating location endpoints by using the console
 {: #link-location-ui}

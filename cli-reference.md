@@ -787,7 +787,7 @@ ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOU
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -841,7 +841,7 @@ ibmcloud sat endpoint get --endpoint ENDPOINT_ID --location LOCATION_ID [--outpu
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -880,7 +880,7 @@ ibmcloud sat endpoint ls --location LOCATION_ID [--output JSON] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -916,7 +916,7 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT_ID --location LOCATION_ID [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -952,7 +952,7 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
