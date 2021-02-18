@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -149,7 +149,7 @@ Review the following metrics that are available for your {{site.data.keyword.sat
 #### Location tunnel numbers
 {: #ibm_satellite_link_location_tunnel_count}
 
-The total number of {{site.data.keyword.satelliteshort}} link tunnel servers present at the endpoint.
+The total number of {{site.data.keyword.satelliteshort}} link tunnel servers present at the endpoint. One tunnel server is created for each cluster in your {{site.data.keyword.satelliteshort}} location, including clusters that run {{site.data.keyword.satelliteshort}}-enabled services and {{site.data.keyword.openshiftshort}} clusters that you create.
 
 | Metadata | Description |
 |----------|-------------|
