@@ -232,7 +232,7 @@ Default {{site.data.keyword.satelliteshort}} link endpoints are created for your
 {: shortdesc}
 
 * When you set up a location, a Link endpoint of type `location` is automatically created so that the {{site.data.keyword.satelliteshort}} control plane master can check the health of your location's control plane cluster. This endpoint is named in the format `satellite-healthcheck-<location_ID>`.
-* When you set up a {{site.data.keyword.satelliteshort}}-enabled service in your location, such as a {{site.data.keyword.openshiftlong_notm}} cluster, a Link endpoint of type `location` is automatically created so that the master for the service cluster can communicate with {{site.data.keyword.cloud_notm}} and monitoring through IBM. This endpoint is named in the format `automated-control-plane-link-<cluster_ID>-<10_digit_hash>`.
+* When you set up a {{site.data.keyword.satelliteshort}}-enabled service in your location, such as a {{site.data.keyword.openshiftlong_notm}} cluster, a Link endpoint of type `location` is automatically created so that the master for the service cluster can communicate with the {{site.data.keyword.openshiftlong_notm}} API in {{site.data.keyword.cloud_notm}}. This endpoint is named in the format `openshift-api-<cluster_ID>`.
 
 Do not disable the automated control plane endpoints. Because these endpoints connect your location to {{site.data.keyword.cloud_notm}}, they cannot be removed.
 {: important}
