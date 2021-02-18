@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -95,7 +95,7 @@ subcollection: satellite
 # Logging and monitoring {{site.data.keyword.satelliteshort}} health
 {: #health}
 
-Integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.cloud_notm}} resources with {{site.data.keyword.la_full}} and {{site.data.keyword.mon_full}}to get a comprehensive view and tools to manage all your resources.
+Integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.cloud_notm}} resources with {{site.data.keyword.la_full}} and {{site.data.keyword.mon_full}} to get a comprehensive view and tools to manage all your resources.
 {: shortdesc}
 
 By default, the following logs are automatically generated for your {{site.data.keyword.satelliteshort}} location:

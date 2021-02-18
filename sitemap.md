@@ -373,6 +373,12 @@ subcollection: satellite
   * [Example for a high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
   * [Example for a high availability setup in another cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
 
+[Securing your connection to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-service-connection)
+* [User access to resources that run in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#user-access)
+  * [Service-instance clusters](/docs/satellite?topic=satellite-service-connection#user-access-service)
+  * [IBM private network access with {{site.data.keyword.satelliteshort}} link](/docs/satellite?topic=satellite-service-connection#user-access-loc-ep)
+* [{{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#ibm-cloud-access)
+
 [Securing your data in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-data-security)
 * [What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
 * [How is my information stored and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
