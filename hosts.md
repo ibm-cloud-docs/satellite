@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -246,7 +246,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 ## Using host autoassignment
 {: #host-autoassign-ov}
 
-By default, available hosts are automatically assigned to worker pools in {{site.data.keyword.satelliteshort}} resources, such as a cluster or a {{site.data.keyword.satelliteshort}}-enabled service. The worker pools use host labels to request compute capacity from available {{{site.data.keyword.satelliteshort}} hosts with matching labels. You can disable and enable host autoassignment.
+By default, available hosts are automatically assigned to worker pools in {{site.data.keyword.satelliteshort}} resources, such as a cluster or a {{site.data.keyword.satelliteshort}}-enabled service. The worker pools use host labels to request compute capacity from available {{site.data.keyword.satelliteshort}} hosts with matching labels. You can disable and enable host autoassignment.
 {: shortdesc}
 
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).

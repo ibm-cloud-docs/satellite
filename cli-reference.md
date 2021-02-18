@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-09"
+lastupdated: "2021-02-17"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -787,7 +787,7 @@ ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOU
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -841,7 +841,7 @@ ibmcloud sat endpoint get --endpoint ENDPOINT_ID --location LOCATION_ID [--outpu
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -880,7 +880,7 @@ ibmcloud sat endpoint ls --location LOCATION_ID [--output JSON] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -916,7 +916,7 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT_ID --location LOCATION_ID [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -952,7 +952,7 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -1250,7 +1250,7 @@ ibmcloud sat host update --location LOCATION --host HOST [--host-label "KEY=VALU
 <dd>Optional. Label the host with a key-value pair to use for host autoassignment. To find existing host labels, run <code>ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;</code>. Repeat this flag for multiple host labels.</dd>
 
 <dt><code>--zone <em>ZONE</em></code></dt>
-<dd>Optional. Specify the zone that you want the host to use for autoassignment. Generally, this zone matches the zone of the infrastructure provider where the host machine is, such as a cloud provider zone or on-prem rack. To find the zones in your {{site.data.keyword.satellitshort}} location, run <code>ibmcloud sat location get --location &lt;location_name_or_ID&gt;</code> and check the **Host zones**.</dd>
+<dd>Optional. Specify the zone that you want the host to use for autoassignment. Generally, this zone matches the zone of the infrastructure provider where the host machine is, such as a cloud provider zone or on-prem rack. To find the zones in your {{site.data.keyword.satelliteshort}} location, run <code>ibmcloud sat location get --location &lt;location_name_or_ID&gt;</code> and check the **Host zones**.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
@@ -1836,6 +1836,9 @@ ibmcloud sat storage config get --name NAME [--output OUTPUT] [-q]
 <dl>
 <dt><code>--name <em>NAME</em></code></dt>
 <dd>Required. The name of the storage configuration.</code>.</dd>
+
+<dt><code>--output <em>JSON</em></code></dt>
+<dd>Optional. Displays the command output in JSON format.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-12"
+lastupdated: "2021-02-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -339,11 +339,16 @@ subcollection: satellite
 
 [Managing access for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-iam)
 * [Understanding {{site.data.keyword.satelliteshort}} resource types in IAM](/docs/satellite?topic=satellite-iam#iam-resource-types)
+  * [Location](/docs/satellite?topic=satellite-iam#iam-resource-loc)
+  * [Configuration, subscription, cluster, cluster group, and resource](/docs/satellite?topic=satellite-iam#iam-resource-config)
+  * [Link](/docs/satellite?topic=satellite-iam#iam-resource-link)
+  * [Other services](/docs/satellite?topic=satellite-iam#iam-resource-services)
 * [Assigning access with {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam#iam-assign)
   * [Overview of the process to set up access to {{site.data.keyword.satellitelong_notm}} in {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam#iam-assign-overview)
   * [Example UI steps](/docs/satellite?topic=satellite-iam#iam-assign-ui)
   * [Example CLI steps](/docs/satellite?topic=satellite-iam#iam-assign-cli)
 * [IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
+  * [Access policies](/docs/satellite?topic=satellite-iam#iam-roles-policies)
   * [Platform management roles](/docs/satellite?topic=satellite-iam#iam-roles-platform)
   * [Service access roles](/docs/satellite?topic=satellite-iam#iam-roles-service)
   * [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=satellite-iam#iam-roles-clusters)
@@ -368,6 +373,12 @@ subcollection: satellite
   * [Example for a high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
   * [Example for a high availability setup in another cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
 
+[Securing your connection to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-service-connection)
+* [User access to resources that run in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#user-access)
+  * [Service-instance clusters](/docs/satellite?topic=satellite-service-connection#user-access-service)
+  * [IBM private network access with {{site.data.keyword.satelliteshort}} link](/docs/satellite?topic=satellite-service-connection#user-access-loc-ep)
+* [{{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#ibm-cloud-access)
+
 [Securing your data in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-data-security)
 * [What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
 * [How is my information stored and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
@@ -375,9 +386,13 @@ subcollection: satellite
 * [How can I remove my information?](/docs/satellite?topic=satellite-data-security#sat-data-removal)
 
 
-## CLI plug-in reference
-{: #sitemap_cli_plug-in_reference}
+## API reference
+{: #sitemap_api_reference}
 
+
+[Satellite locations, hosts, and clusters](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster){: external}
+
+[Satellite links, endpoints, and sources](https://pages.github.ibm.com/IBM-Cloud-Platform-Networking/satellite-link-api/#/){: external}
 
 [{{site.data.keyword.satelliteshort}} CLI command reference](/docs/satellite?topic=satellite-satellite-cli-reference)
 * [`ibmcloud sat` commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-map)
@@ -510,6 +525,23 @@ subcollection: satellite
 
 
 [Debugging location health](/docs/satellite?topic=satellite-ts-locations-debug)
+* [R0001: Ready location](/docs/satellite?topic=satellite-ts-locations-debug#R0001)
+* [R0002, R0018, R0020, R0023, R0029, R0037, R0039: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0002)
+* [R0009: Unable to recover](/docs/satellite?topic=satellite-ts-locations-debug#R0009)
+* [R0010, R0030, R0031, R0032: Control plane needs hosts](/docs/satellite?topic=satellite-ts-locations-debug#R0010)
+* [R0011, R0040, R0041: Issues with the control plane hosts](/docs/satellite?topic=satellite-ts-locations-debug#R0011)
+* [R0012: Hosts are needed in all 3 zones](/docs/satellite?topic=satellite-ts-locations-debug#R0012)
+* [R0013: Unavailable zone](/docs/satellite?topic=satellite-ts-locations-debug#R0013)
+* [R0014: DNS record for control plane](/docs/satellite?topic=satellite-ts-locations-debug#R0014)
+* [R0015, R0016: Host issues](/docs/satellite?topic=satellite-ts-locations-debug#R0015)
+* [R0024, R0025, R0038: Cluster issues](/docs/satellite?topic=satellite-ts-locations-debug#R0024)
+* [R0026: Host disk space](/docs/satellite?topic=satellite-ts-locations-debug#R0026)
+* [R0033, R0034, R0035: Control plane capacity issues](/docs/satellite?topic=satellite-ts-locations-debug#R0033)
+* [R0036: Location subdomain traffic routing](/docs/satellite?topic=satellite-ts-locations-debug#R0036)
+* [R0042, R0047, R0048: Permission issues](/docs/satellite?topic=satellite-ts-locations-debug#R0042)
+* [R0043: Layer 3 connectivity](/docs/satellite?topic=satellite-ts-locations-debug#R0043)
+* [R0044: DNS issues](/docs/satellite?topic=satellite-ts-locations-debug#R0044)
+* [R0045, R0046: Host file system and NTP issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
 
 [Debugging the health of the location control plane](/docs/satellite?topic=satellite-ts-locations-control-plane)
 
