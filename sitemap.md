@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -380,9 +380,13 @@ subcollection: satellite
 * [How can I remove my information?](/docs/satellite?topic=satellite-data-security#sat-data-removal)
 
 
-## CLI plug-in reference
-{: #sitemap_cli_plug-in_reference}
+## API reference
+{: #sitemap_api_reference}
 
+
+[Satellite locations, hosts, and clusters](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster){: external}
+
+[Satellite links, endpoints, and sources](https://pages.github.ibm.com/IBM-Cloud-Platform-Networking/satellite-link-api/#/){: external}
 
 [{{site.data.keyword.satelliteshort}} CLI command reference](/docs/satellite?topic=satellite-satellite-cli-reference)
 * [`ibmcloud sat` commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-map)
