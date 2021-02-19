@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -111,7 +111,7 @@ You can use {{site.data.keyword.cloud_notm}} IAM to assign access to different r
 
 * [{{site.data.keyword.satelliteshort}} location](#iam-resource-loc), including actions for locations and hosts.
 * [{{site.data.keyword.satelliteshort}} config](#iam-resource-config), including actions for configurations, subscriptions, clusters, cluster groups, resources, and other components that use {{site.data.keyword.satelliteshort}} config like storage.
-* [{{site.data.keyword.satelliteshort}} link](#iam-resource-link), including actions for endpoints and sources.
+* [{{site.data.keyword.satelliteshort}} Link](#iam-resource-link), including actions for endpoints and sources.
 * [Other services](#iam-resource-services), like {{site.data.keyword.openshiftlong_notm}} clusters and {{site.data.keyword.satelliteshort}}-enabled services.
 
 ### Location
@@ -166,7 +166,7 @@ Review details about the {{site.data.keyword.satelliteshort}} config IAM resourc
 ### Link
 {: #iam-resource-link}
 
-Review details about the {{site.data.keyword.satelliteshort}} link IAM resource type.
+Review details about the {{site.data.keyword.satelliteshort}} Link IAM resource type.
 {: shortdesc}
 
 **Name of the resource type**:
@@ -631,7 +631,7 @@ Wondering which access roles to assign to your {{site.data.keyword.satelliteshor
 
 | Use case | Example roles and scope |
 | --- | --- |
-| Creating a location | The user and the [API key that is set for the region and resource group](/docs/openshift?topic=openshift-users#api_key_about) require the following permissions. **Administrator** platform role for all {{site.data.keyword.satelliteshort}} locations. Custom **{{site.data.keyword.satelliteshort}} link Administrator** service role for {{site.data.keyword.satelliteshort}} link. **Writer** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. For additional permissions to set up the location control plane, see [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
+| Creating a location | The user and the [API key that is set for the region and resource group](/docs/openshift?topic=openshift-users#api_key_about) require the following permissions. **Administrator** platform role for all {{site.data.keyword.satelliteshort}} locations. Custom **{{site.data.keyword.satelliteshort}} Link Administrator** service role for {{site.data.keyword.satelliteshort}} Link. **Writer** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. For additional permissions to set up the location control plane, see [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
 | Creating a cluster in a location | See [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
 | Location auditor | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location and link endpoints. **Reader** service role for the configuration resources in the location. **Reader** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. |
 | App developers | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location. **Writer** or **Deployer** service access role for the configuration resources. **Editor** platform role and **Writer** service role to {{site.data.keyword.openshiftshort}} clusters or particular projects in a cluster.|

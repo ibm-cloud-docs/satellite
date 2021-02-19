@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -411,9 +411,9 @@ See [Location subdomain not routing traffic to control plane hosts](/docs/satell
 ```
 R0042 Link APIs are erroring in this location. Please check the credentials you have configured for this location and ensure it has the proper permissions.
 
-R0047 The API key that is set does not have correct permissions in {{site.data.keyword.cloud_notm}} IAM to access the {{site.data.keyword.satelliteshort}} link endpoint for the location control plane.
+R0047 The API key that is set does not have correct permissions in {{site.data.keyword.cloud_notm}} IAM to access the {{site.data.keyword.satelliteshort}} Link endpoint for the location control plane.
 
-R0048 The API key that is set does not have correct permissions in {{site.data.keyword.cloud_notm}} IAM to access the {{site.data.keyword.satelliteshort}} link endpoint for a cluster that runs in the location.
+R0048 The API key that is set does not have correct permissions in {{site.data.keyword.cloud_notm}} IAM to access the {{site.data.keyword.satelliteshort}} Link endpoint for a cluster that runs in the location.
 ```
 {: screen}
 

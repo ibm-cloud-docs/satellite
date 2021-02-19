@@ -584,7 +584,7 @@ To review resources in {{site.data.keyword.satelliteshort}} config:
          kubectl label deployment nginx razee/watch-resource=lite
          ```
          {: pre}
-2. After you enable watchkeeping for a resource, wait an hour for the resources to display.
+2. After you enable watchkeeping for a resource, wait about an hour for the resources to display.
 3. Review the resources from {{site.data.keyword.satelliteshort}} config.
    *  **From the console**: You can review resources in several areas in the console as follows.
       * From the [**Cluster resources** page](https://cloud.ibm.com/satellite/resources){: external}. * * From the [**Configurations** page](https://cloud.ibm.com/satellite/configuration){: external}, click a configuration. Then, click a subscription and review the **Resources** tab.

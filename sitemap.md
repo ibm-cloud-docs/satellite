@@ -294,8 +294,9 @@ subcollection: satellite
 
 [About {{site.data.keyword.satelliteshort}} endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-about)
 * [Architecture](/docs/satellite?topic=satellite-link-location-cloud#link-architecture)
+* [Network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security)
 * [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
-* [Access controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
+* [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
 * [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints)
 * [Use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
 
@@ -309,51 +310,36 @@ subcollection: satellite
 * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-location-cli)
 * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-sources)
 
-[Logging network traffic for endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-log)
+[Logging and monitoring network traffic for endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-health)
+* [Setting up Sysdig for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-sysdig)
+* [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-location-cloud#link-packet-capture)
 
 [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint)
 
 
-## Logging and monitoring {{site.data.keyword.satelliteshort}} health
-{: #sitemap_logging_and_monitoring__health}
+## Logging and monitoring
+{: #sitemap_logging_and_monitoring}
 
 
-[Logging and monitoring {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health)
+[Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health)
+* [Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
+* [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
 
-[IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-health#monitoring-default)
+[Monitoring for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-monitor)
+* [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default)
+* [Setting up Sysdig for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-sysdig)
+  * [Available metrics](/docs/satellite?topic=satellite-monitor#available-metrics)
+  * [Attributes for segmentation](/docs/satellite?topic=satellite-monitor#attributes)
+* [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters)
+* [Viewing location, host, and cluster health](/docs/satellite?topic=satellite-monitor#view-health)
+  * [Viewing location health](/docs/satellite?topic=satellite-monitor#location-health)
+  * [Viewing host health](/docs/satellite?topic=satellite-monitor#host-health)
+  * [Viewing cluster health](/docs/satellite?topic=satellite-monitor#cluster-health)
+  * [Viewing Kubernetes resources in clusters](/docs/satellite?topic=satellite-monitor#kubernetes-resources-health)
 
-[Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
-
-[Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
-
-[Setting up monitoring for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
-
-[Viewing location, host, and cluster health](/docs/satellite?topic=satellite-health#view-health)
-* [Viewing location health](/docs/satellite?topic=satellite-health#location-health)
-* [Viewing host health](/docs/satellite?topic=satellite-health#host-health)
-* [Viewing cluster health](/docs/satellite?topic=satellite-health#cluster-health)
-* [Viewing Kubernetes resources in clusters](/docs/satellite?topic=satellite-health#kubernetes-resources-health)
-
-
-## Logging and monitoring {{site.data.keyword.satelliteshort}} health
-{: #sitemap_logging_and_monitoring__health_}
-
-
-[Logging and monitoring {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health)
-
-[IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-health#monitoring-default)
-
-[Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
-
-[Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
-
-[Setting up monitoring for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
-
-[Viewing location, host, and cluster health](/docs/satellite?topic=satellite-health#view-health)
-* [Viewing location health](/docs/satellite?topic=satellite-health#location-health)
-* [Viewing host health](/docs/satellite?topic=satellite-health#host-health)
-* [Viewing cluster health](/docs/satellite?topic=satellite-health#cluster-health)
-* [Viewing Kubernetes resources in clusters](/docs/satellite?topic=satellite-health#kubernetes-resources-health)
+[Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health)
+* [Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
+* [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
 
 
 ## Enhancing security
@@ -399,7 +385,7 @@ subcollection: satellite
 [Securing your connection to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-service-connection)
 * [User access to resources that run in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#user-access)
   * [Service-instance clusters](/docs/satellite?topic=satellite-service-connection#user-access-service)
-  * [IBM private network access with {{site.data.keyword.satelliteshort}} link](/docs/satellite?topic=satellite-service-connection#user-access-loc-ep)
+  * [IBM private network access with {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-service-connection#user-access-loc-ep)
 * [{{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#ibm-cloud-access)
 
 [Securing your data in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-data-security)
@@ -417,93 +403,147 @@ subcollection: satellite
 
 [Satellite links, endpoints, and sources](https://pages.github.ibm.com/IBM-Cloud-Platform-Networking/satellite-link-api/#/){: external}
 
+
+## {{site.data.keyword.satelliteshort}} CLI command reference
+{: #sitemap__cli_command_reference}
+
+
 [{{site.data.keyword.satelliteshort}} CLI command reference](/docs/satellite?topic=satellite-satellite-cli-reference)
-* [`ibmcloud sat` commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-map)
-* [Cluster commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-cluster-commands)
-  * [`ibmcloud sat cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-get)
-  * [`ibmcloud sat cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls)
-  * [`ibmcloud sat cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-register)
-  * [`ibmcloud sat cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister)
-* [Cluster group commands](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-commands)
-  * [`ibmcloud sat group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-attach)
-  * [`ibmcloud sat group create`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-create)
-  * [`ibmcloud sat group detach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-detach)
-  * [`ibmcloud sat group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get)
-  * [`ibmcloud sat group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls)
-  * [`ibmcloud sat group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm)
-* [Config commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-config-configuration-commands)
-  * [`ibmcloud sat config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-create)
-  * [`ibmcloud sat config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-get)
-  * [`ibmcloud sat config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-ls)
-  * [`ibmcloud sat config rename`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rename)
-  * [`ibmcloud sat config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rm)
-  * [`ibmcloud sat config version create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-create)
-  * [`ibmcloud sat config version get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-get)
-  * [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-rm)
-* [Endpoint commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-endpoint-commands)
-  * [`ibmcloud sat endpoint create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-create)
-  * [`ibmcloud sat endpoint get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-get)
-  * [`ibmcloud sat endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-ls)
-  * [`ibmcloud sat endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-rm)
-  * [`ibmcloud sat endpoint update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-update)
-* [Host commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-host-commands)
-  * [`ibmcloud sat host assign`](/docs/satellite?topic=satellite-satellite-cli-reference#host-assign)
-  * [`ibmcloud sat host attach`](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach)
-  * [`ibmcloud sat host get`](/docs/satellite?topic=satellite-satellite-cli-reference#host-get)
-  * [`ibmcloud sat host ls`](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls)
-  * [`ibmcloud sat host rm`](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm)
-  * [`ibmcloud sat host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update)
-* [Location commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-location-commands)
-  * [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create)
-  * [`ibmcloud sat location dns ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-ls)
-  * [`ibmcloud sat location dns register`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-register)
-  * [`ibmcloud sat location get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-get)
-  * [`ibmcloud sat location ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-ls)
-  * [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm)
-* [Resource commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands)
-  * [`ibmcloud sat resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get)
-  * [`ibmcloud sat resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls)
-* [Storage commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-storage-commands)
-  * [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create)
-  * [`ibmcloud sat storage assignment get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-get)
-  * [`ibmcloud sat storage assignment ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-ls)
-  * [`ibmcloud sat storage assignment rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-rm)
-  * [`ibmcloud sat storage assignment update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-update)
-  * [`ibmcloud sat storage config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create)
-  * [`ibmcloud sat storage config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-get)
-  * [`ibmcloud sat storage config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-ls)
-  * [`ibmcloud sat storage config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-rm)
-  * [`ibmcloud sat storage template get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-get)
-  * [`ibmcloud sat storage template ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-ls)
-* [Subscription commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-config-subscription-commands)
-  * [`ibmcloud sat subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-create)
-  * [`ibmcloud sat subscription get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-get)
-  * [`ibmcloud sat subscription ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-ls)
-  * [`ibmcloud sat subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-rm)
-  * [`ibmcloud sat subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)
-* [Other commands](/docs/satellite?topic=satellite-satellite-cli-reference#other-commands)
-  * [{{site.data.keyword.openshiftlong_notm}} commands (`ibmcloud oc`)](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-create)
+
+[`ibmcloud sat` commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-map)
+
+[Cluster commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-cluster-commands)
+* [`ibmcloud sat cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-get)
+* [`ibmcloud sat cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls)
+* [`ibmcloud sat cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-register)
+* [`ibmcloud sat cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister)
+
+[Cluster group commands](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-commands)
+* [`ibmcloud sat group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-attach)
+* [`ibmcloud sat group create`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-create)
+* [`ibmcloud sat group detach`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-detach)
+* [`ibmcloud sat group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get)
+* [`ibmcloud sat group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls)
+* [`ibmcloud sat group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm)
+
+[Config commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-config-configuration-commands)
+* [`ibmcloud sat config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-create)
+* [`ibmcloud sat config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-get)
+* [`ibmcloud sat config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-ls)
+* [`ibmcloud sat config rename`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rename)
+* [`ibmcloud sat config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rm)
+* [`ibmcloud sat config version create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-create)
+* [`ibmcloud sat config version get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-get)
+* [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-rm)
+
+[Endpoint commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-endpoint-commands)
+* [`ibmcloud sat endpoint create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-create)
+* [`ibmcloud sat endpoint get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-get)
+* [`ibmcloud sat endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-ls)
+* [`ibmcloud sat endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-rm)
+* [`ibmcloud sat endpoint update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-update)
+
+[Host commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-host-commands)
+* [`ibmcloud sat host assign`](/docs/satellite?topic=satellite-satellite-cli-reference#host-assign)
+* [`ibmcloud sat host attach`](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach)
+* [`ibmcloud sat host get`](/docs/satellite?topic=satellite-satellite-cli-reference#host-get)
+* [`ibmcloud sat host ls`](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls)
+* [`ibmcloud sat host rm`](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm)
+* [`ibmcloud sat host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update)
+
+[Location commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-location-commands)
+* [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create)
+* [`ibmcloud sat location dns ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-ls)
+* [`ibmcloud sat location dns register`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-register)
+* [`ibmcloud sat location get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-get)
+* [`ibmcloud sat location ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-ls)
+* [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm)
+
+[Resource commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands)
+* [`ibmcloud sat resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get)
+* [`ibmcloud sat resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls)
+
+[Storage commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-storage-commands)
+* [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create)
+* [`ibmcloud sat storage assignment get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-get)
+* [`ibmcloud sat storage assignment ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-ls)
+* [`ibmcloud sat storage assignment rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-rm)
+* [`ibmcloud sat storage assignment update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-update)
+* [`ibmcloud sat storage config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create)
+* [`ibmcloud sat storage config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-get)
+* [`ibmcloud sat storage config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-ls)
+* [`ibmcloud sat storage config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-rm)
+* [`ibmcloud sat storage template get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-get)
+* [`ibmcloud sat storage template ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-ls)
+
+[Subscription commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-config-subscription-commands)
+* [`ibmcloud sat subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-create)
+* [`ibmcloud sat subscription get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-get)
+* [`ibmcloud sat subscription ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-ls)
+* [`ibmcloud sat subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-rm)
+* [`ibmcloud sat subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)
+
+[Other commands](/docs/satellite?topic=satellite-satellite-cli-reference#other-commands)
+* [{{site.data.keyword.openshiftlong_notm}} commands (`ibmcloud oc`)](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-create)
+
+
+## {{site.data.keyword.satelliteshort}} CLI changelog
+{: #sitemap__cli_changelog}
+
 
 [{{site.data.keyword.satelliteshort}} CLI changelog](/docs/satellite?topic=satellite-satellite-cli-changelog)
-* [Version 1.0](/docs/satellite?topic=satellite-satellite-cli-changelog#10)
+
+[Version 1.0](/docs/satellite?topic=satellite-satellite-cli-changelog#10)
+
+
+## Usage requirements
+{: #sitemap_usage_requirements}
+
 
 [Usage requirements](/docs/satellite?topic=satellite-requirements)
-* [Locations](/docs/satellite?topic=satellite-requirements#reqs-locations)
-* [Hosts](/docs/satellite?topic=satellite-requirements#reqs-host)
-* [Clusters](/docs/satellite?topic=satellite-requirements#reqs-clusters)
-* [Link and endpoints](/docs/satellite?topic=satellite-requirements#reqs-link)
-* [Config](/docs/satellite?topic=satellite-requirements#reqs-config)
-* [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-requirements#reqs-services)
+
+[Locations](/docs/satellite?topic=satellite-requirements#reqs-locations)
+
+[Hosts](/docs/satellite?topic=satellite-requirements#reqs-host)
+
+[Clusters](/docs/satellite?topic=satellite-requirements#reqs-clusters)
+
+[Link and endpoints](/docs/satellite?topic=satellite-requirements#reqs-link)
+
+[Config](/docs/satellite?topic=satellite-requirements#reqs-config)
+
+[{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-requirements#reqs-services)
+
+
+## Supported {{site.data.keyword.cloud_notm}} locations
+{: #sitemap_supported__locations}
+
 
 [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions)
-* [Understanding supported {{site.data.keyword.cloud_notm}} multizone metros in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions)
+
+[Understanding supported {{site.data.keyword.cloud_notm}} multizone metros in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions)
+
+
+## Your responsibilities
+{: #sitemap_your_responsibilities}
+
 
 [Your responsibilities](/docs/satellite?topic=satellite-responsibilities)
-* [Incident and operations management](/docs/satellite?topic=satellite-responsibilities#incident-and-ops)
-* [Change management](/docs/satellite?topic=satellite-responsibilities#change-management)
-* [Identity and access management](/docs/satellite?topic=satellite-responsibilities#iam-responsibilities)
-* [Security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance)
-* [Disaster recovery](/docs/satellite?topic=satellite-responsibilities#disaster-recovery)
+
+[Incident and operations management](/docs/satellite?topic=satellite-responsibilities#incident-and-ops)
+
+[Change management](/docs/satellite?topic=satellite-responsibilities#change-management)
+
+[Identity and access management](/docs/satellite?topic=satellite-responsibilities#iam-responsibilities)
+
+[Security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance)
+
+[Disaster recovery](/docs/satellite?topic=satellite-responsibilities#disaster-recovery)
+
+
+## {{site.data.keyword.satellitelong_notm}} notices
+{: #sitemap__notices}
+
 
 [{{site.data.keyword.satellitelong_notm}} notices](/docs/satellite?topic=satellite-sat-notices)
 

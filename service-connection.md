@@ -96,7 +96,7 @@ subcollection: satellite
 # Securing your connection to {{site.data.keyword.satelliteshort}}
 {: #service-connection}
 
-With {{site.data.keyword.satellitelong_notm}}, you bring {{site.data.keyword.cloud_notm}} to your own infrastructure environment by creating a {{site.data.keyword.satelliteshort}} location. This setup means that you do not need [{{site.data.keyword.cloud_notm}} service endpoints](/docs/account?topic=account-service-endpoints-overview) to access {{site.data.keyword.cloud_notm}}. Instead, {{site.data.keyword.cloud_notm}} needs a {{site.data.keyword.satelliteshort}} link endpoint to access your infrastructure environment. You can access services in your {{site.data.keyword.satelliteshort}} location by creating {{site.data.keyword.satelliteshort}} link endpoints, using the cluster URL, or creating a route or similar service for workloads in a cluster.
+With {{site.data.keyword.satellitelong_notm}}, you bring {{site.data.keyword.cloud_notm}} to your own infrastructure environment by creating a {{site.data.keyword.satelliteshort}} location. This setup means that you do not need [{{site.data.keyword.cloud_notm}} service endpoints](/docs/account?topic=account-service-endpoints-overview) to access {{site.data.keyword.cloud_notm}}. Instead, {{site.data.keyword.cloud_notm}} needs a {{site.data.keyword.satelliteshort}} Link endpoint to access your infrastructure environment. You can access services in your {{site.data.keyword.satelliteshort}} location by creating {{site.data.keyword.satelliteshort}} Link endpoints, using the cluster URL, or creating a route or similar service for workloads in a cluster.
 {: shortdesc}
 
 ## User access to resources that run in your {{site.data.keyword.satelliteshort}} location
@@ -115,20 +115,20 @@ For example, when you create a {{site.data.keyword.satellitelong_notm}} cluster,
 
 For more information about connecting to services that run in your {{site.data.keyword.satelliteshort}} location by using the cluster service URL, see the documentation for that service, such as the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 
-### IBM private network access with {{site.data.keyword.satelliteshort}} link
+### IBM private network access with {{site.data.keyword.satelliteshort}} Link
 {: #user-access-loc-ep}
 
-If you have a resource on the IBM private network that requires access to your {{site.data.keyword.satelliteshort}} location, you can [create a `location` endpoint in {{site.data.keyword.satelliteshort}} link](/docs/satellite?topic=satellite-link-location-cloud#link-location).
+If you have a resource on the IBM private network that requires access to your {{site.data.keyword.satelliteshort}} location, you can [create a `location` endpoint in {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-location-cloud#link-location).
 {: shortdesc}
 
 ## {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location
 {: #ibm-cloud-access}
 
-Default {{site.data.keyword.satelliteshort}} link endpoints are created for your location's control plane cluster and for any other {{site.data.keyword.satelliteshort}}-enabled services that you run in your location. These default {{site.data.keyword.satelliteshort}} link endpoints are accessible only from within the {{site.data.keyword.cloud_notm}} private network.
+Default {{site.data.keyword.satelliteshort}} Link endpoints are created for your location's control plane cluster and for any other {{site.data.keyword.satelliteshort}}-enabled services that you run in your location. These default {{site.data.keyword.satelliteshort}} Link endpoints are accessible only from within the {{site.data.keyword.cloud_notm}} private network.
 {: shortdesc}
 
 * When you set up a location, a Link endpoint of type `location` is automatically created so that the {{site.data.keyword.satelliteshort}} control plane master can check the health of your location's control plane cluster. This endpoint is named in the format `satellite-healthcheck-<location_ID>`.
 * When you set up a {{site.data.keyword.satelliteshort}}-enabled service in your location, such as a {{site.data.keyword.openshiftlong_notm}} cluster, a Link endpoint of type `location` is automatically created so that the master for the service cluster can communicate with the {{site.data.keyword.openshiftlong_notm}} API in {{site.data.keyword.cloud_notm}}. This endpoint is named in the format `openshift-api-<cluster_ID>`.
 
 Do not disable these automated endpoints. Because these endpoints connect your location to {{site.data.keyword.cloud_notm}}, they cannot be removed.
-{: important} For more information about {{site.data.keyword.satelliteshort}} link endpoints and what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud).
+{: important} For more information about {{site.data.keyword.satelliteshort}} Link endpoints and what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud).
