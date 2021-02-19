@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -292,10 +292,10 @@ subcollection: satellite
 
 [About {{site.data.keyword.satelliteshort}} endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-about)
 * [Architecture](/docs/satellite?topic=satellite-link-location-cloud#link-architecture)
-* [Security and encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
+* [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
 * [Access controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
-* [Example use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
 * [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints)
+* [Use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
 
 [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-location-cloud#link-cloud)
 * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-ui)

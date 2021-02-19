@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -130,5 +130,5 @@ Default {{site.data.keyword.satelliteshort}} link endpoints are created for your
 * When you set up a location, a Link endpoint of type `location` is automatically created so that the {{site.data.keyword.satelliteshort}} control plane master can check the health of your location's control plane cluster. This endpoint is named in the format `satellite-healthcheck-<location_ID>`.
 * When you set up a {{site.data.keyword.satelliteshort}}-enabled service in your location, such as a {{site.data.keyword.openshiftlong_notm}} cluster, a Link endpoint of type `location` is automatically created so that the master for the service cluster can communicate with the {{site.data.keyword.openshiftlong_notm}} API in {{site.data.keyword.cloud_notm}}. This endpoint is named in the format `openshift-api-<cluster_ID>`.
 
-Do not disable the automated control plane endpoints. Because these endpoints connect your location to {{site.data.keyword.cloud_notm}}, they cannot be removed.
-{: important} For more information about {{site.data.keyword.satelliteshort}} link endpoints, see [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud).
+Do not disable these automated endpoints. Because these endpoints connect your location to {{site.data.keyword.cloud_notm}}, they cannot be removed.
+{: important} For more information about {{site.data.keyword.satelliteshort}} link endpoints and what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud).
