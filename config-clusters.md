@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-19"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -355,13 +355,14 @@ To create the configuration:
    1. From the actions menu of a configuration, click **Add version**.
    2. Enter a name and an optional description for your version.
    3. Upload a Kubernetes resource YAML file or use the editor to enter your Kubernetes resource definition directly.
-   4. Click **Add** to add the Kubernetes resource definition as a version to your configuration.
+   4. **Optional**: To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} config dashboard, you can [add a configmap](https://github.com/razee-io/WatchKeeper#watch-by-resource){: external} to the YAML configuration file of your resource. Make sure to set the namespace for the configmap to `razeedeploy`.
+   5. Click **Add** to add the Kubernetes resource definition as a version to your configuration.
 4. Subscribe your cluster group to the {{site.data.keyword.satelliteshort}} configuration to deploy the Kubernetes resources to your clusters.
    1. Select the configuration that you created to see the configuration details.
    2. Click **Create subscription**.
    3. Enter a name for your subscription and select the version name and the cluster group that you created earlier.
    4. Click **Create** to create the subscription. After you create the subscription, {{site.data.keyword.satelliteshort}} Config automatically downloads the Kubernetes resource YAML file for the version that you specified and starts applying this YAML file across all clusters that belong to the cluster group. This process takes a few minutes to complete. In addition, information about all Kubernetes resources that you create are sent back from your clusters to {{site.data.keyword.satelliteshort}} Config and can be reviewed in the {{site.data.keyword.satelliteshort}} [**Cluster resources**](https://cloud.ibm.com/satellite/resources) dashboard.
-5. Select your subscription to see the subscription details and the rollout status of your Kubernetes resource deployment. If errors occur during the deployment, you can view the error message in the **Message** column of your subscription details.
+5. Select your subscription to see the subscription details and the rollout status of your Kubernetes resource deployment. If errors occur during the deployment, such as YAML files with formatting errors or unsupported API version values, you can view the error message in the **Message** column of your subscription details.
 
 <br />
 
@@ -414,6 +415,10 @@ To create the configuration:
    {: screen}
 
 4. Upload a Kubernetes resource file to your configuration.
+
+   To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} config dashboard, you can [add a configmap](https://github.com/razee-io/WatchKeeper#watch-by-resource){: external} to the YAML configuration file of your resource. Make sure to set the namespace for the configmap to `razeedeploy`.
+   {: tip}
+
    ```
    ibmcloud sat config version create --name <version_name> --config <configuration_name_or_ID> --file-format <type> --read-config <file_path>
    ```
@@ -548,3 +553,40 @@ After you complete these steps, the cluster can be added to a cluster group in y
 7. Verify that your cluster shows on the {{site.data.keyword.satelliteshort}} [**Clusters**](https://cloud.ibm.com/satellite/clusters){: external} dashboard.
 
 8. Optional: Click on your cluster to view the Kubernetes resources that are deployed to the cluster.
+
+<br />
+## Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config
+{: #satconfig-resources}
+
+You can use {{site.data.keyword.satelliteshort}} config to review the Kubnernetes resources that run in your registered clusters.
+{: shortdesc}
+
+Before you begin, make sure that you have the following permissions:
+-  The **Administrator** platform role, **Reader** platform role, or **Manager** platform role in {{site.data.keyword.cloud_notm}} IAM for the **Resource** resource type in {{site.data.keyword.satellitelong_notm}}.
+-  The appropriate permissions to enable the {{site.data.keyword.satelliteshort}} config watchkeeping capability, such as one of the following options.
+   * The [permissions](#create-satconfig-ui) to create a configuration version and subscribe clusters to the version.
+   * The **Writer** service role in {{site.data.keyword.cloud_notm}} IAM to the **Kubernetes Service** clusters that you want to watch resources for.
+
+To review resources in {{site.data.keyword.satelliteshort}} config:
+1. Review the [watchkeeper collection methods](https://github.com/razee-io/WatchKeeper#collection-methods){: external} to decide how to set up watchkeeping for your resources. Common use cases include:
+   *  **Watch all of the resources that my {{site.data.keyword.satelliteshort}} subscription creates**.
+      1. [Add a configmap](https://github.com/razee-io/WatchKeeper#watch-by-resource){: external} to the YAML file of your {{site.data.keyword.satelliteshort}} configuration version. 
+      2. In the `metadata.namespace` field of the configmap, set the value to `razeedeploy`.
+      3. In the `data` section of the configmap, add all of the resources that you want {{site.data.keyword.satelliteshort}} config to watch.
+      4. Subscribe your clusters to this version from the [console](#create-satconfig-ui) or [CLI](#create-satconfig-cli).
+   *  **Watch a particular resource in my {{site.data.keyword.satelliteshort}} config version**.
+      1. In the `metadata.labels` field of the Kubernetes resource in your {{site.data.keyword.satelliteshort}} config version, set the value to `razee/watch-resource=lite`.
+      2. Subscribe your clusters to this version from the [console](#create-satconfig-ui) or [CLI](#create-satconfig-cli).
+   *  **Watch a particular resource that I label in my cluster**.
+      1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+      2. Individually label the resource that you want {{site.data.keyword.satelliteshort}} config to watch. For example, the following command watches a deployment that is called `nginx`. 
+         ```
+         {[kubectl]} label deployment nginx razee/watch-resource=lite
+         ```
+         {: pre}
+2. After you enable watchkeeping for a resource, wait an hour for the resources to display.
+3. Review the resources from {{site.data.keyword.satelliteshort}} config.
+   *  **From the console**: You can review resources in several areas in the console as follows.
+      * From the [**Cluster resources** page](https://cloud.ibm.com/satellite/resources){: external}. * * From the [**Configurations** page](https://cloud.ibm.com/satellite/configuration){: external}, click a configuration. Then, click a subscription and review the **Resources** tab.
+      * From the [**Clusters** page](https://cloud.ibm.com/satellite/clusters){: external}, click a cluster. Then, review the **Resources** tab.
+   *  **From the CLI**: Use the `ibmcloud sat resource ls` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls) and its options to list resources. To view the details of a particular resource, use the `ibmcloud sat resource get` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get).

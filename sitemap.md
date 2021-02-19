@@ -283,6 +283,8 @@ subcollection: satellite
 
 [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters)
 
+[Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources)
+
 
 ## Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints
 {: #sitemap_connecting__locations_with_external_services_using_link_endpoints}
