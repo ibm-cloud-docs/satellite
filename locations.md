@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -451,21 +451,33 @@ The location control plane is running at max capacity and cannot support any mor
 
 The number of clusters depends on the size of your clusters and the size of the hosts that you use for the {{site.data.keyword.satelliteshort}} location control plane. You must scale up the control plane hosts in multiples of 3, such as 6, 9, or 12.
 
-The following table provides an example of the number hosts that the control plane needs to run the masters for a certain number of clusters. The calculation assumes:
-* The hosts for the control plane are the minimum size of 4 vCPU, 16 GB RAM, and 100 GB of disk storage.
-* The clusters have no more than 30 worker nodes each.
-* No other resources run in the location that require the location control plane resources.
+The following tables provide examples of the number of hosts that the control plane must have to run the masters for various combinations of clusters and worker nodes. The size of the hosts that run the control plane, **4 vCPU and 16GB RAM** or **16 vCPU and 64GB RAM**, affect the numbers of clusters and worker nodes that are possible in the location.
 
-| Number of clusters in location | Number of hosts required for control plane|
-| --- | --- |
-| 1 cluster, for demonstration purposes | 3 hosts |
-| Up to 10 clusters | 6 hosts |
-| Up to 20 clusters | 9 hosts |
-| Up to 30 clusters | 12 hosts |
-{: caption="Example of the number of hosts the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for a number of clusters in the location." caption-side="top"}
+| Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
+| --- | --- | --- | --- |
+| 3 hosts | 1 cluster, for demonstration purposes | Up to 20 workers | 20 workers per cluster |
+| 6 hosts | Up to 5 clusters  | 20 workers across 5 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
+| 9 hosts |  Up to 8 clusters | 40 workers across 8 clusters, or 140 workers across 3 clusters | 60 workers per cluster |
+| 12 hosts |  Up to 11 clusters | 60 workers across 11 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for a various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: class="simple-tab-table"}
+{: #4cpu-16ram}
+{: tab-title="4 vCPU, 16GB RAM"}
+{: tab-group="loc-size"}
 
-
+| Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
+| --- | --- | --- | --- |
+| 3 hosts | 1 cluster, for demonstration purposes | Up to 100 workers | 100 workers per cluster |
+| 6 hosts | Up to 20 clusters | 200 workers across 20 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
+| 9 hosts  | Up to 26 clusters | 400 workers across 26 clusters, or 850 workers across 3 clusters | 300 workers per cluster |
+| 12 hosts  | Up to 36 clusters | 520 workers across 26 clusters, or 1150 workers across 4 clusters | 300 workers per cluster |
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for a various combinations of clusters and worker nodes in the location." caption-side="top"}
+{: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: class="simple-tab-table"}
+{: #16cpu-64ram}
+{: tab-title="16 vCPU, 64GB RAM"}
+{: tab-group="loc-size"}
 
 **How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?**
 

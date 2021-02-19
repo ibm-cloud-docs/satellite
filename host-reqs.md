@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-08"
+lastupdated: "2021-02-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -145,6 +145,8 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 ## Host storage and attached devices
 {: #reqs-host-storage}
 
+* Hosts must have attached a minimum of 100 GB of disk storage.
+* For hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane, the attached storage device must have at least 1000 IOPS. The required IOPS varies with the number of clusters in the location, and the activity of the masters for those clusters.
 * Hosts cannot have a device that is mounted to `/var/data`.
 * To set up LUKS encryption, your hosts must have two attached disks: a primary boot disk that is mounted to `/`, and a secondary disk that is unmounted.
 
@@ -154,6 +156,7 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 {: #reqs-host-network}
 
 * Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. 
+* The hosts must have minimum network bandwidth connectivity of 100Mbps, with 1Gbps preferred. The bandwidth required between hosts varies with the number of clusters in the location, and the workloads that run in the cluster. Insufficient network bandwidth can lead to network performance problems.
 * Do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
 * All hosts must have the same MTU values.
 * The `localhost` value must resolve to a valid local host IP address, typically `127.0.0.1`.
