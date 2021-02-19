@@ -335,6 +335,27 @@ subcollection: satellite
 * [Viewing Kubernetes resources in clusters](/docs/satellite?topic=satellite-health#kubernetes-resources-health)
 
 
+## Logging and monitoring {{site.data.keyword.satelliteshort}} health
+{: #sitemap_logging_and_monitoring__health_}
+
+
+[Logging and monitoring {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health)
+
+[IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-health#monitoring-default)
+
+[Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
+
+[Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
+
+[Setting up monitoring for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
+
+[Viewing location, host, and cluster health](/docs/satellite?topic=satellite-health#view-health)
+* [Viewing location health](/docs/satellite?topic=satellite-health#location-health)
+* [Viewing host health](/docs/satellite?topic=satellite-health#host-health)
+* [Viewing cluster health](/docs/satellite?topic=satellite-health#cluster-health)
+* [Viewing Kubernetes resources in clusters](/docs/satellite?topic=satellite-health#kubernetes-resources-health)
+
+
 ## Enhancing security
 {: #sitemap_enhancing_security}
 
@@ -451,6 +472,7 @@ subcollection: satellite
   * [`ibmcloud sat storage config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create)
   * [`ibmcloud sat storage config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-get)
   * [`ibmcloud sat storage config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-ls)
+  * [`ibmcloud sat storage config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-rm)
   * [`ibmcloud sat storage template get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-get)
   * [`ibmcloud sat storage template ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-ls)
 * [Subscription commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-config-subscription-commands)

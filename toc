@@ -28,6 +28,7 @@ Satellite
     config-clusters.md
     link-endpoints.md
     health.md
+    health.md
 
     {: .topicgroup}
     Enhancing security

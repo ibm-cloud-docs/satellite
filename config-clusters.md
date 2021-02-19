@@ -581,7 +581,7 @@ To review resources in {{site.data.keyword.satelliteshort}} config:
       1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
       2. Individually label the resource that you want {{site.data.keyword.satelliteshort}} config to watch. For example, the following command watches a deployment that is called `nginx`. 
          ```
-         {[kubectl]} label deployment nginx razee/watch-resource=lite
+         kubectl label deployment nginx razee/watch-resource=lite
          ```
          {: pre}
 2. After you enable watchkeeping for a resource, wait an hour for the resources to display.
