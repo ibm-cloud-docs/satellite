@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -156,23 +156,51 @@ Before you begin, make sure that you have created host machines that meet the [m
    {: note}
 
 6. Log in to each host machine that you want to attach to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
-   1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.
+   1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
    2. Copy the script from your local machine to your host.
+   
+      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
       ```
-      scp <path_to_script> root@<IP_address>:/tmp/attach.sh
+      scp -i <filepath_to_pem_file> <filepath_to_script> <non_root_user>@<public_IP_address>:/tmp/attach.sh
+      ```
+      {: pre}  
+      
+      **{{site.data.keyword.cloud_notm}} virtual servers**: 
+      ```
+      scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
       ```
       {: pre}
+      
    3. Log in to your host.
+   
+      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
       ```
-      ssh root@<IP_address>
+      ssh -i <filepath_to_pem_file> <non_root_user>@<public_IP_address>
       ```
       {: pre}
+      
+      **{{site.data.keyword.cloud_notm}} virtual servers**:
+      ```
+      ssh root@<public_IP_address>
+      ```
+      {: pre}
+      
    4. Run the script.
+   
+      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
+      ```
+      sudo nohup bash /tmp/attach.sh &
+      ```
+      {: pre}
+      
+      **{{site.data.keyword.cloud_notm}} virtual servers**:
       ```
       nohup bash /tmp/attach.sh &
       ```
       {: pre}
-7. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+      
+7. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. This process might take a few minutes to complete. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+    
 8. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
 ### Attaching hosts from the CLI
@@ -205,20 +233,44 @@ Before you begin, make sure that you have created host machines that meet the [m
 
 2.  On your local machine, find the script.
 3.  Log in to each host machine that you want to attach to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
-    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.
+    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
     2. Copy the script from your local machine to your host.
+   
+       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
        ```
-       scp <path_to_script> root@<IP_address>:/tmp/attach.sh
+       scp -i <filepath_to_pem_file> <filepath_to_script> <non_root_user>@<public_IP_address>:/tmp/attach.sh
+       ```
+       {: pre}  
+      
+       **{{site.data.keyword.cloud_notm}} virtual servers**: 
+       ```
+       scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
        ```
        {: pre}
-
+      
     3. Log in to your host.
+   
+       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
        ```
-       ssh root@<IP_address>
+       ssh -i <filepath_to_pem_file> <non_root_user>@<public_IP_address>
        ```
        {: pre}
-
+      
+       **{{site.data.keyword.cloud_notm}} virtual servers**:
+       ```
+       ssh root@<public_IP_address>
+       ```
+       {: pre}
+      
     4. Run the script.
+   
+       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
+       ```
+       sudo nohup bash /tmp/attach.sh &
+       ```
+       {: pre}
+      
+       **{{site.data.keyword.cloud_notm}} virtual servers**:
        ```
        nohup bash /tmp/attach.sh &
        ```

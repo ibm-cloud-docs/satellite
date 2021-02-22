@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-02-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -150,6 +150,7 @@ To [attach AWS hosts to your {{site.data.keyword.satellitelong_notm}} location](
     echo "repos enabled"
     ```
     {: codeblock}
+    
 3.  In the `UserData` section of your AWS launch template, add the registration script.
     ```
     ...
@@ -262,11 +263,14 @@ As described in the [host networking requirements](/docs/satellite?topic=satelli
 ```
 {: screen}
 
-### VXLAN encapsulation for AWS hosts
-{: #aws-reqs-vxlan}
+### Public access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} console
+{: #aws-reqs-console-access}
 
-When you use hosts from this provider to set up a {{site.data.keyword.satelliteshort}} location and create a {{site.data.keyword.openshiftlong_notm}} cluster in that location, the cluster's Calico network plug-in is created with IP in IP encapsulation. To access the {{site.data.keyword.openshiftshort}} web console for your cluster, you must change the IP in IP encapsulation protocol to VXLAN encapsulation instead. For more information, see step 7 in [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).
-{: shortdesc}
+When you assign AWS hosts to the {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.satelliteshort}} cluster, the private IP addresses of your instances are automatically registered and added to your location's DNS record and the cluster's subdomain. This setup prevents users from accessing the cluster from a local machine or opening the {{site.data.keyword.openshiftshort}} web console. 
+
+To allow access to your cluster from your local machine, to run `kubectl` or `calicoctl` commands against your cluster, or to open the {{site.data.keyword.openshiftshort}} web console, you must update your cluster's subdomain and location's DNS record to use the public IP addresses of your host machines. Follow step 7 in [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli) for more information. 
+
+To update your location's DNS record only, follow step 8 in [Setting up the control plane from the CLI](/docs/satellite?topic=satellite-locations#control-plane-cli). 
 
 <br />
 

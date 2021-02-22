@@ -186,7 +186,7 @@ subcollection: satellite
   * [Supported AWS instance types](/docs/satellite?topic=satellite-providers#aws-instance-types)
   * [RHEL package updates in example launch template](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template)
   * [Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup)
-  * [VXLAN encapsulation for AWS hosts](/docs/satellite?topic=satellite-providers#aws-reqs-vxlan)
+  * [Public access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} console](/docs/satellite?topic=satellite-providers#aws-reqs-console-access)
 * [Google Cloud Platform](/docs/satellite?topic=satellite-providers#gcp-reqs)
   * [RHEL package updates](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages)
   * [Firewall settings](/docs/satellite?topic=satellite-providers#gcp-reqs-firewall)
