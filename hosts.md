@@ -158,49 +158,49 @@ Before you begin, make sure that you have created host machines that meet the [m
 6. Log in to each host machine that you want to attach to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
    2. Copy the script from your local machine to your host.
-   
-      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
+
+      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
       ```
-      scp -i <filepath_to_pem_file> <filepath_to_script> <non_root_user>@<public_IP_address>:/tmp/attach.sh
+      scp -i <filepath_to_pem_file> <filepath_to_script> <non_root_user>@<IP_address>:/tmp/attach.sh
       ```
       {: pre}  
-      
-      **{{site.data.keyword.cloud_notm}} virtual servers**: 
-      ```
-      scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
-      ```
-      {: pre}
-      
-   3. Log in to your host.
-   
-      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
-      ```
-      ssh -i <filepath_to_pem_file> <non_root_user>@<public_IP_address>
-      ```
-      {: pre}
-      
+
       **{{site.data.keyword.cloud_notm}} virtual servers**:
       ```
-      ssh root@<public_IP_address>
+      scp <path_to_script> root@<IP_address>:/tmp/attach.sh
       ```
       {: pre}
-      
+
+   3. Log in to your host.
+
+      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
+      ```
+      ssh -i <filepath_to_pem_file> <non_root_user>@<IP_address>
+      ```
+      {: pre}
+
+      **{{site.data.keyword.cloud_notm}} virtual servers**:
+      ```
+      ssh root@<IP_address>
+      ```
+      {: pre}
+
    4. Run the script.
-   
-      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
+
+      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
       ```
       sudo nohup bash /tmp/attach.sh &
       ```
       {: pre}
-      
+
       **{{site.data.keyword.cloud_notm}} virtual servers**:
       ```
       nohup bash /tmp/attach.sh &
       ```
       {: pre}
-      
+
 7. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. This process might take a few minutes to complete. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
-    
+
 8. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
 ### Attaching hosts from the CLI
@@ -235,41 +235,41 @@ Before you begin, make sure that you have created host machines that meet the [m
 3.  Log in to each host machine that you want to attach to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
     1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
     2. Copy the script from your local machine to your host.
-   
-       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
+
+       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
        ```
-       scp -i <filepath_to_pem_file> <filepath_to_script> <non_root_user>@<public_IP_address>:/tmp/attach.sh
+       scp -i <filepath_to_pem_file> <filepath_to_script> <non_root_user>@<IP_address>:/tmp/attach.sh
        ```
        {: pre}  
-      
-       **{{site.data.keyword.cloud_notm}} virtual servers**: 
-       ```
-       scp <path_to_script> root@<public_IP_address>:/tmp/attach.sh
-       ```
-       {: pre}
-      
-    3. Log in to your host.
-   
-       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
-       ```
-       ssh -i <filepath_to_pem_file> <non_root_user>@<public_IP_address>
-       ```
-       {: pre}
-      
+
        **{{site.data.keyword.cloud_notm}} virtual servers**:
        ```
-       ssh root@<public_IP_address>
+       scp <path_to_script> root@<IP_address>:/tmp/attach.sh
        ```
        {: pre}
-      
+
+    3. Log in to your host.
+
+       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
+       ```
+       ssh -i <filepath_to_pem_file> <non_root_user>@<IP_address>
+       ```
+       {: pre}
+
+       **{{site.data.keyword.cloud_notm}} virtual servers**:
+       ```
+       ssh root@<IP_address>
+       ```
+       {: pre}
+
     4. Run the script.
-   
-       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**: 
+
+       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
        ```
        sudo nohup bash /tmp/attach.sh &
        ```
        {: pre}
-      
+
        **{{site.data.keyword.cloud_notm}} virtual servers**:
        ```
        nohup bash /tmp/attach.sh &
@@ -302,9 +302,9 @@ By default, available hosts are automatically assigned to worker pools in {{site
 {: shortdesc}
 
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
-{: note} 
+{: note}
 
-Host autoassignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. 
+Host autoassignment is not available for the {{site.data.keyword.satelliteshort}} location control plane.
 {: note}
 
 ### About host labels
@@ -320,7 +320,7 @@ Keep in mind the following information about the host labels that are used for a
 
 **Example scenario**
 
-Say that you have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `zone1` and the following host labels. 
+Say that you have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `zone1` and the following host labels.
 * `cpu=4`
 * `env=prod`
 
@@ -329,8 +329,8 @@ Your {{site.data.keyword.satelliteshort}} location has available (unassigned) ho
 * Host B: `cpu=4, memory=32, zone=zone1`
 * Host C: `cpu=4, memory=64, env=prod`
 
-If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B. 
-* Host A meets the CPU and `env=prod` label requests, but can only be assigned in `zone2`. Because the `default` worker pool is only in `zone1`, Host A is not assigned. 
+If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B.
+* Host A meets the CPU and `env=prod` label requests, but can only be assigned in `zone2`. Because the `default` worker pool is only in `zone1`, Host A is not assigned.
 * Host B meets the CPU and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
 * Host C is automatically assigned because it matches the `cpu=4` and `env=prod` host labels, and does not have any zone restrictions. The `memory=64` host label is not considered, because the worker pool does not request a `memory` label.
 
@@ -405,14 +405,14 @@ If you [disabled host autoassignment](#host-autoassign-disable), you can re-enab
 ## Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources
 {: #host-assign}
 
-After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity, such as clusters or {{site.data.keyword.satelliteshort}}-enabled services. 
+After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity, such as clusters or {{site.data.keyword.satelliteshort}}-enabled services.
 {: shortdesc}
 
 You can also use [host autoassignment](#host-autoassign-ov) for worker pools in {{site.data.keyword.satelliteshort}} clusters. However, you must manually assign hosts to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
 {: tip}
 
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
-{: note} 
+{: note}
 
 ### Prerequisites
 {: #host-assign-prereq}
@@ -537,49 +537,49 @@ Many hosts in your {{site.data.keyword.satelliteshort}} location are used in clu
 Some hosts are used to run the {{site.data.keyword.satelliteshort}} location control plane. The following diagram describes the process for updating these hosts.
 {: shortdesc}
 
-![Concept overview of the host update process for the {{site.data.keyword.satelliteshort}} location control plane](/images/host-process-updates.png){: caption="Figure 2. The process for updating hosts in the {{site.data.keyword.satelliteshort}} location control plane." caption-side="bottom"}	
+![Concept overview of the host update process for the {{site.data.keyword.satelliteshort}} location control plane](/images/host-process-updates.png){: caption="Figure 2. The process for updating hosts in the {{site.data.keyword.satelliteshort}} location control plane." caption-side="bottom"}
 
-1. **Remove**: When you list hosts, you might see available updates for hosts that run the {{site.data.keyword.satelliteshort}} location control plane. Make sure that the {{site.data.keyword.satelliteshort}} location control plane has enough compute capacity to continue running your workloads by [assigning extra hosts to your {{site.data.keyword.satelliteshort}} location control plane](#host-assign) before you remove the host that needs to be updated. If you do not have extra hosts available, consider [attaching hosts](#attach-hosts) and then assigning them. Then, [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) that you need to update from your {{site.data.keyword.satelliteshort}} location. Any workloads that run on the host are automatically scheduled onto remaining hosts if possible.	
-2. **Reload**: After your host is removed from your {{site.data.keyword.satelliteshort}} location, follow the guidance from your infrastructure provider to reload the operating system. For example, you might perform maintenance on the machine in your on-prem data center. After you reload the host machine, you can SSH into the host machine again, which was previously disabled while the host was assigned to a {{site.data.keyword.satelliteshort}} resource.	
-3. **Attach**: To reuse the host, [attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.	
-4. **Assign**: [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.	
+1. **Remove**: When you list hosts, you might see available updates for hosts that run the {{site.data.keyword.satelliteshort}} location control plane. Make sure that the {{site.data.keyword.satelliteshort}} location control plane has enough compute capacity to continue running your workloads by [assigning extra hosts to your {{site.data.keyword.satelliteshort}} location control plane](#host-assign) before you remove the host that needs to be updated. If you do not have extra hosts available, consider [attaching hosts](#attach-hosts) and then assigning them. Then, [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) that you need to update from your {{site.data.keyword.satelliteshort}} location. Any workloads that run on the host are automatically scheduled onto remaining hosts if possible.
+2. **Reload**: After your host is removed from your {{site.data.keyword.satelliteshort}} location, follow the guidance from your infrastructure provider to reload the operating system. For example, you might perform maintenance on the machine in your on-prem data center. After you reload the host machine, you can SSH into the host machine again, which was previously disabled while the host was assigned to a {{site.data.keyword.satelliteshort}} resource.
+3. **Attach**: To reuse the host, [attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
+4. **Assign**: [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
-### Considerations before you update	
-{: #host-update-considerations}	
+### Considerations before you update
+{: #host-update-considerations}
 
-Review the following considerations before you update your {{site.data.keyword.satelliteshort}} hosts.	
-{: shortdesc}	
+Review the following considerations before you update your {{site.data.keyword.satelliteshort}} hosts.
+{: shortdesc}
 
 **Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?**
-	
-Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).	
 
-The {{site.data.keyword.satelliteshort}} location control plane and cluster hosts do not have to run the same version of {{site.data.keyword.openshiftshort}}, but your hosts must run a supported version.	
+Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).
+
+The {{site.data.keyword.satelliteshort}} location control plane and cluster hosts do not have to run the same version of {{site.data.keyword.openshiftshort}}, but your hosts must run a supported version.
 
 **Is my {{site.data.keyword.satelliteshort}} location control plane subdomain still reachable when I update the hosts?**
-	
-If your location subdomain was created automatically for you, the host IPs that are registered for the subdomain are automatically managed for you, such as during an update.	
 
-However, when you created the {{site.data.keyword.satelliteshort}} location control plane, you might have manually registered the host IPs for the location subdomain with the `ibmcloud sat location dns register` command. If you manually registered the subdomain, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.	
+If your location subdomain was created automatically for you, the host IPs that are registered for the subdomain are automatically managed for you, such as during an update.
+
+However, when you created the {{site.data.keyword.satelliteshort}} location control plane, you might have manually registered the host IPs for the location subdomain with the `ibmcloud sat location dns register` command. If you manually registered the subdomain, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.
 
 **Who provides the update for my hosts?**
-	
+
 IBM provides updates for the IBM-managed components.
 * For master components, such as the {{site.data.keyword.satelliteshort}} location master or cluster masters, IBM automatically applies these updates.
 * For worker node components that run on hosts, such as the {{site.data.keyword.satelliteshort}} location control plane or cluster worker nodes, you choose when to apply the updates.
 
 ### Updating control plane hosts
-{: #host-update}	
+{: #host-update}
 
-Use the {{site.data.keyword.satelliteshort}} console or CLI to update the hosts for the {{site.data.keyword.satelliteshort}} location control plane.	
-{: shortdesc}	
+Use the {{site.data.keyword.satelliteshort}} console or CLI to update the hosts for the {{site.data.keyword.satelliteshort}} location control plane.
+{: shortdesc}
 
-Before you begin, consider [attaching](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) extra hosts to your resources to handle the compute capacity while your existing hosts are updating. See [Considerations before you update](#host-update-considerations).	
+Before you begin, consider [attaching](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) extra hosts to your resources to handle the compute capacity while your existing hosts are updating. See [Considerations before you update](#host-update-considerations).
 
-1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.	
+1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
 2. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
-3. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.	
-4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.	
+3. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
+4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
 <br />
 
@@ -612,7 +612,7 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as com
 5. From the **Hosts** table, hover over the host that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 6. Click **Remove host**, enter the host name to confirm deletion, and click **Remove**.
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
-   * To reuse the host for other purposes, reload the operating system of the host. 
+   * To reuse the host for other purposes, reload the operating system of the host.
    * To no longer use the host, delete the host from your infrastructure provider.
 
 ### Removing hosts from the CLI
@@ -659,5 +659,5 @@ Use the {{site.data.keyword.satelliteshort}} CLI to remove your hosts as compute
    ```
    {: pre}
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
-   * To reuse the host for other purposes, reload the operating system of the host. 
+   * To reuse the host for other purposes, reload the operating system of the host.
    * To no longer use the host, delete the host from your infrastructure provider.

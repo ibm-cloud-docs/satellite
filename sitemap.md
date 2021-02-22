@@ -186,17 +186,17 @@ subcollection: satellite
   * [Supported AWS instance types](/docs/satellite?topic=satellite-providers#aws-instance-types)
   * [RHEL package updates in example launch template](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template)
   * [Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup)
-  * [Public access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} console](/docs/satellite?topic=satellite-providers#aws-reqs-console-access)
+  * [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-providers#aws-reqs-console-access)
 * [Google Cloud Platform](/docs/satellite?topic=satellite-providers#gcp-reqs)
   * [RHEL package updates](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages)
   * [Firewall settings](/docs/satellite?topic=satellite-providers#gcp-reqs-firewall)
-  * [VXLAN encapsulation for GCP hosts](/docs/satellite?topic=satellite-providers#gcp-reqs-vxlan)
+  * [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-providers#gcp-reqs-console-access)
 * [Microsoft Azure](/docs/satellite?topic=satellite-providers#azure-reqs)
   * [RHEL package updates](/docs/satellite?topic=satellite-providers#azure-reqs-rhel-packages)
   * [Firewall settings](/docs/satellite?topic=satellite-providers#azure-reqs-firewall)
+  * [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-providers#azure-reqs-console-access)
 * [{{site.data.keyword.cloud_notm}} infrastructure](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs)
   * [RHEL package updates](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages)
-  * [VXLAN encapsulation for {{site.data.keyword.vpc_short}} hosts](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-vxlan)
 
 
 ## Setting up {{site.data.keyword.satelliteshort}} hosts

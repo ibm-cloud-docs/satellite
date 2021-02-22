@@ -241,7 +241,7 @@ Use the {{site.data.keyword.satelliteshort}} console to set up a control plane f
 1. From the {{site.data.keyword.satelliteshort}} [**Locations** dashboard](https://cloud.ibm.com/satellite/locations), select the location where you want to finish the setup of your control plane.
 2. From the **Hosts** tab, select the hosts to assign as worker nodes to your control plane. All hosts must be in an **Unassigned** status.
 3. From the actions menu of each host, click **Assign host**.
-4. Select **Control plane** as your cluster. 
+4. Select **Control plane** as your cluster.
 5. Assign hosts in groups of 3 evenly to the control plane cluster. For high availability, make sure that your hosts correspond to physically separate zones in your infrastructure provider. For example, if your infrastructure provider has `zone1`, `zone2`, and `zone3`, you can enter these names for your {{site.data.keyword.satelliteshort}} zones. Then, assign 2 hosts from `zone1` in your infrastructure provider to `zone1` in your {{site.data.keyword.satelliteshort}} control plane, and so on. When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
 6. From the **Hosts** tab, verify that your hosts are successfully assigned to the {{site.data.keyword.satelliteshort}} location control plane. The assignment is successful when an IP address is added to your host and the **Health** status changes to **Normal**.
 7. Verify that your location status changed to **Normal**. You might see a location message about the location not having enough hosts until the bootstrapping process completes.
@@ -249,12 +249,9 @@ Use the {{site.data.keyword.satelliteshort}} console to set up a control plane f
    After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
    {: note}
 
-7. Refer to step 7 in [Setting up the control plane from the CLI](#control-plane-cli) to verify that your DNS records were successfully created. 
+8. Refer to step 7 in [Setting up the control plane from the CLI](#control-plane-cli) to verify that your DNS records were successfully created.
 
-   **Amazon Web Services, Google Cloud Platform, and Microsoft Azure**: If you attached virtual instances to your {{site.data.keyword.satelliteshort}} location control plane that you created in AWS, Azure, or GCP, the private IP addresses of these machines are automatically registered and added to your DNS record. To enable access to the {{site.data.keyword.openshiftshort}} web console for all the {{site.data.keyword.satelliteshort}} clusters that you subsequently add and to access your cluster from your local machine, you must follow the steps in [Setting up the control plane from the CLI](#control-plane-cli) to update the location's DNS record with the public IP addresses of your machines. 
-   {: important}
-
-8. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale).
+9. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale).
 
 ### Setting up the control plane from the CLI
 {: #control-plane-cli}
@@ -396,10 +393,6 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
    {: screen}
 
 7. Verify that the IP addresses of all of your hosts were registered and added to the DNS record of your location. Check that the cert status is **created** and that the records are populated with the subdomains.
-
-    **Amazon Web Services, Google Cloud Platform, and Microsoft Azure**: If you attached virtual instances to your {{site.data.keyword.satelliteshort}} location control plane that you created in AWS, Azure, or GCP, the private IP addresses of these machines are automatically registered and added to your DNS record. To enable access to the {{site.data.keyword.openshiftshort}} web console for all the {{site.data.keyword.satelliteshort}} clusters that you want to subsequently add and access the cluster from your local machine, you must update the location's DNS record with the public IP addresses of your machines in the next step. 
-   {: important}
-
    ```
    ibmcloud sat location dns ls --location <location_ID_or_name>
    ```
@@ -417,24 +410,8 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
    ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00.us-east.satellite.appdomain.cloud   ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud        None             created           ne1d37313068166254bcb-edfc0a8ba65085c5081eced6816c5b9c-ce00   default  
    ```
    {: screen}
-   
-8. **Amazon Web Services, Google Cloud Platform, and Microsoft Azure**: To enable the {{site.data.keyword.openshiftshort}} web console for subsequent {{site.data.keyword.satelliteshort}} clusters and allow access to your clusters from your local machine, register and add the public IP addresses of your virtual instances to your location's DNS record. 
 
-   1. From the previous step, note the private IP addresses of your virtual instances that were automatically registered and added to your location's DNS record. 
-   2. Use your cloud provider's dashboard to retrieve the matching public IP addresses of your virtual instances. 
-   3. Register the public IP addresses of your virtual instances and add them to your location's DNS record. 
-      ```
-      ibmcloud sat location dns register --ip <ip_address1> --ip <ip_address2> --ip <ip_address3> --location <location_name_or_ID>
-      ```
-      {: pre}
-      
-      Updating the DNS record can take up to 2 hours to complete. 
-      {: note}
-      
-      To enable the {{site.data.keyword.openshiftshort}} console and access to a cluster from your local machhine, you must also change the cluster's subdomain DNS record to use the public IP addresses of your virtual instances. This step is required after you created a {{site.data.keyword.openshiftlong_notm}} cluster in {{site.data.keyword.satelliteshort}}. For more information, see step 7 in [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli). 
-      {: note}
-
-9. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale).
+8. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale).
 
 ### What's next?
 {: #location-control-plane-next}
