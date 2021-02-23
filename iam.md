@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-19"
+lastupdated: "2021-02-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -198,7 +198,7 @@ Varies by service. For example, {{site.data.keyword.openshiftlong_notm}} is the 
 
 **Description for {{site.data.keyword.openshiftlong_notm}} clusters**:
 
-You do not assign access policies for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}. Instead, access to clusters is assigned in {{site.data.keyword.cloud_notm}} IAM through {{site.data.keyword.openshiftlong_notm}} (**Kubernetes Service** in the console or `containers-kubernetes` in the API or CLI). For more information, see [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](#iam-roles-clusters). 
+You do not assign access policies for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}. Instead, access to clusters is assigned in {{site.data.keyword.cloud_notm}} IAM through {{site.data.keyword.openshiftlong_notm}} (**Kubernetes Service** in the console or `containers-kubernetes` in the API or CLI). For more information, see [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](#iam-roles-clusters).
 
 If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration. However, you might not be able to access the clusters if you do not have the appropriate roles to those clusters. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} configuration, you might be able to list all the Kubernetes resources that run in registered clusters via the {{site.data.keyword.satelliteshort}} config API. However, without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.openshiftshort}} APIs to list Kubernetes resources.
 
@@ -438,6 +438,10 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Create a {{site.data.keyword.satelliteshort}} endpoint source. | `POST /v1/locations/{location_id}/sources`| | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Update a {{site.data.keyword.satelliteshort}} endpoint source. | `PATCH /v1/locations/{location_id}/sources/{source_id}`| | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Delete a {{site.data.keyword.satelliteshort}} endpoint source. | `DELETE /v1/locations/{location_id}/sources/{source_id}`| | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Export the configuration for a {{site.data.keyword.satelliteshort}} endpoint to a file. | `GET ​/v1​/locations​/{location_id}​/endpoints​/{endpoint_id}​/export`	| | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Import the configuration for a {{site.data.keyword.satelliteshort}} endpoint from a file. | `POST /v1/locations/{location_id}/endpoints/import` | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| List the {{site.data.keyword.satelliteshort}} endpoints that a client (source) is configured for and the enabled status of the client (source) for each endpoint. |	`GET /v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Enable or disable a client (source) for one or more {{site.data.keyword.satelliteshort}} endpoints.	| `PATCH ​/v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
 {: #platform-table2}
 {: tab-title="Link"}
@@ -522,12 +526,12 @@ Click the tabs in the following table to review the actions that are mapped to s
 {{site.data.keyword.satelliteshort}} Config uses a [custom IAM service access role](/docs/account?topic=account-custom-roles), **Deployer**, in addition to the standard **Reader**, **Writer**, and **Manager** roles. You can assign users the **Deployer** role so that they can deploy existing configurations to your clusters, but cannot add or edit the actual configurations for your apps.
 {: note}
 
-| Action | API | CLI | None | Reader | Writer | Manager |
+| Action | API | CLI | None | Reader | Writer | Manager | {{site.data.keyword.satelliteshort}} Link Administrator | {{site.data.keyword.satelliteshort}} Link Source Access Controller |
 |-----|---|---|-----|-----|-----|--------|
-| List the sources for all {{site.data.keyword.satelliteshort}} endpoints. | `GET /v1/locations/{location_id}/sources` | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Create a {{site.data.keyword.satelliteshort}} endpoint source. | `POST /v1/locations/{location_id}/sources`| | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Update a {{site.data.keyword.satelliteshort}} endpoint source. | `PATCH /v1/locations/{location_id}/sources/{source_id}`| | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-| Delete a {{site.data.keyword.satelliteshort}} endpoint source. | `DELETE /v1/locations/{location_id}/sources/{source_id}`| | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
+| Export the configuration for a {{site.data.keyword.satelliteshort}} endpoint to a file. | `GET ​/v1​/locations​/{location_id}​/endpoints​/{endpoint_id}​/export`	| | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |	|
+| Import the configuration for a {{site.data.keyword.satelliteshort}} endpoint from a file. | `POST /v1/locations/{location_id}/endpoints/import` | | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |	|
+| List the {{site.data.keyword.satelliteshort}} endpoints that a client (source) is configured for and the enabled status of the client (source) for each endpoint. | `GET /v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |	|
+| Enable or disable a client (source) for one or more {{site.data.keyword.satelliteshort}} endpoints.	| `PATCH ​/v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 {: row-headers}
 {: #service-table1}
 {: tab-title="Link"}
