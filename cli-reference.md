@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-17"
+lastupdated: "2021-02-23"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1299,7 +1299,7 @@ ibmcloud sat location create --managed-from METRO --name NAME [--cos-bucket COS_
 <dd>Optional. Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up the control plane data. If you specify the bucket name, make sure to also specify the HMAC secret access key, access key ID, bucket region, and bucket endpoint of your {{site.data.keyword.cos_full_notm}} service instance.   </dd>
 
 <dt><code>--ha-zone <em>ZONE1_NAME</em> --ha-zone <em>ZONE2_NAME</em> --ha-zone <em>ZONE3_NAME</em></code></dt>
-<dd>Optional. Specify three names for high availability zones in your location. These zones are used for any {{site.data.keyword.openshiftlong_notm}} clusters that you create in your location, but the names are arbitrary; for example, if you use AWS hosts for your location, you might specify the name of the AWS high availability zones where your hosts exist. If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names such as `zone1`.</dd>
+<dd>Optional. Specify three names for high availability zones in your location. These zones are used for any {{site.data.keyword.openshiftlong_notm}} clusters that you create in your location, but the names are arbitrary; for example, if you use AWS hosts for your location, you might specify the name of the AWS high availability zones where your hosts exist. If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names such as `zone-1`.</dd>
 
 <dt><code>--logging-account-id <em>LOGGING_ACCOUNT</em></code></dt>
 <dd>Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.loganalysislong_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.</dd>
@@ -1753,7 +1753,6 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP] [
 <dt><code>--assignment <em>ASSIGNMENT</em></code></dt>
 <dd>Required. The name of the storage assignment. To list storage assignments, run <code>ibmcloud sat storage assignment ls</code>.</dd>
 
-<dl>
 <dt><code>--group <em>GROUP</em></code></dt>
 <dd>Optional. The ID of the cluster group that you want to add to your assignment. To list cluster groups, run <code>ibmcloud sat group ls</code>.</dd>
 
@@ -1776,7 +1775,7 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT --group GROUP --n
 ### `ibmcloud sat storage config create`
 {: #cli-storage-config-create}
 
-Create a {{site.data.keyword.satelliteshort}} storage configuration that you can assign to your cluster groups to install storage drivers in your clusters.
+Create a {{site.data.keyword.satelliteshort}} storage configuration that you can assign to your clusters to install storage drivers in your clusters.
 {: shortdesc}
 
 ```sh
@@ -1812,7 +1811,7 @@ ibmcloud sat storage config create --name NAME --template-name NAME --template-v
 
 **Example:**
 ```sh
-ibmcloud sat storage config create --name ibm-ocs-config --template-name ocs --template-version 4.3 --source-branch main --source-org my-github-org
+ibmcloud sat storage config create --name ibm-ocs-config --template-name ocs-local --template-version 4.6 --source-branch main --source-org my-github-org
 ```
 {: pre}
 
@@ -1835,7 +1834,7 @@ ibmcloud sat storage config get --name NAME [--output OUTPUT] [-q]
 
 <dl>
 <dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. The name of the storage configuration.</code>.</dd>
+<dd>Required. The name of the storage configuration.</dd>
 
 <dt><code>--output <em>JSON</em></code></dt>
 <dd>Optional. Displays the command output in JSON format.</dd>
@@ -1897,10 +1896,10 @@ ibmcloud sat storage template get --name NAME --version VERSION
 
 <dl>
 <dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. The name of the storage template that you want to retrieve.</code>.</dd>
+<dd>Required. The name of the storage template that you want to retrieve.</dd>
 
 <dt><code>--version <em>VERSION</em></code></dt>
-<dd>Required. The version of the storage template.</code>.</dd>
+<dd>Required. The version of the storage template.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>

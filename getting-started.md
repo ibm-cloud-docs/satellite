@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-04"
+lastupdated: "2021-02-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -106,6 +106,7 @@ In this getting started tutorial, you create your first {{site.data.keyword.sate
 
 ## Prerequisites
 {: #sat-prereqs}
+
 
 1. You must have at least 3 compute hosts in your own infrastructure environment that meet certain requirements, such as RHEL 7 packages and the ability to log in to the host machines and run a script.
    *  All hosts must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs).

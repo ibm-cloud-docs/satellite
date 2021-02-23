@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-10"
+lastupdated: "2021-02-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -150,6 +150,7 @@ To [attach AWS hosts to your {{site.data.keyword.satellitelong_notm}} location](
     echo "repos enabled"
     ```
     {: codeblock}
+
 3.  In the `UserData` section of your AWS launch template, add the registration script.
     ```
     ...
@@ -262,11 +263,10 @@ As described in the [host networking requirements](/docs/satellite?topic=satelli
 ```
 {: screen}
 
-### VXLAN encapsulation for AWS hosts
-{: #aws-reqs-vxlan}
+### Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console
+{: #aws-reqs-console-access}
 
-When you use hosts from this provider to set up a {{site.data.keyword.satelliteshort}} location and create a {{site.data.keyword.openshiftlong_notm}} cluster in that location, the cluster's Calico network plug-in is created with IP in IP encapsulation. To access the {{site.data.keyword.openshiftshort}} web console for your cluster, you must change the IP in IP encapsulation protocol to VXLAN encapsulation instead. For more information, see step 7 in [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).
-{: shortdesc}
+The private IP addresses of your instances are automatically registered and added to your location's DNS record and the cluster's subdomain. This setup prevents users that are not connected to your hosts' private network from accessing the cluster from a local machine or opening the {{site.data.keyword.openshiftshort}} web console. You must be connected to your hosts' private network, such as through VPN access, to [connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se). Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
 
 <br />
 
@@ -335,11 +335,10 @@ udp:30000-32767
 ```
 {: screen}
 
-### VXLAN encapsulation for GCP hosts
-{: #gcp-reqs-vxlan}
+### Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console
+{: #gcp-reqs-console-access}
 
-When you use hosts from this provider to set up a {{site.data.keyword.satelliteshort}} location and create a {{site.data.keyword.openshiftlong_notm}} cluster in that location, the cluster's Calico network plug-in is created with IP in IP encapsulation. To access the {{site.data.keyword.openshiftshort}} web console for your cluster, you must change the IP in IP encapsulation protocol to VXLAN encapsulation instead. For more information, see step 7 in [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).
-{: shortdesc}
+The private IP addresses of your instances are automatically registered and added to your location's DNS record and the cluster's subdomain. This setup prevents users that are not connected to your hosts' private network from accessing the cluster from a local machine or opening the {{site.data.keyword.openshiftshort}} web console. You must be connected to your hosts' private network, such as through VPN access, to [connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se). Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
 
 <br />
 
@@ -405,6 +404,11 @@ tcp:30000-32767
 udp:30000-32767
 ```
 {: screen}
+
+### Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console
+{: #azure-reqs-console-access}
+
+The private IP addresses of your instances are automatically registered and added to your location's DNS record and the cluster's subdomain. This setup prevents users that are not connected to your hosts' private network from accessing the cluster from a local machine or opening the {{site.data.keyword.openshiftshort}} web console. You must be connected to your hosts' private network, such as through VPN access, to [connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se). Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
 
 <br />
 
@@ -484,10 +488,3 @@ To [attach {{site.data.keyword.cloud_notm}} infrastructure hosts to your {{site.
    exit
    ```
    {: pre}
-
-
-### VXLAN encapsulation for {{site.data.keyword.vpc_short}} hosts
-{: #ibm-cloud-reqs-vxlan}
-
-When you use hosts from this provider to set up a {{site.data.keyword.satelliteshort}} location and create a {{site.data.keyword.openshiftlong_notm}} cluster in that location, the cluster's Calico network plug-in is created with IP in IP encapsulation. To access the {{site.data.keyword.openshiftshort}} web console for your cluster, you must change the IP in IP encapsulation protocol to VXLAN encapsulation instead. For more information, see step 7 in [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).
-{: shortdesc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-19"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -164,7 +164,7 @@ Review the {{site.data.keyword.cloud_notm}} services that your {{site.data.keywo
 | {{site.data.keyword.cloudcerts_short}} | This service is used to retrieve the TLS certificates for custom Ingress domains in a {{site.data.keyword.openshiftlong_notm}} cluster in a {{site.data.keyword.satelliteshort}} location.|
 |{{site.data.keyword.cos_short}} (COS)|This service is used to back up the control plane data of a {{site.data.keyword.satelliteshort}} location. The service instance is owned by the customer who controls access to the instance by using IAM policies. All data is encrypted in transit and at rest.|
 |{{site.data.keyword.registryshort}}|This service is used to store the container images that {{site.data.keyword.satellitelong_notm}} uses to run the service.|
-| {{site.data.keyword.databases-for-mongodb}} | {{site.data.keyword.satelliteshort}} config indexes data that is stored in COS by using {{site.data.keyword.databases-for-mongodb}}. {{site.data.keyword.satelliteshort}} link stores endpoint data in {{site.data.keyword.databases-for-mongodb}}.|
+| {{site.data.keyword.databases-for-mongodb}} | {{site.data.keyword.satelliteshort}} config indexes data that is stored in COS by using {{site.data.keyword.databases-for-mongodb}}. {{site.data.keyword.satelliteshort}} Link stores endpoint data in {{site.data.keyword.databases-for-mongodb}}.|
 | Identity and Access Management (IAM) | To authenticate requests to the service and authorize user actions, {{site.data.keyword.satellitelong_notm}} implements platform and service access roles in Identity and Access Management (IAM). For more information about required IAM permissions to work with the service, see [Managing access for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-iam). |
 |{{site.data.keyword.la_short}}|{{site.data.keyword.satellitelong_notm}} sends location logs to {{site.data.keyword.la_full_notm}}. These logs are monitored and analyzed by the service team to detect service issues and malicious activities. |
 |{{site.data.keyword.mon_short}}|{{site.data.keyword.satellitelong_notm}} sends service metrics to {{site.data.keyword.mon_full_notm}}. These metrics are monitored by the service team to identify capacity and performance issues of the service. |

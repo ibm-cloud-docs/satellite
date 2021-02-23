@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -139,9 +139,9 @@ Your {{site.data.keyword.satelliteshort}} locations are representations of your 
 
 Each {{site.data.keyword.satelliteshort}} location must have a location control plane that runs the necessary components to manage the location.
 * **Hosts**: You must assign hosts to run the control plane, typically at least 6 hosts that are spread evenly across 3 zones. As your location grows, you might need to add more hosts evenly in groups of 3 to the control plane. For sizing and setup information, see the [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) documentation.
-* **{{site.data.keyword.satelliteshort}} link**: To audit and secure cloud connections, including the connection back to {{site.data.keyword.cloud_notm}}, each location control plane is set up with [{{site.data.keyword.satelliteshort}} link](/docs/satellite?topic=satellite-link-location-cloud).
+* **{{site.data.keyword.satelliteshort}} Link**: To audit and secure cloud connections, including the connection back to {{site.data.keyword.cloud_notm}}, each location control plane is set up with [{{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-location-cloud).
 * **IBM monitoring**: The {{site.data.keyword.satelliteshort}} location control plane includes monitoring components that can automatically detect, resolve, or report location issues back to {{site.data.keyword.cloud_notm}}.
-* **Cluster masters**: The {{site.data.keyword.satelliteshort}} location control plane runs the masters for the {{site.data.keyword.openshiftshort}} clusters that run in the location, including {{site.data.keyword.satelliteshort}}-enabled service clusters. These masters are automatically updated and managed by {{site.data.keyword.cloud_notm}} through the {{site.data.keyword.satelliteshort}} link connection. However, the masters run on hosts in your infrastructure, so you share responsibility to make sure that the masters have enough compute resources to run.
+* **Cluster masters**: The {{site.data.keyword.satelliteshort}} location control plane runs the masters for the {{site.data.keyword.openshiftshort}} clusters that run in the location, including {{site.data.keyword.satelliteshort}}-enabled service clusters. These masters are automatically updated and managed by {{site.data.keyword.cloud_notm}} through the {{site.data.keyword.satelliteshort}} Link connection. However, the masters run on hosts in your infrastructure, so you share responsibility to make sure that the masters have enough compute resources to run.
 
 **{{site.data.keyword.satelliteshort}}-enabled service**
 

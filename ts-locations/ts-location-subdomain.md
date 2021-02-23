@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-18"
+lastupdated: "2021-02-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -114,12 +114,12 @@ Check and update the host IP addresses that are registered with the location sub
 
 1. Get the IP addresses of your hosts. For hosts that are publicly available, get the public IP addresses. For hosts that are only privately available, get the private IP addresses. Refer to your provider documentation.
 
-2. Verify that the {{site.data.keyword.satelliteshort}} link tunnel server endpoint is reachable.
+2. Verify that the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable.
   1. [Set up LogDNA for {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-health#setup-logdna).
   2. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){:external}, click **View LogDNA** for your {{site.data.keyword.la_short}} instance. The LogDNA dashboard opens.
-  3. Check the `Endpoint health status` logs. These logs report the results of health checks for the {{site.data.keyword.satelliteshort}} link tunnel server endpoint.
-      * If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} link tunnel server endpoint is reachable. Continue to the next step.
-      * If logs report `Failed to reach endpoint`, your {{site.data.keyword.satelliteshort}} link tunnel server endpoint is unreachable. If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall. For example, see [AWS Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup). If you do not have a firewall, or if after you modify your firewall you still see the `R0036` message or `Failed to reach endpoint` logs, continue to step 2.
+  3. Check the `Endpoint health status` logs. These logs report the results of health checks for the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint.
+      * If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable. Continue to the next step.
+      * If logs report `Failed to reach endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is unreachable. If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall. For example, see [AWS Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup). If you do not have a firewall, or if after you modify your firewall you still see the `R0036` message or `Failed to reach endpoint` logs, continue to step 2.
 
 3.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
     ```

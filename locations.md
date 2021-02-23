@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-02-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -138,6 +138,8 @@ Because your {{site.data.keyword.satelliteshort}} location represents your own d
 You can create {{site.data.keyword.satelliteshort}} locations for each place that you like, such as your company's ports in the north and south of the country. A {{site.data.keyword.satelliteshort}} location represents a data center that you fill with your own infrastructure resources to run your own workloads and {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
+
+
 ### Creating locations from the console
 {: #location-create-console}
 
@@ -241,7 +243,7 @@ Use the {{site.data.keyword.satelliteshort}} console to set up a control plane f
 1. From the {{site.data.keyword.satelliteshort}} [**Locations** dashboard](https://cloud.ibm.com/satellite/locations), select the location where you want to finish the setup of your control plane.
 2. From the **Hosts** tab, select the hosts to assign as worker nodes to your control plane. All hosts must be in an **Unassigned** status.
 3. From the actions menu of each host, click **Assign host**.
-4. Select **Control plane** as your cluster. 
+4. Select **Control plane** as your cluster.
 5. Assign hosts in groups of 3 evenly to the control plane cluster. For high availability, make sure that your hosts correspond to physically separate zones in your infrastructure provider. For example, if your infrastructure provider has `zone1`, `zone2`, and `zone3`, you can enter these names for your {{site.data.keyword.satelliteshort}} zones. Then, assign 2 hosts from `zone1` in your infrastructure provider to `zone1` in your {{site.data.keyword.satelliteshort}} control plane, and so on. When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
 6. From the **Hosts** tab, verify that your hosts are successfully assigned to the {{site.data.keyword.satelliteshort}} location control plane. The assignment is successful when an IP address is added to your host and the **Health** status changes to **Normal**.
 7. Verify that your location status changed to **Normal**. You might see a location message about the location not having enough hosts until the bootstrapping process completes.
@@ -249,9 +251,9 @@ Use the {{site.data.keyword.satelliteshort}} console to set up a control plane f
    After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
    {: note}
 
-7. Refer to step 7 in [Setting up the control plane from the CLI](#control-plane-cli) to verify that your DNS records were successfully created.
+8. Refer to step 7 in [Setting up the control plane from the CLI](#control-plane-cli) to verify that your DNS records were successfully created.
 
-8. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale).
+9. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale).
 
 ### Setting up the control plane from the CLI
 {: #control-plane-cli}
@@ -393,7 +395,6 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
    {: screen}
 
 7. Verify that the IP addresses of all of your hosts were registered and added to the DNS record of your location. Check that the cert status is **created** and that the records are populated with the subdomains.
-
    ```
    ibmcloud sat location dns ls --location <location_ID_or_name>
    ```
@@ -451,21 +452,33 @@ The location control plane is running at max capacity and cannot support any mor
 
 The number of clusters depends on the size of your clusters and the size of the hosts that you use for the {{site.data.keyword.satelliteshort}} location control plane. You must scale up the control plane hosts in multiples of 3, such as 6, 9, or 12.
 
-The following table provides an example of the number hosts that the control plane needs to run the masters for a certain number of clusters. The calculation assumes:
-* The hosts for the control plane are the minimum size of 4 vCPU, 16 GB RAM, and 100 GB of disk storage.
-* The clusters have no more than 30 worker nodes each.
-* No other resources run in the location that require the location control plane resources.
+The following tables provide examples of the number of hosts that the control plane must have to run the masters for various combinations of clusters and worker nodes, for informational purposes only. The size of the hosts that run the control plane, **4 vCPU and 16GB RAM** or **16 vCPU and 64GB RAM**, affect the numbers of clusters and worker nodes that are possible in the location. Keep in mind that actual performance requirements depend on many factors, such as the underlying CPU performance and control plane usage by the applications that run in the location.
 
-| Number of clusters in location | Number of hosts required for control plane|
-| --- | --- |
-| 1 cluster, for demonstration purposes | 3 hosts |
-| Up to 10 clusters | 6 hosts |
-| Up to 20 clusters | 9 hosts |
-| Up to 30 clusters | 12 hosts |
-{: caption="Example of the number of hosts the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for a number of clusters in the location." caption-side="top"}
+| Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
+| --- | --- | --- | --- |
+| 3 hosts | 1 cluster, for demonstration purposes | Up to 20 workers | 20 workers per cluster |
+| 6 hosts | Up to 5 clusters  | 20 workers across 5 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
+| 9 hosts |  Up to 8 clusters | 40 workers across 8 clusters, or 140 workers across 3 clusters | 60 workers per cluster |
+| 12 hosts |  Up to 11 clusters | 60 workers across 11 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for a various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: class="simple-tab-table"}
+{: #4cpu-16ram}
+{: tab-title="4 vCPU, 16GB RAM"}
+{: tab-group="loc-size"}
 
-
+| Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
+| --- | --- | --- | --- |
+| 3 hosts | 1 cluster, for demonstration purposes | Up to 100 workers | 100 workers per cluster |
+| 6 hosts | Up to 20 clusters | 200 workers across 20 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
+| 9 hosts  | Up to 26 clusters | 400 workers across 26 clusters, or 850 workers across 3 clusters | 300 workers per cluster |
+| 12 hosts  | Up to 36 clusters | 520 workers across 26 clusters, or 1150 workers across 4 clusters | 300 workers per cluster |
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for a various combinations of clusters and worker nodes in the location." caption-side="top"}
+{: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: class="simple-tab-table"}
+{: #16cpu-64ram}
+{: tab-title="16 vCPU, 64GB RAM"}
+{: tab-group="loc-size"}
 
 **How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?**
 

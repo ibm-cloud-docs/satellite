@@ -21,13 +21,17 @@ Satellite
         Preparing hosts to meet requirements
             host-reqs.md
             providers.md
-
+        
         hosts.md
         /openshift/openshift-satellite-clusters
-
+        
     config-clusters.md
     link-endpoints.md
-    health.md
+
+    {: .topicgroup}
+    Logging and monitoring
+        health.md
+        monitor.md
 
     {: .topicgroup}
     Enhancing security
@@ -43,10 +47,12 @@ Satellite
     API reference
         [Satellite locations, hosts, and clusters](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster)
         [Satellite links, endpoints, and sources](https://pages.github.ibm.com/IBM-Cloud-Platform-Networking/satellite-link-api/#/)
+
     {: topicgroup}
     CLI plug-in reference
         cli-reference.md
         cli-changelog.md
+
     limitations.md
     supported-regions.md
     responsibilities.md

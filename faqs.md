@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-02-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -170,8 +170,10 @@ See the [IBM open source and third-party policy](https://www.ibm.com/support/pag
 ## What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?
 {: #pricing}
 {: support}
+{: faq}
 
 During the beta, you are not charged for using {{site.data.keyword.satellitelong_notm}}. However, because you own the infrastructure that you bring to your {{site.data.keyword.satelliteshort}} location, you might be charged for hosting or using this infrastructure.
+{: beta}
 
 
 

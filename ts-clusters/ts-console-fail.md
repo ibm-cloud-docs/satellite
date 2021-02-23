@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-01-12"
+lastupdated: "2021-02-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -99,40 +99,10 @@ subcollection: satellite
 When you create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location, you cannot access the {{site.data.keyword.openshiftshort}} web console, or access to the console is intermittent.
 
 {: tsCauses}
-If you used Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts to create your location and cluster, the cluster's Calico network plug-in is created with IP in IP encapsulation. To access the {{site.data.keyword.openshiftshort}} web console for your cluster, the Calico plug-in must use VXLAN encapsulation instead.
+If you used Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts to create your location and cluster, the private IP addresses of your instances are automatically registered and added to your location's DNS record and the cluster's subdomain. This setup prevents users that are not connected to your hosts' private network from accessing the cluster from a local machine or opening the {{site.data.keyword.openshiftshort}} web console.
 
 {: tsResolve}
-Update the Calico network plug-in to use VXLAN encapsulation.
+Connect to your hosts' private network to access to your cluster and open the {{site.data.keyword.openshiftshort}} web console. For example, you might connect to your on-premises local network, or use a VPN to connect to your cloud provider's private network. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's service URL and your location's DNS record to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access). Note that making your location and cluster subdomains available outside of your hosts' private network to your authorized cluster users is not recommended for production-level workloads.
 
-1. Follow [these steps](/docs/openshift?topic=openshift-network_policies#cli_install) to access your cluster, download the keys to run Calico commands, and install the `calicoctl` CLI.
-
-2. Set the `DATASTORE_TYPE` environment variable to `kubernetes`.
-  ```
-  export DATASTORE_TYPE=kubernetes
-  ```
-  {: pre}
-
-3. Create the following `IPPool` YAML file, which sets `ipipMode: Never` and `vxlanMode: Always`.
-  ```yaml
-  apiVersion: projectcalico.org/v3
-  kind: IPPool
-  metadata:
-    name: default-ipv4-ippool
-  spec:
-    blockSize: 26
-    cidr: 172.30.0.0/16
-    ipipMode: Never
-    natOutgoing: true
-    nodeSelector: all()
-    vxlanMode: Always
-  ```
-  {: codeblock}
-
-4. Apply the `IPPool` to update the Calico plug-in.
-  ```
-  calicoctl apply -f /<filepath>/pool.yaml
-  ```
-  {: pre}
-
-If you did not use Amazon Web Services, Google Cloud Platform, or {{site.data.keyword.vpc_short}} hosts, or if you are still unable to access the {{site.data.keyword.openshiftshort}} web console after completeing these steps, see [Debugging the OpenShift web console](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails) in the {{site.data.keyword.openshiftlong_notm}} troubleshooting documentation.
+If you are still unable to access the {{site.data.keyword.openshiftshort}} web console after completeing these steps, see [Debugging the OpenShift web console](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails) in the {{site.data.keyword.openshiftlong_notm}} troubleshooting documentation.
 {: note}
