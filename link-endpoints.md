@@ -158,7 +158,7 @@ Your on-location workloads continue to run independently even if the location's 
 ### External network requirements and security
 {: #link-security}
 
-Your {{site.data.keyword.satelliteshort}} location infrastructure is a part of your local network (on-prem hosts) or the network of another cloud provider, but is managed remotely via secure access from {{site.data.keyword.cloud_notm}}. Review the following frequently asked questions about {{site.data.keyword.satelliteshort}} Link network security. For more information about all security options for {{site.data.keyword.satellitelong_notm}}, see [doc tbd](TBD).
+Your {{site.data.keyword.satelliteshort}} location infrastructure is a part of your local network (on-prem hosts) or the network of another cloud provider, but is managed remotely via secure access from {{site.data.keyword.cloud_notm}}. Review the following frequently asked questions about {{site.data.keyword.satelliteshort}} Link network security.
 {: shortdesc}
 
 **Do I need to allow any unique inbound traffic from internet-facing ports through firewalls to my location?**
@@ -167,7 +167,7 @@ No. {{site.data.keyword.satelliteshort}} Link uses standard web security ports t
 
 **If IBM owns the Link tunnel, how can I validate that our data is inaccessible? My organization's security policy does not allow tunnels from our networks.**
 
-{{site.data.keyword.satelliteshort}} Link uses a zero-trust model: {{site.data.keyword.cloud_notm}} has no access to your workloads by default. Any management of infrastructure in your location that is initiated by IBM Site Reliability Engineers over {{site.data.keyword.satelliteshort}} Link is isolated from your workloads and the network connections, such as the Link endpoints, that your workloads use. For more information about what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [doc tbd](TBD). For any other connections into your location that your applications require, you can use {{site.data.keyword.satelliteshort}} Link to create layer 4 communications by setting up an endpoint for each destination resource in your location. All connections through your endpoints are under your control at all times, including completely disabling endpoints.
+{{site.data.keyword.satelliteshort}} Link uses a zero-trust model: {{site.data.keyword.cloud_notm}} has no access to your workloads by default. Any management of infrastructure in your location that is initiated by IBM Site Reliability Engineers over {{site.data.keyword.satelliteshort}} Link is isolated from your workloads and the network connections, such as the Link endpoints, that your workloads use. For any other connections into your location that your applications require, you can use {{site.data.keyword.satelliteshort}} Link to create layer 4 communications by setting up an endpoint for each destination resource in your location. All connections through your endpoints are under your control at all times, including completely disabling endpoints.
 
 **How do I make my data secure in transit?**
 

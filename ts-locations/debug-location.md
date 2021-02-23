@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-19"
+lastupdated: "2021-02-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -98,7 +98,7 @@ subcollection: satellite
 By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your locations and tries to resolve issues automatically for you. For issues that cannot be resolved automatically, you can debug the location by reviewing the provided health information.
 {: shortdesc}
 
-1.  View your locations in the console or list your locations in the CLI, and review the **Status**. If the status is not healthy, continue to the next step. For more information, see [Viewing location health](/docs/satellite?topic=satellite-health#location-health).
+1.  View your locations in the console or list your locations in the CLI, and review the **Status**. If the status is not healthy, continue to the next step. For more information, see [Viewing location health](/docs/satellite?topic=satellite-monitor#location-health).
     ```
     ibmcloud sat location ls
     ```
@@ -321,7 +321,7 @@ R0016 Unexpected error occurred after assigning host. To debug the host, see 'ht
 ## R0024, R0025, R0038: Cluster issues
 {: #R0024}
 {: #R0025}
-{: #R0031}
+{: #R0038}
 
 **Location message**
 
@@ -422,7 +422,7 @@ R0048 The API key that is set does not have correct permissions in {{site.data.k
 1.  [Set up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna) for more information about which hosts are affected.
 2.  Search the platform logs for the error code to see which API method failed.
 3.  Match the API method with the required [{{site.data.keyword.cloud_notm}} IAM platform role](/docs/satellite?topic=satellite-iam#iam-roles-platform), such as **Editor**.
-4.  As the account administrator, assign the missing platform role to the API key owner or the [access group](docs/account?topic=account-groups#access_ag) that the API key owner is in.
+4.  As the account administrator, assign the missing platform role to the API key owner or the [access group](/docs/account?topic=account-groups#access_ag) that the API key owner is in.
 5.  As the API key owner, [reset the API key](/docs/openshift?topic=openshift-users#api_key_most_cases) for the region and resource group that your {{site.data.keyword.satelliteshort}} location is managed from. Now that the API key has the correct permissions, the issue automatically resolves.
 
 ## R0043: Layer 3 connectivity

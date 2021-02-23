@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-02-23"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -177,7 +177,16 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp Tride
 
 ## NetApp Trident SAN
 {: #netapp-san-ref}
-{[storage-class-netapp-san]}
+Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp Trident. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp Trident storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/netapp/netapp-trident/20.07/storage-class.yaml).
+{: shortdesc}
+
+| Storage class name | Type | File system | Reclaim policy |
+| --- | --- | --- | --- | --- | --- | --- |
+| `sat-netapp-block-gold` | Ontap-SAN | Block | Delete |
+| `sat-netapp-block-silver` | Ontap-SAN | Block | Delete |
+| `sat-netapp-block-bronze` | Ontap-SAN | Block | Delete | 
+{: caption="Table 2. NetApp Trident storage class reference." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 <br />
 
