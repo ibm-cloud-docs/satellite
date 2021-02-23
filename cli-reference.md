@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-02-23"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1753,7 +1753,6 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP] [
 <dt><code>--assignment <em>ASSIGNMENT</em></code></dt>
 <dd>Required. The name of the storage assignment. To list storage assignments, run <code>ibmcloud sat storage assignment ls</code>.</dd>
 
-<dl>
 <dt><code>--group <em>GROUP</em></code></dt>
 <dd>Optional. The ID of the cluster group that you want to add to your assignment. To list cluster groups, run <code>ibmcloud sat group ls</code>.</dd>
 
@@ -1835,7 +1834,7 @@ ibmcloud sat storage config get --name NAME [--output OUTPUT] [-q]
 
 <dl>
 <dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. The name of the storage configuration.</code>.</dd>
+<dd>Required. The name of the storage configuration.</dd>
 
 <dt><code>--output <em>JSON</em></code></dt>
 <dd>Optional. Displays the command output in JSON format.</dd>
@@ -1931,10 +1930,10 @@ ibmcloud sat storage template get --name NAME --version VERSION
 
 <dl>
 <dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. The name of the storage template that you want to retrieve.</code>.</dd>
+<dd>Required. The name of the storage template that you want to retrieve.</dd>
 
 <dt><code>--version <em>VERSION</em></code></dt>
-<dd>Required. The version of the storage template.</code>.</dd>
+<dd>Required. The version of the storage template.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>

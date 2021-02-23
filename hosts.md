@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-02-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -471,7 +471,7 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
       <td>Enter the name or ID of the {{site.data.keyword.openshiftlong_notm}} cluster that you created earlier. To retrieve the cluster name or ID, run <code>ibmcloud ks cluster ls</code>. If you want to assign hosts to the {{site.data.keyword.satelliteshort}} control plane, you must enter the location ID as your cluster ID. To retrieve the location ID, run <code>ibmcloud sat location ls</code>.<</td>
       </tr>
        <tr>
-      <td><code>--host &lt;host_name_or_ID&gt;</em></code></td>
+      <td><code>--host <em>&lt;host_name_or_ID&gt;</em></code></td>
       <td>Enter the host ID to assign as worker nodes to the {{site.data.keyword.satelliteshort}} resource. To view the host ID, run <code>ibmcloud sat host ls --location &lt;location_name&gt;</code>. You can also use the <code>--host-label</code> option to identify the host that you want to assign to your cluster.</td>
       </tr>
       <tr>

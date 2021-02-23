@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-19"
+lastupdated: "2021-02-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -108,7 +108,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 | 12 February | <ul><li>**Link endpoints**: Added information about [default Link endpoints](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints) that are automatically created for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location.</li><li>**Securing service connections**: Added a topic to explain all points of access to your {{site.data.keyword.satelliteshort}} location. For more information, see [Securing your connection to Satellite](/docs/satellite?topic=satellite-service-connection).</li></ul> |
 | 08 February | <ul><li>**CLI changelog**: Updated the CLI plug-in changelog page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).</li><li>**Host autoassignment**: Added information about how [{{site.data.keyword.satelliteshort}} can automatically assign hosts](/docs/satellite?topic=satellite-hosts#host-autoassign-ov) to worker pools in clusters or {{site.data.keyword.satelliteshort}}-enabled services that use host labels to request compute capacity.</li><li>**Logging and monitoring**: Added information about how to set up [logging and monitoring for {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health).</li><li>**Worker pool management**: Described how to manage [worker pools in {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-worker-pools), such as host labels for host autoassignment.</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
-{: caption="Documentation updates in February 2021}
+{: caption="Documentation updates in February 2021."}
 
 ## January 2021
 {: #january21}
@@ -120,7 +120,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 | 15 January | **Host requirements**: Updated the [{{site.data.keyword.redhat_notm}} package repositories](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) that you must enable on hosts. |
 | 12 January | <ul><li>**Calico VXLAN encapsulation**: If you use AWS, GCP, or {{site.data.keyword.vpc_short}} hosts to create an {{site.data.keyword.openshiftshort}} cluster, you must [update the cluster's Calico plug-in to use VXLAN encapsulation](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).</li><li>**Host updates**: Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-hosts#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-hosts#host-update-location).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
-{: caption="Documentation updates in January 2021}
+{: caption="Documentation updates in January 2021."}
 
 ## December 2020
 {: #december20}

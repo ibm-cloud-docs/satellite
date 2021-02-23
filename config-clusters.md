@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-19"
+lastupdated: "2021-02-23"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -232,8 +232,8 @@ If you used the `ibmcloud oc cluster create satellite` CLI command to create the
          <td>A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for a viewer or auditor, <code>get,list,watch</code>. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}.</td>
          </tr>
          <tr>
-         <td><code>--resource="&#42;.&#42;"</code></td>
-         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, <code>&#42;.&#42;</code>. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
+         <td>`--resource="*.*"`</td>
+         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, `"*.*"`. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
          </tr>
          </tbody>
          </table>
@@ -292,8 +292,8 @@ If you used the `ibmcloud oc cluster create satellite` CLI command to create the
          <td>A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for an editor, <code>get,list,watch,create,update,patch,delete</code>. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}.</td>
          </tr>
          <tr>
-         <td><code>--resource="&#42;.&#42;"</code></td>
-         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, <code>&#42;.&#42;</code>. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
+         <td>`--resource="*.*"`</td>
+         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, `"*.*"`. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
          </tr>
          </tbody>
          </table>
