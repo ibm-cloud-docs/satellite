@@ -21,10 +21,9 @@ Satellite
         Preparing hosts to meet requirements
             host-reqs.md
             providers.md
-
+        
         hosts.md
         /openshift/openshift-satellite-clusters
-
     config-clusters.md
     link-endpoints.md
 

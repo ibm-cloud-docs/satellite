@@ -198,123 +198,75 @@ subcollection: satellite
 * [{{site.data.keyword.cloud_notm}} infrastructure](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs)
   * [RHEL package updates](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages)
 
-
-## Setting up {{site.data.keyword.satelliteshort}} hosts
-{: #sitemap_setting_up__hosts}
-
-
 [Setting up {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-hosts)
-
-[Understanding {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-hosts#host-concept)
-
-[Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#attach-hosts)
-* [Attaching hosts from the console](/docs/satellite?topic=satellite-hosts#attach-hosts-console)
-* [Attaching hosts from the CLI](/docs/satellite?topic=satellite-hosts#attach-hosts-cli)
-
-[Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov)
-* [About host labels](/docs/satellite?topic=satellite-hosts#host-autoassign-about)
-* [Automatically assigning hosts](/docs/satellite?topic=satellite-hosts#host-autoassign)
-* [Disabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-disable)
-* [Re-enabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-enable)
-
-[Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources](/docs/satellite?topic=satellite-hosts#host-assign)
-* [Prerequisites](/docs/satellite?topic=satellite-hosts#host-assign-prereq)
-* [Assigning hosts from the console](/docs/satellite?topic=satellite-hosts#host-assign-ui)
-* [Assigning hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-assign-cli)
-
-[Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
-
-[Updating worker node hosts in clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
-
-[Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
-* [Considerations before you update](/docs/satellite?topic=satellite-hosts#host-update-considerations)
-* [Updating control plane hosts](/docs/satellite?topic=satellite-hosts#host-update)
-
-[Removing hosts](/docs/satellite?topic=satellite-hosts#host-remove)
-* [Removing hosts from the console](/docs/satellite?topic=satellite-hosts#host-remove-console)
-* [Removing hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-remove-cli)
-
-
-## Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}
-{: #sitemap_creating__clusters_in_{{site.data.keyword.satelliteshort}}}
-
+* [Understanding {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-hosts#host-concept)
+* [Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#attach-hosts)
+  * [Attaching hosts from the console](/docs/satellite?topic=satellite-hosts#attach-hosts-console)
+  * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-hosts#attach-hosts-cli)
+* [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov)
+  * [About host labels](/docs/satellite?topic=satellite-hosts#host-autoassign-about)
+  * [Automatically assigning hosts](/docs/satellite?topic=satellite-hosts#host-autoassign)
+  * [Disabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-disable)
+  * [Re-enabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-enable)
+* [Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources](/docs/satellite?topic=satellite-hosts#host-assign)
+  * [Prerequisites](/docs/satellite?topic=satellite-hosts#host-assign-prereq)
+  * [Assigning hosts from the console](/docs/satellite?topic=satellite-hosts#host-assign-ui)
+  * [Assigning hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-assign-cli)
+* [Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
+* [Updating worker node hosts in clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
+* [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
+  * [Considerations before you update](/docs/satellite?topic=satellite-hosts#host-update-considerations)
+  * [Updating control plane hosts](/docs/satellite?topic=satellite-hosts#host-update)
+* [Removing hosts](/docs/satellite?topic=satellite-hosts#host-remove)
+  * [Removing hosts from the console](/docs/satellite?topic=satellite-hosts#host-remove-console)
+  * [Removing hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-remove-cli)
 
 [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=openshift-satellite-clusters)
-
-[Prerequisites](/docs/satellite?topic=openshift-satellite-clusters#satcluster-prereqs)
-
-[Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-console)
-
-[Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli)
-
-[Accessing and working with your {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-access)
-
-[Setting up the internal container image registry](/docs/satellite?topic=openshift-satellite-clusters#satcluster-internal-registry)
-
-[Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#satcluster-worker-pools)
-* [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels)
-* [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance)
-
-[Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-limitations)
-
-[Storing application data in persistent storage](/docs/satellite?topic=openshift-satellite-clusters#satcluster-storage)
-
-[Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-rm)
-
-
-## Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations
-{: #sitemap_deploying_kubernetes_resources_across_clusters_with__configurations}
-
+* [Prerequisites](/docs/satellite?topic=openshift-satellite-clusters#satcluster-prereqs)
+* [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-console)
+* [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli)
+* [Accessing and working with your {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-access)
+* [Setting up the internal container image registry](/docs/satellite?topic=openshift-satellite-clusters#satcluster-internal-registry)
+* [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#satcluster-worker-pools)
+  * [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels)
+  * [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance)
+* [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-limitations)
+* [Storing application data in persistent storage](/docs/satellite?topic=openshift-satellite-clusters#satcluster-storage)
+* [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-rm)
 
 [Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config)
-
-[Understanding {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config#understanding-satcon)
-* [How {{site.data.keyword.satelliteshort}} configurations work](/docs/satellite?topic=satellite-cluster-config#satcon-flow)
-* [Key concepts](/docs/satellite?topic=satellite-cluster-config#satcon-terminology)
-
-[Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig)
-* [Prerequisites](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-prereq)
-* [Setting up cluster groups](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups)
-* [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access)
-
-[Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-cluster-config#create-satconfig-ui)
-
-[Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-cluster-config#create-satconfig-cli)
-
-[Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters)
-
-[Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources)
-
-
-## Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints
-{: #sitemap_connecting__locations_with_external_services_using_link_endpoints}
-
+* [Understanding {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config#understanding-satcon)
+  * [How {{site.data.keyword.satelliteshort}} configurations work](/docs/satellite?topic=satellite-cluster-config#satcon-flow)
+  * [Key concepts](/docs/satellite?topic=satellite-cluster-config#satcon-terminology)
+* [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig)
+  * [Prerequisites](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-prereq)
+  * [Setting up cluster groups](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups)
+  * [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access)
+* [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-cluster-config#create-satconfig-ui)
+* [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-cluster-config#create-satconfig-cli)
+* [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters)
+* [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources)
 
 [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud)
-
-[About {{site.data.keyword.satelliteshort}} endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-about)
-* [Architecture](/docs/satellite?topic=satellite-link-location-cloud#link-architecture)
-* [Network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security)
-* [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
-* [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
-* [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints)
-* [Use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
-
-[Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-location-cloud#link-cloud)
-* [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-ui)
-* [Creating cloud endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-cli)
-* [Testing connections through cloud endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-test)
-
-[Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-location-cloud#link-location)
-* [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-location-ui)
-* [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-location-cli)
-* [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-sources)
-
-[Logging and monitoring network traffic for endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-health)
-* [Setting up Sysdig for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-sysdig)
-* [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-location-cloud#link-packet-capture)
-
-[Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint)
+* [About {{site.data.keyword.satelliteshort}} endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-about)
+  * [Architecture](/docs/satellite?topic=satellite-link-location-cloud#link-architecture)
+  * [Network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security)
+  * [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
+  * [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
+  * [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints)
+  * [Use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
+* [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-location-cloud#link-cloud)
+  * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-ui)
+  * [Creating cloud endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-cli)
+  * [Testing connections through cloud endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-test)
+* [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-location-cloud#link-location)
+  * [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-location-ui)
+  * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-location-cli)
+  * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-sources)
+* [Logging and monitoring network traffic for endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-health)
+  * [Setting up Sysdig for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-sysdig)
+  * [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-location-cloud#link-packet-capture)
+* [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint)
 
 
 ## Logging and monitoring

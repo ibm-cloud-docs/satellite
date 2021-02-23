@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-22"
+lastupdated: "2021-02-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -137,6 +137,8 @@ Because your {{site.data.keyword.satelliteshort}} location represents your own d
 
 You can create {{site.data.keyword.satelliteshort}} locations for each place that you like, such as your company's ports in the north and south of the country. A {{site.data.keyword.satelliteshort}} location represents a data center that you fill with your own infrastructure resources to run your own workloads and {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
+
+
 
 ### Creating locations from the console
 {: #location-create-console}
