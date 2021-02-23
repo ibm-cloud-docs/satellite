@@ -250,7 +250,7 @@ subcollection: satellite
 [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud)
 * [About {{site.data.keyword.satelliteshort}} endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-about)
   * [Architecture](/docs/satellite?topic=satellite-link-location-cloud#link-architecture)
-  * [Network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security)
+  * [External network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security)
   * [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
   * [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
   * [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints)
@@ -288,10 +288,6 @@ subcollection: satellite
   * [Viewing host health](/docs/satellite?topic=satellite-monitor#host-health)
   * [Viewing cluster health](/docs/satellite?topic=satellite-monitor#cluster-health)
   * [Viewing Kubernetes resources in clusters](/docs/satellite?topic=satellite-monitor#kubernetes-resources-health)
-
-[Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health)
-* [Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
-* [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
 
 
 ## Enhancing security
@@ -424,7 +420,6 @@ subcollection: satellite
 * [`ibmcloud sat storage config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create)
 * [`ibmcloud sat storage config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-get)
 * [`ibmcloud sat storage config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-ls)
-* [`ibmcloud sat storage config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-rm)
 * [`ibmcloud sat storage template get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-get)
 * [`ibmcloud sat storage template ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-ls)
 
