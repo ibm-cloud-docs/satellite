@@ -2,11 +2,12 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-24"
 
 keywords: satellite, hybrid, multicloud
 
 subcollection: satellite
+content-type: troubleshoot
 
 ---
 
@@ -239,7 +240,7 @@ R0041 Unknown issues are detected with the {{site.data.keyword.satelliteshort}} 
     ```
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
-    {: pre} 
+    {: pre}
 2.  If you have no hosts, [attach](/docs/satellite?topic=satellite-hosts#attach-hosts) hosts to your location.
 3.  Make sure that you have at least 6 hosts (2 hosts per zone across 3 zones) that are assigned to the **infrastructure** cluster for the location, to run location control plane operations.
 4.  If your hosts have no status and are unassigned, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
@@ -357,7 +358,7 @@ R0026 Hosts in the location control plane are running out of disk space. Assign 
     ibmcloud sat host ls --location <location_name_or_ID> | grep infrastructure
     ```
     {: pre}
-2.  Check the details of the hosts. 
+2.  Check the details of the hosts.
     ```
     ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>
     ```

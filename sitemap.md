@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -184,12 +184,10 @@ subcollection: satellite
 [Provider requirements](/docs/satellite?topic=satellite-providers)
 * [Amazon Web Services](/docs/satellite?topic=satellite-providers#aws-reqs)
   * [Supported AWS instance types](/docs/satellite?topic=satellite-providers#aws-instance-types)
-  * [RHEL package updates in example launch template](/docs/satellite?topic=satellite-providers#aws-reqs-launch-template)
-  * [Security group](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup)
+  * [Security group settings](/docs/satellite?topic=satellite-providers#aws-reqs-secgroup)
   * [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-providers#aws-reqs-console-access)
 * [Google Cloud Platform](/docs/satellite?topic=satellite-providers#gcp-reqs)
-  * [RHEL package updates](/docs/satellite?topic=satellite-providers#gcp-reqs-rhel-packages)
-  * [Firewall settings](/docs/satellite?topic=satellite-providers#gcp-reqs-firewall)
+  * [Network firewall settings](/docs/satellite?topic=satellite-providers#gcp-reqs-firewall)
   * [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-providers#gcp-reqs-console-access)
 * [Microsoft Azure](/docs/satellite?topic=satellite-providers#azure-reqs)
   * [RHEL package updates](/docs/satellite?topic=satellite-providers#azure-reqs-rhel-packages)
@@ -410,6 +408,9 @@ subcollection: satellite
 [Resource commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands)
 * [`ibmcloud sat resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get)
 * [`ibmcloud sat resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls)
+
+[Service commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-service-commands)
+* [`ibmcloud sat service ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-service-ls)
 
 [Storage commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-storage-commands)
 * [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create)

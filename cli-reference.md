@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-24"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1592,6 +1592,46 @@ ibmcloud sat resource ls
 {: pre}
 
 <br />
+
+## Service commands
+{: #sat-service-commands}
+
+Use these commands to view the {{site.data.keyword.satelliteshort}}-enabled service clusters that are deployed to your {{site.data.keyword.satelliteshort}} location.
+{: shortdesc}
+
+### `ibmcloud sat service ls`
+{: #cli-service-ls}
+
+List all {{site.data.keyword.satelliteshort}}-enabled service clusters in your location to review details such as requested host resources. For more information about how {{site.data.keyword.satelliteshort}}-enabled service clusters request resources, see [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov).
+{: shortdesc}
+
+```
+ibmcloud sat service ls --location LOCATION [--output OUTPUT] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--location <em>LOCATION</em></code></dt>
+<dd>Required. Enter the ID or name of the location where the {{site.data.keyword.satelliteshort}}-enabled service clusters exist. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.</dd>
+
+<dt><code>--output <em>JSON</em></code></dt>
+<dd>Optional. Displays the command output in JSON format.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat service ls --location mylocation
+```
+{: pre}
 
 ## Storage commands
 {: #sat-storage-commands}

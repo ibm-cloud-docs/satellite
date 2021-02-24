@@ -1,12 +1,13 @@
 ---
 
 copyright:
-  years: 2020, 2020
-lastupdated: "2020-12-03"
+  years: 2020, 2021
+lastupdated: "2021-02-24"
 
 keywords: satellite, hybrid, multicloud
 
 subcollection: satellite
+content-type: troubleshoot
 
 ---
 
@@ -88,7 +89,7 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
