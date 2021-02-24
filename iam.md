@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -175,7 +175,7 @@ Review details about the {{site.data.keyword.satelliteshort}} Link IAM resource 
 
 **Type of role that you can assign for the resource in IAM**:
 * Platform management **Viewer**, **Operator**, **Editor**, and **Administrator** roles
-* Service access **Reader**, **Writer**, and **Manager** roles, and custom **{{site.data.keyword.satelliteshort}} Link Administrator** and **{{site.data.keyword.satelliteshort}} Link Source Access Controller** roles
+* Custom **{{site.data.keyword.satelliteshort}} Link Administrator** and **{{site.data.keyword.satelliteshort}} Link Source Access Controller** service access roles
 
 **What you can scope an access policy for the resource to**:
 * Account

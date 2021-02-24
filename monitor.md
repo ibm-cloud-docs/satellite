@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -130,7 +130,7 @@ Metrics are available for the {{site.data.keyword.satelliteshort}} Link componen
 
 If you already have a {{site.data.keyword.mon_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the Sysdig instance is configured to collect platform metrics, the metrics that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this Sysdig instance. Otherwise, follow these steps to set up Sysdig for your {{site.data.keyword.satelliteshort}} location.
 
-1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring-with-sysdig){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from. You must select a paid pricing plan, because {{site.data.keyword.satelliteshort}} location metrics are not available for lite pricing plans.
+1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring-with-sysdig){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
 2. [Enable the instance for platform-level metrics collection](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs). Note that within one region, only one {{site.data.keyword.mon_short}} instance can be enabled for platform metrics collection.
 3. In the **Monitoring** dashboard, click **View Sysdig** for your {{site.data.keyword.mon_short}} instance.
 4. In the Sysdig dashboard, click **Dashboards** > **IBM** > **Satellite Link - Overview**. The pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics opens.

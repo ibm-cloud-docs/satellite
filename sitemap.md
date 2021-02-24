@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-23"
+lastupdated: "2021-02-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -408,6 +408,9 @@ subcollection: satellite
 [Resource commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands)
 * [`ibmcloud sat resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get)
 * [`ibmcloud sat resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls)
+
+[Service commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-service-commands)
+* [`ibmcloud sat service ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-service-ls)
 
 [Storage commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-storage-commands)
 * [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create)
