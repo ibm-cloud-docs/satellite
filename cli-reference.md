@@ -1602,7 +1602,7 @@ Use these commands to view the {{site.data.keyword.satelliteshort}}-enabled serv
 ### `ibmcloud sat service ls`
 {: #cli-service-ls}
 
-List all {{site.data.keyword.satelliteshort}}-enabled service clusters in your location to review details such as requested host resources. For more information about how {{site.data.keyword.satelliteshort}}-enabled service clusters request resources, see [Using host autoassignment](docs/satellite?topic=satellite-hosts#host-autoassign-ov).
+List all {{site.data.keyword.satelliteshort}}-enabled service clusters in your location to review details such as requested host resources. For more information about how {{site.data.keyword.satelliteshort}}-enabled service clusters request resources, see [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov).
 {: shortdesc}
 
 ```
