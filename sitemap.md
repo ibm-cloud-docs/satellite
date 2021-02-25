@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -521,8 +521,8 @@ subcollection: satellite
 [What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} cluster?](/docs/satellite?topic=satellite-faqs#supported-services)
 
 
-## Troubleshooting
-{: #sitemap_troubleshooting}
+## Troubleshooting errors
+{: #sitemap_troubleshooting_errors}
 
 
 [Getting help](/docs/satellite?topic=satellite-get-help)
@@ -531,14 +531,9 @@ subcollection: satellite
 * [Feedback and questions](/docs/satellite?topic=satellite-get-help#feedback-qs)
 * [Contacting support](/docs/satellite?topic=satellite-get-help#help-support)
 
-
-## Locations
-{: #sitemap_locations}
-
-
-[Debugging location health](/docs/satellite?topic=satellite-ts-locations-debug)
+[Location error messages](/docs/satellite?topic=satellite-ts-locations-debug)
 * [R0001: Ready location](/docs/satellite?topic=satellite-ts-locations-debug#R0001)
-* [R0002, R0018, R0020, R0023, R0029, R0037, R0039: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0002)
+* [R0002, R0018, R0020, R0023, R0029, R0037, R0039, R0042: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0002)
 * [R0009: Unable to recover](/docs/satellite?topic=satellite-ts-locations-debug#R0009)
 * [R0010, R0030, R0031, R0032: Control plane needs hosts](/docs/satellite?topic=satellite-ts-locations-debug#R0010)
 * [R0011, R0040, R0041: Issues with the control plane hosts](/docs/satellite?topic=satellite-ts-locations-debug#R0011)
@@ -550,14 +545,22 @@ subcollection: satellite
 * [R0026: Host disk space](/docs/satellite?topic=satellite-ts-locations-debug#R0026)
 * [R0033, R0034, R0035: Control plane capacity issues](/docs/satellite?topic=satellite-ts-locations-debug#R0033)
 * [R0036: Location subdomain traffic routing](/docs/satellite?topic=satellite-ts-locations-debug#R0036)
-* [R0042, R0047, R0048: Permission issues](/docs/satellite?topic=satellite-ts-locations-debug#R0042)
 * [R0043: Layer 3 connectivity](/docs/satellite?topic=satellite-ts-locations-debug#R0043)
 * [R0044: DNS issues](/docs/satellite?topic=satellite-ts-locations-debug#R0044)
 * [R0045, R0046: Host file system and NTP issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
 
+
+## Locations
+{: #sitemap_locations}
+
+
 [Debugging the health of the location control plane](/docs/satellite?topic=satellite-ts-locations-control-plane)
 
 [Why does the location subdomain not route traffic to control plane hosts?](/docs/satellite?topic=satellite-ts-location-subdomain)
+
+[Why can't I see a location that another user gave me access to?](/docs/satellite?topic=satellite-ts-location-missing-location)
+* [Target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location-target)
+* [Ask the location owner to update your permissions](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location-perms)
 
 
 ## Hosts

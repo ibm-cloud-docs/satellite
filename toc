@@ -63,14 +63,15 @@ Satellite
     faqs.md
 
     {: .topicgroup}
-    Troubleshooting
+    Troubleshooting errors
         getting-help.md
+        ts-locations/debug-location.md
 
         {: .topicgroup}
         Locations
-            ts-locations/debug-location.md
             ts-locations/debug-control-plane.md
             ts-locations/ts-location-subdomain.md
+            ts-locations/ts-location-listing-iam.md
 
         {: .topicgroup}
         Hosts

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -93,7 +93,7 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Debugging location health
+# Location error messages
 {: #ts-locations-debug}
 
 By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your locations and tries to resolve issues automatically for you. For issues that cannot be resolved automatically, you can debug the location by reviewing the provided health information.
@@ -147,7 +147,7 @@ The {{site.data.keyword.satelliteshort}} location is ready for operations.
 
 Your {{site.data.keyword.satelliteshort}} location has no critical alerts, and the IBM monitoring component in the location control plane is monitoring the health of your location. You might still see some warning messages for actions that you can take to improve the state of resources in your location, such as hosts.
 
-## R0002, R0018, R0020, R0023, R0029, R0037, R0039: Wait for location to be ready
+## R0002, R0018, R0020, R0023, R0029, R0037, R0039, R0042: Wait for location to be ready
 {: #R0002}
 {: #R0018}
 {: #R0020}
@@ -155,6 +155,7 @@ Your {{site.data.keyword.satelliteshort}} location has no critical alerts, and t
 {: #R0029}
 {: #R0037}
 {: #R0039}
+{: #R0042}
 
 **Location message**
 
@@ -172,12 +173,18 @@ R0029 Successfully initiated recovery action.
 R0037 The {{site.data.keyword.satelliteshort}} location has clusters that are in a failed state. {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later.
 
 R0039 The {{site.data.keyword.satelliteshort}} location control plane is currently unhealthy. {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later.
+
+R0042 {{site.data.keyword.cloud_notm}} Support is resolving link api failures. Check back later. If this issue persists, raise a support case.
 ```
 {: screen}
 
 **Steps to resolve**
 
 Check back later to see if the issue is resolved. If the issue persists for a while, you can [open a support case](/docs/satellite?topic=satellite-get-help).
+
+For more details on the issue:
+1.  [Set up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna).
+2.  Search the platform logs for the error code for more details, such as failed API method due to a permissions error.
 
 ## R0009: Unable to recover
 {: #R0009}
@@ -401,30 +408,6 @@ R0036 The location subdomains are not correctly routing traffic to your control 
 **Steps to resolve**
 
 See [Location subdomain not routing traffic to control plane hosts](/docs/satellite?topic=satellite-ts-location-subdomain).
-
-## R0042, R0047, R0048: Permission issues
-{: #R0042}
-{: #R0047}
-{: #R0048}
-
-**Location message**
-
-```
-R0042 Link APIs are erroring in this location. Please check the credentials you have configured for this location and ensure it has the proper permissions.
-
-R0047 The API key that is set does not have correct permissions in {{site.data.keyword.cloud_notm}} IAM to access the {{site.data.keyword.satelliteshort}} Link endpoint for the location control plane.
-
-R0048 The API key that is set does not have correct permissions in {{site.data.keyword.cloud_notm}} IAM to access the {{site.data.keyword.satelliteshort}} Link endpoint for a cluster that runs in the location.
-```
-{: screen}
-
-**Steps to resolve**
-
-1.  [Set up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna) for more information about which hosts are affected.
-2.  Search the platform logs for the error code to see which API method failed.
-3.  Match the API method with the required [{{site.data.keyword.cloud_notm}} IAM platform role](/docs/satellite?topic=satellite-iam#iam-roles-platform), such as **Editor**.
-4.  As the account administrator, assign the missing platform role to the API key owner or the [access group](/docs/account?topic=account-groups#access_ag) that the API key owner is in.
-5.  As the API key owner, [reset the API key](/docs/openshift?topic=openshift-users#api_key_most_cases) for the region and resource group that your {{site.data.keyword.satelliteshort}} location is managed from. Now that the API key has the correct permissions, the issue automatically resolves.
 
 ## R0043: Layer 3 connectivity
 {: #R0043}
