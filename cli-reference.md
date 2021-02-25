@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1862,7 +1862,7 @@ Get the details of a {{site.data.keyword.satelliteshort}} storage config.
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage config get --name NAME [--output OUTPUT] [-q]
+ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -1873,8 +1873,8 @@ ibmcloud sat storage config get --name NAME [--output OUTPUT] [-q]
 **Command options:**
 
 <dl>
-<dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. The name of the storage configuration.</dd>
+<dt><code>--config <em>CONFIG</em></code></dt>
+<dd>Required. The name of the storage configuration.</code>.</dd>
 
 <dt><code>--output <em>JSON</em></code></dt>
 <dd>Optional. Displays the command output in JSON format.</dd>
@@ -1885,7 +1885,7 @@ ibmcloud sat storage config get --name NAME [--output OUTPUT] [-q]
 
 **Example:**
 ```sh
-ibmcloud sat storage config get --name ocs-config
+ibmcloud sat storage config get --config ocs-config
 ```
 {: pre}
 
