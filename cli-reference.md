@@ -1293,7 +1293,7 @@ ibmcloud sat location create --managed-from METRO --name NAME [--cos-bucket COS_
 <dd>Required. The {{site.data.keyword.cloud_notm}} multizone metro that your {{site.data.keyword.satelliteshort}} control plane resources are managed from. Select the {{site.data.keyword.cloud_notm}} multizone metro that is nearest to where your physical machines are. For a list of supported metros, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. Enter a name for your location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Do not reuse the name of a previously deleted location.</dd>
+<dd>Required. Enter a name for your location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer.</dd>
 
 <dt><code>--cos-bucket <em>COS_BUCKET_NAME</em></code></dt>
 <dd>Optional. Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up the control plane data. If you specify the bucket name, make sure to also specify the HMAC secret access key, access key ID, bucket region, and bucket endpoint of your {{site.data.keyword.cos_full_notm}} service instance.   </dd>

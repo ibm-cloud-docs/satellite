@@ -149,7 +149,7 @@ subcollection: satellite
 
 [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-sizing)
 
-[Creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create)
+[Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create)
 * [Creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
 * [Creating locations from the CLI](/docs/satellite?topic=satellite-locations#locations-create-cli)
 
