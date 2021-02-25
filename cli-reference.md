@@ -1633,6 +1633,8 @@ ibmcloud sat service ls --location mylocation
 ```
 {: pre}
 
+<br />
+
 ## Storage commands
 {: #sat-storage-commands}
 
@@ -1679,6 +1681,8 @@ ibmcloud sat storage assignment create --group staging --config file100 --name f
 ```
 {: pre}
 
+<br />
+
 ### `ibmcloud sat storage assignment get`
 {: #cli-storage-assign-get}
 
@@ -1710,6 +1714,8 @@ ibmcloud sat storage assignment get --assignment my-assignment
 ```
 {: pre}
 
+<br />
+
 ### `ibmcloud sat storage assignment ls`
 {: #cli-storage-assign-ls}
 
@@ -1737,6 +1743,8 @@ ibmcloud sat storage assignment ls [-q]
 ibmcloud sat storage assignment ls [-q]
 ```
 {: pre}
+
+<br />
 
 ### `ibmcloud sat storage assignment rm`
 {: #cli-storage-assign-rm}
@@ -1771,6 +1779,8 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
 ibmcloud sat storage assignment rm --assignment my-storage-assignment
 ```
 {: pre}
+
+<br />
 
 ### `ibmcloud sat storage assignment update`
 {: #cli-storage-assign-update}
@@ -1811,6 +1821,8 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP] [
 ibmcloud sat storage assignment update --assignment ASSIGNMENT --group GROUP --name NAME [-f] [-q]
 ```
 {: pre}
+
+<br />
 
 ### `ibmcloud sat storage config create`
 {: #cli-storage-config-create}
@@ -1855,6 +1867,8 @@ ibmcloud sat storage config create --name ibm-ocs-config --template-name ocs-loc
 ```
 {: pre}
 
+<br />
+
 ### `ibmcloud sat storage config get`
 {: #cli-storage-config-get}
 
@@ -1889,6 +1903,8 @@ ibmcloud sat storage config get --config ocs-config
 ```
 {: pre}
 
+<br />
+
 ### `ibmcloud sat storage config ls`
 {: #cli-storage-config-ls}
 
@@ -1916,6 +1932,8 @@ ibmcloud sat storage config ls [-q]
 ibmcloud sat storage config ls
 ```
 {: pre}
+
+<br />
 
 ### `ibmcloud sat storage template get`
 {: #cli-storage-template-get}
@@ -1950,6 +1968,8 @@ ibmcloud sat storage template get --name NAME --version VERSION
 ibmcloud sat storage template get --name ocs --version 4.3
 ```
 {: pre}
+
+<br />
 
 ### `ibmcloud sat storage template ls`
 {: #cli-storage-template-ls}
