@@ -101,8 +101,8 @@ As a security officer, auditor, or manager, you can use {{site.data.keyword.at_f
 
 {{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [getting started tutorial for {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started#getting-started).
 
-During the beta, the events that are documented on this page are generated and sent to an IBM-owned Activity Tracker account. Customers are not able to see these events in their own Activity Tracker service instance yet. This feature is planned to be added for GA.
-{: important}
+{{site.data.keyword.satellitelong_notm}} is available as a closed beta and subject to change.
+{: beta}
 
 
 

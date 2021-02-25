@@ -352,12 +352,8 @@ subcollection: satellite
 
 
 ## API reference
-{: #sitemap_api_reference}
 
-
-[Satellite locations, hosts, and clusters](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster){: external}
-
-[Satellite links, endpoints, and sources](https://pages.github.ibm.com/IBM-Cloud-Platform-Networking/satellite-link-api/#/){: external}
+[API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster){: external}
 
 
 ## {{site.data.keyword.satelliteshort}} CLI command reference
