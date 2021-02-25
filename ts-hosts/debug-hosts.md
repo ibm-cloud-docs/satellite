@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -115,9 +115,9 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
 3.  Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity. For example, if you change the firewall rules for the host machine's public or private network connectivity, you might make the host unsupported by blocking the necessary ports and IP addresses.
 4.  If your host still has issues, try to [remove](/docs/satellite?topic=satellite-hosts#host-remove), update, and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
 
-| Health state | Description
+| Health state | Description |
 | --- | --- |
-| `assigned` | The host is assigned to a {{site.data.keyword.satelliteshort}} resource, such as a location control plane or cluster. View the status for more information. If the status is `-`, the hosts did not complete the bootstrapping process to the {{site.data.keyword.satelliteshort}} resource. For hosts that you just assigned, wait an hour or so for the process to complete. If you still see the status, [log in to the host to continue debugging](/docs/satellite?topic=satellite-ts-hosts-login).| 
+| `assigned` | The host is assigned to a {{site.data.keyword.satelliteshort}} resource, such as a location control plane or cluster. View the status for more information. If the status is `-`, the hosts did not complete the bootstrapping process to the {{site.data.keyword.satelliteshort}} resource. For hosts that you just assigned, wait an hour or so for the process to complete. If you still see the status, [log in to the host to continue debugging](/docs/satellite?topic=satellite-ts-hosts-login).|
 | `provisioning` | The host is attached to the {{site.data.keyword.satelliteshort}} location and is in the process of bootstrapping to become part of a {{site.data.keyword.satelliteshort}} resource, such as the worker node of a {{site.data.keyword.openshiftlong_notm}} cluster.|
 | `ready` | The host is attached to the {{site.data.keyword.satelliteshort}} location and ready to be [assigned to a {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-hosts#host-assign).|
 | `normal` | The host is assigned to a {{site.data.keyword.satelliteshort}} resource, such as a location control plane or cluster, and ready for usage. |
