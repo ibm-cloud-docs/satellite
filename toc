@@ -40,13 +40,11 @@ Satellite
         ha-dr.md
         service-connection.md
         data-security.md
+        at.md
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    {: .topicgroup}
-    API reference
-        [Satellite locations, hosts, and clusters](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster)
-        [Satellite links, endpoints, and sources](https://pages.github.ibm.com/IBM-Cloud-Platform-Networking/satellite-link-api/#/)
+    [API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster)
 
     {: topicgroup}
     CLI plug-in reference
@@ -63,14 +61,15 @@ Satellite
     faqs.md
 
     {: .topicgroup}
-    Troubleshooting
+    Troubleshooting errors
         getting-help.md
+        ts-locations/debug-location.md
 
         {: .topicgroup}
         Locations
-            ts-locations/debug-location.md
             ts-locations/debug-control-plane.md
             ts-locations/ts-location-subdomain.md
+            ts-locations/ts-location-listing-iam.md
 
         {: .topicgroup}
         Hosts

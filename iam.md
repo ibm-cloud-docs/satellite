@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -120,6 +120,9 @@ You can use {{site.data.keyword.cloud_notm}} IAM to assign access to different r
 Review details about the {{site.data.keyword.satelliteshort}} config IAM resource type.
 {: shortdesc}
 
+If you scope an access policy to the `location` resource type, the users must target the regional endpoint to interact with the location. For more information, see the [troubleshooting topic](/docs/satellite?topic=satellite-ts-location-missing-location).
+{: note}
+
 **Name of the resource type**:
 * UI: `Location`
 * API or CLI: `location`
@@ -230,13 +233,13 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
       * Cluster
       * Cluster group
       * Link
-      * Location
+      * Location (when scoped, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location))
       * Subscription
     * You can further scope access to a particular resource for the following resource types:
       * Cluster
       * Cluster group
       * Link
-      * Location
+      * Location (when scoped, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location))
     * For help with choosing the right platform and service roles, see the following reference information:
       *   [Platform management roles](#iam-roles-platform)
       *   [Service access roles](#iam-roles-service)
@@ -268,7 +271,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM console to grant an access policy t
 6.  Leave the setting in **Account** so that you can scope the resource to a specific instance.
 7.  For **Resource Type** string equals field, scope the policy to a {{site.data.keyword.satelliteshort}} resource, such as **Location**.
 8.  For the **Resource** string equals field, enter the name of your {{site.data.keyword.satelliteshort}} location, such as **Port-NewYork**. Keep in mind the following considerations for various {{site.data.keyword.satelliteshort}} resources.
-    * **{{site.data.keyword.satelliteshort}} location**: If you leave the **Resource** field blank, the user gets access to all the locations, which is needed for the user to create a location.
+    * **{{site.data.keyword.satelliteshort}} location**: If you leave the **Resource** field blank, the user gets access to all the locations, which is needed for the user to create a location. When scoped to a location, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location).
     * **{{site.data.keyword.satelliteshort}} config**: You cannot scope a policy to individual `configuration` or `subscription` resources. Instead, leave the **Resource** field blank and control access to your {{site.data.keyword.satelliteshort}} Config resources at the `clustergroup` level.
 9.  For **Platform access**, select the **Editor** role so that all users in your access group can add and remove hosts and endpoints from the {{site.data.keyword.satelliteshort}} location, but cannot create or delete locations. For other roles by resource type, see [IAM platform and service roles](#iam-roles).
 10. Click **Add+**.
@@ -330,7 +333,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
       <tr>
       <td>{{site.data.keyword.satelliteshort}} resource</td>
       <td>`--resource-type`</td>
-      <td>You can limit the policy to a type of resource within {{site.data.keyword.satellitelong_notm}}, such as all {{site.data.keyword.satelliteshort}} locations or {{site.data.keyword.satelliteshort}} configurations. To review resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types). Possible values include `location` `configuration`, `cluster`, `clustergroup`, and `subscription`.</td>
+      <td>You can limit the policy to a type of resource within {{site.data.keyword.satellitelong_notm}}, such as all {{site.data.keyword.satelliteshort}} locations or {{site.data.keyword.satelliteshort}} configurations. To review resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types). Possible values include `location` `configuration`, `cluster`, `clustergroup`, and `subscription`.<p class="note">If you scope an access policy to the `location` resource type, the users must target the regional endpoint to interact with the location. For more information, see the [troubleshooting topic](/docs/satellite?topic=satellite-ts-location-missing-location).</p></td>
       </tr>
       <tr>
       <td>Resource instance</td>
@@ -380,7 +383,7 @@ Policies enable access at different levels. Some of the options for {{site.data.
 
 * Access across all {{site.data.keyword.satelliteshort}} service instances of all resource types in your account.
 * Access to specific resource types within {{site.data.keyword.satelliteshort}}. For more information about resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types).
-  * **Location** in the UI, **location** in the API and CLI.
+  * **Location** in the UI, **location** in the API and CLI. (When scoped, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location).)
   * **Link** in the UI, **link** in the API and CLI.
   * {{site.data.keyword.satelliteshort}} Config resource types:
     * **Cluster** in the UI, **cluster** in the API and CLI.
@@ -389,7 +392,7 @@ Policies enable access at different levels. Some of the options for {{site.data.
     * **Subscription** in the UI, **subscription** in the API and CLI.
 
 * Access to an individual resource of a particular resource type, such as a particular location {{site.data.keyword.satelliteshort}}. The following resource types can be scoped to particular instances.
-  * **Location** in the UI, **location** in the API and CLI.
+  * **Location** in the UI, **location** in the API and CLI. (When scoped, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location).)
   * **Link** in the UI, **link** in the API and CLI.
   * {{site.data.keyword.satelliteshort}} Config resource types:
     * **Cluster** in the UI, **cluster** in the API and CLI.
@@ -635,7 +638,7 @@ Wondering which access roles to assign to your {{site.data.keyword.satelliteshor
 
 | Use case | Example roles and scope |
 | --- | --- |
-| Creating a location | The user and the [API key that is set for the region and resource group](/docs/openshift?topic=openshift-users#api_key_about) require the following permissions. **Administrator** platform role for all {{site.data.keyword.satelliteshort}} locations. Custom **{{site.data.keyword.satelliteshort}} Link Administrator** service role for {{site.data.keyword.satelliteshort}} Link. **Writer** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. For additional permissions to set up the location control plane, see [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
+| Creating a location | The user and the [API key that is set for the region and resource group](/docs/openshift?topic=openshift-users#api_key_about) require the following permissions. **Administrator** platform role for all {{site.data.keyword.satelliteshort}} locations. The custom **{{site.data.keyword.satelliteshort}} Link Administrator** service role for {{site.data.keyword.satelliteshort}} Link. **Writer** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. For additional permissions to set up the location control plane, see [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
 | Creating a cluster in a location | See [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
 | Location auditor | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location and link endpoints. **Reader** service role for the configuration resources in the location. **Reader** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. |
 | App developers | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location. **Writer** or **Deployer** service access role for the configuration resources. **Editor** platform role and **Writer** service role to {{site.data.keyword.openshiftshort}} clusters or particular projects in a cluster.|

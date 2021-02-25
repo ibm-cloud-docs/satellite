@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -149,7 +149,7 @@ subcollection: satellite
 
 [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-sizing)
 
-[Creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create)
+[Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create)
 * [Creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
 * [Creating locations from the CLI](/docs/satellite?topic=satellite-locations#locations-create-cli)
 
@@ -261,6 +261,7 @@ subcollection: satellite
   * [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-location-ui)
   * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-location-cli)
   * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-sources)
+* [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-location-cloud#link-audit)
 * [Logging and monitoring network traffic for endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-health)
   * [Setting up Sysdig for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-sysdig)
   * [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-location-cloud#link-packet-capture)
@@ -273,10 +274,13 @@ subcollection: satellite
 
 [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health)
 * [Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
+* [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 * [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
 
 [Monitoring for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-monitor)
-* [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default)
+* [Understanding what is logged and monitored by default](/docs/satellite?topic=satellite-monitor#health-default)
+  * [Auditing events for {{site.data.keyword.satelliteshort}} actions](/docs/satellite?topic=satellite-monitor#audit-events)
+  * [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default)
 * [Setting up Sysdig for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-sysdig)
   * [Available metrics](/docs/satellite?topic=satellite-monitor#available-metrics)
   * [Attributes for segmentation](/docs/satellite?topic=satellite-monitor#attributes)
@@ -340,14 +344,16 @@ subcollection: satellite
 * [Where is my information stored?](/docs/satellite?topic=satellite-data-security#sat_data-location)
 * [How can I remove my information?](/docs/satellite?topic=satellite-data-security#sat-data-removal)
 
+[Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events)
+* [Events for {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-at_events#at_actions_clusters)
+* [Events for the {{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-at_events#at_actions_link)
+* [Events for the {{site.data.keyword.satelliteshort}} Config component](/docs/satellite?topic=satellite-at_events#at_actions_config)
+* [Viewing events](/docs/satellite?topic=satellite-at_events#at_ui)
+
 
 ## API reference
-{: #sitemap_api_reference}
 
-
-[Satellite locations, hosts, and clusters](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster){: external}
-
-[Satellite links, endpoints, and sources](https://pages.github.ibm.com/IBM-Cloud-Platform-Networking/satellite-link-api/#/){: external}
+[API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster){: external}
 
 
 ## {{site.data.keyword.satelliteshort}} CLI command reference
@@ -521,8 +527,8 @@ subcollection: satellite
 [What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} cluster?](/docs/satellite?topic=satellite-faqs#supported-services)
 
 
-## Troubleshooting
-{: #sitemap_troubleshooting}
+## Troubleshooting errors
+{: #sitemap_troubleshooting_errors}
 
 
 [Getting help](/docs/satellite?topic=satellite-get-help)
@@ -531,14 +537,9 @@ subcollection: satellite
 * [Feedback and questions](/docs/satellite?topic=satellite-get-help#feedback-qs)
 * [Contacting support](/docs/satellite?topic=satellite-get-help#help-support)
 
-
-## Locations
-{: #sitemap_locations}
-
-
-[Debugging location health](/docs/satellite?topic=satellite-ts-locations-debug)
+[Location error messages](/docs/satellite?topic=satellite-ts-locations-debug)
 * [R0001: Ready location](/docs/satellite?topic=satellite-ts-locations-debug#R0001)
-* [R0002, R0018, R0020, R0023, R0029, R0037, R0039: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0002)
+* [R0002, R0018, R0020, R0023, R0029, R0037, R0039, R0042: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0002)
 * [R0009: Unable to recover](/docs/satellite?topic=satellite-ts-locations-debug#R0009)
 * [R0010, R0030, R0031, R0032: Control plane needs hosts](/docs/satellite?topic=satellite-ts-locations-debug#R0010)
 * [R0011, R0040, R0041: Issues with the control plane hosts](/docs/satellite?topic=satellite-ts-locations-debug#R0011)
@@ -550,14 +551,22 @@ subcollection: satellite
 * [R0026: Host disk space](/docs/satellite?topic=satellite-ts-locations-debug#R0026)
 * [R0033, R0034, R0035: Control plane capacity issues](/docs/satellite?topic=satellite-ts-locations-debug#R0033)
 * [R0036: Location subdomain traffic routing](/docs/satellite?topic=satellite-ts-locations-debug#R0036)
-* [R0042, R0047, R0048: Permission issues](/docs/satellite?topic=satellite-ts-locations-debug#R0042)
 * [R0043: Layer 3 connectivity](/docs/satellite?topic=satellite-ts-locations-debug#R0043)
 * [R0044: DNS issues](/docs/satellite?topic=satellite-ts-locations-debug#R0044)
 * [R0045, R0046: Host file system and NTP issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
 
+
+## Locations
+{: #sitemap_locations}
+
+
 [Debugging the health of the location control plane](/docs/satellite?topic=satellite-ts-locations-control-plane)
 
 [Why does the location subdomain not route traffic to control plane hosts?](/docs/satellite?topic=satellite-ts-location-subdomain)
+
+[Why can't I see a location that another user gave me access to?](/docs/satellite?topic=satellite-ts-location-missing-location)
+* [Target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location-target)
+* [Ask the location owner to update your permissions](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location-perms)
 
 
 ## Hosts

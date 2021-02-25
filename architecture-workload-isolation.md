@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-19"
+lastupdated: "2021-02-25"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -160,7 +160,7 @@ Review the {{site.data.keyword.cloud_notm}} services that your {{site.data.keywo
 
 |Service name|Description|
 |------------|-------------------------------------|
-| {{site.data.keyword.cloudaccesstrailshort}} | {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward {{site.data.keyword.satelliteshort}} audit events to the {{site.data.keyword.at_full_notm}} service instance that you set up.|
+| {{site.data.keyword.cloudaccesstrailshort}} | {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward {{site.data.keyword.satelliteshort}} audit events to the {{site.data.keyword.at_full_notm}} service instance that you set up. For more information, see [Auditing events for {{site.data.keyword.satelliteshort}](/docs/satellite?topic=satellite-at_events).|
 | {{site.data.keyword.cloudcerts_short}} | This service is used to retrieve the TLS certificates for custom Ingress domains in a {{site.data.keyword.openshiftlong_notm}} cluster in a {{site.data.keyword.satelliteshort}} location.|
 |{{site.data.keyword.cos_short}} (COS)|This service is used to back up the control plane data of a {{site.data.keyword.satelliteshort}} location. The service instance is owned by the customer who controls access to the instance by using IAM policies. All data is encrypted in transit and at rest.|
 |{{site.data.keyword.registryshort}}|This service is used to store the container images that {{site.data.keyword.satellitelong_notm}} uses to run the service.|

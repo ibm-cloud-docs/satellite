@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1293,7 +1293,7 @@ ibmcloud sat location create --managed-from METRO --name NAME [--cos-bucket COS_
 <dd>Required. The {{site.data.keyword.cloud_notm}} multizone metro that your {{site.data.keyword.satelliteshort}} control plane resources are managed from. Select the {{site.data.keyword.cloud_notm}} multizone metro that is nearest to where your physical machines are. For a list of supported metros, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. Enter a name for your location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Do not reuse the name of a previously deleted location.</dd>
+<dd>Required. Enter a name for your location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer.</dd>
 
 <dt><code>--cos-bucket <em>COS_BUCKET_NAME</em></code></dt>
 <dd>Optional. Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up the control plane data. If you specify the bucket name, make sure to also specify the HMAC secret access key, access key ID, bucket region, and bucket endpoint of your {{site.data.keyword.cos_full_notm}} service instance.   </dd>
@@ -1633,6 +1633,8 @@ ibmcloud sat service ls --location mylocation
 ```
 {: pre}
 
+<br />
+
 ## Storage commands
 {: #sat-storage-commands}
 
@@ -1679,6 +1681,8 @@ ibmcloud sat storage assignment create --group staging --config file100 --name f
 ```
 {: pre}
 
+<br />
+
 ### `ibmcloud sat storage assignment get`
 {: #cli-storage-assign-get}
 
@@ -1710,6 +1714,8 @@ ibmcloud sat storage assignment get --assignment my-assignment
 ```
 {: pre}
 
+<br />
+
 ### `ibmcloud sat storage assignment ls`
 {: #cli-storage-assign-ls}
 
@@ -1737,6 +1743,8 @@ ibmcloud sat storage assignment ls [-q]
 ibmcloud sat storage assignment ls [-q]
 ```
 {: pre}
+
+<br />
 
 ### `ibmcloud sat storage assignment rm`
 {: #cli-storage-assign-rm}
@@ -1771,6 +1779,8 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
 ibmcloud sat storage assignment rm --assignment my-storage-assignment
 ```
 {: pre}
+
+<br />
 
 ### `ibmcloud sat storage assignment update`
 {: #cli-storage-assign-update}
@@ -1811,6 +1821,8 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP] [
 ibmcloud sat storage assignment update --assignment ASSIGNMENT --group GROUP --name NAME [-f] [-q]
 ```
 {: pre}
+
+<br />
 
 ### `ibmcloud sat storage config create`
 {: #cli-storage-config-create}
@@ -1855,6 +1867,8 @@ ibmcloud sat storage config create --name ibm-ocs-config --template-name ocs-loc
 ```
 {: pre}
 
+<br />
+
 ### `ibmcloud sat storage config get`
 {: #cli-storage-config-get}
 
@@ -1862,7 +1876,7 @@ Get the details of a {{site.data.keyword.satelliteshort}} storage config.
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage config get --name NAME [--output OUTPUT] [-q]
+ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -1873,8 +1887,8 @@ ibmcloud sat storage config get --name NAME [--output OUTPUT] [-q]
 **Command options:**
 
 <dl>
-<dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. The name of the storage configuration.</dd>
+<dt><code>--config <em>CONFIG</em></code></dt>
+<dd>Required. The name of the storage configuration.</code>.</dd>
 
 <dt><code>--output <em>JSON</em></code></dt>
 <dd>Optional. Displays the command output in JSON format.</dd>
@@ -1885,9 +1899,11 @@ ibmcloud sat storage config get --name NAME [--output OUTPUT] [-q]
 
 **Example:**
 ```sh
-ibmcloud sat storage config get --name ocs-config
+ibmcloud sat storage config get --config ocs-config
 ```
 {: pre}
+
+<br />
 
 ### `ibmcloud sat storage config ls`
 {: #cli-storage-config-ls}
@@ -1916,6 +1932,8 @@ ibmcloud sat storage config ls [-q]
 ibmcloud sat storage config ls
 ```
 {: pre}
+
+<br />
 
 ### `ibmcloud sat storage template get`
 {: #cli-storage-template-get}
@@ -1950,6 +1968,8 @@ ibmcloud sat storage template get --name NAME --version VERSION
 ibmcloud sat storage template get --name ocs --version 4.3
 ```
 {: pre}
+
+<br />
 
 ### `ibmcloud sat storage template ls`
 {: #cli-storage-template-ls}
