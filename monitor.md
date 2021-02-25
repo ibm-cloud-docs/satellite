@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -100,7 +100,19 @@ subcollection: satellite
 
 Monitoring for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect metrics for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.mon_short}} instance to collect platform metrics in the same region that your location is managed from. Then, to collect metrics for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a Sysdig agent in your cluster to automatically collect and forward pod metrics to a {{site.data.keyword.mon_short}} instance. Note that you can use the same Sysdig instance to collect metrics for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
 
-## IBM monitoring to resolve and report location alerts
+## Understanding what is logged and monitored by default
+{: #health-default}
+
+By default, {{site.data.keyword.satelliteshort}} generates certain activity events and monitors the state of your location and host resources.
+{: shortdesc}
+
+### Auditing events for {{site.data.keyword.satelliteshort}} actions
+{: #audit-events}
+
+See [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
+{: shortdesc}
+
+### IBM monitoring to resolve and report location alerts
 {: #monitoring-default}
 
 When you create a {{site.data.keyword.satelliteshort}} location and set up the location control plane, IBM automatically monitors and resolves certain alerts for issues with your location setup and host infrastructure. The following table describes different scenarios and the actions that IBM takes to address the scenarios.

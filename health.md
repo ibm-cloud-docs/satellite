@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-19"
+lastupdated: "2021-02-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -120,7 +120,15 @@ If you already have a {{site.data.keyword.la_short}} instance in the same {{site
 
 <br />
 
+## Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events
+{: #setup-at}
 
+To track how users and applications interact with your {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.satellitelong_notm}} automatically generates user-initiated management events and forwards these event logs to {{site.data.keyword.at_full}}.
+{: shortdesc}
+
+To access these logs, [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) in the same region that your location is managed from. For more information about the types of {{site.data.keyword.satelliteshort}} events that you can track, see [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
+
+<br />
 
 ## Setting up logging for clusters
 {: #setup-clusters}
