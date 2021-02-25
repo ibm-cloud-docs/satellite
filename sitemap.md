@@ -261,6 +261,7 @@ subcollection: satellite
   * [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-location-ui)
   * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-location-cli)
   * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-sources)
+* [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-location-cloud#link-audit)
 * [Logging and monitoring network traffic for endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-health)
   * [Setting up Sysdig for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-sysdig)
   * [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-location-cloud#link-packet-capture)
