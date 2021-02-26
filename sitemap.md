@@ -242,8 +242,10 @@ subcollection: satellite
   * [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access)
 * [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-cluster-config#create-satconfig-ui)
 * [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-cluster-config#create-satconfig-cli)
-* [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters)
 * [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources)
+* [Using {{site.data.keyword.satelliteshort}} config with existing {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-cluster-config#manage-existing-openshift-clusters)
+  * [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters)
+  * [Removing {{site.data.keyword.satelliteshort}} config from your cluster](/docs/satellite?topic=satellite-cluster-config#remove-satconfig)
 
 [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud)
 * [About {{site.data.keyword.satelliteshort}} endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-about)
