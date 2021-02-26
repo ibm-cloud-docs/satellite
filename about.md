@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-19"
+lastupdated: "2021-02-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -123,7 +123,10 @@ Your {{site.data.keyword.satelliteshort}} location starts with your actual infra
 
 **Hosts**
 
-The host instances in your infrastructure provider become the compute hosts to run the resources in your {{site.data.keyword.satelliteshort}} location. To add hosts to {{site.data.keyword.satelliteshort}}, the hosts must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers), such as running the RHEL 7 operating system.
+The host instances in your infrastructure provider become the compute hosts to run the resources in your {{site.data.keyword.satelliteshort}} location. To add hosts to {{site.data.keyword.satelliteshort}}, the hosts must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs), such as running the RHEL 7 operating system.
+
+Want to add hosts from other cloud providers? Find detailed steps for how to configure hosts in [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure) to make them available in {{site.data.keyword.satelliteshort}}. 
+{: tip}
 
 **Zones**
 
@@ -156,6 +159,9 @@ You can [create clusters in your {{site.data.keyword.satelliteshort}} location](
 **Hosts**
 
 [Attach as many hosts](/docs/satellite?topic=satellite-hosts) as you need to your {{site.data.keyword.satelliteshort}} location, and consider having a few extra in case resources such as services, clusters, or the control plane request extra capacity. You can use host labels to help manage capacity requests and automatically assign hosts to your resources. The hosts become the user-provided infrastructure (`upi`) worker nodes in your clusters, providing the compute capacity that is needed to run the cluster workloads.
+
+Want to add hosts from other cloud providers? Find detailed steps for how to configure hosts in [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure) to make them available in {{site.data.keyword.satelliteshort}}. 
+{: tip}
 
 **Zones**
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -108,12 +108,12 @@ In this getting started tutorial, you create your first {{site.data.keyword.sate
 {: #sat-prereqs}
 
 
-1. You must have at least 3 compute hosts in your own infrastructure environment that meet certain requirements, such as RHEL 7 packages and the ability to log in to the host machines and run a script.
-   *  All hosts must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs).
-   *  Depending on the provider, your hosts also might have [provider-specific requirements](/docs/satellite?topic=satellite-providers).
-   *  3 hosts at a minimum are needed for the location control plane, for demonstration purposes.
+1. For demonstration. purposes, you must have at least 3 hosts that reside in your on-premises data center, at other cloud providers, or in edge networks. All hosts must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as RHEL 7 packages and must be configured with at least 4 CPUs and 16 GB of memory.
+   
+   Want to add hosts from other cloud providers? Find detailed steps for how to configure hosts in [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure) to make them available in {{site.data.keyword.satelliteshort}}. 
+   {: tip}
 
-   <p class="important">A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location, add more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts.<br><br>If your hosts cannot meet these host and provider requirements, you cannot attach the hosts to {{site.data.keyword.satellitelong_notm}}. {{site.data.keyword.satelliteshort}} beta requirements are subject to change.</p>
+   <p class="important">A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location, add more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts.<br><br>{{site.data.keyword.satelliteshort}} beta requirements are subject to change.</p>
 
 2. You must be the {{site.data.keyword.cloud_notm}} account owner, or have the [administrator permissions](/docs/satellite?topic=satellite-iam#iam-roles-clusters) to the required {{site.data.keyword.cloud_notm}} services in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).
 
@@ -132,8 +132,11 @@ To use {{site.data.keyword.satelliteshort}}, you must create a location. A locat
 ## Step 2: Attach compute hosts to your location
 {: #attach-hosts-to-location}
 
-With your location set up, you can now attach host machines to your location. All host machines must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) for {{site.data.keyword.satelliteshort}} and can physically reside in your own on-premises data center, in other cloud providers, or in edge networks.
+With your location set up, you can now attach host machines to your location. All host machines must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) and can physically reside in your own on-premises data center, in other cloud providers, or in edge networks.
 {: shortdesc}
+
+Want to add hosts from other cloud providers? Find detailed steps for how to configure hosts in [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure) to make them available in {{site.data.keyword.satelliteshort}}. 
+{: tip}
 
 1. From the **Hosts** tab, click **Attach host**.
 2. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use:satcp` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane.
@@ -143,24 +146,36 @@ With your location set up, you can now attach host machines to your location. Al
    Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs), [Azure](/docs/satellite?topic=satellite-providers#azure-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
    {: note}
 
-5. Log in to each host machine that you want to attach to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane.
-   1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.
+5. Follow the cloud provider-specific steps to update the script and attach your host. 
+   - [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
+   - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
+   - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
+   - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
+   
+   **Manual setup**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine. 
+   1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
    2. Copy the script from your local machine to your host.
       ```
-      scp <path_to_script> root@<IP_address>:/tmp/attach.sh
+      scp -i <filepath_to_key_file> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
       ```
-      {: pre}
-
+      {: pre}        
    3. Log in to your host.
       ```
-      ssh root@<IP_address>
+      ssh -i <filepath_to_key_file> <username>@<IP_address>
       ```
       {: pre}
+   4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}. 
    5. Run the script.
       ```
-      nohup bash /tmp/attach.sh &
+      sudo nohup bash /tmp/attach.sh &
       ```
       {: pre}
+   5. Monitor the progress of the registration script. 
+      ```
+      journalctl -f -u ibm-host-attach
+      ```
+      {: pre}
+      
 6. As you run the scripts on each machine, check that your hosts show in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane. You must attach at least 3 compute hosts to your location to continue with the setup of your {{site.data.keyword.satelliteshort}} control plane.
 
 
@@ -181,8 +196,8 @@ To complete the setup of your {{site.data.keyword.satelliteshort}} location, you
 {: #whats-next}
 
 Now that your location is set up, you can choose among the following options:
-- Repeat these steps to add 3 more hosts to your location control plane, so that you can use the location for more than just demonstration purposes.
-- [Attach at least 3 more hosts location](/docs/satellite?topic=satellite-hosts#attach-hosts) to add compute capacity for creating clusters.
+- Repeat steps 2 and 3 to add 3 more hosts to your location control plane, so that you can use the location for more than just demonstration purposes.
+- [Attach at least 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts) to add compute capacity for creating clusters or .
 - [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) on your own infrastructure, and assign your additional hosts as worker nodes in the cluster.
 - [Attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters) and start [deploying Kubernetes resources to these clusters](/docs/satellite?topic=satellite-cluster-config#create-satconfig-ui) with {{site.data.keyword.satelliteshort}} configurations.
 - [Learn more about the {{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.

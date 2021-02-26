@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -116,7 +116,7 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 {: screen}
 
 {: tsResolve}
-1.  Add the required packages to your machine. For example, in IBM Cloud infrastructure you can run the following commands to add the required packages.
+1.  Add the required packages to your machine. For example, in IBM Cloud infrastructure you can run the following commands to add the required packages. For cloud provider-specific configurations, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure).
     1.  Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
         ```
         subscription-manager refresh

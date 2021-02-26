@@ -95,8 +95,11 @@ subcollection: satellite
 # Host requirements
 {: #host-reqs}
 
-Review the following host requirements for {{site.data.keyword.satellitelong}}. For provider-specific requirements, see [Provider requirements](/docs/satellite?topic=satellite-providers).
+Review the following host requirements for {{site.data.keyword.satellitelong}}. 
 {: shortdesc}
+
+Want to add hosts from other cloud providers to your location? Find detailed steps for how to configure hosts in [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure) to meet the minimum host requirements and make them available in {{site.data.keyword.satelliteshort}}. 
+{: tip}
 
 Can't meet these host requirements? [Contact IBM Support](/docs/get-support?topic=get-support-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
 {: note}
@@ -134,6 +137,10 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
           subscription-manager repos --enable rhel-7-server-extras-rpms
           ```
           {: pre}
+          
+    For more information about how to enable the {{site.data.keyword.redhat_notm}} packages in hosts that you add from other cloud providers, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure).
+    {: tip}
+    
 *   After the host is successfully assigned to a {{site.data.keyword.satelliteshort}} location control plane or cluster, {{site.data.keyword.satelliteshort}} disables the ability to SSH into the host for security purposes. If you remove a host from your location or remove the entire location, you must reload the machine in your host infrastructure provider to SSH into the host again. Otherwise, you might see an error similar to the following when you try to log in.
     ```
     Permission denied, please try again.

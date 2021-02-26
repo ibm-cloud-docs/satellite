@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-02-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -115,7 +115,7 @@ You can create up to 20 {{site.data.keyword.satelliteshort}} locations per {{sit
 ## Hosts
 {: #reqs-host}
 
-See [Host requirements](/docs/satellite?topic=satellite-host-reqs#host-reqs). For provider-specific requirements, see [Provider requirements](/docs/satellite?topic=satellite-providers).
+See [Host requirements](/docs/satellite?topic=satellite-host-reqs#host-reqs). For cloud provider-specific configurations, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure). 
 {: shortdesc}
 
 <br />
