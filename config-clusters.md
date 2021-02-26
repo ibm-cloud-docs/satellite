@@ -547,7 +547,7 @@ To review resources in {{site.data.keyword.satelliteshort}} config:
 You can make existing {{site.data.keyword.openshiftlong_notm}} clusters that you run in {{site.data.keyword.cloud_notm}} available to the {{site.data.keyword.satelliteshort}} Config component so that you can include them when you roll out Kubernetes resource versions across your clusters.
 {: shortdesc}
 
-### Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} config
+### Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} config
 {: #existing-openshift-clusters}
 
 Run a script in your {{site.data.keyword.openshiftlong_notm}} cluster to set up the {{site.data.keyword.satelliteshort}} config components and make the cluster visible in {{site.data.keyword.satelliteshort}}. 
@@ -603,7 +603,7 @@ If you do not want your {{site.data.keyword.openshiftlong_notm}} cluster to be a
 You can remove {{site.data.keyword.satelliteshort}} config components only from {{site.data.keyword.openshiftlong_notm}} clusters that you manually registered. If you created a cluster on {{site.data.keyword.satelliteshort}}-provided infrastructure, {{site.data.keyword.satelliteshort}} config components are automatically set up in the location control plane and cannot be removed. 
 {: note}
 
-Removing {{site.data.keyword.satelliteshort}} config components automatically removes all cluster resources that you created by using {{site.data.keyword.satelliteshort}} configurations. Make sure to backup any data or redeploy any apps that you want to keep. 
+Removing {{site.data.keyword.satelliteshort}} config components automatically removes all cluster resources that you created by using {{site.data.keyword.satelliteshort}} configurations. Make sure to back up any data or redeploy any apps that you want to keep. 
 {: important}
 
 1. [Log in to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).

@@ -244,7 +244,7 @@ subcollection: satellite
 * [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-cluster-config#create-satconfig-cli)
 * [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources)
 * [Using {{site.data.keyword.satelliteshort}} config with existing {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-cluster-config#manage-existing-openshift-clusters)
-  * [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters)
+  * [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters)
   * [Removing {{site.data.keyword.satelliteshort}} config from your cluster](/docs/satellite?topic=satellite-cluster-config#remove-satconfig)
 
 [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud)
@@ -486,15 +486,14 @@ subcollection: satellite
 
 [Your responsibilities](/docs/satellite?topic=satellite-responsibilities)
 
-[Incident and operations management](/docs/satellite?topic=satellite-responsibilities#incident-and-ops)
+[Overview of shared responsibilities](/docs/satellite?topic=satellite-responsibilities##overview-by-resource)
 
-[Change management](/docs/satellite?topic=satellite-responsibilities#change-management)
-
-[Identity and access management](/docs/satellite?topic=satellite-responsibilities#iam-responsibilities)
-
-[Security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance)
-
-[Disaster recovery](/docs/satellite?topic=satellite-responsibilities#disaster-recovery)
+[Tasks for shared responsibilities by area](/docs/satellite?topic=satellite-responsibilities#task-responsibilities)
+* [Incident and operations management](/docs/satellite?topic=satellite-responsibilities#incident-and-ops)
+* [Change management](/docs/satellite?topic=satellite-responsibilities#change-management)
+* [Identity and access management](/docs/satellite?topic=satellite-responsibilities#iam-responsibilities)
+* [Security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance)
+* [Disaster recovery](/docs/satellite?topic=satellite-responsibilities#disaster-recovery)
 
 
 ## {{site.data.keyword.satellitelong_notm}} notices

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -105,7 +105,44 @@ Review the following sections for the specific responsibilities for you and for 
 
 <br />
 
-## Incident and operations management
+## Overview of shared responsibilities
+{: ##overview-by-resource}
+
+{{site.data.keyword.satellitelong_notm}} is a managed service in the [{{site.data.keyword.cloud_notm}} shared responsibility model](/docs/overview/terms-of-use?topic=overview-shared-responsibilities). Review the following table of who is responsible for particular cloud resources when using {{site.data.keyword.satellitelong_notm}}. 
+{: shortdesc}
+
+| Resource | [Incident and operations management](#incident-and-ops) | [Change management](#change-management) | [Identity and access management](#iam-responsibilities) | [Security and regulation compliance](#security-compliance) | [Disaster Recovery](#disaster-recovery) |
+| - | - | - | - | - | - |
+| Data | You | You | You | You | You |
+| Application | You | You | You | You | You |
+| {{site.data.keyword.satelliteshort}} Location | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [Shared](#disaster-recovery) |
+| {{site.data.keyword.satelliteshort}} Host | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [Shared](#disaster-recovery) |
+| {{site.data.keyword.satelliteshort}} Config | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [Shared](#disaster-recovery) |
+| {{site.data.keyword.satelliteshort}} Link | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | You | 
+| {{site.data.keyword.satelliteshort}}-enabled services | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [Shared](#disaster-recovery) |
+| Operating System | You | [Shared](#change-management) | You | [Shared](#security-compliance) | You |
+| Virtual and bare metal servers | You | You | You | You | You |
+| Virtual storage | You | You | You | You | You |
+| Virtual network | You | You | You | You | You |
+| Hypervisor | You | You | You | You | You |
+| Physical servers and memory | You | You | You | You | You |
+| Physical storage | You | You | You | You | You |
+| Physical network and devices | You | You | You | You | You |
+| Facilities and data centers | You | You | You | You | You |
+{: summary="The rows are read from left to right. The resource area of comparing responsibilities is in the first column. The next five columns describe whether you, IBM, or both have shared responsibilities for a particular area."}
+{: caption="Table 1. Overview of shared responsibilities." caption-side="top"}
+
+<br /> 
+
+## Tasks for shared responsibilities by area
+{: #task-responsibilities}
+
+After reviewing the [overview](#overview-by-resource), see what tasks you and IBM share responsibility for each area and resource when you use {{site.data.keyword.satellitelong_notm}}.
+{: shortdesc}
+
+<br />
+
+### Incident and operations management
 {: #incident-and-ops}
 
 Incident and operations management includes tasks such as monitoring, event management, high availability, problem determination, recovery, and full state backup and recovery.
@@ -119,12 +156,12 @@ Incident and operations management includes tasks such as monitoring, event mana
 |{{site.data.keyword.satelliteshort}} Config| <ul><li>Provide a highly available configuration management service that you can use to manage the deployment of Kubernetes resources across clusters that are registered with the location.</li><li>Provide an interface to initiate operational activities, such as to create and delete configurations.</li><li>Provide a `kubectl` command that users can run in an {{site.data.keyword.openshiftshort}} cluster to register the cluster to {{site.data.keyword.satelliteshort}} Config.</li><li>Provide the ability to create Kubernetes resource configurations, upload new versions, and subscribe a subset of cluster to a version, including to a previous version.</li><li>Store app configuration files in a highly available, back-end data store (`etcd`).</li><li>Automatically forward configuration events to your {{site.data.keyword.at_full_notm}} instance.</li></ul> | <ul><li>Use the provided tools to [set up clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig), upload your Kubernetes configuration file content as versions in the configuration, and subscribe your clusters to the [configuration](/docs/satellite?topic=satellite-cluster-config#create-satconfig-ui). Keep in mind that you are responsible for the apps that run in your clusters, but you can use {{site.data.keyword.satelliteshort}} Config to help you consistently deploy and update your apps.</li></ul> |
 |{{site.data.keyword.satelliteshort}} Link | <ul><li>Set up the {{site.data.keyword.satelliteshort}} link connector in the {{site.data.keyword.satelliteshort}} location to connect the control plane worker nodes to the control plane master.</li><li>Provide an interface to allow connections between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} or any publicly accessible endpoint.</li><li>Provide the ability to enable and disable connections between your location and an endpoint.</li><li>Automatically collect incoming and outgoing network traffic for an endpoint.</li><li>Provide a dashboard to review endpoint metrics, and automatically send endpoint logs to your {{site.data.keyword.la_full_notm}} instance.</li><li>Automatically forward link events to your {{site.data.keyword.at_full_notm}} instance.</li></ul> | <ul><li>Use the provided tools to [create and manage](/docs/satellite?topic=satellite-link-location-cloud) {{site.data.keyword.satelliteshort}} location endpoints.</li><li>Ensure that the {{site.data.keyword.satelliteshort}} link connector in the {{site.data.keyword.satelliteshort}} control plane is [enabled](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint) to allow network traffic between your location and endpoints outside your location.</li><li>Enable any connections that you need to successfully run the apps in your location and debug any connection issues for your endpoints.</li></ul> |
 | {{site.data.keyword.satelliteshort}}-enabled services | <ul><li>Provide the ability to deploy a select group of {{site.data.keyword.cloud_notm}} services such as [{{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters) to a {{site.data.keyword.satelliteshort}} location.</li><li>Review each service's documentation for additional responsibilities that IBM maintains.</li></ul> | <ul><li>Use the provided tools to set up additional services as needed.</li><li>Provide enough hosts for the services to use as compute capacity, per the service documentation.</li><li>Review each service's documentation for additional responsibilities that you fulfill when you use these services.</li></ul> |
-{: caption="Table 1. Responsibilities for incident and operations." caption-side="top"}
+{: caption="Table 2. Responsibilities for incident and operations." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
 <br />
 
-## Change management
+### Change management
 {: #change-management}
 
 Change management includes tasks such as deployment, configuration, upgrades, patching, configuration changes, and deletion.
@@ -137,12 +174,12 @@ Change management includes tasks such as deployment, configuration, upgrades, pa
 |{{site.data.keyword.satelliteshort}} Config| <ul><li>Provide an interface to initiate change management activities, such as to update configurations or subscriptions.</li><li>Automatically initiate the roll out of changes to a configuration to subscribed clusters.</li><li>Automatically delete Kubernetes resources that run in subscribed clusters when you delete a configuration.</li></ul> | <ul><li>Use the provided [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) and [{{site.data.keyword.openshiftshort}} tools](/docs/openshift?topic=openshift-plan_deploy#updating) to manage all changes to your apps. You are completely responsible for your app lifecycle, including any downtime that might occur when you update an app version, depending on your update rollout strategy.</li></ul> |
 |{{site.data.keyword.satelliteshort}} Link | <ul><li>Maintain {{site.data.keyword.satelliteshort}} link connector versions.</li></ul> | <ul><li>Use the provided tools to [create, update, or delete the endpoints](/docs/satellite?topic=satellite-link-location-cloud) that you need.</li><li>[Enable and disable endpoints](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint) to allow or block network traffic between your location and a service's endpoint.</li></ul> |
 | {{site.data.keyword.satelliteshort}}-enabled services | <ul><li>Review each service's documentation for additional responsibilities that IBM maintains. For example, with {{site.data.keyword.openshiftlong_notm}} clusters, IBM provides patch version updates for the masters automatically and for the worker nodes that you initiate.</li></ul> | <ul><li>Review each service's documentation for additional responsibilities that you fulfill when you use these services.</li></ul> |
-{: caption="Table 2. Responsibilities for change management." caption-side="top"}
+{: caption="Table 3. Responsibilities for change management." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
 <br />
 
-## Identity and access management
+### Identity and access management
 {: #iam-responsibilities}
 
 Identity and access management includes tasks such as authentication, authorization, access control policies, and approving, granting, and revoking access. For more information, see [Managing access for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-iam).
@@ -155,12 +192,12 @@ Identity and access management includes tasks such as authentication, authorizat
 |{{site.data.keyword.satelliteshort}} Config| <ul><li>Provide an interface to assign access control to configurations via IAM.</li></ul> | <ul><li>Use the provided tools to [manage authentication, authorization, and access control policies](/docs/satellite?topic=satellite-iam) to use {{site.data.keyword.satelliteshort}} configurations and subscriptions to create, update, and delete Kubernetes resources.<p class="note">Access in IAM to {{site.data.keyword.satelliteshort}} Config does not give users access to the clusters, nor the ability to log in and manage the Kubernetes resources from the cluster. Users with access to a cluster might log in and manually change the Kubernetes resources.</p></li></ul> |
 |{{site.data.keyword.satelliteshort}} Link | <ul><li>Provide an interface to assign access control to endpoints via IAM.</li></ul> | <ul><li>Use the provided tools to [manage authentication, authorization, and access control policies](/docs/satellite?topic=satellite-iam).</li></ul> |
 | {{site.data.keyword.satelliteshort}}-enabled services | <ul><li>Review each service's documentation for additional responsibilities that IBM maintains.</li></ul> | <ul><li>Review each service's documentation for additional responsibilities that you fulfill when you use these services.</li></ul> |
-{: caption="Table 3. Responsibilities for identity and access management." caption-side="top"}
+{: caption="Table 4. Responsibilities for identity and access management." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
 <br />
 
-## Security and regulation compliance
+### Security and regulation compliance
 {: #security-compliance}
 
 Security and regulation compliance includes tasks such as security controls implementation and compliance certification.
@@ -170,16 +207,16 @@ Security and regulation compliance includes tasks such as security controls impl
 |----------|-----------------------|--------|
 | General | <ul><li>Provide platform-level compliance to certain standards. For more information, see [{{site.data.keyword.cloud_notm}} compliance](/docs/overview?topic=overview-compliance).</li><li>Provide tools to manage billing, usage, and identity and access control (IAM).</li><li>Set default security settings for {{site.data.keyword.satelliteshort}} components. These settings do not guarantee security, and might be modified by the user.</li></ul> | <ul><li>Identify government, industry, and proprietary corporate standards that are required for the environment.</li><li>Review the physical premises that host the underlying infrastructure for security controls to protect the data center.</li></ul>  |
 |{{site.data.keyword.satelliteshort}} Location| <ul><li>Maintain security and regulation compliance for the {{site.data.keyword.cloud_notm}}-managed location control plane.</li><li>Update the managed master components.</li><li>Provide patch updates for the control plane components that run in the location worker nodes.</li><li>Provide the ability to control access to locations via {{site.data.keyword.cloud_notm}} IAM.</li></ul> | <ul><li>You are responsible for keeping your host infrastructure secure and compliant, including applying worker node patch updates to the hosts that run the location control plane.</li></ul> |
-| {{site.data.keyword.satelliteshort}} Host | <ul><li>Provide patch updates for the hosts that run as worker nodes in {{site.data.keyword.satelliteshort}} clusters.</li><li>Disable the ability to SSH into hosts after you assign the hosts to a location control plane or clusters, to enhance security.</li></ul> | <ul><li>You are responsible for keeping your host infrastructure secure and compliant, including applying worker node patch updates.</li></ul> |
+| {{site.data.keyword.satelliteshort}} Host | <ul><li>Provide patch updates for the hosts that run as worker nodes in {{site.data.keyword.satelliteshort}} clusters.</li><li>Disable the ability to SSH into hosts after you assign the hosts to a location control plane or clusters, to enhance security.</li></ul> | <ul><li>You are responsible for keeping your host infrastructure secure and compliant, including applying worker node patch updates.</li><li>You are responsible to encrypt the boot disk and any additional disks that you add to your hosts to keep data secure and meet regulatory requirements. </li></ul> |
 |{{site.data.keyword.satelliteshort}} Config | <ul><li>Deploy apps consistently across clusters and locations.</li><li>Provide the ability to control access to configurations via {{site.data.keyword.cloud_notm}} IAM.</li></ul> | <ul><li>Create your Kubernetes configuration files by following the security standards that you want to comply to, such as by using security context constraints. You are responsible for the security and compliance of your apps.</li></ul> |
 |{{site.data.keyword.satelliteshort}} Link | <ul><li>Establish a secure connection between {{site.data.keyword.cloud_notm}} and {{site.data.keyword.satelliteshort}} locations by using the {{site.data.keyword.satelliteshort}} link connector.</li><li>Provide the ability to control access to endpoints via {{site.data.keyword.cloud_notm}} IAM.</li><li>Provide the ability to monitor network traffic between your location and endpoints outside of your location.</li></ul> | <ul><li>Set up and audit [link endpoints](/docs/satellite?topic=satellite-link-location-cloud) across locations.</li></ul> |
 | {{site.data.keyword.satelliteshort}}-enabled services | <ul><li>Review each service's documentation for additional responsibilities that IBM maintains.</li></ul> | <ul><li>Review each service's documentation for additional responsibilities that you fulfill when you use these services.</li></ul> |
-{: caption="Table 4. Responsibilities for security and regulation compliance." caption-side="top"}
+{: caption="Table 5. Responsibilities for security and regulation compliance." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
 <br />
 
-## Disaster recovery
+### Disaster recovery
 {: #disaster-recovery}
 
 Disaster recovery includes tasks such as providing dependencies on disaster recovery sites, provision disaster recovery environments, data and configuration backup, replicating data and configuration to the disaster recovery environment, and failover on disaster events.
@@ -192,5 +229,5 @@ Disaster recovery includes tasks such as providing dependencies on disaster reco
 |{{site.data.keyword.satelliteshort}} Config| <ul><li>Back up information about saved {{site.data.keyword.satelliteshort}} Configs in etcd.</li><li>When service is restored, automatically deploy configuration files to available clusters.</li></ul> | <ul><li>Design, implement and test a disaster recovery plan for your [highly available apps](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps).</li></ul> |
 |{{site.data.keyword.satelliteshort}} Link | <ul><li>N/A</li></ul> | <ul><li>Reinstate any necessary [endpoints](/docs/satellite?topic=satellite-link-location-cloud) to your resources after recovering from a disaster.</ul> |
 | {{site.data.keyword.satelliteshort}}-enabled services | <ul><li>Review each service's documentation for additional responsibilities that IBM maintains.</li></ul> | <ul><li>Review each service's documentation for additional responsibilities that you fulfill when you use these services.</li></ul> |
-{: caption="Table 5. Responsibilities for disaster recovery." caption-side="top"}
+{: caption="Table 6. Responsibilities for disaster recovery." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
