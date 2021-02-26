@@ -1,0 +1,52 @@
+{
+    "satellite-locations": [
+        "where is Cloud satellite available",
+        "satellite supported locations",
+        "Where is the satellite service located?",
+        "metros for cloud satellite",
+        "what are the IBM Cloud multizone metros",
+        "Supported IBM Cloud locations to manage your Satellite location.",
+        "Supported IBM Cloud locations",
+        "available locations for Satellite",
+        "What IBM Cloud multizone metro do I choose "
+    ],
+    "control-plane-unavailable": [
+        "Cloud Satellite service highly available",
+        "happens if my Satellite control plane becomes unavailable",
+        "how relaible is Cloud Satellite",
+        "is Satellite highly available",
+        "make the Satellite control plane more highly available",
+        "prevent connectivity issues with your IBM Cloud multizone metro",
+        "What level of availability does satellite offer",
+        "Satellite control planes",
+        "how available is Cloud Satellite"
+    ],
+    "faq_thirdparty_oss": [
+        "can I use third party code with Satellite",
+        "use third-party code in Cloud Satellite",
+        "use open source with Cloud Satellite",
+        "use of third party software with Satellite",
+        "use open source code with Satellite",
+        "support third party code with Satellite",
+        "support open source tools on Satelliet"
+    ],
+    "pricing": [
+        "charged for when I use IBM Cloud Satellite",
+        "charge when using Satellite",
+        "what are the charges incurred using Cloud Satellite",
+        "am I charged for using Cloud Satellite",
+        "pricing for Satellite",
+        "how much to use Satellite",
+        "is Cloud Satellite free",
+        "is there no charge for Cloud Satellite"
+    ],
+    "supported-services": [
+        "IBM Cloud services can I use with my Satellite cluster",
+        "which cloud services can be used with Satellite",
+        "integration of other Cloud services with Satellite",
+        "integrate Satellite with other services",
+        "what are the Satellite cluster limitations",
+        "Satellite cluster limitations for redhat",
+        "how many instances of a supported service per Satellite location"
+    ]
+}
