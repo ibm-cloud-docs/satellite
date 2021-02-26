@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-19"
+lastupdated: "2021-02-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -155,7 +155,7 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 ## Host network
 {: #reqs-host-network}
 
-* Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. 
+* Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
 * The hosts must have minimum network bandwidth connectivity of 100Mbps, with 1Gbps preferred. The bandwidth required between hosts varies with the number of clusters in the location, and the workloads that run in the cluster. Insufficient network bandwidth can lead to network performance problems.
 * Do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
 * All hosts must have the same MTU values.
@@ -168,17 +168,17 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
     ```
     {: screen}
 * All hosts must use the same default gateway.
-* Hosts can have multiple IPv4 network interfaces. However, each host must have full IPV4 backend connectivity to the other hosts in the location through the network interface that serves as the default route. To find the default network interface for a host, SSH into the host and run the following command:
+* Hosts can have multiple IPv4 network interfaces. However, the `eth0`, `ens0`, or `bond0` network interface must serve as the default route. To find the default network interface for a host, SSH into the host and run the following command:
   ```
   ip route | grep default | awk '{print $5}'
   ```
   {: pre}
-
   In this example output, `eth0` is the default network interface:
   ```
   default via 161.202.250.1 dev eth0 onlink
   ```
   {: screen}
+* All hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPV4 backend connectivity to the other hosts in the location on the network interface that serves as the default route (`eth0`, `ens0`, or `bond0`).
 
 ### Inbound connectivity
 {: #reqs-host-network-firewall-inbound}
