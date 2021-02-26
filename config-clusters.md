@@ -189,9 +189,6 @@ Created cluster group 'mygroup' with ID '6492111d-3211-4ed2-8f2e-4b99907476a9'.
 For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources.
 {: shortdesc}
 
-If you used the `ibmcloud oc cluster create satellite` CLI command to create the cluster and specified the `--enable-admin-agent` flag, {{site.data.keyword.satelliteshort}} Config already has access to manage Kubernetes resources in your cluster.
-{: note}
-
 1. Access each cluster in the cluster group. For more access options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
    1. From the [{{site.data.keyword.openshiftlong_notm}} clusters page](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click the cluster.
    2. Click **OpenShift web console**.
@@ -199,6 +196,10 @@ If you used the `ibmcloud oc cluster create satellite` CLI command to create the
    4. Click **Display Token**.
    5. Copy the `oc login` token command.
    6. Run the `oc login` token command in your CLI to log in to your cluster.
+
+   If you enabled admin permissions when you created the cluster in the console or in the CLI with the `--enable-admin-agent` flag for the `ibmcloud oc cluster create satellite` command, your admin permissions are automatically synched after you log in to. the cluster so that {{site.data.keyword.satelliteshort}} config can manage Kubernetes resources in your cluster. You can skip the rest of the steps in this task. 
+   {: note}
+
 2. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, custom access that is cluster-wide, or custom access that is scoped to a project. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/){: external}.
 
    If you choose a custom access option, some {{site.data.keyword.satelliteshort}} Config components might not work. For example, if you grant access only to view certain resources, you cannot use subscriptions to create Kubernetes resources in your cluster group. To view an inventory of your Kubernetes resources in a cluster, {{site.data.keyword.satelliteshort}} Config must have an appropriate role that is bound to the `razee-viewer` service account. To deploy Kubernetes resources to a cluster via subscriptions, {{site.data.keyword.satelliteshort}} Config must have an appropriate role that is bound to the `razee-editor` service account.
