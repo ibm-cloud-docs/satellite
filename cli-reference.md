@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-02-26"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1824,7 +1824,7 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT --group GROUP --n
 
 <br />
 
-### `ibmcloud sat storage config create`
+### `ibmcloud sat storage config create --name`
 {: #cli-storage-config-create}
 
 Create a {{site.data.keyword.satelliteshort}} storage configuration that you can assign to your clusters to install storage drivers in your clusters.
