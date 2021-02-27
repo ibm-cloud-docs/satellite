@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-02-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -120,10 +120,9 @@ subcollection: satellite
 
 [About {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about)
 
-[{{site.data.keyword.satelliteshort}} concepts](/docs/satellite?topic=satellite-about#location-concept)
-* [Infrastructure](/docs/satellite?topic=satellite-about#concept-infra)
-* [{{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about#concept-satloc)
-* [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-about#concept-ibm-cloud)
+[Benefits of using {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about#about-benefits)
+
+[{{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-about#components)
 
 [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-about#architecture)
 
@@ -146,8 +145,6 @@ subcollection: satellite
 
 
 [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations)
-
-[Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-sizing)
 
 [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create)
 * [Creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
@@ -210,11 +207,10 @@ subcollection: satellite
   * [Prerequisites](/docs/satellite?topic=satellite-hosts#host-assign-prereq)
   * [Assigning hosts from the console](/docs/satellite?topic=satellite-hosts#host-assign-ui)
   * [Assigning hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-assign-cli)
-* [Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
-* [Updating worker node hosts in clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
-* [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
-  * [Considerations before you update](/docs/satellite?topic=satellite-hosts#host-update-considerations)
-  * [Updating control plane hosts](/docs/satellite?topic=satellite-hosts#host-update)
+* [Updating hosts](/docs/satellite?topic=satellite-hosts#host-update)
+  * [Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
+  * [Updating worker node hosts in clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
+  * [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
 * [Removing hosts](/docs/satellite?topic=satellite-hosts#host-remove)
   * [Removing hosts from the console](/docs/satellite?topic=satellite-hosts#host-remove-console)
   * [Removing hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-remove-cli)
@@ -525,7 +521,7 @@ subcollection: satellite
 
 [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing)
 
-[What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} cluster?](/docs/satellite?topic=satellite-faqs#supported-services)
+[What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-faqs#supported-services)
 
 
 ## Troubleshooting errors

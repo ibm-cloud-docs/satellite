@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-02-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -102,88 +102,42 @@ Learn about {{site.data.keyword.satellitelong_notm}} terminology, service archit
 {{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
 {: beta}
 
-## {{site.data.keyword.satelliteshort}} concepts
-{: #location-concept}
+## Benefits of using {{site.data.keyword.satelliteshort}}
+{: #about-benefits}
 
-Review the following diagram and explanation to understand how {{site.data.keyword.satelliteshort}} concepts build off your infrastructure to bring {{site.data.keyword.cloud_notm}} to your locations.
+Review some of the key benefits for using {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
 
-Review the following parts of your {{site.data.keyword.satellitelong_notm}} environment.
-* [Your infrastructure environment](#concept-infra)
-* [Your {{site.data.keyword.satelliteshort}} locations](#concept-satloc)
-* [{{site.data.keyword.cloud_notm}} resources](#concept-ibm-cloud)
+|Benefits|Description|
+|----------|----------------------------------|
+|Bring your own infrastructure to {{site.data.keyword.cloud_notm}}.|With {{site.data.keyword.satellitelong_notm}}, you can bring your own infrastructure that is in your on-premises data center, in other cloud providers, or in edge environments to {{site.data.keyword.cloud_notm}} by creating a {{site.data.keyword.satelliteshort}} location. With this setup, you can run your workloads in the physical location of your choice to meet legal requirements, compliance standards, data speeds, and network latency requirements while securely using {{site.data.keyword.cloud_notm}} services. For more information, see [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations). |
+|Securely access {{site.data.keyword.cloud_notm}} services.|Every {{site.data.keyword.satelliteshort}} location is securely connected to {{site.data.keyword.cloud_notm}} through an encrypted TLS tunnel that is provided with the {{site.data.keyword.satelliteshort}} Link component. By using this TLS tunnel, you can securely access {{site.data.keyword.cloud_notm}} services in your location and use them with the same security and compliance standards as in {{site.data.keyword.cloud_notm}}.  For more information, see [Connecting {{site.data.keyword.satelliteshort}} locations with services outside of locations by using endpoints](/docs/satellite?topic=satellite-link-location-cloud).  |
+|Control and monitor network traffic to services.|With {{site.data.keyword.satelliteshort}} Link, you can control network access to apps, services, and servers that run in {{site.data.keyword.cloud_notm}}, other cloud providers, or in your on-premises data center. Configure these apps, services, and servers as sources for your {{site.data.keyword.satelliteshort}} endpoints. All network traffic that is sent through an endpoint is automatically captured and can be reviewed by the user.  |
+|Consistently deploy Kubernetes resources across multiple locations.|Use a single dashboard to manage the deployment of Kubernetes resources across cloud, on-premises, and edge environments with {{site.data.keyword.satelliteshort}} Config and gain global visibility into your apps and Kubernetes operations. For more information, see [Deploying Kubernetes resources across clusters](/docs/satellite?topic=satellite-cluster-config). |
+|Centralize your monitoring and logging.|{{site.data.keyword.satellitelong_notm}} is integrated with {{site.data.keyword.mon_full_notm}}, {{site.data.keyword.la_full_notm}}, and {{site.data.keyword.at_full_notm}}. You can view the metrics and logs for the apps that run in your location, the {{site.data.keyword.cloud_notm}} services that you use, or the events that happen in your location from a single location. |
+{: caption="Reasons to use {{site.data.keyword.satellitelong_notm}}." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the benefit of using {{site.data.keyword.satellitelong_notm}}. The second column is a description of the benefit."}
 
-![Concept overview of Satellite locations](/images/satellite-ov.png){: caption="Figure 1. A conceptual overview of setting up {{site.data.keyword.satelliteshort}} locations that are based on your infrastructure." caption-side="bottom"}
+For more information about {{site.data.keyword.satelliteshort}}, how it works and the service benefits, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/cloud/satellite){: external}.
 
-### Infrastructure
-{: #concept-infra}
+<br />
 
-Your {{site.data.keyword.satelliteshort}} location starts with your actual infrastructure that runs somewhere outside {{site.data.keyword.cloud_notm}}, such as another cloud provider or on-prem. Your infrastructure provides the basis for the hosts and zones that you use to build out your {{site.data.keyword.satelliteshort}} location.
+## {{site.data.keyword.satelliteshort}} components
+{: #components}
+
+Review the following {{site.data.keyword.satelliteshort}} components.
 {: shortdesc}
 
-**Hosts**
-
-The host instances in your infrastructure provider become the compute hosts to run the resources in your {{site.data.keyword.satelliteshort}} location. To add hosts to {{site.data.keyword.satelliteshort}}, the hosts must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs), such as running the RHEL 7 operating system.
-
-Want to add hosts from other cloud providers? Find detailed steps for how to configure hosts in [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure) to make them available in {{site.data.keyword.satelliteshort}}. 
-{: tip}
-
-**Zones**
-
-Your infrastructure environment might have multiple zones to increase [high availability](/docs/satellite?topic=satellite-ha). Typically, you have three zones that are physically separate to spread out hosts evenly across zones. For example, your cloud provider might have three different zones within the same region, or you might use three racks with three separate networking and power supply systems in an on-prem environment. You can represent these zone names when you create your {{site.data.keyword.satelliteshort}} location.
-
-### {{site.data.keyword.satelliteshort}} locations
-{: #concept-satloc}
-
-Your {{site.data.keyword.satelliteshort}} locations are representations of your infrastructure environment, with added functionality to help manage the location, deploy your workloads, and bring {{site.data.keyword.cloud_notm}} services to the location.
-{: shortdesc}
-
-**{{site.data.keyword.satelliteshort}} location control plane**
-
-Each {{site.data.keyword.satelliteshort}} location must have a location control plane that runs the necessary components to manage the location.
-* **Hosts**: You must assign hosts to run the control plane, typically at least 6 hosts that are spread evenly across 3 zones. As your location grows, you might need to add more hosts evenly in groups of 3 to the control plane. For sizing and setup information, see the [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) documentation.
-* **{{site.data.keyword.satelliteshort}} Link**: To audit and secure cloud connections, including the connection back to {{site.data.keyword.cloud_notm}}, each location control plane is set up with [{{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-location-cloud).
-* **IBM monitoring**: The {{site.data.keyword.satelliteshort}} location control plane includes monitoring components that can automatically detect, resolve, or report location issues back to {{site.data.keyword.cloud_notm}}.
-* **Cluster masters**: The {{site.data.keyword.satelliteshort}} location control plane runs the masters for the {{site.data.keyword.openshiftshort}} clusters that run in the location, including {{site.data.keyword.satelliteshort}}-enabled service clusters. These masters are automatically updated and managed by {{site.data.keyword.cloud_notm}} through the {{site.data.keyword.satelliteshort}} Link connection. However, the masters run on hosts in your infrastructure, so you share responsibility to make sure that the masters have enough compute resources to run.
-
-**{{site.data.keyword.satelliteshort}}-enabled service**
-
-One of the main benefits to using {{site.data.keyword.satellitelong_notm}} is the ability to get {{site.data.keyword.cloud_notm}} services in any of your compatible infrastructure environments. To consume these {{site.data.keyword.satelliteshort}}-enabled services, the services often set up a control plane cluster to run in your location. After the service cluster is set up, you can start using the service across that location. An example {{site.data.keyword.satelliteshort}}-enabled service is {{site.data.keyword.openshiftlong_notm}}.
-
-**{{site.data.keyword.satelliteshort}}-enabled service: {{site.data.keyword.openshiftlong_notm}} cluster**
-
-You can [create clusters in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=openshift-satellite-clusters) by using the {{site.data.keyword.openshiftlong_notm}} suite of API, CLI, or UI tools, such as the `ibmcloud oc cluster create satellite` command. Use these clusters to run any Kubernetes-compatible workload in your location. You also have a few tools to help you deploy and manage your workloads. This {{site.data.keyword.satelliteshort}}-enabled service uses the location control plane, so you do not need a separate {{site.data.keyword.openshiftlong_notm}} cluster in a {{site.data.keyword.satelliteshort}} location control plane cluster.
-* **{{site.data.keyword.openshiftshort}}**: Each cluster that you create installs OpenShift Container Platform for a simplified Kubernetes developer experience. With {{site.data.keyword.openshiftshort}}, you get a built-in image registry and continuous integration, continuous delivery (CI/CD) pipeline for deploying your apps, strict app security settings by default, and other benefits like the ability to run {{site.data.keyword.cloud_notm}} Paks.
-* **{{site.data.keyword.satelliteshort}} config**: With [{{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config), you can group clusters in your location to create the same Kubernetes configurations and updates across clusters for consistent workload deployments.
-
-**Hosts**
-
-[Attach as many hosts](/docs/satellite?topic=satellite-hosts) as you need to your {{site.data.keyword.satelliteshort}} location, and consider having a few extra in case resources such as services, clusters, or the control plane request extra capacity. You can use host labels to help manage capacity requests and automatically assign hosts to your resources. The hosts become the user-provided infrastructure (`upi`) worker nodes in your clusters, providing the compute capacity that is needed to run the cluster workloads.
-
-Want to add hosts from other cloud providers? Find detailed steps for how to configure hosts in [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure) to make them available in {{site.data.keyword.satelliteshort}}. 
-{: tip}
-
-**Zones**
-
-You must create at least 3 zones to spread hosts evenly across the {{site.data.keyword.satelliteshort}} location control plane, as well as for the worker pools in your clusters throughout the location. You can name these zones to represent the actual, physically separate zones in your infrastructure provider.
-
-### {{site.data.keyword.cloud_notm}}
-{: #concept-ibm-cloud}
-
-{{site.data.keyword.cloud_notm}} manages the master components for your {{site.data.keyword.satelliteshort}} locations. You might also run services in {{site.data.keyword.cloud_notm}}, such as {{site.data.keyword.openshiftlong_notm}} clusters.
-{: shortdesc}
-
-**{{site.data.keyword.satelliteshort}} master control plane**
-
-Each {{site.data.keyword.satelliteshort}} location is managed from an {{site.data.keyword.cloud_notm}} region, where the master control plane resides. IBM manages the master control plane. From the master control plane, components such as version updates, {{site.data.keyword.satelliteshort}} Config and Link, and {{site.data.keyword.cloud_notm}} services are pushed out to your {{site.data.keyword.satelliteshort}} location, to make those components available to all of your resources in the location. Additionally, the master control plane enables you to use the same {{site.data.keyword.cloud_notm}} platform tools to manage identity and access, key management, certificate management, logging and monitoring, and other security and compliance controls for your {{site.data.keyword.satelliteshort}} location.
-
-**Cluster**
-
-You might [create {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-getting-started) in {{site.data.keyword.cloud_notm}} single or multizone regions. Even though these clusters are not in your {{site.data.keyword.satelliteshort}} location, you can add them to cluster groups in {{site.data.keyword.satelliteshort}} config so that you can deploy the same workloads across clusters in {{site.data.keyword.satelliteshort}} or {{site.data.keyword.cloud_notm}}.
-
-**Zones**
-
-The master control plane is automatically spread across zones in the {{site.data.keyword.cloud_notm}} region for you. Unlike the zones in your {{site.data.keyword.satelliteshort}} location, these zones do not represent the zones in your infrastructure provider. Instead, these zones are managed by IBM and available to services that run in {{site.data.keyword.cloud_notm}} only.
+| Component | Description |
+| --- | --- | 
+| {{site.data.keyword.satelliteshort}} config | Based on the [Razee open source project](https://github.com/razee-io/Razee){: external}, {{site.data.keyword.satelliteshort}} config is a continuous delivery tool that you can use to consistently roll out versions of your apps across clusters in {{site.data.keyword.satelliteshort}} locations. For more information, see [Deploying {{site.data.keyword.openshiftshort}} resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config).|
+| {{site.data.keyword.satelliteshort}} hosts | Hosts are machines that reside in your infrastructure provider, across at least three separate zones, and must [meet the minimum host requirements](/docs/satellite?topic=satellite-host-reqs). After attaching the hosts to a {{site.data.keyword.satelliteshort}} location, you assign the hosts to {{site.data.keyword.satelliteshort}}-enabled services such as clusters to provide the computing power to run the service workloads. For more information, see [Setting up {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-hosts). |
+| {{site.data.keyword.satelliteshort}} Link | {{site.data.keyword.satelliteshort}} Link securely connects your {{site.data.keyword.satelliteshort}} location to the {{site.data.keyword.cloud_notm}} region that your location is managed from. All communication that leaves and enters your location is proxied by the Link tunnel server, and network traffic on this connection can be monitored and audited. For more information, see [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud).|
+| {{site.data.keyword.satelliteshort}} location | A location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud, that you want to bring {{site.data.keyword.cloud_notm}} services to so that you can run workloads in your own environment. You create the location based off at least three separate zones of your backing infrastructure environment, and attach host machines from across these zones in your infrastructure to the location. The [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} provides a single pane of glass to manage the workloads that run across the infrastructure in your locations. For more information, see [Planning your infrastructure environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan) and [Setting up {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations).|
+| {{site.data.keyword.satelliteshort}}-enabled service | An {{site.data.keyword.cloud_notm}} service that you can set up in a {{site.data.keyword.satelliteshort}} location, such as a {{site.data.keyword.openshiftlong_notm}} cluster. The service is managed from the {{site.data.keyword.cloud_notm}} region that your location is managed from, but you provide the infrastructure hosts to run the service's resources in your location. For more information, see [What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-faqs#supported-services). |
+| {{site.data.keyword.satelliteshort}} storage | {{site.data.keyword.satelliteshort}} storage uses {{site.data.keyword.satelliteshort}} config to provide a convenient way to install various storage drivers in {{site.data.keyword.openshiftlong_notm}} clusters across your {{site.data.keyword.satelliteshort}} locations, by using storage templates. The storage templates are provided and tested by the vendors. After you install {{site.data.keyword.satelliteshort}} storage, your cluster users can use Kubernetes persistent volume claims (PVCs) to order and save their application data in persistent storage. For more information, see [Understanding {{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-sat-storage-plan). |
+{: caption="{{site.data.keyword.satelliteshort}} terms" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the component. The second column is a brief description of the component."}
 
 <br />
 

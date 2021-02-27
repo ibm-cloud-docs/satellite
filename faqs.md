@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-02-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -178,7 +178,7 @@ During the beta, you are not charged for using {{site.data.keyword.satellitelong
 
 
 
-## What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} cluster?
+## What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} location?
 {: #supported-services}
 {: faq}
 {: support}

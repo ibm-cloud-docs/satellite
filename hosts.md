@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-02-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -126,7 +126,7 @@ Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshor
 After you create the location, you must attach compute capacity to your location so that you can run the {{site.data.keyword.satelliteshort}} control plane or set up {{site.data.keyword.openshiftshort}} clusters.
 {: shortdesc}
 
-Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-sizing).<br><br>
+Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#location-sizing).<br><br>
 Using AWS hosts? You can use a [launch template](/docs/satellite?topic=satellite-providers#aws-reqs) to attach hosts to your {{site.data.keyword.satelliteshort}} location.
 {: tip}
 
@@ -487,39 +487,41 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 
 <br />
 
-## Updating host metadata
+## Updating hosts
+{: #host-update}
+
+Review the following ways to update hosts that are attached to your {{site.data.keyword.satelliteshort}} location.
+{: shortdesc}
+
+### Updating host metadata
 {: #host-update-metadata}
 
 If you want to update metadata about a host, such as labels or zones, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). The update does not apply security patches or operating system updates.
 {: shortdesc}
 
-<br />
-
-## Updating worker node hosts in clusters
+### Updating worker node hosts in clusters
 {: #host-update-workers}
 
 Many hosts in your {{site.data.keyword.satelliteshort}} location are used in clusters for {{site.data.keyword.satelliteshort}}-enabled services, such as {{site.data.keyword.openshiftlong_notm}}. When these hosts need to be updated, such as to apply a version patch fix pack, you can follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
 {: shortdesc}
 
-<br />
-
-## Updating {{site.data.keyword.satelliteshort}} location control plane hosts
+### Updating {{site.data.keyword.satelliteshort}} location control plane hosts
 {: #host-update-location}
 
-Some hosts are used to run the {{site.data.keyword.satelliteshort}} location control plane. The following diagram describes the process for updating these hosts.
+IBM provides major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane hosts. However, you must apply patch updates, for example if you have security standards that require patch updates every two weeks.
 {: shortdesc}
 
-![Concept overview of the host update process for the {{site.data.keyword.satelliteshort}} location control plane](/images/host-process-updates.png){: caption="Figure 2. The process for updating hosts in the {{site.data.keyword.satelliteshort}} location control plane." caption-side="bottom"}
+Before you begin, consider [attaching](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) extra hosts to your {{site.data.keyword.satelliteshort}} resources to handle the compute capacity while your existing hosts are updating. See [Considerations before you update](#host-update-considerations).
 
-1. **Remove**: When you list hosts, you might see available updates for hosts that run the {{site.data.keyword.satelliteshort}} location control plane. Make sure that the {{site.data.keyword.satelliteshort}} location control plane has enough compute capacity to continue running your workloads by [assigning extra hosts to your {{site.data.keyword.satelliteshort}} location control plane](#host-assign) before you remove the host that needs to be updated. If you do not have extra hosts available, consider [attaching hosts](#attach-hosts) and then assigning them. Then, [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) that you need to update from your {{site.data.keyword.satelliteshort}} location. Any workloads that run on the host are automatically scheduled onto remaining hosts if possible.
-2. **Reload**: After your host is removed from your {{site.data.keyword.satelliteshort}} location, follow the guidance from your infrastructure provider to reload the operating system. For example, you might perform maintenance on the machine in your on-prem data center. After you reload the host machine, you can SSH into the host machine again, which was previously disabled while the host was assigned to a {{site.data.keyword.satelliteshort}} resource.
-3. **Attach**: To reuse the host, [attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-4. **Assign**: [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
+1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
+2. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
+3. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
+4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
-### Considerations before you update
+#### Considerations before you update
 {: #host-update-considerations}
 
-Review the following considerations before you update your {{site.data.keyword.satelliteshort}} hosts.
+Review the following considerations before you update your {{site.data.keyword.satelliteshort}} location control plane hosts.
 {: shortdesc}
 
 **Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?**
@@ -539,19 +541,6 @@ However, when you created the {{site.data.keyword.satelliteshort}} location cont
 IBM provides updates for the IBM-managed components.
 * For master components, such as the {{site.data.keyword.satelliteshort}} location master or cluster masters, IBM automatically applies these updates.
 * For worker node components that run on hosts, such as the {{site.data.keyword.satelliteshort}} location control plane or cluster worker nodes, you choose when to apply the updates.
-
-### Updating control plane hosts
-{: #host-update}
-
-Use the {{site.data.keyword.satelliteshort}} console or CLI to update the hosts for the {{site.data.keyword.satelliteshort}} location control plane.
-{: shortdesc}
-
-Before you begin, consider [attaching](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) extra hosts to your resources to handle the compute capacity while your existing hosts are updating. See [Considerations before you update](#host-update-considerations).
-
-1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
-2. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
-3. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
 <br />
 
