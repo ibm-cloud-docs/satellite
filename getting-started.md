@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-02-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -150,9 +150,9 @@ Want to add hosts from other cloud providers? Find detailed steps for how to con
    - [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
    - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
    - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
-   - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
+   - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) </br>
    
-   **Manual setup**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine. 
+   **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine. 
    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
    2. Copy the script from your local machine to your host.
       ```

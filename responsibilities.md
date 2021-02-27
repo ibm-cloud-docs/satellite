@@ -118,7 +118,7 @@ Review the following sections for the specific responsibilities for you and for 
 | {{site.data.keyword.satelliteshort}} Location | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [Shared](#disaster-recovery) |
 | {{site.data.keyword.satelliteshort}} Host | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [Shared](#disaster-recovery) |
 | {{site.data.keyword.satelliteshort}} Config | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [Shared](#disaster-recovery) |
-| {{site.data.keyword.satelliteshort}} Link | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | You | 
+| {{site.data.keyword.satelliteshort}} Link | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [You](#disaster-recovery) | 
 | {{site.data.keyword.satelliteshort}}-enabled services | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [Shared](#disaster-recovery) |
 | Operating System | You | [Shared](#change-management) | You | [Shared](#security-compliance) | You |
 | Virtual and bare metal servers | You | You | You | You | You |
