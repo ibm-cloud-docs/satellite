@@ -157,6 +157,8 @@ subcollection: satellite
 
 [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale)
 
+[Copying a location](/docs/satellite?topic=satellite-locations#location-copy)
+
 [Removing locations](/docs/satellite?topic=satellite-locations#location-remove)
 * [Removing locations from the console](/docs/satellite?topic=satellite-locations#location-remove-console)
 * [Removing locations from the CLI](/docs/satellite?topic=satellite-locations#location-remove-cli)
