@@ -288,6 +288,7 @@ subcollection: satellite
   * [Viewing host health](/docs/satellite?topic=satellite-monitor#host-health)
   * [Viewing cluster health](/docs/satellite?topic=satellite-monitor#cluster-health)
   * [Viewing Kubernetes resources in clusters](/docs/satellite?topic=satellite-monitor#kubernetes-resources-health)
+  * [Viewing {{site.data.keyword.satelliteshort}} config registration status for clusters](/docs/satellite?topic=satellite-monitor#satconfig-registration-status)
 
 
 ## Enhancing security
