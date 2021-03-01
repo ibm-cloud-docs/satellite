@@ -112,7 +112,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You
 
 | Storage class name | EBS volume type | File system type | Provisioner | Default IOPS per GB | Size range | Hard disk | Encrypted? | Volume binding mode | Reclaim policy |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `sat-aws-block-gold` | io2 | ext4 | `ebs.csi.aws.com` | 10 | 4 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | 
+| `sat-aws-block-gold` | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | 
 | `sat-aws-block-silver` | gp3 | ext4 | `ebs.csi.aws.com` | N/A | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | 
 | `sat-aws-block-bronze` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete |
 {: caption="Table 2. AWS EBS storage class reference." caption-side="top"}
@@ -165,30 +165,30 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 ## NetApp Trident NAS
 {: #netapp-nas-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp Trident. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp Trident storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/netapp/netapp-trident/20.07/storage-class.yaml).
+Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-NAS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp Trident storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/netapp/netapp-ontap-nas/20.07).
 {: shortdesc}
 
 | Storage class name | Type | File system | Reclaim policy |
 | --- | --- | --- | --- | --- | --- | --- |
-| `sat-netapp-file-gold` | Ontap-NAS | File | Delete |
-| `sat-netapp-file-silver` | Ontap-NAS | File | Delete |
-| `sat-netapp-file-bronze` | Ontap-NAS | File | Delete | 
-{: caption="Table 2. NetApp Trident storage class reference." caption-side="top"}
+| `sat-netapp-file-gold` | ONTAP-NAS | File | Delete |
+| `sat-netapp-file-silver` | ONTAP-NAS | File | Delete |
+| `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete | 
+{: caption="Table 2. NetApp ONTAP-NAS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 <br />
 
 ## NetApp Trident SAN
 {: #netapp-san-ref}
-Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp Trident. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp Trident storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/netapp/netapp-trident/20.07/storage-class.yaml).
+Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-SAN. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp ONTAP-SAN storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/netapp/netapp-ontap-san/20.07).
 {: shortdesc}
 
 | Storage class name | Type | File system | Reclaim policy |
 | --- | --- | --- | --- | --- | --- | --- |
-| `sat-netapp-block-gold` | Ontap-SAN | Block | Delete |
-| `sat-netapp-block-silver` | Ontap-SAN | Block | Delete |
-| `sat-netapp-block-bronze` | Ontap-SAN | Block | Delete | 
-{: caption="Table 2. NetApp Trident storage class reference." caption-side="top"}
+| `sat-netapp-block-gold` | ONTAP-SAN | Block | Delete |
+| `sat-netapp-block-silver` | ONTAP-SAN | Block | Delete |
+| `sat-netapp-block-bronze` | ONTAP-SAN | Block | Delete | 
+{: caption="Table 2. NetApp ONTAP-SAN storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 <br />

@@ -100,7 +100,7 @@ Set up [NetApp Trident storage](https://netapp-trident.readthedocs.io/en/stable-
 The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
 {: beta}
 
-You must deploy the NetApp Trident template to your clusters before you can create configurations with the NetApp NAS or NetApp SAN templates.
+You must deploy the NetApp Trident template to your clusters before you can create configurations with the NetApp ONTAP-NAS or NetApp ONTAP-SAN templates.
 {: important}
 
 <br />
