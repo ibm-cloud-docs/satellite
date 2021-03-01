@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -119,6 +119,12 @@ For more information about connecting to services that run in your {{site.data.k
 {: #user-access-loc-ep}
 
 If you have a resource on the IBM private network that requires access to your {{site.data.keyword.satelliteshort}} location, you can [create a `location` endpoint in {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-location-cloud#link-location).
+{: shortdesc}
+
+### Application workloads that run in clusters
+{: #user-access-apps}
+
+To make your apps available, see the options for [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
 {: shortdesc}
 
 ## {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location

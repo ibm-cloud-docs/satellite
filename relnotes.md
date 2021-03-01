@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -99,6 +99,15 @@ subcollection: satellite
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {:shortdesc}
 
+## March 2021
+{: #mar21}
+
+| Date | Description |
+| ---- | ----------- |
+| 01 March | <ul><li>**New! General availability of {{site.data.keyword.satellitelong}}**: {{site.data.keyword.satellitelong_notm}} is now generally available. If you created locations during the closed beta, you must [re-create your locations](/docs/satellite?topic=satellite-locations#location-copy) for the general availability release. For more information about what you are charged for when you use {{site.data.keyword.satellitelong_notm}}, see the [FAQs](/docs/satellite?topic=satellite-faqs#pricing).</li><li>**CLI changelog**: Updated the CLI plug-in changelog page for the [release of version 1.0.233](/docs/satellite?topic=satellite-satellite-cli-changelog).</li><li>**Cloud provider guides**: Added instructions to set up {{site.data.keyword.satelliteshort}} locations that use infrastructure from [AWS](/docs/satellite?topic=satellite-providers#aws-reqs), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs), [Azure](/docs/satellite?topic=satellite-providers#azure-reqs-rhel-packages), and [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages).</li><li>**Exposing apps in {{site.data.keyword.satelliteshort}} clusters**: Added an overview of the [options for exposing apps in Satellite clusters](/docs/openshift?topic=openshift-sat-expose-apps) and steps for setting up each option.</li><li>**{{site.data.keyword.satelliteshort}} Infrastructure Service**: [Order managed infrastructure from IBM](/docs/satellite?topic=satellite-infrastructure-service) to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.</li><li>**New! Template for fast provisioning on AWS**: [Automate your {{site.data.keyword.satelliteshort}} location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template), available for AWS infrastructure.</li></ul>|
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in March 2021."}
+
 ## February 2021
 {: #february21}
 
@@ -118,7 +127,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 | Date | Description |
 | ---- | ----------- |
 | 29 January | <ul><li>**AWS hosts**: Added the list of supported [supported AWS EC2 instance types](/docs/satellite?topic=satellite-providers#aws-instance-types) that can be used as hosts.</li><li>**{{site.data.keyword.satelliteshort}} Link**: Added information about the [maximum number of endpoints](/docs/satellite?topic=satellite-requirements#reqs-link) that you can create for one location.</li></ul> |
-| 25 January | <ul><li>**About {{site.data.keyword.satelliteshort}}**: Updated the [About topic](/docs/satellite?topic=satellite-about#location-concept) with a new conceptual diagram and explanation of how {{site.data.keyword.satelliteshort}} locations relate to your infrastructure provider and {{site.data.keyword.cloud_notm}} environments.</li><li>**{{site.data.keyword.satelliteshort}} Link**: Expanded information about endpoint security and access controls, and added example use cases.</li></ul> |
+| 25 January | <ul><li>**{{site.data.keyword.satelliteshort}} Link**: Expanded information about endpoint security and access controls, and added example use cases.</li></ul> |
 | 15 January | **Host requirements**: Updated the [{{site.data.keyword.redhat_notm}} package repositories](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) that you must enable on hosts. |
 | 12 January | <ul><li>**Calico VXLAN encapsulation**: If you use AWS, GCP, or {{site.data.keyword.vpc_short}} hosts to create an {{site.data.keyword.openshiftshort}} cluster, you must [update the cluster's Calico plug-in to use VXLAN encapsulation](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).</li><li>**Host updates**: Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-hosts#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-hosts#host-update-location).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}

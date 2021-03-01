@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-02-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -93,47 +93,19 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Why does the host registration script fail?
-{: #host-registration-script-fails}
+# Why can't I update or complete other actions with my cluster?
+{: #ts-cluster-operations-blocked}
 
 {: tsSymptoms}
-When you SSH into your own infrastructure machine that you want to attach as a {{site.data.keyword.satelliteshort}} host and run the host registration script, you see a message similar to the following.
+When you try to manage your cluster, such as to perform a cluster update, the operation fails with a message similar to the following.
+
 ```
-No package rh-python36 available.
-Error: Nothing to do
+Cluster management is not currently available for this {{site.data.keyword.satelliteshort}} location. The location requires action to enable cluster operations. Please see logs for more detailed information.
 ```
 {: screen}
 
 {: tsCauses}
-Your machine does not meet the minimum requirements to become a {{site.data.keyword.satelliteshort}} host. In particular, you must have the following packages installed on your RHEL 7 machine.
-```
-Repository 'rhel-server-rhscl-7-rpms' is enabled for this system.
-Repository 'rhel-7-server-optional-rpms' is enabled for this system.
-Repository 'rhel-7-server-rh-common-rpms' is enabled for this system.
-Repository 'rhel-7-server-supplementary-rpms' is enabled for this system.
-Repository 'rhel-7-server-extras-rpms' is enabled for this system.
-```
-{: screen}
+Your {{site.data.keyword.satelliteshort}} location is currently in an unhealthy state, so cluster operations are blocked to prevent the operation from failing. 
 
 {: tsResolve}
-1.  Add the required packages to your machine. For example, in IBM Cloud infrastructure you can run the following commands to add the required packages. For cloud provider-specific configurations, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure).
-    1.  Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
-        ```
-        subscription-manager refresh
-        ```
-        {: pre}
-
-        If you see an error such as `Network error, unable to connect to server. Please see /var/log/rhsm/rhsm.log for more information.`, check the security group and other network settings for your machine to make sure that you have connectivity to the internet.
-        {: tip}
-
-    2.  Enable the package repositories on your machine.
-        ```
-        subscription-manager repos --enable rhel-server-rhscl-7-rpms
-        subscription-manager repos --enable rhel-7-server-optional-rpms
-        subscription-manager repos --enable rhel-7-server-rh-common-rpms
-        subscription-manager repos --enable rhel-7-server-supplementary-rpms
-        subscription-manager repos --enable rhel-7-server-extras-rpms
-        ```
-        {: pre}
-2.  Make sure that your machine meets the other [host minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as minimum CPU and memory sizes.
-3.  [Run the registration script](/docs/satellite?topic=satellite-hosts#attach-hosts) on your machine again.
+[Debug your location](/docs/satellite?topic=satellite-ts-locations-debug), such as reviewing the platform logs and common error messages to find the reason for the unhealthy state. When the location is healthy, you can resume managing your cluster.

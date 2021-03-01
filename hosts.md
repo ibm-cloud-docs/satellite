@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -99,9 +99,6 @@ subcollection: satellite
 Set up {{site.data.keyword.satellitelong}} hosts to bring your own infrastructure to a {{site.data.keyword.satelliteshort}} location. Then, your hosts can be used as compute capacity to run {{site.data.keyword.cloud_notm}} services such as {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
-{{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
-{: beta}
-
 ## Understanding {{site.data.keyword.satelliteshort}} hosts
 {: #host-concept}
 
@@ -112,7 +109,7 @@ The following diagram presents the initial setup steps for hosts.
 
 ![Concept overview of Satellite host setup](/images/host-process.png){: caption="Figure 1. The initial setup process for {{site.data.keyword.satelliteshort}} hosts." caption-side="bottom"}
 
-1.  **Attach**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [attach the host](#attach-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers). After the host is attached and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
+1.  **Attach**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [attach the host](#attach-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). For cloud provider-specific configurations, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure). After the host is attached and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
 2.  **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service. For example, a basic setup has 6 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} location control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
 3.  **Bootstrap**: When you assign a host, the host is bootstrapped to become a worker node in a managed {{site.data.keyword.openshiftlong_notm}} cluster or your {{site.data.keyword.satelliteshort}} control plane. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 
@@ -126,14 +123,14 @@ Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshor
 After you create the location, you must attach compute capacity to your location so that you can run the {{site.data.keyword.satelliteshort}} control plane or set up {{site.data.keyword.openshiftshort}} clusters.
 {: shortdesc}
 
-Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-sizing).<br><br>
+Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#location-sizing).<br><br>
 Using AWS hosts? You can use a [launch template](/docs/satellite?topic=satellite-providers#aws-reqs) to attach hosts to your {{site.data.keyword.satelliteshort}} location.
 {: tip}
 
 When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.
 {: important}
 
-* Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers).
+* Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure).
 * Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
 * Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then IBM can automatically assign hosts when clusters or the {{site.data.keyword.satelliteshort}} location control plane request more capacity.
 
@@ -143,59 +140,46 @@ When you set up the {{site.data.keyword.satelliteshort}} location control plane,
 Use the {{site.data.keyword.satelliteshort}} console to attach hosts to your location.
 {: shortdesc}
 
-Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
+Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure).
 {: important}
 
 1. From the [**Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, select that location where you want to attach hosts.  
 2. From the **Hosts** tab, click **Attach host**.
-3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. By default, your hosts get a `cpu` label, but you might want to add more to control the autoassignment, such as `env=prod` or `service=database`.
 4. Enter a file name for your script or use the name that is generated for you.
 5. Click **Download script** to generate the host script and download the script to your local machine.
 
    Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs), [Azure](/docs/satellite?topic=satellite-providers#azure-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
    {: note}
 
-6. Log in to each host machine that you want to attach to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
+6. Follow the cloud provider-specific steps to update the script and attach your host.
+   - [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
+   - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
+   - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
+   - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)<br>
+   
+  **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine. 
+
    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
    2. Copy the script from your local machine to your host.
-
-      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
       ```
-      scp -i <filepath_to_pem_file> <filepath_to_script> <non_root_user>@<IP_address>:/tmp/attach.sh
+      scp -i <filepath_to_key_file> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
       ```
-      {: pre}  
-
-      **{{site.data.keyword.cloud_notm}} virtual servers**:
-      ```
-      scp <path_to_script> root@<IP_address>:/tmp/attach.sh
-      ```
-      {: pre}
-
+      {: pre}        
    3. Log in to your host.
-
-      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
       ```
-      ssh -i <filepath_to_pem_file> <non_root_user>@<IP_address>
+      ssh -i <filepath_to_key_file> <username>@<IP_address>
       ```
       {: pre}
-
-      **{{site.data.keyword.cloud_notm}} virtual servers**:
-      ```
-      ssh root@<IP_address>
-      ```
-      {: pre}
-
-   4. Run the script.
-
-      **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
+   4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
+   5. Run the script.
       ```
       sudo nohup bash /tmp/attach.sh &
       ```
       {: pre}
-
-      **{{site.data.keyword.cloud_notm}} virtual servers**:
+   5. Monitor the progress of the registration script.
       ```
-      nohup bash /tmp/attach.sh &
+      journalctl -f -u ibm-host-attach
       ```
       {: pre}
 
@@ -209,7 +193,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 Use the {{site.data.keyword.satelliteshort}} CLI to attach hosts to your location.
 {: shortdesc}
 
-Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) and any [provider-specific requirements](/docs/satellite?topic=satellite-providers) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
+Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure).
 {: important}
 
 1.  Generate a script that you can copy and run on your machines to attach them as hosts to your location. You might want to include a label to identify the purpose of the hosts, such as `use:satloc`, because the hosts provide compute capacity for the {{site.data.keyword.satelliteshort}} location. Your hosts automatically are assigned labels for the CPU and memory size if these values can be detected on the machine.
@@ -231,50 +215,37 @@ Before you begin, make sure that you have created host machines that meet the [m
    Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs), [Azure](/docs/satellite?topic=satellite-providers#azure-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
    {: note}
 
-2.  On your local machine, find the script.
-3.  Log in to each host machine that you want to attach to your location and run the script. The steps for how to log in to your machine and run the script vary by cloud provider. When you run the script on the machine, the machine is made visible to your {{site.data.keyword.satelliteshort}} location, but is not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster. The script also disables the ability to SSH in to the machine for security purposes. If you later remove the host from the {{site.data.keyword.satelliteshort}} location, you must reload the host machine to SSH into the machine again.
-    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
-    2. Copy the script from your local machine to your host.
+2. On your local machine, find the script.
+3. Follow the cloud provider-specific steps to update the script and attach your host.
+   - [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
+   - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
+   - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
+   - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)<br>
+   
+   **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine. 
 
-       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
-       ```
-       scp -i <filepath_to_pem_file> <filepath_to_script> <non_root_user>@<IP_address>:/tmp/attach.sh
-       ```
-       {: pre}  
-
-       **{{site.data.keyword.cloud_notm}} virtual servers**:
-       ```
-       scp <path_to_script> root@<IP_address>:/tmp/attach.sh
-       ```
-       {: pre}
-
-    3. Log in to your host.
-
-       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
-       ```
-       ssh -i <filepath_to_pem_file> <non_root_user>@<IP_address>
-       ```
-       {: pre}
-
-       **{{site.data.keyword.cloud_notm}} virtual servers**:
-       ```
-       ssh root@<IP_address>
-       ```
-       {: pre}
-
-    4. Run the script.
-
-       **Amazon Web Services, Google Cloud Platform, or Microsoft Azure virtual instances**:
-       ```
-       sudo nohup bash /tmp/attach.sh &
-       ```
-       {: pre}
-
-       **{{site.data.keyword.cloud_notm}} virtual servers**:
-       ```
-       nohup bash /tmp/attach.sh &
-       ```
-       {: pre}
+   1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
+   2. Copy the script from your local machine to your host.
+      ```
+      scp -i <filepath_to_key_file> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
+      ```
+      {: pre}        
+   3. Log in to your host.
+      ```
+      ssh -i <filepath_to_key_file> <username>@<IP_address>
+      ```
+      {: pre}
+   4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
+   5. Run the script.
+      ```
+      sudo nohup bash /tmp/attach.sh &
+      ```
+      {: pre}
+   5. Monitor the progress of the registration script.
+      ```
+      journalctl -f -u ibm-host-attach
+      ```
+      {: pre}
 
 4.  Verify that your hosts are attached to your location. Your hosts are not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster which is why all of them show an `unassigned` state without any cluster or worker node information.
     ```
@@ -515,39 +486,41 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 
 <br />
 
-## Updating host metadata
+## Updating hosts
+{: #host-update}
+
+Review the following ways to update hosts that are attached to your {{site.data.keyword.satelliteshort}} location.
+{: shortdesc}
+
+### Updating host metadata
 {: #host-update-metadata}
 
 If you want to update metadata about a host, such as labels or zones, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). The update does not apply security patches or operating system updates.
 {: shortdesc}
 
-<br />
-
-## Updating worker node hosts in clusters
+### Updating worker node hosts in clusters
 {: #host-update-workers}
 
 Many hosts in your {{site.data.keyword.satelliteshort}} location are used in clusters for {{site.data.keyword.satelliteshort}}-enabled services, such as {{site.data.keyword.openshiftlong_notm}}. When these hosts need to be updated, such as to apply a version patch fix pack, you can follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
 {: shortdesc}
 
-<br />
-
-## Updating {{site.data.keyword.satelliteshort}} location control plane hosts
+### Updating {{site.data.keyword.satelliteshort}} location control plane hosts
 {: #host-update-location}
 
-Some hosts are used to run the {{site.data.keyword.satelliteshort}} location control plane. The following diagram describes the process for updating these hosts.
+IBM provides major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane hosts. However, you must apply patch updates, for example if you have security standards that require patch updates every two weeks.
 {: shortdesc}
 
-![Concept overview of the host update process for the {{site.data.keyword.satelliteshort}} location control plane](/images/host-process-updates.png){: caption="Figure 2. The process for updating hosts in the {{site.data.keyword.satelliteshort}} location control plane." caption-side="bottom"}
+Before you begin, consider [attaching](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) extra hosts to your {{site.data.keyword.satelliteshort}} resources to handle the compute capacity while your existing hosts are updating. See [Considerations before you update](#host-update-considerations).
 
-1. **Remove**: When you list hosts, you might see available updates for hosts that run the {{site.data.keyword.satelliteshort}} location control plane. Make sure that the {{site.data.keyword.satelliteshort}} location control plane has enough compute capacity to continue running your workloads by [assigning extra hosts to your {{site.data.keyword.satelliteshort}} location control plane](#host-assign) before you remove the host that needs to be updated. If you do not have extra hosts available, consider [attaching hosts](#attach-hosts) and then assigning them. Then, [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) that you need to update from your {{site.data.keyword.satelliteshort}} location. Any workloads that run on the host are automatically scheduled onto remaining hosts if possible.
-2. **Reload**: After your host is removed from your {{site.data.keyword.satelliteshort}} location, follow the guidance from your infrastructure provider to reload the operating system. For example, you might perform maintenance on the machine in your on-prem data center. After you reload the host machine, you can SSH into the host machine again, which was previously disabled while the host was assigned to a {{site.data.keyword.satelliteshort}} resource.
-3. **Attach**: To reuse the host, [attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-4. **Assign**: [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
+1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
+2. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
+3. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
+4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
-### Considerations before you update
+#### Considerations before you update
 {: #host-update-considerations}
 
-Review the following considerations before you update your {{site.data.keyword.satelliteshort}} hosts.
+Review the following considerations before you update your {{site.data.keyword.satelliteshort}} location control plane hosts.
 {: shortdesc}
 
 **Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?**
@@ -567,19 +540,6 @@ However, when you created the {{site.data.keyword.satelliteshort}} location cont
 IBM provides updates for the IBM-managed components.
 * For master components, such as the {{site.data.keyword.satelliteshort}} location master or cluster masters, IBM automatically applies these updates.
 * For worker node components that run on hosts, such as the {{site.data.keyword.satelliteshort}} location control plane or cluster worker nodes, you choose when to apply the updates.
-
-### Updating control plane hosts
-{: #host-update}
-
-Use the {{site.data.keyword.satelliteshort}} console or CLI to update the hosts for the {{site.data.keyword.satelliteshort}} location control plane.
-{: shortdesc}
-
-Before you begin, consider [attaching](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) extra hosts to your resources to handle the compute capacity while your existing hosts are updating. See [Considerations before you update](#host-update-considerations).
-
-1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
-2. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
-3. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
 <br />
 

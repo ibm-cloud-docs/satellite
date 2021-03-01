@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-01"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1824,7 +1824,7 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT --group GROUP --n
 
 <br />
 
-### `ibmcloud sat storage config create`
+### `ibmcloud sat storage config create --name`
 {: #cli-storage-config-create}
 
 Create a {{site.data.keyword.satelliteshort}} storage configuration that you can assign to your clusters to install storage drivers in your clusters.
@@ -1930,6 +1930,42 @@ ibmcloud sat storage config ls [-q]
 **Example:**
 ```sh
 ibmcloud sat storage config ls
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat storage config rm`
+{: #cli-storage-config-rm}
+
+Remove a {{site.data.keyword.satelliteshort}} storage configuration.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage config rm --config CONFIG [-f] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dt><code>--config <em>CONFIG</em></code></dt>
+<dd>Required. The name of the storage configuration that you want to remove. To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage config ls</code>.</dd>
+
+<dt><code>-f</code></dt>
+<dd>Optional. Force the command to run with no user prompts.</dd>
+
+<dl>
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage config rm --config ocs-config
 ```
 {: pre}
 
