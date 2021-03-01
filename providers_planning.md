@@ -160,7 +160,7 @@ For on-prem infrastructure, you can manually setup a {{site.data.keyword.satelli
 6. [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) and assign the hosts as worker nodes to the cluster, so that you can run {{site.data.keyword.openshiftshort}} workloads in your location.
 
 ### Cloud infrastructure like AWS, Azure, and GCP
-{: #create-options-onprem}
+{: #create-options-cloud}
 
 For cloud provider infrastructure, you can follow provider-specific guides.
 {: shortdesc}
