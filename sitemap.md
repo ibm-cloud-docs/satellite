@@ -149,7 +149,7 @@ subcollection: satellite
 * [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#location-sizing)
 * [Deciding how to create your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#create-options)
   * [On-premises infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-onprem)
-  * [Cloud infrastructure like AWS, Azure, and GCP](/docs/satellite?topic=satellite-infrastructure-plan#create-options-onprem)
+  * [Cloud infrastructure like AWS, Azure, and GCP](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud)
   * [IBM-managed infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-sat-is)
 
 [Host requirements](/docs/satellite?topic=satellite-host-reqs)
@@ -275,6 +275,8 @@ subcollection: satellite
 [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#satcluster-worker-pools)
 * [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels)
 * [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance)
+
+[Exposing apps](/docs/satellite?topic=openshift-satellite-clusters#satcluster-expose-apps)
 
 [Storing application data in persistent storage](/docs/satellite?topic=openshift-satellite-clusters#satcluster-storage)
 
