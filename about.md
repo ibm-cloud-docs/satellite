@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-27"
+lastupdated: "2021-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -98,9 +98,6 @@ subcollection: satellite
 
 Learn about {{site.data.keyword.satellitelong_notm}} terminology, service architecture, and components.
 {: shortdesc}
-
-{{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
-{: beta}
 
 ## Benefits of using {{site.data.keyword.satelliteshort}}
 {: #about-benefits}

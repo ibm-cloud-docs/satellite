@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-27"
+lastupdated: "2021-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -101,12 +101,13 @@ Learn about the management responsibilities and terms and conditions that you ha
 
 Review the following sections for the specific responsibilities for you and for {{site.data.keyword.IBM_notm}} when you use {{site.data.keyword.satellitelong_notm}}. For the overall terms of use, see [{{site.data.keyword.cloud_notm}} Terms and Notices](/docs/overview/terms-of-use?topic=overview-terms). For responsibilities that you have for other {{site.data.keyword.cloud_notm}} services that you use with {{site.data.keyword.satelliteshort}}, refer to the documentation of those services, such as [{{site.data.keyword.openshiftlong_notm}} responsibilities](/docs/openshift?topic=openshift-responsibilities_iks).
 
-
+Using {{site.data.keyword.satelliteshort}} Infrastructure Service as your infrastructure provider? [Review the {{site.data.keyword.satelliteshort}} Infrastructure Service responsibilities instead](/docs/satellite?topic=satellite-infrastructure-service#satis-responsibilities).
+{: note}
 
 <br />
 
 ## Overview of shared responsibilities
-{: ##overview-by-resource}
+{: #overview-by-resource}
 
 {{site.data.keyword.satellitelong_notm}} is a managed service in the [{{site.data.keyword.cloud_notm}} shared responsibility model](/docs/overview/terms-of-use?topic=overview-shared-responsibilities). Review the following table of who is responsible for particular cloud resources when using {{site.data.keyword.satellitelong_notm}}. 
 {: shortdesc}
@@ -139,8 +140,6 @@ Review the following sections for the specific responsibilities for you and for 
 
 After reviewing the [overview](#overview-by-resource), see what tasks you and IBM share responsibility for each area and resource when you use {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
-
-<br />
 
 ### Incident and operations management
 {: #incident-and-ops}

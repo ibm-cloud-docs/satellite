@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-27"
+lastupdated: "2021-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -99,21 +99,20 @@ subcollection: satellite
 With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute infrastructure that is in your on-premises data center, at other cloud providers, or in edge networks as a {{site.data.keyword.satelliteshort}} Location to {{site.data.keyword.cloud_notm}}. Then, you use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on this infrastructure, and consistently deploy, manage, and control your app workloads.
 {: shortdesc}
 
-{{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
-{: beta}
-
 In this getting started tutorial, you create your first {{site.data.keyword.satellitelong_notm}} location for demonstration purposes. Then, you create the location control plane with at least 3 compute hosts from your own infrastructure environment. These compute hosts can reside in an on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers.
 
 ## Prerequisites
 {: #sat-prereqs}
 
+Don't have your own infrastructure or want a managed solution? [Check out {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).<br><br>Using AWS cloud? Try an [automated setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
+{: tip}
 
 1. For demonstration. purposes, you must have at least 3 hosts that reside in your on-premises data center, at other cloud providers, or in edge networks. All hosts must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as RHEL 7 packages and must be configured with at least 4 CPUs and 16 GB of memory.
-   
-   Want to add hosts from other cloud providers? Find detailed steps for how to configure hosts in [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure) to make them available in {{site.data.keyword.satelliteshort}}. 
+
+   Want to add hosts from other cloud providers? Find detailed steps for how to configure hosts in [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure) to make them available in {{site.data.keyword.satelliteshort}}.
    {: tip}
 
-   <p class="important">A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location, add more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts.<br><br>{{site.data.keyword.satelliteshort}} beta requirements are subject to change.</p>
+   <p class="important">A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location, add more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts.</p>
 
 2. You must be the {{site.data.keyword.cloud_notm}} account owner, or have the [administrator permissions](/docs/satellite?topic=satellite-iam#iam-roles-clusters) to the required {{site.data.keyword.cloud_notm}} services in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).
 
@@ -135,7 +134,7 @@ To use {{site.data.keyword.satelliteshort}}, you must create a location. A locat
 With your location set up, you can now attach host machines to your location. All host machines must meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) and can physically reside in your own on-premises data center, in other cloud providers, or in edge networks.
 {: shortdesc}
 
-Want to add hosts from other cloud providers? Find detailed steps for how to configure hosts in [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure) to make them available in {{site.data.keyword.satelliteshort}}. 
+Want to add hosts from other cloud providers? Find detailed steps for how to configure hosts in [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure) to make them available in {{site.data.keyword.satelliteshort}}.
 {: tip}
 
 1. From the **Hosts** tab, click **Attach host**.
@@ -146,13 +145,14 @@ Want to add hosts from other cloud providers? Find detailed steps for how to con
    Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-providers#aws-reqs), [GCP](/docs/satellite?topic=satellite-providers#gcp-reqs), [Azure](/docs/satellite?topic=satellite-providers#azure-reqs-rhel-packages), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-providers#ibm-cloud-reqs-rhel-packages) RHEL package updates.
    {: note}
 
-5. Follow the cloud provider-specific steps to update the script and attach your host. 
+5. Follow the cloud provider-specific steps to update the script and attach your host.
    - [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
    - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
    - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
-   - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) </br>
+   - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) <br>
    
    **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine. 
+
    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
    2. Copy the script from your local machine to your host.
       ```
@@ -164,18 +164,18 @@ Want to add hosts from other cloud providers? Find detailed steps for how to con
       ssh -i <filepath_to_key_file> <username>@<IP_address>
       ```
       {: pre}
-   4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}. 
+   4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
    5. Run the script.
       ```
       sudo nohup bash /tmp/attach.sh &
       ```
       {: pre}
-   5. Monitor the progress of the registration script. 
+   5. Monitor the progress of the registration script.
       ```
       journalctl -f -u ibm-host-attach
       ```
       {: pre}
-      
+
 6. As you run the scripts on each machine, check that your hosts show in the **Hosts** tab of your location dashboard. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane. You must attach at least 3 compute hosts to your location to continue with the setup of your {{site.data.keyword.satelliteshort}} control plane.
 
 

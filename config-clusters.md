@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-27"
+lastupdated: "2021-03-01"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -628,6 +628,5 @@ Removing {{site.data.keyword.satelliteshort}} config components automatically re
    
 5. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, find the cluster that you want to remove from {{site.data.keyword.satelliteshort}} config. 
 6. From the actions menu, click **Unregister** and verify that your cluster is removed from the {{site.data.keyword.satelliteshort}} cluster dashboard. 
-   
 
 <br />

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -258,6 +258,7 @@ Review the following list of general use cases and example use cases for {{site.
 
 **Can I use Link endpoints to...**
 * **Connect resources within the same {{site.data.keyword.satelliteshort}} location?** No. Link endpoints cannot be created between resources in the same location. Instead, resources can access each other directly. For example, an app that runs in an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}} does not need to communicate through {{site.data.keyword.satelliteshort}} Link to access a database that exists in the same location, and can instead access that database directly through the location's private network.
+* **Expose apps or services that run in an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}}?** To see available options, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
 * **Bridge networks within the IBM Cloud public network, such as VPC spanning?** No. Instead, use the bridging solution that is recommended for your network setup. For example, you might use a [{{site.data.keyword.vpn_vpc_full}}](/docs/vpc?topic=vpc-vpn-example) or [{{site.data.keyword.dl_full}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl#get-started-with-direct-link-connect).
 * **Connect to other public clouds?** Yes. {{site.data.keyword.satelliteshort}} Link is agnostic to the cloud provider, and you can create `cloud` endpoints for resources that run in other public clouds.
 
@@ -625,14 +626,8 @@ To see the status of sources for each endpoints, such as the last time that a so
 ## Auditing events for endpoint actions
 {: #link-audit}
 
-{{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full_notm}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance.
+{{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full_notm}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance. To access these logs, [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) in the same region that your location is managed from.
 {: shortdesc}
-
-1. [Provision an instance of {{site.data.keyword.at_short}}](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-provision) in the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
-2. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.
-3. From the **Audit** tab, click the name of your endpoint.
-4. Review the status of sources that are configured for this endpoint, such as whether a source is currently enabled and the last time that a source was modified.
-5. Click **Launch Auditing**. The dashboard for your {{site.data.keyword.at_short}} instance is opened, and the events are filtered for your endpoint's ID.
 
 For more information about the types of {{site.data.keyword.satelliteshort}} events that you can track, see [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
 {: tip}

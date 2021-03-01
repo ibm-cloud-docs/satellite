@@ -12,19 +12,20 @@ Satellite
 
     {: .navgroup id="howto"}
     setup-cli.md
-    locations.md
 
     {: .topicgroup}
-    Managing Satellite hosts
+    Preparing your infrastructure to use in Satellite
+        providers_planning.md
+        host-reqs.md
+        satellite-is.md
+        providers_aws.md
+        providers_gcp.md
+        providers_azure.md
+        providers_ibm.md
 
-        {: .topicgroup}
-        Preparing hosts to meet requirements
-            host-reqs.md
-            providers.md
-        
-        hosts.md
-        /openshift/openshift-satellite-clusters
-        
+    locations.md
+    hosts.md
+    /openshift/openshift-satellite-clusters
     config-clusters.md
     link-endpoints.md
 
@@ -32,6 +33,29 @@ Satellite
     Logging and monitoring
         health.md
         monitor.md
+
+    {: .topicgroup}
+    Setting up storage
+        storage-template-ov.md
+
+        {: .topicgroup}
+        AWS storage templates
+            storage-ebs.md
+            storage-efs.md
+
+        {: .topicgroup}
+        NetApp storage templates
+            storage-netapp-trident.md
+            storage-netapp-nas.md
+            storage-netapp-san.md
+
+        {: .topicgroup}
+        Red Hat storage templates
+            storage-local-block.md
+            storage-local-file.md
+            storage-ocs-local.md
+
+        storage-ref.md
 
     {: .topicgroup}
     Enhancing security

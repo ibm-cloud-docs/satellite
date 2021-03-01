@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -95,23 +95,23 @@ subcollection: satellite
 # Google Cloud Platform (GCP)
 {: #gcp}
 
-Learn how you can set up a {{site.data.keyword.satellitelong_notm}} location with virtual instances that you created in Google Cloud Platform (GCP). 
+Learn how you can set up a {{site.data.keyword.satellitelong_notm}} location with virtual instances that you created in Google Cloud Platform (GCP).
 {: shortdesc}
 
 ## Adding GCP hosts to {{site.data.keyword.satelliteshort}}
 {: #gcp-host-attach}
 
-You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Google Cloud Platform (GCP). 
+You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Google Cloud Platform (GCP).
 {: shortdesc}
 
 All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
-Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create). 
+Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create).
 
-1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add GCP hosts. 
-2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location. 
-   1. From the **Hosts** tab, click **Attach host**. 
+1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add GCP hosts.
+2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
+   1. From the **Hosts** tab, click **Attach host**.
    2. Optional: Enter any host labels that are used later to [automatically assign hosts to {{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the autoassignment, such as `env=prod` or `service=database`.
    3. Enter a file name for your script or use the name that is generated for you.
    4. Click **Download script** to generate the host script and download the script to your local machine.
@@ -124,26 +124,26 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
    yum install subscription-manager -y
    ```
    {: codeblock}  
-4. From the [GCP **Compute Engine** dashboard](https://console.cloud.google.com/compute){: external}, select **Instance templates**. 
-5. Click **Create instance template**. 
-6. Enter the details for your instance template as follows. 
-   
-   For an overview of available options when creating an instance template, see the [GCP documentation](https://cloud.google.com/compute/docs/instance-templates/create-instance-templates){: external}. 
+4. From the [GCP **Compute Engine** dashboard](https://console.cloud.google.com/compute){: external}, select **Instance templates**.
+5. Click **Create instance template**.
+6. Enter the details for your instance template as follows.
+
+   For an overview of available options when creating an instance template, see the [GCP documentation](https://cloud.google.com/compute/docs/instance-templates/create-instance-templates){: external}.
    {: tip}
-   
-   1. Enter a name for your instance template. 
-   2. In the **Machine configuration** section, select the **Series** and **Machine type** that you want to use. You can select any series that you want, but make sure that the machine type meets the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) for CPU and memory. 
-   3. In the **Boot disk** section, click **Change** to change the default operating system and boot disk size. Make sure to select Red Hat Enterprise Linux 7 as your operating system and to change your boot disk size to a minimum of 100 GB. 
-   4. Optional: If you want your machines to allow HTTP and HTTPS traffic, select **Allow HTTP traffic** and **Allow HTTPS traffic** from the **Firewall** section of your instance template. 
-   5. Click **Management, security, disks, networking, sole tenancy** to view additional networking and security settings. 
-   6. In the **Management** tab, locate the **Startup script** field and enter the registration script that you modified earlier. 
-   7. In the **Networking** tab, choose the network that you want your instances to be connected to. This network must allow access to {{site.data.keyword.satellitelong_notm}} as described in [Firewall settings](#gcp-reqs-firewall). You can check and change the firewall settings for your network in the next step. 
-   8. Click **Create** to save your instance template. 
-7. Optional: Update the firewall settings for the network that you assigned to your instance template. 
-   1. From the [GCP **VPC Network** dashboard](https://console.cloud.google.com/networking/networks){: external}, select **Firewall**. 
-   2. Verify that your network allows access as describde in the [Network firewall settings](#gcp-reqs-firewall). Make changes as necessary. 
-8. From the [GCP **Compute Engine** dashboard](https://console.cloud.google.com/compute){: external}, select **Instance templates** and find the instance template that you created. 
-9. From the actions menu, click **Create VM** to create an instance from your template. You can alternatively click **Create Instance Group** to create an instance group to add multiple instances at the same time. Make sure that you spread your instances across multiple zones for higher availability. 
+
+   1. Enter a name for your instance template.
+   2. In the **Machine configuration** section, select the **Series** and **Machine type** that you want to use. You can select any series that you want, but make sure that the machine type meets the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) for CPU and memory.
+   3. In the **Boot disk** section, click **Change** to change the default operating system and boot disk size. Make sure to select Red Hat Enterprise Linux 7 as your operating system and to change your boot disk size to a minimum of 100 GB.
+   4. Optional: If you want your machines to allow HTTP and HTTPS traffic, select **Allow HTTP traffic** and **Allow HTTPS traffic** from the **Firewall** section of your instance template.
+   5. Click **Management, security, disks, networking, sole tenancy** to view additional networking and security settings.
+   6. In the **Management** tab, locate the **Startup script** field and enter the registration script that you modified earlier.
+   7. In the **Networking** tab, choose the network that you want your instances to be connected to. This network must allow access to {{site.data.keyword.satellitelong_notm}} as described in [Firewall settings](#gcp-reqs-firewall). You can check and change the firewall settings for your network in the next step.
+   8. Click **Create** to save your instance template.
+7. Optional: Update the firewall settings for the network that you assigned to your instance template.
+   1. From the [GCP **VPC Network** dashboard](https://console.cloud.google.com/networking/networks){: external}, select **Firewall**.
+   2. Verify that your network allows access as describde in the [Network firewall settings](#gcp-reqs-firewall). Make changes as necessary.
+8. From the [GCP **Compute Engine** dashboard](https://console.cloud.google.com/compute){: external}, select **Instance templates** and find the instance template that you created.
+9. From the actions menu, click **Create VM** to create an instance from your template. You can alternatively click **Create Instance Group** to create an instance group to add multiple instances at the same time. Make sure that you spread your instances across multiple zones for higher availability.
 10. Wait for the instance to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete. You can monitor the progress of the script by reviewing the logs for your instance. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 11. Assign your GCP hosts to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign).
 

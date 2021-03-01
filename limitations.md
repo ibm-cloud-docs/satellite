@@ -96,11 +96,8 @@ subcollection: satellite
 # Usage requirements
 {: #requirements}
 
-{{site.data.keyword.satellitelong}} comes with usage requirements, default service settings, and limitations to ensure security, convenience, and basic functionality. Requirements are subject to change, and might differ from beta to generally available releases.
+{{site.data.keyword.satellitelong}} comes with usage requirements, default service settings, and limitations to ensure security, convenience, and basic functionality.
 {: shortdesc}
-
-{{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
-{: beta}
 
 
 

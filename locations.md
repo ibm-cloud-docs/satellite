@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-27"
+lastupdated: "2021-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -101,10 +101,39 @@ Set up an {{site.data.keyword.satellitelong}} location to represent a data cente
 
 Not sure if your infrastructure is ready to use for {{site.data.keyword.satelliteshort}} locations? See [Planning your infrastructure environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan).
 
-{{site.data.keyword.satellitelong_notm}} is available as a closed beta and is subject to change. To register for the beta, see the [product details page](https://cloud.ibm.com/satellite/beta){: external}.
-{: beta}
+## Automating your location setup with a {{site.data.keyword.bpshort}} template
+{: #satloc-template}
 
+Automate your setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-about-schematics) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in a cloud provider, and set up the {{site.data.keyword.satelliteshort}} location control plane for you.
+{: shortdesc}
 
+Setting up {{site.data.keyword.satelliteshort}} locations with {{site.data.keyword.bpshort}} templates is available only for the Amazon Web Services (AWS) cloud provider. For more configuration options, you can [manually set up an AWS location](/docs/satellite?topic=satellite-aws).
+{: note}
+
+Before you begin, make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
+
+1. In your AWS cloud provider, set up your account credentials.
+   1. [Create a separate IAM user that is scoped to EC2 access](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html){: external}.
+   2. [Retrieve the access key ID and secret access key credentials for the IAM user](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys){: external}.
+2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
+3. From **Setup**, click **Amazon Web Services**.
+4. From **AWS credentials**, enter the **AWS access key ID** and **AWS secret access key** values that you previously created, then click **Fetch options from AWS**.
+5. Review the **AWS EC2 instances** that are prepopulated. By default, enough hosts are created for 1 small location that can run about 2 demo clusters. To change the region, instance type, or number of hosts, click the **Edit** pencil icon.
+6. Review the **Satellite location** details. If you edited the AWS EC2 instances, you might want to click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
+7. In the **Summary** pane, review the cost estimate.
+8. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
+9. Optional: To review the provisioning progress, review the logs in the {{site.data.keyword.bpshort}} workspace that is automatically created for you.
+   1. Click **Manage in Schematics**. If you see an error, navigate to the [{{site.data.keyword.bpshort}} workspaces console](https://cloud.ibm.com/schematics/workspaces){: external} and click the name of your workspace, such as `us.east.cartOrder...`.
+   2. From the **Activity** tab, find the current activity row and click **View log**.
+   3. Review the details and wait for the workspace to complete and enter an **Active** state.
+
+Well done, your {{site.data.keyword.satelliteshort}} location is creating! 
+
+**What's next?**
+
+The {{site.data.keyword.bpshort}} template helped with the initial creation, but you are in control for subsequent location management actions, such as [attaching more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts), [creating {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters), or [scaling the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale). If you [remove](#location-remove) your {{site.data.keyword.satelliteshort}} location, make sure to remove your workspace in {{site.data.keyword.bpshort}}, too.
+
+<br />
 
 ## Manually creating {{site.data.keyword.satelliteshort}} locations
 {: #location-create}
@@ -112,6 +141,8 @@ Not sure if your infrastructure is ready to use for {{site.data.keyword.satellit
 You can create {{site.data.keyword.satelliteshort}} locations for each place that you like, such as your company's ports in the north and south of the country. A {{site.data.keyword.satelliteshort}} location represents a data center that you fill with your own infrastructure resources to run your own workloads and {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
+Don't have your own infrastructure or want a managed solution? [Check out {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
+{: tip}
 
 
 ### Creating locations from the console
@@ -123,6 +154,7 @@ Use the {{site.data.keyword.satelliteshort}} console to create your location.
 Before you begin, make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations.
 
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
+2. Click **Manual setup**.
 3. Enter a name and an optional description for your location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer.
 4. Select the {{site.data.keyword.cloud_notm}} multizone metro that you want to use to manage your location. For more information about why you must select an {{site.data.keyword.cloud_notm}} multizone metro, see [Understanding supported {{site.data.keyword.cloud_notm}} multizone metros in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the metro that is closest to where your host machines physically reside that you plan to attach to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
 5. Click **Create location**. When you create the location, a location control plane master is deployed to one of the zones that are located in the {{site.data.keyword.cloud_notm}} multizone metro that you selected.

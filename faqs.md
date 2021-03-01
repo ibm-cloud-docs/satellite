@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-27"
+lastupdated: "2021-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -129,14 +129,6 @@ Review some of the key benefits for using {{site.data.keyword.satellitelong_notm
 
 For more information about {{site.data.keyword.satelliteshort}}, how it works and the service benefits, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/cloud/satellite){: external}.
 
-## How can I get access to the {{site.data.keyword.satelliteshort}} beta?
-{: #satellite-beta-access}
-{: faq}
-{: support}
-
-{{site.data.keyword.satellitelong_notm}} is available as a closed beta and subject to change. To register for the beta, see [{{site.data.keyword.satellitelong_notm}} beta](https://cloud.ibm.com/satellite/beta){: external}.
-{: beta}
-
 ## Where is the service available?
 {: #satellite-locations}
 {: faq}
@@ -173,17 +165,110 @@ See the [IBM open source and third-party policy](https://www.ibm.com/support/pag
 {: support}
 {: faq}
 
-During the beta, you are not charged for using {{site.data.keyword.satellitelong_notm}}. However, because you own the infrastructure that you bring to your {{site.data.keyword.satelliteshort}} location, you might be charged for hosting or using this infrastructure.
-{: beta}
+{{site.data.keyword.satellitelong_notm}} provides a convenient way for you to consume {{site.data.keyword.cloud_notm}} services in any location that you want, with visibility across your locations. Most of your costs are for the [{{site.data.keyword.cloud_notm}} services](#pricing-services) that you consume. Each location also has a [{{site.data.keyword.satelliteshort}} management](#pricing-satloc) fee.
+{: shortdesc}
+
+{{site.data.keyword.satelliteshort}} charges a flat management fee for all of the service benefits, such as the following.
+* **Flexibile consumption**. By charging per vCPU hour only for assigned hosts, you have no upfront costs and no cancellation fees. No charges are incurred for hosts that are attached to a location but are not assigned to a resource. You can have as many hosts waiting in your location without charge for future growth. As soon as you unassign a host from a resource, you are no longer charged. Keep in mind that hosts might be automaticaly assigned, depending on your setup.
+* **Application and networking capabilities at no additional charge**. You do not have separate charges for {{site.data.keyword.satelliteshort}} management capabilities for the locations, hosts, Link endpoints, configuration versions and subscriptions, or other {{site.data.keyword.satelliteshort}} resources.
+* **Consistent {{site.data.keyword.cloud_notm}} experience**. The management fee includes benefits such as the managed {{site.data.keyword.satelliteshort}} master, the installation and security patch updates of OpenShift Container Platform on your {{site.data.keyword.satelliteshort}} location control plane; managing your {{site.data.keyword.satelliteshort}} resources with a suite of API, CLI, and UI tools; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by IBM Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support. For more information, see [the responsibilities topic](/docs/satellite?topic=satellite-responsibilities).
+
+### {{site.data.keyword.satelliteshort}}-enabled services
+{: #pricing-services}
+
+Each {{site.data.keyword.cloud_notm}} service instance that you create in your {{site.data.keyword.satelliteshort}} location incurs charges. Review the following {{site.data.keyword.satelliteshort}}-enabled services.
+{: shortdesc}
+
+#### {{site.data.keyword.openshiftshort}} clusters
+{: #pricing-services-clusters}
+
+Get the benefits of a [managed {{site.data.keyword.openshiftshort}} service](/docs/openshift?topic=openshift-cs_ov#compare_ocp) on any compatible infrastructure that you want.
+{: shortdesc}
+
+| Type of charge | How the charge is applied | What the charge covers |
+| -------------- | ------------------------- | ---------------------- |
+| Cluster management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.openshiftlong_notm}}, such as installation and security patch updates of OpenShift Container Platform for your worker nodes; managing your cluster with a suite of API, CLI, and UI tools; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by IBM Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
+| {{site.data.keyword.satelliteshort}} management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by IBM Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
+| OCP licensing fee | Red Hat charges a fee for Red Hat Enterprise Linux and OpenShift Container Platform per 2 vCPU hour. | This charge is not included in your {{site.data.keyword.cloud_notm}} bill. Instead, you cover this charge by [bringing your own license](#byo-ocp). **Internal IBM accounts only**: You cannot bring your own OCP license. Instead, you are charged the OCP license fee for the worker nodes, and use the default pull secret that is provided by IBM. |
+| Infrastructure | Varies by provider | The underlying infrastructure that you bring to {{site.data.keyword.satelliteshort}} is your own, so it has its own charges. Consult your infrastructure provider for more details, such as about the storage, compute, and networking of the hosts in a cloud or on-prem environment. |
+{: caption="{{site.data.keyword.openshiftshort}} cluster charges." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the type of charge for a {{site.data.keyword.openshiftshort}} cluster. The second column describes how the charge is applied. The third column describes what is included with the charge."}
+
+#### Other services
+{: #pricing-services-other}
+
+Other {{site.data.keyword.satelliteshort}}-enabled services often set up a cluster in the location for you, to deliver their services. The services also might have their own charges. For more information, consult their documentation.
+{: shortdesc}
+
+### {{site.data.keyword.satelliteshort}} locations
+{: #pricing-satloc}
+
+When you create a location, you must create a {{site.data.keyword.satelliteshort}} location control plane to manage the location. You need only one control plane per location, although you might need to add more hosts depending on the [size of your location](/docs/satellite?topic=satellite-locations#control-plane-scale).
+{: shortdesc}
+
+| Type of charge | How the charge is applied | What the charge covers |
+| -------------- | ------------------------- | ---------------------- |
+| {{site.data.keyword.satelliteshort}} management fee | Per vCPU hour of the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by IBM Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more.  |
+| Infrastructure | Varies by provider | The underlying infrastructure that you bring to {{site.data.keyword.satelliteshort}} is your own, so it has its own charges. Consult your infrastructure provider for more details, such as about the storage, compute, and networking of the hosts in a cloud or on-prem environment. |
+{: caption="{{site.data.keyword.satelliteshort}} location control plane charges." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the type of charge for a {{site.data.keyword.openshiftshort}} cluster. The second column describes how the charge is applied. The third column describes what is included with the charge."}
+
+## How do I bring my own OCP license?
+{: #byo-ocp}
+{: faq}
+
+All clusters in your {{site.data.keyword.satelliteshort}} location are installed with OpenShift Container Platform, which incurs a licensing fee from Red Hat. However, you must bring your own OCP license, such as if you have an {{site.data.keyword.cloud_notm}} Pak or other OCP entitlement.
+{: shortdesc}
+
+When you create the cluster, make sure to include your Red Hat pull secret to entitle the cluster to run OCP, either by uploading the pull secret in the console or by including the `--pull-secret` flag in the `ibmcloud oc cluster create satellite` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
+
+**Internal IBM accounts only**: You cannot bring your own OCP license. Instead, you are charged the OCP license fee for the worker nodes, and use the default pull secret that is provided by IBM.
+{: note}
+
+## Can I estimate my costs?
+{: #cost-estimate}
+{: faq}
+
+When you create a resource such as a location or cluster, you can review a cost estimate in the **Summary** pane of the console. For other types of estimates, see [Estimating your costs](/docs/billing-usage?topic=billing-usage-cost#cost).
+
+Keep in mind that some charges are not reflected in the estimate, such as the costs for your underlying infrastructure.
+
+## Can I view and control my current usage?
+{: #usage}
+{: faq}
+
+See [View your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage) and [Set spending notifications](/docs/billing-usage?topic=billing-usage-spending) for general {{site.data.keyword.cloud_notm}} account guidance.
+
+## What are the terms of the service level agreement?
+{: #sla}
+{: faq}
+
+See the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic=overview-slas) and the [{{site.data.keyword.satelliteshort}} additional service description](http://www-03.ibm.com/software/sla/sladb.nsf/sla/bm-8913-01){: external}.
+
+If you use {{site.data.keyword.satelliteshort}} Infrastructure Service, consult that product's service level agreement.
+{: note}
+
+## What compliance standards does the service meet?
+{: #standards}
+{: faq}
+
+{{site.data.keyword.cloud_notm}} is built by following many data, finance, health, insurance, privacy, security, technology, and other international compliance standards. For more information, see [{{site.data.keyword.cloud_notm}} compliance](/docs/overview?topic=overview-compliance).
+
+To view detailed system requirements, you can run a [software product compatibility report for {{site.data.keyword.satellitelong_notm}}](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=4440E450C2C811E6A98AAE81A233E762){: external}.
+
+Note that compliance also might depend on the setup of the underlying infrastructure provider that you use for the {{site.data.keyword.satelliteshort}} location control plane and other resources.
+{: important}
+
+{{site.data.keyword.satellitelong_notm}} implements controls commensurate with the following security standards:
+- International Organization for Standardization (ISO 27001, ISO 27017, ISO 27018)
 
 
-
-## What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} location?
+## What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} cluster?
 {: #supported-services}
 {: faq}
 {: support}
 
-During the {{site.data.keyword.satelliteshort}} beta, you can run the {{site.data.keyword.cloud_notm}} services in your {{site.data.keyword.satelliteshort}} location as described in the following table. Keep in mind that each service might have its own [limitations for use in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-requirements#reqs-services).  
+You can run the {{site.data.keyword.cloud_notm}} services in your {{site.data.keyword.satelliteshort}} location as described in the following table. Keep in mind that each service might have its own [limitations for use in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-requirements#reqs-services).  
 
 |Service name|Description|
 |------------|----------------------------------|
