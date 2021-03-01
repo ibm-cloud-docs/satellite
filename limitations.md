@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -115,8 +115,15 @@ You can create up to 20 {{site.data.keyword.satelliteshort}} locations per {{sit
 ## Hosts
 {: #reqs-host}
 
-See [Host requirements](/docs/satellite?topic=satellite-host-reqs#host-reqs). For cloud provider-specific configurations, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure). 
+See [Host requirements](/docs/satellite?topic=satellite-host-reqs#host-reqs).
 {: shortdesc}
+
+For cloud provider-specific configurations, see the following topics:
+* [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
+* [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
+* [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) (for testing and demonstration purposes only)
+* [Microsoft Azure](/docs/satellite?topic=satellite-azure). 
+
 
 <br />
 
@@ -159,12 +166,8 @@ Review the following application configuration requirements for {{site.data.keyw
 By default, {{site.data.keyword.satelliteshort}} Config is limited to what Kubernetes resources it can read and modify in your clusters. You must grant {{site.data.keyword.satelliteshort}} Config access in each cluster where you want to use {{site.data.keyword.satelliteshort}} Config to manage your Kubernetes resources.
 
 Choose from the following options:
-*   **Cluster admin access**: Create a cluster role binding to grant {{site.data.keyword.satelliteshort}} Config access to the appropriate service accounts.
-    ```
-    kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
-    ```
-    {: pre}
-*   **Custom access, cluster-wide or scoped to a project**: You can create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access only to the projects (namespaces), actions, and resources that you want {{site.data.keyword.satelliteshort}} Config to manage. For more information and examples, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access).
+* Opt-in to cluster admin access when you create the cluster in the [console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console) or [CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli) with the `--enable-admin-agent` flag. Note that you must perform a one-time `oc login` in each cluster to synchronize the admin permissions.
+* To opt in after creating a cluster or to scope the access, see [Granting {{site.data.keyword.satelliteshort}} config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access).
 
 **{{site.data.keyword.satelliteshort}} Config and {{site.data.keyword.cloud_notm}} IAM**
 
