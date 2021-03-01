@@ -119,7 +119,7 @@ For cloud provider-specific configurations, see the following topics:
 * [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
 * [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
 * [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) (for testing and demonstration purposes only)
-* [Microsoft Azure](/docs/satellite?topic=satellite-azure). 
+* [Microsoft Azure](/docs/satellite?topic=satellite-azure).
 
 
 <br />
@@ -148,7 +148,7 @@ The {{site.data.keyword.satelliteshort}} Link connector instances that run in yo
 
 Review the maximum number of each type of Link endpoint that you can create for one {{site.data.keyword.satelliteshort}} location.
 * `cloud` endpoints: 1000 total, TCP and UDP combined. For example, you might create up to 650 TCP endpoints and 350 UDP endpoints through which clients in your location can connect to resources outside of the location network.
-* `location` endpoints: 100 TCP and 100 UDP. For example, you might create up to 100 TCP endpoints and 100 UDP endpoints through which clients outside of your location network can connect to resources inside the location.
+* `location` endpoints: 25 TCP and 25 UDP. For example, you might create up to 25 TCP endpoints and 25 UDP endpoints through which clients outside of your location network can connect to resources inside the location.
 
 <br />
 
