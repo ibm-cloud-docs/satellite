@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -118,9 +118,6 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
    4. Click **Download script** to generate the host script and download the script to your local machine.
 3. Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
    ```
-   ...
-   API_URL="https://containers.cloud.ibm.com/"
-
    # Grow the TMP LV
    lvextend -L+10G /dev/rootvg/tmplv
    xfs_growfs /dev/rootvg/tmplv
