@@ -103,13 +103,13 @@ subcollection: satellite
 
 [Getting started with {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-getting-started)
 
-[Prerequisites](/docs/satellite?topic=satellite-getting-started#sat-prereqs)
-
 [Step 1: Create your location](/docs/satellite?topic=satellite-getting-started#create-location)
 
 [Step 2: Attach compute hosts to your location](/docs/satellite?topic=satellite-getting-started#attach-hosts-to-location)
+* [Attaching hosts from cloud providers](/docs/satellite?topic=satellite-getting-started#gs-attach-hosts-cloud)
+* [Attaching hosts from on-premises data centers and edge networks](/docs/satellite?topic=satellite-getting-started#gs-attach-hosts-onprem)
 
-[Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-getting-started#assign-hosts-to-cp)
+[Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-getting-started#assign-hosts-to-cp)
 
 [What's next](/docs/satellite?topic=satellite-getting-started#whats-next)
 
@@ -668,7 +668,7 @@ subcollection: satellite
 
 [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions)
 
-[Understanding supported {{site.data.keyword.cloud_notm}} multizone metros in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions)
+[About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions)
 
 
 ## Your responsibilities
