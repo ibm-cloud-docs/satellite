@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -99,7 +99,15 @@ subcollection: satellite
 With {{site.data.keyword.satellitelong_notm}}, you use your own compute infrastructure that is in your on-premises data center, other cloud providers, or edge networks to create a {{site.data.keyword.satelliteshort}} location. Then, you use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on your infrastructure, and consistently deploy, manage, and control your app workloads.
 {: shortdesc}
 
+Want to see a preview before trying out the steps yourself? Check out the [Video demonstration of setting up an on-prem location](#gs-video-demo).
+{: tip}
+
+## Start by considering your infrastructure
+{: #gs-start-here}
+
 To get started, consider the type of infrastructure that you want to use.
+{: shortdesc}
+
 * **I have on-prem, cloud, or edge infrastructure**: Continue with the [getting started steps](#create-location).
 * **I use Amazon Web Services**: You can continue with the [getting started steps](#create-location), or try an [automated setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
 * **I don't have my own infrastructure or want to order some**: For a managed offering where IBM ships you the infrastructure and sets up the location, check out [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
@@ -196,6 +204,14 @@ To complete the setup of your {{site.data.keyword.satelliteshort}} location, you
 
    After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
    {: note}
+
+## Video demonstration of setting up an on-prem location
+{: #gs-video-demo}
+
+Want to see a preview before trying out the steps yourself? Check out the following video of setting up a {{site.data.keyword.satelliteshort}} location for on-prem edge devices.
+{: shortdesc}
+
+![Setting up an On-Premises Satellite Location with Mini Personal Computers](https://www.youtube.com/embed/8WNjwlN5gMk){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
 ## What's next
 {: #whats-next}

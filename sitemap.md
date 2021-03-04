@@ -103,6 +103,8 @@ subcollection: satellite
 
 [Getting started with {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-getting-started)
 
+[Start by considering your infrastructure](/docs/satellite?topic=satellite-getting-started#gs-start-here)
+
 [Step 1: Create your location](/docs/satellite?topic=satellite-getting-started#create-location)
 
 [Step 2: Attach compute hosts to your location](/docs/satellite?topic=satellite-getting-started#attach-hosts-to-location)
@@ -110,6 +112,8 @@ subcollection: satellite
 * [Attaching hosts from on-premises data centers and edge networks](/docs/satellite?topic=satellite-getting-started#gs-attach-hosts-onprem)
 
 [Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-getting-started#assign-hosts-to-cp)
+
+[Video demonstration of setting up an on-prem location](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
 
 [What's next](/docs/satellite?topic=satellite-getting-started#whats-next)
 

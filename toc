@@ -24,8 +24,12 @@ Satellite
         providers_ibm.md
 
     locations.md
-    hosts.md
-    /openshift/openshift-satellite-clusters
+
+    {: . topicgroup}
+    Assigning Satellite hosts to services and clusters
+        hosts.md
+        /openshift/openshift-satellite-clusters
+    
     config-clusters.md
     link-endpoints.md
 
