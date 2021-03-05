@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
-keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations, 
+keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
 subcollection: satellite
 
@@ -122,12 +122,12 @@ When you create your file storage configuration, you must specify which devices 
     ```
     {: pre}
 
-2. Log in to each worker node that you want to use for your local storage configuration. 
+2. Log in to each worker node that you want to use for your local storage configuration.
     ```sh
     oc debug node/<node-name>
     ```
     {: pre}
-    
+
 3. When the debug pod is deployed on the worker node, run the following commands to list the available disks on the worker node.
   1. Allow host binaries.
     ```sh
@@ -160,7 +160,7 @@ When you create your file storage configuration, you must specify which devices 
     |-sdc1   8:33   0  18.6G  0 part
     `-sdc2   8:34   0 260.8G  0 part
     ```
-    {: pre}
+    {: screen}
 
 6. Repeat the previous steps for each worker node that you want to use for your local block storage configuration.
 
@@ -340,14 +340,14 @@ After you create a local file storage configuration and assign it to your cluste
   kind: PersistentVolumeClaim
   apiVersion: v1
   metadata:
-    name: local-pvc 
+    name: local-pvc
   spec:
     accessModes:
     - ReadWriteOnce
-    volumeMode: Filesystem 
+    volumeMode: Filesystem
     resources:
       requests:
-        storage: 50Gi 
+        storage: 50Gi
     storageClassName: sat-local-file-gold
   ```
   {: codeblock}
@@ -437,5 +437,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 | `sat-local-file-gold` | `ext4` or `xfs` | Retain |
 {: caption="Table 2. Local file storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
-
-

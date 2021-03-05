@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -128,7 +128,7 @@ If you scope an access policy to the `location` resource type, the users must ta
 * API or CLI: `location`
 
 **Type of role that you can assign for the resource in IAM**:
-* Platform management **Viewer**, **Operator**, **Editor**, and **Administrator** roles
+* Platform access **Viewer**, **Operator**, **Editor**, and **Administrator** roles
 * Custom service access role to create clusters, **{{site.data.keyword.satelliteshort}} Cluster Creator**
 
 **What you can scope an access policy for the resource to**:
@@ -151,7 +151,7 @@ Review details about the {{site.data.keyword.satelliteshort}} config IAM resourc
 * API or CLI: `configuration`, `subscription`, `cluster`, `clustergroup`, or `resource`
 
 **Type of role that you can assign for the resource in IAM**:
-* Platform management **Viewer**, **Operator**, **Editor**, and **Administrator** roles
+* Platform access **Viewer**, **Operator**, **Editor**, and **Administrator** roles
 * Service access **Reader**, **Writer**, and **Manager** roles, and a custom **Deployer** role
 
 **What you can scope an access policy for the resource to**:
@@ -177,7 +177,7 @@ Review details about the {{site.data.keyword.satelliteshort}} Link IAM resource 
 * API or CLI: `link`
 
 **Type of role that you can assign for the resource in IAM**:
-* Platform management **Viewer**, **Operator**, **Editor**, and **Administrator** roles
+* Platform access **Viewer**, **Operator**, **Editor**, and **Administrator** roles
 * Custom **{{site.data.keyword.satelliteshort}} Link Administrator** and **{{site.data.keyword.satelliteshort}} Link Source Access Controller** service access roles
 
 **What you can scope an access policy for the resource to**:
@@ -241,7 +241,7 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
       * Link
       * Location (when scoped, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location))
     * For help with choosing the right platform and service roles, see the following reference information:
-      *   [Platform management roles](#iam-roles-platform)
+      *   [Platform access roles](#iam-roles-platform)
       *   [Service access roles](#iam-roles-service)
       *   [Common use cases and roles](#iam-roles-usecases)
     * Consider creating a **Reader** service policy to {{site.data.keyword.satellitelong_notm}} (and not scoped to a particular resource type or resource) so that users can view the {{site.data.keyword.satelliteshort}} config resources that run in {{site.data.keyword.satelliteshort}} clusters, such as pods or deployments.
@@ -343,8 +343,8 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
       <tr>
       <td>Role</td>
       <td>`--role`</td>
-      <td>Choose the platform management or service access that you want to assign.
-      <ul><li>**Platform**: Grants access to {{site.data.keyword.satelliteshort}} platform resources so that users can manage infrastructure resources such as locations, hosts, or link endpoints. For more information, see [Platform management roles](#iam-roles-platform). Possible values are: `Administrator`, `Operator`, `Editor`, or `Viewer`.</li>
+      <td>Choose the platform access or service access that you want to assign.
+      <ul><li>**Platform**: Grants access to {{site.data.keyword.satelliteshort}} platform resources so that users can manage infrastructure resources such as locations, hosts, or link endpoints. For more information, see [Platform access roles](#iam-roles-platform). Possible values are: `Administrator`, `Operator`, `Editor`, or `Viewer`.</li>
       <li>**Service**: Grants access to services that run within {{site.data.keyword.satelliteshort}} resources so that users can work with {{site.data.keyword.satelliteshort}} Config subscriptions and Kubernetes resources. For more information, see [Service access roles](#iam-roles-service). Possible values are: `Manager`, `Writer`, or `Reader`.</li></ul></td>
       </tr>
       </tbody>
@@ -400,10 +400,10 @@ Policies enable access at different levels. Some of the options for {{site.data.
 
 After you define the scope of the access policy, you assign a role, which determines the user's level of access. Review the following sections that outline what actions each platform and service role allows within the {{site.data.keyword.satelliteshort}} service.
 
-### Platform management roles
+### Platform access roles
 {: #iam-roles-platform}
 
-Click the tabs in the following table to review the actions that are mapped to platform management roles for different components of {{site.data.keyword.satelliteshort}}. Platform management roles enable users to perform tasks on service resources at the platform level, for example, assign user access for the service, create or delete instances, and bind instances to applications.
+Click the tabs in the following table to review the actions that are mapped to platform access roles for different components of {{site.data.keyword.satelliteshort}}. Platform access roles enable users to perform tasks on service resources at the platform level, for example, assign user access for the service, create or delete instances, and bind instances to applications.
 {: shortdesc}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
@@ -422,7 +422,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 {: tab-title="Locations and hosts"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform management roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
@@ -450,7 +450,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 {: tab-title="Link"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform management roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
@@ -463,7 +463,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 {: tab-title="Configuration"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform management roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
@@ -474,7 +474,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 {: tab-title="Subscription"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform management roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
@@ -488,7 +488,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 {: tab-title="Cluster"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform management roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
@@ -503,7 +503,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 {: tab-title="Clustergroup"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform management roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
@@ -514,7 +514,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 {: tab-title="Resource"}
 {: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="`*` Actions that you can take with platform management roles." caption-side="top"}
+{: caption="`*` Actions that you can take with platform access roles." caption-side="top"}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 `*` You cannot scope access policies to a particular {{site.data.keyword.satelliteshort}} Config **resource**. Instead, scope the policy to the {{site.data.keyword.satellitelong_notm}} service so that users can list {{site.data.keyword.satelliteshort}} Config resources.

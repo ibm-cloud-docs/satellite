@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -173,6 +173,8 @@ You cannot scope access policies for {{site.data.keyword.satelliteshort}} Config
 You cannot scope access policies to particular configuration or subscription resources. When you assign a policy in the {{site.data.keyword.cloud_notm}} IAM console, leave the **Resource** field blank for configurations or subscriptions. Instead, you can scope the access policy to a cluster group for more control of how your {{site.data.keyword.satelliteshort}} Config resources are deployed.
 
 To let users view the Kubernetes resources that run in clusters with {{site.data.keyword.satelliteshort}} Config, you must assign an access policy with the appropriate role (Administrator, Manager, or Reader) to {{site.data.keyword.satelliteslong_notm}} (and not scoped to a particular resource or resource type).
+
+After you enable {{site.data.keyword.satelliteshort}} config permissions when you create a {{site.data.keyword.satelliteshort}} cluster in the console or in the CLI with the `--enable-admin-agent` flag for the `ibmcloud oc cluster create satellite` command, you must set the context of the cluster to synchornize permissions. You can set the cluster context by launching the {{site.data.keyword.openshiftshort}} web console or by running the `ibmcloud oc cluster config` command in the CLI. **Note**: If you registered a {{site.data.keyword.openshiftlong_notm}} cluster in the public cloud to use with {{site.data.keyword.satelliteshort}} config, you do not need to set the cluster context to synchronize permissions.
 
 **Configuration files in {{site.data.keyword.satelliteshort}} Config**
 * You can upload only an individual configuration file of Kubernetes resources per release version. You cannot upload a directory or several different configuration files.

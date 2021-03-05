@@ -503,7 +503,7 @@ subcollection: satellite
   * [Example CLI steps](/docs/satellite?topic=satellite-iam#iam-assign-cli)
 * [IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
   * [Access policies](/docs/satellite?topic=satellite-iam#iam-roles-policies)
-  * [Platform management roles](/docs/satellite?topic=satellite-iam#iam-roles-platform)
+  * [Platform access roles](/docs/satellite?topic=satellite-iam#iam-roles-platform)
   * [Service access roles](/docs/satellite?topic=satellite-iam#iam-roles-service)
   * [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=satellite-iam#iam-roles-clusters)
 * [Common use cases and roles](/docs/satellite?topic=satellite-iam#iam-roles-usecases)

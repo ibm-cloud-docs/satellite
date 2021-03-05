@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -197,7 +197,7 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
    5. Copy the `oc login` token command.
    6. Run the `oc login` token command in your CLI to log in to your cluster.
 
-   If you enabled admin permissions when you created the cluster in the console or in the CLI with the `--enable-admin-agent` flag for the `ibmcloud oc cluster create satellite` command, your admin permissions are automatically synched after you log in to. the cluster so that {{site.data.keyword.satelliteshort}} config can manage Kubernetes resources in your cluster. You can skip the rest of the steps in this task. 
+   If you enabled admin permissions when you created the cluster in the console or in the CLI with the `--enable-admin-agent` flag for the `ibmcloud oc cluster create satellite` command, your admin permissions are automatically synched after you set the context to the cluster. You can skip the rest of the steps in this task. 
    {: note}
 
 2. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, custom access that is cluster-wide, or custom access that is scoped to a project. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/){: external}.
