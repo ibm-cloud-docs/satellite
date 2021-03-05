@@ -105,29 +105,36 @@ R0036 The location subdomains are not correctly routing traffic to your control 
 {: screen}
 
 {: tsCauses}
-The location control plane is not accessible. The IP addresses that are registered with the DNS for your location subdomains might have one of the following issues:
-* The hosts are behind a firewall that blocks traffic within the location data plane.
-* The hosts DNS resolver is not properly resolving the registered DNS endpoints.
+The location control plane is not publicly accessible. The IP addresses that are registered with the DNS for your location subdomains might have one of the following issues:
+* The IP addresses are not the correct IP addresses of the hosts that run the location control plane.
+* The hosts are behind a firewall that blocks traffic to the location control plane.
+* You reused the name of the location, and the location subdomains are still using the IP addresses of the previous location hosts.
 
 {: tsResolve}
 Check and update the host IP addresses that are registered with the location subdomain DNS entries.
 
-1.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain. Ensure that the records point to the IPs that you expect.
+1. Get the IP addresses of your hosts. For hosts that are publicly available, get the public IP addresses. For hosts that are only privately available, get the private IP addresses. Refer to your provider documentation.
+
+2. Verify that the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable.
+  1. [Set up LogDNA for {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-health#setup-logdna).
+  2. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){:external}, click **View LogDNA** for your {{site.data.keyword.la_short}} instance. The LogDNA dashboard opens.
+  3. Check the `Endpoint health status` logs. These logs report the results of health checks for the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint.
+      * If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable. Continue to the next step.
+      * If logs report `Failed to reach endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is unreachable. If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall. For example, see [AWS Security group](/docs/satellite?topic=satellite-aws-secgroup). If you do not have a firewall, or if after you modify your firewall you still see the `R0036` message or `Failed to reach endpoint` logs, continue to step 2.
+
+3.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
     ```
     ibmcloud sat location dns ls --location <location_name_or_ID>
     ```
     {: pre}
 
-2.  From each infrastructure hosts grab each location subdomain and check whether the IP address that is actually registered with the subdomain matches the host IP addresses that you found in step 1.
-    * To log into the hosts after they have been provisioned, review: https://cloud.ibm.com/docs/satellite?topic=satellite-ssh-login-denied
+4.  For each location subdomain, check whether the IP address that is actually registered with the subdomain matches the host IP addresses that you found in step 1. If any of the registered IP addresses do not match the IP addresses from step 1, [open a support case](/docs/satellite?topic=satellite-get-help#help-support).
     ```
     nslookup <subdomain>
     ```
     {: pre}
 
-
-3.  From each infrastructure hosts curl each location subdomain on port 30000.
-    * To log into the hosts after they have been provisioned, review: https://cloud.ibm.com/docs/satellite?topic=satellite-ssh-login-denied
+5.  Curl each location subdomain on port 30000.
     ```
     curl http://<subdomain>:30000
     ```
@@ -141,37 +148,8 @@ Check and update the host IP addresses that are registered with the location sub
     ```
     {: screen}
 
-4. If the hosts DNS resolver is not resolving to the expected IPs from step 2, review this document to ensure proper outbound connectivity https://cloud.ibm.com/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound.
-
-5. If the host is unable to curl each location subdomain from step 3, review this document to ensure proper host neworking https://cloud.ibm.com/docs/satellite?topic=satellite-host-reqs#reqs-host-network.  
-
-6. If still unable to solve the issue [open a support case](/docs/satellite?topic=satellite-get-help#help-support). 
-  * be sure to include all the steps followed to this point and all debugging output.
-
-# Why is IBM Cloud unable to reach the health check Link Endpoint to check the health of the Satellite Location
-{: #ts-location-subdomain}
-
-{: tsSymptoms}
-After you assign hosts to your {{site.data.keyword.satelliteshort}} location control plane, you see a message similar to the following.
-
-```
-R0047 IBM Cloud is unable to use the health check Link Endpoint to check the health of the Satellite Location.
-```
-{: screen}
-
-{: tsCauses}
-The location control plane is not accessible through Link from IBM Cloud. The IP addresses that are registered with the DNS for your location subdomains might have one of the following issues:
-* The satellite-health-check Link Endpoint has been disabled by the end user.
-* The hosts are behind a firewall that blocks traffic to and or from IBM Cloud and the location data plane.
-
-{: tsResolve}
-Check and update the host IP addresses that are registered with the location subdomain DNS entries.
-
-1. Verify that the satellite-health-check Link Endpoint is enabled. In the UI, navigate to the satellite location -> link endpoints and search for `satellite-health-check-<locationID>`. If disabled, enable it.
-    
-2. Verify that the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable.
-  1. [Set up LogDNA for {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-health#setup-logdna).
-  2. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){:external}, click **View LogDNA** for your {{site.data.keyword.la_short}} instance. The LogDNA dashboard opens.
-  3. Check the `Endpoint health status` logs. These logs report the results of health checks for the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint.
-      * If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable. Continue to the next step.
-      * If logs report `Failed to reach endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is unreachable. If you have a firewall, allow traffic from the hosts to the location control plane access through the firewall. For example, see [AWS Security group](/docs/satellite?topic=satellite-aws-secgroup). If you do not have a firewall, or if after you modify your firewall you still see the `R0047` message or `Failed to reach endpoint` logs [open a support case](/docs/satellite?topic=satellite-get-help#help-support). 
+6.  If any subdomains did not return a `200 OK` message, update the location subdomain DNS records with the correct public or private IP addresses of each host in the control plane.
+    ```
+    ibmcloud sat location dns register --location <location_name_or_ID> --ip <host_IP> --ip <host_IP> --ip <host_IP>
+    ```
+    {: pre}
