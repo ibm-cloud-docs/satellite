@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -121,7 +121,6 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
    4. Click **Download script** to generate the host script and download the script to your local machine.
 3. Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
    ```
-   API_URL="https://containers.cloud.ibm.com/"
    # Enable AWS RHEL package updates
    yum update -y
    yum-config-manager --enable '*'
@@ -174,9 +173,9 @@ Review the following [AWS EC2 instance types](https://aws.amazon.com/ec2/instanc
 
 | Instance | vCPU | Memory (GiB) | Storage disk (GiB) | Network bandwidth (Gbps) |
 | -------- | ---- | ------------ | ------------------ | ------------------------ |
-| m5d.xlarge | 4 | 16 | 1 x 150 NVMe SSD | Up to 10 |
-| m5d.2xlarge | 8 | 32 | 1 x 300 NVMe SSD | Up to 10 |
-| m5d.4xlarge | 16 | 64 | 2 x 300 NVMe SSD | Up to 10 |
+| m5d.xlarge | 4 | 16 | At least 100 GB SSD attached | Up to 10 |
+| m5d.2xlarge | 8 | 32 | At least 100 GB SSD attached | Up to 10 |
+| m5d.4xlarge | 16 | 64 | At least 100 GB SSD attached | Up to 10 |
 {: caption="Supported AWS instance types" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the name of the supported instance. The second column is the number of vCPUs. The third column is the memory in gibibytes (GiB). THe fourth column is the number of storage disks and their size in gibibytes (GiB). The fifth column is the network bandwidth in gigabits per second (Gbps)."}
 

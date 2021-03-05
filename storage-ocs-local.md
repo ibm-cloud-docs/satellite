@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -116,10 +116,10 @@ When you create an OCS local storage configuration, you must provide your local 
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) that meets the minimum requirements for {{site.data.keyword.satelliteshort}} and OCS. Review the following requirements when you create your cluster.
   1. Your cluster must have a minimum of 3 worker nodes with at least 16CPUs and 64GB RAM per worker node.
-  1. Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](https://test.cloud.ibm.com/docs/satellite?topic=satellite-host-reqs) in addition to having one of the following local storage configurations.
+  1. Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to having one of the following local storage configurations.
     * Raw devices that have no partitions or formatted file systems. If your devices have no partitions, each node must have 2 free disks. One disk for the OSD and one disk for the MON.
     * Raw partitions that have no formatted file system. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
-1. The OCP version should be compatible with the OCS version that you want to install. 
+1. The OCP version should be compatible with the OCS version that you want to install.
 1. Your cluster must have an `openshift-storage` [namespace](#sat-storage-ocs-local-ns).
 1. [Create an IBM COS service instance](#sat-storage-ocs-local-cos).
   1. Create HMAC credentials for your COS instance.
@@ -144,13 +144,13 @@ Create an `openshift-storage` namespace in your cluster. The OCS driver pods are
       name: openshift-storage
     ```
     {: codeblock}
-    
+
 2. Create the `openshift-storage` namespace by using the YAML file that you saved.
     ```sh
     oc create -f os-namespace.yaml
     ```
     {: pre}
-  
+
 3. Verify that the namespace is created.
     ```sh
     oc get namespaces | grep storage
@@ -209,13 +209,13 @@ Create an instance of IBM COS for the backing storage of your OCS local configur
   oc create -f secret.yaml
   ```
   {: pre}
-    
+
 7. Verify that your secret is created.
   ```sh
   oc get secrets -n openshift-storage | grep ibm-cloud-cos-creds
   ```
   {: pre}
- 
+
 <br />
 
 ### Getting the device details for your OCS configuration
@@ -232,12 +232,12 @@ The following steps show how you can manually retrieve the local device informat
     ```
     {: pre}
 
-2. Log in to each worker node that you want to use for your OCS configuration. 
+2. Log in to each worker node that you want to use for your OCS configuration.
     ```sh
     oc debug node/<node-name>
     ```
     {: pre}
-    
+
 3. When the debug pod is deployed on the worker node, run the following commands to list the available disks on the worker node.
   1. Allow host binaries.
     ```sh
@@ -296,7 +296,7 @@ The following steps show how you can manually retrieve the local device informat
 7. Repeat the previous steps for each worker node that you want to use for your OCS configuration.   
 
 
-<br /> 
+<br />
 
 
 
@@ -458,6 +458,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Co
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 {: caption="Table 2. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
-
-
-

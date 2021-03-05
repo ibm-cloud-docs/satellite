@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -157,8 +157,8 @@ Before you begin, make sure that you have created host machines that meet the [m
    - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
    - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
    - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)<br>
-   
-  **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine. 
+
+  **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine.
 
    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
    2. Copy the script from your local machine to your host.
@@ -221,8 +221,8 @@ Before you begin, make sure that you have created host machines that meet the [m
    - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
    - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
    - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)<br>
-   
-   **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine. 
+
+   **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine.
 
    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
    2. Copy the script from your local machine to your host.
@@ -305,6 +305,9 @@ If you resize the `default` worker pool to request 3 more worker nodes, only Hos
 * Host B meets the CPU and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
 * Host C is automatically assigned because it matches the `cpu=4` and `env=prod` host labels, and does not have any zone restrictions. The `memory=64` host label is not considered, because the worker pool does not request a `memory` label.
 
+Hosts must be assigned as worker nodes in each zone of the default worker pool in your cluster. If your default worker pool spans multiple zones, ensure that you have hosts with matching labels that can be assigned in each zone.
+{: note}
+
 ### Automatically assigning hosts
 {: #host-autoassign}
 
@@ -354,6 +357,8 @@ Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{sit
    ```
    {: pre}
 
+
+
 ### Disabling host autoassignment
 {: #host-autoassign-disable}
 
@@ -400,6 +405,7 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 3. In the **Hosts** tab, from the actions menu of each host machine that you want to add to your resource, click **Assign host**.
 4. Select the cluster that you created, and choose one of the available zones. When you assign the hosts to a cluster, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the Health of your machine changes from **Ready** to **Provisioning**.
 5. Verify that your hosts are successfully assigned to the cluster. The assignment is successful when an IP address is added to your host and the **Health** status changes to **Normal**.
+6. Repeat these steps to ensure that hosts are assigned as worker nodes in each zone of the default worker pool in your cluster.
 
    After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
    {: note}

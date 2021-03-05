@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -103,13 +103,17 @@ subcollection: satellite
 
 [Getting started with {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-getting-started)
 
-[Prerequisites](/docs/satellite?topic=satellite-getting-started#sat-prereqs)
+[Start by considering your infrastructure](/docs/satellite?topic=satellite-getting-started#gs-start-here)
 
 [Step 1: Create your location](/docs/satellite?topic=satellite-getting-started#create-location)
 
 [Step 2: Attach compute hosts to your location](/docs/satellite?topic=satellite-getting-started#attach-hosts-to-location)
+* [Attaching hosts from cloud providers](/docs/satellite?topic=satellite-getting-started#gs-attach-hosts-cloud)
+* [Attaching hosts from on-premises data centers and edge networks](/docs/satellite?topic=satellite-getting-started#gs-attach-hosts-onprem)
 
-[Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-getting-started#assign-hosts-to-cp)
+[Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-getting-started#assign-hosts-to-cp)
+
+[Video demonstration of setting up an on-prem location](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
 
 [What's next](/docs/satellite?topic=satellite-getting-started#whats-next)
 
@@ -499,7 +503,7 @@ subcollection: satellite
   * [Example CLI steps](/docs/satellite?topic=satellite-iam#iam-assign-cli)
 * [IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
   * [Access policies](/docs/satellite?topic=satellite-iam#iam-roles-policies)
-  * [Platform management roles](/docs/satellite?topic=satellite-iam#iam-roles-platform)
+  * [Platform access roles](/docs/satellite?topic=satellite-iam#iam-roles-platform)
   * [Service access roles](/docs/satellite?topic=satellite-iam#iam-roles-service)
   * [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=satellite-iam#iam-roles-clusters)
 * [Common use cases and roles](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
@@ -668,7 +672,7 @@ subcollection: satellite
 
 [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions)
 
-[Understanding supported {{site.data.keyword.cloud_notm}} multizone metros in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions)
+[About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions)
 
 
 ## Your responsibilities

@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
-keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
+keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
 subcollection: satellite
 
@@ -130,14 +130,14 @@ Before you can create storage configurations by using the NetApp NAS template, y
 For more information about the NetApp Trident configuration parameters, see the [NetApp documentation](https://netapp-trident.readthedocs.io/en/stable-v20.07/docker/install/ndvp_ontap_config.html#configuration-file-options){: external}.
 
 | Parameter name | Required? | Description | Default if not provided |
-| --- | --- | --- | 
+| --- | --- | --- |
 | `--name` | Required | Enter a name for your storage configuration. | N/A |
 | `--template-name` | Required | Enter `netapp-ontap-san` | N/A |
 | `--template-version` | Required | Enter the template version number. To get a list of templates, run `ibmcloud sat storage template ls`. | N/A |
 | `namespace` | Optional | Enter the namespace where you want to install the NetApp Trident storage drivers. | `trident` |
 | `managementLIF` | Required | Enter the IP address of the management LIF. Example: `10.0.0.1`. | N/A |
-| `dataLIF` | Required | Enter the IP address of the protocol LIF. Example: `10.0.0.2`. | N/A | 
-| `svm` | Required | Enter the name of the storage virtual machine. Example: `svm`. | N/A | 
+| `dataLIF` | Required | Enter the IP address of the protocol LIF. Example: `10.0.0.2`. | N/A |
+| `svm` | Required | Enter the name of the storage virtual machine. Example: `svm`. | N/A |
 | `username` | Required | Enter your username. | N/A |
 | `password` | Required | Enter your user password. | N/A |
 | `limitVolumeSize` | Optional | Maximum volume size that can be requested and qtree parent volume size. | `50Gi` |
@@ -150,7 +150,7 @@ For more information about the NetApp Trident configuration parameters, see the 
 ## Assigning your NetApp storage configuration to a cluster
 {: #assign-storage-netapp-san}
 
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp-san), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
+After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 <br />
 
@@ -202,4 +202,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-block-bronze` | ONTAP-SAN | Block | Delete | 
 {: caption="Table 2. NetApp ONTAP-SAN storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
-
