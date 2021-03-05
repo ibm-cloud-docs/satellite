@@ -152,7 +152,7 @@ When you create your local block storage configuration, you must specify which d
     {: pre}
 
 4. Review the command output for available disks. You must use unmounted disks for the local storage configuration. In the following example output from the `lsblk` command, the `sdc` disk is the only disk that has only unmounted partitions and can be used for local storage.
-    ```sh
+    ```
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     sda      8:0    0   931G  0 disk
     |-sda1   8:1    0   256M  0 part /boot

@@ -1,9 +1,9 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-05"
 
-keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
+keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
 subcollection: satellite
 
@@ -126,7 +126,7 @@ You must deploy the NetApp Trident template to your clusters before you can crea
 ## Assigning your NetApp storage configuration to a cluster
 {: #assign-storage-netapp}
 
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
+After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp-trident), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 <br />
 

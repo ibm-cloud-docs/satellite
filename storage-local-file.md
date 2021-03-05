@@ -148,7 +148,7 @@ When you create your file storage configuration, you must specify which devices 
     {: pre}
 
 4. Review the command output for available disks. Disks that can be used for your local file storage configuration must be unmounted. In the following example output from the `lsblk` command, the `sdc` disk unformatted partitions that we can use for local file storage configuration.
-    ```sh
+    ```
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     sda      8:0    0   931G  0 disk
     |-sda1   8:1    0   256M  0 part /boot
