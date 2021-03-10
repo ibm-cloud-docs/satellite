@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-10"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -106,7 +106,7 @@ The {{site.data.keyword.satelliteshort}} storage templates are currently availab
 ## Prerequisites
 Before you can create a local file storage configuration, you must identify the worker nodes in your clusters that have the required available disks. Once you identify the worker nodes that you want to use in your configuration, you must add a label to those worker nodes. When the local storage drivers are installed in your cluster, they are installed only on the worker nodes that have the label you specified.
 
-- [Get the device details of your worker nodes](#sat-storage-block-local-devices). If your worker nodes do not have an available disk, add worker nodes to your cluster or add disks to your worker nodes.
+- [Get the device details of your worker nodes](#sat-storage-file-local-devices). If your worker nodes do not have an available disk, add worker nodes to your cluster or add disks to your worker nodes.
 - [Label the worker nodes]() that have an available disk and that you want to use in your configuration.
 
 
@@ -162,13 +162,13 @@ When you create your file storage configuration, you must specify which devices 
     ```
     {: screen}
 
-6. Repeat the previous steps for each worker node that you want to use for your local block storage configuration.
+6. Repeat the previous steps for each worker node that you want to use for your local file storage configuration.
 
 
 <br />
 ### Labeling your worker nodes
 {: #sat-storage-file-local-labels}
-After you have [retrieved the device paths for the disks that you want to use in your configuration](#sat-storage-block-local-devices), label the worker nodes where the disks are located.
+After you have [retrieved the device paths for the disks that you want to use in your configuration](#sat-storage-file-local-devices), label the worker nodes where the disks are located.
 {: shortdesc}
 
 1. Get the worker node IP addresses.
@@ -223,11 +223,11 @@ After you have [retrieved the device paths for the disks that you want to use in
 | Parameter | Required? | Description |
 | --- | --- | --- |
 | `--name` | Required | Enter a name for your storage configuration. |
-| `--template-name` | Required | Enter `local-volume-block`. |
-| `--template-version` | Required | Enter the version of the `local-volume-block` template that you want to use. The template version that you specify must match your OCP version. For example, if your OCP version is `4.5.X`, specify template version `4.5`.  To get a list of storage templates and versions, run `ibmcloud sat storage template ls`. |
+| `--template-name` | Required | Enter `local-volume-file`. |
+| `--template-version` | Required | Enter the version of the `local-volume-file` template that you want to use. The template version that you specify must match your OCP version. For example, if your OCP version is `4.5.X`, specify template version `4.5`.  To get a list of storage templates and versions, run `ibmcloud sat storage template ls`. |
 | `label-key` | Required | Enter the node label key that you added to the worker nodes where you want to install the local storage drivers. The local storage drivers are installed only on the worker nodes that have the corresponding label. |
 | `label-value` | Required | Enter the node label value that you added to the worker nodes where you want to install the local storage driver. The local storage drivers are installed only on the worker nodes that have the corresponding label. |
-| `devicepath` | Required | Enter the local storage device paths. For more information on how to retrieve this value, see [Getting the device details](#sat-storage-block-local-devices). Example: `/dev/sdc`. |
+| `devicepath` | Required | Enter the local storage device paths. For more information on how to retrieve this value, see [Getting the device details](#sat-storage-file-local-devices). Example: `/dev/sdc`. |
 | `fstype` | Required | Enter the file system type that you want to use on your local disks. The supported file system types are: `xfs`, `ext`, `ext3`, and `ext4`.  Example: `ext4`. |
 {: caption="Table 1. Local file storage parameter reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is a required parameter. The third column is a brief description of the parameter."}

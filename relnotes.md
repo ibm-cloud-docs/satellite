@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -104,6 +104,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 10 March | **New `health-pending` host state**: To review the state of your hosts, see [Viewing host health](/docs/satellite?topic=satellite-monitor#host-health).|
 | 01 March | <ul><li>**New! General availability of {{site.data.keyword.satellitelong}}**: {{site.data.keyword.satellitelong_notm}} is now generally available. If you created locations during the closed beta, you must [re-create your locations](/docs/satellite?topic=satellite-locations#location-copy) for the general availability release. For more information about what you are charged for when you use {{site.data.keyword.satellitelong_notm}}, see the [FAQs](/docs/satellite?topic=satellite-faqs#pricing).</li><li>**CLI changelog**: Updated the CLI plug-in changelog page for the [release of version 1.0.233](/docs/satellite?topic=satellite-satellite-cli-changelog).</li><li>**Cloud provider guides**: Added instructions to set up {{site.data.keyword.satelliteshort}} locations that use infrastructure from [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), and [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm).</li><li>**Exposing apps in {{site.data.keyword.satelliteshort}} clusters**: Added an overview of the [options for exposing apps in Satellite clusters](/docs/openshift?topic=openshift-sat-expose-apps) and steps for setting up each option.</li><li>**{{site.data.keyword.satelliteshort}} Infrastructure Service**: [Order managed infrastructure from IBM](/docs/satellite?topic=satellite-infrastructure-service) to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.</li><li>**New! Template for fast provisioning on AWS**: [Automate your {{site.data.keyword.satelliteshort}} location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template), available for AWS infrastructure.</li></ul>|
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in March 2021."}

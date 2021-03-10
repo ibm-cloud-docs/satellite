@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -222,6 +222,8 @@ subcollection: satellite
 
 [Copying a location](/docs/satellite?topic=satellite-locations#location-copy)
 
+[Monitoring location health](/docs/satellite?topic=satellite-locations#location-monitor-health)
+
 [Removing locations](/docs/satellite?topic=satellite-locations#location-remove)
 * [Removing locations from the console](/docs/satellite?topic=satellite-locations#location-remove-console)
 * [Removing locations from the CLI](/docs/satellite?topic=satellite-locations#location-remove-cli)
@@ -254,6 +256,8 @@ subcollection: satellite
 * [Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
 * [Updating worker node hosts in clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
 * [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
+
+[Monitoring host health](/docs/satellite?topic=satellite-hosts#host-monitor-health)
 
 [Removing hosts](/docs/satellite?topic=satellite-hosts#host-remove)
 * [Removing hosts from the console](/docs/satellite?topic=satellite-hosts#host-remove-console)
