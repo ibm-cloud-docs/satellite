@@ -93,54 +93,33 @@ content-type: troubleshoot
 {:video: .video}
 
 
-# Why does the location subdomain not route traffic to control plane hosts?
-{: #ts-location-subdomain}
+# Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?
+{: #ts-location-healthcheck}
 
 {: tsSymptoms}
 After you assign hosts to your {{site.data.keyword.satelliteshort}} location control plane, you see a message similar to the following.
 
 ```
-R0036 The location subdomains are not correctly routing traffic to your control plane hosts. Verify that the location subdomains are registered with the correct IP addresses for your control plane hosts with the 'ibmcloud sat location dns' commands.
+R0047 IBM Cloud is unable to use the health check Link endpoint to check the location's health.
 ```
 {: screen}
 
 {: tsCauses}
-The {{site.data.keyword.satelliteshort}} location control plane is inaccessible through the location subdomains due to one of the following reasons:
-* The hosts are behind a firewall that blocks traffic within the location.
-* The DNS resolver for one or more hosts is not properly resolving the registered DNS endpoints.
+The location control plane is not accessible from {{site.data.keyword.cloud_notm}} through {{site.data.keyword.satelliteshort}} Link due to one of the following reasons:
+* The automated health check endpoint was disabled.
+* The hosts are behind a firewall that blocks traffic to or from {{site.data.keyword.cloud_notm}}.
 
 {: tsResolve}
-1.  Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
-    ```
-    ibmcloud sat location dns ls --location <location_name_or_ID>
-    ```
-    {: pre}
+1. Verify that the automated health check endpoint for your location is enabled.
+  1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.
+  2. From the **Link endpoints** tab, verify that the **Status** for the endpoint in the format `satellite-healthcheck-<location_ID>` is toggled to **Enabled**.
 
-2.  For **every** host in your location, complete the following steps to log in to the host and check the DNS resolution.
-    1. Log in to the host machine.
-      * If the host is not assigned to the {{site.data.keyword.satelliteshort}} location control plane or a cluster, you can SSH into the host machine.
-      * If the host is assigned to the {{site.data.keyword.satelliteshort}} location control plane or a cluster:
-        1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove).
-        2. Reload the operating system of the host.
-        3. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location, but do not assign it. Later, after you complete these troubleshooting steps, you can [re-assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or cluster.
-        4. SSH into the host machine.
-    2. Look up each location subdomain that you found in step 1. Check whether the IP address that resolves matches the host IP addresses that you found in step 1. If the host's DNS resolver does not resolve the subdomains to the expected IP addresses, ensure that your hosts have the [required minimum outbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound).
-      ```
-      nslookup <subdomain>
-      ```
-      {: pre}
-    3. Curl each location subdomain on port 30000. If any subdomains do not return a `200 OK` message, ensure that your hosts meet the [host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
-      ```
-      curl http://<subdomain>:30000
-      ```
-      {: pre}
-
-      Example output:
-      ```
-      <html><body><h1>200 OK</h1>
-      Service ready.
-      </body></html>
-      ```
-      {: screen}
-
-3. If are still unable to resolve the issue, [open a support case](/docs/satellite?topic=satellite-get-help#help-support). In the support case description, include all debugging steps that you followed and the output from these steps.
+2. Verify that the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable.
+  1. [Set up LogDNA for {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-health#setup-logdna).
+  2. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){:external}, click **View LogDNA** for your {{site.data.keyword.la_short}} instance. The LogDNA dashboard opens.
+  3. Check the `Endpoint health status` logs. These logs report the results of health checks for the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint.
+      * If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable. Continue to the next step.
+      * If logs report `Failed to reach endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is unreachable.
+4.  Resolve the issue that prevents the tunnel from being reached.
+     * If you have a firewall in your infrastructure provider, allow traffic from the hosts to the location control plane access through the firewall. For example, see [AWS Security group](/docs/satellite?topic=satellite-aws#aws-reqs-secgroup).
+     * If you still see the `R0047` error message, [open a support case](/docs/satellite?topic=satellite-get-help#help-support).

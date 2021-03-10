@@ -29,7 +29,7 @@ Satellite
     Assigning Satellite hosts to services and clusters
         hosts.md
         /openshift/openshift-satellite-clusters
-    
+
     config-clusters.md
     link-endpoints.md
 
@@ -97,6 +97,7 @@ Satellite
         Locations
             ts-locations/debug-control-plane.md
             ts-locations/ts-location-subdomain.md
+            ts-locations/ts-location-healthcheck.md
             ts-locations/ts-location-listing-iam.md
 
         {: .topicgroup}
