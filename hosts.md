@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2021
 lastupdated: "2021-03-11"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
 subcollection: satellite
 
@@ -493,8 +493,11 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 ## Updating hosts
 {: #host-update}
 
-Review the following ways to update hosts that are attached to your {{site.data.keyword.satelliteshort}} location.
+Review the following ways to update the version, operating system, security patch, container platform, or metadata of the hosts that are attached to your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
+
+* [Update host metadata](#host-update-metadata), such as labels or zones.
+* Apply major, minor, or fix pack version updates to the host, such as for container platform, operating system, and security patches. The way that you apply these updates varies for hosts that are assigned as [worker nodes in clusters](#host-update-workers) or to the [{{site.data.keyword.satelliteshort}} location control plane](#host-update-location).
 
 ### Updating host metadata
 {: #host-update-metadata}
@@ -505,7 +508,7 @@ If you want to update metadata about a host, such as labels or zones, see the [`
 ### Updating worker node hosts in clusters
 {: #host-update-workers}
 
-Many hosts in your {{site.data.keyword.satelliteshort}} location are used in clusters for {{site.data.keyword.satelliteshort}}-enabled services, such as {{site.data.keyword.openshiftlong_notm}}. When these hosts need to be updated, such as to apply a version patch fix pack, you can follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
+Many hosts in your {{site.data.keyword.satelliteshort}} location are used in clusters for {{site.data.keyword.satelliteshort}}-enabled services, such as {{site.data.keyword.openshiftlong_notm}}. Periodically, IBM provides version updates that might include patches for the container platform software, operating system, or security fixes. To apply these updates to your hosts, you can follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
 {: shortdesc}
 
 ### Updating {{site.data.keyword.satelliteshort}} location control plane hosts

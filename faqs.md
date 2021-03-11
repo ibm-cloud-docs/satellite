@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -189,7 +189,7 @@ Get the benefits of a [managed {{site.data.keyword.openshiftshort}} service](/do
 | -------------- | ------------------------- | ---------------------- |
 | Cluster management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.openshiftlong_notm}}, such as installation and security patch updates of OpenShift Container Platform for your worker nodes; managing your cluster with a suite of API, CLI, and UI tools; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by IBM Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
 | {{site.data.keyword.satelliteshort}} management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by IBM Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
-| OCP licensing fee | Red Hat charges a fee for Red Hat Enterprise Linux and OpenShift Container Platform per 2 vCPU hour. | This charge is not included in your {{site.data.keyword.cloud_notm}} bill. Instead, you cover this charge by [bringing your own license](#byo-ocp). **Internal IBM accounts only**: You cannot bring your own OCP license. Instead, you are charged the OCP license fee for the worker nodes, and use the default pull secret that is provided by IBM. |
+| OCP licensing fee | Red Hat charges a fee for Red Hat Enterprise Linux and OpenShift Container Platform per 2 vCPU hour. | This charge is not included in your {{site.data.keyword.cloud_notm}} bill. Instead, you cover this charge by [bringing your own license](#byo-ocp). |
 | Infrastructure | Varies by provider | The underlying infrastructure that you bring to {{site.data.keyword.satelliteshort}} is your own, so it has its own charges. Consult your infrastructure provider for more details, such as about the storage, compute, and networking of the hosts in a cloud or on-prem environment. |
 {: caption="{{site.data.keyword.openshiftshort}} cluster charges." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the type of charge for a {{site.data.keyword.openshiftshort}} cluster. The second column describes how the charge is applied. The third column describes what is included with the charge."}
@@ -222,8 +222,7 @@ All clusters in your {{site.data.keyword.satelliteshort}} location are installed
 
 When you create the cluster, make sure to include your Red Hat pull secret to entitle the cluster to run OCP, either by uploading the pull secret in the console or by including the `--pull-secret` flag in the `ibmcloud oc cluster create satellite` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
 
-**Internal IBM accounts only**: You cannot bring your own OCP license. Instead, you are charged the OCP license fee for the worker nodes, and use the default pull secret that is provided by IBM.
-{: note}
+
 
 ## Can I estimate my costs?
 {: #cost-estimate}
