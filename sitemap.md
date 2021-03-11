@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -256,6 +256,8 @@ subcollection: satellite
 * [Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
 * [Updating worker node hosts in clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
 * [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
+
+[Resetting the host key](/docs/satellite?topic=satellite-hosts#host-key-reset)
 
 [Monitoring host health](/docs/satellite?topic=satellite-hosts#host-monitor-health)
 
