@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -152,6 +152,8 @@ Metrics are available for the {{site.data.keyword.satelliteshort}} Link componen
     {: tip}
 4. Review the [available metrics](#available-metrics) and [attributes for segmentation](#attributes).
 5. Review more ways that you can [work with platform metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_working).
+
+After you set up Sysdig with the pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics, you can quickly access this dashboard from the **Link endpoints** tab of your {{site.data.keyword.satelliteshort}} location console by clicking **Launch monitoring**.
 
 ### Available metrics
 {: #available-metrics}

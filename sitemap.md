@@ -522,7 +522,7 @@ subcollection: satellite
 * [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies)
 * [Dependencies to 3rd party services](/docs/satellite?topic=satellite-service-architecture#3rd-party-dependencies)
 
-[High availability and disaster recovery for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha)
+[High availability and disaster recovery for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ha)
 * [About high availability and disaster recovery](/docs/satellite?topic=satellite-ha#ha-about)
 * [Understanding high availability in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha#ha-understand)
   * [High availability of the {{site.data.keyword.satelliteshort}} control plane master](/docs/satellite?topic=satellite-ha#ha-control-plane-master)
@@ -540,7 +540,7 @@ subcollection: satellite
   * [Application workloads that run in clusters](/docs/satellite?topic=satellite-service-connection#user-access-apps)
 * [{{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#ibm-cloud-access)
 
-[Securing your data in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-data-security)
+[Securing your data in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-data-security)
 * [What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
 * [How is my information stored and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
 * [Where is my information stored?](/docs/satellite?topic=satellite-data-security#sat_data-location)
