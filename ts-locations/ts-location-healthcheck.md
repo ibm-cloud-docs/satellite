@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -120,6 +120,6 @@ The location control plane is not accessible from {{site.data.keyword.cloud_notm
   3. Check the `Endpoint health status` logs. These logs report the results of health checks for the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint.
       * If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable. Continue to the next step.
       * If logs report `Failed to reach endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is unreachable.
-4.  Resolve the issue that prevents the tunnel from being reached.
+3. Resolve the issue that prevents the tunnel from being reached.
      * If you have a firewall in your infrastructure provider, allow traffic from the hosts to the location control plane access through the firewall. For example, see [AWS Security group](/docs/satellite?topic=satellite-aws#aws-reqs-secgroup).
      * If you still see the `R0047` error message, [open a support case](/docs/satellite?topic=satellite-get-help#help-support).

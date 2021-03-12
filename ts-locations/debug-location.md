@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -468,4 +468,4 @@ R0047 IBM Cloud is unable to use the health check endpoint to check the location
 
 **Steps to resolve**
 
-See [Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?](/docs/satellite?topic=satellite-ts-location-subdomain).
+See [Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?](/docs/satellite?topic=satellite-ts-location-healthcheck).
