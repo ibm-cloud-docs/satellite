@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -256,6 +256,8 @@ subcollection: satellite
 * [Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
 * [Updating worker node hosts in clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
 * [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
+
+[Resetting the host key](/docs/satellite?topic=satellite-hosts#host-key-reset)
 
 [Monitoring host health](/docs/satellite?topic=satellite-hosts#host-monitor-health)
 
@@ -764,6 +766,7 @@ subcollection: satellite
 * [R0043: Layer 3 connectivity](/docs/satellite?topic=satellite-ts-locations-debug#R0043)
 * [R0044: DNS issues](/docs/satellite?topic=satellite-ts-locations-debug#R0044)
 * [R0045, R0046: Host file system and NTP issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
+* [R0047: Location health checking](/docs/satellite?topic=satellite-ts-locations-debug#R0047)
 
 
 ## Locations
@@ -773,6 +776,8 @@ subcollection: satellite
 [Debugging the health of the location control plane](/docs/satellite?topic=satellite-ts-locations-control-plane)
 
 [Why does the location subdomain not route traffic to control plane hosts?](/docs/satellite?topic=satellite-ts-location-subdomain)
+
+[Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?](/docs/satellite?topic=satellite-ts-location-healthcheck)
 
 [Why can't I see a location that another user gave me access to?](/docs/satellite?topic=satellite-ts-location-missing-location)
 * [Target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location-target)

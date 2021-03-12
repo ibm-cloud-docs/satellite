@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-11"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
 subcollection: satellite
 
@@ -198,7 +198,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 
 1.  Generate a script that you can copy and run on your machines to attach them as hosts to your location. You might want to include a label to identify the purpose of the hosts, such as `use:satloc`, because the hosts provide compute capacity for the {{site.data.keyword.satelliteshort}} location. Your hosts automatically are assigned labels for the CPU and memory size if these values can be detected on the machine.
     ```
-    ibmcloud sat host attach --location <location_name> [-l "use=satloc"]
+    ibmcloud sat host attach --location <location_name> [-hl "use=satloc"]
     ```
     {: pre}
 
@@ -353,11 +353,9 @@ Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{sit
    {: note}
 
    ```
-   ibmcloud sat host update --location <location_name_or_ID> --host <host_name_or_ID> -l <key=value> [-l <key=value>] [--zone <zone1>]
+   ibmcloud sat host update --location <location_name_or_ID> --host <host_name_or_ID> -hl <key=value> [-hl <key=value>] [--zone <zone1>]
    ```
    {: pre}
-
-
 
 ### Disabling host autoassignment
 {: #host-autoassign-disable}
@@ -495,8 +493,11 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 ## Updating hosts
 {: #host-update}
 
-Review the following ways to update hosts that are attached to your {{site.data.keyword.satelliteshort}} location.
+Review the following ways to update the version, operating system, security patch, container platform, or metadata of the hosts that are attached to your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
+
+* [Update host metadata](#host-update-metadata), such as labels or zones.
+* Apply major, minor, or fix pack version updates to the host, such as for container platform, operating system, and security patches. The way that you apply these updates varies for hosts that are assigned as [worker nodes in clusters](#host-update-workers) or to the [{{site.data.keyword.satelliteshort}} location control plane](#host-update-location).
 
 ### Updating host metadata
 {: #host-update-metadata}
@@ -507,7 +508,7 @@ If you want to update metadata about a host, such as labels or zones, see the [`
 ### Updating worker node hosts in clusters
 {: #host-update-workers}
 
-Many hosts in your {{site.data.keyword.satelliteshort}} location are used in clusters for {{site.data.keyword.satelliteshort}}-enabled services, such as {{site.data.keyword.openshiftlong_notm}}. When these hosts need to be updated, such as to apply a version patch fix pack, you can follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
+Many hosts in your {{site.data.keyword.satelliteshort}} location are used in clusters for {{site.data.keyword.satelliteshort}}-enabled services, such as {{site.data.keyword.openshiftlong_notm}}. Periodically, IBM provides version updates that might include patches for the container platform software, operating system, or security fixes. To apply these updates to your hosts, you can follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
 {: shortdesc}
 
 ### Updating {{site.data.keyword.satelliteshort}} location control plane hosts
@@ -546,6 +547,35 @@ However, when you created the {{site.data.keyword.satelliteshort}} location cont
 IBM provides updates for the IBM-managed components.
 * For master components, such as the {{site.data.keyword.satelliteshort}} location master or cluster masters, IBM automatically applies these updates.
 * For worker node components that run on hosts, such as the {{site.data.keyword.satelliteshort}} location control plane or cluster worker nodes, you choose when to apply the updates.
+
+<br />
+
+## Resetting the host key
+{: #host-key-reset}
+
+Reset the key that the control plane uses to communicate with all of the hosts in the {{site.data.keyword.satelliteshort}} location.
+{: shortdesc}
+
+When you create a location, a key is generated that the {{site.data.keyword.satelliteshort}} API server uses to attach hosts to the location and assign hosts to the control plane or to {{site.data.keyword.satelliteshort}}-enabled services. As you use your location, you might want to reset the existing host key. For example, in the case of a potential security incident, you can reset the key when you request a host attachment script. All existing hosts that run the previous version of the script can no longer communicate with the API for your {{site.data.keyword.satelliteshort}} location, and you can remove and reattach the existing hosts by using the script with the new key.
+
+When you reset the host key, all existing hosts that are attached to your location can no longer communicate with the {{site.data.keyword.satelliteshort}} API server. Until they are reattached, existing hosts have authentication errors and cannot be managed by the control plane, such as for updates.
+{: note}
+
+1. List all hosts that are attached to your location.
+  ```
+  ibmcloud sat host ls --location <location_name_or_ID>
+  ```
+  {: pre}
+2. Reset the host key for the {{site.data.keyword.satelliteshort}} location.
+  ```
+  ibmcloud sat host attach --location <location_name> --reset-key [-hl "<key>=<value>"]
+  ```
+  {: pre}
+3. [Remove one host from your {{site.data.keyword.satelliteshort}} location](#host-remove).
+4. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
+5. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location. The host registration script now uses the new host key.
+6. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or {{site.data.keyword.satelliteshort}}-enabled service.
+7. Repeat steps 3 - 6 for each host in your location so that each host uses the new key to communicate with the {{site.data.keyword.satelliteshort}} API server.
 
 <br />
 

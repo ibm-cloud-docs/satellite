@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -407,7 +407,7 @@ R0036 The location subdomains are not correctly routing traffic to your control 
 
 **Steps to resolve**
 
-See [Location subdomain not routing traffic to control plane hosts](/docs/satellite?topic=satellite-ts-location-subdomain).
+See [Why does the location subdomain not route traffic to control plane hosts?](/docs/satellite?topic=satellite-ts-location-subdomain).
 
 ## R0043: Layer 3 connectivity
 {: #R0043}
@@ -455,3 +455,17 @@ R0046 An NTP issue has been detected on one or more hosts. Verify that your NTP 
 1.  [Set up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna) for more information about which hosts are affected.
 2.  [Remove](/docs/satellite?topic=satellite-hosts#host-remove) the affected hosts and [reattach new hosts](/docs/satellite?topic=satellite-hosts#attach-hosts).
 3.  If you still have issues, [open a support case](/docs/satellite?topic=satellite-get-help) and include your Satellite location ID.
+
+## R0047: Location health checking
+{: #R0047}
+
+**Location message**
+
+```
+R0047 IBM Cloud is unable to use the health check endpoint to check the location's health.
+```
+{: screen}
+
+**Steps to resolve**
+
+See [Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?](/docs/satellite?topic=satellite-ts-location-healthcheck).
