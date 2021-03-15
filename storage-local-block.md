@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-15"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -199,7 +199,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 ## Creating a local block storage configuration in the command line
 {: #sat-storage-local-block-cli}
 
-1. Review the [Local block storage configuration parameters](#sat-storage-local-params-cli).
+1. Review the [Local block storage configuration parameters](#sat-storage-local-block-params-cli).
 2. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
   ```sh
   ibmcloud sat storage config create --name <name> --template-name local-volume-block --template-version <template-version> --param "label-key=<label-key>" --param "lable-value=<label-value>" --param "devicepath=<devicepath>"
@@ -414,7 +414,7 @@ After you create a local file storage configuration and assign it to your cluste
 ## Storage class reference
 {: #local-block-sc-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for local block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the storage class YAML in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/redhat/local-volume-block).
+Review the {{site.data.keyword.satelliteshort}} storage classes for local block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the storage class YAML in [GitHub](https://github.com/IBM/ibm-satellite-storage/tree/develop/config-templates/redhat/local-volume-block).
 {: shortdesc}
 
 | Storage class name | Type | Reclaim policy |

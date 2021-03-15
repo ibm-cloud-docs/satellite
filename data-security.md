@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-11"
+lastupdated: "2021-03-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -93,7 +93,7 @@ subcollection: satellite
 
 
 
-# Securing your data in {{site.data.keyword.satellitelong_notm}}
+# Securing your data in {{site.data.keyword.satelliteshort}}
 {: #data-security}
 
 Review what information is stored with IBM when you use {{site.data.keyword.satellitelong}}, how this data is stored and encrypted, and how you can permanently remove this information.
@@ -139,5 +139,3 @@ Removing personal and sensitive information is permanent and non-reversible. Mak
   - **End your {{site.data.keyword.cloud_notm}} subscription**: After you end your {{site.data.keyword.cloud_notm}} subscription, all personal and sensitive information is permanently removed.
 * **Cluster data in {{site.data.keyword.cos_full_notm}}**: When you create a {{site.data.keyword.openshiftlong_notm}} cluster, some cluster data is backed up to an {{site.data.keyword.cos_short}} instance in your account. To delete the data, review the [{{site.data.keyword.cos_short}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-security).
 * **Cluster data on the local host**: Because the cluster masters run on your {{site.data.keyword.satelliteshort}} location control plane hosts, the data is still available on the physical hosts in your infrastructure provider after you delete the {{site.data.keyword.satelliteshort}} location. To delete the data, consult your infrastructure provider documentation to reload the operating system or delete the host.
-
-
