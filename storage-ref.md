@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-15"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -137,7 +137,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 ## Local block storage
 {: #local-block-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for local block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the storage class YAML in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/redhat/local-volume-block).
+Review the {{site.data.keyword.satelliteshort}} storage classes for local block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the storage class YAML in [GitHub](https://github.com/IBM/ibm-satellite-storage/tree/develop/config-templates/redhat/local-volume-block).
 {: shortdesc}
 
 | Storage class name | Type | Reclaim policy |
@@ -151,7 +151,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 ## Local file storage
 {: #local-file-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for local file storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the storage class YAML in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/redhat/local-volume-file).
+Review the {{site.data.keyword.satelliteshort}} storage classes for local file storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the storage class YAML in [GitHub](https://github.com/IBM/ibm-satellite-storage/tree/develop/config-templates/redhat/local-volume-file).
 {: shortdesc}
 
 | Storage class name | File system | Reclaim policy |
@@ -165,7 +165,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 ## NetApp Trident NAS
 {: #netapp-nas-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-NAS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp Trident storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/netapp/netapp-ontap-nas/20.07).
+Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-NAS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp Trident storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/tree/develop/config-templates/netapp/netapp-ontap-nas/20.07).
 {: shortdesc}
 
 | Storage class name | Type | File system | Reclaim policy |
@@ -180,7 +180,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 ## NetApp Trident SAN
 {: #netapp-san-ref}
-Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-SAN. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp ONTAP-SAN storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/netapp/netapp-ontap-san/20.07).
+Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-SAN. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp ONTAP-SAN storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/tree/develop/config-templates/netapp/netapp-ontap-san/20.07).
 {: shortdesc}
 
 | Storage class name | Type | File system | Reclaim policy |

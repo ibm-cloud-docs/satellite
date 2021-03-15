@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -120,9 +120,9 @@ The {{site.data.keyword.satelliteshort}} location control plane is inaccessible 
     1. Log in to the host machine.
       * If the host is not assigned to the {{site.data.keyword.satelliteshort}} location control plane or a cluster, you can SSH into the host machine.
       * If the host is assigned to the {{site.data.keyword.satelliteshort}} location control plane or a cluster:
-        1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove).
+        1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#host-remove).
         2. Reload the operating system of the host.
-        3. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location, but do not assign it. Later, after you complete these troubleshooting steps, you can [re-assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or cluster.
+        3. [Attach the host](/docs/satellite?topic=satellite-hosts#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location, but do not assign it. Later, after you complete these troubleshooting steps, you can [re-assign the host](/docs/satellite?topic=satellite-hosts#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or cluster.
         4. SSH into the host machine.
     2. Look up each location subdomain that you found in step 1. Check whether the IP address that resolves matches the host IP addresses that you found in step 1. If the host's DNS resolver does not resolve the subdomains to the expected IP addresses, ensure that your hosts have the [required minimum outbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound).
       ```

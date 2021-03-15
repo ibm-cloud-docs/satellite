@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-10"
+lastupdated: "2021-03-15"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -107,7 +107,7 @@ The {{site.data.keyword.satelliteshort}} storage templates are currently availab
 Before you can create a local file storage configuration, you must identify the worker nodes in your clusters that have the required available disks. Once you identify the worker nodes that you want to use in your configuration, you must add a label to those worker nodes. When the local storage drivers are installed in your cluster, they are installed only on the worker nodes that have the label you specified.
 
 - [Get the device details of your worker nodes](#sat-storage-file-local-devices). If your worker nodes do not have an available disk, add worker nodes to your cluster or add disks to your worker nodes.
-- [Label the worker nodes]() that have an available disk and that you want to use in your configuration.
+- [Label the worker nodes](#sat-storage-file-local-labels) that have an available disk and that you want to use in your configuration.
 
 
 <br />
@@ -168,6 +168,7 @@ When you create your file storage configuration, you must specify which devices 
 <br />
 ### Labeling your worker nodes
 {: #sat-storage-file-local-labels}
+
 After you have [retrieved the device paths for the disks that you want to use in your configuration](#sat-storage-file-local-devices), label the worker nodes where the disks are located.
 {: shortdesc}
 
@@ -202,7 +203,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 2. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters).
-3. Review the [Local file storage configuration parameters](#sat-storage-local-params-cli).
+3. Review the [Local file storage configuration parameters](#sat-storage-local-file-params-cli).
 4. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
   ```sh
   ibmcloud sat storage config create --name <name> --template-name local-volume-file --template-version <template-version> --param "label-key=<label-key>" --param "lable-value=<label-value>" --param "devicepath=<devicepath>" --param "fstype=<fstype>"
@@ -429,7 +430,7 @@ After you create a local file storage configuration and assign it to your cluste
 ## Storage class reference
 {: #local-file-sc-reference}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for local file storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the storage class YAML in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/redhat/local-volume-file).
+Review the {{site.data.keyword.satelliteshort}} storage classes for local file storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the storage class YAML in [GitHub](https://github.com/IBM/ibm-satellite-storage/tree/develop/config-templates/redhat/local-volume-file).
 {: shortdesc}
 
 | Storage class name | File system | Reclaim policy |
