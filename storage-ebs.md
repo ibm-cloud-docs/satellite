@@ -131,7 +131,7 @@ Use the console to create an AWS EBS storage configuration for your location.
 
 Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 
-1. From the {[satloc]}, select the location where you want to create a storage configuration.
+1. From the {{site.data.keyword.satelliteshort}} location, select the location where you want to create a storage configuration.
 2. Select the **Storage** tab and click **Create storage configuration**.
 3. Enter the details for your storage configuration. 
    1. Enter a name for your storage configuration.
