@@ -525,6 +525,7 @@ Use the CLI to remove a storage configuration.
 
 ## AWS EFS storage configuration parameter reference
 {: #sat-storage-aws-efs-params-cli}
+{: cli}
 
 | Parameter | Required? | Description | Default if not provided |
 | --- | --- | --- | --- |
