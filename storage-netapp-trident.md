@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-17"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -94,7 +94,7 @@ subcollection: satellite
 # NetApp Trident Operator
 {: #config-storage-netapp-trident}
 
-Set up [NetApp Trident storage](https://netapp-trident.readthedocs.io/en/stable-v20.07/){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. After you create a storage configuration, you can assign it to your clusters. When you assign a storage configuration to your clusters, the storage drivers for the provider that you used to create your configuration are installed on your cluster.
+Set up [NetApp Trident storage](https://netapp-trident.readthedocs.io/en/stable-v20.07/){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
@@ -141,7 +141,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
   ```
   {: pre}
 
-2. List your {{site.data.keyword.satelliteshort}} cluster groups and make a note of the group that you want to assign storage.
+2. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to assign storage. Note that the clusters in the cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
   ```sh
   ibmcloud sat group ls
   ```

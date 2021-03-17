@@ -58,6 +58,7 @@ Satellite
             storage-local-block.md
             storage-local-file.md
             storage-ocs-local.md
+            storage-ocs-remote.md
 
         storage-ref.md
 
