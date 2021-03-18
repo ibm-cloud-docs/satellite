@@ -146,7 +146,7 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
 8. Follow step 7 in [Creating an AWS EFS storage configuration from the CLI](#sat-storage-aws-efs-cli) to verify that the AWS EFS driver is successfully installed in your cluster.
 
 
-## Creating an AWS EFS storage configuration from the CLI
+### Creating an AWS EFS storage configuration from the CLI
 {: #sat-storage-aws-efs-cli}
 
 Use the CLI to create an AWS EFS storage configuration for your location.
