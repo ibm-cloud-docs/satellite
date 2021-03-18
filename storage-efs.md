@@ -371,8 +371,6 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
 
 9. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you used and verify that the file system grows in size.   
 
-<br />
-
 ## Removing AWS EFS storage from your apps 
 {: #aws-efs-rm}
 

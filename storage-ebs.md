@@ -521,7 +521,7 @@ Use the CLI to remove a storage configuration.
       {: pre}
 
 
-### AWS EBS storage configuration CLI parameter reference
+## AWS EBS storage configuration CLI parameter reference
 {: #sat-storage-aws-ebs-params-cli}
 
 Review the AWS EBS storage configuration parameters.
