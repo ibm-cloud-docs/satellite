@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -400,11 +400,11 @@ subcollection: satellite
   * [Creating an AWS EBS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-ui)
   * [Creating an AWS EBS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-cli)
 * [Deploying an app that uses AWS EBS storage](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-ebs-deploy)
-  * [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-rm)
+* [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-rm)
 * [Removing the AWS EBS storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm)
   * [Removing the AWS EBS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm-ui)
   * [Removing the AWS EBS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm-cli)
-  * [AWS EBS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-params-cli)
+  * [AWS EBS storage configuration CLI parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-ebs-sc-reference)
 
 [AWS EFS](/docs/satellite?topic=satellite-config-storage-efs)

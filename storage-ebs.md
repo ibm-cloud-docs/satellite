@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-18"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -95,7 +95,7 @@ subcollection: satellite
 # AWS EBS
 {: #config-storage-ebs}
 
-Set up [Amazon Elastic Block Storage (EBS)](https://docs.aws.amazon.com/ebs/?id=docs_gateway){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [Amazon Elastic Block Storage (EBS)](https://docs.aws.amazon.com/ebs/?id=docs_gateway){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster. 
 {: shortdesc}
 
 When you create your AWS EBS storage configuration, you provide your AWS credentials which are stored as a Kubernetes secret in the clusters that you assign your configuration to. The secret is mounted inside the CSI controller pod so that when you create a PVC by using one of the IBM-provided storage classes, your AWS credentials are used to dynamically provision an EBS instance.
@@ -106,8 +106,6 @@ The {{site.data.keyword.satelliteshort}} storage templates are currently availab
 To use AWS EBS storage for your apps, the {{site.data.keyword.satelliteshort}} hosts that you use for your cluster's worker nodes must reside in AWS. 
 {: important}
 
-<br />
-
 ## Prerequisites
 {: #aws-ebs-prereq}
 
@@ -115,12 +113,12 @@ To use the AWS EBS storage template, complete the following tasks:
 
 - [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations). 
 - [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Amazon Web Services (AWS). For more information about how to add hosts from AWS to your {{site.data.keyword.satelliteshort}} location so that you can assign them to a cluster, see [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach). 
-- [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups). 
+- [Add your {{site.data.keyword.satelliteshort}} cluster to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups). 
 
 ## Creating an AWS EBS storage configuration
 {: #sat-storage-aws-ebs}
 
-You can use the [console](#sat-storage-aws-ebs-ui) or [CLI](#sat-storage-aws-ebs-cli) to create an AWS EBS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EBS storage for your apps. 
+You can use the [console](#sat-storage-aws-ebs-ui) or [CLI](#sat-storage-aws-ebs-cli) to create an AWS EBS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EBS storage for your apps.
 {: shortdesc}
 
 ### Creating an AWS EBS storage configuration from the console
@@ -131,7 +129,7 @@ Use the console to create an AWS EBS storage configuration for your location.
 
 Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 
-1. From the {{site.data.keyword.satelliteshort}} location, select the location where you want to create a storage configuration.
+1. From the [{{site.data.keyword.satelliteshort}} location dashboard](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 2. Select the **Storage** tab and click **Create storage configuration**.
 3. Enter the details for your storage configuration. 
    1. Enter a name for your storage configuration.
@@ -151,8 +149,6 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
    3. Enter a name for your subscription, select a version and a cluster group. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EBS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location. 
    4. Click **Create** to create your subscription. After the subscription is created, your storage configuration is deployed to all clusters in your cluster group. 
 9. Follow step 8 in [Creating an AWS EBS storage configuration from the CLI](#sat-storage-aws-ebs-cli) to verify that the AWS EBS driver is successfully installed in your cluster.
-
-<br />
 
 ### Creating an AWS EBS storage configuration from the CLI
 {: #sat-storage-aws-ebs-cli}
@@ -295,7 +291,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
        persistentVolumeClaim:
          claimName: sat-aws-block-bronze
    ```
-   {: pre}
+   {: codeblock}
    
 6. Create the pod in your cluster. 
    ```
@@ -324,8 +320,8 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
    
    Example output:
    ```
-   NAME                      STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
-   sat-aws-block-bronze      Bound     pvc-86d2f9f4-78d4-4bb2-ab73-39726d144981   125Gi      RWO            sat-aws-block-bronze   33m
+   NAME                 STATUS  VOLUME                                   CAPACITY   ACCESS MODES   STORAGECLASS           AGE
+   sat-aws-block-bronze Bound   pvc-86d2f9f4-78d4-4bb2-ab73-39726d144981 125Gi      RWO            sat-aws-block-bronze   33m
    ```
    {: screen}
    
@@ -381,7 +377,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
 
 <br />
 
-### Removing AWS EBS storage from your apps 
+## Removing AWS EBS storage from your apps 
 {: #aws-ebs-rm}
 
 If you no longer need your AWS EBS instance, you can remove your PVC, PV, and the AWS EBS instance in your AWS account. 
@@ -396,7 +392,7 @@ Removing your AWS EBS instance permanently removes all the data that is stored o
    ```
    {: pre}
    
-2. Remove any pods that currently mount the PVC. 
+2. Remove any pods that mount the PVC. 
    1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC. 
       ```sh
       oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
@@ -473,8 +469,6 @@ Use the console to remove a storage configuration.
    1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, find the storage configuration that you want to remove. 
    2. From the actions menu, click **Delete**. 
 
-<br />
-
 
 ### Removing the AWS EBS storage configuration from the CLI
 {: #aws-ebs-template-rm-cli}
@@ -526,15 +520,12 @@ Use the CLI to remove a storage configuration.
       ```
       {: pre}
 
-<br />
 
-
-### AWS EBS storage configuration parameter reference
+### AWS EBS storage configuration CLI parameter reference
 {: #sat-storage-aws-ebs-params-cli}
 
 Review the AWS EBS storage configuration parameters.
 {: shortdesc}
-
 
 | Parameter | Required? | Description |
 | --- | --- | --- |
@@ -545,8 +536,6 @@ Review the AWS EBS storage configuration parameters.
 | `aws-secret-access-key` | Required | Enter your AWS secret access key. For more information about how retrieve this value, see the [AWS IAM documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external}. |
 {: caption="Table 1. AWS EBS parameter reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
-
-<br />
 
 ## Storage class reference
 {: #sat-ebs-sc-reference}
