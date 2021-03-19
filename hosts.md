@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-19"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -605,8 +605,10 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 ## Removing hosts
 {: #host-remove}
 
-When you remove a host from your location, the host is unassigned from a {{site.data.keyword.openshiftlong_notm}} cluster or {{site.data.keyword.satellitelong_notm}} control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete an {{site.data.keyword.openshiftshort}} cluster or resize a worker pool, the hosts are still attached to your location, but you must detach and reattach the hosts to use them with another {{site.data.keyword.satelliteshort}} resource.
+When you remove a host from your location, the host is unassigned from a {{site.data.keyword.satelliteshort}}-enabled service cluster or the {{site.data.keyword.satelliteshort}} location control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete an {{site.data.keyword.openshiftshort}} cluster or resize a worker pool, the hosts are still attached to your location, but you must detach and reattach the hosts to use them with another {{site.data.keyword.satelliteshort}} resource.
 {: shortdesc}
+
+After removal, the host machine still exists in your underlying infrastructure provider. Reload the operating system before using the host machine for another purpose.
 
 Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep. Note that the underlying host infrastructure is not deleted because you manage the infrastructure yourself.
 {: important}
@@ -631,7 +633,7 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as com
 5. From the **Hosts** table, hover over the host that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 6. Click **Remove host**, enter the host name to confirm deletion, and click **Remove**.
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
-   * To reuse the host for other purposes, reload the operating system of the host.
+   * To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
    * To no longer use the host, delete the host from your infrastructure provider.
 
 ### Removing hosts from the CLI
@@ -678,5 +680,5 @@ Use the {{site.data.keyword.satelliteshort}} CLI to remove your hosts as compute
    ```
    {: pre}
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
-   * To reuse the host for other purposes, reload the operating system of the host.
+   * To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
    * To no longer use the host, delete the host from your infrastructure provider.
