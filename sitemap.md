@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -560,8 +560,8 @@ subcollection: satellite
 
 [Securing your data in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-data-security)
 * [What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
-* [How is my information stored and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
-* [Where is my information stored?](/docs/satellite?topic=satellite-data-security#sat_data-location)
+* [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
+* [Which {{site.data.keyword.cloud_notm}} region is my information stored in?](/docs/satellite?topic=satellite-data-security#sat_data-location)
 * [How can I remove my information?](/docs/satellite?topic=satellite-data-security#sat-data-removal)
 
 [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -96,32 +96,46 @@ subcollection: satellite
 # Securing your data in {{site.data.keyword.satelliteshort}}
 {: #data-security}
 
-Review what information is stored with IBM when you use {{site.data.keyword.satellitelong}}, how this data is stored and encrypted, and how you can permanently remove this information.
+Review what personal and sensitive information is stored when you use {{site.data.keyword.satellitelong}}, how this data is stored and encrypted, and how you can permanently remove this information.
 {: shortdesc}
 
 ## What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?
 {: #sat-sensitive-data}
 
-For each location that you create with {{site.data.keyword.satelliteshort}}, IBM stores the following information:
+For every location that you create, IBM stores certain personal and sensitive information. Depending on the type of information, IBM or you are responsible to store this information and protect it. For more information, see [How is my information stored, backed up, and encrypted?](#sat-data-encryption). 
+{: shortdesc}
 
-|Type of information|Description|
-|--------------|---------------------------------|
-|Personal information|<ul><li>The email address of the {{site.data.keyword.cloud_notm}} account that created the location.</li></ul>|
-|Sensitive information|<ul><li>The TLS certificate and secret that is used for the assigned {{site.data.keyword.satelliteshort}} subdomain.</li><li>The Certificate Authority that is used for the TLS certificate.</li><li>An IBM-owned encryption key for each location that is used to encrypt the TLS certificates, secrets, and Certificate Authority in an IBM-owned etcd data store.</li><li>A customer root key in {{site.data.keyword.keymanagementservicelong_notm}} for each {{site.data.keyword.cloud_notm}} account that is used to encrypt the backup of the etcd data store.</li><li>{{site.data.keyword.satelliteshort}} control plane data that can be used to restore the control plane in case of a disaster.</li></ul>|
-{: caption="Information that is stored when you use {{site.data.keyword.satellitelong_notm}}." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the type of information. The second column is a description of the information."}
+The following information is stored when you create a {{site.data.keyword.satelliteshort}} location:
 
-## How is my information stored and encrypted?
+**Personal information:**
+- The email address of the {{site.data.keyword.cloud_notm}} account that created the location.
+
+**Sensitive information:**
+- The TLS certificate and secret that is used for the assigned {{site.data.keyword.satelliteshort}} control plane domain.
+- The Certificate Authority that is used for the TLS certificate.
+- An IBM-owned encryption key for each location that is used to encrypt the TLS certificates, secrets, and Certificate Authority of the {{site.data.keyword.satelliteshort}} control plane domain.
+- {{site.data.keyword.satelliteshort}} control plane and {{site.data.keyword.satelliteshort}} cluster data that can be used to restore the control plane and clusters in case of a disaster.
+
+
+## How is my information stored, backed up, and encrypted?
 {: #sat-data-encryption}
 
-All personal and sensitive information is stored in an etcd database and backed up every 8 hours to {{site.data.keyword.cos_full_notm}}. The etcd database and {{site.data.keyword.cos_full_notm}} service instance are owned and managed by the {{site.data.keyword.satelliteshort}} service team. To protect your data in the etcd database, IBM creates an encryption key for each location by using an IBM-owned encryption mechanism. The etcd backup data that is stored in {{site.data.keyword.cos_full_notm}} are protected in transit and at rest by a root key that IBM creates and stores in an IBM-owned {{site.data.keyword.keymanagementservicelong_notm}} service instance. Access to this service instance is controlled by {{site.data.keyword.iamshort}} (IAM) and granted to the {{site.data.keyword.satelliteshort}} service team and IBM Site Reliability Engineers (SRE) only.
+Review the following image to see how your personal and sensitive information is stored, backed up, and encrypted. 
+{: shortdesc}
 
-In addition to the data that IBM stores on behalf of the customer, all {{site.data.keyword.satelliteshort}} control plane data is backed up to a customer-owned {{site.data.keyword.cos_full_notm}} bucket. Access to this bucket is controlled by IAM and the customer can grant or revoke access to this data for the {{site.data.keyword.satelliteshort}} service team. All data in the bucket is protected in transit and at rest by using a customer-owned root key in {{site.data.keyword.keymanagementservicelong_notm}}.
+![Satellite data security](images/satellite_data_security.png)
 
-## Where is my information stored?
+|#|Information|Location|Access and data management|Backup|Encryption|
+|--|--|--|--|--|--|
+|1|All personal and sensitive information.|All data is stored in a {{site.data.keyword.satelliteshort}} persistent storage instance that is set up in the location's {{site.data.keyword.satelliteshort}} control plane master.|The persistent storage instance is owned and managed by the {{site.data.keyword.satelliteshort}} control plane service team. You cannot access the data that is stored in the persistent storage instance.|See #2 and #3 to see how data is backed up.|Data is encrypted at rest with a customer root key from an IBM-owned {{site.data.keyword.keymanagementservicelong_notm}} service instance.|
+|2|TLS certificate, TLS secret, and Certificate Authority to encrypt the {{site.data.keyword.satelliteshort}} control plane domain.|Data is backed up from the {{site.data.keyword.satelliteshort}} persistent storage instance to an IBM-owned {{site.data.keyword.cos_full_notm}} instance.|Access to the IBM-owned {{site.data.keyword.cos_full_notm}} service instance is controlled by {{site.data.keyword.iamshort}} (IAM) and granted to the {{site.data.keyword.satelliteshort}} service team and IBM Site Reliability Engineers (SRE) only.|Every hour|All backup data is protected in transit and at rest by a root key that IBM creates and stores in an IBM-owned {{site.data.keyword.keymanagementservicelong_notm}} service instance.|
+|3|All {{site.data.keyword.satelliteshort}} control plane and cluster data.|Data is backed up from the {{site.data.keyword.satelliteshort}} persistent storage instance to a customer-owned {{site.data.keyword.cos_full_notm}} instance. You must create an {{site.data.keyword.cos_full_notm}} instance or have an existing instance before you can create the location. {{site.data.keyword.satelliteshort}} accesses this service instance when you create a location to create the bucket for the control plane and cluster data backup. You can also provide an existing bucket that you want {{site.data.keyword.satelliteshort}} to use if you create the location from the [CLI](/docs/satellite?topic=satellite-satellite-cli-reference#location-create).|Access to the customer-owned {{site.data.keyword.cos_full_notm}} service instance is controlled by IAM.|Every 8 hours|Data is automatically encrypted by using the default built-in encryption mechanisms in {{site.data.keyword.cos_full_notm}}. You can further choose to protect your data by using a root key in {{site.data.keyword.keymanagementservicelong_notm}} and use the key to encrypt the data in your bucket. For more information, see the [{{site.data.keyword.cos_full_notm}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-encryption). |
+
+
+## Which {{site.data.keyword.cloud_notm}} region is my information stored in?
 {: #sat_data-location}
 
-The location where your information is stored depends on the {{site.data.keyword.cloud_notm}} multizone metro that manages the control plane of your {{site.data.keyword.satelliteshort}} location. By selecting the {{site.data.keyword.cloud_notm}} multizone metro that is closest to your {{site.data.keyword.satelliteshort}} location, your data is automatically spread across a multizone metro area for high availability. Because the {{site.data.keyword.cloud_notm}} multizone metro might be in a different city or country than the infrastructure hosts that you bring to your {{site.data.keyword.satelliteshort}} location, make sure that your data can be stored in the selected {{site.data.keyword.cloud_notm}} multizone metro.
+Where your {{site.data.keyword.satelliteshort}} information is stored depends on the {{site.data.keyword.cloud_notm}} region that manages the control plane of your {{site.data.keyword.satelliteshort}} location. By selecting the {{site.data.keyword.cloud_notm}} region that is closest to the infrastructure provider for your {{site.data.keyword.satelliteshort}} location, your data is automatically spread across zones in that region for high availability. Because the zones of an {{site.data.keyword.cloud_notm}} region might be in a different city or country than the infrastructure hosts that you bring to your {{site.data.keyword.satelliteshort}} location, make sure that your data can be stored in the selected {{site.data.keyword.cloud_notm}} region.
 
 ## How can I remove my information?
 {: #sat-data-removal}
