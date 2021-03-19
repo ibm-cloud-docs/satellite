@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-19"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -512,7 +512,7 @@ You can use {{site.data.keyword.satelliteshort}} config to review the Kubnernete
 {: shortdesc}
 
 Before you begin, make sure that you have the following permissions:
--  The **Administrator** platform role, **Reader** platform role, or **Manager** platform role in {{site.data.keyword.cloud_notm}} IAM for the **Resource** resource type in {{site.data.keyword.satellitelong_notm}}.
+-  The **Administrator** platform role, **Reader** service role, or **Manager** service role in {{site.data.keyword.cloud_notm}} IAM for the **Resource** resource type in {{site.data.keyword.satellitelong_notm}}.
 -  The appropriate permissions to enable the {{site.data.keyword.satelliteshort}} config watchkeeping capability, such as one of the following options.
    * The [permissions](#create-satconfig-ui) to create a configuration version and subscribe clusters to the version.
    * The **Writer** service role in {{site.data.keyword.cloud_notm}} IAM to the **Kubernetes Service** clusters that you want to watch resources for.
