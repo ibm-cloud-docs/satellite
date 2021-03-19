@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-17"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -110,12 +110,12 @@ The {{site.data.keyword.satelliteshort}} storage templates are currently availab
 Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the EBS storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/aws/aws-ebs-csi-driver/0.8.2/storage-class.yaml).
 {: shortdesc}
 
-| Storage class name | EBS volume type | File system type | Provisioner | Default IOPS per GB | Size range | Hard disk | Encrypted? | Volume binding mode | Reclaim policy |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `sat-aws-block-gold` | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | 
-| `sat-aws-block-silver` | gp3 | ext4 | `ebs.csi.aws.com` | N/A | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | 
-| `sat-aws-block-bronze` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete |
-{: caption="Table 2. AWS EBS storage class reference." caption-side="top"}
+| Storage class name | EBS volume type | File system type | Provisioner | Default IOPS per GB | Size range | Hard disk | Encrypted? | Volume binding mode | Reclaim policy | More info | 
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| `sat-aws-block-gold` | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 6.25 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external}
+| `sat-aws-block-silver` | gp3 | ext4 | `ebs.csi.aws.com` | N/A | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external} |
+| `sat-aws-block-bronze` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#hard-disk-drives){: external} |
+{: caption="Table 1. AWS EBS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the volume type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the default IOPs per GB. The size column is the supported size range. The seventh column is disk type. The eigth column is encryption support. The ninth column is the volume binding mode. The tenth column is the reclaim policy."}
 
 <br />
@@ -143,7 +143,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 | Storage class name | Type | Reclaim policy |
 | --- | --- | --- |
 | `sat-local-block-gold ` | Block | Retain |
-{: caption="Table 2. Local block storage class reference" caption-side="top"}
+{: caption="Table 3. Local block storage class reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
 
 <br />
@@ -157,7 +157,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 | Storage class name | File system | Reclaim policy |
 | --- | --- | --- |
 | `sat-local-file-gold` | `ext4` or `xfs` | Retain |
-{: caption="Table 2. Local file storage class reference." caption-side="top"}
+{: caption="Table 4. Local file storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
 
 <br />
@@ -172,8 +172,8 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | --- | --- | --- | --- | --- | --- | --- |
 | `sat-netapp-file-gold` | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-silver` | ONTAP-NAS | File | Delete |
-| `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete | 
-{: caption="Table 2. NetApp ONTAP-NAS storage class reference." caption-side="top"}
+| `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete |
+{: caption="Table 5. NetApp ONTAP-NAS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 <br />
@@ -187,8 +187,8 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | --- | --- | --- | --- | --- | --- | --- |
 | `sat-netapp-block-gold` | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-silver` | ONTAP-SAN | Block | Delete |
-| `sat-netapp-block-bronze` | ONTAP-SAN | Block | Delete | 
-{: caption="Table 2. NetApp ONTAP-SAN storage class reference." caption-side="top"}
+| `sat-netapp-block-bronze` | ONTAP-SAN | Block | Delete |
+{: caption="Table 6. NetApp ONTAP-SAN storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 <br />
@@ -205,10 +205,25 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Co
 | `sat-ocs-cephfs-gold` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | Immediate | True |Delete |
 | `sat-ocs-cephrgw-gold` | Object | N/A | `openshift-storage.ceph.rook.io/bucket` | Immediate | N/A | Delete |
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
-{: caption="Table 2. Storage class reference for OpenShift Container storage" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
+{: caption="Table 7. NetApp ONTAP-SAN storage class reference." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 <br />
+
+## OpenShift Container Storage for remote volumes
+{: #ocs-remote-ref}
+
+Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Container Storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the OCS remote storage classes in [GitHub]().
+{: shortdesc}
+
+| Storage class name | Type | File system | Provisioner | Volume binding mode | Allow volume expansion | Reclaim policy |
+| --- | --- | --- | --- | --- | --- | --- |
+| `sat-ocs-cephrbd-gold` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | Immediate | True | Delete |
+| `sat-ocs-cephfs-gold` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | Immediate | True |Delete |
+| `sat-ocs-cephrgw-gold` | Object | N/A | `openshift-storage.ceph.rook.io/bucket` | Immediate | N/A | Delete |
+| `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
+{: caption="Table 8. Storage class reference for OpenShift Container storage" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
 
 
 

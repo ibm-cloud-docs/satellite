@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-17"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -94,7 +94,7 @@ subcollection: satellite
 # NetApp ONTAP-NAS
 {: #config-storage-netapp-nas}
 
-Set up [NetApp ONTAP-NAS storage](https://netapp-trident.readthedocs.io/en/stable-v20.07/){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. After you create a storage configuration, you can assign it to your clusters. When you assign a storage configuration to your clusters, the storage drivers for the provider that you used to create your configuration are installed on your cluster.
+Set up [NetApp ONTAP-NAS storage](https://netapp-trident.readthedocs.io/en/stable-v20.07/){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
@@ -124,31 +124,6 @@ Before you can create storage configurations by using the NetApp NAS template, y
   ibmcloud sat storage config get --config <config>
   ```
   {: pre}
-
-### NetApp Trident storage configuration parameter reference
-{: #sat-storage-netapp-params-cli-nas}
-
-For more information about the NetApp Trident configuration parameters, see the [NetApp documentation](https://netapp-trident.readthedocs.io/en/stable-v20.07/docker/install/ndvp_ontap_config.html#configuration-file-options){: external}.
-
-| Parameter name | Required? | Description | Default if not provided |
-| --- | --- | --- | 
-| `--name` | Required | Enter a name for your storage configuration. | N/A |
-| `--template-name` | Required | Enter `netapp-ontap-nas` | N/A |
-| `--template-version` | Required | Enter the template verison number. To get a list of templates, run `ibmcloud sat storage template ls`. | N/A |
-| `namespace` | Required | Enter the namespace where you want to install the NetApp Trident storage drivers. | `trident` |
-| `managementLIF` | Required | Enter the IP address of management LIF. Example: `10.0.0.1`. | N/A |
-| `dataLIF` | Required | Enter the IP address of data LIF. Example: `10.0.0.2`. | N/A | 
-| `svm` | Required | Enter the name of the storage virtual machine. Example: `svm-nfs`. | N/A | 
-| `export-policy` | Required | Enter the NFS export policy to use. Example: `default`. | N/A |
-| `username` | Required | Enter your username. | N/A |
-| `password` | Required | Enter your user password. | N/A |
-| `limitVolumeSize` | Optional | Maximum volume size that can be requested and qtree parent volume size. | `50Gi` |
-| `limitAggregateUsage` | Optional | Limit provisioning of volumes if the parent volume usage exceeds this value. For example, if a volume is requested that causes the parent volume usage to exceed this value, the volume provisioning fails.  | `80%` |
-| `nfsMountOptions` | Optional | Specify the NFS mount version. Example: `nfsvers=4` | `nfsvers=4` |
-{: caption="Table 1. NetApp Trident storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
-
-<br />
 ## Assigning your NetApp storage configuration to a cluster
 {: #assign-storage-netapp-nas}
 
@@ -167,7 +142,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
   ```
   {: pre}
 
-2. List your {{site.data.keyword.satelliteshort}} cluster groups and make a note of the group that you want to assign storage.
+2. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to assign storage. Note that the clusters in the cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
   ```sh
   ibmcloud sat group ls
   ```
@@ -191,6 +166,31 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
   {: pre}
 
 <br />
+
+## NetApp Trident storage configuration parameter reference
+{: #sat-storage-netapp-params-cli-nas}
+
+For more information about the NetApp Trident configuration parameters, see the [NetApp documentation](https://netapp-trident.readthedocs.io/en/stable-v20.07/docker/install/ndvp_ontap_config.html#configuration-file-options){: external}.
+
+| Parameter name | Required? | Description | Default if not provided |
+| --- | --- | --- | 
+| `--name` | Required | Enter a name for your storage configuration. | N/A |
+| `--template-name` | Required | Enter `netapp-ontap-nas` | N/A |
+| `--template-version` | Required | Enter the template verison number. To get a list of templates, run `ibmcloud sat storage template ls`. | N/A |
+| `namespace` | Required | Enter the namespace where you want to install the NetApp Trident storage drivers. | `trident` |
+| `managementLIF` | Required | Enter the IP address of management LIF. Example: `10.0.0.1`. | N/A |
+| `dataLIF` | Required | Enter the IP address of data LIF. Example: `10.0.0.2`. | N/A | 
+| `svm` | Required | Enter the name of the storage virtual machine. Example: `svm-nfs`. | N/A | 
+| `export-policy` | Required | Enter the NFS export policy to use. Example: `default`. | N/A |
+| `username` | Required | Enter your username. | N/A |
+| `password` | Required | Enter your user password. | N/A |
+| `limitVolumeSize` | Optional | Maximum volume size that can be requested and qtree parent volume size. | `50Gi` |
+| `limitAggregateUsage` | Optional | Limit provisioning of volumes if the parent volume usage exceeds this value. For example, if a volume is requested that causes the parent volume usage to exceed this value, the volume provisioning fails.  | `80%` |
+| `nfsMountOptions` | Optional | Specify the NFS mount version. Example: `nfsvers=4` | `nfsvers=4` |
+{: caption="Table 1. NetApp Trident storage parameter reference." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+
+<br />
 ## Storage class reference
 {: #netapp-sc-reference-nas}
 
@@ -201,7 +201,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | --- | --- | --- | --- | --- | --- | --- |
 | `sat-netapp-file-gold` | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-silver` | ONTAP-NAS | File | Delete |
-| `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete | 
+| `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete |
 {: caption="Table 2. NetApp ONTAP-NAS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-03-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -96,7 +96,7 @@ subcollection: satellite
 # Supported {{site.data.keyword.cloud_notm}} locations
 {: #sat-regions}
 
-Review the {{site.data.keyword.cloud_notm}} regions that you can choose from to manage your {{site.data.keyword.satelliteshort}} location.
+Review the {{site.data.keyword.cloud}} regions that you can choose from to manage your {{site.data.keyword.satelliteshort}} location. Your infrastructure provider must have a low latency connection of less than 100 milliseconds (`< 100ms`) between the hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location and the {{site.data.keyword.cloud_notm}} region that the location is managed from.
 {: shortdesc}
 
 |Geography|Country|Multizone Metro|Location|Region|Zone|
@@ -128,5 +128,11 @@ You can choose any of the supported {{site.data.keyword.cloud_notm}} region to m
 
 **Is there a limitation where my compute hosts can reside?**
 
-No. Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. Hosts can be in your own on-premises data center, other cloud providers, or edge computing devices if they meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) for {{site.data.keyword.satelliteshort}}.
+Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. Hosts can be in your own on-premises data center, other cloud providers, or edge computing devices if they meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) for {{site.data.keyword.satelliteshort}}.
+
+**What about latency requirements?**
+
+As you select your infrastructure provider, consider the following latency requirements. Environments that do not meet the latency requirements experience degradated performance.
+* **Between {{site.data.keyword.cloud_notm}} and the location**: Your infrastructure provider must have a low latency connection of less than 100 milliseconds (`< 100ms`) between the hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location and the {{site.data.keyword.cloud_notm}} region that the location is managed from.
+* **Between hosts in your location**: Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
 

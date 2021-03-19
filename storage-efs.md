@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-18"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -95,49 +95,422 @@ subcollection: satellite
 # AWS EFS
 {: #config-storage-efs}
 
-Set up [Amazon Elastic File System (EFS)](https://docs.aws.amazon.com/efs/?id=docs_gateway){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. After you create a storage configuration, you can assign it to your clusters. When you assign a storage configuration to your clusters, the storage drivers for the provider that you used to create your configuration are installed on your cluster.
+Set up [Amazon Elastic File System (EFS)](https://docs.aws.amazon.com/efs/?id=docs_gateway){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
 {: beta}
 
-Only static provisioning is supported. You must manually provision an [AWS EFS file system](https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html){: external} on AWS before you create your {{site.data.keyword.satelliteshort}} storage configuration.
-{: note}
-
-<br />
+To use AWS EFS storage for your apps, your {{site.data.keyword.satelliteshort}} hosts must reside in AWS. Only static provisioning is supported with this storage template. You must manually provision an [AWS EFS file system](https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html){: external} on AWS before you create your {{site.data.keyword.satelliteshort}} storage configuration. Make sure that the EFS device is in the same VPC and subnet that you used for your AWS hosts, and that your hosts and EFS device use the same security group. 
+{: important}
 
 ## Prerequisites
 {: #sat-storage-efs-prereqs}
-Only static provisioning is supported. You must manually provision an [AWS EFS file system](https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html){: external} on AWS before you create your {{site.data.keyword.satelliteshort}} storage configuration. After you create your AWS EFS instance, you can create a {{site.data.keyword.satelliteshort}} storage configuration to install the AWS EFS drivers in your cluster.
 
-<br />
+To use the AWS EFS storage template, complete the following tasks: 
+
+- [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations). 
+- [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Amazon Web Services (AWS). For more information about how to add hosts from AWS to your {{site.data.keyword.satelliteshort}} location so that you can assign them to a cluster, see [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach). 
+- [Add your {{site.data.keyword.satelliteshort}} cluster to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups). 
+- Manually provision an [AWS EFS file system](https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html){: external} in your AWS account. Make sure that the EFS device is in the same VPC and subnet that you used for your AWS hosts, and that your hosts and EFS device use the same security group. 
+
+## Creating an AWS EFS storage configuration
+{: #sat-storage-aws-efs}
+
+You can use the [console](#sat-storage-aws-efs-ui) or [CLI](#sat-storage-aws-efs-cli) to create an AWS EFS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EFS storage for your apps. 
+{: shortdesc}
+
+### Creating an AWS EFS storage configuration from the console
+{: #sat-storage-aws-efs-ui}
+
+Use the console to create an AWS EFS storage configuration for your location. 
+{: shortdesc}
+
+Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs).
+
+1. From the [{{site.data.keyword.satelliteshort}} location dashboard](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
+2. Select the **Storage** tab and click **Create storage configuration**.
+3. Enter the details for your storage configuration. 
+   1. Enter a name for your storage configuration.
+   2. From the **Storage type** drop-down list, select the **AWS EFS CSI driver**.
+   3. From the **Version** drop-down list, select the storage driver version that you want to install.
+   4. Click **Next** to go to the **Parameters** page. 
+4. Click **Next** to go to the **Storage classes** page. 
+5. Review the storage classes that get created in a cluster that you subscribe to your storage configuration. 
+6. Click **Complete** to create your storage configuration. 
+7. Assign your storage configuration to a cluster. 
+   1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, select the configuration that you created. 
+   2. Click **Create a subscription**. 
+   3. Enter a name for your subscription, select a version and a cluster group. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EFS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location. 
+   4. Click **Create** to create your subscription. After the subscription is created, your storage configuration is deployed to all clusters in your cluster group. 
+8. Follow step 7 in [Creating an AWS EFS storage configuration from the CLI](#sat-storage-aws-efs-cli) to verify that the AWS EFS driver is successfully installed in your cluster.
 
 
-
-## Creating an AWS EFS storage configuration in the command line
+### Creating an AWS EFS storage configuration from the CLI
 {: #sat-storage-aws-efs-cli}
 
-1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-2. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters).
-3. Review the [AWS EFS storage configuration parameters](#sat-storage-aws-efs-params-cli).
-4. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
-  ```sh
-  ibmcloud sat storage config create --name <name> --template-name aws-efs-csi-driver --template-version 1.0.0
-  ```
-  {: pre}
+Use the CLI to create an AWS EFS storage configuration for your location.
+{: shortdesc}
 
-5. Verify that your storage configuration is created.
-  ```sh
-  ibmcloud sat storage config get --config <config>
-  ```
-  {: pre}
+Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs).
 
-6. [Assign your configuration to clusters](#assign-storage-efs).
+1. Review the [AWS EFS storage configuration parameters](#sat-storage-aws-efs-params-cli).
+2. Create an AWS EFS storage configuration. Replace the variables with the parameters that you retrieved in the previous step. 
+   ```sh
+   ibmcloud sat storage config create --name <config_name> --template-name aws-efs-csi-driver --template-version <template_version>
+   ```
+   {: pre}
+3. Verify that your storage configuration is created.
+   ```sh
+   ibmcloud sat storage config get --config <config_name>
+   ```
+   {: pre}
+   
+4. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to use. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EFS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location. 
+   ```sh
+   ibmcloud sat group ls
+   ```
+   {: pre}
+   
+5. Create a storage assignment for your cluster group. After you create the assignment, the AWS EFS driver is installed in all clusters that belong to the cluster group. Replace `<group_name>` with the name of your cluster group, `<config_name>` with the name of your storage configuration, and `<assignment_name>` with a name for your storage assignment. For more information, see the [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create) command.
+   ```sh
+   ibmcloud sat storage assignment create --group <group_name> --config <config_name> --name <assignment_name>
+   ```
+   {: pre}
+   
+6. Verify that your assignment is created.
+   ```sh
+   ibmcloud sat storage assignment ls 
+   ```
+   {: pre}
+   
+7. Verify that the AWS EFS storage configuration resources are successfully deployed in your cluster. 
+   1. [Access your cluster](/docs/openshift?topic=openshift-access_cluster).
+   2. List the AWS EFS driver pods in the `kube-system` namespace and verify that the status is `Running`.
+      ```sh
+      oc get pods -n kube-system | grep efs
+      ```
+      {: pre}
+
+      Example output:
+      ```sh   
+      efs-csi-node-gfm9x                      3/3     Running   0          7m48s
+      efs-csi-node-hz45b                      3/3     Running   0          7m48s
+      efs-csi-node-pv8m7                      3/3     Running   0          7m48s
+      ```
+      {: screen}
+
+   3. List the AWS EFS storage classes.
+      ```sh
+      oc get sc | grep aws-file
+      ```
+      {: pre}
+
+      Example output:
+      ```             
+      sat-aws-file-gold     efs.csi.aws.com      Delete          Immediate              false                  8m27s
+      ```
+      {: screen}
+
+## Deploying an app that uses AWS EFS storage
+{: #sat-storage-efs-deploy}
+
+You can use the `efs-csi-driver` to statically provision AWS EFS storage for the apps in your clusters.
+{: shortdesc}
+
+Before you begin, make sure that you [created an AWS EFS instance](https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html){: external} in your AWS account.The EFS device must be in the same VPC and subnet that you used for your AWS hosts, and your hosts and EFS device must use the same security group. 
+
+1. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you want to use for your apps and note the file system ID. 
+
+2. Create a persistent volume (PV) that references the file system ID of your AWS EFS instance. 
+   1. Create a YAML configuration file for your PV and enter the file system ID in the `csi.volumeHandle` field.
+      ```yaml
+      apiVersion: v1
+      kind: PersistentVolume
+      metadata:
+        name: efs
+      spec:
+        capacity:
+          storage: 5Gi
+        volumeMode: Filesystem
+        accessModes:
+          - ReadWriteOnce
+        persistentVolumeReclaimPolicy: Retain
+        storageClassName: sat-aws-file-gold
+        csi:
+          driver: efs.csi.aws.com
+          volumeHandle: <aws_efs_fileshare_ID>
+      ```
+      {: codeblock}
+      
+   2. Create the PV in your cluster. 
+      ```
+      oc apply -f pv.yaml
+      ```
+      {: pre}
+      
+   3. Verify that the PV is created. Note that the PV remains in an `Available` status as no matching PVC is found yet. 
+      ```
+      oc get pv
+      ```
+      {: pre}
+      
+      Example output: 
+      ```
+      NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM        STORAGECLASS           REASON   AGE
+      efs    5Gi        RWO            Retain           Available                  sat-aws-file-gold               34m
+      ```
+      {: screen}
+      
+3. Create a persistent volume claim (PVC) that matches the PV that you created. 
+   1. Create a YAML configuration file for your PVC. In order for the PVC to match the PV, you must use the same values for the storage class and the size of the storage. 
+      ```yaml
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      metadata:
+        name: efs
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        storageClassName: sat-aws-file-gold
+        resources:
+          requests:
+            storage: 5Gi
+      ```
+      {: codeblock}
+      
+   2. Create the PVC in your cluster. 
+      ```sh
+      oc apply -f pvc.yaml
+      ```
+      {: pre}
+      
+   3. Verify that the PVC is created. Make sure that the PVC is in a `Bound` status and that the name of the PV that you created earlier is listed in the **VOLUME** column. 
+      ```sh
+      oc get pvc
+      ```
+      {: pre}
+      
+      Example output: 
+      ```
+      NAME      STATUS        VOLUME     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
+      efs       Bound         efs        5Gi        RWO            sat-aws-file-gold   36m
+      ```
+      {: screen}
+
+4. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file on your AWS EFS volume mount path. 
+   ```yaml
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     name: app
+   spec:
+     containers:
+     - name: app
+       image: nginx
+       command: ["/bin/sh"]
+       args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
+       volumeMounts:
+       - name: persistent-storage
+         mountPath: /test
+     volumes:
+     - name: persistent-storage
+       persistentVolumeClaim:
+         claimName: efs
+   ```
+   {: codeblock}
+   
+5. Create the pod in your cluster. 
+   ```sh
+   oc apply -f pod.yaml
+   ```
+   {: pre}
+
+6. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state. 
+   ```sh
+   oc get pods
+   ```
+   {: pre}
+   
+   Example output: 
+   ```
+   NAME                                READY   STATUS    RESTARTS   AGE
+   app                                 1/1     Running   0          2m58s
+   ```
+   {: screen}
+   
+7. Verify that the app can write to your AWS EFS instance. 
+   1. Log in to your pod. 
+      ```sh
+      oc exec <app-pod-name> -it bash
+      ```
+      {: pre}
+
+   2. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
+      ```sh
+      cat /test/test.txt
+      ```
+      {: pre}
+      
+      Example output:
+      ```sh
+      Tue Mar 2 20:09:19 UTC 2021
+      Tue Mar 2 20:09:25 UTC 2021
+      Tue Mar 2 20:09:31 UTC 2021
+      Tue Mar 2 20:09:36 UTC 2021
+      Tue Mar 2 20:09:42 UTC 2021
+      Tue Mar 2 20:09:47 UTC 2021
+      ```
+      {: screen}
+      
+   3. Exit the pod. 
+      ```sh
+      exit
+      ```
+      {: pre}
+
+9. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you used and verify that the file system grows in size.   
+
+## Removing AWS EFS storage from your apps 
+{: #aws-efs-rm}
+
+If you no longer need your AWS EFS instance, you can remove your PVC, PV, and the AWS EFS instance in your AWS account. 
+{: shortdesc}
+
+Removing your AWS EFS instance permanently removes all the data that is stored on this instance. This action cannot be undone. Make sure that you back up your data before you delete the AWS EFS instance. 
+{: important}
+
+1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove. 
+   ```sh
+   oc get pvc
+   ```
+   {: pre}
+   
+2. Remove any pods that mount the PVC. 
+   1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC. 
+      ```sh
+      oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+      ```
+      {: pre}
+   
+      Example output: 
+      ```
+      app    sat-aws-block-bronze
+      ```
+      {: screen}
+   
+   2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
+      ```sh
+      oc delete pod <pod_name>
+      ```
+      {: pre}
+      
+      ```sh
+      oc delete deployment <deployment_name>
+      ```
+      {: pre}
+      
+   3. Verify that the pod or the deployment is removed. 
+      ```sh
+      oc get pods
+      ```
+      {: pre}
+      
+      ```sh
+      oc get deployments
+      ```
+      {: pre}
+      
+3. Delete the PVC. Because you statically provisioned the AWS EFS storage, deleting the PVC does not remove the PV or the AWS EFS instance in your AWS account. 
+   ```sh
+   oc delete pvc <pvc_name>
+   ```
+   {: pre}
+   
+4. Delete the corresponding PV. 
+   ```sh
+   oc delete pv <pv_name>
+   ```
+   {: pre}
+   
+5. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, select the file system that you want to delete and click **Delete**.    
 
 
-<br />
-### AWS EFS storage configuration parameter reference
+## Removing the AWS EFS storage configuration from your cluster
+{: #aws-efs-template-rm}
+
+If you no longer plan on using AWS EFS storage in your cluster, you can unassign your cluster from the storage configuration. 
+{: shortdesc}
+
+Removing the storage configuration, uninstalls the AWS EFS driver from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
+{: important}
+
+### Removing the AWS EFS storage configuration from the console
+{: #aws-efs-template-rm-ui}
+{: ui}
+
+Use the console to remove a storage configuration. 
+{: shortdesc}
+
+1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, select the storage configuration that you subscribed your clusters to. 
+
+2. Find the subscription that you want to remove and from the actions menu, click **Remove**. After the subscription is removed, the AWS EFS driver pods and storage class are removed from all clusters that were subscribed to your storage configuration. 
+
+3. Optional: Follow step 3 in [Removing the AWS EFS storage configuration from the CLI](#aws-ebs-template-rm-cli) to verify that the AWS driver pods and storage class are removed from your clusters. 
+
+4. Optional: Remove your storage configuration. 
+   1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, find the storage configuration that you want to remove. 
+   2. From the actions menu, click **Delete**. 
+
+
+### Removing the AWS EFS storage configuration from the CLI
+{: #aws-efs-template-rm-cli}
+
+Use the CLI to remove a storage configuration. 
+{: shortdesc}
+
+1. List your storage assignments and find the one that you used for your cluster. 
+   ```sh
+   ibmcloud sat storage assignment ls
+   ```
+   {: pre}
+   
+2. Remove the assignment. After the assignment is removed, the AWS EFS driver pods and storage class are removed from all clusters that were part of the storage assignment. 
+   ```sh
+   ibmcloud sat storage assignment rm --assignment <assignment_name>
+   ```
+   {: pre}
+      
+3. Verify that the AWS EFS driver is removed from your cluster. 
+   1. List the storage classess in your cluster and verify that the AWS EFS storage class is removed. 
+      ```sh
+      oc get sc
+      ```
+      {: pre}
+      
+   2. List the pods in the `kube-system` namespace and verify that the AWS EFS storage driver pods are removed. 
+      ```sh
+      oc get pods -n kube-system
+      ```
+      {: pre}
+      
+4. Optional: Remove the storage configuration. 
+   1. List the storage configurations. 
+      ```sh
+      ibmcloud sat storage config ls
+      ```
+      {: pre}
+   
+   2. Remove the storage configuration.
+      ```sh
+      ibmcloud sat storage config rm --config <config_name>
+      ```
+      {: pre}
+
+
+## AWS EFS storage configuration parameter reference
 {: #sat-storage-aws-efs-params-cli}
+{: cli}
 
 | Parameter | Required? | Description | Default if not provided |
 | --- | --- | --- | --- |
@@ -146,71 +519,6 @@ Only static provisioning is supported. You must manually provision an [AWS EFS f
 | `--template-version` | Required | Enter the version of the `aws-efs-csi-driver` template that you want to use. To get a list of storage templates and versions, run `ibmcloud sat storage template ls`. | N/A |
 {: caption="Table 1. AWS EFS parameter reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
-
-<br />
-
-## Assigning your EFS storage configuration to a cluster
-{: #assign-storage-efs}
-
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-efs), you can assign you configuration to your {{site.data.keyword.satelliteshort}}
-{: shortdesc}
-
-
-
-<br />
-### Assigning a storage configuraton in the command line
-{: #assign-storage-efs-cli}
-
-1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
-  ```sh
-  ibmcloud sat storage config ls
-  ```
-  {: pre}
-
-2. List your {{site.data.keyword.satelliteshort}} cluster groups and make a note of the group that you want to assign storage.
-  ```sh
-  ibmcloud sat group ls
-  ```
-  {: pre}
-
-3. Assign storage to the clusters that you retrieved in step 2. Replace `<group>` with the name of your cluster group, `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
-  ```sh
-  ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
-  ```
-  {: pre}
-
-4. Verify that your assignment is created.
-  ```sh
-  ibmcloud sat storage assignment ls | grep <storage-assignment-name>
-  ```
-  {: pre}
-5. Verify that the storage configuration resources are deployed. List the EFS driver pods in the `kube-system` namespace and verify that the status is `Running`.
-  ```sh
-  oc get pods -n kube-system | grep efs
-  ```
-  {: pre}
-
-  Example output:
-  ```sh   
-  efs-csi-node-4gkzx                      3/3     Running   0          2d22h
-  efs-csi-node-r8g5d                      3/3     Running   0          2d22h
-  efs-csi-node-td4wc                      3/3     Running   0          2d22h
-  ```
-  {: screen}
-
-6. List the EFS storage classes.
-  ```sh
-  oc get sc | grep aws-file
-  ```
-  {: pre}
-
-  Example output:
-  ```sh
-  sat-aws-file-gold              efs.csi.aws.com    Delete          Immediate              false                  20h
-  ```
-  {: screen}
-
-<br />
 
 ## Storage class reference
 {: #efs-sc-reference}
@@ -223,7 +531,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 | `sat-aws-file-gold` | NFS | Delete |
 {: caption="Table 2. AWS EFS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
-
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -103,6 +103,8 @@ subcollection: satellite
 
 [Getting started with {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-getting-started)
 
+[Video demonstration of setting up an on-prem location](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
+
 [Start by considering your infrastructure](/docs/satellite?topic=satellite-getting-started#gs-start-here)
 
 [Step 1: Create your location](/docs/satellite?topic=satellite-getting-started#create-location)
@@ -112,8 +114,6 @@ subcollection: satellite
 * [Attaching hosts from on-premises data centers and edge networks](/docs/satellite?topic=satellite-getting-started#gs-attach-hosts-onprem)
 
 [Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-getting-started#assign-hosts-to-cp)
-
-[Video demonstration of setting up an on-prem location](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
 
 [What's next](/docs/satellite?topic=satellite-getting-started#whats-next)
 
@@ -395,18 +395,29 @@ subcollection: satellite
 
 
 [AWS EBS](/docs/satellite?topic=satellite-config-storage-ebs)
-* [Creating an AWS EBS storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-cli)
-  * [AWS EBS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-params-cli)
-* [Assigning your AWS EBS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ebs#assign-storage-ebs)
-  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-ebs#assign-storage-ebs-cli)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-prereq)
+* [Creating an AWS EBS storage configuration](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs)
+  * [Creating an AWS EBS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-ui)
+  * [Creating an AWS EBS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-cli)
+* [Deploying an app that uses AWS EBS storage](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-ebs-deploy)
+* [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-rm)
+* [Removing the AWS EBS storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm)
+  * [Removing the AWS EBS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm-ui)
+  * [Removing the AWS EBS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm-cli)
+* [AWS EBS storage configuration CLI parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-ebs-sc-reference)
 
 [AWS EFS](/docs/satellite?topic=satellite-config-storage-efs)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-efs-prereqs)
-* [Creating an AWS EFS storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-cli)
-  * [AWS EFS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-params-cli)
-* [Assigning your EFS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-efs#assign-storage-efs)
-  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-efs#assign-storage-efs-cli)
+* [Creating an AWS EFS storage configuration](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs)
+  * [Creating an AWS EFS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-ui)
+  * [Creating an AWS EFS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-cli)
+* [Deploying an app that uses AWS EFS storage](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-efs-deploy)
+* [Removing AWS EFS storage from your apps](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-rm)
+* [Removing the AWS EFS storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-template-rm)
+  * [Removing the AWS EFS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-template-rm-ui)
+  * [Removing the AWS EFS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-template-rm-cli)
+* [AWS EFS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-efs#efs-sc-reference)
 
 
@@ -421,16 +432,16 @@ subcollection: satellite
 
 [NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas)
 * [Creating a NetApp Trident storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-cli-nas)
-  * [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-params-cli-nas)
 * [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-nas)
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-cli-nas)
+* [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-params-cli-nas)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-sc-reference-nas)
 
 [NetApp ONTAP-SAN](/docs/satellite?topic=satellite-config-storage-netapp)
 * [Creating a NetApp Trident SAN storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-cli-san)
-  * [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-params-cli-san)
 * [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-san)
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-cli-san)
+* [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-params-cli-san)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp#netapp-sc-reference-san)
 
 
@@ -441,34 +452,39 @@ subcollection: satellite
 [Local Storage Operator - Block](/docs/satellite?topic=satellite-config-storage-local-block)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-prereqs)
   * [Getting the device details for your local block storage configuration](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-block-local-devices)
-  * [Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-file-local-labels)
+  * [Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-block-local-labels)
 * [Creating a local block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-cli)
-  * [Local block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-params-cli)
 * [Assigning your storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-local-block#assign-storage-local-block)
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-local-block#assign-storage-local-block-cli)
 * [Deploying an app that uses your local block storage](/docs/satellite?topic=satellite-config-storage-local-block#deploy-app-local-block)
+* [Removing the local block storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-remove-local-block-config)
+  * [Removing the local block storage configuration from the console](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-rm-local-block-ui)
+  * [Removing the local block storage configuration from the command line](/docs/satellite?topic=satellite-config-storage-local-block#rm-local-block-temp-cli)
+* [Local block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
 
 [Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file)
   * [Getting the device details for your local file storage configuration](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-devices)
   * [Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-labels)
 * [Creating a local file storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-cli)
-  * [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
 * [Assigning your storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file)
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file-cli)
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-config-storage-local-file#deploy-app-local-file)
+* [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-remove-local-file-config)
+  * [Remove the local file storage configuration from the console](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-rm-local-file-ui)
+  * [Remove the local file storage configuration from the command line](/docs/satellite?topic=satellite-config-storage-local-file#rm-local-file-temp-cli)
+* [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
 
 [OpenShift Container Storage using local disks](/docs/satellite?topic=satellite-config-storage-ocs-local)
-* [Creating an OCS local storage configuration](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local)
-  * [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-prereq)
-  * [Creating the `openshift-storage` namespace](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-ns)
-  * [Creating the IBM COS service instance](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cos)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-prereq)
+* [Setting up backing storage and getting your device details](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local)
+  * [Creating the IBM {{site.data.keyword.cos_short}} service instance](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cos)
   * [Getting the device details for your OCS configuration](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-devices)
 * [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cli)
-  * [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli)
 * [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local)
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local-cli)
+  * [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-sc-ref)
 
 
@@ -491,6 +507,8 @@ subcollection: satellite
 [NetApp Trident SAN](/docs/satellite?topic=satellite-storage-class-ref#netapp-san-ref)
 
 [OpenShift Container Storage for local volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-local-ref)
+
+[OpenShift Container Storage for remote volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-remote-ref)
 
 
 ## Enhancing security
@@ -542,8 +560,8 @@ subcollection: satellite
 
 [Securing your data in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-data-security)
 * [What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
-* [How is my information stored and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
-* [Where is my information stored?](/docs/satellite?topic=satellite-data-security#sat_data-location)
+* [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
+* [Which {{site.data.keyword.cloud_notm}} region is my information stored in?](/docs/satellite?topic=satellite-data-security#sat_data-location)
 * [How can I remove my information?](/docs/satellite?topic=satellite-data-security#sat-data-removal)
 
 [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events)

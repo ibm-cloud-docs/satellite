@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-19"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -109,7 +109,7 @@ The following diagram presents the initial setup steps for hosts.
 
 ![Concept overview of Satellite host setup](/images/host-process.png){: caption="Figure 1. The initial setup process for {{site.data.keyword.satelliteshort}} hosts." caption-side="bottom"}
 
-1.  **Attach**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [attach the host](#attach-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). For cloud provider-specific configurations, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure). After the host is attached and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
+1.  **Attach**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [attach the host](#attach-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud). After the host is attached and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
 2.  **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service. For example, a basic setup has 6 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} location control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
 3.  **Bootstrap**: When you assign a host, the host is bootstrapped to become a worker node in a managed {{site.data.keyword.openshiftlong_notm}} cluster or your {{site.data.keyword.satelliteshort}} control plane. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, Kubernetes and {{site.data.keyword.openshiftshort}} are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 
@@ -130,7 +130,7 @@ Using AWS hosts? You can use a [launch template](/docs/satellite?topic=satellite
 When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.
 {: important}
 
-* Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure).
+* Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
 * Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
 * Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then IBM can automatically assign hosts when clusters or the {{site.data.keyword.satelliteshort}} location control plane request more capacity.
 
@@ -140,7 +140,7 @@ When you set up the {{site.data.keyword.satelliteshort}} location control plane,
 Use the {{site.data.keyword.satelliteshort}} console to attach hosts to your location.
 {: shortdesc}
 
-Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure).
+Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
 {: important}
 
 1. From the [**Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, select that location where you want to attach hosts.  
@@ -193,7 +193,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 Use the {{site.data.keyword.satelliteshort}} CLI to attach hosts to your location.
 {: shortdesc}
 
-Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), and [Microsoft Azure](/docs/satellite?topic=satellite-azure).
+Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
 {: important}
 
 1.  Generate a script that you can copy and run on your machines to attach them as hosts to your location. You might want to include a label to identify the purpose of the hosts, such as `use:satloc`, because the hosts provide compute capacity for the {{site.data.keyword.satelliteshort}} location. Your hosts automatically are assigned labels for the CPU and memory size if these values can be detected on the machine.
@@ -605,8 +605,10 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 ## Removing hosts
 {: #host-remove}
 
-When you remove a host from your location, the host is unassigned from a {{site.data.keyword.openshiftlong_notm}} cluster or {{site.data.keyword.satellitelong_notm}} control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete an {{site.data.keyword.openshiftshort}} cluster or resize a worker pool, the hosts are still attached to your location, but you must detach and reattach the hosts to use them with another {{site.data.keyword.satelliteshort}} resource.
+When you remove a host from your location, the host is unassigned from a {{site.data.keyword.satelliteshort}}-enabled service cluster or the {{site.data.keyword.satelliteshort}} location control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete an {{site.data.keyword.openshiftshort}} cluster or resize a worker pool, the hosts are still attached to your location, but you must detach and reattach the hosts to use them with another {{site.data.keyword.satelliteshort}} resource.
 {: shortdesc}
+
+After removal, the host machine still exists in your underlying infrastructure provider. Reload the operating system before using the host machine for another purpose.
 
 Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep. Note that the underlying host infrastructure is not deleted because you manage the infrastructure yourself.
 {: important}
@@ -631,7 +633,7 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as com
 5. From the **Hosts** table, hover over the host that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 6. Click **Remove host**, enter the host name to confirm deletion, and click **Remove**.
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
-   * To reuse the host for other purposes, reload the operating system of the host.
+   * To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
    * To no longer use the host, delete the host from your infrastructure provider.
 
 ### Removing hosts from the CLI
@@ -678,5 +680,5 @@ Use the {{site.data.keyword.satelliteshort}} CLI to remove your hosts as compute
    ```
    {: pre}
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
-   * To reuse the host for other purposes, reload the operating system of the host.
+   * To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
    * To no longer use the host, delete the host from your infrastructure provider.

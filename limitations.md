@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -107,6 +107,10 @@ subcollection: satellite
 You can create up to 20 {{site.data.keyword.satelliteshort}} locations per {{site.data.keyword.cloud_notm}} multizone metro that the location is managed from.
 {: shortdesc}
 
+As you select your infrastructure provider, consider the following latency requirements. Environments that do not meet the latency requirements experience degradated performance.
+* **Between {{site.data.keyword.cloud_notm}} and the location**: Your infrastructure provider must have a low latency connection of less than 100 milliseconds (`< 100ms`) between the hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location and the {{site.data.keyword.cloud_notm}} region that the location is managed from.
+* **Between hosts in your location**: Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
+
 <br />
 
 ## Hosts
@@ -172,7 +176,7 @@ You cannot scope access policies for {{site.data.keyword.satelliteshort}} Config
 
 You cannot scope access policies to particular configuration or subscription resources. When you assign a policy in the {{site.data.keyword.cloud_notm}} IAM console, leave the **Resource** field blank for configurations or subscriptions. Instead, you can scope the access policy to a cluster group for more control of how your {{site.data.keyword.satelliteshort}} Config resources are deployed.
 
-To let users view the Kubernetes resources that run in clusters with {{site.data.keyword.satelliteshort}} Config, you must assign an access policy with the appropriate role (Administrator, Manager, or Reader) to {{site.data.keyword.satelliteslong_notm}} (and not scoped to a particular resource or resource type).
+To let users view the Kubernetes resources that run in clusters with {{site.data.keyword.satelliteshort}} Config, you must assign an access policy with the appropriate role (Administrator, Manager, or Reader) to {{site.data.keyword.satellitelong_notm}} (and not scoped to a particular resource or resource type).
 
 After you enable {{site.data.keyword.satelliteshort}} config permissions when you create a {{site.data.keyword.satelliteshort}} cluster in the console or in the CLI with the `--enable-admin-agent` flag for the `ibmcloud oc cluster create satellite` command, you must set the context of the cluster to synchornize permissions. You can set the cluster context by launching the {{site.data.keyword.openshiftshort}} web console or by running the `ibmcloud oc cluster config` command in the CLI. **Note**: If you registered a {{site.data.keyword.openshiftlong_notm}} cluster in the public cloud to use with {{site.data.keyword.satelliteshort}} config, you do not need to set the cluster context to synchronize permissions.
 
