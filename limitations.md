@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-05"
+lastupdated: "2021-03-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -106,6 +106,10 @@ subcollection: satellite
 
 You can create up to 20 {{site.data.keyword.satelliteshort}} locations per {{site.data.keyword.cloud_notm}} multizone metro that the location is managed from.
 {: shortdesc}
+
+As you select your infrastructure provider, consider the following latency requirements. Environments that do not meet the latency requirements experience degradated performance.
+* **Between {{site.data.keyword.cloud_notm}} and the location**: Your infrastructure provider must have a low latency connection of less than 100 milliseconds (`< 100ms`) between the hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location and the {{site.data.keyword.cloud_notm}} region that the location is managed from.
+* **Between hosts in your location**: Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
 
 <br />
 
