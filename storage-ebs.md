@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-18"
+lastupdated: "2021-03-23"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -118,40 +118,10 @@ To use the AWS EBS storage template, complete the following tasks:
 ## Creating an AWS EBS storage configuration
 {: #sat-storage-aws-ebs}
 
-You can use the [console](#sat-storage-aws-ebs-ui) or [CLI](#sat-storage-aws-ebs-cli) to create an AWS EBS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EBS storage for your apps.
+You can use the [CLI](#sat-storage-aws-ebs-cli) to create an AWS EBS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EBS storage for your apps.
 {: shortdesc}
 
-### Creating an AWS EBS storage configuration from the console
-{: #sat-storage-aws-ebs-ui}
 
-Use the console to create an AWS EBS storage configuration for your location. 
-{: shortdesc}
-
-Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
-
-1. From the [{{site.data.keyword.satelliteshort}} location dashboard](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
-2. Select the **Storage** tab and click **Create storage configuration**.
-3. Enter the details for your storage configuration. 
-   1. Enter a name for your storage configuration.
-   2. From the **Storage type** drop-down list, select the **AWS EBS CSI driver**.
-   3. From the **Version** drop-down list, select the storage driver version that you want to install.
-   4. Click **Next** to go to the **Parameters** page. 
-4. Click **Next** to go to the **Secrets** page. 
-5. On the **Secrets** page, enter your AWS login credentials. These credentials are needed to provision AWS EBS storage in your account. When you assign the storage configuration to your cluster, your AWS access key ID and secret access key are stored in a Kubernetes secret in your cluster. 
-   1. In the **Access key ID** field, enter your AWS access key ID. For more information about how to retrieve this value, see the [AWS IAM documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external}.
-   2. In the **Secret access key** field, enter your AWS secret access key. For more information about how to retrieve this value, see the [AWS IAM documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external}.
-   3. Click **Next** to go to the **Storage classes** page. 
-6. Review the storage classes that get created in a cluster that you subscribe to your storage configuration. 
-7. Click **Complete** to create your storage configuration. 
-8. Assign your storage configuration to a cluster. 
-   1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, select the configuration that you created. 
-   2. Click **Create a subscription**. 
-   3. Enter a name for your subscription, select a version and a cluster group. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EBS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location. 
-   4. Click **Create** to create your subscription. After the subscription is created, your storage configuration is deployed to all clusters in your cluster group. 
-9. Follow step 8 in [Creating an AWS EBS storage configuration from the CLI](#sat-storage-aws-ebs-cli) to verify that the AWS EBS driver is successfully installed in your cluster.
-
-### Creating an AWS EBS storage configuration from the CLI
-{: #sat-storage-aws-ebs-cli}
 
 Use the command line to create an AWS EBS storage configuration for your location.
 {: shortdesc}
@@ -453,25 +423,7 @@ If you no longer plan on using AWS EBS storage in your cluster, you can unassign
 Removing the storage configuration, uninstalls the AWS EBS driver from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
 {: important}
 
-### Removing the AWS EBS storage configuration from the console
-{: #aws-ebs-template-rm-ui}
 
-Use the console to remove a storage configuration. 
-{: shortdesc}
-
-1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, select the storage configuration that you subscribed your clusters to. 
-
-2. Find the subscription that you want to remove and from the actions menu, click **Remove**. After the subscription is removed, the AWS EBS driver pods and storage classes are removed from all clusters that were subscribed to your storage configuration. 
-
-3. Optional: Follow step 3 in [Removing the AWS EBS storage configuration from the CLI](#aws-ebs-template-rm-cli) to verify that the AWS driver pods and storage classes are removed from your clusters. 
-
-4. Optional: Remove your storage configuration. 
-   1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, find the storage configuration that you want to remove. 
-   2. From the actions menu, click **Delete**. 
-
-
-### Removing the AWS EBS storage configuration from the CLI
-{: #aws-ebs-template-rm-cli}
 
 Use the CLI to remove a storage configuration. 
 {: shortdesc}

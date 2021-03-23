@@ -134,7 +134,7 @@ When you create an OCS local storage configuration, you must configure a backing
 
 Create an instance of IBM {{site.data.keyword.cos_short}} for the backing storage of your OCS local configuration. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials.
 
-For more information about creating a {{site.data.keyword.cos_short}} instance, see [creating a service instance](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-instance). For more information about creating and retrieving your {{site.data.keyword.cos_short}} HMAC credentials, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
+For more information about creating an {{site.data.keyword.cos_short}} instance, see [creating a service instance](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-instance). For more information about creating and retrieving your {{site.data.keyword.cos_short}} HMAC credentials, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
 {: tip}
 
 1. Create an IBM {{site.data.keyword.cos_short}} service instance.
@@ -264,9 +264,6 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuraton in the command line
-{: #assign-storage-ocs-local-cli}
-
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
   ```sh
   ibmcloud sat storage config ls
@@ -395,7 +392,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 <br />
 
-## Deploying an app that uses {{ocs_long}
+## Deploying an app that uses OpenShift Container Storage
 {: #sat-storage-ocs-local-deploy}
 
 You can use the OCS storage classes to create PVCs for the apps in your clusters.
@@ -569,26 +566,7 @@ If you no longer plan on using OpenShift Container Storage in your cluster, you 
 Removing the storage configuration, uninstalls the OCS operators from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
 {: important}
 
-### Removing the OCS storage configuration from the console
-{: #ocs-local-template-rm-ui}
-{: ui}
 
-Use the console to remove a storage configuration. 
-{: shortdesc}
-
-1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, select the storage configuration that you subscribed your clusters to. 
-
-2. Find the subscription that you want to remove and from the actions menu, click **Remove**. After the subscription is removed, the OCS driver pods and storage class are removed from all clusters that were subscribed to your storage configuration. 
-
-3. Optional: Follow step 3 in [Removing the OCS storage configuration from the CLI](#ocs-local-template-rm-cli) to verify that the OCS driver pods and storage class are removed from your clusters. 
-
-4. Optional: Remove your storage configuration. 
-   1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, find the storage configuration that you want to remove. 
-   2. From the actions menu, click **Delete**. 
-
-
-### Removing the OCS local storage assignment from the command line
-{: #ocs-local-template-rm-cli}
 
 Use the command line to remove a storage configuration. 
 {: shortdesc}
@@ -743,7 +721,7 @@ Use the command line to remove a storage configuration.
   ```
   {: screen}
 
-### OpenShift Container Storage configuration parameter reference
+## OpenShift Container Storage configuration parameter reference
 {: #sat-storage-ocs-local-params-cli}
 
 | Parameter | Required? | Description | Default value if not provided |
