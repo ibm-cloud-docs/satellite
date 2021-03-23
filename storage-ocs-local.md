@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-23"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -134,7 +134,10 @@ When you create an OCS local storage configuration, you must configure a backing
 
 Create an instance of IBM {{site.data.keyword.cos_short}} for the backing storage of your OCS local configuration. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials.
 
-1. Create an IBM {{site.data.keyword.cos_short}} Service Instance.
+For more information about creating an {{site.data.keyword.cos_short}} instance, see [creating a service instance](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-instance). For more information about creating and retrieving your {{site.data.keyword.cos_short}} HMAC credentials, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
+{: tip}
+
+1. Create an IBM {{site.data.keyword.cos_short}} service instance.
     ```sh
     ibmcloud resource service-instance-create noobaa-store cloud-object-storage standard global
     ```
@@ -239,9 +242,9 @@ The following steps show how you can manually retrieve the local device informat
 
 1. Before you can create a storage configuration, [review the prerequisites](#sat-storage-ocs-local-prereq).
 1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-local-params-cli).
-1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values.
   ```sh
-  ibmcloud sat storage config create --name <name> --template-name ocs-local --template-version 4.6 -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=<by-id1>,<by-id2>,<by-id3>" -p "mon-device-path=<by-id1>,<by-id2>,<by-id3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
+  ibmcloud sat storage config create --name <name> --template-name ocs-local --template-version 4.6 -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
   ```
   {: pre}
 1. Verify that your storage configuration is created.
@@ -260,9 +263,6 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 <br />
 
 
-
-### Assigning a storage configuraton in the command line
-{: #assign-storage-ocs-local-cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
   ```sh
@@ -350,12 +350,378 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
       ```
       {: screen}
 
+6. List the OCS storage classes.
+  ```sh
+  oc get sc
+  ```
+  {: pre}
+
+  **Example output**:
+  ```sh
+  NAME                          PROVISIONER                             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+  localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  107s
+  localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  107s
+  ocs-storagecluster-ceph-rbd   openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   87s
+  ocs-storagecluster-ceph-rgw   openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  87s
+  ocs-storagecluster-cephfs     openshift-storage.cephfs.csi.ceph.com   Delete          Immediate              true                   88s
+  sat-ocs-cephfs-gold           openshift-storage.cephfs.csi.ceph.com   Delete          Immediate              true                   2m46s
+  sat-ocs-cephrbd-gold          openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   2m46s
+  sat-ocs-cephrgw-gold          openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  2m45s
+  sat-ocs-noobaa-gold           openshift-storage.noobaa.io/obc         Delete          Immediate              false                  2m45s
+  ```
+  {: screen}
+
+7. List the persistent volumes and verify that your MON and OSD volumes are created.
+  ```sh
+  oc get pv
+  ```
+  {: pre}
+
+  **Example output**:
+  ```sh
+  NAME                CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                            STORAGECLASS   REASON   AGE
+  local-pv-180cfc58   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-b                localfile               12m
+  local-pv-67f21982   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-a                localfile               12m
+  local-pv-80c5166    100Gi      RWO            Delete           Bound    openshift-storage/ocs-deviceset-2-data-0-5p6hd   localblock              12m
+  local-pv-9b049705   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-c                localfile               12m
+  local-pv-b09e0279   100Gi      RWO            Delete           Bound    openshift-storage/ocs-deviceset-1-data-0-gcq88   localblock              12m
+  local-pv-f798e570   100Gi      RWO            Delete           Bound    openshift-storage/ocs-deviceset-0-data-0-6fgp6   localblock              12m
+  ```
+  {: screen}
+
 
 <br />
 
+## Deploying an app that uses OpenShift Container Storage
+{: #sat-storage-ocs-local-deploy}
+
+You can use the OCS storage classes to create PVCs for the apps in your clusters.
+{: shortdesc}
+      
+1. Create a YAML configuration file for your PVC. In order for the PVC to match the PV, you must use the same values for the storage class and the size of the storage. 
+  ```yaml
+  apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: ocs-pvc
+  spec:
+    accessModes:
+      - ReadWriteOnce
+    storageClassName: sat-ocs-cephfs-gold
+    resources:
+      requests:
+        storage: 5Gi
+  ```
+  {: codeblock}
+  
+2. Create the PVC in your cluster. 
+  ```sh
+  oc apply -f pvc.yaml
+  ```
+  {: pre}
+
+3. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file.
+   ```yaml
+   apiVersion: v1
+   kind: Pod
+   metadata:
+     name: app
+   spec:
+     containers:
+     - name: app
+       image: nginx
+       command: ["/bin/sh"]
+       args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
+       volumeMounts:
+       - name: persistent-storage
+         mountPath: /test
+     volumes:
+     - name: persistent-storage
+       persistentVolumeClaim:
+         claimName: ocs-pvc
+   ```
+   {: codeblock}
+   
+5. Create the pod in your cluster. 
+   ```sh
+   oc apply -f pod.yaml
+   ```
+   {: pre}
+
+6. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state. 
+   ```sh
+   oc get pods
+   ```
+   {: pre}
+   
+   Example output: 
+   ```
+   NAME                                READY   STATUS    RESTARTS   AGE
+   app                                 1/1     Running   0          2m58s
+   ```
+   {: screen}
+   
+7. Verify that the app can write data. 
+   1. Log in to your pod. 
+      ```sh
+      oc exec <app-pod-name> -it bash
+      ```
+      {: pre}
+
+   2. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
+      ```sh
+      cat /test/test.txt
+      ```
+      {: pre}
+      
+      Example output:
+      ```sh
+      Tue Mar 2 20:09:19 UTC 2021
+      Tue Mar 2 20:09:25 UTC 2021
+      Tue Mar 2 20:09:31 UTC 2021
+      Tue Mar 2 20:09:36 UTC 2021
+      Tue Mar 2 20:09:42 UTC 2021
+      Tue Mar 2 20:09:47 UTC 2021
+      ```
+      {: screen}
+      
+   3. Exit the pod. 
+      ```sh
+      exit
+      ```
+      {: pre}
 
 
-### OpenShift Container Storage configuration parameter reference
+
+
+
+
+
+## Removing OpenShift Container Storage from your apps 
+{: #ocs-local-rm}
+
+If you no longer need your OpenShift Container Storage, you can remove your PVC, PV, and the OCS operator from your clusters. 
+{: shortdesc}
+
+1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove. 
+   ```sh
+   oc get pvc
+   ```
+   {: pre}
+   
+2. Remove any pods that mount the PVC. 
+   1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC. 
+      ```sh
+      oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+      ```
+      {: pre}
+   
+      Example output: 
+      ```
+      app    sat-ocs-cephfs-gold
+      ```
+      {: screen}
+   
+   2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
+      ```sh
+      oc delete pod <pod_name>
+      ```
+      {: pre}
+      
+      ```sh
+      oc delete deployment <deployment_name>
+      ```
+      {: pre}
+      
+   3. Verify that the pod or the deployment is removed. 
+      ```sh
+      oc get pods
+      ```
+      {: pre}
+      
+      ```sh
+      oc get deployments
+      ```
+      {: pre}
+      
+3. Delete the PVC.
+   ```sh
+   oc delete pvc <pvc_name>
+   ```
+   {: pre}
+   
+4. Delete the corresponding PV. 
+   ```sh
+   oc delete pv <pv_name>
+   ```
+   {: pre}
+   
+ 
+## Removing the OCS local storage configuration from your cluster
+{: #ocs-local-template-rm}
+
+If you no longer plan on using OpenShift Container Storage in your cluster, you can unassign your cluster from the storage configuration. 
+{: shortdesc}
+
+Removing the storage configuration, uninstalls the OCS operators from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
+{: important}
+
+
+
+Use the command line to remove a storage configuration. 
+{: shortdesc}
+
+1. List your storage assignments and find the one that you used for your cluster. 
+   ```sh
+   ibmcloud sat storage assignment ls
+   ```
+   {: pre}
+   
+2. Remove the assignment. After the assignment is removed, the OCS driver pods and storage classes are removed from all clusters that were part of the storage assignment. 
+   ```sh
+   ibmcloud sat storage assignment rm --assignment <assignment_name>
+   ```
+   {: pre}
+
+3. List your storage assignments and find the one that you used for your cluster. 
+  ```sh
+  ibmcloud sat storage assignment ls
+  ```
+  {: pre}
+
+4. Remove the assignment. After the assignment is removed, the local file driver pods and storage classes are removed from all clusters that were part of the storage assignment. 
+  ```sh
+  ibmcloud sat storage assignment rm --assignment <assignment_name>
+  ```
+  {: pre}
+
+5. Remove your storage assignment.
+  ```sh
+  ibmcloud sat storage assignment rm --assignment <assignment>
+  ```
+  {: pre}
+
+6. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
+  ```sh
+  #!/bin/bash
+  oc delete ns openshift-storage --wait=false
+  sleep 20
+  kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl -n openshift-storage patch cephblockpool.ceph.rook.io/ocs-storagecluster-cephblockpool -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl -n openshift-storage patch cephcluster.ceph.rook.io/ocs-storagecluster-cephcluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl -n openshift-storage patch cephfilesystem.ceph.rook.io/ocs-storagecluster-cephfilesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl -n openshift-storage patch cephobjectstore.ceph.rook.io/ocs-storagecluster-cephobjectstore -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/noobaa-ceph-objectstore-user -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/ocs-storagecluster-cephobjectstoreuser -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl -n openshift-storage patch NooBaa/noobaa -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl -n openshift-storage patch backingstores.noobaa.io/noobaa-default-backing-store -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl -n openshift-storage patch bucketclasses.noobaa.io/noobaa-default-bucket-class -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+  sleep 20
+  oc delete pods -n openshift-storage --all --force --grace-period=0
+  oc delete ns local-storage --wait=false
+  sleep 20
+  kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-block -p '{"metadata":{"finalizers":[]}}' --type=merge
+  kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-file -p '{"metadata":{"finalizers":[]}}' --type=merge
+  sleep 20
+  oc delete pods -n local-storage --all --force --grace-period=0
+  ```
+  {: pre}
+
+7. Run the `cleanup.sh` script.
+  ```sh
+  sh ./cleanup.sh
+  ```
+  {: pre}
+
+8. After you run the cleanup script, log in to each worker node and run the following commands.
+  1. Deploy a debug pod and run `chroot /host`.
+    ```sh
+    oc debug node/<node_name> -- chroot /host
+    ```
+    {: pre}
+
+  2. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your OCS configuration.
+    ```sh
+    rm -rvf /var/lib/rook /mnt/local-storage
+    ```
+    {: codeblock}
+
+    **Example output**:
+    ```sh
+    removed '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6/ceph-volume.log'
+    removed directory: '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6'
+    removed directory: '/var/lib/rook/openshift-storage/log'
+    removed directory: '/var/lib/rook/openshift-storage/crash/posted'
+    removed directory: '/var/lib/rook/openshift-storage/crash'
+    removed '/var/lib/rook/openshift-storage/client.admin.keyring'
+    removed '/var/lib/rook/openshift-storage/openshift-storage.config'
+    removed directory: '/var/lib/rook/openshift-storage'
+    removed directory: '/var/lib/rook'
+    removed '/mnt/local-storage/localblock/nvme3n1'
+    removed directory: '/mnt/local-storage/localblock'
+    removed '/mnt/local-storage/localfile/nvme2n1'
+    removed directory: '/mnt/local-storage/localfile'
+    removed directory: '/mnt/local-storage'
+    ```
+    {: codeblock}
+
+10. **Optional**: If you no longer want to use the local volumes that you used in your OCS configuration, you can delete them from the cluster. List the local PVs.
+  ```sh
+  oc get pv 
+  ```
+  {: pre}
+
+  **Example output**:
+  ```sh
+  local-pv-180cfc58   139Gi      RWO            Delete           Available           localfile               11m
+  local-pv-67f21982   139Gi      RWO            Delete           Available           localfile               12m
+  local-pv-80c5166    100Gi      RWO            Delete           Available           localblock              12m
+  local-pv-9b049705   139Gi      RWO            Delete           Available           localfile               12m
+  local-pv-b09e0279   100Gi      RWO            Delete           Available           localblock              12m
+  local-pv-f798e570   100Gi      RWO            Delete           Available           localblock              12m
+  ```
+  {: screen}
+
+11. Delete the local PVs.
+  ```sh
+  oc delete pv <pv_name> <pv_name> <pv_name>
+  ```
+  {: pre}
+
+12. List the OCS and local storage classes.
+  ```sh
+  oc get sc
+  ```
+  {: pre}
+
+  **Example output**:
+  ```sh
+  localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
+  localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
+  ocs-storagecluster-ceph-rbd   openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   41m
+  ocs-storagecluster-ceph-rgw   openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  41m
+  ocs-storagecluster-cephfs
+  ```
+  {: screen}
+
+13. Delete the storage classes.
+  ```
+  oc delete sc localblock localfile ocs-storagecluster-ceph-rbd ocs-storagecluster-ceph-rgw ocs-storagecluster-cephfs
+  ```
+  {: pre}
+
+  **Example output**
+  ```sh
+  storageclass.storage.k8s.io "localblock" deleted
+  storageclass.storage.k8s.io "localfile" deleted
+  storageclass.storage.k8s.io "ocs-storagecluster-ceph-rgw" deleted
+  storageclass.storage.k8s.io "ocs-storagecluster-cephfs" deleted
+  storageclass.storage.k8s.io "ocs-storagecluster-cephrbd" deleted
+  ```
+  {: screen}
+
+## OpenShift Container Storage configuration parameter reference
 {: #sat-storage-ocs-local-params-cli}
 
 | Parameter | Required? | Description | Default value if not provided |
@@ -364,11 +730,11 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 | `--template-name` | Required | Enter `ocs-local`. | N/A |
 | `--template-version` | Required | Enter `4.6`. | N/A |
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. | N/A |
-| `mon-device-path` | Required | Enter a comma separated list of the `disk-by-id` paths for the devices that you want to use for the MON pods. The parameter format is `</directory/device-id>`. Example `mon-device-path` value for a partitioned device: `/dev/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. | N/A |
-| `osd-device-path` | Required | Enter a comma separated list of the `disk-by-id` paths for the devices that you want to use for the OSD pods. The parameter format is `</directory/device-id>`. Example `osd-device-path` value for a partitioned device: `/dev/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`,`/dev/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
-| `ibm-cos-access-key` | Required | Enter the IBM {{site.data.keyword.cos_short}} regional public endpoint. Example: `us-east-standard`. | N/A | 
-| `ibm-cos-secret-access-key` | Required | Enter the IBM {{site.data.keyword.cos_short}} region. Example: `us-east-standard`. | N/A |
-| `ibm-cos-endpoint` | Required | Enter the IBM {{site.data.keyword.cos_short}} regional public endpoint. Example: `us-east-standard`. | N/A | 
+| `mon-device-path` | Required | Enter a comma separated list of the `disk-by-id` paths for the storage devices that you want to use for the OCS monitoring (MON) pods. The devices that you specify must have at least 20GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `mon-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. | N/A |
+| `osd-device-path` | Required | Enter a comma separated list of the `disk-by-id` paths for the devices that you want to use for the OSD pods. The devices that you specify are used as your storage devices in your OCS configuration. Your OSD devices must have at least 100GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `osd-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
+| `ibm-cos-access-key` | Required | Enter the IBM {{site.data.keyword.cos_short}} access key ID. Do not base64 encode this value. Your {{site.data.keyword.cos_short}} access key ID is used to create a Kubernetes secret in your cluster. | N/A | 
+| `ibm-cos-secret-access-key` | Required | Enter the IBM {{site.data.keyword.cos_short}} secret access key. Do not base64 encode this value. Your {{site.data.keyword.cos_short}} secret access key is used to create a Kubernetes secret in your cluster. | N/A |
+| `ibm-cos-endpoint` | Required | Enter the IBM {{site.data.keyword.cos_short}} regional public endpoint. Be sure that you enter the regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A | 
 | `ibm-cos-location` | Required | Enter the IBM {{site.data.keyword.cos_short}} region. Example: `us-east-standard`. | N/A |
 | `num-of-osd` | Optional | Enter the number of OSDs. OCS creates 3 times the value specified. | 1 |
 |`worker-nodes` | Optional | Enter the IP addresses of the worker nodes that you want to use in your OCS configuration. Your configuration must have at least 3 worker nodes. If this value is not specified, all of the worker nodes in the cluster are included in your OCS configuration. Example: `169.48.170.90` | N/A |
@@ -394,6 +760,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Co
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 {: caption="Table 2. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
-
-
-

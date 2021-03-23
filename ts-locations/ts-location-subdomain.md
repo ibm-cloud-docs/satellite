@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-03-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -129,17 +129,16 @@ The {{site.data.keyword.satelliteshort}} location control plane is inaccessible 
       nslookup <subdomain>
       ```
       {: pre}
-    3. Curl each location subdomain on port 30000. If any subdomains do not return a `200 OK` message, ensure that your hosts meet the [host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
+    3. Use `netcat` on each location subdomain on port 30000 to test host connectivity. If any subdomain's `netcat` operation times out, ensure that your hosts meet the [host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
       ```
-      curl http://<subdomain>:30000
+      nc -zv <subdomain> 30000
       ```
       {: pre}
 
-      Example output:
+      Successful output:
       ```
-      <html><body><h1>200 OK</h1>
-      Service ready.
-      </body></html>
+      Ncat: Version 7.50 ( https://nmap.org/ncat )
+      Ncat: Connection refused.
       ```
       {: screen}
 

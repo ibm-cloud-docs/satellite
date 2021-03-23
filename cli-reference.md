@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-23"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1284,7 +1284,9 @@ ibmcloud sat location create --managed-from METRO --name NAME [--cos-bucket COS_
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: 
+* To run this operation, {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. 
+* To create a location, you also need to set up [permissions to other cloud services](/docs/satellite?topic=satellite-iam#iam-roles-usecases).
 
 **Command options:**
 

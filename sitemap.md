@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -397,26 +397,18 @@ subcollection: satellite
 [AWS EBS](/docs/satellite?topic=satellite-config-storage-ebs)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-prereq)
 * [Creating an AWS EBS storage configuration](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs)
-  * [Creating an AWS EBS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-ui)
-  * [Creating an AWS EBS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-cli)
 * [Deploying an app that uses AWS EBS storage](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-ebs-deploy)
 * [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-rm)
 * [Removing the AWS EBS storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm)
-  * [Removing the AWS EBS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm-ui)
-  * [Removing the AWS EBS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm-cli)
 * [AWS EBS storage configuration CLI parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-ebs-sc-reference)
 
 [AWS EFS](/docs/satellite?topic=satellite-config-storage-efs)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-efs-prereqs)
 * [Creating an AWS EFS storage configuration](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs)
-  * [Creating an AWS EFS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-ui)
-  * [Creating an AWS EFS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-cli)
 * [Deploying an app that uses AWS EFS storage](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-efs-deploy)
 * [Removing AWS EFS storage from your apps](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-rm)
 * [Removing the AWS EFS storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-template-rm)
-  * [Removing the AWS EFS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-template-rm-ui)
-  * [Removing the AWS EFS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-template-rm-cli)
 * [AWS EFS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-efs#efs-sc-reference)
 
@@ -458,8 +450,6 @@ subcollection: satellite
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-local-block#assign-storage-local-block-cli)
 * [Deploying an app that uses your local block storage](/docs/satellite?topic=satellite-config-storage-local-block#deploy-app-local-block)
 * [Removing the local block storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-remove-local-block-config)
-  * [Removing the local block storage configuration from the console](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-rm-local-block-ui)
-  * [Removing the local block storage configuration from the command line](/docs/satellite?topic=satellite-config-storage-local-block#rm-local-block-temp-cli)
 * [Local block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
 
@@ -471,8 +461,6 @@ subcollection: satellite
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file-cli)
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-config-storage-local-file#deploy-app-local-file)
 * [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-remove-local-file-config)
-  * [Remove the local file storage configuration from the console](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-rm-local-file-ui)
-  * [Remove the local file storage configuration from the command line](/docs/satellite?topic=satellite-config-storage-local-file#rm-local-file-temp-cli)
 * [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
 
@@ -483,8 +471,10 @@ subcollection: satellite
   * [Getting the device details for your OCS configuration](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-devices)
 * [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cli)
 * [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local)
-  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local-cli)
-  * [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli)
+* [Deploying an app that uses OpenShift Container Storage](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-deploy)
+* [Removing OpenShift Container Storage from your apps](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-rm)
+* [Removing the OCS local storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-template-rm)
+* [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-sc-ref)
 
 
@@ -783,7 +773,8 @@ subcollection: satellite
 * [R0036: Location subdomain traffic routing](/docs/satellite?topic=satellite-ts-locations-debug#R0036)
 * [R0043: Layer 3 connectivity](/docs/satellite?topic=satellite-ts-locations-debug#R0043)
 * [R0044: DNS issues](/docs/satellite?topic=satellite-ts-locations-debug#R0044)
-* [R0045, R0046: Host file system and NTP issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
+* [R0045: Host read-only file system issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
+* [R0046: NTP issues](/docs/satellite?topic=satellite-ts-locations-debug#R0046)
 * [R0047: Location health checking](/docs/satellite?topic=satellite-ts-locations-debug#R0047)
 
 
