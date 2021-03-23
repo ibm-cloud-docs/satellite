@@ -484,6 +484,11 @@ subcollection: satellite
 * [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cli)
 * [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local)
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local-cli)
+* [Deploying an app that uses {{ocs_long}](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-deploy)
+* [Removing {[ocs_long] from your apps](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-rm)
+* [Removing the OCS local storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-template-rm)
+  * [Removing the OCS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-template-rm-ui)
+  * [Removing the OCS local storage assignment from the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-template-rm-cli)
   * [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-sc-ref)
 
