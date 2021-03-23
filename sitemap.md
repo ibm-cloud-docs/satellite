@@ -485,7 +485,7 @@ subcollection: satellite
 * [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local)
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local-cli)
 * [Deploying an app that uses {{ocs_long}](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-deploy)
-* [Removing {[ocs_long] from your apps](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-rm)
+* [Removing OpenShift Container Storage from your apps](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-rm)
 * [Removing the OCS local storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-template-rm)
   * [Removing the OCS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-template-rm-ui)
   * [Removing the OCS local storage assignment from the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-template-rm-cli)
@@ -788,7 +788,7 @@ subcollection: satellite
 * [R0036: Location subdomain traffic routing](/docs/satellite?topic=satellite-ts-locations-debug#R0036)
 * [R0043: Layer 3 connectivity](/docs/satellite?topic=satellite-ts-locations-debug#R0043)
 * [R0044: DNS issues](/docs/satellite?topic=satellite-ts-locations-debug#R0044)
-* [R0045: Host read only file system issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
+* [R0045: Host read-only file system issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
 * [R0046: NTP issues](/docs/satellite?topic=satellite-ts-locations-debug#R0046)
 * [R0047: Location health checking](/docs/satellite?topic=satellite-ts-locations-debug#R0047)
 

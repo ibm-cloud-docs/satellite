@@ -423,21 +423,23 @@ R0043 The location does not meet the following requirement: Hosts must have TCP/
 
 Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block access to certain ports that might block communication across hosts. Review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) and unblock the ports on the host in your infrastructure provider.
 
-Example test:
-1.  SSH into an attached host that is not assigned
+To test TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts:
+1.  SSH into a host that is attached to your location but that is not assigned to any resources.
 
     You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
     {: note}
 
-2.  Check if netcat (TCP) receives a response (does not timeout) from all other hosts on port `10250`
-```
-nc -zv <hostIP> 10250
-```
+2.  To check TCP connectivity, verify that `netcat` receives a response from all other hosts on port `10250`. If the operation times out, review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) to unblock the ports on the host in your infrastructure provider.
+  ```
+  nc -zv <host_IP> 10250
+  ```
+  {: pre}
 
-3.  Check if a ping (ICMP) is successful to all other hosts
-```
-ping <hostIP>
-```
+3. To check ICMP connectivity, verify that a ping is successful to all other hosts. Repeat this step for each IP address of the hosts that are attached to your location. If the ping times out, review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) to unblock the ports on the host in your infrastructure provider.
+  ```
+  ping <host_IP>
+  ```
+  {: pre}
 
 ## R0044: DNS issues
 {: #R0044}
@@ -453,16 +455,21 @@ R0044 DNS issues have been detected on one or more hosts. Verify that your DNS s
 
 One or more hosts in your locations is unable to resolve DNS queries or a search domain is causing unexpected issues. Verify that your DNS solution is working as expected and that all hosts meet the [network host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
 
-Example DNS tests:
-1.  SSH into an attached host that is not assigned
-2.  Ensure DNS resoultions work.
+To test DNS resolution:
+1.  SSH into a host that is attached to your location but that is not assigned to any resources.
+
+    You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
+    {: note}
+
+2.  Ensure that DNS resolution is working properly.
     ```
     dig +short +timeout=5 +nocookie cloud.ibm.com
     ```
     {: pre}
-3.  Ensure that `localhost` + `anyDefinedSearchDomains` in DNS configuration do not resolve or resolve to `127.0.0.1`.
 
-## R0045: Host read only file system issues
+3.  Ensure that `localhost` with any appended search domains in your DNS configuration either do not resolve to anything, or resolve only to `127.0.0.1`. In the `/etc/resolv.conf` file that manages DNS resolution for each host, multiple search domains, such as `search ibm.com`, might be listed. Calico Typha pods on each host run a health check that uses `localhost` resolution. However, some search domains might be appended when the health check attempts to resolve `localhost`, which causes the health check to fail. To ensure that the health check can run properly, make sure that none of the listed search domains resolve to anything other than the `127.0.0.1` IP address when appended to `localhost`.
+
+## R0045: Host read-only file system issues
 {: #R0045}
 
 **Location message**
@@ -490,7 +497,21 @@ R0046 An NTP issue has been detected on one or more hosts. Verify that your NTP 
 
 **Steps to resolve**
 
-One or more hosts in your locations has NTP issues. Verify that your NTP solution is working as expected (e.g. ensure that running `date +%s` on your hosts does not differ from the actual time by more than 3 minutes)
+One or more hosts in your locations has Network Time Protocol (NTP) issues that must be resolved.
+
+To test NTP on your hosts:
+1.  SSH into a host that is attached to your location but that is not assigned to any resources.
+
+    You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
+    {: note}
+
+2.  Ensure that the time that is reported by the host does not differ from the actual time by more than 3 minutes. If the time differs by more than 3 minutes, verify your NTP solution with your infrastructure provider.
+    ```
+    date +%s
+    ```
+    {: pre}
+
+3. Repeat these steps to identify any hosts that have NTP issues.
 
 ## R0047: Location health checking
 {: #R0047}

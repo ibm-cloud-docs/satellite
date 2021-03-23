@@ -500,7 +500,7 @@ You can use the OCS storage classes to create PVCs for the apps in your clusters
 
 
 
-## Removing {[ocs_long] from your apps 
+## Removing OpenShift Container Storage from your apps 
 {: #ocs-local-rm}
 
 If you no longer need your OpenShift Container Storage, you can remove your PVC, PV, and the OCS operator from your clusters. 
