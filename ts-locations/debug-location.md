@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -423,6 +423,22 @@ R0043 The location does not meet the following requirement: Hosts must have TCP/
 
 Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block access to certain ports that might block communication across hosts. Review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) and unblock the ports on the host in your infrastructure provider.
 
+Example test:
+1.  SSH into an attached host that is not assigned
+
+    You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
+    {: note}
+
+2.  Check if netcat (TCP) receives a response (does not timeout) from all other hosts on port `10250`
+```
+nc -zv <hostIP> 10250
+```
+
+3.  Check if a ping (ICMP) is successful to all other hosts
+```
+ping <hostIP>
+```
+
 ## R0044: DNS issues
 {: #R0044}
 
@@ -437,16 +453,22 @@ R0044 DNS issues have been detected on one or more hosts. Verify that your DNS s
 
 One or more hosts in your locations is unable to resolve DNS queries or a search domain is causing unexpected issues. Verify that your DNS solution is working as expected and that all hosts meet the [network host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
 
-## R0045, R0046: Host file system and NTP issues
+Example DNS tests:
+1.  SSH into an attached host that is not assigned
+2.  Ensure DNS resoultions work.
+    ```
+    dig +short +timeout=5 +nocookie cloud.ibm.com
+    ```
+    {: pre}
+3.  Ensure that `localhost` + `anyDefinedSearchDomains` in DNS configuration do not resolve or resolve to `127.0.0.1`.
+
+## R0045: Host read only file system issues
 {: #R0045}
-{: #R0046}
 
 **Location message**
 
 ```
 R0045 A read-only file system has been detected on one or more hosts. Replace the affected host(s).
-
-R0046 An NTP issue has been detected on one or more hosts. Verify that your NTP solution is working as expected.
 ```
 {: screen}
 
@@ -455,6 +477,20 @@ R0046 An NTP issue has been detected on one or more hosts. Verify that your NTP 
 1.  [Set up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna) for more information about which hosts are affected.
 2.  [Remove](/docs/satellite?topic=satellite-hosts#host-remove) the affected hosts and [reattach new hosts](/docs/satellite?topic=satellite-hosts#attach-hosts).
 3.  If you still have issues, [open a support case](/docs/satellite?topic=satellite-get-help) and include your Satellite location ID.
+
+## R0046: NTP issues
+{: #R0046}
+
+**Location message**
+
+```
+R0046 An NTP issue has been detected on one or more hosts. Verify that your NTP solution is working as expected.
+```
+{: screen}
+
+**Steps to resolve**
+
+One or more hosts in your locations has NTP issues. Verify that your NTP solution is working as expected (e.g. ensure that running `date +%s` on your hosts does not differ from the actual time by more than 3 minutes)
 
 ## R0047: Location health checking
 {: #R0047}
