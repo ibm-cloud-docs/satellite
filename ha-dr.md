@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -92,7 +92,7 @@ subcollection: satellite
 {:video: .video}
 
 
-# High availability and disaster recovery for {{site.data.keyword.satelliteshort}}
+# High availability and disaster recovery
 {: #ha}
 
 Review what options you have to make your {{site.data.keyword.satellitelong}} location highly available.

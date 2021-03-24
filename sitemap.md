@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -505,7 +505,7 @@ subcollection: satellite
 {: #sitemap_enhancing_security}
 
 
-[Managing access for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-iam)
+[Managing access](/docs/satellite?topic=satellite-iam)
 * [Understanding {{site.data.keyword.satelliteshort}} resource types in IAM](/docs/satellite?topic=satellite-iam#iam-resource-types)
   * [Location](/docs/satellite?topic=satellite-iam#iam-resource-loc)
   * [Configuration, subscription, cluster, cluster group, and resource](/docs/satellite?topic=satellite-iam#iam-resource-config)
@@ -530,7 +530,7 @@ subcollection: satellite
 * [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies)
 * [Dependencies to 3rd party services](/docs/satellite?topic=satellite-service-architecture#3rd-party-dependencies)
 
-[High availability and disaster recovery for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ha)
+[High availability and disaster recovery](/docs/satellite?topic=satellite-ha)
 * [About high availability and disaster recovery](/docs/satellite?topic=satellite-ha#ha-about)
 * [Understanding high availability in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha#ha-understand)
   * [High availability of the {{site.data.keyword.satelliteshort}} control plane master](/docs/satellite?topic=satellite-ha#ha-control-plane-master)
@@ -541,20 +541,36 @@ subcollection: satellite
   * [Example for a high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
   * [Example for a high availability setup in another cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
 
-[Securing your connection to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-service-connection)
+[Security and compliance](/docs/satellite?topic=satellite-compliance)
+* [Data security](/docs/satellite?topic=satellite-compliance#secure-data)
+  * [What data is stored when I use {{site.data.keyword.satelliteshort}}? How can I use my own keys to encrypt my data?](/docs/satellite?topic=satellite-compliance#secure-data-store-encrypt)
+  * [How do I make my data secure over {{site.data.keyword.satelliteshort}} Link?](/docs/satellite?topic=satellite-compliance#secure-data-link)
+  * [What measures can I take to secure user access to data in my location?](/docs/satellite?topic=satellite-compliance#secure-data-access)
+* [IBM operational access](/docs/satellite?topic=satellite-compliance#operational-access)
+  * [What automated access does IBM have to my location?](/docs/satellite?topic=satellite-compliance#operational-access-automated)
+  * [What access do IBM SREs have to my location control plane, including the masters of {{site.data.keyword.satelliteshort}}-enabled service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-control-plane)
+  * [What access do IBM SREs have to my data and workloads that run in my {{site.data.keyword.satelliteshort}}-enabled service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-workloads)
+  * [How can I monitor and manage IBM access into my location? How can I know that there are no backdoor access points on the hosts?](/docs/satellite?topic=satellite-compliance#operational-access-monitor)
+  * [What happens if {{site.data.keyword.satelliteshort}} Link becomes unavailable? Can IBM still maintain my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-compliance#operational-access-availability)
+* [Platform compliance and certification](/docs/satellite?topic=satellite-compliance#platform-compliance)
+  * [What compliance standards does the service meet?](/docs/satellite?topic=satellite-compliance#compliance-standards)
+  * [Which areas of security compliance am I responsible for?](/docs/satellite?topic=satellite-compliance#compliance-responsibilities)
+  * [What are the security compliance responsibilities of {{site.data.keyword.satelliteshort}}-enabled services?](/docs/satellite?topic=satellite-compliance#compliance-services)
+
+[Securing your connection](/docs/satellite?topic=satellite-service-connection)
 * [User access to resources that run in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#user-access)
   * [Service-instance clusters](/docs/satellite?topic=satellite-service-connection#user-access-service)
   * [IBM private network access with {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-service-connection#user-access-loc-ep)
   * [Application workloads that run in clusters](/docs/satellite?topic=satellite-service-connection#user-access-apps)
 * [{{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#ibm-cloud-access)
 
-[Securing your data in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-data-security)
+[Securing your data](/docs/satellite?topic=satellite-data-security)
 * [What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
 * [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
 * [Which {{site.data.keyword.cloud_notm}} region is my information stored in?](/docs/satellite?topic=satellite-data-security#sat_data-location)
 * [How can I remove my information?](/docs/satellite?topic=satellite-data-security#sat-data-removal)
 
-[Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events)
+[Auditing events](/docs/satellite?topic=satellite-at_events)
 * [Events for {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-at_events#at_actions_clusters)
 * [Events for the {{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-at_events#at_actions_link)
 * [Events for the {{site.data.keyword.satelliteshort}} Config component](/docs/satellite?topic=satellite-at_events#at_actions_config)

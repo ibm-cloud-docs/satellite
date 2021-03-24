@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -152,7 +152,7 @@ The {{site.data.keyword.satellitelong_notm}} service architecture and infrastruc
 
 Every location is securely connected to the {{site.data.keyword.cloud_notm}} multizone metro that manages your location by using the {{site.data.keyword.satelliteshort}} Link component. The link component runs in your control plane and is the main gateway for any communication between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. If your {{site.data.keyword.satelliteshort}} location cannot communicate with the {{site.data.keyword.cloud_notm}} multizone metro anymore, your existing location workloads continue to run, but you cannot make any configuration changes or roll out updates to the services and apps that run in your location.
 
-For an overview of your options to make the {{site.data.keyword.satelliteshort}} control plane more highly available to prevent connectivity issues with your {{site.data.keyword.cloud_notm}} multizone metro, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha). 
+For an overview of your options to make the {{site.data.keyword.satelliteshort}} control plane more highly available to prevent connectivity issues with your {{site.data.keyword.cloud_notm}} multizone metro, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
 
 ## Does IBM support third-party and open source tools that I use with {{site.data.keyword.satelliteshort}}?
 {: #faq_thirdparty_oss}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -158,7 +158,7 @@ Your on-location workloads continue to run independently even if the location's 
 ### External network requirements and security
 {: #link-security}
 
-Your {{site.data.keyword.satelliteshort}} location infrastructure is a part of your local network (on-prem hosts) or the network of another cloud provider, but is managed remotely via secure access from {{site.data.keyword.cloud_notm}}. Review the following frequently asked questions about {{site.data.keyword.satelliteshort}} Link network security.
+Your {{site.data.keyword.satelliteshort}} location infrastructure is a part of your local network (on-prem hosts) or the network of another cloud provider, but is managed remotely via secure access from {{site.data.keyword.cloud_notm}}. Review the following frequently asked questions about {{site.data.keyword.satelliteshort}} Link network security. For more information about all security options for {{site.data.keyword.satellitelong_notm}}, see [Security and compliance for {{site.data.keyword.satelliteshort}}](docs/satellite?topic=satellite-compliance).
 {: shortdesc}
 
 **Do I need to allow any unique inbound traffic from internet-facing ports through firewalls to my location?**
@@ -167,7 +167,7 @@ No. {{site.data.keyword.satelliteshort}} Link uses standard web security ports t
 
 **If IBM owns the Link tunnel, how can I validate that our data is inaccessible? My organization's security policy does not allow tunnels from our networks.**
 
-{{site.data.keyword.satelliteshort}} Link uses a zero-trust model: {{site.data.keyword.cloud_notm}} has no access to your workloads by default. Any management of infrastructure in your location that is initiated by IBM Site Reliability Engineers over {{site.data.keyword.satelliteshort}} Link is isolated from your workloads and the network connections, such as the Link endpoints, that your workloads use. For any other connections into your location that your applications require, you can use {{site.data.keyword.satelliteshort}} Link to create layer 4 communications by setting up an endpoint for each destination resource in your location. All connections through your endpoints are under your control at all times, including completely disabling endpoints.
+{{site.data.keyword.satelliteshort}} Link uses a zero-trust model: {{site.data.keyword.cloud_notm}} has no access to your workloads by default. Any management of infrastructure in your location that is initiated by IBM Site Reliability Engineers over {{site.data.keyword.satelliteshort}} Link is isolated from your workloads and the network connections, such as the Link endpoints, that your workloads use. For more information about what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [IBM operational access](docs/satellite?topic=satellite-compliance#operational-access). For any other connections into your location that your applications require, you can use {{site.data.keyword.satelliteshort}} Link to create layer 4 communications by setting up an endpoint for each destination resource in your location. All connections through your endpoints are under your control at all times, including completely disabling endpoints.
 
 **How do I make my data secure in transit?**
 
@@ -225,7 +225,7 @@ By default, after you set up an endpoint, any client can connect to the destinat
 
 **Auditing user-initiated events**
 
-After you set up source lists for endpoints, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} automatically integrates with {{site.data.keyword.at_full}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance. To get started with auditing, see [Auditing events for endpoint actions](#link-audit).
+After you set up source lists for endpoints, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance. To get started with auditing, see [Auditing events for endpoint actions](#link-audit).
 
 ### Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location
 {: #default-link-endpoints}

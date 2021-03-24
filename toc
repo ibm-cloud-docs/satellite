@@ -67,6 +67,7 @@ Satellite
         iam.md
         architecture-workload-isolation.md
         ha-dr.md
+        compliance.md
         service-connection.md
         data-security.md
         at.md
