@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -104,6 +104,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 25 March | **Security and compliance**: Added an [overview of security and compliance](/docs/satellite?topic=satellite-compliance) information for {{site.data.keyword.satelliteshort}}. |
 | 23 March | **OpenShift Container Storage using local disks**: Added steps for removing an OCS configuration and updated the [configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli). |
 | 12 March | <ul><li>**Resetting the host key**: In the event of a potential security violation, you can [reset the key](/docs/satellite?topic=satellite-hosts#host-key-reset) that the control plane uses to communicate with all of the hosts in the {{site.data.keyword.satelliteshort}} location.</li><li>**Troubleshooting location health checks**: Added steps for troubleshooting when [{{site.data.keyword.cloud_notm}} is unable to check a location's health](/docs/satellite?topic=satellite-ts-location-healthcheck).</li></ul>|
 | 10 March | **New `health-pending` host state**: To review the state of your hosts, see [Viewing host health](/docs/satellite?topic=satellite-monitor#host-health).|
@@ -129,10 +130,10 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 29 January | <ul><li>**AWS hosts**: Added the list of supported supported AWS EC2 instance types that can be used as hosts.</li><li>**{{site.data.keyword.satelliteshort}} Link**: Added information about the [maximum number of endpoints](/docs/satellite?topic=satellite-requirements#reqs-link) that you can create for one location.</li></ul> |
+| 29 January | <ul><li>**AWS hosts**: Added the list of supported AWS EC2 instance types that can be used as hosts.</li><li>**{{site.data.keyword.satelliteshort}} Link**: Added information about the [maximum number of endpoints](/docs/satellite?topic=satellite-requirements#reqs-link) that you can create for one location.</li></ul> |
 | 25 January | <ul><li>**{{site.data.keyword.satelliteshort}} Link**: Expanded information about endpoint security and access controls, and added example use cases.</li></ul> |
 | 15 January | **Host requirements**: Updated the [{{site.data.keyword.redhat_notm}} package repositories](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) that you must enable on hosts. |
-| 12 January | <ul><li>**Calico VXLAN encapsulation**: If you use AWS, GCP, or {{site.data.keyword.vpc_short}} hosts to create an {{site.data.keyword.openshiftshort}} cluster, you must [update the cluster's Calico plug-in to use VXLAN encapsulation](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli).</li><li>**Host updates**: Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-hosts#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-hosts#host-update-location).</li></ul> |
+| 12 January | <ul><li>**Host updates**: Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-hosts#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-hosts#host-update-location).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in January 2021."}
 

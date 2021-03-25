@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -98,9 +98,6 @@ subcollection: satellite
 You can use built-in security features in {{site.data.keyword.satellitelong}} for risk analysis and security protection. These features help you to protect your {{site.data.keyword.satelliteshort}} workloads that run on your location infrastructure and network communication.
 {: shortdesc}
 
-This page is currently under revision and is internal-only.
-{: important}
-
 ## Data security
 {: #secure-data}
 
@@ -169,7 +166,7 @@ Default {{site.data.keyword.satelliteshort}} Link endpoints are created for your
 
 {{site.data.keyword.satelliteshort}} Link provides built-in controls to help you restrict which clients can access endpoints. For more information, see [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about).
 
-Additionally, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance. For example, after you set up event auditing, you can review all events that relate to the masters for the clusters that run in your location, including events that are initiated by {{site.data.keyword.cloud_notm}}. To get started with auditing, see [Auditing events for endpoint actions](#link-audit).
+Additionally, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance. For example, after you set up event auditing, you can review all events that relate to the masters for the clusters that run in your location, including events that are initiated by {{site.data.keyword.cloud_notm}}. To get started with auditing, see [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-location-cloud#link-audit).
 
 ### What happens if {{site.data.keyword.satelliteshort}} Link becomes unavailable? Can IBM still maintain my {{site.data.keyword.satelliteshort}} location?
 {: #operational-access-availability}
