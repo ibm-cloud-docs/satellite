@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-01"
+lastupdated: "2021-03-24"
 
 keywords: satellite at events, satellite activity tracker, satconfig events, satlink events, satellite config events, satellite link events, satellite location events, satellite host events
 
@@ -93,7 +93,7 @@ subcollection: satellite
 
 
 
-# Auditing events for {{site.data.keyword.satelliteshort}}
+# Auditing events
 {: #at_events}
 
 As a security officer, auditor, or manager, you can use {{site.data.keyword.at_full}} to track how users and applications interact with {{site.data.keyword.satellitelong_notm}}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -93,7 +93,7 @@ subcollection: satellite
 
 
 
-# Managing access for {{site.data.keyword.satelliteshort}}
+# Managing access
 {: #iam}
 
 Access to {{site.data.keyword.satellitelong}} service instances for users in your account is controlled by {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).

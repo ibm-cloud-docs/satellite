@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -93,7 +93,7 @@ subcollection: satellite
 
 
 
-# Securing your data in {{site.data.keyword.satelliteshort}}
+# Securing your data
 {: #data-security}
 
 Review what personal and sensitive information is stored when you use {{site.data.keyword.satellitelong}}, how this data is stored and encrypted, and how you can permanently remove this information.
@@ -102,7 +102,7 @@ Review what personal and sensitive information is stored when you use {{site.dat
 ## What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?
 {: #sat-sensitive-data}
 
-For every location that you create, IBM stores certain personal and sensitive information. Depending on the type of information, IBM or you are responsible to store this information and protect it. For more information, see [How is my information stored, backed up, and encrypted?](#sat-data-encryption). 
+For every location that you create, IBM stores certain personal and sensitive information. Depending on the type of information, IBM or you are responsible to store this information and protect it. For more information, see [How is my information stored, backed up, and encrypted?](#sat-data-encryption).
 {: shortdesc}
 
 The following information is stored when you create a {{site.data.keyword.satelliteshort}} location:
@@ -120,7 +120,7 @@ The following information is stored when you create a {{site.data.keyword.satell
 ## How is my information stored, backed up, and encrypted?
 {: #sat-data-encryption}
 
-Review the following image to see how your personal and sensitive information is stored, backed up, and encrypted. 
+Review the following image to see how your personal and sensitive information is stored, backed up, and encrypted.
 {: shortdesc}
 
 ![Satellite data security](images/satellite_data_security.png)

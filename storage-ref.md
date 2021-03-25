@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-17"
+lastupdated: "2021-03-25"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -180,6 +180,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 ## NetApp Trident SAN
 {: #netapp-san-ref}
+
 Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-SAN. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp ONTAP-SAN storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/tree/develop/config-templates/netapp/netapp-ontap-san/20.07).
 {: shortdesc}
 
@@ -224,7 +225,5 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Co
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 {: caption="Table 8. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
-
-
 
 

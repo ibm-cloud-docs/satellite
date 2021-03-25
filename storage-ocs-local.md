@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-25"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -109,13 +109,13 @@ The {{site.data.keyword.satelliteshort}} storage templates are currently availab
 
 To use the OCS storage with the local storage operator and local storage devices, complete the following tasks:
 
-- [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations). 
-- [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters). 
+- [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
+- [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters).
   - Your cluster must have a minimum of 3 worker nodes with at least 16CPUs and 64GB RAM per worker node.
   - Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to having one of the following local storage configurations.
     * Two raw devices that have no partitions or formatted file systems. If your devices have no partitions, each node must have 2 free disks. One disk for the OSD and one disk for the MON.
     * Two raw partitions that have no formatted file system. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
-- [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups). 
+- [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups).
 
 <br />
 
@@ -134,7 +134,7 @@ When you create an OCS local storage configuration, you must configure a backing
 
 Create an instance of IBM {{site.data.keyword.cos_short}} for the backing storage of your OCS local configuration. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials.
 
-For more information about creating an {{site.data.keyword.cos_short}} instance, see [creating a service instance](https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-instance). For more information about creating and retrieving your {{site.data.keyword.cos_short}} HMAC credentials, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
+For more information about creating an {{site.data.keyword.cos_short}} instance, see [creating a service instance](/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-instance). For more information about creating and retrieving your {{site.data.keyword.cos_short}} HMAC credentials, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
 {: tip}
 
 1. Create an IBM {{site.data.keyword.cos_short}} service instance.
@@ -148,7 +148,7 @@ For more information about creating an {{site.data.keyword.cos_short}} instance,
     ibmcloud resource service-key-create cos-creds-rw Writer --instance-name noobaa-store --parameters '{"HMAC": true}'
     ```
     {: pre}
- 
+
 
 <br />
 
@@ -397,8 +397,8 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 You can use the OCS storage classes to create PVCs for the apps in your clusters.
 {: shortdesc}
-      
-1. Create a YAML configuration file for your PVC. In order for the PVC to match the PV, you must use the same values for the storage class and the size of the storage. 
+
+1. Create a YAML configuration file for your PVC. In order for the PVC to match the PV, you must use the same values for the storage class and the size of the storage.
   ```yaml
   apiVersion: v1
   kind: PersistentVolumeClaim
@@ -413,8 +413,8 @@ You can use the OCS storage classes to create PVCs for the apps in your clusters
         storage: 5Gi
   ```
   {: codeblock}
-  
-2. Create the PVC in your cluster. 
+
+2. Create the PVC in your cluster.
   ```sh
   oc apply -f pvc.yaml
   ```
@@ -441,28 +441,28 @@ You can use the OCS storage classes to create PVCs for the apps in your clusters
          claimName: ocs-pvc
    ```
    {: codeblock}
-   
-5. Create the pod in your cluster. 
+
+5. Create the pod in your cluster.
    ```sh
    oc apply -f pod.yaml
    ```
    {: pre}
 
-6. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state. 
+6. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
    ```sh
    oc get pods
    ```
    {: pre}
-   
-   Example output: 
+
+   Example output:
    ```
    NAME                                READY   STATUS    RESTARTS   AGE
    app                                 1/1     Running   0          2m58s
    ```
    {: screen}
-   
-7. Verify that the app can write data. 
-   1. Log in to your pod. 
+
+7. Verify that the app can write data.
+   1. Log in to your pod.
       ```sh
       oc exec <app-pod-name> -it bash
       ```
@@ -473,7 +473,7 @@ You can use the OCS storage classes to create PVCs for the apps in your clusters
       cat /test/test.txt
       ```
       {: pre}
-      
+
       Example output:
       ```sh
       Tue Mar 2 20:09:19 UTC 2021
@@ -484,8 +484,8 @@ You can use the OCS storage classes to create PVCs for the apps in your clusters
       Tue Mar 2 20:09:47 UTC 2021
       ```
       {: screen}
-      
-   3. Exit the pod. 
+
+   3. Exit the pod.
       ```sh
       exit
       ```
@@ -497,99 +497,99 @@ You can use the OCS storage classes to create PVCs for the apps in your clusters
 
 
 
-## Removing OpenShift Container Storage from your apps 
+## Removing OpenShift Container Storage from your apps
 {: #ocs-local-rm}
 
-If you no longer need your OpenShift Container Storage, you can remove your PVC, PV, and the OCS operator from your clusters. 
+If you no longer need your OpenShift Container Storage, you can remove your PVC, PV, and the OCS operator from your clusters.
 {: shortdesc}
 
-1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove. 
+1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove.
    ```sh
    oc get pvc
    ```
    {: pre}
-   
-2. Remove any pods that mount the PVC. 
-   1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC. 
+
+2. Remove any pods that mount the PVC.
+   1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC.
       ```sh
       oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
       ```
       {: pre}
-   
-      Example output: 
+
+      Example output:
       ```
       app    sat-ocs-cephfs-gold
       ```
       {: screen}
-   
+
    2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
       ```sh
       oc delete pod <pod_name>
       ```
       {: pre}
-      
+
       ```sh
       oc delete deployment <deployment_name>
       ```
       {: pre}
-      
-   3. Verify that the pod or the deployment is removed. 
+
+   3. Verify that the pod or the deployment is removed.
       ```sh
       oc get pods
       ```
       {: pre}
-      
+
       ```sh
       oc get deployments
       ```
       {: pre}
-      
+
 3. Delete the PVC.
    ```sh
    oc delete pvc <pvc_name>
    ```
    {: pre}
-   
-4. Delete the corresponding PV. 
+
+4. Delete the corresponding PV.
    ```sh
    oc delete pv <pv_name>
    ```
    {: pre}
-   
- 
+
+
 ## Removing the OCS local storage configuration from your cluster
 {: #ocs-local-template-rm}
 
-If you no longer plan on using OpenShift Container Storage in your cluster, you can unassign your cluster from the storage configuration. 
+If you no longer plan on using OpenShift Container Storage in your cluster, you can unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration, uninstalls the OCS operators from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
+Removing the storage configuration, uninstalls the OCS operators from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 
 
-Use the command line to remove a storage configuration. 
+Use the command line to remove a storage configuration.
 {: shortdesc}
 
-1. List your storage assignments and find the one that you used for your cluster. 
+1. List your storage assignments and find the one that you used for your cluster.
    ```sh
    ibmcloud sat storage assignment ls
    ```
    {: pre}
-   
-2. Remove the assignment. After the assignment is removed, the OCS driver pods and storage classes are removed from all clusters that were part of the storage assignment. 
+
+2. Remove the assignment. After the assignment is removed, the OCS driver pods and storage classes are removed from all clusters that were part of the storage assignment.
    ```sh
    ibmcloud sat storage assignment rm --assignment <assignment_name>
    ```
    {: pre}
 
-3. List your storage assignments and find the one that you used for your cluster. 
+3. List your storage assignments and find the one that you used for your cluster.
   ```sh
   ibmcloud sat storage assignment ls
   ```
   {: pre}
 
-4. Remove the assignment. After the assignment is removed, the local file driver pods and storage classes are removed from all clusters that were part of the storage assignment. 
+4. Remove the assignment. After the assignment is removed, the local file driver pods and storage classes are removed from all clusters that were part of the storage assignment.
   ```sh
   ibmcloud sat storage assignment rm --assignment <assignment_name>
   ```
@@ -668,7 +668,7 @@ Use the command line to remove a storage configuration.
 
 10. **Optional**: If you no longer want to use the local volumes that you used in your OCS configuration, you can delete them from the cluster. List the local PVs.
   ```sh
-  oc get pv 
+  oc get pv
   ```
   {: pre}
 
@@ -732,9 +732,9 @@ Use the command line to remove a storage configuration.
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. | N/A |
 | `mon-device-path` | Required | Enter a comma separated list of the `disk-by-id` paths for the storage devices that you want to use for the OCS monitoring (MON) pods. The devices that you specify must have at least 20GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `mon-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. | N/A |
 | `osd-device-path` | Required | Enter a comma separated list of the `disk-by-id` paths for the devices that you want to use for the OSD pods. The devices that you specify are used as your storage devices in your OCS configuration. Your OSD devices must have at least 100GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `osd-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
-| `ibm-cos-access-key` | Required | Enter the IBM {{site.data.keyword.cos_short}} access key ID. Do not base64 encode this value. Your {{site.data.keyword.cos_short}} access key ID is used to create a Kubernetes secret in your cluster. | N/A | 
+| `ibm-cos-access-key` | Required | Enter the IBM {{site.data.keyword.cos_short}} access key ID. Do not base64 encode this value. Your {{site.data.keyword.cos_short}} access key ID is used to create a Kubernetes secret in your cluster. | N/A |
 | `ibm-cos-secret-access-key` | Required | Enter the IBM {{site.data.keyword.cos_short}} secret access key. Do not base64 encode this value. Your {{site.data.keyword.cos_short}} secret access key is used to create a Kubernetes secret in your cluster. | N/A |
-| `ibm-cos-endpoint` | Required | Enter the IBM {{site.data.keyword.cos_short}} regional public endpoint. Be sure that you enter the regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A | 
+| `ibm-cos-endpoint` | Required | Enter the IBM {{site.data.keyword.cos_short}} regional public endpoint. Be sure that you enter the regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A |
 | `ibm-cos-location` | Required | Enter the IBM {{site.data.keyword.cos_short}} region. Example: `us-east-standard`. | N/A |
 | `num-of-osd` | Optional | Enter the number of OSDs. OCS creates 3 times the value specified. | 1 |
 |`worker-nodes` | Optional | Enter the IP addresses of the worker nodes that you want to use in your OCS configuration. Your configuration must have at least 3 worker nodes. If this value is not specified, all of the worker nodes in the cluster are included in your OCS configuration. Example: `169.48.170.90` | N/A |

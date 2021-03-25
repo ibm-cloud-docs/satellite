@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-03-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -134,9 +134,9 @@ For more information about {{site.data.keyword.satelliteshort}}, how it works an
 {: faq}
 {: support}
 
-Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. However, to monitor malicious activity and apply updates to your location, these compute hosts are managed by an {{site.data.keyword.cloud_notm}} multizone metro that is supported by {{site.data.keyword.satellitelong_notm}}. You can choose any of the supported metros, but to reduce latency between {{site.data.keyword.cloud_notm}} and your {{site.data.keyword.satelliteshort}} location, choose the metro that is closest to your compute hosts.
+Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. However, to monitor malicious activity and apply updates to your location, these compute hosts are managed by an {{site.data.keyword.cloud_notm}} multizone region that is supported by {{site.data.keyword.satellitelong_notm}}. You can choose any of the supported regions, but to reduce latency between {{site.data.keyword.cloud_notm}} and your {{site.data.keyword.satelliteshort}} location, choose the region that is closest to your compute hosts.
 
-For more information about supported {{site.data.keyword.satelliteshort}} metros, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
+For more information, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
 
 ## Is my location setup highly available?
 {: #satellite-ha}
@@ -150,9 +150,9 @@ The {{site.data.keyword.satellitelong_notm}} service architecture and infrastruc
 {: faq}
 {: support}
 
-Every location is securely connected to the {{site.data.keyword.cloud_notm}} multizone metro that manages your location by using the {{site.data.keyword.satelliteshort}} Link component. The link component runs in your control plane and is the main gateway for any communication between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. If your {{site.data.keyword.satelliteshort}} location cannot communicate with the {{site.data.keyword.cloud_notm}} multizone metro anymore, your existing location workloads continue to run, but you cannot make any configuration changes or roll out updates to the services and apps that run in your location.
+Every location is securely connected to the {{site.data.keyword.cloud_notm}} multizone region that manages your location by using the {{site.data.keyword.satelliteshort}} Link component. The link component runs in your control plane and is the main gateway for any communication between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. If your {{site.data.keyword.satelliteshort}} location cannot communicate with the {{site.data.keyword.cloud_notm}} multizone region anymore, your existing location workloads continue to run, but you cannot make any configuration changes or roll out updates to the services and apps that run in your location.
 
-For an overview of your options to make the {{site.data.keyword.satelliteshort}} control plane more highly available to prevent connectivity issues with your {{site.data.keyword.cloud_notm}} multizone metro, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha). 
+For an overview of your options to make the {{site.data.keyword.satelliteshort}} control plane more highly available to prevent connectivity issues with your {{site.data.keyword.cloud_notm}} multizone region, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
 
 ## Does IBM support third-party and open source tools that I use with {{site.data.keyword.satelliteshort}}?
 {: #faq_thirdparty_oss}

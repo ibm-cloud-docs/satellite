@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-25"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1890,7 +1890,7 @@ ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 
 <dl>
 <dt><code>--config <em>CONFIG</em></code></dt>
-<dd>Required. The name of the storage configuration.</code>.</dd>
+<dd>Required. The name of the storage configuration.</dd>
 
 <dt><code>--output <em>JSON</em></code></dt>
 <dd>Optional. Displays the command output in JSON format.</dd>

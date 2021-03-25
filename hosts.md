@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-03-25"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -131,7 +131,7 @@ When you set up the {{site.data.keyword.satelliteshort}} location control plane,
 {: important}
 
 * Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
-* Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
+* Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
 * Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then IBM can automatically assign hosts when clusters or the {{site.data.keyword.satelliteshort}} location control plane request more capacity.
 
 ### Attaching hosts from the console
