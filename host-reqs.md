@@ -297,15 +297,9 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 1.  In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, you might SSH into the machine from a command line.
 2.  Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test.
     *   Washington, DC:
-        ```
         169.63.123.154</br>169.60.123.162</br>52.117.93.26
-        ```
-        {: codeblock}
     *   London: 
-        ```
         158.175.120.210</br>141.125.97.106</br>158.176.139.66
-        ```
-        {: codeblock}
 3.  From your host, ping the IP addresses of the {{site.data.keyword.cloud_notm}} region.
     ```
     ping <ip_address>
