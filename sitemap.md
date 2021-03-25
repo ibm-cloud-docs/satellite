@@ -158,10 +158,18 @@ subcollection: satellite
 
 [Host requirements](/docs/satellite?topic=satellite-host-reqs)
 * [Host system requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-system)
+  * [Computing characteristics](/docs/satellite?topic=satellite-host-reqs#reqs-host-compute)
+  * [Packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages)
 * [Host storage and attached devices](/docs/satellite?topic=satellite-host-reqs#reqs-host-storage)
 * [Host network](/docs/satellite?topic=satellite-host-reqs#reqs-host-network)
+  * [Networking configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-config)
+  * [Host network bandwidth](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-bandwidth)
+  * [Network gateways and interfaces](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-interface)
   * [Inbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-inbound)
   * [Outbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound)
+* [Host latency](/docs/satellite?topic=satellite-host-reqs#host-latency-test)
+  * [Latency across hosts in the same location](/docs/satellite?topic=satellite-host-reqs#host-latency-location)
+  * [Latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-reqs#host-latency-mzr)
 
 [{{site.data.keyword.satellitelong_notm}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service)
 * [Getting started with {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service#satis-getting-started)
