@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-03-25"
 
 keywords: satellite, hybrid, multicloud
 
