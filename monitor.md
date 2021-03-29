@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -98,7 +98,7 @@ subcollection: satellite
 {{site.data.keyword.satellitelong}} comes with basic tools to help you manage the health of your {{site.data.keyword.satelliteshort}} resources, such as reviewing location and host health. Additionally, you can integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.cloud_notm}} resources with {{site.data.keyword.mon_full}} to get a comprehensive view and tools to manage all your resources.
 {: shortdesc}
 
-Monitoring for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect metrics for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.mon_short}} instance to collect platform metrics in the same region that your location is managed from. Then, to collect metrics for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a Sysdig agent in your cluster to automatically collect and forward pod metrics to a {{site.data.keyword.mon_short}} instance. Note that you can use the same Sysdig instance to collect metrics for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
+Monitoring for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect metrics for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.mon_short}} instance to collect platform metrics in the same region that your location is managed from. Then, to collect metrics for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a monitoring agent in your cluster to automatically collect and forward pod metrics to a {{site.data.keyword.mon_short}} instance. Note that you can use the same {{site.data.keyword.mon_short}} instance to collect metrics for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
 
 ## Understanding what is logged and monitored by default
 {: #health-default}
@@ -132,7 +132,7 @@ Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location 
 
 <br />
 
-## Setting up Sysdig for {{site.data.keyword.satelliteshort}} location platform metrics
+## Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics
 {: #setup-sysdig}
 
 Forward and view metrics for {{site.data.keyword.satelliteshort}} in an {{site.data.keyword.mon_full_notm}} instance that is enabled for platform-level metrics.
@@ -141,8 +141,8 @@ Forward and view metrics for {{site.data.keyword.satelliteshort}} in an {{site.d
 Metrics are available for the {{site.data.keyword.satelliteshort}} Link component of your location to help you monitor the performance of specific Link endpoints or of all Link endpoints for the location. For example, you can monitor the latency or throughput of a specific Link endpoint that you created.
 
 1. Create or choose an existing {{site.data.keyword.mon_short}} instance.
-  * If you already have a {{site.data.keyword.mon_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the Sysdig instance is configured to collect platform metrics, the metrics that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this Sysdig instance.
-  * Otherwise, to set up Sysdig for your {{site.data.keyword.satelliteshort}} location:
+  * If you already have a {{site.data.keyword.mon_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.mon_short}} instance is configured to collect platform metrics, the metrics that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.mon_short}} instance.
+  * Otherwise, to set up {{site.data.keyword.mon_short}} for your {{site.data.keyword.satelliteshort}} location:
     1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring-with-sysdig){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
     2. [Enable the instance for platform-level metrics collection](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs). Note that within one region, only one {{site.data.keyword.mon_short}} instance can be enabled for platform metrics collection.
 2. In the **Monitoring** dashboard, click **View Sysdig** for your {{site.data.keyword.mon_short}} instance.
@@ -153,7 +153,7 @@ Metrics are available for the {{site.data.keyword.satelliteshort}} Link componen
 4. Review the [available metrics](#available-metrics) and [attributes for segmentation](#attributes).
 5. Review more ways that you can [work with platform metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_working).
 
-After you set up Sysdig with the pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics, you can quickly access this dashboard from the **Link endpoints** tab of your {{site.data.keyword.satelliteshort}} location console by clicking **Launch monitoring**.
+After you set up {{site.data.keyword.mon_short}} with the pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics, you can quickly access this dashboard from the **Link endpoints** tab of your {{site.data.keyword.satelliteshort}} location console by clicking **Launch monitoring**.
 
 ### Available metrics
 {: #available-metrics}
@@ -335,7 +335,7 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 To understand and set up monitoring for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.mon_full_notm}} documentation](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster#kubernetes_cluster).
 {: shortdesc}
 
-You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy Sysdig agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
+You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
 {: note}
 
 <br />

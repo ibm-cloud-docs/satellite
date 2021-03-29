@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -356,7 +356,7 @@ subcollection: satellite
 [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-location-cloud#link-audit)
 
 [Logging and monitoring network traffic for endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-health)
-* [Setting up Sysdig for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-sysdig)
+* [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-sysdig)
 * [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-location-cloud#link-packet-capture)
 
 [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint)
@@ -367,7 +367,7 @@ subcollection: satellite
 
 
 [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health)
-* [Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
+* [Setting up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
 * [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 * [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
 
@@ -375,7 +375,7 @@ subcollection: satellite
 * [Understanding what is logged and monitored by default](/docs/satellite?topic=satellite-monitor#health-default)
   * [Auditing events for {{site.data.keyword.satelliteshort}} actions](/docs/satellite?topic=satellite-monitor#audit-events)
   * [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default)
-* [Setting up Sysdig for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-sysdig)
+* [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-sysdig)
   * [Available metrics](/docs/satellite?topic=satellite-monitor#available-metrics)
   * [Attributes for segmentation](/docs/satellite?topic=satellite-monitor#attributes)
 * [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters)

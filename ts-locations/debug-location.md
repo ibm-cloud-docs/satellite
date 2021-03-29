@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-03-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -183,7 +183,7 @@ R0042 {{site.data.keyword.cloud_notm}} Support is resolving link api failures. C
 Check back later to see if the issue is resolved. If the issue persists for a while, you can [open a support case](/docs/satellite?topic=satellite-get-help).
 
 For more details on the issue:
-1.  [Set up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna).
+1.  [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna).
 2.  Search the platform logs for the error code for more details, such as failed API method due to a permissions error.
 
 ## R0009: Unable to recover
@@ -481,7 +481,7 @@ R0045 A read-only file system has been detected on one or more hosts. Replace th
 
 **Steps to resolve**
 
-1.  [Set up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna) for more information about which hosts are affected.
+1.  [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna) for more information about which hosts are affected.
 2.  [Remove](/docs/satellite?topic=satellite-hosts#host-remove) the affected hosts and [reattach new hosts](/docs/satellite?topic=satellite-hosts#attach-hosts).
 3.  If you still have issues, [open a support case](/docs/satellite?topic=satellite-get-help) and include your Satellite location ID.
 

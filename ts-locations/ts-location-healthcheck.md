@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-12"
+lastupdated: "2021-03-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -115,7 +115,7 @@ The location control plane is not accessible from {{site.data.keyword.cloud_notm
   2. From the **Link endpoints** tab, verify that the **Status** for the endpoint in the format `satellite-healthcheck-<location_ID>` is toggled to **Enabled**.
 
 2. Verify that the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable.
-  1. [Set up LogDNA for {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-health#setup-logdna).
+  1. [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-health#setup-logdna).
   2. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){:external}, click **View LogDNA** for your {{site.data.keyword.la_short}} instance. The LogDNA dashboard opens.
   3. Check the `Endpoint health status` logs. These logs report the results of health checks for the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint.
       * If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable. Continue to the next step.
