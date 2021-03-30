@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -115,7 +115,7 @@ If you already have a {{site.data.keyword.la_short}} instance in the same {{site
 1. [Provision an {{site.data.keyword.la_full_notm}} instance](https://cloud.ibm.com/catalog/services/ibm-log-analysis-with-logdna){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
 2. [Enable the instance for platform-level log collection](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs). Note that within one region, only one {{site.data.keyword.la_short}} instance can be enabled for platform logs collection.
 3. In the **Logging** dashboard, click **View LogDNA** for your {{site.data.keyword.la_short}} instance.
-4. In the LogDNA dashboard, review `satellite` logs for your location, which you can identify by searching for your location's ID.
+4. In the {{site.data.keyword.la_short}} dashboard, review `satellite` logs for your location, which you can identify by searching for your location's ID.
 5. Review how you can [search and filter logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs).
 
 <br />
