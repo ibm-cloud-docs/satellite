@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-03-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -116,7 +116,7 @@ Review some frequently asked questions about why and how you choose an {{site.da
 
 Running {{site.data.keyword.cloud_notm}} services on your own infrastructure requires a secure connection to {{site.data.keyword.cloud_notm}}. The connection is controlled, monitored, and managed by IBM to ensure that security and compliance standards for each of the services are met and to roll out updates to these services.
 
-Every {{site.data.keyword.satelliteshort}} location is set up with a control plane that establishes the secure connection back to {{site.data.keyword.cloud_notm}}. The control plane consists of a highly available control plane master that runs in the {{site.data.keyword.cloud_notm}} regiono that you choose and that is controlled and managed by IBM. The control plane worker nodes run on your own compute hosts that you added to your {{site.data.keyword.satelliteshort}} location.
+Every {{site.data.keyword.satelliteshort}} location is set up with a control plane that establishes the secure connection back to {{site.data.keyword.cloud_notm}}. The control plane consists of a highly available control plane master that runs in the {{site.data.keyword.cloud_notm}} region that you choose and that is controlled and managed by IBM. The control plane worker nodes run on your own compute hosts that you added to your {{site.data.keyword.satelliteshort}} location.
 
 IBM uses this connection to monitor your {{site.data.keyword.satelliteshort}} location, automatically detect and resolve capacity issues, monitor malicious activity, and roll out updates to the {{site.data.keyword.cloud_notm}} services that you run on your infrastructure.
 
@@ -135,4 +135,3 @@ Because you bring your own compute host infrastructure to your {{site.data.keywo
 As you select your infrastructure provider, consider the following latency requirements. Environments that do not meet the latency requirements experience degraded performance.
 * **Between {{site.data.keyword.cloud_notm}} and the location**: Your infrastructure provider must have a low latency connection of less than 100 milliseconds (`< 100ms`) round-trip time (RTT) between the hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location and the {{site.data.keyword.cloud_notm}} region that the location is managed from. For more information, see [Latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-reqs#host-latency-mzr).
 * **Between hosts in your location**: Your host infrastructure setup must have a low latency connection of less than 10 milliseconds (`< 10ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane and the hosts that are used for other resources in the location, like clusters or services. For example, in cloud providers such as AWS, this setup typically means that the all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`.
-

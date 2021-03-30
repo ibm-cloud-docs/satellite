@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-03-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -102,21 +102,21 @@ By default, the following logs are automatically generated for your {{site.data.
 * Messages and more detailed information from the IBM Monitoring component regarding certain alerts for issues with your location setup and host infrastructure
 * Health check status of the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint
 
-Logging for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect logs for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.la_short}} instance to collect platform logs in the same region that your location is managed from. Then, to collect logs for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a LogDNA agent in your cluster to automatically collect and forward pod logs to a {{site.data.keyword.la_short}} instance. Note that you can use the same LogDNA instance to collect logs for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
+Logging for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect logs for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.la_short}} instance to collect platform logs in the same region that your location is managed from. Then, to collect logs for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a logging agent in your cluster to automatically collect and forward pod logs to a {{site.data.keyword.la_short}} instance. Note that you can use the same {{site.data.keyword.la_short}} instance to collect logs for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
 
-## Setting up LogDNA for {{site.data.keyword.satelliteshort}} location platform logs
+## Setting up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs
 {: #setup-logdna}
 
 Forward and view logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup in an {{site.data.keyword.la_full_notm}} instance that is enabled for platform-level logs.
 {: shortdesc}
 
-If you already have a {{site.data.keyword.la_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the LogDNA instance is configured to collect platform logs, the logs that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this LogDNA instance. If you do not, first contact your account administrator to verify that a {{site.data.keyword.la_short}} instance with platform logs does not exist in the region. Otherwise, follow these steps to set up LogDNA for your {{site.data.keyword.satelliteshort}} location.
+If you already have a {{site.data.keyword.la_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.la_short}} instance is configured to collect platform logs, the logs that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.la_short}} instance. If you do not, first contact your account administrator to verify that a {{site.data.keyword.la_short}} instance with platform logs does not exist in the region. Otherwise, follow these steps to set up {{site.data.keyword.la_short}} for your {{site.data.keyword.satelliteshort}} location.
 
 1. [Provision an {{site.data.keyword.la_full_notm}} instance](https://cloud.ibm.com/catalog/services/ibm-log-analysis-with-logdna){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
 2. [Enable the instance for platform-level log collection](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs). Note that within one region, only one {{site.data.keyword.la_short}} instance can be enabled for platform logs collection.
 3. In the **Logging** dashboard, click **View LogDNA** for your {{site.data.keyword.la_short}} instance.
-4. In the LogDNA dashboard, review `satellite` logs for your location, which you can identify by searching for your location's ID.
-5. Review how you can [search and filter logs in the LogDNA dashboard](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs).
+4. In the {{site.data.keyword.la_short}} dashboard, review `satellite` logs for your location, which you can identify by searching for your location's ID.
+5. Review how you can [search and filter logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs).
 
 <br />
 
@@ -136,5 +136,5 @@ To access these logs, [provision an instance of {{site.data.keyword.at_full_notm
 To understand and set up logging for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.la_full_notm}} documentation](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-kube#kube).
 {: shortdesc}
 
-You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy LogDNA agents to your cluster to forward logs to {{site.data.keyword.la_short}}.
+You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy logging agents to your cluster to forward logs to {{site.data.keyword.la_short}}.
 {: note}
