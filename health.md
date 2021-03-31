@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -113,10 +113,10 @@ Forward and view logs that are automatically generated for your {{site.data.keyw
 If you already have a {{site.data.keyword.la_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.la_short}} instance is configured to collect platform logs, the logs that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.la_short}} instance. If you do not, first contact your account administrator to verify that a {{site.data.keyword.la_short}} instance with platform logs does not exist in the region. Otherwise, follow these steps to set up {{site.data.keyword.la_short}} for your {{site.data.keyword.satelliteshort}} location.
 
 1. [Provision an {{site.data.keyword.la_full_notm}} instance](https://cloud.ibm.com/catalog/services/ibm-log-analysis-with-logdna){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
-2. [Enable the instance for platform-level log collection](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs). Note that within one region, only one {{site.data.keyword.la_short}} instance can be enabled for platform logs collection.
+2. [Enable the instance for platform-level log collection](/docs/log-analysis?topic=log-analysis-config_svc_logs). Note that within one region, only one {{site.data.keyword.la_short}} instance can be enabled for platform logs collection.
 3. In the **Logging** dashboard, click **View LogDNA** for your {{site.data.keyword.la_short}} instance.
 4. In the {{site.data.keyword.la_short}} dashboard, review `satellite` logs for your location, which you can identify by searching for your location's ID.
-5. Review how you can [search and filter logs](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-view_logs).
+5. Review how you can [search and filter logs](/docs/log-analysis?topic=log-analysis-view_logs).
 
 <br />
 
@@ -126,14 +126,14 @@ If you already have a {{site.data.keyword.la_short}} instance in the same {{site
 To track how users and applications interact with your {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.satellitelong_notm}} automatically generates user-initiated management events and forwards these event logs to {{site.data.keyword.at_full}}.
 {: shortdesc}
 
-To access these logs, [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/Activity-Tracker-with-LogDNA?topic=Activity-Tracker-with-LogDNA-getting-started) in the same region that your location is managed from. For more information about the types of {{site.data.keyword.satelliteshort}} events that you can track, see [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
+To access these logs, [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started) in the same region that your location is managed from. For more information about the types of {{site.data.keyword.satelliteshort}} events that you can track, see [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
 
 <br />
 
 ## Setting up logging for clusters
 {: #setup-clusters}
 
-To understand and set up logging for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.la_full_notm}} documentation](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-kube#kube).
+To understand and set up logging for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.la_full_notm}} documentation](/docs/log-analysis?topic=log-analysis-kube#kube).
 {: shortdesc}
 
 You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy logging agents to your cluster to forward logs to {{site.data.keyword.la_short}}.

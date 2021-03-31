@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-03-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -144,14 +144,14 @@ Metrics are available for the {{site.data.keyword.satelliteshort}} Link componen
   * If you already have a {{site.data.keyword.mon_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.mon_short}} instance is configured to collect platform metrics, the metrics that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.mon_short}} instance.
   * Otherwise, to set up {{site.data.keyword.mon_short}} for your {{site.data.keyword.satelliteshort}} location:
     1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring-with-sysdig){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
-    2. [Enable the instance for platform-level metrics collection](/docs/Log-Analysis-with-LogDNA?topic=Log-Analysis-with-LogDNA-config_svc_logs). Note that within one region, only one {{site.data.keyword.mon_short}} instance can be enabled for platform metrics collection.
+    2. [Enable the instance for platform-level metrics collection](/docs/log-analysis?topic=log-analysis-config_svc_logs). Note that within one region, only one {{site.data.keyword.mon_short}} instance can be enabled for platform metrics collection.
 2. In the **Monitoring** dashboard, click **View Sysdig** for your {{site.data.keyword.mon_short}} instance.
 3. In the {{site.data.keyword.mon_short}} dashboard, click **Dashboards** > **IBM** > **Satellite Link - Overview**. The pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics opens. Note that if you just created this {{site.data.keyword.mon_short}} instance, it might take up to two hours for the **IBM** dashboards to become available.
 
     You can create a copy of this dashboard to customize the metrics that are shown. To add metrics that are enabled for {{site.data.keyword.satellitelong_notm}}, search for the `ibm_satellite_link` prefix.
     {: tip}
 4. Review the [available metrics](#available-metrics) and [attributes for segmentation](#attributes).
-5. Review more ways that you can [work with platform metrics](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-platform_metrics_working).
+5. Review more ways that you can [work with platform metrics](/docs/monitoring?topic=monitoring-platform_metrics_working).
 
 After you set up {{site.data.keyword.mon_short}} with the pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics, you can quickly access this dashboard from the **Link endpoints** tab of your {{site.data.keyword.satelliteshort}} location console by clicking **Launch monitoring**.
 
@@ -332,7 +332,7 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 ## Setting up monitoring for clusters
 {: #setup-clusters}
 
-To understand and set up monitoring for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.mon_full_notm}} documentation](/docs/Monitoring-with-Sysdig?topic=Monitoring-with-Sysdig-kubernetes_cluster#kubernetes_cluster).
+To understand and set up monitoring for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.mon_full_notm}} documentation](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster).
 {: shortdesc}
 
 You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
