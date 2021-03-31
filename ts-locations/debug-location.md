@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-29"
+lastupdated: "2021-03-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -138,10 +138,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
 
 **Location message**
 
-```
 The {{site.data.keyword.satelliteshort}} location is ready for operations.
-```
-{: screen}
 
 **Steps to resolve**
 
@@ -149,34 +146,31 @@ Your {{site.data.keyword.satelliteshort}} location has no critical alerts, and t
 
 ## R0002, R0018, R0020, R0023, R0029, R0037, R0039, R0042: Wait for location to be ready
 {: #R0002}
-{: #R0018}
-{: #R0020}
-{: #R0023}
-{: #R0029}
-{: #R0037}
-{: #R0039}
-{: #R0042}
 
 **Location message**
 
-```
 R0002 The {{site.data.keyword.satelliteshort}} location has issues that {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later.
 
 R0018 {{site.data.keyword.satelliteshort}} is attempting to recover.
+{: #R0018}
 
 R0020 Wait while {{site.data.keyword.satelliteshort}} completes a recovery action.
+{: #R0020}
 
 R0023 Wait while {{site.data.keyword.satelliteshort}} sets up the location control plane.
+{: #R0023}
 
 R0029 Successfully initiated recovery action.
+{: #R0029}
 
 R0037 The {{site.data.keyword.satelliteshort}} location has clusters that are in a failed state. {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later.
+{: #R0037}
 
 R0039 The {{site.data.keyword.satelliteshort}} location control plane is currently unhealthy. {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later.
+{: #R0039}
 
 R0042 {{site.data.keyword.cloud_notm}} Support is resolving link api failures. Check back later. If this issue persists, raise a support case.
-```
-{: screen}
+{: #R0042}
 
 **Steps to resolve**
 
@@ -191,10 +185,8 @@ For more details on the issue:
 
 **Location message**
 
-```
 R0009 {{site.data.keyword.satelliteshort}} is unable to recover from issues.
-```
-{: screen}
+
 
 **Steps to resolve**
 
@@ -202,22 +194,19 @@ R0009 {{site.data.keyword.satelliteshort}} is unable to recover from issues.
 
 ## R0010, R0030, R0031, R0032: Control plane needs hosts
 {: #R0010}
-{: #R0030}
-{: #R0031}
-{: #R0032}
 
 **Location message**
 
-```
 R0010 Assign more hosts to the location control plane, or replace unhealthy hosts.
 
 R0030 A zone for the {{site.data.keyword.satelliteshort}} location control plane is reaching a critical capacity. If critical capacity is reached, you cannot add more clusters to location. Add more hosts to the control plane zone, or replace unhealthy hosts.
+{: #R0030}
 
 R0031 A zone for the {{site.data.keyword.satelliteshort}} location control plane is reaching a warning capacity. Add more hosts to the control plane zone, or replace unhealthy hosts.
+{: #R0031}
 
 R0032 Manually assign hosts to the control plane across all 3 zones.
-```
-{: screen}
+{: #R0032}
 
 **Steps to resolve**
 
@@ -227,19 +216,16 @@ Your location has no available hosts for {{site.data.keyword.satelliteshort}} to
 
 ## R0011, R0040, R0041: Issues with the control plane hosts
 {: #R0011}
-{: #R0040}
-{: #R0041}
 
 **Location message**
 
-```
 R0011 Make sure that all hosts for your {{site.data.keyword.satelliteshort}} location are in a normal state. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.
 
 R0040 The {{site.data.keyword.satelliteshort}} location data plane is currently unhealthy. To debug the host, see 'http://ibm.biz/sat-host-debug'. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.
+{: #R0040}
 
 R0041 Unknown issues are detected with the {{site.data.keyword.satelliteshort}} location control plane hosts. Ensure that hosts meet the minimum requirements, http://ibm.biz/sat-host-reqs. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.
-```
-{: screen}
+{: #R0041}
 
 **Steps to resolve**
 
@@ -258,10 +244,7 @@ R0041 Unknown issues are detected with the {{site.data.keyword.satelliteshort}} 
 
 **Location message**
 
-```
 R0012 The location control plane does not have hosts in all 3 zones. Add available hosts to your location for the control plane.
-```
-{: screen}
 
 **Steps to resolve**
 
@@ -276,10 +259,7 @@ If you just assigned hosts to the control plane, wait a while for the bootstrapp
 
 **Location message**
 
-```
 R0013 A zone in the location control plane is unavailable. Attach more hosts to the location and assign the hosts to the zone, or replace unhealthy hosts.
-```
-{: screen}
 
 **Steps to resolve**
 
@@ -294,10 +274,7 @@ R0013 A zone in the location control plane is unavailable. Attach more hosts to 
 
 **Location message**
 
-```
 R0014 Verify that the {{site.data.keyword.satelliteshort}} location has a DNS record for load balancing requests to the location control plane.
-```
-{: screen}
 
 **Steps to resolve**
 
@@ -311,16 +288,13 @@ R0014 Verify that the {{site.data.keyword.satelliteshort}} location has a DNS re
 
 ## R0015, R0016: Host issues
 {: #R0015}
-{: #R0016}
 
 **Location message**
 
-```
 R0015 Could not assign hosts because no hosts are available. Attach more hosts to the location and try again. For more information, see the docs: 'http://ibm.biz/sat-loc'
 
 R0016 Unexpected error occurred after assigning host. To debug the host, see 'http://ibm.biz/sat-host-debug'. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.
-```
-{: screen}
+{: #R0016}
 
 **Steps to resolve**
 
@@ -328,19 +302,16 @@ R0016 Unexpected error occurred after assigning host. To debug the host, see 'ht
 
 ## R0024, R0025, R0038: Cluster issues
 {: #R0024}
-{: #R0025}
-{: #R0038}
 
 **Location message**
 
-```
 R0024 The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.openshiftshort}} clusters in warning health.
 
 R0025 The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.openshiftshort}} clusters in critical health.
+{: #R0025}
 
 R0038 The {{site.data.keyword.satelliteshort}} location has clusters in the middle of an operation. Wait for them to finish and check back later.
-```
-{: screen}
+{: #R0038}
 
 **Steps to resolve**
 
@@ -353,10 +324,7 @@ R0038 The {{site.data.keyword.satelliteshort}} location has clusters in the midd
 
 **Location message**
 
-```
 R0026 Hosts in the location control plane are running out of disk space. Assign more hosts to the location control plane, or reload the hosts with disk space issues.
-```
-{: screen}
 
 **Steps to resolve**
 
@@ -375,19 +343,16 @@ R0026 Hosts in the location control plane are running out of disk space. Assign 
 
 ## R0033, R0034, R0035: Control plane capacity issues
 {: #R0033}
-{: #R0034}
-{: #R0035}
 
 **Location message**
 
-```
 R0033 Hosts in the location control plane have critical memory usage issues. Add more hosts to the location control plane and wait for the location to return to normal.
 
 R0034 Hosts in the location control plane have critical CPU usage issues. Add more hosts to the location control plane and wait for the location to return to normal.
+{: #R0034}
 
 R0035 The location control plane is running at max capacity and cannot support any more workloads. Add hosts to each zone and wait for the location to return to normal.
-```
-{: screen}
+{: #R0035}
 
 **Steps to resolve**
 
@@ -400,10 +365,7 @@ R0035 The location control plane is running at max capacity and cannot support a
 
 **Location message**
 
-```
 R0036 The location subdomains are not correctly routing traffic to your control plane hosts. Verify that the location subdomains are registered with the correct IP addresses for your control plane hosts with the 'ibmcloud sat location dns' commands.
-```
-{: screen}
 
 **Steps to resolve**
 
@@ -414,10 +376,7 @@ See [Why does the location subdomain not route traffic to control plane hosts?](
 
 **Location message**
 
-```
 R0043 The location does not meet the following requirement: Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. If you still have issues, contact IBM Cloud Support and include your Satellite location ID.
-```
-{: screen}
 
 **Steps to resolve**
 
@@ -446,10 +405,7 @@ To test TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts:
 
 **Location message**
 
-```
 R0044 DNS issues have been detected on one or more hosts. Verify that your DNS solution is working as expected. If you still have issues, contact IBM Cloud Support and include your Satellite location ID.
-```
-{: screen}
 
 **Steps to resolve**
 
@@ -474,10 +430,7 @@ To test DNS resolution:
 
 **Location message**
 
-```
 R0045 A read-only file system has been detected on one or more hosts. Replace the affected host(s).
-```
-{: screen}
 
 **Steps to resolve**
 
@@ -490,10 +443,7 @@ R0045 A read-only file system has been detected on one or more hosts. Replace th
 
 **Location message**
 
-```
 R0046 An NTP issue has been detected on one or more hosts. Verify that your NTP solution is working as expected.
-```
-{: screen}
 
 **Steps to resolve**
 
@@ -518,10 +468,7 @@ To test NTP on your hosts:
 
 **Location message**
 
-```
 R0047 IBM Cloud is unable to use the health check endpoint to check the location's health.
-```
-{: screen}
 
 **Steps to resolve**
 
