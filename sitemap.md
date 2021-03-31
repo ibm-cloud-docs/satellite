@@ -205,7 +205,7 @@ subcollection: satellite
 * [Security group settings](/docs/satellite?topic=satellite-azure#azure-reqs-firewall)
 * [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-azure#azure-reqs-console-access)
 
-[{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
+[{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm)
 * [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
 
 

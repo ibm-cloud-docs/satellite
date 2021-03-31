@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-26"
+lastupdated: "2021-03-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -93,13 +93,13 @@ subcollection: satellite
 
 
 
-# {{site.data.keyword.cloud_notm}}
+# {{site.data.keyword.cloud_notm}} for tests
 {: #ibm}
 
-Learn how you can set up a {{site.data.keyword.satellitelong}} location with virtual instances that you created in {{site.data.keyword.cloud_notm}}. 
+Test out an {{site.data.keyword.satellitelong}} location with virtual instances that you created in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-Using {{site.data.keyword.cloud_notm}} infrastructure hosts in {{site.data.keyword.satelliteshort}} is supported only for testing or proof of concept purposes. For production workloads in your {{site.data.keyword.satelliteshort}} location, use on-premises, edge, or other cloud provider hosts. You can also create {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud and add them to a {{site.data.keyword.satelliteshort}} Config cluster group to deploy the same app across your {{site.data.keyword.satelliteshort}} and {{site.data.keyword.cloud_notm}} clusters.
+**Testing only**: Using {{site.data.keyword.cloud_notm}} infrastructure hosts in {{site.data.keyword.satelliteshort}} is supported only for testing, demo, or proof of concept purposes. For production workloads in your {{site.data.keyword.satelliteshort}} location, use on-premises, edge, or other cloud provider hosts. You can also create {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud and add them to a {{site.data.keyword.satelliteshort}} Config cluster group to deploy the same app across your {{site.data.keyword.satelliteshort}} and {{site.data.keyword.cloud_notm}} clusters.
 {: important}
 
 ## Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}}
