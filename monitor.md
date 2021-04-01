@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -118,7 +118,7 @@ See [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?t
 When you create a {{site.data.keyword.satelliteshort}} location and set up the location control plane, IBM automatically monitors and resolves certain alerts for issues with your location setup and host infrastructure. The following table describes different scenarios and the actions that IBM takes to address the scenarios.
 {: shortdesc}
 
-Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location to forward logs to {{site.data.keyword.la_full_notm}}](/docs/satellite?topic=satellite-health#setup-logdna), the messages and more detailed information from the IBM Monitoring component are captured and stored in your {{site.data.keyword.la_full_notm}} instance.
+Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location to forward logs to {{site.data.keyword.la_full_notm}}](/docs/satellite?topic=satellite-health#setup-la), the messages and more detailed information from the IBM Monitoring component are captured and stored in your {{site.data.keyword.la_full_notm}} instance.
 
 | Scenario | Action |
 | --- | --- |
@@ -133,7 +133,7 @@ Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location 
 <br />
 
 ## Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics
-{: #setup-sysdig}
+{: #setup-mon}
 
 Forward and view metrics for {{site.data.keyword.satelliteshort}} in an {{site.data.keyword.mon_full_notm}} instance that is enabled for platform-level metrics.
 {: shortdesc}
@@ -143,9 +143,9 @@ Metrics are available for the {{site.data.keyword.satelliteshort}} Link componen
 1. Create or choose an existing {{site.data.keyword.mon_short}} instance.
   * If you already have a {{site.data.keyword.mon_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.mon_short}} instance is configured to collect platform metrics, the metrics that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.mon_short}} instance.
   * Otherwise, to set up {{site.data.keyword.mon_short}} for your {{site.data.keyword.satelliteshort}} location:
-    1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog/services/ibm-cloud-monitoring-with-sysdig){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
+    1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog/services){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
     2. [Enable the instance for platform-level metrics collection](/docs/log-analysis?topic=log-analysis-config_svc_logs). Note that within one region, only one {{site.data.keyword.mon_short}} instance can be enabled for platform metrics collection.
-2. In the **Monitoring** dashboard, click **View Sysdig** for your {{site.data.keyword.mon_short}} instance.
+2. In the **Monitoring** dashboard, click **Open Dashboard** for your {{site.data.keyword.mon_short}} instance.
 3. In the {{site.data.keyword.mon_short}} dashboard, click **Dashboards** > **IBM** > **Satellite Link - Overview**. The pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics opens. Note that if you just created this {{site.data.keyword.mon_short}} instance, it might take up to two hours for the **IBM** dashboards to become available.
 
     You can create a copy of this dashboard to customize the metrics that are shown. To add metrics that are enabled for {{site.data.keyword.satellitelong_notm}}, search for the `ibm_satellite_link` prefix.

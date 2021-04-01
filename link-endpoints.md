@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-31"
+lastupdated: "2021-04-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -645,9 +645,9 @@ Log traffic that flows from your source to your destination resource over a {{si
 {: shortdesc}
 
 ### Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} Link metrics
-{: #link-sysdig}
+{: #link-mon}
 
-Metrics are available for the {{site.data.keyword.satelliteshort}} Link component of your location to help you monitor the performance of specific Link endpoints or of all Link endpoints for the location. For example, you can monitor the latency or throughput of a specific Link endpoint that you created. To get started, see [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-sysdig).
+Metrics are available for the {{site.data.keyword.satelliteshort}} Link component of your location to help you monitor the performance of specific Link endpoints or of all Link endpoints for the location. For example, you can monitor the latency or throughput of a specific Link endpoint that you created. To get started, see [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-mon).
 
 ### Running a packet capture of endpoint traffic
 {: #link-packet-capture}

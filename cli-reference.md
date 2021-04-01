@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-01"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1304,7 +1304,7 @@ ibmcloud sat location create --managed-from METRO --name NAME [--cos-bucket COS_
 <dd>Optional. Specify three names for high availability zones in your location. These zones are used for any {{site.data.keyword.openshiftlong_notm}} clusters that you create in your location, but the names are arbitrary; for example, if you use AWS hosts for your location, you might specify the name of the AWS high availability zones where your hosts exist. If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names such as `zone-1`.</dd>
 
 <dt><code>--logging-account-id <em>LOGGING_ACCOUNT</em></code></dt>
-<dd>Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.loganalysislong_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.</dd>
+<dd>Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.la_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
