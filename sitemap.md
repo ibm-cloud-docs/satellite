@@ -529,6 +529,9 @@ subcollection: satellite
   * [Service access roles](/docs/satellite?topic=satellite-iam#iam-roles-service)
   * [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=satellite-iam#iam-roles-clusters)
 * [Common use cases and roles](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
+* [API keys](/docs/satellite?topic=satellite-iam#sat-api-keys)
+  * [Container service API key](/docs/satellite?topic=satellite-iam#api-keys-containers)
+  * [Template API key](/docs/satellite?topic=satellite-iam#api-keys-templates)
 
 [Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies](/docs/satellite?topic=satellite-service-architecture)
 * [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture)
