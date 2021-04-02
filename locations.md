@@ -155,6 +155,7 @@ Use the {{site.data.keyword.satelliteshort}} console to create your location.
 * Make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations.
 * You must have an existing [{{site.data.keyword.cos_full_notm}} service instance](https://cloud.ibm.com/objectstorage/create){: external} so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance.
 
+**To create a location from the console**:
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
 2. Click **Manual setup**.
 3. Enter a name and an optional description for your location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer.
@@ -168,7 +169,7 @@ Use the {{site.data.keyword.satelliteshort}} console to create your location.
 Use the {{site.data.keyword.satelliteshort}} CLI to create your location.
 {: shortdesc}
 
-Before you begin:
+**Before you begin**:
 * [Install the {{site.data.keyword.satelliteshort}} CLI](/docs/satellite?topic=satellite-setup-cli).
 * Make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations.
 * You must have an existing {{site.data.keyword.cos_full_notm}} service instance so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance. For example, to set up a dedicated {{site.data.keyword.cos_short}} instance and bucket:
@@ -178,7 +179,7 @@ Before you begin:
 
     <p class="important">Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.</p>
 
-To create a {{site.data.keyword.satelliteshort}} location from the CLI:
+**To create a {{site.data.keyword.satelliteshort}} location from the CLI**:
 
 1.  Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` flag, or create an API key to log in.
     ```
@@ -209,7 +210,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI:
       </tr>
       <tr>
       <td><code>--cos-bucket &lt;cos_bucket_name&gt;</code></td>
-      <td>Optional: Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up the control plane data. Otherwise, a new bucket is automatically created in a {{site.data.keyword.cos_short}} instance in your account.<p class="important">Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your control plane data cannot be backed up.</p></td>
+      <td>Optional: Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up the control plane data. Otherwise, a new bucket is automatically created in a {{site.data.keyword.cos_short}} instance in your account.</td>
       </tr>
       <tr>
       <td><code>--ha-zone &lt;ZONE1_NAME&gt; --ha-zone &lt;ZONE2_NAME&gt; --ha-zone &lt;ZONE3_NAME&gt;</code></td>
