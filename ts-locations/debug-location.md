@@ -179,6 +179,17 @@ Check back later to see if the issue is resolved. If the issue persists for a wh
 For more details on the issue:
 1.  [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la).
 2.  Search the platform logs for the error code for more details, such as failed API method due to a permissions error.
+3.  If the details indicate a permission error:
+    1.  As the account administrator, log in to the {{site.data.keyword.cloud_notm}} CLI and target the resource group and region that the location is in.
+        ```
+        ibmcloud login -g <resource_group> -r <region>
+        ```
+        {: pre}
+    2.  Reset the API key that is used for permissions.
+        ```
+        ibmcloud ks api-key reset
+        ```
+        {: pre}
 
 ## R0009: Unable to recover
 {: #R0009}
