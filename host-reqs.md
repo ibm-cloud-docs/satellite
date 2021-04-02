@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -95,7 +95,7 @@ subcollection: satellite
 # Host requirements
 {: #host-reqs}
 
-Review the following host requirements for {{site.data.keyword.satellitelong}}. 
+Review the following host requirements for {{site.data.keyword.satellitelong}}.
 {: shortdesc}
 
 Want to add hosts from other cloud providers to your location? See [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
@@ -148,7 +148,7 @@ You might need to refresh your packages on the host machine. For example, in IBM
       subscription-manager repos --enable rhel-7-server-extras-rpms
       ```
       {: pre}
-      
+
 For more information about how to enable the {{site.data.keyword.redhat_notm}} packages inhosts that you add from other cloud providers, see [Cloud infrastructure providers](/docssatellite?topic=satellite-infrastructure-plan#create-options-cloud).
 {: tip}
 
@@ -245,11 +245,12 @@ curl -k [node 1-n]:22
 ```
 {: codeblock}
 
-If you do not open all outbound connectivity, you must allow the following outbound connectivity in your firewall. The required IP addresses vary with the {{site.data.keyword.cloud_notm}} multizone region that your {{site.data.keyword.satelliteshort}} location is managed from.
+If you do not open all outbound connectivity, you must allow the following outbound connectivity in your firewall. The required IP addresses vary with the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
 
 |Description|Source IP|Destination IP|Protocol and ports|
 |-----------|---------|--------------|------------------|
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 169.63.123.154</br>169.60.123.162</br>52.117.93.26 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
+| Allow control plane worker nodes to communicate with {{site.data.keyword.cos_full_notm}} to back up control plane etcd data. | Control plane hosts | `s3.us.cloud-object-storage.appdomain.cloud` | - |
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **US East** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for US East (`wdc`) in steps 3 - 5 of the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | See documentation |
 | Allow Cloudflare proxied load balancers for {{site.data.keyword.satelliteshort}} Config | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 443 |
@@ -265,6 +266,7 @@ If you do not open all outbound connectivity, you must allow the following outbo
 |Description|Source IP|Destination IP|Protocol and ports|
 |-----------|---------|--------------|------------------|
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 158.175.120.210</br>141.125.97.106</br>158.176.139.66 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
+| Allow control plane worker nodes to communicate with {{site.data.keyword.cos_full_notm}} to back up control plane etcd data. | Control plane hosts | `s3.eu.cloud-object-storage.appdomain.cloud` | - |
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **UK South** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for UK South (`lon`) in steps 3 - 5 of the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | See documentation |
 | Allow Cloudflare proxied load balancers for {{site.data.keyword.satelliteshort}} Config | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 443 |
@@ -298,7 +300,7 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 2.  Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test.
     *   Washington, DC:
         169.63.123.154</br>169.60.123.162</br>52.117.93.26
-    *   London: 
+    *   London:
         158.175.120.210</br>141.125.97.106</br>158.176.139.66
 3.  From your host, ping the IP addresses of the {{site.data.keyword.cloud_notm}} region.
     ```
@@ -307,7 +309,7 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     {: pre}
 4.  After a few packets complete transmission, close the connection. For example, from the command line, you might enter `ctrl+c`.
 5.  In the `ping statistics` output, note the average (`avg`) round-trip distance in milliseconds (ms) between the host and the {{site.data.keyword.cloud_notm}} region, and compare whether the connection meets the latency requirement of less than 100 ms (`<100 ms`).
-    
+
     Example of a connection that meets the latency requirements:
     ```
     --- 169.63.123.154 ping statistics ---
@@ -323,4 +325,3 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     round-trip min/avg/max/stddev = 138.453/187.370/389.901/78.211 ms
     ```
     {: screen}
-

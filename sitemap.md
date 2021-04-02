@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -462,6 +462,7 @@ subcollection: satellite
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
 
 [Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-local-file#prerequisites)
   * [Getting the device details for your local file storage configuration](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-devices)
   * [Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-labels)
 * [Creating a local file storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-cli)
@@ -738,6 +739,8 @@ subcollection: satellite
 
 [{{site.data.keyword.satellitelong_notm}} notices](/docs/satellite?topic=satellite-sat-notices)
 
+[Creative Commons Attribution Share Alike 4.0 Generic](/docs/satellite?topic=satellite-sat-notices#creative-commons-attribution-share-alike-4.0-generic)
+
 
 ## FAQs
 {: #sitemap_faqs}
@@ -803,6 +806,7 @@ subcollection: satellite
 * [R0045: Host read-only file system issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
 * [R0046: NTP issues](/docs/satellite?topic=satellite-ts-locations-debug#R0046)
 * [R0047: Location health checking](/docs/satellite?topic=satellite-ts-locations-debug#R0047)
+* [R0048: Etcd backup failure](/docs/satellite?topic=satellite-ts-locations-debug#R0048)
 
 
 ## Locations

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -436,7 +436,7 @@ R0045 A read-only file system has been detected on one or more hosts. Replace th
 
 1.  [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la) for more information about which hosts are affected.
 2.  [Remove](/docs/satellite?topic=satellite-hosts#host-remove) the affected hosts and [reattach new hosts](/docs/satellite?topic=satellite-hosts#attach-hosts).
-3.  If you still have issues, [open a support case](/docs/satellite?topic=satellite-get-help) and include your Satellite location ID.
+3.  If you still have issues, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
 
 ## R0046: NTP issues
 {: #R0046}
@@ -473,3 +473,49 @@ R0047 IBM Cloud is unable to use the health check endpoint to check the location
 **Steps to resolve**
 
 See [Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?](/docs/satellite?topic=satellite-ts-location-healthcheck).
+
+## R0048: Etcd backup failure
+{: #R0048}
+
+**Location message**
+
+```
+R0048 The etcd backup for a cluster in your location failed to complete within the past day.
+```
+{: screen}
+
+**Steps to resolve**
+
+Etcd data is backed up every 8 hours from your {{site.data.keyword.satelliteshort}} location control plane to a bucket in your {{site.data.keyword.cos_full_notm}} instance. If this backup consecutively fails 3 times over 24 hours, problems might exist with the {{site.data.keyword.cos_short}} bucket or service instance, or with your {{site.data.keyword.satelliteshort}} location's connection to the {{site.data.keyword.cos_short}} instance.
+
+1. Ensure that the hosts that you assigned to the location control plane are able to access the {{site.data.keyword.cos_full_notm}} endpoint for the {{site.data.keyword.cloud_notm}} region that your location is managed from. For example, in your host firewall, you must allow outbound connectivity from your control plane hosts to the following endpoints:
+
+    <table summary="The table shows the required outbound connectivity for hosts to the {{site.data.keyword.cos_short}} endpoint for the region. Rows are to be read from the left to right. The region that your {{site.data.keyword.satelliteshort}} location is managed from is in the first column. The {{site.data.keyword.cos_short}} endpoint for that region is in the second column.">
+    <caption>Required outbound connectivity for hosts to {{site.data.keyword.cos_short}} endpoints</caption>
+    <table>
+    <thead>
+    <tr>
+    <th>Region</th>
+    <th>{{site.data.keyword.cos_short}} endpoint</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td><code>wdc</code></td>
+    <td><code>s3.us.cloud-object-storage.appdomain.cloud</code></td>
+    </tr>
+    <tr>
+    <td><code>lon</code></td>
+    <td><code>s3.eu.cloud-object-storage.appdomain.cloud</code></td>
+    </tr>
+    </tbody>
+    </table>
+
+2. If you specified the name of a bucket in your {{site.data.keyword.cos_short}} service instance during location creation, verify that the service instance and bucket are available and were not deleted.
+    1. In the {{site.data.keyword.cloud_notm}} console, navigate to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
+    2. Expand the **Storage** row.
+    3. Look for the {{site.data.keyword.cos_short}} instance for your location control plane.
+    4. Click the instance's name. The **Buckets** list page opens.
+    5. Verify that the bucket for your control plane etcd backup exists. If either the service instance or bucket were deleted, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
+
+3. If the control plane hosts can reach the {{site.data.keyword.cos_short}} endpoint, and the {{site.data.keyword.cos_short}} service instance and bucket exist, [open a support case](/docs/satellite?topic=satellite-get-help) to investigate backup failures and include your {{site.data.keyword.satelliteshort}} location ID.
