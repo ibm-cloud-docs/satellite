@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -127,7 +127,7 @@ Before you begin, make sure that you have the [correct permissions](/docs/satell
    2. From the **Activity** tab, find the current activity row and click **View log**.
    3. Review the details and wait for the workspace to complete and enter an **Active** state.
 
-Well done, your {{site.data.keyword.satelliteshort}} location is creating! 
+Well done, your {{site.data.keyword.satelliteshort}} location is creating!
 
 **What's next?**
 
@@ -151,14 +151,17 @@ Don't have your own infrastructure or want a managed solution? [Check out {{site
 Use the {{site.data.keyword.satelliteshort}} console to create your location.
 {: shortdesc}
 
-Before you begin, make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations.
+**Before you begin**:
+* Make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations.
+* You must have an existing [{{site.data.keyword.cos_full_notm}} service instance](https://cloud.ibm.com/objectstorage/create){: external} so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance.
 
+**To create a location from the console**:
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
 2. Click **Manual setup**.
 3. Enter a name and an optional description for your location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer.
-4. Select the {{site.data.keyword.cloud_notm}} multizone metro that you want to use to manage your location. For more information about why you must select an {{site.data.keyword.cloud_notm}} multizone metro, see [Understanding supported {{site.data.keyword.cloud_notm}} multizone metros in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the metro that is closest to where your host machines physically reside that you plan to attach to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
-5. Click **Create location**. When you create the location, a location control plane master is deployed to one of the zones that are located in the {{site.data.keyword.cloud_notm}} multizone metro that you selected.
-6. Continue with [attaching hosts to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) to finish the setup of your {{site.data.keyword.satelliteshort}} location control plane.
+5. Select the {{site.data.keyword.cloud_notm}} region that you want to use to manage your location. For more information about why you must select an {{site.data.keyword.cloud_notm}} region, see [About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the region that is closest to where your host machines physically reside that you plan to attach to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
+6. Click **Create location**. When you create the location, a location control plane master is deployed to one of the zones that are located in the {{site.data.keyword.cloud_notm}} region that you selected.
+7. Continue with [attaching hosts to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) to finish the setup of your {{site.data.keyword.satelliteshort}} location control plane.
 
 ### Creating locations from the CLI
 {: #locations-create-cli}
@@ -166,11 +169,17 @@ Before you begin, make sure that you have the [correct permissions](/docs/satell
 Use the {{site.data.keyword.satelliteshort}} CLI to create your location.
 {: shortdesc}
 
-Before you begin:
+**Before you begin**:
 * [Install the {{site.data.keyword.satelliteshort}} CLI](/docs/satellite?topic=satellite-setup-cli).
 * Make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations.
+* You must have an existing {{site.data.keyword.cos_full_notm}} service instance so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance. For example, to set up a dedicated {{site.data.keyword.cos_short}} instance and bucket:
+    1. [Set up a {{site.data.keyword.cos_full_notm}} instance](https://cloud.ibm.com/objectstorage/create){: external} that you plan to use for all of your {{site.data.keyword.satelliteshort}} locations in your account.
+    2. Create a bucket in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`. Create a separate bucket for each {{site.data.keyword.satelliteshort}} location that you create in your account.
+    3. Pass in the name of this bucket when you create the {{site.data.keyword.satelliteshort}} location.
 
-To create a {{site.data.keyword.satelliteshort}} location from the CLI:
+    <p class="important">Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.</p>
+
+**To create a {{site.data.keyword.satelliteshort}} location from the CLI**:
 
 1.  Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` flag, or create an API key to log in.
     ```
@@ -178,9 +187,9 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI:
     ```
     {: pre}
 
-2.  Create a {{site.data.keyword.satelliteshort}} location. When you create the location, an {{site.data.keyword.cos_full_notm}} service instance and a bucket are created on your behalf to back up the {{site.data.keyword.satelliteshort}} location control plane data. You can create your own {{site.data.keyword.cos_full_notm}} service instance and bucket, and provide this information during location creation. For more information, see the [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create) command.
+2.  Create a {{site.data.keyword.satelliteshort}} location.
     ```
-    ibmcloud sat location create --managed-from <satellite-metro> --name <location_name>
+    ibmcloud sat location create --managed-from <region> --name <location_name> [--cos-bucket cos_bucket_name] [--ha-zone zone1_name --ha-zone zone2_name --ha-zone zone3_name]
     ```
     {: pre}
 
@@ -192,17 +201,25 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI:
       </thead>
       <tbody>
       <tr>
-      <td><code>--managed-from us-east</code></td>
-        <td>The {{site.data.keyword.cloud_notm}} multizone metro location, such as `wdc`, that your {{site.data.keyword.satelliteshort}} location is managed from. You can use any metro, but to reduce latency between {{site.data.keyword.cloud_notm}} and your location, choose the metro that is closest to the compute hosts that you plan to attach to your location later. For a list of supported {{site.data.keyword.cloud_notm}} multizone metros, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions). </td>
+      <td><code>--managed-from &lt;region&gt;</code></td>
+      <td>The {{site.data.keyword.cloud_notm}} region, such as `wdc` or `lon`, that your {{site.data.keyword.satelliteshort}} location is managed from. You can use any region, but to reduce latency between {{site.data.keyword.cloud_notm}} and your location, choose the region that is closest to the compute hosts that you plan to attach to your location later. For a list of supported {{site.data.keyword.cloud_notm}} regions, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).</td>
       </tr>
       <tr>
       <td><code>--name &lt;location_name&gt;</code></td>
       <td>Enter a name for your {{site.data.keyword.satelliteshort}} location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer.</td>
       </tr>
+      <tr>
+      <td><code>--cos-bucket &lt;cos_bucket_name&gt;</code></td>
+      <td>Optional: Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up the control plane data. Otherwise, a new bucket is automatically created in a {{site.data.keyword.cos_short}} instance in your account.</td>
+      </tr>
+      <tr>
+      <td><code>--ha-zone &lt;ZONE1_NAME&gt; --ha-zone &lt;ZONE2_NAME&gt; --ha-zone &lt;ZONE3_NAME&gt;</code></td>
+      <td>Optional: Specify three names for high availability zones in your location. These zones are used for any {{site.data.keyword.openshiftlong_notm}} clusters that you create in your location, but the names are arbitrary. For example, if you use AWS hosts for your location, you might specify the name of the AWS high availability zones where your hosts exist. If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names such as `zone-1`.</td>
+      </tr>
       </tbody>
     </table>
 
-3. Verify that your location is created and wait for the location **Status** to change to `action required`. When you create the location, a location control plane master is deployed to the metro that you selected during location creation. During this process, the **Status** of the location shows `deploying`. While the master deploys, you can now attach compute capacity to your location to complete the setup of the {{site.data.keyword.satelliteshort}} location control plane.
+3. Verify that your location is created and wait for the location **Status** to change to `action required`. When you create the location, a location control plane master is deployed to the region that you selected during location creation. During this process, the **Status** of the location shows `deploying`. While the master deploys, you can now attach compute capacity to your location to complete the setup of the {{site.data.keyword.satelliteshort}} location control plane.
    ```
    ibmcloud sat location ls
    ```
@@ -488,7 +505,7 @@ The following tables provide examples of the number of hosts that the control pl
 
 **How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?**
 
-See [Highly available control plane worker setup](/docs/satellite?topic=satellite-ha#satellite-ha-setup). Make sure to attach hosts to the control plane location in each zone, in multiples of three. For example, you might have 6 hosts that are assigned to your control plane location that is managed from {{site.data.keyword.cloud_notm}} multizone metro `wdc` US East region, with 2 hosts each zone (`us-east-1`, `us-east-2`, and `us-east-3`).
+See [Highly available control plane worker setup](/docs/satellite?topic=satellite-ha#satellite-ha-setup). Make sure to attach hosts to the control plane location in each zone, in multiples of three. For example, you might have 6 hosts that are assigned to your control plane location that is managed from the {{site.data.keyword.cloud_notm}} `wdc` region, with 2 hosts each zone (`us-east-1`, `us-east-2`, and `us-east-3`).
 
 **I am ready to scale up my {{site.data.keyword.satelliteshort}} location control plane. How do I start?**
 

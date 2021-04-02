@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-30"
+lastupdated: "2021-04-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -205,7 +205,7 @@ subcollection: satellite
 * [Security group settings](/docs/satellite?topic=satellite-azure#azure-reqs-firewall)
 * [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-azure#azure-reqs-console-access)
 
-[{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
+[{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm)
 * [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
 
 
@@ -356,7 +356,7 @@ subcollection: satellite
 [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-location-cloud#link-audit)
 
 [Logging and monitoring network traffic for endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-health)
-* [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-sysdig)
+* [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-mon)
 * [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-location-cloud#link-packet-capture)
 
 [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint)
@@ -367,7 +367,7 @@ subcollection: satellite
 
 
 [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health)
-* [Setting up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-logdna)
+* [Setting up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la)
 * [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 * [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
 
@@ -375,7 +375,7 @@ subcollection: satellite
 * [Understanding what is logged and monitored by default](/docs/satellite?topic=satellite-monitor#health-default)
   * [Auditing events for {{site.data.keyword.satelliteshort}} actions](/docs/satellite?topic=satellite-monitor#audit-events)
   * [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default)
-* [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-sysdig)
+* [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-mon)
   * [Available metrics](/docs/satellite?topic=satellite-monitor#available-metrics)
   * [Attributes for segmentation](/docs/satellite?topic=satellite-monitor#attributes)
 * [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters)
@@ -462,6 +462,7 @@ subcollection: satellite
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
 
 [Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-local-file#prerequisites)
   * [Getting the device details for your local file storage configuration](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-devices)
   * [Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-labels)
 * [Creating a local file storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-cli)
@@ -529,6 +530,9 @@ subcollection: satellite
   * [Service access roles](/docs/satellite?topic=satellite-iam#iam-roles-service)
   * [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=satellite-iam#iam-roles-clusters)
 * [Common use cases and roles](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
+* [API keys](/docs/satellite?topic=satellite-iam#sat-api-keys)
+  * [Container service API key](/docs/satellite?topic=satellite-iam#api-keys-containers)
+  * [Template API key](/docs/satellite?topic=satellite-iam#api-keys-templates)
 
 [Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies](/docs/satellite?topic=satellite-service-architecture)
 * [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture)
@@ -735,6 +739,8 @@ subcollection: satellite
 
 [{{site.data.keyword.satellitelong_notm}} notices](/docs/satellite?topic=satellite-sat-notices)
 
+[Creative Commons Attribution Share Alike 4.0 Generic](/docs/satellite?topic=satellite-sat-notices#creative-commons-attribution-share-alike-4.0-generic)
+
 
 ## FAQs
 {: #sitemap_faqs}
@@ -800,6 +806,7 @@ subcollection: satellite
 * [R0045: Host read-only file system issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
 * [R0046: NTP issues](/docs/satellite?topic=satellite-ts-locations-debug#R0046)
 * [R0047: Location health checking](/docs/satellite?topic=satellite-ts-locations-debug#R0047)
+* [R0048: Etcd backup failure](/docs/satellite?topic=satellite-ts-locations-debug#R0048)
 
 
 ## Locations

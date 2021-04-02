@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-11"
+lastupdated: "2021-04-01"
 
 keywords: satellite, hybrid, multicloud, satellite infrastructure service
 
@@ -153,7 +153,7 @@ With your {{site.data.keyword.satelliteshort}} Infrastructure Service location u
 
 **Usage and capacity planning**
 
-1.  Monitor daily usage such as [platform metrics](/docs/satellite?topic=satellite-monitor#setup-sysdig) or the [health of your location, hosts, and clusters](/docs/satellite?topic=satellite-monitor#view-health).
+1.  Monitor daily usage such as [platform metrics](/docs/satellite?topic=satellite-monitor#setup-mon) or the [health of your location, hosts, and clusters](/docs/satellite?topic=satellite-monitor#view-health).
 2.  Contact the IBM team for exceptional changes to capacity needs in your {{site.data.keyword.satelliteshort}} location.
 
 **Support requests**

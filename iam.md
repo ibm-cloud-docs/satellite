@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-04-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -648,3 +648,36 @@ Wondering which access roles to assign to your {{site.data.keyword.satelliteshor
 | Operator or site reliability engineer | **Administrator** platform role for the location and link resources. **Manager** service role for the configuration resources. **Administrator** platform role and **Manager** service role to {{site.data.keyword.openshiftshort}} clusters. |
 {: caption="Types of roles you might assign to meet different use cases." caption-side="top"}
 {: summary="The first column contains the use case, which is typically the role of an access group or user. The second column is the example role and scope of the role that you assign the user in {{site.data.keyword.cloud_notm}} IAM."}
+
+## API keys
+{: #sat-api-keys}
+
+{{site.data.keyword.satelliteshort}} uses [API keys](/docs/account?topic=account-manapikey) from {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to authorize various requests.
+{: shortdesc}
+
+### Container service API key
+{: #api-keys-containers}
+
+{{site.data.keyword.satelliteshort}} uses the API key that is set for the container service, {{site.data.keyword.openshiftlong_notm}}, which is specific to the resource group and region that the {{site.data.keyword.satelliteshort}} location is managed from.
+{: shortdesc}
+
+The API key name is in the format `containers-kubernetes-key`. The account owner can reset the API key by logging in to a region and resource group and running `ibmcloud ks api-key reset`.
+
+This API key is used to authorize actions to various {{site.data.keyword.cloud_notm}} services, such as the following.
+* {{site.data.keyword.openshiftlong_notm}} for clusters.
+* {{site.data.keyword.registrylong_notm}} for images.
+* Service-to-service authorization in IAM for any {{site.data.keyword.satelliteshort}}-enabled services that you add to your location.
+
+For more information, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-users#api_key_about).
+
+### Template API key
+{: #api-keys-templates}
+
+If you create a {{site.data.keyword.satelliteshort}} location by using a template, such as for AWS, {{site.data.keyword.satelliteshort}} checks for permissions by using an API key. The API key must have the [required permissions to create a location](#iam-roles-usecases), including to {{site.data.keyword.bplong_notm}} which is used to automate the infrastructure creation from the template's cloud provider.
+{: shortdesc}
+
+By default, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM API key for you, that impersonates the permissions of the user that tries to use the template. The API key name is formatted as `satellite-<location_name>`.
+
+When you use a template, you can optionally provide the value of an existing API key that has the correct permissions in the same account.
+
+
