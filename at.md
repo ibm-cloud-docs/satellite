@@ -126,7 +126,7 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 | `satellite.link-endpoints.get` | Details for a {{site.data.keyword.satelliteshort}} endpoint are retrieved. |
 | `satellite.link-endpoints.import` |	The configuration for a {{site.data.keyword.satelliteshort}} endpoint is imported from a file. |
 | `satellite.link-endpoints.list` | A list of {{site.data.keyword.satelliteshort}} endpoints is retrieved. |
-| `satellite.link-endpoints.update` | A {{site.data.keyword.satelliteshort}} endpoint is updated or data for exported. |
+| `satellite.link-endpoints.update` | A {{site.data.keyword.satelliteshort}} endpoint is updated or data for the endpoint is exported. |
 | `satellite.link-source-endpoints.list` | A list of {{site.data.keyword.satelliteshort}} endpoints that a client (source) is configured for and the enabled status of the client (source) for each endpoint is retrieved. |
 | `satellite.link-source-endpoints.update` | A client (source) is enabled or disabled for one or more {{site.data.keyword.satelliteshort}} endpoints.	|
 | `satellite.link-sources.create` | A client (source) is configured for a {{site.data.keyword.satelliteshort}} endpoint. |
