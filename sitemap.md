@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -739,7 +739,7 @@ subcollection: satellite
 
 [{{site.data.keyword.satellitelong_notm}} notices](/docs/satellite?topic=satellite-sat-notices)
 
-[Creative Commons Attribution Share Alike 4.0 Generic](/docs/satellite?topic=satellite-sat-notices#creative-commons-attribution-share-alike-4.0-generic)
+[Creative Commons Attribution Share Alike 4.0 Generic](/docs/satellite?topic=satellite-sat-notices#cc-40-generic)
 
 
 ## FAQs
@@ -783,7 +783,7 @@ subcollection: satellite
 
 [Getting help](/docs/satellite?topic=satellite-get-help)
 * [General ways to resolve issues](/docs/satellite?topic=satellite-get-help#help-general)
-* [Reviewing issues and status](/docs/satellite?topic=satellite-get-help#help-cloud-status)
+* [Reviewing cloud issues and status](/docs/satellite?topic=satellite-get-help#help-cloud-status)
 * [Feedback and questions](/docs/satellite?topic=satellite-get-help#feedback-qs)
 * [Contacting support](/docs/satellite?topic=satellite-get-help#help-support)
 
