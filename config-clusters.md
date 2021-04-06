@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-19"
+lastupdated: "2021-04-06"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -140,7 +140,7 @@ Review the following key concepts that are used when you create a {{site.data.ke
 By default, clusters that you create in a {{site.data.keyword.satelliteshort}} location have {{site.data.keyword.satelliteshort}} Config components automatically installed. However, you must grant the service accounts that {{site.data.keyword.satelliteshort}} Config uses the appropriate access to view and manage Kubernetes resources in each cluster. You can also optionally create cluster groups to deploy resources to several clusters at once.
 {: shortdesc}
 
-If you do not grant {{site.data.keyword.satelliteshort}} Config access in each cluster, {{site.data.keyword.satelliteshort}} Config functionality does not work, such as not viewing or deploying Kubernetes resources for your clusters.
+If you do not grant {{site.data.keyword.satelliteshort}} Config access, you cannot later use the {{site.data.keyword.satelliteshort}} Config functionality to view or deploy Kubernetes resources for your clusters.
 
 You do not need to configure access if you already gave {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources when you created the cluster. For example, you might have enabled admin access in the UI or in the CLI with the `--enable-admin-agent` flag.
 {: note}
@@ -186,19 +186,17 @@ Created cluster group 'mygroup' with ID '6492111d-3211-4ed2-8f2e-4b99907476a9'.
 ### Granting {{site.data.keyword.satelliteshort}} Config access to your clusters
 {: #setup-clusters-satconfig-access}
 
-For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources.
+For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. 
 {: shortdesc}
 
-1. Access each cluster in the cluster group. For more access options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
-   1. From the [{{site.data.keyword.openshiftlong_notm}} clusters page](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift), click the cluster.
-   2. Click **OpenShift web console**.
-   3. Click **IAM#username@email.com > Copy Login Command**.
-   4. Click **Display Token**.
-   5. Copy the `oc login` token command.
-   6. Run the `oc login` token command in your CLI to log in to your cluster.
+Choose from the following options.
+* **Admin access when you create a {{site.data.keyword.satelliteshort}} cluster**: You can enable admin permissions when you create the cluster in the console or in the CLI by using the `--enable-admin-agent` flag in the `ibmcloud oc cluster create satellite` command. After creating the cluster, you must perform a one-time login by running `ibmcloud ks cluster config` in the command line.
+* **Admin access for {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud**: See [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} config](#existing-openshift-clusters).
+* **Custom access, or access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access**: Complete the following steps.
 
-   If you enabled admin permissions when you created the cluster in the console or in the CLI with the `--enable-admin-agent` flag for the `ibmcloud oc cluster create satellite` command, your admin permissions are automatically synched after you set the context to the cluster. You can skip the rest of the steps in this task. 
-   {: note}
+**To customize access, or add access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access at cluster creation**:
+
+1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 
 2. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, custom access that is cluster-wide, or custom access that is scoped to a project. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/){: external}.
 
