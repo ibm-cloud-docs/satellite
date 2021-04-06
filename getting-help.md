@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2020
-lastupdated: "2020-12-03"
+  years: 2020, 2021
+lastupdated: "2021-04-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -88,7 +88,7 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vb.net: .ph data-hd-programlang='vb.net'}
+{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
 
 
@@ -102,12 +102,13 @@ Still having issues? Review different ways to get help and support for {{site.da
 ## General ways to resolve issues
 {: #help-general}
 
-1. Keep the clusters and hosts in your {{site.data.keyword.satelliteshort}} location up to date.
-2. Make sure that your command-line tools are up to date.
+1. Enable and review [logging](/docs/satellite?topic=satellite-health) and [monitoring](/docs/satellite?topic=satellite-monitor) details to troubleshoot your {{site.data.keyword.satelliteshort}} components.
+2. Keep the clusters and hosts in your {{site.data.keyword.satelliteshort}} location up to date.
+3. Make sure that your command-line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up to date so that you can use all available commands and flags.
    * Make sure that your `kubectl` and `oc` CLI client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/docs/setup/release/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
 
-## Reviewing issues and status
+## Reviewing cloud issues and status
 {: #help-cloud-status}
 
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.

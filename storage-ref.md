@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-06"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -214,7 +214,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Co
 ## OpenShift Container Storage for remote volumes
 {: #ocs-remote-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Container Storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the OCS remote storage classes in [GitHub]().
+Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Container Storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
 | Storage class name | Type | File system | Provisioner | Volume binding mode | Allow volume expansion | Reclaim policy |
