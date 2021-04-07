@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -368,6 +368,12 @@ subcollection: satellite
 
 [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health)
 * [Setting up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la)
+  * [Enabling platform logs](/docs/satellite?topic=satellite-health#enable-la)
+  * [Viewing logs for your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-health#view-la)
+  * [Analyzing logs for your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-health#analyze-la)
+  * [`R00XX` error logs](/docs/satellite?topic=satellite-health#logs-error)
+  * [Enablement of resource deployment logs](/docs/satellite?topic=satellite-health#logs-deploy)
+  * [Endpoint health status logs](/docs/satellite?topic=satellite-health#logs-link)
 * [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 * [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
 
@@ -784,10 +790,18 @@ subcollection: satellite
 [Getting help](/docs/satellite?topic=satellite-get-help)
 * [General ways to resolve issues](/docs/satellite?topic=satellite-get-help#help-general)
 * [Reviewing cloud issues and status](/docs/satellite?topic=satellite-get-help#help-cloud-status)
+* [Using {{site.data.keyword.la_short}} to review {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-get-help#review-logs)
+  * [Enabling platform logs](/docs/satellite?topic=satellite-get-help#enable-la)
+  * [Viewing logs for your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-get-help#view-la)
+  * [Analyzing logs for your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-get-help#analyze-la)
+  * [`R00XX` error logs](/docs/satellite?topic=satellite-get-help#logs-error)
+  * [Enablement of resource deployment logs](/docs/satellite?topic=satellite-get-help#logs-deploy)
+  * [Endpoint health status logs](/docs/satellite?topic=satellite-get-help#logs-link)
 * [Feedback and questions](/docs/satellite?topic=satellite-get-help#feedback-qs)
 * [Contacting support](/docs/satellite?topic=satellite-get-help#help-support)
 
 [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug)
+* [Reviewing error messages and logs](/docs/satellite?topic=satellite-ts-locations-debug#review-messages-logs)
 * [R0001: Ready location](/docs/satellite?topic=satellite-ts-locations-debug#R0001)
 * [R0002, R0018, R0020, R0023, R0029, R0037, R0039, R0042: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0002)
 * [R0009: Unable to recover](/docs/satellite?topic=satellite-ts-locations-debug#R0009)

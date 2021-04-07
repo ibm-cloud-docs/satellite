@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -110,6 +110,8 @@ The location control plane is not accessible from {{site.data.keyword.cloud_notm
 * The hosts are behind a firewall that blocks traffic to or from {{site.data.keyword.cloud_notm}}.
 
 {: tsResolve}
+To troubleshoot the health check for the Link endpoint:
+
 1. Verify that the automated health check endpoint for your location is enabled.
   1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.
   2. From the **Link endpoints** tab, verify that the **Status** for the endpoint in the format `satellite-healthcheck-<location_ID>` is toggled to **Enabled**.

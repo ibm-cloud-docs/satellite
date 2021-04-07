@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -99,6 +99,9 @@ content-type: troubleshoot
 By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your locations and tries to resolve issues automatically for you. For issues that cannot be resolved automatically, you can debug the location by reviewing the provided health information.
 {: shortdesc}
 
+## Reviewing error messages and logs
+{: #review-messages-logs}
+
 1.  View your locations in the console or list your locations in the CLI, and review the **Status**. If the status is not healthy, continue to the next step. For more information, see [Viewing location health](/docs/satellite?topic=satellite-monitor#location-health).
     ```
     ibmcloud sat location ls
@@ -131,7 +134,9 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     ```
     {: screen}
 
-3.  Review the following common location messages for steps to resolve the issue.
+3.  Get more details about the error message and affected components by [setting up {{site.data.keyword.la_short}} to review {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-get-help#review-logs).
+
+4.  Review the following common location messages for steps to resolve the issue.
 
 ## R0001: Ready location
 {: #R0001}
@@ -349,7 +354,7 @@ R0026 Hosts in the location control plane are running out of disk space. Assign 
     ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>
     ```
     {: pre}
-3.  In the infrastructure provider for the host, check the disk space of your host machine. [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
+3.  In the infrastructure provider for the host, check the disk space of your host machine. Each host must have at least 20 GB disk available. [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
 4.  If debugging and reattaching the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
 
 ## R0033, R0034, R0035: Control plane capacity issues
@@ -367,7 +372,9 @@ R0035 The location control plane is running at max capacity and cannot support a
 
 **Steps to resolve**
 
-1.  Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.
+1.  In each zone, check the CPU and memory size of the hosts.
+  * Across all hosts in a zone, at least 3 CPU total must be available.
+  * Across all hosts in a zone, at least 4 GB memory total must be available.
 2.  [Attach 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts).
 3.  [Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones to add capacity for control plane operations. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
 
