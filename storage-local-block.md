@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-04-08"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -243,13 +243,19 @@ After you [create a local block storage configuration](#config-storage-local-blo
   ```
   {: pre}
 
-2. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to assign storage. Note that the clusters in the cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
+2. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to assign storage. Note that the clusters in the cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location. If you have not created a cluster group, see [Setting up cluster groups](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups).
   ```sh
   ibmcloud sat group ls
   ```
   {: pre}
 
-3. Assign storage to the clusters that you retrieved in step 2. Replace `<group>` with the name of your cluster group, `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
+3. Get the details of your cluster group and verify the clusters where you want to deploy your storage configuration. To attach clusters to your group, run the `ic sat group attach` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-attach).
+  ```sh
+  ibmcloud sat group get <group-name>
+  ```
+  {: pre}
+
+4. Assign storage to the clusters that you retrieved in step 2. Replace `<group>` with the name of your cluster group, `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
   ```sh
   ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
   ```

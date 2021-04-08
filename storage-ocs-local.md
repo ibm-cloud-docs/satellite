@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-08"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -106,36 +106,25 @@ The {{site.data.keyword.satelliteshort}} storage templates are currently availab
 ## Prerequisites
 {: #sat-storage-ocs-local-prereq}
 
-
 To use the OCS storage with the local storage operator and local storage devices, complete the following tasks:
 
 - [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 - [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters).
   - Your cluster must have a minimum of 3 worker nodes with at least 16CPUs and 64GB RAM per worker node.
   - Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to having one of the following local storage configurations.
-    * Two raw devices that have no partitions or formatted file systems. If your devices have no partitions, each node must have 2 free disks. One disk for the OSD and one disk for the MON.
-    * Two raw partitions that have no formatted file system. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
+    * Two raw devices per worker node that have no partitions or formatted file systems. If your devices have no partitions, each node must have 2 free disks. One disk for the OSD and one disk for the MON.
+    * Two raw partitions per worker node that have no formatted file system. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
 - [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups).
-
-<br />
-
-## Setting up backing storage and getting your device details
-{: #sat-storage-ocs-local}
-
-When you create an OCS local storage configuration, you must configure a backing store and provide your local storage device details. When you assign your configuration to your clusters, the storage drivers then install the object storage daemon (OSD) pods and MON pods on the devices that you specify. The OSD pods replicate your local storage data across your worker nodes. The MON pods monitor your devices.
-
-- [Create an IBM {{site.data.keyword.cos_short}} service instance](#sat-storage-ocs-local-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your OCS configuration. The backing store is the underlying storage for the data in your NooBaa buckets.
+- [Set up {{site.data.keyword.satelliteshort}} config on your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
+- **Optional**: If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-ocs-local-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your OCS configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you do not specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and OCS is installed.
 - [Get the details of the raw, unformatted devices that you want to use for your configuration](#sat-storage-ocs-local-devices). The device IDs of your storage disks are used to create your {{site.data.keyword.satelliteshort}} storage configuration.
 
-
 <br />
-### Creating the IBM {{site.data.keyword.cos_short}} service instance
-{: #sat-storage-ocs-local-cos}
+## Optional: Setting up an {{site.data.keyword.cos_full_notm}} backing store
+{: #sat-storage-ocs-remote-cos}
 
-Create an instance of IBM {{site.data.keyword.cos_short}} for the backing storage of your OCS local configuration. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_short}} HMAC credentials.
-
-For more information about creating an {{site.data.keyword.cos_short}} instance, see [creating a service instance](/docs/cloud-object-storage?topic=cloud-object-storage-provision#provision-instance). For more information about creating and retrieving your {{site.data.keyword.cos_short}} HMAC credentials, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main).
-{: tip}
+If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-ocs-local-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your OCS configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you do not specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and OCS is installed.
+{: shortdesc}
 
 1. Create an IBM {{site.data.keyword.cos_short}} service instance.
     ```sh
@@ -143,19 +132,19 @@ For more information about creating an {{site.data.keyword.cos_short}} instance,
     ```
     {: pre}
 
-2. Create HMAC credentials. Note your `access-key-ID` and `secret-access-key` HMAC credentials.
+2. Create HMAC credentials and note the service access key and access key ID of your HMAC credentials
     ```sh
-    ibmcloud resource service-key-create cos-creds-rw Writer --instance-name noobaa-store --parameters '{"HMAC": true}'
+    ibmcloud resource service-key-create cos-cred-rw Writer --instance-name noobaa-store --parameters '{"HMAC": true}'
     ```
     {: pre}
 
 
 <br />
 
-### Getting the device details for your OCS configuration
+## Getting the device details for your OCS configuration
 {: #sat-storage-ocs-local-devices}
 
-When you create your OCS configuration, you must specify which devices that you want to use for the object storage daemons (OSDs) and the MON. The OSD deploys a series of pods, in multiples of 3, that replicate your local storage across the worker nodes and disks in your OCS deployment. The device paths that you retrieve in the following steps are specified as parameters when you create your OCS configuration.
+When you create your OCS configuration, you must specify the device paths of the disks that you want to use in your storage cluster. The storage cluster is comprised of the object storage daemon (OSD) pods and the monitoring (MON) pods. The devices that you specify as OSD devices are your storage devices where your app data is stored and the devices that you specify as MON devices are managed by the MON pod and used to store and maintain the storage cluster mapping and monitor storage events. For more information about the OSD and MON, see the [Ceph documentation](https://docs.ceph.com/en/latest/start/intro/){: external}.
 
 The following steps show how you can manually retrieve the local device information from each worker node in your clusters. You can also use the [OCS disk gatherer](https://access.redhat.com/solutions/4928841) to retrieve a list of all the local devices in your cluster.
 {: tip}
@@ -185,12 +174,6 @@ The following steps show how you can manually retrieve the local device informat
     ```
     {: pre}
 
-  1. Get the details of your devices. Verify that the devices that you want to use are unmounted and unformatted.
-    ```sh
-    fdisk -l
-    ```
-    {: pre}
-
 4. Review the command output for available disks. Disks that can be used for your OCS configuration must be unmounted. In the following example output from the `lsblk` command, the `sdc` disk has two available, unformatted partitions that you can use for the OSD and MON device paths for this worker node. If your worker node has raw disks with no partitions you need one disk for the OSD and one disk for the MON. As a best practice, and to maximize storage capacity on this disk, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your OCS configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration.
     ```sh
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
@@ -206,7 +189,7 @@ The following steps show how you can manually retrieve the local device informat
     ```
     {: screen}
 
-5. Find the `by-id` for each disk that you want to use in your configuration. In this case, the `sdc1` and `sdc2` partitions are unformatted and unmounted. Find `by-id` for each disk is specified as a command parameter when you create your configuration.
+5. Find the `by-id` for each disk that you want to use in your configuration. In this case, the `sdc1` and `sdc2` partitions are unformatted and unmounted. The `by-id` for each disk is specified as a command parameter when you create your configuration.
 
     ```sh
     ls -l /dev/disk/by-id/
@@ -242,7 +225,7 @@ The following steps show how you can manually retrieve the local device informat
 
 1. Before you can create a storage configuration, [review the prerequisites](#sat-storage-ocs-local-prereq).
 1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-local-params-cli).
-1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values.
+1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values. If you are using a {{site.data.keyword.cos_short}} backing store, be sure to specify the regional public endpoint in the following format: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your exisiting configuration. 
   ```sh
   ibmcloud sat storage config create --name <name> --template-name ocs-local --template-version 4.6 -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
   ```
@@ -270,13 +253,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
   ```
   {: pre}
 
-2. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to assign storage. Note that the clusters in the cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
+2. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to assign storage. Note that the clusters in the cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location. If you have not created a cluster group, see [Setting up cluster groups](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups).
   ```sh
   ibmcloud sat group ls
   ```
   {: pre}
 
-3. Assign storage to the clusters that you retrieved in step 2. Replace `<group>` with the name of your cluster group, `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
+3. Get the details of your cluster group and verify the clusters where you want to deploy your storage configuration. To attach clusters to your group, run the `ic sat group attach` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-attach).
+  ```sh
+  ibmcloud sat group get <group-name>
+  ```
+  {: pre}
+
+4. Assign storage to the clusters that you retrieved in step 2. Replace `<group>` with the name of your cluster group, `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
   ```sh
   ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
   ```
@@ -287,7 +276,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
   ibmcloud sat storage assignment ls | grep <storage-assignment-name>
   ```
   {: pre}
-5. Verify that the storage configuration resources are deployed. For more information about the resources that are deployed with the configuration that you assigned to your clusters. Note that this process might take up to 10 minutes to complete.
+5. Verify that the storage configuration resources are deployed. Note that this process might take up to 10 minutes to complete.
 
   1. Get the `storagecluster` that you deployed and verify that the phase is `Ready`.
     ```sh
@@ -495,8 +484,62 @@ You can use the OCS storage classes to create PVCs for the apps in your clusters
 
 
 
+## Upgrading your OCS version
+{: #ocs-local-upgrade}
 
+To upgrade the OCS version of your configuration, get the details of your configuration and create a new configuration with the same `ocs-cluster-name` and details, but with the `template-version` set to the target version that you want to upgrade to and the `ocs-upgrade` parameter to `true`.
+{: shortdesc}
 
+Deleting configurations and assignments might result in data loss.
+{: important}
+
+In the following example, the OCS configuration is updated to use template version 4.7:
+  * `--name` - Enter a name for your new configuration.
+  * `--template-name` - Use the same parameter value as in your exisiting configuration.
+  * `--template-version` - Enter the template version that you want to use to upgrade your configuration.
+  * `ocs-cluster-name` - Use the same parameter value as in your exisiting configuration.
+  * `osd-device-path` - Use the same parameter value as in your exisiting configuration.
+  * `mon-device-path` - Use the same parameter value as in your exisiting configuration.
+  * `num-of-osd` - Use the same parameter value as in your exisiting configuration.
+  * `worker-nodes` - Use the same parameter value as in your exisiting configuration.
+  * `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
+  * `ibm-cos-access-key` - Optional: Use the same parameter value as in your exisiting configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+  * `ibm-cos-secret-access-key` - Optional: Use the same parameter value as in your exisiting configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+  * `ibm-cos-endpoint` - Optional: Use the same parameter value as in your exisiting configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+  * `ibm-cos-location` - Optional: Use the same parameter value as in your exisiting configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+
+1. Get the details of your OCS configuration.
+    ```sh
+    ibmcloud sat storage config get --config <config>
+    ```
+    {: pre}
+
+2. Get the configuration details of your `ocscluster` custom resource.
+
+    ```sh
+    oc get ocscluster <ocs-cluster-name>
+    ```
+    {: pre}
+
+3. Save the configuration details. When you upgrade your OCS version, you must enter the same configuration details as in your exisiting OCS configuration. In addition, you must set the `template-version` to the version you want to upgrade to and change the `ocs-upgrade` parameter to `true`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your exisiting configuration. 
+    ```sh
+    ibmcloud sat storage config create --name <name> --template-name ocs-local --template-version 4.7 -p "ocs-cluster-name=testocscluster" -p "osd-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part2,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part2" -p "mon-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part1,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part1" -p "num-of-osd=1" -p "worker-nodes=<worker-IP>,<worker-IP>,<worker-IP>" -p "ocs-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
+    ```
+    {: pre}
+
+4. Assign your configuration to your clusters.
+    ```sh
+    ibmcloud sat storage assignment create --name <name> --group <group> --config <config>
+    ```
+    {: pre}
+
+5. Verify that your configuration is updated
+    ```sh
+    ibmcloud sat storage config get --config <config>
+    ```
+    {: pre}
+
+<br />
 ## Removing OpenShift Container Storage from your apps
 {: #ocs-local-rm}
 
@@ -604,6 +647,9 @@ Use the command line to remove a storage configuration.
 6. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
   ```sh
   #!/bin/bash
+  ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
+  oc delete ocscluster --all --wait=false
+  kubectl patch ocscluster/$ocscluster_name -p '{"metadata":{"finalizers":[]}}' --type=merge
   oc delete ns openshift-storage --wait=false
   sleep 20
   kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
@@ -706,7 +752,7 @@ Use the command line to remove a storage configuration.
   {: screen}
 
 13. Delete the storage classes.
-  ```
+  ```sh
   oc delete sc localblock localfile ocs-storagecluster-ceph-rbd ocs-storagecluster-ceph-rgw ocs-storagecluster-cephfs
   ```
   {: pre}
@@ -732,10 +778,10 @@ Use the command line to remove a storage configuration.
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. | N/A |
 | `mon-device-path` | Required | Enter a comma separated list of the `disk-by-id` paths for the storage devices that you want to use for the OCS monitoring (MON) pods. The devices that you specify must have at least 20GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `mon-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. | N/A |
 | `osd-device-path` | Required | Enter a comma separated list of the `disk-by-id` paths for the devices that you want to use for the OSD pods. The devices that you specify are used as your storage devices in your OCS configuration. Your OSD devices must have at least 100GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `osd-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
-| `ibm-cos-access-key` | Required | Enter the IBM {{site.data.keyword.cos_short}} access key ID. Do not base64 encode this value. Your {{site.data.keyword.cos_short}} access key ID is used to create a Kubernetes secret in your cluster. | N/A |
-| `ibm-cos-secret-access-key` | Required | Enter the IBM {{site.data.keyword.cos_short}} secret access key. Do not base64 encode this value. Your {{site.data.keyword.cos_short}} secret access key is used to create a Kubernetes secret in your cluster. | N/A |
-| `ibm-cos-endpoint` | Required | Enter the IBM {{site.data.keyword.cos_short}} regional public endpoint. Be sure that you enter the regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A |
-| `ibm-cos-location` | Required | Enter the IBM {{site.data.keyword.cos_short}} region. Example: `us-east-standard`. | N/A |
+| `ibm-cos-access-key` | Optional | Enter the IBM {{site.data.keyword.cos_short}} access key ID. Do not encode this value to base64. Your {{site.data.keyword.cos_short}} access key ID is used to create a Kubernetes secret in your cluster. | N/A | 
+| `ibm-cos-secret-access-key` | Optional | Enter the IBM {{site.data.keyword.cos_short}} secret access key. Do not encode this value to base64. Your {{site.data.keyword.cos_short}} secret access key is used to create a Kubernetes secret in your cluster. | N/A |
+| `ibm-cos-endpoint` | Optional | Enter the IBM {{site.data.keyword.cos_short}} regional public endpoint. Be sure that you enter the regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A | 
+| `ibm-cos-location` | Optional | Enter the IBM {{site.data.keyword.cos_short}} region. Example: `us-east-standard`. | N/A |
 | `num-of-osd` | Optional | Enter the number of OSDs. OCS creates 3 times the value specified. | 1 |
 |`worker-nodes` | Optional | Enter the IP addresses of the worker nodes that you want to use in your OCS configuration. Your configuration must have at least 3 worker nodes. If this value is not specified, all of the worker nodes in the cluster are included in your OCS configuration. Example: `169.48.170.90` | N/A |
 | `billing-type` | Optional | Enter the billing option that you want to use. You can enter either `hourly` or `monthly`. | `hourly` |

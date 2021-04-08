@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-08"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1839,7 +1839,7 @@ ibmcloud sat storage config create --name NAME --template-name NAME --template-v
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -1950,7 +1950,7 @@ ibmcloud sat storage config rm --config CONFIG [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -1973,6 +1973,8 @@ ibmcloud sat storage config rm --config ocs-config
 
 <br />
 
+
+
 ### `ibmcloud sat storage template get`
 {: #cli-storage-template-get}
 
@@ -1986,7 +1988,7 @@ ibmcloud sat storage template get --name NAME --version VERSION
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -2025,7 +2027,7 @@ You can run `ibmcloud sat storage templates` as an alias of the `ibmcloud sat st
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 

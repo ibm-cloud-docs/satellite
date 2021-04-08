@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -481,16 +481,29 @@ subcollection: satellite
 
 [OpenShift Container Storage using local disks](/docs/satellite?topic=satellite-config-storage-ocs-local)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-prereq)
-* [Setting up backing storage and getting your device details](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local)
-  * [Creating the IBM {{site.data.keyword.cos_short}} service instance](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cos)
-  * [Getting the device details for your OCS configuration](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-devices)
+* [Optional: Setting up an {{site.data.keyword.cos_full_notm}} backing store](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-remote-cos)
+* [Getting the device details for your OCS configuration](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-devices)
 * [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cli)
 * [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local)
 * [Deploying an app that uses OpenShift Container Storage](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-deploy)
+* [Upgrading your OCS version](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-upgrade)
 * [Removing OpenShift Container Storage from your apps](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-rm)
 * [Removing the OCS local storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-template-rm)
 * [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-sc-ref)
+
+[Setting OpenShift Container Storage for remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote)
+* [Creating an OCS remote storage configuration](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote)
+  * [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-prereq)
+  * [Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cos)
+  * [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cli)
+* [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote)
+  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote-cli)
+* [Scaling your {{ocs}} configuration](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-scale-config)
+* [Upgrading your OCS configuration](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-upgrade-config)
+  * [Removing the OCS remote storage assignment from the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#ocs-remote-template-rm-cli)
+* [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-params-cli)
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-sc-ref)
 
 
 ## Storage class reference
