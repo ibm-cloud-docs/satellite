@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -224,8 +224,6 @@ Example log:
 |`message`|The status of whether your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable, and the endpoint that was health checked.|
 {: caption="Pre-defined fields for endpoint health status logs" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
-
-</br>
 
 <br />
 

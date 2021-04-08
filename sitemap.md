@@ -803,6 +803,7 @@ subcollection: satellite
 [Getting help](/docs/satellite?topic=satellite-get-help)
 * [General ways to resolve issues](/docs/satellite?topic=satellite-get-help#help-general)
 * [Reviewing cloud issues and status](/docs/satellite?topic=satellite-get-help#help-cloud-status)
+* [Identifying issues for {{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-get-help#help-services)
 * [Using {{site.data.keyword.la_short}} to review {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-get-help#review-logs)
   * [Enabling platform logs](/docs/satellite?topic=satellite-get-help#enable-la)
   * [Viewing logs for your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-get-help#view-la)

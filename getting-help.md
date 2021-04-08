@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -102,7 +102,7 @@ Still having issues? Review different ways to get help and support for {{site.da
 ## General ways to resolve issues
 {: #help-general}
 
-1. Enable and review [logging](/docs/satellite?topic=satellite-health) and [monitoring](/docs/satellite?topic=satellite-monitor) details to troubleshoot your {{site.data.keyword.satelliteshort}} components.
+1. Enable and review [logging](#review-logs) and [monitoring](/docs/satellite?topic=satellite-monitor) details to troubleshoot your {{site.data.keyword.satelliteshort}} components.
 2. Keep the clusters and hosts in your {{site.data.keyword.satelliteshort}} location up to date.
 3. Make sure that your command-line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up to date so that you can use all available commands and flags.
@@ -115,6 +115,14 @@ Still having issues? Review different ways to get help and support for {{site.da
 2. Filter for the **Satellite** component and review any cloud status issue.
 3. Review the [requirements, limitations, and known issues documentation](/docs/satellite?topic=satellite-requirements).
 4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
+
+## Identifying issues for {{site.data.keyword.satelliteshort}}-enabled services
+{: #help-services}
+
+If you experience an issue with a {{site.data.keyword.satelliteshort}}-enabled service in your location, first check whether your issue is listed in the troubleshooting topics in the {{site.data.keyword.satelliteshort}} documentation. If the issue is not listed in the {{site.data.keyword.satelliteshort}} documentation, check the {{site.data.keyword.cloud_notm}} documentation set for the service.
+{: shortdesc}
+
+For example, if you cannot access the {{site.data.keyword.openshiftshort}} console for an {{site.data.keyword.openshiftshort}} cluster on {{site.data.keyword.satelliteshort}}, first check whether the issue is [specific to your {{site.data.keyword.satelliteshort}} location setup](/docs/satellite?topic=satellite-ts-console-fail). If your {{site.data.keyword.satelliteshort}} location setup is not the source of the issue, then check the [{{site.data.keyword.openshiftlong_notm}} documentation for troubleshooting console issues](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails).
 
 ## Using {{site.data.keyword.la_short}} to review {{site.data.keyword.satelliteshort}} location logs
 {: #review-logs}
@@ -240,10 +248,6 @@ Example log:
 |`message`|The status of whether your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable, and the endpoint that was health checked.|
 {: caption="Pre-defined fields for endpoint health status logs" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
-
-</br>
-
-<br />
 
 ## Feedback and questions
 {: #feedback-qs}
