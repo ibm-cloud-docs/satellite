@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -202,9 +202,9 @@ Example log:
 |`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to IBM for monitoring and alerts.|
 |`Details`|The detailed information for log.|
 |`Details.message`|The current error message for the location, including any troubleshooting steps or documentation links.|
-|`Details.errorDetails`|Other details for the current error, such as specific causes or issues with certain components. These details are used by IBM site reliability engineers to manage alerts, and do not require action on your part.|
+|`Details.errorDetails`|Other details for the current error, such as specific causes or issues with certain components. These details are used by IBM site reliability engineers to manage alerts, but can help provide more details about the issue while you troubleshoot.|
 |`Details.messageID`|The error message's `R00XX` identifier.|
-{: caption="Pre-defined fields for `R00XX` error logs" caption-side="top"}
+{: caption="Pre-defined fields for R00XX error logs" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
 
 ### Enablement of resource deployment logs

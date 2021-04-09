@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-15"
+lastupdated: "2021-04-09"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -99,7 +99,8 @@ Before you can decide what type of storage is the right solution for your {{site
 
 
 <br />
-### How do I configure storage on {{site.data.keyword.satelliteshort}}?
+
+## How do I configure storage on {{site.data.keyword.satelliteshort}}?
 {: #storage-sat-configure}
 
 You can configure storage on {{site.data.keyword.satelliteshort}} by using one of the provided storage configuration templates or by manually installing your own storage drivers.
@@ -113,7 +114,8 @@ The {{site.data.keyword.satelliteshort}} storage templates are currently availab
 **Manual installation**: You can also bring your own storage drivers to {{site.data.keyword.satelliteshort}} by installing them from OperatorHub, installing Helm charts, creating configurations, or by using your preferred method of deploying images to your clusters including images and drivers from various {{site.data.keyword.cloud_notm}} storage and partner solutions. Bringing your own storage driver is functionally supported, but you are responsible for the entire lifecycle operations, installation, troubleshooting, and support.
 
 <br />
-### What are the benefits of using templates?
+
+## What are the benefits of using templates?
 {: #storage-template-benefits}
 
 With {{site.data.keyword.satelliteshort}} storage templates, you can create a storage configuration that can be deployed across your clusters without the need to re-create the configuration for each cluster.
@@ -133,7 +135,8 @@ When you use a {{site.data.keyword.satelliteshort}} storage template to create a
 {: summary="The rows are read from left to right. The first column is a description of the feature. The second column is the feature support on Satellite. The third column is the feature support for bring your own drivers."}
 
 <br />
-### How do storage templates work?
+
+## How do storage templates work?
 {: #storage-template-flow}
 
 When you create a configuration by using a template, you specify a set of parameters for the storage provider that you want to use. These parameters preset values that are used when you deploy storage drivers, create persistent volumes, provision instances, or use other functions depending on the provider and the type of storage that you want to use. For more information, see the [list of available storage templates](#storage-template-ov-providers).
@@ -150,7 +153,8 @@ The following image depicts the workflow for creating a {{site.data.keyword.sate
 
 
 <br />
-### Which storage providers have {{site.data.keyword.satelliteshort}} storage templates?
+
+## Which storage providers have {{site.data.keyword.satelliteshort}} storage templates?
 {: #storage-template-ov-providers}
 
 You can create a {{site.data.keyword.satelliteshort}} storage configuration by using a template for the storage provider that you want to use. If your preferred storage provider does not have a template, you can [create your own configuration template](https://github.com/IBM/ibm-satellite-storage){: external} or you can manually deploy storage drivers. The following list includes the storage templates are currently available to deploy to your {{site.data.keyword.satelliteshort}} clusters.

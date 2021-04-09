@@ -398,10 +398,10 @@ subcollection: satellite
 
 
 [Understanding {{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov)
-  * [How do I configure storage on {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-sat-configure)
-  * [What are the benefits of using templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-benefits)
-  * [How do storage templates work?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-flow)
-  * [Which storage providers have {{site.data.keyword.satelliteshort}} storage templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-ov-providers)
+* [How do I configure storage on {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-sat-configure)
+* [What are the benefits of using templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-benefits)
+* [How do storage templates work?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-flow)
+* [Which storage providers have {{site.data.keyword.satelliteshort}} storage templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-ov-providers)
 
 
 ## AWS storage templates
@@ -886,6 +886,8 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-release-notes)
+
+[April 2021](/docs/satellite?topic=satellite-release-notes#apr21)
 
 [March 2021](/docs/satellite?topic=satellite-release-notes#mar21)
 
