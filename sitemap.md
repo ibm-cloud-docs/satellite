@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -368,6 +368,12 @@ subcollection: satellite
 
 [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health)
 * [Setting up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la)
+  * [Enabling platform logs](/docs/satellite?topic=satellite-health#enable-la)
+  * [Viewing logs for your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-health#view-la)
+  * [Analyzing logs for your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-health#analyze-la)
+  * [`R00XX` error logs](/docs/satellite?topic=satellite-health#logs-error)
+  * [Enablement of resource deployment logs](/docs/satellite?topic=satellite-health#logs-deploy)
+  * [Endpoint health status logs](/docs/satellite?topic=satellite-health#logs-link)
 * [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 * [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
 
@@ -392,10 +398,10 @@ subcollection: satellite
 
 
 [Understanding {{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov)
-  * [How do I configure storage on {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-sat-configure)
-  * [What are the benefits of using templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-benefits)
-  * [How do storage templates work?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-flow)
-  * [Which storage providers have {{site.data.keyword.satelliteshort}} storage templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-ov-providers)
+* [How do I configure storage on {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-sat-configure)
+* [What are the benefits of using templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-benefits)
+* [How do storage templates work?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-flow)
+* [Which storage providers have {{site.data.keyword.satelliteshort}} storage templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-ov-providers)
 
 
 ## AWS storage templates
@@ -475,16 +481,27 @@ subcollection: satellite
 
 [OpenShift Container Storage using local disks](/docs/satellite?topic=satellite-config-storage-ocs-local)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-prereq)
-* [Setting up backing storage and getting your device details](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local)
-  * [Creating the IBM {{site.data.keyword.cos_short}} service instance](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cos)
-  * [Getting the device details for your OCS configuration](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-devices)
+* [Optional: Setting up an {{site.data.keyword.cos_full_notm}} backing store](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cos)
+* [Getting the device details for your OCS configuration](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-devices)
 * [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cli)
 * [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local)
 * [Deploying an app that uses OpenShift Container Storage](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-deploy)
+* [Upgrading your OCS version](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-upgrade)
 * [Removing OpenShift Container Storage from your apps](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-rm)
 * [Removing the OCS local storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-template-rm)
 * [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-sc-ref)
+
+[Setting OpenShift Container Storage for remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-prereq)
+  * [Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cos)
+* [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cli)
+* [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote)
+  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote-cli)
+* [Upgrading your OCS configuration](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-upgrade-config)
+  * [Removing the OCS remote storage assignment from the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#ocs-remote-template-rm-cli)
+* [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-params-cli)
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-sc-ref)
 
 
 ## Storage class reference
@@ -784,10 +801,19 @@ subcollection: satellite
 [Getting help](/docs/satellite?topic=satellite-get-help)
 * [General ways to resolve issues](/docs/satellite?topic=satellite-get-help#help-general)
 * [Reviewing cloud issues and status](/docs/satellite?topic=satellite-get-help#help-cloud-status)
+* [Identifying issues for {{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-get-help#help-services)
+* [Using {{site.data.keyword.la_short}} to review {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-get-help#review-logs)
+  * [Enabling platform logs](/docs/satellite?topic=satellite-get-help#enable-la)
+  * [Viewing logs for your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-get-help#view-la)
+  * [Analyzing logs for your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-get-help#analyze-la)
+  * [`R00XX` error logs](/docs/satellite?topic=satellite-get-help#logs-error)
+  * [Enablement of resource deployment logs](/docs/satellite?topic=satellite-get-help#logs-deploy)
+  * [Endpoint health status logs](/docs/satellite?topic=satellite-get-help#logs-link)
 * [Feedback and questions](/docs/satellite?topic=satellite-get-help#feedback-qs)
 * [Contacting support](/docs/satellite?topic=satellite-get-help#help-support)
 
 [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug)
+* [Reviewing error messages and logs](/docs/satellite?topic=satellite-ts-locations-debug#review-messages-logs)
 * [R0001: Ready location](/docs/satellite?topic=satellite-ts-locations-debug#R0001)
 * [R0002, R0018, R0020, R0023, R0029, R0037, R0039, R0042: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0002)
 * [R0009: Unable to recover](/docs/satellite?topic=satellite-ts-locations-debug#R0009)
@@ -859,6 +885,8 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-release-notes)
+
+[April 2021](/docs/satellite?topic=satellite-release-notes#apr21)
 
 [March 2021](/docs/satellite?topic=satellite-release-notes#mar21)
 
