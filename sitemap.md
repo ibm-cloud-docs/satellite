@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -493,10 +493,9 @@ subcollection: satellite
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-sc-ref)
 
 [Setting OpenShift Container Storage for remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote)
-* [Creating an OCS remote storage configuration](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote)
-  * [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-prereq)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-prereq)
   * [Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cos)
-  * [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cli)
+* [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cli)
 * [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote)
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote-cli)
 * [Scaling your {{ocs}} configuration](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-scale-config)

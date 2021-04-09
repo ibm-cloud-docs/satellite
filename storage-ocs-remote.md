@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-09"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -101,26 +101,22 @@ Set up [OpenShift Container Storage](https://docs.openshift.com/container-platfo
 The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
 {: beta}
 
-## Creating an OCS remote storage configuration
-{: #sat-storage-ocs-remote}
-
-When you create an OCS remote storage configuration, you must provide your remote storage device details. The storage drivers then install the object storage daemon (OSD) pods and MON pods on the devices that you specify. The OSD pods replicate your remote storage data across your worker nodes. The MON pods monitor your devices.
-
-### Prerequisites
+## Prerequisites
 {: #sat-storage-ocs-remote-prereq}
 
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters). Review the following requirements when you create your cluster.
-1. [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups).
+1. [Add your {{site.data.keyword.satelliteshort}} cluster to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups).
 1. [Set up {{site.data.keyword.satelliteshort}} config on your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
 1. Your cluster must have a minimum of 3 worker nodes with at least 16CPUs and 64GB RAM per worker node.
-1. Your cluster must have a remote block storage storage provisioner available. 
+1. Your cluster must have a remote block storage provisioner available. 
 1. The OCP version must be compatible with the OCS version that you want to install. 
 1. **Optional**: [Create an IBM {{site.data.keyword.cos_full_notm}} service instance](#sat-storage-ocs-remote-cos).
   1. Create HMAC credentials for your {{site.data.keyword.cos_full_notm}} instance.
   1. Create a Kubernetes secret that uses your {{site.data.keyword.cos_full_notm}} HMAC credentials.
 1. [Get the details of the raw, unformatted devices that you want to use for your configuration](#sat-storage-ocs-remote-devices).
 
+<br />
 
 ### Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance
 {: #sat-storage-ocs-remote-cos}
@@ -144,7 +140,7 @@ Create an instance of IBM {{site.data.keyword.cos_full_notm}} for the backing st
 
 
 
-### Creating an OpenShift Container Storage configuration in the command line
+## Creating an OpenShift Container Storage configuration in the command line
 {: #sat-storage-ocs-remote-cli}
 
 1. Before you can create a storage configuration, [review the prerequisites](#sat-storage-ocs-remote-prereq).
