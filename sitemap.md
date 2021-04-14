@@ -127,6 +127,13 @@ subcollection: satellite
 * [{{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-about#components)
 * [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-about#architecture)
 
+[Edge environments for AI, IoT, and machine learning](/docs/satellite?topic=satellite-edge-usecase)
+* [Solving common edge workload challenges with {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-edge-usecase#edge-challenges)
+* [Setting up your edge solution with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-edge-usecase#edge-solution)
+  * [Step 1: Set up machine learning and model training for your data](/docs/satellite?topic=satellite-edge-usecase#edge-example-ml)
+  * [Step 2: Deploy {{site.data.keyword.satelliteshort}} with a serverless component to your edge environment](/docs/satellite?topic=satellite-edge-usecase#edge-example-serverless)
+  * [Step 3: Run model inferencing at the edge](/docs/satellite?topic=satellite-edge-usecase#edge-example-inferencing)
+
 
 ## Installing the {{site.data.keyword.satelliteshort}} CLI
 {: #sitemap_installing_the__cli}

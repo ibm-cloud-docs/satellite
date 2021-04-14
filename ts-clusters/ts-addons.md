@@ -106,6 +106,8 @@ Add-ons might not work for several reason.
 * The add-on settings are misconfigured, such as renaming or editing a configmap.
 
 {: tsResolve}
+Take the following steps to troubleshoot the add-on.
+
 1.  Check that the [add-on is supported](/docs/openshift?topic=openshift-managed-addons#addons-satellite). If not, uninstall the add-on.
 2.  If the add-on is misconfigured, refresh the cluster master to restore the add-on to the default settings. 
     ```
