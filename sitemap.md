@@ -878,6 +878,8 @@ subcollection: satellite
 
 [Why can't I update or complete other actions with my cluster?](/docs/satellite?topic=satellite-ts-cluster-operations-blocked)
 
+[Why doesn't my cluster add-on work?](/docs/satellite?topic=satellite-addon-errors)
+
 
 ## Release notes
 {: #sitemap_release_notes}
