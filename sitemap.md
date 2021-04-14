@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-04-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -118,17 +118,14 @@ subcollection: satellite
 [What's next](/docs/satellite?topic=satellite-getting-started#whats-next)
 
 
-## About {{site.data.keyword.satelliteshort}}
-{: #sitemap_about_}
+## Understanding Satellite use cases
+{: #sitemap_understanding_satellite_use_cases}
 
 
 [About {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about)
-
-[Benefits of using {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about#about-benefits)
-
-[{{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-about#components)
-
-[{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-about#architecture)
+* [Benefits of using {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about#about-benefits)
+* [{{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-about#components)
+* [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-about#architecture)
 
 
 ## Installing the {{site.data.keyword.satelliteshort}} CLI

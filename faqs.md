@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -105,7 +105,9 @@ Review frequently asked questions (FAQs) for using {{site.data.keyword.satellite
 {: faq}
 {: support}
 
-With {{site.data.keyword.satellitelong_notm}}, you can bring your own compute infrastructure that meets the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) to {{site.data.keyword.cloud_notm}}. You can add infrastructure from your on-premises data center, at other cloud providers, or in edge networks as a {{site.data.keyword.satelliteshort}} host in your {{site.data.keyword.satelliteshort}} location. Then, you use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on this infrastructure, and consistently deploy, manage, and control your app workloads.  
+With {{site.data.keyword.satellitelong_notm}}, you can create a hybrid environment that brings the scalability and on-demand flexibility of public cloud services to the applications and data that run in your secure private cloud. To achieve this distributed cloud architecture, {{site.data.keyword.satelliteshort}} provides an API-based suite of tools that let you represent your on-premises data center, another cloud provider, or an edge network as a {{site.data.keyword.satelliteshort}} location. You fill the {{site.data.keyword.satelliteshort}} location with your own host machines that meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-system). Then, these hosts provide the compute power to run {{site.data.keyword.cloud_notm}} services, such as workloads in managed {{site.data.keyword.openshiftshort}} clusters or data and artificial intelligence (AI) tools like {{site.data.keyword.watson}}.
+
+Your {{site.data.keyword.satelliteshort}} location includes tools like {{site.data.keyword.satelliteshort}} Link and {{site.data.keyword.satelliteshort}} config to provide additional capabilities for securing and auditing network connections in your location and consistently deploying, managing, and controlling your apps and policies across clusters in the location.
 
 For more information, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/cloud/satellite){: external}.
 

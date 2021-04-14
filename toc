@@ -6,7 +6,11 @@ Satellite
 
     {: .navgroup id="learn"}
     getting-started.md
-    about.md
+
+    {: .topicgroup}
+    Understanding Satellite use cases
+        about.md
+        
     {: .navgroup-end}
     
 
