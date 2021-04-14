@@ -6,9 +6,19 @@ Satellite
 
     {: .navgroup id="learn"}
     getting-started.md
-    about.md
+
+    {: .topicgroup}
+    Understanding Satellite use cases
+        about.md
+        uc-ov.md
+        uc-edge.md
+        
+    adopters.md
     {: .navgroup-end}
     
+    {: .navgroup id="tutorial"}
+    tutorial.md
+    {: .navgroup-end}
 
     {: .navgroup id="howto"}
     setup-cli.md
@@ -74,7 +84,10 @@ Satellite
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    [API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster)
+    {: .topicgroup}
+    API reference
+        [Satellite locations, hosts, and clusters](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster)
+        [Satellite links, endpoints, and sources](https://pages.github.ibm.com/IBM-Cloud-Platform-Networking/satellite-link-api/#/)
 
     {: topicgroup}
     CLI plug-in reference
@@ -117,6 +130,7 @@ Satellite
             ts-clusters/ts-kubectl-fail.md
             ts-clusters/ts-console-fail.md
             ts-clusters/ts-cluster-operations.md
+            ts-clusters/ts-addons.md
 
     relnotes.md
     sitemap.md
