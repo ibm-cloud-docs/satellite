@@ -264,15 +264,20 @@ Note that compliance also might depend on the setup of the underlying infrastruc
 - International Organization for Standardization (ISO 27001, ISO 27017, ISO 27018)
 
 
-## What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} cluster?
+## What {{site.data.keyword.cloud_notm}} services can I use with {{site.data.keyword.satelliteshort}}?
 {: #supported-services}
 {: faq}
 {: support}
 
-You can run the {{site.data.keyword.cloud_notm}} services in your {{site.data.keyword.satelliteshort}} location as described in the following table. Keep in mind that each service might have its own [limitations for use in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-requirements#reqs-services).  
+You can run the following {{site.data.keyword.cloud_notm}} services in your {{site.data.keyword.satelliteshort}} location. Keep in mind that each service might have its own [limitations for use in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-requirements#reqs-services).  
 
 |Service name|Description|
 |------------|----------------------------------|
 |{{site.data.keyword.openshiftlong_notm}}|Run {{site.data.keyword.openshiftlong_notm}} clusters on the infrastructure that you added to your {{site.data.keyword.satelliteshort}} location. For more information, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). |
 {: caption="{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cloud_notm}} service that is enabled for use with {{site.data.keyword.satelliteshort}}. The second column is a description of the service."}
+
+## What managed add-ons can I use with {{site.data.keyword.openshiftshort}} clusters in my {{site.data.keyword.satelliteshort}} location?
+{: #faq-managed-addons}
+
+See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-managed-addons#addons-satellite).

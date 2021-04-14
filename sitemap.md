@@ -788,7 +788,9 @@ subcollection: satellite
 
 [What compliance standards does the service meet?](/docs/satellite?topic=satellite-faqs#standards)
 
-[What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} cluster?](/docs/satellite?topic=satellite-faqs#supported-services)
+[What {{site.data.keyword.cloud_notm}} services can I use with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-faqs#supported-services)
+
+[What managed add-ons can I use with {{site.data.keyword.openshiftshort}} clusters in my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-faqs#faq-managed-addons)
 
 
 ## Troubleshooting errors
