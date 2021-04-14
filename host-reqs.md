@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-04-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -188,6 +188,7 @@ In general, do not set any custom networking configurations on your hosts, such 
     172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, 172.20.0.0/16, and 192.168.255.0/24
     ```
     {: screen}
+* Host IP addresses must remain static and cannot change over time, such as due to a reboot or other potential infrastructure updates.
 
 ### Host network bandwidth
 {: #reqs-host-network-bandwidth}
