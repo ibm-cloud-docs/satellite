@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -550,10 +550,12 @@ subcollection: satellite
   * [Platform access roles](/docs/satellite?topic=satellite-iam#iam-roles-platform)
   * [Service access roles](/docs/satellite?topic=satellite-iam#iam-roles-service)
   * [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=satellite-iam#iam-roles-clusters)
-* [Common use cases and roles](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
-* [API keys](/docs/satellite?topic=satellite-iam#sat-api-keys)
+* [Common use cases and roles in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
+* [API keys in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam#sat-api-keys)
   * [Container service API key](/docs/satellite?topic=satellite-iam#api-keys-containers)
   * [Template API key](/docs/satellite?topic=satellite-iam#api-keys-templates)
+* [Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam#permissions-other-clouds)
+  * [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws)
 
 [Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies](/docs/satellite?topic=satellite-service-architecture)
 * [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture)

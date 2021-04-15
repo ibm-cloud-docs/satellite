@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-04-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -630,7 +630,7 @@ If you create {{site.data.keyword.openshiftlong_notm}} clusters to use in your {
 * [Assigning access to clusters](/docs/openshift?topic=openshift-users), such as setting up the API key for underlying infrastructure permissions and granting users access with {{site.data.keyword.cloud_notm}} IAM.
 * [Accessing clusters](/docs/openshift?topic=openshift-access_cluster) on the public or private service endpoints, or by using an {{site.data.keyword.cloud_notm}} IAM API key such as for automation purposes.
 
-## Common use cases and roles
+## Common use cases and roles in {{site.data.keyword.cloud_notm}}
 {: #iam-roles-usecases}
 
 Wondering which access roles to assign to your {{site.data.keyword.satelliteshort}} access groups and users? Use the examples in following table to determine which roles and scope to assign.
@@ -649,7 +649,7 @@ Wondering which access roles to assign to your {{site.data.keyword.satelliteshor
 {: caption="Types of roles you might assign to meet different use cases." caption-side="top"}
 {: summary="The first column contains the use case, which is typically the role of an access group or user. The second column is the example role and scope of the role that you assign the user in {{site.data.keyword.cloud_notm}} IAM."}
 
-## API keys
+## API keys in {{site.data.keyword.cloud_notm}}
 {: #sat-api-keys}
 
 {{site.data.keyword.satelliteshort}} uses [API keys](/docs/account?topic=account-manapikey) from {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to authorize various requests.
@@ -680,4 +680,30 @@ By default, {{site.data.keyword.satelliteshort}} automatically creates an {{site
 
 When you use a template, you can optionally provide the value of an existing API key that has the correct permissions in the same account.
 
+## Common permissions in other cloud providers
+{: #permissions-other-clouds}
 
+To create and manage the underlying infrastructure in other cloud providers, you must have the appropriate permissions. Some commonly required permissions are listed in the following section. For more information, consult your cloud provider's documentation.
+{: shortdesc}
+
+### AWS permissions
+{: #permissions-aws}
+
+Review the following example policies that you might give users in AWS to do various actions for {{site.data.keyword.satelliteshort}}. If you want to further restrict permissions, consult the AWS documentation.
+{: shortdesc}
+
+**Manually creating a {{site.data.keyword.satelliteshort}} location in AWS**:
+
+* `AmazonEC2FullAccess`
+* `AmazonElasticFileSystemFullAccess`
+* `AmazonVPCFullAccess`
+* `AWSMarketplaceFullAccess`
+
+**Automatically creating a {{site.data.keyword.satelliteshort}} location from a {{site.data.keyword.bpshort}} template in AWS**:
+
+* `AmazonEC2FullAccess`
+* `AmazonElasticFileSystemFullAccess`
+* `AmazonSSMFullAccess`
+* `AmazonVPCFullAccess`
+* `AWSMarketplaceFullAccess`
+* `IAMFullAccess`
