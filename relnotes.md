@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-04-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -104,7 +104,8 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 09 April | **Logging**: Expanded information for collecting and analyzing logs for your {{site.data.keyword.satelliteshort}} location, including the types of available logs, how to set up log alerts, and how to use logs to troubleshoot location and host errors.<br><br>**New! Storage template for remote OpenShift Container Storage**: The {{site.data.keyword.satelliteshort}} storage template for [using OpenShift Container Storage with remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote) is now available. |
+| 15 April | <ul><li>**Cluster add-ons**: Added the [list](/docs/satellite?topic=satellite-addon-errors) of supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations.</li><li>**Use case**: Added an example use case for using [{{site.data.keyword.satelliteshort}} edge environments for AI, IoT, and machine learning](/docs/satellite?topic=satellite-edge-usecase).</li><li>**{{site.data.keyword.cos_short}} buckets**: When you create a location from the console, you can now [enter the name of an existing {{site.data.keyword.cos_full_notm}} bucket](/docs/satellite?topic=satellite-locations#location-create-console) that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data.</li></ul> |
+| 09 April | <ul><li>**Logging**: Expanded information for collecting and analyzing logs for your {{site.data.keyword.satelliteshort}} location, including the types of available logs, how to set up log alerts, and how to use logs to troubleshoot location and host errors.</li><li>**New! Storage template for remote OpenShift Container Storage**: The {{site.data.keyword.satelliteshort}} storage template for [using OpenShift Container Storage with remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote) is now available.</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in April 2021."}
 

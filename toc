@@ -10,14 +10,7 @@ Satellite
     {: .topicgroup}
     Understanding Satellite use cases
         about.md
-        uc-ov.md
-        uc-edge.md
-        
-    adopters.md
-    {: .navgroup-end}
-    
-    {: .navgroup id="tutorial"}
-    tutorial.md
+        uc-edge.md   
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -84,10 +77,7 @@ Satellite
     {: .navgroup-end}
 
     {: .navgroup id="reference"}
-    {: .topicgroup}
-    API reference
-        [Satellite locations, hosts, and clusters](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster)
-        [Satellite links, endpoints, and sources](https://pages.github.ibm.com/IBM-Cloud-Platform-Networking/satellite-link-api/#/)
+    [API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster)
 
     {: topicgroup}
     CLI plug-in reference

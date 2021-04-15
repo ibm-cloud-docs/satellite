@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-04-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -118,17 +118,21 @@ subcollection: satellite
 [What's next](/docs/satellite?topic=satellite-getting-started#whats-next)
 
 
-## About {{site.data.keyword.satelliteshort}}
-{: #sitemap_about_}
+## Understanding Satellite use cases
+{: #sitemap_understanding_satellite_use_cases}
 
 
 [About {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about)
+* [Benefits of using {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about#about-benefits)
+* [{{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-about#components)
+* [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-about#architecture)
 
-[Benefits of using {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about#about-benefits)
-
-[{{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-about#components)
-
-[{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-about#architecture)
+[Edge environments for AI, IoT, and machine learning](/docs/satellite?topic=satellite-edge-usecase)
+* [Solving common edge workload challenges with {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-edge-usecase#edge-challenges)
+* [Setting up your edge solution with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-edge-usecase#edge-solution)
+  * [Step 1: Set up machine learning and model training for your data](/docs/satellite?topic=satellite-edge-usecase#edge-example-ml)
+  * [Step 2: Deploy {{site.data.keyword.satelliteshort}} with a serverless component to your edge environment](/docs/satellite?topic=satellite-edge-usecase#edge-example-serverless)
+  * [Step 3: Run model inferencing at the edge](/docs/satellite?topic=satellite-edge-usecase#edge-example-inferencing)
 
 
 ## Installing the {{site.data.keyword.satelliteshort}} CLI
@@ -546,10 +550,12 @@ subcollection: satellite
   * [Platform access roles](/docs/satellite?topic=satellite-iam#iam-roles-platform)
   * [Service access roles](/docs/satellite?topic=satellite-iam#iam-roles-service)
   * [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=satellite-iam#iam-roles-clusters)
-* [Common use cases and roles](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
-* [API keys](/docs/satellite?topic=satellite-iam#sat-api-keys)
+* [Common use cases and roles in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
+* [API keys in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam#sat-api-keys)
   * [Container service API key](/docs/satellite?topic=satellite-iam#api-keys-containers)
   * [Template API key](/docs/satellite?topic=satellite-iam#api-keys-templates)
+* [Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam#permissions-other-clouds)
+  * [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws)
 
 [Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies](/docs/satellite?topic=satellite-service-architecture)
 * [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture)
@@ -791,7 +797,9 @@ subcollection: satellite
 
 [What compliance standards does the service meet?](/docs/satellite?topic=satellite-faqs#standards)
 
-[What {{site.data.keyword.cloud_notm}} services can I use with my {{site.data.keyword.satelliteshort}} cluster?](/docs/satellite?topic=satellite-faqs#supported-services)
+[What {{site.data.keyword.cloud_notm}} services can I use with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-faqs#supported-services)
+
+[What managed add-ons can I use with {{site.data.keyword.openshiftshort}} clusters in my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-faqs#faq-managed-addons)
 
 
 ## Troubleshooting errors
@@ -878,6 +886,8 @@ subcollection: satellite
 [Why can't I access the {{site.data.keyword.openshiftshort}} console?](/docs/satellite?topic=satellite-ts-console-fail)
 
 [Why can't I update or complete other actions with my cluster?](/docs/satellite?topic=satellite-ts-cluster-operations-blocked)
+
+[Why doesn't my cluster add-on work?](/docs/satellite?topic=satellite-addon-errors)
 
 
 ## Release notes

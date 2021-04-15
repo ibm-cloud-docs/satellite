@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-07"
+lastupdated: "2021-04-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -529,11 +529,14 @@ Etcd data is backed up every 8 hours from your {{site.data.keyword.satelliteshor
     </tbody>
     </table>
 
-2. If you specified the name of a bucket in your {{site.data.keyword.cos_short}} service instance during location creation, verify that the service instance and bucket are available and were not deleted.
-    1. In the {{site.data.keyword.cloud_notm}} console, navigate to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
-    2. Expand the **Storage** row.
-    3. Look for the {{site.data.keyword.cos_short}} instance for your location control plane.
-    4. Click the instance's name. The **Buckets** list page opens.
-    5. Verify that the bucket for your control plane etcd backup exists. If either the service instance or bucket were deleted, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
+2.  Verify that the {{site.data.keyword.cos_short}} service instance and bucket that back up your etcd data are available and were not deleted.
+    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.
+    2. In the details section of your location overview, copy the name of the **{{site.data.keyword.cos_short}} bucket**.
+    3. In the {{site.data.keyword.cloud_notm}} console, navigate to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
+    4. Expand the **Storage** row.
+    5. Look for the {{site.data.keyword.cos_short}} instance where you created the bucket. If you did not specify a bucket name during location creation, check each {{site.data.keyword.cos_short}} instance until you find the auto-generated bucket for your location.
+    6. Click the instance's name. The **Buckets** list page opens.
+    7. Verify that the bucket for your control plane etcd backup exists.
+    8. If either the service instance or bucket were deleted, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
 
 3. If the control plane hosts can reach the {{site.data.keyword.cos_short}} endpoint, and the {{site.data.keyword.cos_short}} service instance and bucket exist, [open a support case](/docs/satellite?topic=satellite-get-help) to investigate backup failures and include your {{site.data.keyword.satelliteshort}} location ID.
