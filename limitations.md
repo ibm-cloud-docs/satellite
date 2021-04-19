@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -146,7 +146,7 @@ See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?t
 
 **Link connector instances**
 
-The {{site.data.keyword.satelliteshort}} Link connector instances that run in your [{{site.data.keyword.satelliteshort}} location control plane worker nodes](/docs/satellite?topic=satellite-service-architecture) are limited to 3 instances, one per host. Even if you attach hosts to the location control plane, network traffic that is routed through the {{site.data.keyword.satelliteshort}} Link connector is sent only over 3 hosts.
+The {{site.data.keyword.satelliteshort}} Link connector instances that run in your [{{site.data.keyword.satelliteshort}} location control plane worker nodes](/docs/satellite?topic=satellite-service-architecture) are limited to three instances, one per host. Even if you attach hosts to the location control plane, network traffic that is routed through the {{site.data.keyword.satelliteshort}} Link connector is sent only over three hosts.
 
 **Cloud and location endpoints**
 
@@ -167,7 +167,7 @@ Review the following application configuration requirements for {{site.data.keyw
 By default, {{site.data.keyword.satelliteshort}} Config is limited to what Kubernetes resources it can read and modify in your clusters. You must grant {{site.data.keyword.satelliteshort}} Config access in each cluster where you want to use {{site.data.keyword.satelliteshort}} Config to manage your Kubernetes resources.
 
 Choose from the following options:
-* Opt-in to cluster admin access when you create the cluster in the [console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console) or [CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli) with the `--enable-admin-agent` flag. Note that you must perform a one-time `oc login` in each cluster to synchronize the admin permissions.
+* Opt in to cluster admin access when you create the cluster in the [console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console) or [CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli) with the `--enable-admin-agent` flag. Note that you must perform a one-time `oc login` in each cluster to synchronize the admin permissions.
 * To opt in after creating a cluster or to scope the access, see [Granting {{site.data.keyword.satelliteshort}} config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access).
 
 **{{site.data.keyword.satelliteshort}} Config and {{site.data.keyword.cloud_notm}} IAM**
@@ -178,7 +178,7 @@ You cannot scope access policies to particular configuration or subscription res
 
 To let users view the Kubernetes resources that run in clusters with {{site.data.keyword.satelliteshort}} Config, you must assign an access policy with the appropriate role (Administrator, Manager, or Reader) to {{site.data.keyword.satellitelong_notm}} (and not scoped to a particular resource or resource type).
 
-After you enable {{site.data.keyword.satelliteshort}} config permissions when you create a {{site.data.keyword.satelliteshort}} cluster in the console or in the CLI with the `--enable-admin-agent` flag for the `ibmcloud oc cluster create satellite` command, you must set the context of the cluster to synchornize permissions. You can set the cluster context by launching the {{site.data.keyword.openshiftshort}} web console or by running the `ibmcloud oc cluster config` command in the CLI. **Note**: If you registered a {{site.data.keyword.openshiftlong_notm}} cluster in the public cloud to use with {{site.data.keyword.satelliteshort}} config, you do not need to set the cluster context to synchronize permissions.
+After you enable {{site.data.keyword.satelliteshort}} config permissions when you create a {{site.data.keyword.satelliteshort}} cluster in the console or in the CLI with the `--enable-admin-agent` flag for the `ibmcloud oc cluster create satellite` command, you must set the context of the cluster to synchronize permissions. You can set the cluster context by launching the {{site.data.keyword.openshiftshort}} web console or by running the `ibmcloud oc cluster config` command in the CLI. **Note**: If you registered a {{site.data.keyword.openshiftlong_notm}} cluster in the public cloud to use with {{site.data.keyword.satelliteshort}} config, you do not need to set the cluster context to synchronize permissions.
 
 **Configuration files in {{site.data.keyword.satelliteshort}} Config**
 * You can upload only an individual configuration file of Kubernetes resources per release version. You cannot upload a directory or several different configuration files.

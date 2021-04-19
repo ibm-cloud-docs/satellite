@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -133,7 +133,7 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 ```
 {: screen}
 
-You might need to refresh your packages on the host machine. For example, in IBM Cloud infrastructureyou can run the following commands to add the required packages.
+You might need to refresh your packages on the host machine. For example, in IBM Cloud infrastructure you can run the following commands to add the required packages.
   1.  Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
       ```
       subscription-manager refresh
@@ -149,7 +149,7 @@ You might need to refresh your packages on the host machine. For example, in IBM
       ```
       {: pre}
 
-For more information about how to enable the {{site.data.keyword.redhat_notm}} packages inhosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
+For more information about how to enable the {{site.data.keyword.redhat_notm}} packages in hosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
 {: tip}
 
 <br />
@@ -160,7 +160,7 @@ For more information about how to enable the {{site.data.keyword.redhat_notm}} p
 Review the following requirements that relate to the storage setup of host machines.
 {: shortdesc}
 
-* Hosts must have attached a minimum of 100 GB of disk storage.
+* Hosts must have a minimum of 100 GB of attached disk storage.
 * For hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane, the attached storage device must have at least 1000 IOPS. The required IOPS varies with the number of clusters in the location, and the activity of the masters for those clusters.
 * Hosts cannot have a device that is mounted to `/var/data`.
 * To set up LUKS encryption, your hosts must have two attached disks: a primary boot disk that is mounted to `/`, and a secondary disk that is unmounted.
@@ -193,7 +193,7 @@ In general, do not set any custom networking configurations on your hosts, such 
 ### Host network bandwidth
 {: #reqs-host-network-bandwidth}
 
-* The hosts must have minimum network bandwidth connectivity of 100Mbps, with 1Gbps preferred.
+* The hosts must have minimum network bandwidth connectivity of 100 Mbps, with 1 Gbps preferred.
 * The bandwidth required between hosts varies with the number of clusters in the location, and the workloads that run in the cluster. Insufficient network bandwidth can lead to network performance problems.
 
 ### Network gateways and interfaces

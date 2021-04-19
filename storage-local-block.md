@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-19"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -113,7 +113,7 @@ Before you can create a local block storage configuration, you must identify the
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 2. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters). Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
 3. [Get the device details of your worker nodes](#sat-storage-block-local-devices).
-4. [Label the worker nodes](#sat-storage-block-local-labels) that have an available disk and that you want to use in your configuration. The local storage drivers are installed only on the labelled worker nodes.
+4. [Label the worker nodes](#sat-storage-block-local-labels) that have an available disk and that you want to use in your configuration. The local storage drivers are installed only on the labeled worker nodes.
 
 
 <br />
@@ -234,7 +234,7 @@ After you [create a local block storage configuration](#config-storage-local-blo
 
 
 
-### Assigning a storage configuraton in the command line
+### Assigning a storage configuration in the command line
 {: #assign-storage-local-block-cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
@@ -351,7 +351,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
   ```
   {: pre}
 
-  To ensure that your pods are scheduled to worker nodes with storage, or to ensure that the apps that require storage are not pre-empted by other pods, you can specify `nodeAffinity` and set up pod priority. For more information, see the Kuberenetes documentation for [pod priority and preemption](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/) and setting [node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-isolation-restriction).
+  To ensure that your pods are scheduled to worker nodes with storage, or to ensure that the apps that require storage are not pre-empted by other pods, you can specify `nodeAffinity` and set up pod priority. For more information, see the Kubernetes documentation for [pod priority and preemption](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/) and setting [node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-isolation-restriction).
   {: tip}
 
 4. Deploy an app pod that uses your local storage PVC. Save the following example app YAML as a file on your local machine called `app.yaml`. In this example, the `nodeAffinity` spec ensures that this pod is only scheduled to a worker node with the specified label.
@@ -612,7 +612,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
 | `--template-version` | Required | Enter the version of the `local-volume-block` template that you want to use. The template version that you specify must match your OCP version. For example, if your OCP version is `4.5.X`, specify template version `4.5`. To get a list of storage templates and versions, run `ibmcloud sat storage template ls`. |
 | `label-key` | Required | Enter the node label key that you added to the worker nodes where you want to install the local storage drivers. The local storage drivers are installed only on the worker nodes that have the corresponding label. In the previous example, the label key is `storage`. |
 | `label-value` | Required | Enter the node label value that you added to the worker nodes where you want to install the local storage driver. The local storage drivers are installed only on the worker nodes that have the corresponding label. In the previous example, the label value is `local-block`. |
-| `devicepath` | Required | Enter the local storage device paths in the format `/dev/<device>`. The device path begins with `/dev` and includes the disk that you retrived earlier. For example: `/dev/nvme2n1`. If you specify more than one device path, be sure to separate them with a comma and do not enter any additional spaces between each path. For example: `/dev/nvme2n1`,`/dev/nvme3n1`. For more information on how to retrieve this value, see [Getting the device details](#sat-storage-block-local-devices). |
+| `devicepath` | Required | Enter the local storage device paths in the format `/dev/<device>`. The device path begins with `/dev` and includes the disk that you retrieved earlier. For example: `/dev/nvme2n1`. If you specify more than one device path, be sure to separate them with a comma and do not enter any additional spaces between each path. For example: `/dev/nvme2n1`,`/dev/nvme3n1`. For more information on how to retrieve this value, see [Getting the device details](#sat-storage-block-local-devices). |
 {: caption="Table 1. Local block storage parameter reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is a required parameter. The third column is a brief description of the parameter. The third column is the default value of the parameter."}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -186,7 +186,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
       ssh -i <filepath_to_key_file> <username>@<IP_address>
       ```
       {: pre}
-   4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
+   4. Update your host to have the required RHEL 7 packages. For more information about how to install these packages, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
    5. Run the script.
       ```
       sudo nohup bash /tmp/attach.sh &
