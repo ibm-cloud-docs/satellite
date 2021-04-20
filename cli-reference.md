@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-19"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -113,7 +113,7 @@ The following image depicts the structure and grouping of the `ibmcloud sat` com
 ## Cluster commands
 {: #sat-cluster-commands}
 
-Use these commands to register {{site.data.keyword.openshiftshort}} clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config), to consistently deploy and update apps across clusters.
+Use these commands to register {{site.data.keyword.openshiftshort}} clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config) to consistently deploy and update apps across clusters.
 {: shortdesc}
 
 ### `ibmcloud sat cluster get`
@@ -273,7 +273,7 @@ ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER] --group GROUP [-
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -310,7 +310,7 @@ ibmcloud sat group create --name NAME [--cluster CLUSTER] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -346,7 +346,7 @@ ibmcloud sat group detach --group GROUP --cluster CLUSTER [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -385,7 +385,7 @@ ibmcloud sat group get --group GROUP [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -418,7 +418,7 @@ ibmcloud sat group ls [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -449,7 +449,7 @@ ibmcloud sat group rm --group GROUP [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Clustergroup** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
 
 **Command options:**
 
@@ -1559,7 +1559,7 @@ ibmcloud sat resource get --resource 1234567
 ### `ibmcloud sat resource ls`
 {: #cli-resource-ls}
 
-Search for and list Kubernetes resource that are managed by a {{site.data.keyword.satelliteshort}} configuration.
+Search for and list Kubernetes resources that are managed by a {{site.data.keyword.satelliteshort}} configuration.
 {: shortdesc}
 
 ```
@@ -1704,7 +1704,7 @@ ibmcloud sat storage assignment get --assignment ASSIGNMENT
 
 <dl>
 <dt><code>--assignment <em>ASSIGNMENT</em></code></dt>
-<dd>Required. The name of the storage assignment.To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage assignment ls</code>.</dd>
+<dd>Required. The name of the storage assignment. To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage assignment ls</code>.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>

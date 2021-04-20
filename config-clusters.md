@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-06"
+lastupdated: "2021-04-19"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -315,7 +315,7 @@ Choose from the following options.
          </tr>
          <tr>
          <td><code>--namespace default</code></td>
-         <td>The project (namespace) to scope the role binding to, such as <code>default</code>. The namespace much match the namespace that the role is in.</td>
+         <td>The project (namespace) to scope the role binding to, such as <code>default</code>. The namespace must match the namespace that the role is in.</td>
          </tr>
          <tr>
          <td><code>--role=razee-editor</code></td>
@@ -506,7 +506,7 @@ To create the configuration:
 ## Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config
 {: #satconfig-resources}
 
-You can use {{site.data.keyword.satelliteshort}} config to review the Kubnernetes resources that run in your registered clusters.
+You can use {{site.data.keyword.satelliteshort}} config to review the Kubernetes resources that run in your registered clusters.
 {: shortdesc}
 
 Before you begin, make sure that you have the following permissions:

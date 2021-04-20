@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -127,7 +127,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 25 February | <ul><li>**Auditing events**:Added a topic for [auditing {{site.data.keyword.satelliteshort}} events with {{site.data.keyword.cloudaccesstrailshort}}](/docs/satellite?topic=satellite-at_events).</li><li>**CLI changelog**: Updated the CLI plug-in changelog page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).</li></ul> |
+| 25 February | <ul><li>**Auditing events**: Added a topic for [auditing {{site.data.keyword.satelliteshort}} events with {{site.data.keyword.cloudaccesstrailshort}}](/docs/satellite?topic=satellite-at_events).</li><li>**CLI changelog**: Updated the CLI plug-in changelog page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).</li></ul> |
 | 23 February | <ul><li>**Accessing clusters**: Added steps for testing [access to a {{site.data.keyword.satelliteshort}} cluster by using the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access).</li><li>**Host requirements**: Added the minimum required disk storage, storage device IOPS, and network bandwidth to the [hosts requirements](/docs/satellite?topic=satellite-host-reqs).</li><li>**Link endpoints**: Added FAQs about [{{site.data.keyword.satelliteshort}} Link network security](/docs/satellite?topic=satellite-link-location-cloud#link-security).</li><li>**Monitoring**: Added information about how to [set up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor).</li><li>**Reviewing resources**: Added a topic for [reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources).</li></ul>
 | 18 February | **Securing service connections**: Added a [{{site.data.keyword.satelliteshort}} connection overview](/docs/satellite?topic=satellite-service-connection) to describe user access to resources that run in your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location. |
 | 12 February | <ul><li>**Link endpoints**: Added information about [default Link endpoints](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints) that are automatically created for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location.</li><li>**Securing service connections**: Added a topic to explain all points of access to your {{site.data.keyword.satelliteshort}} location. For more information, see [Securing your connection to Satellite](/docs/satellite?topic=satellite-service-connection).</li></ul> |

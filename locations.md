@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -128,7 +128,18 @@ Before you begin, make sure that you have the [correct permissions](/docs/satell
    2. From the **Activity** tab, find the current activity row and click **View log**.
    3. Review the details and wait for the workspace to complete and enter an **Active** state.
 
-Well done, your {{site.data.keyword.satelliteshort}} location is creating!
+Well done, your {{site.data.keyword.satelliteshort}} location is creating! 
+
+The following resources are created in your AWS cloud account.
+* 1 virtual private cloud (VPC).
+* 1 subnet per zone.
+* 1 security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
+* 6 EC2 instances spread evenly across zones, or the number of hosts that you specified.
+
+The following resources are created in your {{site.data.keyword.cloud_notm}} account.
+* 1 {{site.data.keyword.satelliteshort}} location.
+* 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
+* 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS hosts, attached to the location, unassigned, and available to use for services like an {{site.data.keyword.openshiftshort}} cluster. If you added more than 6 hosts, the number of hosts equals the number that you specified minus the 3 that are assigned to the control plane.
 
 **What's next?**
 

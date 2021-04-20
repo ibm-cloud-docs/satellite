@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-19"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -133,7 +133,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuraton in the command line
+### Assigning a storage configuration in the command line
 {: #assign-storage-netapp-cli-nas}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
@@ -182,7 +182,7 @@ For more information about the NetApp Trident configuration parameters, see the 
 | --- | --- | --- | 
 | `--name` | Required | Enter a name for your storage configuration. | N/A |
 | `--template-name` | Required | Enter `netapp-ontap-nas` | N/A |
-| `--template-version` | Required | Enter the template verison number. To get a list of templates, run `ibmcloud sat storage template ls`. | N/A |
+| `--template-version` | Required | Enter the template version number. To get a list of templates, run `ibmcloud sat storage template ls`. | N/A |
 | `namespace` | Required | Enter the namespace where you want to install the NetApp Trident storage drivers. | `trident` |
 | `managementLIF` | Required | Enter the IP address of management LIF. Example: `10.0.0.1`. | N/A |
 | `dataLIF` | Required | Enter the IP address of data LIF. Example: `10.0.0.2`. | N/A | 

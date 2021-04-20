@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-04-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -152,7 +152,7 @@ The {{site.data.keyword.satellitelong_notm}} service architecture and infrastruc
 {: faq}
 {: support}
 
-Every location is securely connected to the {{site.data.keyword.cloud_notm}} multizone region that manages your location by using the {{site.data.keyword.satelliteshort}} Link component. The link component runs in your control plane and is the main gateway for any communication between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. If your {{site.data.keyword.satelliteshort}} location cannot communicate with the {{site.data.keyword.cloud_notm}} multizone region anymore, your existing location workloads continue to run, but you cannot make any configuration changes or roll out updates to the services and apps that run in your location.
+Every location is securely connected to the {{site.data.keyword.cloud_notm}} multizone region that manages your location by using the {{site.data.keyword.satelliteshort}} Link component. The link component runs in your control plane and is the main gateway for any communication between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}. If your {{site.data.keyword.satelliteshort}} location cannot communicate with the {{site.data.keyword.cloud_notm}} multizone region anymore, your existing location workloads will continue to run, but you cannot make any configuration changes or roll out updates to the services and apps that run in your location.
 
 For an overview of your options to make the {{site.data.keyword.satelliteshort}} control plane more highly available to prevent connectivity issues with your {{site.data.keyword.cloud_notm}} multizone region, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
 

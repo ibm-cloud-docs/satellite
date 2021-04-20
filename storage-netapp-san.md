@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-08"
+lastupdated: "2021-04-19"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -133,7 +133,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuraton in the command line
+### Assigning a storage configuration in the command line
 {: #assign-storage-netapp-cli-san}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.

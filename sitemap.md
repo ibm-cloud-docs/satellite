@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -443,14 +443,14 @@ subcollection: satellite
 [NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas)
 * [Creating a NetApp Trident storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-cli-nas)
 * [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-nas)
-  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-cli-nas)
+  * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-cli-nas)
 * [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-params-cli-nas)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-sc-reference-nas)
 
 [NetApp ONTAP-SAN](/docs/satellite?topic=satellite-config-storage-netapp)
 * [Creating a NetApp Trident SAN storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-cli-san)
 * [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-san)
-  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-cli-san)
+  * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-cli-san)
 * [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-params-cli-san)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp#netapp-sc-reference-san)
 
@@ -465,7 +465,7 @@ subcollection: satellite
   * [Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-block-local-labels)
 * [Creating a local block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-cli)
 * [Assigning your storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-local-block#assign-storage-local-block)
-  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-local-block#assign-storage-local-block-cli)
+  * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-block#assign-storage-local-block-cli)
 * [Deploying an app that uses your local block storage](/docs/satellite?topic=satellite-config-storage-local-block#deploy-app-local-block)
 * [Removing the local block storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-remove-local-block-config)
 * [Local block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-params-cli)
@@ -563,7 +563,7 @@ subcollection: satellite
   * [Workload isolation in the {{site.data.keyword.cloud_notm}} multizone metro that manages your location](/docs/satellite?topic=satellite-service-architecture#workload-isolation-cloud)
   * [Workload isolation in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-architecture#workload-isolation-location)
 * [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies)
-* [Dependencies to 3rd party services](/docs/satellite?topic=satellite-service-architecture#3rd-party-dependencies)
+* [Dependencies to third-party services](/docs/satellite?topic=satellite-service-architecture#3rd-party-dependencies)
 
 [High availability and disaster recovery](/docs/satellite?topic=satellite-ha)
 * [About high availability and disaster recovery](/docs/satellite?topic=satellite-ha#ha-about)
