@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-23"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -465,7 +465,7 @@ Use the CLI to remove a storage configuration.
 
 ## AWS EFS storage configuration parameter reference
 {: #sat-storage-aws-efs-params-cli}
-{: cli}
+
 
 | Parameter | Required? | Description | Default if not provided |
 | --- | --- | --- | --- |
