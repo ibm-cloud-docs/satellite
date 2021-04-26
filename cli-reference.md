@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-04-26"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1973,7 +1973,116 @@ ibmcloud sat storage config rm --config ocs-config
 
 <br />
 
+### `ibmcloud sat storage config sc add`
+{: #cli-storage-config-sc-add}
 
+Add a custom storage class to a {{site.data.keyword.satelliteshort}} storage configuration.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage config sc add --config CONFIG --name NAME [--param PARAM ...] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Configuration** resource type in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--config <em>CONFIG</em></code></dt>
+<dd>Required. The name of the storage configuration that you want to add a storage class to. To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage config ls</code>.</dd>
+
+<dt><code>--name</code></dt>
+<dd>Required. The name of the custom storage class that you wand to add to your configuration.</dd>
+
+<dt><code>--param</code></dt>
+<dd>Optional. The custom parameters to provide to the storage class. Parameters are passed as <em>KEY=VALUE</em> pairs. You can pass multiple parameters by specifying the <code>--param</code> flag multiple times.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage config sc add --config ocs-config --name my-sc --param key=value --param key=value
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat storage config sc get`
+{: #cli-storage-config-sc-get}
+
+Get the details of a custom storage class in a {{site.data.keyword.satelliteshort}} storage configuration.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage config sc get --config CONFIG --sc SC [--output OUTPUT] [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--config <em>CONFIG</em></code></dt>
+<dd>Required. The name of the storage configuration that you want to get storage class details from. To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage config ls</code>.</dd>
+
+<dt><code>--sc</code></dt>
+<dd>Required. The custom storage class that you want to retrieve. To list the storage classes of a {{site.data.keyword.satelliteshort}} storage configuration, run <code>ibmcloud sat storage config sc ls</code>.</dd>
+
+<dt><code>--output <em>JSON</em></code></dt>
+<dd>Optional. Displays the command output in JSON format.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage config sc get --config ocs-config --sc my-sc
+```
+{: pre}
+
+<br />
+
+### `ibmcloud sat storage config sc ls`
+{: #cli-storage-config-sc-ls}
+
+List the custom storage classes in a {{site.data.keyword.satelliteshort}} storage configuration.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage config sc ls --config CONFIG [-q]
+```
+{: pre}
+
+</br>
+
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+
+**Command options:**
+
+<dl>
+<dt><code>--config <em>CONFIG</em></code></dt>
+<dd>Required. The name of the storage configuration that you want to retrieve storage classes from. To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage config ls</code>.</dd>
+
+<dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
+
+**Example:**
+```sh
+ibmcloud sat storage config sc ls --config ocs-config
+```
+{: pre}
+
+<br />
 
 ### `ibmcloud sat storage template get`
 {: #cli-storage-template-get}
@@ -2242,6 +2351,23 @@ ibmcloud sat subscription update --subscription myapp_prod_subscription --name m
 
 Review other commands for managing {{site.data.keyword.satelliteshort}} resources, such as commands from other {{site.data.keyword.cloud_notm}} services that might be useful.
 {: shortdesc}
+
+### `ibmcloud sat messages`
+{: #cli-messages}
+
+View current messages from {{site.data.keyword.satellitelong_notm}}.
+{: shortdesc}
+
+```
+ibmcloud sat messages
+```
+{: pre}
+
+**Minimum required permissions**: None
+
+**Command options**: None
+
+<br />
 
 ### {{site.data.keyword.openshiftlong_notm}} commands (`ibmcloud oc`)
 {: #cluster-create}
