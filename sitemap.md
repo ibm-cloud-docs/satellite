@@ -266,7 +266,7 @@ subcollection: satellite
 
 [Updating hosts](/docs/satellite?topic=satellite-hosts#host-update)
 * [Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
-* [Updating worker node hosts in clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
+* [Updating hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled services like clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
 * [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
 
 [Resetting the host key](/docs/satellite?topic=satellite-hosts#host-key-reset)
