@@ -10,8 +10,10 @@ Satellite
     {: .topicgroup}
     Understanding Satellite use cases
         about.md
-        uc-edge.md   
+        uc-edge.md
+        
     {: .navgroup-end}
+    
 
     {: .navgroup id="howto"}
     setup-cli.md
