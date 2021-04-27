@@ -496,7 +496,7 @@ subcollection: satellite
 * [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-sc-ref)
 
-[Setting OpenShift Container Storage for remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote)
+[OpenShift Container Storage for remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-prereq)
   * [Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cos)
 * [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cli)
