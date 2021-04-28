@@ -264,10 +264,16 @@ subcollection: satellite
 * [Assigning hosts from the console](/docs/satellite?topic=satellite-hosts#host-assign-ui)
 * [Assigning hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-assign-cli)
 
-[Updating hosts](/docs/satellite?topic=satellite-hosts#host-update)
-* [Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
-* [Updating hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled services like clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
-* [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
+[Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled services like clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
+* [Checking if a version update is available for worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-check)
+* [Reviewing the changelog for version updates](/docs/satellite?topic=satellite-hosts#host-update-workers-changelog)
+* [Applying version updates to worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-apply)
+
+[Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
+* [Considerations before you update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-considerations)
+* [Procedure to update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-cp-procedure)
+
+[Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
 
 [Resetting the host key](/docs/satellite?topic=satellite-hosts#host-key-reset)
 
