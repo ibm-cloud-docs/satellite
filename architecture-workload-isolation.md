@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-27"
+lastupdated: "2021-04-28"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -182,7 +182,6 @@ Review the list of third-party services that {{site.data.keyword.satellitelong_n
 |Service name|Description|
 |------------|-------------------------------------|
 |Akamai, Cloudflare|Akamai and Cloudflare are used as the primary providers for DNS, global load balancing, and web firewall capabilities in {{site.data.keyword.satellitelong_notm}}.|
-|Amplitude, Segment|Amplitude and Segment are used to monitor user behavior in the {{site.data.keyword.cloud_notm}} console, such as page hits or click-through paths. This information is used for IBM-internal marketing and data analytics purposes.|
 |Let's Encrypt|This service is used as the certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_long_notm}}.|
 {: caption="{{site.data.keyword.satelliteshort}} dependencies to third-party services." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
