@@ -96,7 +96,7 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} CLI command reference
 {: #satellite-cli-reference}
 
-Refer to these commands when you want to automate the creation and management of your {{site.data.keyword.satelliteshort}} location. 	
+Refer to these commands when you want to automate the creation and management of your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 To install the CLI, see [Setting up the CLI](/docs/satellite?topic=satellite-setup-cli). 	

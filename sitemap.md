@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-04-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -264,10 +264,16 @@ subcollection: satellite
 * [Assigning hosts from the console](/docs/satellite?topic=satellite-hosts#host-assign-ui)
 * [Assigning hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-assign-cli)
 
-[Updating hosts](/docs/satellite?topic=satellite-hosts#host-update)
-* [Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
-* [Updating worker node hosts in clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
-* [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
+[Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled services like clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
+* [Checking if a version update is available for worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-check)
+* [Reviewing the changelog for version updates](/docs/satellite?topic=satellite-hosts#host-update-workers-changelog)
+* [Applying version updates to worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-apply)
+
+[Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
+* [Considerations before you update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-considerations)
+* [Procedure to update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-cp-procedure)
+
+[Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
 
 [Resetting the host key](/docs/satellite?topic=satellite-hosts#host-key-reset)
 
@@ -496,7 +502,7 @@ subcollection: satellite
 * [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-sc-ref)
 
-[Setting OpenShift Container Storage for remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote)
+[OpenShift Container Storage for remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-prereq)
   * [Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cos)
 * [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cli)

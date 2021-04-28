@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-04-28"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -490,63 +490,123 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 
 <br />
 
-## Updating hosts
-{: #host-update}
-
-Review the following ways to update the version, operating system, security patch, container platform, or metadata of the hosts that are attached to your {{site.data.keyword.satelliteshort}} location.
-{: shortdesc}
-
-* [Update host metadata](#host-update-metadata), such as labels or zones.
-* Apply major, minor, or fix pack version updates to the host, such as for container platform, operating system, and security patches. The way that you apply these updates varies for hosts that are assigned as [worker nodes in clusters](#host-update-workers) or to the [{{site.data.keyword.satelliteshort}} location control plane](#host-update-location).
-
-### Updating host metadata
-{: #host-update-metadata}
-
-If you want to update metadata about a host, such as labels or zones, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). The update does not apply security patches or operating system updates.
-{: shortdesc}
-
-### Updating worker node hosts in clusters
+## Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled services like clusters
 {: #host-update-workers}
 
-Many hosts in your {{site.data.keyword.satelliteshort}} location are used in clusters for {{site.data.keyword.satelliteshort}}-enabled services, such as {{site.data.keyword.openshiftlong_notm}}. Periodically, IBM provides version updates that might include patches for the container platform software, operating system, or security fixes. To apply these updates to your hosts, you can follow the same process as [Updating classic worker nodes](/docs/openshift?topic=openshift-update#worker_node).
+IBM provides version updates for your hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled services. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply to the host version updates.
 {: shortdesc}
 
-### Updating {{site.data.keyword.satelliteshort}} location control plane hosts
+### Checking if a version update is available for worker node hosts
+{: #host-update-workers-check}
+
+You can check if a version update is available for a host that is assigned as a worker node to a {{site.data.keyword.satelliteshort}}-enabled service cluster.
+{: shortdesc}
+
+**From the {{site.data.keyword.cloud_notm}} CLI**:
+
+1. Log in to {{site.data.keyword.cloud_notm}}. Include the `--sso` option if you have a federated account.
+   ```
+   ibmcloud login [--sso]
+   ```
+   {: pre}
+2. List the {{site.data.keyword.satelliteshort}} clusters in your account.
+   ```
+   ibmcloud ks cluster ls --provider satellite
+   ```
+   {: pre}
+3. List the worker nodes in the cluster that you want to update the version for. In the output, check for an asterisk `*` with a message that indicates a version update is available.
+   ```
+   ibmcloud ks worker ls -c <cluster_name_or_ID>
+   ```
+   {: pre}
+
+   Example output:
+   ```
+   ID                Primary IP       Flavor   State    Status   Zone     Version   
+   sat-worker-<ID>   <IP_address>     upi      normal   Ready    zone-1   4.5.35_1534_openshift*   
+
+   * To update to 4.5.37_1537_openshift version, run 'ibmcloud ks worker replace'. Review and make any required version changes before you update: 'https://ibm.biz/upworker'
+   ```
+   {: screen}
+
+**From the {{site.data.keyword.cloud_notm}} console**:
+1. Log in to the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}.
+2. Click the location with the hosts that you want to update.
+3. Click the **Hosts** tab.
+4. From the host list, click the link to the **Cluster** for the host that you want to update. A new tab opens for the {{site.data.keyword.openshiftlong_notm}} cluster details.
+5. Click the **Worker nodes** tab.
+6. In the **Version** column, check for an information icon that says `Update available` when you click on the icon. If no update is available, no icon is present.
+
+### Reviewing the changelog for version updates
+{: #host-update-workers-changelog}
+
+To review the changes that are included in version updates for hosts that are assigned as worker nodes, see the [Version changelog for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
+{: shortdesc}
+
+### Applying version updates to worker node hosts
+{: #host-update-workers-apply}
+
+To apply the version updates to your hosts, you update the worker nodes that run on the hosts. You follow the same process as [Updating classic worker nodes for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-update#worker_node).
+{: shortdesc}
+
+<br />
+
+## Updating {{site.data.keyword.satelliteshort}} location control plane hosts
 {: #host-update-location}
 
-IBM provides major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane hosts. However, you must apply patch updates, for example if you have security standards that require patch updates every two weeks.
+IBM provides version updates for your hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply to the host version updates by following a process to detach the hosts from your location, reload the host machine in the infrastructure provider, and reattach and reassign the host to the {{site.data.keyword.satelliteshort}} location control plane.
 {: shortdesc}
 
-Before you begin, consider [attaching](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assigning](/docs/satellite?topic=satellite-hosts#host-assign) extra hosts to your {{site.data.keyword.satelliteshort}} resources to handle the compute capacity while your existing hosts are updating. See [Considerations before you update](#host-update-considerations).
+1. Review the [Considerations before you update](#host-update-considerations) to make sure that you have enough capacity to keep your location healthy during the host update.
+2. Follow the [Procedure to update control plane hosts](#host-update-cp-procedure).
 
-1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](#host-remove) so that you can update the host.
-2. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
-3. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-4. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
-
-#### Considerations before you update
+### Considerations before you update control plane hosts
 {: #host-update-considerations}
 
 Review the following considerations before you update your {{site.data.keyword.satelliteshort}} location control plane hosts.
 {: shortdesc}
 
+**How can I tell if a version update is available?**
+
+Version updates for hosts become available as the {{site.data.keyword.openshiftlong_notm}} team packages new versions for worker nodes. Typically, worker node version updates are released every two weeks. 
+
+You might check for a version update to meet your required security cadence, such as updates on a monthly or bi-monthly basis. To review available version updates, see the [Version changelog for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
+
 **Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?**
 
 Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).
 
-The {{site.data.keyword.satelliteshort}} location control plane and cluster hosts do not have to run the same version of {{site.data.keyword.openshiftshort}}, but your hosts must run a supported version.
+**Do the hosts in my {{site.data.keyword.satelliteshort}}-enabled services have to run the same version as my {{site.data.keyword.satelliteshort}} location control plane?**
+
+No, the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane do not have to run the same version as the hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled services that run in the location, like clusters. However, all hosts in the location must run a supported version.
+
+To review supported {{site.data.keyword.openshiftshort}} versions that hosts can run, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-openshift_versions#version_types) or run `ibmcloud ks versions` in the command line. 
 
 **Is my {{site.data.keyword.satelliteshort}} location control plane subdomain still reachable when I update the hosts?**
 
-If your location subdomain was created automatically for you, the host IPs that are registered for the subdomain are automatically managed for you, such as during an update.
+If your location subdomain was created automatically for you, the host IP addresses that are registered for the subdomain are automatically managed for you, such as during an update. 
 
-However, when you created the {{site.data.keyword.satelliteshort}} location control plane, you might have manually registered the host IPs for the location subdomain with the `ibmcloud sat location dns register` command. If you manually registered the subdomain, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.
+If you manually registered the host IP addresses for the location subdomain with the `ibmcloud sat location dns register` command when you created the {{site.data.keyword.satelliteshort}} location control plane, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.
 
-**Who provides the update for my hosts?**
+### Procedure to update control plane hosts
+{: #host-update-cp-procedure}
 
-IBM provides updates for the IBM-managed components.
-* For master components, such as the {{site.data.keyword.satelliteshort}} location master or cluster masters, IBM automatically applies these updates.
-* For worker node components that run on hosts, such as the {{site.data.keyword.satelliteshort}} location control plane or cluster worker nodes, you choose when to apply the updates.
+To apply a version update, you must detach, reload, and reattach your host to the {{site.data.keyword.satelliteshort}} location. Then, you can assign the host back to the control plane or to another resource that runs in the location.
+{: shortdesc}
+
+1. Optional: [Attach](#attach-hosts) and [assign](#host-assign) extra hosts to the {{site.data.keyword.satelliteshort}} location control plane to handle the compute capacity while your existing hosts are updating.
+2. [Remove the host that you want to update from your {{site.data.keyword.satelliteshort}} location](#host-remove).
+3. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
+4. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
+5. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
+
+<br />
+
+## Updating host metadata
+{: #host-update-metadata}
+
+If you want to update metadata about a host, such as labels or zones, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). This metadata is used to help manage your hosts, such as for [autoassignment](#host-autoassign-ov). The metadata update does not apply security patches or operating system updates.
+{: shortdesc}
 
 <br />
 
