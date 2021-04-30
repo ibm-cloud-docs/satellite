@@ -10,6 +10,7 @@ Satellite
     {: .topicgroup}
     Understanding Satellite use cases
         about.md
+        uc-sg.md
         uc-edge.md
         
     {: .navgroup-end}
