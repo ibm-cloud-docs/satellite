@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-04-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -540,3 +540,20 @@ Etcd data is backed up every 8 hours from your {{site.data.keyword.satelliteshor
     8. If either the service instance or bucket were deleted, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
 
 3. If the control plane hosts can reach the {{site.data.keyword.cos_short}} endpoint, and the {{site.data.keyword.cos_short}} service instance and bucket exist, [open a support case](/docs/satellite?topic=satellite-get-help) to investigate backup failures and include your {{site.data.keyword.satelliteshort}} location ID.
+
+## R0049, R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues
+{: #R0049}
+
+**Location message**
+
+The Link connector is experiencing authentication issues. Contact IBM Cloud Support and include your Satellite location ID.
+
+The Link connector is experiencing token authentication issues. Contact IBM Cloud Support and include your Satellite location ID.
+{: #R0050}
+
+The Link connector cannot retrieve the location ID. Contact IBM Cloud Support and include your Satellite location ID.
+{: #R0051}
+
+**Steps to resolve**
+
+[Open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
