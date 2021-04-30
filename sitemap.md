@@ -127,6 +127,12 @@ subcollection: satellite
 * [{{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-about#components)
 * [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-about#architecture)
 
+[Securing access between {{site.data.keyword.cloud_notm}} and on-prem resources with {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-sg-usecase)
+* [{{site.data.keyword.satelliteshort}} as a Layer 4 connection solution](/docs/satellite?topic=satellite-sg-usecase#sg-alt)
+* [Setting up a secure connection to {{site.data.keyword.cloud_notm}} with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sg-usecase#sg-alt-setup)
+  * [Step 1: Deploy {{site.data.keyword.satelliteshort}} to your on-premises environment](/docs/satellite?topic=satellite-sg-usecase#sg-example-loc)
+  * [Step 2: Set up secure communication channels by using {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-sg-usecase#sg-example-link)
+
 [Edge environments for AI, IoT, and machine learning](/docs/satellite?topic=satellite-edge-usecase)
 * [Solving common edge workload challenges with {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-edge-usecase#edge-challenges)
 * [Setting up your edge solution with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-edge-usecase#edge-solution)
