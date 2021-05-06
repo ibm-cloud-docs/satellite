@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-27"
+lastupdated: "2021-05-06"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -142,7 +142,33 @@ Create an instance of IBM {{site.data.keyword.cos_full_notm}} for the backing st
 ## Creating an OpenShift Container Storage configuration in the command line
 {: #sat-storage-ocs-remote-cli}
 
-1. Before you can create a storage configuration, [review the prerequisites](#sat-storage-ocs-remote-prereq).
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
+1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
+1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters).
+
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+    ```
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
+
 1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-remote-params-cli).
 1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your exisiting configuration. 
   ```sh
