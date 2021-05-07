@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-23"
+lastupdated: "2021-05-06"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -127,7 +127,32 @@ Use the CLI to create an AWS EFS storage configuration for your location.
 {: shortdesc}
 
 Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs).
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
 
+1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
+1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters).
+
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+    ```
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
 1. Review the [AWS EFS storage configuration parameters](#sat-storage-aws-efs-params-cli).
 2. Create an AWS EFS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
    ```sh

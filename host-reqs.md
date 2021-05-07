@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-05-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -115,7 +115,7 @@ Review the following requirements that relate to the computing and system setup 
 
 *   Hosts must run Red Hat Enterprise Linux 7 on x86 architecture. Other operating systems, such as Windows, and mainframe systems, such as IBM Z or Power, are not supported.
 *   Hosts can be physical or virtual machines.
-*   Hosts must have at least 4 vCPU, 16 GB memory, and 100 GB attached storage device. 
+*   Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](#reqs-host-storage). 
 *   If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
 
 ### Packages and other machine configurations
@@ -159,11 +159,11 @@ For more information about how to enable the {{site.data.keyword.redhat_notm}} p
 
 Review the following requirements that relate to the storage setup of host machines.
 {: shortdesc}
-
-* Hosts must have a minimum of 100 GB of attached disk storage.
+* Hosts must have a boot disk with sufficient space to boot the host and run the operating system.
+* Hosts must have an additional disk that is attached to the host and that provides a minimum of 100 GB of unmounted and unformatted disk space.
 * For hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane, the attached storage device must have at least 1000 IOPS. The required IOPS varies with the number of clusters in the location, and the activity of the masters for those clusters.
 * Hosts cannot have a device that is mounted to `/var/data`.
-* To set up LUKS encryption, your hosts must have two attached disks: a primary boot disk that is mounted to `/`, and a secondary disk that is unmounted.
+
 
 <br />
 

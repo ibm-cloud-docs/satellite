@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -441,6 +441,25 @@ subcollection: satellite
 * [Removing the AWS EFS storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-template-rm)
 * [AWS EFS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-efs#efs-sc-reference)
+
+
+## IBM storage templates
+{: #sitemap_ibm_storage_templates}
+
+
+[IBM Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-prereq)
+* [Mapping IBM Spectrum Scale hosts to worker node names](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-ts-mapping)
+* [Creating an Spectrum Scale storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-cli)
+* [Assigning your Spectrum Scale storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-spectrum-scale#assign-storage-spectrum-scale)
+  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-spectrum-scale#assign-storage-spectrum-scale-cli)
+  * [Changing the Spectrum Scale CSI driver mount point](/docs/satellite?topic=satellite-config-storage-spectrum-scale#ess-change-mount-point)
+* [Deploying an app that uses your Spectrum Scale storage](/docs/satellite?topic=satellite-config-storage-spectrum-scale#storage-spectrum-app-deploy)
+* [Removing the Spectrum Scale storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-rm-cli)
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref)
+* [Additional references](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-ref)
+* [Limitations](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-limits)
+  * [Spectrum Scale configuration parameter reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-params-cli)
 
 
 ## NetApp storage templates
@@ -912,6 +931,8 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-release-notes)
+
+* [May 2021](/docs/satellite?topic=satellite-release-notes#may21)
 
 * [April 2021](/docs/satellite?topic=satellite-release-notes#apr21)
 

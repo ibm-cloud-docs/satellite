@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-05-06"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -110,8 +110,34 @@ The {{site.data.keyword.satelliteshort}} storage templates are currently availab
 {: #sat-storage-local-prereqs}
 
 Before you can create a local block storage configuration, you must identify the worker nodes in your clusters that have the required available disks. Then, label these worker nodes so that the local storage drivers are installed on only these worker nodes.
+
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-2. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters). Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
+1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters).
+
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+    ```
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
+2. Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
 3. [Get the device details of your worker nodes](#sat-storage-block-local-devices).
 4. [Label the worker nodes](#sat-storage-block-local-labels) that have an available disk and that you want to use in your configuration. The local storage drivers are installed only on the labeled worker nodes.
 

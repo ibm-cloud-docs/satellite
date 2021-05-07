@@ -54,6 +54,10 @@ Satellite
             storage-efs.md
 
         {: .topicgroup}
+        IBM storage templates
+            storage-spectrum-scale.md
+
+        {: .topicgroup}
         NetApp storage templates
             storage-netapp-trident.md
             storage-netapp-nas.md
