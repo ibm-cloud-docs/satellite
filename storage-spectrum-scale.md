@@ -539,7 +539,8 @@ Do not install the IBM Spectrum Scale management API GUI on worker nodes that ar
 | --- | --- | --- |
 | `scale-host-path` | Required | The mount path of the primary file system. You can retrieve this value by running the `mmlsfs` command from a worker node in the primary Spectrum Scale cluster. |
 | `cluster-id` | Required | The cluster ID of the primary IBM Spectrum Scale cluster. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `primary-fs` | Required | The primary file system name. You can retrieve this value by running the `mmlsfs` command from a worker node in the primary Spectrum Scale cluster. | Enter the FQDN or IP address that corresponds with the ID specified in `gui-api-user`. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
+| `primary-fs` | Required | The primary file system name. You can retrieve this value by running the `mmlsfs` command from a worker node in the primary Spectrum Scale cluster. | 
+| `gui-host` | Required | Enter the FQDN or IP address that corresponds with the ID that is specified in `gui-api-user` parameter. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
 | `secret-name` | Required | The name of the secret that contains the `username` and `password` to connect to the primary Spectrum Scale cluster GUI server. This parameter is user-specified. |
 | `gui-api-user` | Required | The username to connect to the primary Spectrum Scale cluster GUI. To retrieve this value, log in to the Spectrum Scale GUI node and run the `lsuser` command. The `gui-api-user` value is in the `CsiAdmin` group. |
 | `gui-api-password` | Required | The password to connect to the primary Spectrum Scale cluster GUI. This parameter is user-specified.|
@@ -566,5 +567,6 @@ Do not install the IBM Spectrum Scale management API GUI on worker nodes that ar
 
 
 <br />
+
 
 
