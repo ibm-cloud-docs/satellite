@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-30"
+lastupdated: "2021-05-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -417,6 +417,8 @@ To test TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts:
   ping <host_IP>
   ```
   {: pre}
+
+4. If the TCP and ICMP connectivity checks do not reveal any issues, reboot all control plane hosts by rebooting one host at a time. Do not reboot control plane hosts concurrently, which can prevent etcd from running on the control plane hosts.
 
 ## R0044: DNS issues
 {: #R0044}
