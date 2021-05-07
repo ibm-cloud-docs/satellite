@@ -449,7 +449,6 @@ subcollection: satellite
 
 [IBM Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-prereq)
-  * [Preparing your IBM Spectrum Scale Nodes for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-prep)
 * [Mapping IBM Spectrum Scale hosts to worker node names](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-ts-mapping)
 * [Creating an Spectrum Scale storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-cli)
 * [Assigning your Spectrum Scale storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-spectrum-scale#assign-storage-spectrum-scale)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-06"
+lastupdated: "2021-05-07"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations, 
 
@@ -118,55 +118,21 @@ The {{site.data.keyword.satelliteshort}} storage templates are currently availab
 
 ## Prerequisites
 {: #sat-storage-spectrum-scale-prereq}
-
-1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
-    ```sh
-    ibmcloud login
-    ```
-    {: pre}
-
-1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters).
-
-1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-    ```
-    ibmcloud sat location ls
-    ```
-    {: pre}
-
-1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
-    ```sh
-    ibmcloud target -r us-east
-    ```
-    {: pre}
-
-1. If you use a resource group other than `default`, target it.
-    ```sh
-    ibmcloud target -g <resource-group>
-    ```
-    {: pre}
-
-1. Before you can create a storage configuration, set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
-1. [Prepare your IBM Spectrum Scale worker nodes](#sat-storage-spectrum-scale-setup-workers).
-
-
-### Preparing your IBM Spectrum Scale Nodes for {{site.data.keyword.satellitelong_notm}}
-{: #sat-storage-spectrum-scale-prep}
-
 Complete the following steps, but do not create an IBM Cloud Spectrum Scale cluster.
-{: note}
+{: shortdesc}
 
-1. [Set up IBM Spectrum Scale as root](https://www.ibm.com/support/knowledgecenter/STXKQY_5.1.0/com.ibm.spectrum.scale.v5r10.doc/bl1ins_linsoft.html){: external} and make sure that you install all the required packages by running the following command.
+1. [Follow the steps to install Spectrum Scale as root](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=isslndp-manually-installing-spectrum-scale-software-packages-linux-nodes){: external} and make sure that you install all the required packages by running the following command.
     ```sh
     yum install -y kernel-devel cpp gcc gcc-c++ binutils python3
     ```
 	{: pre}
-2. Follow the steps to [install IBM Spectrum Scale packages on Linux systems](https://www.ibm.com/support/knowledgecenter/STXKQY_5.1.0/com.ibm.spectrum.scale.v5r10.doc/bl1ins_manuallyinstallingonlinux_packages.htm), but make sure that you do not create the cluster in step 4.
 
-3. Follow the steps to [run IBM Spectrum Scale commands without remote root login](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=cgc-running-spectrum-scale-commands-without-remote-root-login){: external}, but do not create a Spectrum Scale cluster.
+1. [Configure `sudo`](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=login-configuring-sudo){: external}.
+1. Follow the steps to [install IBM Spectrum Scale packages on Linux systems](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=nodes-installing-spectrum-scale-packages-linux-systems), but make sure that you do not create the cluster in step 4.
+
+1. Follow the steps to [run IBM Spectrum Scale commands without remote root login](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=cgc-running-spectrum-scale-commands-without-remote-root-login){: external}, but do not create a Spectrum Scale cluster.
 		
-4. [Switch to the `sudo` user and create a Spectrum Scale cluster on the worker nodes](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=login-configuring-cluster-use-sudo-wrapper-scripts){: external}.
+1. [Switch to the `sudo` user and create a Spectrum Scale cluster on the worker nodes](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=login-configuring-cluster-use-sudo-wrapper-scripts){: external}.
     * Verify that the cluster is using sudo wrappers.
     * Verify Spectrum Scale starts up on all worker nodes by running the following commands.
         ```sh
@@ -179,17 +145,17 @@ Complete the following steps, but do not create an IBM Cloud Spectrum Scale clus
 		```
 		{: pre}
 
-5. [Attach your IBM Spectrum Scale Nodes to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-hosts#attach-hosts).
+1. [Attach your IBM Spectrum Scale Nodes to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-hosts#attach-hosts).
 	* Make sure your system is configured for the desired default route if you have more than one clustering network.
 	* Make sure that default route has a path to the public network, possibly via NAT or VPN.
 
-6. Start IBM Spectrum Scale nodes and verify that it is running. If there is an issue with the portability layer, you can [rebuild the portability layer](#rebuilding-the-portability-layer).
+1. Start IBM Spectrum Scale nodes and verify that it is running. If there is an issue with the portability layer, you can [rebuild the portability layer](#rebuilding-the-portability-layer).
 
-7. [Mount your file system remotely and verify that it is running on all worker nodes](https://www.ibm.com/support/knowledgecenter/STXKQY_5.1.0/com.ibm.spectrum.scale.v5r10.doc/bl1adv_admrmsec.htm){: external}. Run the `mmcluster` command on both the local and remote IBM Spectrum Scale cluster.
+1. [Mount your file system remotely and verify that it is running on all worker nodes](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=system-mounting-remote-gpfs-file){: external}. Run the `mmcluster` command on both the local and remote IBM Spectrum Scale cluster.
 
-8. [Initialize the IBM Spectrum Scale GUI](https://www.ibm.com/support/knowledgecenter/STXKQY_CSI_SHR/com.ibm.spectrum.scale.csi.v2r10.doc/bl1csi_instal_prereq.html){: external}.
+1. [Initialize the IBM Spectrum Scale GUI](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=i-performing-pre-installation-tasks){: external}.
   
-9. Label the worker nodes where the IBM Spectrum Scale client is installed and where the IBM Spectrum Scale Container Storage Interface (CSI) driver is running.
+1. Label the worker nodes where the IBM Spectrum Scale client is installed and where the IBM Spectrum Scale Container Storage Interface (CSI) driver is running.
     ```sh
     oc label nodes <node> <node> <node> scale=true --overwrite=true
     ```
@@ -198,7 +164,7 @@ Complete the following steps, but do not create an IBM Cloud Spectrum Scale clus
 ## Mapping IBM Spectrum Scale hosts to worker node names
 {: #sat-storage-spectrum-scale-ts-mapping}
 
-In some environments, your worker node names might be different from your IBM Spectrum Scale node names which results in the pods not mounting. You must map your worker node names to your Spectrum Scale nodes. For more information, see [Kubernetes to IBM Spectrum Scale node mapping](https://www.ibm.com/support/knowledgecenter/STXKQY_CSI_SHR/com.ibm.spectrum.scale.csi.v2r10.doc/bl1csi_config_kubernet_SS_mapping_procedure_final.html){: external}.
+In some environments, your worker node names might be different from your IBM Spectrum Scale node names which results in the pods not mounting. You must map your worker node names to your Spectrum Scale nodes. For more information, see [Kubernetes to IBM Spectrum Scale node mapping](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=o-kubernetes-spectrum-scale-node-mapping){: external}.
 
 <br />
 
@@ -536,7 +502,7 @@ Use the CLI to remove a storage configuration.
       ```
       {: pre}
 
-5. [Clean up your Spectrum Scale deployment](https://www.ibm.com/support/knowledgecenter/STXKQY_CSI_SHR/com.ibm.spectrum.scale.csi.v2r10.doc/bl1csi_operator.html){: external}.
+5. [Clean up your Spectrum Scale deployment](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=installation-cleaning-up-spectrum-scale-container-storage-interface-driver-operator-by-using-clis){: external}.
 
 
 <br />
@@ -554,8 +520,8 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for IBM Spectrum
 ## Additional references
 {: #sat-storage-spectrum-scale-ref}
 
-* [IBM Spectrum Scale CSI driver documentation](https://www.ibm.com/support/knowledgecenter/STXKQY_CSI_SHR/ibmspectrumscalecsi_welcome.html){: external}.
-* [Cleaning up your Spectrum Scale deployment](https://www.ibm.com/support/knowledgecenter/STXKQY_CSI_SHR/com.ibm.spectrum.scale.csi.v2r10.doc/bl1csi_operator.html){: external}.
+* [IBM Spectrum Scale CSI driver documentation](https://www.ibm.com/docs/en/spectrum-scale-csi){: external}.
+* [Cleaning up your Spectrum Scale deployment](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=installation-cleaning-up-spectrum-scale-container-storage-interface-driver-operator-by-using-clis){: external}.
 
 ## Limitations
 {: #sat-storage-spectrum-scale-limits}
