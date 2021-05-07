@@ -118,6 +118,7 @@ The {{site.data.keyword.satelliteshort}} storage templates are currently availab
 
 ## Prerequisites
 {: #sat-storage-spectrum-scale-prereq}
+
 Complete the following steps, but do not create an IBM Cloud Spectrum Scale cluster.
 {: shortdesc}
 

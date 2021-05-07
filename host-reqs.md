@@ -115,7 +115,7 @@ Review the following requirements that relate to the computing and system setup 
 
 *   Hosts must run Red Hat Enterprise Linux 7 on x86 architecture. Other operating systems, such as Windows, and mainframe systems, such as IBM Z or Power, are not supported.
 *   Hosts can be physical or virtual machines.
-*   Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](##reqs-host-storage). 
+*   Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](#reqs-host-storage). 
 *   If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
 
 ### Packages and other machine configurations
