@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-19"
+lastupdated: "2021-05-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -127,7 +127,7 @@ To use {{site.data.keyword.satelliteshort}}, you must create a location. A locat
 * You must be the {{site.data.keyword.cloud_notm}} account owner, or have the [administrator permissions](/docs/satellite?topic=satellite-iam#iam-roles-clusters) to the required {{site.data.keyword.cloud_notm}} services in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM).
 * You must have an existing {{site.data.keyword.cos_full_notm}} service instance so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance. For example, to set up a dedicated {{site.data.keyword.cos_short}} instance and bucket:
     1. [Set up a {{site.data.keyword.cos_full_notm}} instance](https://cloud.ibm.com/objectstorage/create){: external} that you plan to use for all of your {{site.data.keyword.satelliteshort}} locations in your account.
-    2. Create a bucket in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`.
+    2. Create a bucket in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. The bucket endpoint must match the instance endpoint, such as a **Cross Region** bucket for a **Global** instance. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`.
     3. Pass in the name of this bucket when you create the {{site.data.keyword.satelliteshort}} location.
 
 **To create a location**:
