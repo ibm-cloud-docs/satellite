@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-14"
+lastupdated: "2021-05-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -104,6 +104,7 @@ Add-ons might not work for several reason.
 * The add-on is not supported for clusters in a {{site.data.keyword.satelliteshort}} location.
 * The add-on is in an unhealthy state.
 * The add-on settings are misconfigured, such as renaming or editing a configmap.
+* The add-on cannot be backed up in {{site.data.keyword.cos_full_notm}} due to conflicting service instance and bucket endpoints.
 
 {: tsResolve}
 Take the following steps to troubleshoot the add-on.
@@ -114,4 +115,5 @@ Take the following steps to troubleshoot the add-on.
     ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
     ```
     {: pre}
-3.  For more information, [review the add-on state and statuses](/docs/containers?topic=containers-cs_troubleshoot_addons#debug_addons).
+3.  If the add-on is in critical state, review the {{site.data.keyword.cos_full_notm}} instance and bucket that backs up the cluster data. The instance and endpoint must have matching endpoints, such as a **Global** instance with a **Cross Region** bucket (`us-geo` endpoint), or a **Regional** instance with a **Regional** bucket (`us-east` endpoint). If the endpoints do not match, you must re-create the {{site.data.keyword.satelliteshort}} location with matching {{site.data.keyword.cos_full_notm}} instance and bucket endpoints.
+4.  For more information, [review the add-on state and statuses](/docs/containers?topic=containers-cs_troubleshoot_addons#debug_addons).

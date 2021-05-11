@@ -15,7 +15,6 @@ Satellite
         
     {: .navgroup-end}
     
-
     {: .navgroup id="howto"}
     setup-cli.md
 
