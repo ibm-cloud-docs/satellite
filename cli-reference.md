@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-05-12"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1664,11 +1664,11 @@ ibmcloud sat storage assignment create --config CONFIG --group GROUP [--group GR
 **Command options:**
 
 <dl>
-<dt><code>--group <em>GROUP</em></code></dt>
-<dd>Required. The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run <code>ibmcloud sat group ls</code>.</dd>
-
 <dt><code>--config <em>CONFIG</em></code></dt>
 <dd>Required. The name of the storage configuration that you want to assign to your cluster group. To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage config ls</code>.</dd>
+
+<dt><code>--group <em>GROUP</em></code></dt>
+<dd>The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run <code>ibmcloud sat group ls</code>. To assign the storage configuration to multiple cluster groups at the same time, repeat this flag.</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
 <dd>Required. Enter a name for your storage assignment.</dd>
