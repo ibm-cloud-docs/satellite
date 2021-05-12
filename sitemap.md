@@ -457,10 +457,19 @@ subcollection: satellite
   * [Changing the Spectrum Scale CSI driver mount point](/docs/satellite?topic=satellite-config-storage-spectrum-scale#ess-change-mount-point)
 * [Deploying an app that uses your Spectrum Scale storage](/docs/satellite?topic=satellite-config-storage-spectrum-scale#storage-spectrum-app-deploy)
 * [Removing the Spectrum Scale storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-rm-cli)
+* [Troubleshooting](/docs/satellite?topic=satellite-config-storage-spectrum-scale#ess-ts)
+  * [Rebuilding the portability layer](/docs/satellite?topic=satellite-config-storage-spectrum-scale#ess-ts-rebuilding)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref)
 * [Additional references](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-ref)
 * [Limitations](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-limits)
   * [Spectrum Scale configuration parameter reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-params-cli)
+
+[IBM Systems {{site.data.keyword.blockstorageshort}} CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-prereq)
+* [Creating a {{site.data.keyword.blockstorageshort}} configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-cli)
+* [Assigning your {{site.data.keyword.blockstorageshort}} configuration to a cluster](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi)
+  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-cli)
+* [Deploying an app that uses your IBM {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
 
 
 ## NetApp storage templates

@@ -54,6 +54,7 @@ Satellite
         {: .topicgroup}
         IBM storage templates
             storage-spectrum-scale.md
+            storage-ibm-block-csi.md
 
         {: .topicgroup}
         NetApp storage templates

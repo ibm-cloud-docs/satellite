@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-12"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations, 
 
@@ -150,7 +150,7 @@ Complete the following steps, but do not create an IBM Cloud Spectrum Scale clus
 	* Make sure your system is configured for the desired default route if you have more than one clustering network.
 	* Make sure that default route has a path to the public network, possibly via NAT or VPN.
 
-1. Start IBM Spectrum Scale nodes and verify that it is running. If there is an issue with the portability layer, you can [rebuild the portability layer](#rebuilding-the-portability-layer).
+1. Start IBM Spectrum Scale nodes and verify that they are running. If there is an issue with the portability layer, you can [rebuild the portability layer](#ess-ts-rebuild).
 
 1. [Mount your file system remotely and verify that it is running on all worker nodes](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=system-mounting-remote-gpfs-file){: external}. Run the `mmcluster` command on both the local and remote IBM Spectrum Scale cluster.
 
@@ -505,6 +505,28 @@ Use the CLI to remove a storage configuration.
 
 5. [Clean up your Spectrum Scale deployment](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=installation-cleaning-up-spectrum-scale-container-storage-interface-driver-operator-by-using-clis){: external}.
 
+## Troubleshooting
+{: #ess-ts}
+
+### Rebuilding the portability layer
+{: #ess-ts-rebuilding}
+Run the following commands to rebuild the portability layer on each affected worker. Note that you may need to replace some files and subdirectories.
+{: shortdesc}
+   ```sh
+   sudo yum install -y kernel-devel cpp gcc gcc-c++ binutils python3
+
+   sudo mkdir /usr/include/asm
+   sudo cp /usr/src/kernels/3.10.0-1160.11.1.el7.x86_64/arch/x86/include/uapi/asm/*.h
+   /usr/include/asm
+
+   sudo mkdir /usr/include/asm-generic
+   sudo cp /usr/src/kernels/3.10.0-1160.11.1.el7.x86_64/include/uapi/asm-generic/*.h
+   /usr/include/asm-generic
+
+   sudo mkdir /usr/include/linux
+   sudo cp /usr/src/kernels/3.10.0-1160.15.2.el7.x86_64/include/uapi/linux/*.h /usr/include/linux
+   ```
+   {: codeblock}
 
 <br />
 ## Storage class reference
@@ -567,6 +589,5 @@ Do not install the IBM Spectrum Scale management API GUI on worker nodes that ar
 
 
 <br />
-
 
 
