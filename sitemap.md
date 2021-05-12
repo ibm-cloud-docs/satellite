@@ -126,6 +126,8 @@ subcollection: satellite
 * [Benefits of using {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about#about-benefits)
 * [{{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-about#components)
 * [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-about#architecture)
+  * [Master and worker node components](/docs/satellite?topic=satellite-about#architecture-master-worker)
+  * [Latency requirements](/docs/satellite?topic=satellite-about#architecture-latency)
 
 [Securing access between {{site.data.keyword.cloud_notm}} and on-prem resources with {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-sg-usecase)
 * [{{site.data.keyword.satelliteshort}} as a Layer 4 connection solution](/docs/satellite?topic=satellite-sg-usecase#sg-alt)
@@ -178,8 +180,7 @@ subcollection: satellite
   * [Inbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-inbound)
   * [Outbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound)
 * [Host latency](/docs/satellite?topic=satellite-host-reqs#host-latency-test)
-  * [Latency across hosts in the same location](/docs/satellite?topic=satellite-host-reqs#host-latency-location)
-  * [Latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-reqs#host-latency-mzr)
+  * [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-reqs#host-latency-mzr)
 
 [{{site.data.keyword.satellitelong_notm}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service)
 * [Getting started with {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service#satis-getting-started)
@@ -590,6 +591,8 @@ subcollection: satellite
 
 [Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies](/docs/satellite?topic=satellite-service-architecture)
 * [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture)
+  * [Master and worker node components](/docs/satellite?topic=satellite-service-architecture#architecture-master-worker)
+  * [Latency requirements](/docs/satellite?topic=satellite-service-architecture#architecture-latency)
 * [Workload isolation in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-service-architecture#workload-isolation)
   * [Workload isolation in the {{site.data.keyword.cloud_notm}} multizone metro that manages your location](/docs/satellite?topic=satellite-service-architecture#workload-isolation-cloud)
   * [Workload isolation in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-architecture#workload-isolation-location)
