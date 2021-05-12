@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-07"
+lastupdated: "2021-05-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -104,6 +104,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
+| 12 May 2021 | **New! IBM Systems {{site.data.keyword.blockstorageshort}} CSI driver template**: You can use the IBM Systems {{site.data.keyword.blockstorageshort}} CSI driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [IBM Systems {{site.data.keyword.blockstorageshort}} CSI driver documentation](/docs/satellite?topic=satellite-config-storage-block-csi). |
 | 07 May 2021 | **New! Spectrum Scale CSI driver template**: You can use the IBM Spectrum Scale Container Storage Interface (CSI) driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [IBM Spectrum Scale driver documentation](/docs/satellite?topic=satellite-config-storage-spectrum-scale). |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in May 2021."}
