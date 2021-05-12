@@ -110,7 +110,7 @@ Supported IBM storage systems:
 Be sure to complete all prerequisite and installation steps before assigning hosts to your location. Do not create a Kubernetes cluster.
 {: important}
 
-Review the [compatibility and requirements documentation](https://www.ibm.com/support/knowledgecenter/SSRQ8T_1.4.0/csi_ug_requirements.html){: external}.
+Review the [compatibility and requirements documentation](https://www.ibm.com/docs/en/blockstg-csi-driver/1.4.0?topic=installation-compatibility-requirements){: external}.
 
 
 The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
@@ -185,25 +185,22 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
   ```
   {: pre}
 
-2. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to assign storage. Note that the clusters in the cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location. If you have not created a cluster group, see [Setting up cluster groups](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups).
-  ```sh
-  ibmcloud sat group ls
-  ```
-  {: pre}
+1. Get the ID of the  cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
+  * **Group**
+    ```sh
+    ibmcloud sat group ls
+    ```
+    {: pre}
 
-3. Get the details of your cluster group and verify the clusters where you want to deploy your storage configuration. To attach clusters to your group, run the `ic sat group attach` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-attach).
-  ```sh
-  ibmcloud sat group get <group-name>
-  ```
-  {: pre}
+1. Assign storage to the group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-4. Assign storage to the clusters that you retrieved in step 2. Replace `<group>` with the name of your cluster group, `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
-  ```sh
-  ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
-  ```
-  {: pre}
+  * **Group**
+    ```sh
+    ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
+    ```
+    {: pre}
 
-4. Verify that your assignment is created.
+1. Verify that your assignment is created.
   ```sh
   ibmcloud sat storage assignment ls | grep <storage-assignment-name>
   ```
