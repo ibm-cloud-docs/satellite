@@ -12,7 +12,6 @@ Satellite
         about.md
         uc-sg.md
         uc-edge.md
-        
     {: .navgroup-end}
     
     {: .navgroup id="howto"}
