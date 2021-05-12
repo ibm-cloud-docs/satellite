@@ -273,7 +273,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
   ```
   {: pre}
 
-1. [Create a persistent volume claim (PVC])(https://www.ibm.com/docs/en/blockstg-csi-driver/1.4.0?topic=configuration-creating-persistentvolumeclaim-pvc){: external} that references the storage class that you created earlier.
+1. [Create a PVC](https://www.ibm.com/docs/en/blockstg-csi-driver/1.4.0?topic=configuration-creating-persistentvolumeclaim-pvc){: external} that references the storage class that you created earlier.
    ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
@@ -347,9 +347,9 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
    {: pre}
 
    Example output:
-   ```
+   ```sh
    NAME                                READY   STATUS    RESTARTS   AGE
-   app                                 1/1     Running   0          2m58s
+   demo-statefulset-file-system-0       1/1     Running   0          2m58s
    ```
    {: screen}
 
