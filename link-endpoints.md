@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-01"
+lastupdated: "2021-05-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -105,7 +105,7 @@ Open up {{site.data.keyword.satelliteshort}} endpoints in the {{site.data.keywor
 With {{site.data.keyword.satelliteshort}} Link endpoints, you can allow any client that runs in your {{site.data.keyword.satelliteshort}} location to connect to a service, server, or app that runs outside of the location, or allow a client that is connected to the {{site.data.keyword.cloud_notm}} private network to connect to a service, server, or app that runs in your location.
 {: shortdesc}
 
-To establish the connection, you must specify the destination resource's URL or IP address and port, the connection protocol, and any authentication methods in the endpoint. The endpoint is registered with the {{site.data.keyword.satelliteshort}} Link component of your location's {{site.data.keyword.satelliteshort}} control plane. To help you maintain enterprise security and audit compliance, {{site.data.keyword.satelliteshort}} Link additionally provides built-in controls to restrict client access to endpoints and to log and audit traffic that flows over endpoints.
+To establish the connection, you must specify the destination resource's fully qualified domain name (FQDN) or IP address, port, the connection protocol, and any authentication methods in the endpoint. The endpoint is registered with the {{site.data.keyword.satelliteshort}} Link component of your location's {{site.data.keyword.satelliteshort}} control plane. To help you maintain enterprise security and audit compliance, {{site.data.keyword.satelliteshort}} Link additionally provides built-in controls to restrict client access to endpoints and to log and audit traffic that flows over endpoints.
 
 ### Architecture
 {: #link-architecture}
@@ -299,8 +299,8 @@ Use the console to create a cloud endpoint so that sources in your {{site.data.k
 2. From the **Overview** tab, verify that your location has a **normal** status.
 3. From the **Link endpoints** tab, click **Create an endpoint**.
 4. Select **Cloud** to create an endpoint for a service, server, or app that runs outside of the location.
-5. Enter an endpoint name, the destination resource's URL or IP address, and the port that your destination resource listens on for incoming requests. Make sure to enter the URL without `http://` or `https://`. The IP address or hostname must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}}, such as a private service endpoint.
-6. Select the protocol that a source must use to connect to the destination URL or IP address. This protocol must match the port for your destination resource. For more information, see [Endpoint protocols](#link-protocols).
+5. Enter an endpoint name, the destination resource's fully qualified domain name (FQDN) or IP address, and the port that your destination resource listens on for incoming requests. The IP address or FQDN must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}}, such as a private service endpoint.
+6. Select the protocol that a source must use to connect to the destination FQDN or IP address. This protocol must match the port for your destination resource. For more information, see [Endpoint protocols](#link-protocols).
   * If you selected the **TLS** or **HTTPS** protocols and want to require server-side authentication of the destination's certificate, select the **Verify destination certificate** checkbox.
   * If you selected the **TLS** or **HTTPS** protocols but the destination resource is still in development, you can click **Upload certificate** to add your self-signed certificate file. This `ssl.crt` file must contain the public, base-64 encoded certificate for your resource's host name and must not contain the private `ssl.key` certificate key. To create a self-signed certificate for testing purposes by using OpenSSL, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external}.
 7. Configure optional connection settings, such as setting an inactivity timeout. The inactivity timeout is applied to both the connection between the source and {{site.data.keyword.satelliteshort}} Link and to the connection between {{site.data.keyword.satelliteshort}} Link and the destination. By default, no default inactivity timeout is set.
@@ -329,7 +329,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
 
 2. Create a `cloud` endpoint.
    ```
-   ibmcloud sat endpoint create --location <location_ID> --endpoint <endpoint_name> --dest-type cloud --dest-hostname <hostname_or_IP> --dest-port <port> [--dest-protocol <destination_protocol>] --source-protocol <source_protocol>
+   ibmcloud sat endpoint create --location <location_ID> --endpoint <endpoint_name> --dest-type cloud --dest-hostname <FQDN_or_IP> --dest-port <port> [--dest-protocol <destination_protocol>] --source-protocol <source_protocol>
    ```
    {: pre}
 
@@ -353,8 +353,8 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
       <td>Enter `cloud` to indicate that the destination resource runs outside of the location.</td>
       </tr>
       <tr>
-      <td><code>--dest-hostname &lt;hostname_or_IP&gt;</code></td>
-      <td>Enter the URL or the externally accessible IP address of the destination that you want to connect to, such as a public IP address, a public service endpoint, or a private service endpoint. Note that you cannot specify a private IP address. Make sure to enter the URL without <code>http://</code> or <code>https://</code>. </td>
+      <td><code>--dest-hostname &lt;FQDN_or_IP&gt;</code></td>
+      <td>Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, such as a public IP address, a public service endpoint, or a private service endpoint. Note that you cannot specify a private IP address.</td>
       </tr>
       <tr>
       <td><code>--dest-port &lt;port&gt;</code></td>
@@ -496,8 +496,8 @@ Use the console to create an endpoint so that sources that are connected to the 
 2. From the **Overview** tab, verify that your location has a **normal** status.
 3. From the **Link endpoints** tab, click **Create an endpoint**.
 4. Select **Satellite location** to create an endpoint for a service, server, or app in your {{site.data.keyword.satelliteshort}} location.
-5. Enter an endpoint name, the destination resource's URL or IP address, and the port that your destination resource listens on for incoming requests. Make sure to enter the URL without `http://` or `https://`.
-6. Select the protocol that a source must use to connect to the destination URL or IP address. This protocol must match the port for your destination resource. For more information, see [Endpoint protocols](#link-protocols).
+5. Enter an endpoint name, the destination resource's fully qualified domain name (FQDN) or IP address, and the port that your destination resource listens on for incoming requests.
+6. Select the protocol that a source must use to connect to the destination FQDN or IP address. This protocol must match the port for your destination resource. For more information, see [Endpoint protocols](#link-protocols).
   * If you selected the **TLS** or **HTTPS** protocols and want to require server-side authentication of the destination's certificate, select the **Verify destination certificate** checkbox.
   * If you selected the **TLS** or **HTTPS** protocols but the destination resource is still in development, you can click **Upload certificate** to add your self-signed certificate file. This `ssl.crt` file must contain the public, base-64 encoded certificate for your resource's host name and must not contain the private `ssl.key` certificate key. To create a self-signed certificate for testing purposes by using OpenSSL, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external}.
 7. Configure optional connection settings, such as setting an inactivity timeout. The inactivity timeout is applied to both the connection between the source and {{site.data.keyword.satelliteshort}} Link and to the connection between {{site.data.keyword.satelliteshort}} Link and the destination. By default, no default inactivity timeout is set.
@@ -530,7 +530,7 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
 
 2. Create a `location` endpoint.
    ```
-   ibmcloud sat endpoint create --location <location_ID> --endpoint <endpoint_name> --dest-type location --dest-hostname <hostname_or_IP> --dest-port <port> [--dest-protocol <destination_protocol>] --source-protocol <source_protocol>
+   ibmcloud sat endpoint create --location <location_ID> --endpoint <endpoint_name> --dest-type location --dest-hostname <FQDN_or_IP> --dest-port <port> [--dest-protocol <destination_protocol>] --source-protocol <source_protocol>
    ```
    {: pre}
 
@@ -554,8 +554,8 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
       <td>Enter `location` to indicate that the destination resource runs in your {{site.data.keyword.satelliteshort}} location.</td>
       </tr>
       <tr>
-      <td><code>--dest-hostname &lt;hostname_or_IP&gt;</code></td>
-      <td>Enter the URL or the externally accessible IP address of the destination that you want to connect to, such as a public IP address, a public service endpoint, or a private service endpoint. Note that you cannot specify a private IP address. Make sure to enter the URL without <code>http://</code> or <code>https://</code>. </td>
+      <td><code>--dest-hostname &lt;FQDN_or_IP&gt;</code></td>
+      <td>Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, such as a public IP address, a public service endpoint, or a private service endpoint. Note that you cannot specify a private IP address.</td>
       </tr>
       <tr>
       <td><code>--dest-port &lt;port&gt;</code></td>
@@ -612,11 +612,11 @@ Currently, you can create source lists only for endpoints of type `location`. Yo
 3. In the **Source list** section, click **Add source**.
 4. Choose an existing source or configure a new source and add it to the source list.
   * To add an existing source, select the source name and click **Add**.
-  * To configure a new source, click **Configure source** to enter a source name and the IP address or subnet CIDR for the client that you want to connect to the endpoint, and click **Add**.
+  * To configure a new source, click **Configure source** to enter a source name and the IP address or subnet CIDR for the client that you want to connect to the endpoint, and click **Add**. Separate multiple IP addresses or subnet CIDRs with a comma (`,`).
 5. Use the toggle to enable the source to connect to the destination resource. After you enable a source, network traffic to the destination through the endpoint is permitted only from clients that use an IP address in the range that you specified in the source. Network traffic from other clients that is sent to the destination resource through the endpoint is blocked.
 6. Repeat these steps for any sources that you want to grant access to the destination resource through the endpoint.
 
-To see the status of sources for each endpoints, such as the last time that a source was modified for an endpoint, click the **Audit** tab, and click the name of your endpoint.
+To see the status of sources for each endpoints, such as the last time that a source was modified for an endpoint, click the **Link endpoints** tab, and click the **Sources** tab.
 {: tip}
 
 
@@ -630,10 +630,9 @@ To see the status of sources for each endpoints, such as the last time that a so
 {: shortdesc}
 
 1. [Provision an instance of {{site.data.keyword.at_short}}](/docs/log-analysis?topic=log-analysis-provision) in the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
-2. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.
-3. From the **Audit** tab, click the name of your endpoint.
-4. Review the status of sources that are configured for this endpoint, such as whether a source is currently enabled and the last time that a source was modified.
-5. Click **Launch Auditing**. The dashboard for your {{site.data.keyword.at_short}} instance is opened, and the events are filtered for your endpoint's ID.
+2. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations), click the name of your location.
+3. From the **Link endpoints** tab, click the name of your endpoint.
+4. From the actions menu, click **Launch Auditing**. The dashboard for your {{site.data.keyword.at_short}} instance is opened, and the events are filtered for your endpoint's ID.
 
 For more information about the types of {{site.data.keyword.satelliteshort}} events that you can track, see [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
 {: tip}
