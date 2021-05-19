@@ -127,6 +127,10 @@ Satellite
             ts-clusters/ts-console-fail.md
             ts-clusters/ts-cluster-operations.md
             ts-clusters/ts-addons.md
+        
+        {: topicgroup}
+        Storage
+            ts-storage/ts-storage-cleanup.md
 
     relnotes.md
     sitemap.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-12"
+lastupdated: "2021-05-19"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -97,7 +97,7 @@ subcollection: satellite
 
 The {{site.data.keyword.blockstorageshort}} CSI driver is based on an IBM open-source project, and integrated into the IBM Storage orchestration for containers. IBM Storage orchestration for containers enables enterprises to implement a modern container-driven hybrid multicloud environment that can reduce IT costs and enhance business agility, while continuing to derive value from existing systems.
 
-For full release notes, compatiblity, installation, and user information, see the [{{site.data.keyword.blockstorageshort}} CSI driver documentation](https://www.ibm.com/support/knowledgecenter/SSRQ8T_1.4.0/){: external}.
+For full release notes, compatiblity, installation, and user information, see the [{{site.data.keyword.blockstorageshort}} CSI driver documentation](https://www.ibm.com/docs/en/blockstg-csi-driver/1.4.0){: external}.
 
 Supported IBM storage systems:
   - IBM Spectrum Virtualize Family including IBM SAN Volume Controller (SVC) and IBM FlashSystem® family members built with IBM Spectrum® Virtualize (FlashSystem 5010, 5030, 5100, 5200, 7200, 9100, 9200, 9200R)

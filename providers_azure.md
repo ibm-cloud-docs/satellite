@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-05-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -108,7 +108,12 @@ You can create your {{site.data.keyword.satellitelong_notm}} location by using h
 All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
-Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create).
+Before you begin:
+*  [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create).
+*  [Install the Azure command line interface (`az`)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli){: external}.
+*  Make sure that you have user admin credentials to your Azure account.
+
+To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location:
 
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add Azure hosts.
 2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
@@ -118,51 +123,64 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
    4. Click **Download script** to generate the host script and download the script to your local machine.
 3. Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
    ```
+   # Grow the base volume group first
+   echo -e "r\ne\ny\nw\ny\ny\n" | gdisk /dev/sda
+   # Mark result as true as this returns a non-0 RC when syncing disks
+   echo -e "n\n\n\n\n\nw\n" | fdisk /dev/sda || true
+   partx -l /dev/sda || true
+   partx -v -a /dev/sda || true
+   pvcreate /dev/sda5
+   vgextend rootvg /dev/sda5
    # Grow the TMP LV
    lvextend -L+10G /dev/rootvg/tmplv
    xfs_growfs /dev/rootvg/tmplv
+   # Grow the var LV
+   lvextend -L+20G /dev/rootvg/varlv
+   xfs_growfs /dev/rootvg/varlv
 
    # Enable Azure RHEL Updates
-   yum update -y
+   yum update --disablerepo=* --enablerepo="*microsoft*" -y
    yum-config-manager --enable '*'
    yum repolist all
    yum install container-selinux -y
    echo "repos enabled"
    ```
    {: codeblock}
-4. Open the Azure [virtual machine scale set creation page](https://portal.azure.com/#create/microsoft.vmss){: external}.
-
-   For an overview of options that you can configure for your virtual machine scale set, see the [Azure documentation](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/quick-create-portal){: external}.
-   {: tip}
-
-5. On the **Basic** tab, enter the following information:
-   1. Select the resource group where you want to create your virtual machines.
-   2. Enter a name for your virtual machine scale set.
-   3. Select a region and the availability zones where you want to create your virtual machines. Make sure that you select 3 different availability zones to spread your virtual machines across zones for higher availability.
-   4. Select a supported Red Hat Enterprise Linux 7 operating system that is enabled for cloud-init and that includes all Azure images, such as `Red Hat Enterprise Linux 7.9 - Gen1`. Other Red Hat Enterprise Linux 7 versions might not be enabled for cloud-init or do not come with all the required images to run as a host in your {{site.data.keyword.satelliteshort}} location.
-   5. Select a size for your machines. Make sure that you select a machine that meets the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for CPU and memory, such as `D4s_v3`.
-   6. Choose how you want to access your virtual machines. You can enter a username and password or use an SSH key.
-   7. Continue to the **Disks** tab.
-6. On the **Disks** tab, add a Premium SSD disk with a size of at least 100 GB. Then, continue to the **Networking** tab.
-7. On the **Networking** tab, enter the following information:
-   1. Select an existing or create a virtual network that you want to connect your virtual machines to.
-   2. Select an existing or create a new network interface (nic). Make sure that your network interface includes a security group that allows access to {{site.data.keyword.satelliteshort}} as described in the [Security group settings](#azure-reqs-firewall).
-   3. Continue to the **Scaling** tab.
-8. On the **Scaling** tab, enter the number of instances that you want to create. To create the {{site.data.keyword.satelliteshort}} location control plane, you need at least 6 virtual machines (or 3 for testing purposes). Then, continue to the **Advanced** tab.
-9. On the **Advanced** tab, enter the script that you modified earlier in the **Custom data** field.
-10. Click **Review + create** to start the resource validation process. Then, click **Create** to start creating your virtual machines.
-11. Wait for the instances to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete.
-12. Monitor the progress of the registration script.
-    1. From the Azure virtual machine scale set dashboard, retrieve the public IP address of one of your instances.
+4. From your local command line, [sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest){: external}.
+   ```
+   az login
+   ```
+   {: pre}
+5. Create a network security group that meets the host networking requirements for {{site.data.keyword.satelliteshort}}.
+   1. Create a network security group in your resource group. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/network/nsg?view=azure-cli-latest#az_network_nsg_create){: external}.
+      ```
+      az network nsg create --name <network_security_group_name> --resource-group <resource_group_name>
+      ```
+      {: pre}
+   2. Create a rule in the network security group to allow SSH into virtual machines. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az_network_nsg_rule_create){: external}.
+      ```
+      az network nsg rule create --name ssh --nsg-name <network_security_group_name> --priority 1000 --resource-group <resource_group_name> --destination-port-ranges 22 --access Allow --protocol Tcp
+      ```
+      {: pre}
+   3. Create a rule in the network security group to meet the [minimum host networking requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network). For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az_network_nsg_rule_create){: external}.
+      ```
+      az network nsg rule create --name satellite --nsg-name <network_security_group_name> --priority 1010 --resource-group <resource_group_name> --destination-port-ranges 80 443 30000-32767 --access Allow
+      ```
+      {: pre} 
+   4. Optional: Verify that your network security group meets the host networking requirements, such as in the [example settings](#azure-reqs-firewall).
+6. Create virtual machines to serve as the hosts for your {{site.data.keyword.satelliteshort}} location resources, including the control plane and any {{site.data.keyword.openshiftshort}} clusters that you want to create. The following command creates 6 VMs at the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for compute, disks, and image. The VMs are created in the resource group and network security group that you previously created. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_create){: external}.
+   ```
+   az vm create --name <vm_name> --resource-group <resource_group> --admin-user <username> --admin-password <password> --image RedHat:RHEL:7-LVM:latest --nsg <network_security_group> --os-disk-name <disk_name> --os-disk-size-gb 128 --size Standard_D4s_v3 --count 6 --custom-data <filepath_to_host_registration_script>
+   ```
+   {: pre}
+7. Wait for the instances to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete.
+8. Monitor the progress of the registration script.
+    1.   Get the public IP address of one of your instances. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_list_ip_addresses){: external}.
+         ```
+         az vm list-ip-addresses -g <resource_group> -n <vm_name>
+         ```
+         {: pre}
     2. Log in to your instance.
-
-       **Log in with a pem file**:
-       ```
-       ssh -i <key>.pem <username>@<public_IP_address>
-       ```
-       {: pre}
-
-       **Log in with username and password**:
        ```
        ssh <username>:<public_IP_address>
        ```
@@ -174,9 +192,9 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
        ```
        {: pre}
 
-13. Check that your hosts are shown in the **Hosts** tab of your location from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+9. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, check that your hosts are shown in the **Hosts** tab of your location. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 
-14. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign).
+10. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign).
 
 
 ## Security group settings

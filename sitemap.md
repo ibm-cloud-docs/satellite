@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-12"
+lastupdated: "2021-05-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -480,12 +480,16 @@ subcollection: satellite
 * [Creating a NetApp Trident storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-storage-netapp-cli)
 * [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp)
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp-cli)
+  * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-template-rm-cli)
 
 [NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas)
-* [Creating a NetApp Trident storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-cli-nas)
-* [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-nas)
+* [Creating a NetApp ONTAP-NAS storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-cli-nas)
+* [Assigning your NetApp ONTAP-NAS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-nas)
   * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-cli-nas)
-* [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-params-cli-nas)
+* [Deploying an app that uses ONTAP-NAS storage](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-nas-deploy)
+* [Removing NetApp ONTAP-NAS storage from your apps](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-rm)
+  * [Removing the NetApp ONTAP-NAS storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-template-rm-cli)
+* [NetApp ONTAP-NAS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-params-cli-nas)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-sc-reference-nas)
 
 [NetApp ONTAP-SAN](/docs/satellite?topic=satellite-config-storage-netapp)
@@ -936,6 +940,8 @@ subcollection: satellite
 [Why can't I update or complete other actions with my cluster?](/docs/satellite?topic=satellite-ts-cluster-operations-blocked)
 
 [Why doesn't my cluster add-on work?](/docs/satellite?topic=satellite-addon-errors)
+
+[Why is the namespace where my storage operator was deployed stuck in **Terminating** status?](/docs/satellite?topic=satellite-storage-namespace-terminating)
 
 
 ## Release notes
