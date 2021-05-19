@@ -129,6 +129,7 @@ Satellite
             ts-clusters/ts-addons.md
         
         {: topicgroup}
+        Storage
             ts-storage/ts-storage-cleanup.md
 
     relnotes.md

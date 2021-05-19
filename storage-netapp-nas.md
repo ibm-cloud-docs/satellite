@@ -391,7 +391,7 @@ Before you remove your storage configuration, remove the app pods and PVCs that 
   ```
   {: pre}
 
-5. Delete the PVC. Because you statically provisioned the NetApp ONTAP-NAS storage, deleting the PVC does not remove the PV or the NetApp ONTAP-NAS instance in your AWS account.
+5. Delete the PVC.
   ```sh
   oc delete pvc <pvc_name>
   ```
