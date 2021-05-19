@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-12"
+lastupdated: "2021-05-19"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations, 
 
@@ -507,23 +507,22 @@ Use the CLI to remove a storage configuration.
 
 ### Rebuilding the portability layer
 {: #ess-ts-rebuilding}
-Run the following commands to rebuild the portability layer on each affected worker. Note that you may need to replace some files and subdirectories.
+
+Run the following commands to rebuild the portability layer on each affected worker. Note that you might need to replace some files and subdirectories.
 {: shortdesc}
-   ```sh
-   sudo yum install -y kernel-devel cpp gcc gcc-c++ binutils python3
 
-   sudo mkdir /usr/include/asm
-   sudo cp /usr/src/kernels/3.10.0-1160.11.1.el7.x86_64/arch/x86/include/uapi/asm/*.h
-   /usr/include/asm
-
-   sudo mkdir /usr/include/asm-generic
-   sudo cp /usr/src/kernels/3.10.0-1160.11.1.el7.x86_64/include/uapi/asm-generic/*.h
-   /usr/include/asm-generic
-
-   sudo mkdir /usr/include/linux
-   sudo cp /usr/src/kernels/3.10.0-1160.15.2.el7.x86_64/include/uapi/linux/*.h /usr/include/linux
-   ```
-   {: codeblock}
+```sh
+sudo yum install -y kernel-devel cpp gcc gcc-c++ binutils python3
+sudo mkdir /usr/include/asm
+sudo cp /usr/src/kernels/3.10.0-1160.11.1.el7.x86_64/arch/x86/include/uapi/asm/*.h
+/usr/include/asm
+sudo mkdir /usr/include/asm-generic
+sudo cp /usr/src/kernels/3.10.0-1160.11.1.el7.x86_64/include/uapi/asm-generic/*.h
+/usr/include/asm-generic
+sudo mkdir /usr/include/linux
+sudo cp /usr/src/kernels/3.10.0-1160.15.2.el7.x86_64/include/uapi/linux/*.h /usr/include/linux
+```
+{: codeblock}
 
 <br />
 ## Storage class reference

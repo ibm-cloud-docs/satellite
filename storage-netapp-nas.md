@@ -402,7 +402,7 @@ Before you remove your storage configuration, remove the app pods and PVCs that 
   oc delete pv <pv_name>
   ```
   {: pre}
-7. [Remove your NetApp ONTAP-NAS storage configuration from your cluster]()
+7. [Remove your NetApp ONTAP-NAS storage configuration from your cluster](#netapp-nas-template-rm-cli)
 
 <br />
 
@@ -448,7 +448,7 @@ Use the CLI to remove a storage assignment and storage configuration.
   ```
   {: pre}
 
-7. **Next steps**: [Remove the NetApp Trident operator from your cluster](){: external}.
+7. **Next steps**: Remove the NetApp Trident operator from your cluster.
 
   
 
