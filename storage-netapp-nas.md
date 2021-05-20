@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-20"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -76,6 +76,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -448,7 +449,7 @@ Use the CLI to remove a storage assignment and storage configuration.
   ```
   {: pre}
 
-7. **Next steps**: Remove the NetApp Trident operator from your cluster.
+7. **Next steps**: [Remove the NetApp Trident operator from your cluster](/docs/satellite?topic=satellite-config-storage-netapp-trident).
 
   
 
