@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-02"
+lastupdated: "2021-05-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -77,6 +77,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -105,6 +106,9 @@ Review what personal and sensitive information is stored when you use {{site.dat
 For every location that you create, IBM stores certain personal and sensitive information. Depending on the type of information, IBM or you are responsible to store this information and protect it. For more information, see [How is my information stored, backed up, and encrypted?](#sat-data-encryption).
 {: shortdesc}
 
+### Stored information when you create a {{site.data.keyword.satelliteshort}} location
+{: #sat-sensitive-data-default}
+
 The following information is stored when you create a {{site.data.keyword.satelliteshort}} location:
 
 **Personal information:**
@@ -116,6 +120,19 @@ The following information is stored when you create a {{site.data.keyword.satell
 - An IBM-owned encryption key for each location that is used to encrypt the TLS certificates, secrets, and Certificate Authority of the {{site.data.keyword.satelliteshort}} control plane domain.
 - {{site.data.keyword.satelliteshort}} control plane and {{site.data.keyword.satelliteshort}} cluster data that can be used to restore the control plane and clusters in case of a disaster.
 
+### Stored information from resources that you create
+{: #sat-sensitive-data-user-added}
+
+Because {{site.data.keyword.satelliteshort}} is an extension of {{site.data.keyword.cloud_notm}} to your own environment, you create many resources whose metadata might be stored, backed up, and encrypted in {{site.data.keyword.satelliteshort}}.
+{: shortdesc}
+
+Do not use sensitive or personally identifiable information for the names, labels, tags, or other metadata for the following items.
+{: important}
+
+* {{site.data.keyword.satelliteshort}} resources, such as the names of locations, hosts, {{site.data.keyword.satelliteshort}} Link endpoints, {{site.data.keyword.satelliteshort}} config configurations, versions, subscriptions, cluster group names, or storage configurations.
+* {{site.data.keyword.satelliteshort}}-enabled service resources, such as the names of service instances or clusters.
+* Kubernetes resources that run in clusters in your {{site.data.keyword.satelliteshort}} location, such as the names of deployments, pods, services, or config maps.
+* Any other resources that run in your {{site.data.keyword.satelliteshort}} location.
 
 ## How is my information stored, backed up, and encrypted?
 {: #sat-data-encryption}
