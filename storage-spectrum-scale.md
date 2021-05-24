@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-24"
 
-keywords: spectrum scale, satellite storage, satellite config, satellite configurations, 
+keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
 subcollection: satellite
 
@@ -77,6 +77,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -132,7 +133,7 @@ Complete the following steps, but do not create an IBM Cloud Spectrum Scale clus
 1. Follow the steps to [install IBM Spectrum Scale packages on Linux systems](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=nodes-installing-spectrum-scale-packages-linux-systems), but make sure that you do not create the cluster in step 4.
 
 1. Follow the steps to [run IBM Spectrum Scale commands without remote root login](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=cgc-running-spectrum-scale-commands-without-remote-root-login){: external}, but do not create a Spectrum Scale cluster.
-		
+
 1. [Switch to the `sudo` user and create a Spectrum Scale cluster on the worker nodes](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=login-configuring-cluster-use-sudo-wrapper-scripts){: external}.
     * Verify that the cluster is using sudo wrappers.
     * Verify Spectrum Scale starts up on all worker nodes by running the following commands.
@@ -150,12 +151,12 @@ Complete the following steps, but do not create an IBM Cloud Spectrum Scale clus
 	* Make sure your system is configured for the desired default route if you have more than one clustering network.
 	* Make sure that default route has a path to the public network, possibly via NAT or VPN.
 
-1. Start IBM Spectrum Scale nodes and verify that they are running. If there is an issue with the portability layer, you can [rebuild the portability layer](#ess-ts-rebuild).
+1. Start IBM Spectrum Scale nodes and verify that they are running. If there is an issue with the portability layer, you can [rebuild the portability layer](#ess-ts-rebuilding).
 
 1. [Mount your file system remotely and verify that it is running on all worker nodes](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=system-mounting-remote-gpfs-file){: external}. Run the `mmcluster` command on both the local and remote IBM Spectrum Scale cluster.
 
 1. [Initialize the IBM Spectrum Scale GUI](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=i-performing-pre-installation-tasks){: external}.
-  
+
 1. Label the worker nodes where the IBM Spectrum Scale client is installed and where the IBM Spectrum Scale Container Storage Interface (CSI) driver is running.
     ```sh
     oc label nodes <node> <node> <node> scale=true --overwrite=true
@@ -297,7 +298,7 @@ After you deploy the `ess` template, you must change the Spectrum Scale CSI driv
       oc edit ds ibm-spectrum-scale-csi -n ibm-spectrum-scale-csi-driver
       ```
       {: pre}
-  
+
    * **Get the YAML configuration file**
       ```sh
       oc get ds ibm-spectrum-scale-csi -n ibm-spectrum-scale-csi-driver -o yaml
@@ -474,7 +475,7 @@ Use the CLI to remove a storage configuration.
       oc get sc
       ```
       {: pre}
-   
+
    1. Optional: If you created custom storage classes, remove them.
       ```sh
       oc delete sc <storage-class-name>
@@ -483,7 +484,7 @@ Use the CLI to remove a storage configuration.
 
    2. List the pods in the `ibm-spectrum-scale-csi-driver` namespace and verify that the storage driver pods are removed.
       ```sh
-      oc get pods -n ibm-spectrum-scale-csi-driver 
+      oc get pods -n ibm-spectrum-scale-csi-driver
       ```
       {: pre}
 
@@ -557,7 +558,7 @@ Do not install the IBM Spectrum Scale management API GUI on worker nodes that ar
 | --- | --- | --- |
 | `scale-host-path` | Required | The mount path of the primary file system. You can retrieve this value by running the `mmlsfs` command from a worker node in the primary Spectrum Scale cluster. |
 | `cluster-id` | Required | The cluster ID of the primary IBM Spectrum Scale cluster. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `primary-fs` | Required | The primary file system name. You can retrieve this value by running the `mmlsfs` command from a worker node in the primary Spectrum Scale cluster. | 
+| `primary-fs` | Required | The primary file system name. You can retrieve this value by running the `mmlsfs` command from a worker node in the primary Spectrum Scale cluster. |
 | `gui-host` | Required | Enter the FQDN or IP address that corresponds with the ID that is specified in `gui-api-user` parameter. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
 | `secret-name` | Required | The name of the secret that contains the `username` and `password` to connect to the primary Spectrum Scale cluster GUI server. This parameter is user-specified. |
 | `gui-api-user` | Required | The username to connect to the primary Spectrum Scale cluster GUI. To retrieve this value, log in to the Spectrum Scale GUI node and run the `lsuser` command. The `gui-api-user` value is in the `CsiAdmin` group. |
