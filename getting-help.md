@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-12"
+lastupdated: "2021-05-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -77,6 +77,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -102,11 +103,11 @@ Still having issues? Review different ways to get help and support for {{site.da
 ## General ways to resolve issues
 {: #help-general}
 
-1. Enable and review [logging](#review-logs) and [monitoring](/docs/satellite?topic=satellite-monitor) details to troubleshoot your {{site.data.keyword.satelliteshort}} components.
-2. Keep the clusters and hosts in your {{site.data.keyword.satelliteshort}} location up to date.
-3. Make sure that your command-line tools are up to date.
+* Make sure that your command-line tools are up to date.
    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up to date so that you can use all available commands and flags.
    * Make sure that your `kubectl` and `oc` CLI client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
+* Keep the clusters and hosts in your {{site.data.keyword.satelliteshort}} location up to date.
+* Enable and review [logging](#review-logs) and [monitoring](/docs/satellite?topic=satellite-monitor) details to troubleshoot your {{site.data.keyword.satelliteshort}} components.
 
 ## Reviewing cloud issues and status
 {: #help-cloud-status}

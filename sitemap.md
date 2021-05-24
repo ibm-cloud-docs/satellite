@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-05-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -77,6 +77,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -398,16 +399,16 @@ subcollection: satellite
 * [Understanding what is logged and monitored by default](/docs/satellite?topic=satellite-monitor#health-default)
   * [Auditing events for {{site.data.keyword.satelliteshort}} actions](/docs/satellite?topic=satellite-monitor#audit-events)
   * [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default)
-* [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-mon)
-  * [Available metrics](/docs/satellite?topic=satellite-monitor#available-metrics)
-  * [Attributes for segmentation](/docs/satellite?topic=satellite-monitor#attributes)
-* [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters)
 * [Viewing location, host, and cluster health](/docs/satellite?topic=satellite-monitor#view-health)
   * [Viewing location health](/docs/satellite?topic=satellite-monitor#location-health)
   * [Viewing host health](/docs/satellite?topic=satellite-monitor#host-health)
   * [Viewing cluster health](/docs/satellite?topic=satellite-monitor#cluster-health)
   * [Viewing Kubernetes resources in clusters](/docs/satellite?topic=satellite-monitor#kubernetes-resources-health)
   * [Viewing {{site.data.keyword.satelliteshort}} config registration status for clusters](/docs/satellite?topic=satellite-monitor#satconfig-registration-status)
+* [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-mon)
+  * [Available metrics](/docs/satellite?topic=satellite-monitor#available-metrics)
+  * [Attributes for segmentation](/docs/satellite?topic=satellite-monitor#attributes)
+* [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters)
 
 
 ## Setting up storage
@@ -648,6 +649,8 @@ subcollection: satellite
 
 [Securing your data](/docs/satellite?topic=satellite-data-security)
 * [What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
+  * [Stored information when you create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-data-security#sat-sensitive-data-default)
+  * [Stored information from resources that you create](/docs/satellite?topic=satellite-data-security#sat-sensitive-data-user-added)
 * [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
 * [Which {{site.data.keyword.cloud_notm}} region is my information stored in?](/docs/satellite?topic=satellite-data-security#sat_data-location)
 * [How can I remove my information?](/docs/satellite?topic=satellite-data-security#sat-data-removal)
