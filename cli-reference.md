@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-12"
+lastupdated: "2021-05-26"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -77,6 +77,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -517,7 +518,7 @@ Get the details of a {{site.data.keyword.satelliteshort}} configuration, such as
 {: shortdesc}
 
 ```
-ibmcloud sat config get --config CONFIG [-q]
+ibmcloud sat config get --config CONFIG [--output JSON] [-q]
 ```
 {: pre}
 
@@ -530,6 +531,8 @@ ibmcloud sat config get --config CONFIG [-q]
 <dl>
 <dt><code>--config <em>CONFIG</em></code></dt>
 <dd>Required. The name or ID of your configuration. To list available configurations, run <code>ibmcloud sat config ls</code>.</dd>
+<dt><code>--output <em>JSON</em></code></dt>
+<dd>Optional. Displays the command output in JSON format.</dd>
 <dt><code>--q </code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
 </dl>
@@ -549,7 +552,7 @@ List your {{site.data.keyword.satelliteshort}} configurations.
 {: shortdesc}
 
 ```
-ibmcloud sat config ls
+ibmcloud sat config ls [--output JSON]
 ```
 {: pre}
 
@@ -557,7 +560,12 @@ ibmcloud sat config ls
 
 **Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
 
-**Command options**: N/A
+**Command options:**
+
+<dl>
+<dt><code>--output <em>JSON</em></code></dt>
+<dd>Optional. Displays the command output in JSON format.</dd>
+</dl>
 
 **Example:**
 ```
@@ -667,7 +675,7 @@ ibmcloud sat config version create --name NAME --read-config FILEPATH --config C
 <dd>Required. A name for your version, such as `1.0` or `black friday`.</dd>
 
 <dt><code>--read-config <em>FILEPATH</em></code></dt>
-<dd>Required. The file path to the Kubernetes resource configuration file that you want to upload as a version. You can upload only one configuration file, but the configuration file can have multiple Kubernetes resource definitions, such as a deployment, service, and security context constraint. Supported file types are YAML.</dd>
+<dd>Required. The file path to the Kubernetes resource configuration file that you want to upload as a version. You can upload only one configuration file, but the configuration file can have multiple Kubernetes resource definitions, such as a deployment, service, and security context constraint. Supported file types are YAML. Files must not exceed 3MB in size.</dd>
 
 <dt><code>--config <em>CONFIG</em></code></dt>
 <dd>Required. The name of the configuration to add the version to. To list available configurations, run <code>ibmcloud sat config ls</code>.</dd>
@@ -697,7 +705,7 @@ Get the details of a particular version that you added to your {{site.data.keywo
 {: shortdesc}
 
 ```
-ibmcloud sat config version get --config CONFIG --version VERSION [--save-config] [-q]
+ibmcloud sat config version get --config CONFIG --version VERSION [--output JSON] [--save-config] [-q]
 ```
 {: pre}
 
@@ -713,6 +721,9 @@ ibmcloud sat config version get --config CONFIG --version VERSION [--save-config
 
 <dt><code>--version <em>VERSION</em></code></dt>
 <dd>Required. The name or ID of your version. To list versions in your configuration, run <code>ibmcloud sat config get --config &lt;configuration_name_or_ID&gt;</code>.</dd>
+
+<dt><code>--output <em>JSON</em></code></dt>
+<dd>Optional. Displays the command output in JSON format.</dd>
 
 <dt><code>--save-config</code></dt>
 <dd>Optional. Download and save the Kubernetes resource configuration file of the version to a temporary file.</dd>
@@ -1653,7 +1664,7 @@ Create a {{site.data.keyword.satelliteshort}} storage assignment to deploy stora
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage assignment create --config CONFIG --group GROUP [--group GROUP ...] --name NAME [-q]
+ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | --group GROUP [--group GROUP ...]) [--name NAME] [-q]
 ```
 {: pre}
 
@@ -1667,11 +1678,14 @@ ibmcloud sat storage assignment create --config CONFIG --group GROUP [--group GR
 <dt><code>--config <em>CONFIG</em></code></dt>
 <dd>Required. The name of the storage configuration that you want to assign to your cluster group. To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage config ls</code>.</dd>
 
+<dt><code>--cluster <em>CLUSTER_ID</em></code></dt>
+<dd>The ID of a {{site.data.keyword.satelliteshort}} cluster. To list {{site.data.keyword.satelliteshort}} clusters, run <code>ibmcloud oc cluster ls --provider satellite</code>. To assign the storage configuration to multiple clusters at once, create a cluster group or run this command with this flag multiple times. If you do not include this flag, you must specify the `--group` flag.</dd>
+
 <dt><code>--group <em>GROUP</em></code></dt>
-<dd>The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run <code>ibmcloud sat group ls</code>. To assign the storage configuration to multiple cluster groups at the same time, repeat this flag.</dd>
+<dd>The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run <code>ibmcloud sat group ls</code>. To assign the storage configuration to multiple cluster groups at the same time, repeat this flag. If you do not include this flag, you must specify the `--cluster` flag.</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. Enter a name for your storage assignment.</dd>
+<dd>Optional. Enter a name for your storage assignment.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
@@ -1826,14 +1840,14 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT --group GROUP --n
 
 <br />
 
-### `ibmcloud sat storage config create --name`
+### `ibmcloud sat storage config create`
 {: #cli-storage-config-create}
 
 Create a {{site.data.keyword.satelliteshort}} storage configuration that you can assign to your clusters to install storage drivers in your clusters.
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage config create --name NAME --template-name NAME --template-version VERSION [--param PARAM ...] [-q] [--source-branch BRANCH] [--source-org ORG]
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name NAME --template-version VERSION [--param PARAM ...] [-q] [--source-branch BRANCH] [--source-org ORG]
 ```
 {: pre}
 
@@ -1844,6 +1858,9 @@ ibmcloud sat storage config create --name NAME --template-name NAME --template-v
 **Command options:**
 
 <dl>
+<dt><code>--location <em>LOCATION</em></code></dt>
+<dd>Required. Enter the ID or name of the location where you want to create the storage configuration. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.</dd>
+
 <dt><code>--name <em>NAME</em></code></dt>
 <dd>Required. Enter a name for your storage configuration.</dd>
 
@@ -1914,7 +1931,7 @@ List your {{site.data.keyword.satelliteshort}} storage configurations.
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage config ls [-q]
+ibmcloud sat storage config ls [--location LOCATION] [-q]
 ```
 {: pre}
 
@@ -1925,6 +1942,8 @@ ibmcloud sat storage config ls [-q]
 **Command options:**
 
 <dl>
+<dt><code>--location <em>LOCATION</em></code></dt>
+<dd>Optional. Enter the ID or name of the location where you want to list storage configurations. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.</dd>
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
 </dl>
@@ -1980,7 +1999,7 @@ Add a custom storage class to a {{site.data.keyword.satelliteshort}} storage con
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage config sc add --config CONFIG --name NAME [--param PARAM ...] [-q]
+ibmcloud sat storage config sc add --config-name CONFIG --name NAME [--param PARAM ...] [-q]
 ```
 {: pre}
 
