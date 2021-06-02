@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-06-02"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1306,7 +1306,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 <dd>Required. The {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} control plane resources are managed from. Select the {{site.data.keyword.cloud_notm}} region that is nearest to where your physical machines are. For a list of supported regions, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
-<dd>Required. Enter a name for your location. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer.</dd>
+<dd>Required. Enter a name for your location. The {{site.data.keyword.satelliteshort}} location name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Do not reuse the same name for multiple locations, even if you deleted another location with the same name.</dd>
 
 <dt><code>--cos-bucket <em>COS_BUCKET_NAME</em></code></dt>
 <dd>Optional. Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data. Otherwise, a new bucket is automatically created in your {{site.data.keyword.cos_short}} instance.<p class="important">Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.</p></dd>
