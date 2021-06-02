@@ -108,6 +108,8 @@ Not sure if your infrastructure is ready to use for {{site.data.keyword.satellit
 Automate your setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-about-schematics) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in a cloud provider, and set up the {{site.data.keyword.satelliteshort}} location control plane for you.
 {: shortdesc}
 
+
+
 Setting up {{site.data.keyword.satelliteshort}} locations with {{site.data.keyword.bpshort}} templates is available only for the Amazon Web Services (AWS) cloud provider. For more configuration options, you can [manually set up an AWS location](/docs/satellite?topic=satellite-aws).
 {: note}
 
@@ -142,9 +144,11 @@ The following resources are created in your {{site.data.keyword.cloud_notm}} acc
 * 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
 * 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS hosts, attached to the location, unassigned, and available to use for services like an {{site.data.keyword.openshiftshort}} cluster. If you added more than 6 hosts, the number of hosts equals the number that you specified minus the 3 that are assigned to the control plane.
 
+
+
 **What's next?**
 
-The {{site.data.keyword.bpshort}} template helped with the initial creation, but you are in control for subsequent location management actions, such as [attaching more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts), [creating {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters), or [scaling the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale). If you [remove](#location-remove) your {{site.data.keyword.satelliteshort}} location, make sure to remove your workspace in {{site.data.keyword.bpshort}}, too.
+The {{site.data.keyword.bpshort}} template helped with the initial creation, but you are in control for subsequent location management actions, such as [attaching more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts), [creating {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters), or [scaling the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale). If you [remove](/docs/satellite?topic=satellite-locations#location-remove) your {{site.data.keyword.satelliteshort}} location, make sure to remove your workspace in {{site.data.keyword.bpshort}}, too.
 
 <br />
 
