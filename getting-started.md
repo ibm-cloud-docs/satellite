@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-11"
+lastupdated: "2021-06-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -77,6 +77,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -154,7 +155,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
    - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
    - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
    - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
-2. Confirm that you have at least three host machines in separate zones that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 CPUs and 16 GB of memory with RHEL 7 packages and any provider-specific requirement from the guide.
+2. Confirm that you have at least three host machines in separate zones that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 vCPUs and 16 GB of memory with RHEL 7 packages and any provider-specific requirement from the guide.
 
    A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).
    {: tip}
@@ -164,7 +165,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
 ### Attaching hosts from on-premises data centers and edge networks
 {: #gs-attach-hosts-onprem}
 
-1. In your on-premises environment, identify or create at least three host machines in physically separate racks, which are called _zones_ in {{site.data.keyword.satelliteshort}}, that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 CPUs and 16 GB of memory with RHEL 7 packages.
+1. In your on-premises environment, identify or create at least three host machines in physically separate racks, which are called _zones_ in {{site.data.keyword.satelliteshort}}, that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 vCPUs and 16 GB of memory with RHEL 7 packages.
 
    A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).
    {: tip}

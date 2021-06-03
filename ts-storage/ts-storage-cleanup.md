@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-06-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -115,7 +116,7 @@ Do not delete or patch the resource finalizers in the `kube-system` namespace.
     {: pre}
 
     **Example output for a NetApp Trident namespace**
-    ```yaml
+    ```sh
     status:
       conditions:
       - lastTransitionTime: "2021-05-18T17:40:31Z"
@@ -145,6 +146,7 @@ Do not delete or patch the resource finalizers in the `kube-system` namespace.
         status: "True"
         type: NamespaceFinalizersRemaining
       phase: Terminating
+    ```
     {: screen}
 
 2. Run the `oc get` command to get the resources that are pending removal. In the example output, the `tridentbackends.trident.netapp.io has 1 resource instances`. Repeat this step for each resource that has remaining instances listed in the `message` section of the namespace YAML that you retrieved earlier.

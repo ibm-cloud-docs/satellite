@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-15"
+lastupdated: "2021-06-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -77,6 +77,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -102,7 +103,9 @@ Review the following host requirements that are specific to hosts that are in th
 Want to try an automated setup? See [Automating your location setup with a Schematics template](/docs/satellite?topic=satellite-locations#satloc-template).
 {: tip}
 
-## Adding AWS hosts to {{site.data.keyword.satelliteshort}}
+
+
+## Manually adding AWS hosts to {{site.data.keyword.satelliteshort}}
 {: #aws-host-attach}
 
 You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Amazon Web Services (AWS) cloud.
