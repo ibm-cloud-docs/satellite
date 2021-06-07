@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-25"
+lastupdated: "2021-06-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -77,6 +77,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -176,6 +177,26 @@ Additionally, you can configure auditing to monitor user-initiated events for Li
 Note that your on-location workloads continue to run independently even if the location's connectivity to {{site.data.keyword.cloud_notm}} is unavailable. However, if any applications use a Link endpoint to communicate with {{site.data.keyword.cloud_notm}}, communication between those apps and {{site.data.keyword.cloud_notm}} is disrupted.
 
 For more information about making your {{site.data.keyword.satelliteshort}} location highly available, see [High availability and disaster recovery for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
+
+<br />
+
+## Digital certificates for Satellite hosts and domains
+{: #certs-hosts-domains}
+
+Let's Encrypt certificates are automatically generated for several {{site.data.keyword.satellitelong_notm}} domains and hosts. Regular renewal of these certificates helps keep your {{site.data.keyword.satelliteshort}} components secure. To see the expiry dates for each certificate and understand whether you or IBM is responsible for regenerating the certificate, review the following table.
+{: shortdesc}
+
+| Component | Example domain | Certificate expiry | Who regenerates | How to regenerate |
+|---|---|---|---|---|
+| Default {{site.data.keyword.openshiftlong_notm}} API endpoint (`openshift-api-<cluster_ID>`) for each {{site.data.keyword.satelliteshort}}-enabled service cluster | `c-04.private.us-east.link.satellite.cloud.ibm.com` | 19800 hours (~2.26 years) | You | Regenerated during a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) or [cluster master update](/docs/containers?topic=containers-update#master). |
+| Default endpoints for {{site.data.keyword.cloud_notm}} services (IAM, {{site.data.keyword.cos_short}}, {{site.data.keyword.mon_short}}, {{site.data.keyword.la_short}}) | `m65f0b26d6c5f695647f5-6b64a6ccc9c596bf59a86625d8fa2202-c000.us-east.satellite.appdomain.cloud` | 90 days | IBM | The Link tunnel server regenerates the certificate, and the Link Connector automatically reboots to reflect the rotated certificate. |
+| `c000`, `c001`, `c002`, and `c003` subdomains for each location zone | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-c000.us-south.satellite.appdomain.cloud` | 19800 hours (~2.26 years) | You | Regenerated during a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) or [cluster master update](/docs/containers?topic=containers-update#master). |
+| `ce00` Ingress subdomains | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-ce00.us-south.satellite.appdomain.cloud` | 90 days | IBM | [Automatically regenerated 37 days before expiration](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_ibm). |
+| Worker node connection to the API server | 10.240.128.09 | 3 years | You | [Update hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-hosts#host-update-workers). |
+| {{site.data.keyword.satelliteshort}} control plane master API endpoint | `http://c103-1.containers.cloud.ibm.com/` | 19800 hours (~2.26 years) | IBM | Regenerated during automated rollouts for major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane master hosts. |
+| {{site.data.keyword.satelliteshort}} control plane master hosts | - | 19800 hours (~2.26 years) | IBM | [Update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location). |
+{: caption="Certificates for {{site.data.keyword.satelliteshort}} domains and hosts" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the name of the {{site.data.keyword.satelliteshort}} component. The second column shows an example of the domain for which the certificate is issued. The third column is the amount of time that the certificate is valid for. The fourth column indicates whether you or IBM is responsible for certificate regeneration. The fifth column describes the process during which the certificate is regenerated."}
 
 <br />
 
