@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -944,6 +944,11 @@ subcollection: satellite
 [Why can't I update or complete other actions with my cluster?](/docs/satellite?topic=satellite-ts-cluster-operations-blocked)
 
 [Why doesn't my cluster add-on work?](/docs/satellite?topic=satellite-addon-errors)
+
+
+## Why is the namespace where my storage operator was deployed stuck in **Terminating** status?
+{: #sitemap_why_is_the_namespace_where_my_storage_operator_was_deployed_stuck_in_**terminating**_status?}
+
 
 [Why is the namespace where my storage operator was deployed stuck in **Terminating** status?](/docs/satellite?topic=satellite-storage-namespace-terminating)
 
