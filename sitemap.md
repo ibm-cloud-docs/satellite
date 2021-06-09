@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-08"
+lastupdated: "2021-06-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -144,11 +144,11 @@ subcollection: satellite
   * [Step 3: Run model inferencing at the edge](/docs/satellite?topic=satellite-edge-usecase#edge-example-inferencing)
 
 
-## Installing the {{site.data.keyword.satelliteshort}} CLI
-{: #sitemap_installing_the__cli}
+## Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands
+{: #sitemap_installing_the_cli_plug-in_for__commands}
 
 
-[Installing the {{site.data.keyword.satelliteshort}} CLI](/docs/satellite?topic=satellite-setup-cli)
+[Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-setup-cli)
 
 * [Updating the CLI](/docs/satellite?topic=satellite-setup-cli#update-sat-cli)
 
@@ -668,11 +668,11 @@ subcollection: satellite
 [API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster){: external}
 
 
-## {{site.data.keyword.satelliteshort}} CLI command reference
-{: #sitemap__cli_command_reference}
+## CLI reference for {{site.data.keyword.satelliteshort}} commands
+{: #sitemap_cli_reference_for__commands}
 
 
-[{{site.data.keyword.satelliteshort}} CLI command reference](/docs/satellite?topic=satellite-satellite-cli-reference)
+[CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference)
 
 * [`ibmcloud sat` commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-map)
 
@@ -758,11 +758,11 @@ subcollection: satellite
     * [{{site.data.keyword.openshiftlong_notm}} commands (`ibmcloud oc`)](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-create)
 
 
-## {{site.data.keyword.satelliteshort}} CLI changelog
-{: #sitemap__cli_changelog}
+## CLI changelog for {{site.data.keyword.satelliteshort}} commands
+{: #sitemap_cli_changelog_for__commands}
 
 
-[{{site.data.keyword.satelliteshort}} CLI changelog](/docs/satellite?topic=satellite-satellite-cli-changelog)
+[CLI changelog for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-satellite-cli-changelog#10)
 
@@ -958,6 +958,8 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-release-notes)
+
+* [June 2021](/docs/satellite?topic=satellite-release-notes#june21)
 
 * [May 2021](/docs/satellite?topic=satellite-release-notes#may21)
 

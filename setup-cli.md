@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-04"
+lastupdated: "2021-06-09"
 
 keywords: satellite cli, install satellite cli, satellite cli commands
 
@@ -77,6 +77,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -92,10 +93,10 @@ subcollection: satellite
 {:video: .video}
 
 
-# Installing the {{site.data.keyword.satelliteshort}} CLI
+# Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands
 {: #setup-cli}
 
-Set up the {{site.data.keyword.cloud_notm}} command-line interface (CLI), the {{site.data.keyword.satelliteshort}} plug-in, and other related CLIs.
+Set up the {{site.data.keyword.cloud_notm}} command-line interface (CLI), the plug-in for {{site.data.keyword.satelliteshort}} commands, and other related CLIs.
 {: shortdesc}
 
 1.  Install the stand-alone [{{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-install-ibmcloud-cli) (`ibmcloud`). 
@@ -161,7 +162,7 @@ Update the CLIs regularly to use new features.
     If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
     {: tip}
 
-3.  Update the {{site.data.keyword.satelliteshort}} CLI plug-in. The {{site.data.keyword.satelliteshort}} plug-in is part of the {{site.data.keyword.containerlong_notm}} CLI plug-in.
+3.  Update the CLI plug-in for {{site.data.keyword.satelliteshort}} commands. {{site.data.keyword.satelliteshort}} commands are part of the {{site.data.keyword.containerlong_notm}} CLI plug-in.
     1.  Install the update from the {{site.data.keyword.cloud_notm}} plug-in repository.
         ```
         ibmcloud plugin update kubernetes-service
@@ -174,7 +175,7 @@ Update the CLIs regularly to use new features.
         ```
         {: pre}
 
-        Because the {{site.data.keyword.satelliteshort}} CLI is included in the {{site.data.keyword.containerlong_notm}} CLI plug-in, look for the `container-service/kubernetes-service ` plug-in in your CLI output.
+        Because {{site.data.keyword.satelliteshort}} commands are included in the {{site.data.keyword.containerlong_notm}} CLI plug-in, look for the `container-service/kubernetes-service ` plug-in in your CLI output.
         {: tip}
 
 ## Uninstalling the CLI
