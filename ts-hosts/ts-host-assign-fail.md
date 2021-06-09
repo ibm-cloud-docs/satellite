@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-06-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -133,7 +134,7 @@ If you want, you can debug the connectivity issues for your host. Otherwise, rem
         curl -k <master_URL>
         ```
         {: pre}
-    6.  If you think you might have a webhook in the cluster that block access to the API server, see [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-cs_troubleshoot#webhooks_update). Webhooks are often components for additional capabilities in your cluster, such as Cloud Paks, Istio, or container image security enforcement.
+    6.  If you think you might have a webhook in the cluster that block access to the API server, see [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-webhooks_update). Webhooks are often components for additional capabilities in your cluster, such as Cloud Paks, Istio, or container image security enforcement.
 3.  After you resolve any connectivity issues, [check the health of your host](/docs/satellite?topic=satellite-ts-hosts-debug) for further information.
 4.  Reassign your hosts if you continue to have issues.
     1.  [Remove the host](/docs/satellite?topic=satellite-hosts#host-remove) from your {{site.data.keyword.satelliteshort}} location.
@@ -176,6 +177,19 @@ Review the following table to help troubleshoot network connectivity issues to {
 {: shortdesc}
 
 
+
+| Endpoint | Command to check endpoint |
+| --- | ------------------------- |
+| Public regional endpoint| `nslookup origin.eu-de.containers.cloud.ibm.com` |
+| Public regional bootstrap endpoint | `curl -v https://origin.eu-de.containers.cloud.ibm.com/bootstrap/firstboot` |
+| Private regional bootstrap endpoint| `curl -v https://private.eu-de.containers.cloud.ibm.com/bootstrap/firstboot` |
+|{{site.data.keyword.registrylong_notm}} region | `curl -v https://de.icr.io` |
+{: summary="The rows are read from left to right. The first row contains an endpoint to check. The second row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
+{: class="simple-tab-table"}
+{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Frankfurt." caption-side="top"}
+{: #check-ep-frankfurt}
+{: tab-title="Frankfurt"}
+{: tab-group="check-ep"}
 
 | Endpoint | Command to check endpoint |
 | --- | ------------------------- |

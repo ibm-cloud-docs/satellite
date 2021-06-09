@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-09"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -94,7 +94,7 @@ subcollection: satellite
 
 
 
-# {{site.data.keyword.satelliteshort}} CLI command reference
+# CLI reference for {{site.data.keyword.satelliteshort}} commands
 {: #satellite-cli-reference}
 
 Refer to these commands when you want to automate the creation and management of your {{site.data.keyword.satelliteshort}} location.

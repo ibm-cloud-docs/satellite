@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -281,6 +281,22 @@ If you do not open all outbound connectivity, you must allow the following outbo
 {: caption="Required outbound connectivity for hosts on the primary network interface" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
+|Description|Source IP|Destination IP|Protocol and ports|
+|-----------|---------|--------------|------------------|
+| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 149.81.188.122</br>158.177.88.18</br>161.156.38.122 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
+| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.eu.cloud-object-storage.appdomain.cloud` | HTTPS |
+| Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **EU Central** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
+| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for EU Central (`fra`) in steps 3 - 5 of the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | See documentation |
+| Allow Cloudflare proxied load balancers for {{site.data.keyword.satelliteshort}} Config | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 443 |
+| Allow Cloudflare proxied load balancers for the {{site.data.keyword.satelliteshort}} Link API | Control plane hosts | [Cloudflare's IPv4 IPs](https://www.cloudflare.com/ips/){: external} | TCP 443 |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org | - |
+{: #firewall-outbound-fra}
+{: tab-title="Frankfurt (fra)"}
+{: class="comparison-tab-table"}
+{: tab-group="firewall-outbound"}
+{: caption="Required outbound connectivity for hosts on the primary network interface" caption-side="top"}
+{: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
+
 ## Host latency
 {: #host-latency-test}
 
@@ -310,6 +326,10 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     *   **Washington, DC**:
 
         169.63.123.154</br>169.60.123.162</br>52.117.93.26
+        
+    *   **Frankfurt**:
+
+        149.81.188.122</br>158.177.88.18</br>161.156.38.122
         
     *   **London**:
 

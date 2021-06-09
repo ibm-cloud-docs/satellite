@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-09"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -191,7 +191,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 ### Attaching hosts from the CLI
 {: #attach-hosts-cli}
 
-Use the {{site.data.keyword.satelliteshort}} CLI to attach hosts to your location.
+Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to attach hosts to your location.
 {: shortdesc}
 
 Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
@@ -700,7 +700,7 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as com
 ### Removing hosts from the CLI
 {: #host-remove-cli}
 
-Use the {{site.data.keyword.satelliteshort}} CLI to remove your hosts as compute capacity from the {{site.data.keyword.satelliteshort}} location.
+Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove your hosts as compute capacity from the {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 1. Make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep.

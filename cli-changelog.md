@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-26"
+lastupdated: "2021-06-09"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference
 
@@ -93,14 +93,14 @@ subcollection: satellite
 {:video: .video}
 
 
-# {{site.data.keyword.satelliteshort}} CLI changelog
+# CLI changelog for {{site.data.keyword.satelliteshort}} commands
 {: #satellite-cli-changelog}
 
 In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and flags.
 {: shortdesc}
 
 <br>
-Refer to the following tables for a summary of changes for each version of the [{{site.data.keyword.satelliteshort}} CLI](/docs/satellite?topic=satellite-setup-cli), which uses the `ibmcloud sat` alias.
+Refer to the following tables for a summary of changes for each version of the [plug-in for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-setup-cli), which uses the `ibmcloud sat` alias.
 
 To see the CLI plug-in changes that pertain specifically to {{site.data.keyword.openshiftshort}} (`ibmcloud oc`) commands, see the [{{site.data.keyword.openshiftshort}} CLI changelog](/docs/openshift?topic=openshift-cs_cli_changelog).
 {: tip}
@@ -120,5 +120,5 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 | 1.0.223 | 08 Feb 2021 | <ul><li>Adds the `ibmcloud sat storage` command group to view and manage the storage resources that run in {{site.data.keyword.openshiftshort}} clusters that are registered with {{site.data.keyword.satelliteshort}} config.</li><li>Adds the optional `--ha-zone` flag to the `ibmcloud sat location create` command to specify three arbitrary zone names in your {{site.data.keyword.satelliteshort}} location.</li><li>Adds the optional `--reset-key` flag to the `ibmcloud sat host attach` command to reset the key that the control plane uses to communicate with all of the hosts in the location.</li><li>Moves `ibmcloud sat config configuration` commands to the `ibmcloud sat config` command group.</li><li>Moves `ibmcloud sat config subscription` commands to the `ibmcloud sat subscription` command group.</li><li>Renames `cluster-group` commands and `--cluster-group` flags to `group`.</li><li>Renames `configuration` commands and `--configuration` flags to `config`.</li><li>Renames `--type` flags to `--file-format`.</li><li>Renames the `--label` (short form `-l`) flag in the `ibmcloud sat host assign`, `attach`, and `update` commands to `--host-label` (short form `-hl`).</li><li>The following changes are made to `ibmcloud oc` commands for managing {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}:<ul><li>Adds the [`ibmcloud ks worker-pool create satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create_sat) to add worker pools to {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}.</li><li>Adds the [`ibmcloud ks zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat) to add zones to {{site.data.keyword.openshiftshort}} clusters and worker pools in {{site.data.keyword.satelliteshort}}.</li><li>Adds the optional `--host-label`, `--pod-subnet`, `--pull-secret`, `--service-subnet`, `--workers`, and `--zone` flags to the [`ibmcloud ks cluster create satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).</li><li>Adds the `satellite` value to the `--provider` flag in the [`ibmcloud ks zone ls` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_datacenters) to list zones in your {{site.data.keyword.satelliteshort}} location.</li></ul></li></ul> |
 | 1.0.197 | 18 Nov 2020 | Adds the `--endpoint` flag to the [`ibmcloud oc cluster config` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config) to use the Link endpoint URL for the cluster context. |
 | 1.0.178 | 06 Oct 2020 | <ul><li>Adds `http-tunnel` as a supported source or destination protocol in the `ibmcloud sat endpoint create` and `ibmcloud sat endpoint update` commands.</li><li>Updates the Go version to 1.15.2.</li><li>Updates the help text in various languages.</li></ul> |
-{: caption="Overview of version changes for version 1.0 of the {{site.data.keyword.satelliteshort}} CLI plug-in" caption-side="top"}
+{: caption="Overview of version changes for version 1.0 of the CLI plug-in for {{site.data.keyword.satelliteshort}} commands" caption-side="top"}
 {: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."}

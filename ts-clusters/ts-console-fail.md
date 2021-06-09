@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-03"
+lastupdated: "2021-06-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -120,5 +121,5 @@ If you use host autoassignment, [attach hosts](/docs/satellite?topic=satellite-h
 
 Connect to your hosts' private network to access to your cluster and open the {{site.data.keyword.openshiftshort}} web console. For example, you might connect to your on-premises local network, or use a VPN to connect to your cloud provider's private network. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's service URL and your location's DNS record to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access). Note that making your location and cluster subdomains available outside of your hosts' private network to your authorized cluster users is not recommended for production-level workloads.
 
-If you are still unable to access the {{site.data.keyword.openshiftshort}} web console after completing these steps, see [Debugging the OpenShift web console](/docs/openshift?topic=openshift-cs_troubleshoot#oc_console_fails) in the {{site.data.keyword.openshiftlong_notm}} troubleshooting documentation.
+If you are still unable to access the {{site.data.keyword.openshiftshort}} web console after completing these steps, see [Debugging the OpenShift web console](/docs/openshift?topic=openshift-ocp-debug) in the {{site.data.keyword.openshiftlong_notm}} troubleshooting documentation.
 {: note}
