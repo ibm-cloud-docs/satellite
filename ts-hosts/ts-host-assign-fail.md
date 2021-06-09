@@ -134,7 +134,7 @@ If you want, you can debug the connectivity issues for your host. Otherwise, rem
         curl -k <master_URL>
         ```
         {: pre}
-    6.  If you think you might have a webhook in the cluster that block access to the API server, see [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-cs_troubleshoot#webhooks_update). Webhooks are often components for additional capabilities in your cluster, such as Cloud Paks, Istio, or container image security enforcement.
+    6.  If you think you might have a webhook in the cluster that block access to the API server, see [Cluster cannot update because of broken webhook](/docs/openshift?topic=openshift-webhooks_update). Webhooks are often components for additional capabilities in your cluster, such as Cloud Paks, Istio, or container image security enforcement.
 3.  After you resolve any connectivity issues, [check the health of your host](/docs/satellite?topic=satellite-ts-hosts-debug) for further information.
 4.  Reassign your hosts if you continue to have issues.
     1.  [Remove the host](/docs/satellite?topic=satellite-hosts#host-remove) from your {{site.data.keyword.satelliteshort}} location.

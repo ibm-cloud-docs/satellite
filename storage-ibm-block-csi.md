@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-05-19"
+lastupdated: "2021-06-09"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -77,6 +77,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -97,7 +98,7 @@ subcollection: satellite
 
 The {{site.data.keyword.blockstorageshort}} CSI driver is based on an IBM open-source project, and integrated into the IBM Storage orchestration for containers. IBM Storage orchestration for containers enables enterprises to implement a modern container-driven hybrid multicloud environment that can reduce IT costs and enhance business agility, while continuing to derive value from existing systems.
 
-For full release notes, compatiblity, installation, and user information, see the [{{site.data.keyword.blockstorageshort}} CSI driver documentation](https://www.ibm.com/docs/en/blockstg-csi-driver/1.4.0){: external}.
+For full release notes, compatiblity, installation, and user information, see the [{{site.data.keyword.blockstorageshort}} CSI driver documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0){: external}.
 
 Supported IBM storage systems:
   - IBM Spectrum Virtualize Family including IBM SAN Volume Controller (SVC) and IBM FlashSystem® family members built with IBM Spectrum® Virtualize (FlashSystem 5010, 5030, 5100, 5200, 7200, 9100, 9200, 9200R)
@@ -110,7 +111,7 @@ Supported IBM storage systems:
 Be sure to complete all prerequisite and installation steps before assigning hosts to your location. Do not create a Kubernetes cluster.
 {: important}
 
-Review the [compatibility and requirements documentation](https://www.ibm.com/docs/en/blockstg-csi-driver/1.4.0?topic=installation-compatibility-requirements){: external}.
+Review the [compatibility and requirements documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=installation-compatibility-requirements){: external}.
 
 
 The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
@@ -217,7 +218,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you can use in your cluster workloads.
 {: shortdesc}
 
-1. Create a Kubernetes secret configuration file that contains your {{site.data.keyword.blockstorageshort}} credentials. For more information, see [Creating a Kubernetes secret](https://www.ibm.com/docs/en/blockstg-csi-driver/1.4.0?topic=configuration-creating-secret){: external}.
+1. Create a Kubernetes secret configuration file that contains your {{site.data.keyword.blockstorageshort}} credentials. For more information, see [Creating a Kubernetes secret](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-secret){: external}.
   ```yaml
   kind: Secret
   apiVersion: v1
@@ -239,7 +240,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
   ```
   {: pre}
 
-1. [Create a storage class that uses the block storage driver](https://www.ibm.com/docs/en/blockstg-csi-driver/1.4.0?topic=configuration-creating-storageclass){: external}.
+1. [Create a storage class that uses the block storage driver](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-storageclass){: external}.
   ```yaml
   kind: StorageClass
   apiVersion: storage.k8s.io/v1
@@ -273,7 +274,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
   ```
   {: pre}
 
-1. [Create a PVC](https://www.ibm.com/docs/en/blockstg-csi-driver/1.4.0?topic=configuration-creating-persistentvolumeclaim-pvc){: external} that references the storage class that you created earlier.
+1. [Create a PVC](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-persistentvolumeclaim-pvc){: external} that references the storage class that you created earlier.
    ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
