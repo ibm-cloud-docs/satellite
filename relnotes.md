@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -105,7 +105,8 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 09 June 2021 | **New! Frankfurt location**: You can now manage {{site.data.keyword.satelliteshort}} locations from the **Frankfurt** (`fra`, `eu-de`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). |
+| 18 June 2021 | Updates the [required outbound connectivity for hosts](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound) to include IP addresses for Link tunnel server endpoints. |
+| 09 June 2021 | <ul><li>**New! Frankfurt location**: You can now manage {{site.data.keyword.satelliteshort}} locations from the **Frankfurt** (`fra`, `eu-de`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions).</li><li>**Digital certificates**: Added information about [certificates for various {{site.data.keyword.satellitelong_notm}} domains and hosts](/docs/satellite?topic=satellite-compliance#certs-hosts-domains).</li></ul> |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in June 2021."}
 

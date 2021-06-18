@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -635,7 +635,7 @@ subcollection: satellite
   * [What access do IBM SREs have to my data and workloads that run in my {{site.data.keyword.satelliteshort}}-enabled service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-workloads)
   * [How can I monitor and manage IBM access into my location? How can I know that there are no backdoor access points on the hosts?](/docs/satellite?topic=satellite-compliance#operational-access-monitor)
   * [What happens if {{site.data.keyword.satelliteshort}} Link becomes unavailable? Can IBM still maintain my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-compliance#operational-access-availability)
-* [Digital certificates for Satellite hosts and domains](/docs/satellite?topic=satellite-compliance#certs-hosts-domains)
+* [Digital certificates for {{site.data.keyword.satelliteshort}} hosts and domains](/docs/satellite?topic=satellite-compliance#certs-hosts-domains)
 * [Platform compliance and certification](/docs/satellite?topic=satellite-compliance#platform-compliance)
   * [What compliance standards does the service meet?](/docs/satellite?topic=satellite-compliance#compliance-standards)
   * [Which areas of security compliance am I responsible for?](/docs/satellite?topic=satellite-compliance#compliance-responsibilities)

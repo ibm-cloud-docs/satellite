@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-07"
+lastupdated: "2021-06-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -180,7 +180,7 @@ For more information about making your {{site.data.keyword.satelliteshort}} loca
 
 <br />
 
-## Digital certificates for Satellite hosts and domains
+## Digital certificates for {{site.data.keyword.satelliteshort}} hosts and domains
 {: #certs-hosts-domains}
 
 Let's Encrypt certificates are automatically generated for several {{site.data.keyword.satellitelong_notm}} domains and hosts. Regular renewal of these certificates helps keep your {{site.data.keyword.satelliteshort}} components secure. To see the expiry dates for each certificate and understand whether you or IBM is responsible for regenerating the certificate, review the following table.
