@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-23"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -957,7 +957,7 @@ Update an endpoint. Only the options that you specify are updated.
 {: shortdesc}
 
 ```
-ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--name NAME] [--dest-type CLOUD|LOCATION] [--dest-hostname HOSTNAME_OR_IP] [--dest-port PORT] [--dest-protocol PROTOCOL] [--source-protocol PROTOCOL] [-q]
+ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--name NAME] [--dest-hostname HOSTNAME_OR_IP] [--dest-port PORT] [--dest-protocol PROTOCOL] [--source-protocol PROTOCOL] [-q]
 ```
 {: pre}
 
@@ -977,9 +977,6 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 <dt><code>--name <em>NAME</em></code></dt>
 <dd>Optional. A new name for your {{site.data.keyword.satelliteshort}} endpoint.</dd>
 
-<dt><code>--dest-type <em>CLOUD|LOCATION</em></code></dt>
-<dd>Optional. Where the destination resource runs.</dd>
-
 <dt><code>--dest-hostname <em>HOSTNAME_OR_IP</em></code></dt>
 <dd>Optional. The URL or the externally accessible IP address of the destination resource that you want to connect to. Make sure to enter the URL without <code>http://</code> or <code>https://</code>.</dd>
 
@@ -987,7 +984,7 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 <dd>Optional. The port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol.</dd>
 
 <dt><code>--dest-protocol <em>PROTOCOL</em></code></dt>
-<dd>Optional. The protocol of the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).</dd>
+<dd>Optional. The protocol of the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, and <code>tls</code>. If you do not specify this flag, the destination protocol is inherited from the source protocol. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).</dd>
 
 <dt><code>--source-protocol <em>PROTOCOL</em></code></dt>
 <dd>Optional. The protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).</dd>

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-24"
+lastupdated: "2021-06-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -77,6 +77,7 @@ subcollection: satellite
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -147,7 +148,7 @@ The following table describes the Link endpoints that are automatically created 
 {: caption="Default Link endpoints." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the name of the default endpoint. The second column describes what the endpoint is for. The third column describes how many instances of the endpoint are created and for which component the endpoint is created."}
 
-Disabling these automated endpoints prevents your location from being fully managed and updated. Because these endpoints connect your location to {{site.data.keyword.cloud_notm}}, they cannot be removed.
+Disabling these automated endpoints prevents your location from being fully managed and updated. Because these endpoints connect your location to {{site.data.keyword.cloud_notm}}, they cannot be removed or updated.
 {: important}
 
 For more information about {{site.data.keyword.satelliteshort}} Link endpoints and what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud).

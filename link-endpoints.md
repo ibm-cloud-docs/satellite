@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -208,7 +208,7 @@ The client source makes an HTTP connection request to the {{site.data.keyword.sa
 
 The {{site.data.keyword.satelliteshort}} Link component is not involved in TLS termination for encrypted traffic, so the destination resource must terminate the TLS connection. For example, if your destination resource requires mutual authentication, the HTTP tunnel protocol allows your client source to pass the required authentication certificate directly to the destination.
 
-**Server-side certificate authentication for TLS, HTTPS, and HTTP tunnel**
+**Server-side certificate authentication for TLS and HTTPS**
 
 If you select the TLS or HTTPS protocols, you can optionally require server-side verification of the destination's certificate. The certificate must be valid for the destination's host name and signed by a trusted Certificate Authority.
 
@@ -248,7 +248,7 @@ The following table describes the Link endpoints that are automatically created 
 {: caption="Default Link endpoints." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the name of the default endpoint. The second column describes what the endpoint is for. The third column describes how many instances of the endpoint are created and for which component the endpoint is created."}
 
-Disabling these automated endpoints prevents your location from being fully managed and updated. Because these endpoints connect your location to {{site.data.keyword.cloud_notm}}, they cannot be removed.
+Disabling these automated endpoints prevents your location from being fully managed and updated. Because these endpoints connect your location to {{site.data.keyword.cloud_notm}}, they cannot be removed or updated.
 {: important}
 
 ### Use cases
@@ -304,7 +304,7 @@ Use the console to create a cloud endpoint so that sources in your {{site.data.k
 6. Select the protocol that a source must use to connect to the destination FQDN or IP address. This protocol must match the port for your destination resource. For more information, see [Endpoint protocols](#link-protocols).
   * If you selected the **TLS** or **HTTPS** protocols and want to require server-side authentication of the destination's certificate, select the **Verify destination certificate** checkbox.
   * If you selected the **TLS** or **HTTPS** protocols but the destination resource is still in development, you can click **Upload certificate** to add your self-signed certificate file. This `ssl.crt` file must contain the public, base-64 encoded certificate for your resource's host name and must not contain the private `ssl.key` certificate key. To create a self-signed certificate for testing purposes by using OpenSSL, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external}.
-7. Configure optional connection settings, such as setting an inactivity timeout. The inactivity timeout is applied to both the connection between the source and {{site.data.keyword.satelliteshort}} Link and to the connection between {{site.data.keyword.satelliteshort}} Link and the destination. By default, no default inactivity timeout is set.
+7. Configure optional connection settings, such as setting an inactivity timeout. The inactivity timeout is applied to both the connection between the source and {{site.data.keyword.satelliteshort}} Link and to the connection between {{site.data.keyword.satelliteshort}} Link and the destination. The default value is `0`, which sets no inactivity timeout.
 8. Click **Create**. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a port to your endpoint.
 9. In the table row for your endpoint, copy the host name for your {{site.data.keyword.satelliteshort}} Link connector and the port for your endpoint in the **Address** field.
 10. Use the address to [connect to your destination from a source in your location](#link-cloud-test).
@@ -330,7 +330,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
 
 2. Create a `cloud` endpoint.
    ```
-   ibmcloud sat endpoint create --location <location_ID> --endpoint <endpoint_name> --dest-type cloud --dest-hostname <FQDN_or_IP> --dest-port <port> [--dest-protocol <destination_protocol>] --source-protocol <source_protocol>
+   ibmcloud sat endpoint create --location <location_ID> --name <endpoint_name> --dest-type cloud --dest-hostname <FQDN_or_IP> --dest-port <port> [--dest-protocol <destination_protocol>] --source-protocol <source_protocol>
    ```
    {: pre}
 
@@ -355,7 +355,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
       </tr>
       <tr>
       <td><code>--dest-hostname &lt;FQDN_or_IP&gt;</code></td>
-      <td>Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, such as a public IP address, a public service endpoint, or a private service endpoint. Note that you cannot specify a private IP address.</td>
+      <td>Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, which must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}} such as a private cloud service endpoint.</td>
       </tr>
       <tr>
       <td><code>--dest-port &lt;port&gt;</code></td>
@@ -363,7 +363,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
       </tr>
       <tr>
       <td><code>--dest-protocol &lt;destination-protocol&gt;</code></td>
-      <td>Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
+      <td>Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code>, <code>udp</code>, and <code>tls</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
       </tr>
       <tr>
       <td><code>--source-protocol &lt;source-protocol&gt;</code></td>
@@ -531,7 +531,7 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
 
 2. Create a `location` endpoint.
    ```
-   ibmcloud sat endpoint create --location <location_ID> --endpoint <endpoint_name> --dest-type location --dest-hostname <FQDN_or_IP> --dest-port <port> [--dest-protocol <destination_protocol>] --source-protocol <source_protocol>
+   ibmcloud sat endpoint create --location <location_ID> --name <endpoint_name> --dest-type location --dest-hostname <FQDN_or_IP> --dest-port <port> [--dest-protocol <destination_protocol>] --source-protocol <source_protocol>
    ```
    {: pre}
 
@@ -556,7 +556,7 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
       </tr>
       <tr>
       <td><code>--dest-hostname &lt;FQDN_or_IP&gt;</code></td>
-      <td>Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, such as a public IP address, a public service endpoint, or a private service endpoint. Note that you cannot specify a private IP address.</td>
+      <td>Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to.</td>
       </tr>
       <tr>
       <td><code>--dest-port &lt;port&gt;</code></td>
@@ -564,7 +564,7 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
       </tr>
       <tr>
       <td><code>--dest-protocol &lt;destination-protocol&gt;</code></td>
-      <td>Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
+      <td>Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code>, <code>udp</code>, and <code>tls</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
       </tr>
       <tr>
       <td><code>--source-protocol &lt;source-protocol&gt;</code></td>
