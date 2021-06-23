@@ -1651,7 +1651,7 @@ ibmcloud sat service ls --location mylocation
 Use these commands to view the storage resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config).
 {: shortdesc}
 
-The `ibmcloud sat storage` commands are available in beta.
+The `ibmcloud sat storage assignment` group of commands are available in beta.
 {: beta}
 
 ### `ibmcloud sat storage assignment create`
@@ -1661,7 +1661,7 @@ Create a {{site.data.keyword.satelliteshort}} storage assignment to deploy stora
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | --group GROUP [--group GROUP ...]) [--name NAME] [-q]
+ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | --group GROUP [--group GROUP ...] | --service-cluster-id CLUSTER_ID) [--name NAME] [-q]
 ```
 {: pre}
 
@@ -1676,10 +1676,13 @@ ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | -
 <dd>Required. The name of the storage configuration that you want to assign to your cluster group. To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage config ls</code>.</dd>
 
 <dt><code>--cluster <em>CLUSTER_ID</em></code></dt>
-<dd>The ID of a {{site.data.keyword.satelliteshort}} cluster. To list {{site.data.keyword.satelliteshort}} clusters, run <code>ibmcloud oc cluster ls --provider satellite</code>. To assign the storage configuration to multiple clusters at once, create a cluster group or run this command with this flag multiple times. If you do not include this flag, you must specify the `--group` flag.</dd>
+<dd>The ID of a {{site.data.keyword.satelliteshort}} cluster. To list {{site.data.keyword.satelliteshort}} clusters, run <code>ibmcloud oc cluster ls --provider satellite</code>. To assign the storage configuration to multiple clusters at once, create a cluster group or run this command with this flag multiple times. If you do not include this flag, you must specify the `--group` or the `--service-cluster-id` flag.</dd>
 
 <dt><code>--group <em>GROUP</em></code></dt>
-<dd>The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run <code>ibmcloud sat group ls</code>. To assign the storage configuration to multiple cluster groups at the same time, repeat this flag. If you do not include this flag, you must specify the `--cluster` flag.</dd>
+<dd>The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run <code>ibmcloud sat group ls</code>. To assign the storage configuration to multiple cluster groups at the same time, repeat this flag. If you do not include this flag, you must specify the `--cluster` or the `--service-cluster-id` flag.</dd>
+
+<dt><code>--service-cluster-id <em>CLUSTER_ID</em></code></dt>
+<dd>The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster` or the `--group` flag.</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
 <dd>Optional. Enter a name for your storage assignment.</dd>
@@ -1736,7 +1739,7 @@ List your {{site.data.keyword.satelliteshort}} storage assignments.
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage assignment ls [-q]
+ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --service-cluster-id CLUSTER) [-q]
 ```
 {: pre}
 
@@ -1747,6 +1750,12 @@ ibmcloud sat storage assignment ls [-q]
 **Command options:**
 
 <dl>
+<dt><code>--cluster <em>CLUSTER_ID</em></code></dt>
+<dd>The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run <code>ibmcloud oc cluster ls --provider satellite</code>.  If you do not include this flag, you must specify the `--service-cluster-id` flag.</dd>
+
+<dt><code>--service-cluster-id <em>CLUSTER_ID</em></code></dt>
+<dd>The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster` flag.</dd>
+
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
 </dl>
