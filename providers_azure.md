@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-06-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -100,7 +100,83 @@ subcollection: satellite
 Learn how you can set up a {{site.data.keyword.satellitelong}} location with virtual instances that you created in Microsoft Azure.
 {: shortdesc}
 
+## Automating your Azure location setup with a {{site.data.keyword.bpshort}} template
+{: #azure-template}
 
+Automate your Azure setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-about-schematics) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your Azure account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
+{: shortdesc}
+
+For more configuration options, you can [manually attach Azure hosts to a {{site.data.keyword.satelliteshort}} location](#azure-host-attach).
+{: tip}
+
+Before you begin, make sure that you have the correct [{{site.data.keyword.cloud_notm}} permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations, including to {{site.data.keyword.satelliteshort}} and {{site.data.keyword.bpshort}}. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
+
+1. In your Azure cloud provider, set up your account credentials.
+   1. [Sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli){: external} from the command line.
+      ```
+      az login
+      ```
+      {: pre}
+   2. List the available subscriptions in your account.
+      ```
+      az account list
+      ```
+      {: pre}
+   3. Set the subscription to create your Azure resources in.
+      ```
+      az account set --subscription="<subscription_ID>"
+      ```
+      {: pre}
+   4. Create a service principal identity with the Contributor role, scoped to your subscription. These credentials are used by {{site.data.keyword.satellitelong_notm}} to provision resources in your Azure account. For more information, see the [Azure documentation](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli){: external}.
+      ```
+      az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_ID>" -n "<service_principal_name>"
+      ```
+      {: pre}
+   5. In the output, note the values of the `appID`, `password`, and `tenant` fields.
+      ```
+      {
+      "appId": "<azure-client-id>",
+      "displayName": "<service_principal_name>",
+      "name": "http://<service_principal_name>",
+      "password": "<azure-secret-key>",
+      "tenant": "<tenant-id>"
+      }
+      ```
+      {: screen}
+2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
+3. In the **Setup** section, click **Azure**.
+4. In the **Azure credentials** section, enter the **Azure client ID (app ID)**, **Azure tenant ID**, and **Azure secret key (password)** values that you previously created for the service principal.
+5. Click **Fetch options from Azure**.
+6. Review the **Azure environment** details that are prepopulated. By default, enough VMs are created to provide hosts for 1 small location that can run about 2 demo clusters. To change the subscription, region, instance type, or number of VMs for the hosts, click the **Edit** pencil icon.
+7. Review the **Satellite location** details. If you edited the Azure environment details, you might want to click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
+8. In the **Summary** pane, review the cost estimate.
+9. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
+10. Optional: To review the provisioning progress, review the logs in the {{site.data.keyword.bpshort}} workspace that is automatically created for you.
+   1. Click **Manage in Schematics**. If you see an error, navigate to the [{{site.data.keyword.bpshort}} workspaces console](https://cloud.ibm.com/schematics/workspaces){: external} and click the name of your workspace, such as `us.east.cartOrder...`.
+   2. From the **Activity** tab, find the current activity row and click **View log** to review the log details.
+   3. Wait for the {{site.data.keyword.bpshort}} action to finish and the workspace to enter an **Active** state.
+
+Well done, your {{site.data.keyword.satelliteshort}} location is creating! You can review the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to see when your location is in a **Normal** state and ready to use.
+
+**Resources that are created by the template:**
+
+The following resources are created in the resource group of your Azure cloud subscription.
+* 1 virtual network that spans the region.
+* 1 network security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
+* 1 virtual machine for each host that you specified, spread evenly across the region. By default, 6 virtual machines are created.
+* 1 network interface for each virtual machine.
+* 1 disk for each virtual machine.
+
+The following resources are created in your {{site.data.keyword.cloud_notm}} account.
+* 1 {{site.data.keyword.satelliteshort}} location.
+* 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
+* 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location, unassigned, and available to use for services like an {{site.data.keyword.openshiftshort}} cluster. If you added more than 6 hosts, the number of hosts equals the number that you specified minus the 3 that are assigned to the control plane.
+
+**What's next?**
+
+The {{site.data.keyword.bpshort}} template helped with the initial creation, but you are in control for subsequent location management actions, such as [attaching more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts), [creating {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters), or [scaling the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale). If you [remove](/docs/satellite?topic=satellite-locations#location-remove) your {{site.data.keyword.satelliteshort}} location, make sure to [remove your workspace in {{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-workspace-setup#del-workspace), too.
+
+<br />
 
 ## Manually adding Azure hosts to {{site.data.keyword.satelliteshort}}
 {: #azure-host-attach}

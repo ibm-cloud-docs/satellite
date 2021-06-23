@@ -202,6 +202,7 @@ subcollection: satellite
   * [Disaster recovery](/docs/satellite?topic=satellite-infrastructure-service#satis-disaster-recovery)
 
 [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
+* [Automating your AWS location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-aws#aws-template)
 * [Manually adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach)
 * [Supported AWS instance types](/docs/satellite?topic=satellite-aws#aws-instance-types)
 * [Security group settings](/docs/satellite?topic=satellite-aws#aws-reqs-secgroup)
@@ -213,6 +214,7 @@ subcollection: satellite
 * [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-gcp#gcp-reqs-console-access)
 
 [Microsoft Azure](/docs/satellite?topic=satellite-azure)
+* [Automating your Azure location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-azure#azure-template)
 * [Manually adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach)
 * [Security group settings](/docs/satellite?topic=satellite-azure#azure-reqs-firewall)
 * [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-azure#azure-reqs-console-access)
