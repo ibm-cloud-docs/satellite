@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-23"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -957,7 +957,7 @@ Update an endpoint. Only the options that you specify are updated.
 {: shortdesc}
 
 ```
-ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--name NAME] [--dest-type CLOUD|LOCATION] [--dest-hostname HOSTNAME_OR_IP] [--dest-port PORT] [--dest-protocol PROTOCOL] [--source-protocol PROTOCOL] [-q]
+ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--name NAME] [--dest-hostname HOSTNAME_OR_IP] [--dest-port PORT] [--dest-protocol PROTOCOL] [--source-protocol PROTOCOL] [-q]
 ```
 {: pre}
 
@@ -977,9 +977,6 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 <dt><code>--name <em>NAME</em></code></dt>
 <dd>Optional. A new name for your {{site.data.keyword.satelliteshort}} endpoint.</dd>
 
-<dt><code>--dest-type <em>CLOUD|LOCATION</em></code></dt>
-<dd>Optional. Where the destination resource runs.</dd>
-
 <dt><code>--dest-hostname <em>HOSTNAME_OR_IP</em></code></dt>
 <dd>Optional. The URL or the externally accessible IP address of the destination resource that you want to connect to. Make sure to enter the URL without <code>http://</code> or <code>https://</code>.</dd>
 
@@ -987,7 +984,7 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 <dd>Optional. The port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol.</dd>
 
 <dt><code>--dest-protocol <em>PROTOCOL</em></code></dt>
-<dd>Optional. The protocol of the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).</dd>
+<dd>Optional. The protocol of the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, and <code>tls</code>. If you do not specify this flag, the destination protocol is inherited from the source protocol. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).</dd>
 
 <dt><code>--source-protocol <em>PROTOCOL</em></code></dt>
 <dd>Optional. The protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).</dd>
@@ -1654,7 +1651,7 @@ ibmcloud sat service ls --location mylocation
 Use these commands to view the storage resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config).
 {: shortdesc}
 
-The `ibmcloud sat storage` commands are available in beta.
+The `ibmcloud sat storage assignment` group of commands are available in beta.
 {: beta}
 
 ### `ibmcloud sat storage assignment create`
@@ -1664,7 +1661,7 @@ Create a {{site.data.keyword.satelliteshort}} storage assignment to deploy stora
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | --group GROUP [--group GROUP ...]) [--name NAME] [-q]
+ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | --group GROUP [--group GROUP ...] | --service-cluster-id CLUSTER_ID) [--name NAME] [-q]
 ```
 {: pre}
 
@@ -1679,10 +1676,13 @@ ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | -
 <dd>Required. The name of the storage configuration that you want to assign to your cluster group. To list {{site.data.keyword.satelliteshort}} storage configurations, run <code>ibmcloud sat storage config ls</code>.</dd>
 
 <dt><code>--cluster <em>CLUSTER_ID</em></code></dt>
-<dd>The ID of a {{site.data.keyword.satelliteshort}} cluster. To list {{site.data.keyword.satelliteshort}} clusters, run <code>ibmcloud oc cluster ls --provider satellite</code>. To assign the storage configuration to multiple clusters at once, create a cluster group or run this command with this flag multiple times. If you do not include this flag, you must specify the `--group` flag.</dd>
+<dd>The ID of a {{site.data.keyword.satelliteshort}} cluster. To list {{site.data.keyword.satelliteshort}} clusters, run <code>ibmcloud oc cluster ls --provider satellite</code>. To assign the storage configuration to multiple clusters at once, create a cluster group or run this command with this flag multiple times. If you do not include this flag, you must specify the `--group` or the `--service-cluster-id` flag.</dd>
 
 <dt><code>--group <em>GROUP</em></code></dt>
-<dd>The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run <code>ibmcloud sat group ls</code>. To assign the storage configuration to multiple cluster groups at the same time, repeat this flag. If you do not include this flag, you must specify the `--cluster` flag.</dd>
+<dd>The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run <code>ibmcloud sat group ls</code>. To assign the storage configuration to multiple cluster groups at the same time, repeat this flag. If you do not include this flag, you must specify the `--cluster` or the `--service-cluster-id` flag.</dd>
+
+<dt><code>--service-cluster-id <em>CLUSTER_ID</em></code></dt>
+<dd>The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster` or the `--group` flag.</dd>
 
 <dt><code>--name <em>NAME</em></code></dt>
 <dd>Optional. Enter a name for your storage assignment.</dd>
@@ -1739,7 +1739,7 @@ List your {{site.data.keyword.satelliteshort}} storage assignments.
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage assignment ls [-q]
+ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --service-cluster-id CLUSTER) [-q]
 ```
 {: pre}
 
@@ -1750,6 +1750,12 @@ ibmcloud sat storage assignment ls [-q]
 **Command options:**
 
 <dl>
+<dt><code>--cluster <em>CLUSTER_ID</em></code></dt>
+<dd>The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run <code>ibmcloud oc cluster ls --provider satellite</code>.  If you do not include this flag, you must specify the `--service-cluster-id` flag.</dd>
+
+<dt><code>--service-cluster-id <em>CLUSTER_ID</em></code></dt>
+<dd>The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster` flag.</dd>
+
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
 </dl>

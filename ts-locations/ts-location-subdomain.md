@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-03-23"
+lastupdated: "2021-06-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -78,6 +78,7 @@ content-type: troubleshoot
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
@@ -124,7 +125,7 @@ The {{site.data.keyword.satelliteshort}} location control plane is inaccessible 
         2. Reload the operating system of the host.
         3. [Attach the host](/docs/satellite?topic=satellite-hosts#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location, but do not assign it. Later, after you complete these troubleshooting steps, you can [re-assign the host](/docs/satellite?topic=satellite-hosts#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or cluster.
         4. SSH into the host machine.
-    2. Look up each location subdomain that you found in step 1. Check whether the IP address that resolves matches the host IP addresses that you found in step 1. If the host's DNS resolver does not resolve the subdomains to the expected IP addresses, ensure that your hosts have the [required minimum outbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound).
+    2. Look up **each** location subdomain that you found in step 1. Check whether the IP address that resolves matches the host IP addresses that you found in step 1. If the host's DNS resolver does not resolve the subdomains to the expected IP addresses, ensure that your hosts have the [required minimum outbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound).
       ```
       nslookup <subdomain>
       ```

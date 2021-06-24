@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-06-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -108,42 +108,12 @@ Not sure if your infrastructure is ready to use for {{site.data.keyword.satellit
 Automate your setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-about-schematics) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in a cloud provider, and set up the {{site.data.keyword.satelliteshort}} location control plane for you.
 {: shortdesc}
 
+**Setting up a {{site.data.keyword.satelliteshort}} location with a template**
 
+You can set up {{site.data.keyword.satelliteshort}} locations with a {{site.data.keyword.bpshort}} template for the following cloud providers. 
 
-Setting up {{site.data.keyword.satelliteshort}} locations with {{site.data.keyword.bpshort}} templates is available only for the Amazon Web Services (AWS) cloud provider. For more configuration options, you can [manually set up an AWS location](/docs/satellite?topic=satellite-aws).
-{: note}
-
-Before you begin, make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
-
-1. In your AWS cloud provider, set up your account credentials.
-   1. Verify that you have the required [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws) to create a {{site.data.keyword.satelliteshort}} location from a template.
-   2. [Create a separate IAM user that is scoped to EC2 access](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html){: external}.
-   3. [Retrieve the access key ID and secret access key credentials for the IAM user](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys){: external}.
-2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
-3. From **Setup**, click **Amazon Web Services**.
-4. From **AWS credentials**, enter the **AWS access key ID** and **AWS secret access key** values that you previously created, then click **Fetch options from AWS**.
-5. Review the **AWS EC2 instances** that are prepopulated. By default, enough hosts are created for 1 small location that can run about 2 demo clusters. To change the region, instance type, or number of hosts, click the **Edit** pencil icon.
-6. Review the **Satellite location** details. If you edited the AWS EC2 instances, you might want to click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
-7. In the **Summary** pane, review the cost estimate.
-8. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
-9. Optional: To review the provisioning progress, review the logs in the {{site.data.keyword.bpshort}} workspace that is automatically created for you.
-   1. Click **Manage in Schematics**. If you see an error, navigate to the [{{site.data.keyword.bpshort}} workspaces console](https://cloud.ibm.com/schematics/workspaces){: external} and click the name of your workspace, such as `us.east.cartOrder...`.
-   2. From the **Activity** tab, find the current activity row and click **View log**.
-   3. Review the details and wait for the workspace to complete and enter an **Active** state.
-
-Well done, your {{site.data.keyword.satelliteshort}} location is creating! 
-
-The following resources are created in your AWS cloud account.
-* 1 virtual private cloud (VPC).
-* 1 subnet per zone.
-* 1 security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
-* 6 EC2 instances spread evenly across zones, or the number of hosts that you specified.
-
-The following resources are created in your {{site.data.keyword.cloud_notm}} account.
-* 1 {{site.data.keyword.satelliteshort}} location.
-* 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
-* 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS hosts, attached to the location, unassigned, and available to use for services like an {{site.data.keyword.openshiftshort}} cluster. If you added more than 6 hosts, the number of hosts equals the number that you specified minus the 3 that are assigned to the control plane.
-
+* [AWS](/docs/satellite?topic=satellite-aws#aws-template)
+* [Azure](/docs/satellite?topic=satellite-azure#azure-template)
 
 
 **What's next?**
