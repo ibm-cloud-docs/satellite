@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-06-30"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -112,9 +112,6 @@ The IBM Spectrum Scale CSI driver supports the following features:
 * **Operator deployment**: You can use the IBM Spectrum Scale operator for easier deployment, upgrade, and cleanup.
 * **Multiple volume access modes** You can create volumes with ReadWriteMany (RWX) and ReadWriteOnce (RWO) access modes.
 
-The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
-{: beta}
-
 <br />
 
 ## Prerequisites
@@ -199,10 +196,15 @@ In some environments, your worker node names might be different from your IBM Sp
     ibmcloud target -g <resource-group>
     ```
     {: pre}
-1. Review the [template parameters](#sat-storage-spectrum-scale-params-cli).
-1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
   ```sh
-  ibmcloud sat storage config create --name <name> --template-name ess --template-version 1.1 -p "scale-host-path=<scale-host-path>" -p "cluster-id=<cluseter-id>" -p "primary-fs=<primary-fs>" -p "gui-host=<gui-host>" -p "secret-name=<secret-name>" -p "gui-api-user=<gui-api-user>" -p "gui-api-password=<gui-api-password>" -p "k8-n1-ip=<k8-n1-ip>" -p "sc-n1-host=<sc-n1-host>" -p "k8-n2-ip=<k8-n2-ip>" -p "sc-n2-host=<sc-n2-host>" -p "k8-n3-ip=<k8-n3-ip>" -p "sc-n3-host=<sc-n3-host>" -p "storage-class-name=<storage-class-name>" -p "vol-backend-fs=<vol-backend-fs>" -p "vol-dir-base-path=<vol-dir-base>"
+  ibmcloud sat storage template ls
+  ```
+  {: pre}
+1. Review the [template parameters](#sat-storage-spectrum-scale-params-cli).
+1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+  ```sh
+  ibmcloud sat storage config create --name <name> --template-name ess --template-version <template_version> -p "scale-host-path=<scale-host-path>" -p "cluster-id=<cluseter-id>" -p "primary-fs=<primary-fs>" -p "gui-host=<gui-host>" -p "secret-name=<secret-name>" -p "gui-api-user=<gui-api-user>" -p "gui-api-password=<gui-api-password>" -p "k8-n1-ip=<k8-n1-ip>" -p "sc-n1-host=<sc-n1-host>" -p "k8-n2-ip=<k8-n2-ip>" -p "sc-n2-host=<sc-n2-host>" -p "k8-n3-ip=<k8-n3-ip>" -p "sc-n3-host=<sc-n3-host>" -p "storage-class-name=<storage-class-name>" -p "vol-backend-fs=<vol-backend-fs>" -p "vol-dir-base-path=<vol-dir-base>"
   ```
   {: pre}
 

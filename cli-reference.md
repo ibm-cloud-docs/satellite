@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-06-30"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1653,6 +1653,10 @@ Use these commands to view the storage resources that run in clusters that are r
 
 The `ibmcloud sat storage assignment` group of commands are available in beta.
 {: beta}
+
+Before working with your {{site.data.keyword.satelliteshort}} storage assignments and configurations, be sure to target the `Managed from` region of your {{site.data.keyword.satelliteshort}} by running `ibmcloud sat location ls` then `ibmcloud target -r <region>`.
+{: note}
+
 
 ### `ibmcloud sat storage assignment create`
 {: #cli-storage-assign-create}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-06-30"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -100,9 +100,6 @@ Set up [Amazon Elastic Block Storage (EBS)](https://docs.aws.amazon.com/ebs/?id=
 {: shortdesc}
 
 When you create your AWS EBS storage configuration, you provide your AWS credentials which are stored as a Kubernetes secret in the clusters that you assign your configuration to. The secret is mounted inside the CSI controller pod so that when you create a PVC by using one of the IBM-provided storage classes, your AWS credentials are used to dynamically provision an EBS instance.
-
-The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
-{: beta}
 
 To use AWS EBS storage for your apps, the {{site.data.keyword.satelliteshort}} hosts that you use for your cluster's worker nodes must reside in AWS.
 {: important}
