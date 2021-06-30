@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-06-30"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -113,10 +113,6 @@ Be sure to complete all prerequisite and installation steps before assigning hos
 
 Review the [compatibility and requirements documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=installation-compatibility-requirements){: external}.
 
-
-The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
-{: beta}
-
 <br />
 
 
@@ -153,9 +149,14 @@ The {{site.data.keyword.satelliteshort}} storage templates are currently availab
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
+  ```sh
+  ibmcloud sat storage template ls
+  ```
+  {: pre}
 1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
   ```sh
-  ibmcloud sat storage config create --name <name> --template-name ibm-system-storage-block-csi-driver --template-version <version> -p "namespace=<namespace>" 
+  ibmcloud sat storage config create --name <name> --template-name ibm-system-storage-block-csi-driver --template-version <template_version> -p "namespace=<namespace>" 
   ```
   {: pre}
 

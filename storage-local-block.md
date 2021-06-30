@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-06-30"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -100,10 +100,6 @@ Set up [Persistent storage using local volumes](https://docs.openshift.com/conta
 {: shortdesc}
 
 When you create a local block storage configuration, you specify the local block storage device paths that you want to make available as persistent volumes (PVs) in your clusters. After you assign the storage configuration to a cluster, {{site.data.keyword.satelliteshort}} deploys the local storage operator which mounts the local disks that you specified in your configuration. The operator further creates the local persistent volumes, and creates the `sat-local-block-gold` storage class which you can use to create persistent volumes claims (PVCs). You can then reference your PVCs in your Kubernetes workloads.
-
-
-The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
-{: beta}
 
 <br />
 
@@ -236,17 +232,22 @@ After you have [retrieved the device paths for the disks that you want to use in
 {: #sat-storage-local-block-cli}
 
 1. Review the [Local block storage configuration parameters](#sat-storage-local-block-params-cli).
-2. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
+  ```sh
+  ibmcloud sat storage template ls
+  ```
+  {: pre}
+1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
   ```sh
   ibmcloud sat storage config create --name <name> --template-name local-volume-block --template-version <template-version> --param "label-key=storage" --param "label-value=local-block" --param "devicepath=<devicepath>"
   ```
   {: pre}
-3. Verify that your storage configuration is created.
+1. Verify that your storage configuration is created.
   ```sh
   ibmcloud sat storage config get --config <config>
   ```
   {: pre}
-4. [Assign your configuration to clusters](#assign-storage-local-block).
+1. [Assign your configuration to clusters](#assign-storage-local-block).
 
 
 <br />

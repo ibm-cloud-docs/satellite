@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-06-30"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -98,9 +98,6 @@ subcollection: satellite
 Set up [NetApp Trident storage](https://netapp-trident.readthedocs.io/en/stable-v20.07/){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
-The {{site.data.keyword.satelliteshort}} storage templates are currently available in beta and should not be used for production workloads.
-{: beta}
-
 You must deploy the NetApp Trident template to your clusters before you can create configurations with the NetApp ONTAP-NAS or NetApp ONTAP-SAN templates.
 {: important}
 
@@ -137,12 +134,17 @@ You must deploy the NetApp Trident template to your clusters before you can crea
     ibmcloud target -g <resource-group>
     ```
     {: pre}
-3. Runt the following the command to create a NetApp Trident configuration. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
   ```sh
-  ibmcloud sat storage config create --name <name> --template-name netapp-trident --template-version 1.1
+  ibmcloud sat storage template ls
   ```
   {: pre}
-5. Verify that your storage configuration is created.
+1. Run the following command to create a NetApp Trident configuration. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+  ```sh
+  ibmcloud sat storage config create --name <name> --template-name netapp-trident --template-version <template_version>
+  ```
+  {: pre}
+1. Verify that your storage configuration is created.
   ```sh
   ibmcloud sat storage config get --config <config>
   ```
