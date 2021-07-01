@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -105,7 +105,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | ---- | ----------- |
-| 30 June 2021 | **New!** General availability of the {{site.data.keyword.satelliteshort}} storage templates. For more information about storage templates, see [Understanding storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov). | 
+| 30 June 2021 | <ul><li>**New!** General availability of the {{site.data.keyword.satelliteshort}} storage templates. For more information about storage templates, see [Understanding storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov).</li><li>**New! {{site.data.keyword.satelliteshort}}-enabled services**: Many IBM {{site.data.keyword.databases-for}} are now available to deploy to your {{site.data.keyword.satelliteshort}} location. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/deploy-managed-cloud-native-databases-anywhere-with-ibm-cloud-satellite){: external}.</li></ul> | 
 | 24 June 2021 | <ul><li>**Azure template**: Automate the setup of a {{site.data.keyword.satelliteshort}} location in Microsoft Azure cloud infrastructure by using a [{{site.data.keyword.bpshort}}](/docs/satellite?topic=satellite-azure#azure-template).</li><li>**CLI changelog**: Updated the CLI plug-in changelog page for the [release of version 1.0.295](/docs/satellite?topic=satellite-satellite-cli-changelog).</li></ul> |
 | 18 June 2021 | Updates the [required outbound connectivity for hosts](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound) to include IP addresses for Link tunnel server endpoints. |
 | 09 June 2021 | <ul><li>**New! Frankfurt location**: You can now manage {{site.data.keyword.satelliteshort}} locations from the **Frankfurt** (`fra`, `eu-de`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions).</li><li>**Digital certificates**: Added information about [certificates for various {{site.data.keyword.satellitelong_notm}} domains and hosts](/docs/satellite?topic=satellite-compliance#certs-hosts-domains).</li></ul> |
