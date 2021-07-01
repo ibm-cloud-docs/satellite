@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -119,6 +119,9 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 3. Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
    ```
    # Enable GCP RHEL package updates
+   yum update --disablerepo=* --enablerepo="*" -y
+   yum repolist all
+   yum install container-selinux -y
    yum install subscription-manager -y
    ```
    {: codeblock}  
