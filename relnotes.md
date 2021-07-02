@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -99,6 +99,14 @@ subcollection: satellite
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {:shortdesc}
+
+## July 2021
+{: #july21}
+
+| Date | Description |
+| ---- | ----------- |
+{: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
+{: caption="Documentation updates in July 2021."}
 
 ## June 2021
 {: #june21}
