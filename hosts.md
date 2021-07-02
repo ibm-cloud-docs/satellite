@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-02"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -392,7 +392,7 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 ### Prerequisites
 {: #host-assign-prereq}
 
-1.   Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for {{site.data.keyword.satelliteshort}}.
+1.   Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 2.   [Attach hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts), and check that the hosts are healthy and **unassigned**.
 3.   If you plan to use the host for a {{site.data.keyword.satelliteshort}}-enabled service, such as a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters), create this service instance in your {{site.data.keyword.cloud_notm}} account.
 

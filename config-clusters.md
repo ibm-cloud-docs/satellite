@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-21"
+lastupdated: "2021-07-02"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -154,7 +154,7 @@ You do not need to configure access if you already gave {{site.data.keyword.sate
 {: #setup-clusters-satconfig-prereq}
 
 *  If you have {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} (not your {{site.data.keyword.satelliteshort}} location), [register the clusters](#existing-openshift-clusters).
-*  Make sure that you [have the following permissions](/docs/satellite?topic=satellite-iam#iam-assign) in {{site.data.keyword.cloud_notm}} IAM.
+*  Make sure that you have the following permissions in {{site.data.keyword.cloud_notm}} IAM. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
    - The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Cluster** resource in {{site.data.keyword.satellitelong_notm}}.
    - The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Clustergroup** resource in {{site.data.keyword.satellitelong_notm}}.
    - The **Manager** {{site.data.keyword.cloud_notm}} IAM service role for the cluster in {{site.data.keyword.openshiftlong_notm}}.
@@ -339,7 +339,7 @@ Choose from the following options.
 Use the {{site.data.keyword.satelliteshort}} console to create a configuration and upload the Kubernetes resource definition that you want to deploy to your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
-Before you begin, make sure that you have the following permissions:
+Before you begin, make sure that you have the following permissions. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 - The **Editor** {{site.data.keyword.cloud_notm}} IAM platform role for the **Configuration** resource in {{site.data.keyword.satellitelong_notm}}.
 - The **Editor** {{site.data.keyword.cloud_notm}} IAM platform role for the **Subscription** resource in {{site.data.keyword.satellitelong_notm}}.
 - The **Editor** {{site.data.keyword.cloud_notm}} IAM platform role for the **Clustergroup** resource in {{site.data.keyword.satellitelong_notm}}.
@@ -372,7 +372,7 @@ To create the configuration:
 Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to create a configuration and upload the Kubernetes resource definition that you want to deploy to your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
-Before you begin, make sure that you have the following permissions:
+Before you begin, make sure that you have the following permissions. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 - The **Editor** {{site.data.keyword.cloud_notm}} IAM platform role for the **Configuration** resource in {{site.data.keyword.satellitelong_notm}}.
 - The **Editor** {{site.data.keyword.cloud_notm}} IAM platform role for the **Subscription** resource in {{site.data.keyword.satellitelong_notm}}.
 - The **Editor** {{site.data.keyword.cloud_notm}} IAM platform role for the **Clustergroup** resource in {{site.data.keyword.satellitelong_notm}}.
@@ -510,7 +510,7 @@ To create the configuration:
 You can use {{site.data.keyword.satelliteshort}} config to review the Kubernetes resources that run in your registered clusters.
 {: shortdesc}
 
-Before you begin, make sure that you have the following permissions:
+Before you begin, make sure that you have the following permissions. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 -  The **Administrator** platform role, **Reader** service role, or **Manager** service role in {{site.data.keyword.cloud_notm}} IAM for the **Resource** resource type in {{site.data.keyword.satellitelong_notm}}.
 -  The appropriate permissions to enable the {{site.data.keyword.satelliteshort}} config watchkeeping capability, such as one of the following options.
    * The [permissions](#create-satconfig-ui) to create a configuration version and subscribe clusters to the version.

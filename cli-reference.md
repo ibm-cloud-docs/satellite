@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-02"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -130,7 +130,7 @@ ibmcloud sat cluster get --cluster CLUSTER [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -163,7 +163,7 @@ ibmcloud sat cluster ls [--filter FILTER] [--limit NUMBER] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -199,7 +199,7 @@ ibmcloud sat cluster register [--silent] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -232,7 +232,7 @@ ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -274,7 +274,7 @@ ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER] --group GROUP [-
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -311,7 +311,7 @@ ibmcloud sat group create --name NAME [--cluster CLUSTER] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -347,7 +347,7 @@ ibmcloud sat group detach --group GROUP --cluster CLUSTER [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -386,7 +386,7 @@ ibmcloud sat group get --group GROUP [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -419,7 +419,7 @@ ibmcloud sat group ls [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -450,7 +450,7 @@ ibmcloud sat group rm --group GROUP [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -492,7 +492,7 @@ ibmcloud sat config create --name NAME [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -524,7 +524,7 @@ ibmcloud sat config get --config CONFIG [--output JSON] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -558,7 +558,7 @@ ibmcloud sat config ls [--output JSON]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -591,7 +591,7 @@ ibmcloud sat config rename --config CONFIG --name NEW_NAME [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -630,7 +630,7 @@ ibmcloud sat config rm --config CONFIG [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -666,7 +666,7 @@ ibmcloud sat config version create --name NAME --read-config FILEPATH --config C
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -711,7 +711,7 @@ ibmcloud sat config version get --config CONFIG --version VERSION [--output JSON
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -753,7 +753,7 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -798,7 +798,7 @@ ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOU
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -852,7 +852,7 @@ ibmcloud sat endpoint get --endpoint ENDPOINT_ID --location LOCATION_ID [--outpu
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -891,7 +891,7 @@ ibmcloud sat endpoint ls --location LOCATION_ID [--output JSON] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -927,7 +927,7 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT_ID --location LOCATION_ID [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -963,7 +963,7 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1018,7 +1018,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1068,7 +1068,7 @@ ibmcloud sat host attach --location LOCATION [--host-label "LABEL"] [-q] [--rese
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1111,7 +1111,7 @@ ibmcloud sat host get --location LOCATION --host HOST [--output json] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1155,7 +1155,7 @@ ibmcloud sat host ls --location LOCATION [--output json] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1200,7 +1200,7 @@ ibmcloud sat host rm --location LOCATION --host HOST [-f ] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1242,7 +1242,7 @@ ibmcloud sat host update --location LOCATION --host HOST [--host-label "KEY=VALU
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1293,7 +1293,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 </br>
 
 **Minimum required permissions**:
-* To run this operation, {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+* To run this operation, {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 * To create a location, you also need to set up [permissions to other cloud services](/docs/satellite?topic=satellite-iam#iam-roles-usecases).
 
 **Command options:**
@@ -1339,7 +1339,7 @@ ibmcloud sat location dns ls --location LOCATION [--output json] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1379,7 +1379,7 @@ ibmcloud sat location dns register --location LOCATION --ip HOST_IP_ADDRESS [--o
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1421,7 +1421,7 @@ ibmcloud sat location get --location LOCATION [--output json] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1459,7 +1459,7 @@ ibmcloud sat location ls [--output json] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1497,7 +1497,7 @@ ibmcloud sat location rm --location LOCATION [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1541,7 +1541,7 @@ ibmcloud sat resource get --resource RESOURCE [--save-data] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1577,7 +1577,7 @@ ibmcloud sat resource ls [--cluster CLUSTER] [--limit NUMBER] [--search STRING] 
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1622,7 +1622,7 @@ ibmcloud sat service ls --location LOCATION [--output OUTPUT] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1671,7 +1671,7 @@ ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | -
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1716,7 +1716,7 @@ ibmcloud sat storage assignment get --assignment ASSIGNMENT
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1749,7 +1749,7 @@ ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --service-cluster-id 
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1785,7 +1785,7 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1821,7 +1821,7 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP] [
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1863,7 +1863,7 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1911,7 +1911,7 @@ ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1947,7 +1947,7 @@ ibmcloud sat storage config ls [--location LOCATION] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -1979,7 +1979,7 @@ ibmcloud sat storage config rm --config CONFIG [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -2015,7 +2015,7 @@ ibmcloud sat storage config sc add --config-name CONFIG --name NAME [--param PAR
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Configuration** resource type in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Configuration** resource type in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -2054,7 +2054,7 @@ ibmcloud sat storage config sc get --config CONFIG --sc SC [--output OUTPUT] [-q
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -2093,7 +2093,7 @@ ibmcloud sat storage config sc ls --config CONFIG [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -2126,7 +2126,7 @@ ibmcloud sat storage template get --name NAME --version VERSION
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -2165,7 +2165,7 @@ You can run `ibmcloud sat storage templates` as an alias of the `ibmcloud sat st
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -2204,7 +2204,7 @@ ibmcloud sat subscription create --name NAME --group GROUP [--group GROUP] --con
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -2246,7 +2246,7 @@ ibmcloud sat subscription get --subscription SUBSCRIPTION [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -2279,7 +2279,7 @@ ibmcloud sat subscription ls
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:** N/A
 
@@ -2307,7 +2307,7 @@ ibmcloud sat subscription rm --subscription SUBSCRIPTION [-f] [-q]
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
@@ -2343,7 +2343,7 @@ ibmcloud sat subscription update --subscription SUBSCRIPTION [--name NAME] [--gr
 
 </br>
 
-**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}.
+**Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 **Command options:**
 
