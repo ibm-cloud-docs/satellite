@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -604,6 +604,8 @@ subcollection: satellite
   * [Template API key](/docs/satellite?topic=satellite-iam#api-keys-templates)
 * [Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam#permissions-other-clouds)
   * [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws)
+  * [Azure permissions](/docs/satellite?topic=satellite-iam#permissions-azure)
+  * [Google Cloud Platform permissions](/docs/satellite?topic=satellite-iam#permissions-gcp)
 
 [Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies](/docs/satellite?topic=satellite-service-architecture)
 * [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture)
@@ -960,6 +962,8 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-release-notes)
+
+* [July 2021](/docs/satellite?topic=satellite-release-notes#july21)
 
 * [June 2021](/docs/satellite?topic=satellite-release-notes#june21)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -270,13 +270,12 @@ Note that compliance also might depend on the setup of the underlying infrastruc
 {: faq}
 {: support}
 
-You can run the following {{site.data.keyword.cloud_notm}} services in your {{site.data.keyword.satelliteshort}} location. Keep in mind that each service might have its own [limitations for use in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-requirements#reqs-services).  
+For a complete list of {{site.data.keyword.cloud_notm}} services that you can deploy to your {{site.data.keyword.satelliteshort}} location, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog?search=label%3Asatellite_enabled#services){: external}. 
 
-|Service name|Description|
-|------------|----------------------------------|
-|{{site.data.keyword.openshiftlong_notm}}|Run {{site.data.keyword.openshiftlong_notm}} clusters on the infrastructure that you added to your {{site.data.keyword.satelliteshort}} location. For more information, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). |
-{: caption="{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the {{site.data.keyword.cloud_notm}} service that is enabled for use with {{site.data.keyword.satelliteshort}}. The second column is a description of the service."}
+Keep in mind that each service might:
+* Be available for {{site.data.keyword.satelliteshort}} locations that are managed from select {{site.data.keyword.cloud_notm}} regions only, such as from Washington, DC or London.
+* Have its own [limitations for use in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-requirements#reqs-services).
+
 
 ## What managed add-ons can I use with {{site.data.keyword.openshiftshort}} clusters in my {{site.data.keyword.satelliteshort}} location?
 {: #faq-managed-addons}

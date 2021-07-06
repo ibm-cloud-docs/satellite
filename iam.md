@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -708,3 +708,16 @@ Review the following example policies that you might give users in AWS to do var
 * `AmazonVPCFullAccess`
 * `AWSMarketplaceFullAccess`
 * `IAMFullAccess`
+
+### Azure permissions
+{: #permissions-azure}
+
+To allow users in Microsoft Azure to do various actions for {{site.data.keyword.satelliteshort}}, you can grant the users the general **Contributor** built-in role in Azure role-based access control. For more information about further restricting permissions, see the [Azure documentation](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles){: external}.
+{: shortdesc}
+
+### Google Cloud Platform permissions
+{: #permissions-gcp}
+
+To allow users in Google Cloud Platform to do various actions for {{site.data.keyword.satelliteshort}}, you can grant the users the **Editor** role to the project in GCP IAM. For more information about the permissions of this role, see the [GCP documentation](https://cloud.google.com/iam/docs/permissions-reference){: external}.
+{: shortdesc}
+

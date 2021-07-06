@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-02"
+lastupdated: "2021-07-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -186,5 +186,7 @@ For cloud provider infrastructure, you can follow provider-specific guides.
 
 IBM can ship infrastructure and set up a {{site.data.keyword.satelliteshort}} location for you. See [Getting started with {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
 {: shortdesc}
+
+
 
 
