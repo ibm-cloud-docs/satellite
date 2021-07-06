@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -346,7 +346,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
       <td>Enter the ID of your {{site.data.keyword.satelliteshort}} location that you retrieved earlier.</td>
       </tr>
       <tr>
-      <td><code>--endpoint &lt;endpoint_name&gt;</code></td>
+      <td><code>--name &lt;endpoint_name&gt;</code></td>
       <td>Enter a name for your {{site.data.keyword.satelliteshort}} endpoint. </td>
       </tr>
       <tr>
@@ -501,7 +501,7 @@ Use the console to create an endpoint so that sources that are connected to the 
 6. Select the protocol that a source must use to connect to the destination FQDN or IP address. This protocol must match the port for your destination resource. For more information, see [Endpoint protocols](#link-protocols).
   * If you selected the **TLS** or **HTTPS** protocols and want to require server-side authentication of the destination's certificate, select the **Verify destination certificate** checkbox.
   * If you selected the **TLS** or **HTTPS** protocols but the destination resource is still in development, you can click **Upload certificate** to add your self-signed certificate file. This `ssl.crt` file must contain the public, base-64 encoded certificate for your resource's host name and must not contain the private `ssl.key` certificate key. To create a self-signed certificate for testing purposes by using OpenSSL, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external}.
-7. Configure optional connection settings, such as setting an inactivity timeout. The inactivity timeout is applied to both the connection between the source and {{site.data.keyword.satelliteshort}} Link and to the connection between {{site.data.keyword.satelliteshort}} Link and the destination. By default, no default inactivity timeout is set.
+7. Configure optional connection settings, such as setting an inactivity timeout. The inactivity timeout is applied to both the connection between the source and {{site.data.keyword.satelliteshort}} Link and to the connection between {{site.data.keyword.satelliteshort}} Link and the destination. The default value is `0`, which sets no inactivity timeout.
 8. Click **Create**. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a port to your endpoint.
 9. In the table row for your endpoint, copy the host name for your {{site.data.keyword.satelliteshort}} Link tunnel server and the port for your endpoint in the **Address** field.
 10. From your source client in the {{site.data.keyword.cloud_notm}} private network, test the connection to your {{site.data.keyword.satelliteshort}} endpoint by using the address. For example, depending on your source client, you might send a curl request to the endpoint:
@@ -547,7 +547,7 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
       <td>Enter the ID of your {{site.data.keyword.satelliteshort}} location that you retrieved earlier.</td>
       </tr>
       <tr>
-      <td><code>--endpoint &lt;endpoint_name&gt;</code></td>
+      <td><code>--name &lt;endpoint_name&gt;</code></td>
       <td>Enter a name for your {{site.data.keyword.satelliteshort}} endpoint. </td>
       </tr>
       <tr>
