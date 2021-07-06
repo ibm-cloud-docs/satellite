@@ -604,6 +604,8 @@ subcollection: satellite
   * [Template API key](/docs/satellite?topic=satellite-iam#api-keys-templates)
 * [Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam#permissions-other-clouds)
   * [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws)
+  * [Azure permissions](/docs/satellite?topic=satellite-iam#permissions-azure)
+  * [Google Cloud Platform permissions](/docs/satellite?topic=satellite-iam#permissions-gcp)
 
 [Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies](/docs/satellite?topic=satellite-service-architecture)
 * [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture)

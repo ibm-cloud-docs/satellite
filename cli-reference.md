@@ -1314,6 +1314,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 <dt><code>--logging-account-id <em>LOGGING_ACCOUNT</em></code></dt>
 <dd>Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.la_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.</dd>
 
+
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
 
