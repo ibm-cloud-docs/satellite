@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-07-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -186,7 +186,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
    {: tip}
 
    1. Enter a name for your launch template.
-   2. In the **Amazon machine image (AMI)** section, make sure to select a supported Red Hat Enterprise Linux 7 operating system, such as RHEL 7.7 that you can find by entering the AMI ID `ami-0170fc126935d44c3`.
+   2. In the **Amazon machine image (AMI)** section, make sure to select a supported Red Hat Enterprise Linux 7 operating system, such as RHEL 7.7 that you can find by entering the AMI ID `ami-030e754805234517e`.
    3. From the **Instance type** section, select one of the [supported AWS instance types](#aws-instance-types).
    4. From the **Key pair (login)** section, select the pem key that you want to use to log in to your machines later. If you do not have a pem key, create one.
    5. In the **Network settings**, select **Virtual Private Cloud (VPC)** and an existing subnet and a security group that allows network traffic as defined in [Security group settings](#aws-reqs-secgroup). If you do not have a subnet or security group that you want to use, create one.
