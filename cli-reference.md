@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-06"
+lastupdated: "2021-07-09"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1649,7 +1649,7 @@ ibmcloud sat service ls --location mylocation
 ## Storage commands
 {: #sat-storage-commands}
 
-Use these commands to view the storage resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config).
+Use these commands to view the storage resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config).
 {: shortdesc}
 
 The `ibmcloud sat storage assignment` group of commands are available in beta.

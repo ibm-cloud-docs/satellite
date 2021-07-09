@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-09"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -116,7 +116,7 @@ To use the OCS storage with the local storage operator and local storage devices
     * Two raw devices per worker node that have no partitions or formatted file systems. If your devices have no partitions, each node must have 2 free disks. One disk for the OSD and one disk for the MON.
     * Two raw partitions per worker node that have no formatted file system. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
 - [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups).
-- [Set up {{site.data.keyword.satelliteshort}} config on your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
+- [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
 - **Optional**: If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-ocs-local-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your OCS configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you do not specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and OCS is installed.
 - [Get the details of the raw, unformatted devices that you want to use for your configuration](#sat-storage-ocs-local-devices). The device IDs of your storage disks are used to create your {{site.data.keyword.satelliteshort}} storage configuration.
 
@@ -284,7 +284,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
   ```
   {: pre}
 
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
+1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
   * **Group**
     ```sh
     ibmcloud sat group ls

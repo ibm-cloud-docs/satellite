@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-07-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -198,26 +198,26 @@ When you add your clusters to {{site.data.keyword.satelliteshort}} Configuration
 Adding clusters to {{site.data.keyword.satelliteshort}} Configuration does not automatically set up logging and monitoring solutions, such as {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}.
 {: note}
 
-### Viewing {{site.data.keyword.satelliteshort}} config registration status for clusters
+### Viewing {{site.data.keyword.satelliteshort}} Config registration status for clusters
 {: #satconfig-registration-status}
 
-You can view the registration status of clusters that are enabled for use with {{site.data.keyword.satelliteshort}} config. Keep in mind that some of these clusters might be in a public cloud location, not your {{site.data.keyword.satelliteshort}} location.
+You can view the registration status of clusters that are enabled for use with {{site.data.keyword.satelliteshort}} Config. Keep in mind that some of these clusters might be in a public cloud location, not your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
-1.  List clusters that are registered with {{site.data.keyword.satelliteshort}} config. Note the output in the **Status** and **Location** columns.
+1.  List clusters that are registered with {{site.data.keyword.satelliteshort}} Config. Note the output in the **Status** and **Location** columns.
     ```
     ibmcloud sat cluster ls
     ```
     {: pre}
-2.  Review the following {{site.data.keyword.satelliteshort}} config registration statuses.
+2.  Review the following {{site.data.keyword.satelliteshort}} Config registration statuses.
 
 | Status | Description |
 | --- | --- |
-| `active` | {{site.data.keyword.satelliteshort}} config components for the location are installed in the cluster, and at least one resource is being watched. |
-| `inactive` | {{site.data.keyword.satelliteshort}} config components were manually removed from the cluster, or are installed but are no longer responding to {{site.data.keyword.satelliteshort}} config. For example, network connectivity might be disconnected. Existing resources, if any, continue to run but do not receive updates. To resolve the issue, try debugging your [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-ts-locations-debug) or [cluster](/docs/openshift?topic=openshift-debug_clusters). |
-| `registered` | {{site.data.keyword.satelliteshort}} config components are installed in the cluster, but no resources are currently watched. To set up watchkeeping, see [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources).|
+| `active` | {{site.data.keyword.satelliteshort}} Config components for the location are installed in the cluster, and at least one resource is being watched. |
+| `inactive` | {{site.data.keyword.satelliteshort}} Config components were manually removed from the cluster, or are installed but are no longer responding to {{site.data.keyword.satelliteshort}} Config. For example, network connectivity might be disconnected. Existing resources, if any, continue to run but do not receive updates. To resolve the issue, try debugging your [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-ts-locations-debug) or [cluster](/docs/openshift?topic=openshift-debug_clusters). |
+| `registered` | {{site.data.keyword.satelliteshort}} Config components are installed in the cluster, but no resources are currently watched. To set up watchkeeping, see [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources).|
 {: caption="Host health states." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the status of the {{site.data.keyword.satelliteshort}} config registration. The second column describes what the status means."}
+{: summary="The rows are read from left to right. The first column is the status of the {{site.data.keyword.satelliteshort}} Config registration. The second column describes what the status means."}
 
 <br />
 

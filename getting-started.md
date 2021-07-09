@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -227,5 +227,5 @@ Now that your {{site.data.keyword.satelliteshort}} location is set up, you are r
 1. Repeat steps 2 and 3 to add three more hosts to your {{site.data.keyword.satelliteshort}} location, so that you can use the location for more than just demonstration purposes.
 2. [Attach at least 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts) to add compute capacity to your location so that you can run {{site.data.keyword.satelliteshort}}-enabled services.
 3. Create a {{site.data.keyword.satelliteshort}}-enabled service, such as a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters). You assign the additional hosts that you previously attached as worker nodes to provide the compute power for the cluster.
-4. [Attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters) and start [deploying Kubernetes resources to these clusters](/docs/satellite?topic=satellite-cluster-config#create-satconfig-ui) with {{site.data.keyword.satelliteshort}} configs.
+4. [Attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters) and start [deploying Kubernetes resources to these clusters](/docs/satellite?topic=satellite-cluster-config#create-satconfig-ui) with {{site.data.keyword.satelliteshort}} Configs.
 5. [Learn more about the {{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.

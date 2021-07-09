@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-06"
+lastupdated: "2021-07-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -111,14 +111,14 @@ You can use {{site.data.keyword.cloud_notm}} IAM to assign access to different r
 {: shortdesc}
 
 * [{{site.data.keyword.satelliteshort}} location](#iam-resource-loc), including actions for locations and hosts.
-* [{{site.data.keyword.satelliteshort}} config](#iam-resource-config), including actions for configurations, subscriptions, clusters, cluster groups, resources, and other components that use {{site.data.keyword.satelliteshort}} config like storage.
+* [{{site.data.keyword.satelliteshort}} Config](#iam-resource-config), including actions for configurations, subscriptions, clusters, cluster groups, resources, and other components that use {{site.data.keyword.satelliteshort}} Config like storage.
 * [{{site.data.keyword.satelliteshort}} Link](#iam-resource-link), including actions for endpoints and sources.
 * [Other services](#iam-resource-services), like {{site.data.keyword.openshiftlong_notm}} clusters and {{site.data.keyword.satelliteshort}}-enabled services.
 
 ### Location
 {: #iam-resource-loc}
 
-Review details about the {{site.data.keyword.satelliteshort}} config IAM resource type.
+Review details about the {{site.data.keyword.satelliteshort}} Config IAM resource type.
 {: shortdesc}
 
 If you scope an access policy to the `location` resource type, the users must target the regional endpoint to interact with the location. For more information, see the [troubleshooting topic](/docs/satellite?topic=satellite-ts-location-missing-location).
@@ -144,7 +144,7 @@ If you scope an access policy to the `location` resource type, the users must ta
 ### Configuration, subscription, cluster, cluster group, and resource
 {: #iam-resource-config}
 
-Review details about the {{site.data.keyword.satelliteshort}} config IAM resource type.
+Review details about the {{site.data.keyword.satelliteshort}} Config IAM resource type.
 {: shortdesc}
 
 **Name of the resource type**:
@@ -161,7 +161,7 @@ Review details about the {{site.data.keyword.satelliteshort}} config IAM resourc
 
 **Description**:
 
-[{{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config) is a collection of configurations, versions, and subscriptions that you use to automatically deploy Kubernetes resources to groups of clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component. However, access to {{site.data.keyword.satelliteshort}} Config does not give a user access to the clusters that run the Kubernetes resources of the configuration. You can scope access to the following {{site.data.keyword.satelliteshort}} config resources.
+[{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) is a collection of configurations, versions, and subscriptions that you use to automatically deploy Kubernetes resources to groups of clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component. However, access to {{site.data.keyword.satelliteshort}} Config does not give a user access to the clusters that run the Kubernetes resources of the configuration. You can scope access to the following {{site.data.keyword.satelliteshort}} Config resources.
 * **Configurations**, where you upload the version of the configuration file for the Kubernetes resources that you want to deploy. You cannot scope a policy to a particular configuration.
 * **Subscriptions**, which you use to use to specify the cluster group where you want to deploy the Kubernetes resource definition that you added as a version to your configuration. You cannot scope a policy to a particular configuration.
 * **Clusters** or **cluster groups**, which are {{site.data.keyword.openshiftlong_notm}} that are registered with {{site.data.keyword.satelliteshort}} Config and can be subscribed to configurations.
@@ -204,7 +204,7 @@ Varies by service. For example, {{site.data.keyword.openshiftlong_notm}} is the 
 
 You do not assign access policies for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}. Instead, access to clusters is assigned in {{site.data.keyword.cloud_notm}} IAM through {{site.data.keyword.openshiftlong_notm}} (**Kubernetes Service** in the console or `containers-kubernetes` in the API or CLI). For more information, see [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](#iam-roles-clusters).
 
-If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration. However, you might not be able to access the clusters if you do not have the appropriate roles to those clusters. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} configuration, you might be able to list all the Kubernetes resources that run in registered clusters via the {{site.data.keyword.satelliteshort}} config API. However, without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.openshiftshort}} APIs to list Kubernetes resources.
+If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration. However, you might not be able to access the clusters if you do not have the appropriate roles to those clusters. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} configuration, you might be able to list all the Kubernetes resources that run in registered clusters via the {{site.data.keyword.satelliteshort}} Config API. However, without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.openshiftshort}} APIs to list Kubernetes resources.
 
 **Description of other {{site.data.keyword.satelliteshort}}-enabled services**:
 
@@ -245,7 +245,7 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
       *   [Platform access roles](#iam-roles-platform)
       *   [Service access roles](#iam-roles-service)
       *   [Common use cases and roles](#iam-roles-usecases)
-    * Consider creating a **Reader** service policy to {{site.data.keyword.satellitelong_notm}} (and not scoped to a particular resource type or resource) so that users can view the {{site.data.keyword.satelliteshort}} config resources that run in {{site.data.keyword.satelliteshort}} clusters, such as pods or deployments.
+    * Consider creating a **Reader** service policy to {{site.data.keyword.satellitelong_notm}} (and not scoped to a particular resource type or resource) so that users can view the {{site.data.keyword.satelliteshort}} Config resources that run in {{site.data.keyword.satelliteshort}} clusters, such as pods or deployments.
 4.  [Assign the access group](/docs/account?topic=account-groups#access_ag) with the appropriate scope for any other {{site.data.keyword.cloud_notm}} services that you plan to use in your {{site.data.keyword.satelliteshort}} location. Refer to each service documentation for the level of access that you need. Common services include:
     * {{site.data.keyword.openshiftlong_notm}} clusters: **Kubernetes Service** in the UI, **containers-kubernetes** in the API and CLI.
     * {{site.data.keyword.registrylong_notm}} for a private registry across clusters: **Container Registry** in the UI, **container-registry** in the API and CLI.
@@ -273,7 +273,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM console to grant an access policy t
 7.  For **Resource Type** string equals field, scope the policy to a {{site.data.keyword.satelliteshort}} resource, such as **Location**.
 8.  For the **Resource** string equals field, enter the name of your {{site.data.keyword.satelliteshort}} location, such as **Port-NewYork**. Keep in mind the following considerations for various {{site.data.keyword.satelliteshort}} resources.
     * **{{site.data.keyword.satelliteshort}} location**: If you leave the **Resource** field blank, the user gets access to all the locations, which is needed for the user to create a location. When scoped to a location, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location).
-    * **{{site.data.keyword.satelliteshort}} config**: You cannot scope a policy to individual `configuration` or `subscription` resources. Instead, leave the **Resource** field blank and control access to your {{site.data.keyword.satelliteshort}} Config resources at the `clustergroup` level.
+    * **{{site.data.keyword.satelliteshort}} Config**: You cannot scope a policy to individual `configuration` or `subscription` resources. Instead, leave the **Resource** field blank and control access to your {{site.data.keyword.satelliteshort}} Config resources at the `clustergroup` level.
 9.  For **Platform access**, select the **Editor** role so that all users in your access group can add and remove hosts and endpoints from the {{site.data.keyword.satelliteshort}} location, but cannot create or delete locations. For other roles by resource type, see [IAM platform and service roles](#iam-roles).
 10. Click **Add+**.
 11. In the **Access summary** pane, review the access policy, and then click **Assign**.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-09"
 
 keywords: satellite, hybrid, multicloud, satellite infrastructure service
 
@@ -150,7 +150,7 @@ With your {{site.data.keyword.satelliteshort}} Infrastructure Service location u
 **Application workloads**
 
 1.  As needed, [create clusters](/docs/satellite?topic=openshift-satellite-clusters) in your {{site.data.keyword.satelliteshort}} location to run your apps. The clusters use the available hosts as worker nodes.
-2.  Use tools such as [{{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config), [{{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-location-cloud), and [{{site.data.keyword.satelliteshort}} storage](/docs/satellite?topic=satellite-config-storage-local-block) to consistently deploy and manage your apps across the clusters in your {{site.data.keyword.satelliteshort}} location.
+2.  Use tools such as [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config), [{{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-location-cloud), and [{{site.data.keyword.satelliteshort}} storage](/docs/satellite?topic=satellite-config-storage-local-block) to consistently deploy and manage your apps across the clusters in your {{site.data.keyword.satelliteshort}} location.
 
 **Usage and capacity planning**
 
