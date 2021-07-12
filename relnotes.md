@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-08"
+lastupdated: "2021-07-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -128,7 +128,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 | ---- | ----------- |
 | 26 May 2021 | **CLI changelog**: Updated the CLI plug-in changelog page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog). |
 | 19 May 2021 | **New! NetApp ONTAP-NAS storage driver template**: You can use the NetApp ONTAP-NAS storage driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [NetApp ONTAP-NAS storage driver documentation](/docs/satellite?topic=satellite-config-storage-netapp-nas). |
-| 12 May 2021 | **New! IBM Systems {{site.data.keyword.blockstorageshort}} CSI driver template**: You can use the IBM Systems {{site.data.keyword.blockstorageshort}} CSI driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [IBM Systems {{site.data.keyword.blockstorageshort}} CSI driver documentation](/docs/satellite?topic=satellite-config-storage-block-csi). |
+| 12 May 2021 | **New! IBM Systems block storage CSI driver template**: You can use the IBM Systems block storage CSI driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [IBM Systems block storage CSI driver documentation](/docs/satellite?topic=satellite-config-storage-block-csi). |
 | 07 May 2021 | **New! Spectrum Scale CSI driver template**: You can use the IBM Spectrum Scale Container Storage Interface (CSI) driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [IBM Spectrum Scale driver documentation](/docs/satellite?topic=satellite-config-storage-spectrum-scale). |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in May 2021."}

@@ -93,12 +93,12 @@ subcollection: satellite
 {:video: .video}
 
 
-# IBM Systems {{site.data.keyword.blockstorageshort}} CSI driver
+# IBM Systems block storage CSI driver
 {: #config-storage-block-csi}
 
-The {{site.data.keyword.blockstorageshort}} CSI driver is based on an IBM open-source project, and integrated into the IBM Storage orchestration for containers. IBM Storage orchestration for containers enables enterprises to implement a modern container-driven hybrid multicloud environment that can reduce IT costs and enhance business agility, while continuing to derive value from existing systems.
+The block storage CSI driver is based on an IBM open-source project, and integrated into the IBM Storage orchestration for containers. IBM Storage orchestration for containers enables enterprises to implement a modern container-driven hybrid multicloud environment that can reduce IT costs and enhance business agility, while continuing to derive value from existing systems.
 
-For full release notes, compatiblity, installation, and user information, see the [{{site.data.keyword.blockstorageshort}} CSI driver documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0){: external}.
+For full release notes, compatiblity, installation, and user information, see the [block storage CSI driver documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0){: external}.
 
 Supported IBM storage systems:
   - IBM Spectrum Virtualize Family including IBM SAN Volume Controller (SVC) and IBM FlashSystem® family members built with IBM Spectrum® Virtualize (FlashSystem 5010, 5030, 5100, 5200, 7200, 9100, 9200, 9200R)
@@ -120,7 +120,7 @@ Review the [compatibility and requirements documentation](https://www.ibm.com/do
 
 <br />
 
-## Creating a {{site.data.keyword.blockstorageshort}} configuration in the command line
+## Creating a block storage configuration in the command line
 {: #sat-storage-block-csi-cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
@@ -169,7 +169,7 @@ Review the [compatibility and requirements documentation](https://www.ibm.com/do
 1. [Assign your storage configuration to clusters](#assign-storage-block-csi).
 
 <br />
-## Assigning your {{site.data.keyword.blockstorageshort}} configuration to a cluster
+## Assigning your block storage configuration to a cluster
 {: #assign-storage-block-csi}
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-block-csi), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
@@ -237,13 +237,13 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
   ```
   {: pre}
 
-## Deploying an app that uses your IBM {{site.data.keyword.blockstorageshort}}
+## Deploying an app that uses your IBM block storage
 {: #storage-block-csi-app-deploy}
 
 You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you can use in your cluster workloads.
 {: shortdesc}
 
-1. Create a Kubernetes secret configuration file that contains your {{site.data.keyword.blockstorageshort}} credentials. For more information, see [Creating a Kubernetes secret](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-secret){: external}.
+1. Create a Kubernetes secret configuration file that contains your block storage credentials. For more information, see [Creating a Kubernetes secret](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-secret){: external}.
   ```yaml
   kind: Secret
   apiVersion: v1
