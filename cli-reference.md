@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-09"
+lastupdated: "2021-07-12"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1893,7 +1893,7 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 
 **Example:**
 ```sh
-ibmcloud sat storage config create --name ibm-ocs-config --template-name ocs-local --template-version 4.6 --source-branch main --source-org my-github-org
+ibmcloud sat storage config create --name <config_name> --location <location> --template-name ocs-local --template-version 4.6 --source-branch main --source-org my-github-org
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-09"
+lastupdated: "2021-07-12"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -156,7 +156,7 @@ Review the [compatibility and requirements documentation](https://www.ibm.com/do
   {: pre}
 1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
   ```sh
-  ibmcloud sat storage config create --name <name> --template-name ibm-system-storage-block-csi-driver --template-version <template_version> -p "namespace=<namespace>" 
+  ibmcloud sat storage config create --name <config_name> --location <location> --template-name ibm-system-storage-block-csi-driver --template-version <template_version> -p "namespace=<namespace>" 
   ```
   {: pre}
 

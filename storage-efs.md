@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-12"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -154,7 +154,7 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
 1. Review the [AWS EFS storage configuration parameters](#sat-storage-aws-efs-params-cli).
 2. Create an AWS EFS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
    ```sh
-   ibmcloud sat storage config create --name <config_name> --template-name aws-efs-csi-driver --template-version <template_version>
+   ibmcloud sat storage config create --name <config_name> --location <location> --template-name aws-efs-csi-driver --template-version <template_version>
    ```
    {: pre}
 3. Verify that your storage configuration is created.

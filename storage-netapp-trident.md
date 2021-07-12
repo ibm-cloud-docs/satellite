@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-09"
+lastupdated: "2021-07-12"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -141,7 +141,7 @@ You must deploy the NetApp Trident template to your clusters before you can crea
   {: pre}
 1. Run the following command to create a NetApp Trident configuration. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
   ```sh
-  ibmcloud sat storage config create --name <name> --template-name netapp-trident --template-version <template_version>
+  ibmcloud sat storage config create --name <config_name> --location <location> --template-name netapp-trident --template-version <template_version>
   ```
   {: pre}
 1. Verify that your storage configuration is created.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-09"
+lastupdated: "2021-07-12"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -239,7 +239,7 @@ After you have [retrieved the device paths for the disks that you want to use in
   {: pre}
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
   ```sh
-  ibmcloud sat storage config create --name <name> --template-name local-volume-block --template-version <template-version> --param "label-key=storage" --param "label-value=local-block" --param "devicepath=<devicepath>"
+  ibmcloud sat storage config create --name <config_name> --location <location> --template-name local-volume-block --template-version <template-version> --param "label-key=storage" --param "label-value=local-block" --param "devicepath=<devicepath>"
   ```
   {: pre}
 1. Verify that your storage configuration is created.
