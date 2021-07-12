@@ -29,7 +29,7 @@ Satellite
 
     locations.md
 
-    {: . topicgroup}
+    {: .topicgroup}
     Assigning Satellite hosts to services and clusters
         hosts.md
         /openshift/openshift-satellite-clusters

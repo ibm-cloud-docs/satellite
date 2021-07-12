@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-06"
+lastupdated: "2021-07-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -114,7 +114,7 @@ Your {{site.data.keyword.satelliteshort}} location starts with your actual infra
 
 1.  Choose the infrastructure provider that you want to use to create a {{site.data.keyword.satelliteshort}} location.
     * **On-premises**: You can use a data center with existing infrastructure, or order infrastructure from IBM with [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service). You might not even have a data center, but rather an edge location that meets the minimum hardware requirements, such as three racks at one of your company's local sites.
-    * **Cloud provider**: You can use a cloud provider of your choice, such as Amazon Web Services (AWS), Google Cloud Platform (GCP), {{site.data.keyword.cloud_notm}}, or Microsoft Azure. With the AWS cloud provider, you can also use a {{site.data.keyword.bpshort}} template to quickly create the location. To use {{site.data.keyword.cloud_notm}}, you can [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-getting-started), and then [add the cluster to a {{site.data.keyword.satelliteshort}} config cluster group](/docs/satellite?topic=satellite-cluster-config#manage-existing-openshift-clusters).
+    * **Cloud provider**: You can use a cloud provider of your choice, such as Amazon Web Services (AWS), Google Cloud Platform (GCP), {{site.data.keyword.cloud_notm}}, or Microsoft Azure. With the AWS cloud provider, you can also use a {{site.data.keyword.bpshort}} template to quickly create the location. To use {{site.data.keyword.cloud_notm}}, you can [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-getting-started), and then [add the cluster to a {{site.data.keyword.satelliteshort}} Config cluster group](/docs/satellite?topic=satellite-cluster-config#manage-existing-openshift-clusters).
 2.  In your infrastructure provider, identify a multizone location that meets the latency requirements.
     *   **Multizone**: Your location must have at least three zones that are physically separate so that you can spread out hosts evenly across the zones to increase [high availability](/docs/satellite?topic=satellite-ha). For example, your cloud provider might have three different zones within the same region, or you might use three racks with three separate networking and power supply systems in an on-prem environment.
     *   **Latency**: Environments that do not meet the latency requirements experience degraded performance.

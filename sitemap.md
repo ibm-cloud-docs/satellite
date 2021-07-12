@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-08"
+lastupdated: "2021-07-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -251,75 +251,50 @@ subcollection: satellite
     * [Removing locations from the CLI](/docs/satellite?topic=satellite-locations#location-remove-cli)
 
 
-## Setting up {{site.data.keyword.satelliteshort}} hosts
-{: #sitemap_setting_up__hosts}
+## Assigning Satellite hosts to services and clusters
+{: #sitemap_assigning_satellite_hosts_to_services_and_clusters}
 
 
 [Setting up {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-hosts)
-
 * [Understanding {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-hosts#host-concept)
-
 * [Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#attach-hosts)
-    * [Attaching hosts from the console](/docs/satellite?topic=satellite-hosts#attach-hosts-console)
-    * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-hosts#attach-hosts-cli)
-
+  * [Attaching hosts from the console](/docs/satellite?topic=satellite-hosts#attach-hosts-console)
+  * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-hosts#attach-hosts-cli)
 * [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov)
-    * [About host labels](/docs/satellite?topic=satellite-hosts#host-autoassign-about)
-    * [Automatically assigning hosts](/docs/satellite?topic=satellite-hosts#host-autoassign)
-    * [Disabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-disable)
-    * [Re-enabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-enable)
-
+  * [About host labels](/docs/satellite?topic=satellite-hosts#host-autoassign-about)
+  * [Automatically assigning hosts](/docs/satellite?topic=satellite-hosts#host-autoassign)
+  * [Disabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-disable)
+  * [Re-enabling host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-enable)
 * [Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources](/docs/satellite?topic=satellite-hosts#host-assign)
-    * [Prerequisites](/docs/satellite?topic=satellite-hosts#host-assign-prereq)
-    * [Assigning hosts from the console](/docs/satellite?topic=satellite-hosts#host-assign-ui)
-    * [Assigning hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-assign-cli)
-
+  * [Prerequisites](/docs/satellite?topic=satellite-hosts#host-assign-prereq)
+  * [Assigning hosts from the console](/docs/satellite?topic=satellite-hosts#host-assign-ui)
+  * [Assigning hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-assign-cli)
 * [Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled services like clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
-    * [Checking if a version update is available for worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-check)
-    * [Reviewing the changelog for version updates](/docs/satellite?topic=satellite-hosts#host-update-workers-changelog)
-    * [Applying version updates to worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-apply)
-
+  * [Checking if a version update is available for worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-check)
+  * [Reviewing the changelog for version updates](/docs/satellite?topic=satellite-hosts#host-update-workers-changelog)
+  * [Applying version updates to worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-apply)
 * [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
-    * [Considerations before you update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-considerations)
-    * [Procedure to update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-cp-procedure)
-
+  * [Considerations before you update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-considerations)
+  * [Procedure to update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-cp-procedure)
 * [Updating host metadata](/docs/satellite?topic=satellite-hosts#host-update-metadata)
-
 * [Resetting the host key](/docs/satellite?topic=satellite-hosts#host-key-reset)
-
 * [Monitoring host health](/docs/satellite?topic=satellite-hosts#host-monitor-health)
-
 * [Removing hosts](/docs/satellite?topic=satellite-hosts#host-remove)
-    * [Removing hosts from the console](/docs/satellite?topic=satellite-hosts#host-remove-console)
-    * [Removing hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-remove-cli)
-
-
-## Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}
-{: #sitemap_creating__clusters_in_{{site.data.keyword.satelliteshort}}}
-
+  * [Removing hosts from the console](/docs/satellite?topic=satellite-hosts#host-remove-console)
+  * [Removing hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-remove-cli)
 
 [Creating {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=openshift-satellite-clusters)
-
 * [Prerequisites](/docs/satellite?topic=openshift-satellite-clusters#satcluster-prereqs)
-
 * [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the console](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-console)
-
 * [Creating {{site.data.keyword.openshiftshort}} clusters on {{site.data.keyword.satelliteshort}} from the CLI](/docs/satellite?topic=openshift-satellite-clusters#satcluster-create-cli)
-
 * [Accessing and working with your {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-access)
-
 * [Setting up the internal container image registry](/docs/satellite?topic=openshift-satellite-clusters#satcluster-internal-registry)
-
 * [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#satcluster-worker-pools)
-    * [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels)
-    * [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance)
-
+  * [Creating {{site.data.keyword.satelliteshort}} worker pools with host labels for autoassignment](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels)
+  * [Maintaining {{site.data.keyword.satelliteshort}} worker pools](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance)
 * [Exposing apps](/docs/satellite?topic=openshift-satellite-clusters#satcluster-expose-apps)
-
 * [Storing application data in persistent storage](/docs/satellite?topic=openshift-satellite-clusters#satcluster-storage)
-
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-rm)
-
 * [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-limitations)
 
 
@@ -342,11 +317,11 @@ subcollection: satellite
 
 * [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-cluster-config#create-satconfig-cli)
 
-* [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources)
+* [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources)
 
-* [Using {{site.data.keyword.satelliteshort}} config with existing {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-cluster-config#manage-existing-openshift-clusters)
-    * [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters)
-    * [Removing {{site.data.keyword.satelliteshort}} config from your cluster](/docs/satellite?topic=satellite-cluster-config#remove-satconfig)
+* [Using {{site.data.keyword.satelliteshort}} Config with existing {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-cluster-config#manage-existing-openshift-clusters)
+    * [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters)
+    * [Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-cluster-config#remove-satconfig)
 
 
 ## Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints
@@ -406,7 +381,7 @@ subcollection: satellite
   * [Viewing host health](/docs/satellite?topic=satellite-monitor#host-health)
   * [Viewing cluster health](/docs/satellite?topic=satellite-monitor#cluster-health)
   * [Viewing Kubernetes resources in clusters](/docs/satellite?topic=satellite-monitor#kubernetes-resources-health)
-  * [Viewing {{site.data.keyword.satelliteshort}} config registration status for clusters](/docs/satellite?topic=satellite-monitor#satconfig-registration-status)
+  * [Viewing {{site.data.keyword.satelliteshort}} Config registration status for clusters](/docs/satellite?topic=satellite-monitor#satconfig-registration-status)
 * [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics](/docs/satellite?topic=satellite-monitor#setup-mon)
   * [Available metrics](/docs/satellite?topic=satellite-monitor#available-metrics)
   * [Attributes for segmentation](/docs/satellite?topic=satellite-monitor#attributes)
@@ -467,12 +442,12 @@ subcollection: satellite
 * [Limitations](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-limits)
   * [Spectrum Scale configuration parameter reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-params-cli)
 
-[IBM Systems {{site.data.keyword.blockstorageshort}} CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi)
+[IBM Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-prereq)
-* [Creating a {{site.data.keyword.blockstorageshort}} configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-cli)
-* [Assigning your {{site.data.keyword.blockstorageshort}} configuration to a cluster](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi)
+* [Creating a block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-cli)
+* [Assigning your block storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi)
   * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-cli)
-* [Deploying an app that uses your IBM {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
+* [Deploying an app that uses your IBM block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
 
 
 ## NetApp storage templates

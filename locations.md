@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -547,9 +547,9 @@ To copy your {{site.data.keyword.satelliteshort}} location to a new location, yo
 7. Re-create your location.
    *  For options to create the location and hosts, see [Deciding how to create your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#create-options).
    *  To create {{site.data.keyword.satelliteshort}} Link endpoints, see [cloud](/docs/satellite?topic=satellite-link-location-cloud#link-cloud) or [location](/docs/satellite?topic=satellite-link-location-cloud#link-location) endpoint instructions.
-   *  For clusters, see [Creating {{site.data.keyword.openshiftshort}} in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters). If you manually deployed Kubernetes configurations instead of using {{site.data.keyword.satelliteshort}} config, also see [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster).
-8. Redeploy your apps to your cluster. Because {{site.data.keyword.satelliteshort}} config works across {{site.data.keyword.satelliteshort}} locations, you can [add your new clusters to existing cluster groups](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups) that are already [subscribed to the configurations](/docs/satellite?topic=satellite-cluster-config#create-satconfig-ui) that you want to deploy.
-9. Similar to {{site.data.keyword.satelliteshort}} config, if you used {{site.data.keyword.satelliteshort}} storage configurations, you can assign these configurations to your new clusters to install the storage drivers.
+   *  For clusters, see [Creating {{site.data.keyword.openshiftshort}} in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters). If you manually deployed Kubernetes configurations instead of using {{site.data.keyword.satelliteshort}} Config, also see [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster).
+8. Redeploy your apps to your cluster. Because {{site.data.keyword.satelliteshort}} Config works across {{site.data.keyword.satelliteshort}} locations, you can [add your new clusters to existing cluster groups](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups) that are already [subscribed to the configurations](/docs/satellite?topic=satellite-cluster-config#create-satconfig-ui) that you want to deploy.
+9. Similar to {{site.data.keyword.satelliteshort}} Config, if you used {{site.data.keyword.satelliteshort}} storage configurations, you can assign these configurations to your new clusters to install the storage drivers.
 
 When you are done and your new location is healthy, you can [remove the previous location](#location-remove).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-07"
+lastupdated: "2021-07-12"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -155,7 +155,7 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 2. Review the [AWS EBS storage configuration parameters](#sat-storage-aws-ebs-params-cli).
 3. Create an AWS EBS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
    ```sh
-   ibmcloud sat storage config create --name <config_name> --template-name aws-ebs-csi-driver --template-version <template_version> --param "aws-access-key=<aws_access_key>" --param "aws-secret-access-key=<aws_secret_access_key>"
+   ibmcloud sat storage config create --name <config_name> --location <location> --template-name aws-ebs-csi-driver --template-version <template_version> --param "aws-access-key=<aws_access_key>" --param "aws-secret-access-key=<aws_secret_access_key>"
    ```
    {: pre}
 4. Verify that your storage configuration is created.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-30"
+lastupdated: "2021-07-12"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -242,7 +242,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 3. Review the [Local file storage configuration parameters](#sat-storage-local-file-params-cli).
 4. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
   ```sh
-  ibmcloud sat storage config create --name <name> --template-name local-volume-file --template-version <template-version> --param "label-key=storage" --param "label-value=local-file" --param "devicepath=<devicepath>" --param "fstype=<fstype>"
+  ibmcloud sat storage config create --name <config_name> --location <location> --template-name local-volume-file --template-version <template-version> --param "label-key=storage" --param "label-value=local-file" --param "devicepath=<devicepath>" --param "fstype=<fstype>"
   ```
   {: pre}
 5. Verify that your storage configuration is created.
@@ -274,7 +274,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
   ```
   {: pre}
 
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
+1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
   * **Group**
     ```sh
     ibmcloud sat group ls

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-09"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -192,7 +192,7 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
 
 Choose from the following options.
 * **Admin access when you create a {{site.data.keyword.satelliteshort}} cluster**: You can enable admin permissions when you create the cluster in the console or in the CLI by using the `--enable-admin-agent` flag in the `ibmcloud oc cluster create satellite` command. After creating the cluster, you must perform a one-time login by running `ibmcloud ks cluster config` in the command line.
-* **Admin access for {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud**: See [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} config](#existing-openshift-clusters).
+* **Admin access for {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud**: See [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} Config](#existing-openshift-clusters).
 * **Custom access, or access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access**: Complete the following steps.
 
 **To customize access, or add access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access at cluster creation**:
@@ -355,7 +355,7 @@ To create the configuration:
    1. From the actions menu of a configuration, click **Add version**.
    2. Enter a name and an optional description for your version.
    3. Upload a Kubernetes resource YAML file or use the editor to enter your Kubernetes resource definition directly. Make sure to specify the Kubernetes namespace where you want your resource to be deployed. If you do not specify a namespace, the resource is deployed to the `razeedeploy` namespace by default. 
-   4. **Optional**: To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-cluster-config#satconfig-resources), such as adding a configmap to your cluster. 
+   4. **Optional**: To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} Config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-cluster-config#satconfig-resources), such as adding a configmap to your cluster. 
    5. Click **Add** to add the Kubernetes resource definition as a version to your configuration.
 4. Subscribe your cluster group to the {{site.data.keyword.satelliteshort}} configuration to deploy the Kubernetes resources to your clusters.
    1. Select the configuration that you created to see the configuration details.
@@ -416,7 +416,7 @@ To create the configuration:
 
 4. Upload a Kubernetes resource file to your configuration. Make sure to specify the Kubernetes namespace where you want your resource to be deployed. If you do not specify a namespace, the resource is deployed to the `razeedeploy` namespace by default. 
 
-   To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-cluster-config#satconfig-resources), such as adding a configmap to your cluster. 
+   To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} Config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-cluster-config#satconfig-resources), such as adding a configmap to your cluster. 
    {: tip}
 
    ```
@@ -504,52 +504,52 @@ To create the configuration:
 
 <br />
 
-## Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config
+## Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config
 {: #satconfig-resources}
 
-You can use {{site.data.keyword.satelliteshort}} config to review the Kubernetes resources that run in your registered clusters.
+You can use {{site.data.keyword.satelliteshort}} Config to review the Kubernetes resources that run in your registered clusters.
 {: shortdesc}
 
 Before you begin, make sure that you have the following permissions. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 -  The **Administrator** platform role, **Reader** service role, or **Manager** service role in {{site.data.keyword.cloud_notm}} IAM for the **Resource** resource type in {{site.data.keyword.satellitelong_notm}}.
--  The appropriate permissions to enable the {{site.data.keyword.satelliteshort}} config watchkeeping capability, such as one of the following options.
+-  The appropriate permissions to enable the {{site.data.keyword.satelliteshort}} Config watchkeeping capability, such as one of the following options.
    * The [permissions](#create-satconfig-ui) to create a configuration version and subscribe clusters to the version.
    * The **Writer** service role in {{site.data.keyword.cloud_notm}} IAM to the **Kubernetes Service** clusters that you want to watch resources for.
 
-To review resources in {{site.data.keyword.satelliteshort}} config:
+To review resources in {{site.data.keyword.satelliteshort}} Config:
 1. Review the [watchkeeper collection methods](https://github.com/razee-io/WatchKeeper#collection-methods){: external} to decide how to set up watchkeeping for your resources. Common use cases include:
    *  **Watch all of the resources that my {{site.data.keyword.satelliteshort}} subscription creates**.
       1. [Add a configmap](https://github.com/razee-io/WatchKeeper#watch-by-resource){: external} to the YAML file of your {{site.data.keyword.satelliteshort}} configuration version. 
       2. In the `metadata.namespace` field of the configmap, set the value to `razeedeploy`.
-      3. In the `data` section of the configmap, add all of the resources that you want {{site.data.keyword.satelliteshort}} config to watch.
+      3. In the `data` section of the configmap, add all of the resources that you want {{site.data.keyword.satelliteshort}} Config to watch.
       4. Subscribe your clusters to this version from the [console](#create-satconfig-ui) or [CLI](#create-satconfig-cli).
-   *  **Watch a particular resource in my {{site.data.keyword.satelliteshort}} config version**.
-      1. In the `metadata.labels` field of the Kubernetes resource in your {{site.data.keyword.satelliteshort}} config version, set the value to `razee/watch-resource=lite`.
+   *  **Watch a particular resource in my {{site.data.keyword.satelliteshort}} Config version**.
+      1. In the `metadata.labels` field of the Kubernetes resource in your {{site.data.keyword.satelliteshort}} Config version, set the value to `razee/watch-resource=lite`.
       2. Subscribe your clusters to this version from the [console](#create-satconfig-ui) or [CLI](#create-satconfig-cli).
    *  **Watch a particular resource that I label in my cluster**.
       1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
-      2. Individually label the resource that you want {{site.data.keyword.satelliteshort}} config to watch. For example, the following command watches a deployment that is called `nginx`. 
+      2. Individually label the resource that you want {{site.data.keyword.satelliteshort}} Config to watch. For example, the following command watches a deployment that is called `nginx`. 
          ```
          kubectl label deployment nginx razee/watch-resource=lite
          ```
          {: pre}
 2. After you enable watchkeeping for a resource, wait about an hour for the resources to display.
-3. Review the resources from {{site.data.keyword.satelliteshort}} config.
+3. Review the resources from {{site.data.keyword.satelliteshort}} Config.
    *  **From the console**: You can review resources in several areas in the console as follows.
       * From the [**Cluster resources** page](https://cloud.ibm.com/satellite/resources){: external}. * * From the [**Configurations** page](https://cloud.ibm.com/satellite/configuration){: external}, click a configuration. Then, click a subscription and review the **Resources** tab.
       * From the [**Clusters** page](https://cloud.ibm.com/satellite/clusters){: external}, click a cluster. Then, review the **Resources** tab.
    *  **From the CLI**: Use the `ibmcloud sat resource ls` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls) and its options to list resources. To view the details of a particular resource, use the `ibmcloud sat resource get` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get).
 
-## Using {{site.data.keyword.satelliteshort}} config with existing {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.cloud_notm}} 
+## Using {{site.data.keyword.satelliteshort}} Config with existing {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.cloud_notm}} 
 {: #manage-existing-openshift-clusters}
 
 You can make existing {{site.data.keyword.openshiftlong_notm}} clusters that you run in {{site.data.keyword.cloud_notm}} available to the {{site.data.keyword.satelliteshort}} Config component so that you can include them when you roll out Kubernetes resource versions across your clusters.
 {: shortdesc}
 
-### Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} config
+### Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} Config
 {: #existing-openshift-clusters}
 
-Run a script in your {{site.data.keyword.openshiftlong_notm}} cluster to set up the {{site.data.keyword.satelliteshort}} config components and make the cluster visible in {{site.data.keyword.satelliteshort}}. 
+Run a script in your {{site.data.keyword.openshiftlong_notm}} cluster to set up the {{site.data.keyword.satelliteshort}} Config components and make the cluster visible in {{site.data.keyword.satelliteshort}}. 
 {: shortdesc}
 
 After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](#create-satconfig-ui). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
@@ -593,27 +593,27 @@ After you complete these steps, the cluster can be added to a cluster group in y
 
 8. Optional: Click on your cluster to view the Kubernetes resources that are deployed to the cluster.
 
-### Removing {{site.data.keyword.satelliteshort}} config from your cluster
+### Removing {{site.data.keyword.satelliteshort}} Config from your cluster
 {: #remove-satconfig}
 
-If you do not want your {{site.data.keyword.openshiftlong_notm}} cluster to be available to {{site.data.keyword.satelliteshort}} config, you can remove the {{site.data.keyword.satelliteshort}} config components from your cluster. 
+If you do not want your {{site.data.keyword.openshiftlong_notm}} cluster to be available to {{site.data.keyword.satelliteshort}} Config, you can remove the {{site.data.keyword.satelliteshort}} Config components from your cluster. 
 {: shortdesc}
 
-You can remove {{site.data.keyword.satelliteshort}} config components only from {{site.data.keyword.openshiftlong_notm}} clusters that you manually registered. If you created a cluster on {{site.data.keyword.satelliteshort}}-provided infrastructure, {{site.data.keyword.satelliteshort}} config components are automatically set up in the location control plane and cannot be removed. 
+You can remove {{site.data.keyword.satelliteshort}} Config components only from {{site.data.keyword.openshiftlong_notm}} clusters that you manually registered. If you created a cluster on {{site.data.keyword.satelliteshort}}-provided infrastructure, {{site.data.keyword.satelliteshort}} Config components are automatically set up in the location control plane and cannot be removed. 
 {: note}
 
-Removing {{site.data.keyword.satelliteshort}} config components automatically removes all cluster resources that you created by using {{site.data.keyword.satelliteshort}} configurations. Make sure to back up any data or redeploy any apps that you want to keep. 
+Removing {{site.data.keyword.satelliteshort}} Config components automatically removes all cluster resources that you created by using {{site.data.keyword.satelliteshort}} configurations. Make sure to back up any data or redeploy any apps that you want to keep. 
 {: important}
 
 1. [Log in to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2. Remove all the {{site.data.keyword.satelliteshort}} config components from your cluster by running a [{{site.data.keyword.satelliteshort}} config removal job](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml){: external}. 
+2. Remove all the {{site.data.keyword.satelliteshort}} Config components from your cluster by running a [{{site.data.keyword.satelliteshort}} Config removal job](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml){: external}. 
    ```
    oc apply -f https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml
    ```
    {: pre}
 
-3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} config components to be removed. 
-4. Verify that your {{site.data.keyword.satelliteshort}} config components are removed. 
+3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Config components to be removed. 
+4. Verify that your {{site.data.keyword.satelliteshort}} Config components are removed. 
    ```
    oc get pods -n razeedeploy
    ```
@@ -625,7 +625,7 @@ Removing {{site.data.keyword.satelliteshort}} config components automatically re
    ```
    {: screen}
    
-5. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, find the cluster that you want to remove from {{site.data.keyword.satelliteshort}} config. 
+5. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, find the cluster that you want to remove from {{site.data.keyword.satelliteshort}} Config. 
 6. From the actions menu, click **Unregister** and verify that your cluster is removed from the {{site.data.keyword.satelliteshort}} cluster dashboard. 
 
 <br />
