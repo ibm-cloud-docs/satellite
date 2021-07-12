@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-09"
+lastupdated: "2021-07-12"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference
 
@@ -113,6 +113,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.300 | 12 Jul 2021 | <ul><li>Updates the help text in various languages.</li></ul>|
 | 1.0.295 | 24 Jun 2021 | <ul><li>The `ibmcloud sat storage config` and `ibmcloud sat storage template` commands are now generally available.</li><li>Adds the `--cluster` and `--service-cluster-id` flag to the `ibmcloud sat storage assignment ls` command to filter output by the ID of a cluster that you created or the ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster.</li><li>Adds the `--service-cluster-id` flag to the `ibmcloud sat storage assignment create` command to deploy storage drivers to a specific {{site.data.keyword.satelliteshort}}-enabled service cluster.</li><li>Updates the help text in various languages.</li></ul> |
 | 1.0.275 | 26 May 2021 | <ul><li>Adds the following changes to storage commands:<ul><li>Adds the `--cluster` flag to the `ibmcloud sat storage assignment create` command to assign to an individual cluster ID instead of a cluster group.</li><li>Adds `--location` as a required flag to the `ibmcloud sat storage config create` command and an optional flag to the `ibmcloud sat storage config ls` command.</li><li>Changes the `--config` flag to `--config-name` in the `ibmcloud sat storage config sc add` command.</li></ul></li><li>Adds the optional `--output json` flag to the `ibmcloud sat config get`, `ibmcloud sat config ls`, and `ibmcloud sat config version get` commands.</li><li>Increases the maximum size for the file in the `--read-config` flag of the `ibmcloud sat config version create` command from 1MB to 3MB.</li><li>Fixes the `ibmcloud sat group create` command to enable cluster group creation.</li><li>The IAM token that is used for your CLI session is now refreshed 5 minutes before expiration to keep the session active.</li><li>Updates the help text in various languages.</li></ul> |
 | 1.0.258 | 26 Apr 2021 | <ul><li>Adds the `ibmcloud sat storage config sc add`, `ibmcloud sat storage config sc get`, and `ibmcloud sat storage config sc ls` beta commands to create and view custom storage classes of {{site.data.keyword.satelliteshort}} storage configurations.</li><li>Adds the `ibmcloud sat messages` command to view current messages from {{site.data.keyword.satellitelong_notm}}.</li><li>Fixes a `golang` vulnerability for [CVE-2020-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28852){: external}.</li><li>Updates the help text in various languages.</li></ul> |
