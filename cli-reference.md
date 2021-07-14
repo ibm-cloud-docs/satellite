@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-14"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1955,6 +1955,7 @@ ibmcloud sat storage config ls [--location LOCATION] [-q]
 <dl>
 <dt><code>--location <em>LOCATION</em></code></dt>
 <dd>Optional. Enter the ID or name of the location where you want to list storage configurations. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.</dd>
+
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
 </dl>
@@ -2241,7 +2242,7 @@ Get the details of a subscription, such as the {{site.data.keyword.satelliteshor
 {: shortdesc}
 
 ```
-ibmcloud sat subscription get --subscription SUBSCRIPTION [-q]
+ibmcloud sat subscription get --subscription SUBSCRIPTION  [-q]
 ```
 {: pre}
 
@@ -2274,7 +2275,7 @@ List the subscriptions to {{site.data.keyword.satelliteshort}} configurations in
 {: shortdesc}
 
 ```
-ibmcloud sat subscription ls
+ibmcloud sat subscription ls 
 ```
 {: pre}
 
@@ -2282,7 +2283,11 @@ ibmcloud sat subscription ls
 
 **Minimum required permissions**: {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
-**Command options:** N/A
+**Command options:** 
+
+<dl><dt><code>-q</code></dt>
+<dd>Optional. Do not show the message of the day or update reminders.</dd>
+</dl>
 
 **Example:**
 ```
