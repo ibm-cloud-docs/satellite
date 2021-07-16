@@ -590,28 +590,13 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 | `sat-azure-block-platinum-metro`  | 1200 - 160000 | 4 GiB - 64 TiB | SSD | Delete | WaitForFirstConsumer |
 | `sat-azure-block-gold` | 120 - 20000 | 32 GiB - 32 TiB | SSD | Delete | Immediate |
 | `sat-azure-block-gold-metro` | 120 - 20000 | 32 GiB - 32 TiB | SSD | Delete | WaitForFirstConsumer |
-| `sat-azure-block-silver`  | 120 - 6000 | NA | SSD | Delete | Immediate |
-| `sat-azure-block-silver-metro` | 120 - 6000 | NA | SSD | Delete | WaitForFirstConsumer |
+| `sat-azure-block-silver`  | 120 - 6000 | N/A | SSD | Delete | Immediate |
+| `sat-azure-block-silver-metro` | 120 - 6000 | N/A | SSD | Delete | WaitForFirstConsumer |
 | `sat-azure-block-bronze`  | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | Immediate |
 | `sat-azure-block-bronze-metro` | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | WaitForFirstConsumer |
 {: caption="Table 2. Storage class reference for Azure Disk storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the IOPs range per disk. The third column is the size range . The fourth column is the disk type. The fifth column is the reclaim policy. The sixth column is the volume binding mode."}
 
 <br />
-
-
-## Storage class reference
-{: #sat-storage-ibm-azure-csi-sc-ref}
-
-| Storage class name | IOPS range per disk | Size range | Disk type | Reclaim policy | Volume Binding Mode |
-| --- | --- | --- | --- | --- | --- |
-| `sat-azure-block-platinum` |  1200 - 160000 | 4 GiB - 64 TiB | SSD | Delete | Immediate |
-| `sat-azure-block-platinum-metro`  | 1200 - 160000 | 4 GiB - 64 TiB | SSD | Delete | WaitForFirstConsumer |
-| `sat-azure-block-gold` | 120 - 20000 | 32 GiB - 32 TiB | SSD | Delete | Immediate |
-| `sat-azure-block-gold-metro` | 120 - 20000 | 32 GiB - 32 TiB | SSD | Delete | WaitForFirstConsumer |
-| `sat-azure-block-silver`  | 120 - 6000 | NA | SSD | Delete | Immediate |
-| `sat-azure-block-silver-metro` | 120 - 6000 | NA | SSD | Delete | WaitForFirstConsumer |
-| `sat-azure-block-bronze`  | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | Immediate |
-| `sat-azure-block-bronze-metro` | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | WaitForFirstConsumer |
 
 

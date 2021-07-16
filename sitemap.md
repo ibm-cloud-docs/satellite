@@ -437,7 +437,6 @@ subcollection: satellite
 * [Removing the Azure Disk storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-template-rm)
 * [Parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-disk-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-sc-ref)
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-ibm-azure-csi-sc-ref)
 
 
 ## IBM storage templates
