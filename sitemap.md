@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-14"
+lastupdated: "2021-07-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -422,6 +422,24 @@ subcollection: satellite
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-efs#efs-sc-reference)
 
 
+## Azure storage templates
+{: #sitemap_azure_storage_templates}
+
+
+[Azure Disk CSI driver](/docs/satellite?topic=satellite-config-storage-azure-csi)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-prereq)
+  * [Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-label-nodes)
+  * [Creating your Azure configuration file](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-config-file)
+* [Creating an Azure Disk configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-cli)
+* [Assigning your azure storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-azure-csi#assign-storage-azure)
+* [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-config-storage-azure-csi#storage-azure-csi-app-deploy)
+* [Removing Azure Disk storage from your apps](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-rm)
+* [Removing the Azure Disk storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-template-rm)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-disk-params-cli)
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-sc-ref)
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-ibm-azure-csi-sc-ref)
+
+
 ## IBM storage templates
 {: #sitemap_ibm_storage_templates}
 
@@ -540,6 +558,8 @@ subcollection: satellite
 * [AWS EBS](/docs/satellite?topic=satellite-storage-class-ref#ebs-ref)
 
 * [AWS EFS](/docs/satellite?topic=satellite-storage-class-ref#efs-ref)
+
+* [Azure Disk](/docs/satellite?topic=satellite-storage-class-ref#azure-disk-ref)
 
 * [Local block storage](/docs/satellite?topic=satellite-storage-class-ref#local-block-ref)
 

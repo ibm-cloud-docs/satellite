@@ -52,6 +52,10 @@ Satellite
             storage-efs.md
 
         {: .topicgroup}
+        Azure storage templates
+            storage-azure-disk.md
+
+        {: .topicgroup}
         IBM storage templates
             storage-spectrum-scale.md
             storage-ibm-block-csi.md
