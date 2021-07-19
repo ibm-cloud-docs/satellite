@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-09"
+lastupdated: "2021-07-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -162,6 +162,20 @@ For an overview of your options to make the {{site.data.keyword.satelliteshort}}
 {: faq}
 
 See the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
+
+## Why can't I install extra software like vulnerability scanning tools on my host?
+{: #host-software}
+{: faq}
+
+To add your own server as a host in your {{site.data.keyword.satelliteshort}} location, the host must meet certain [compute, storage, networking, and system requirements](/docs/satellite?topic=satellite-host-reqs). These requirements specify the Red Hat software packages that must be installed on the Red Hat Enterprise Linux 7 hosts. No other software packages, including vulnerability scanning tools such as McAfee or Qualys, can be installed on the hosts.
+
+The reasons that you cannot install extra software on the hosts relate to [IBM's responsibilities](/docs/satellite?topic=satellite-responsibilities) to manage multiple aspects of the {{site.data.keyword.satelliteshort}} hosts for you, such as installation, access, and maintenance.
+
+**Installation**: The {{site.data.keyword.satelliteshort}} team tries to keep the host requirements to a minimal level so that many servers across infrastructure providers can meet the requirements to become {{site.data.keyword.satelliteshort}} hosts. By limiting the number of possible software packages, {{site.data.keyword.satelliteshort}} reduces instability and conflicts during installation tasks such as [bootstrapping](/docs/satellite?topic=satellite-hosts) each host so that all hosts across {{site.data.keyword.satelliteshort}} locations have a consistent set of images and container platform software. This consistency also helps you develop applications and deploy {{site.data.keyword.satelliteshort}}-enabled services that work across your environments.
+
+**Access**: For security purposes, {{site.data.keyword.satelliteshort}} restricts external access to hosts, including SSH. Many extra software packages require access to or from the host, so extra software packages are not allowed to be installed.
+
+**Maintenance**: IBM provides software updates that you choose when to apply to the host. Because IBM is responsible for providing these updates, you cannot install extra software that is not managed by IBM. Extra software also uses mores CPU, memory, and disk storage resources on the host, which impacts the amount available to your {{site.data.keyword.satelliteshort}}-enabled services and applications that run on the hosts.
 
 ## What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?
 {: #pricing}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-16"
+lastupdated: "2021-07-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -835,6 +835,8 @@ subcollection: satellite
 * [What happens if my {{site.data.keyword.satelliteshort}} control plane becomes unavailable?](/docs/satellite?topic=satellite-faqs#control-plane-unavailable)
 
 * [Does IBM support third-party and open source tools that I use with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-faqs#faq_thirdparty_oss)
+
+* [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software)
 
 * [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing)
     * [{{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-faqs#pricing-services)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-08"
+lastupdated: "2021-07-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -122,7 +122,7 @@ Review the following requirements that relate to the computing and system setup 
 ### Packages and other machine configurations
 {: #reqs-host-packages}
 
-Hosts must have access to {{site.data.keyword.redhat_notm}} updates and the following packages. The hosts must not have any additional packages, configuration, or other customizations.
+Hosts must have access to {{site.data.keyword.redhat_notm}} updates and the following packages. The hosts must not have any additional packages, configuration, or other customizations. For more information, see [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software).
 {: shortdesc}
 
 ```
