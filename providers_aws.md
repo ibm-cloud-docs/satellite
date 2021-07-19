@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-08"
+lastupdated: "2021-07-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -99,9 +99,6 @@ subcollection: satellite
 
 Review the following host requirements that are specific to hosts that are in the Amazon Web Services (AWS) cloud. For required access in AWS cloud, see [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws).
 {: shortdesc}
-
-Want to try an automated setup? See [Automating your location setup with a Schematics template](/docs/satellite?topic=satellite-locations#satloc-template).
-{: tip}
 
 ## Automating your AWS location setup with a {{site.data.keyword.bpshort}} template
 {: #aws-template}

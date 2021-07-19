@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-07"
+lastupdated: "2021-07-19"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -114,7 +114,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You
 | `sat-aws-block-silver` | gp3 | ext4 | `ebs.csi.aws.com` | N/A | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external} |
 | `sat-aws-block-bronze` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#hard-disk-drives){: external} |
 {: caption="Table 1. AWS EBS storage class reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the volume type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the default IOPs per GB. The size column is the supported size range. The seventh column is disk type. The eigth column is encryption support. The ninth column is the volume binding mode. The tenth column is the reclaim policy."}
+{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the volume type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the default IOPs per GB. The size column is the supported size range. The seventh column is disk type. The eighth column is encryption support. The ninth column is the volume binding mode. The tenth column is the reclaim policy."}
 
 <br />
 
@@ -131,6 +131,22 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
 
 <br />
+
+## Azure Disk
+{: #azure-disk-ref}
+
+| Storage class name | IOPS range per disk | Size range | Disk type | Reclaim policy | Volume Binding Mode |
+| --- | --- | --- | --- | --- | --- |
+| `sat-azure-block-platinum` |  1200 - 160000 | 4 GiB - 64 TiB | SSD | Delete | Immediate |
+| `sat-azure-block-platinum-metro`  | 1200 - 160000 | 4 GiB - 64 TiB | SSD | Delete | WaitForFirstConsumer |
+| `sat-azure-block-gold` | 120 - 20000 | 32 GiB - 32 TiB | SSD | Delete | Immediate |
+| `sat-azure-block-gold-metro` | 120 - 20000 | 32 GiB - 32 TiB | SSD | Delete | WaitForFirstConsumer |
+| `sat-azure-block-silver`  | 120 - 6000 | N/A | SSD | Delete | Immediate |
+| `sat-azure-block-silver-metro` | 120 - 6000 | N/A | SSD | Delete | WaitForFirstConsumer |
+| `sat-azure-block-bronze`  | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | Immediate |
+| `sat-azure-block-bronze-metro` | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | WaitForFirstConsumer |
+{: caption="Table 2. Azure Disk storage class reference" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the IOPs range per disk. The third column is the size range . The fourth column is the disk type. The fifth column is the reclaim policy. The sixth column is the volume binding mode."}
 
 ## Local block storage
 {: #local-block-ref}

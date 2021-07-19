@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -460,7 +460,7 @@ Use the CLI to remove a storage configuration.
    {: pre}
 
 3. Verify that the AWS EFS driver is removed from your cluster.
-   1. List the storage classess in your cluster and verify that the AWS EFS storage class is removed.
+   1. List the storage classes in your cluster and verify that the AWS EFS storage class is removed.
       ```sh
       oc get sc
       ```

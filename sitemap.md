@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -422,6 +422,23 @@ subcollection: satellite
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-efs#efs-sc-reference)
 
 
+## Azure storage templates
+{: #sitemap_azure_storage_templates}
+
+
+[Azure Disk CSI driver](/docs/satellite?topic=satellite-config-storage-azure-csi)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-prereq)
+  * [Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-label-nodes)
+  * [Creating your Azure configuration file](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-config-file)
+* [Creating an Azure Disk configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-cli)
+* [Assigning your Azure storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-azure-csi#assign-storage-azure)
+* [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-config-storage-azure-csi#storage-azure-csi-app-deploy)
+* [Removing Azure Disk storage from your apps](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-rm)
+* [Removing the Azure Disk storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-template-rm)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-disk-params-cli)
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-sc-ref)
+
+
 ## IBM storage templates
 {: #sitemap_ibm_storage_templates}
 
@@ -431,7 +448,7 @@ subcollection: satellite
 * [Mapping IBM Spectrum Scale hosts to worker node names](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-ts-mapping)
 * [Creating an Spectrum Scale storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-cli)
 * [Assigning your Spectrum Scale storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-spectrum-scale#assign-storage-spectrum-scale)
-  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-spectrum-scale#assign-storage-spectrum-scale-cli)
+  * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-spectrum-scale#assign-storage-spectrum-scale-cli)
   * [Changing the Spectrum Scale CSI driver mount point](/docs/satellite?topic=satellite-config-storage-spectrum-scale#ess-change-mount-point)
 * [Deploying an app that uses your Spectrum Scale storage](/docs/satellite?topic=satellite-config-storage-spectrum-scale#storage-spectrum-app-deploy)
 * [Removing the Spectrum Scale storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-rm-cli)
@@ -446,7 +463,7 @@ subcollection: satellite
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-prereq)
 * [Creating a block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-cli)
 * [Assigning your block storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi)
-  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-cli)
+  * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-cli)
 * [Deploying an app that uses your IBM block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
 
 
@@ -457,7 +474,7 @@ subcollection: satellite
 [NetApp Trident Operator](/docs/satellite?topic=satellite-config-storage-netapp-trident)
 * [Creating a NetApp Trident storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-storage-netapp-cli)
 * [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp)
-  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp-cli)
+  * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp-cli)
   * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-template-rm-cli)
 
 [NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas)
@@ -500,7 +517,7 @@ subcollection: satellite
   * [Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-labels)
 * [Creating a local file storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-cli)
 * [Assigning your storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file)
-  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file-cli)
+  * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file-cli)
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-config-storage-local-file#deploy-app-local-file)
 * [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-remove-local-file-config)
 * [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
@@ -524,7 +541,7 @@ subcollection: satellite
   * [Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cos)
 * [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cli)
 * [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote)
-  * [Assigning a storage configuraton in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote-cli)
+  * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote-cli)
 * [Upgrading your OCS configuration](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-upgrade-config)
   * [Removing the OCS remote storage assignment from the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#ocs-remote-template-rm-cli)
 * [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-params-cli)
@@ -540,6 +557,8 @@ subcollection: satellite
 * [AWS EBS](/docs/satellite?topic=satellite-storage-class-ref#ebs-ref)
 
 * [AWS EFS](/docs/satellite?topic=satellite-storage-class-ref#efs-ref)
+
+* [Azure Disk](/docs/satellite?topic=satellite-storage-class-ref#azure-disk-ref)
 
 * [Local block storage](/docs/satellite?topic=satellite-storage-class-ref#local-block-ref)
 
@@ -816,6 +835,8 @@ subcollection: satellite
 * [What happens if my {{site.data.keyword.satelliteshort}} control plane becomes unavailable?](/docs/satellite?topic=satellite-faqs#control-plane-unavailable)
 
 * [Does IBM support third-party and open source tools that I use with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-faqs#faq_thirdparty_oss)
+
+* [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software)
 
 * [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing)
     * [{{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-faqs#pricing-services)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -175,7 +175,7 @@ Create an instance of IBM {{site.data.keyword.cos_full_notm}} for the backing st
   ```
   {: pre}
 1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-remote-params-cli).
-1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your exisiting configuration. 
+1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. 
   ```sh
   ibmcloud sat storage config create --name <config_name> --location <location> --template-name ocs-remote --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name>" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=<mon-size>" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=<osd-size>" -p "num-of-osd=1" -p "worker-nodes=<worker-IP>,<worker-IP>,<worker-IP>" -p "ibm-cos-endpoint=<cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
   ```
@@ -196,7 +196,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuraton in the command line
+### Assigning a storage configuration in the command line
 {: #assign-storage-ocs-remote-cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
@@ -327,21 +327,21 @@ To upgrade the OCS version of your configuration, complete the following steps:
     ```
 2. Create a new configuration with the same `ocs-cluster-name` and details. Make sure to change the `template-version` to the version that you want to upgrade to and set the `ocs-upgrade` parameter to `true`.
 
-  In the following example, the OCS configuration is updated to use template version 4.7. When you create the configuration, the following paramater changes are required.
+  In the following example, the OCS configuration is updated to use template version 4.7. When you create the configuration, the following parameter changes are required.
       - `name` - Enter a name for your new configuration.
-      - `template-name` - Use the same parameter value as in your exisiting configuration.
+      - `template-name` - Use the same parameter value as in your existing configuration.
       - `template-version` - Enter the template version that you want to use to upgrade your configuration.
-      - `ocs-cluster-name` - Use the same parameter value as in your exisiting configuration.
-      - `mon-storage-class` - Use the same parameter value as in your exisiting configuration.
-      - `mon-size` - Use the same parameter value as in your exisiting configuration.
-      - `osd-storage-class` - Use the same parameter value as in your exisiting configuration.
-      - `osd-size` - Use the same parameter value as in your exisiting configuration.
-      - `num-of-osd` - Use the same parameter value as in your exisiting configuration.
-      - `worker-nodes` - Use the same parameter value as in your exisiting configuration.
-      - `ibm-cos-endpoint` - Use the same parameter value as in your exisiting configuration.
-      - `ibm-cos-location` - Use the same parameter value as in your exisiting configuration.
-      - `ibm-cos-access-key` - Use the same parameter value as in your exisiting configuration.
-      - `ibm-cos-secret-key` - Use the same parameter value as in your exisiting configuration.
+      - `ocs-cluster-name` - Use the same parameter value as in your existing configuration.
+      - `mon-storage-class` - Use the same parameter value as in your existing configuration.
+      - `mon-size` - Use the same parameter value as in your existing configuration.
+      - `osd-storage-class` - Use the same parameter value as in your existing configuration.
+      - `osd-size` - Use the same parameter value as in your existing configuration.
+      - `num-of-osd` - Use the same parameter value as in your existing configuration.
+      - `worker-nodes` - Use the same parameter value as in your existing configuration.
+      - `ibm-cos-endpoint` - Use the same parameter value as in your existing configuration.
+      - `ibm-cos-location` - Use the same parameter value as in your existing configuration.
+      - `ibm-cos-access-key` - Use the same parameter value as in your existing configuration.
+      - `ibm-cos-secret-key` - Use the same parameter value as in your existing configuration.
       - `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
 
 2. Get the configuration details of your `ocscluster` custom resource.
@@ -350,7 +350,7 @@ To upgrade the OCS version of your configuration, complete the following steps:
     ```
     {: pre}
 
-3. Save the configuration details. When you upgrade your OCS version, you must enter the same configuration details and set the `template-version` to the version you want to upgrade to and set the `ocs-upgrade` parameter to `true`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your exisiting configuration. 
+3. Save the configuration details. When you upgrade your OCS version, you must enter the same configuration details and set the `template-version` to the version you want to upgrade to and set the `ocs-upgrade` parameter to `true`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. 
   ```sh
   ibmcloud sat storage config create --name ocs-config --template-name ocs-remote --template-version <template_version> -p "ocs-cluster-name=testocscluster" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=50Gi" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=150Gi" -p "num-of-osd=1" -p "worker-nodes=169.48.170.83,169.48.170.88,169.48.170.90" -p "ocs-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
   ```

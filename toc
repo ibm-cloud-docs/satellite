@@ -52,6 +52,10 @@ Satellite
             storage-efs.md
 
         {: .topicgroup}
+        Azure storage templates
+            storage-azure-disk.md
+
+        {: .topicgroup}
         IBM storage templates
             storage-spectrum-scale.md
             storage-ibm-block-csi.md
@@ -123,7 +127,6 @@ Satellite
         Clusters
             ts-clusters/debug-clusters.md
             ts-clusters/ts-cluster-satconfig-updates.md
-            ts-clusters/ts-kubectl-fail.md
             ts-clusters/ts-console-fail.md
             ts-clusters/ts-cluster-operations.md
             ts-clusters/ts-addons.md

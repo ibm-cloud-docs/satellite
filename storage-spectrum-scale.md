@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -226,7 +226,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuraton in the command line
+### Assigning a storage configuration in the command line
 {: #assign-storage-spectrum-scale-cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
@@ -496,7 +496,7 @@ Use the CLI to remove a storage configuration.
    {: pre}
 
 3. Verify that the driver and storage classes are removed from your cluster.
-   1. List the storage classess in your cluster and verify that the storage classes are removed.
+   1. List the storage classes in your cluster and verify that the storage classes are removed.
       ```sh
       oc get sc
       ```

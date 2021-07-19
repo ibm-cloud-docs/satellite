@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -98,7 +98,7 @@ subcollection: satellite
 
 The block storage CSI driver is based on an IBM open-source project, and integrated into the IBM Storage orchestration for containers. IBM Storage orchestration for containers enables enterprises to implement a modern container-driven hybrid multicloud environment that can reduce IT costs and enhance business agility, while continuing to derive value from existing systems.
 
-For full release notes, compatiblity, installation, and user information, see the [block storage CSI driver documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0){: external}.
+For full release notes, compatibility, installation, and user information, see the [block storage CSI driver documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0){: external}.
 
 Supported IBM storage systems:
   - IBM Spectrum Virtualize Family including IBM SAN Volume Controller (SVC) and IBM FlashSystem® family members built with IBM Spectrum® Virtualize (FlashSystem 5010, 5030, 5100, 5200, 7200, 9100, 9200, 9200R)
@@ -178,7 +178,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuraton in the command line
+### Assigning a storage configuration in the command line
 {: #assign-storage-block-csi-cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -108,7 +108,7 @@ Before you can create a local file storage configuration, you must identify the 
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 2. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters). Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
 3. [Get the device details of your worker nodes](#sat-storage-file-local-devices).
-4. [Label the worker nodes](#sat-storage-file-local-labels) that have an available disk and that you want to use in your configuration. The local storage drivers are installed only on the labelled worker nodes.
+4. [Label the worker nodes](#sat-storage-file-local-labels) that have an available disk and that you want to use in your configuration. The local storage drivers are installed only on the labeled worker nodes.
 
 
 <br />
@@ -265,7 +265,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
 
 
 
-### Assigning a storage configuraton in the command line
+### Assigning a storage configuration in the command line
 {: #assign-storage-local-file-cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
@@ -414,7 +414,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
   ```
   {: pre}
 
-  To ensure that your pods are scheduled to worker nodes with storage, or to ensure that the apps that require storage are not pre-empted by other pods, you can specify `nodeAffinity` and set up pod priority. For more information, see the Kuberenetes documentation for [pod priority and preemption](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/) and setting [node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-isolation-restriction).
+  To ensure that your pods are scheduled to worker nodes with storage, or to ensure that the apps that require storage are not preempted by other pods, you can specify `nodeAffinity` and set up pod priority. For more information, see the Kubernetes documentation for [pod priority and preemption](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/) and setting [node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-isolation-restriction).
   {: tip}
 
 4. Deploy an app pod that uses your local storage PVC. Save the following example app YAML as a file on your local machine called `app.yaml`. This pod writes the date to a file called `test.txt`. Be sure to enter the name of the PVC that you created earlier. In this example, the `nodeAffinity` spec ensures that this pod is only scheduled to a worker node with the label is the specified.

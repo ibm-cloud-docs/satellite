@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-09"
+lastupdated: "2021-07-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -154,8 +154,8 @@ The {{site.data.keyword.satelliteshort}} Link connector instances that run in yo
 **Cloud and location endpoints**
 
 Review the maximum number of each type of Link endpoint that you can create for one {{site.data.keyword.satelliteshort}} location.
-* `cloud` endpoints: 1000 total, TCP and UDP combined. For example, you might create up to 650 TCP endpoints and 350 UDP endpoints through which clients in your location can connect to resources outside of the location network.
-* `location` endpoints: 25 TCP and 25 UDP. For example, you might create up to 25 TCP endpoints and 25 UDP endpoints through which clients outside of your location network can connect to resources inside the location.
+* `cloud` endpoints: 1000 total. For example, you might create up to 650 TLS endpoints and 350 HTTP endpoints through which clients in your location can connect to resources outside of the location network.
+* `location` endpoints: 25 total. For example, you might create up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location.
 
 <br />
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -256,7 +256,7 @@ The following steps show how you can manually retrieve the local device informat
   ```
   {: pre}
 1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-local-params-cli).
-1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values. If you are using a {{site.data.keyword.cos_short}} backing store, be sure to specify the regional public endpoint in the following format: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your exisiting configuration. 
+1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values. If you are using a {{site.data.keyword.cos_short}} backing store, be sure to specify the regional public endpoint in the following format: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. 
   ```sh
   ibmcloud sat storage config create --name <config_name> --location <location> --template-name ocs-local --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
   ```
@@ -547,18 +547,18 @@ Deleting configurations and assignments might result in data loss.
 
 In the following example, the OCS configuration is updated to use template version 4.7:
   * `--name` - Enter a name for your new configuration.
-  * `--template-name` - Use the same parameter value as in your exisiting configuration.
+  * `--template-name` - Use the same parameter value as in your existing configuration.
   * `--template-version` - Enter the template version that you want to use to upgrade your configuration.
-  * `ocs-cluster-name` - Use the same parameter value as in your exisiting configuration.
-  * `osd-device-path` - Use the same parameter value as in your exisiting configuration.
-  * `mon-device-path` - Use the same parameter value as in your exisiting configuration.
-  * `num-of-osd` - Use the same parameter value as in your exisiting configuration.
-  * `worker-nodes` - Use the same parameter value as in your exisiting configuration.
+  * `ocs-cluster-name` - Use the same parameter value as in your existing configuration.
+  * `osd-device-path` - Use the same parameter value as in your existing configuration.
+  * `mon-device-path` - Use the same parameter value as in your existing configuration.
+  * `num-of-osd` - Use the same parameter value as in your existing configuration.
+  * `worker-nodes` - Use the same parameter value as in your existing configuration.
   * `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
-  * `ibm-cos-access-key` - Optional: Use the same parameter value as in your exisiting configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-  * `ibm-cos-secret-access-key` - Optional: Use the same parameter value as in your exisiting configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-  * `ibm-cos-endpoint` - Optional: Use the same parameter value as in your exisiting configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-  * `ibm-cos-location` - Optional: Use the same parameter value as in your exisiting configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+  * `ibm-cos-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+  * `ibm-cos-secret-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+  * `ibm-cos-endpoint` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+  * `ibm-cos-location` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
 
 1. Get the details of your OCS configuration.
     ```sh
@@ -573,7 +573,7 @@ In the following example, the OCS configuration is updated to use template versi
     ```
     {: pre}
 
-3. Save the configuration details. When you upgrade your OCS version, you must enter the same configuration details as in your exisiting OCS configuration. In addition, you must set the `template-version` to the version you want to upgrade to and change the `ocs-upgrade` parameter to `true`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your exisiting configuration. 
+3. Save the configuration details. When you upgrade your OCS version, you must enter the same configuration details as in your existing OCS configuration. In addition, you must set the `template-version` to the version you want to upgrade to and change the `ocs-upgrade` parameter to `true`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. 
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name ocs-local --template-version <template_version> -p "ocs-cluster-name=testocscluster" -p "osd-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part2,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part2" -p "mon-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part1,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part1" -p "num-of-osd=1" -p "worker-nodes=<worker-IP>,<worker-IP>,<worker-IP>" -p "ocs-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
     ```
