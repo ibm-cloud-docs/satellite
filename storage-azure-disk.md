@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-16"
+lastupdated: "2021-07-19"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -215,7 +215,7 @@ Create a storage configuration in the command line by using the Azure Disk templ
     ibmcloud target -g <resource-group>
     ```
     {: pre}
-1. Review the [template parameters](#sat-storage-azure-csi-params-cli).
+1. Review the [template parameters](#sat-storage-azure-disk-params-cli).
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
   ```sh
   ibmcloud sat storage config create --name <config_name> --location <location> --template-name azuredisk-csi-driver --template-version 1.4.0 -p "cloud-config=<base64-encoded-config-file>"
@@ -228,11 +228,11 @@ Create a storage configuration in the command line by using the Azure Disk templ
   ```
   {: pre}
 
-1. [Assign your storage configuration to clusters](#assign-storage-azure-csi).
+1. [Assign your storage configuration to clusters](#assign-storage-azure).
 
 <br />
 
-## Assigning your azure storage configuration to a cluster
+## Assigning your Azure storage configuration to a cluster
 {: #assign-storage-azure}
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-azure-csi), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-01"
+lastupdated: "2021-07-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -96,7 +96,7 @@ subcollection: satellite
 # Google Cloud Platform (GCP)
 {: #gcp}
 
-Learn how you can set up a {{site.data.keyword.satellitelong_notm}} location with virtual instances that you created in Google Cloud Platform (GCP).
+Learn how you can set up an {{site.data.keyword.satellitelong_notm}} location with virtual instances that you created in Google Cloud Platform (GCP).
 {: shortdesc}
 
 ## Adding GCP hosts to {{site.data.keyword.satelliteshort}}

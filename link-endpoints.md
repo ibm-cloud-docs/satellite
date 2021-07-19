@@ -261,7 +261,7 @@ Review the following list of general use cases and example use cases for {{site.
 * **Connect resources within the same {{site.data.keyword.satelliteshort}} location?** No. Link endpoints cannot be created between resources in the same location. Instead, resources can access each other directly. For example, an app that runs in an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}} does not need to communicate through {{site.data.keyword.satelliteshort}} Link to access a database that exists in the same location, and can instead access that database directly through the location's private network.
 * **Expose apps or services that run in an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}}?** To see available options, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
 * **Bridge networks within the IBM Cloud public network, such as VPC spanning?** No. Instead, use the bridging solution that is recommended for your network setup. For example, you might use a [{{site.data.keyword.vpn_vpc_full}}](/docs/vpc?topic=vpc-vpn-example) or [{{site.data.keyword.dl_full}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl#get-started-with-direct-link-connect).
-* **Connect to other public clouds?** Yes. {{site.data.keyword.satelliteshort}} Link is agnostic to the cloud provider, and you can create `cloud` endpoints for resources that run in other public clouds.
+* **Connect to other public clouds?** Yes. With {{site.data.keyword.satelliteshort}} Link, you can create `cloud` endpoints for resources that run in other public clouds.
 
 **Example: Connect from a {{site.data.keyword.satelliteshort}} location to a service in another cloud provider**
 
@@ -485,7 +485,7 @@ Create an endpoint of type `location` so that sources that are connected to the 
 **Before you begin**, ensure that you have the following:
 * Source client: A service, server, or app that that can access the {{site.data.keyword.cloud_notm}} private network.
 * Destination resource: A service, server, or app that runs in a {{site.data.keyword.satelliteshort}} cluster or a host that you attached to your location. For more information about how to create a {{site.data.keyword.satelliteshort}} cluster, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). To use a host, [attach a host to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) but do not assign the host to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster. Assigning the host starts a bootstrapping process that removes SSH access to your host.
-* Permissions: The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Link**resource in {{site.data.keyword.satellitelong_notm}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+* Permissions: The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Link** resource in {{site.data.keyword.satellitelong_notm}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 ### Creating location endpoints by using the console
 {: #link-location-ui}

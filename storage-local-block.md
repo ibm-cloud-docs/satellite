@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -400,7 +400,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
   ```
   {: pre}
 
-  To ensure that your pods are scheduled to worker nodes with storage, or to ensure that the apps that require storage are not pre-empted by other pods, you can specify `nodeAffinity` and set up pod priority. For more information, see the Kubernetes documentation for [pod priority and preemption](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/) and setting [node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-isolation-restriction).
+  To ensure that your pods are scheduled to worker nodes with storage, or to ensure that the apps that require storage are not preempted by other pods, you can specify `nodeAffinity` and set up pod priority. For more information, see the Kubernetes documentation for [pod priority and preemption](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/) and setting [node affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#node-isolation-restriction).
   {: tip}
 
 4. Deploy an app pod that uses your local storage PVC. Save the following example app YAML as a file on your local machine called `app.yaml`. In this example, the `nodeAffinity` spec ensures that this pod is only scheduled to a worker node with the specified label.

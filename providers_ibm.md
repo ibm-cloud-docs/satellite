@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-24"
+lastupdated: "2021-07-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -151,9 +151,21 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
    ```
    {: pre}
 
+   If you use an SSH key to log in, make sure to convert the key to `.key` format and use the following command.
+   ```
+   scp -i <filepath_to_key_file.key> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
+   ```
+   {: pre}
+
 7. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
    ```
    ssh root@<ip_address>
+   ```
+   {: pre}
+
+   If you use an SSH key to log in, use the following command.
+   ```
+   ssh -i <filepath_to_key_file.key> <username>@<IP_address>
    ```
    {: pre}
 

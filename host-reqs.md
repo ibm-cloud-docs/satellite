@@ -122,7 +122,7 @@ Review the following requirements that relate to the computing and system setup 
 ### Packages and other machine configurations
 {: #reqs-host-packages}
 
-Hosts must have access to {{site.data.keyword.redhat_notm}} updates and the following packages. The hosts must not have any additional packages, configuration, or other customizations. For more information, see [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software).
+Hosts must have access to {{site.data.keyword.redhat_notm}} updates and the following packages.
 {: shortdesc}
 
 ```
@@ -133,6 +133,9 @@ Repository 'rhel-7-server-supplementary-rpms' is enabled for this system.
 Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 ```
 {: screen}
+
+The hosts must not have any additional packages, configuration, or other customizations. After the host is created, do not change the default packages or operating system settings, such as disabling SELinux. For more information, see [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software).
+{: important}
 
 You might need to refresh your packages on the host machine. For example, in IBM Cloud infrastructure you can run the following commands to add the required packages.
   1.  Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
@@ -356,6 +359,6 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     ```
     --- 158.175.120.210 ping statistics ---
     9 packets transmitted, 9 packets received, 0.0% packet loss
-    round-trip min/avg/max/stddev = 158.453/187.370/389.901/78.211 ms
+    round-trip min/avg/max/stddev = 138.453/217.370/419.901/108.211 ms
     ```
     {: screen}

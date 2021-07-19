@@ -127,7 +127,6 @@ Satellite
         Clusters
             ts-clusters/debug-clusters.md
             ts-clusters/ts-cluster-satconfig-updates.md
-            ts-clusters/ts-kubectl-fail.md
             ts-clusters/ts-console-fail.md
             ts-clusters/ts-cluster-operations.md
             ts-clusters/ts-addons.md

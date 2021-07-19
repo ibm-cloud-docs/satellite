@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-07-19"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -451,7 +451,7 @@ Use the CLI to remove a storage assignment and storage configuration.
    ```
    {: pre}
 
-3. Verify that the NetApp ONTAP-NAS driver is removed from your cluster. List the storage classess in your cluster and verify that the NetApp ONTAP-NAS storage class is removed.
+3. Verify that the NetApp ONTAP-NAS driver is removed from your cluster. List the storage classes in your cluster and verify that the NetApp ONTAP-NAS storage class is removed.
   ```sh
   oc get sc
   ```

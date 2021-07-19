@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-23"
+lastupdated: "2021-07-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -97,7 +97,7 @@ subcollection: satellite
 # Microsoft Azure
 {: #azure}
 
-Learn how you can set up a {{site.data.keyword.satellitelong}} location with virtual instances that you created in Microsoft Azure.
+Learn how you can set up an {{site.data.keyword.satellitelong}} location with virtual instances that you created in Microsoft Azure.
 {: shortdesc}
 
 ## Automating your Azure location setup with a {{site.data.keyword.bpshort}} template
