@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-06"
+lastupdated: "2021-07-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -164,7 +164,7 @@ Your {{site.data.keyword.satelliteshort}} location infrastructure is a part of y
 
 **Do I need to allow any unique inbound traffic from internet-facing ports through firewalls to my location?**
 
-No. {{site.data.keyword.satelliteshort}} Link uses standard web security ports to originate encrypted communication from your location to {{site.data.keyword.cloud_notm}} for location management. {{site.data.keyword.satelliteshort}} creates unique public DNS entries for each location and assigns ports from the 32768 - 52768 range for TCP or the 10000 - 30000 range for UDP so that destination addresses can be predictably resolved by {{site.data.keyword.cloud_notm}}. Communication channels over Link endpoints between your {{site.data.keyword.satelliteshort}} location to {{site.data.keyword.cloud_notm}} are permitted through your [existing outbound firewall policies for hosts](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
+No. {{site.data.keyword.satelliteshort}} Link uses standard web security ports to originate encrypted communication from your location to {{site.data.keyword.cloud_notm}} for location management. {{site.data.keyword.satelliteshort}} creates unique public DNS entries for each location and assigns ports from the 32768 - 52768 range for TCP so that destination addresses can be predictably resolved by {{site.data.keyword.cloud_notm}}. Communication channels over Link endpoints between your {{site.data.keyword.satelliteshort}} location to {{site.data.keyword.cloud_notm}} are permitted through your [existing outbound firewall policies for hosts](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
 
 **If IBM owns the Link tunnel, how can I validate that our data is inaccessible? My organization's security policy does not allow tunnels from our networks.**
 
@@ -189,9 +189,9 @@ Review the following information about how {{site.data.keyword.satelliteshort}} 
 If you use the {{site.data.keyword.satelliteshort}} console to create an endpoint, the destination protocol is inherited from the source protocol that you select. To specify a destination protocol, use the CLI to create an endpoint and include the `--dest-protocol` flag in the `ibmcloud sat endpoint create` command.
 {: note}
 
-**UDP, TCP, and TLS**
+**TCP and TLS**
 
-If your destination resource does not require requests with a specific HTTP or HTTPS host name header, or can accept direct requests to its IP address instead of its host name, use the UDP, TCP, or TLS protocols. {{site.data.keyword.satelliteshort}} Link uses the same protocol as the request to transfer the request packet to the destination.
+If your destination resource does not require requests with a specific HTTP or HTTPS host name header, or can accept direct requests to its IP address instead of its host name, use the TCP or TLS protocols. {{site.data.keyword.satelliteshort}} Link uses the same protocol as the request to transfer the request packet to the destination.
 
 **HTTP and HTTPS**
 
@@ -363,11 +363,11 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
       </tr>
       <tr>
       <td><code>--dest-protocol &lt;destination-protocol&gt;</code></td>
-      <td>Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code>, <code>udp</code>, and <code>tls</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
+      <td>Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code> and <code>tls</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
       </tr>
       <tr>
       <td><code>--source-protocol &lt;source-protocol&gt;</code></td>
-      <td>Enter the protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
+      <td>Enter the protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
       </tr>
       </tbody>
     </table>
@@ -564,11 +564,11 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
       </tr>
       <tr>
       <td><code>--dest-protocol &lt;destination-protocol&gt;</code></td>
-      <td>Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code>, <code>udp</code>, and <code>tls</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
+      <td>Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code> and <code>tls</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
       </tr>
       <tr>
       <td><code>--source-protocol &lt;source-protocol&gt;</code></td>
-      <td>Enter the protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>udp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
+      <td>Enter the protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
       </tr>
       </tbody>
     </table>
