@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-26"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -455,7 +455,7 @@ Use the CLI to remove a storage configuration.
 
 2. Remove the assignment. After the assignment is removed, the AWS EFS driver pods and storage class are removed from all clusters that were part of the storage assignment.
    ```sh
-   ibmcloud sat storage assignment rm --assignment <assignment_name>
+   ibmcloud sat storage assignment rm --assignment <assignment_ID>
    ```
    {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-26"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -459,7 +459,7 @@ Use the CLI to remove a storage configuration.
 
 2. Remove the assignment. After the assignment is removed, the AWS EBS driver pods and storage classes are removed from all clusters that were part of the storage assignment.
    ```sh
-   ibmcloud sat storage assignment rm --assignment <assignment_name>
+   ibmcloud sat storage assignment rm --assignment <assignment_ID>
    ```
    {: pre}
 
@@ -472,7 +472,7 @@ Use the CLI to remove a storage configuration.
 
    2. List the pods in the `kube-system` namespace and verify that the AWS EBS storage driver pods are removed.
       ```sh
-      oc get pods -n kube-system | greb ebs
+      oc get pods -n kube-system | grep ebs
       ```
       {: pre}
 
