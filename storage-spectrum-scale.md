@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-26"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -491,7 +491,7 @@ Use the CLI to remove a storage configuration.
 
 2. Remove the assignment. After the assignment is removed, the driver pods and default storage classes are removed from all clusters that were part of the storage assignment.
    ```sh
-   ibmcloud sat storage assignment rm --assignment <assignment_name>
+   ibmcloud sat storage assignment rm --assignment <assignment_ID>
    ```
    {: pre}
 
