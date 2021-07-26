@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -111,38 +111,7 @@ For more configuration options, you can [manually attach Azure hosts to a {{site
 
 Before you begin, make sure that you have the correct [{{site.data.keyword.cloud_notm}} permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations, including to {{site.data.keyword.satelliteshort}} and {{site.data.keyword.bpshort}}. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
 
-1. In your Azure cloud provider, set up your account credentials.
-   1. [Sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli){: external} from the command line.
-      ```
-      az login
-      ```
-      {: pre}
-   2. List the available subscriptions in your account.
-      ```
-      az account list
-      ```
-      {: pre}
-   3. Set the subscription to create your Azure resources in.
-      ```
-      az account set --subscription="<subscription_ID>"
-      ```
-      {: pre}
-   4. Create a service principal identity with the Contributor role, scoped to your subscription. These credentials are used by {{site.data.keyword.satellitelong_notm}} to provision resources in your Azure account. For more information, see the [Azure documentation](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli){: external}.
-      ```
-      az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_ID>" -n "<service_principal_name>"
-      ```
-      {: pre}
-   5. In the output, note the values of the `appID`, `password`, and `tenant` fields.
-      ```
-      {
-      "appId": "<azure-client-id>",
-      "displayName": "<service_principal_name>",
-      "name": "http://<service_principal_name>",
-      "password": "<azure-secret-key>",
-      "tenant": "<tenant-id>"
-      }
-      ```
-      {: screen}
+1. In your Azure cloud provider, [set up your account credentials](/docs/satellite?topic=satellite-infrastructure-plan#infra-creds-azure).set up your account credentials.
 2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
 3. In the **Setup** section, click **Azure**.
 4. In the **Azure credentials** section, enter the **Azure client ID (app ID)**, **Azure tenant ID**, and **Azure secret key (password)** values that you previously created for the service principal.

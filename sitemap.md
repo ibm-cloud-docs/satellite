@@ -168,6 +168,10 @@ subcollection: satellite
   * [On-premises infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-onprem)
   * [Cloud infrastructure like AWS, Azure, and GCP](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud)
   * [IBM-managed infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-sat-is)
+* [Providing {{site.data.keyword.satelliteshort}} with credentials to your cloud provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-credentials)
+  * [AWS credentials](/docs/satellite?topic=satellite-infrastructure-plan#infra-creds-aws)
+  * [Microsoft Azure credentials](/docs/satellite?topic=satellite-infrastructure-plan#infra-creds-azure)
+  * [Google Cloud Platform credentials](/docs/satellite?topic=satellite-infrastructure-plan#infra-creds-gcp)
 
 [Host requirements](/docs/satellite?topic=satellite-host-reqs)
 * [Host system requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-system)

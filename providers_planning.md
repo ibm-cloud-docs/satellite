@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -186,6 +186,109 @@ For cloud provider infrastructure, you can follow provider-specific guides.
 
 IBM can send infrastructure and set up a {{site.data.keyword.satelliteshort}} location for you. See [Getting started with {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
 {: shortdesc}
+
+
+
+
+
+## Providing {{site.data.keyword.satelliteshort}} with credentials to your cloud provider
+{: #infra-credentials}
+
+For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf in a cloud provider, you must provide credentials to the cloud provider. For example, you might [automate your location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template) or use a {{site.data.keyword.satelliteshort}}-enabled service that sets up a {{site.data.keyword.satelliteshort}} location for you.
+{: shortdesc}
+
+The credentials that you provide are stored and encrypted in etcd of the {{site.data.keyword.satelliteshort}} location control plane master. For more information, see [Securing your data](/docs/satellite?topic=satellite-data-security).
+
+
+### AWS credentials
+{: #infra-creds-aws}
+
+Retrieve the Amazon Web Services (AWS) credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your AWS cloud on your behalf.
+{: shortdesc}
+
+1. Verify that you have the required [permissions in your AWS account](/docs/satellite?topic=satellite-iam#permissions-aws) to create a {{site.data.keyword.satelliteshort}} location from a template.
+2. [Create a separate IAM user that is scoped to EC2 access](https://docs.aws.amazon.com/AWSEC2latest/UserGuide/iam-policies-for-amazon-ec2.html){: external}.
+3. [Retrieve the access key ID and secret access key credentials for the IAM user](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys){: external}.
+4. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. The `client_id` is the ID of the access key and the `client_secret` is the secret access key that you created for the IAM user in AWS.
+   ```json
+   {
+      "client_id":"string",
+      "client_secret": "string"
+   }
+   ```
+   {: screen}
+
+### Microsoft Azure credentials
+{: #infra-creds-azure}
+
+Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your Azure cloud on your behalf.
+{: shortdesc}
+
+1. Verify that you have the required [permissions in your Azure account](/docs/satellite?topic=satellite-iam#permissions-azure) to create a {{site.data.keyword.satelliteshort}} location from a template.
+1. [Sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli){: external} from the command line.
+   ```
+   az login
+   ```
+   {: pre}
+2. List the available subscriptions in your account.
+   ```
+   az account list
+   ```
+   {: pre}
+3. Set the subscription to create your Azure resources in.
+   ```
+   az account set --subscription="<subscription_ID>"
+   ```
+   {: pre}
+4. Create a service principal identity with the Contributor role, scoped to your subscription. These credentials are used by {{site.data.keyword.satellitelong_notm}} to provision resources in your Azure account. For more information, see the [Azure documentation](https://docs.microsoft.com/en-uscli/azure/create-an-azure-service-principal-azure-cli){: external}.
+   ```
+   az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_ID>" -n"<service_principal_name>"
+   ```
+   {: pre}
+5. In the output, note the values of the `appID`, `password`, and `tenant` fields.
+   ```
+   {
+   "appId": "<azure-client-id>",
+   "displayName": "<service_principal_name>",
+   "name": "http://<service_principal_name>",
+   "password": "<azure-secret-key>",
+   "tenant": "<tenant-id>"
+   }
+   ```
+   {: screen}
+6. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. 
+   ```json
+   {
+      "app_id":"string",
+      "tenant_id":"string",
+      "password": "string"
+   }
+   ```
+   {: screen}
+
+### Google Cloud Platform credentials
+{: #infra-creds-gcp}
+
+Retrieve the Google Cloud Platform (GCP) credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your GCP cloud on your behalf.
+{: shortdesc}
+
+1. [Create a service account and service account key](https://cloud.google.com/docs/authentication/getting-started#creating_a_service_account){: external} with at least the required [GCP permissions](/docs/satellite?topic=satellite-iam#permissions-gcp). As part of creating the service account, a JSON key file is downloaded to your local machine.
+2. Open the JSON key file on your local machine, and verify that the format matches the following example. You can provide this JSON key file as your GCP credentials for actions such as creating a {{site.data.keyword.satelliteshort}} location.
+   ```json
+   {
+      "type":"string",
+      "project_id":"string",
+      "private_key_id": "string",
+      "private_key": "string",
+      "client_email": "string",
+      "client_id": "string",
+      "auth_uri": "string",
+      "token_uri": "string",
+      "auth_provider_x509_cert_url": "string",
+      "client_x509_cert_url": "string"
+   }
+   ```
+   {: screen}
 
 
 
