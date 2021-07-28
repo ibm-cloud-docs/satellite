@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-02"
+lastupdated: "2021-07-28"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -292,17 +292,17 @@ Keep in mind the following information about the host labels that are used for a
 
 **Example scenario**
 
-Say that you have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `zone1` and the following host labels.
+Say that you have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `us-east-1a` and the following host labels.
 * `cpu=4`
 * `env=prod`
 
 Your {{site.data.keyword.satelliteshort}} location has available (unassigned) hosts with host labels as follows.
-* Host A: `cpu=4, memory=32, env=prod, zone=zone2`
-* Host B: `cpu=4, memory=32, zone=zone1`
+* Host A: `cpu=4, memory=32, env=prod, zone=us-east-1b`
+* Host B: `cpu=4, memory=32, zone=us-east-1a`
 * Host C: `cpu=4, memory=64, env=prod`
 
 If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B.
-* Host A meets the CPU and `env=prod` label requests, but can only be assigned in `zone2`. Because the `default` worker pool is only in `zone1`, Host A is not assigned.
+* Host A meets the CPU and `env=prod` label requests, but can only be assigned in `us-east-1b`. Because the `default` worker pool is only in `us-east-1a`, Host A is not assigned.
 * Host B meets the CPU and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
 * Host C is automatically assigned because it matches the `cpu=4` and `env=prod` host labels, and does not have any zone restrictions. The `memory=64` host label is not considered, because the worker pool does not request a `memory` label.
 
