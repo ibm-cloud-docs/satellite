@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -252,6 +252,8 @@ curl -k [node 1-n]:22
 
 If you do not open all outbound connectivity, you must allow the following outbound connectivity in your firewall. The required IP addresses vary with the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
 
+
+
 |Description|Source IP|Destination IP|Protocol and ports|
 |-----------|---------|--------------|------------------|
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 169.63.123.154</br>169.60.123.162</br>52.117.93.26 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
@@ -325,6 +327,7 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 {: shortdesc}
 
 1.  In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, you might SSH into the machine from a command line.
+
 2.  Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test.
 
     *   **Frankfurt**:
