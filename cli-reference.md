@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-07-28"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1309,7 +1309,11 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 <dd>Optional. Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data. Otherwise, a new bucket is automatically created in your {{site.data.keyword.cos_short}} instance.<p class="important">Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.</p></dd>
 
 <dt><code>--ha-zone <em>ZONE1_NAME</em> --ha-zone <em>ZONE2_NAME</em> --ha-zone <em>ZONE3_NAME</em></code></dt>
-<dd>Optional. Specify three names for high availability zones in your location. These zones are used for any {{site.data.keyword.openshiftlong_notm}} clusters that you create in your location, but the names are arbitrary; for example, if you use AWS hosts for your location, you might specify the name of the AWS high availability zones where your hosts exist. If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names such as `zone-1`.</dd>
+<dd>Specify three names for high availability zones in your location. The names of the zones <strong>must match exactly</strong> the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider.
+<ul><li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuiusing-regions-availability-zones.html">AWS regions and zones</a>, such as <code>us-east-1a</code>, <code>us-east-1b</code>, <code>us-east-1c</code>.</li>
+<li><a href="https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones">Azure <code>topology.kubernetes.io/zone</code> labels</a>, such as <code>eastus-1</code>, <code>eastus-2</code>, and <code>eastus-3</code>. Do <strong>not</strong> use only the location name (<code>eastus</code>) or the zone number (<code>1</code>).</li>
+<li><a href="https://cloud.google.com/compute/docs/regions-zones">GCP regions and zones</a>, such as <code>us-west1-a</code>, <code>us-west1-b</code>, and <code>us-west1-c</code>.</li></ul>
+<p>Optional: If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names such as <code>zone-1</code>.</p></dd>
 
 <dt><code>--logging-account-id <em>LOGGING_ACCOUNT</em></code></dt>
 <dd>Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.la_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.</dd>
