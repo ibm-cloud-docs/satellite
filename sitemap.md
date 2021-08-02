@@ -957,7 +957,7 @@ subcollection: satellite
 
 [Why does the list of Kubernetes resources not show up or update after registering my cluster with {{site.data.keyword.satelliteshort}} Config?](/docs/satellite?topic=satellite-satconfig-cluster-access-error)
 
-[Why can't I access the {{site.data.keyword.openshiftshort}} console?](/docs/satellite?topic=satellite-ts-console-fail)
+[Why can't I access the {{site.data.keyword.openshiftshort}} console without a VPN on the VPC?](/docs/satellite?topic=satellite-ts-console-fail)
 
 [Why can't I update or complete other actions with my cluster?](/docs/satellite?topic=satellite-ts-cluster-operations-blocked)
 
