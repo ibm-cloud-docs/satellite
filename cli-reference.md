@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-07-28"
+lastupdated: "2021-08-02"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -21,13 +21,16 @@ subcollection: satellite
 {:app_url: data-hd-keyref="app_url"}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +43,28 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
+{:node: .ph data-hd-programlang='node'}
 {:note .note}
 {:note: .note}
+{:note:.deprecated}
 {:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +82,10 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +93,7 @@ subcollection: satellite
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -1310,7 +1324,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 
 <dt><code>--ha-zone <em>ZONE1_NAME</em> --ha-zone <em>ZONE2_NAME</em> --ha-zone <em>ZONE3_NAME</em></code></dt>
 <dd>Specify three names for high availability zones in your location. The names of the zones <strong>must match exactly</strong> the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider.
-<ul><li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuiusing-regions-availability-zones.html">AWS regions and zones</a>, such as <code>us-east-1a</code>, <code>us-east-1b</code>, <code>us-east-1c</code>.</li>
+<ul><li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">AWS regions and zones</a>, such as <code>us-east-1a</code>, <code>us-east-1b</code>, <code>us-east-1c</code>.</li>
 <li><a href="https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones">Azure <code>topology.kubernetes.io/zone</code> labels</a>, such as <code>eastus-1</code>, <code>eastus-2</code>, and <code>eastus-3</code>. Do <strong>not</strong> use only the location name (<code>eastus</code>) or the zone number (<code>1</code>).</li>
 <li><a href="https://cloud.google.com/compute/docs/regions-zones">GCP regions and zones</a>, such as <code>us-west1-a</code>, <code>us-west1-b</code>, and <code>us-west1-c</code>.</li></ul>
 <p>Optional: If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names such as <code>zone-1</code>.</p></dd>
