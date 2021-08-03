@@ -114,6 +114,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #aug21}
 
 | Date | Description |
+| --- | --- |
 | 03 August 2021 | **New! Dallas location**: You can now manage {{site.data.keyword.satelliteshort}} locations from the **Dallas** (`dal`, `us-south`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in August 2021."}
