@@ -170,7 +170,7 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
    ibmcloud sat storage config create --name <config_name> --location <location> --template-name aws-efs-csi-driver --template-version <template_version>
    ```
    {: pre}
-   
+
 3. Verify that your storage configuration is created.
    ```sh
    ibmcloud sat storage config get --config <config_name>
@@ -521,5 +521,9 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 | Storage class name | File system | Reclaim policy |
 | --- | --- | --- |
 | `sat-aws-file-gold` | NFS | Delete |
+
 {: caption="Table 2. AWS EFS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
+
+
+
