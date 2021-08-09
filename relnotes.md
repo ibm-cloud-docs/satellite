@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-03"
+lastupdated: "2021-08-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,6 +19,7 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -54,6 +55,7 @@ subcollection: satellite
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -79,6 +81,7 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
 {:swift: #swift .ph data-hd-programlang='swift'}
@@ -115,6 +118,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 | Date | Description |
 | --- | --- |
+| 09 August 2021 | **CLI changelog**: Updated the CLI plug-in changelog page for the [release of version 1.0.312](/docs/satellite?topic=satellite-satellite-cli-reference). |
 | 03 August 2021 | **New! Dallas location**: You can now manage {{site.data.keyword.satelliteshort}} locations from the **Dallas** (`dal`, `us-south`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in August 2021."}
