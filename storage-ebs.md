@@ -373,7 +373,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
       {: pre}
 
    2. Get the details of your PV and note the ID of your AWS EBS instance that was created in the `source.volumeHandle` field.
-      ```sg
+      ```sh
       oc describe pv <pv_name>
       ```
       {: pre}
