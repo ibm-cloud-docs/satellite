@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-12"
+lastupdated: "2021-08-09"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference
 
@@ -19,15 +19,19 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: satellite
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -113,6 +126,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.312 | 09 Aug 2021 |<ul><li>Includes the subscription status in the output of the `ibmcloud sat subscription get` and `ibmcloud sat subscription ls` commands.</li><li><>Adds the option to display the output of the `ibmcloud sat subscription get` and `ibmcloud sat subscription ls` commands in JSON format.</li><li>Updates the help text in various languages.</li><li>Displays OpenVPN Server Port details in the `ibmcloud sat location get` command output.</li></ul> | 
 | 1.0.300 | 12 Jul 2021 | <ul><li>Updates the help text in various languages.</li></ul>|
 | 1.0.295 | 24 Jun 2021 | <ul><li>The `ibmcloud sat storage config` and `ibmcloud sat storage template` commands are now generally available.</li><li>Adds the `--cluster` and `--service-cluster-id` flag to the `ibmcloud sat storage assignment ls` command to filter output by the ID of a cluster that you created or the ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster.</li><li>Adds the `--service-cluster-id` flag to the `ibmcloud sat storage assignment create` command to deploy storage drivers to a specific {{site.data.keyword.satelliteshort}}-enabled service cluster.</li><li>Updates the help text in various languages.</li></ul> |
 | 1.0.275 | 26 May 2021 | <ul><li>Adds the following changes to storage commands:<ul><li>Adds the `--cluster` flag to the `ibmcloud sat storage assignment create` command to assign to an individual cluster ID instead of a cluster group.</li><li>Adds `--location` as a required flag to the `ibmcloud sat storage config create` command and an optional flag to the `ibmcloud sat storage config ls` command.</li><li>Changes the `--config` flag to `--config-name` in the `ibmcloud sat storage config sc add` command.</li></ul></li><li>Adds the optional `--output json` flag to the `ibmcloud sat config get`, `ibmcloud sat config ls`, and `ibmcloud sat config version get` commands.</li><li>Increases the maximum size for the file in the `--read-config` flag of the `ibmcloud sat config version create` command from 1MB to 3MB.</li><li>Fixes the `ibmcloud sat group create` command to enable cluster group creation.</li><li>The IAM token that is used for your CLI session is now refreshed 5 minutes before expiration to keep the session active.</li><li>Updates the help text in various languages.</li></ul> |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-04"
+lastupdated: "2021-08-09"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -19,6 +19,7 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -54,6 +55,7 @@ subcollection: satellite
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -79,6 +81,7 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
 {:swift: #swift .ph data-hd-programlang='swift'}
@@ -2256,7 +2259,7 @@ Get the details of a subscription, such as the {{site.data.keyword.satelliteshor
 {: shortdesc}
 
 ```
-ibmcloud sat subscription get --subscription SUBSCRIPTION  [-q]
+ibmcloud sat subscription get --subscription SUBSCRIPTION [--output JSON] [-q]
 ```
 {: pre}
 
@@ -2269,6 +2272,9 @@ ibmcloud sat subscription get --subscription SUBSCRIPTION  [-q]
 <dl>
 <dt><code>--subscription <em>SUBSCRIPTION</em></code></dt>
 <dd>Required. The name or ID of your subscription. To list subscriptions in your {{site.data.keyword.cloud_notm}} account, run <code>ibmcloud sat subscription ls</code>.</dd>
+
+<dt><code>--output <em>JSON</em></code></dt>
+<dd>Optional. Displays the command output in JSON format.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
@@ -2289,7 +2295,7 @@ List the subscriptions to {{site.data.keyword.satelliteshort}} configurations in
 {: shortdesc}
 
 ```
-ibmcloud sat subscription ls 
+ibmcloud sat subscription ls [--cluster CLUSTER] [--output JSON] [-q]
 ```
 {: pre}
 
@@ -2299,7 +2305,14 @@ ibmcloud sat subscription ls
 
 **Command options:**
 
-<dl><dt><code>-q</code></dt>
+<dl>
+<dt><code>--cluster, -c <em>CLUSTER</em></code></dt>
+<dd>Optional. The name or ID of the cluster that you want to list subscriptions from. To list registered clusters, run <code>ibmcloud sat cluster ls</code>.</dd>
+
+<dt><code>--output <em>JSON</em></code></dt>
+<dd>Optional. Displays the command output in JSON format.</dd>
+
+<dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
 </dl>
 
