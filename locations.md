@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-04"
+lastupdated: "2021-08-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,6 +19,7 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -54,6 +55,7 @@ subcollection: satellite
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -79,6 +81,7 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
 {:swift: #swift .ph data-hd-programlang='swift'}
@@ -491,7 +494,7 @@ The number of clusters depends on the size of your clusters and the size of the 
 
 The following tables provide examples of the number of hosts that the control plane must have to run the masters for various combinations of clusters and worker nodes, for informational purposes only. 
 * The size of the hosts that run the control plane, **4 vCPU and 16GB RAM** or **16 vCPU and 64GB RAM**, affect the numbers of clusters and worker nodes that are possible in the location. Keep in mind that actual performance requirements depend on many factors, such as the underlying CPU performance and control plane usage by the applications that run in the location.
-* You can assign hosts to the control plane in groups of 3 beyond 12 hosts, such as 18 or 27 hosts. The table presents examples up to 12 hosts as common configurations to give you an idea of how you might size the control plane for your host and application environment.
+* You can assign hosts to the control plane in groups of 3. The table presents examples up to 12 hosts as common configurations to give you an idea of how you might size the control plane for your host and application environment. Note that you can add more than 12 hosts to your control plane in groups of 3. For example you might create a control plane with 18 or 27 hosts.
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-10"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -127,7 +127,7 @@ The following image depicts the structure and grouping of the `ibmcloud sat` com
 ## Cluster commands
 {: #sat-cluster-commands}
 
-Use these commands to register {{site.data.keyword.openshiftshort}} clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config) to consistently deploy and update apps across clusters.
+Use these commands to register clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config). You can use configurations to consistently deploy and update apps across clusters.
 {: shortdesc}
 
 ### `ibmcloud sat cluster get`
