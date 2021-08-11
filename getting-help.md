@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-08-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,15 +19,19 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: satellite
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -115,7 +128,7 @@ Still having issues? Review different ways to get help and support for {{site.da
 1. To see whether {{site.data.keyword.cloud_notm}} is available, [check the {{site.data.keyword.cloud_notm}} status page](https://cloud.ibm.com/status?selected=status){: external}.
 2. Filter for the **Satellite** component and review any cloud status issue.
 3. Review the [requirements, limitations, and known issues documentation](/docs/satellite?topic=satellite-requirements).
-4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
+4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [{{site.data.keyword.IBM_notm}} open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
 
 ## Identifying issues for {{site.data.keyword.satelliteshort}}-enabled services
 {: #help-services}
@@ -180,10 +193,10 @@ You can use the built-in {{site.data.keyword.la_short}} dashboard tools to save 
 4. In the **Alert** drop-down list, select **View-specific alert** and follow the steps for the notification channel that you selected to configure a custom alert for this log query.
 5. Click **Save view**.
 
-#### Is IBM alerted for any of these logs?
+#### Is {{site.data.keyword.IBM_notm}} alerted for any of these logs?
 {: #analyze-la-monitor}
 
-The IBM Monitoring component generates certain alerts for issues with your location setup and host infrastructure. To review the alerts that IBM monitors, see [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default).
+The {{site.data.keyword.monitoringfull_notm}} component generates certain alerts for issues with your location setup and host infrastructure. To review the alerts that {{site.data.keyword.IBM_notm}} monitors, see [{{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default).
 
 ### `R00XX` error logs
 {: #logs-error}
@@ -200,10 +213,10 @@ Example log:
 |Log field|Description|
 |---------|-----------|
 |`logSourceCRN`|The CRN of the {{site.data.keyword.satelliteshort}} location. To identify the CRN for a location, look for the location's ID at the end of the CRN.|
-|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to IBM for monitoring and alerts.|
+|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to {{site.data.keyword.IBM_notm}} for monitoring and alerts.|
 |`Details`|The detailed information for log.|
 |`Details.message`|The current error message for the location, including any troubleshooting steps or documentation links.|
-|`Details.errorDetails`|Other details for the current error, such as specific causes or issues with certain components. These details are used by IBM site reliability engineers to manage alerts, but can help provide more details about the issue while you troubleshoot.|
+|`Details.errorDetails`|Other details for the current error, such as specific causes or issues with certain components. These details are used by {{site.data.keyword.IBM_notm}} site reliability engineers to manage alerts, but can help provide more details about the issue while you troubleshoot.|
 |`Details.messageID`|The error message's `R00XX` identifier.|
 {: caption="Pre-defined fields for R00XX error logs" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
@@ -223,7 +236,7 @@ Example log:
 |Log field|Description|
 |---------|-----------|
 |`logSourceCRN`|The CRN of the {{site.data.keyword.satelliteshort}} location. To identify the CRN for a location, look for the location's ID at the end of the CRN.|
-|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to IBM for monitoring and alerts.|
+|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to {{site.data.keyword.IBM_notm}} for monitoring and alerts.|
 |`message`|The status of whether resource deployment is currently enabled (`true` or `false`). If set to `false`, the current `R00XX`-level error messages for the location are listed.|
 {: caption="Pre-defined fields of logs for the status of deployment enablement" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
@@ -245,7 +258,7 @@ Example log:
 |Log field|Description|
 |---------|-----------|
 |`logSourceCRN`|The CRN of the {{site.data.keyword.satelliteshort}} location. To identify the CRN for a location, look for the location's ID at the end of the CRN.|
-|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to IBM for monitoring and alerts.|
+|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to {{site.data.keyword.IBM_notm}} for monitoring and alerts.|
 |`message`|The status of whether your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable, and the endpoint that was health checked.|
 {: caption="Pre-defined fields for endpoint health status logs" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
@@ -276,9 +289,9 @@ Example log:
    2. For any hosts, include relevant details about the underlying infrastructure provider, such as if the host is in an Amazon Web Services, Google Cloud Platform, Microsoft Azure, or other environment.
    3. For issues with resources within your cluster such as pods or services, log in to the cluster and use the Kubernetes API to get more information about them. If the resources are managed by {{site.data.keyword.satelliteshort}} configuration, get the details of your configuration and subscription.
 
-   You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool) to gather and export pertinent information to share with IBM Support.
+   You can also use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/containers?topic=containers-debug-tool) to gather and export pertinent information to share with {{site.data.keyword.IBM_notm}} Support.
    {: tip}
 
-2.  Contact IBM Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an IBM support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
+2.  Contact {{site.data.keyword.IBM_notm}} Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an {{site.data.keyword.IBM_notm}} support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
 3.  For the **Problem type**, search for or select **{{site.data.keyword.openshiftlong_notm}}**.
 4.  For the **Case details**, provide a descriptive title and include the details that you previously gathered. From the **Resources**, you can also select the cluster that the issue is related to, if any.

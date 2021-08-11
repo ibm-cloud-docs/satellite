@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-08-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,15 +20,19 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -41,20 +45,26 @@ content-type: troubleshoot
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -72,8 +82,10 @@ content-type: troubleshoot
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -81,6 +93,7 @@ content-type: troubleshoot
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -148,7 +161,7 @@ The {{site.data.keyword.satelliteshort}} location is ready for operations.
 
 **Steps to resolve**
 
-Your {{site.data.keyword.satelliteshort}} location has no critical alerts, and the IBM monitoring component in the location control plane is monitoring the health of your location. You might still see some warning messages for actions that you can take to improve the state of resources in your location, such as hosts.
+Your {{site.data.keyword.satelliteshort}} location has no critical alerts, and the {{site.data.keyword.IBM_notm}} monitoring component in the location control plane is monitoring the health of your location. You might still see some warning messages for actions that you can take to improve the state of resources in your location, such as hosts.
 
 ## R0002, R0018, R0020, R0023, R0029, R0037, R0039, R0042: Wait for location to be ready
 {: #R0002}
@@ -395,7 +408,7 @@ See [Why does the location subdomain not route traffic to control plane hosts?](
 
 **Location message**
 
-R0043 The location does not meet the following requirement: Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. If you still have issues, contact IBM Cloud Support and include your Satellite location ID.
+R0043 The location does not meet the following requirement: Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID.
 
 **Steps to resolve**
 
@@ -426,7 +439,7 @@ To test TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts:
 
 **Location message**
 
-R0044 DNS issues have been detected on one or more hosts. Verify that your DNS solution is working as expected. If you still have issues, contact IBM Cloud Support and include your Satellite location ID.
+R0044 DNS issues have been detected on one or more hosts. Verify that your DNS solution is working as expected. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID.
 
 **Steps to resolve**
 
@@ -489,7 +502,7 @@ To test NTP on your hosts:
 
 **Location message**
 
-R0047 IBM Cloud is unable to use the health check endpoint to check the location's health.
+R0047 {{site.data.keyword.cloud_notm}} is unable to use the health check endpoint to check the location's health.
 
 **Steps to resolve**
 
@@ -549,12 +562,12 @@ Etcd data is backed up every 8 hours from your {{site.data.keyword.satelliteshor
 
 **Location message**
 
-The Link connector is experiencing authentication issues. Contact IBM Cloud Support and include your Satellite location ID.
+The Link connector is experiencing authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID.
 
-The Link connector is experiencing token authentication issues. Contact IBM Cloud Support and include your Satellite location ID.
+The Link connector is experiencing token authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID.
 {: #R0050}
 
-The Link connector cannot retrieve the location ID. Contact IBM Cloud Support and include your Satellite location ID.
+The Link connector cannot retrieve the location ID. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID.
 {: #R0051}
 
 **Steps to resolve**

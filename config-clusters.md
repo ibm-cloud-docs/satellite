@@ -549,10 +549,9 @@ Removing {{site.data.keyword.satelliteshort}} Config components automatically re
 {: important}
 
 1. [Log in to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2. Remove all the {{site.data.keyword.satelliteshort}} Config components from your cluster by running a [{{site.data.keyword.satelliteshort}} Config removal job](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml){: external}. 
-
+2. Remove all the {{site.data.keyword.satelliteshort}} Config components from your cluster by running a [{{site.data.keyword.satelliteshort}} Config removal job](https://raw.githubusercontent.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml){: external}. 
    ```
-   oc apply -f https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml
+   oc apply -f https://raw.githubusercontent.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml
    ```
    {: pre}
 

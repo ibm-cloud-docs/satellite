@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-30"
+lastupdated: "2021-08-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,6 +19,7 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: satellite
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -127,13 +126,13 @@ By default, {{site.data.keyword.satelliteshort}} generates certain activity even
 See [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).
 {: shortdesc}
 
-### IBM monitoring to resolve and report location alerts
+### {{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts
 {: #monitoring-default}
 
-When you create a {{site.data.keyword.satelliteshort}} location and set up the location control plane, IBM automatically monitors and resolves certain alerts for issues with your location setup and host infrastructure. The following table describes different scenarios and the actions that IBM takes to address the scenarios.
+When you create a {{site.data.keyword.satelliteshort}} location and set up the location control plane, {{site.data.keyword.IBM_notm}} automatically monitors and resolves certain alerts for issues with your location setup and host infrastructure. The following table describes different scenarios and the actions that {{site.data.keyword.IBM_notm}} takes to address the scenarios.
 {: shortdesc}
 
-Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location to forward logs to {{site.data.keyword.la_full_notm}}](/docs/satellite?topic=satellite-health#setup-la), the messages and more detailed information from the IBM Monitoring component are captured and stored in your {{site.data.keyword.la_full_notm}} instance.
+Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location to forward logs to {{site.data.keyword.la_full_notm}}](/docs/satellite?topic=satellite-health#setup-la), the messages and more detailed information from the {{site.data.keyword.IBM_notm}} Monitoring component are captured and stored in your {{site.data.keyword.la_full_notm}} instance.
 
 | Scenario | Action |
 | --- | --- |
@@ -141,8 +140,8 @@ Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location 
 | Cluster capacity exceeds 80% in a zone. | Prevent or allow {{site.data.keyword.openshiftshort}} clusters to be created. Assign available hosts to a location control plane for more compute resources. |
 | {{site.data.keyword.openshiftshort}} clusters are in an unhealthy state. | Resolve certain health issues with {{site.data.keyword.openshiftshort}} clusters. |
 | Default monitoring tools like Prometheus do not work. | Send alerts to your {{site.data.keyword.la_full_notm}} instance and return a status message with further troubleshooting information. |
-| Ingress subdomain registration fails. | Alert IBM engineers to troubleshoot the issues further and return a status message with further troubleshooting information. |
-{: caption="IBM monitoring actions to address certain scenarios." caption-side="top"}
+| Ingress subdomain registration fails. | Alert {{site.data.keyword.IBM_notm}} engineers to troubleshoot the issues further and return a status message with further troubleshooting information. |
+{: caption="{{site.data.keyword.IBM_notm}} monitoring actions to address certain scenarios." caption-side="top"}
 {: summary="Read this table from left to right. In the first column is the scenario. In the second column is the action that {{site.data.keyword.satelliteshort}} automatically takes to address the alert."}
 
 <br />
@@ -156,7 +155,7 @@ You can review the health of {{site.data.keyword.satelliteshort}} resources such
 ### Viewing location health
 {: #location-health}
 
-When you set up a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your location healthy. For more information, see [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default). For troubleshooting help, see [Debugging location health](/docs/satellite?topic=satellite-ts-locations-debug).
+When you set up a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your location healthy. For more information, see [{{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default). For troubleshooting help, see [Debugging location health](/docs/satellite?topic=satellite-ts-locations-debug).
 {: shortdesc}
 
 You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running `ibmcloud sat location ls`.
@@ -178,7 +177,7 @@ You can review the host health from the **Locations** table in the [{{site.data.
 ### Viewing host health
 {: #host-health}
 
-When you attach hosts to a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your hosts healthy. For more information, see [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default). For troubleshooting help, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
+When you attach hosts to a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your hosts healthy. For more information, see [{{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default). For troubleshooting help, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 {: shortdesc}
 
 You can review the host health from the **Hosts** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running `ibmcloud sat host ls --location <location_name_or_ID>`.
@@ -186,7 +185,7 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 | Health state | Description |
 | --- | --- |
 | `assigned` | The host is assigned to a {{site.data.keyword.satelliteshort}} resource, such as a location control plane or cluster. View the status for more information. If the status is `-`, the hosts did not complete the bootstrapping process to the {{site.data.keyword.satelliteshort}} resource. For hosts that you just assigned, wait an hour or so for the process to complete. If you still see the status, [log in to the host to continue debugging](/docs/satellite?topic=satellite-ts-hosts-login).|
-| `health-pending` | The host is assigned and bootstrapped into the cluster as worker nodes that are provisioned and deployed. However, the health components that IBM sets up in the host cannot communicate status back to {{site.data.keyword.cloud_notm}}. Make sure that your hosts meet the [minimum host and network connectivity requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) and that the hosts are not blocked by a firewall in your infrastructure provider. |
+| `health-pending` | The host is assigned and bootstrapped into the cluster as worker nodes that are provisioned and deployed. However, the health components that {{site.data.keyword.IBM_notm}} sets up in the host cannot communicate status back to {{site.data.keyword.cloud_notm}}. Make sure that your hosts meet the [minimum host and network connectivity requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) and that the hosts are not blocked by a firewall in your infrastructure provider. |
 | `provisioning` | The host is attached to the {{site.data.keyword.satelliteshort}} location and is in the process of bootstrapping to become part of a {{site.data.keyword.satelliteshort}} resource, such as the worker node of a {{site.data.keyword.openshiftlong_notm}} cluster. While the host reports a `provisioning` state, the worker node goes through the states of provisioning and deploying. |
 | `ready` | The host is attached to the {{site.data.keyword.satelliteshort}} location and ready to be [assigned to a {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-hosts#host-assign).|
 | `normal` | The host is assigned to a {{site.data.keyword.satelliteshort}} resource, such as a location control plane or cluster, and ready for usage. |
@@ -249,7 +248,7 @@ Metrics are available for the {{site.data.keyword.satelliteshort}} Link componen
     1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog/services){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
     2. [Enable the instance for platform-level metrics collection](/docs/monitoring?topic=monitoring-platform_metrics_enabling). Note that within one region, only one {{site.data.keyword.mon_short}} instance can be enabled for platform metrics collection.
 2. In the **Monitoring** dashboard, click **Open Dashboard** for your {{site.data.keyword.mon_short}} instance.
-3. In the {{site.data.keyword.mon_short}} dashboard, click **Dashboards** > **IBM** > **Satellite Link - Overview**. The pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics opens. Note that if you just created this {{site.data.keyword.mon_short}} instance, it might take up to two hours for the **IBM** dashboards to become available.
+3. In the {{site.data.keyword.mon_short}} dashboard, click **Dashboards** > **{{site.data.keyword.IBM_notm}} ** > **Satellite Link - Overview**. The pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics opens. Note that if you just created this {{site.data.keyword.mon_short}} instance, it might take up to two hours for the **{{site.data.keyword.IBM_notm}} ** dashboards to become available.
 
     You can create a copy of this dashboard to customize the metrics that are shown. To add metrics that are enabled for {{site.data.keyword.satellitelong_notm}}, search for the `ibm_satellite_link` prefix.
     {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-08-11"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -19,15 +19,19 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: satellite
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -93,13 +106,13 @@ subcollection: satellite
 {:video: .video}
 
 
-# OpenShift Container Storage using local disks
+# OpenShift Data Foundation using local disks
 {: #config-storage-ocs-local}
 
-Set up [OpenShift Container Storage](https://docs.openshift.com/container-platform/4.6/storage/persistent_storage/persistent-storage-ocs.html){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [OpenShift Data Foundation](https://docs.openshift.com/container-platform/4.6/storage/persistent_storage/persistent-storage-ocs.html){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
-The OpenShift Container Storage add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
+The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
 {: preview}
 
 <br />
@@ -107,7 +120,7 @@ The OpenShift Container Storage add-on is available as a technology preview and 
 ## Prerequisites
 {: #sat-storage-ocs-local-prereq}
 
-To use the OCS storage with the local storage operator and local storage devices, complete the following tasks:
+To use the ODF storage with the local storage operator and local storage devices, complete the following tasks:
 
 - [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 - [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters).
@@ -117,17 +130,17 @@ To use the OCS storage with the local storage operator and local storage devices
     * Two raw partitions per worker node that have no formatted file system. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
 - [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups).
 - [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
-- **Optional**: If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-ocs-local-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your OCS configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you do not specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and OCS is installed.
+- **Optional**: If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-ocs-local-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you do not specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and ODF is installed.
 - [Get the details of the raw, unformatted devices that you want to use for your configuration](#sat-storage-ocs-local-devices). The device IDs of your storage disks are used to create your {{site.data.keyword.satelliteshort}} storage configuration.
 
 <br />
 ## Optional: Setting up an {{site.data.keyword.cos_full_notm}} backing store
 {: #sat-storage-ocs-local-cos}
 
-If you want to use {{site.data.keyword.cos_full_notm}} as your object service, create an {{site.data.keyword.cos_short}} service instance and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your OCS configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you do not specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and OCS is installed.
+If you want to use {{site.data.keyword.cos_full_notm}} as your object service, create an {{site.data.keyword.cos_short}} service instance and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you do not specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and ODF is installed.
 {: shortdesc}
 
-1. Create an IBM {{site.data.keyword.cos_short}} service instance.
+1. Create an {{site.data.keyword.cos_full_notm}} service instance.
     ```sh
     ibmcloud resource service-instance-create noobaa-store cloud-object-storage standard global
     ```
@@ -142,21 +155,21 @@ If you want to use {{site.data.keyword.cos_full_notm}} as your object service, c
 
 <br />
 
-## Getting the device details for your OCS configuration
+## Getting the device details for your ODF configuration
 {: #sat-storage-ocs-local-devices}
 
-When you create your OCS configuration, you must specify the device paths of the disks that you want to use in your storage cluster. The storage cluster is comprised of the object storage daemon (OSD) pods and the monitoring (MON) pods. The devices that you specify as OSD devices are your storage devices where your app data is stored and the devices that you specify as MON devices are managed by the MON pod and used to store and maintain the storage cluster mapping and monitor storage events. For more information about the OSD and MON, see the [Ceph documentation](https://docs.ceph.com/en/latest/start/intro/){: external}.
+When you create your ODF configuration, you must specify the device paths of the disks that you want to use in your storage cluster. The storage cluster is comprised of the object storage daemon (OSD) pods and the monitoring (MON) pods. The devices that you specify as OSD devices are your storage devices where your app data is stored and the devices that you specify as MON devices are managed by the MON pod and used to store and maintain the storage cluster mapping and monitor storage events. For more information about the OSD and MON, see the [Ceph documentation](https://docs.ceph.com/en/latest/start/intro/){: external}.
 
-The following steps show how you can manually retrieve the local device information from each worker node in your clusters. You can also use the [OCS disk gatherer](https://access.redhat.com/solutions/4928841) to retrieve a list of all the local devices in your cluster.
+The following steps show how you can manually retrieve the local device information from each worker node in your clusters. You can also use the [ODF disk gatherer](https://access.redhat.com/solutions/4928841) to retrieve a list of all the local devices in your cluster.
 {: tip}
 
-1. Log in to your cluster and get a list of available worker nodes. Make a note of the worker nodes that you want to use in your OCS configuration.
+1. Log in to your cluster and get a list of available worker nodes. Make a note of the worker nodes that you want to use in your ODF configuration.
     ```sh
     oc get nodes
     ```
     {: pre}
 
-2. Log in to each worker node that you want to use for your OCS configuration.
+2. Log in to each worker node that you want to use for your ODF configuration.
     ```sh
     oc debug node/<node-name>
     ```
@@ -175,7 +188,7 @@ The following steps show how you can manually retrieve the local device informat
     ```
     {: pre}
 
-4. Review the command output for available disks. Disks that can be used for your OCS configuration must be unmounted. In the following example output from the `lsblk` command, the `sdc` disk has two available, unformatted partitions that you can use for the OSD and MON device paths for this worker node. If your worker node has raw disks with no partitions you need one disk for the OSD and one disk for the MON. As a best practice, and to maximize storage capacity on this disk, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your OCS configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration.
+4. Review the command output for available disks. Disks that can be used for your ODF configuration must be unmounted. In the following example output from the `lsblk` command, the `sdc` disk has two available, unformatted partitions that you can use for the OSD and MON device paths for this worker node. If your worker node has raw disks without partitions, you need one disk for the OSD and one disk for the MON. As a best practice, and to maximize storage capacity on this disk, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your ODF configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration.
     ```sh
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     sda      8:0    0   931G  0 disk
@@ -211,7 +224,7 @@ The following steps show how you can manually retrieve the local device informat
     ```
     {: screen}
 
-7. Repeat the previous steps for each worker node that you want to use for your OCS configuration.   
+7. Repeat the previous steps for each worker node that you want to use for your ODF configuration.   
 
 
 <br />
@@ -221,7 +234,7 @@ The following steps show how you can manually retrieve the local device informat
 
 <br />
 
-## Creating an OpenShift Container Storage configuration in the command line
+## Creating an OpenShift Data Foundation configuration in the command line
 {: #sat-storage-ocs-local-cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
@@ -258,7 +271,7 @@ The following steps show how you can manually retrieve the local device informat
 1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-local-params-cli).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values. If you are using a {{site.data.keyword.cos_short}} backing store, be sure to specify the regional public endpoint in the following format: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. 
   ```sh
-  ibmcloud sat storage config create --name <config_name> --location <location> --template-name ocs-local --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
+  ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
   ```
   {: pre}
 1. Verify that your storage configuration is created.
@@ -269,7 +282,7 @@ The following steps show how you can manually retrieve the local device informat
 1. [Assign your storage configuration to clusters](#assign-storage-ocs-local).
 
 <br />
-## Assigning your OCS storage configuration to a cluster
+## Assigning your ODF storage configuration to a cluster
 {: #assign-storage-ocs-local}
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-ocs-local), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
@@ -391,7 +404,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
       ```
       {: screen}
 
-6. List the OCS storage classes.
+6. List the ODF storage classes.
   ```sh
   oc get sc
   ```
@@ -433,10 +446,10 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 <br />
 
-## Deploying an app that uses OpenShift Container Storage
+## Deploying an app that uses OpenShift Data Foundation
 {: #sat-storage-ocs-local-deploy}
 
-You can use the OCS storage classes to create PVCs for the apps in your clusters.
+You can use the ODF storage classes to create PVCs for the apps in your clusters.
 {: shortdesc}
 
 1. Create a YAML configuration file for your PVC. In order for the PVC to match the PV, you must use the same values for the storage class and the size of the storage.
@@ -536,16 +549,16 @@ You can use the OCS storage classes to create PVCs for the apps in your clusters
 
 
 
-## Upgrading your OCS version
+## Upgrading your ODF version
 {: #ocs-local-upgrade}
 
-To upgrade the OCS version of your configuration, get the details of your configuration and create a new configuration with the same `ocs-cluster-name` and details, but with the `template-version` set to the target version that you want to upgrade to and the `ocs-upgrade` parameter to `true`.
+To upgrade the ODF version of your configuration, get the details of your configuration and create a new configuration with the same `ocs-cluster-name` and details, but with the `template-version` set to the target version that you want to upgrade to and the `ocs-upgrade` parameter to `true`.
 {: shortdesc}
 
 Deleting configurations and assignments might result in data loss.
 {: important}
 
-In the following example, the OCS configuration is updated to use template version 4.7:
+In the following example, the ODF configuration is updated to use template version 4.7,
   * `--name` - Enter a name for your new configuration.
   * `--template-name` - Use the same parameter value as in your existing configuration.
   * `--template-version` - Enter the template version that you want to use to upgrade your configuration.
@@ -560,7 +573,7 @@ In the following example, the OCS configuration is updated to use template versi
   * `ibm-cos-endpoint` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
   * `ibm-cos-location` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
 
-1. Get the details of your OCS configuration.
+1. Get the details of your ODF configuration.
     ```sh
     ibmcloud sat storage config get --config <config>
     ```
@@ -573,9 +586,9 @@ In the following example, the OCS configuration is updated to use template versi
     ```
     {: pre}
 
-3. Save the configuration details. When you upgrade your OCS version, you must enter the same configuration details as in your existing OCS configuration. In addition, you must set the `template-version` to the version you want to upgrade to and change the `ocs-upgrade` parameter to `true`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. 
+3. Save the configuration details. When you upgrade your ODF version, you must enter the same configuration details as in your existing ODF configuration. In addition, you must set the `template-version` to the version you want to upgrade to and change the `ocs-upgrade` parameter to `true`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. 
     ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name ocs-local --template-version <template_version> -p "ocs-cluster-name=testocscluster" -p "osd-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part2,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part2" -p "mon-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part1,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part1" -p "num-of-osd=1" -p "worker-nodes=<worker-IP>,<worker-IP>,<worker-IP>" -p "ocs-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
+    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "ocs-cluster-name=testocscluster" -p "osd-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part2,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part2" -p "mon-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part1,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part1" -p "num-of-osd=1" -p "worker-nodes=<worker-IP>,<worker-IP>,<worker-IP>" -p "ocs-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
     ```
     {: pre}
 
@@ -592,10 +605,10 @@ In the following example, the OCS configuration is updated to use template versi
     {: pre}
 
 <br />
-## Removing OpenShift Container Storage from your apps
+## Removing OpenShift Data Foundation from your apps
 {: #ocs-local-rm}
 
-If you no longer need your OpenShift Container Storage, you can remove your PVC, PV, and the OCS operator from your clusters.
+If you no longer need your OpenShift Data Foundation, you can remove your PVC, PV, and the ODF operator from your clusters.
 {: shortdesc}
 
 1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove.
@@ -652,13 +665,13 @@ If you no longer need your OpenShift Container Storage, you can remove your PVC,
    {: pre}
 
 
-## Removing the OCS local storage configuration from your cluster
+## Removing the ODF local storage configuration from your cluster
 {: #ocs-local-template-rm}
 
-If you no longer plan on using OpenShift Container Storage in your cluster, you can unassign your cluster from the storage configuration.
+If you no longer plan to use OpenShift Data Foundation in your cluster, you can unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration, uninstalls the OCS operators from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Removing the storage configuration uninstalls the ODF operators from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 
@@ -672,7 +685,7 @@ Use the command line to remove a storage configuration.
    ```
    {: pre}
 
-2. Remove the assignment. After the assignment is removed, the OCS driver pods and storage classes are removed from all clusters that were part of the storage assignment.
+2. Remove the assignment. After the assignment is removed, the ODF driver pods and storage classes are removed from all clusters that were part of the storage assignment.
    ```sh
    ibmcloud sat storage assignment rm --assignment <assignment_ID>
    ```
@@ -739,7 +752,7 @@ Use the command line to remove a storage configuration.
     ```
     {: pre}
 
-  2. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your OCS configuration.
+  2. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your ODF configuration.
     ```sh
     rm -rvf /var/lib/rook /mnt/local-storage
     ```
@@ -764,7 +777,7 @@ Use the command line to remove a storage configuration.
     ```
     {: codeblock}
 
-10. **Optional**: If you no longer want to use the local volumes that you used in your OCS configuration, you can delete them from the cluster. List the local PVs.
+10. **Optional**: If you no longer want to use the local volumes that you used in your ODF configuration, you can delete them from the cluster. List the local PVs.
   ```sh
   oc get pv
   ```
@@ -787,7 +800,7 @@ Use the command line to remove a storage configuration.
   ```
   {: pre}
 
-12. List the OCS and local storage classes.
+12. List the ODF and local storage classes.
   ```sh
   oc get sc
   ```
@@ -819,7 +832,7 @@ Use the command line to remove a storage configuration.
   ```
   {: screen}
 
-## OpenShift Container Storage configuration parameter reference
+## OpenShift Data Foundation configuration parameter reference
 {: #sat-storage-ocs-local-params-cli}
 
 | Parameter | Required? | Description | Default value if not provided |
@@ -828,18 +841,18 @@ Use the command line to remove a storage configuration.
 | `--template-name` | Required | Enter `ocs-local`. | N/A |
 | `--template-version` | Required | Enter `4.6`. | N/A |
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. | N/A |
-| `mon-device-path` | Required | Enter a comma separated list of the `disk-by-id` paths for the storage devices that you want to use for the OCS monitoring (MON) pods. The devices that you specify must have at least 20GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `mon-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. | N/A |
-| `osd-device-path` | Required | Enter a comma separated list of the `disk-by-id` paths for the devices that you want to use for the OSD pods. The devices that you specify are used as your storage devices in your OCS configuration. Your OSD devices must have at least 100GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `osd-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
-| `ibm-cos-access-key` | Optional | Enter the IBM {{site.data.keyword.cos_short}} access key ID. Do not encode this value to base64. Your {{site.data.keyword.cos_short}} access key ID is used to create a Kubernetes secret in your cluster. | N/A | 
-| `ibm-cos-secret-access-key` | Optional | Enter the IBM {{site.data.keyword.cos_short}} secret access key. Do not encode this value to base64. Your {{site.data.keyword.cos_short}} secret access key is used to create a Kubernetes secret in your cluster. | N/A |
-| `ibm-cos-endpoint` | Optional | Enter the IBM {{site.data.keyword.cos_short}} regional public endpoint. Be sure that you enter the regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A | 
-| `ibm-cos-location` | Optional | Enter the IBM {{site.data.keyword.cos_short}} region. Example: `us-east-standard`. | N/A |
-| `num-of-osd` | Optional | Enter the number of OSDs. OCS creates 3 times the value specified. | 1 |
-|`worker-nodes` | Optional | Enter the IP addresses of the worker nodes that you want to use in your OCS configuration. Your configuration must have at least 3 worker nodes. If this value is not specified, all of the worker nodes in the cluster are included in your OCS configuration. Example: `169.48.170.90` | N/A |
+| `mon-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths for the storage devices that you want to use for the ODF monitoring (MON) pods. The devices that you specify must have at least 20GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `mon-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. | N/A |
+| `osd-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths for the devices that you want to use for the OSD pods. The devices that you specify are used as your storage devices in your ODF configuration. Your OSD devices must have at least 100GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `osd-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
+| `ibm-cos-access-key` | Optional | Enter the {{site.data.keyword.cos_full_notm}} access key ID. Do not encode this value to base64. Your {{site.data.keyword.cos_short}} access key ID is used to create a Kubernetes secret in your cluster. | N/A | 
+| `ibm-cos-secret-access-key` | Optional | Enter the {{site.data.keyword.cos_full_notm}} secret access key. Do not encode this value to base64. Your {{site.data.keyword.cos_short}} secret access key is used to create a Kubernetes secret in your cluster. | N/A |
+| `ibm-cos-endpoint` | Optional | Enter the {{site.data.keyword.cos_full_notm}} regional public endpoint. Be sure that you enter the regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A | 
+| `ibm-cos-location` | Optional | Enter the {{site.data.keyword.cos_full_notm}} region. Example: `us-east-standard`. | N/A |
+| `num-of-osd` | Optional | Enter the number of OSDs. ODF creates 3 times the value specified. | 1 |
+|`worker-nodes` | Optional | Enter the IP addresses of the worker nodes that you want to use in your ODF configuration. Your configuration must have at least 3 worker nodes. If this value is not specified, all of the worker nodes in the cluster are included in your ODF configuration. Example: `169.48.170.90` | N/A |
 | `billing-type` | Optional | Enter the billing option that you want to use. You can enter either `hourly` or `monthly`. | `hourly` |
-| `ocs-upgrade` | Optional | Set to `true` if you want to upgrade the major version of OCS while creating a configuration of the newer version. | false |
+| `ocs-upgrade` | Optional | Set to `true` if you want to upgrade the major version of ODF while creating a configuration of the newer version. | false |
 {: caption="Table 1. OpenShift Container storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+{: summary="The rows are read from left to right. The first column is the parameter name.  The second column indicates if the parameter is optional. The third column is a brief description of the parameter. The fourth column is the default value of the parameter."}
 
 
 <br />
@@ -847,7 +860,7 @@ Use the command line to remove a storage configuration.
 ## Storage class reference
 {: #sat-storage-ocs-local-sc-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Container Storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the OCS storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/master/config-templates/redhat/ocs-local/4.6/storage-class.yaml).
+Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Data Foundation. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
 | Storage class name | Type | File system | Provisioner | Volume binding mode | Allow volume expansion | Reclaim policy |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-30"
+lastupdated: "2021-08-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,6 +19,7 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: satellite
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -168,7 +167,7 @@ By default, source clients that are connected to the {{site.data.keyword.cloud_n
 3. The {{site.data.keyword.satelliteshort}} Link connector resolves the request to the destination's IP address and port, and forwards the request to the destination resource.
 
 **What happens if {{site.data.keyword.satelliteshort}} Link becomes unavailable?**
-Your on-location workloads continue to run independently even if the location's connectivity to {{site.data.keyword.cloud_notm}} is unavailable. However, if any applications use a Link endpoint to communicate with {{site.data.keyword.cloud_notm}}, communication between those apps and {{site.data.keyword.cloud_notm}} is disrupted. Additionally, any requested changes to your {{site.data.keyword.satelliteshort}} location, such as adding hosts or access control requests to IBM services through {{site.data.keyword.iamshort}}, are disrupted. After connectivity is restored, logs and events are sent to your [{{site.data.keyword.la_full_notm}} and {{site.data.keyword.at_full_notm}} instances](/docs/satellite?topic=satellite-health). Note that {{site.data.keyword.satelliteshort}} Link depends on the underlying connectivity of your hosts' local network to monitor and maintain the managed services for your {{site.data.keyword.satelliteshort}} location.
+Your on-location workloads continue to run independently even if the location's connectivity to {{site.data.keyword.cloud_notm}} is unavailable. However, if any applications use a Link endpoint to communicate with {{site.data.keyword.cloud_notm}}, communication between those apps and {{site.data.keyword.cloud_notm}} is disrupted. Additionally, any requested changes to your {{site.data.keyword.satelliteshort}} location, such as adding hosts or access control requests to {{site.data.keyword.IBM_notm}} services through {{site.data.keyword.iamshort}}, are disrupted. After connectivity is restored, logs and events are sent to your [{{site.data.keyword.la_full_notm}} and {{site.data.keyword.at_full_notm}} instances](/docs/satellite?topic=satellite-health). Note that {{site.data.keyword.satelliteshort}} Link depends on the underlying connectivity of your hosts' local network to monitor and maintain the managed services for your {{site.data.keyword.satelliteshort}} location.
 
 ### External network requirements and security
 {: #link-security}
@@ -180,22 +179,22 @@ Your {{site.data.keyword.satelliteshort}} location infrastructure is a part of y
 
 No. {{site.data.keyword.satelliteshort}} Link uses standard web security ports to originate encrypted communication from your location to {{site.data.keyword.cloud_notm}} for location management. {{site.data.keyword.satelliteshort}} creates unique public DNS entries for each location and assigns ports from the 32768 - 52768 range for TCP so that destination addresses can be predictably resolved by {{site.data.keyword.cloud_notm}}. Communication channels over Link endpoints between your {{site.data.keyword.satelliteshort}} location to {{site.data.keyword.cloud_notm}} are permitted through your [existing outbound firewall policies for hosts](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
 
-**If IBM owns the Link tunnel, how can I validate that our data is inaccessible? My organization's security policy does not allow tunnels from our networks.**
+**If {{site.data.keyword.IBM_notm}} owns the Link tunnel, how can I validate that our data is inaccessible? My organization's security policy does not allow tunnels from our networks.**
 
-{{site.data.keyword.satelliteshort}} Link uses a zero-trust model: {{site.data.keyword.cloud_notm}} has no access to your workloads by default. Any management of infrastructure in your location that is initiated by IBM Site Reliability Engineers over {{site.data.keyword.satelliteshort}} Link is isolated from your workloads and the network connections, such as the Link endpoints, that your workloads use. For more information about what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [IBM operational access](/docs/satellite?topic=satellite-compliance#operational-access). For any other connections into your location that your applications require, you can use {{site.data.keyword.satelliteshort}} Link to create layer 4 communications by setting up an endpoint for each destination resource in your location. All connections through your endpoints are under your control at all times, including completely disabling endpoints.
+{{site.data.keyword.satelliteshort}} Link uses a zero-trust model: {{site.data.keyword.cloud_notm}} has no access to your workloads by default. Any management of infrastructure in your location that is initiated by {{site.data.keyword.IBM_notm}} Site Reliability Engineers over {{site.data.keyword.satelliteshort}} Link is isolated from your workloads and the network connections, such as the Link endpoints, that your workloads use. For more information about what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [{{site.data.keyword.IBM_notm}} operational access](/docs/satellite?topic=satellite-compliance#operational-access). For any other connections into your location that your applications require, you can use {{site.data.keyword.satelliteshort}} Link to create layer 4 communications by setting up an endpoint for each destination resource in your location. All connections through your endpoints are under your control at all times, including completely disabling endpoints.
 
 **How do I make my data secure in transit?**
 
-Link endpoints between your location and {{site.data.keyword.cloud_notm}} are secured through two levels of encryption: high-security encryption from the location’s connector to {{site.data.keyword.cloud_notm}} that is provided by IBM, and an optional additional encryption layer between the source and destination resources.
+Link endpoints between your location and {{site.data.keyword.cloud_notm}} are secured through two levels of encryption: high-security encryption from the location’s connector to {{site.data.keyword.cloud_notm}} that is provided by {{site.data.keyword.IBM_notm}} , and an optional additional encryption layer between the source and destination resources.
 
-All data that is transported over {{site.data.keyword.satelliteshort}} Link is encrypted using TLS 1.3 standards. This level of encryption is managed by IBM.
+All data that is transported over {{site.data.keyword.satelliteshort}} Link is encrypted using TLS 1.3 standards. This level of encryption is managed by {{site.data.keyword.IBM_notm}}.
 
-When you create an endpoint, you can optionally provide another level of encryption by specifying [data encryption protocols](#link-protocols) for the endpoint connection between the client source and destination resource. For example, even if the traffic is not encrypted on the source side, you can specify TLS encryption for the connection that goes over the internet. You can provide your own signed certificates to ensure both internal security and operational auditability without exposing any data contents. IBM only transports the encrypted connection, and your resources must be configured for the data encryption protocols that you specify.
+When you create an endpoint, you can optionally provide another level of encryption by specifying [data encryption protocols](#link-protocols) for the endpoint connection between the client source and destination resource. For example, even if the traffic is not encrypted on the source side, you can specify TLS encryption for the connection that goes over the internet. You can provide your own signed certificates to ensure both internal security and operational auditability without exposing any data contents. {{site.data.keyword.IBM_notm}} only transports the encrypted connection, and your resources must be configured for the data encryption protocols that you specify.
 
 ### Encryption protocols
 {: #link-protocols}
 
-All communication over {{site.data.keyword.satelliteshort}} Link is encrypted by IBM. When you create an endpoint, you can optionally specify an additional data encryption protocol for the endpoint connection between the client source and destination resource. For example, even if the traffic is not encrypted on the source side, you can specify your own additional TLS encryption for the connection that goes over the internet. Note that your resources must be configured for the data encryption protocols that you specify.
+All communication over {{site.data.keyword.satelliteshort}} Link is encrypted by {{site.data.keyword.IBM_notm}}. When you create an endpoint, you can optionally specify an additional data encryption protocol for the endpoint connection between the client source and destination resource. For example, even if the traffic is not encrypted on the source side, you can specify your own additional TLS encryption for the connection that goes over the internet. Note that your resources must be configured for the data encryption protocols that you specify.
 {: shortdesc}
 
 Review the following information about how {{site.data.keyword.satelliteshort}} Link handles each type of connection protocol.
@@ -274,7 +273,7 @@ Review the following list of general use cases and example use cases for {{site.
 **Can I use Link endpoints to...**
 * **Connect resources within the same {{site.data.keyword.satelliteshort}} location?** No. Link endpoints cannot be created between resources in the same location. Instead, resources can access each other directly. For example, an app that runs in an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}} does not need to communicate through {{site.data.keyword.satelliteshort}} Link to access a database that exists in the same location, and can instead access that database directly through the location's private network.
 * **Expose apps or services that run in an {{site.data.keyword.openshiftshort}} cluster in {{site.data.keyword.satelliteshort}}?** To see available options, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
-* **Bridge networks within the IBM Cloud public network, such as VPC spanning?** No. Instead, use the bridging solution that is recommended for your network setup. For example, you might use a [{{site.data.keyword.vpn_vpc_full}}](/docs/vpc?topic=vpc-vpn-example) or [{{site.data.keyword.dl_full}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl#get-started-with-direct-link-connect).
+* **Bridge networks within the {{site.data.keyword.cloud_notm}} public network, such as VPC spanning?** No. Instead, use the bridging solution that is recommended for your network setup. For example, you might use a [{{site.data.keyword.vpn_vpc_full}}](/docs/vpc?topic=vpc-vpn-example) or [{{site.data.keyword.dl_full}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl#get-started-with-direct-link-connect).
 * **Connect to other public clouds?** Yes. With {{site.data.keyword.satelliteshort}} Link, you can create `cloud` endpoints for resources that run in other public clouds.
 
 **Example: Connect from a {{site.data.keyword.satelliteshort}} location to a service in another cloud provider**

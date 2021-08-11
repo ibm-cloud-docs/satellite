@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-11"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -515,7 +515,7 @@ Use the CLI to remove a storage configuration.
 ## Storage class reference
 {: #efs-sc-reference}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the EFS storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/aws/aws-efs-csi-driver/1.0.0/storage-class.yaml).
+Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
 | Storage class name | File system | Reclaim policy |

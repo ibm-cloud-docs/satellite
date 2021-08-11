@@ -180,7 +180,7 @@ subcollection: satellite
 * [Deciding how to create your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#create-options)
   * [On-premises infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-onprem)
   * [Cloud infrastructure like AWS, Azure, and GCP](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud)
-  * [IBM-managed infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-sat-is)
+  * [{{site.data.keyword.IBM_notm}}-managed infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-sat-is)
 * [Providing {{site.data.keyword.satelliteshort}} with credentials to your cloud provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-credentials)
   * [AWS credentials](/docs/satellite?topic=satellite-infrastructure-plan#infra-creds-aws)
   * [Microsoft Azure credentials](/docs/satellite?topic=satellite-infrastructure-plan#infra-creds-azure)
@@ -392,7 +392,7 @@ subcollection: satellite
 [Monitoring for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-monitor)
 * [Understanding what is logged and monitored by default](/docs/satellite?topic=satellite-monitor#health-default)
   * [Auditing events for {{site.data.keyword.satelliteshort}} actions](/docs/satellite?topic=satellite-monitor#audit-events)
-  * [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default)
+  * [{{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default)
 * [Viewing location, host, and cluster health](/docs/satellite?topic=satellite-monitor#view-health)
   * [Viewing location health](/docs/satellite?topic=satellite-monitor#location-health)
   * [Viewing host health](/docs/satellite?topic=satellite-monitor#host-health)
@@ -460,9 +460,9 @@ subcollection: satellite
 {: #sitemap_ibm_storage_templates}
 
 
-[IBM Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale)
+[{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-prereq)
-* [Mapping IBM Spectrum Scale hosts to worker node names](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-ts-mapping)
+* [Mapping {{site.data.keyword.IBM_notm}} Spectrum Scale hosts to worker node names](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-ts-mapping)
 * [Creating an Spectrum Scale storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-cli)
 * [Assigning your Spectrum Scale storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-spectrum-scale#assign-storage-spectrum-scale)
   * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-spectrum-scale#assign-storage-spectrum-scale-cli)
@@ -476,12 +476,12 @@ subcollection: satellite
 * [Limitations](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-limits)
   * [Spectrum Scale configuration parameter reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-params-cli)
 
-[IBM Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi)
+[{{site.data.keyword.IBM_notm}} Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-prereq)
 * [Creating a block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-cli)
 * [Assigning your block storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi)
   * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-cli)
-* [Deploying an app that uses your IBM block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
+* [Deploying an app that uses your {{site.data.keyword.IBM_notm}} block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
 
 
 ## NetApp storage templates
@@ -494,7 +494,7 @@ subcollection: satellite
   * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp-cli)
   * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-template-rm-cli)
 
-[NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas)
+[NetApp ONTAP-NAS 20.07](/docs/satellite?topic=satellite-config-storage-netapp-nas)
 * [Creating a NetApp ONTAP-NAS storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-cli-nas)
 * [Assigning your NetApp ONTAP-NAS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-nas)
   * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-cli-nas)
@@ -504,7 +504,7 @@ subcollection: satellite
 * [NetApp ONTAP-NAS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-params-cli-nas)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-sc-reference-nas)
 
-[NetApp ONTAP-SAN](/docs/satellite?topic=satellite-config-storage-netapp)
+[NetApp ONTAP-SAN 20.07](/docs/satellite?topic=satellite-config-storage-netapp)
 * [Creating a NetApp Trident SAN storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-cli-san)
 * [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-san)
   * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-cli-san)
@@ -540,28 +540,28 @@ subcollection: satellite
 * [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
 
-[OpenShift Container Storage using local disks](/docs/satellite?topic=satellite-config-storage-ocs-local)
+[OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-ocs-local)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-prereq)
 * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} backing store](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cos)
-* [Getting the device details for your OCS configuration](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-devices)
-* [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cli)
-* [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local)
-* [Deploying an app that uses OpenShift Container Storage](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-deploy)
-* [Upgrading your OCS version](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-upgrade)
-* [Removing OpenShift Container Storage from your apps](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-rm)
-* [Removing the OCS local storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-template-rm)
-* [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli)
+* [Getting the device details for your ODF configuration](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-devices)
+* [Creating an OpenShift Data Foundation configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-cli)
+* [Assigning your ODF storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#assign-storage-ocs-local)
+* [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-deploy)
+* [Upgrading your ODF version](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-upgrade)
+* [Removing OpenShift Data Foundation from your apps](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-rm)
+* [Removing the ODF local storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ocs-local#ocs-local-template-rm)
+* [OpenShift Data Foundation configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-sc-ref)
 
-[OpenShift Container Storage for remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote)
+[OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote)
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-prereq)
   * [Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cos)
-* [Creating an OpenShift Container Storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cli)
-* [Assigning your OCS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote)
+* [Creating an OpenShift Data Foundation configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-cli)
+* [Assigning your ODF storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote)
   * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#assign-storage-ocs-remote-cli)
-* [Upgrading your OCS configuration](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-upgrade-config)
-  * [Removing the OCS remote storage assignment from the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#ocs-remote-template-rm-cli)
-* [OpenShift Container Storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-params-cli)
+* [Upgrading your ODF configuration](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-upgrade-config)
+  * [Removing the ODF remote storage assignment from the command line](/docs/satellite?topic=satellite-config-storage-ocs-remote#ocs-remote-template-rm-cli)
+* [OpenShift Data Foundation configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-params-cli)
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ocs-remote#sat-storage-ocs-remote-sc-ref)
 
 
@@ -581,13 +581,13 @@ subcollection: satellite
 
 * [Local file storage](/docs/satellite?topic=satellite-storage-class-ref#local-file-ref)
 
-* [NetApp Trident NAS](/docs/satellite?topic=satellite-storage-class-ref#netapp-nas-ref)
+* [NetApp ONTAP-NAS 20.07](/docs/satellite?topic=satellite-storage-class-ref#netapp-nas-ref)
 
-* [NetApp Trident SAN](/docs/satellite?topic=satellite-storage-class-ref#netapp-san-ref)
+* [NetApp ONTAP-SAN 20.07](/docs/satellite?topic=satellite-storage-class-ref#netapp-san-ref)
 
-* [OpenShift Container Storage for local volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-local-ref)
+* [OpenShift Data Foundation for local volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-local-ref)
 
-* [OpenShift Container Storage for remote volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-remote-ref)
+* [OpenShift Data Foundation for remote volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-remote-ref)
 
 
 ## Enhancing security
@@ -644,12 +644,12 @@ subcollection: satellite
   * [What data is stored when I use {{site.data.keyword.satelliteshort}}? How can I use my own keys to encrypt my data?](/docs/satellite?topic=satellite-compliance#secure-data-store-encrypt)
   * [How do I make my data secure over {{site.data.keyword.satelliteshort}} Link?](/docs/satellite?topic=satellite-compliance#secure-data-link)
   * [What measures can I take to secure user access to data in my location?](/docs/satellite?topic=satellite-compliance#secure-data-access)
-* [IBM operational access](/docs/satellite?topic=satellite-compliance#operational-access)
-  * [What automated access does IBM have to my location?](/docs/satellite?topic=satellite-compliance#operational-access-automated)
-  * [What access do IBM SREs have to my location control plane, including the masters of {{site.data.keyword.satelliteshort}}-enabled service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-control-plane)
-  * [What access do IBM SREs have to my data and workloads that run in my {{site.data.keyword.satelliteshort}}-enabled service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-workloads)
-  * [How can I monitor and manage IBM access into my location? How can I know that there are no backdoor access points on the hosts?](/docs/satellite?topic=satellite-compliance#operational-access-monitor)
-  * [What happens if {{site.data.keyword.satelliteshort}} Link becomes unavailable? Can IBM still maintain my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-compliance#operational-access-availability)
+* [{{site.data.keyword.IBM_notm}} operational access](/docs/satellite?topic=satellite-compliance#operational-access)
+  * [What automated access does {{site.data.keyword.IBM_notm}} have to my location?](/docs/satellite?topic=satellite-compliance#operational-access-automated)
+  * [What access do {{site.data.keyword.IBM_notm}} SREs have to my location control plane, including the masters of {{site.data.keyword.satelliteshort}}-enabled service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-control-plane)
+  * [What access do {{site.data.keyword.IBM_notm}} SREs have to my data and workloads that run in my {{site.data.keyword.satelliteshort}}-enabled service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-workloads)
+  * [How can I monitor and manage {{site.data.keyword.IBM_notm}} access into my location? How can I know that there are no backdoor access points on the hosts?](/docs/satellite?topic=satellite-compliance#operational-access-monitor)
+  * [What happens if {{site.data.keyword.satelliteshort}} Link becomes unavailable? Can {{site.data.keyword.IBM_notm}} still maintain my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-compliance#operational-access-availability)
 * [Digital certificates for {{site.data.keyword.satelliteshort}} hosts and domains](/docs/satellite?topic=satellite-compliance#certs-hosts-domains)
 * [Platform compliance and certification](/docs/satellite?topic=satellite-compliance#platform-compliance)
   * [What compliance standards does the service meet?](/docs/satellite?topic=satellite-compliance#compliance-standards)
@@ -659,12 +659,12 @@ subcollection: satellite
 [Securing your connection](/docs/satellite?topic=satellite-service-connection)
 * [User access to resources that run in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#user-access)
   * [Service-instance clusters](/docs/satellite?topic=satellite-service-connection#user-access-service)
-  * [IBM private network access with {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-service-connection#user-access-loc-ep)
+  * [{{site.data.keyword.IBM_notm}} private network access with {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-service-connection#user-access-loc-ep)
   * [Application workloads that run in clusters](/docs/satellite?topic=satellite-service-connection#user-access-apps)
 * [{{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#ibm-cloud-access)
 
 [Securing your data](/docs/satellite?topic=satellite-data-security)
-* [What information is stored with IBM when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
+* [What information is stored with {{site.data.keyword.IBM_notm}} when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
   * [Stored information when you create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-data-security#sat-sensitive-data-default)
   * [Stored information from resources that you create](/docs/satellite?topic=satellite-data-security#sat-sensitive-data-user-added)
 * [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
@@ -851,7 +851,7 @@ subcollection: satellite
 
 * [What happens if my {{site.data.keyword.satelliteshort}} control plane becomes unavailable?](/docs/satellite?topic=satellite-faqs#control-plane-unavailable)
 
-* [Does IBM support third-party and open source tools that I use with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-faqs#faq_thirdparty_oss)
+* [Does {{site.data.keyword.IBM_notm}} support third-party and open source tools that I use with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-faqs#faq_thirdparty_oss)
 
 * [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software)
 

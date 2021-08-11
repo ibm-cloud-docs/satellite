@@ -129,7 +129,7 @@ To get started, consider the type of infrastructure that you want to use.
 
 * **I have on-prem, cloud, or edge infrastructure**: Continue with the [getting started steps](#create-location).
 * **I use Amazon Web Services or Microsoft Azure**: You can continue with the [getting started steps](#create-location), or try an [automated setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
-* **I don't have my own infrastructure or want to order some**: For a managed offering where IBM sends you the infrastructure and sets up the location, check out [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
+* **I don't have my own infrastructure or want to order some**: For a managed offering where {{site.data.keyword.IBM_notm}} sends you the infrastructure and sets up the location, check out [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
 
 ## Step 1: Create your location
 {: #create-location}
@@ -232,11 +232,11 @@ To complete the setup of your {{site.data.keyword.satelliteshort}} location, you
 1. From the actions menu of each host machine that you attached, click **Assign host**.
 2. For the **Cluster**, select `Control plane`.
 3. For the **Zone**, select a unique zone such as `zone-1`.
-4. Click **Assign host**. When you assign the hosts to the control plane, IBM bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
+4. Click **Assign host**. When you assign the hosts to the control plane, {{site.data.keyword.IBM_notm}} bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the **Health** of your machine changes from `Ready` to `Provisioning`.
 4. Repeat these steps for each host. Make sure that you assign each host to a different zone so that you spread all three hosts across all three zones, such as `zone-1`, `zone-2`, and `zone-3`.
 5. From the **Hosts** tab, verify that your hosts are successfully assigned to the {{site.data.keyword.satelliteshort}} control plane. The assignment is successful when an IP address is added to your host and the **Health** status changes to **Normal**.
 
-   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until IBM monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
+   After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until {{site.data.keyword.IBM_notm}} monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
    {: note}
 
 ## What's next

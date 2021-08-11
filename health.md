@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-09"
+lastupdated: "2021-08-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,15 +19,19 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,14 +81,18 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -155,10 +169,10 @@ You can use the built-in {{site.data.keyword.la_short}} dashboard tools to save 
 4. In the **Alert** drop-down list, select **View-specific alert** and follow the steps for the notification channel that you selected to configure a custom alert for this log query.
 5. Click **Save view**.
 
-#### Is IBM alerted for any of these logs?
+#### Is {{site.data.keyword.IBM_notm}} alerted for any of these logs?
 {: #analyze-la-monitor}
 
-The IBM Monitoring component generates certain alerts for issues with your location setup and host infrastructure. To review the alerts that IBM monitors, see [IBM monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default).
+The {{site.data.keyword.monitoringfull_notm}} component generates certain alerts for issues with your location setup and host infrastructure. To review the alerts that {{site.data.keyword.IBM_notm}} monitors, see [{{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default).
 
 ### `R00XX` error logs
 {: #logs-error}
@@ -175,10 +189,10 @@ Example log:
 |Log field|Description|
 |---------|-----------|
 |`logSourceCRN`|The CRN of the {{site.data.keyword.satelliteshort}} location. To identify the CRN for a location, look for the location's ID at the end of the CRN.|
-|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to IBM for monitoring and alerts.|
+|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to {{site.data.keyword.IBM_notm}} for monitoring and alerts.|
 |`Details`|The detailed information for log.|
 |`Details.message`|The current error message for the location, including any troubleshooting steps or documentation links.|
-|`Details.errorDetails`|Other details for the current error, such as specific causes or issues with certain components. These details are used by IBM site reliability engineers to manage alerts, but can help provide more details about the issue while you troubleshoot.|
+|`Details.errorDetails`|Other details for the current error, such as specific causes or issues with certain components. These details are used by {{site.data.keyword.IBM_notm}} site reliability engineers to manage alerts, but can help provide more details about the issue while you troubleshoot.|
 |`Details.messageID`|The error message's `R00XX` identifier.|
 {: caption="Pre-defined fields for R00XX error logs" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
@@ -198,7 +212,7 @@ Example log:
 |Log field|Description|
 |---------|-----------|
 |`logSourceCRN`|The CRN of the {{site.data.keyword.satelliteshort}} location. To identify the CRN for a location, look for the location's ID at the end of the CRN.|
-|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to IBM for monitoring and alerts.|
+|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to {{site.data.keyword.IBM_notm}} for monitoring and alerts.|
 |`message`|The status of whether resource deployment is currently enabled (`true` or `false`). If set to `false`, the current `R00XX`-level error messages for the location are listed.|
 {: caption="Pre-defined fields of logs for the status of deployment enablement" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
@@ -220,7 +234,7 @@ Example log:
 |Log field|Description|
 |---------|-----------|
 |`logSourceCRN`|The CRN of the {{site.data.keyword.satelliteshort}} location. To identify the CRN for a location, look for the location's ID at the end of the CRN.|
-|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to IBM for monitoring and alerts.|
+|`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to {{site.data.keyword.IBM_notm}} for monitoring and alerts.|
 |`message`|The status of whether your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable, and the endpoint that was health checked.|
 {: caption="Pre-defined fields for endpoint health status logs" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}

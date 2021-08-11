@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-26"
+lastupdated: "2021-08-11"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -19,15 +19,19 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: satellite
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -93,23 +106,23 @@ subcollection: satellite
 {:video: .video}
 
 
-# IBM Spectrum Scale driver
+# {{site.data.keyword.IBM_notm}} Spectrum Scale driver
 {: #config-storage-spectrum-scale}
 
-Set up [IBM Spectrum Scale](https://www.ibm.com/docs/en/spectrum-scale-csi){: external} storage for {{site.data.keyword.satelliteshort}} clusters.
+Set up [{{site.data.keyword.IBM_notm}} Spectrum Scale](https://www.ibm.com/docs/en/spectrum-scale-csi){: external} storage for {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
 
 
-You can use the IBM Spectrum Scale Container Storage Interface (CSI) driver to create persistent storage for stateful apps. that run in your {{site.data.keyword.satelliteshort}} clusters.
+You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale Container Storage Interface (CSI) driver to create persistent storage for stateful apps. that run in your {{site.data.keyword.satelliteshort}} clusters.
 
-The IBM Spectrum Scale CSI driver supports the following features:
+The {{site.data.keyword.IBM_notm}} Spectrum Scale CSI driver supports the following features:
 
 * **Static provisioning**: You can use your existing directories and filesets as persistent volumes.
 * **Lightweight dynamic provisioning**: You can dynamically create directory-based volumes.
 * **Fileset-based dynamic provisioning**: You can dynamically create fileset-based volumes.
 * **Multiple file systems**: You can create volumes across multiple file systems.
 * **Remote volumes**: You can create volumes on a remotely mounted file system.
-* **Operator deployment**: You can use the IBM Spectrum Scale operator for easier deployment, upgrade, and cleanup.
+* **Operator deployment**: You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale operator for easier deployment, upgrade, and cleanup.
 * **Multiple volume access modes** You can create volumes with ReadWriteMany (RWX) and ReadWriteOnce (RWO) access modes.
 
 <br />
@@ -117,7 +130,7 @@ The IBM Spectrum Scale CSI driver supports the following features:
 ## Prerequisites
 {: #sat-storage-spectrum-scale-prereq}
 
-Complete the following steps, but do not create an IBM Cloud Spectrum Scale cluster.
+Complete the following steps, but do not create an {{site.data.keyword.cloud_notm}} Spectrum Scale cluster.
 {: shortdesc}
 
 1. [Follow the steps to install Spectrum Scale as root](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=isslndp-manually-installing-spectrum-scale-software-packages-linux-nodes){: external} and make sure that you install all the required packages by running the following command.
@@ -127,9 +140,9 @@ Complete the following steps, but do not create an IBM Cloud Spectrum Scale clus
 	{: pre}
 
 1. [Configure `sudo`](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=login-configuring-sudo){: external}.
-1. Follow the steps to [install IBM Spectrum Scale packages on Linux systems](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=nodes-installing-spectrum-scale-packages-linux-systems), but make sure that you do not create the cluster in step 4.
+1. Follow the steps to [install {{site.data.keyword.IBM_notm}} Spectrum Scale packages on Linux systems](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=nodes-installing-spectrum-scale-packages-linux-systems), but make sure that you do not create the cluster in step 4.
 
-1. Follow the steps to [run IBM Spectrum Scale commands without remote root login](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=cgc-running-spectrum-scale-commands-without-remote-root-login){: external}, but do not create a Spectrum Scale cluster.
+1. Follow the steps to [run {{site.data.keyword.IBM_notm}} Spectrum Scale commands without remote root login](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=cgc-running-spectrum-scale-commands-without-remote-root-login){: external}, but do not create a Spectrum Scale cluster.
 
 1. [Switch to the `sudo` user and create a Spectrum Scale cluster on the worker nodes](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=login-configuring-cluster-use-sudo-wrapper-scripts){: external}.
     * Verify that the cluster is using sudo wrappers.
@@ -144,26 +157,26 @@ Complete the following steps, but do not create an IBM Cloud Spectrum Scale clus
 		```
 		{: pre}
 
-1. [Attach your IBM Spectrum Scale Nodes to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-hosts#attach-hosts).
+1. [Attach your {{site.data.keyword.IBM_notm}} Spectrum Scale Nodes to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-hosts#attach-hosts).
 	* Make sure your system is configured for the desired default route if you have more than one clustering network.
 	* Make sure that default route has a path to the public network, possibly via NAT or VPN.
 
-1. Start IBM Spectrum Scale nodes and verify that they are running. If there is an issue with the portability layer, you can [rebuild the portability layer](#ess-ts-rebuilding).
+1. Start {{site.data.keyword.IBM_notm}} Spectrum Scale nodes and verify that they are running. If there is an issue with the portability layer, you can [rebuild the portability layer](#ess-ts-rebuilding).
 
-1. [Mount your file system remotely and verify that it is running on all worker nodes](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=system-mounting-remote-gpfs-file){: external}. Run the `mmcluster` command on both the local and remote IBM Spectrum Scale cluster.
+1. [Mount your file system remotely and verify that it is running on all worker nodes](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=system-mounting-remote-gpfs-file){: external}. Run the `mmcluster` command on both the local and remote {{site.data.keyword.IBM_notm}} Spectrum Scale cluster.
 
-1. [Initialize the IBM Spectrum Scale GUI](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=i-performing-pre-installation-tasks){: external}.
+1. [Initialize the {{site.data.keyword.IBM_notm}} Spectrum Scale GUI](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=i-performing-pre-installation-tasks){: external}.
 
-1. Label the worker nodes where the IBM Spectrum Scale client is installed and where the IBM Spectrum Scale Container Storage Interface (CSI) driver is running.
+1. Label the worker nodes where the {{site.data.keyword.IBM_notm}} Spectrum Scale client is installed and where the {{site.data.keyword.IBM_notm}} Spectrum Scale Container Storage Interface (CSI) driver is running.
     ```sh
     oc label nodes <node> <node> <node> scale=true --overwrite=true
     ```
 	{: pre}
 
-## Mapping IBM Spectrum Scale hosts to worker node names
+## Mapping {{site.data.keyword.IBM_notm}} Spectrum Scale hosts to worker node names
 {: #sat-storage-spectrum-scale-ts-mapping}
 
-In some environments, your worker node names might be different from your IBM Spectrum Scale node names which results in the pods not mounting. You must map your worker node names to your Spectrum Scale nodes. For more information, see [Kubernetes to IBM Spectrum Scale node mapping](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=o-kubernetes-spectrum-scale-node-mapping){: external}.
+In some environments, your worker node names might be different from your {{site.data.keyword.IBM_notm}} Spectrum Scale node names which results in the pods not mounting. You must map your worker node names to your Spectrum Scale nodes. For more information, see [Kubernetes to {{site.data.keyword.IBM_notm}} Spectrum Scale node mapping](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=o-kubernetes-spectrum-scale-node-mapping){: external}.
 
 <br />
 
@@ -441,7 +454,7 @@ You can use the `ibm-spectrum-scale-csi-driver` to create PVCs that you can use 
    ```
    {: screen}
 
-1. Verify that the app can write to your IBM Spectrum Scale instance.
+1. Verify that the app can write to your {{site.data.keyword.IBM_notm}} Spectrum Scale instance.
    1. Log in to your pod.
       ```sh
       oc exec <app-pod-name> -it bash
@@ -555,7 +568,7 @@ sudo cp /usr/src/kernels/3.10.0-1160.15.2.el7.x86_64/include/uapi/linux/*.h /usr
 ## Storage class reference
 {: #sat-storage-spectrum-scale-sc-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for IBM Spectrum Scale. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.keyword.IBM_notm}} Spectrum Scale. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
 
@@ -566,12 +579,12 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for IBM Spectrum
 ## Additional references
 {: #sat-storage-spectrum-scale-ref}
 
-* [IBM Spectrum Scale CSI driver documentation](https://www.ibm.com/docs/en/spectrum-scale-csi){: external}.
+* [{{site.data.keyword.IBM_notm}} Spectrum Scale CSI driver documentation](https://www.ibm.com/docs/en/spectrum-scale-csi){: external}.
 * [Cleaning up your Spectrum Scale deployment](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=installation-cleaning-up-spectrum-scale-container-storage-interface-driver-operator-by-using-clis){: external}.
 
 ## Limitations
 {: #sat-storage-spectrum-scale-limits}
-Do not install the IBM Spectrum Scale management API GUI on worker nodes that are managed by {{site.data.keyword.satelliteshort}}.
+Do not install the {{site.data.keyword.IBM_notm}} Spectrum Scale management API GUI on worker nodes that are managed by {{site.data.keyword.satelliteshort}}.
 {: important}
 
 * If the Spectrum Scale file system mount path is the exact same on the owning and primary Spectrum Scale cluster, then only one Spectrum Scale GUI is required.
@@ -583,29 +596,29 @@ Do not install the IBM Spectrum Scale management API GUI on worker nodes that ar
 | Parameter | Required? | Description |
 | --- | --- | --- |
 | `scale-host-path` | Required | The mount path of the primary file system. You can retrieve this value by running the `mmlsfs` command from a worker node in the primary Spectrum Scale cluster. |
-| `cluster-id` | Required | The cluster ID of the primary IBM Spectrum Scale cluster. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
+| `cluster-id` | Required | The cluster ID of the primary {{site.data.keyword.IBM_notm}} Spectrum Scale cluster. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
 | `primary-fs` | Required | The primary file system name. You can retrieve this value by running the `mmlsfs` command from a worker node in the primary Spectrum Scale cluster. |
 | `gui-host` | Required | Enter the FQDN or IP address that corresponds with the ID that is specified in `gui-api-user` parameter. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
 | `secret-name` | Required | The name of the secret that contains the `username` and `password` to connect to the primary Spectrum Scale cluster GUI server. This parameter is user-specified. |
 | `gui-api-user` | Required | The username to connect to the primary Spectrum Scale cluster GUI. To retrieve this value, log in to the Spectrum Scale GUI node and run the `lsuser` command. The `gui-api-user` value is in the `CsiAdmin` group. |
 | `gui-api-password` | Required | The password to connect to the primary Spectrum Scale cluster GUI. This parameter is user-specified.|
-| `k8-n1-ip` | Required | The IP address of your worker node 1 running IBM Spectrum Scale. You can retrieve this value by running the `oc get nodes` command. |
-| `sc-n1-host` | Required | the hostname of the IBM Spectrum Scale Node 1.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n2-ip` | Optional | The IP address of your worker node 2 running IBM Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command. |
-| `sc-n2-host` | Optional | the hostname of the IBM Spectrum Scale Node 2. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n3-ip` | Optional | The IP address of your worker node 3 running IBM Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n3-host` | Optional | the hostname of the IBM Spectrum Scale Node 3.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n4-ip` | Optional | The IP address of your worker node 3 running IBM Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n4-host` | Optional | the hostname of the IBM Spectrum Scale Node 4.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n5-ip` | Optional | The IP address of your worker node 4 running IBM Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n5-host` | Optional | the hostname of the IBM Spectrum Scale Node 5.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n6-ip` | Optional | The IP address of your worker node 5 running IBM Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n6-host` | Optional | the hostname of the IBM Spectrum Scale Node 6.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n7-ip` | Optional | The IP address of your worker node 6 running IBM Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n7-host` | Optional | the hostname of the IBM Spectrum Scale Node 7.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n8-ip` | Optional | The IP address of your worker node 7 running IBM Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n8-host` | Optional | the hostname of the IBM Spectrum Scale Node 8. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `storage-class-name` | Optional | The name of the IBM Spectrum Scale storage class.  |
+| `k8-n1-ip` | Required | The IP address of your worker node 1 running {{site.data.keyword.IBM_notm}} Spectrum Scale. You can retrieve this value by running the `oc get nodes` command. |
+| `sc-n1-host` | Required | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 1.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
+| `k8-n2-ip` | Optional | The IP address of your worker node 2 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command. |
+| `sc-n2-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 2. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
+| `k8-n3-ip` | Optional | The IP address of your worker node 3 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
+| `sc-n3-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 3.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
+| `k8-n4-ip` | Optional | The IP address of your worker node 3 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
+| `sc-n4-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 4.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
+| `k8-n5-ip` | Optional | The IP address of your worker node 4 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
+| `sc-n5-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 5.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
+| `k8-n6-ip` | Optional | The IP address of your worker node 5 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
+| `sc-n6-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 6.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
+| `k8-n7-ip` | Optional | The IP address of your worker node 6 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
+| `sc-n7-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 7.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
+| `k8-n8-ip` | Optional | The IP address of your worker node 7 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
+| `sc-n8-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 8. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
+| `storage-class-name` | Optional | The name of the {{site.data.keyword.IBM_notm}} Spectrum Scale storage class.  |
 | `vol-backend-fs` | Optional | The name of the file system on which the fileset is created. |
 {: caption="Table 1. OpenShift Container storage parameter reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-08-11"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -19,15 +19,19 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: satellite
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -93,17 +106,17 @@ subcollection: satellite
 {:video: .video}
 
 
-# IBM Systems block storage CSI driver
+# {{site.data.keyword.IBM_notm}} Systems block storage CSI driver
 {: #config-storage-block-csi}
 
-The block storage CSI driver is based on an IBM open-source project, and integrated into the IBM Storage orchestration for containers. IBM Storage orchestration for containers enables enterprises to implement a modern container-driven hybrid multicloud environment that can reduce IT costs and enhance business agility, while continuing to derive value from existing systems.
+The block storage CSI driver is based on an {{site.data.keyword.IBM_notm}} open-source project, and integrated into the {{site.data.keyword.IBM_notm}} Storage orchestration for containers. {{site.data.keyword.IBM_notm}} Storage orchestration for containers enables enterprises to implement a modern container-driven hybrid multicloud environment that can reduce IT costs and enhance business agility, while continuing to derive value from existing systems.
 
 For full release notes, compatibility, installation, and user information, see the [block storage CSI driver documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0){: external}.
 
-Supported IBM storage systems:
-  - IBM Spectrum Virtualize Family including IBM SAN Volume Controller (SVC) and IBM FlashSystem® family members built with IBM Spectrum® Virtualize (FlashSystem 5010, 5030, 5100, 5200, 7200, 9100, 9200, 9200R)
-  - IBM FlashSystem A9000 and A9000R
-  - IBM DS8000 Family
+Supported {{site.data.keyword.IBM_notm}} storage systems:
+  - {{site.data.keyword.IBM_notm}} Spectrum Virtualize Family including {{site.data.keyword.IBM_notm}} SAN Volume Controller (SVC) and {{site.data.keyword.IBM_notm}} FlashSystem® family members built with {{site.data.keyword.IBM_notm}} Spectrum® Virtualize (FlashSystem 5010, 5030, 5100, 5200, 7200, 9100, 9200, 9200R)
+  - {{site.data.keyword.IBM_notm}} FlashSystem A9000 and A9000R
+  - {{site.data.keyword.IBM_notm}} DS8000 Family
   
 ## Prerequisites
 {: #sat-storage-block-csi-prereq}
@@ -237,7 +250,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
   ```
   {: pre}
 
-## Deploying an app that uses your IBM block storage
+## Deploying an app that uses your {{site.data.keyword.IBM_notm}} block storage
 {: #storage-block-csi-app-deploy}
 
 You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you can use in your cluster workloads.
@@ -252,7 +265,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
     namespace: default
   type: Opaque
   stringData:
-    management_address: demo-management-address 
+    management_address: demo-management-address #
     username: demo-username                     
   data:
     password: AAAA1AAA 
@@ -379,7 +392,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
    ```
    {: screen}
 
-1. Verify that the app can write to your IBM Block Storage instance.
+1. Verify that the app can write to your {{site.data.keyword.IBM_notm}} Block Storage instance.
    1. Log in to your pod.
       ```sh
       oc exec demo-statefulset-file-system-0 -it bash

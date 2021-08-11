@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-09"
+lastupdated: "2021-08-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,15 +19,19 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: satellite
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -101,7 +114,7 @@ Access to {{site.data.keyword.satellitelong}} service instances for users in you
 {: shortdesc}
 
 The name for the {{site.data.keyword.satellitelong_notm}} service in IAM is:
-* **IBM Cloud Satellite** in the UI
+* **{{site.data.keyword.satellitelong_notm}}** in the UI
 * **satellite** in the API and CLI
 
 ## Understanding {{site.data.keyword.satelliteshort}} resource types in IAM
@@ -225,7 +238,7 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
 1.  [Invite users to your account](/docs/account?topic=account-iamuserinv).
 2.  [Create an access group](/docs/account?topic=account-groups#create_ag) to add users to.
 3.  [Assign the access group](/docs/account?topic=account-groups#access_ag) with the appropriate scope for the {{site.data.keyword.satelliteshort}} resources and IAM platform and service roles for the actions you want to let users in your access group perform.
-    * To scope access to the service, use **IBM Cloud Satellite** in the UI or **satellite** in the API or CLI.
+    * To scope access to the service, use **{{site.data.keyword.satellitelong_notm}}** in the UI or **satellite** in the API or CLI.
     * You can scope access to the account or particular resource groups. Keep in mind the following points.
       * Account-level access is not the same as access to all resource groups.
       * Not all {{site.data.keyword.satelliteshort}} resource types support scoping to resource groups. For example, you cannot scope {{site.data.keyword.satelliteshort}} Config resource types (configuration, subscription, cluster, or cluster group) to resource groups, only to the account.
@@ -264,9 +277,9 @@ Use the {{site.data.keyword.cloud_notm}} IAM console to grant an access policy t
 2.  From the menu bar, click **Manage > Access (IAM)**.
 3.  Click **Access groups**, and then click the access group that you want to assign access to {{site.data.keyword.satellitelong_notm}}.
 4.  Click the **Access policies** tab, and then click **Assign access**.
-5.  With the **IAM Services** tile selected, in the service access dropdown field, select **IBM Cloud Satellite**.
+5.  With the **IAM Services** tile selected, in the service access dropdown field, select **{{site.data.keyword.satellitelong_notm}}**.
 
-    You can start to enter letters like `sat` and the field filters results to help you find **IBM Cloud Satellite**.
+    You can start to enter letters like `sat` and the field filters results to help you find **{{site.data.keyword.satellitelong_notm}}**.
     {: tip}
 
 6.  Leave the setting in **Account** so that you can scope the resource to a specific instance.
@@ -370,7 +383,7 @@ Every user that accesses the {{site.data.keyword.satelliteshort}} service in you
 {: shortdesc}
 
 The name for the {{site.data.keyword.satellitelong_notm}} service in IAM is:
-* **IBM Cloud Satellite** in the UI
+* **{{site.data.keyword.satellitelong_notm}}** in the UI
 * **satellite** in the API and CLI
 
 Keep in mind that you need permissions to {{site.data.keyword.cloud_notm}} services if you use the services with {{site.data.keyword.satelliteshort}}. For example, to create and manage clusters in your {{site.data.keyword.satelliteshort}} location, you must have the [appropriate permissions to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-access_reference) in IAM (**Kubernetes Service** in the UI, **containers-kubernetes** in the API and CLI).

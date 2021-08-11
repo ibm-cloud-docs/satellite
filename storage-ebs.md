@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-11"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -112,7 +112,7 @@ subcollection: satellite
 Set up [Amazon Elastic Block Storage (EBS)](https://docs.aws.amazon.com/ebs/?id=docs_gateway){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
-When you create your AWS EBS storage configuration, you provide your AWS credentials which are stored as a Kubernetes secret in the clusters that you assign your configuration to. The secret is mounted inside the CSI controller pod so that when you create a PVC by using one of the IBM-provided storage classes, your AWS credentials are used to dynamically provision an EBS instance.
+When you create your AWS EBS storage configuration, you provide your AWS credentials which are stored as a Kubernetes secret in the clusters that you assign your configuration to. The secret is mounted inside the CSI controller pod so that when you create a PVC by using one of the {{site.data.keyword.IBM_notm}}-provided storage classes, your AWS credentials are used to dynamically provision an EBS instance.
 
 To use AWS EBS storage for your apps, the {{site.data.keyword.satelliteshort}} hosts that you use for your cluster's worker nodes must reside in AWS.
 {: important}
@@ -265,7 +265,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
    ```
    {: pre}
 
-4. Verify that your PVC is created. Because all IBM-provided storage classes are configured as `WaitForFirstConsumer`, the status of your PVC remains `Pending` until you provision an app that mounts your PVC.
+4. Verify that your PVC is created. Because all {{site.data.keyword.IBM_notm}}-provided storage classes are configured as `WaitForFirstConsumer`, the status of your PVC remains `Pending` until you provision an app that mounts your PVC.
    ```sh
    oc get pvc
    ```
@@ -434,7 +434,7 @@ Removing your AWS EBS instance permanently removes all the data that is stored o
       ```
       {: pre}
 
-3. Delete the PVC. Because all IBM-provided AWS EBS storage classes are specified with a `Delete` reclaim policy, the PV and the AWS EBS instance in your AWS account are automatically deleted when you delete the PVC.
+3. Delete the PVC. Because all {{site.data.keyword.IBM_notm}}-provided AWS EBS storage classes are specified with a `Delete` reclaim policy, the PV and the AWS EBS instance in your AWS account are automatically deleted when you delete the PVC.
    ```sh
    oc delete pvc <pvc_name>
    ```
