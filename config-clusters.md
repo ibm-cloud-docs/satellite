@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-09"
+lastupdated: "2021-08-11"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -19,15 +19,19 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: satellite
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -133,7 +146,7 @@ Review the following key concepts that are used when you create a {{site.data.ke
 {: caption="{{site.data.keyword.satelliteshort}} Config key concepts." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the term for the key concept. The second column is a description of the key concept."}
 
-<br />
+
 
 ## Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config
 {: #setup-clusters-satconfig}
@@ -204,134 +217,90 @@ Choose from the following options.
    If you choose a custom access option, some {{site.data.keyword.satelliteshort}} Config components might not work. For example, if you grant access only to view certain resources, you cannot use subscriptions to create Kubernetes resources in your cluster group. To view an inventory of your Kubernetes resources in a cluster, {{site.data.keyword.satelliteshort}} Config must have an appropriate role that is bound to the `razee-viewer` service account. To deploy Kubernetes resources to a cluster via subscriptions, {{site.data.keyword.satelliteshort}} Config must have an appropriate role that is bound to the `razee-editor` service account.
    {: note}
 
-   *  **Cluster admin access**: Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role.
-      ```
-      kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
-      ```
-      {: pre}
-   *  **Custom access, cluster-wide**: Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access to the actions and Kubernetes resources that you want for the cluster.
-      1. Create a cluster role with the actions and resources that you want to grant. For example, the following command creates a viewer role so that {{site.data.keyword.satelliteshort}} Config can list all the Kubernetes resources in a cluster, but cannot modify them.
-         ```
-         kubectl create clusterrole razee-viewer --verb=get,list,watch --resource="*.*"
-         ```
-         {: pre}
 
-         <table summary="This table is read from left to right. The first column has the error message. The second column has the description of the how to resolve the error.">
-         <caption>Understanding this command's components</caption>
-         <thead>
-         <th>Component</th>
-         <th>Description</th>
-         </thead>
-         <tbody>
-         <tr>
-         <td><code>razee-viewer</code></td>
-         <td>The name of the cluster role, such as <code>razee-viewer</code>.</td>
-         </tr>
-         <tr>
-         <td><code>--verb=get,list,watch</code></td>
-         <td>A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for a viewer or auditor, <code>get,list,watch</code>. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}.</td>
-         </tr>
-         <tr>
-         <td>`--resource="*.*"`</td>
-         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, `"*.*"`. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
-         </tr>
-         </tbody>
-         </table>
-      2. Create a cluster role binding that binds the {{site.data.keyword.satelliteshort}} Config service account to the cluster role that you previously created. Now, {{site.data.keyword.satelliteshort}} Config has the custom access to the cluster.
-         ```
-         kubectl create clusterrolebinding razee-viewer --clusterrole=razee-viewer --serviceaccount=razeedeploy:razee-viewer
-         ```
-         {: pre}
+#### Cluster admin access
+{: #cluster-admin-access}
 
-         <table summary="This table is read from left to right. The first column has the error message. The second column has the description of the how to resolve the error.">
-         <caption>Understanding this command's components</caption>
-         <thead>
-         <th>Component</th>
-         <th>Description</th>
-         </thead>
-         <tbody>
-         <tr>
-         <td><code>razee-viewer</code></td>
-         <td>The name of the cluster role binding, such as <code>razee-viewer</code>.</td>
-         </tr>
-         <tr>
-         <td><code>--clusterrole=razee-viewer</code></td>
-         <td>The name of the cluster role that you previously created, such as <code>razee-viewer</code>.</td>
-         </tr>
-         <tr>
-         <td><code>--serviceaccount=razeedeploy:razee-viewer</code></td>
-         <td>The name of one of the service accounts that the {{site.data.keyword.satelliteshort}} Config components are set up by default to use, either <code>razeedeploy:razee-viewer</code> or <code>razeedeploy:razee-editor</code>.</td>
-         </tr>
-         </tbody>
-         </table>
+Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role.
 
-   *  **Custom access, scoped to a project**: Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access to the actions, Kubernetes resources, and projects (namespaces) that you want.
-      1. Create a role with the actions and resources that you want to grant in the project that you want to scope the role to. For example, the following command creates an editor role so that {{site.data.keyword.satelliteshort}} Config can deploy and update all the Kubernetes resources in the project.
-         ```
-         kubectl create role razee-editor --namespace=default --verb=get,list,watch,create,update,patch,delete --resource="*.*"
-         ```
-         {: pre}
+```
+kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
+```
+{: pre}
+      
+#### Custom access, cluster-wide
+{: #custom-access-cluster-wide}
 
-         <table summary="This table is read from left to right. The first column has the error message. The second column has the description of the how to resolve the error.">
-         <caption>Understanding this command's components</caption>
-         <thead>
-         <th>Component</th>
-         <th>Description</th>
-         </thead>
-         <tbody>
-         <tr>
-         <td><code>razee-editor</code></td>
-         <td>The name of the cluster role, such as <code>razee-editor</code>.</td>
-         </tr>
-         <tr>
-         <td><code>--namespace default</code></td>
-         <td>The project (namespace) to scope the role to, such as <code>default</code>.</td>
-         </tr>
-         <tr>
-         <td><code>--verb=get,list,watch,create,update,patch,delete</code></td>
-         <td>A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for an editor, <code>get,list,watch,create,update,patch,delete</code>. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}.</td>
-         </tr>
-         <tr>
-         <td>`--resource="*.*"`</td>
-         <td>A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, `"*.*"`. For other possible resources, run <code>kubectl api-resources -o wide</code>.</td>
-         </tr>
-         </tbody>
-         </table>
-      2. Create a role binding that binds the {{site.data.keyword.satelliteshort}} Config service account to the cluster role that you previously created. Now, {{site.data.keyword.satelliteshort}} Config has the custom access to the cluster.
-         ```
-         kubectl create rolebinding razee-editor --namespace=default --role=razee-editor --serviceaccount=razeedeploy:razee-editor
-         ```
-         {: pre}
+Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access to the actions and Kubernetes resources that you want for the cluster.
 
-         <table summary="This table is read from left to right. The first column has the error message. The second column has the description of the how to resolve the error.">
-         <caption>Understanding this command's components</caption>
-         <thead>
-         <th>Component</th>
-         <th>Description</th>
-         </thead>
-         <tbody>
-         <tr>
-         <td><code>razee-editor</code></td>
-         <td>The name of the role binding, such as <code>razee-editor</code>.</td>
-         </tr>
-         <tr>
-         <td><code>--namespace default</code></td>
-         <td>The project (namespace) to scope the role binding to, such as <code>default</code>. The namespace must match the namespace that the role is in.</td>
-         </tr>
-         <tr>
-         <td><code>--role=razee-editor</code></td>
-         <td>The name of the role that you previously created, such as <code>razee-editor</code>.</td>
-         </tr>
-         <tr>
-         <td><code>--serviceaccount=razeedeploy:razee-editor</code></td>
-         <td>The name of one of the service accounts that the {{site.data.keyword.satelliteshort}} Config components are set up by default to use, either <code>razeedeploy:razee-viewer</code> or <code>razeedeploy:razee-editor</code>.</td>
-         </tr>
-         </tbody>
-         </table>
+1. Create a cluster role with the actions and resources that you want to grant. For example, the following command creates a viewer role so that {{site.data.keyword.satelliteshort}} Config can list all the Kubernetes resources in a cluster, but cannot modify them.
+      
+    ```
+    kubectl create clusterrole razee-viewer --verb=get,list,watch --resource="*.*"
+    ```
+    {: pre}
+    
+    | Component          | Description      | 
+    |--------------------|------------------|
+    | `razee-viewer` | The name of the cluster role, such as `razee-viewer`. | 
+    | `--verb=get,list,watch` | A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for a viewer or auditor, `get,list,watch`. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}. |
+    | `--resource="*.*"` | A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, `"*.*"`. For other possible resources, run `kubectl api-resources -o wide`. |
+    {: caption="Understanding this command's components" caption-side="top"}
 
-3. Create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters [from the console](#create-satconfig-ui) or [the CLI](#create-satconfig-cli).
+2. Create a cluster role binding that binds the {{site.data.keyword.satelliteshort}} Config service account to the cluster role that you previously created. Now, {{site.data.keyword.satelliteshort}} Config has the custom access to the cluster.
 
-<br />
+    ```
+    kubectl create clusterrolebinding razee-viewer --clusterrole=razee-viewer --serviceaccount=razeedeploy:razee-viewer
+    ```
+    {: pre}
+
+    | Component          | Description      | 
+    |--------------------|------------------|
+    | `razee-viewer` | The name of the cluster role binding, such as `razee-viewer`. | 
+    | `--clusterrole=razee-viewer` | The name of the cluster role that you previously created, such as `razee-viewer`. |
+    | `--serviceaccount=razeedeploy:razee-viewer` | The name of one of the service accounts that the {{site.data.keyword.satelliteshort}} Config components are set up by default to use, either `razeedeploy:razee-viewer` or `razeedeploy:razee-editor`. |
+    {: caption="Understanding this command's components" caption-side="top"}
+    
+
+#### Custom access, scoped to a project
+{: #custom-access-scoped-project}
+
+Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config access to the actions, Kubernetes resources, and projects (namespaces) that you want.
+
+1. Create a role with the actions and resources that you want to grant in the project that you want to scope the role to. For example, the following command creates an editor role so that {{site.data.keyword.satelliteshort}} Config can deploy and update all the Kubernetes resources in the project.
+
+    ```
+    kubectl create role razee-editor --namespace=default --verb=get,list,watch,create,update,patch,delete --resource="*.*"
+    ```
+    {: pre}
+    
+    | Component          | Description      | 
+    |--------------------|------------------|
+    | `razee-editor` | The name of the cluster role, such as `razee-editor`. | 
+    | `--namespace default` | The project (namespace) to scope the role to, such as `default`. |
+    | `--verb=get,list,watch,create,update,patch,delete` | A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for an editor, `get,list,watch,create,update,patch,delete`. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}. |
+    | `--resource="*.*"` | A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, `"*.*"`. For other possible resources, run `kubectl api-resources -o wide`. | 
+    {: caption="Understanding this command's components" caption-side="top"}
+
+2. Create a role binding that binds the {{site.data.keyword.satelliteshort}} Config service account to the cluster role that you previously created. Now, {{site.data.keyword.satelliteshort}} Config has the custom access to the cluster.
+
+    ```
+    kubectl create rolebinding razee-editor --namespace=default --role=razee-editor --serviceaccount=razeedeploy:razee-editor
+    ```
+    {: pre}
+    
+    | Component | Description | 
+    |--------------------|------------------|
+    | `razee-editor` | The name of the role binding, such as `razee-editor`. | 
+    | `--namespace default` | The project (namespace) to scope the role binding to, such as `default`. The namespace must match the namespace that the role is in. |
+    | `--role=razee-editor` | The name of the role that you previously created, such as `razee-editor`. |
+    | `--serviceaccount=razeedeploy:razee-editor` | The name of one of the service accounts that the {{site.data.keyword.satelliteshort}} Config components are set up by default to use, either `razeedeploy:razee-viewer` or `razeedeploy:razee-editor`. | 
+    {: caption="Understanding this command's components" caption-side="top"}
+    
+#### Next steps for granting access
+{: #next-steps-gran-access}
+
+When you are finished with the previous sections, create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters [from the console](#create-satconfig-ui) or [the CLI](#create-satconfig-cli).
 
 ## Creating {{site.data.keyword.satelliteshort}} configurations from the console
 {: #create-satconfig-ui}
@@ -364,7 +333,7 @@ To create the configuration:
    4. Click **Create** to create the subscription. After you create the subscription, {{site.data.keyword.satelliteshort}} Config automatically downloads the Kubernetes resource YAML file for the version that you specified and starts applying this YAML file across all clusters that belong to the cluster group. This process takes a few minutes to complete. In addition, information about all Kubernetes resources that you create are sent back from your clusters to {{site.data.keyword.satelliteshort}} Config and can be reviewed in the {{site.data.keyword.satelliteshort}} [**Cluster resources**](https://cloud.ibm.com/satellite/resources) dashboard.
 5. Select your subscription to see the subscription details and the rollout status of your Kubernetes resource deployment. If errors occur during the deployment, such as YAML files with formatting errors or unsupported API version values, you can view the error message in the **Message** column of your subscription details.
 
-<br />
+
 
 ## Creating {{site.data.keyword.satelliteshort}} configurations from the CLI
 {: #create-satconfig-cli}
@@ -383,6 +352,7 @@ To create the configuration:
 1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](#setup-clusters-satconfig). The setup includes creating a cluster group and granting {{site.data.keyword.satelliteshort}} Config access to your clusters.
 2. Add {{site.data.keyword.openshiftlong_notm}} clusters to your cluster group. The clusters can run in your location or in {{site.data.keyword.cloud_notm}}.
    1. List the {{site.data.keyword.openshiftlong_notm}} clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component and note their ID.
+   
       ```
       ibmcloud sat cluster ls
       ```
@@ -424,48 +394,32 @@ To create the configuration:
    ```
    {: pre}
 
-   Example output:
+   **Example output**
+   
    ```
    Creating configuration version...
    OK
    Configuration Version <version_name> was successfully created with ID ad5ae7a9-4f74-486c-816a-32de98de00df.
    ```
    {: screen}
-
-   <table>
-   <caption>Understanding the command's components</caption>
-   <col width="25%">
-   <thead>
-   <th>Parameter</th>
-   <th>Description</th>
-   </thead>
-   <tbody>
-   <tr>
-   <td><code>--name <em>&lt;version_name&gt;</em></code></td>
-   <td>Enter a name for your version.</td>
-   </tr>
-   <tr>
-   <td><code>--config <em>&lt;configuration_name_or_ID&gt;</em></code></td>
-   <td>Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier.</td>
-   </tr>
-   <tr>
-   <td><code>--file-format <em>&lt;type&gt;</em></code></td>
-   <td>Enter the file extension of your Kubernetes resource file. Supported extensions are <code>yaml</code>. </td>
-   </tr>
-   <tr>
-   <td><code>--read-config <em>&lt;file_path&gt;</em></code></td>
-   <td>Enter the relative file path to the Kubernetes resource file on your local machine. </td>
-   </tr>
-  </tbody>
-  </table>
+   
+    | Component | Description | 
+    |--------------------|------------------|
+    | `--name *<version_name>*` | Enter a name for your version. | 
+    | `--config *<configuration_name_or_ID>*` | Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier. |
+    | `--role=razee-editor` | Enter the file extension of your Kubernetes resource file. Supported extensions are `yaml`. |
+    | `--read-config *<file_path>*` | Enter the relative file path to the Kubernetes resource file on your local machine. | 
+    {: caption="Understanding this command's components" caption-side="top"}
 
 5. Subscribe your cluster group to the {{site.data.keyword.satelliteshort}} configuration. After you create the subscription, {{site.data.keyword.satelliteshort}} Config automatically downloads the Kubernetes resource file for the version that you specified and starts applying this file across all clusters that belong to the cluster group. This process takes a few minutes to complete. In addition, information about all Kubernetes resources that you create are sent back from your clusters to {{site.data.keyword.satelliteshort}} Config and can be reviewed in the {{site.data.keyword.satelliteshort}} [**Cluster resources**](https://cloud.ibm.com/satellite/resources) dashboard.
+
    ```
    ibmcloud sat subscription create --group <cluster_group_name> --config <configuration_name_or_ID> --name <subscription_name> --version <version_name_or_ID>
    ```
    {: pre}
 
-   Example output:
+   **Example output**
+   
    ```
    Creating subscription...
    OK
@@ -473,36 +427,17 @@ To create the configuration:
    ```
    {: screen}
 
-   <table>
-   <caption>Understanding the command's components</caption>
-   <col width="25%">
-   <thead>
-   <th>Parameter</th>
-   <th>Description</th>
-   </thead>
-   <tbody>
-   <tr>
-   <td><code>--group <em>&lt;cluster_group_name&gt;</em></code></td>
-   <td>Enter the name of the cluster group where you want to deploy your Kubernetes resources.</td>
-   </tr>
-   <tr>
-   <td><code>--config <em>&lt;configuration_name_or_ID&gt;</em></code></td>
-   <td>Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier.</td>
-   </tr>
-   <tr>
-   <td><code>--name <em>&lt;subscription_name&gt;</em></code></td>
-   <td>Enter a name for your {{site.data.keyword.satelliteshort}} subscription. </td>
-   </tr>
-   <tr>
-   <td><code>--version <em>&lt;version_name_or_ID&gt;</em></code></td>
-   <td>Enter the name or ID of the Kubernetes resource definition that you added as a version to your configuration. To list available versions, run <code>ibmcloud sat config get --config &lt;configuration_name_or_ID&gt;</code>.</td>
-   </tr>
-  </tbody>
-  </table>
+    | Component | Description | 
+    |--------------------|------------------|
+    | `--group *<cluster_group_name>*` | Enter the name of the cluster group where you want to deploy your Kubernetes resources. | 
+    | `--config *<configuration_name_or_ID>*` | Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier. |
+    | `--name *<subscription_name>*` | Enter a name for your {{site.data.keyword.satelliteshort}} subscription. |
+    | `--version *<version_name_or_ID>*` | Enter the name or ID of the Kubernetes resource definition that you added as a version to your configuration. To list available versions, run `ibmcloud sat config get --config <configuration_name_or_ID>` | 
+    {: caption="Understanding this command's components" caption-side="top"}
 
 6. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](#create-satconfig-ui) to review the rollout status of your Kubernetes resources.
 
-<br />
+
 
 ## Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config
 {: #satconfig-resources}
@@ -517,22 +452,27 @@ Before you begin, make sure that you have the following permissions. For more in
    * The **Writer** service role in {{site.data.keyword.cloud_notm}} IAM to the **Kubernetes Service** clusters that you want to watch resources for.
 
 To review resources in {{site.data.keyword.satelliteshort}} Config:
-1. Review the [watchkeeper collection methods](https://github.com/razee-io/WatchKeeper#collection-methods){: external} to decide how to set up watchkeeping for your resources. Common use cases include:
-   *  **Watch all of the resources that my {{site.data.keyword.satelliteshort}} subscription creates**.
+1. Review the [watchkeeper collection methods](https://github.com/razee-io/WatchKeeper#collection-methods){: external} to decide how to set up watchkeeping for your resources. Common use cases include,
+
+   * **Watch all of the resources that my {{site.data.keyword.satelliteshort}} subscription creates**.
       1. [Add a configmap](https://github.com/razee-io/WatchKeeper#watch-by-resource){: external} to the YAML file of your {{site.data.keyword.satelliteshort}} configuration version. 
       2. In the `metadata.namespace` field of the configmap, set the value to `razeedeploy`.
       3. In the `data` section of the configmap, add all of the resources that you want {{site.data.keyword.satelliteshort}} Config to watch.
       4. Subscribe your clusters to this version from the [console](#create-satconfig-ui) or [CLI](#create-satconfig-cli).
-   *  **Watch a particular resource in my {{site.data.keyword.satelliteshort}} Config version**.
+      
+   * **Watch a particular resource in my {{site.data.keyword.satelliteshort}} Config version**.
       1. In the `metadata.labels` field of the Kubernetes resource in your {{site.data.keyword.satelliteshort}} Config version, set the value to `razee/watch-resource=lite`.
       2. Subscribe your clusters to this version from the [console](#create-satconfig-ui) or [CLI](#create-satconfig-cli).
-   *  **Watch a particular resource that I label in my cluster**.
+      
+   * **Watch a particular resource that I label in my cluster**.
       1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
-      2. Individually label the resource that you want {{site.data.keyword.satelliteshort}} Config to watch. For example, the following command watches a deployment that is called `nginx`. 
+      2. Individually label the resource that you want {{site.data.keyword.satelliteshort}} Config to watch. For example, the following command watches a deployment that is called `nginx`.
+      
          ```
          kubectl label deployment nginx razee/watch-resource=lite
          ```
          {: pre}
+         
 2. After you enable watchkeeping for a resource, wait about an hour for the resources to display.
 3. Review the resources from {{site.data.keyword.satelliteshort}} Config.
    *  **From the console**: You can review resources in several areas in the console as follows.
@@ -561,23 +501,26 @@ After you complete these steps, the cluster can be added to a cluster group in y
 4. Copy the command that is displayed to you.
 5. [Log in to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster) and run the command in your cluster. The command creates the `razeedeploy` project, custom resource definitions and RBAC policies on your cluster that are required to make your cluster visible to {{site.data.keyword.satelliteshort}} Config.
 
-   Example output:  
-   ```
-   namespace/razeedeploy created
-   serviceaccount/razeedeploy-sa created
-   clusterrole.rbac.authorization.k8s.io/razeedeploy-admin-cr created
-   clusterrolebinding.rbac.authorization.k8s.io/razeedeploy-rb created
-   job.batch/razeedeploy-job created
-   ```
-   {: screen}
+    **Example output**
+    
+    ```
+    namespace/razeedeploy created
+    serviceaccount/razeedeploy-sa created
+    clusterrole.rbac.authorization.k8s.io/razeedeploy-admin-cr created
+    clusterrolebinding.rbac.authorization.k8s.io/razeedeploy-rb created
+    job.batch/razeedeploy-job created
+    ```
+    {: screen}
 
 6. Verify that all pods in the `razeedeploy` project are in a **Running** state.
+
    ```
    oc get pods -n razeedeploy
    ```
    {: pre}
 
-   Example output:  
+   **Example output**
+   
    ```
    NAME                                                  READY     STATUS      RESTARTS   AGE
    clustersubscription-c9cfb6f8b-7p5sw            1/1     Running     0          41m
@@ -607,19 +550,22 @@ Removing {{site.data.keyword.satelliteshort}} Config components automatically re
 
 1. [Log in to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. Remove all the {{site.data.keyword.satelliteshort}} Config components from your cluster by running a [{{site.data.keyword.satelliteshort}} Config removal job](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml){: external}. 
+
    ```
    oc apply -f https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml
    ```
    {: pre}
 
 3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Config components to be removed. 
-4. Verify that your {{site.data.keyword.satelliteshort}} Config components are removed. 
+4. Verify that your {{site.data.keyword.satelliteshort}} Config components are removed.
+
    ```
    oc get pods -n razeedeploy
    ```
    {: pre}
    
-   Example output: 
+   **Example output**
+   
    ```
    No resources found.
    ```
@@ -628,4 +574,3 @@ Removing {{site.data.keyword.satelliteshort}} Config components automatically re
 5. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, find the cluster that you want to remove from {{site.data.keyword.satelliteshort}} Config. 
 6. From the actions menu, click **Unregister** and verify that your cluster is removed from the {{site.data.keyword.satelliteshort}} cluster dashboard. 
 
-<br />

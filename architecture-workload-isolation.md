@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-30"
+lastupdated: "2021-08-11"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -19,6 +19,7 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
 {:c#: .ph data-hd-programlang='c#'}
@@ -52,11 +53,9 @@ subcollection: satellite
 {:navgroup: .navgroup}
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
-{:note .note}
 {:note: .note}
-{:note:.deprecated}
-{:objectc data-hd-programlang="objectc"}
 {:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
 {:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
@@ -190,7 +189,6 @@ One of the components that is set up in the {{site.data.keyword.satelliteshort}}
 
 Because you manage the host infrastructure that you bring to your {{site.data.keyword.satelliteshort}} location, you are responsible to isolate app workloads that run on your infrastructure. If you host and run {{site.data.keyword.cloud_notm}} services in your location, such as {{site.data.keyword.openshiftlong_notm}}, you can leverage the tools and features that this service provides to isolate your workloads. For more information about available options, refer to the service documentation.
 
-<br />
 
 ## Dependencies to other {{site.data.keyword.cloud_notm}} services
 {: #cloud-service-dependencies}
@@ -211,7 +209,7 @@ Review the {{site.data.keyword.cloud_notm}} services that your {{site.data.keywo
 {: caption="{{site.data.keyword.satelliteshort}} dependencies to other {{site.data.keyword.cloud_notm}} services." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
 
-<br />
+
 
 ## Dependencies to third-party services
 {: #3rd-party-dependencies}
