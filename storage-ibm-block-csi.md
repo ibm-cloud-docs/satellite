@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-12"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -54,6 +54,7 @@ subcollection: satellite
 {:new_window: target="_blank"}
 {:node: .ph data-hd-programlang='node'}
 {:note: .note}
+{:note:.deprecated}
 {:objectc: .ph data-hd-programlang='Objective C'}
 {:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
@@ -369,7 +370,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
         volumes:
         - name: demo-volume-file-system
           persistentVolumeClaim:
-            claimName: demo-pvc-file-system
+            claimName: demo-pvc-file
    ```
    {: codeblock}
 
