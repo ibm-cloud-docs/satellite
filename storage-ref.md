@@ -199,7 +199,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 {: shortdesc}
 
 | Storage class name | Type | File system | Reclaim policy |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | 
 | `sat-netapp-file-gold` | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-silver` | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete |
@@ -217,7 +217,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 {: shortdesc}
 
 | Storage class name | Type | File system | Reclaim policy |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | 
 | `sat-netapp-block-gold` | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-silver` | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-bronze` | ONTAP-SAN | Block | Delete |

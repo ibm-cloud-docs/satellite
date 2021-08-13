@@ -110,8 +110,9 @@ content-type: troubleshoot
 # Why does the location subdomain not route traffic to control plane hosts?
 {: #ts-location-subdomain}
 
-{: tsSymptoms}
+
 After you assign hosts to your {{site.data.keyword.satelliteshort}} location control plane, you see a message similar to the following.
+{: tsSymptoms}
 
 ```
 R0036 The location subdomains are not correctly routing traffic to your control plane hosts. Verify that the location subdomains are registered with the correct IP addresses for your control plane hosts with the 'ibmcloud sat location dns' commands.
@@ -120,10 +121,13 @@ R0036 The location subdomains are not correctly routing traffic to your control 
 
 {: tsCauses}
 The {{site.data.keyword.satelliteshort}} location control plane is inaccessible through the location subdomains due to one of the following reasons:
+{: tsCauses}
 * The hosts are behind a firewall that blocks traffic within the location.
 * The DNS resolver for one or more hosts is not properly resolving the registered DNS endpoints.
 
+Follow these steps to resolve your issue
 {: tsResolve}
+
 1. Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
     ```
     ibmcloud sat location dns ls --location <location_name_or_ID>
