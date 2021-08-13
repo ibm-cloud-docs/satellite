@@ -146,7 +146,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
     {: pre}
 
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters).
+1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
 
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
     ```
@@ -174,7 +174,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
     
 1. Verify that the `netapp-trident` [driver](/docs/satellite?topic=satellite-config-storage-netapp-trident) is deployed on your clusters.
 1. Review the template parameters and retrieve the values from your NetApp cluster.
-1. Review the [NetApp Trident storage configuration parameters](#sat-storage-netapp-params-cli-san).
+1. Review the [NetApp Trident storage configuration parameters](#sat-storage-netapp-params-cli-san-2104).
 1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     ```sh
     ibmcloud sat storage config create --name 'ontapsan-config' --location <location id> --template-name 'netapp-ontap-san' --template-version '21.04' -p 'managementLIF=10.0.0.1' -p 'dataLIF=10.0.0.2' -p 'svm=svm-san' -p 'username=admin' -p 'password=<admin password>'
@@ -190,7 +190,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 ## Assigning your NetApp storage configuration to a cluster
 {: #assign-storage-netapp-san-2104}
 
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
+After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp-2104), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 <br />
 
@@ -205,7 +205,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
+1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
     * **Group**
       ```sh
       ibmcloud sat group ls

@@ -130,7 +130,7 @@ Before you can create storage configurations by using the NetApp NAS template, y
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters). 
     - Your cluster must meet the requirements for ONTAP-NAS. For more information, see the [NetApp documentation](https://netapp-trident.readthedocs.io/en/stable-v21.04/support/requirements.html).
     - Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to the requirements for ONTAP-NAS.
-1. [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups).
+1. [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups).
 1. [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
 
 
@@ -145,7 +145,7 @@ Before you can create storage configurations by using the NetApp NAS template, y
     {: pre}
 
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters).
+1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
 
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
     ```
@@ -172,7 +172,7 @@ Before you can create storage configurations by using the NetApp NAS template, y
     {: pre}
     
 
-1. Review the [NetApp ONTAP-NAS storage configuration parameters](#sat-storage-netapp-params-cli-nas).
+1. Review the [NetApp ONTAP-NAS storage configuration parameters](#sat-storage-netapp-params-cli-nas-2104).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     ```sh
     ibmcloud sat storage config create --name <config> --location <location-id> --template-name 'netapp-ontap-nas' --template-version '21.04' -p 'managementLIF=<mgmt-LIF' -p 'dataLIF=<data-LIF>' -p 'svm=svm-nas' -p 'username=<username>' -p 'password=<password>' -p 'exportPolicy=<export-policy>'
@@ -188,7 +188,7 @@ Before you can create storage configurations by using the NetApp NAS template, y
 ## Assigning your NetApp ONTAP-NAS storage configuration to a cluster
 {: #assign-storage-netapp-nas-2104}
 
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp-nas), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
+After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp-nas-2104), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 <br />
 
@@ -203,7 +203,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
+1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
     * **Group**
       ```sh
       ibmcloud sat group ls
@@ -465,7 +465,7 @@ Before you remove your storage configuration, remove the app pods and PVCs that 
     ```
     {: pre}
 
-7. [Remove your NetApp ONTAP-NAS storage configuration from your cluster](#netapp-nas-template-rm-cli)
+7. [Remove your NetApp ONTAP-NAS storage configuration from your cluster](#netapp-nas-template-rm-cli-2104)
 
 <br />
 

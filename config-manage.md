@@ -121,7 +121,7 @@ You can use {{site.data.keyword.satelliteshort}} Config to review the Kubernetes
 Before you begin, make sure that you have the following permissions. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 -  The **Administrator** platform role, **Reader** service role, or **Manager** service role in {{site.data.keyword.cloud_notm}} IAM for the **Resource** resource type in {{site.data.keyword.satellitelong_notm}}.
 -  The appropriate permissions to enable the {{site.data.keyword.satelliteshort}} Config watchkeeping capability, such as one of the following options.
-    * The [permissions](#create-satconfig-ui) to create a configuration version and subscribe clusters to the version.
+    * The [permissions](/docs/satellite?topic=satellite-satcon-create) to create a configuration version and subscribe clusters to the version.
     * The **Writer** service role in {{site.data.keyword.cloud_notm}} IAM to the **Kubernetes Service** clusters that you want to watch resources for.
 
 ### Enabling watchkeeper collection methods
@@ -135,13 +135,13 @@ Review the [watchkeeper collection methods](https://github.com/razee-io/WatchKee
 1. [Add a configmap](https://github.com/razee-io/WatchKeeper#watch-by-resource){: external} to the YAML file of your {{site.data.keyword.satelliteshort}} configuration version. 
 2. In the `metadata.namespace` field of the configmap, set the value to `razeedeploy`.
 3. In the `data` section of the configmap, add all of the resources that you want {{site.data.keyword.satelliteshort}} Config to watch.
-4. Subscribe your clusters to this version from the [console](#create-satconfig-ui) or [CLI](#create-satconfig-cli).
+4. Subscribe your clusters to this version from the [console](/docs/satellite?topic=satellite-satcon-create#create-satconfig-ui) or [CLI](/docs/satellite?topic=satellite-satcon-create#create-satconfig-cli).
 
 #### Watch a particular resource in my {{site.data.keyword.satelliteshort}} Config version
 {: #satconfig-enable-watchkeeper-specific}
 
 1. In the `metadata.labels` field of the Kubernetes resource in your {{site.data.keyword.satelliteshort}} Config version, set the value to `razee/watch-resource=lite`.
-2. Subscribe your clusters to this version from the [console](#create-satconfig-ui) or [CLI](#create-satconfig-cli).
+2. Subscribe your clusters to this version from the [console](/docs/satellite?topic=satellite-satcon-create#create-satconfig-ui) or [CLI](/docs/satellite?topic=satellite-satcon-create#create-satconfig-cli).
 
 #### Watch a particular resource that I label in my cluster
 {: #satconfig-enable-watchkeeper-label}

@@ -126,7 +126,7 @@ Use the {{site.data.keyword.satelliteshort}} console to create a configuration a
 
 To create the configuration,
 
-1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](#setup-clusters-satconfig). The setup includes creating a cluster group and granting {{site.data.keyword.satelliteshort}} Config access to your clusters.
+1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig). The setup includes creating a cluster group and granting {{site.data.keyword.satelliteshort}} Config access to your clusters.
 2. Create a {{site.data.keyword.satelliteshort}} configuration.
     1. From the [{{site.data.keyword.satelliteshort}} configurations dashboard](https://cloud.ibm.com/satellite/configuration){: external}, click **Create configuration**.
     2. Enter a name for your configuration and click **Create**.
@@ -134,7 +134,7 @@ To create the configuration,
     1. From the actions menu of a configuration, click **Add version**.
     2. Enter a name and an optional description for your version.
     3. Upload a Kubernetes resource YAML file or use the editor to enter your Kubernetes resource definition directly. Make sure to specify the Kubernetes namespace where you want your resource to be deployed. If you do not specify a namespace, the resource is deployed to the `razeedeploy` namespace by default. 
-    4. **Optional**: To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} Config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-cluster-config#satconfig-resources), such as adding a configmap to your cluster. 
+    4. **Optional**: To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} Config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources), such as adding a configmap to your cluster. 
     5. Click **Add** to add the Kubernetes resource definition as a version to your configuration.
 4. Subscribe your cluster group to the {{site.data.keyword.satelliteshort}} configuration to deploy the Kubernetes resources to your clusters.
     1. Select the configuration that you created to see the configuration details.
@@ -153,7 +153,7 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to create 
 
 To create the configuration:
 
-1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](#setup-clusters-satconfig). The setup includes creating a cluster group and granting {{site.data.keyword.satelliteshort}} Config access to your clusters.
+1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig). The setup includes creating a cluster group and granting {{site.data.keyword.satelliteshort}} Config access to your clusters.
 2. Add {{site.data.keyword.openshiftlong_notm}} clusters to your cluster group. The clusters can run in your location or in {{site.data.keyword.cloud_notm}}.
     1. List the {{site.data.keyword.openshiftlong_notm}} clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component and note their ID.
         ```
@@ -238,6 +238,6 @@ To create the configuration:
     | `--version *<version_name_or_ID>*` | Enter the name or ID of the Kubernetes resource definition that you added as a version to your configuration. To list available versions, run `ibmcloud sat config get --config <configuration_name_or_ID>` | 
     {: caption="Understanding this command's components" caption-side="top"}
 
-6. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](#create-satconfig-ui) to review the rollout status of your Kubernetes resources.
+6. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-setup-clusters-satconfig) to review the rollout status of your Kubernetes resources.
 
 

@@ -117,7 +117,7 @@ When you register a cluster to use with {{site.data.keyword.satelliteshort}} Con
 To use a cluster to use with {{site.data.keyword.satelliteshort}} Config, the proper components must be installed, and you must grant {{site.data.keyword.satelliteshort}} Config permissions in your cluster to manage Kubernetes resources.
 
 {: tsResolve}
-1. Re-attach the cluster to {{site.data.keyword.satelliteshort}} Config. For more information, see [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters).
+1. Re-attach the cluster to {{site.data.keyword.satelliteshort}} Config. For more information, see [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing).
     1. Get a `kubectl` command to register your cluster with {{site.data.keyword.satelliteshort}} Config.
         ```
         ibmcloud sat cluster register
@@ -137,7 +137,7 @@ To use a cluster to use with {{site.data.keyword.satelliteshort}} Config, the pr
         {: pre}
 
     3. Run the `kubectl` command that you previously retrieved.
-2. Grant {{site.data.keyword.satelliteshort}} Config permissions in your cluster to manage Kubernetes resources. The following command grants `cluster-admin` permissions for the entire cluster. For more options, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access).
+2. Grant {{site.data.keyword.satelliteshort}} Config permissions in your cluster to manage Kubernetes resources. The following command grants `cluster-admin` permissions for the entire cluster. For more options, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
     ```
     kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
     ```

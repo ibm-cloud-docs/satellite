@@ -184,7 +184,7 @@ By default, {{site.data.keyword.satelliteshort}} Config is limited to what Kuber
 
 Choose from the following options:
 * Opt in to cluster admin access when you create the cluster in the [console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console) or [CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli) with the `--enable-admin-agent` flag. Note that you must perform a one-time `oc login` in each cluster to synchronize the admin permissions.
-* To opt in after creating a cluster or to scope the access, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access).
+* To opt in after creating a cluster or to scope the access, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
 
 **{{site.data.keyword.satelliteshort}} Config and {{site.data.keyword.cloud_notm}} IAM**
 

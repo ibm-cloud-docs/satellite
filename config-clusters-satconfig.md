@@ -124,7 +124,7 @@ You do not need to configure access if you already gave {{site.data.keyword.sate
 ## Prerequisites
 {: #setup-clusters-satconfig-prereq}
 
-*  If you have {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} (not your {{site.data.keyword.satelliteshort}} location), [register the clusters](#existing-openshift-clusters).
+*  If you have {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} (not your {{site.data.keyword.satelliteshort}} location), [register the clusters](/docs/satellite?topic=satellite-satcon-existing).
 *  Make sure that you have the following permissions in {{site.data.keyword.cloud_notm}} IAM. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
     - The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Cluster** resource in {{site.data.keyword.satellitelong_notm}}.
     - The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Clustergroup** resource in {{site.data.keyword.satellitelong_notm}}.
@@ -168,7 +168,7 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
 Choose from the following options.
 
 * **Admin access when you create a {{site.data.keyword.satelliteshort}} cluster**: You can enable admin permissions when you create the cluster in the console or in the CLI by using the `--enable-admin-agent` flag in the `ibmcloud oc cluster create satellite` command. After creating the cluster, you must perform a one-time login by running `ibmcloud ks cluster config` in the command line.
-* **Admin access for {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud**: See [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} Config](#existing-openshift-clusters).
+* **Admin access for {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud**: See [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing).
 * **Custom access, or access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access**: Complete the following steps.
 
 **To customize access, or to add access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access at cluster creation**:
@@ -263,7 +263,7 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
 ### Next steps for granting access
 {: #next-steps-gran-access}
 
-When you are finished with the previous sections, create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters [from the console](#create-satconfig-ui) or [the CLI](#create-satconfig-cli).
+When you are finished with the previous sections, create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters [from the console](/docs/satellite?topic=satellite-satcon-create#create-satconfig-ui) or [the CLI](/docs/satellite?topic=satellite-satcon-create#create-satconfig-cli).
 
 
 

@@ -118,7 +118,7 @@ You can make existing {{site.data.keyword.openshiftlong_notm}} clusters that you
 Run a script in your {{site.data.keyword.openshiftlong_notm}} cluster to set up the {{site.data.keyword.satelliteshort}} Config components and make the cluster visible in {{site.data.keyword.satelliteshort}}. 
 {: shortdesc}
 
-After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](#create-satconfig-ui). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
+After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-create). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
 {: note}
 
 1. Find the {{site.data.keyword.openshiftlong_notm}} cluster that you want to attach to your location. To list available clusters, run `ibmcloud oc cluster ls` or go to the [{{site.data.keyword.openshiftshort}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.

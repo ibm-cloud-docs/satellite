@@ -333,7 +333,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
         <td>N/A</td>
         <td>You can assign the policy to an individual or group of users. Place this positional argument immediately following the command.
         <ul><li><strong>Individual user</strong>: Enter the email address of the user.</li>
-        <li><strong>Access group</strong>: Enter the name of the access group of users. You can create an access group with the <code>ibmcloud iam access-group-create</code> command. To list available access groups, run <code>ibmcloud iam access-groups</code>. To add a user to an access group, run <code>ibmcloud iam access-group-user-add <access_group_name> <user_email></code>.</li></ul></td>
+        <li><strong>Access group</strong>: Enter the name of the access group of users. You can create an access group with the <code>ibmcloud iam access-group-create</code> command. To list available access groups, run <code>ibmcloud iam access-groups</code>. To add a user to an access group, run <code>ibmcloud iam access-group-user-add &lt ;access_group_name&gt ; &lt ;user_email&gt ;</code>.</li></ul></td>
         </tr>
         <tr>
         <td>{{site.data.keyword.cloud_notm}} service</td>
@@ -353,7 +353,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
         <tr>
         <td>Resource instance</td>
         <td><code>--resource</code></td>
-        <td>If you scope the policy to a resource type, you can further limit the policy to a particular instance of the resource. To list available instances, run <a href="the CLI commands">/docs/satellite?topic=satellite-satellite-cli-reference</a> for that resource type, such as <code>ibmcloud sat location ls</code>.<p class="note">To grant permissions to create a location, do not include the <code>--resource</code> flag, which limits access only to a particular location.<br><br>You cannot scope a policy to individual <code>configuration</code> or <code>subscription</code> resources. Instead, control access to your {{site.data.keyword.satelliteshort}} Config resources at the <code>clustergroup</code> level.</p></td>
+        <td>If you scope the policy to a resource type, you can further limit the policy to a particular instance of the resource. To list available instances, run [the CLI commands](/docs/satellite?topic=satellite-satellite-cli-reference) for that resource type, such as <code>ibmcloud sat location ls</code>.<p class="note">To grant permissions to create a location, do not include the <code>--resource</code> flag, which limits access only to a particular location.<br><br>You cannot scope a policy to individual <code>configuration</code> or <code>subscription</code> resources. Instead, control access to your {{site.data.keyword.satelliteshort}} Config resources at the <code>clustergroup</code> level.</p></td>
         </tr>
         <tr>
         <td>Role</td>

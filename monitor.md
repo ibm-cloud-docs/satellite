@@ -229,7 +229,7 @@ You can view the registration status of clusters that are enabled for use with {
 | --- | --- |
 | `active` | {{site.data.keyword.satelliteshort}} Config components for the location are installed in the cluster, and at least one resource is being watched. |
 | `inactive` | {{site.data.keyword.satelliteshort}} Config components were manually removed from the cluster, or are installed but are no longer responding to {{site.data.keyword.satelliteshort}} Config. For example, network connectivity might be disconnected. Existing resources, if any, continue to run but do not receive updates. To resolve the issue, try debugging your [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-ts-locations-debug) or [cluster](/docs/openshift?topic=openshift-debug_clusters). |
-| `registered` | {{site.data.keyword.satelliteshort}} Config components are installed in the cluster, but no resources are currently watched. To set up watchkeeping, see [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources).|
+| `registered` | {{site.data.keyword.satelliteshort}} Config components are installed in the cluster, but no resources are currently watched. To set up watchkeeping, see [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources).|
 {: caption="Host health states." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the status of the {{site.data.keyword.satelliteshort}} Config registration. The second column describes what the status means."}
 
