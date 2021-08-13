@@ -249,6 +249,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
     ```
     {: pre}
+
 1. Verify that the storage configuration resources are deployed.
     ```sh
     oc get pods -A | grep <template-name>

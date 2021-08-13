@@ -346,6 +346,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
     ```
     {: pre}
+
 5. Verify that the storage configuration resources are deployed. Note that this process might take up to 10 minutes to complete.
 
     1. Get the `storagecluster` that you deployed and verify that the phase is `Ready`.

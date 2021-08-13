@@ -304,6 +304,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
     ```
     {: pre}
+
 5. Verify that the storage configuration resources are deployed.
     ```sh
     kubectl get pods -n kube-system | grep azure

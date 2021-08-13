@@ -229,6 +229,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
     ```
     {: pre}
+
 5. Verify that the `trident-kubectl-nas` pod is deployed in the `trident` namespace.
     ```sh
     oc get pods -n trident | grep trident-kubectl-nas

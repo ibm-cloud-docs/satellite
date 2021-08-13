@@ -337,6 +337,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
     ```
     {: pre}
+
 5. Verify that the storage configuration resources are deployed. Get a list of all the resources in the `local-storage` namespace.
 
     ```sh
