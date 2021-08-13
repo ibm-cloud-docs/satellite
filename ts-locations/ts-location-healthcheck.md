@@ -132,7 +132,7 @@ To troubleshoot the health check for the Link endpoint:
 
 2. Verify that the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable.
     1. [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-health#setup-la).
-    2. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){:external}, click **Open Dashboard** for your {{site.data.keyword.la_short}} instance. The {{site.data.keyword.la_short}} dashboard opens.
+    2. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){: external}, click **Open Dashboard** for your {{site.data.keyword.la_short}} instance. The {{site.data.keyword.la_short}} dashboard opens.
     3. Check the `Endpoint health status` logs. These logs report the results of health checks for the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint.
         * If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable. Continue to the next step.
         * If logs report `Failed to reach endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is unreachable.
