@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -159,3 +159,5 @@ Next, you create {{site.data.keyword.satelliteshort}} Link endpoints to allow ap
 3. [Audit events for endpoint actions](/docs/satellite?topic=satellite-link-location-cloud#link-audit).
 
 Now, you have a managed {{site.data.keyword.satelliteshort}} location that runs in your on-premises environment and a secure communication channel to resources in {{site.data.keyword.cloud_notm}}.
+
+

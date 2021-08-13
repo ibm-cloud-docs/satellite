@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -116,7 +116,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
 ## Reviewing error messages and logs
 {: #review-messages-logs}
 
-1.  View your locations in the console or list your locations in the CLI, and review the **Status**. If the status is not healthy, continue to the next step. For more information, see [Viewing location health](/docs/satellite?topic=satellite-monitor#location-health).
+1. View your locations in the console or list your locations in the CLI, and review the **Status**. If the status is not healthy, continue to the next step. For more information, see [Viewing location health](/docs/satellite?topic=satellite-monitor#location-health).
     ```
     ibmcloud sat location ls
     ```
@@ -129,7 +129,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     ```
     {: screen}
 
-2.  Get the details for your location, and review the **Message**. From the console, you can click the location and hover over the tooltip in the title with the location name and health.
+2. Get the details for your location, and review the **Message**. From the console, you can click the location and hover over the tooltip in the title with the location name and health.
     ```
     ibmcloud sat location get --location <location_name_or_ID>
     ```
@@ -148,9 +148,9 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     ```
     {: screen}
 
-3.  Get more details about the error message and affected components by [setting up {{site.data.keyword.la_short}} to review {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-get-help#review-logs).
+3. Get more details about the error message and affected components by [setting up {{site.data.keyword.la_short}} to review {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-get-help#review-logs).
 
-4.  Review the following common location messages for steps to resolve the issue.
+4. Review the following common location messages for steps to resolve the issue.
 
 ## R0001: Ready location
 {: #R0001}
@@ -196,15 +196,16 @@ R0042 {{site.data.keyword.cloud_notm}} Support is resolving link api failures. C
 Check back later to see if the issue is resolved. If the issue persists for a while, you can [open a support case](/docs/satellite?topic=satellite-get-help).
 
 For more details on the issue:
-1.  [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la).
-2.  Search the platform logs for the error code for more details, such as failed API method due to a permissions error.
-3.  If the details indicate a permission error:
-    1.  As the account administrator, log in to the {{site.data.keyword.cloud_notm}} CLI and target the resource group and region that the location is in.
+1. [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la).
+2. Search the platform logs for the error code for more details, such as failed API method due to a permissions error.
+3. If the details indicate a permission error:
+    1. As the account administrator, log in to the {{site.data.keyword.cloud_notm}} CLI and target the resource group and region that the location is in.
         ```
         ibmcloud login -g <resource_group> -r <region>
         ```
         {: pre}
-    2.  Reset the API key that is used for permissions.
+
+    2. Reset the API key that is used for permissions.
         ```
         ibmcloud ks api-key reset
         ```
@@ -259,15 +260,16 @@ R0041 Unknown issues are detected with the {{site.data.keyword.satelliteshort}} 
 
 **Steps to resolve**
 
-1.  Check the **Status** of your hosts.
+1. Check the **Status** of your hosts.
     ```
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
     {: pre}
-2.  If you have no hosts, [attach](/docs/satellite?topic=satellite-hosts#attach-hosts) hosts to your location.
-3.  Make sure that you have at least 6 hosts (2 hosts per zone across 3 zones) that are assigned to the **infrastructure** cluster for the location, to run location control plane operations.
-4.  If your hosts have no status and are unassigned, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
-5.  Review the host status to [resolve the host issue](/docs/satellite?topic=satellite-ts-hosts-debug).
+
+2. If you have no hosts, [attach](/docs/satellite?topic=satellite-hosts#attach-hosts) hosts to your location.
+3. Make sure that you have at least 6 hosts (2 hosts per zone across 3 zones) that are assigned to the **infrastructure** cluster for the location, to run location control plane operations.
+4. If your hosts have no status and are unassigned, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
+5. Review the host status to [resolve the host issue](/docs/satellite?topic=satellite-ts-hosts-debug).
 
 ## R0012: Hosts are needed in all 3 zones
 {: #R0012}
@@ -294,10 +296,10 @@ R0013 A zone in the location control plane is unavailable. Attach more hosts to 
 **Steps to resolve**
 
 [Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least 2 hosts to each of the 3 zones for the location itself, to run control plane operations. If you did assign at least 2 hosts in each of the 3 zones:
-1.  Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.
-2.  Make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system and networking configuration.
-3.  [Log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
-4.  [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts). When you remove a host, the host is unassigned from the location control plane, and you must assign another host to the zone.
+1. Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.
+2. Make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system and networking configuration.
+3. [Log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
+4. [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts). When you remove a host, the host is unassigned from the location control plane, and you must assign another host to the zone.
 
 ## R0014: DNS record for control plane
 {: #R0014}
@@ -308,13 +310,14 @@ R0014 Verify that the {{site.data.keyword.satelliteshort}} location has a DNS re
 
 **Steps to resolve**
 
-1.  Verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of `assigned` and a **Status** of `Ready`.
+1. Verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of `assigned` and a **Status** of `Ready`.
     ```
     ibmcloud sat host ls --location <location_ID_or_name>
     ```
     {: pre}
-2.  If all hosts show the correct state and status, the DNS record for your location is not yet created. This process can take up to 30 minutes to complete after all hosts are successfully assigned to your location.
-3.  If one or more hosts do not show the correct state or status, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
+
+2. If all hosts show the correct state and status, the DNS record for your location is not yet created. This process can take up to 30 minutes to complete after all hosts are successfully assigned to your location.
+3. If one or more hosts do not show the correct state or status, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 
 ## R0015, R0016: Host issues
 {: #R0015}
@@ -345,9 +348,9 @@ R0038 The {{site.data.keyword.satelliteshort}} location has clusters in the midd
 
 **Steps to resolve**
 
-1.  Wait to see if another message is returned, such as a message about host capacity.
-2.  If a host message is returned, try [Debugging hosts](/docs/satellite?topic=satellite-ts-hosts-debug).
-3.  If no further message is returned, try [Debugging your {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-debug_clusters).
+1. Wait to see if another message is returned, such as a message about host capacity.
+2. If a host message is returned, try [Debugging hosts](/docs/satellite?topic=satellite-ts-hosts-debug).
+3. If no further message is returned, try [Debugging your {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-debug_clusters).
 
 ## R0026: Host disk space
 {: #R0026}
@@ -358,18 +361,20 @@ R0026 Hosts in the location control plane are running out of disk space. Assign 
 
 **Steps to resolve**
 
-1.  List the hosts that are assigned to the control plane.
+1. List the hosts that are assigned to the control plane.
     ```
     ibmcloud sat host ls --location <location_name_or_ID> | grep infrastructure
     ```
     {: pre}
-2.  Check the details of the hosts.
+
+2. Check the details of the hosts.
     ```
     ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>
     ```
     {: pre}
-3.  In the infrastructure provider for the host, check the disk space of your host machine. Each host must have at least 20 GB disk available. [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
-4.  If debugging and reattaching the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+
+3. In the infrastructure provider for the host, check the disk space of your host machine. Each host must have at least 20 GB disk available. [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
+4. If debugging and reattaching the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
 
 ## R0033, R0034, R0035: Control plane capacity issues
 {: #R0033}
@@ -386,11 +391,11 @@ R0035 The location control plane is running at max capacity and cannot support a
 
 **Steps to resolve**
 
-1.  In each zone, check the CPU and memory size of the hosts.
-  * Across all hosts in a zone, at least 3 CPU total must be available.
-  * Across all hosts in a zone, at least 4 GB memory total must be available.
-2.  [Attach 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts).
-3.  [Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones to add capacity for control plane operations. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
+1. In each zone, check the CPU and memory size of the hosts.
+    * Across all hosts in a zone, at least 3 CPU total must be available.
+    * Across all hosts in a zone, at least 4 GB memory total must be available.
+2. [Attach 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts).
+3. [Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones to add capacity for control plane operations. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
 
 ## R0036: Location subdomain traffic routing
 {: #R0036}
@@ -415,22 +420,22 @@ R0043 The location does not meet the following requirement: Hosts must have TCP/
 Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block access to certain ports that might block communication across hosts. Review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) and unblock the ports on the host in your infrastructure provider.
 
 To test TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts:
-1.  SSH into a host that is attached to your location but that is not assigned to any resources.
+1. SSH into a host that is attached to your location but that is not assigned to any resources.
 
     You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
     {: note}
 
-2.  To check TCP connectivity, verify that `netcat` receives a response from all other hosts on port `10250`. If the operation times out, review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) to unblock the ports on the host in your infrastructure provider.
-  ```
-  nc -zv <host_IP> 10250
-  ```
-  {: pre}
+2. To check TCP connectivity, verify that `netcat` receives a response from all other hosts on port `10250`. If the operation times out, review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) to unblock the ports on the host in your infrastructure provider.
+    ```
+    nc -zv <host_IP> 10250
+    ```
+    {: pre}
 
 3. To check ICMP connectivity, verify that a ping is successful to all other hosts. Repeat this step for each IP address of the hosts that are attached to your location. If the ping times out, review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) to unblock the ports on the host in your infrastructure provider.
-  ```
-  ping <host_IP>
-  ```
-  {: pre}
+    ```
+    ping <host_IP>
+    ```
+    {: pre}
 
 4. If the TCP and ICMP connectivity checks do not reveal any issues, reboot all control plane hosts by rebooting one host at a time. Do not reboot control plane hosts concurrently, which can prevent etcd from running on the control plane hosts.
 
@@ -446,18 +451,18 @@ R0044 DNS issues have been detected on one or more hosts. Verify that your DNS s
 One or more hosts in your locations is unable to resolve DNS queries or a search domain is causing unexpected issues. Verify that your DNS solution is working as expected and that all hosts meet the [network host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
 
 To test DNS resolution:
-1.  SSH into a host that is attached to your location but that is not assigned to any resources.
+1. SSH into a host that is attached to your location but that is not assigned to any resources.
 
     You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
     {: note}
 
-2.  Ensure that DNS resolution is working properly.
+2. Ensure that DNS resolution is working properly.
     ```
     dig +short +timeout=5 +nocookie cloud.ibm.com
     ```
     {: pre}
 
-3.  Ensure that `localhost` with any appended search domains in your DNS configuration either do not resolve to anything, or resolve only to `127.0.0.1`. In the `/etc/resolv.conf` file that manages DNS resolution for each host, multiple search domains, such as `search ibm.com`, might be listed. Calico Typha pods on each host run a health check that uses `localhost` resolution. However, some search domains might be appended when the health check attempts to resolve `localhost`, which causes the health check to fail. To ensure that the health check can run properly, make sure that none of the listed search domains resolve to anything other than the `127.0.0.1` IP address when appended to `localhost`.
+3. Ensure that `localhost` with any appended search domains in your DNS configuration either do not resolve to anything, or resolve only to `127.0.0.1`. In the `/etc/resolv.conf` file that manages DNS resolution for each host, multiple search domains, such as `search ibm.com`, might be listed. Calico Typha pods on each host run a health check that uses `localhost` resolution. However, some search domains might be appended when the health check attempts to resolve `localhost`, which causes the health check to fail. To ensure that the health check can run properly, make sure that none of the listed search domains resolve to anything other than the `127.0.0.1` IP address when appended to `localhost`.
 
 ## R0045: Host read-only file system issues
 {: #R0045}
@@ -468,9 +473,9 @@ R0045 A read-only file system has been detected on one or more hosts. Replace th
 
 **Steps to resolve**
 
-1.  [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la) for more information about which hosts are affected.
-2.  [Remove](/docs/satellite?topic=satellite-hosts#host-remove) the affected hosts and [reattach new hosts](/docs/satellite?topic=satellite-hosts#attach-hosts).
-3.  If you still have issues, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
+1. [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la) for more information about which hosts are affected.
+2. [Remove](/docs/satellite?topic=satellite-hosts#host-remove) the affected hosts and [reattach new hosts](/docs/satellite?topic=satellite-hosts#attach-hosts).
+3. If you still have issues, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
 
 ## R0046: NTP issues
 {: #R0046}
@@ -484,12 +489,12 @@ R0046 An NTP issue has been detected on one or more hosts. Verify that your NTP 
 One or more hosts in your locations has Network Time Protocol (NTP) issues that must be resolved.
 
 To test NTP on your hosts:
-1.  SSH into a host that is attached to your location but that is not assigned to any resources.
+1. SSH into a host that is attached to your location but that is not assigned to any resources.
 
     You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
     {: note}
 
-2.  Ensure that the time that is reported by the host does not differ from the actual time by more than 3 minutes. If the time differs by more than 3 minutes, verify your NTP solution with your infrastructure provider.
+2. Ensure that the time that is reported by the host does not differ from the actual time by more than 3 minutes. If the time differs by more than 3 minutes, verify your NTP solution with your infrastructure provider.
     ```
     date +%s
     ```
@@ -545,7 +550,7 @@ Etcd data is backed up every 8 hours from your {{site.data.keyword.satelliteshor
     </tbody>
     </table>
 
-2.  Verify that the {{site.data.keyword.cos_short}} service instance and bucket that back up your etcd data are available and were not deleted.
+2. Verify that the {{site.data.keyword.cos_short}} service instance and bucket that back up your etcd data are available and were not deleted.
     1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.
     2. In the details section of your location overview, copy the name of the **{{site.data.keyword.cos_short}} bucket**.
     3. In the {{site.data.keyword.cloud_notm}} console, navigate to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
@@ -573,3 +578,5 @@ The Link connector cannot retrieve the location ID. Contact {{site.data.keyword.
 **Steps to resolve**
 
 [Open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
+
+

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -148,21 +148,22 @@ Before you can create storage configurations by using the NetApp NAS template, y
     ```
     {: pre}
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
-  ```sh
-  ibmcloud sat storage template ls
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage template ls
+    ```
+    {: pre}
 3. Review the [NetApp Trident storage configuration parameters](#sat-storage-netapp-params-cli-san).
 4. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
-  ```sh
-  ibmcloud sat storage config create --name <config_name> --location <location> --template-name netapp-ontap-san --template-version <template_version> --param "managementLIF=<managementLIF>" --param "dataLIF=<dataLIF>" --param "svm=<svm>" --param "username=<username>" --param "password=<password>"
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config create --name <config_name> --location <location> --template-name netapp-ontap-san --template-version <template_version> --param "managementLIF=<managementLIF>" --param "dataLIF=<dataLIF>" --param "svm=<svm>" --param "username=<username>" --param "password=<password>"
+    ```
+    {: pre}
+
 5. Verify that your storage configuration is created.
-  ```sh
-  ibmcloud sat storage config get --config <config>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config get --config <config>
+    ```
+    {: pre}
 
 ## Assigning your NetApp storage configuration to a cluster
 {: #assign-storage-netapp-san}
@@ -177,25 +178,25 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 {: #assign-storage-netapp-cli-san}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
-  ```sh
-  ibmcloud sat storage config ls
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config ls
+    ```
+    {: pre}
 
 1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
-  * **Group**
+    * **Group**
     ```sh
     ibmcloud sat group ls
     ```
     {: pre}
 
-  * **Cluster**
+    * **Cluster**
     ```sh
     ibmcloud oc cluster ls --provider satellite
     ```
     {: pre}
 
-  * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
     ```sh
     ibmcloud sat service ls --location <location>
     ```
@@ -203,34 +204,34 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-  * **Group**
+    * **Group**
     ```sh
     ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
     ```
     {: pre}
 
-  * **Cluster**
+    * **Cluster**
     ```sh
     ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
     ```
     {: pre}
 
-  * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
     ```sh
     ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
     ```
     {: pre}
 
 1. Verify that your assignment is created.
-  ```sh
-  ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
+    ```
+    {: pre}
 5. Verify that the storage configuration resources are deployed.
-  ```sh
-  oc get pods -A | grep <template-name>
-  ```
-  {: pre}
+    ```sh
+    oc get pods -A | grep <template-name>
+    ```
+    {: pre}
 
 <br />
 
@@ -269,5 +270,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-block-bronze` | ONTAP-SAN | Block | Delete |
 {: caption="Table 2. NetApp ONTAP-SAN storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
+
+
 
 

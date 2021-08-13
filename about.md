@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -216,3 +216,5 @@ Your host infrastructure setup must have a low latency connection of less than o
 
 
 <br />
+
+

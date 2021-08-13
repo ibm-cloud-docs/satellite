@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -151,6 +151,7 @@ Complete the following steps, but do not create an {{site.data.keyword.cloud_not
 		sudo /usr/lpp/mmfs/bin/mmstartup -a -- sudo /usr/lpp/mmfs/bin/mmgetstate -a
 		```
 		{: pre}
+
     * Enable autostart for Spectrum Scale.
 		```sh
 		sudo /usr/lpp/mmfs/bin/mmchconfig autoload=yes
@@ -210,22 +211,22 @@ In some environments, your worker node names might be different from your {{site
     ```
     {: pre}
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
-  ```sh
-  ibmcloud sat storage template ls
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage template ls
+    ```
+    {: pre}
 1. Review the [template parameters](#sat-storage-spectrum-scale-params-cli).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
-  ```sh
-  ibmcloud sat storage config create --name <config_name> --location <location> --template-name ess --template-version <template_version> -p "scale-host-path=<scale-host-path>" -p "cluster-id=<cluseter-id>" -p "primary-fs=<primary-fs>" -p "gui-host=<gui-host>" -p "secret-name=<secret-name>" -p "gui-api-user=<gui-api-user>" -p "gui-api-password=<gui-api-password>" -p "k8-n1-ip=<k8-n1-ip>" -p "sc-n1-host=<sc-n1-host>" -p "k8-n2-ip=<k8-n2-ip>" -p "sc-n2-host=<sc-n2-host>" -p "k8-n3-ip=<k8-n3-ip>" -p "sc-n3-host=<sc-n3-host>" -p "storage-class-name=<storage-class-name>" -p "vol-backend-fs=<vol-backend-fs>" -p "vol-dir-base-path=<vol-dir-base>"
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config create --name <config_name> --location <location> --template-name ess --template-version <template_version> -p "scale-host-path=<scale-host-path>" -p "cluster-id=<cluseter-id>" -p "primary-fs=<primary-fs>" -p "gui-host=<gui-host>" -p "secret-name=<secret-name>" -p "gui-api-user=<gui-api-user>" -p "gui-api-password=<gui-api-password>" -p "k8-n1-ip=<k8-n1-ip>" -p "sc-n1-host=<sc-n1-host>" -p "k8-n2-ip=<k8-n2-ip>" -p "sc-n2-host=<sc-n2-host>" -p "k8-n3-ip=<k8-n3-ip>" -p "sc-n3-host=<sc-n3-host>" -p "storage-class-name=<storage-class-name>" -p "vol-backend-fs=<vol-backend-fs>" -p "vol-dir-base-path=<vol-dir-base>"
+    ```
+    {: pre}
 
 1. Verify that your storage configuration is created.
-  ```sh
-  ibmcloud sat storage config get --config <config>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config get --config <config>
+    ```
+    {: pre}
 
 1. [Assign your storage configuration to clusters](#assign-storage-spectrum-scale).
 
@@ -243,25 +244,25 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 {: #assign-storage-spectrum-scale-cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
-  ```sh
-  ibmcloud sat storage config ls
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config ls
+    ```
+    {: pre}
 
 1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
-  * **Group**
+    * **Group**
     ```sh
     ibmcloud sat group ls
     ```
     {: pre}
 
-  * **Cluster**
+    * **Cluster**
     ```sh
     ibmcloud oc cluster ls --provider satellite
     ```
     {: pre}
 
-  * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
     ```sh
     ibmcloud sat service ls --location <location>
     ```
@@ -269,62 +270,62 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-  * **Group**
+    * **Group**
     ```sh
     ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
     ```
     {: pre}
 
-  * **Cluster**
+    * **Cluster**
     ```sh
     ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
     ```
     {: pre}
 
-  * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
     ```sh
     ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
     ```
     {: pre}
 
 1. Verify that your assignment is created.
-  ```sh
-  ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
+    ```
+    {: pre}
 5. Verify that the storage configuration resources are deployed.
 	```sh
 	oc get all -n ibm-spectrum-scale-csi-driver
 	```
 	{: pre}
 
-   **Example output**
-   ```sh
-   NAME                                                   READY   STATUS             RESTARTS   AGE
-   pod/ibm-spectrum-scale-csi-attacher-0                  1/1     Running            2          173m
-   pod/ibm-spectrum-scale-csi-k2978                       2/2     Running            0          152m
-   pod/ibm-spectrum-scale-csi-operator-56955949c4-j4ljf   1/1     Running            0          178m
-   pod/ibm-spectrum-scale-csi-provisioner-0               1/1     Running            2          173m
-   pod/ibm-spectrum-scale-csi-t6hfz                       2/2     Running            0          152m
-   pod/ibm-spectrum-scale-csi-x9h5g                       2/2     Running            0          152m
+    **Example output**
+    ```sh
+    NAME                                                   READY   STATUS             RESTARTS   AGE
+    pod/ibm-spectrum-scale-csi-attacher-0                  1/1     Running            2          173m
+    pod/ibm-spectrum-scale-csi-k2978                       2/2     Running            0          152m
+    pod/ibm-spectrum-scale-csi-operator-56955949c4-j4ljf   1/1     Running            0          178m
+    pod/ibm-spectrum-scale-csi-provisioner-0               1/1     Running            2          173m
+    pod/ibm-spectrum-scale-csi-t6hfz                       2/2     Running            0          152m
+    pod/ibm-spectrum-scale-csi-x9h5g                       2/2     Running            0          152m
 
-   NAME                                              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)             AGE
-   service/ibm-spectrum-scale-csi-operator-metrics   ClusterIP   172.XX.XX.XXX   <none>        8383/TCP,8686/TCP   178m
+    NAME                                              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)             AGE
+    service/ibm-spectrum-scale-csi-operator-metrics   ClusterIP   172.XX.XX.XXX   <none>        8383/TCP,8686/TCP   178m
 
-   NAME                                    DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
-   daemonset.apps/ibm-spectrum-scale-csi   3         3         3       3            3           scale=true      173m
+    NAME                                    DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+    daemonset.apps/ibm-spectrum-scale-csi   3         3         3       3            3           scale=true      173m
 
-   NAME                                              READY   UP-TO-DATE   AVAILABLE   AGE
-   deployment.apps/ibm-spectrum-scale-csi-operator   1/1     1            1           178m
+    NAME                                              READY   UP-TO-DATE   AVAILABLE   AGE
+    deployment.apps/ibm-spectrum-scale-csi-operator   1/1     1            1           178m
 
-   NAME                                                         DESIRED   CURRENT   READY   AGE
-   replicaset.apps/ibm-spectrum-scale-csi-operator-56955949c4   1         1         1       178m
+    NAME                                                         DESIRED   CURRENT   READY   AGE
+    replicaset.apps/ibm-spectrum-scale-csi-operator-56955949c4   1         1         1       178m
 
-   NAME                                                  READY   AGE
-   statefulset.apps/ibm-spectrum-scale-csi-attacher      1/1     173m
-   statefulset.apps/ibm-spectrum-scale-csi-provisioner   1/1     173m
-   ```
-   {: screen}
+    NAME                                                  READY   AGE
+    statefulset.apps/ibm-spectrum-scale-csi-attacher      1/1     173m
+    statefulset.apps/ibm-spectrum-scale-csi-provisioner   1/1     173m
+    ```
+    {: screen}
 
 ### Changing the Spectrum Scale CSI driver mount point
 {: #ess-change-mount-point}
@@ -332,17 +333,17 @@ After you deploy the `ess` template, you must change the Spectrum Scale CSI driv
 {: shortdesc}
 
 1. Edit the daemonset by using the `oc edit` command or get the daemonset YAML file configuration and save it on your local machine.
-   * **Edit in the command line**
-      ```sh
-      oc edit ds ibm-spectrum-scale-csi -n ibm-spectrum-scale-csi-driver
-      ```
-      {: pre}
+    * **Edit in the command line**
+        ```sh
+        oc edit ds ibm-spectrum-scale-csi -n ibm-spectrum-scale-csi-driver
+        ```
+        {: pre}
 
-   * **Get the YAML configuration file**
-      ```sh
-      oc get ds ibm-spectrum-scale-csi -n ibm-spectrum-scale-csi-driver -o yaml
-      ```
-      {: pre}
+    * **Get the YAML configuration file**
+        ```sh
+        oc get ds ibm-spectrum-scale-csi -n ibm-spectrum-scale-csi-driver -o yaml
+        ```
+        {: pre}
 
 1. Search for the string: `/var\/lib\/kubelet$`. Note that `kubelet` is the end of the string. There are 2 instances in the daemonset configuration that must be replaced.
     ```sh
@@ -367,126 +368,126 @@ You can use the `ibm-spectrum-scale-csi-driver` to create PVCs that you can use 
 {: shortdesc}
 
 1. Create a storage class that uses the `spectrumscale.csi.ibm.com` driver.
-   ```yaml
-   apiVersion: storage.k8s.io/v1
-   kind: StorageClass
-   metadata:
-     name: ess-sc
-   provisioner: spectrumscale.csi.ibm.com
-   parameters:
-     volBackendFs: <vol-backend-fs> # The name of the file system on which the fileset is created.
-   reclaimPolicy: Delete
-   ```
-   {: codeblock}
+    ```yaml
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: ess-sc
+    provisioner: spectrumscale.csi.ibm.com
+    parameters:
+      volBackendFs: <vol-backend-fs> # The name of the file system on which the fileset is created.
+    reclaimPolicy: Delete
+    ```
+    {: codeblock}
 
 1. Create the storage class in your cluster.
-   ```sh
-   oc create -f sc.yaml
-   ```
-   {: pre}
+    ```sh
+    oc create -f sc.yaml
+    ```
+    {: pre}
 
 1. Create a persistent volume (PVC) that references the storage class you created earlier.
-   ```yaml
-   kind: PersistentVolumeClaim
-   apiVersion: v1
-   metadata:
-     name: ess-pvc
-   spec:
-     accessModes:
-      - ReadWriteMany
-     resources:
-       requests:
-       storage: 5Gi
-     storageClassName: ess-sc
-  ```
-  {: codeblock}
+    ```yaml
+    kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: ess-pvc
+    spec:
+      accessModes:
+       - ReadWriteMany
+      resources:
+        requests:
+        storage: 5Gi
+      storageClassName: ess-sc
+    ```
+    {: codeblock}
 
 1. Create the PVC in your cluster.
-   ```sh
-   oc create -f pvc.yaml
-   ```
-   {: pre}
+    ```sh
+    oc create -f pvc.yaml
+    ```
+    {: pre}
 
 1. Verify that your PVC is `Bound`.
-   ```sh
-   oc get pvc
-   ```
-   {: pre}
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
 
 1. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file on your volume mount path.
-   ```yaml
-   apiVersion: v1
-   kind: Pod
-   metadata:
-     name: app
-   spec:
-     containers:
-     - name: app
-       image: nginx
-       command: ["/bin/sh"]
-       args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
-       volumeMounts:
-       - name: persistent-storage
-         mountPath: /test
-     volumes:
-     - name: persistent-storage
-       persistentVolumeClaim:
-         claimName: ess-pvc
-   ```
-   {: codeblock}
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: app
+    spec:
+      containers:
+      - name: app
+        image: nginx
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
+        volumeMounts:
+        - name: persistent-storage
+          mountPath: /test
+      volumes:
+      - name: persistent-storage
+        persistentVolumeClaim:
+          claimName: ess-pvc
+    ```
+    {: codeblock}
 
 1. Create the pod in your cluster.
-   ```sh
-   oc create -f pod.yaml
-   ```
-   {: pre}
+    ```sh
+    oc create -f pod.yaml
+    ```
+    {: pre}
 
 1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
-   ```sh
-   oc get pods
-   ```
-   {: pre}
+    ```sh
+    oc get pods
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   NAME                                READY   STATUS    RESTARTS   AGE
-   app                                 1/1     Running   0          2m58s
-   ```
-   {: screen}
+    Example output:
+    ```
+    NAME                                READY   STATUS    RESTARTS   AGE
+    app                                 1/1     Running   0          2m58s
+    ```
+    {: screen}
 
 1. Verify that the app can write to your {{site.data.keyword.IBM_notm}} Spectrum Scale instance.
-   1. Log in to your pod.
-      ```sh
-      oc exec <app-pod-name> -it bash
-      ```
-      {: pre}
+    1. Log in to your pod.
+        ```sh
+        oc exec <app-pod-name> -it bash
+        ```
+        {: pre}
 
-   1. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
-      ```sh
-      cat /test/test.txt
-      ```
-      {: pre}
+    1. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
+        ```sh
+        cat /test/test.txt
+        ```
+        {: pre}
 
-      Example output:
-      ```sh
-      Wed May 5 20:37:04 UTC 2021
-      Wed May 5 20:37:10 UTC 2021
-      Wed May 5 20:37:15 UTC 2021
-      Wed May 5 20:37:20 UTC 2021
-      Wed May 5 20:37:26 UTC 2021
-      Wed May 5 20:37:31 UTC 2021
-      Wed May 5 20:37:36 UTC 2021
-      Wed May 5 20:37:41 UTC 2021
-      Wed May 5 20:37:46 UTC 2021
-      Wed May 5 20:37:51 UTC 2021
-      ```
-      {: screen}
+        Example output:
+        ```sh
+        Wed May 5 20:37:04 UTC 2021
+        Wed May 5 20:37:10 UTC 2021
+        Wed May 5 20:37:15 UTC 2021
+        Wed May 5 20:37:20 UTC 2021
+        Wed May 5 20:37:26 UTC 2021
+        Wed May 5 20:37:31 UTC 2021
+        Wed May 5 20:37:36 UTC 2021
+        Wed May 5 20:37:41 UTC 2021
+        Wed May 5 20:37:46 UTC 2021
+        Wed May 5 20:37:51 UTC 2021
+        ```
+        {: screen}
 
-   1. Exit the pod.
-      ```sh
-      exit
-      ```
-      {: pre}
+    1. Exit the pod.
+        ```sh
+        exit
+        ```
+        {: pre}
 
 <br />
 
@@ -497,48 +498,48 @@ Use the CLI to remove a storage configuration.
 {: shortdesc}
 
 1. List your storage assignments and find the one that you used for your cluster.
-   ```sh
-   ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
+    ```
+    {: pre}
 
 2. Remove the assignment. After the assignment is removed, the driver pods and default storage classes are removed from all clusters that were part of the storage assignment.
-   ```sh
-   ibmcloud sat storage assignment rm --assignment <assignment_ID>
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage assignment rm --assignment <assignment_ID>
+    ```
+    {: pre}
 
 3. Verify that the driver and storage classes are removed from your cluster.
-   1. List the storage classes in your cluster and verify that the storage classes are removed.
-      ```sh
-      oc get sc
-      ```
-      {: pre}
+    1. List the storage classes in your cluster and verify that the storage classes are removed.
+        ```sh
+        oc get sc
+        ```
+        {: pre}
 
-   1. Optional: If you created custom storage classes, remove them.
-      ```sh
-      oc delete sc <storage-class-name>
-      ```
-      {: pre}
+    1. Optional: If you created custom storage classes, remove them.
+        ```sh
+        oc delete sc <storage-class-name>
+        ```
+        {: pre}
 
-   2. List the pods in the `ibm-spectrum-scale-csi-driver` namespace and verify that the storage driver pods are removed.
-      ```sh
-      oc get pods -n ibm-spectrum-scale-csi-driver
-      ```
-      {: pre}
+    2. List the pods in the `ibm-spectrum-scale-csi-driver` namespace and verify that the storage driver pods are removed.
+        ```sh
+        oc get pods -n ibm-spectrum-scale-csi-driver
+        ```
+        {: pre}
 
 4. Optional: Remove the storage configuration.
-   1. List the storage configurations.
-      ```sh
-      ibmcloud sat storage config ls
-      ```
-      {: pre}
+    1. List the storage configurations.
+        ```sh
+        ibmcloud sat storage config ls
+        ```
+        {: pre}
 
-   2. Remove the storage configuration.
-      ```sh
-      ibmcloud sat storage config rm --config <config_name>
-      ```
-      {: pre}
+    2. Remove the storage configuration.
+        ```sh
+        ibmcloud sat storage config rm --config <config_name>
+        ```
+        {: pre}
 
 5. [Clean up your Spectrum Scale deployment](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=installation-cleaning-up-spectrum-scale-container-storage-interface-driver-operator-by-using-clis){: external}.
 
@@ -625,5 +626,7 @@ Do not install the {{site.data.keyword.IBM_notm}} Spectrum Scale management API 
 
 
 <br />
+
+
 
 

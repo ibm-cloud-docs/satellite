@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-25"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,15 +19,19 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,14 +81,18 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -107,13 +121,14 @@ Target the regional endpoint, or ask the location owner to update your permissio
 ## Target the regional endpoint
 {: #ts-location-missing-location-target}
 
-1.  Ask the location owner which [{{site.data.keyword.cloud_notm}} multizone region](/docs/satellite?topic=satellite-sat-regions) the {{site.data.keyword.satelliteshort}} location is managed from. For example, the owner can run `ibmcloud sat location get --location <location_name_or_ID>` and review the **Managed from** field.
-2.  From the CLI, [target the regional endpoint](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init), such as Washington, D.C. (`us-east`) in the following example.
+1. Ask the location owner which [{{site.data.keyword.cloud_notm}} multizone region](/docs/satellite?topic=satellite-sat-regions) the {{site.data.keyword.satelliteshort}} location is managed from. For example, the owner can run `ibmcloud sat location get --location <location_name_or_ID>` and review the **Managed from** field.
+2. From the CLI, [target the regional endpoint](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init), such as Washington, D.C. (`us-east`) in the following example.
     ```
     ibmcloud oc init --host https://us-east.containers.cloud.ibm.com
     ```
     {: pre}
-3.  Verify that you can view the {{site.data.keyword.satelliteshort}} location.
+
+3. Verify that you can view the {{site.data.keyword.satelliteshort}} location.
     ```
     ibmcloud sat location ls
     ```
@@ -126,23 +141,25 @@ If you still cannot view the {{site.data.keyword.satelliteshort}} location, ask 
 
 Ask the location owner to update your access policy in {{site.data.keyword.cloud_notm}} IAM so that access to {{site.data.keyword.satelliteshort}} locations is no longer scoped to locations. The steps vary depending on how the location owner set up your access policy. The following commands provide examples for updating access group and individual policies from the CLI. For more information, see [Managing access for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-iam).
 
-1.  Log in to {{site.data.keyword.cloud_notm}}. If you have a federated account, include the `--sso` flag.
+1. Log in to {{site.data.keyword.cloud_notm}}. If you have a federated account, include the `--sso` flag.
     ```
     ibmcloud login [--sso]
     ```
     {: pre}
-2.  List the access policies for the user or access group, and note the **Policy ID** that grants access to the {{site.data.keyword.satelliteshort}} location.
+
+2. List the access policies for the user or access group, and note the **Policy ID** that grants access to the {{site.data.keyword.satelliteshort}} location.
     *   For individual users:
         ```
         ibmcloud iam user-policies <user@email.com>
         ```
         {: pre}
+
     *   For access groups:
         ```
         ibmcloud iam access-group-policies <access_group>
         ```
         {: pre}
-    
+
     Example output:
     ```
     Policy ID:   11a11111-bb2b-3c33-444d-ee5ee55ee55e
@@ -152,18 +169,20 @@ Ask the location owner to update your access policy in {{site.data.keyword.cloud
                 Resource Type   location   
     ```
     {: screen}
-3.  Update the access policy so that the policy is no longer scoped to locations. 
+
+3. Update the access policy so that the policy is no longer scoped to locations. 
     *   For individual users:
         ```
         ibmcloud iam user-policy-update <user@email.com> <policy_ID> --roles Viewer --service-name satellite
         ```
         {: pre}
+
     *   For access groups:
         ```
         ibmcloud iam access-group-policy-update <group> <policy_ID> --roles Viewer --service-name satellite
         ```
         {: pre}
-    
+
     Example output:
     ```
     Policy ID:   11a11111-bb2b-3c33-444d-ee5ee55ee55e
@@ -173,4 +192,6 @@ Ask the location owner to update your access policy in {{site.data.keyword.cloud
                 Service Name    satellite      
     ```
     {: screen}
+
     
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -182,3 +182,5 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 * [Red Hat Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file)
 * [Red Hat OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-ocs-local)
 * [Red Hat OpenShift Data Foundation using remote volumes](/docs/satellite?topic=satellite-config-storage-ocs-remote)
+
+

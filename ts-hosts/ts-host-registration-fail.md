@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -130,8 +130,8 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 {: screen}
 
 {: tsResolve}
-1.  Add the required packages to your machine. For example, in {{site.data.keyword.IBM_notm}} Cloud infrastructure you can run the following commands to add the required packages. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
-    1.  Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
+1. Add the required packages to your machine. For example, in {{site.data.keyword.IBM_notm}} Cloud infrastructure you can run the following commands to add the required packages. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
+    1. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
         ```
         subscription-manager refresh
         ```
@@ -140,7 +140,7 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
         If you see an error such as `Network error, unable to connect to server. Please see /var/log/rhsm/rhsm.log for more information.`, check the security group and other network settings for your machine to make sure that you have connectivity to the internet.
         {: tip}
 
-    2.  Enable the package repositories on your machine.
+    2. Enable the package repositories on your machine.
         ```
         subscription-manager repos --enable rhel-server-rhscl-7-rpms
         subscription-manager repos --enable rhel-7-server-optional-rpms
@@ -149,5 +149,8 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
         subscription-manager repos --enable rhel-7-server-extras-rpms
         ```
         {: pre}
-2.  Make sure that your machine meets the other [host minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as minimum CPU and memory sizes.
-3.  [Run the registration script](/docs/satellite?topic=satellite-hosts#attach-hosts) on your machine again.
+
+2. Make sure that your machine meets the other [host minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as minimum CPU and memory sizes.
+3. [Run the registration script](/docs/satellite?topic=satellite-hosts#attach-hosts) on your machine again.
+
+

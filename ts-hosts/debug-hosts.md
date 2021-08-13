@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -113,7 +113,7 @@ content-type: troubleshoot
 By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your hosts and tries to resolve issues automatically for you. For issues that cannot be resolved automatically, you can debug the hosts by reviewing the provided health information.
 {: shortdesc}
 
-1.  Review the health and status of your hosts. From the CLI, list your hosts in a location. From the console, click your location, and then click the **Hosts** tab.
+1. Review the health and status of your hosts. From the CLI, list your hosts in a location. From the console, click your location, and then click the **Hosts** tab.
     ```
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
@@ -125,9 +125,10 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     satellite-test-1   aaaaa1a11aaaaaa111aa   assigned     -        infrastructure   -           -   
     ```
     {: screen}
-2.  Review the states and the steps to resolve the issue in the following table.
-3.  Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity. For example, if you change the firewall rules for the host machine's public or private network connectivity, you might make the host unsupported by blocking the necessary ports and IP addresses. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
-4.  If your host still has issues, try to [remove](/docs/satellite?topic=satellite-hosts#host-remove), update, and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
+
+2. Review the states and the steps to resolve the issue in the following table.
+3. Check that your hosts still meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity. For example, if you change the firewall rules for the host machine's public or private network connectivity, you might make the host unsupported by blocking the necessary ports and IP addresses. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
+4. If your host still has issues, try to [remove](/docs/satellite?topic=satellite-hosts#host-remove), update, and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
 
 When you attach hosts to a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your hosts healthy. For more information, see [{{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default). For troubleshooting help, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 {: shortdesc}
@@ -147,3 +148,5 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 | `unresponsive` | The host did not check in with the {{site.data.keyword.satelliteshort}} location control plane within the past 5 minutes. The host cannot be assigned when it is unresponsive. Try [debugging the health of the host](/docs/satellite?topic=satellite-ts-hosts-debug), particularly the network connectivity. |
 {: caption="Host health states." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the health state of the host. The second column describes what the health state means."}
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -233,3 +233,5 @@ For an overview of who is responsible for particular cloud resources when using 
 {: #compliance-services}
 
 To see the security options and compliance standards of a {{site.data.keyword.satelliteshort}}-enabled service, review the documentation for each {{site.data.keyword.satelliteshort}}-enabled service. For example, for {{site.data.keyword.openshiftshort}} clusters, see [What compliance standards does the service meet?](/docs/openshift?topic=openshift-faqs#standards) in the {{site.data.keyword.openshiftlong_notm}} documentation.
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -112,12 +112,13 @@ content-type: troubleshoot
 
 When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations), {{site.data.keyword.IBM_notm}} automatically sets up a master for the location control plane in {{site.data.keyword.cloud_notm}}. Additionally, you must assign at least three hosts to the {{site.data.keyword.satelliteshort}} location control plane as worker nodes to run location components that {{site.data.keyword.IBM_notm}} configures. If the location control plane that runs on your hosts has issues, you can debug the location control plane.
 
-1.  Get your {{site.data.keyword.satelliteshort}} location ID.
+1. Get your {{site.data.keyword.satelliteshort}} location ID.
     ```
     ibmcloud sat location ls
     ```
     {: pre}
-2.  List the **Hostnames** of the subdomains for your location control plane hosts.
+
+2. List the **Hostnames** of the subdomains for your location control plane hosts.
     ```
     ibmcloud sat location dns ls --location <location_name_or_ID>
     ```
@@ -136,7 +137,7 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     ```
     {: screen}
 
-3.  Check the health of the control plane location subdomains by curling each hostname endpoint. If the endpoint returns a `200` response for each host, the control plane worker node is healthy and serving Kubernetes traffic. If not, continue to the next step.
+3. Check the health of the control plane location subdomains by curling each hostname endpoint. If the endpoint returns a `200` response for each host, the control plane worker node is healthy and serving Kubernetes traffic. If not, continue to the next step.
     ```
     curl -v http://<hostname>:30000
     ```
@@ -178,7 +179,8 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     * Closing connection 0
     ```
     {: screen}
-3.  Find the **ID** of the host that did not return a `200` response. You can compare the `Host: 169.xx.xxx.xxx` from the previous step with the **Worker IP** in the output of the following command.
+
+3. Find the **ID** of the host that did not return a `200` response. You can compare the `Host: 169.xx.xxx.xxx` from the previous step with the **Worker IP** in the output of the following command.
     ```
     ibmcloud sat host ls --location <location_ID> | grep infrastructure
     ```
@@ -192,6 +194,9 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     host3    ccccc3c33ccccc3333cc   assigned     Ready    infrastructure   sat-virtualser-1234...   169.xx.xxx.xxx  
     ```
     {: screen}
-4.  [Add a host to the control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) in the same zone so that the location control plane has enough compute resources to continue running when you remove the unhealthy host.
-5.  [Remove the unhealthy host from the location control plane](/docs/satellite?topic=satellite-hosts#host-remove).
-6.  Optional: You can reload the operating system on the unhealthy host and try to attach and assign the host to {{site.data.keyword.satellitelong_notm}} again.
+
+4. [Add a host to the control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) in the same zone so that the location control plane has enough compute resources to continue running when you remove the unhealthy host.
+5. [Remove the unhealthy host from the location control plane](/docs/satellite?topic=satellite-hosts#host-remove).
+6. Optional: You can reload the operating system on the unhealthy host and try to attach and assign the host to {{site.data.keyword.satellitelong_notm}} again.
+
+

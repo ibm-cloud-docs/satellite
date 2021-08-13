@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -148,21 +148,23 @@ Before you can create storage configurations by using the NetApp NAS template, y
     ```
     {: pre}
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
-  ```sh
-  ibmcloud sat storage template ls
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage template ls
+    ```
+    {: pre}
 3. Review the [NetApp ONTAP-NAS storage configuration parameters](#sat-storage-netapp-params-cli-nas).
 4. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
-  ```sh
-  ibmcloud sat storage config create --name <config_name> --location <location> --template-name netapp-ontap-nas --template-version <template_version> --param "managementLIF=<managementLIF>" --param "dataLIF=<dataLIF>" --param "svm=<svm>" --param "export-policy=<export-policy>" --param "username=<username>" --param "password=<password>"
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config create --name <config_name> --location <location> --template-name netapp-ontap-nas --template-version <template_version> --param "managementLIF=<managementLIF>" --param "dataLIF=<dataLIF>" --param "svm=<svm>" --param "export-policy=<export-policy>" --param "username=<username>" --param "password=<password>"
+    ```
+    {: pre}
+
 5. Verify that your storage configuration is created.
-  ```sh
-  ibmcloud sat storage config get --config <config>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config get --config <config>
+    ```
+    {: pre}
+
 ## Assigning your NetApp ONTAP-NAS storage configuration to a cluster
 {: #assign-storage-netapp-nas}
 
@@ -176,25 +178,25 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 {: #assign-storage-netapp-cli-nas}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
-  ```sh
-  ibmcloud sat storage config ls
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config ls
+    ```
+    {: pre}
 
 1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
-  * **Group**
+    * **Group**
     ```sh
     ibmcloud sat group ls
     ```
     {: pre}
 
-  * **Cluster**
+    * **Cluster**
     ```sh
     ibmcloud oc cluster ls --provider satellite
     ```
     {: pre}
 
-  * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
     ```sh
     ibmcloud sat service ls --location <location>
     ```
@@ -202,78 +204,78 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-  * **Group**
+    * **Group**
     ```sh
     ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
     ```
     {: pre}
 
-  * **Cluster**
+    * **Cluster**
     ```sh
     ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
     ```
     {: pre}
 
-  * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
     ```sh
     ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
     ```
     {: pre}
 
 1. Verify that your assignment is created.
-  ```sh
-  ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
+    ```
+    {: pre}
 5. Verify that the `trident-kubectl-nas` pod is deployed in the `trident` namespace.
-  ```sh
-  oc get pods -n trident | grep trident-kubectl-nas
-  ```
-  {: pre}
+    ```sh
+    oc get pods -n trident | grep trident-kubectl-nas
+    ```
+    {: pre}
 
-  **Example output**
-  ```sh
-  trident-kubectl-nas                 1/1     Running   0          2m32s
-  ```
-  {: screen}
+    **Example output**
+    ```sh
+    trident-kubectl-nas                 1/1     Running   0          2m32s
+    ```
+    {: screen}
 
 6. Verify that the `sat-netapp` storage classes are deployed.
-  ```sh
-  oc get sc | grep netapp
-  ```
-  {: pre}
+    ```sh
+    oc get sc | grep netapp
+    ```
+    {: pre}
 
 7. Verify that all resources in the `trident` namespace are `Running` or `Ready`.
-  ```sh
-  oc get all -n trident
-  ```
-  {: pre}
+    ```sh
+    oc get all -n trident
+    ```
+    {: pre}
 
-  **Example output**
-  ```sh
-  NAME                                    READY   STATUS    RESTARTS   AGE
-  pod/trident-csi-2nrt4                   2/2     Running   0          14m
-  pod/trident-csi-7f999bfb96-z4dr5        6/6     Running   0          14m
-  pod/trident-csi-cd5mx                   2/2     Running   0          14m
-  pod/trident-csi-zlwwn                   2/2     Running   0          14m
-  pod/trident-kubectl-nas                 1/1     Running   0          4m14s
-  pod/trident-operator-794f74cd4b-zpnt4   1/1     Running   0          14m
+    **Example output**
+    ```sh
+    NAME                                    READY   STATUS    RESTARTS   AGE
+    pod/trident-csi-2nrt4                   2/2     Running   0          14m
+    pod/trident-csi-7f999bfb96-z4dr5        6/6     Running   0          14m
+    pod/trident-csi-cd5mx                   2/2     Running   0          14m
+    pod/trident-csi-zlwwn                   2/2     Running   0          14m
+    pod/trident-kubectl-nas                 1/1     Running   0          4m14s
+    pod/trident-operator-794f74cd4b-zpnt4   1/1     Running   0          14m
 
-  NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)              AGE
-  service/trident-csi   ClusterIP   172.21.106.252   <none>        34571/TCP,9220/TCP   14m
+    NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)              AGE
+    service/trident-csi   ClusterIP   172.21.106.252   <none>        34571/TCP,9220/TCP   14m
 
-  NAME                         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR                                     AGE
-  daemonset.apps/trident-csi   3         3         3       3            3           kubernetes.io/arch=amd64,kubernetes.io/os=linux   14m
+    NAME                         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR                                     AGE
+    daemonset.apps/trident-csi   3         3         3       3            3           kubernetes.io/arch=amd64,kubernetes.io/os=linux   14m
 
-  NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
-  deployment.apps/trident-csi        1/1     1            1           14m
-  deployment.apps/trident-operator   1/1     1            1           14m
+    NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
+    deployment.apps/trident-csi        1/1     1            1           14m
+    deployment.apps/trident-operator   1/1     1            1           14m
 
-  NAME                                          DESIRED   CURRENT   READY   AGE
-  replicaset.apps/trident-csi-7f999bfb96        1         1         1       14m
-  replicaset.apps/trident-operator-794f74cd4b   1         1         1       14m
-  ```
-  {: screen}
+    NAME                                          DESIRED   CURRENT   READY   AGE
+    replicaset.apps/trident-csi-7f999bfb96        1         1         1       14m
+    replicaset.apps/trident-operator-794f74cd4b   1         1         1       14m
+    ```
+    {: screen}
 
 <br />
 
@@ -284,108 +286,108 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
 {: shortdesc}
 
 1. Create a PVC configuration file that uses one of the `sat-netapp` storage classes. 
-  ```yaml
-  apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    name: netapp-pvc
-  spec:
-    accessModes:
-      - ReadWriteMany
-    storageClassName: sat-netapp-file-gold
-    resources:
-      requests:
-        storage: 10Gi
-  ```
-  {: pre}
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: netapp-pvc
+    spec:
+      accessModes:
+        - ReadWriteMany
+      storageClassName: sat-netapp-file-gold
+      resources:
+        requests:
+          storage: 10Gi
+    ```
+    {: pre}
 
 1. Create the PVC in your cluster.
-  ```sh
-  oc apply -f pvc.yaml
-  ```
-  {: pre}
+    ```sh
+    oc apply -f pvc.yaml
+    ```
+    {: pre}
 
 3. Verify that the PVC is created. Make sure that the PVC is in a `Bound` status.
-  ```sh
-  oc get pvc
-  ```
-  {: pre}
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
 
-  Example output:
-  ```
-  NAME         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
-  netapp-pvc   Bound    pvc-acd9e5b4-0b24-4e20-ac00-69a05148c799   10Gi       RWX            sat-netapp-file-gold   39s
-  ```
-  {: screen}
+    Example output:
+    ```
+    NAME         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
+    netapp-pvc   Bound    pvc-acd9e5b4-0b24-4e20-ac00-69a05148c799   10Gi       RWX            sat-netapp-file-gold   39s
+    ```
+    {: screen}
 
 4. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file on your ONTAP-NAS volume mount path.
-  ```yaml
-  apiVersion: v1
-  kind: Pod
-  metadata:
-    name: app
-  spec:
-    containers:
-    - name: app
-      image: nginx
-      command: ["/bin/sh"]
-      args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
-      volumeMounts:
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: app
+    spec:
+      containers:
+      - name: app
+        image: nginx
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
+        volumeMounts:
+        - name: persistent-storage
+          mountPath: /test
+      volumes:
       - name: persistent-storage
-        mountPath: /test
-    volumes:
-    - name: persistent-storage
-      persistentVolumeClaim:
-        claimName: netapp-pvc
-  ```
-  {: codeblock}
+        persistentVolumeClaim:
+          claimName: netapp-pvc
+    ```
+    {: codeblock}
 
 5. Create the pod in your cluster.
-   ```sh
-   oc apply -f pod.yaml
-   ```
-   {: pre}
+    ```sh
+    oc apply -f pod.yaml
+    ```
+    {: pre}
 
 6. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
-   ```sh
-   oc get pods
-   ```
-   {: pre}
+    ```sh
+    oc get pods
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   NAME                                READY   STATUS    RESTARTS   AGE
-   app   1/1     Running   0          50s
-   ```
-   {: screen}
+    Example output:
+    ```
+    NAME                                READY   STATUS    RESTARTS   AGE
+    app   1/1     Running   0          50s
+    ```
+    {: screen}
 
 7. Verify that the app can write to your ONTAP-NAS instance.
-   1. Log in to your pod.
-      ```sh
-      oc exec app -it bash
-      ```
-      {: pre}
+    1. Log in to your pod.
+        ```sh
+        oc exec app -it bash
+        ```
+        {: pre}
 
-   2. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
-      ```sh
-      cat /test/test.txt
-      ```
-      {: pre}
+    2. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
+        ```sh
+        cat /test/test.txt
+        ```
+        {: pre}
 
-      **Example output**:
-      ```sh
-      Wed May 19 13:28:31 UTC 2021
-      Wed May 19 13:28:37 UTC 2021
-      Wed May 19 13:28:42 UTC 2021
-      Wed May 19 13:28:47 UTC 2021
-      ```
-      {: screen}
+        **Example output**:
+        ```sh
+        Wed May 19 13:28:31 UTC 2021
+        Wed May 19 13:28:37 UTC 2021
+        Wed May 19 13:28:42 UTC 2021
+        Wed May 19 13:28:47 UTC 2021
+        ```
+        {: screen}
 
-   3. Exit the pod.
-      ```sh
-      exit
-      ```
-      {: pre}
+    3. Exit the pod.
+        ```sh
+        exit
+        ```
+        {: pre}
 
 <br />
 
@@ -396,51 +398,52 @@ Before you remove your storage configuration, remove the app pods and PVCs that 
 {: shortdesc}
 
 1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove.
-   ```sh
-   oc get pvc
-   ```
-   {: pre}
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
 
 2. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC.
-  ```sh
-  oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
-  ```
-  {: pre}
+    ```sh
+    oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+    ```
+    {: pre}
 
-  **Example output**:
-  ```
-  app    sat-netapp-file-gold
-  ```
-  {: screen}
+    **Example output**:
+    ```
+    app    sat-netapp-file-gold
+    ```
+    {: screen}
 
 3. If the pod is part of a deployment, delete the deployment.
-  ```sh
-  oc delete deployment <deployment_name>
-  ```
-  {: pre}
+    ```sh
+    oc delete deployment <deployment_name>
+    ```
+    {: pre}
 
 4. Verify that the pod or the deployment is removed.
-  ```sh
-  oc get pods
-  ```
-  {: pre}
+    ```sh
+    oc get pods
+    ```
+    {: pre}
 
-  ```sh
-  oc get deployments
-  ```
-  {: pre}
+    ```sh
+    oc get deployments
+    ```
+    {: pre}
 
 5. Delete the PVC.
-  ```sh
-  oc delete pvc <pvc_name>
-  ```
-  {: pre}
+    ```sh
+    oc delete pvc <pvc_name>
+    ```
+    {: pre}
 
 6. Delete the corresponding PV.
-  ```sh
-  oc delete pv <pv_name>
-  ```
-  {: pre}
+    ```sh
+    oc delete pv <pv_name>
+    ```
+    {: pre}
+
 7. [Remove your NetApp ONTAP-NAS storage configuration from your cluster](#netapp-nas-template-rm-cli)
 
 <br />
@@ -453,43 +456,43 @@ Use the CLI to remove a storage assignment and storage configuration.
 {: shortdesc}
 
 1. List your storage assignments and find the one that you used for your cluster.
-   ```sh
-   ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
+    ```
+    {: pre}
 
 2. Remove the assignment. After the assignment is removed, the NetApp ONTAP-NAS driver pods and storage class are removed from all clusters that were part of the storage assignment.
-   ```sh
-   ibmcloud sat storage assignment rm --assignment <assignment_ID>
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage assignment rm --assignment <assignment_ID>
+    ```
+    {: pre}
 
 3. Verify that the NetApp ONTAP-NAS driver is removed from your cluster. List the storage classes in your cluster and verify that the NetApp ONTAP-NAS storage class is removed.
-  ```sh
-  oc get sc
-  ```
-  {: pre}
+    ```sh
+    oc get sc
+    ```
+    {: pre}
 
 4. List the pods in the `trident` namespace and verify that the NetApp ONTAP-NAS storage driver pods are removed.
-  ```sh
-  oc get pods -n trident
-  ```
-  {: pre}
+    ```sh
+    oc get pods -n trident
+    ```
+    {: pre}
 
 5. **Optional**: List your storage configurations and remove your NetApp configuration.
-  ```sh
-  ibmcloud sat storage config ls
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config ls
+    ```
+    {: pre}
 
-  ```sh
-  ibmcloud sat storage config rm --config <config_name>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config rm --config <config_name>
+    ```
+    {: pre}
 
 7. **Next steps**: [Remove the NetApp Trident operator from your cluster](/docs/satellite?topic=satellite-config-storage-netapp-trident).
 
-  
+
 
 ## NetApp ONTAP-NAS storage configuration parameter reference
 {: #sat-storage-netapp-params-cli-nas}
@@ -528,3 +531,5 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete |
 {: caption="Table 2. NetApp ONTAP-NAS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
+
+

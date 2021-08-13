@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -130,6 +130,7 @@ Review the following requirements that relate to the computing and system setup 
 *   Hosts must run Red Hat Enterprise Linux 7 on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
 *   Hosts can be physical or virtual machines.
 *   Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](#reqs-host-storage). 
+
 *   If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
 
 ### Packages and other machine configurations
@@ -151,20 +152,21 @@ The hosts must not have any additional packages, configuration, or other customi
 {: important}
 
 You might need to refresh your packages on the host machine. For example, in {{site.data.keyword.IBM_notm}} Cloud infrastructure you can run the following commands to add the required packages.
-  1.  Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
-      ```
-      subscription-manager refresh
-      ```
-      {: pre}
-  2.  Enable the package repositories on your machine.
-      ```
-      subscription-manager repos --enable rhel-server-rhscl-7-rpms
-      subscription-manager repos --enable rhel-7-server-optional-rpms
-      subscription-manager repos --enable rhel-7-server-rh-common-rpms
-      subscription-manager repos --enable rhel-7-server-supplementary-rpms
-      subscription-manager repos --enable rhel-7-server-extras-rpms
-      ```
-      {: pre}
+    1. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
+        ```
+        subscription-manager refresh
+        ```
+        {: pre}
+
+    2. Enable the package repositories on your machine.
+        ```
+        subscription-manager repos --enable rhel-server-rhscl-7-rpms
+        subscription-manager repos --enable rhel-7-server-optional-rpms
+        subscription-manager repos --enable rhel-7-server-rh-common-rpms
+        subscription-manager repos --enable rhel-7-server-supplementary-rpms
+        subscription-manager repos --enable rhel-7-server-extras-rpms
+        ```
+        {: pre}
 
 For more information about how to enable the {{site.data.keyword.redhat_notm}} packages in hosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
 {: tip}
@@ -176,6 +178,7 @@ For more information about how to enable the {{site.data.keyword.redhat_notm}} p
 
 Review the following requirements that relate to the storage setup of host machines.
 {: shortdesc}
+
 * Hosts must have a boot disk with sufficient space to boot the host and run the operating system.
 * Hosts must have an additional disk that is attached to the host and that provides a minimum of 100 GB of unmounted and unformatted disk space.
 * For hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane, the attached storage device must have at least 1000 IOPS. The required IOPS varies with the number of clusters in the location, and the activity of the masters for those clusters.
@@ -205,6 +208,7 @@ In general, do not set any custom networking configurations on your hosts, such 
     172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, 172.20.0.0/16, and 192.168.255.0/24
     ```
     {: screen}
+
 * Host IP addresses must remain static and cannot change over time, such as due to a reboot or other potential infrastructure updates.
 
 ### Host network bandwidth
@@ -218,15 +222,17 @@ In general, do not set any custom networking configurations on your hosts, such 
 
 * All hosts must use the same default gateway.
 * Hosts can have multiple IPv4 network interfaces. However, the `eth0`, `ens0`, or `bond0` network interface must serve as the default route. To find the default network interface for a host, SSH into the host and run the following command:
-  ```
-  ip route | grep default | awk '{print $5}'
-  ```
-  {: pre}
-  In this example output, `eth0` is the default network interface:
-  ```
-  default via 161.202.250.1 dev eth0 onlink
-  ```
-  {: screen}
+    ```
+    ip route | grep default | awk '{print $5}'
+    ```
+    {: pre}
+
+    In this example output, `eth0` is the default network interface:
+    ```
+    default via 161.202.250.1 dev eth0 onlink
+    ```
+    {: screen}
+
 * All hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPV4 backend connectivity to the other hosts in the location on the network interface that serves as the default route (`eth0`, `ens0`, or `bond0`).
 
 ### Inbound connectivity
@@ -356,9 +362,9 @@ Your host infrastructure setup must have a low latency connection of less than o
 Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.data.keyword.cloud_notm}} multizone region](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). You can test the latency between your hosts and the region to make sure you use a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round-trip time (RTT).
 {: shortdesc}
 
-1.  In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, you might SSH into the machine from a command line.
+1. In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, you might SSH into the machine from a command line.
 
-2.  Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test.
+2. Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test.
     *   **Dallas**:
 
         52.117.39.146</br>169.48.134.66</br>169.63.36.210
@@ -375,13 +381,14 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 
         169.63.123.154</br>169.60.123.162</br>52.117.93.26
 
-3.  From your host, ping the IP addresses of the {{site.data.keyword.cloud_notm}} region.
+3. From your host, ping the IP addresses of the {{site.data.keyword.cloud_notm}} region.
     ```
     ping <ip_address>
     ```
     {: pre}
-4.  After a few packets complete transmission, close the connection. For example, from the command line, you might enter `ctrl+c`.
-5.  In the `ping statistics` output, note the average (`avg`) round-trip distance in milliseconds (ms) between the host and the {{site.data.keyword.cloud_notm}} region, and compare whether the connection meets the latency requirement of less than or equal to 200 milliseconds (`<= 200ms`).
+
+4. After a few packets complete transmission, close the connection. For example, from the command line, you might enter `ctrl+c`.
+5. In the `ping statistics` output, note the average (`avg`) round-trip distance in milliseconds (ms) between the host and the {{site.data.keyword.cloud_notm}} region, and compare whether the connection meets the latency requirement of less than or equal to 200 milliseconds (`<= 200ms`).
 
     Example of a connection that meets the latency requirements:
     ```
@@ -398,3 +405,5 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     round-trip min/avg/max/stddev = 138.453/217.370/419.901/108.211 ms
     ```
     {: screen}
+
+

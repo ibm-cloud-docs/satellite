@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -236,3 +236,5 @@ The following image shows a highly available setup for compute hosts that are in
 {: shortdesc}
 
 <img src="/images/satellite_ha_aws.png" alt="High availability setup with compute hosts that are at another cloud provider." width="700" style="width: 550px; border-style: none"/>
+
+

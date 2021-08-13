@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -166,62 +166,62 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
     {: pre}
 1. Review the [AWS EFS storage configuration parameters](#sat-storage-aws-efs-params-cli).
 2. Create an AWS EFS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
-   ```sh
-   ibmcloud sat storage config create --name <config_name> --location <location> --template-name aws-efs-csi-driver --template-version <template_version>
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage config create --name <config_name> --location <location> --template-name aws-efs-csi-driver --template-version <template_version>
+    ```
+    {: pre}
 
 3. Verify that your storage configuration is created.
-   ```sh
-   ibmcloud sat storage config get --config <config_name>
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage config get --config <config_name>
+    ```
+    {: pre}
 
 4. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to use. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EFS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location.
-   ```sh
-   ibmcloud sat group ls
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat group ls
+    ```
+    {: pre}
 
 5. Create a storage assignment for your cluster group. After you create the assignment, the AWS EFS driver is installed in all clusters that belong to the cluster group. Replace `<group_name>` with the name of your cluster group, `<config_name>` with the name of your storage configuration, and `<assignment_name>` with a name for your storage assignment. For more information, see the [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create) command.
-   ```sh
-   ibmcloud sat storage assignment create --group <group_name> --config <config_name> --name <assignment_name>
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage assignment create --group <group_name> --config <config_name> --name <assignment_name>
+    ```
+    {: pre}
 
 6. Verify that your assignment is created.
-   ```sh
-   ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
+    ```
+    {: pre}
 
 7. Verify that the AWS EFS storage configuration resources are successfully deployed in your cluster.
-   1. [Access your cluster](/docs/openshift?topic=openshift-access_cluster).
-   2. List the AWS EFS driver pods in the `kube-system` namespace and verify that the status is `Running`.
-      ```sh
-      oc get pods -n kube-system | grep efs
-      ```
-      {: pre}
+    1. [Access your cluster](/docs/openshift?topic=openshift-access_cluster).
+    2. List the AWS EFS driver pods in the `kube-system` namespace and verify that the status is `Running`.
+        ```sh
+        oc get pods -n kube-system | grep efs
+        ```
+        {: pre}
 
-      Example output:
-      ```sh   
-      efs-csi-node-gfm9x                      3/3     Running   0          7m48s
-      efs-csi-node-hz45b                      3/3     Running   0          7m48s
-      efs-csi-node-pv8m7                      3/3     Running   0          7m48s
-      ```
-      {: screen}
+        Example output:
+        ```sh   
+        efs-csi-node-gfm9x                      3/3     Running   0          7m48s
+        efs-csi-node-hz45b                      3/3     Running   0          7m48s
+        efs-csi-node-pv8m7                      3/3     Running   0          7m48s
+        ```
+        {: screen}
 
-   3. List the AWS EFS storage classes.
-      ```sh
-      oc get sc | grep aws-file
-      ```
-      {: pre}
+    3. List the AWS EFS storage classes.
+        ```sh
+        oc get sc | grep aws-file
+        ```
+        {: pre}
 
-      Example output:
-      ```             
-      sat-aws-file-gold     efs.csi.aws.com      Delete          Immediate              false                  8m27s
-      ```
-      {: screen}
+        Example output:
+        ```             
+        sat-aws-file-gold     efs.csi.aws.com      Delete          Immediate              false                  8m27s
+        ```
+        {: screen}
 
 ## Deploying an app that uses AWS EFS storage
 {: #sat-storage-efs-deploy}
@@ -234,151 +234,151 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
 1. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you want to use for your apps and note the file system ID.
 
 2. Create a persistent volume (PV) that references the file system ID of your AWS EFS instance.
-   1. Create a YAML configuration file for your PV and enter the file system ID in the `csi.volumeHandle` field.
-      ```yaml
-      apiVersion: v1
-      kind: PersistentVolume
-      metadata:
-        name: efs
-      spec:
-        capacity:
-          storage: 5Gi
-        volumeMode: Filesystem
-        accessModes:
-          - ReadWriteOnce
-        persistentVolumeReclaimPolicy: Retain
-        storageClassName: sat-aws-file-gold
-        csi:
-          driver: efs.csi.aws.com
-          volumeHandle: <aws_efs_fileshare_ID>
-      ```
-      {: codeblock}
+    1. Create a YAML configuration file for your PV and enter the file system ID in the `csi.volumeHandle` field.
+        ```yaml
+        apiVersion: v1
+        kind: PersistentVolume
+        metadata:
+            name: efs
+        spec:
+            capacity:
+            storage: 5Gi
+            volumeMode: Filesystem
+            accessModes:
+            - ReadWriteOnce
+            persistentVolumeReclaimPolicy: Retain
+            storageClassName: sat-aws-file-gold
+            csi:
+            driver: efs.csi.aws.com
+            volumeHandle: <aws_efs_fileshare_ID>
+        ```
+        {: codeblock}
 
-   2. Create the PV in your cluster.
-      ```
-      oc apply -f pv.yaml
-      ```
-      {: pre}
+    2. Create the PV in your cluster.
+        ```
+        oc apply -f pv.yaml
+        ```
+        {: pre}
 
-   3. Verify that the PV is created. Note that the PV remains in an `Available` status as no matching PVC is found yet.
-      ```
-      oc get pv
-      ```
-      {: pre}
+    3. Verify that the PV is created. Note that the PV remains in an `Available` status as no matching PVC is found yet.
+        ```
+        oc get pv
+        ```
+        {: pre}
 
-      Example output:
-      ```
-      NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM        STORAGECLASS           REASON   AGE
-      efs    5Gi        RWO            Retain           Available                  sat-aws-file-gold               34m
-      ```
-      {: screen}
+        Example output:
+        ```
+        NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM        STORAGECLASS           REASON   AGE
+        efs    5Gi        RWO            Retain           Available                  sat-aws-file-gold               34m
+        ```
+        {: screen}
 
 3. Create a persistent volume claim (PVC) that matches the PV that you created.
-   1. Create a YAML configuration file for your PVC. In order for the PVC to match the PV, you must use the same values for the storage class and the size of the storage.
-      ```yaml
-      apiVersion: v1
-      kind: PersistentVolumeClaim
-      metadata:
-        name: efs
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        storageClassName: sat-aws-file-gold
-        resources:
-          requests:
-            storage: 5Gi
-      ```
-      {: codeblock}
+    1. Create a YAML configuration file for your PVC. In order for the PVC to match the PV, you must use the same values for the storage class and the size of the storage.
+        ```yaml
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        metadata:
+            name: efs
+        spec:
+            accessModes:
+            - ReadWriteOnce
+            storageClassName: sat-aws-file-gold
+            resources:
+            requests:
+                storage: 5Gi
+        ```
+        {: codeblock}
 
-   2. Create the PVC in your cluster.
-      ```sh
-      oc apply -f pvc.yaml
-      ```
-      {: pre}
+    2. Create the PVC in your cluster.
+        ```sh
+        oc apply -f pvc.yaml
+        ```
+        {: pre}
 
-   3. Verify that the PVC is created. Make sure that the PVC is in a `Bound` status and that the name of the PV that you created earlier is listed in the **VOLUME** column.
-      ```sh
-      oc get pvc
-      ```
-      {: pre}
+    3. Verify that the PVC is created. Make sure that the PVC is in a `Bound` status and that the name of the PV that you created earlier is listed in the **VOLUME** column.
+        ```sh
+        oc get pvc
+        ```
+        {: pre}
 
-      Example output:
-      ```
-      NAME      STATUS        VOLUME     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
-      efs       Bound         efs        5Gi        RWO            sat-aws-file-gold   36m
-      ```
-      {: screen}
+        Example output:
+        ```
+        NAME      STATUS        VOLUME     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
+        efs       Bound         efs        5Gi        RWO            sat-aws-file-gold   36m
+        ```
+        {: screen}
 
 4. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file on your AWS EFS volume mount path.
-   ```yaml
-   apiVersion: v1
-   kind: Pod
-   metadata:
-     name: app
-   spec:
-     containers:
-     - name: app
-       image: nginx
-       command: ["/bin/sh"]
-       args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
-       volumeMounts:
-       - name: persistent-storage
-         mountPath: /test
-     volumes:
-     - name: persistent-storage
-       persistentVolumeClaim:
-         claimName: efs
-   ```
-   {: codeblock}
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+        name: app
+    spec:
+        containers:
+        - name: app
+        image: nginx
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
+        volumeMounts:
+        - name: persistent-storage
+            mountPath: /test
+        volumes:
+        - name: persistent-storage
+        persistentVolumeClaim:
+            claimName: efs
+    ```
+    {: codeblock}
 
 5. Create the pod in your cluster.
-   ```sh
-   oc apply -f pod.yaml
-   ```
-   {: pre}
+    ```sh
+    oc apply -f pod.yaml
+    ```
+    {: pre}
 
 6. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
-   ```sh
-   oc get pods
-   ```
-   {: pre}
+    ```sh
+    oc get pods
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   NAME                                READY   STATUS    RESTARTS   AGE
-   app                                 1/1     Running   0          2m58s
-   ```
-   {: screen}
+    Example output:
+    ```
+    NAME                                READY   STATUS    RESTARTS   AGE
+    app                                 1/1     Running   0          2m58s
+    ```
+    {: screen}
 
 7. Verify that the app can write to your AWS EFS instance.
-   1. Log in to your pod.
-      ```sh
-      oc exec <app-pod-name> -it bash
-      ```
-      {: pre}
+    1. Log in to your pod.
+        ```sh
+        oc exec <app-pod-name> -it bash
+        ```
+        {: pre}
 
-   2. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
-      ```sh
-      cat /test/test.txt
-      ```
-      {: pre}
+    2. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
+        ```sh
+        cat /test/test.txt
+        ```
+        {: pre}
 
-      Example output:
-      ```sh
-      Tue Mar 2 20:09:19 UTC 2021
-      Tue Mar 2 20:09:25 UTC 2021
-      Tue Mar 2 20:09:31 UTC 2021
-      Tue Mar 2 20:09:36 UTC 2021
-      Tue Mar 2 20:09:42 UTC 2021
-      Tue Mar 2 20:09:47 UTC 2021
-      ```
-      {: screen}
+        Example output:
+        ```sh
+        Tue Mar 2 20:09:19 UTC 2021
+        Tue Mar 2 20:09:25 UTC 2021
+        Tue Mar 2 20:09:31 UTC 2021
+        Tue Mar 2 20:09:36 UTC 2021
+        Tue Mar 2 20:09:42 UTC 2021
+        Tue Mar 2 20:09:47 UTC 2021
+        ```
+        {: screen}
 
-   3. Exit the pod.
-      ```sh
-      exit
-      ```
-      {: pre}
+    3. Exit the pod.
+        ```sh
+        exit
+        ```
+        {: pre}
 
 9. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you used and verify that the file system grows in size.   
 
@@ -392,57 +392,57 @@ Removing your AWS EFS instance permanently removes all the data that is stored o
 {: important}
 
 1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove.
-   ```sh
-   oc get pvc
-   ```
-   {: pre}
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
 
 2. Remove any pods that mount the PVC.
-   1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC.
-      ```sh
-      oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
-      ```
-      {: pre}
+    1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC.
+        ```sh
+        oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+        ```
+        {: pre}
 
-      Example output:
-      ```
-      app    sat-aws-block-bronze
-      ```
-      {: screen}
+        Example output:
+        ```
+        app    sat-aws-block-bronze
+        ```
+        {: screen}
 
-   2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
-      ```sh
-      oc delete pod <pod_name>
-      ```
-      {: pre}
+    2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
+        ```sh
+        oc delete pod <pod_name>
+        ```
+        {: pre}
 
-      ```sh
-      oc delete deployment <deployment_name>
-      ```
-      {: pre}
+        ```sh
+        oc delete deployment <deployment_name>
+        ```
+        {: pre}
 
-   3. Verify that the pod or the deployment is removed.
-      ```sh
-      oc get pods
-      ```
-      {: pre}
+    3. Verify that the pod or the deployment is removed.
+        ```sh
+        oc get pods
+        ```
+        {: pre}
 
-      ```sh
-      oc get deployments
-      ```
-      {: pre}
+        ```sh
+        oc get deployments
+        ```
+        {: pre}
 
 3. Delete the PVC. Because you statically provisioned the AWS EFS storage, deleting the PVC does not remove the PV or the AWS EFS instance in your AWS account.
-   ```sh
-   oc delete pvc <pvc_name>
-   ```
-   {: pre}
+    ```sh
+    oc delete pvc <pvc_name>
+    ```
+    {: pre}
 
 4. Delete the corresponding PV.
-   ```sh
-   oc delete pv <pv_name>
-   ```
-   {: pre}
+    ```sh
+    oc delete pv <pv_name>
+    ```
+    {: pre}
 
 5. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, select the file system that you want to delete and click **Delete**.    
 
@@ -462,42 +462,42 @@ Use the CLI to remove a storage configuration.
 {: shortdesc}
 
 1. List your storage assignments and find the one that you used for your cluster.
-   ```sh
-   ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
+    ```
+    {: pre}
 
 2. Remove the assignment. After the assignment is removed, the AWS EFS driver pods and storage class are removed from all clusters that were part of the storage assignment.
-   ```sh
-   ibmcloud sat storage assignment rm --assignment <assignment_ID>
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage assignment rm --assignment <assignment_ID>
+    ```
+    {: pre}
 
 3. Verify that the AWS EFS driver is removed from your cluster.
-   1. List the storage classes in your cluster and verify that the AWS EFS storage class is removed.
-      ```sh
-      oc get sc
-      ```
-      {: pre}
+    1. List the storage classes in your cluster and verify that the AWS EFS storage class is removed.
+        ```sh
+        oc get sc
+        ```
+        {: pre}
 
-   2. List the pods in the `kube-system` namespace and verify that the AWS EFS storage driver pods are removed.
-      ```sh
-      oc get pods -n kube-system
-      ```
-      {: pre}
+    2. List the pods in the `kube-system` namespace and verify that the AWS EFS storage driver pods are removed.
+        ```sh
+        oc get pods -n kube-system
+        ```
+        {: pre}
 
 4. Optional: Remove the storage configuration.
-   1. List the storage configurations.
-      ```sh
-      ibmcloud sat storage config ls
-      ```
-      {: pre}
+    1. List the storage configurations.
+        ```sh
+        ibmcloud sat storage config ls
+        ```
+        {: pre}
 
-   2. Remove the storage configuration.
-      ```sh
-      ibmcloud sat storage config rm --config <config_name>
-      ```
-      {: pre}
+    2. Remove the storage configuration.
+        ```sh
+        ibmcloud sat storage config rm --config <config_name>
+        ```
+        {: pre}
 
 
 ## AWS EFS storage configuration parameter reference
@@ -524,6 +524,8 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 
 {: caption="Table 2. AWS EFS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-08-13"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -124,10 +124,10 @@ To use the ODF storage with the local storage operator and local storage devices
 
 - [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 - [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters).
-  - Your cluster must have a minimum of 3 worker nodes with at least 16CPUs and 64GB RAM per worker node.
-  - Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to having one of the following local storage configurations.
-    * Two raw devices per worker node that have no partitions or formatted file systems. If your devices have no partitions, each node must have 2 free disks. One disk for the OSD and one disk for the MON.
-    * Two raw partitions per worker node that have no formatted file system. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
+    - Your cluster must have a minimum of 3 worker nodes with at least 16CPUs and 64GB RAM per worker node.
+    - Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to having one of the following local storage configurations.
+        * Two raw devices per worker node that have no partitions or formatted file systems. If your devices have no partitions, each node must have 2 free disks. One disk for the OSD and one disk for the MON.
+        * Two raw partitions per worker node that have no formatted file system. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
 - [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups).
 - [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
 - **Optional**: If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-ocs-local-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you do not specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and ODF is installed.
@@ -176,13 +176,13 @@ The following steps show how you can manually retrieve the local device informat
     {: pre}
 
 3. When the debug pod is deployed on the worker node, run the following commands to list the available disks on the worker node.
-  1. Allow host binaries.
+    1. Allow host binaries.
     ```sh
     chroot /host
     ```
     {: pre}
 
-  1. List your devices.
+    1. List your devices.
     ```sh
     lsblk
     ```
@@ -264,21 +264,23 @@ The following steps show how you can manually retrieve the local device informat
     ```
     {: pre}
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
-  ```sh
-  ibmcloud sat storage template ls
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage template ls
+    ```
+    {: pre}
 1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-local-params-cli).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values. If you are using a {{site.data.keyword.cos_short}} backing store, be sure to specify the regional public endpoint in the following format: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. 
-  ```sh
-  ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
+    ```
+    {: pre}
+
 1. Verify that your storage configuration is created.
-  ```sh
-  ibmcloud sat storage config get --config <config>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config get --config <config>
+    ```
+    {: pre}
+
 1. [Assign your storage configuration to clusters](#assign-storage-ocs-local).
 
 <br />
@@ -292,25 +294,25 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
-  ```sh
-  ibmcloud sat storage config ls
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config ls
+    ```
+    {: pre}
 
 1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
-  * **Group**
+    * **Group**
     ```sh
     ibmcloud sat group ls
     ```
     {: pre}
 
-  * **Cluster**
+    * **Cluster**
     ```sh
     ibmcloud oc cluster ls --provider satellite
     ```
     {: pre}
 
-  * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
     ```sh
     ibmcloud sat service ls --location <location>
     ```
@@ -318,130 +320,130 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-  * **Group**
+    * **Group**
     ```sh
     ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
     ```
     {: pre}
 
-  * **Cluster**
+    * **Cluster**
     ```sh
     ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
     ```
     {: pre}
 
-  * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
     ```sh
     ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
     ```
     {: pre}
 
 1. Verify that your assignment is created.
-  ```sh
-  ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
+    ```
+    {: pre}
 5. Verify that the storage configuration resources are deployed. Note that this process might take up to 10 minutes to complete.
 
-  1. Get the `storagecluster` that you deployed and verify that the phase is `Ready`.
+    1. Get the `storagecluster` that you deployed and verify that the phase is `Ready`.
     ```sh
     oc get storagecluster -n openshift-storage
     ```
     {: pre}
 
     Example output:
-      ```sh
-      NAME                 AGE   PHASE   EXTERNAL   CREATED AT             VERSION
-      ocs-storagecluster   72m   Ready              2021-02-10T06:00:20Z   4.6.0
-      ```
-      {: screen}
+        ```sh
+        NAME                 AGE   PHASE   EXTERNAL   CREATED AT             VERSION
+        ocs-storagecluster   72m   Ready              2021-02-10T06:00:20Z   4.6.0
+        ```
+        {: screen}
 
-  2. Get a list of pods in the `openshift-storage` namespace and verify that the status is `Running`.
+    2. Get a list of pods in the `openshift-storage` namespace and verify that the status is `Running`.
     ```sh
     oc get pods -n openshift-storage
     ```
     {: pre}
 
     Example output:
-      ```sh
-      NAME                                                              READY   STATUS      RESTARTS   AGE
-      csi-cephfsplugin-9g2d5                                            3/3     Running     0          8m11s
-      csi-cephfsplugin-g42wv                                            3/3     Running     0          8m11s
-      csi-cephfsplugin-provisioner-7b89766c86-l68sr                     5/5     Running     0          8m10s
-      csi-cephfsplugin-provisioner-7b89766c86-nkmkf                     5/5     Running     0          8m10s
-      csi-cephfsplugin-rlhzv                                            3/3     Running     0          8m11s
-      csi-rbdplugin-8dmxc                                               3/3     Running     0          8m12s
-      csi-rbdplugin-f8c4c                                               3/3     Running     0          8m12s
-      csi-rbdplugin-nkzcd                                               3/3     Running     0          8m12s
-      csi-rbdplugin-provisioner-75596f49bd-7mk5g                        5/5     Running     0          8m12s
-      csi-rbdplugin-provisioner-75596f49bd-r2p6g                        5/5     Running     0          8m12s
-      noobaa-core-0                                                     1/1     Running     0          4m37s
-      noobaa-db-0                                                       1/1     Running     0          4m37s
-      noobaa-endpoint-7d959fd6fb-dr5x4                                  1/1     Running     0          2m27s
-      noobaa-operator-6cbf8c484c-fpwtt                                  1/1     Running     0          9m41s
-      ocs-operator-9d6457dff-c4xhh                                      1/1     Running     0          9m42s
-      rook-ceph-crashcollector-169.48.170.83-89f6d7dfb-gsglz            1/1     Running     0          5m38s
-      rook-ceph-crashcollector-169.48.170.88-6f58d6489-b9j49            1/1     Running     0          5m29s
-      rook-ceph-crashcollector-169.48.170.90-866b9d444d-zk6ft           1/1     Running     0          5m15s
-      rook-ceph-drain-canary-169.48.170.83-6b885b94db-wvptz             1/1     Running     0          4m41s
-      rook-ceph-drain-canary-169.48.170.88-769f8b6b7-mtm47              1/1     Running     0          4m39s
-      rook-ceph-drain-canary-169.48.170.90-84845c98d4-pxpqs             1/1     Running     0          4m40s
-      rook-ceph-mds-ocs-storagecluster-cephfilesystem-a-6dfbb4fcnqv9g   1/1     Running     0          4m16s
-      rook-ceph-mds-ocs-storagecluster-cephfilesystem-b-cbc56b8btjhrt   1/1     Running     0          4m15s
-      rook-ceph-mgr-a-55cc8d96cc-vm5dr                                  1/1     Running     0          4m55s
-      rook-ceph-mon-a-5dcc4d9446-4ff5x                                  1/1     Running     0          5m38s
-      rook-ceph-mon-b-64dc44f954-w24gs                                  1/1     Running     0          5m30s
-      rook-ceph-mon-c-86d4fb86-s8gdz                                    1/1     Running     0          5m15s
-      rook-ceph-operator-69c46db9d4-tqdpt                               1/1     Running     0          9m42s
-      rook-ceph-osd-0-6c6cc87d58-79m5z                                  1/1     Running     0          4m42s
-      rook-ceph-osd-1-f4cc9c864-fmwgd                                   1/1     Running     0          4m41s
-      rook-ceph-osd-2-dd4968b75-lzc6x                                   1/1     Running     0          4m40s
-      rook-ceph-osd-prepare-ocs-deviceset-0-data-0-29jgc-kzpgr          0/1     Completed   0          4m51s
-      rook-ceph-osd-prepare-ocs-deviceset-1-data-0-ckvv2-4jdx5          0/1     Completed   0          4m50s
-      rook-ceph-osd-prepare-ocs-deviceset-2-data-0-szmjd-49dd4          0/1     Completed   0          4m50s
-      rook-ceph-rgw-ocs-storagecluster-cephobjectstore-a-7f7f6df9rv6h   1/1     Running     0          3m44s
-      rook-ceph-rgw-ocs-storagecluster-cephobjectstore-b-554fd9dz6dm8   1/1     Running     0          3m41s
-      ```
-      {: screen}
+        ```sh
+        NAME                                                              READY   STATUS      RESTARTS   AGE
+        csi-cephfsplugin-9g2d5                                            3/3     Running     0          8m11s
+        csi-cephfsplugin-g42wv                                            3/3     Running     0          8m11s
+        csi-cephfsplugin-provisioner-7b89766c86-l68sr                     5/5     Running     0          8m10s
+        csi-cephfsplugin-provisioner-7b89766c86-nkmkf                     5/5     Running     0          8m10s
+        csi-cephfsplugin-rlhzv                                            3/3     Running     0          8m11s
+        csi-rbdplugin-8dmxc                                               3/3     Running     0          8m12s
+        csi-rbdplugin-f8c4c                                               3/3     Running     0          8m12s
+        csi-rbdplugin-nkzcd                                               3/3     Running     0          8m12s
+        csi-rbdplugin-provisioner-75596f49bd-7mk5g                        5/5     Running     0          8m12s
+        csi-rbdplugin-provisioner-75596f49bd-r2p6g                        5/5     Running     0          8m12s
+        noobaa-core-0                                                     1/1     Running     0          4m37s
+        noobaa-db-0                                                       1/1     Running     0          4m37s
+        noobaa-endpoint-7d959fd6fb-dr5x4                                  1/1     Running     0          2m27s
+        noobaa-operator-6cbf8c484c-fpwtt                                  1/1     Running     0          9m41s
+        ocs-operator-9d6457dff-c4xhh                                      1/1     Running     0          9m42s
+        rook-ceph-crashcollector-169.48.170.83-89f6d7dfb-gsglz            1/1     Running     0          5m38s
+        rook-ceph-crashcollector-169.48.170.88-6f58d6489-b9j49            1/1     Running     0          5m29s
+        rook-ceph-crashcollector-169.48.170.90-866b9d444d-zk6ft           1/1     Running     0          5m15s
+        rook-ceph-drain-canary-169.48.170.83-6b885b94db-wvptz             1/1     Running     0          4m41s
+        rook-ceph-drain-canary-169.48.170.88-769f8b6b7-mtm47              1/1     Running     0          4m39s
+        rook-ceph-drain-canary-169.48.170.90-84845c98d4-pxpqs             1/1     Running     0          4m40s
+        rook-ceph-mds-ocs-storagecluster-cephfilesystem-a-6dfbb4fcnqv9g   1/1     Running     0          4m16s
+        rook-ceph-mds-ocs-storagecluster-cephfilesystem-b-cbc56b8btjhrt   1/1     Running     0          4m15s
+        rook-ceph-mgr-a-55cc8d96cc-vm5dr                                  1/1     Running     0          4m55s
+        rook-ceph-mon-a-5dcc4d9446-4ff5x                                  1/1     Running     0          5m38s
+        rook-ceph-mon-b-64dc44f954-w24gs                                  1/1     Running     0          5m30s
+        rook-ceph-mon-c-86d4fb86-s8gdz                                    1/1     Running     0          5m15s
+        rook-ceph-operator-69c46db9d4-tqdpt                               1/1     Running     0          9m42s
+        rook-ceph-osd-0-6c6cc87d58-79m5z                                  1/1     Running     0          4m42s
+        rook-ceph-osd-1-f4cc9c864-fmwgd                                   1/1     Running     0          4m41s
+        rook-ceph-osd-2-dd4968b75-lzc6x                                   1/1     Running     0          4m40s
+        rook-ceph-osd-prepare-ocs-deviceset-0-data-0-29jgc-kzpgr          0/1     Completed   0          4m51s
+        rook-ceph-osd-prepare-ocs-deviceset-1-data-0-ckvv2-4jdx5          0/1     Completed   0          4m50s
+        rook-ceph-osd-prepare-ocs-deviceset-2-data-0-szmjd-49dd4          0/1     Completed   0          4m50s
+        rook-ceph-rgw-ocs-storagecluster-cephobjectstore-a-7f7f6df9rv6h   1/1     Running     0          3m44s
+        rook-ceph-rgw-ocs-storagecluster-cephobjectstore-b-554fd9dz6dm8   1/1     Running     0          3m41s
+        ```
+        {: screen}
 
 6. List the ODF storage classes.
-  ```sh
-  oc get sc
-  ```
-  {: pre}
+    ```sh
+    oc get sc
+    ```
+    {: pre}
 
-  **Example output**:
-  ```sh
-  NAME                          PROVISIONER                             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
-  localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  107s
-  localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  107s
-  ocs-storagecluster-ceph-rbd   openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   87s
-  ocs-storagecluster-ceph-rgw   openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  87s
-  ocs-storagecluster-cephfs     openshift-storage.cephfs.csi.ceph.com   Delete          Immediate              true                   88s
-  sat-ocs-cephfs-gold           openshift-storage.cephfs.csi.ceph.com   Delete          Immediate              true                   2m46s
-  sat-ocs-cephrbd-gold          openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   2m46s
-  sat-ocs-cephrgw-gold          openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  2m45s
-  sat-ocs-noobaa-gold           openshift-storage.noobaa.io/obc         Delete          Immediate              false                  2m45s
-  ```
-  {: screen}
+    **Example output**:
+    ```sh
+    NAME                          PROVISIONER                             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+    localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  107s
+    localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  107s
+    ocs-storagecluster-ceph-rbd   openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   87s
+    ocs-storagecluster-ceph-rgw   openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  87s
+    ocs-storagecluster-cephfs     openshift-storage.cephfs.csi.ceph.com   Delete          Immediate              true                   88s
+    sat-ocs-cephfs-gold           openshift-storage.cephfs.csi.ceph.com   Delete          Immediate              true                   2m46s
+    sat-ocs-cephrbd-gold          openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   2m46s
+    sat-ocs-cephrgw-gold          openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  2m45s
+    sat-ocs-noobaa-gold           openshift-storage.noobaa.io/obc         Delete          Immediate              false                  2m45s
+    ```
+    {: screen}
 
 7. List the persistent volumes and verify that your MON and OSD volumes are created.
-  ```sh
-  oc get pv
-  ```
-  {: pre}
+    ```sh
+    oc get pv
+    ```
+    {: pre}
 
-  **Example output**:
-  ```sh
-  NAME                CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                            STORAGECLASS   REASON   AGE
-  local-pv-180cfc58   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-b                localfile               12m
-  local-pv-67f21982   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-a                localfile               12m
-  local-pv-80c5166    100Gi      RWO            Delete           Bound    openshift-storage/ocs-deviceset-2-data-0-5p6hd   localblock              12m
-  local-pv-9b049705   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-c                localfile               12m
-  local-pv-b09e0279   100Gi      RWO            Delete           Bound    openshift-storage/ocs-deviceset-1-data-0-gcq88   localblock              12m
-  local-pv-f798e570   100Gi      RWO            Delete           Bound    openshift-storage/ocs-deviceset-0-data-0-6fgp6   localblock              12m
-  ```
-  {: screen}
+    **Example output**:
+    ```sh
+    NAME                CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                            STORAGECLASS   REASON   AGE
+    local-pv-180cfc58   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-b                localfile               12m
+    local-pv-67f21982   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-a                localfile               12m
+    local-pv-80c5166    100Gi      RWO            Delete           Bound    openshift-storage/ocs-deviceset-2-data-0-5p6hd   localblock              12m
+    local-pv-9b049705   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-c                localfile               12m
+    local-pv-b09e0279   100Gi      RWO            Delete           Bound    openshift-storage/ocs-deviceset-1-data-0-gcq88   localblock              12m
+    local-pv-f798e570   100Gi      RWO            Delete           Bound    openshift-storage/ocs-deviceset-0-data-0-6fgp6   localblock              12m
+    ```
+    {: screen}
 
 
 <br />
@@ -453,97 +455,97 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
 {: shortdesc}
 
 1. Create a YAML configuration file for your PVC. In order for the PVC to match the PV, you must use the same values for the storage class and the size of the storage.
-  ```yaml
-  apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    name: ocs-pvc
-  spec:
-    accessModes:
-      - ReadWriteOnce
-    storageClassName: sat-ocs-cephfs-gold
-    resources:
-      requests:
-        storage: 5Gi
-  ```
-  {: codeblock}
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: ocs-pvc
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      storageClassName: sat-ocs-cephfs-gold
+      resources:
+        requests:
+          storage: 5Gi
+    ```
+    {: codeblock}
 
 2. Create the PVC in your cluster.
-  ```sh
-  oc apply -f pvc.yaml
-  ```
-  {: pre}
+    ```sh
+    oc apply -f pvc.yaml
+    ```
+    {: pre}
 
 3. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file.
-   ```yaml
-   apiVersion: v1
-   kind: Pod
-   metadata:
-     name: app
-   spec:
-     containers:
-     - name: app
-       image: nginx
-       command: ["/bin/sh"]
-       args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
-       volumeMounts:
+    ```yaml
+     apiVersion: v1
+     kind: Pod
+     metadata:
+       name: app
+     spec:
+       containers:
+       - name: app
+         image: nginx
+         command: ["/bin/sh"]
+         args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
+         volumeMounts:
+         - name: persistent-storage
+           mountPath: /test
+       volumes:
        - name: persistent-storage
-         mountPath: /test
-     volumes:
-     - name: persistent-storage
-       persistentVolumeClaim:
-         claimName: ocs-pvc
-   ```
-   {: codeblock}
+         persistentVolumeClaim:
+           claimName: ocs-pvc
+    ```
+    {: codeblock}
 
 5. Create the pod in your cluster.
-   ```sh
-   oc apply -f pod.yaml
-   ```
-   {: pre}
+    ```sh
+    oc apply -f pod.yaml
+    ```
+    {: pre}
 
 6. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
-   ```sh
-   oc get pods
-   ```
-   {: pre}
+    ```sh
+    oc get pods
+    ```
+    {: pre}
 
-   Example output:
-   ```
-   NAME                                READY   STATUS    RESTARTS   AGE
-   app                                 1/1     Running   0          2m58s
-   ```
-   {: screen}
+    Example output:
+    ```
+    NAME                                READY   STATUS    RESTARTS   AGE
+    app                                 1/1     Running   0          2m58s
+    ```
+    {: screen}
 
 7. Verify that the app can write data.
-   1. Log in to your pod.
-      ```sh
-      oc exec <app-pod-name> -it bash
-      ```
-      {: pre}
+    1. Log in to your pod.
+        ```sh
+        oc exec <app-pod-name> -it bash
+        ```
+        {: pre}
 
-   2. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
-      ```sh
-      cat /test/test.txt
-      ```
-      {: pre}
+    2. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
+        ```sh
+        cat /test/test.txt
+        ```
+        {: pre}
 
-      Example output:
-      ```sh
-      Tue Mar 2 20:09:19 UTC 2021
-      Tue Mar 2 20:09:25 UTC 2021
-      Tue Mar 2 20:09:31 UTC 2021
-      Tue Mar 2 20:09:36 UTC 2021
-      Tue Mar 2 20:09:42 UTC 2021
-      Tue Mar 2 20:09:47 UTC 2021
-      ```
-      {: screen}
+        Example output:
+        ```sh
+        Tue Mar 2 20:09:19 UTC 2021
+        Tue Mar 2 20:09:25 UTC 2021
+        Tue Mar 2 20:09:31 UTC 2021
+        Tue Mar 2 20:09:36 UTC 2021
+        Tue Mar 2 20:09:42 UTC 2021
+        Tue Mar 2 20:09:47 UTC 2021
+        ```
+        {: screen}
 
-   3. Exit the pod.
-      ```sh
-      exit
-      ```
-      {: pre}
+    3. Exit the pod.
+        ```sh
+        exit
+        ```
+        {: pre}
 
 
 
@@ -559,19 +561,19 @@ Deleting configurations and assignments might result in data loss.
 {: important}
 
 In the following example, the ODF configuration is updated to use template version 4.7,
-  * `--name` - Enter a name for your new configuration.
-  * `--template-name` - Use the same parameter value as in your existing configuration.
-  * `--template-version` - Enter the template version that you want to use to upgrade your configuration.
-  * `ocs-cluster-name` - Use the same parameter value as in your existing configuration.
-  * `osd-device-path` - Use the same parameter value as in your existing configuration.
-  * `mon-device-path` - Use the same parameter value as in your existing configuration.
-  * `num-of-osd` - Use the same parameter value as in your existing configuration.
-  * `worker-nodes` - Use the same parameter value as in your existing configuration.
-  * `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
-  * `ibm-cos-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-  * `ibm-cos-secret-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-  * `ibm-cos-endpoint` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-  * `ibm-cos-location` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+    * `--name` - Enter a name for your new configuration.
+    * `--template-name` - Use the same parameter value as in your existing configuration.
+    * `--template-version` - Enter the template version that you want to use to upgrade your configuration.
+    * `ocs-cluster-name` - Use the same parameter value as in your existing configuration.
+    * `osd-device-path` - Use the same parameter value as in your existing configuration.
+    * `mon-device-path` - Use the same parameter value as in your existing configuration.
+    * `num-of-osd` - Use the same parameter value as in your existing configuration.
+    * `worker-nodes` - Use the same parameter value as in your existing configuration.
+    * `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
+    * `ibm-cos-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+    * `ibm-cos-secret-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+    * `ibm-cos-endpoint` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+    * `ibm-cos-location` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
 
 1. Get the details of your ODF configuration.
     ```sh
@@ -612,57 +614,57 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
 {: shortdesc}
 
 1. List your PVCs and note the name of the PVC and the corresponding PV that you want to remove.
-   ```sh
-   oc get pvc
-   ```
-   {: pre}
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
 
 2. Remove any pods that mount the PVC.
-   1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC.
-      ```sh
-      oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
-      ```
-      {: pre}
+    1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC.
+        ```sh
+        oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+        ```
+        {: pre}
 
-      Example output:
-      ```
-      app    sat-ocs-cephfs-gold
-      ```
-      {: screen}
+        Example output:
+        ```
+        app    sat-ocs-cephfs-gold
+        ```
+        {: screen}
 
-   2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
-      ```sh
-      oc delete pod <pod_name>
-      ```
-      {: pre}
+    2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
+        ```sh
+        oc delete pod <pod_name>
+        ```
+        {: pre}
 
-      ```sh
-      oc delete deployment <deployment_name>
-      ```
-      {: pre}
+        ```sh
+        oc delete deployment <deployment_name>
+        ```
+        {: pre}
 
-   3. Verify that the pod or the deployment is removed.
-      ```sh
-      oc get pods
-      ```
-      {: pre}
+    3. Verify that the pod or the deployment is removed.
+        ```sh
+        oc get pods
+        ```
+        {: pre}
 
-      ```sh
-      oc get deployments
-      ```
-      {: pre}
+        ```sh
+        oc get deployments
+        ```
+        {: pre}
 
 3. Delete the PVC.
-   ```sh
-   oc delete pvc <pvc_name>
-   ```
-   {: pre}
+    ```sh
+    oc delete pvc <pvc_name>
+    ```
+    {: pre}
 
 4. Delete the corresponding PV.
-   ```sh
-   oc delete pv <pv_name>
-   ```
-   {: pre}
+    ```sh
+    oc delete pv <pv_name>
+    ```
+    {: pre}
 
 
 ## Removing the ODF local storage configuration from your cluster
@@ -680,79 +682,79 @@ Use the command line to remove a storage configuration.
 {: shortdesc}
 
 1. List your storage assignments and find the one that you used for your cluster.
-   ```sh
-   ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
+    ```
+    {: pre}
 
 2. Remove the assignment. After the assignment is removed, the ODF driver pods and storage classes are removed from all clusters that were part of the storage assignment.
-   ```sh
-   ibmcloud sat storage assignment rm --assignment <assignment_ID>
-   ```
-   {: pre}
+    ```sh
+    ibmcloud sat storage assignment rm --assignment <assignment_ID>
+    ```
+    {: pre}
 
 3. List your storage assignments and find the one that you used for your cluster.
-  ```sh
-  ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
+    ```
+    {: pre}
 
 4. Remove the assignment. After the assignment is removed, the local file driver pods and storage classes are removed from all clusters that were part of the storage assignment.
-  ```sh
-  ibmcloud sat storage assignment rm --assignment <assignment_ID>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage assignment rm --assignment <assignment_ID>
+    ```
+    {: pre}
 
 5. Remove your storage assignment.
-  ```sh
-  ibmcloud sat storage assignment rm --assignment <assignment>
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage assignment rm --assignment <assignment>
+    ```
+    {: pre}
 
 6. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
-  ```sh
-  #!/bin/bash
-  ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
-  oc delete ocscluster --all --wait=false
-  kubectl patch ocscluster/$ocscluster_name -p '{"metadata":{"finalizers":[]}}' --type=merge
-  oc delete ns openshift-storage --wait=false
-  sleep 20
-  kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephblockpool.ceph.rook.io/ocs-storagecluster-cephblockpool -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephcluster.ceph.rook.io/ocs-storagecluster-cephcluster -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephfilesystem.ceph.rook.io/ocs-storagecluster-cephfilesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephobjectstore.ceph.rook.io/ocs-storagecluster-cephobjectstore -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/noobaa-ceph-objectstore-user -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/ocs-storagecluster-cephobjectstoreuser -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch NooBaa/noobaa -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch backingstores.noobaa.io/noobaa-default-backing-store -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch bucketclasses.noobaa.io/noobaa-default-bucket-class -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
-  sleep 20
-  oc delete pods -n openshift-storage --all --force --grace-period=0
-  oc delete ns local-storage --wait=false
-  sleep 20
-  kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-block -p '{"metadata":{"finalizers":[]}}' --type=merge
-  kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-file -p '{"metadata":{"finalizers":[]}}' --type=merge
-  sleep 20
-  oc delete pods -n local-storage --all --force --grace-period=0
-  ```
-  {: pre}
+    ```sh
+    #!/bin/bash
+    ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
+    oc delete ocscluster --all --wait=false
+    kubectl patch ocscluster/$ocscluster_name -p '{"metadata":{"finalizers":[]}}' --type=merge
+    oc delete ns openshift-storage --wait=false
+    sleep 20
+    kubectl -n openshift-storage patch persistentvolumeclaim/db-noobaa-db-0 -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephblockpool.ceph.rook.io/ocs-storagecluster-cephblockpool -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephcluster.ceph.rook.io/ocs-storagecluster-cephcluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephfilesystem.ceph.rook.io/ocs-storagecluster-cephfilesystem -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephobjectstore.ceph.rook.io/ocs-storagecluster-cephobjectstore -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/noobaa-ceph-objectstore-user -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch cephobjectstoreuser.ceph.rook.io/ocs-storagecluster-cephobjectstoreuser -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch NooBaa/noobaa -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch backingstores.noobaa.io/noobaa-default-backing-store -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch bucketclasses.noobaa.io/noobaa-default-bucket-class -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n openshift-storage patch storagecluster.ocs.openshift.io/ocs-storagecluster -p '{"metadata":{"finalizers":[]}}' --type=merge
+    sleep 20
+    oc delete pods -n openshift-storage --all --force --grace-period=0
+    oc delete ns local-storage --wait=false
+    sleep 20
+    kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-block -p '{"metadata":{"finalizers":[]}}' --type=merge
+    kubectl -n local-storage patch localvolume.local.storage.openshift.io/local-file -p '{"metadata":{"finalizers":[]}}' --type=merge
+    sleep 20
+    oc delete pods -n local-storage --all --force --grace-period=0
+    ```
+    {: pre}
 
 7. Run the `cleanup.sh` script.
-  ```sh
-  sh ./cleanup.sh
-  ```
-  {: pre}
+    ```sh
+    sh ./cleanup.sh
+    ```
+    {: pre}
 
 8. After you run the cleanup script, log in to each worker node and run the following commands.
-  1. Deploy a debug pod and run `chroot /host`.
+    1. Deploy a debug pod and run `chroot /host`.
     ```sh
     oc debug node/<node_name> -- chroot /host
     ```
     {: pre}
 
-  2. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your ODF configuration.
+    2. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your ODF configuration.
     ```sh
     rm -rvf /var/lib/rook /mnt/local-storage
     ```
@@ -778,59 +780,59 @@ Use the command line to remove a storage configuration.
     {: codeblock}
 
 10. **Optional**: If you no longer want to use the local volumes that you used in your ODF configuration, you can delete them from the cluster. List the local PVs.
-  ```sh
-  oc get pv
-  ```
-  {: pre}
+    ```sh
+    oc get pv
+    ```
+    {: pre}
 
-  **Example output**:
-  ```sh
-  local-pv-180cfc58   139Gi      RWO            Delete           Available           localfile               11m
-  local-pv-67f21982   139Gi      RWO            Delete           Available           localfile               12m
-  local-pv-80c5166    100Gi      RWO            Delete           Available           localblock              12m
-  local-pv-9b049705   139Gi      RWO            Delete           Available           localfile               12m
-  local-pv-b09e0279   100Gi      RWO            Delete           Available           localblock              12m
-  local-pv-f798e570   100Gi      RWO            Delete           Available           localblock              12m
-  ```
-  {: screen}
+    **Example output**:
+    ```sh
+    local-pv-180cfc58   139Gi      RWO            Delete           Available           localfile               11m
+    local-pv-67f21982   139Gi      RWO            Delete           Available           localfile               12m
+    local-pv-80c5166    100Gi      RWO            Delete           Available           localblock              12m
+    local-pv-9b049705   139Gi      RWO            Delete           Available           localfile               12m
+    local-pv-b09e0279   100Gi      RWO            Delete           Available           localblock              12m
+    local-pv-f798e570   100Gi      RWO            Delete           Available           localblock              12m
+    ```
+    {: screen}
 
 11. Delete the local PVs.
-  ```sh
-  oc delete pv <pv_name> <pv_name> <pv_name>
-  ```
-  {: pre}
+    ```sh
+    oc delete pv <pv_name> <pv_name> <pv_name>
+    ```
+    {: pre}
 
 12. List the ODF and local storage classes.
-  ```sh
-  oc get sc
-  ```
-  {: pre}
+    ```sh
+    oc get sc
+    ```
+    {: pre}
 
-  **Example output**:
-  ```sh
-  localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
-  localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
-  ocs-storagecluster-ceph-rbd   openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   41m
-  ocs-storagecluster-ceph-rgw   openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  41m
-  ocs-storagecluster-cephfs
-  ```
-  {: screen}
+    **Example output**:
+    ```sh
+    localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
+    localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
+    ocs-storagecluster-ceph-rbd   openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   41m
+    ocs-storagecluster-ceph-rgw   openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  41m
+    ocs-storagecluster-cephfs
+    ```
+    {: screen}
 
 13. Delete the storage classes.
-  ```sh
-  oc delete sc localblock localfile ocs-storagecluster-ceph-rbd ocs-storagecluster-ceph-rgw ocs-storagecluster-cephfs
-  ```
-  {: pre}
+    ```sh
+    oc delete sc localblock localfile ocs-storagecluster-ceph-rbd ocs-storagecluster-ceph-rgw ocs-storagecluster-cephfs
+    ```
+    {: pre}
 
-  **Example output**
-  ```sh
-  storageclass.storage.k8s.io "localblock" deleted
-  storageclass.storage.k8s.io "localfile" deleted
-  storageclass.storage.k8s.io "ocs-storagecluster-ceph-rgw" deleted
-  storageclass.storage.k8s.io "ocs-storagecluster-cephfs" deleted
-  storageclass.storage.k8s.io "ocs-storagecluster-cephrbd" deleted
-  ```
-  {: screen}
+    **Example output**
+    ```sh
+    storageclass.storage.k8s.io "localblock" deleted
+    storageclass.storage.k8s.io "localfile" deleted
+    storageclass.storage.k8s.io "ocs-storagecluster-ceph-rgw" deleted
+    storageclass.storage.k8s.io "ocs-storagecluster-cephfs" deleted
+    storageclass.storage.k8s.io "ocs-storagecluster-cephrbd" deleted
+    ```
+    {: screen}
 
 ## OpenShift Data Foundation configuration parameter reference
 {: #sat-storage-ocs-local-params-cli}
@@ -871,3 +873,5 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 {: caption="Table 2. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
+
+
