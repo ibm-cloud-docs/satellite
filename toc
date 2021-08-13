@@ -34,7 +34,13 @@ Satellite
         hosts.md
         /openshift/openshift-satellite-clusters
 
-    config-clusters.md
+    {: .topicgroup}
+    Deploying Kubernetes resources across clusters with Satellite Config
+        config-about.md
+        config-clusters-satconfig.md
+        config-sat-setup.md
+        config-manage.md
+        config-roks-setup.md
     link-endpoints.md
 
     {: .topicgroup}

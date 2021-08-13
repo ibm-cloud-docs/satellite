@@ -317,62 +317,56 @@ subcollection: satellite
 * [Limitations for {{site.data.keyword.openshiftshort}} clusters in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=openshift-satellite-clusters#satcluster-limitations)
 
 
-## Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations
-{: #sitemap_deploying_kubernetes_resources_across_clusters_with__configurations}
+## Deploying Kubernetes resources across clusters with Satellite Config
+{: #sitemap_deploying_kubernetes_resources_across_clusters_with_satellite_config}
 
 
-[Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config)
+[Understanding {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config)
+* [How {{site.data.keyword.satelliteshort}} configurations work](/docs/satellite?topic=satellite-cluster-config#satcon-flow)
+* [Key concepts](/docs/satellite?topic=satellite-cluster-config#satcon-terminology)
 
-* [Understanding {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config#understanding-satcon)
-    * [How {{site.data.keyword.satelliteshort}} configurations work](/docs/satellite?topic=satellite-cluster-config#satcon-flow)
-    * [Key concepts](/docs/satellite?topic=satellite-cluster-config#satcon-terminology)
+[Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig)
+* [Prerequisites](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-prereq)
+* [Setting up cluster groups](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups)
+* [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access)
+  * [Cluster admin access](/docs/satellite?topic=satellite-setup-clusters-satconfig#cluster-admin-access)
+  * [Custom access, cluster-wide](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-cluster-wide)
+  * [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-scoped-project)
+  * [Next steps for granting access](/docs/satellite?topic=satellite-setup-clusters-satconfig#next-steps-gran-access)
 
-* [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig)
-    * [Prerequisites](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-prereq)
-    * [Setting up cluster groups](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-groups)
-    * [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig-access)
+[Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-create)
+* [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-satcon-create#create-satconfig-ui)
+* [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-satcon-create#create-satconfig-cli)
 
-* [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-cluster-config#create-satconfig-ui)
+[Managing your {{site.data.keyword.satelliteshort}} Config resources](/docs/satellite?topic=satellite-satcon-manage)
+* [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources)
+  * [Enabling watchkeeper collection methods](/docs/satellite?topic=satellite-satcon-manage#satconfig-enable-watchkeeper)
+  * [Reviewing the resources from {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-review-resources)
 
-* [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-cluster-config#create-satconfig-cli)
-
-* [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#satconfig-resources)
-
-* [Using {{site.data.keyword.satelliteshort}} Config with existing {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-cluster-config#manage-existing-openshift-clusters)
-    * [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#existing-openshift-clusters)
-    * [Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-cluster-config#remove-satconfig)
-
-
-## Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints
-{: #sitemap_connecting__locations_with_external_services_using_link_endpoints}
-
+[Using {{site.data.keyword.satelliteshort}} Config with existing {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-satcon-existing)
+* [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing#register-openshift-clusters)
+* [Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-satcon-existing#remove-satconfig)
 
 [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud)
-
 * [About {{site.data.keyword.satelliteshort}} endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-about)
-    * [Architecture](/docs/satellite?topic=satellite-link-location-cloud#link-architecture)
-    * [External network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security)
-    * [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
-    * [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
-    * [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints)
-    * [Use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
-
+  * [Architecture](/docs/satellite?topic=satellite-link-location-cloud#link-architecture)
+  * [External network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security)
+  * [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
+  * [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
+  * [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints)
+  * [Use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
 * [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-location-cloud#link-cloud)
-    * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-ui)
-    * [Creating cloud endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-cli)
-    * [Testing connections through cloud endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-test)
-
+  * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-ui)
+  * [Creating cloud endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-cli)
+  * [Testing connections through cloud endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-test)
 * [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-location-cloud#link-location)
-    * [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-location-ui)
-    * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-location-cli)
-    * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-sources)
-
+  * [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-location-ui)
+  * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-location-cli)
+  * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-sources)
 * [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-location-cloud#link-audit)
-
 * [Logging and monitoring network traffic for endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-health)
-    * [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-mon)
-    * [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-location-cloud#link-packet-capture)
-
+  * [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-mon)
+  * [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-location-cloud#link-packet-capture)
 * [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint)
 
 

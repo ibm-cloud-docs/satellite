@@ -398,7 +398,6 @@ If you [disabled host autoassignment](#host-autoassign-disable), you can re-enab
 1. Make sure that you have [available hosts with labels that match the host labels of the worker pool](#host-autoassign).
 2. [Resize the worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance) to set the requested size per zone, rebalance the worker pool, and enable autoassignment again.
 
-<br />
 
 ## Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources
 {: #host-assign}
@@ -666,7 +665,6 @@ When you reset the host key, all existing hosts that are attached to your locati
 6. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or {{site.data.keyword.satelliteshort}}-enabled service.
 7. Repeat steps 3 - 6 for each host in your location so that each host uses the new key to communicate with the {{site.data.keyword.satelliteshort}} API server.
 
-<br />
 
 ## Monitoring host health
 {: #host-monitor-health}
@@ -690,7 +688,7 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 {: caption="Host health states." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the health state of the host. The second column describes what the health state means."}
 
-<br />
+
 
 ## Removing hosts
 {: #host-remove}
