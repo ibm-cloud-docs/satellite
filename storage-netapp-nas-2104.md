@@ -164,11 +164,13 @@ Before you can create storage configurations by using the NetApp NAS template, y
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
     ```sh
     ibmcloud sat storage template ls
     ```
     {: pre}
+    
 
 1. Review the [NetApp ONTAP-NAS storage configuration parameters](#sat-storage-netapp-params-cli-nas).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
@@ -309,14 +311,14 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-        name: netapp-pvc
+      name: netapp-pvc
     spec:
-        accessModes:
-        - ReadWriteMany
-        storageClassName: sat-netapp-file-gold
-        resources:
-        requests:
-            storage: 10Gi
+      accessModes:
+      - ReadWriteMany
+      storageClassName: sat-netapp-file-gold
+      resources:
+      requests:
+        storage: 10Gi
     ```
     {: pre}
 
@@ -533,6 +535,7 @@ For more information about the NetApp ONTAP-NAS configuration parameters, see th
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter. The fourth column lists the default value, if it is not already provided."}
 
 <br />
+
 ## Storage class reference
 {: #netapp-sc-reference-nas}
 

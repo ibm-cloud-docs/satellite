@@ -435,25 +435,25 @@ Use the {{site.data.keyword.satelliteshort}} Link connector host name and port t
 2. Deploy a sample app to your cluster. To test the connection from your location to your endpoint, you must be connected to the network that your {{site.data.keyword.satelliteshort}} cluster is connected to. You can connect to the network by deploying an app, logging in to the app, and then running a curl request against your endpoint. The following example deploys `nginx` into your cluster.
     1. Create a configuration file for your deployment.
         ```
-      apiVersion: apps/v1
-      kind: Deployment
-      metadata:
-        name: nginx-deployment
-      spec:
-        replicas: 1
-        selector:
-          matchLabels:
-            app: nginx
-        template:
-          metadata:
-            labels:
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: nginx-deployment
+        spec:
+          replicas: 1
+          selector:
+            matchLabels:
               app: nginx
-          spec:
-            containers:
-            - name: nginx
-              image: nginxinc/nginx-unprivileged
-              ports:
-              - containerPort: 80
+          template:
+            metadata:
+              labels:
+                app: nginx
+            spec:
+              containers:
+              - name: nginx
+                image: nginxinc/nginx-unprivileged
+                ports:
+                - containerPort: 80
         ```
         {: codeblock}
 

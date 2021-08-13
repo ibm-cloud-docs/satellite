@@ -125,6 +125,7 @@ Before you can create a local file storage configuration, you must identify the 
 
 
 <br />
+
 ### Getting the device details for your local file storage configuration
 {: #sat-storage-file-local-devices}
 
@@ -179,6 +180,7 @@ When you create your file storage configuration, you must specify which devices 
 
 
 <br />
+
 ### Labeling your worker nodes
 {: #sat-storage-file-local-labels}
 
@@ -246,12 +248,14 @@ After you have [retrieved the device paths for the disks that you want to use in
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 2. Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
     ```sh
     ibmcloud sat storage template ls
     ```
     {: pre}
+    
 3. Review the [Local file storage configuration parameters](#sat-storage-local-file-params-cli).
 4. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     ```sh
@@ -391,6 +395,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
 
 
 <br />
+
 ## Deploying an app that uses your local file storage
 {: #deploy-app-local-file}
 

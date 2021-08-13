@@ -165,11 +165,13 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
     ```sh
     ibmcloud sat storage template ls
     ```
     {: pre}
+    
 1. Verify that the `netapp-trident` [driver](/docs/satellite?topic=satellite-config-storage-netapp-trident) is deployed on your clusters.
 1. Review the template parameters and retrieve the values from your NetApp cluster.
 1. Review the [NetApp Trident storage configuration parameters](#sat-storage-netapp-params-cli-san).
@@ -273,6 +275,7 @@ For more information about the NetApp Trident configuration parameters, see the 
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter. The fourth column is the default value, if one is provided."}
 
 <br />
+
 ## Storage class reference
 {: #netapp-sc-reference-san-2104}
 

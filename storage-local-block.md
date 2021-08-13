@@ -147,12 +147,14 @@ Before you can create a local block storage configuration, you must identify the
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 2. Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
 3. [Get the device details of your worker nodes](#sat-storage-block-local-devices).
 4. [Label the worker nodes](#sat-storage-block-local-labels) that have an available disk and that you want to use in your configuration. The local storage drivers are installed only on the labeled worker nodes.
 
 
 <br />
+
 ### Getting the device details for your local block storage configuration
 {: #sat-storage-block-local-devices}
 
@@ -207,6 +209,7 @@ When you create your local block storage configuration, you must specify which d
 
 
 <br />
+
 ### Labeling your worker nodes
 {: #sat-storage-block-local-labels}
 After you have [retrieved the device paths for the disks that you want to use in your configuration](#sat-storage-block-local-devices), label the worker nodes where the disks are located.
@@ -250,6 +253,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     ibmcloud sat storage template ls
     ```
     {: pre}
+    
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name local-volume-block --template-version <template-version> --param "label-key=storage" --param "label-value=local-block" --param "devicepath=<devicepath>"

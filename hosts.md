@@ -399,6 +399,7 @@ If you [disabled host autoassignment](#host-autoassign-disable), you can re-enab
 2. [Resize the worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance) to set the requested size per zone, rebalance the worker pool, and enable autoassignment again.
 
 <br />
+
 ## Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources
 {: #host-assign}
 
@@ -690,6 +691,7 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 {: summary="The rows are read from left to right. The first column describes the health state of the host. The second column describes what the health state means."}
 
 <br />
+
 ## Removing hosts
 {: #host-remove}
 

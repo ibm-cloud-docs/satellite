@@ -162,11 +162,13 @@ Review the [compatibility and requirements documentation](https://www.ibm.com/do
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
     ```sh
     ibmcloud sat storage template ls
     ```
     {: pre}
+    
 1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name ibm-system-storage-block-csi-driver --template-version <template_version> -p "namespace=<namespace>" 
@@ -182,6 +184,7 @@ Review the [compatibility and requirements documentation](https://www.ibm.com/do
 1. [Assign your storage configuration to clusters](#assign-storage-block-csi).
 
 <br />
+
 ## Assigning your block storage configuration to a cluster
 {: #assign-storage-block-csi}
 

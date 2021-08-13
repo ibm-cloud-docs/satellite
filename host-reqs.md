@@ -152,21 +152,21 @@ The hosts must not have any additional packages, configuration, or other customi
 {: important}
 
 You might need to refresh your packages on the host machine. For example, in {{site.data.keyword.IBM_notm}} Cloud infrastructure you can run the following commands to add the required packages.
-    1. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
-        ```
-        subscription-manager refresh
-        ```
-        {: pre}
+1. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
+    ```
+    subscription-manager refresh
+    ```
+    {: pre}
 
-    2. Enable the package repositories on your machine.
-        ```
-        subscription-manager repos --enable rhel-server-rhscl-7-rpms
-        subscription-manager repos --enable rhel-7-server-optional-rpms
-        subscription-manager repos --enable rhel-7-server-rh-common-rpms
-        subscription-manager repos --enable rhel-7-server-supplementary-rpms
-        subscription-manager repos --enable rhel-7-server-extras-rpms
-        ```
-        {: pre}
+2. Enable the package repositories on your machine.
+    ```
+    subscription-manager repos --enable rhel-server-rhscl-7-rpms
+    subscription-manager repos --enable rhel-7-server-optional-rpms
+    subscription-manager repos --enable rhel-7-server-rh-common-rpms
+    subscription-manager repos --enable rhel-7-server-supplementary-rpms
+    subscription-manager repos --enable rhel-7-server-extras-rpms
+    ```
+    {: pre}
 
 For more information about how to enable the {{site.data.keyword.redhat_notm}} packages in hosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
 {: tip}

@@ -243,10 +243,10 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location:
 7. Wait for the instances to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete.
 8. Monitor the progress of the registration script.
     1.  Get the public IP address of one of your instances. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_list_ip_addresses){: external}.
-            ```
-            az vm list-ip-addresses -g <resource_group> -n <vm_name>
-            ```
-            {: pre}
+        ```
+        az vm list-ip-addresses -g <resource_group> -n <vm_name>
+        ```
+        {: pre}
 
     2. Log in to your instance.
         ```

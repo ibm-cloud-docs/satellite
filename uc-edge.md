@@ -123,6 +123,7 @@ Common challenges of edge workloads include training the machine learning models
 **Model inferencing** is the task of using a trained model to make predictions, detect anomalies, and categorize data from your edge environment. Because of memory, storage, and latency requirements, model inferencing is most effectively run as near to your IoT sensors and other data sources as possible. You can create a {{site.data.keyword.satelliteshort}} location with managed {{site.data.keyword.openshiftshort}} clusters right where your data is located in your edge environments. Then, you can set up a serverless programming model such as Red Hat&trade; OpenShift&trade; Serverless&trade; to provide a simplified programming model with a REST interface to query your trained model to produce a prediction.
 
 <br />
+
 ## Setting up your edge solution with {{site.data.keyword.satelliteshort}}
 {: #edge-solution}
 

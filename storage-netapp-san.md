@@ -147,11 +147,13 @@ Before you can create storage configurations by using the NetApp NAS template, y
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
     ```sh
     ibmcloud sat storage template ls
     ```
     {: pre}
+    
 3. Review the [NetApp Trident storage configuration parameters](#sat-storage-netapp-params-cli-san).
 4. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     ```sh
@@ -257,6 +259,7 @@ For more information about the NetApp Trident configuration parameters, see the 
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 <br />
+
 ## Storage class reference
 {: #netapp-sc-reference-san}
 

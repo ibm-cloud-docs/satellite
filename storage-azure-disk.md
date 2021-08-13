@@ -228,6 +228,7 @@ Create a storage configuration in the command line by using the Azure Disk templ
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 1. Review the [template parameters](#sat-storage-azure-disk-params-cli).
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     ```sh
@@ -381,7 +382,7 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     apiVersion: apps/v1
     kind: StatefulSet
     metadata:
-          name: statefulset-azuredisk
+      name: statefulset-azuredisk
       labels:
         app: nginx
     spec:

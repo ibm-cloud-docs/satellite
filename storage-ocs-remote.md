@@ -182,11 +182,13 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
     ```sh
     ibmcloud sat storage template ls
     ```
     {: pre}
+    
 1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-remote-params-cli).
 1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. 
     ```sh
@@ -203,6 +205,7 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
 1. [Assign your storage configuration to clusters](#assign-storage-ocs-remote).
 
 <br />
+
 ## Assigning your ODF storage configuration to a cluster
 {: #assign-storage-ocs-remote}
 
@@ -267,12 +270,12 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 5. Verify that the storage configuration resources are deployed.
 
     1. Get the `storagecluster` that you deployed and verify that the phase is `Ready`.
-    ```sh
-    oc get storagecluster -n openshift-storage
-    ```
-    {: pre}
+        ```sh
+        oc get storagecluster -n openshift-storage
+        ```
+        {: pre}
 
-    Example output:
+        Example output:
         ```sh
         NAME                 AGE   PHASE   EXTERNAL   CREATED AT             VERSION
         ocs-storagecluster   72m   Ready              2021-02-10T06:00:20Z   4.6.0
@@ -280,12 +283,12 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         {: screen}
 
     2. Get a list of pods in the `openshift-storage` namespace and verify that the status is `Running`.
-    ```sh
-    oc get pods -n openshift-storage
-    ```
-    {: pre}
+        ```sh
+        oc get pods -n openshift-storage
+        ```
+        {: pre}
 
-    Example output:
+        Example output:
         ```sh
         NAME                                                              READY   STATUS      RESTARTS   AGE
         csi-cephfsplugin-9g2d5                                            3/3     Running     0          8m11s
@@ -343,21 +346,21 @@ To upgrade the ODF version of your configuration, complete the following steps:
 2. Create a new configuration with the same `ocs-cluster-name` and details. Make sure to change the `template-version` to the version that you want to upgrade to and set the `ocs-upgrade` parameter to `true`.
 
     In the following example, the ODF configuration is updated to use template version 4.7. When you create the configuration, the following parameter changes are required.
-        - `name` - Enter a name for your new configuration.
-        - `template-name` - Use the same parameter value as in your existing configuration.
-        - `template-version` - Enter the template version that you want to use to upgrade your configuration.
-        - `ocs-cluster-name` - Use the same parameter value as in your existing configuration.
-        - `mon-storage-class` - Use the same parameter value as in your existing configuration.
-        - `mon-size` - Use the same parameter value as in your existing configuration.
-        - `osd-storage-class` - Use the same parameter value as in your existing configuration.
-        - `osd-size` - Use the same parameter value as in your existing configuration.
-        - `num-of-osd` - Use the same parameter value as in your existing configuration.
-        - `worker-nodes` - Use the same parameter value as in your existing configuration.
-        - `ibm-cos-endpoint` - Use the same parameter value as in your existing configuration.
-        - `ibm-cos-location` - Use the same parameter value as in your existing configuration.
-        - `ibm-cos-access-key` - Use the same parameter value as in your existing configuration.
-        - `ibm-cos-secret-key` - Use the same parameter value as in your existing configuration.
-        - `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
+    - `name` - Enter a name for your new configuration.
+    - `template-name` - Use the same parameter value as in your existing configuration.
+    - `template-version` - Enter the template version that you want to use to upgrade your configuration.
+    - `ocs-cluster-name` - Use the same parameter value as in your existing configuration.
+    - `mon-storage-class` - Use the same parameter value as in your existing configuration.
+    - `mon-size` - Use the same parameter value as in your existing configuration.
+    - `osd-storage-class` - Use the same parameter value as in your existing configuration.
+    - `osd-size` - Use the same parameter value as in your existing configuration.
+    - `num-of-osd` - Use the same parameter value as in your existing configuration.
+    - `worker-nodes` - Use the same parameter value as in your existing configuration.
+    - `ibm-cos-endpoint` - Use the same parameter value as in your existing configuration.
+    - `ibm-cos-location` - Use the same parameter value as in your existing configuration.
+    - `ibm-cos-access-key` - Use the same parameter value as in your existing configuration.
+    - `ibm-cos-secret-key` - Use the same parameter value as in your existing configuration.
+    - `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
 
 2. Get the configuration details of your `ocscluster` custom resource.
     ```sh

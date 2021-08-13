@@ -210,11 +210,13 @@ In some environments, your worker node names might be different from your {{site
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
     ```sh
     ibmcloud sat storage template ls
     ```
     {: pre}
+    
 1. Review the [template parameters](#sat-storage-spectrum-scale-params-cli).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     ```sh
@@ -231,6 +233,7 @@ In some environments, your worker node names might be different from your {{site
 1. [Assign your storage configuration to clusters](#assign-storage-spectrum-scale).
 
 <br />
+
 ## Assigning your Spectrum Scale storage configuration to a cluster
 {: #assign-storage-spectrum-scale}
 
@@ -356,7 +359,7 @@ After you deploy the `ess` template, you must change the Spectrum Scale CSI driv
     volumeMounts:
     ....
     -mountPath: /var/data/kubelet
-        name: pods-mount-dir
+      name: pods-mount-dir
         ....
     ```
     {: screen}
@@ -566,6 +569,7 @@ sudo cp /usr/src/kernels/3.10.0-1160.15.2.el7.x86_64/include/uapi/linux/*.h /usr
 {: codeblock}
 
 <br />
+
 ## Storage class reference
 {: #sat-storage-spectrum-scale-sc-ref}
 

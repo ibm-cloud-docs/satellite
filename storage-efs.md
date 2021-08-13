@@ -164,6 +164,7 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 1. Review the [AWS EFS storage configuration parameters](#sat-storage-aws-efs-params-cli).
 2. Create an AWS EFS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
     ```sh
@@ -239,18 +240,18 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         apiVersion: v1
         kind: PersistentVolume
         metadata:
-            name: efs
+          name: efs
         spec:
-            capacity:
-            storage: 5Gi
-            volumeMode: Filesystem
-            accessModes:
-            - ReadWriteOnce
-            persistentVolumeReclaimPolicy: Retain
-            storageClassName: sat-aws-file-gold
-            csi:
-            driver: efs.csi.aws.com
-            volumeHandle: <aws_efs_fileshare_ID>
+          capacity:
+          storage: 5Gi
+          volumeMode: Filesystem
+          accessModes:
+          - ReadWriteOnce
+          persistentVolumeReclaimPolicy: Retain
+          storageClassName: sat-aws-file-gold
+          csi:
+          driver: efs.csi.aws.com
+          volumeHandle: <aws_efs_fileshare_ID>
         ```
         {: codeblock}
 
@@ -279,14 +280,14 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         apiVersion: v1
         kind: PersistentVolumeClaim
         metadata:
-            name: efs
+          name: efs
         spec:
-            accessModes:
-            - ReadWriteOnce
-            storageClassName: sat-aws-file-gold
-            resources:
-            requests:
-                storage: 5Gi
+          accessModes:
+          - ReadWriteOnce
+          storageClassName: sat-aws-file-gold
+          resources:
+          requests:
+            storage: 5Gi
         ```
         {: codeblock}
 
@@ -314,20 +315,20 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
     apiVersion: v1
     kind: Pod
     metadata:
-        name: app
+      name: app
     spec:
-        containers:
-        - name: app
-        image: nginx
-        command: ["/bin/sh"]
-        args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
-        volumeMounts:
-        - name: persistent-storage
-            mountPath: /test
-        volumes:
-        - name: persistent-storage
-        persistentVolumeClaim:
-            claimName: efs
+      containers:
+       - name: app
+      image: nginx
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
+      volumeMounts:
+      - name: persistent-storage
+        mountPath: /test
+      volumes:
+      - name: persistent-storage
+      persistentVolumeClaim:
+        claimName: efs
     ```
     {: codeblock}
 

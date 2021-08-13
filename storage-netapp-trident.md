@@ -147,11 +147,13 @@ You must deploy the NetApp Trident template to your clusters before you can crea
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
     ```sh
     ibmcloud sat storage template ls
     ```
     {: pre}
+    
 1. Run the following command to create a NetApp Trident configuration. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name netapp-trident --template-version <template_version>

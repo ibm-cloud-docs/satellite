@@ -164,6 +164,7 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
     ibmcloud target -g <resource-group>
     ```
     {: pre}
+    
 1. [Create an AWS access key ID and secret access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external} for your AWS login credentials. These credentials are needed to provision AWS EBS storage in your account. When you assign the storage configuration to your cluster, your AWS access key ID and secret access key are stored in a Kubernetes secret in your cluster.
 2. Review the [AWS EBS storage configuration parameters](#sat-storage-aws-ebs-params-cli).
 3. Create an AWS EBS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
@@ -248,14 +249,14 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-        name: sat-aws-block-bronze
+      name: sat-aws-block-bronze
     spec:
-        accessModes:
-        - ReadWriteOnce
-        storageClassName: sat-aws-block-bronze
-        resources:
-        requests:
-            storage: 125Gi
+      accessModes:
+      - ReadWriteOnce
+      storageClassName: sat-aws-block-bronze
+      resources:
+      requests:
+        storage: 125Gi
     ```
     {: codeblock}
 
@@ -283,20 +284,20 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     apiVersion: v1
     kind: Pod
     metadata:
-        name: app
+      name: app
     spec:
-        containers:
-        - name: app
-        image: nginx
-        command: ["/bin/sh"]
-        args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
-        volumeMounts:
-        - name: persistent-storage
-            mountPath: /test
-        volumes:
-        - name: persistent-storage
-        persistentVolumeClaim:
-            claimName: sat-aws-block-bronze
+      containers:
+      - name: app
+      image: nginx
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
+      volumeMounts:
+      - name: persistent-storage
+        mountPath: /test
+      volumes:
+      - name: persistent-storage
+      persistentVolumeClaim:
+        claimName: sat-aws-block-bronze
     ```
     {: codeblock}
 
