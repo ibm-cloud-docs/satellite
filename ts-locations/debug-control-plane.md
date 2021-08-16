@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-02-24"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,15 +20,19 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -41,20 +45,26 @@ content-type: troubleshoot
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -72,14 +82,18 @@ content-type: troubleshoot
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -96,14 +110,15 @@ content-type: troubleshoot
 # Debugging the health of the location control plane
 {: #ts-locations-control-plane}
 
-When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations), IBM automatically sets up a master for the location control plane in {{site.data.keyword.cloud_notm}}. Additionally, you must assign at least three hosts to the {{site.data.keyword.satelliteshort}} location control plane as worker nodes to run location components that IBM configures. If the location control plane that runs on your hosts has issues, you can debug the location control plane.
+When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations), {{site.data.keyword.IBM_notm}} automatically sets up a master for the location control plane in {{site.data.keyword.cloud_notm}}. Additionally, you must assign at least three hosts to the {{site.data.keyword.satelliteshort}} location control plane as worker nodes to run location components that {{site.data.keyword.IBM_notm}} configures. If the location control plane that runs on your hosts has issues, you can debug the location control plane.
 
-1.  Get your {{site.data.keyword.satelliteshort}} location ID.
+1. Get your {{site.data.keyword.satelliteshort}} location ID.
     ```
     ibmcloud sat location ls
     ```
     {: pre}
-2.  List the **Hostnames** of the subdomains for your location control plane hosts.
+
+2. List the **Hostnames** of the subdomains for your location control plane hosts.
     ```
     ibmcloud sat location dns ls --location <location_name_or_ID>
     ```
@@ -122,7 +137,7 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     ```
     {: screen}
 
-3.  Check the health of the control plane location subdomains by curling each hostname endpoint. If the endpoint returns a `200` response for each host, the control plane worker node is healthy and serving Kubernetes traffic. If not, continue to the next step.
+3. Check the health of the control plane location subdomains by curling each hostname endpoint. If the endpoint returns a `200` response for each host, the control plane worker node is healthy and serving Kubernetes traffic. If not, continue to the next step.
     ```
     curl -v http://<hostname>:30000
     ```
@@ -164,7 +179,8 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     * Closing connection 0
     ```
     {: screen}
-3.  Find the **ID** of the host that did not return a `200` response. You can compare the `Host: 169.xx.xxx.xxx` from the previous step with the **Worker IP** in the output of the following command.
+
+3. Find the **ID** of the host that did not return a `200` response. You can compare the `Host: 169.xx.xxx.xxx` from the previous step with the **Worker IP** in the output of the following command.
     ```
     ibmcloud sat host ls --location <location_ID> | grep infrastructure
     ```
@@ -178,6 +194,9 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     host3    ccccc3c33ccccc3333cc   assigned     Ready    infrastructure   sat-virtualser-1234...   169.xx.xxx.xxx  
     ```
     {: screen}
-4.  [Add a host to the control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) in the same zone so that the location control plane has enough compute resources to continue running when you remove the unhealthy host.
-5.  [Remove the unhealthy host from the location control plane](/docs/satellite?topic=satellite-hosts#host-remove).
-6.  Optional: You can reload the operating system on the unhealthy host and try to attach and assign the host to {{site.data.keyword.satellitelong_notm}} again.
+
+4. [Add a host to the control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) in the same zone so that the location control plane has enough compute resources to continue running when you remove the unhealthy host.
+5. [Remove the unhealthy host from the location control plane](/docs/satellite?topic=satellite-hosts#host-remove).
+6. Optional: You can reload the operating system on the unhealthy host and try to attach and assign the host to {{site.data.keyword.satellitelong_notm}} again.
+
+

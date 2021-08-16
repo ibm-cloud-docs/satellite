@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-13"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -134,7 +134,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You
 ## AWS EFS
 {: #efs-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the EFS storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/develop/config-templates/aws/aws-efs-csi-driver/1.0.0/storage-class.yaml).
+Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
 | Storage class name | File system | Reclaim policy |
@@ -165,7 +165,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 ## Local block storage
 {: #local-block-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for local block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the storage class YAML in [GitHub](https://github.com/IBM/ibm-satellite-storage/tree/develop/config-templates/redhat/local-volume-block).
+Review the {{site.data.keyword.satelliteshort}} storage classes for local block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
 | Storage class name | Type | Reclaim policy |
@@ -179,7 +179,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 ## Local file storage
 {: #local-file-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for local file storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the storage class YAML in [GitHub](https://github.com/IBM/ibm-satellite-storage/tree/develop/config-templates/redhat/local-volume-file).
+Review the {{site.data.keyword.satelliteshort}} storage classes for local file storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
 | Storage class name | File system | Reclaim policy |
@@ -190,14 +190,16 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 
 <br />
 
-## NetApp Trident NAS
+
+
+## NetApp ONTAP-NAS 20.07
 {: #netapp-nas-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-NAS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp Trident storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/tree/develop/config-templates/netapp/netapp-ontap-nas/20.07).
+Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-NAS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
 | Storage class name | Type | File system | Reclaim policy |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | 
 | `sat-netapp-file-gold` | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-silver` | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete |
@@ -206,14 +208,16 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 <br />
 
-## NetApp Trident SAN
+
+
+## NetApp ONTAP-SAN 20.07
 {: #netapp-san-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-SAN. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the NetApp ONTAP-SAN storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/tree/develop/config-templates/netapp/netapp-ontap-san/20.07).
+Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-SAN. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
 | Storage class name | Type | File system | Reclaim policy |
-| --- | --- | --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | 
 | `sat-netapp-block-gold` | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-silver` | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-bronze` | ONTAP-SAN | Block | Delete |
@@ -222,10 +226,10 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 <br />
 
-## OpenShift Container Storage for local volumes
+## OpenShift Data Foundation for local volumes
 {: #ocs-local-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Container Storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. You can also view the YAML spec for the OCS storage classes in [GitHub](https://github.com/IBM/ibm-satellite-storage/blob/master/config-templates/redhat/ocs-local/4.6/storage-class.yaml).
+Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Data Foundation. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
 | Storage class name | Type | File system | Provisioner | Volume binding mode | Allow volume expansion | Reclaim policy |
@@ -239,10 +243,10 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Co
 
 <br />
 
-## OpenShift Container Storage for remote volumes
+## OpenShift Data Foundation for remote volumes
 {: #ocs-remote-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Container Storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Data Foundation. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
 | Storage class name | Type | File system | Provisioner | Volume binding mode | Allow volume expansion | Reclaim policy |
@@ -253,5 +257,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Co
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 {: caption="Table 8. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
+
+
 
 

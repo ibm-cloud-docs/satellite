@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-04-26"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,15 +19,19 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,14 +81,18 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
 {:term: .term}
+{:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -109,19 +123,20 @@ Common challenges of edge workloads include training the machine learning models
 **Model inferencing** is the task of using a trained model to make predictions, detect anomalies, and categorize data from your edge environment. Because of memory, storage, and latency requirements, model inferencing is most effectively run as near to your IoT sensors and other data sources as possible. You can create a {{site.data.keyword.satelliteshort}} location with managed {{site.data.keyword.openshiftshort}} clusters right where your data is located in your edge environments. Then, you can set up a serverless programming model such as Red Hat&trade; OpenShift&trade; Serverless&trade; to provide a simplified programming model with a REST interface to query your trained model to produce a prediction.
 
 <br />
+
 ## Setting up your edge solution with {{site.data.keyword.satelliteshort}}
 {: #edge-solution}
 
 While you can set up many possible solutions to the challenges of your edge environment, you can use {{site.data.keyword.satelliteshort}} to provide a consistent, scalable experience across environments. An example setup is as follows.
 {: shortdesc}
 
-1.  Set up machine learning and model training for your data.
-2.  Deploy {{site.data.keyword.satelliteshort}} with a serverless component to your edge environment.
-3.  Run model inferencing at the edge.
+1. Set up machine learning and model training for your data.
+2. Deploy {{site.data.keyword.satelliteshort}} with a serverless component to your edge environment.
+3. Run model inferencing at the edge.
 
 ### Step 1: Set up machine learning and model training for your data
 {: #edge-example-ml}
-  
+
 As an AI model developer, you prepare your edge data with machine learning and AI tools in {{site.data.keyword.cloud_notm}}. Before you begin, you must have access to {{site.data.keyword.DSX}} and {{site.data.keyword.pm_short}} instances, such as in an {{site.data.keyword.cloud_notm}} account or through {{site.data.keyword.cpd_full_notm}}.
 {: shortdesc}
 
@@ -138,7 +153,7 @@ As the edge environment system administrator, you enable a serverless tool to si
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create) on your edge computing infrastructure.
 2. [Create a managed {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=openshift-satellite-clusters) in the {{site.data.keyword.satelliteshort}} location.
-3.  [Access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+3. [Access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 3. Using the OperatorHub, [install the {{site.data.keyword.openshiftshort}} Serverless operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
 4. [Install the Knative Serving Operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
 
@@ -153,3 +168,5 @@ As the AI developer, run model inferencing on your edge data by using the server
 3. [Deploy the image](https://developers.redhat.com/blog/2020/04/30/serverless-applications-made-faster-and-simpler-with-openshift-serverless-ga/){: external} to your {{site.data.keyword.openshiftshort}} Serverless processor that runs in your {{site.data.keyword.satelliteshort}} cluster. You can use the {{site.data.keyword.openshiftshort}} web console in the developer perspective, or use the `kn` command line tool for {{site.data.keyword.satelliteshort}} Serverless.
 
 Now, you have a managed {{site.data.keyword.satelliteshort}} location that runs on your edge environment and performs on-demand model inferencing for your edge data through your AI-trained model and {{site.data.keyword.openshiftshort}} Serverless.
+
+

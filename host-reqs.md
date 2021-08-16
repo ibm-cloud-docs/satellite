@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -115,7 +115,7 @@ Review the following host requirements for {{site.data.keyword.satellitelong}}.
 Want to add hosts from other cloud providers to your location? See [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
 {: tip}
 
-Can't meet these host requirements? [Contact IBM Support](/docs/get-support?topic=get-support-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
+Can't meet these host requirements? [Contact {{site.data.keyword.IBM_notm}} Support](/docs/get-support?topic=get-support-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
 {: note}
 
 ## Host system requirements
@@ -127,9 +127,10 @@ Review the following requirements that relate to the computing and system setup 
 ### Computing characteristics
 {: #reqs-host-compute}
 
-*   Hosts must run Red Hat Enterprise Linux 7 on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported.
+*   Hosts must run Red Hat Enterprise Linux 7 on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
 *   Hosts can be physical or virtual machines.
 *   Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](#reqs-host-storage). 
+
 *   If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
 
 ### Packages and other machine configurations
@@ -150,21 +151,22 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 The hosts must not have any additional packages, configuration, or other customizations. After the host is created, do not change the default packages or operating system settings, such as disabling SELinux. For more information, see [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software).
 {: important}
 
-You might need to refresh your packages on the host machine. For example, in IBM Cloud infrastructure you can run the following commands to add the required packages.
-  1.  Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
-      ```
-      subscription-manager refresh
-      ```
-      {: pre}
-  2.  Enable the package repositories on your machine.
-      ```
-      subscription-manager repos --enable rhel-server-rhscl-7-rpms
-      subscription-manager repos --enable rhel-7-server-optional-rpms
-      subscription-manager repos --enable rhel-7-server-rh-common-rpms
-      subscription-manager repos --enable rhel-7-server-supplementary-rpms
-      subscription-manager repos --enable rhel-7-server-extras-rpms
-      ```
-      {: pre}
+You might need to refresh your packages on the host machine. For example, in {{site.data.keyword.IBM_notm}} Cloud infrastructure you can run the following commands to add the required packages.
+1. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
+    ```
+    subscription-manager refresh
+    ```
+    {: pre}
+
+2. Enable the package repositories on your machine.
+    ```
+    subscription-manager repos --enable rhel-server-rhscl-7-rpms
+    subscription-manager repos --enable rhel-7-server-optional-rpms
+    subscription-manager repos --enable rhel-7-server-rh-common-rpms
+    subscription-manager repos --enable rhel-7-server-supplementary-rpms
+    subscription-manager repos --enable rhel-7-server-extras-rpms
+    ```
+    {: pre}
 
 For more information about how to enable the {{site.data.keyword.redhat_notm}} packages in hosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
 {: tip}
@@ -176,6 +178,7 @@ For more information about how to enable the {{site.data.keyword.redhat_notm}} p
 
 Review the following requirements that relate to the storage setup of host machines.
 {: shortdesc}
+
 * Hosts must have a boot disk with sufficient space to boot the host and run the operating system.
 * Hosts must have an additional disk that is attached to the host and that provides a minimum of 100 GB of unmounted and unformatted disk space.
 * For hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane, the attached storage device must have at least 1000 IOPS. The required IOPS varies with the number of clusters in the location, and the activity of the masters for those clusters.
@@ -205,6 +208,7 @@ In general, do not set any custom networking configurations on your hosts, such 
     172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, 172.20.0.0/16, and 192.168.255.0/24
     ```
     {: screen}
+
 * Host IP addresses must remain static and cannot change over time, such as due to a reboot or other potential infrastructure updates.
 
 ### Host network bandwidth
@@ -218,15 +222,17 @@ In general, do not set any custom networking configurations on your hosts, such 
 
 * All hosts must use the same default gateway.
 * Hosts can have multiple IPv4 network interfaces. However, the `eth0`, `ens0`, or `bond0` network interface must serve as the default route. To find the default network interface for a host, SSH into the host and run the following command:
-  ```
-  ip route | grep default | awk '{print $5}'
-  ```
-  {: pre}
-  In this example output, `eth0` is the default network interface:
-  ```
-  default via 161.202.250.1 dev eth0 onlink
-  ```
-  {: screen}
+    ```
+    ip route | grep default | awk '{print $5}'
+    ```
+    {: pre}
+
+    In this example output, `eth0` is the default network interface:
+    ```
+    default via 161.202.250.1 dev eth0 onlink
+    ```
+    {: screen}
+
 * All hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPV4 backend connectivity to the other hosts in the location on the network interface that serves as the default route (`eth0`, `ens0`, or `bond0`).
 
 ### Inbound connectivity
@@ -291,7 +297,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 | Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 52.117.112.242</br>169.47.156.154</br>169.47.174.178</br>169.59.135.26</br>169.60.122.226</br>169.62.1.34</br>169.62.53.58</br>169.63.113.122</br>169.63.121.178</br>169.63.133.10</br>169.63.148.250</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.us-east.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **US East** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **US East** in steps 3 - 5 of the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | [See documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) |
-| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
+| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org | NTP protocol and UDP port 123 |
 {: #firewall-outbound-wdc}
 {: tab-title="Washington DC (wdc)"}
@@ -307,7 +313,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 | Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 141.125.137.50</br>141.125.137.98</br>141.125.66.114</br>141.125.87.226</br>158.175.125.50</br>158.175.130.138</br>158.175.131.242</br>158.175.140.106</br>158.176.104.186</br>158.176.135.26</br>158.176.142.106</br>158.176.74.242</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.eu-gb.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **UK South** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **UK South** in steps 3 - 5 of the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | [See documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) |
-| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
+| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org | - |
 {: #firewall-outbound-lon}
 {: tab-title="London (lon)"}
@@ -323,7 +329,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 | Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 149.81.188.130</br>149.81.188.138</br>149.81.188.146</br>149.81.188.154</br>158.177.109.210</br>158.177.169.162</br>158.177.179.154</br>158.177.75.210</br>161.156.38.10</br>161.156.38.18</br>161.156.38.2</br>161.156.38.26</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.eu-de.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **EU Central** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **EU Central** in steps 3 - 5 of the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | [See documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) |
-| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
+| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org</br>1.rhel.pool.ntp.org</br>2.rhel.pool.ntp.org</br>3.rhel.pool.ntp.org | - |
 {: #firewall-outbound-fra}
 {: tab-title="Frankfurt (fra)"}
@@ -338,7 +344,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 Review the network latency requirements for the hosts that you add to your {{site.data.keyword.satellitelong_notm}} location.
 {: shortdesc}
 
-**IBM-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane:**
+**{{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane:**
 
 The hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location control plane must have a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round-trip time (RTT) to the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from. As latency increases, you might see impacts to performance, including {{site.data.keyword.satelliteshort}} Link throughput, {{site.data.keyword.satelliteshort}}-enabled service provisioning time, host failure recovery time, and in extreme cases, the availability of resources that run in the {{site.data.keyword.satelliteshort}} location control plane like {{site.data.keyword.openshiftshort}} cluster masters. For more information, see [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-reqs#host-latency-mzr).
 
@@ -356,9 +362,9 @@ Your host infrastructure setup must have a low latency connection of less than o
 Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.data.keyword.cloud_notm}} multizone region](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). You can test the latency between your hosts and the region to make sure you use a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round-trip time (RTT).
 {: shortdesc}
 
-1.  In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, you might SSH into the machine from a command line.
+1. In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, you might SSH into the machine from a command line.
 
-2.  Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test.
+2. Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test.
     *   **Dallas**:
 
         52.117.39.146</br>169.48.134.66</br>169.63.36.210
@@ -375,13 +381,14 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 
         169.63.123.154</br>169.60.123.162</br>52.117.93.26
 
-3.  From your host, ping the IP addresses of the {{site.data.keyword.cloud_notm}} region.
+3. From your host, ping the IP addresses of the {{site.data.keyword.cloud_notm}} region.
     ```
     ping <ip_address>
     ```
     {: pre}
-4.  After a few packets complete transmission, close the connection. For example, from the command line, you might enter `ctrl+c`.
-5.  In the `ping statistics` output, note the average (`avg`) round-trip distance in milliseconds (ms) between the host and the {{site.data.keyword.cloud_notm}} region, and compare whether the connection meets the latency requirement of less than or equal to 200 milliseconds (`<= 200ms`).
+
+4. After a few packets complete transmission, close the connection. For example, from the command line, you might enter `ctrl+c`.
+5. In the `ping statistics` output, note the average (`avg`) round-trip distance in milliseconds (ms) between the host and the {{site.data.keyword.cloud_notm}} region, and compare whether the connection meets the latency requirement of less than or equal to 200 milliseconds (`<= 200ms`).
 
     Example of a connection that meets the latency requirements:
     ```
@@ -398,3 +405,5 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     round-trip min/avg/max/stddev = 138.453/217.370/419.901/108.211 ms
     ```
     {: screen}
+
+

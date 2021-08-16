@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-09"
+lastupdated: "2021-08-13"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -127,7 +127,7 @@ The following image depicts the structure and grouping of the `ibmcloud sat` com
 ## Cluster commands
 {: #sat-cluster-commands}
 
-Use these commands to register {{site.data.keyword.openshiftshort}} clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config) to consistently deploy and update apps across clusters.
+Use these commands to register clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config). You can use configurations to consistently deploy and update apps across clusters.
 {: shortdesc}
 
 ### `ibmcloud sat cluster get`
@@ -218,7 +218,7 @@ ibmcloud sat cluster register [--silent] [-q]
 
 <dl>
 <dt><code>--silent</code></dt>
-  <dd>Return only the registration command in the CLI output.</dd>
+    <dd>Return only the registration command in the CLI output.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
@@ -1137,7 +1137,7 @@ ibmcloud sat host get --location LOCATION --host HOST [--output json] [-q]
 <dd>Required. Enter the ID of the host that you want to retrieve details for. To retrieve the host ID, run <code>ibmcloud sat host ls &lt;location_ID_or_name&gt;</code>.  </dd>
 
 <dt><code>--output json</code></dt>
- <dd>Optional. Prints the command output in JSON format.</dd>
+    <dd>Optional. Prints the command output in JSON format.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
@@ -1178,7 +1178,7 @@ ibmcloud sat host ls --location LOCATION [--output json] [-q]
 <dd>Required. Enter the ID or name of the location that you want to list compute hosts for. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.  </dd>
 
 <dt><code>--output json</code></dt>
- <dd>Optional. Prints the command output in JSON format.</dd>
+    <dd>Optional. Prints the command output in JSON format.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
@@ -1226,7 +1226,7 @@ ibmcloud sat host rm --location LOCATION --host HOST [-f ] [-q]
 <dd>Required. Enter the ID of the host that you want to remove. To retrieve the host ID, run <code>ibmcloud sat host ls &lt;location_ID_or_name&gt;</code>.  </dd>
 
 <dt><code>-f</code></dt>
- <dd>Optional. Force the command to run with no user prompts.</dd>
+    <dd>Optional. Force the command to run with no user prompts.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
@@ -1367,7 +1367,7 @@ ibmcloud sat location dns ls --location LOCATION [--output json] [-q]
 <dd>Required. Enter the ID or name of the location that you want to show the DNS record for. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.  </dd>
 
 <dt><code>--output json</code></dt>
- <dd>Optional. Prints the command output in JSON format.</dd>
+    <dd>Optional. Prints the command output in JSON format.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
@@ -1410,7 +1410,7 @@ ibmcloud sat location dns register --location LOCATION --ip HOST_IP_ADDRESS [--o
 <dd>Required. Enter the IP address of a compute host that you added to your {{site.data.keyword.satelliteshort}} control plane. To retrieve the IP, run <code>ibmcloud sat host ls --location &lt;location_ID_or_name&gt;</code>ID. To register multiple IP addresses, you can use multiple <code>--ip</code> flags in the same command.   </dd>
 
 <dt><code>--output json</code></dt>
- <dd>Optional. Prints the command output in JSON format.</dd>
+    <dd>Optional. Prints the command output in JSON format.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
@@ -1449,7 +1449,7 @@ ibmcloud sat location get --location LOCATION [--output json] [-q]
 <dd>Required. Enter the ID or name of the location that you want to retrieve details for. To retrieve the location ID or name, run <code>ibmcloud sat location ls</code>.  </dd>
 
 <dt><code>--output json</code></dt>
- <dd>Optional. Prints the command output in JSON format.</dd>
+    <dd>Optional. Prints the command output in JSON format.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>
@@ -1910,7 +1910,7 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 
 **Example:**
 ```sh
-ibmcloud sat storage config create --name <config_name> --location <location> --template-name ocs-local --template-version 4.6 --source-branch main --source-org my-github-org
+ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version 4.6 --source-branch main --source-org my-github-org
 ```
 {: pre}
 
@@ -2180,7 +2180,7 @@ ibmcloud sat storage template ls [-q]
 {: pre}
 
 You can run `ibmcloud sat storage templates` as an alias of the `ibmcloud sat storage template ls` command.
-{:tip}
+{: tip}
 
 </br>
 
@@ -2436,3 +2436,5 @@ ibmcloud sat messages
 
 For commands to manage {{site.data.keyword.openshiftshort}} clusters in your {{site.data.keyword.satelliteshort}} locations, such as `ibmcloud oc cluster create satellite`, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#sat_commands).
 {: shortdesc}
+
+

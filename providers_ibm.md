@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-07-19"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,15 +19,19 @@ subcollection: satellite
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -40,20 +44,26 @@ subcollection: satellite
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -71,8 +81,10 @@ subcollection: satellite
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -80,6 +92,7 @@ subcollection: satellite
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -117,73 +130,77 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 1. Follow the steps to create a [classic public virtual server](/docs/virtual-servers?topic=virtual-servers-ordering-vs-public) or a virtual server instance in a [VPC](/docs/vpc?topic=vpc-creating-virtual-servers). Make sure that you select a supported RHEL 7 operating system, configure the machine with at least 4 CPU and 16 RAM, and add a boot disk with a size of at least 100 GB. 
 2. Wait for your virtual server instance to be provisioned.
 3. Get the registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location.
-   ```
-   ibmcloud sat host attach --location <location_name_or_ID>
-   ```
-   {: pre}
+    ```
+    ibmcloud sat host attach --location <location_name_or_ID>
+    ```
+    {: pre}
+
 4. Retrieve the IP address and ID of your machine.
     * Classic:
-       ```
-       ibmcloud sl vs list
-       ```
-       {: pre}
+        ```
+        ibmcloud sl vs list
+        ```
+        {: pre}
+
     * VPC:
-       ```
-       ibmcloud is instances
-       ```
-       {: pre}
+        ```
+        ibmcloud is instances
+        ```
+        {: pre}
 
 5. Retrieve the credentials to log in to your virtual machine.
     * Classic:
-      ```
-      ibmcloud sl vs credentials <vm_ID>
-      ```
-      {: pre}
+        ```
+        ibmcloud sl vs credentials <vm_ID>
+        ```
+        {: pre}
+
     * VPC:
-       ```
-       ibmcloud is instance-initialization-values <instance_ID>
-       ```
-       {: pre}
+        ```
+        ibmcloud is instance-initialization-values <instance_ID>
+        ```
+        {: pre}
 
 6. Copy the script from your local machine to the virtual server instance.
-   ```
-   scp <path_to_attachHost.sh> root@<ip_address>:/tmp/attach.sh
-   ```
-   {: pre}
+    ```
+    scp <path_to_attachHost.sh> root@<ip_address>:/tmp/attach.sh
+    ```
+    {: pre}
 
-   If you use an SSH key to log in, make sure to convert the key to `.key` format and use the following command.
-   ```
-   scp -i <filepath_to_key_file.key> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
-   ```
-   {: pre}
+    If you use an SSH key to log in, make sure to convert the key to `.key` format and use the following command.
+    ```
+    scp -i <filepath_to_key_file.key> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
+    ```
+    {: pre}
 
 7. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
-   ```
-   ssh root@<ip_address>
-   ```
-   {: pre}
+    ```
+    ssh root@<ip_address>
+    ```
+    {: pre}
 
-   If you use an SSH key to log in, use the following command.
-   ```
-   ssh -i <filepath_to_key_file.key> <username>@<IP_address>
-   ```
-   {: pre}
+    If you use an SSH key to log in, use the following command.
+    ```
+    ssh -i <filepath_to_key_file.key> <username>@<IP_address>
+    ```
+    {: pre}
 
 8. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
-   ```
-   subscription-manager refresh
-   ```
-   {: pre}
-   ```
-   subscription-manager repos --enable=*
-   ```
-   {: pre}
+    ```
+    subscription-manager refresh
+    ```
+    {: pre}
+
+    ```
+    subscription-manager repos --enable=*
+    ```
+    {: pre}
 
 9. Run the registration script on your machine.
-   ```
-   nohup bash /tmp/attach.sh &
-   ```
-   {: pre}
+    ```
+    nohup bash /tmp/attach.sh &
+    ```
+    {: pre}
 
 10. Monitor the progress of the registration script.
     ```
@@ -200,3 +217,5 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 12. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 
 13. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign).
+
+

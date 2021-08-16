@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-06-09"
+lastupdated: "2021-08-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,15 +20,19 @@ content-type: troubleshoot
 {:app_name: data-hd-keyref="app_name"}
 {:app_secret: data-hd-keyref="app_secret"}
 {:app_url: data-hd-keyref="app_url"}
+{:audio: .audio}
 {:authenticated-content: .authenticated-content}
 {:beta: .beta}
+{:c#: .ph data-hd-programlang='c#'}
 {:c#: data-hd-programlang="c#"}
 {:cli: .ph data-hd-interface='cli'}
 {:codeblock: .codeblock}
+{:curl: #curl .ph data-hd-programlang='curl'}
 {:curl: .ph data-hd-programlang='curl'}
 {:deprecated: .deprecated}
 {:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
 {:download: .download}
+{:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
 {:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
@@ -41,20 +45,26 @@ content-type: troubleshoot
 {:hide-in-docs: .hide-in-docs}
 {:important: .important}
 {:ios: data-hd-operatingsystem="ios"}
+{:java: #java .ph data-hd-programlang='java'}
 {:java: .ph data-hd-programlang='java'}
 {:java: data-hd-programlang="java"}
 {:javascript: .ph data-hd-programlang='javascript'}
 {:javascript: data-hd-programlang="javascript"}
+{:middle: .ph data-hd-position='middle'}
+{:navgroup: .navgroup}
 {:new_window: target="_blank"}
-{:note .note}
+{:node: .ph data-hd-programlang='node'}
 {:note: .note}
-{:objectc data-hd-programlang="objectc"}
+{:objectc: .ph data-hd-programlang='Objective C'}
+{:objectc: data-hd-programlang="objectc"}
 {:org_name: data-hd-keyref="org_name"}
+{:php: .ph data-hd-programlang='PHP'}
 {:php: data-hd-programlang="php"}
 {:pre: .pre}
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
 {:ruby: .ph data-hd-programlang='ruby'}
@@ -72,8 +82,10 @@ content-type: troubleshoot
 {:shortdesc: .shortdesc}
 {:space_name: data-hd-keyref="space_name"}
 {:step: data-tutorial-type='step'}
+{:step: data-tutorial-type='step'} 
 {:subsection: outputclass="subsection"}
 {:support: data-reuse='support'}
+{:swift: #swift .ph data-hd-programlang='swift'}
 {:swift: .ph data-hd-programlang='swift'}
 {:swift: data-hd-programlang="swift"}
 {:table: .aria-labeledby="caption"}
@@ -81,6 +93,7 @@ content-type: troubleshoot
 {:terraform: .ph data-hd-interface='terraform'}
 {:tip: .tip}
 {:tooling-url: data-tooling-url-placeholder='tooling-url'}
+{:topicgroup: .topicgroup}
 {:troubleshoot: data-hd-content-type='troubleshoot'}
 {:tsCauses: .tsCauses}
 {:tsResolve: .tsResolve}
@@ -110,11 +123,14 @@ Add-ons might not work for several reason.
 {: tsResolve}
 Take the following steps to troubleshoot the add-on.
 
-1.  Check that the [add-on is supported](/docs/openshift?topic=openshift-managed-addons#addons-satellite). If not, uninstall the add-on.
-2.  If the add-on is misconfigured, refresh the cluster master to restore the add-on to the default settings. 
+1. Check that the [add-on is supported](/docs/openshift?topic=openshift-managed-addons#addons-satellite). If not, uninstall the add-on.
+2. If the add-on is misconfigured, refresh the cluster master to restore the add-on to the default settings. 
     ```
     ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
     ```
     {: pre}
-3.  If the add-on is in critical state, review the {{site.data.keyword.cos_full_notm}} instance and bucket that backs up the cluster data. The instance and endpoint must have matching endpoints, such as a **Global** instance with a **Cross Region** bucket (`us-geo` endpoint), or a **Regional** instance with a **Regional** bucket (`us-east` endpoint). If the endpoints do not match, you must re-create the {{site.data.keyword.satelliteshort}} location with matching {{site.data.keyword.cos_full_notm}} instance and bucket endpoints.
-4.  For more information, [review the add-on state and statuses](/docs/containers?topic=containers-debug_addons).
+
+3. If the add-on is in critical state, review the {{site.data.keyword.cos_full_notm}} instance and bucket that backs up the cluster data. The instance and endpoint must have matching endpoints, such as a **Global** instance with a **Cross Region** bucket (`us-geo` endpoint), or a **Regional** instance with a **Regional** bucket (`us-east` endpoint). If the endpoints do not match, you must re-create the {{site.data.keyword.satelliteshort}} location with matching {{site.data.keyword.cos_full_notm}} instance and bucket endpoints.
+4. For more information, [review the add-on state and statuses](/docs/containers?topic=containers-debug_addons).
+
+

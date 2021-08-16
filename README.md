@@ -1,5 +1,7 @@
 
 
-# Source files for IBM Cloud Satellite documentation
+# Source files for {{site.data.keyword.satellitelong_notm}} documentation
+
+
 
 
