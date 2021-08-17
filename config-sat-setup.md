@@ -187,18 +187,24 @@ To create the configuration:
     ```
     {: screen}
 
-4. Upload a Kubernetes resource file to your configuration. Make sure to specify the Kubernetes namespace where you want your resource to be deployed. If you do not specify a namespace, the resource is deployed to the `razeedeploy` namespace by default. 
+4. Upload a Kubernetes resource file to your configuration. Make sure to specify the Kubernetes namespace where you want your resource to be deployed. If you do not specify a namespace, the resource is deployed to the `razeedeploy` namespace by default. Review the command options by running `ibmcloud sat config version create`.
 
     To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} Config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources), such as adding a configmap to your cluster. 
     {: tip}
 
     ```
-    ibmcloud sat config version create --name <version_name> --config <configuration_name_or_ID> --file-format <type> --read-config <file_path>
+    ibmcloud sat config version create --name <version_name> --config <configuration_name_or_ID> --file-format yaml --read-config <file_path>
     ```
     {: pre}
 
-    **Example output**
+    | Component | Description | 
+    |--------------------|------------------|
+    | `--name <version_name>` | Enter a name for your configuration version. | 
+    | `--config <configuration_name_or_ID>` | Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier. |
+    | `--read-config <file_path>` | Enter the relative file path to the Kubernetes resource file on your local machine. | 
+    {: caption="Understanding this command's components" caption-side="top"}
 
+    **Example output**
     ```
     Creating configuration version...
     OK
@@ -206,37 +212,28 @@ To create the configuration:
     ```
     {: screen}
 
-    | Component | Description | 
-    |--------------------|------------------|
-    | `--name *<version_name>*` | Enter a name for your version. | 
-    | `--config *<configuration_name_or_ID>*` | Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier. |
-    | `--role=razee-editor` | Enter the file extension of your Kubernetes resource file. Supported extensions are `yaml`. |
-    | `--read-config *<file_path>*` | Enter the relative file path to the Kubernetes resource file on your local machine. | 
-    {: caption="Understanding this command's components" caption-side="top"}
-
-5. Subscribe your cluster group to the {{site.data.keyword.satelliteshort}} configuration. After you create the subscription, {{site.data.keyword.satelliteshort}} Config automatically downloads the Kubernetes resource file for the version that you specified and starts applying this file across all clusters that belong to the cluster group. This process takes a few minutes to complete. In addition, information about all Kubernetes resources that you create are sent back from your clusters to {{site.data.keyword.satelliteshort}} Config and can be reviewed in the {{site.data.keyword.satelliteshort}} [**Cluster resources**](https://cloud.ibm.com/satellite/resources) dashboard.
+5. Subscribe your cluster group to the {{site.data.keyword.satelliteshort}} configuration. After you create the subscription, {{site.data.keyword.satelliteshort}} Config automatically downloads the Kubernetes resource file for the version that you specified and starts applying this file across all clusters that belong to the cluster group. This process takes a few minutes to complete. In addition, information about all Kubernetes resources that you create are sent back from your clusters to {{site.data.keyword.satelliteshort}} Config and can be reviewed in the {{site.data.keyword.satelliteshort}} [**Cluster resources**](https://cloud.ibm.com/satellite/resources) dashboard. Review the command options by running `ibmcloud sat subscription create`.
 
     ```
     ibmcloud sat subscription create --group <cluster_group_name> --config <configuration_name_or_ID> --name <subscription_name> --version <version_name_or_ID>
     ```
     {: pre}
 
-    **Example output**
+    | Component | Description | 
+    |--------------------|------------------|
+    | `--group <cluster_group_name>` | Enter the name of the cluster group where you want to deploy your Kubernetes resources. | 
+    | `--config <configuration_name_or_ID>` | Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier. |
+    | `--name <subscription_name>` | Enter a name for your {{site.data.keyword.satelliteshort}} subscription. |
+    | `--version <version_name_or_ID>` | Enter the name or ID of the Kubernetes resource definition that you added as a version to your configuration. To list available versions, run `ibmcloud sat config get --config <configuration_name_or_ID>` | 
+    {: caption="Understanding this command's components" caption-side="top"}
 
+    **Example output**
     ```
     Creating subscription...
     OK
     Subscription <subscription_name> was successfully created with ID f6114bd5-f71e-4335-b034-ca45fa3cab81.
     ```
     {: screen}
-
-    | Component | Description | 
-    |--------------------|------------------|
-    | `--group *<cluster_group_name>*` | Enter the name of the cluster group where you want to deploy your Kubernetes resources. | 
-    | `--config *<configuration_name_or_ID>*` | Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier. |
-    | `--name *<subscription_name>*` | Enter a name for your {{site.data.keyword.satelliteshort}} subscription. |
-    | `--version *<version_name_or_ID>*` | Enter the name or ID of the Kubernetes resource definition that you added as a version to your configuration. To list available versions, run `ibmcloud sat config get --config <configuration_name_or_ID>` | 
-    {: caption="Understanding this command's components" caption-side="top"}
 
 6. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-setup-clusters-satconfig) to review the rollout status of your Kubernetes resources.
 
