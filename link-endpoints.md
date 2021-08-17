@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -136,12 +136,7 @@ Two {{site.data.keyword.satelliteshort}} Link components, the tunnel server and 
 
 By default, source clients in your {{site.data.keyword.satelliteshort}} location cannot reach destination resources that run outside of the location because the destination resource's IP address is not routable from within the location. Review the following architecture diagram and steps, which demonstrate how {{site.data.keyword.satelliteshort}} Link enables communication from {{site.data.keyword.satelliteshort}} locations to services that run outside of locations through {{site.data.keyword.satelliteshort}} endpoints.
 
-<p>
-<figure>
-    <img src="/images/sat_link_cloud.png" alt="Network traffic flow from {{site.data.keyword.satelliteshort}} resources to an {{site.data.keyword.cloud_notm}} resource through an endpoint">
-    <figcaption>Network traffic flow from a source in your {{site.data.keyword.satellitelong_notm}} location to a destination resource in {{site.data.keyword.cloud_notm}} through {{site.data.keyword.satelliteshort}} Link</figcaption>
-</figure>
-</p>
+![Network traffic through {{site.data.keyword.satelliteshort}} Link.](/images/sat_link_cloud.png){: caption="Network traffic flow from a source in your {{site.data.keyword.satellitelong_notm}} location to a destination resource in {{site.data.keyword.cloud_notm}} through {{site.data.keyword.satelliteshort}} Link" caption-side="bottom"}
 
 1. When you create an endpoint for your destination resource, a port is opened for the {{site.data.keyword.satelliteshort}} Link connector on your {{site.data.keyword.satelliteshort}} control plane worker nodes. Requests from sources in your {{site.data.keyword.satelliteshort}} location are made to the {{site.data.keyword.satelliteshort}} Link connector host name and the port, such as `nae4dce0eb35957baff66-edfc0a8ba65085c5081eced6816c5b9c-c000.us-east.satellite.appdomain.cloud:30819`. This Link host name and port are mapped to the destination resource's domain and port.
 
@@ -153,12 +148,7 @@ By default, source clients in your {{site.data.keyword.satelliteshort}} location
 
 By default, source clients that are connected to the {{site.data.keyword.cloud_notm}} private network cannot reach destination resources that run in your {{site.data.keyword.satelliteshort}} location because the destination resource's IP address is not routable from outside the location. Review the following architecture diagram and steps, which demonstrate how {{site.data.keyword.satelliteshort}} Link enables communication from services that are connected to the {{site.data.keyword.cloud_notm}} private network to locations through {{site.data.keyword.satelliteshort}} endpoints.
 
-<p>
-<figure>
-    <img src="/images/sat_link_location.png" alt="Network traffic flow from {{site.data.keyword.cloud_notm}} resources to a {{site.data.keyword.satelliteshort}} resource through an endpoint">
-    <figcaption>Network traffic flow from an {{site.data.keyword.cloud_notm}} source to a destination resource in your location through {{site.data.keyword.satelliteshort}} Link</figcaption>
-</figure>
-</p>
+![Network traffic through {{site.data.keyword.satelliteshort}} Link.](/images/sat_link_location.png){: caption="Figure 2: Network traffic flow from an {{site.data.keyword.cloud_notm}} source to a destination resource in your location through {{site.data.keyword.satelliteshort}} Link" caption-side="bottom"}
 
 1. When you create an endpoint for a resource that runs in your {{site.data.keyword.satelliteshort}} location, a port is opened on the {{site.data.keyword.satelliteshort}} Link tunnel server and added in the endpoint configuration. Requests from sources that are connected to the {{site.data.keyword.cloud_notm}} private network are made to the {{site.data.keyword.satelliteshort}} Link tunnel server host name and this port, such as `c-01.us-east.link.satellite.cloud.ibm.com:30819`. This Link host name and port are mapped to the destination resource's domain and port.
 
@@ -290,7 +280,6 @@ To establish this connection, you first create a `location` endpoint. You specif
 
 Finally, to maintain enterprise security and audit compliance, you specify a list of source IP ranges so that only trusted clients in the public cloud can access your on-location database through the endpoint. Then, you set up an {{site.data.keyword.at_full_notm}} instance so that audit logs can be automatically collected for all endpoints in your {{site.data.keyword.satelliteshort}} location.
 
-<br />
 
 ## Creating `cloud` endpoints to connect to resources outside of the location
 {: #link-cloud}
@@ -347,53 +336,29 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
     ```
     {: pre}
 
-    <table summary="This table is read from left to right. The first column has the command component. The second column has the description of the component".>
-    <caption>Understanding the API request</caption>
-        <thead>
-        <th>Component</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>--location &lt;location_ID&gt;</code></td>
-        <td>Enter the ID of your {{site.data.keyword.satelliteshort}} location that you retrieved earlier.</td>
-        </tr>
-        <tr>
-        <td><code>--name &lt;endpoint_name&gt;</code></td>
-        <td>Enter a name for your {{site.data.keyword.satelliteshort}} endpoint. </td>
-        </tr>
-        <tr>
-        <td><code>--dest-type cloud</code></td>
-        <td>Enter <code>cloud</code> to indicate that the destination resource runs outside of the location.</td>
-        </tr>
-        <tr>
-        <td><code>--dest-hostname &lt;FQDN_or_IP&gt;</code></td>
-        <td>Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, which must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}} such as a private cloud service endpoint.</td>
-        </tr>
-        <tr>
-        <td><code>--dest-port &lt;port&gt;</code></td>
-        <td>Enter the port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol.</td>
-        </tr>
-        <tr>
-        <td><code>--dest-protocol &lt;destination-protocol&gt;</code></td>
-        <td>Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code> and <code>tls</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
-        </tr>
-        <tr>
-        <td><code>--source-protocol &lt;source-protocol&gt;</code></td>
-        <td>Enter the protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
-        </tr>
-        </tbody>
-    </table>
+    | Component             | Description      | 
+    |--------------------|------------------|
+    | `--location <location_ID>` | Enter the ID of your {{site.data.keyword.satelliteshort}} location that you retrieved earlier. | 
+    | `--name <endpoint_name>` | Enter a name for your {{site.data.keyword.satelliteshort}} endpoint. | 
+    | `--dest-type cloud` | Enter `cloud` to indicate that the destination resource runs outside of the location. | 
+    | `--dest-hostname <FQDN_or_IP>` | Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, which must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}} such as a private cloud service endpoint. | 
+    | `--dest-port <port>` | Enter the port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol. | 
+    | `--dest-protocol <destination-protocol>` | Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](#link-protocols). | 
+    | `--source-protocol <source-protocol>` | Enter the protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](#link-protocols). | 
+    {: summary="This table is read from left to right. The first column has the command component. The second column has the description of the component."}
+    {: caption="Table 1. Understanding the API request" caption-side="top"}
 
 3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a port to your endpoint.
 
 4. Verify that your endpoint is created. In the output, copy the host name for your {{site.data.keyword.satelliteshort}} Link connector and the port for your endpoint in the **Address** field.
+
     ```
     ibmcloud sat endpoint ls --location <location_ID>
     ```
     {: pre}
 
-    Example output:
+    **Example output**
+    
     ```
     ID                           Name                                         Destination Type   Address
     c0mnbnkw0jl8si22djkg_cEomQ   openshift-api-c0mpnn4w0bv28oq2dks0           location           TCP  c-02.us-east.link.satellite.cloud.ibm.com:32823
@@ -410,7 +375,8 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
 Use the {{site.data.keyword.satelliteshort}} Link connector host name and port that are assigned to your endpoint to connect to your destination resource from a source in your location. The source can be a {{site.data.keyword.satelliteshort}} cluster that you previously created or a host that you assigned to your location.
 {: shortdesc}
 
-**Example for testing the connection from an unassigned host**:
+**Example for testing the connection from an unassigned host**
+
 1. Log in to your host. Enter the password to access your host when prompted.
     ```
     ssh root@<ip_address>
@@ -423,9 +389,10 @@ Use the {{site.data.keyword.satelliteshort}} Link connector host name and port t
     ```
     {: pre}
 
-</br>
 
-**Example for testing the connection from a {{site.data.keyword.satelliteshort}} cluster**:
+
+**Example for testing the connection from a {{site.data.keyword.satelliteshort}} cluster**
+
 1. Target your cluster. If you are not connected to your location host network, include the `--endpoint link` flag.
     ```
     ibmcloud oc cluster config --cluster <cluster_name> --admin [--endpoint link]
@@ -548,54 +515,30 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
     ibmcloud sat endpoint create --location <location_ID> --name <endpoint_name> --dest-type location --dest-hostname <FQDN_or_IP> --dest-port <port> [--dest-protocol <destination_protocol>] --source-protocol <source_protocol>
     ```
     {: pre}
-
-    <table summary="This table is read from left to right. The first column has the command component. The second column has the description of the component".>
-    <caption>Understanding the API request</caption>
-        <thead>
-        <th>Component</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>--location &lt;location_ID&gt;</code></td>
-        <td>Enter the ID of your {{site.data.keyword.satelliteshort}} location that you retrieved earlier.</td>
-        </tr>
-        <tr>
-        <td><code>--name &lt;endpoint_name&gt;</code></td>
-        <td>Enter a name for your {{site.data.keyword.satelliteshort}} endpoint. </td>
-        </tr>
-        <tr>
-        <td><code>--dest-type location</code></td>
-        <td>Enter <code>location</code> to indicate that the destination resource runs in your {{site.data.keyword.satelliteshort}} location.</td>
-        </tr>
-        <tr>
-        <td><code>--dest-hostname &lt;FQDN_or_IP&gt;</code></td>
-        <td>Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to.</td>
-        </tr>
-        <tr>
-        <td><code>--dest-port &lt;port&gt;</code></td>
-        <td>Enter the port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol.</td>
-        </tr>
-        <tr>
-        <td><code>--dest-protocol &lt;destination-protocol&gt;</code></td>
-        <td>Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include <code>tcp</code> and <code>tls</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
-        </tr>
-        <tr>
-        <td><code>--source-protocol &lt;source-protocol&gt;</code></td>
-        <td>Enter the protocol that the source must use to connect to the destination resource. Supported protocols include <code>tcp</code>, <code>tls</code>, <code>http</code>, <code>https</code>, and <code>http-tunnel</code>. For more information, see [Endpoint protocols](#link-protocols).</td>
-        </tr>
-        </tbody>
-    </table>
+  
+    | Component             | Description      | 
+    |--------------------|------------------|
+    | `--location <location_ID>` | Enter the ID of your {{site.data.keyword.satelliteshort}} location that you retrieved earlier. | 
+    | `--name <endpoint_name>` | Enter a name for your {{site.data.keyword.satelliteshort}} endpoint. | 
+    | `--dest-type cloud` | Enter `cloud` to indicate that the destination resource runs outside of the location. | 
+    | `--dest-hostname <FQDN_or_IP>` | Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, which must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}} such as a private cloud service endpoint. | 
+    | `--dest-port <port>` | Enter the port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol. | 
+    | `--dest-protocol <destination-protocol>` | Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](#link-protocols). | 
+    | `--source-protocol <source-protocol>` | Enter the protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](#link-protocols). | 
+    {: summary="This table is read from left to right. The first column has the API component. The second column has the description of the component."}
+    {: caption="Table 1. Understanding the API request" caption-side="top"}
 
 3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Link connector component to assign a port to your endpoint.
 
 4. Verify that your endpoint is created. In the output, copy the host name for your {{site.data.keyword.satelliteshort}} Link tunnel server and the port for your endpoint in the **Address** field.
+
     ```
     ibmcloud sat endpoint ls --location <location_ID>
     ```
     {: pre}
 
-    Example output:
+    **Example output**
+    
     ```
     ID                           Name                                         Destination Type   Address
     c0mnbnkw0jl8si22djkg_cEomQ   openshift-api-c0mpnn4w0bv28oq2dks0           location           TCP  c-02.us-east.link.satellite.cloud.ibm.com:32823
@@ -603,7 +546,8 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
     ```
     {: screen}
 
-5. From your source client in the {{site.data.keyword.cloud_notm}} private network, test the connection to your {{site.data.keyword.satelliteshort}} endpoint by using the address. For example, depending on your source client, you might send a curl request to the endpoint:
+5. From your source client in the {{site.data.keyword.cloud_notm}} private network, test the connection to your {{site.data.keyword.satelliteshort}} endpoint by using the address. For example, depending on your source client, you might send a curl request to the endpoint.
+
     ```
     curl http://<linkserver_hostname>:<port>
     ```
@@ -686,40 +630,21 @@ Run a packet capture to view the traffic that is flowing from your source to you
     {: screen}
 
 2. Using the host name and port, start a packet capture. The following command is an example for using `tcpdump`.
+
     ```
     tcpdump -i <interface> host <link_host> and port <endpoint_port> [-n] [-w <filename>.pcap]
     ```
     {: pre}
-
-    <table summary="This table is read from left to right. The first column has the command component. The second column has the description of the component.">
-        <caption>Understanding this command's components</caption>
-        <thead>
-        <th>Component</th>
-        <th>Description</th>
-        </thead>
-        <tbody>
-        <tr>
-        <td><code>-i &lt;interface&gt;</code></td>
-        <td>The interface that routes traffic through the endpoint. To view available interfaces, run <code>tcpdump -D</code>. If you do not know which interface is used, specify <code>-i any</code>.</td>
-        </tr>
-        <tr>
-        <td><code>host &lt;link_host&gt;</code></td>
-        <td>The host name that was assigned by {{site.data.keyword.satelliteshort}} Link to your endpoint.</td>
-        </tr>
-        <tr>
-        <td><code>port &lt;endpoint_port&gt;</code></td>
-        <td>The port that was assigned by {{site.data.keyword.satelliteshort}} Link to your endpoint.</td>
-        </tr>
-        <tr>
-        <td><code>-n</code></td>
-        <td>Include this flag if you do not want the IP addresses and port numbers in the output to be converted to DNS host names.</td>
-        </tr>
-        <tr>
-        <td><code>-w &lt;filename&gt;.pcap</code></td>
-        <td>Include this flag to print the output of the packet capture into a <code>.pcap</code> file.</td>
-        </tr>
-        </tbody>
-        </table>
+    
+    | Component | Description | 
+    |---------|------------------|
+    | `-i <interface>` | The interface that routes traffic through the endpoint. To view available interfaces, run `tcpdump -D`. If you do not know which interface is used, specify `-i any`. | 
+    | `host <link_host>` | The host name that was assigned by {{site.data.keyword.satelliteshort}} Link to your endpoint. | 
+    | `port <endpoint_port>` | The port that was assigned by {{site.data.keyword.satelliteshort}} Link to your endpoint. | 
+    | `-n` | Include this flag if you do not want the IP addresses and port numbers in the output to be converted to DNS host names. | 
+    | `-w <filename>` | Include this flag to print the output of the packet capture into a `.pcap` file. | 
+    {: summary="This table is read from left to right. The first column has the API component. The second column has the description of the component."}
+    {: caption="Table 1. Understanding the API request" caption-side="top"}
 
 3. In the output, you can check the sources and destinations of packets that are sent through the endpoint.
 
