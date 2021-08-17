@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-17"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -115,7 +115,7 @@ Set up [OpenShift Data Foundation](https://docs.openshift.com/container-platform
 The OpenShift Data Foundation add-on is available as a technology preview and might change without prior notice. Do not use this add-on for production workloads.
 {: preview}
 
-<br />
+
 
 ## Prerequisites
 {: #sat-storage-ocs-local-prereq}
@@ -129,7 +129,7 @@ To use the ODF storage with the local storage operator and local storage devices
         * Two raw devices per worker node that have no partitions or formatted file systems. If your devices have no partitions, each node must have 2 free disks. One disk for the OSD and one disk for the MON.
         * Two raw partitions per worker node that have no formatted file system. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
 - [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups).
-- [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-cluster-config#setup-clusters-satconfig).
+- [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-satcon-create).
 - **Optional**: If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-ocs-local-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you do not specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and ODF is installed.
 - [Get the details of the raw, unformatted devices that you want to use for your configuration](#sat-storage-ocs-local-devices). The device IDs of your storage disks are used to create your {{site.data.keyword.satelliteshort}} storage configuration.
 
@@ -153,7 +153,7 @@ If you want to use {{site.data.keyword.cos_full_notm}} as your object service, c
     {: pre}
 
 
-<br />
+
 
 ## Getting the device details for your ODF configuration
 {: #sat-storage-ocs-local-devices}
@@ -227,12 +227,12 @@ The following steps show how you can manually retrieve the local device informat
 7. Repeat the previous steps for each worker node that you want to use for your ODF configuration.   
 
 
-<br />
 
 
 
 
-<br />
+
+
 
 ## Creating an OpenShift Data Foundation configuration in the command line
 {: #sat-storage-ocs-local-cli}
@@ -271,13 +271,17 @@ The following steps show how you can manually retrieve the local device informat
     {: pre}
     
 1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-local-params-cli).
-1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values. If you are using a {{site.data.keyword.cos_short}} backing store, be sure to specify the regional public endpoint in the following format: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. 
+1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values. If you are using a {{site.data.keyword.cos_short}} backing store, be sure to specify the regional public endpoint in the following format: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+
+    Note that you must specify separate disks or separate partitions for each `mon-device-path` and `osd-device-path`. You must assign one disk or one partition for each OSD or MON storage device. For disks without partitions, specify separate disks. For partitioned disks, you can specify the same disk, but you must specify separate partitions.
+    {: note}
+
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
     ```
     {: pre}
 
-1. Verify that your storage configuration is created.
+1. Verify that your configuration was created.
     ```sh
     ibmcloud sat storage config get --config <config>
     ```
@@ -285,14 +289,13 @@ The following steps show how you can manually retrieve the local device informat
 
 1. [Assign your storage configuration to clusters](#assign-storage-ocs-local).
 
-<br />
 
 ## Assigning your ODF storage configuration to a cluster
 {: #assign-storage-ocs-local}
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-ocs-local), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
-<br />
+
 
 
 
@@ -450,7 +453,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: screen}
 
 
-<br />
+
 
 ## Deploying an app that uses OpenShift Data Foundation
 {: #sat-storage-ocs-local-deploy}
@@ -610,7 +613,7 @@ In the following example, the ODF configuration is updated to use template versi
     ```
     {: pre}
 
-<br />
+
 
 ## Removing OpenShift Data Foundation from your apps
 {: #ocs-local-rm}
@@ -682,42 +685,38 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 {: important}
 
 
-
-Use the command line to remove a storage configuration.
-{: shortdesc}
-
 1. List your storage assignments and find the one that you used for your cluster.
-    ```sh
+    ```bash
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
     ```
     {: pre}
 
 2. Remove the assignment. After the assignment is removed, the ODF driver pods and storage classes are removed from all clusters that were part of the storage assignment.
-    ```sh
+    ```bash
     ibmcloud sat storage assignment rm --assignment <assignment_ID>
     ```
     {: pre}
 
 3. List your storage assignments and find the one that you used for your cluster.
-    ```sh
+    ```bash
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
     ```
     {: pre}
 
 4. Remove the assignment. After the assignment is removed, the local file driver pods and storage classes are removed from all clusters that were part of the storage assignment.
-    ```sh
+    ```bash
     ibmcloud sat storage assignment rm --assignment <assignment_ID>
     ```
     {: pre}
 
 5. Remove your storage assignment.
-    ```sh
+    ```bash
     ibmcloud sat storage assignment rm --assignment <assignment>
     ```
     {: pre}
 
 6. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
-    ```sh
+    ```bash
     #!/bin/bash
     ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
     oc delete ocscluster --all --wait=false
@@ -744,7 +743,7 @@ Use the command line to remove a storage configuration.
     sleep 20
     oc delete pods -n local-storage --all --force --grace-period=0
     ```
-    {: pre}
+    {: codeblock}
 
 7. Run the `cleanup.sh` script.
     ```sh
@@ -754,13 +753,13 @@ Use the command line to remove a storage configuration.
 
 8. After you run the cleanup script, log in to each worker node and run the following commands.
     1. Deploy a debug pod and run `chroot /host`.
-    ```sh
+    ```bash
     oc debug node/<node_name> -- chroot /host
     ```
     {: pre}
 
     2. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your ODF configuration.
-    ```sh
+    ```bash
     rm -rvf /var/lib/rook /mnt/local-storage
     ```
     {: codeblock}
@@ -782,7 +781,7 @@ Use the command line to remove a storage configuration.
     removed directory: '/mnt/local-storage/localfile'
     removed directory: '/mnt/local-storage'
     ```
-    {: codeblock}
+    {: screen}
 
 10. **Optional**: If you no longer want to use the local volumes that you used in your ODF configuration, you can delete them from the cluster. List the local PVs.
     ```sh
@@ -846,10 +845,10 @@ Use the command line to remove a storage configuration.
 | --- | --- | --- | --- |
 | `--name` | Required | Enter a name for your storage configuration. | N/A |
 | `--template-name` | Required | Enter `ocs-local`. | N/A |
-| `--template-version` | Required | Enter `4.6`. | N/A |
+| `--template-version` | Required | Enter `4.7`. | N/A |
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. | N/A |
-| `mon-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths for the storage devices that you want to use for the ODF monitoring (MON) pods. The devices that you specify must have at least 20GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `mon-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. | N/A |
-| `osd-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths for the devices that you want to use for the OSD pods. The devices that you specify are used as your storage devices in your ODF configuration. Your OSD devices must have at least 100GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `osd-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
+| `mon-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths for the storage devices that you want to use for the ODF monitoring (MON) pods. The devices that you specify must have at least 20GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `mon-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
+| `osd-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths for the devices that you want to use for the OSD pods. The devices that you specify are used as your storage devices in your ODF configuration. Your OSD devices must have at least 100GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>`. Example `osd-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A |
 | `ibm-cos-access-key` | Optional | Enter the {{site.data.keyword.cos_full_notm}} access key ID. Do not encode this value to base64. Your {{site.data.keyword.cos_short}} access key ID is used to create a Kubernetes secret in your cluster. | N/A | 
 | `ibm-cos-secret-access-key` | Optional | Enter the {{site.data.keyword.cos_full_notm}} secret access key. Do not encode this value to base64. Your {{site.data.keyword.cos_short}} secret access key is used to create a Kubernetes secret in your cluster. | N/A |
 | `ibm-cos-endpoint` | Optional | Enter the {{site.data.keyword.cos_full_notm}} regional public endpoint. Be sure that you enter the regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A | 
@@ -862,7 +861,7 @@ Use the command line to remove a storage configuration.
 {: summary="The rows are read from left to right. The first column is the parameter name.  The second column indicates if the parameter is optional. The third column is a brief description of the parameter. The fourth column is the default value of the parameter."}
 
 
-<br />
+
 
 ## Storage class reference
 {: #sat-storage-ocs-local-sc-ref}
@@ -878,5 +877,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 {: caption="Table 2. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
+
+
 
 

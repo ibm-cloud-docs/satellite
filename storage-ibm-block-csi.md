@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-17"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -126,12 +126,12 @@ Be sure to complete all prerequisite and installation steps before assigning hos
 
 Review the [compatibility and requirements documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=installation-compatibility-requirements){: external}.
 
-<br />
 
 
 
 
-<br />
+
+
 
 ## Creating a block storage configuration in the command line
 {: #sat-storage-block-csi-cli}
@@ -183,14 +183,14 @@ Review the [compatibility and requirements documentation](https://www.ibm.com/do
 
 1. [Assign your storage configuration to clusters](#assign-storage-block-csi).
 
-<br />
+
 
 ## Assigning your block storage configuration to a cluster
 {: #assign-storage-block-csi}
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-block-csi), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
-<br />
+
 
 
 
@@ -269,7 +269,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
       namespace: default
     type: Opaque
     stringData:
-      management_address: demo-management-address #
+      management_address: demo-management-address # Example: baremetal-cluster.xiv.ibm.com
       username: demo-username                     
     data:
       password: AAAA1AAA 
@@ -421,8 +421,6 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
         ```
         {: pre}
 
-
-<br />
 
 
 
