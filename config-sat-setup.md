@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-17"
+lastupdated: "2021-08-23"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -205,12 +205,12 @@ To create the configuration:
     {: caption="Understanding this command's components" caption-side="top"}
 
     **Example output**
-    ```
-    Creating configuration version...
-    OK
-    Configuration Version <version_name> was successfully created with ID ad5ae7a9-4f74-486c-816a-32de98de00df.
-    ```
-    {: screen}
+        ```
+        Creating configuration version...
+        OK
+        Configuration Version <version_name> was successfully created with ID ad5ae7a9-4f74-486c-816a-32de98de00df.
+        ```
+        {: screen}
 
 5. Subscribe your cluster group to the {{site.data.keyword.satelliteshort}} configuration. After you create the subscription, {{site.data.keyword.satelliteshort}} Config automatically downloads the Kubernetes resource file for the version that you specified and starts applying this file across all clusters that belong to the cluster group. This process takes a few minutes to complete. In addition, information about all Kubernetes resources that you create are sent back from your clusters to {{site.data.keyword.satelliteshort}} Config and can be reviewed in the {{site.data.keyword.satelliteshort}} [**Cluster resources**](https://cloud.ibm.com/satellite/resources) dashboard. Review the command options by running `ibmcloud sat subscription create`.
 
@@ -228,12 +228,12 @@ To create the configuration:
     {: caption="Understanding this command's components" caption-side="top"}
 
     **Example output**
-    ```
-    Creating subscription...
-    OK
-    Subscription <subscription_name> was successfully created with ID f6114bd5-f71e-4335-b034-ca45fa3cab81.
-    ```
-    {: screen}
+        ```
+        Creating subscription...
+        OK
+        Subscription <subscription_name> was successfully created with ID f6114bd5-f71e-4335-b034-ca45fa3cab81.
+        ```
+        {: screen}
 
 6. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-setup-clusters-satconfig) to review the rollout status of your Kubernetes resources.
 
