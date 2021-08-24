@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -156,7 +156,7 @@ Use the {{site.data.keyword.satelliteshort}} console to create your location.
 * Make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 * You must have an existing {{site.data.keyword.cos_full_notm}} service instance so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance. For example, to set up a dedicated {{site.data.keyword.cos_short}} instance and bucket:
     1. [Set up a {{site.data.keyword.cos_full_notm}} instance](https://cloud.ibm.com/objectstorage/create){: external} that you plan to use for all of your {{site.data.keyword.satelliteshort}} locations in your account.
-    2. Create a bucket in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. The bucket endpoint must match the instance endpoint, such as a **Cross Region** bucket for a **Global** instance. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`. Create a separate bucket for each {{site.data.keyword.satelliteshort}} location that you create in your account.
+    2. Create a bucket in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. The {{site.data.keyword.cos_full_notm}} bucket must be in the same region as your {{site.data.keyword.satelliteshort}} location. The bucket endpoint must match the instance endpoint, such as a **Cross Region** bucket for a **Global** instance. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`. Create a separate bucket for each {{site.data.keyword.satelliteshort}} location that you create in your account.
     3. Pass in the name of this bucket when you create the {{site.data.keyword.satelliteshort}} location.
 
     <p class="important">Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.</p>
@@ -188,10 +188,11 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to create 
 * Make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 * You must have an existing {{site.data.keyword.cos_full_notm}} service instance so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance. For example, to set up a dedicated {{site.data.keyword.cos_short}} instance and bucket:
     1. [Set up a {{site.data.keyword.cos_full_notm}} instance](https://cloud.ibm.com/objectstorage/create){: external} that you plan to use for all of your {{site.data.keyword.satelliteshort}} locations in your account.
-    2. Create a bucket in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. The bucket endpoint must match the instance endpoint, such as a **Cross Region** bucket for a **Global** instance. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`. Create a separate bucket for each {{site.data.keyword.satelliteshort}} location that you create in your account.
+    2. Create a bucket in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. The {{site.data.keyword.cos_full_notm}} bucket must be in the same region as your {{site.data.keyword.satelliteshort}} location. The bucket endpoint must match the instance endpoint, such as a **Cross Region** bucket for a **Global** instance. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`. Create a separate bucket for each {{site.data.keyword.satelliteshort}} location that you create in your account.
     3. Pass in the name of this bucket when you create the {{site.data.keyword.satelliteshort}} location.
 
-    <p class="important">Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.</p>
+Don't delete your {{site.data.keyword.cos_short}} instance or this bucket. If you delete your service instance or bucket, you can't back up your {{site.data.keyword.satelliteshort}} location control plane data.
+{: important}
 
 **To create a {{site.data.keyword.satelliteshort}} location from the CLI**:
 
