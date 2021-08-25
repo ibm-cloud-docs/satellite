@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -132,7 +132,7 @@ If you use host autoassignment, [attach hosts](/docs/satellite?topic=satellite-h
 
 **Host private IP addresses are used for Ingress subdomain:**
 
-Connect to your hosts' private network to access to your cluster and open the {{site.data.keyword.openshiftshort}} web console. For example, you might connect to your on-premises local network, or use a VPN such as [Wireguard](/docs/openshift?topic=openshift-access_cluster#access_vpn) to connect to your cloud provider's private network. 
+Connect to your hosts' private network to access to your cluster and open the {{site.data.keyword.openshiftshort}} web console. For example, you might connect to your on-premises local network, or use a VPN such as [Wireguard](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift) to connect to your cloud provider's private network. 
 
 Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's service URL and your location's DNS record to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access). Note that making your location and cluster subdomains available outside of your hosts' private network to your authorized cluster users is not recommended for production-level workloads.
 
