@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="satellite" category="compute" audience="service" href="/docs/satellite?topic=satellite-getting-started" console-page="/satellite/overview" product-page="https://www.ibm.com/cloud/satellite" path="satellite"}
+{: .toc subcollection="satellite" version="2" category="compute" audience="service" href="/docs/satellite?topic=satellite-getting-started" console-page="/satellite/overview" product-page="https://www.ibm.com/cloud/satellite" path="satellite"}
 Satellite
 
     {: .navgroup id="learn"}
