@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-08-27"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -63,6 +63,7 @@ subcollection: satellite
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -219,7 +220,7 @@ Review the list of third-party services that {{site.data.keyword.satellitelong_n
 
 |Service name|Description|
 |------------|-------------------------------------|
-|Akamai, Cloudflare|Akamai and Cloudflare are used as the primary providers for DNS, global load balancing, and web firewall capabilities in {{site.data.keyword.satellitelong_notm}}.|
+| Akamai | Akamai is the primary provider for DNS, global load balancing, and web firewall capabilities in {{site.data.keyword.satellitelong_notm}}.|
 |Let's Encrypt|This service is used as the certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_long_notm}}.|
 {: caption="{{site.data.keyword.satelliteshort}} dependencies to third-party services." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
