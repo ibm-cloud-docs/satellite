@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-23"
+lastupdated: "2021-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -119,7 +120,7 @@ R0036 The location subdomains are not correctly routing traffic to your control 
 ```
 {: screen}
 
-{: tsCauses}
+
 The {{site.data.keyword.satelliteshort}} location control plane is inaccessible through the location subdomains due to one of the following reasons:
 {: tsCauses}
 * The hosts are behind a firewall that blocks traffic within the location.

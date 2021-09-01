@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -110,21 +111,25 @@ content-type: troubleshoot
 # Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?
 {: #ts-location-healthcheck}
 
-{: tsSymptoms}
+
 After you assign hosts to your {{site.data.keyword.satelliteshort}} location control plane, you see a message similar to the following.
+{: tsSymptoms}
 
 ```
 R0047 {{site.data.keyword.cloud_notm}} is unable to use the health check Link endpoint to check the location's health.
 ```
 {: screen}
 
-{: tsCauses}
+
 The location control plane is not accessible from {{site.data.keyword.cloud_notm}} through {{site.data.keyword.satelliteshort}} Link due to one of the following reasons:
+{: tsCauses}
+
 * The automated health check endpoint was disabled.
 * The hosts are behind a firewall that blocks traffic to or from {{site.data.keyword.cloud_notm}}.
 
-{: tsResolve}
+
 To troubleshoot the health check for the Link endpoint:
+{: tsResolve}
 
 1. Verify that the automated health check endpoint for your location is enabled.
     1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.

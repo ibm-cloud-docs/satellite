@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -110,14 +111,17 @@ content-type: troubleshoot
 # Why is the namespace where my storage operator was deployed stuck in **Terminating** status?
 {: #storage-namespace-terminating}
 
-{: tsSymptoms}
+
 When you remove a storage configuration from a cluster, the resources such as operator pods and storage classes are removed, but the namespace is stuck in `Terminating` status. 
+{: tsSymptoms}
 
+
+There are [finalizers](https://kubernetes.io/blog/2021/05/14/using-finalizers-to-control-deletion/){: external} that are preventing the remaining resources in the namespace and the namespace itself from being deleted.
 {: tsCauses}
-There are [finalizers](https://kubernetes.io/blog/2021/05/14/using-finalizers-to-control-deletion/){: external} that are preventing the remaining resources in the namespace and the namespace itself from being deleted. 
 
-{: tsResolve}
+
 Take the following steps to remove the resources and the namespace.
+{: tsResolve}
 
 Do not delete or patch the resource finalizers in the `kube-system` namespace.
 {: important}
