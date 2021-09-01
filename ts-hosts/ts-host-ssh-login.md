@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -110,18 +111,22 @@ content-type: troubleshoot
 # Why can't I SSH into my host machines?
 {: #ssh-login-denied}
 
-{: tsSymptoms}
+
 When you try to SSH into a host machine that is assigned in {{site.data.keyword.satelliteshort}}, you see a message similar to the following.
+{: tsSymptoms}
+
 ```
 Permission denied, please try again.
 ```
 {: screen}
 
-{: tsCauses}
-After the host is successfully assigned to a {{site.data.keyword.satelliteshort}} location control plane or cluster, {{site.data.keyword.satelliteshort}} disables the ability to SSH into the host for security purposes.
 
-{: tsResolve}
+After the host is successfully assigned to a {{site.data.keyword.satelliteshort}} location control plane or cluster, {{site.data.keyword.satelliteshort}} disables the ability to SSH into the host for security purposes.
+{: tsCauses}
+
+
 You cannot SSH into the host. If you need to modify settings on host machines in a cluster, try deploying a daemon set, such as in the [Tuning performance](/docs/containers?topic=containers-kernel) example.
+{: tsResolve}
 
 If you remove a host from your location or remove the entire location, you must reload the machine in your host infrastructure provider to SSH into the host again.
 

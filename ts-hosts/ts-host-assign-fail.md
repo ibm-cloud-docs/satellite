@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -110,11 +111,17 @@ content-type: troubleshoot
 # Why can't I assign hosts to a cluster?
 {: #assign-fails}
 
-{: tsSymptoms}
-You try to assign a host to {{site.data.keyword.satelliteshort}} resource such as a cluster, but the assignment does not succeed. When you check your host, the health state might be `unresponsive`, `unknown`, or `reload-required`.
 
+You try to assign a host to {{site.data.keyword.satelliteshort}} resource such as a cluster, but the assignment does not succeed.
+{: tsSymptoms}
+
+When you check your host, the health state might be `unresponsive`, `unknown`, or `reload-required`.
+
+
+Your host might have encountered an issue during the bootstrapping process. For example, the underlying infrastructure of the host machine changed and no longer meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity.
 {: tsCauses}
-Your host might have encountered an issue during the bootstrapping process. For example, the underlying infrastructure of the host machine changed and no longer meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity. You might have set up a firewall or other change that prevents access to a dependency.
+
+You might have set up a firewall or other change that prevents access to a dependency.
 
 In particular, the bootstrapping process depends upon the following access.
 *   Access to RHEL Satellite servers and the required packages installed on the host machine.
@@ -124,8 +131,11 @@ In particular, the bootstrapping process depends upon the following access.
 ## Debugging hosts for connectivity issues
 {: #debug-host-connectivity}
 
+
+If you want, you can debug the connectivity issues for your host.
 {: tsResolve}
-If you want, you can debug the connectivity issues for your host. Otherwise, remove the host, reload the operating system, and attach the host back.
+
+Otherwise, remove the host, reload the operating system, and attach the host back.
 
 1. Get the location ID where your host is attached, and note the {{site.data.keyword.cloud_notm}} multizone metro that the location is managed from. From the console, click your location, and then click the **Overview** tab. From the CLI, run the following command.
     ```

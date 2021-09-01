@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-24"
+lastupdated: "2021-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -110,8 +111,9 @@ content-type: troubleshoot
 # Why can't I access the {{site.data.keyword.openshiftshort}} console without a VPN on the VPC?
 {: #ts-console-fail}
 
-{: tsSymptoms}
+
 When you create an {{site.data.keyword.openshiftshort}} cluster in your {{site.data.keyword.satelliteshort}} location, you cannot access the {{site.data.keyword.openshiftshort}} web console, or access to the console is intermittent.
+{: tsSymptoms}
 
 You might see an error message similar to the following:
 ```
@@ -120,13 +122,16 @@ Wait until your ingress subdomain is available before you access the OpenShift w
 ```
 {: screen}
 
-{: tsCauses}
+
 Review the following reasons why you are unable to reach the {{site.data.keyword.openshiftshort}} web console:
+{: tsCauses}
+
 * The {{site.data.keyword.openshiftshort}} web console can be accessed only after your cluster's Ingress subdomain is created. For the Ingress subdomain to be created, hosts must be assigned as worker nodes in each zone of the default worker pool in your cluster. For example, if your default worker pool spans three zones, but hosts are assigned as worker nodes to the default worker pool in only two zones, the Ingress subdomain in your cluster cannot be created, and you cannot access the web console.
 * The private IP addresses of your instances were automatically registered and added to your location's DNS record and the cluster's Ingress subdomain. This setup prevents users that are not connected to your hosts' private network from accessing the cluster from a local machine or opening the {{site.data.keyword.openshiftshort}} web console.
 
-{: tsResolve}
+
 **Worker nodes do not exist in each zone of the default worker pool:**
+{: tsResolve}
 
 If you use host autoassignment, [attach hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to your {{site.data.keyword.satelliteshort}} location in the zone where you do not have worker nodes so that hosts can be assigned to the default worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts in that zone to your cluster](/docs/satellite?topic=satellite-hosts#host-assign).
 

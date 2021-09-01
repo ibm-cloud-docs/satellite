@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -110,18 +111,21 @@ content-type: troubleshoot
 # Why doesn't my cluster add-on work?
 {: #addon-errors}
 
-{: tsSymptoms}
 When you try to use a cluster add-on, the cluster add-on does not work. For example, you installed the Kubernetes web terminal add-on but cannot open the add-on.
+{: tsSymptoms}
 
-{: tsCauses}
+
 Add-ons might not work for several reason.
+{: tsCauses}
+
 * The add-on is not supported for clusters in a {{site.data.keyword.satelliteshort}} location.
 * The add-on is in an unhealthy state.
 * The add-on settings are misconfigured, such as renaming or editing a configmap.
 * The add-on cannot be backed up in {{site.data.keyword.cos_full_notm}} due to conflicting service instance and bucket endpoints.
 
-{: tsResolve}
+
 Take the following steps to troubleshoot the add-on.
+{: tsResolve}
 
 1. Check that the [add-on is supported](/docs/openshift?topic=openshift-managed-addons#addons-satellite). If not, uninstall the add-on.
 2. If the add-on is misconfigured, refresh the cluster master to restore the add-on to the default settings. 

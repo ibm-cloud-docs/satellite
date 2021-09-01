@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -110,18 +111,23 @@ content-type: troubleshoot
 # Why can't I update or complete other actions with my cluster?
 {: #ts-cluster-operations-blocked}
 
-{: tsSymptoms}
+
 When you try to manage your cluster, such as to perform a cluster update, the operation fails with a message similar to the following.
+{: tsSymptoms}
 
 ```
 Cluster management is not currently available for this {{site.data.keyword.satelliteshort}} location. The location requires action to enable cluster operations. Please see logs for more detailed information.
 ```
 {: screen}
 
-{: tsCauses}
-Your {{site.data.keyword.satelliteshort}} location is currently in an unhealthy state, so cluster operations are blocked to prevent the operation from failing. 
 
+Your {{site.data.keyword.satelliteshort}} location is currently in an unhealthy state, so cluster operations are blocked to prevent the operation from failing. 
+{: tsCauses}
+
+
+[Debug your location](/docs/satellite?topic=satellite-ts-locations-debug), such as reviewing the platform logs and common error messages to find the reason for the unhealthy state.
 {: tsResolve}
-[Debug your location](/docs/satellite?topic=satellite-ts-locations-debug), such as reviewing the platform logs and common error messages to find the reason for the unhealthy state. When the location is healthy, you can resume managing your cluster.
+
+When the location is healthy, you can resume managing your cluster.
 
 
