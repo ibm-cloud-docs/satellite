@@ -128,11 +128,12 @@ Review the following requirements that relate to the computing and system setup 
 ### Computing characteristics
 {: #reqs-host-compute}
 
-*   Hosts must run Red Hat Enterprise Linux 7 on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
-*   Hosts can be physical or virtual machines.
-*   Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](#reqs-host-storage). 
+* Hosts must run Red Hat Enterprise Linux 7 on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
+* Hosts can be physical or virtual machines.
+* Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](#reqs-host-storage). 
 
-*   If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
+* If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
+* Hostnames can contain only lowercase alphanumeric characters, `-`, or `.`.
 
 ### Packages and other machine configurations
 {: #reqs-host-packages}
@@ -172,7 +173,7 @@ You might need to refresh your packages on the host machine. For example, in {{s
 For more information about how to enable the {{site.data.keyword.redhat_notm}} packages in hosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
 {: tip}
 
-<br />
+
 
 ## Host storage and attached devices
 {: #reqs-host-storage}
@@ -426,5 +427,3 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     round-trip min/avg/max/stddev = 138.453/217.370/419.901/108.211 ms
     ```
     {: screen}
-
-
