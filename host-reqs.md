@@ -212,6 +212,7 @@ In general, do not set any custom networking configurations on your hosts, such 
     {: screen}
 
 * Host IP addresses must remain static and cannot change over time, such as due to a reboot or other potential infrastructure updates.
+* If you are provisioning your host on-prem, you must configure your host to use a public DNS server, such as `8.8.8.8`.
 
 ### Host network bandwidth
 {: #reqs-host-network-bandwidth}
