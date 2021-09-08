@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-03"
+lastupdated: "2021-09-08"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -499,11 +499,16 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 {{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled services. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates.
 {: shortdesc}
 
+Do not use the `ibmcloud ks worker update` command for hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled services.
+{: important}
+
 ### Checking if a version update is available for worker node hosts
 {: #host-update-workers-check}
 
-You can check if a version update is available for a host that is assigned as a worker node to a {{site.data.keyword.satelliteshort}}-enabled service cluster.
+You can check if a version update is available for a host that is assigned as a worker node to a {{site.data.keyword.satelliteshort}}-enabled service by using the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
+
+To review the changes that are included in each version update, see the [Version changelog for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
 
 **From the {{site.data.keyword.cloud_notm}} CLI**:
 
@@ -513,7 +518,7 @@ You can check if a version update is available for a host that is assigned as a 
     ```
     {: pre}
 
-2. List the {{site.data.keyword.satelliteshort}} clusters in your account.
+2. List the {{site.data.keyword.satelliteshort}} clusters in your account. 
     ```
     ibmcloud ks cluster ls --provider satellite
     ```
@@ -525,7 +530,7 @@ You can check if a version update is available for a host that is assigned as a 
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     ID                Primary IP       Flavor   State    Status   Zone     Version   
     sat-worker-<ID>   <IP_address>     upi      normal   Ready    zone-1   4.5.35_1534_openshift*   
@@ -534,6 +539,8 @@ You can check if a version update is available for a host that is assigned as a 
     ```
     {: screen}
 
+4. [Determine if the version update is a major, minor, or patch update](#host-update-workers-type). 
+
 **From the {{site.data.keyword.cloud_notm}} console**:
 1. Log in to the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}.
 2. Click the location with the hosts that you want to update.
@@ -541,20 +548,109 @@ You can check if a version update is available for a host that is assigned as a 
 4. From the host list, click the link to the **Cluster** for the host that you want to update. A new tab opens for the {{site.data.keyword.openshiftlong_notm}} cluster details.
 5. Click the **Worker nodes** tab.
 6. In the **Version** column, check for an information icon that says `Update available` when you click on the icon. If no update is available, no icon is present.
+7. [Determine if the version update is a major, minor, or patch update](#host-update-workers-type). 
 
-### Reviewing the changelog for version updates
-{: #host-update-workers-changelog}
+### Determining if the worker node version update is a major, minor, or patch update
+{: #host-update-workers-type}
 
-To review the changes that are included in version updates for hosts that are assigned as worker nodes, see the [Version changelog for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
+The process to update a worker node depends on whether the update is a major, minor, or patch update.
 {: shortdesc}
 
-### Applying version updates to worker node hosts
-{: #host-update-workers-apply}
+To determine the type of update that is available, compare your current worker node versions to the latest `worker node fix pack` version in the [{{site.data.keyword.openshiftshort}} version changelog](/docs/openshift?topic=openshift-openshift_changelog). Major updates are inidcated by the first digit in the version label (4.x.x), minor updates are indicated by the second digit (x.7.x) and patch updates are indicated by the trailing digits (x.x.23_1528_openshift). For more information on version updates, see [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions).
 
-To apply the version updates to your hosts, you update the worker nodes that run on the hosts. You follow the same process as [Updating classic worker nodes for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-update#worker_node).
+
+### Applying minor and patch version updates to worker node hosts
+{: #host-update-workers-minor}
+
+Hosts that are attached to a location do not update automatically. To apply a minor version update, you must first attach and assign new hosts to your {{site.data.keyword.satelliteshort}}-enabled service and then remove the old hosts.
 {: shortdesc}
 
-<br />
+**Before you begin**:
+
+ List your current hosts and make note of their IDs. This helps determine which hosts to remove after applying the update.
+
+    ```
+    ibmcloud ks worker ls -c <cluster_name_or_ID>
+    ```
+    {: pre}
+
+    Review the example output.
+
+    ```
+    ID                                                        Primary IP      Flavor   State    Status   Zone     Version   
+    sat-satliberty-5b4c7f3a7bfc14cf58cbb14ad5c08429475274fe   208.43.36.202   upi      normal   Ready    zone-1   4.7.19_1525_openshift*   
+    ```
+    {: screen}
+
+**Applying a minor or patch update**:
+
+1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
+1. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign). These hosts automatically receive the update when you assign them.
+1. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](#host-remove).
+
+### Applying major version updates to worker node hosts
+{: #host-update-workers-major}
+
+Hosts that are attached to a location do not update automatically. To apply a major version update to your worker node hosts, you must attach, assign, and remove hosts one at at time from your {[SatLoc}]'s control plane. Then, you attach, assign, and remove hosts from your {{site.data.keyword.satelliteshort}}-enabled service.
+{: shortdesc}
+
+**Before you begin**:
+
+1. List your location's current control plane hosts and make note of their IDs. This helps determine which hosts to remove from the control plane after applying the update. The control plane hosts have `infrastructure` listed in the `Cluster` column of the output.
+
+    ```
+    ibmcloud sat hosts ls --location <location>
+    ```
+    { :pre}
+
+    Review the example output.
+
+    ```
+    Name                ID                     State        Status   Zone     Cluster          Worker ID                                              Worker IP   
+
+    satdemo-cp1         0bc3b92f55968a230985   assigned     Ready    zone-1   infrastructure   sat-satdemocp1-2bda578e901b4047c6e48d766cd99bc11a45fddd   169.62.42.178   
+    satdemo-cp2         999cd38c39ddffe4b672   assigned     Ready    zone-2   infrastructure   sat-satdemocp2-940134e69c2609c5421b2426a7640fa80569668d   169.62.42.183   
+    satdemo-cp5         6ca4fd8fcad1fa622bb4   assigned     Ready    zone-3   infrastructure   sat-satdemocp5-d46581b509357ea4b429fddc38a18b155463bf1c   169.62.42.181   
+    ```
+    {: screen}
+
+2. List your current hosts that are assigned as worker nodes to your {{site.data.keyword.satelliteshort}}-enabled service and make note of their IDs. This helps determine which hosts to remove from your {{site.data.keyword.satelliteshort}}-enabled service after applying the update.
+
+    ```
+    ibmcloud ks worker ls -c <cluster_name_or_ID>
+    ```
+    {: pre}
+
+    Review the example output.
+
+    ```
+    ID                                                        Primary IP      Flavor   State    Status   Zone     Version   
+    sat-satliberty-5b4c7f3a7bfc14cf58cbb14ad5c08429475274fe   208.43.36.202   upi      normal   Ready    zone-1   4.7.19_1525_openshift*   
+    ```
+    {: screen}
+
+**Applying a major update to the control plane hosts**:
+
+When you update control plane hosts, **do not assign or remove multiple hosts at the same time** as doing so may break the control plane. You must wait for a host assignment or removal to complete before assigning or removing another host.
+{: important}
+
+1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts you attach must equal the number of control plane hosts that you want to update.
+1. [Assign one of the newly attached hosts to your {{site.data.keyword.satelliteshort}} control plane](#host-assign).
+1. Wait for the host assignment to complete, then repeat the previous step for each of the newly attached hosts. You must wait for each host assignment to complete before assigning another host. 
+1. Once you have attached and assigned the correct number of hosts to your control plane, update the cluster master with the `ibmcloud sat oc cluster master update` command and wait for the update to complete.
+    ```
+    ibmcloud sat oc cluster master update
+    ```
+    {: pre}
+
+1. After the update completes, [remove and delete the old hosts one at a time](#host-remove). You must wait for each host removal to complete before removing another host.
+
+**Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled service**:
+
+1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts that you attach must match the number of hosts that you want to update.
+1. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign). These hosts automatically receive the new update when you assign them.
+1. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old worker node hosts that you previously noted](#host-remove).
+
 
 ## Updating {{site.data.keyword.satelliteshort}} location control plane hosts
 {: #host-update-location}
@@ -598,6 +694,9 @@ If you manually registered the host IP addresses for the location subdomain with
 
 To apply a version update, you must detach, reload, and reattach your host to the {{site.data.keyword.satelliteshort}} location. Then, you can assign the host back to the control plane or to another resource that runs in the location.
 {: shortdesc}
+
+When you update control plane hosts, **do not assign or remove multiple hosts at the same time** as doing so may break the control plane. You must wait for a host assignment or removal to complete before assigning or removing another host.
+{: important}
 
 1. Optional: [Attach](#attach-hosts) and [assign](#host-assign) extra hosts to the {{site.data.keyword.satelliteshort}} location control plane to handle the compute capacity while your existing hosts are updating.
 2. [Remove the host that you want to update from your {{site.data.keyword.satelliteshort}} location](#host-remove).
@@ -754,5 +853,3 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove 
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
     * To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
     * To no longer use the host, delete the host from your infrastructure provider.
-
-
