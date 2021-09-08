@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -291,8 +291,9 @@ subcollection: satellite
   * [Assigning hosts from the CLI](/docs/satellite?topic=satellite-hosts#host-assign-cli)
 * [Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled services like clusters](/docs/satellite?topic=satellite-hosts#host-update-workers)
   * [Checking if a version update is available for worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-check)
-  * [Reviewing the changelog for version updates](/docs/satellite?topic=satellite-hosts#host-update-workers-changelog)
-  * [Applying version updates to worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-apply)
+  * [Determining if the worker node version update is a major, minor, or patch update](/docs/satellite?topic=satellite-hosts#host-update-workers-type)
+  * [Applying minor and patch version updates to worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-minor)
+  * [Applying major version updates to worker node hosts](/docs/satellite?topic=satellite-hosts#host-update-workers-major)
 * [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location)
   * [Considerations before you update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-considerations)
   * [Procedure to update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-cp-procedure)
@@ -909,7 +910,7 @@ subcollection: satellite
 * [R0045: Host read-only file system issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
 * [R0046: NTP issues](/docs/satellite?topic=satellite-ts-locations-debug#R0046)
 * [R0047: Location health checking](/docs/satellite?topic=satellite-ts-locations-debug#R0047)
-* [R0048: Etcd backup failure](/docs/satellite?topic=satellite-ts-locations-debug#R0048)
+* [R0048: etcd backup failure](/docs/satellite?topic=satellite-ts-locations-debug#R0048)
 * [R0049, R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues](/docs/satellite?topic=satellite-ts-locations-debug#R0049)
 
 

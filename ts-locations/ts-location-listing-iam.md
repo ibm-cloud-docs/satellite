@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -63,6 +63,7 @@ subcollection: satellite
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -109,14 +110,14 @@ subcollection: satellite
 # Why can't I see a location that another user gave me access to?
 {: #ts-location-missing-location}
 
-{: tsSymptoms}
 You are granted access to another user's {{site.data.keyword.satelliteshort}} location. However, when you list locations, you do not see the location.
+{: tsSymptoms}
 
-{: tsCauses}
 The location owner might have scoped your {{site.data.keyword.satelliteshort}} access in {{site.data.keyword.cloud_notm}} IAM to only the `location` resource type, which prevents the location from returning unless you target the regional endpoint that the location is managed from.
+{: tsCauses}
 
-{: tsResolve}
 Target the regional endpoint, or ask the location owner to update your permissions.
+{: tsResolve}
 
 ## Target the regional endpoint
 {: #ts-location-missing-location-target}
@@ -148,19 +149,19 @@ Ask the location owner to update your access policy in {{site.data.keyword.cloud
     {: pre}
 
 2. List the access policies for the user or access group, and note the **Policy ID** that grants access to the {{site.data.keyword.satelliteshort}} location.
-    *   For individual users:
+    *   For individual users
         ```
         ibmcloud iam user-policies <user@email.com>
         ```
         {: pre}
 
-    *   For access groups:
+    *   For access groups
         ```
         ibmcloud iam access-group-policies <access_group>
         ```
         {: pre}
 
-    Example output:
+    Example output
     ```
     Policy ID:   11a11111-bb2b-3c33-444d-ee5ee55ee55e
     Roles:       Viewer   
@@ -171,19 +172,19 @@ Ask the location owner to update your access policy in {{site.data.keyword.cloud
     {: screen}
 
 3. Update the access policy so that the policy is no longer scoped to locations. 
-    *   For individual users:
+    *   For individual users
         ```
         ibmcloud iam user-policy-update <user@email.com> <policy_ID> --roles Viewer --service-name satellite
         ```
         {: pre}
 
-    *   For access groups:
+    *   For access groups
         ```
         ibmcloud iam access-group-policy-update <group> <policy_ID> --roles Viewer --service-name satellite
         ```
         {: pre}
 
-    Example output:
+    Example output
     ```
     Policy ID:   11a11111-bb2b-3c33-444d-ee5ee55ee55e
     Version:     2-111aaa1111a1a1aa1a1a11aa11a1aa11

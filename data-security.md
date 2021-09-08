@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -63,6 +63,7 @@ subcollection: satellite
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -155,9 +156,9 @@ Review the following image to see how your personal and sensitive information is
 
 ![Satellite data security](images/satellite_data_security.png)
 
-|#|Information|Location|Access and data management|Backup|Encryption|
+|&nbsp;|Information|Location|Access and data management|Backup|Encryption|
 |--|--|--|--|--|--|
-|1|All personal and sensitive information.|All data is stored in a {{site.data.keyword.satelliteshort}} persistent storage instance that is set up in the location's {{site.data.keyword.satelliteshort}} control plane master.|The persistent storage instance is owned and managed by the {{site.data.keyword.satelliteshort}} control plane service team. You cannot access the data that is stored in the persistent storage instance.|See #2 and #3 to see how data is backed up.|Data is encrypted at rest with a customer root key from an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.keymanagementservicelong_notm}} service instance.|
+|1|All personal and sensitive information.|All data is stored in a {{site.data.keyword.satelliteshort}} persistent storage instance that is set up in the location's {{site.data.keyword.satelliteshort}} control plane master.|The persistent storage instance is owned and managed by the {{site.data.keyword.satelliteshort}} control plane service team. You cannot access the data that is stored in the persistent storage instance.|See 2 and 3 to see how data is backed up.|Data is encrypted at rest with a customer root key from an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.keymanagementservicelong_notm}} service instance.|
 |2|TLS certificate, TLS secret, and Certificate Authority to encrypt the {{site.data.keyword.satelliteshort}} control plane domain.|Data is backed up from the {{site.data.keyword.satelliteshort}} persistent storage instance to an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_full_notm}} instance.|Access to the {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_full_notm}} service instance is controlled by {{site.data.keyword.iamshort}} (IAM) and granted to the {{site.data.keyword.satelliteshort}} service team and {{site.data.keyword.IBM_notm}} Site Reliability Engineers (SRE) only.|Every hour|All backup data is protected in transit and at rest by a root key that {{site.data.keyword.IBM_notm}} creates and stores in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.keymanagementservicelong_notm}} service instance.|
 |3|All {{site.data.keyword.satelliteshort}} control plane and cluster data.|Data is backed up from the {{site.data.keyword.satelliteshort}} persistent storage instance to a customer-owned {{site.data.keyword.cos_full_notm}} instance. You must have an existing {{site.data.keyword.cos_full_notm}} instance when you create the location. You can specify an existing bucket in the {{site.data.keyword.cos_full_notm}} instance that you want {{site.data.keyword.satelliteshort}} to use. Otherwise, a new bucket is automatically created in your {{site.data.keyword.cos_short}} instance on your behalf.|Access to the customer-owned {{site.data.keyword.cos_full_notm}} service instance is controlled by IAM.|Every 8 hours|Data is automatically encrypted by using the default built-in encryption mechanisms in {{site.data.keyword.cos_full_notm}}. You can further choose to protect your data by using a root key in {{site.data.keyword.keymanagementservicelong_notm}} and use the key to encrypt the data in your bucket. For more information, see the [{{site.data.keyword.cos_full_notm}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-encryption). |
 

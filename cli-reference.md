@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-02"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -63,6 +63,7 @@ subcollection: satellite
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -1773,10 +1774,10 @@ ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --service-cluster-id 
 
 <dl>
 <dt><code>--cluster <em>CLUSTER_ID</em></code></dt>
-<dd>The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run <code>ibmcloud oc cluster ls --provider satellite</code>.  If you do not include this flag, you must specify the `--service-cluster-id` flag.</dd>
+<dd>The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run <code>ibmcloud oc cluster ls --provider satellite</code>.  If you do not include this flag, you must specify the `--service-cluster-id`  flag.</dd>
 
 <dt><code>--service-cluster-id <em>CLUSTER_ID</em></code></dt>
-<dd>The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster` flag.</dd>
+<dd>The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster`  flag.</dd>
 
 <dt><code>-q</code></dt>
 <dd>Optional. Do not show the message of the day or update reminders.</dd>

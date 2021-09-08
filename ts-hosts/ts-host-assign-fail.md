@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-01"
+lastupdated: "2021-09-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -143,7 +143,7 @@ Otherwise, remove the host, reload the operating system, and attach the host bac
     ```
     {: pre}
 
-2. Confirm that your host meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
+2. Confirm that your host meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and verify that the hostname contains only lowercase alphanumeric characters, `-`, or `.`.
 2. Check your host for connectivity issues.
     1. Log in to your host machine, such as via SSH.
     2. Check your [host network settings](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) to ensure that your host can access the required ports and IP addresses, which might be blocked by a security group or firewall.
@@ -257,5 +257,4 @@ Review the following table to help troubleshoot network connectivity issues to {
 {: #check-ep-dc}
 {: tab-title="Washington, DC"}
 {: tab-group="check-ep"}
-
 
