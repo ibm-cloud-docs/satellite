@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -513,7 +514,7 @@ R0047 {{site.data.keyword.cloud_notm}} is unable to use the health check endpoin
 
 See [Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?](/docs/satellite?topic=satellite-ts-location-healthcheck).
 
-## R0048: Etcd backup failure
+## R0048: etcd backup failure
 {: #R0048}
 
 **Location message**
@@ -525,7 +526,7 @@ R0048 The etcd backup for a cluster in your location failed to complete within t
 
 **Steps to resolve**
 
-Etcd data is backed up every 8 hours from your {{site.data.keyword.satelliteshort}} location control plane to a bucket in your {{site.data.keyword.cos_full_notm}} instance. If this backup consecutively fails 3 times over 24 hours, problems might exist with the {{site.data.keyword.cos_short}} bucket or service instance, or with your {{site.data.keyword.satelliteshort}} location's connection to the {{site.data.keyword.cos_short}} instance.
+The etcd data is backed up every 8 hours from your {{site.data.keyword.satelliteshort}} location control plane to a bucket in your {{site.data.keyword.cos_full_notm}} instance. If this backup consecutively fails 3 times over 24 hours, problems might exist with the {{site.data.keyword.cos_short}} bucket or service instance, or with your {{site.data.keyword.satelliteshort}} location's connection to the {{site.data.keyword.cos_short}} instance.
 
 1. Ensure that the hosts that you assigned to the location control plane are able to access the {{site.data.keyword.cos_full_notm}} endpoint for the {{site.data.keyword.cloud_notm}} region that your location is managed from. For example, in your host firewall, you must allow outbound connectivity from your control plane hosts to the following endpoints:
 

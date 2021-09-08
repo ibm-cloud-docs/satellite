@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -64,6 +64,7 @@ content-type: troubleshoot
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -110,16 +111,20 @@ content-type: troubleshoot
 # Why does the host registration script fail?
 {: #host-registration-script-fails}
 
+
+When you SSH into your own infrastructure machine that you want to attach as a {{site.data.keyword.satelliteshort}} host and run the host registration script, you see a message similar to the following example.
 {: tsSymptoms}
-When you SSH into your own infrastructure machine that you want to attach as a {{site.data.keyword.satelliteshort}} host and run the host registration script, you see a message similar to the following.
+
 ```
 No package rh-python36 available.
 Error: Nothing to do
 ```
 {: screen}
 
-{: tsCauses}
+
 Your machine does not meet the minimum requirements to become a {{site.data.keyword.satelliteshort}} host. In particular, you must have the following packages installed on your RHEL 7 machine.
+{: tsCauses}
+
 ```
 Repository 'rhel-server-rhscl-7-rpms' is enabled for this system.
 Repository 'rhel-7-server-optional-rpms' is enabled for this system.
@@ -129,7 +134,9 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 ```
 {: screen}
 
+To resolve this issue, follow these steps.
 {: tsResolve}
+
 1. Add the required packages to your machine. For example, in {{site.data.keyword.IBM_notm}} Cloud infrastructure you can run the following commands to add the required packages. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
     1. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
         ```

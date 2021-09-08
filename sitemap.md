@@ -909,7 +909,7 @@ subcollection: satellite
 * [R0045: Host read-only file system issues](/docs/satellite?topic=satellite-ts-locations-debug#R0045)
 * [R0046: NTP issues](/docs/satellite?topic=satellite-ts-locations-debug#R0046)
 * [R0047: Location health checking](/docs/satellite?topic=satellite-ts-locations-debug#R0047)
-* [R0048: Etcd backup failure](/docs/satellite?topic=satellite-ts-locations-debug#R0048)
+* [R0048: etcd backup failure](/docs/satellite?topic=satellite-ts-locations-debug#R0048)
 * [R0049, R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues](/docs/satellite?topic=satellite-ts-locations-debug#R0049)
 
 
