@@ -591,7 +591,7 @@ Hosts that are attached to a location do not update automatically. To apply a mi
 ### Applying major version updates to worker node hosts
 {: #host-update-workers-major}
 
-Hosts that are attached to a location do not update automatically. To apply a major version update to your worker node hosts, you must attach, assign, and remove hosts one at at time from your {[SatLoc}]'s control plane. Then, you attach, assign, and remove hosts from your {{site.data.keyword.satelliteshort}}-enabled service.
+Hosts that are attached to a location do not update automatically. To apply a major version update to your worker node hosts, you must attach, assign, and remove hosts one at at time from your {{site.data.keyword.satelliteshort}} location's control plane. Then, you attach, assign, and remove hosts from your {{site.data.keyword.satelliteshort}}-enabled service.
 {: shortdesc}
 
 **Before you begin**:
