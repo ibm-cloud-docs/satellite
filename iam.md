@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -34,7 +34,6 @@ subcollection: satellite
 {:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
 {:generic: data-hd-operatingsystem="generic"}
 {:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
@@ -63,6 +62,7 @@ subcollection: satellite
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -102,8 +102,9 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+{:video: .video} -->
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -700,6 +701,12 @@ When you use a template, you can optionally provide the value of an existing API
 {: #permissions-other-clouds}
 
 To create and manage the underlying infrastructure in other cloud providers, you must have the appropriate permissions. Some commonly required permissions are listed in the following section. For more information, consult your cloud provider's documentation.
+{: shortdesc}
+
+### Alibaba permissions
+{: #permissions-alibaba}
+
+To allow users in Alibaba to do various actions for {{site.data.keyword.satelliteshort}}, you can grant the users access to the **AliyunECSFullAccess** security policy or create a custom security policy that allows access to only specific instances. For more information about the permissions of this role, see the [Alibaba documentation](https://www.alibabacloud.com/help/doc-detail/273910.htm?spm=a2c63.p38356.b99.453.566659d8FD2xbU){: external}.
 {: shortdesc}
 
 ### AWS permissions

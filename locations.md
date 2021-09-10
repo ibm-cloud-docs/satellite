@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-24"
+lastupdated: "2021-09-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -34,7 +34,6 @@ subcollection: satellite
 {:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
 {:generic: data-hd-operatingsystem="generic"}
 {:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
@@ -63,6 +62,7 @@ subcollection: satellite
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -102,8 +102,9 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+{:video: .video} -->
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -145,7 +146,6 @@ Don't have your own infrastructure or want a managed solution? [Check out {{site
 {: tip}
 
 
-
 ### Creating locations from the console
 {: #location-create-console}
 
@@ -154,12 +154,13 @@ Use the {{site.data.keyword.satelliteshort}} console to create your location.
 
 **Before you begin**:
 * Make sure that you have the [correct permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
-* You must have an existing {{site.data.keyword.cos_full_notm}} service instance so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance. For example, to set up a dedicated {{site.data.keyword.cos_short}} instance and bucket:
-    1. [Set up a {{site.data.keyword.cos_full_notm}} instance](https://cloud.ibm.com/objectstorage/create){: external} that you plan to use for all of your {{site.data.keyword.satelliteshort}} locations in your account.
+* You must have an existing {{site.data.keyword.cos_full_notm}} service instance so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance. For example, to set up a dedicated {{site.data.keyword.cos_short}} instance and bucket,
+    1. [Set up an {{site.data.keyword.cos_full_notm}} instance](https://cloud.ibm.com/objectstorage/create){: external} that you plan to use for all of your {{site.data.keyword.satelliteshort}} locations in your account.
     2. Create a bucket in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. The {{site.data.keyword.cos_full_notm}} bucket must be in the same region as your {{site.data.keyword.satelliteshort}} location. The bucket endpoint must match the instance endpoint, such as a **Cross Region** bucket for a **Global** instance. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`. Create a separate bucket for each {{site.data.keyword.satelliteshort}} location that you create in your account.
-    3. Pass in the name of this bucket when you create the {{site.data.keyword.satelliteshort}} location.
+    3. When you create your {{site.data.keyword.satelliteshort}} location, enter the exact name of the bucket you created earlier or an existing bucket in your {{site.data.keyword.cos_full_notm}} instance. If no bucket name is provided, a bucket is created for you.
 
-    <p class="important">Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.</p>
+        Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.
+        {: important}
 
 **To create a location from the console**:
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
@@ -170,7 +171,7 @@ Use the {{site.data.keyword.satelliteshort}} console to create your location.
     3. The **Resource group** is set to `default` by default.
     4. For **Managed from**: Select the {{site.data.keyword.cloud_notm}} region that you want to use to manage your location. For more information about why you must select an {{site.data.keyword.cloud_notm}} region, see [About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the region that is closest to where your host machines physically reside that you plan to attach to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
     5. For **Zones**: The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider.
-        * [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, `us-east-1c`.
+        * [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, and `us-east-1c`.
         * [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
         * [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
 4. In the **Object Storage** section, you can click **Edit** to optionally enter the exact name of an existing {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data. Otherwise, a new bucket is automatically created in an {{site.data.keyword.cos_short}} instance in your account.
@@ -244,7 +245,7 @@ Don't delete your {{site.data.keyword.cos_short}} instance or this bucket. If yo
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Name         ID                     Status            Ready   Created        Hosts (used/total)   Managed From   
     mylocation   brhtfum2015a6mgqj16g   action required   no      1 minute ago   0 / 3                Washington DC   
@@ -315,7 +316,7 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Name             ID                     State        Status   Cluster   Worker ID   Worker IP   
     machine-name-1   aaaaa1a11aaaaaa111aa   unassigned   -        -         -           -   
@@ -330,7 +331,7 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Retrieving host details...
 
@@ -357,13 +358,13 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
 
 3. Assign your host machine to the {{site.data.keyword.satelliteshort}} location control plane. When you assign the host to the control plane, {{site.data.keyword.IBM_notm}} bootstraps your machine. This process takes a few minutes to complete. You can choose to assign a host by using the host ID, or you can also define the label that the host must have to be assigned to the location.
 
-    **Example for assigning a host by using the host ID:**
+    Example for assigning a host by using the host ID.
     ```
     ibmcloud sat host assign --location <location_name_or_ID>  --cluster <location_ID> --host <host_ID>  --zone <zone>
     ```
     {: pre}
 
-    **Example for assigning a host by using the `use:satloc` label:**
+    Example for assigning a host by using the `use:satloc` label.
     ```
     ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satloc" --zone <zone>
     ```
@@ -407,7 +408,7 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Retrieving hosts...
     OK
@@ -442,7 +443,7 @@ Use the {{site.data.keyword.satelliteshort}} command line to set up a control pl
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Retrieving location subdomains...
     OK
@@ -654,5 +655,3 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove 
     {: pre}
 
 Now that the location is removed, check the hosts in your underlying infrastructure provider. To reuse the hosts for other purposes, you must reload the operating system. If you no longer need the hosts, delete them from your infrastructure provider.
-
-
