@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-08-13"
+lastupdated: "2021-09-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -34,7 +34,6 @@ subcollection: satellite
 {:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
 {:generic: data-hd-operatingsystem="generic"}
 {:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
@@ -63,6 +62,7 @@ subcollection: satellite
 {:preview: .preview}
 {:python: .ph data-hd-programlang='python'}
 {:python: data-hd-programlang="python"}
+{:release-note: data-hd-content-type='release-note'}
 {:right: .ph data-hd-position='right'}
 {:route: data-hd-keyref="route"}
 {:row-headers: .row-headers}
@@ -102,8 +102,9 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+{:video: .video} -->
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -177,11 +178,12 @@ For on-prem infrastructure, you can manually setup a {{site.data.keyword.satelli
 5. [Attach at least 3 more hosts to the {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#attach-hosts) that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs).
 6. [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) and assign the hosts as worker nodes to the cluster, so that you can run {{site.data.keyword.openshiftshort}} workloads in your location.
 
-### Cloud infrastructure like AWS, Azure, and GCP
+### Cloud-provider infrastructure
 {: #create-options-cloud}
 
 For cloud provider infrastructure, you can follow provider-specific guides.
 {: shortdesc}
+
 
 **AWS**: You can choose between manually setting up an AWS location, or using a {{site.data.keyword.bpshort}} template to automatically create and set up the location.
 *   Automatic: [Automating your location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
@@ -207,6 +209,7 @@ For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf i
 {: shortdesc}
 
 The credentials that you provide are stored and encrypted in etcd of the {{site.data.keyword.satelliteshort}} location control plane master. For more information, see [Securing your data](/docs/satellite?topic=satellite-data-security).
+
 
 
 ### AWS credentials

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-08"
+lastupdated: "2021-09-10"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -34,7 +34,6 @@ subcollection: satellite
 {:external: .external target="_blank"}
 {:external: target="_blank" .external}
 {:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
 {:generic: data-hd-operatingsystem="generic"}
 {:generic: data-hd-programlang="generic"}
 {:gif: data-image-type='gif'}
@@ -103,8 +102,9 @@ subcollection: satellite
 {:unity: .ph data-hd-programlang='unity'}
 {:url: data-credential-placeholder='url'}
 {:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+{:video: .video} -->
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -220,7 +220,7 @@ Before you begin, make sure that you have created host machines that meet the [m
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Creating host registration script...
     OK
@@ -477,7 +477,7 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
     ```
     {: pre}
 
-    Example output:  
+    Example output
     ```
     Retrieving hosts...
     OK
@@ -539,9 +539,9 @@ To review the changes that are included in each version update, see the [Version
     ```
     {: screen}
 
-4. [Determine if the version update is a major, minor, or patch update](#host-update-workers-type). 
 
 **From the {{site.data.keyword.cloud_notm}} console**:
+
 1. Log in to the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}.
 2. Click the location with the hosts that you want to update.
 3. Click the **Hosts** tab.
