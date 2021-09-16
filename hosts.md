@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -460,7 +460,7 @@ To review the changes that are included in each version update, see the [Version
 The process to update a worker node depends on whether the update is a major, minor, or patch update.
 {: shortdesc}
 
-To determine the type of update that is available, compare your current worker node versions to the latest `worker node fix pack` version in the [{{site.data.keyword.openshiftshort}} version changelog](/docs/openshift?topic=openshift-openshift_changelog). Major updates are inidcated by the first digit in the version label (4.x.x), minor updates are indicated by the second digit (x.7.x) and patch updates are indicated by the trailing digits (x.x.23_1528_openshift). For more information on version updates, see [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions).
+To determine the type of update that is available, compare your current worker node versions to the latest `worker node fix pack` version in the [{{site.data.keyword.openshiftshort}} version changelog](/docs/openshift?topic=openshift-openshift_changelog). Major updates are indicated by the first digit in the version label (4.x.x), minor updates are indicated by the second digit (x.7.x) and patch updates are indicated by the trailing digits (x.x.23_1528_openshift). For more information on version updates, see [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions).
 
 
 ### Applying minor and patch version updates to worker node hosts
