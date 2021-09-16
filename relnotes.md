@@ -20,21 +20,20 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: shortdesc}
 
 
-
 ## September 2021
 {: #release-sep-2021}
 
 Review the release notes for September 2021.
 {: shortdesc}
+
+
 ### 15 September 2021
 {: #15sep2021}
 {: release-note}
 
 
-
-Review the release notes for 16 September 2021.
+Review the release notes for 15 September 2021.
 {: shortdesc}
-
 
 
 OpenShift Data Foundation  
