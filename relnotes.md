@@ -20,12 +20,12 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: shortdesc}
 
 
-
 ## September 2021
 {: #release-sep-2021}
 
 Review the release notes for September 2021.
 {: shortdesc}
+
 
 
 ### 16 September 2021
