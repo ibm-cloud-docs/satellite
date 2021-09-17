@@ -44,7 +44,6 @@ OpenShift Data Foundation
 
 
 
-
 ## August 2021
 {: #aug21}
 
