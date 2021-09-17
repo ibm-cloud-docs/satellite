@@ -9,143 +9,143 @@ toc:
     version: 2
     console-page: /satellite
     product-page: https://www.ibm.com/cloud/satellite
+    
   entries: 
-    - navgroup: 
+  - navgroup: 
       id: learn
       topics:
-        - getting-started.md
-        - topicgroup:
+      - getting-started.md
+      - topicgroup:
           label: Understanding Satellite use cases
           topics:
             - about.md
             - uc-sg.md
             - uc-edge.md
-    - navgroup:
+  - navgroup:
       id: howto
       topics:
         - setup-cli.md
         - topicgroup:
-          label: Preparing your infrastructure to use in Satellite
-          topics: 
-            - providers_planning.md
-            - host-reqs.md
-            - satellite-is.md
-            - providers_aws.md
-            - providers_gcp.md
-            - providers_azure.md
-            - providers_ibm.md
+            label: Preparing your infrastructure to use in Satellite
+            topics: 
+              - providers_planning.md
+              - host-reqs.md
+              - satellite-is.md
+              - providers_aws.md
+              - providers_gcp.md
+              - providers_azure.md
+              - providers_ibm.md
         - locations.md
         - topicgroup:
-          label: Assigning Satellite hosts to services and clusters
-          topics:
+            label: Assigning Satellite hosts to services and clusters
+            topics:
             - hosts.md
             - link:
-              label: Creating OpenShift clusters in Satellite
-              href: https://cloud.ibm.com/docs/openshift/openshift-satellite-clusters
+                label: Creating OpenShift clusters in Satellite
+                href: https://cloud.ibm.com/docs/openshift/openshift-satellite-clusters
         - topicgroup:
-          label: Deploying Kubernetes resources across clusters with Satellite Config
-          topics:
-            - config-about.md
-            - config-clusters-satconfig.md
-            - config-sat-setup.md
-            - config-manage.md
-            - config-roks-setup.md
+            label: Deploying Kubernetes resources across clusters with Satellite Config
+            topics:
+              - config-about.md
+              - config-clusters-satconfig.md
+              - config-sat-setup.md
+              - config-manage.md
+              - config-roks-setup.md
         - link-endpoints.md
         - topicgroup:
-          label: Logging and monitoring
-          topics:
-            - health.md
-            - monitor.md
+            label: Logging and monitoring
+            topics:
+              - health.md
+              - monitor.md
         - topicgroup:
-          label: Setting up storage
-          topics: 
-            - storage-template-ov.md
-            - topicgroup:
-              label: AWS storage templates
-              topics:
-                - storage-ebs.md
-                - storage-efs.md
-            - topicgroup:
-              label: Azure storage templates
-              topics:
-                - storage-azure-disk.md
-            - topicgroup:
-              label: IBM storage templates
-              topics:
-                - storage-spectrum-scale.md
-                - storage-ibm-block-csi.md
-            - topicgroup:
-              label: NetApp storage templates
-              topics:
-                - storage-netapp-trident.md
-                - storage-netapp-nas.md
-                - storage-netapp-san.md
-            - topicgroup:
-              label: Red Hat storage templates
-              topics:
-                - storage-local-block.md
-                - storage-local-file.md
-                - storage-ocs-local.md
-                - storage-ocs-remote.md
-            - storage-ref.md
+            label: Setting up storage
+            topics: 
+              - storage-template-ov.md
+              - topicgroup:
+                  label: AWS storage templates
+                  topics:
+                    - storage-ebs.md
+                    - storage-efs.md
+              - topicgroup:
+                  label: Azure storage templates
+                  topics:
+                    - storage-azure-disk.md
+              - topicgroup:
+                  label: IBM storage templates
+                  topics:
+                    - storage-spectrum-scale.md
+                    - storage-ibm-block-csi.md
+              - topicgroup:
+                  label: NetApp storage templates
+                  topics:
+                    - storage-netapp-trident.md
+                    - storage-netapp-nas.md
+                    - storage-netapp-san.md
+              - topicgroup:
+                  label: Red Hat storage templates
+                  topics:
+                    - storage-local-block.md
+                    - storage-local-file.md
+                    - storage-ocs-local.md
+                    - storage-ocs-remote.md
+              - storage-ref.md
         - topicgroup:
-          label: Enhancing security
-          topics:
-            - iam.md
-            - architecture-workload-isolation.md
-            - ha-dr.md
-            - compliance.md
-            - service-connection.md
-            - data-security.md
-            - at.md
-    - navgroup:
+            label: Enhancing security
+            topics:
+              - iam.md
+              - architecture-workload-isolation.md
+              - ha-dr.md
+              - compliance.md
+              - service-connection.md
+              - data-security.md
+              - at.md
+  - navgroup:
       id: reference
             - link:
-              label: API reference
-              href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster
-        - topcigroup:
-          label: CLI plug-in reference
-          topics:
-            - cli-reference.md
-            - cli-changelog.md
+                label: API reference
+                href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster
+        - topicgroup:
+            label: CLI plug-in reference
+            topics:
+              - cli-reference.md
+              - cli-changelog.md
         - limitations.md
         - supported-regions.md
         - responsibilities.md
         - license-notices.md
-    - navgroup:
+  - navgroup:
       id: help
       topics:
         - faqs.md
         - topicgroup:
-          label: Troubleshooting errors
-          topics:
-            - getting-help.md
-            - ts-locations/debug-location.md
+            label: Troubleshooting errors
+            topics:
+              - getting-help.md
+              - ts-locations/debug-location.md
         - topicgroup:
-          label: Locations
-          topics:
-            - ts-locations/debug-control-plane.md
-            - ts-locations/ts-location-subdomain.md
-            - ts-locations/ts-location-healthcheck.md
-            - ts-locations/ts-location-listing-iam.md
+            label: Locations
+            topics:
+              - ts-locations/debug-control-plane.md
+              - ts-locations/ts-location-subdomain.md
+              - ts-locations/ts-location-healthcheck.md
+              - ts-locations/ts-location-listing-iam.md
         - topicgroup:
-          label: Hosts
-          topics:
-            - ts-hosts/debug-hosts.md
-            - ts-hosts/debug-login-host.md
-            - ts-hosts/ts-host-ssh-login.md
-            - ts-hosts/ts-host-registration-fail.md
-            - ts-hosts/ts-host-assign-fail.md
+            label: Hosts
+            topics:
+              - ts-hosts/debug-hosts.md
+              - ts-hosts/debug-login-host.md
+              - ts-hosts/ts-host-ssh-login.md
+              - ts-hosts/ts-host-registration-fail.md
+              - ts-hosts/ts-host-assign-fail.md
         - topicgroup:
-          label: Clusters
-          topics:
-            - ts-clusters/debug-clusters.md
-            - ts-clusters/ts-cluster-satconfig-updates.md
-            - ts-clusters/ts-console-fail.md
-            - ts-clusters/ts-cluster-operations.md
-            - ts-clusters/ts-addons.md
+            label: Clusters
+            topics:
+              - ts-clusters/debug-clusters.md
+              - ts-clusters/ts-cluster-satconfig-updates.md
+              - ts-clusters/ts-console-fail.md
+              - ts-clusters/ts-cluster-operations.md
+              - ts-clusters/ts-addons.md
         - topicgroup:
-          label: Storage
-          topics:
-            - ts-storage/ts-storage-cleanup.md
-    - sitemap.md
+            label: Storage
+            topics:
+              - ts-storage/ts-storage-cleanup.md
