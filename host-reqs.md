@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -188,7 +188,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 | Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.us.cloud-object-storage.appdomain.cloud` | HTTPS |
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **US South** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for US South (`dal`) in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | See documentation |
-| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org  \n 1.rhel.pool.ntp.org  \n 2.rhel.pool.ntp.org  \n 3.rhel.pool.ntp.org | NTP protocol and UDP port 123 |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts |  0.rhel.pool.ntp.org<br>1.rhel.pool.ntp.org<br>2.rhel.pool.ntp.org<br>3.rhel.pool.ntp.org | NTP protocol and UDP port 123 |
 {: #firewall-outbound-dal}
 {: tab-title="Dallas (dal)"}
 {: class="comparison-tab-table"}
@@ -198,13 +198,13 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 
 |Description|Source IP|Destination IP|Protocol and ports|
 |-----------|---------|--------------|------------------|
-| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 169.63.123.154</br>169.63.110.114</br>169.62.13.2</br>169.60.123.162</br>169.59.152.58</br>52.117.93.26 | TCP 443, 30000 - 32767  \n UDP 30000 - 32767 |
+| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 169.63.123.154</br>169.63.110.114</br>169.62.13.2</br>169.60.123.162</br>169.59.152.58</br>52.117.93.26 | TCP 443, 30000 - 32767<br>UDP 30000 - 32767 |
 | Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.us.cloud-object-storage.appdomain.cloud` | HTTPS |
 | Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 52.117.112.242</br>169.47.156.154</br>169.47.174.178</br>169.59.135.26</br>169.60.122.226</br>169.62.1.34</br>169.62.53.58</br>169.63.113.122</br>169.63.121.178</br>169.63.133.10</br>169.63.148.250</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.us-east.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **US East** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **US East** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | [See documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) |
 | Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
-| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org  \n 1.rhel.pool.ntp.org  \n 2.rhel.pool.ntp.org  \n 3.rhel.pool.ntp.org | NTP protocol and UDP port 123 |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org<br>1.rhel.pool.ntp.org<br>2.rhel.pool.ntp.org<br>3.rhel.pool.ntp.org | NTP protocol and UDP port 123 |
 {: #firewall-outbound-wdc}
 {: tab-title="Washington DC (wdc)"}
 {: class="comparison-tab-table"}
@@ -220,7 +220,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **UK South** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **UK South** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | [See documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) |
 | Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
-| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org  \n 1.rhel.pool.ntp.org  \n 2.rhel.pool.ntp.org  \n 3.rhel.pool.ntp.org | - |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org<br>1.rhel.pool.ntp.org<br>2.rhel.pool.ntp.org<br>3.rhel.pool.ntp.org | - |
 {: #firewall-outbound-lon}
 {: tab-title="London (lon)"}
 {: class="comparison-tab-table"}
@@ -236,7 +236,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **EU Central** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **EU Central** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | [See documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) |
 | Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
-| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org  \n 1.rhel.pool.ntp.org  \n 2.rhel.pool.ntp.org  \n 3.rhel.pool.ntp.org | - |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org<br>1.rhel.pool.ntp.org<br>2.rhel.pool.ntp.org<br>3.rhel.pool.ntp.org | - |
 {: #firewall-outbound-fra}
 {: tab-title="Frankfurt (fra)"}
 {: class="comparison-tab-table"}
