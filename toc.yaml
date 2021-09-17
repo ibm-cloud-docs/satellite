@@ -9,7 +9,6 @@ toc:
     version: 2
     console-page: /satellite
     product-page: https://www.ibm.com/cloud/satellite
-    
   entries: 
   - navgroup: 
       id: learn
@@ -21,6 +20,7 @@ toc:
             - about.md
             - uc-sg.md
             - uc-edge.md
+      - relnotes.md
   - navgroup:
       id: howto
       topics:
