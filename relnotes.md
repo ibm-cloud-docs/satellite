@@ -35,11 +35,14 @@ Review the release notes for September 2021.
 Review the release notes for 15 September 2021.
 {: shortdesc}
 
+
 OpenShift Data Foundation
 :   OpenShift Data Foundation is generally available for {{site.data.keyword.satelliteshort}} cluster. For more information see, the following links.
     - [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
     - [Deploying OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-ocs-local).
     - [Deploying OpenShift Data Foundation using remote, dynamically provisioned disks](/docs/satellite?topic=satellite-config-storage-ocs-remote).
+
+
 
 
 ## August 2021
