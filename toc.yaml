@@ -101,7 +101,8 @@ toc:
               - at.md
   - navgroup:
       id: reference
-            - link:
+      topics: 
+        - link:
                 label: API reference
                 href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster
         - topicgroup:
