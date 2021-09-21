@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -181,7 +181,7 @@ See [View your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewi
 See the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic=overview-slas) and the [{{site.data.keyword.satelliteshort}} additional service description](http://www.ibm.com/software/sla/sladb.nsf/sla/bm-8913-01){: external}.
 
  
-{{site.data.keyword.satelliteshort}} Infrastructure Service is IBM-operated and as such, is covered in the {{site.data.keyword.satellitelong_notm}} cloud service terms with additional information outlined in the [{{site.data.keyword.cloud_notm}} Additional Services Description](http://www.ibm.com/terms?id=i126-8979){: external}.
+{{site.data.keyword.satelliteshort}} Infrastructure Service is IBM-operated and as such, is covered in the {{site.data.keyword.satellitelong_notm}} cloud service terms with additional information outlined in the [{{site.data.keyword.cloud_notm}} Additional Services Description](http://www.ibm.com/support/customer/csol/terms/?id=i126-8979){: external}.
 
 ## What compliance standards does the service meet?
 {: #standards}
