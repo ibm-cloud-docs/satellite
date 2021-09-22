@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -148,6 +148,19 @@ Review the following table to help troubleshoot network connectivity issues to {
 {: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from London." caption-side="top"}
 {: #check-ep-london}
 {: tab-title="London"}
+{: tab-group="check-ep"}
+
+| Endpoint | Command to check endpoint |
+| --- | ------------------------- |
+| Public regional endpoint| `nslookup origin.jp-tok.containers.cloud.ibm.com` |
+| Public regional bootstrap endpoint | `curl -v https://origin.jp-tok.containers.cloud.ibm.com/bootstrap/firstboot` |
+| Private regional bootstrap endpoint | `curl -v https://private.jp-tok.containers.cloud.ibm.com/bootstrap/firstboot` |
+|{{site.data.keyword.registrylong_notm}} region | `curl -v https://jp.icr.io` |
+{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
+{: class="simple-tab-table"}
+{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Tokyo." caption-side="top"}
+{: #check-ep-tokyo}
+{: tab-title="Tokyo"}
 {: tab-group="check-ep"}
 
 | Endpoint | Command to check endpoint |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,6 +21,7 @@ Review the {{site.data.keyword.cloud}} regions that you can choose from to manag
 
 |Geography|Country|Multizone Metro|Location|Region|Zone|
 |---------|-------|---------------|--------|------|----|
+| Asia Pacific | Japan | Tokyo | `tok` | `jp-tok` | `jp-tok-1` </br> `jp-tok-2` </br> `jp-tok-3`|
 |North America|United States|Dallas| `dal`| `us-south`|`us-south-1` </br> `us-south-2` </br> `us-south-3`|
 |North America|United States|Washington DC| `wdc`| `us-east`|`us-east-1` </br> `us-east-2` </br> `us-east-3`|
 | Europe | Germany | Frankfurt | `fra` | `eu-de` | `eu-de-1` </br> `eu-de-2` </br> `eu-de-3`|

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -230,6 +230,22 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 
 |Description|Source IP|Destination IP|Protocol and ports|
 |-----------|---------|--------------|------------------|
+| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 161.202.104.226</br>128.168.67.106</br>165.192.108.10 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
+| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.tok.ap.cloud-object-storage.appdomain.cloud` | HTTPS |
+| Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 161.202.150.66</br>128.168.89.146</br>165.192.71.226</br>169.56.18.98</br>128.168.68.42</br>165.192.76.2</br>161.202.235.106</br>128.168.106.18</br>165.192.111.170</br>161.202.89.122</br>128.168.151.170</br>165.192.64.2</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.jp-tok.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
+| Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **AP North** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
+| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **AP North** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | [See documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) |
+| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org<br>1.rhel.pool.ntp.org<br>2.rhel.pool.ntp.org<br>3.rhel.pool.ntp.org | - |
+{: #firewall-outbound-tok}
+{: tab-title="Tokyo (tok)"}
+{: class="comparison-tab-table"}
+{: tab-group="firewall-outbound"}
+{: caption="Required outbound connectivity for hosts on the primary network interface" caption-side="top"}
+{: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
+
+|Description|Source IP|Destination IP|Protocol and ports|
+|-----------|---------|--------------|------------------|
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 149.81.188.122</br>158.177.88.18</br>161.156.38.122 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
 | Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.eu.cloud-object-storage.appdomain.cloud` | HTTPS |
 | Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 149.81.188.130</br>149.81.188.138</br>149.81.188.146</br>149.81.188.154</br>158.177.109.210</br>158.177.169.162</br>158.177.179.154</br>158.177.75.210</br>161.156.38.10</br>161.156.38.18</br>161.156.38.2</br>161.156.38.26</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.eu-de.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
@@ -282,6 +298,10 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     *   **London**:
 
         158.175.120.210</br>141.125.97.106</br>158.176.139.66
+
+    *   **Tokyo**:
+
+        161.202.104.226</br>128.168.67.106</br>165.192.108.10
 
     *   **Washington, DC**:
 
