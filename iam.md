@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -339,12 +339,12 @@ Click the tabs in the following table to review the actions that are mapped to p
 | List hosts in a {{site.data.keyword.satelliteshort}} location. | `/hostqueue/getHosts` | [`host ls`](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls) | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Update a host. | `/hostqueue/updateHost` | [`host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update) | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Remove a host from a {{site.data.keyword.satelliteshort}} location control plane or cluster.| `/hostqueue/removeHost` |[`host rm`](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm) | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: #platform-table1}
 {: tab-title="Locations and hosts"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
@@ -367,12 +367,12 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Import the configuration for a {{site.data.keyword.satelliteshort}} endpoint from a file. | `POST /v1/locations/{location_id}/endpoints/import` | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | List the {{site.data.keyword.satelliteshort}} endpoints that a client (source) is configured for and the enabled status of the client (source) for each endpoint. |	`GET /v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Enable or disable a client (source) for one or more {{site.data.keyword.satelliteshort}} endpoints.	| `PATCH ​/v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: #platform-table2}
 {: tab-title="Link"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
@@ -380,23 +380,23 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Create a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. | `addChannel`|[`config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-create) | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Delete a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. |`removeChannel` |[`config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rm) | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | View an organization in {{site.data.keyword.satelliteshort}} Config. | `organization`| - | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: #platform-table3}
 {: tab-title="Configuration"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
 |-----|---|---|-----|-----|-----|--------|---|
 | Set the configuration version that a cluster group is subscribed to in {{site.data.keyword.satelliteshort}} Config. | `setSubscription`| [`subscription update --version`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)| | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: #platform-table4}
 {: tab-title="Subscription"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
@@ -405,12 +405,12 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Get a script to register a cluster to {{site.data.keyword.satelliteshort}} Config. | `enableRegistrationUrl`|[`cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-register) | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Remove a cluster from {{site.data.keyword.satelliteshort}} Config. | `deleteCluster`|[`cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister) | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | View clusters that are attached to {{site.data.keyword.satelliteshort}} Config. |`clusters` calls |[`cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls)</br> [`cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-get) | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: #platform-table5}
 {: tab-title="Cluster"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
@@ -420,23 +420,23 @@ Click the tabs in the following table to review the actions that are mapped to p
 |Create a cluster group.|`addGroup`|[`cluster-group create`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-create)| | | | |<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|
 | View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config. |`groups` |[`cluster-group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls) </br>[`cluster-group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get) | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Remove a cluster group. |`removeGroup` |[`cluster-group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm) | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: #platform-table6}
 {: tab-title="Clustergroup"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 | Action | API | CLI | None | Viewer | Editor | Operator | Administrator |
 |-----|---|---|-----|-----|-----|--------|---|
 | View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. | `resources` calls | `resource ls`| | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with platform access roles." caption-side="top"}
 {: #platform-table7}
 {: tab-title="Resource"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-platform"}
-{: caption="`*` Actions that you can take with platform access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different platform roles are in the following columns: none, viewer, editor, operator, and administrator."}
 
 `*` You cannot scope access policies to a particular {{site.data.keyword.satelliteshort}} Config **resource**. Instead, scope the policy to the {{site.data.keyword.satellitelong_notm}} service so that users can list {{site.data.keyword.satelliteshort}} Config resources.
@@ -457,12 +457,12 @@ Click the tabs in the following table to review the actions that are mapped to s
 | Import the configuration for a {{site.data.keyword.satelliteshort}} endpoint from a file. | `POST /v1/locations/{location_id}/endpoints/import` | | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |	|
 | List the {{site.data.keyword.satelliteshort}} endpoints that a client (source) is configured for and the enabled status of the client (source) for each endpoint. | `GET /v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |	|
 | Enable or disable a client (source) for one or more {{site.data.keyword.satelliteshort}} endpoints.	| `PATCH ​/v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with service access roles." caption-side="top"}
 {: #service-table1}
 {: tab-title="Link"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-service"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different service roles are in the following columns: none, reader, writer, deployer, and manager."}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
@@ -476,12 +476,12 @@ Click the tabs in the following table to review the actions that are mapped to s
 | Get details for a version that you added to a {{site.data.keyword.satelliteshort}} configuration. | `getChannelVersion`| [`configuration version get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-get)| | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|  | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|
 | View an organization in {{site.data.keyword.satelliteshort}} Config. |`organization` | - | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | |<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Manage an organization in {{site.data.keyword.satelliteshort}} Config | - | | | | |  |<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with service access roles." caption-side="top"}
 {: #service-table2}
 {: tab-title="Configuration"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-service"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different service roles are in the following columns: none, reader, writer, deployer, and manager."}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
@@ -491,12 +491,12 @@ Click the tabs in the following table to review the actions that are mapped to s
 | Update a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. | `editSubscription`| [`subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)| | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Set the configuration version of Kubernetes resources for a subscription in {{site.data.keyword.satelliteshort}} Config. | `setSubscription`|[`subscription update --version`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update) | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|
 | Delete a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. |`removeSubscription` |[`subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-rm) | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with service access roles." caption-side="top"}
 {: #service-table3}
 {: tab-title="Subscription"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-service"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different service roles are in the following columns: none, reader, writer, deployer, and manager."}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
@@ -505,12 +505,12 @@ Click the tabs in the following table to review the actions that are mapped to s
 | Get a script to register a cluster to {{site.data.keyword.satelliteshort}} Config. | `enableRegistrationUrl`|[`cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-register) | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Remove a cluster from {{site.data.keyword.satelliteshort}} Config. | `deleteCluster`|[`cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister) | | | |  |<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | View clusters that are attached to {{site.data.keyword.satelliteshort}} Config. | `clusters` calls |[`cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls) </br> [`cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-get) | |<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | |  |<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with service access roles." caption-side="top"}
 {: #service-table4}
 {: tab-title="Cluster"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-service"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different service roles are in the following columns: none, reader, writer, deployer, and manager."}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
@@ -520,23 +520,23 @@ Click the tabs in the following table to review the actions that are mapped to s
 |Create a cluster group.|`addGroup`|[`cluster-group create`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-create)| | | | |<img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />|
 | View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config. |`groups` |[`cluster-group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls) </br>[`cluster-group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get) | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" />| | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
 | Remove a cluster group. |`removeGroup` |[`cluster-group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm) | | | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: row-headers}
+{: class="comparison-tab-table"}
+{: caption="Actions that you can take with service access roles." caption-side="top"}
 {: #service-table5}
 {: tab-title="Clustergroup"}
-{: class="comparison-tab-table"}
 {: tab-group="iam-service"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different service roles are in the following columns: none, reader, writer, deployer, and manager."}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
 |-----|---|---|-----|-----|-----|--------|----|
 | View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. | `resources` calls | [`resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls) </br> [`resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get) | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> | | | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |
-{: row-headers}
-{: #service-table6}
-{: tab-title="Resource"}
 {: class="comparison-tab-table"}
+{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: #service-table6}
+{: tab-title="Resources"}
 {: tab-group="iam-service"}
-{: caption="`*` Actions that you can take with service access roles." caption-side="top"}
+{: row-headers}
 {: summary="The table shows user permissions by access role. Rows are to be read from the left to right. The action is in the first column. The API for the action is in the second column. The CLI for the action is in the third column. The different service roles are in the following columns: none, reader, writer, deployer, and manager."}
 
 `*` You cannot scope access policies to a particular {{site.data.keyword.satelliteshort}} Config **resource**. Instead, scope the policy to the {{site.data.keyword.satellitelong_notm}} service so that users can list {{site.data.keyword.satelliteshort}} Config resources.
