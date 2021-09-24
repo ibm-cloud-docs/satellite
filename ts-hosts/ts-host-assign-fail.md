@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -29,9 +29,9 @@ Your host might have encountered an issue during the bootstrapping process. For 
 You might have set up a firewall or other change that prevents access to a dependency.
 
 In particular, the bootstrapping process depends upon the following access.
-*   Access to RHEL Satellite servers and the required packages installed on the host machine.
-*   Access to {{site.data.keyword.registrylong_notm}} endpoints to pull down required images.
-*   Access to the Kubernetes master of the {{site.data.keyword.satelliteshort}} cluster that you want to assign the host to. Access might be blocked because the host cannot communicate with the service endpoint of the cluster, or because a Kubernetes resource within the cluster such as a webhook intercepts and blocks communication with the Kubernetes API server.
+* Access to RHEL Satellite servers and the required packages installed on the host machine.
+* Access to {{site.data.keyword.registrylong_notm}} endpoints to pull down required images.
+* Access to the Kubernetes master of the {{site.data.keyword.satelliteshort}} cluster that you want to assign the host to. Access might be blocked because the host cannot communicate with the service endpoint of the cluster, or because a Kubernetes resource within the cluster such as a webhook intercepts and blocks communication with the Kubernetes API server.
 
 ## Debugging hosts for connectivity issues
 {: #debug-host-connectivity}
@@ -148,6 +148,19 @@ Review the following table to help troubleshoot network connectivity issues to {
 {: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from London." caption-side="top"}
 {: #check-ep-london}
 {: tab-title="London"}
+{: tab-group="check-ep"}
+
+| Endpoint | Command to check endpoint |
+| --- | ------------------------- |
+| Public regional endpoint| `nslookup origin.jp-tok.containers.cloud.ibm.com` |
+| Public regional bootstrap endpoint | `curl -v https://origin.jp-tok.containers.cloud.ibm.com/bootstrap/firstboot` |
+| Private regional bootstrap endpoint | `curl -v https://private.jp-tok.containers.cloud.ibm.com/bootstrap/firstboot` |
+|{{site.data.keyword.registrylong_notm}} region | `curl -v https://jp.icr.io` |
+{: summary="Each row contains a command that you can run to check connectivity to a required endpoint in the {{site.data.keyword.cloud_notm}} multizone metro."}
+{: class="simple-tab-table"}
+{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Tokyo." caption-side="top"}
+{: #check-ep-tokyo}
+{: tab-title="Tokyo"}
 {: tab-group="check-ep"}
 
 | Endpoint | Command to check endpoint |

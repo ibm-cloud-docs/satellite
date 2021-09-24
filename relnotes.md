@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -27,6 +27,15 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 Review the release notes for September 2021.
 {: shortdesc}
 
+### 23 September 2021
+{: #23sep2021}
+{: release-note}
+
+Review the release notes for 23 September 2021.
+{: shortdesc}
+
+**New! Tokyo location**
+:   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Tokyo** (`tok`, `jp-tok`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). 
 
 
 ### 15 September 2021
@@ -37,11 +46,10 @@ Review the release notes for 15 September 2021.
 {: shortdesc}
 
 OpenShift Data Foundation
-:   OpenShift Data Foundation is generally available for {{site.data.keyword.satelliteshort}} clusters. For more information see, the following links.
+:   OpenShift Data Foundation is generally available for {{site.data.keyword.satelliteshort}} cluster. For more information see, the following links.
     - [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
     - [Deploying OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-ocs-local).
     - [Deploying OpenShift Data Foundation using remote, dynamically provisioned disks](/docs/satellite?topic=satellite-config-storage-ocs-remote).
-
 
 
 ## August 2021
@@ -59,9 +67,9 @@ OpenShift Data Foundation
 
 | Date | Description |
 | ---- | ----------- |
-| 19 July 2021 | **End of UDP endpoint support**: The UDP protocol is no longer supported for `cloud` and `location` endpoints that you create in {{site.data.keyword.satelliteshort}} Link. For more information, see [Encyrption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).  |
-| 16 July 2021 | **New! Beta support for the Azure Disk CSI driver template**: You can use the Azure Disk CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Azure Disk CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-azure-csi). |
-| 08 July 2021 | On 08 July, the DNS provider is changed from Cloudflare to Akamai for all `containers.cloud.ibm.com` domains. Previously, to use {{site.data.keyword.satelliteshort}} Config and to access the {{site.data.keyword.satelliteshort}} Link API, you were required to allow outbound connectivity from your control plane hosts to the IP addresses for Cloudflare's proxied load balancers. Now, you must instead allow access to [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} on TCP ports 80 and 443. After the migration completes, you can remove the Cloudflare IP address rules. |
+| 19 July | **End of UDP endpoint support**: The UDP protocol is no longer supported for `cloud` and `location` endpoints that you create in {{site.data.keyword.satelliteshort}} Link. For more information, see [Encyrption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).  |
+| 16 July | **New! Beta support for the Azure Disk CSI driver template**: You can use the Azure Disk CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Azure Disk CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-azure-csi). |
+| 08 July | On 08 July, the DNS provider is changed from Cloudflare to Akamai for all `containers.cloud.ibm.com` domains. Previously, to use {{site.data.keyword.satelliteshort}} Config and to access the {{site.data.keyword.satelliteshort}} Link API, you were required to allow outbound connectivity from your control plane hosts to the IP addresses for Cloudflare's proxied load balancers. Now, you must instead allow access to [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} on TCP ports 80 and 443. After the migration completes, you can remove the Cloudflare IP address rules. |<staging tokyo>
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in July 2021."}
 
@@ -82,10 +90,10 @@ OpenShift Data Foundation
 
 | Date | Description |
 | ---- | ----------- |
-| 26 May 2021 | **CLI changelog**: Updated the CLI plug-in changelog page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog). |
-| 19 May 2021 | **New! NetApp ONTAP-NAS storage driver template**: You can use the NetApp ONTAP-NAS storage driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [NetApp ONTAP-NAS storage driver documentation](/docs/satellite?topic=satellite-config-storage-netapp-nas). |
-| 12 May 2021 | **New! {{site.data.keyword.IBM_notm}} Systems block storage CSI driver template**: You can use the {{site.data.keyword.IBM_notm}} Systems block storage CSI driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver documentation](/docs/satellite?topic=satellite-config-storage-block-csi). |
-| 07 May 2021 | **New! Spectrum Scale CSI driver template**: You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale Container Storage Interface (CSI) driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.IBM_notm}} Spectrum Scale driver documentation](/docs/satellite?topic=satellite-config-storage-spectrum-scale). |
+| 26 May | **CLI changelog**: Updated the CLI plug-in changelog page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog). |
+| 19 May | **New! NetApp ONTAP-NAS storage driver template**: You can use the NetApp ONTAP-NAS storage driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [NetApp ONTAP-NAS storage driver documentation](/docs/satellite?topic=satellite-config-storage-netapp-nas). |
+| 12 May | **New! {{site.data.keyword.IBM_notm}} Systems block storage CSI driver template**: You can use the {{site.data.keyword.IBM_notm}} Systems block storage CSI driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver documentation](/docs/satellite?topic=satellite-config-storage-block-csi). |
+| 07 May | **New! Spectrum Scale CSI driver template**: You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale Container Storage Interface (CSI) driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.IBM_notm}} Spectrum Scale driver documentation](/docs/satellite?topic=satellite-config-storage-spectrum-scale). |
 {: summary="The table shows release notes. Rows are to be read from the left to right, with the date in column one, the title of the feature in column two and a description in column three."}
 {: caption="Documentation updates in May 2021."}
 

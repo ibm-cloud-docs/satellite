@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-17"
+lastupdated: "2021-09-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -91,8 +91,6 @@ Review the following requirements that relate to the storage setup of host machi
 * For hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane, the attached storage device must have at least 1000 IOPS. The required IOPS varies with the number of clusters in the location, and the activity of the masters for those clusters.
 * Hosts cannot have a device that is mounted to `/var/data`.
 
-
-<br />
 
 ## Host network
 {: #reqs-host-network}
@@ -186,8 +184,8 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 |-----------|---------|--------------|------------------|
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 52.117.39.146</br>169.48.134.66</br>169.63.36.210 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
 | Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.us.cloud-object-storage.appdomain.cloud` | HTTPS |
-| Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **US South** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
-| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for US South (`dal`) in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | See documentation |
+| Allow hosts to be attached to a location and assigned to services in the location | All hosts | All IP addresses listed in the **US South** row of the table of the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips), or allow all outbound | TCP 443 |
+| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for US South (`dal`) in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips) | See documentation |
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts |  0.rhel.pool.ntp.org<br>1.rhel.pool.ntp.org<br>2.rhel.pool.ntp.org<br>3.rhel.pool.ntp.org | NTP protocol and UDP port 123 |
 {: #firewall-outbound-dal}
 {: tab-title="Dallas (dal)"}
@@ -196,13 +194,15 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 {: caption="Required outbound connectivity for hosts on the primary network interface" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
+
+
 |Description|Source IP|Destination IP|Protocol and ports|
 |-----------|---------|--------------|------------------|
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 169.63.123.154</br>169.63.110.114</br>169.62.13.2</br>169.60.123.162</br>169.59.152.58</br>52.117.93.26 | TCP 443, 30000 - 32767<br>UDP 30000 - 32767 |
 | Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.us.cloud-object-storage.appdomain.cloud` | HTTPS |
-| Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 52.117.112.242</br>169.47.156.154</br>169.47.174.178</br>169.59.135.26</br>169.60.122.226</br>169.62.1.34</br>169.62.53.58</br>169.63.113.122</br>169.63.121.178</br>169.63.133.10</br>169.63.148.250</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.us-east.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
-| Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **US East** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
-| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **US East** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | [See documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) |
+| Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 52.117.112.242</br>169.47.156.154</br>169.47.174.178</br>169.59.135.26</br>169.60.122.226</br>169.61.101.226</br>169.62.1.34</br>169.62.53.58</br>169.63.113.122</br>169.63.121.178</br>169.63.133.10</br>169.63.148.250</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.us-east.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
+| Allow hosts to be attached to a location and assigned to services in the location | All hosts | All IP addresses listed for **US East** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips), or allow all outbound | TCP 443 |
+| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **US East** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips) | [See documentation](/docs/openshift?topic=openshift-firewall#master_ips) |
 | Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org<br>1.rhel.pool.ntp.org<br>2.rhel.pool.ntp.org<br>3.rhel.pool.ntp.org | NTP protocol and UDP port 123 |
 {: #firewall-outbound-wdc}
@@ -217,8 +217,8 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 158.175.120.210</br>141.125.97.106</br>158.176.139.66 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
 | Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.eu.cloud-object-storage.appdomain.cloud` | HTTPS |
 | Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 141.125.137.50</br>141.125.137.98</br>141.125.66.114</br>141.125.87.226</br>158.175.125.50</br>158.175.130.138</br>158.175.131.242</br>158.175.140.106</br>158.176.104.186</br>158.176.135.26</br>158.176.142.106</br>158.176.74.242</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.eu-gb.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
-| Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **UK South** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
-| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **UK South** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | [See documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) |
+| Allow hosts to be attached to a location and assigned to services in the location | All hosts | All IP addresses listed for **UK South** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips), or allow all outbound | TCP 443 |
+| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **UK South** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips) | [See documentation](/docs/openshift?topic=openshift-firewall#master_ips) |
 | Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org<br>1.rhel.pool.ntp.org<br>2.rhel.pool.ntp.org<br>3.rhel.pool.ntp.org | - |
 {: #firewall-outbound-lon}
@@ -230,11 +230,27 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 
 |Description|Source IP|Destination IP|Protocol and ports|
 |-----------|---------|--------------|------------------|
+| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 161.202.104.226</br>128.168.67.106</br>165.192.108.10 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
+| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.tok.ap.cloud-object-storage.appdomain.cloud` | HTTPS |
+| Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 161.202.150.66</br>128.168.89.146</br>165.192.71.226</br>169.56.18.98</br>128.168.68.42</br>165.192.76.2</br>161.202.235.106</br>128.168.106.18</br>165.192.111.170</br>161.202.89.122</br>128.168.151.170</br>165.192.64.2</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.jp-tok.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
+| Allow hosts to be attached to a location and assigned to services in the location | All hosts | All IP addresses listed for **AP North** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips), or allow all outbound | TCP 443 |
+| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **AP North** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips) | [See documentation](/docs/openshift?topic=openshift-firewall#master_ips) |
+| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org<br>1.rhel.pool.ntp.org<br>2.rhel.pool.ntp.org<br>3.rhel.pool.ntp.org | - |
+{: #firewall-outbound-tok}
+{: tab-title="Tokyo (tok)"}
+{: class="comparison-tab-table"}
+{: tab-group="firewall-outbound"}
+{: caption="Required outbound connectivity for hosts on the primary network interface" caption-side="top"}
+{: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
+
+|Description|Source IP|Destination IP|Protocol and ports|
+|-----------|---------|--------------|------------------|
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 149.81.188.122</br>158.177.88.18</br>161.156.38.122 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
 | Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.eu.cloud-object-storage.appdomain.cloud` | HTTPS |
 | Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 149.81.188.130</br>149.81.188.138</br>149.81.188.146</br>149.81.188.154</br>158.177.109.210</br>158.177.169.162</br>158.177.179.154</br>158.177.75.210</br>161.156.38.10</br>161.156.38.18</br>161.156.38.2</br>161.156.38.26</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.eu-de.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
-| Allow hosts to be attached to a location and assigned to services in the location | All hosts | [All IP addresses listed in the **EU Central** row of the table in step 2 of the {{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound), or allow all outbound | TCP 443 |
-| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **EU Central** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) | [See documentation](/docs/openshift?topic=openshift-firewall#firewall_outbound) |
+| Allow hosts to be attached to a location and assigned to services in the location | All hosts | All IP addresses listed for **EU Central** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips), or allow all outbound | TCP 443 |
+| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **EU Central** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips) | [See documentation](/docs/openshift?topic=openshift-firewall#master_ips) |
 | Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | 0.rhel.pool.ntp.org<br>1.rhel.pool.ntp.org<br>2.rhel.pool.ntp.org<br>3.rhel.pool.ntp.org | - |
 {: #firewall-outbound-fra}
@@ -271,21 +287,25 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 1. In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, you might SSH into the machine from a command line.
 
 2. Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test.
-    *   **Dallas**:
+    - **Dallas**:
 
-        52.117.39.146</br>169.48.134.66</br>169.63.36.210
+      52.117.39.146</br>169.48.134.66</br>169.63.36.210
 
-    *   **Frankfurt**:
+    - **Frankfurt**:
 
-        149.81.188.122</br>158.177.88.18</br>161.156.38.122
+      149.81.188.122</br>158.177.88.18</br>161.156.38.122
 
-    *   **London**:
+    - **London**:
 
-        158.175.120.210</br>141.125.97.106</br>158.176.139.66
+      158.175.120.210</br>141.125.97.106</br>158.176.139.66
 
-    *   **Washington, DC**:
+    - **Tokyo**:
 
-        169.63.123.154</br>169.63.110.114</br>169.62.13.2</br>169.60.123.162</br>169.59.152.58</br>52.117.93.26
+      161.202.104.226</br>128.168.67.106</br>165.192.108.10
+
+    - **Washington, DC**:
+
+      169.63.123.154</br>169.63.110.114</br>169.62.13.2</br>169.60.123.162</br>169.59.152.58</br>52.117.93.26
 
 3. From your host, ping the IP addresses of the {{site.data.keyword.cloud_notm}} region.
     ```
@@ -296,7 +316,7 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 4. After a few packets complete transmission, close the connection. For example, from the command line, you might enter `ctrl+c`.
 5. In the `ping statistics` output, note the average (`avg`) round-trip distance in milliseconds (ms) between the host and the {{site.data.keyword.cloud_notm}} region, and compare whether the connection meets the latency requirement of less than or equal to 200 milliseconds (`<= 200ms`).
 
-    Example of a connection that meets the latency requirements:
+    Example of a connection that meets the latency requirements
     ```
     --- 169.63.123.154 ping statistics ---
     25 packets transmitted, 25 packets received, 0.0% packet loss
@@ -304,7 +324,7 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     ```
     {: screen}
 
-    Example of a connection that does not meet the latency requirements:
+    Example of a connection that does not meet the latency requirements
     ```
     --- 158.175.120.210 ping statistics ---
     9 packets transmitted, 9 packets received, 0.0% packet loss
