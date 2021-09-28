@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -26,6 +26,16 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 Review the release notes for September 2021.
 {: shortdesc}
+
+### 29 September 2021
+{: #29sep2021}
+{: release-note}
+
+Review the release notes for 29 September 2021.
+{: shortdesc}
+
+**New! Alibaba host support**
+:   Alibaba Cloud hosts are now supported for your {{site.data.keyword.satelliteshort}} location.
 
 ### 23 September 2021
 {: #23sep2021}

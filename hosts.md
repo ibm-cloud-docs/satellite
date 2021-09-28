@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-28"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -73,6 +73,7 @@ Before you begin, make sure that you have created host machines that meet the [m
     {: note}
 
 6. Follow the cloud provider-specific steps to update the script and attach your host.
+    - [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba)
     - [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
     - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
     - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
@@ -140,6 +141,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 
 2. On your local machine, find the script.
 3. Follow the cloud provider-specific steps to update the script and attach your host.
+    - [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba)
     - [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
     - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
     - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
