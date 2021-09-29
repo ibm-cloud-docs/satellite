@@ -98,7 +98,7 @@ Before you can attach your hosts, you must install the required Red Hat Enterpri
     {: note}
 
 ### 4. Upload and run the host attach script
-{: #alibaba-host-script}
+{: #alibaba-host-script-run}
 
 1. Locate your host script file on your system that you downloaded in step [1. Download the host script](#alibaba-host-script).
 2. Upload the host script file to your Alibaba instance.
