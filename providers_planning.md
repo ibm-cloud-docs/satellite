@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -115,8 +115,6 @@ For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf i
 {: shortdesc}
 
 The credentials that you provide are stored and encrypted in etcd of the {{site.data.keyword.satelliteshort}} location control plane master. For more information, see [Securing your data](/docs/satellite?topic=satellite-data-security).
-
-
 
 
 ### AWS credentials

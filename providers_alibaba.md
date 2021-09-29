@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-29"
 
 keywords: satellite, hybrid, multicloud, alibaba
 
@@ -19,7 +19,7 @@ subcollection: satellite
 Review the following host requirements that are specific to hosts that are in the Alibaba Cloud. For required access in Alibaba Cloud, see [Alibaba permissions](/docs/satellite?topic=satellite-iam#permissions-alibaba).
 {: shortdesc}
 
-## Manually adding Alibaba hosts to {{site.data.keyword.satelliteshort}}
+## Adding Alibaba hosts to {{site.data.keyword.satelliteshort}}
 {: #alibaba-host-attach}
 
 You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Alibaba Cloud.
@@ -156,8 +156,6 @@ Example security group for Alibaba
 |------|-----|------|-----|-----|
 | Allow |	1 | Custom TCP | Destination `30000/32767` | Source `0.0.0.0/0` |
 | Allow |	1 | Custom TCP | Destination `443/443` | Source `0.0.0.0/0` |
-| Allow |	1 | Custom TCP | Destination `22/22` | Source `0.0.0.0/0` |
-| Allow |	1 | Custom ICMP | Destination `-1/-1` | Source `0.0.0.0/0` |
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
 {: caption="Cluster add-on events" caption-side="top"}
 
