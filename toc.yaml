@@ -139,6 +139,7 @@ toc:
                   - ts-hosts/ts-host-ssh-login.md
                   - ts-hosts/ts-host-registration-fail.md
                   - ts-hosts/ts-host-assign-fail.md
+                  - ts-hosts/ts_host_console_update_fail.md
               - topicgroup:
                 label: Clusters
                 topics:
