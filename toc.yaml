@@ -125,30 +125,31 @@ toc:
               - getting-help.md
               - ts-locations/debug-location.md
               - topicgroup:
-                label: Locations
-                topics:
-                  - ts-locations/debug-control-plane.md
-                  - ts-locations/ts-location-subdomain.md
-                  - ts-locations/ts-location-healthcheck.md
-                  - ts-locations/ts-location-listing-iam.md
+                  label: Locations
+                  topics:
+                    - ts-locations/debug-control-plane.md
+                    - ts-locations/ts-location-subdomain.md
+                    - ts-locations/ts-location-healthcheck.md
+                    - ts-locations/ts-location-listing-iam.md
               - topicgroup:
-                label: Hosts
-                topics:
-                  - ts-hosts/debug-hosts.md
-                  - ts-hosts/debug-login-host.md
-                  - ts-hosts/ts-host-ssh-login.md
-                  - ts-hosts/ts-host-registration-fail.md
-                  - ts-hosts/ts-host-assign-fail.md
-                  - ts-hosts/ts_host_console_update_fail.md
+                  label: Hosts
+                  topics:
+                    - ts-hosts/debug-hosts.md
+                    - ts-hosts/debug-login-host.md
+                    - ts-hosts/ts-host-ssh-login.md
+                    - ts-hosts/ts-host-registration-fail.md
+                    - ts-hosts/ts-host-assign-fail.md
+                    - ts-hosts/ts_host_console_update_fail.md
               - topicgroup:
-                label: Clusters
-                topics:
-                  - ts-clusters/debug-clusters.md
-                  - ts-clusters/ts-cluster-satconfig-updates.md
-                  - ts-clusters/ts-console-fail.md
-                  - ts-clusters/ts-cluster-operations.md
-                  - ts-clusters/ts-addons.md
+                  label: Clusters
+                  topics:
+                    - ts-clusters/debug-clusters.md
+                    - ts-clusters/ts-cluster-satconfig-updates.md
+                    - ts-clusters/ts-console-fail.md
+                    - ts-clusters/ts-cluster-operations.md
+                    - ts-clusters/ts-addons.md
               - topicgroup:
-                label: Storage
-                topics:
-                  - ts-storage/ts-storage-cleanup.md
+                  label: Storage
+                  topics:
+                    - ts-storage/ts-storage-cleanup.md
+
