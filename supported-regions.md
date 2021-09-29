@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,11 +21,12 @@ Review the {{site.data.keyword.cloud}} regions that you can choose from to manag
 
 |Geography|Country|Multizone Metro|Location|Region|Zone|
 |---------|-------|---------------|--------|------|----|
-| Asia Pacific | Japan | Tokyo | `tok` | `jp-tok` | `jp-tok-1` \n `jp-tok-2` \n  `jp-tok-3`|
-| North America | United States | Dallas | `dal`| `us-south`|`us-south-1` \n `us-south-2` \n `us-south-3`|
-| North America | United States | Washington DC | `wdc`| `us-east`|`us-east-1` \n `us-east-2`  \n `us-east-3`|
-| Europe | Germany | Frankfurt | `fra` | `eu-de` | `eu-de-1` \n `eu-de-2` \n `eu-de-3`|
-| Europe | United Kingdom | London | `lon` | `eu-gb`|`eu-gb-1` \n `eu-gb-2` \n `eu-gb-3`|
+| Asia Pacific | Japan | Tokyo | `tok` | `jp-tok` | `jp-tok-1`</br>`jp-tok-2`</br>`jp-tok-3`|
+| North America | Canada | Toronto | `tor`| `ca-tor`|`tor-1`</br>`tor-4`</br>`tor-5`|
+| North America | United States | Dallas | `dal`| `us-south`|`us-south-1`</br>`us-south-2`</br>`us-south-3`|
+| North America | United States | Washington DC | `wdc`| `us-east`|`us-east-1`</br>`us-east-2`</br>`us-east-3`|
+| Europe | Germany | Frankfurt | `fra` | `eu-de` | `eu-de-1`</br>`eu-de-2`</br>`eu-de-3`|
+| Europe | United Kingdom | London | `lon` | `eu-gb`|`eu-gb-1`</br>`eu-gb-2`</br>`eu-gb-3`|
 {: caption="Supported {{site.data.keyword.cloud_notm}} locations to manage your {{site.data.keyword.satelliteshort}} location." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the geography. The second column is the country. The third column is the multizone metro. The fourth column is the region. The fifth column has the possible zones."}
 
