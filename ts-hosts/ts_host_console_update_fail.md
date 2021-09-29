@@ -13,7 +13,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Why can't I update my worker node hosts in the {{site.keyword.data.openshiftlong}} console?
+# Why can't I update my worker node hosts in the {{site.keyword.data.openshiftlong_notm}} console?
 {: #ts-hosts-update-roks-console}
 
 When you try to update your worker node hosts in the {{site.keyword.data.openshiftlong}} console, the update process fails. 
