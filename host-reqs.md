@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -194,7 +194,20 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 {: caption="Required outbound connectivity for hosts on the primary network interface" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
-
+|Description|Source IP|Destination IP|Protocol and ports|
+|-----------|---------|--------------|------------------|
+| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 163.74.65.138</br>163.75.70.50</br>169.53.160.154 | TCP 443, 30000 - 32767</br>UDP 30000 - 32767 |
+| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.ca.cloud-object-storage.appdomain.cloud` | HTTPS |
+| Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | 158.85.124.194</br>158.85.79.18</br>158.85.86.234</br>163.74.67.114</br>163.74.70.82</br>163.74.70.90</br>163.74.70.98</br>163.75.70.74</br>163.75.70.82</br>163.75.70.90</br>163.75.70.98</br>169.55.154.154</br></br>**Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.eu-gb.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
+| Allow hosts to be attached to a location and assigned to services in the location | All hosts | All IP addresses listed for **US East** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips), or allow all outbound | TCP 443 |
+| Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for Toronto (`tor`) in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips) | See documentation |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts |  0.rhel.pool.ntp.org<br>1.rhel.pool.ntp.org<br>2.rhel.pool.ntp.org<br>3.rhel.pool.ntp.org | NTP protocol and UDP port 123 |
+{: #firewall-outbound-tor}
+{: tab-title="Toronto (tor)"}
+{: class="comparison-tab-table"}
+{: tab-group="firewall-outbound"}
+{: caption="Required outbound connectivity for hosts on the primary network interface" caption-side="top"}
+{: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
 |Description|Source IP|Destination IP|Protocol and ports|
 |-----------|---------|--------------|------------------|
@@ -302,6 +315,10 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     - **Tokyo**:
 
       161.202.104.226</br>128.168.67.106</br>165.192.108.10
+
+    - **Toronto**
+    
+      163.74.65.138</br>163.75.70.50</br>169.53.160.154
 
     - **Washington, DC**:
 

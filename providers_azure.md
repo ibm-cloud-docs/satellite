@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -46,7 +46,7 @@ Before you begin, make sure that you have the correct [{{site.data.keyword.cloud
 
 Well done, your {{site.data.keyword.satelliteshort}} location is creating! You can review the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to see when your location is in a **Normal** state and ready to use.
 
-**Resources that are created by the template:**
+**Resources that are created by the template**
 
 The following resources are created in the resource group of your Azure cloud subscription.
 * 1 virtual network that spans the region.
@@ -64,9 +64,8 @@ The following resources are created in your {{site.data.keyword.cloud_notm}} acc
 
 The {{site.data.keyword.bpshort}} template helped with the initial creation, but you are in control for subsequent location management actions, such as [attaching more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts), [creating {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters), or [scaling the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale). If you [remove](/docs/satellite?topic=satellite-locations#location-remove) your {{site.data.keyword.satelliteshort}} location, make sure to [remove your workspace in {{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-workspace-setup#del-workspace), too.
 
-<br />
 
-## Manually adding Azure hosts to {{site.data.keyword.satelliteshort}}
+## Adding Azure hosts to {{site.data.keyword.satelliteshort}}
 {: #azure-host-attach}
 
 You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Microsoft Azure.
@@ -75,12 +74,12 @@ You can create your {{site.data.keyword.satellitelong_notm}} location by using h
 All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
-Before you begin:
-*  [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create).
-*  [Install the Azure command line interface (`az`)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli){: external}.
-*  Make sure that you have user admin credentials to your Azure account.
+Before you begin
+* [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create).
+* [Install the Azure command line interface (`az`)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli){: external}.
+* Make sure that you have user admin credentials to your Azure account.
 
-To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location:
+To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
 
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add Azure hosts.
 2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
@@ -230,9 +229,4 @@ As described in the [host networking requirements](/docs/satellite?topic=satelli
 {: #azure-reqs-console-access}
 
 The private IP addresses of your instances are automatically registered and added to your location's DNS record and the cluster's subdomain. This setup prevents users that are not connected to your hosts' private network from accessing the cluster from a local machine or opening the {{site.data.keyword.openshiftshort}} web console. You must be connected to your hosts' private network, such as through VPN access, to [connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se). Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
-
-
-<br />
-
-
 

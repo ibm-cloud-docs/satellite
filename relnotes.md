@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,13 +19,24 @@ subcollection: satellite
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
 
-
-
 ## September 2021
 {: #release-sep-2021}
 
 Review the release notes for September 2021.
 {: shortdesc}
+
+### 29 September 2021
+{: #29sep2021}
+{: release-note}
+
+Review the release notes for 29 September 2021.
+{: shortdesc}
+
+**New! Alibaba host support**
+:   Alibaba Cloud hosts are now supported for your {{site.data.keyword.satelliteshort}} location.
+
+**New! Toronto location**
+:   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Toronto** (`tor`, `ca-tok`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). 
 
 ### 23 September 2021
 {: #23sep2021}

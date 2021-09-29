@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -89,6 +89,7 @@ For on-prem infrastructure, you can manually setup a {{site.data.keyword.satelli
 For cloud provider infrastructure, you can follow provider-specific guides.
 {: shortdesc}
 
+**Alibaba**: [Adding Alibaba hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-alibaba).
 
 **AWS**: You can choose between manually setting up an AWS location, or using a {{site.data.keyword.bpshort}} template to automatically create and set up the location.
 *   Automatic: [Automating your location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
@@ -114,7 +115,6 @@ For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf i
 {: shortdesc}
 
 The credentials that you provide are stored and encrypted in etcd of the {{site.data.keyword.satelliteshort}} location control plane master. For more information, see [Securing your data](/docs/satellite?topic=satellite-data-security).
-
 
 
 ### AWS credentials
