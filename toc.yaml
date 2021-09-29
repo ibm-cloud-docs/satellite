@@ -31,6 +31,7 @@ toc:
               - providers_planning.md
               - host-reqs.md
               - satellite-is.md
+              - providers_alibaba.md
               - providers_aws.md
               - providers_gcp.md
               - providers_azure.md

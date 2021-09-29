@@ -552,7 +552,7 @@ You can update worker node hosts by using the {{site.keyword.data.openshiftlong_
 The option to update worker node hosts in the {{site.keyword.data.openshiftlong_notm}} console is available in beta.
 {: beta}
 
-1. Log in to the {site.data.keyword.cloud_notm} console and click **OpenShift** > **Clusters**.
+1. Log in to the {{site.data.keyword.cloud_notm}} console and click **OpenShift** > **Clusters**.
 2. Click the cluster where the hosts that you want to update are assigned and navigate to the **Worker nodes** page.
 3. Select each host that you want to update. After you select the hosts, an **Update** option appears. 
 4. Click **Update**. In the dialog box that appears, click **Update** again. A message appears that the update started successfully. 

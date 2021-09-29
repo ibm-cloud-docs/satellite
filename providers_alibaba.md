@@ -47,7 +47,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 
 You need at least 3 virtual machines to use as hosts that meet the [host requirements](/docs/satellite?topic=satellite-host-reqs). If you do not have 3 virtual machines that meet these requirements, create them.
 
-1. Log into your [Alibaba account](https://alibabacloud.com/){: external}.
+1. Log into your [Alibaba account](https://www.alibabacloud.com/){: external}.
 2. From the [VPC console](https://vpc.console.aliyun.com/vpc){: external}, create or select an existing Virtual Private Cloud. When you create a VPC, you must create a vSwitch in each zone where you want to add hosts.
 3. Select the **Resources** tab.
 4. Verify that you have a **Route table** and at least one **vSwitch**. 
@@ -98,7 +98,7 @@ Before you can attach your hosts, you must install the required Red Hat Enterpri
     {: note}
 
 ### 4. Upload and run the host attach script
-{: #alibaba-host-install-packages}
+{: #alibaba-host-script}
 
 1. Locate your host script file on your system that you downloaded in step [1. Download the host script](#alibaba-host-script).
 2. Upload the host script file to your Alibaba instance.
