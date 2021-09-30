@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -36,7 +36,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine.
 3. Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
-    ```
+    ```sh
     # Enable GCP RHEL package updates
     yum update --disablerepo=* --enablerepo="*" -y
     yum repolist all
@@ -61,8 +61,8 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     7. In the **Networking** tab, choose the network that you want your instances to be connected to. This network must allow access to {{site.data.keyword.satellitelong_notm}} as described in [Firewall settings](#gcp-reqs-firewall). You can check and change the firewall settings for your network in the next step.
     8. Click **Create** to save your instance template.
 7. Optional: Update the firewall settings for the network that you assigned to your instance template.
-    1. From the [GCP **VPC Network** dashboard](https://console.cloud.google.com/networking/networks){: external}, select **Firewall**.
-    2. Verify that your network allows access as describe in the [Network firewall settings](#gcp-reqs-firewall). Make changes as necessary.
+    9. From the [GCP **VPC Network** dashboard](https://console.cloud.google.com/networking/networks){: external}, select **Firewall**.
+    10. Verify that your network allows access as describe in the [Network firewall settings](#gcp-reqs-firewall). Make changes as necessary.
 8. From the [GCP **Compute Engine** dashboard](https://console.cloud.google.com/compute){: external}, select **Instance templates** and find the instance template that you created.
 9. From the actions menu, click **Create VM** to create an instance from your template. You can alternatively click **Create Instance Group** to create an instance group to add multiple instances at the same time. Make sure that you spread your instances across multiple zones for higher availability.
 10. Wait for the instance to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete. You can monitor the progress of the script by reviewing the logs for your instance. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
@@ -74,7 +74,6 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 As described in the [host networking requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network), your GCP hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. You might find that you need to update your firewall settings in GCP, similar to the following example.
 {: shortdesc}
 
-**Example firewall settings**
 ```
 Network default
 

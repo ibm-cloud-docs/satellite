@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: satellite, hybrid, multicloud, alibaba
 
@@ -58,7 +58,7 @@ You need at least 3 virtual machines to use as hosts that meet the [host require
 
     1. Download your SSH certification file (`.pem`) for your Alibaba VPC instance. 
     2. Change the permissions of your `.pem` file by running,
-        ```
+        ```sh
         chmod 600 <filename>
         ```
         {: codeblock}  
@@ -71,13 +71,13 @@ Before you can attach your hosts, you must install the required Red Hat Enterpri
 1. From your Alibaba instance page, find the public IP address for each instance that you want to add.
 2. Connect to the first Alibaba instance.
 
-    ```
+    ```sh
     ssh -i <path-to-pemfile> cloud-user@<PUBLIC_IP>
     ```
     {: pre}
 
 3. Register your system with Red Hat and then install the packages.
-    ```
+    ```sh
     sudo bash
     subscription-manager register --username=<username> --password=<password> 
     subscription-manager refresh
@@ -103,28 +103,28 @@ Before you can attach your hosts, you must install the required Red Hat Enterpri
 1. Locate your host script file on your system that you downloaded in step [1. Download the host script](#alibaba-host-script).
 2. Upload the host script file to your Alibaba instance.
     
-    ```
+    ```sh
     scp -i <PEM-FILE> <Path2HostScript> cloud-user@<PUBLIC_IP>:/tmp/attach.sh
     ```
     {: pre}
     
 3. Log in to your instance.
 
-    ```
+    ```sh
     ssh -i <path-to-pemfile> cloud-user@<PUBLIC_IP>
     ```
     {: pre}
 
 4. Run the host script file. For example,
 
-    ```
+    ```sh
     sudo nohup bash /tmp/attach.sh &
     ```
     {: pre}
 
 5. Review the status of the registration script.
         
-    ```
+    ```sh
     journalctl -f -u ibm-host-attach
     ```
     {: pre}  

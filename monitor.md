@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -50,7 +50,6 @@ Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location 
 {: caption="{{site.data.keyword.IBM_notm}} monitoring actions to address certain scenarios." caption-side="top"}
 {: summary="Read this table from left to right. In the first column is the scenario. In the second column is the action that {{site.data.keyword.satelliteshort}} automatically takes to address the alert."}
 
-<br />
 
 ## Viewing location, host, and cluster health
 {: #view-health}
@@ -124,7 +123,7 @@ You can view the registration status of clusters that are enabled for use with {
 {: shortdesc}
 
 1. List clusters that are registered with {{site.data.keyword.satelliteshort}} Config. Note the output in the **Status** and **Location** columns.
-    ```
+    ```sh
     ibmcloud sat cluster ls
     ```
     {: pre}
@@ -139,7 +138,7 @@ You can view the registration status of clusters that are enabled for use with {
 {: caption="Host health states." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the status of the {{site.data.keyword.satelliteshort}} Config registration. The second column describes what the status means."}
 
-<br />
+
 
 ## Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} location platform metrics
 {: #setup-mon}
@@ -150,8 +149,8 @@ Forward and view additional metrics for {{site.data.keyword.satelliteshort}} in 
 Metrics are available for the {{site.data.keyword.satelliteshort}} Link component of your location to help you monitor the performance of specific Link endpoints or of all Link endpoints for the location. For example, you can monitor the latency or throughput of a specific Link endpoint that you created.
 
 1. Create or choose an existing {{site.data.keyword.mon_short}} instance.
-    * If you already have a {{site.data.keyword.mon_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.mon_short}} instance is configured to collect platform metrics, the metrics that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.mon_short}} instance.
-    * Otherwise, to set up {{site.data.keyword.mon_short}} for your {{site.data.keyword.satelliteshort}} location:
+    - If you already have a {{site.data.keyword.mon_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.mon_short}} instance is configured to collect platform metrics, the metrics that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.mon_short}} instance.
+    - Otherwise, to set up {{site.data.keyword.mon_short}} for your {{site.data.keyword.satelliteshort}} location:
         1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog/services){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
         2. [Enable the instance for platform-level metrics collection](/docs/monitoring?topic=monitoring-platform_metrics_enabling). Note that within one region, only one {{site.data.keyword.mon_short}} instance can be enabled for platform metrics collection.
 2. In the **Monitoring** dashboard, click **Open Dashboard** for your {{site.data.keyword.mon_short}} instance.
@@ -337,7 +336,6 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 {: summary="Read this table from left to right. In the first column is the attribute type. In the second column is the attribute name. In the third column is the attribute description."}
 {: caption="Additional attributes for metric segmentation" caption-side="top"}
 
-<br />
 
 ## Setting up monitoring for clusters
 {: #setup-clusters}
@@ -347,7 +345,5 @@ To understand and set up monitoring for {{site.data.keyword.openshiftshort}} clu
 
 You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
 {: note}
-
-<br />
 
 
