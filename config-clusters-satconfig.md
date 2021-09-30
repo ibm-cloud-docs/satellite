@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-30"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -42,21 +42,21 @@ You do not need to configure access if you already gave {{site.data.keyword.sate
 Create a cluster group. The cluster group specifies all {{site.data.keyword.openshiftlong_notm}} clusters that you want to include into the deployment of your Kubernetes resources. The clusters can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-**From the console**
+For example, create a cluster group from the console.
 
 1. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, switch to the **Cluster group** tab and click **Create cluster group**.
 2. Enter a name for your cluster group and click **Create**.
 3. Go to the **Clusters** tab and find the {{site.data.keyword.openshiftlong_notm}} clusters that you want to add to your cluster group.
 4. From the actions menu, click **Add to group** and choose the name of the cluster group where you want to add the cluster.
 
-**From the CLI**
+Create a cluster group with the CLI.
 
-```
+```sh
 ibmcloud sat group create --name <cluster_group_name>
 ```
 {: pre}
 
-**Example output**
+Example output
 
 ```
 Creating cluster group...
@@ -73,11 +73,11 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
 
 Choose from the following options.
 
-* **Admin access when you create a {{site.data.keyword.satelliteshort}} cluster**: You can enable admin permissions when you create the cluster in the console or in the CLI by using the `--enable-admin-agent` flag in the `ibmcloud oc cluster create satellite` command. After creating the cluster, you must perform a one-time login by running `ibmcloud ks cluster config` in the command line.
-* **Admin access for {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud**: See [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing).
-* **Custom access, or access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access**: Complete the following steps.
+- **Admin access when you create a {{site.data.keyword.satelliteshort}} cluster**: You can enable admin permissions when you create the cluster in the console or in the CLI by using the `--enable-admin-agent` flag in the `ibmcloud oc cluster create satellite` command. After creating the cluster, you must perform a one-time login by running `ibmcloud ks cluster config` in the command line.
+- **Admin access for {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud**: See [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing).
+- **Custom access, or access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access**: Complete the following steps.
 
-**To customize access, or to add access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access at cluster creation**:
+To customize access, or to add access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access at cluster creation.
 
 1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 
@@ -92,7 +92,7 @@ Choose from the following options.
 
 Grant the {{site.data.keyword.satelliteshort}} Config service accounts access to the cluster admin role.
 
-```
+```sh
 kubectl create clusterrolebinding razee-cluster-admin --clusterrole=razee-cluster-admin --serviceaccount=razeedeploy:razee-viewer --serviceaccount=razeedeploy:razee-editor --serviceaccount=razeedeploy:razee-satcon
 ```
 {: pre}
@@ -104,7 +104,7 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
 
 1. Create a cluster role with the actions and resources that you want to grant. For example, the following command creates a viewer role so that {{site.data.keyword.satelliteshort}} Config can list all the Kubernetes resources in a cluster, but cannot modify them.
 
-    ```
+    ```sh
     kubectl create clusterrole razee-viewer --verb=get,list,watch --resource="*.*"
     ```
     {: pre}
@@ -118,7 +118,7 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
 
 2. Create a cluster role binding that binds the {{site.data.keyword.satelliteshort}} Config service account to the cluster role that you previously created. Now, {{site.data.keyword.satelliteshort}} Config has the custom access to the cluster.
 
-    ```
+    ```sh
     kubectl create clusterrolebinding razee-viewer --clusterrole=razee-viewer --serviceaccount=razeedeploy:razee-viewer
     ```
     {: pre}
@@ -138,7 +138,7 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
 
 1. Create a role with the actions and resources that you want to grant in the project that you want to scope the role to. For example, the following command creates an editor role so that {{site.data.keyword.satelliteshort}} Config can deploy and update all the Kubernetes resources in the project.
 
-    ```
+    ```sh
     kubectl create role razee-editor --namespace=default --verb=get,list,watch,create,update,patch,delete --resource="*.*"
     ```
     {: pre}
@@ -153,7 +153,7 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
 
 2. Create a role binding that binds the {{site.data.keyword.satelliteshort}} Config service account to the cluster role that you previously created. Now, {{site.data.keyword.satelliteshort}} Config has the custom access to the cluster.
 
-    ```
+    ```sh
     kubectl create rolebinding razee-editor --namespace=default --role=razee-editor --serviceaccount=razeedeploy:razee-editor
     ```
     {: pre}
@@ -170,6 +170,3 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
 {: #next-steps-gran-access}
 
 When you are finished with the previous sections, create a configuration and subscribe your cluster group to deploy Kubernetes resources to your clusters [from the console](/docs/satellite?topic=satellite-satcon-create#create-satconfig-ui) or [the CLI](/docs/satellite?topic=satellite-satcon-create#create-satconfig-cli).
-
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-30"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -55,17 +55,18 @@ Review the [watchkeeper collection methods](https://github.com/razee-io/WatchKee
 1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 2. Individually label the resource that you want {{site.data.keyword.satelliteshort}} Config to watch. For example, the following command watches a deployment that is called `nginx`.
 
-    ```
+    ```sh
     kubectl label deployment nginx razee/watch-resource=lite
     ```
     {: pre}
             
 After you enable watchkeeping for a resource, wait about an hour for the resources to display.
 
-### Reviewing the resources from {{site.data.keyword.satelliteshort}} Config
+### Review the resources from {{site.data.keyword.satelliteshort}} Config
 {: #satconfig-review-resources}
 
-**From the console**
+#### Reviewing resources from the console
+{: #satconfig-review-resources-console}
 
 You can review resources in several areas in the console as follows.
 
@@ -73,9 +74,9 @@ You can review resources in several areas in the console as follows.
 * From the [**Configurations** page](https://cloud.ibm.com/satellite/configuration){: external}, click a configuration. Then, click a subscription and review the **Resources** tab.
 * From the [**Clusters** page](https://cloud.ibm.com/satellite/clusters){: external}, click a cluster. Then, review the **Resources** tab.
 
-**From the CLI** 
+#### Reviewing resources with the CLI
+{: #satconfig-review-resources-cli}
+
+Review resources with the CLI.
 
 Use the **`ibmcloud sat resource ls`** [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls) and its options to list resources. To view the details of a particular resource, use the `ibmcloud sat resource get` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get).
-
-
-

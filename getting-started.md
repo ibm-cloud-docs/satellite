@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-28"
+lastupdated: "2021-09-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -33,9 +33,9 @@ Want to see a preview before trying out the steps yourself? Check out the follow
 To get started, consider the type of infrastructure that you want to use.
 {: shortdesc}
 
-* **I have on-prem, cloud, or edge infrastructure**: Continue with the [getting started steps](#create-location).
-* **I use Amazon Web Services or Microsoft Azure**: You can continue with the [getting started steps](#create-location), or try an [automated setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
-* **I don't have my own infrastructure or want to order some**: For a managed offering where {{site.data.keyword.IBM_notm}} sends you the infrastructure and sets up the location, check out [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
+- **I have on-prem, cloud, or edge infrastructure**: Continue with the [getting started steps](#create-location).
+- **I use Amazon Web Services or Microsoft Azure**: You can continue with the [getting started steps](#create-location), or try an [automated setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
+- **I don't have my own infrastructure or want to order some**: For a managed offering where {{site.data.keyword.IBM_notm}} sends you the infrastructure and sets up the location, check out [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
 
 ## Step 1: Create your location
 {: #create-location}
@@ -43,14 +43,15 @@ To get started, consider the type of infrastructure that you want to use.
 To use {{site.data.keyword.satelliteshort}}, you must create a location. A location represents a data center that you can later fill with your own infrastructure resources to run {{site.data.keyword.cloud_notm}} services or other workloads on your own infrastructure.
 {: shortdesc}
 
-**Before you begin**:
-* You must be the {{site.data.keyword.cloud_notm}} account owner, or have the administrator permissions to the required {{site.data.keyword.cloud_notm}} services in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
-* You must have an existing {{site.data.keyword.cos_full_notm}} service instance so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance. For example, to set up a dedicated {{site.data.keyword.cos_short}} instance and bucket:
+Before you begin
+
+- You must be the {{site.data.keyword.cloud_notm}} account owner, or have the administrator permissions to the required {{site.data.keyword.cloud_notm}} services in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+- You must have an existing {{site.data.keyword.cos_full_notm}} service instance so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance. For example, to set up a dedicated {{site.data.keyword.cos_short}} instance and bucket:
     1. [Set up a {{site.data.keyword.cos_full_notm}} instance](https://cloud.ibm.com/objectstorage/create){: external} that you plan to use for all of your {{site.data.keyword.satelliteshort}} locations in your account.
     2. Create a bucket in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. The bucket endpoint must match the instance endpoint, such as a **Cross Region** bucket for a **Global** instance. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`.
     3. Pass in the name of this bucket when you create the {{site.data.keyword.satelliteshort}} location.
 
-**To create a location**:
+To create a location,
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
 2. Click **Manual setup**.
 3. In the **{{site.data.keyword.satelliteshort}} location** section, review the following details. To change any of the default values, click **Edit**.
@@ -107,26 +108,26 @@ No matter what infrastructure provider you use, all host machines must meet the 
 7. Add the host machines that reside in your on-premises data center to your {{site.data.keyword.satelliteshort}} location.
     1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
     2. Copy the script from your local machine to your host.
-        ```
+        ```sh
         scp -i <filepath_to_key_file> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
         ```
         {: pre}        
 
     3. Log in to your host.
-        ```
+        ```sh
         ssh -i <filepath_to_key_file> <username>@<IP_address>
         ```
         {: pre}
 
     4. Update your host to have the required RHEL 7 packages. For more information about how to install these packages, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
     5. Run the script.
-        ```
+        ```sh
         sudo nohup bash /tmp/attach.sh &
         ```
         {: pre}
 
     6. Monitor the progress of the registration script.
-        ```
+        ```sh
         journalctl -f -u ibm-host-attach
         ```
         {: pre}

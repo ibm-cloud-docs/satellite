@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -49,9 +49,9 @@ Using AWS hosts? You can use a [launch template](/docs/satellite?topic=satellite
 When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.
 {: important}
 
-* Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
-* Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or {{site.data.keyword.satelliteshort}}-enabled service. For example, in cloud providers such as AWS, this setup typically means that all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. As latency increases, you might see impacts to performance, including provisioning and recovery times, reduced worker nodes in the cluster, {{site.data.keyword.satelliteshort}}-enabled service degradation, and in extreme cases, failures in your cluster applications.
-* Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then {{site.data.keyword.IBM_notm}} can automatically assign hosts when clusters or the {{site.data.keyword.satelliteshort}} location control plane request more capacity.
+- Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
+- Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or {{site.data.keyword.satelliteshort}}-enabled service. For example, in cloud providers such as AWS, this setup typically means that all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. As latency increases, you might see impacts to performance, including provisioning and recovery times, reduced worker nodes in the cluster, {{site.data.keyword.satelliteshort}}-enabled service degradation, and in extreme cases, failures in your cluster applications.
+- Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then {{site.data.keyword.IBM_notm}} can automatically assign hosts when clusters or the {{site.data.keyword.satelliteshort}} location control plane request more capacity.
 
 ### Attaching hosts from the console
 {: #attach-hosts-console}
@@ -82,26 +82,26 @@ Before you begin, make sure that you have created host machines that meet the [m
 
     1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
     2. Copy the script from your local machine to your host.
-        ```
+        ```sh
         scp -i <filepath_to_key_file> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
         ```
         {: pre}        
 
     3. Log in to your host.
-        ```
+        ```sh
         ssh -i <filepath_to_key_file> <username>@<IP_address>
         ```
         {: pre}
 
     4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
     5. Run the script.
-        ```
+        ```sh
         sudo nohup bash /tmp/attach.sh &
         ```
         {: pre}
 
     5. Monitor the progress of the registration script.
-        ```
+        ```sh
         journalctl -f -u ibm-host-attach
         ```
         {: pre}
@@ -120,7 +120,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 {: important}
 
 1. Generate a script that you can copy and run on your machines to attach them as hosts to your location. You might want to include a label to identify the purpose of the hosts, such as `use:satloc`, because the hosts provide compute capacity for the {{site.data.keyword.satelliteshort}} location. Your hosts automatically are assigned labels for the CPU and memory size if these values can be detected on the machine.
-    ```
+    ```sh
     ibmcloud sat host attach --location <location_name> [-hl "use=satloc"]
     ```
     {: pre}
@@ -150,37 +150,37 @@ Before you begin, make sure that you have created host machines that meet the [m
 
     1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
     2. Copy the script from your local machine to your host.
-        ```
+        ```sh
         scp -i <filepath_to_key_file> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
         ```
         {: pre}        
 
     3. Log in to your host.
-        ```
+        ```sh
         ssh -i <filepath_to_key_file> <username>@<IP_address>
         ```
         {: pre}
 
     4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
     5. Run the script.
-        ```
+        ```sh
         sudo nohup bash /tmp/attach.sh &
         ```
         {: pre}
 
     5. Monitor the progress of the registration script.
-        ```
+        ```sh
         journalctl -f -u ibm-host-attach
         ```
         {: pre}
 
 4. Verify that your hosts are attached to your location. Your hosts are not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster which is why all of them show an `unassigned` state without any cluster or worker node information.
-    ```
+    ```sh
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Name             ID                     State        Status   Cluster   Worker ID   Worker IP   
     machine-name-1   aaaaa1a11aaaaaa111aa   unassigned   -        -         -           -   
@@ -211,25 +211,32 @@ Host autoassignment works by matching requesting labels from worker pools in {{s
 {: shortdesc}
 
 Keep in mind the following information about the host labels that are used for autoassignment.
-* **Default host labels**: When you attach a host to a {{site.data.keyword.satelliteshort}} location, the host automatically gets labels for `cpu` and `memory` (in bytes). You cannot remove these labels. You can include additional host labels, or update the host metadata later.
-* **Hosts can have more labels than worker pools**: For example, your host might have `cpu`, `memory`, and `env` host labels, but the requesting worker pool has only a `cpu` host label. Host autoassignment matches just the `cpu` labels. Note that the reverse does not work. If a worker pool has more labels than a host, the host cannot be autoassigned to the worker pool.
-* **Matching is exact**: Host labels must equal (`=`) each other exactly. Even if the host label is a number, no less than (`<`), greater than (`>`), or other operators are used for matching.
 
-**Example scenario**
+Default host labels
+:    When you attach a host to a {{site.data.keyword.satelliteshort}} location, the host automatically gets labels for `cpu` and `memory` (in bytes). You cannot remove these labels. You can include additional host labels, or update the host metadata later.
+
+Hosts can have more labels than worker pools
+:    For example, your host might have `cpu`, `memory`, and `env` host labels, but the requesting worker pool has only a `cpu` host label. Host autoassignment matches just the `cpu` labels. Note that the reverse does not work. If a worker pool has more labels than a host, the host cannot be autoassigned to the worker pool.
+
+Matching is exact
+:    Host labels must equal (`=`) each other exactly. Even if the host label is a number, no less than (`<`), greater than (`>`), or other operators are used for matching.
+
+#### Example scenario
+{: #host-autoassign-example-scenario}
 
 Say that you have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `us-east-1a` and the following host labels.
-* `cpu=4`
-* `env=prod`
+- `cpu=4`
+- `env=prod`
 
 Your {{site.data.keyword.satelliteshort}} location has available (unassigned) hosts with host labels as follows.
-* Host A: `cpu=4, memory=32, env=prod, zone=us-east-1b`
-* Host B: `cpu=4, memory=32, zone=us-east-1a`
-* Host C: `cpu=4, memory=64, env=prod`
+- Host A: `cpu=4, memory=32, env=prod, zone=us-east-1b`
+- Host B: `cpu=4, memory=32, zone=us-east-1a`
+- Host C: `cpu=4, memory=64, env=prod`
 
 If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B.
-* Host A meets the CPU and `env=prod` label requests, but can only be assigned in `us-east-1b`. Because the `default` worker pool is only in `us-east-1a`, Host A is not assigned.
-* Host B meets the CPU and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
-* Host C is automatically assigned because it matches the `cpu=4` and `env=prod` host labels, and does not have any zone restrictions. The `memory=64` host label is not considered, because the worker pool does not request a `memory` label.
+- Host A meets the CPU and `env=prod` label requests, but can only be assigned in `us-east-1b`. Because the `default` worker pool is only in `us-east-1a`, Host A is not assigned.
+- Host B meets the CPU and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
+- Host C is automatically assigned because it matches the `cpu=4` and `env=prod` host labels, and does not have any zone restrictions. The `memory=64` host label is not considered, because the worker pool does not request a `memory` label.
 
 Hosts must be assigned as worker nodes in each zone of the default worker pool in your cluster. If your default worker pool spans multiple zones, ensure that you have hosts with matching labels that can be assigned in each zone.
 {: note}
@@ -243,24 +250,24 @@ Hosts must be assigned as worker nodes in each zone of the default worker pool i
 Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts.
 
 1. Review the host labels that the worker pools use to request compute capacity. You have several options.
-    * [Create a worker pool in a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels) with the host labels that you want to use for autoassignment.
-    * Review existing worker pools for their host labels. Note that you cannot update the host labels that a worker pool has. You can review the **Host labels** by running the `ibmcloud oc worker-pool get -c <cluster> --worker-pool <worker_pool>` command.
-    * Review the host labels that a {{site.data.keyword.satelliteshort}}-enabled service cluster uses to request resources from the {{site.data.keyword.satelliteshort}}-enabled service instance console.
+    - [Create a worker pool in a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels) with the host labels that you want to use for autoassignment.
+    - Review existing worker pools for their host labels. Note that you cannot update the host labels that a worker pool has. You can review the **Host labels** by running the `ibmcloud oc worker-pool get -c <cluster> --worker-pool <worker_pool>` command.
+    - Review the host labels that a {{site.data.keyword.satelliteshort}}-enabled service cluster uses to request resources from the {{site.data.keyword.satelliteshort}}-enabled service instance console.
 2. Review the host labels that your available hosts have. Remember that hosts automatically get `cpu` and `memory` labels when you attach the host to your {{site.data.keyword.satelliteshort}} location.
     1. Get the {{site.data.keyword.satelliteshort}} location name.
-        ```
+        ```sh
         ibmcloud sat location ls
         ```
         {: pre}
 
     2. List the available (unassigned) hosts in your location, and note the IDs of the hosts that you want to check the labels for.
-        ```
+        ```sn
         ibmcloud sat host ls --location <location_name_or_ID> | grep unassigned
         ```
         {: pre}
 
     3. For each host that you want to check, get the host details and note the **Labels** in the output.
-        ```
+        ```sh
         ibmcloud sat host get --location <location_name_or_ID> --host <host_name_or_ID>
         ```
         {: pre}
@@ -281,7 +288,7 @@ Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{sit
     The `cpu` and `memory` labels on the host are applied automatically and cannot be edited.
     {: note}
 
-    ```
+    ```sh
     ibmcloud sat host update --location <location_name_or_ID> --host <host_name_or_ID> -hl <key=value> [-hl <key=value>] [--zone <zone1>]
     ```
     {: pre}
@@ -292,8 +299,8 @@ Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{sit
 The following actions disable host autoassignment for a worker pool. Later, you can [reenable host autoassignment](#host-autoassign-enable).
 {: shortdesc}
 
-* [Manually assign hosts to a worker pool](#host-assign).
-* [Delete an individual worker node from a worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance).
+- [Manually assign hosts to a worker pool](#host-assign).
+- [Delete an individual worker node from a worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance).
 
 ### Re-enabling host autoassignment
 {: #host-autoassign-enable}
@@ -303,7 +310,6 @@ If you [disabled host autoassignment](#host-autoassign-disable), you can re-enab
 
 1. Make sure that you have [available hosts with labels that match the host labels of the worker pool](#host-autoassign).
 2. [Resize the worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance) to set the requested size per zone, rebalance the worker pool, and enable autoassignment again.
-
 
 ## Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources
 {: #host-assign}
@@ -320,8 +326,8 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 ### Prerequisites
 {: #host-assign-prereq}
 
-1.  Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
-2.  [Attach hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts), and check that the hosts are healthy and **unassigned**.
+1. Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+2. [Attach hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts), and check that the hosts are healthy and **unassigned**.
 
 ### Assigning hosts from the console
 {: #host-assign-ui}
@@ -340,21 +346,21 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 {: #host-assign-cli}
 
 1. List the hosts in your location and find the ones that are in an **unassigned** status.
-    ```
+    ```sh
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
     {: pre}
 
 2. Assign at least 3 compute hosts from your location as worker nodes to your {{site.data.keyword.satelliteshort}} control plane or an existing {{site.data.keyword.openshiftlong_notm}} cluster. When you assign the host, {{site.data.keyword.IBM_notm}} bootstraps your machine. This process might take a few minutes to complete. You can choose to assign a host by using the host ID, or you can also define the label that the host must have to be assigned to the location.
 
-    **Example for assigning a host by using the host ID**
-    ```
+    The following example assigns a host by using the host ID.
+    ```sh
     ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host <host_ID> --worker-pool default --zone <zone>
     ```
     {: pre}
 
-    **Example for assigning a host by using the `use:satcluster` label**
-    ```
+   The following example assigns a host by using the `use:satcluster` label.
+    ```sh
     ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satcluster" --worker-pool default --zone us-east-1
     ```
     {: pre}
@@ -376,7 +382,7 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
     You can monitor the bootstrapping process of your compute hosts by running `ibmcloud ks worker get --cluster <cluster_name_or_ID> --worker <worker_ID>`.
     {: tip}
 
-    ```
+    ```sh
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
     {: pre}
@@ -413,22 +419,23 @@ You can check if a version update is available for a host that is assigned as a 
 
 To review the changes that are included in each version update, see the [Version changelog for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
 
-**From the {{site.data.keyword.cloud_notm}} CLI**
+#### Checking if a version update is available with the {{site.data.keyword.cloud_notm}} CLI
+{: #host-update-workers-check-cli}
 
 1. Log in to {{site.data.keyword.cloud_notm}}. Include the `--sso` option if you have a federated account.
-    ```
+    ```sh
     ibmcloud login [--sso]
     ```
     {: pre}
 
 2. List the {{site.data.keyword.satelliteshort}} clusters in your account. 
-    ```
+    ```sh
     ibmcloud ks cluster ls --provider satellite
     ```
     {: pre}
 
 3. List the worker nodes in the cluster that you want to update the version for. In the output, check for an asterisk `*` with a message that indicates a version update is available.
-    ```
+    ```sh
     ibmcloud ks worker ls -c <cluster_name_or_ID>
     ```
     {: pre}
@@ -442,7 +449,8 @@ To review the changes that are included in each version update, see the [Version
     ```
     {: screen}
 
-**From the {{site.data.keyword.cloud_notm}} console**
+#### Checking if a version update is available from the {{site.data.keyword.cloud_notm}} console
+{: #host-update-workers-check-console}
 
 1. Log in to the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}.
 2. Click the location with the hosts that you want to update.
@@ -455,7 +463,7 @@ To review the changes that are included in each version update, see the [Version
 ### Manually updating worker node hosts in the CLI
 {: #host-update-cli}
 
-**Determining if the worker node version update is a major, minor, or patch update**
+#### Determining if the worker node version update is a major, minor, or patch update
 {: #host-update-workers-type}
 
 The process to update a worker node depends on whether the update is a major, minor, or patch update.
@@ -463,17 +471,64 @@ The process to update a worker node depends on whether the update is a major, mi
 
 To determine the type of update that is available, compare your current worker node versions to the latest `worker node fix pack` version in the [{{site.data.keyword.openshiftshort}} version changelog](/docs/openshift?topic=openshift-openshift_changelog). Major updates are indicated by the first digit in the version label (4.x.x), minor updates are indicated by the second digit (x.7.x) and patch updates are indicated by the trailing digits (x.x.23_1528_openshift). For more information on version updates, see [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions).
 
-**Applying minor and patch version updates to worker node hosts**
+#### Applying minor and patch version updates to worker node hosts
 {: #host-update-workers-minor}
 
 Hosts that are attached to a location do not update automatically. To apply a minor version update, you must first attach and assign new hosts to your {{site.data.keyword.satelliteshort}}-enabled service and then remove the old hosts.
 {: shortdesc}
 
-Before you begin:
+Before you begin
 
- List your current hosts and make note of their IDs. This helps determine which hosts to remove after applying the update.
+- List your current hosts and make note of their IDs. This helps determine which hosts to remove after applying the update.
+
+    ```sh
+    ibmcloud ks worker ls -c <cluster_name_or_ID>
+    ```
+    {: pre}
+
+- Review the example output.
 
     ```
+    ID                                                        Primary IP      Flavor   State    Status   Zone     Version   
+    sat-satliberty-5b4c7f3a7bfc14cf58cbb14ad5c08429475274fe   208.43.36.202   upi      normal   Ready    zone-1   4.7.19_1525_openshift*   
+    ```
+    {: screen}
+
+To apply a minor or patch update,
+
+1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
+1. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign). These hosts automatically receive the update when you assign them.
+1. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](#host-remove).
+
+#### Applying major version updates to worker node host
+{: #host-update-workers-major}
+
+Hosts that are attached to a location do not update automatically. To apply a major version update to your worker node hosts, you must attach, assign, and remove hosts one at at time from your {{site.data.keyword.satelliteshort}} location's control plane. Then, you attach, assign, and remove hosts from your {{site.data.keyword.satelliteshort}}-enabled service.
+{: shortdesc}
+
+Before you begin
+
+1. List your location's current control plane hosts and make note of their IDs. This helps determine which hosts to remove from the control plane after applying the update. The control plane hosts have `infrastructure` listed in the `Cluster` column of the output.
+
+   ```sh
+   ibmcloud sat hosts ls --location <location>
+   ```
+   { :pre}
+   
+   Review the example output.
+
+   ```
+   Name                ID                     State        Status   Zone     Cluster          Worker ID                                              Worker IP   
+
+   satdemo-cp1         0bc3b92f55968a230985   assigned     Ready    zone-1   infrastructure   sat-satdemocp1-2bda578e901b4047c6e48d766cd99bc11a45fddd   169.62.42.178   
+   satdemo-cp2         999cd38c39ddffe4b672   assigned     Ready    zone-2   infrastructure   sat-satdemocp2-940134e69c2609c5421b2426a7640fa80569668d   169.62.42.183   
+   satdemo-cp5         6ca4fd8fcad1fa622bb4   assigned     Ready    zone-3   infrastructure   sat-satdemocp5-d46581b509357ea4b429fddc38a18b155463bf1c   169.62.42.181   
+   ```
+   {: screen}
+
+2. List your current hosts that are assigned as worker nodes to your {{site.data.keyword.satelliteshort}}-enabled service and make note of their IDs. This helps determine which hosts to remove from your {{site.data.keyword.satelliteshort}}-enabled service after applying the update.
+
+    ```sh
     ibmcloud ks worker ls -c <cluster_name_or_ID>
     ```
     {: pre}
@@ -485,63 +540,18 @@ Before you begin:
     sat-satliberty-5b4c7f3a7bfc14cf58cbb14ad5c08429475274fe   208.43.36.202   upi      normal   Ready    zone-1   4.7.19_1525_openshift*   
     ```
     {: screen}
+    
+Choose from one of the following scenarios,
 
-Applying a minor or patch update:
-
-1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
-1. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign). These hosts automatically receive the update when you assign them.
-1. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](#host-remove).
-
-**Applying major version updates to worker node hosts**
-{: #host-update-workers-major}
-
-Hosts that are attached to a location do not update automatically. To apply a major version update to your worker node hosts, you must attach, assign, and remove hosts one at at time from your {{site.data.keyword.satelliteshort}} location's control plane. Then, you attach, assign, and remove hosts from your {{site.data.keyword.satelliteshort}}-enabled service.
-{: shortdesc}
-
-- Before you begin:
-
-    1. List your location's current control plane hosts and make note of their IDs. This helps determine which hosts to remove from the control plane after applying the update. The control plane hosts have `infrastructure` listed in the `Cluster` column of the output.
-
-        ```
-        ibmcloud sat hosts ls --location <location>
-        ```
-        { :pre}
-
-        Review the example output.
-
-        ```
-        Name                ID                     State        Status   Zone     Cluster          Worker ID                                              Worker IP   
-
-        satdemo-cp1         0bc3b92f55968a230985   assigned     Ready    zone-1   infrastructure   sat-satdemocp1-2bda578e901b4047c6e48d766cd99bc11a45fddd   169.62.42.178   
-        satdemo-cp2         999cd38c39ddffe4b672   assigned     Ready    zone-2   infrastructure   sat-satdemocp2-940134e69c2609c5421b2426a7640fa80569668d   169.62.42.183   
-        satdemo-cp5         6ca4fd8fcad1fa622bb4   assigned     Ready    zone-3   infrastructure   sat-satdemocp5-d46581b509357ea4b429fddc38a18b155463bf1c   169.62.42.181   
-        ```
-        {: screen}
-
-    2. List your current hosts that are assigned as worker nodes to your {{site.data.keyword.satelliteshort}}-enabled service and make note of their IDs. This helps determine which hosts to remove from your {{site.data.keyword.satelliteshort}}-enabled service after applying the update.
-
-        ```
-        ibmcloud ks worker ls -c <cluster_name_or_ID>
-        ```
-        {: pre}
-
-        Review the example output.
-
-        ```
-        ID                                                        Primary IP      Flavor   State    Status   Zone     Version   
-        sat-satliberty-5b4c7f3a7bfc14cf58cbb14ad5c08429475274fe   208.43.36.202   upi      normal   Ready    zone-1   4.7.19_1525_openshift*   
-        ```
-        {: screen}
-
-- Applying a major update to the control plane hosts:
+- Applying a major update to the control plane hosts.
 
     See [Procedure to update control plane hosts](#host-update-cp-procedure).
 
-- Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled service:
+- Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled service.
 
     1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts that you attach must match the number of hosts that you want to update.
-    1. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign). These hosts automatically receive the new update when you assign them.
-    1. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old worker node hosts that you previously noted](#host-remove).
+    2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign). These hosts automatically receive the new update when you assign them.
+    3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old worker node hosts that you previously noted](#host-remove).
 
 ### Updating worker node hosts in the {{site.keyword.data.openshiftlong_notm}} console
 {: #host-update-roks-console}
@@ -595,7 +605,7 @@ If your location subdomain was created automatically for you, the host IP addres
 
 If you manually registered the host IP addresses for the location subdomain with the `ibmcloud sat location dns register` command when you created the {{site.data.keyword.satelliteshort}} location control plane, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.
 
-### Procedure to update control plane hosts
+### Updating control plane hosts
 {: #host-update-cp-procedure}
 
 To apply a version update, you must detach, reload, and reattach your host to the {{site.data.keyword.satelliteshort}} location. Then, you can assign the host back to the control plane or to another resource that runs in the location.
@@ -630,13 +640,13 @@ When you reset the host key, all existing hosts that are attached to your locati
 {: note}
 
 1. List all hosts that are attached to your location.
-    ```
+    ```sh
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
     {: pre}
 
 2. Reset the host key for the {{site.data.keyword.satelliteshort}} location.
-    ```
+    ```sh
     ibmcloud sat host attach --location <location_name> --reset-key [-hl "<key>=<value>"]
     ```
     {: pre}
@@ -714,19 +724,19 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove 
 
 1. Make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep.
 2. Log in your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` flag, or create an API key to log in.
-    ```
+    ```sh
     ibmcloud login [--sso]
     ```
     {: pre}
 
 3. List your locations and note the name of the location for the host that you want to remove.
-    ```
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
 
 4. List your hosts. If the host is assigned to a cluster (and not to **infrastructure**) note the worker **ID** of the host that you want to remove.
-    ```
+    ```sh
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
     {: pre}
@@ -743,17 +753,17 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove 
     {: screen}
 
 5. If your host is assigned to a cluster, remove the worker node of the host by using the cluster name and worker ID that you previously retrieved.
-    ```
+    ```sh
     ibmcloud ks worker rm --cluster <cluster_name> --worker <worker_ID>
     ```
     {: pre}
 
 6. Remove the host from your {{site.data.keyword.satelliteshort}} location.
-    ```
+    ```sh
     ibmcloud sat host rm --location <location_name_or_ID> --host <host_ID>
     ```
     {: pre}
 
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
-    * To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
-    * To no longer use the host, delete the host from your infrastructure provider.
+    - To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
+    - To no longer use the host, delete the host from your infrastructure provider.

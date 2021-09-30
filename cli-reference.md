@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -85,7 +85,7 @@ ibmcloud sat cluster ls [--filter FILTER] [--limit NUMBER] [-q]
 #### Minimum required permissions
 {: #cli-cluster-ls-min-perm}
 
- {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
 {: #cli-cluster-ls-command-options}
@@ -123,10 +123,10 @@ ibmcloud sat cluster register [--silent] [-q]
 
 
 
-#### Minimum required permissions {{site.data.keyword.cloud_notm}} 
+#### Minimum required permissions
 {: #cli-cluster-register-min-perm}
 
-IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+{{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
 {: #cli-cluster-register-command-options}
@@ -1258,8 +1258,8 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 #### Minimum required permissions
 {: #location-create-min-perm}
 
-* To run this operation, {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
-* To create a location, you also need to set up [permissions to other cloud services](/docs/satellite?topic=satellite-iam#iam-roles-usecases).
+- To run this operation, {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+- To create a location, you also need to set up [permissions to other cloud services](/docs/satellite?topic=satellite-iam#iam-roles-usecases).
 
 #### Command options
 {: #location-create-command-options}
@@ -1275,9 +1275,10 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 
 `--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME`
 :    Specify three names for high availability zones in your location. The names of the zones <strong>must match exactly</strong> the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider.
-     1. `<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">AWS regions and zones</a>, such as `us-east-1a`, `us-east-1b`, `us-east-1c`.
-     2. <a href="https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones">Azure `topology.kubernetes.io/zone` labels</a>, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do <strong>not</strong> use only the location name (`eastus`) or the zone number (`1`).
-     3. <a href="https://cloud.google.com/compute/docs/regions-zones">GCP regions and zones</a>, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
+     1. [Alibaba regions and zones])https://www.alibabacloud.com/help/doc-detail/188196.htm), such as `us-east-1` and `us-west-1`.
+     2. [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, `us-east-1c`.
+     3. [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do <strong>not</strong> use only the location name (`eastus`) or the zone number (`1`).
+     4. [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
      
      Optional: If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names such as `zone-1`.
 

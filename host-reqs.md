@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-09-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -33,12 +33,12 @@ Review the following requirements that relate to the computing and system setup 
 ### Computing characteristics
 {: #reqs-host-compute}
 
-* Hosts must run Red Hat Enterprise Linux 7 on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
-* Hosts can be physical or virtual machines.
-* Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](#reqs-host-storage). 
+- Hosts must run Red Hat Enterprise Linux 7 on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
+- Hosts can be physical or virtual machines.
+- Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](#reqs-host-storage). 
 
-* If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
-* Hostnames can contain only lowercase alphanumeric characters, `-`, or `.`.
+- If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
+- Hostnames can contain only lowercase alphanumeric characters, `-`, or `.`.
 
 ### Packages and other machine configurations
 {: #reqs-host-packages}
@@ -60,13 +60,13 @@ The hosts must not have any additional packages, configuration, or other customi
 
 You might need to refresh your packages on the host machine. For example, in {{site.data.keyword.IBM_notm}} Cloud infrastructure you can run the following commands to add the required packages.
 1. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
-    ```
+    ```sh
     subscription-manager refresh
     ```
     {: pre}
 
 2. Enable the package repositories on your machine.
-    ```
+    ```sh
     subscription-manager repos --enable rhel-server-rhscl-7-rpms
     subscription-manager repos --enable rhel-7-server-optional-rpms
     subscription-manager repos --enable rhel-7-server-rh-common-rpms
@@ -86,10 +86,10 @@ For more information about how to enable the {{site.data.keyword.redhat_notm}} p
 Review the following requirements that relate to the storage setup of host machines.
 {: shortdesc}
 
-* Hosts must have a boot disk with sufficient space to boot the host and run the operating system.
-* Hosts must have an additional disk that is attached to the host and that provides a minimum of 100 GB of unmounted and unformatted disk space.
-* For hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane, the attached storage device must have at least 1000 IOPS. The required IOPS varies with the number of clusters in the location, and the activity of the masters for those clusters.
-* Hosts cannot have a device that is mounted to `/var/data`.
+- Hosts must have a boot disk with sufficient space to boot the host and run the operating system.
+- Hosts must have an additional disk that is attached to the host and that provides a minimum of 100 GB of unmounted and unformatted disk space.
+- For hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane, the attached storage device must have at least 1000 IOPS. The required IOPS varies with the number of clusters in the location, and the activity of the masters for those clusters.
+- Hosts cannot have a device that is mounted to `/var/data`.
 
 
 ## Host network
@@ -104,31 +104,31 @@ Review the following requirements that relate to the networking setup of host ma
 In general, do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
 {: shortdesc}
 
-* All hosts must have the same MTU values.
-* The `localhost` value must resolve to a valid local host IP address, typically `127.0.0.1`.
-* Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
-* You cannot use custom iptables to route traffic to the public or private network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables.
-* The following IP address ranges are reserved, and must not be used in any of the networks that you want to use in {{site.data.keyword.satellitelong_notm}}, including the host networks.
+- All hosts must have the same MTU values.
+- The `localhost` value must resolve to a valid local host IP address, typically `127.0.0.1`.
+- Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
+- You cannot use custom iptables to route traffic to the public or private network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables.
+- The following IP address ranges are reserved, and must not be used in any of the networks that you want to use in {{site.data.keyword.satellitelong_notm}}, including the host networks.
     ```
     172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, 172.20.0.0/16, and 192.168.255.0/24
     ```
     {: screen}
 
-* Host IP addresses must remain static and cannot change over time, such as due to a reboot or other potential infrastructure updates.
-* If you are provisioning your host on-prem, you must configure your host to use a public DNS server, such as `8.8.8.8`.
+- Host IP addresses must remain static and cannot change over time, such as due to a reboot or other potential infrastructure updates.
+- If you are provisioning your host on-prem, you must configure your host to use a public DNS server, such as `8.8.8.8`.
 
 ### Host network bandwidth
 {: #reqs-host-network-bandwidth}
 
-* The hosts must have minimum network bandwidth connectivity of 100 Mbps, with 1 Gbps preferred.
-* The bandwidth required between hosts varies with the number of clusters in the location, and the workloads that run in the cluster. Insufficient network bandwidth can lead to network performance problems.
+- The hosts must have minimum network bandwidth connectivity of 100 Mbps, with 1 Gbps preferred.
+- The bandwidth required between hosts varies with the number of clusters in the location, and the workloads that run in the cluster. Insufficient network bandwidth can lead to network performance problems.
 
 ### Network gateways and interfaces
 {: #reqs-host-network-interface}
 
-* All hosts must use the same default gateway.
-* Hosts can have multiple IPv4 network interfaces. However, the `eth0`, `ens0`, or `bond0` network interface must serve as the default route. To find the default network interface for a host, SSH into the host and run the following command:
-    ```
+- All hosts must use the same default gateway.
+- Hosts can have multiple IPv4 network interfaces. However, the `eth0`, `ens0`, or `bond0` network interface must serve as the default route. To find the default network interface for a host, SSH into the host and run the following command:
+    ```sh
     ip route | grep default | awk '{print $5}'
     ```
     {: pre}
@@ -139,7 +139,7 @@ In general, do not set any custom networking configurations on your hosts, such 
     ```
     {: screen}
 
-* All hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPV4 backend connectivity to the other hosts in the location on the network interface that serves as the default route (`eth0`, `ens0`, or `bond0`).
+- All hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPV4 backend connectivity to the other hosts in the location on the network interface that serves as the default route (`eth0`, `ens0`, or `bond0`).
 
 ### Inbound connectivity
 {: #reqs-host-network-firewall-inbound}
@@ -164,7 +164,7 @@ Hosts must have outbound connectivity to all ports and IP addresses on the prima
 {: shortdec}
 
 For example, if the primary network interface is public, you can try these commands to test that your host has outbound network connectivity on the public network.
-```
+```sh
 ping 8.8.8.8
 nslookup google.com
 nslookup google.com 8.8.8.8
@@ -279,15 +279,18 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 Review the network latency requirements for the hosts that you add to your {{site.data.keyword.satellitelong_notm}} location.
 {: shortdesc}
 
-**{{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane:**
+### {{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane
+{: #host-latency-test-master-worker}
 
 The hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location control plane must have a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round-trip time (RTT) to the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from. As latency increases, you might see impacts to performance, including {{site.data.keyword.satelliteshort}} Link throughput, {{site.data.keyword.satelliteshort}}-enabled service provisioning time, host failure recovery time, and in extreme cases, the availability of resources that run in the {{site.data.keyword.satelliteshort}} location control plane like {{site.data.keyword.openshiftshort}} cluster masters. For more information, see [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-reqs#host-latency-mzr).
 
-**Customer-provided worker nodes in the {{site.data.keyword.satelliteshort}} location control plane to worker nodes that run {{site.data.keyword.satelliteshort}}-enabled services like {{site.data.keyword.openshiftshort}} clusters in the same location:**
+### Customer-provided worker nodes in the {{site.data.keyword.satelliteshort}} location control plane to worker nodes that run {{site.data.keyword.satelliteshort}}-enabled services like {{site.data.keyword.openshiftshort}} clusters in the same location
+{: #host-latency-test-woker-worker}
 
 Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or {{site.data.keyword.satelliteshort}}-enabled service. For example, in cloud providers such as AWS, this setup typically means that all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. As latency increases, you might see impacts to performance, including provisioning and recovery times, reduced worker nodes in the cluster, {{site.data.keyword.satelliteshort}}-enabled service degradation, and in extreme cases, failures in your cluster applications.
 
-**Customer-provided worker nodes that are assigned to the same resource, like the {{site.data.keyword.satelliteshort}} location control plane or a cluster**:
+### Customer-provided worker nodes that are assigned to the same resource, like the {{site.data.keyword.satelliteshort}} location control plane or a cluster
+{: #host-latency-test-customer-provided}
 
 Your host infrastructure setup must have a low latency connection of less than or equal to 10 milliseconds (`<= 10ms`) round-trip time (RTT) among all of the hosts that are assigned to the same {{site.data.keyword.satelliteshort}} resource, such as the {{site.data.keyword.satelliteshort}} location control plane, a {{site.data.keyword.satelliteshort}}-enabled service, or cluster. As latency increases, you might see impacts to performance, including {{site.data.keyword.satelliteshort}}-enabled services like databases or cluster application failures.
 
@@ -300,19 +303,19 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 1. In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, you might SSH into the machine from a command line.
 
 2. Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test.
-    - **Dallas**:
+    - **Dallas**
 
       52.117.39.146</br>169.48.134.66</br>169.63.36.210
 
-    - **Frankfurt**:
+    - **Frankfurt**
 
       149.81.188.122</br>158.177.88.18</br>161.156.38.122
 
-    - **London**:
+    - **London**
 
       158.175.120.210</br>141.125.97.106</br>158.176.139.66
 
-    - **Tokyo**:
+    - **Tokyo**
 
       161.202.104.226</br>128.168.67.106</br>165.192.108.10
 
@@ -320,12 +323,12 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     
       163.74.65.138</br>163.75.70.50</br>169.53.160.154
 
-    - **Washington, DC**:
+    - **Washington, DC**
 
       169.63.123.154</br>169.63.110.114</br>169.62.13.2</br>169.60.123.162</br>169.59.152.58</br>52.117.93.26
 
 3. From your host, ping the IP addresses of the {{site.data.keyword.cloud_notm}} region.
-    ```
+    ```sh
     ping <ip_address>
     ```
     {: pre}

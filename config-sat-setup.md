@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-30"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -49,7 +49,6 @@ To create the configuration,
     4. Click **Create** to create the subscription. After you create the subscription, {{site.data.keyword.satelliteshort}} Config automatically downloads the Kubernetes resource YAML file for the version that you specified and starts applying this YAML file across all clusters that belong to the cluster group. This process takes a few minutes to complete. In addition, information about all Kubernetes resources that you create are sent back from your clusters to {{site.data.keyword.satelliteshort}} Config and can be reviewed in the {{site.data.keyword.satelliteshort}} [**Cluster resources**](https://cloud.ibm.com/satellite/resources) dashboard.
 5. Select your subscription to see the subscription details and the rollout status of your Kubernetes resource deployment. If errors occur during the deployment, such as YAML files with formatting errors or unsupported API version values, you can view the error message in the **Message** column of your subscription details.
 
-<br />
 
 ## Creating {{site.data.keyword.satelliteshort}} configurations from the CLI
 {: #create-satconfig-cli}
@@ -62,30 +61,30 @@ To create the configuration:
 1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig). The setup includes creating a cluster group and granting {{site.data.keyword.satelliteshort}} Config access to your clusters.
 2. Add {{site.data.keyword.openshiftlong_notm}} clusters to your cluster group. The clusters can run in your location or in {{site.data.keyword.cloud_notm}}.
     1. List the {{site.data.keyword.openshiftlong_notm}} clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component and note their ID.
-        ```
+        ```sh
         ibmcloud sat cluster ls
         ```
         {: pre}
 
     2. Add the cluster to your cluster group.    
-        ```
+        ```sh
         ibmcloud sat group attach --cluster <cluster_ID> --group <cluster_group_name>
         ```
         {: pre}
 
     3. Verify that your cluster is successfully added to your cluster group.
-        ```
+        ```sh
         ibmcloud sat group get --group <cluster_group_name>
         ```
         {: pre}
 
 3. Create a {{site.data.keyword.satelliteshort}} configuration.
-    ```
+    ```sh
     ibmcloud sat config create --name <configuration_name>
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     Creating configuration...
     OK
@@ -98,7 +97,7 @@ To create the configuration:
     To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} Config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources), such as adding a configmap to your cluster. 
     {: tip}
 
-    ```
+    ```sh
     ibmcloud sat config version create --name <version_name> --config <configuration_name_or_ID> --file-format yaml --read-config <file_path>
     ```
     {: pre}
@@ -110,17 +109,18 @@ To create the configuration:
     | `--read-config <file_path>` | Enter the relative file path to the Kubernetes resource file on your local machine. | 
     {: caption="Understanding this command's components" caption-side="top"}
 
-    **Example output**
-        ```
-        Creating configuration version...
-        OK
-        Configuration Version <version_name> was successfully created with ID ad5ae7a9-4f74-486c-816a-32de98de00df.
-        ```
-        {: screen}
+    Example output
+    
+    ```
+    Creating configuration version...
+    OK
+    Configuration Version <version_name> was successfully created with ID ad5ae7a9-4f74-486c-816a-32de98de00df.
+    ```
+    {: screen}
 
 5. Subscribe your cluster group to the {{site.data.keyword.satelliteshort}} configuration. After you create the subscription, {{site.data.keyword.satelliteshort}} Config automatically downloads the Kubernetes resource file for the version that you specified and starts applying this file across all clusters that belong to the cluster group. This process takes a few minutes to complete. In addition, information about all Kubernetes resources that you create are sent back from your clusters to {{site.data.keyword.satelliteshort}} Config and can be reviewed in the {{site.data.keyword.satelliteshort}} [**Cluster resources**](https://cloud.ibm.com/satellite/resources) dashboard. Review the command options by running `ibmcloud sat subscription create`.
 
-    ```
+    ```sh
     ibmcloud sat subscription create --group <cluster_group_name> --config <configuration_name_or_ID> --name <subscription_name> --version <version_name_or_ID>
     ```
     {: pre}
@@ -133,13 +133,13 @@ To create the configuration:
     | `--version <version_name_or_ID>` | Enter the name or ID of the Kubernetes resource definition that you added as a version to your configuration. To list available versions, run `ibmcloud sat config get --config <configuration_name_or_ID>` | 
     {: caption="Understanding this command's components" caption-side="top"}
 
-    **Example output**
-        ```
-        Creating subscription...
-        OK
-        Subscription <subscription_name> was successfully created with ID f6114bd5-f71e-4335-b034-ca45fa3cab81.
-        ```
-        {: screen}
+    Example output
+    ```
+    Creating subscription...
+    OK
+    Subscription <subscription_name> was successfully created with ID f6114bd5-f71e-4335-b034-ca45fa3cab81.
+    ```
+    {: screen}
 
 6. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-setup-clusters-satconfig) to review the rollout status of your Kubernetes resources.
 
