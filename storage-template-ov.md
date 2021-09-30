@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-30"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -18,19 +18,18 @@ subcollection: satellite
 Before you can decide what type of storage is the right solution for your {{site.data.keyword.satelliteshort}} clusters, you must understand the infrastructure provider, your app requirements, the type of data that you want to store, and how often you want to access this data. For more information, see [choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution).
 
 
-<br />
-
 ## How do I configure storage on {{site.data.keyword.satelliteshort}}?
 {: #storage-sat-configure}
 
 You can configure storage on {{site.data.keyword.satelliteshort}} by using one of the provided storage configuration templates or by manually installing your own storage drivers.
 {: shortdesc}
 
-**Automatic installation with templates**: You can create storage configurations by [using the {{site.data.keyword.satelliteshort}} storage template for your storage provider](#storage-template-ov-providers). After you create a storage configuration by using a template, you can assign your storage configuration to your clusters. By using storage templates, you can create storage configurations that can be consistently assigned across your clusters.
+Automatic installation with templates
+:   You can create storage configurations by [using the {{site.data.keyword.satelliteshort}} storage template for your storage provider](#storage-template-ov-providers). After you create a storage configuration by using a template, you can assign your storage configuration to your clusters. By using storage templates, you can create storage configurations that can be consistently assigned across your clusters.
 
-**Manual installation**: You can also bring your own storage drivers to {{site.data.keyword.satelliteshort}} by installing them from OperatorHub, installing Helm charts, creating configurations, or by using your preferred method of deploying images to your clusters including images and drivers from various {{site.data.keyword.cloud_notm}} storage and partner solutions. Bringing your own storage driver is functionally supported, but you are responsible for the entire lifecycle operations, installation, troubleshooting, and support.
+Manual installation
+:   You can also bring your own storage drivers to {{site.data.keyword.satelliteshort}} by installing them from OperatorHub, installing Helm charts, creating configurations, or by using your preferred method of deploying images to your clusters including images and drivers from various {{site.data.keyword.cloud_notm}} storage and partner solutions. Bringing your own storage driver is functionally supported, but you are responsible for the entire lifecycle operations, installation, troubleshooting, and support.
 
-<br />
 
 ## What are the benefits of using templates?
 {: #storage-template-benefits}
@@ -51,7 +50,6 @@ When you use a {{site.data.keyword.satelliteshort}} storage template to create a
 {: caption="Comparison of supported features between using {{site.data.keyword.satelliteshort}} storage templates and bringing your own storage drivers" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is a description of the feature. The second column is the feature support on Satellite. The third column is the feature support for bring your own drivers."}
 
-<br />
 
 ## How do storage templates work?
 {: #storage-template-flow}
@@ -68,8 +66,6 @@ The following image depicts the workflow for creating a {{site.data.keyword.sate
 
 ![Concept overview of Satellite storage templates](/images/storage-template.png){: caption="Figure 1. A conceptual overview of creating a storage configuration by using a template." caption-side="bottom"}
 
-
-<br />
 
 ## Which storage providers have {{site.data.keyword.satelliteshort}} storage templates?
 {: #storage-template-ov-providers}
@@ -88,5 +84,3 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 * [Red Hat Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file)
 * [Red Hat OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-ocs-local)
 * [Red Hat OpenShift Data Foundation using remote volumes](/docs/satellite?topic=satellite-config-storage-ocs-remote)
-
-

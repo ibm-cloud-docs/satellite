@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-30"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -21,17 +21,29 @@ Set up [{{site.data.keyword.IBM_notm}} Spectrum Scale](https://www.ibm.com/docs/
 
 You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale Container Storage Interface (CSI) driver to create persistent storage for stateful apps. that run in your {{site.data.keyword.satelliteshort}} clusters.
 
-The {{site.data.keyword.IBM_notm}} Spectrum Scale CSI driver supports the following features:
+The {{site.data.keyword.IBM_notm}} Spectrum Scale CSI driver supports the following features.
 
-* **Static provisioning**: You can use your existing directories and filesets as persistent volumes.
-* **Lightweight dynamic provisioning**: You can dynamically create directory-based volumes.
-* **Fileset-based dynamic provisioning**: You can dynamically create fileset-based volumes.
-* **Multiple file systems**: You can create volumes across multiple file systems.
-* **Remote volumes**: You can create volumes on a remotely mounted file system.
-* **Operator deployment**: You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale operator for easier deployment, upgrade, and cleanup.
-* **Multiple volume access modes** You can create volumes with ReadWriteMany (RWX) and ReadWriteOnce (RWO) access modes.
+Static provisioning
+:   You can use your existing directories and filesets as persistent volumes.
 
-<br />
+Lightweight dynamic provisioning
+:   You can dynamically create directory-based volumes.
+
+Fileset-based dynamic provisioning
+:   You can dynamically create fileset-based volumes.
+
+Multiple file systems
+:   You can create volumes across multiple file systems.
+
+Remote volumes
+:   You can create volumes on a remotely mounted file system.
+
+Operator deployment
+:   You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale operator for easier deployment, upgrade, and cleanup.
+
+Multiple volume access modes
+:   You can create volumes with ReadWriteMany (RWX) and ReadWriteOnce (RWO) access modes.
+
 
 ## Prerequisites
 {: #sat-storage-spectrum-scale-prereq}
@@ -43,7 +55,7 @@ Complete the following steps, but do not create an {{site.data.keyword.cloud_not
     ```sh
     yum install -y kernel-devel cpp gcc gcc-c++ binutils python3
     ```
-	{: pre}
+    {: pre}
 
 1. [Configure `sudo`](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=login-configuring-sudo){: external}.
 1. Follow the steps to [install {{site.data.keyword.IBM_notm}} Spectrum Scale packages on Linux systems](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=nodes-installing-spectrum-scale-packages-linux-systems), but make sure that you do not create the cluster in step 4.
@@ -54,19 +66,19 @@ Complete the following steps, but do not create an {{site.data.keyword.cloud_not
     * Verify that the cluster is using sudo wrappers.
     * Verify Spectrum Scale starts up on all worker nodes by running the following commands.
         ```sh
-		sudo /usr/lpp/mmfs/bin/mmstartup -a -- sudo /usr/lpp/mmfs/bin/mmgetstate -a
-		```
-		{: pre}
+        sudo /usr/lpp/mmfs/bin/mmstartup -a -- sudo /usr/lpp/mmfs/bin/mmgetstate -a
+        ```
+	{: pre}
 
     * Enable autostart for Spectrum Scale.
-		```sh
-		sudo /usr/lpp/mmfs/bin/mmchconfig autoload=yes
-		```
-		{: pre}
+	```sh
+	sudo /usr/lpp/mmfs/bin/mmchconfig autoload=yes
+	```
+	{: pre}
 
-1. [Attach your {{site.data.keyword.IBM_notm}} Spectrum Scale Nodes to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-hosts#attach-hosts).
-	* Make sure your system is configured for the desired default route if you have more than one clustering network.
-	* Make sure that default route has a path to the public network, possibly via NAT or VPN.
+1. [Attach your {{site.data.keyword.IBM_notm}} Spectrum Scale Nodes to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-hosts#attach-hosts)
+    * Make sure your system is configured for the desired default route if you have more than one clustering network.
+    * Make sure that default route has a path to the public network, possibly via NAT or VPN.
 
 1. Start {{site.data.keyword.IBM_notm}} Spectrum Scale nodes and verify that they are running. If there is an issue with the portability layer, you can [rebuild the portability layer](#ess-ts-rebuilding).
 
@@ -78,14 +90,13 @@ Complete the following steps, but do not create an {{site.data.keyword.cloud_not
     ```sh
     oc label nodes <node> <node> <node> scale=true --overwrite=true
     ```
-	{: pre}
+    {: pre}
 
 ## Mapping {{site.data.keyword.IBM_notm}} Spectrum Scale hosts to worker node names
 {: #sat-storage-spectrum-scale-ts-mapping}
 
 In some environments, your worker node names might be different from your {{site.data.keyword.IBM_notm}} Spectrum Scale node names which results in the pods not mounting. You must map your worker node names to your Spectrum Scale nodes. For more information, see [Kubernetes to {{site.data.keyword.IBM_notm}} Spectrum Scale node mapping](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=o-kubernetes-spectrum-scale-node-mapping){: external}.
 
-<br />
 
 ## Creating an Spectrum Scale storage configuration in the command line
 {: #sat-storage-spectrum-scale-cli}
@@ -100,7 +111,7 @@ In some environments, your worker node names might be different from your {{site
 1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
 
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-    ```
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
@@ -138,14 +149,11 @@ In some environments, your worker node names might be different from your {{site
 
 1. [Assign your storage configuration to clusters](#assign-storage-spectrum-scale).
 
-<br />
 
 ## Assigning your Spectrum Scale storage configuration to a cluster
 {: #assign-storage-spectrum-scale}
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-spectrum-scale), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
-
-<br />
 
 
 
@@ -159,19 +167,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
 1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat group ls
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud oc cluster ls --provider satellite
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat service ls --location <location>
       ```
@@ -179,19 +187,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
       ```
@@ -209,8 +217,8 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-    **Example output**
-    ```sh
+    Example output
+    ```
     NAME                                                   READY   STATUS             RESTARTS   AGE
     pod/ibm-spectrum-scale-csi-attacher-0                  1/1     Running            2          173m
     pod/ibm-spectrum-scale-csi-k2978                       2/2     Running            0          152m
@@ -243,13 +251,13 @@ After you deploy the `ess` template, you must change the Spectrum Scale CSI driv
 {: shortdesc}
 
 1. Edit the daemonset by using the `oc edit` command or get the daemonset YAML file configuration and save it on your local machine.
-    * **Edit in the command line**
+    * Edit in the command line
         ```sh
         oc edit ds ibm-spectrum-scale-csi -n ibm-spectrum-scale-csi-driver
         ```
         {: pre}
 
-    * **Get the YAML configuration file**
+    * Get the YAML configuration file
         ```sh
         oc get ds ibm-spectrum-scale-csi -n ibm-spectrum-scale-csi-driver -o yaml
         ```
@@ -358,7 +366,7 @@ You can use the `ibm-spectrum-scale-csi-driver` to create PVCs that you can use 
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     NAME                                READY   STATUS    RESTARTS   AGE
     app                                 1/1     Running   0          2m58s
@@ -378,8 +386,8 @@ You can use the `ibm-spectrum-scale-csi-driver` to create PVCs that you can use 
         ```
         {: pre}
 
-        Example output:
-        ```sh
+        Example output
+        ```
         Wed May 5 20:37:04 UTC 2021
         Wed May 5 20:37:10 UTC 2021
         Wed May 5 20:37:15 UTC 2021
@@ -399,7 +407,6 @@ You can use the `ibm-spectrum-scale-csi-driver` to create PVCs that you can use 
         ```
         {: pre}
 
-<br />
 
 ## Removing the Spectrum Scale storage configuration from the CLI
 {: #sat-storage-spectrum-rm-cli}
@@ -475,7 +482,6 @@ sudo cp /usr/src/kernels/3.10.0-1160.15.2.el7.x86_64/include/uapi/linux/*.h /usr
 ```
 {: codeblock}
 
-<br />
 
 ## Storage class reference
 {: #sat-storage-spectrum-scale-sc-ref}
@@ -533,10 +539,8 @@ Do not install the {{site.data.keyword.IBM_notm}} Spectrum Scale management API 
 | `storage-class-name` | Optional | The name of the {{site.data.keyword.IBM_notm}} Spectrum Scale storage class.  |
 | `vol-backend-fs` | Optional | The name of the file system on which the fileset is created. |
 {: caption="Table 1. OpenShift Container storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
+{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameters is required. The third column is a brief description of the parameter."}
 
-
-<br />
 
 
 

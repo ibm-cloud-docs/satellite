@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-30"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -53,7 +53,7 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
 
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-    ```
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
@@ -110,8 +110,8 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
         ```
         {: pre}
 
-        Example output:
-        ```sh   
+        Example output
+        ```  
         ebs-csi-controller-7bb59dbcdd-8d866     6/6     Running   0          38s
         ebs-csi-controller-7bb59dbcdd-cbgl5     6/6     Running   0          38s
         ebs-csi-node-4hzf9                      3/3     Running   0          38s
@@ -126,8 +126,8 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
         ```
         {: pre}
 
-        Example output:
-        ```sh             
+        Example output
+        ```         
         sat-aws-block-bronze      ebs.csi.aws.com    Delete          WaitForFirstConsumer   true                   2d8h
         sat-aws-block-gold        ebs.csi.aws.com    Delete          WaitForFirstConsumer   true                   2d8h
         sat-aws-block-silver      ebs.csi.aws.com    Delete          WaitForFirstConsumer   true                   2d8h
@@ -177,7 +177,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     NAME                   STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS           AGE
     sat-aws-block-bronze   Pending                                      sat-aws-block-bronze   17s
@@ -207,7 +207,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     {: codeblock}
 
 6. Create the pod in your cluster.
-    ```
+    ```sh
     oc apply -f pod.yaml
     ```
     {: pre}
@@ -218,7 +218,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     NAME                                READY   STATUS    RESTARTS   AGE
     app                                 1/1     Running   0          2m58s
@@ -231,7 +231,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     NAME                 STATUS  VOLUME                                   CAPACITY   ACCESS MODES   STORAGECLASS           AGE
     sat-aws-block-bronze Bound   pvc-86d2f9f4-78d4-4bb2-ab73-39726d144981 125Gi      RWO            sat-aws-block-bronze   33m
@@ -254,8 +254,8 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
         ```
         {: pre}
 
-        Example output:
-        ```sh
+        Example output
+        ```
         Tue Mar 2 20:09:19 UTC 2021
         Tue Mar 2 20:09:25 UTC 2021
         Tue Mar 2 20:09:31 UTC 2021
@@ -288,7 +288,6 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     4. Find your AWS EBS volume by using the ID that you retrieved earlier.
 
 
-<br />
 
 ## Removing AWS EBS storage from your apps
 {: #aws-ebs-rm}
@@ -312,7 +311,7 @@ Removing your AWS EBS instance permanently removes all the data that is stored o
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         app    sat-aws-block-bronze
         ```
@@ -355,7 +354,6 @@ Removing your AWS EBS instance permanently removes all the data that is stored o
 
     2. From the [AWS EC2 dashboard](https://console.aws.amazon.com/ec2/v2/home){: external}, select **Elastic Block Store** > **Volumes** and verify that your AWS EBS instance is removed.
 
-<br />
 
 ## Removing the AWS EBS storage configuration from your cluster
 {: #aws-ebs-template-rm}

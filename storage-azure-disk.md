@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-30"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -56,7 +56,7 @@ Complete the following steps to add the required labels to your worker nodes for
     {: pre}
 
 1. Label your worker nodes with the `zone` value that you retrieved earlier. Replace `<node-name>` and `<zone>` with the node name and zone of your worker node. For example, if you have a worker node in zone: `eastus-1`, use the following commands to add `eastus-1` as a label to the worker node in the `eastus-1` zone.
-    ```
+    ```sh
     oc label node <node-name> topology.kubernetes.io/zone-
     oc label node <node-name> topology.kubernetes.io/zone=<zone> --overwrite
     ```
@@ -98,7 +98,6 @@ Create a configuration file that contains your Azure Disk settings.
     ```
     {: pre}
 
-<br />
 
 
 ## Creating an Azure Disk configuration in the command line
@@ -117,7 +116,7 @@ Create a storage configuration in the command line by using the Azure Disk templ
 1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
 
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-    ```
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
@@ -149,7 +148,6 @@ Create a storage configuration in the command line by using the Azure Disk templ
 
 1. [Assign your storage configuration to clusters](#assign-storage-azure).
 
-<br />
 
 ## Assigning your Azure storage configuration to a cluster
 {: #assign-storage-azure}
@@ -166,19 +164,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
 1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat group ls
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud oc cluster ls --provider satellite
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat service ls --location <location>
       ```
@@ -186,19 +184,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
       ```
@@ -216,8 +214,8 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-    **Example output**
-    ```sh
+    Example output
+    ```
     csi-azuredisk-controller-849d854b96-6jbjg   5/5     Running   0          167m
     csi-azuredisk-controller-849d854b96-lkplx   5/5     Running   0          167m
     csi-azuredisk-node-7qwlj                    3/3     Running   6          167m
@@ -232,8 +230,8 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-    **Example output**
-    ```sh
+    Example output
+    ```
     sat-azure-block-bronze           disk.csi.azure.com   Delete          Immediate              true                   167m
     sat-azure-block-bronze-metro     disk.csi.azure.com   Delete          WaitForFirstConsumer   true                   167m
     sat-azure-block-gold             disk.csi.azure.com   Delete          Immediate              true                   167m
@@ -247,7 +245,6 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. [Deploy an app that uses your Azure Disk storage](#storage-azure-csi-app-deploy).
 
-<br />
 
 ## Deploying an app that uses your Azure Disk storage
 {: #storage-azure-csi-app-deploy}
@@ -342,8 +339,8 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     ```
     {: pre}
 
-    Example output:
-    ```sh
+    Example output
+    ```
     NAME                                READY   STATUS    RESTARTS   AGE
     statefulset-azuredisk       1/1     Running   0          2m58s
     ```
@@ -361,8 +358,8 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     ```
     {: pre}
 
-    Example output:
-    ```sh
+    Example output
+    ```
     Fri Jul 16 07:49:39 EDT 2021
     Fri Jul 16 07:49:39 EDT 2021
     Fri Jul 16 07:49:39 EDT 2021
@@ -375,8 +372,6 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     ```
     {: pre}
 
-
-<br />
 
 ## Removing Azure Disk storage from your apps
 {: #azure-disk-rm}
@@ -397,7 +392,7 @@ If you no longer need your Azure Disk configuration, you can remove your apps, P
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         app    sat-azure-block-platinum
         ```
@@ -438,7 +433,6 @@ If you no longer need your Azure Disk configuration, you can remove your apps, P
     {: pre}
 
 
-<br />
 
 ## Removing the Azure Disk storage configuration from your cluster
 {: #azure-disk-template-rm}
@@ -488,7 +482,6 @@ Removing the storage configuration uninstalls the driver from all assigned clust
         {: pre}
 
 
-<br />
 
 ## Parameter reference
 {: #sat-storage-azure-disk-params-cli}
@@ -499,7 +492,6 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 {: caption="Table 1. Parameter reference for Azure Disk storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter."}
 
-<br />
 
 ## Storage class reference
 {: #azure-disk-sc-ref}
@@ -516,9 +508,4 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 | `sat-azure-block-bronze-metro` | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | WaitForFirstConsumer |
 {: caption="Table 2. Storage class reference for Azure Disk storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the IOPs range per disk. The third column is the size range . The fourth column is the disk type. The fifth column is the reclaim policy. The sixth column is the volume binding mode."}
-
-<br />
-
-
-
 

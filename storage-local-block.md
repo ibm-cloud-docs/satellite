@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-30"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -20,7 +20,6 @@ Set up [Persistent storage using local volumes](https://docs.openshift.com/conta
 
 When you create a local block storage configuration, you specify the local block storage device paths that you want to make available as persistent volumes (PVs) in your clusters. After you assign the storage configuration to a cluster, {{site.data.keyword.satelliteshort}} deploys the local storage operator which mounts the local disks that you specified in your configuration. The operator further creates the local persistent volumes, and creates the `sat-local-block-gold` storage class which you can use to create persistent volumes claims (PVCs). You can then reference your PVCs in your Kubernetes workloads.
 
-<br />
 
 ## Prerequisites
 {: #sat-storage-local-prereqs}
@@ -37,7 +36,7 @@ Before you can create a local block storage configuration, you must identify the
 1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
 
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-    ```
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
@@ -58,8 +57,6 @@ Before you can create a local block storage configuration, you must identify the
 3. [Get the device details of your worker nodes](#sat-storage-block-local-devices).
 4. [Label the worker nodes](#sat-storage-block-local-labels) that have an available disk and that you want to use in your configuration. The local storage drivers are installed only on the labeled worker nodes.
 
-
-<br />
 
 ### Getting the device details for your local block storage configuration
 {: #sat-storage-block-local-devices}
@@ -100,7 +97,7 @@ When you create your local block storage configuration, you must specify which d
 
 
 4. List available block storage disks on your worker node. You must use unmounted disks for the local storage configuration. In the following example output from the `lsblk` command, the `nvme2n1` disk is unmounted and has no partitions.
-    ```sh
+    ```
     NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     nvme0n1     259:3    0   100G  0 disk 
     |-nvme0n1p1 259:4    0     1M  0 part 
@@ -114,7 +111,6 @@ When you create your local block storage configuration, you must specify which d
 6. Repeat the previous steps for each worker node that you want to use for your local block storage configuration.  
 
 
-<br />
 
 ### Labeling your worker nodes
 {: #sat-storage-block-local-labels}
@@ -133,8 +129,8 @@ After you have [retrieved the device paths for the disks that you want to use in
     ```
     {: pre}
 
-    Example output:
-    ```sh
+    Example output
+    ```
     node/<worker-IP> labeled
     node/<worker-IP> labeled
     node/<worker-IP> labeled
@@ -175,14 +171,12 @@ After you have [retrieved the device paths for the disks that you want to use in
 1. [Assign your configuration to clusters](#assign-storage-local-block).
 
 
-<br />
 
 ## Assigning your storage configuration to a cluster
 {: #assign-storage-local-block}
 
 After you [create a local block storage configuration](#config-storage-local-block), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
-<br />
 
 
 
@@ -197,19 +191,19 @@ After you [create a local block storage configuration](#config-storage-local-blo
     {: pre}
 
 1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat group ls
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud oc cluster ls --provider satellite
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat service ls --location <location>
       ```
@@ -217,19 +211,19 @@ After you [create a local block storage configuration](#config-storage-local-blo
 
 1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
       ```
@@ -246,9 +240,9 @@ After you [create a local block storage configuration](#config-storage-local-blo
     ```
     {: pre}
 
-    **Example output**:
+    Example output
 
-    ```sh
+    ```
     NAME                                         READY   STATUS    RESTARTS   AGE
     pod/local-disk-local-diskmaker-qdrjs         1/1     Running   0          100s
     pod/local-disk-local-provisioner-b6v4n       1/1     Running   0          100s
@@ -276,8 +270,8 @@ After you [create a local block storage configuration](#config-storage-local-blo
     ```
     {: pre}
 
-    Example output:
-    ```sh
+    Example output
+    ```
     NAME                CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS           REASON   AGE
     local-pv-88842685   20Gi       RWO            Delete           Available           sat-local-block-gold            90s
     ```
@@ -380,8 +374,8 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     ```
     {: pre}
 
-    **Example output**
-    ```sh
+    Example output
+    ```
     brw-rw-rw-. 1 root disk 202, 32 Mar  3 21:24 /dev/nvme2n1
     ```
     {: screen}
@@ -399,8 +393,8 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     ```
     {: pre}
 
-    **Example output**:
-    ```sh
+    Example output
+    ```
     b   l   o   c   k   _   d   a   t   a
     ```
     {: screen}
@@ -411,7 +405,6 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     ```
     {: pre}
 
-<br />
 
 ## Removing the local block storage configuration from your cluster
 {: #sat-storage-remove-local-block-config}
@@ -430,8 +423,8 @@ Removing the storage configuration, uninstalls the local storage operator resour
     ```
     {: pre}
 
-    **Example output**
-    ```sh
+    Example output
+    ```
     NAME                                         READY   STATUS    RESTARTS   AGE
     pod/local-disk-local-diskmaker-clvg6         1/1     Running   0          29h
     pod/local-disk-local-diskmaker-kqddq         1/1     Running   0          29h
@@ -474,8 +467,8 @@ Removing the storage configuration, uninstalls the local storage operator resour
     ```
     {: pre}
 
-    **Example output**:
-    ```sh
+    Example output
+    ```
     No resources found in local-storage namespace.
     ```
     {: pre}
@@ -512,7 +505,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
     ```
     {: pre}
 
-    Example output: 
+    Example output
     ```
     app    sat-local-block-gold
     ```
@@ -569,11 +562,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
     oc get pv
     ```
     {: pre}
-
-
-
-
-<br />
+    
 
 ## Local block storage configuration parameter reference
 {: #sat-storage-local-block-params-cli}
@@ -589,7 +578,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
 {: caption="Table 1. Local block storage parameter reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is a required parameter. The third column is a brief description of the parameter. The third column is the default value of the parameter."}
 
-<br />
+
 
 ## Storage class reference
 {: #local-block-sc-ref}

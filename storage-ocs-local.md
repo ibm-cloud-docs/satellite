@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-30"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -173,7 +173,7 @@ The following steps show how you can manually retrieve the local device informat
     {: pre}
 
 4. Review the command output for available disks. Disks that can be used for your ODF configuration must be unmounted. In the following example output from the `lsblk` command, the `sdc` disk has two available, unformatted partitions that you can use for the OSD and MON device paths for this worker node. If your worker node has raw disks without partitions, you need one disk for the OSD and one disk for the MON. As a best practice, and to maximize storage capacity on this disk, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your ODF configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration.
-    ```sh
+    ```
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     sda      8:0    0   931G  0 disk
     |-sda1   8:1    0   256M  0 part /boot
@@ -195,7 +195,7 @@ The following steps show how you can manually retrieve the local device informat
     {: pre}
 
 6. Review the command output and make a note of the `by-id` values for the disks that you want to use in your configuration. In the following example output, the disk ids for the `sdc1` and `sdc2` partitions are: `scsi-3600605b00d87b43027b3bc310a64c6c9-part1` and `scsi-3600605b00d87b43027b3bc310a64c6c9-part2`.
-    ```sh
+    ```
     lrwxrwxrwx. 1 root root  9 Feb  9 04:15 scsi-3600605b00d87b43027b3bbb603150cc6 -> ../../sda
     lrwxrwxrwx. 1 root root 10 Feb  9 04:15 scsi-3600605b00d87b43027b3bbb603150cc6-part1 -> ../../sda1
     lrwxrwxrwx. 1 root root 10 Feb  9 04:15 scsi-3600605b00d87b43027b3bbb603150cc6-part2 -> ../../sda2
@@ -231,7 +231,7 @@ The following steps show how you can manually retrieve the local device informat
 1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
 
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-    ```
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
@@ -290,19 +290,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
 1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat group ls
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud oc cluster ls --provider satellite
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat service ls --location <location>
       ```
@@ -310,19 +310,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
       ```
@@ -342,8 +342,8 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         ```
         {: pre}
 
-        Example output:
-        ```sh
+        Example output
+        ```
         NAME                 AGE   PHASE   EXTERNAL   CREATED AT             VERSION
         ocs-storagecluster   72m   Ready              2021-02-10T06:00:20Z   4.6.0
         ```
@@ -355,8 +355,8 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         ```
         {: pre}
 
-        Example output:
-        ```sh
+        Example output
+        ```
         NAME                                                              READY   STATUS      RESTARTS   AGE
         csi-cephfsplugin-9g2d5                                            3/3     Running     0          8m11s
         csi-cephfsplugin-g42wv                                            3/3     Running     0          8m11s
@@ -403,8 +403,8 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-    **Example output**:
-    ```sh
+    Example output
+    ```
     NAME                          PROVISIONER                             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
     localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  107s
     localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  107s
@@ -424,8 +424,8 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-    **Example output**:
-    ```sh
+    Example output
+    ```
     NAME                CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                            STORAGECLASS   REASON   AGE
     local-pv-180cfc58   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-b                localfile               12m
     local-pv-67f21982   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-a                localfile               12m
@@ -501,7 +501,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
     ```
     {: pre}
 
-    Example output:
+    Example output
     ```
     NAME                                READY   STATUS    RESTARTS   AGE
     app                                 1/1     Running   0          2m58s
@@ -521,8 +521,8 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
         ```
         {: pre}
 
-        Example output:
-        ```sh
+        Example output
+        ```
         Tue Mar 2 20:09:19 UTC 2021
         Tue Mar 2 20:09:25 UTC 2021
         Tue Mar 2 20:09:31 UTC 2021
@@ -618,7 +618,7 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```
         app    sat-ocs-cephfs-gold
         ```
@@ -670,37 +670,37 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 
 
 1. List your storage assignments and find the one that you used for your cluster.
-    ```bash
+    ```sh
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
     ```
     {: pre}
 
 2. Remove the assignment. After the assignment is removed, the ODF driver pods and storage classes are removed from all clusters that were part of the storage assignment.
-    ```bash
+    ```sh
     ibmcloud sat storage assignment rm --assignment <assignment_ID>
     ```
     {: pre}
 
 3. List your storage assignments and find the one that you used for your cluster.
-    ```bash
+    ```sh
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
     ```
     {: pre}
 
 4. Remove the assignment. After the assignment is removed, the local file driver pods and storage classes are removed from all clusters that were part of the storage assignment.
-    ```bash
+    ```sh
     ibmcloud sat storage assignment rm --assignment <assignment_ID>
     ```
     {: pre}
 
 5. Remove your storage assignment.
-    ```bash
+    ```sh
     ibmcloud sat storage assignment rm --assignment <assignment>
     ```
     {: pre}
 
 6. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
-    ```bash
+    ```sh
     #!/bin/bash
     ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
     oc delete ocscluster --all --wait=false
@@ -737,19 +737,19 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 
 8. After you run the cleanup script, log in to each worker node and run the following commands.
     1. Deploy a debug pod and run `chroot /host`.
-    ```bash
+    ```sh
     oc debug node/<node_name> -- chroot /host
     ```
     {: pre}
 
     2. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your ODF configuration.
-    ```bash
+    ```sh
     rm -rvf /var/lib/rook /mnt/local-storage
     ```
     {: codeblock}
 
-    **Example output**:
-    ```sh
+    Example output
+    ```
     removed '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6/ceph-volume.log'
     removed directory: '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6'
     removed directory: '/var/lib/rook/openshift-storage/log'
@@ -773,8 +773,8 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     ```
     {: pre}
 
-    **Example output**:
-    ```sh
+    Example output
+    ```
     local-pv-180cfc58   139Gi      RWO            Delete           Available           localfile               11m
     local-pv-67f21982   139Gi      RWO            Delete           Available           localfile               12m
     local-pv-80c5166    100Gi      RWO            Delete           Available           localblock              12m
@@ -796,8 +796,8 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     ```
     {: pre}
 
-    **Example output**:
-    ```sh
+    Example output
+    ```
     localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
     localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
     ocs-storagecluster-ceph-rbd   openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   41m
@@ -812,8 +812,8 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     ```
     {: pre}
 
-    **Example output**
-    ```sh
+    Example output
+    ```
     storageclass.storage.k8s.io "localblock" deleted
     storageclass.storage.k8s.io "localfile" deleted
     storageclass.storage.k8s.io "ocs-storagecluster-ceph-rgw" deleted
