@@ -23,13 +23,13 @@ You can only SSH into the machine if you did not assign the host to a cluster, o
 {: note}
 
 1. Log in to the machine.
-    ```
+    ```sh
     ssh root@<IP_address>
     ```
     {: pre}
 
 2. Check the various log output files from the host registration and host bootstrapping processes. Replace `<filepath>` with the following files to check in order.
-    ```
+    ```sh
     tail <filepath>
     ```
     {: pre}
@@ -37,37 +37,12 @@ You can only SSH into the machine if you did not assign the host to a cluster, o
     1. The `nohup.out` logs from the host registration attempt.
     2. The `/var/log/firstboot.log` for the first bootstrapping attempt. If the host registration failed, you do not have this file.
     3. The `/tmp/bootstrap/bootstrap_base.log` for the base bootstrapping process, if the first boot was unsuccessful. If the host registration failed, you do not have this file.
-3. Review the logs for errors. Some common errors include the following.
-    <table summary="This table is read from left to right. The first column has the error message. The second column has the description of the how to resolve the error.">
-    <caption>Common host machine registration and bootstrapping errors</caption>
-    <thead>
-    <th>Message</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    <tr>
-    <td><pre class="screen"><code>export HOME=/root
-    HOME=/root
-    '[' '!' -f /var/log/firstboot.flag ']'
-    ~</code></pre></td>
-    <td>The first boot did not complete successfully. Check the <code>/tmp/bootstrap/bootstrap_base.log</code> file and continue looking for errors.</td>
-    </tr>
-    <tr>
-    <td><code>No package matching '\''container-selinux'\'' found available, installed or updated</code>.<br><br><code>No package rh-python36 available. Error: Nothing to do</code>.<br><br>(Note that the package name might be replaced with another package name.)</td>
-    <td>See [Host registration script fails](/docs/satellite?topic=satellite-host-registration-script-fails).</td>
-    </tr>
-    <tr>
-    <td><pre class="screen"><code>curl: (6) Could not resolve host: <URL>.com; Unknown error
-    tar -xvf bootstrap.tar
-    tar: This does not look like a tar archive
-    tar: Exiting with failure status due to previous errors
-    [[ -n ‘’ ]]
-    echo ‘Failed to untar bootstrap.tar’
-    Failed to untar bootstrap.tar
-    + rm -rf /tmp/bootstrap</code></pre></td>
-    <td>The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-hosts#host-remove), and try to [add](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assign](/docs/satellite?topic=satellite-hosts#host-assign) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.</td>
-    </tr>
-    </tbody>
-    </table>
+3. Review the logs for errors. Some common errors include the following errors.
 
+    | Message | Description |
+    | -------------- | -------------- |
+    | `export HOME=/root`   \n  `HOME=/root` \n ` '[' '!' -f /var/log/firstboot.flag ']'`  \n  `~` | The first boot did not complete successfully. Check the `/tmp/bootstrap/bootstrap_base.log` file and continue looking for errors. |
+    | `No package matching '\''container-selinux'\'' found available, installed or updated`.  \n `No package rh-python36 available. Error: Nothing to do`. \n  (Note that the package name might be replaced with another package name.) |See [Host registration script fails](/docs/satellite?topic=satellite-host-registration-script-fails). |
+    | `curl: (6) Could not resolve host: <URL>.com; Unknown error` \n `tar -xvf bootstrap.tar` \n `tar: This does not look like a tar archive` \n `tar: Exiting with failure status due to previous errors` \n `[[ -n ‘’ ]]` \n `echo ‘Failed to untar bootstrap.tar’` \n `Failed to untar bootstrap.tar` \n `+ rm -rf /tmp/bootstrap` | The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-hosts#host-remove), and try to [add](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assign](/docs/satellite?topic=satellite-hosts#host-assign) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps. |
+    {: caption="Table 1. Common host machine registration and bootstrapping errors" caption-side="top"}
 

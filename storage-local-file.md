@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -101,7 +101,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     {: pre}
 
     Example output
-    ```
+    ```sh
     node/<worker-IP> labeled
     node/<worker-IP> labeled
     ```
@@ -239,7 +239,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                         READY   STATUS    RESTARTS   AGE
     pod/local-disk-local-diskmaker-cpk4r         1/1     Running   0          30s
     pod/local-disk-local-provisioner-xstjh       1/1     Running   0          30s
@@ -267,7 +267,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
     {: pre}
 
     Example output
-    ```
+    ```sh
     sat-local-file-gold       kubernetes.io/no-provisioner   Delete          WaitForFirstConsumer   false                  21m
     ```
     {: screen}
@@ -279,7 +279,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME               CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS          REASON   AGE
     local-pv-1d14680   50Gi       RWO            Delete           Available           sat-local-file-gold            50s
     ```
@@ -381,7 +381,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     {: pre}
 
     Example output
-    ```
+    ```sh
     This is a test.
     ```
     {: screen}
@@ -411,7 +411,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                         READY   STATUS    RESTARTS   AGE
     pod/local-disk-local-diskmaker-clvg6         1/1     Running   0          29h
     pod/local-disk-local-diskmaker-kqddq         1/1     Running   0          29h
@@ -455,7 +455,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
     {: pre}
 
     Example output
-    ```
+    ```sh
     No resources found in local-storage namespace.
     ```
     {: screen}
@@ -493,7 +493,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
     {: pre}
 
     Example output
-    ```
+    ```sh
     app    sat-local-block-gold
     ```
     {: screen}
@@ -559,7 +559,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
 | `--name` | Required | Enter a name for your storage configuration. |
 | `--template-name` | Required | Enter `local-volume-file`. |
 | `--template-version` | Required | Enter the version of the `local-volume-file` template that you want to use. The template version that you specify must match your OCP version. For example, if your OCP version is `4.5.X`, specify template version `4.5`.  To get a list of storage templates and versions, run `ibmcloud sat storage template ls`. |
-| `label-key` | Required | Enter the node label key that you added to the worker nodes where you want to install the local storage drivers. The local storage drivers are installed only on the worker nodes that have the corresponding label. In the previous example, the `label-key` is `storage. |
+| `label-key` | Required | Enter the node label key that you added to the worker nodes where you want to install the local storage drivers. The local storage drivers are installed only on the worker nodes that have the corresponding label. In the previous example, the `label-key` is `storage`. |
 | `label-value` | Required | Enter the node label value that you added to the worker nodes where you want to install the local storage driver. The local storage drivers are installed only on the worker nodes that have the corresponding label. In the previous example, the `label-value` is `local-file`. |
 | `devicepath` | Required | Enter the local storage device paths. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/nvme2n1`,`/dev/nvme3n1`. For more information on how to retrieve this value, see [Getting the device details](#sat-storage-file-local-devices). Example: `/dev/sdc`. |
 | `fstype` | Required | Enter the file system type that you want to use on your local disks. The supported file system types are: `xfs`, `ext`, `ext3`, and `ext4`.  Example: `ext4`. |

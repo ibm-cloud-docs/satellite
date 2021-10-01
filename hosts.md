@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -30,7 +30,9 @@ The following diagram presents the initial setup steps for hosts.
 ![Concept overview of Satellite host setup](/images/host-process.png){: caption="Figure 1. The initial setup process for {{site.data.keyword.satelliteshort}} hosts." caption-side="bottom"}
 
 1. **Attach**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [attach the host](#attach-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud). After the host is attached and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
+
 2. **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service. For example, a basic setup has 6 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} location control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
+
 3. **Bootstrap**: When you assign a host, the host is bootstrapped to become a worker node in a {{site.data.keyword.satelliteshort}}-enabled service such as a managed {{site.data.keyword.openshiftlong_notm}} cluster or your {{site.data.keyword.satelliteshort}} control plane. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, software packages for the {{site.data.keyword.satelliteshort}}-enabled service, such as {{site.data.keyword.openshiftshort}}, are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 
 Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshort}} location control plane, {{site.data.keyword.openshiftlong_notm}} cluster, or as compute capacity for other {{site.data.keyword.satelliteshort}}-enabled services. If you run an {{site.data.keyword.openshiftshort}} cluster, you can log in to the clusters and use Kubernetes or {{site.data.keyword.openshiftshort}} APIs to manage your containerized workloads, or use [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) to manage your workloads across clusters.
@@ -42,7 +44,7 @@ Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshor
 After you create the location, you must attach compute capacity to your location so that you can run the {{site.data.keyword.satelliteshort}} control plane or set up {{site.data.keyword.openshiftshort}} clusters.
 {: shortdesc}
 
-Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#location-sizing).<br><br>
+Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#location-sizing).   \n
 Using AWS hosts? You can use a [launch template](/docs/satellite?topic=satellite-aws) to attach hosts to your {{site.data.keyword.satelliteshort}} location.
 {: tip}
 
@@ -76,7 +78,7 @@ Before you begin, make sure that you have created host machines that meet the [m
     - [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
     - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
     - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
-    - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)<br>
+    - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
 
     **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine.
 
@@ -100,7 +102,7 @@ Before you begin, make sure that you have created host machines that meet the [m
         ```
         {: pre}
 
-    5. Monitor the progress of the registration script.
+    6. Monitor the progress of the registration script.
         ```sh
         journalctl -f -u ibm-host-attach
         ```
@@ -126,7 +128,7 @@ Before you begin, make sure that you have created host machines that meet the [m
     {: pre}
 
     Example output
-    ```
+    ```sh
     Creating host registration script...
     OK
     The script to attach hosts to Satellite location 'mylocation' was downloaded to the following location:
@@ -144,7 +146,7 @@ Before you begin, make sure that you have created host machines that meet the [m
     - [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
     - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
     - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
-    - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)<br>
+    - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
 
     **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine.
 
@@ -168,7 +170,7 @@ Before you begin, make sure that you have created host machines that meet the [m
         ```
         {: pre}
 
-    5. Monitor the progress of the registration script.
+    6. Monitor the progress of the registration script.
         ```sh
         journalctl -f -u ibm-host-attach
         ```
@@ -181,7 +183,7 @@ Before you begin, make sure that you have created host machines that meet the [m
     {: pre}
 
     Example output
-    ```
+    ```sh
     Name             ID                     State        Status   Cluster   Worker ID   Worker IP   
     machine-name-1   aaaaa1a11aaaaaa111aa   unassigned   -        -         -           -   
     machine-name-2   bbbbbbb22bb2bbb222b2   unassigned   -        -         -           -   
@@ -261,7 +263,7 @@ Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{sit
         {: pre}
 
     2. List the available (unassigned) hosts in your location, and note the IDs of the hosts that you want to check the labels for.
-        ```sn
+        ```sh
         ibmcloud sat host ls --location <location_name_or_ID> | grep unassigned
         ```
         {: pre}
@@ -273,7 +275,7 @@ Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{sit
         {: pre}
 
         Example output
-        ```
+        ```sh
         ...
         Labels      
         app      webserver   
@@ -388,7 +390,7 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
     {: pre}
 
     Example output
-    ```
+    ```sh
     Retrieving hosts...
     OK
     Name              ID                     State      Status   Cluster             Worker ID                                                 Worker IP   
@@ -441,7 +443,7 @@ To review the changes that are included in each version update, see the [Version
     {: pre}
 
     Example output
-    ```
+    ```sh
     ID                Primary IP       Flavor   State    Status   Zone     Version   
     sat-worker-<ID>   <IP_address>     upi      normal   Ready    zone-1   4.5.35_1534_openshift*   
 
@@ -488,7 +490,7 @@ Before you begin
 
 - Review the example output.
 
-    ```
+    ```sh
     ID                                                        Primary IP      Flavor   State    Status   Zone     Version   
     sat-satliberty-5b4c7f3a7bfc14cf58cbb14ad5c08429475274fe   208.43.36.202   upi      normal   Ready    zone-1   4.7.19_1525_openshift*   
     ```
@@ -497,8 +499,8 @@ Before you begin
 To apply a minor or patch update,
 
 1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
-1. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign). These hosts automatically receive the update when you assign them.
-1. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](#host-remove).
+2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign). These hosts automatically receive the update when you assign them.
+3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](#host-remove).
 
 #### Applying major version updates to worker node host
 {: #host-update-workers-major}
@@ -517,7 +519,7 @@ Before you begin
    
    Review the example output.
 
-   ```
+   ```sh
    Name                ID                     State        Status   Zone     Cluster          Worker ID                                              Worker IP   
 
    satdemo-cp1         0bc3b92f55968a230985   assigned     Ready    zone-1   infrastructure   sat-satdemocp1-2bda578e901b4047c6e48d766cd99bc11a45fddd   169.62.42.178   
@@ -535,7 +537,7 @@ Before you begin
 
     Review the example output.
 
-    ```
+    ```sh
     ID                                                        Primary IP      Flavor   State    Status   Zone     Version   
     sat-satliberty-5b4c7f3a7bfc14cf58cbb14ad5c08429475274fe   208.43.36.202   upi      normal   Ready    zone-1   4.7.19_1525_openshift*   
     ```
@@ -713,8 +715,8 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as com
 5. From the **Hosts** table, hover over the host that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 6. Click **Remove host**, enter the host name to confirm deletion, and click **Remove**.
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
-    * To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
-    * To no longer use the host, delete the host from your infrastructure provider.
+    - To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
+    - To no longer use the host, delete the host from your infrastructure provider.
 
 ### Removing hosts from the CLI
 {: #host-remove-cli}
@@ -742,7 +744,7 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove 
     {: pre}
 
     Example output
-    ```
+    ```sh
     Retrieving hosts...
     OK
     Name              ID                     State      Status   Cluster          Worker ID                                                 Worker IP   

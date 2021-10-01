@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -101,7 +101,7 @@ Every {{site.data.keyword.cloud_notm}} service that you run in your {{site.data.
 
 The following image shows a basic {{site.data.keyword.satelliteshort}} control plane worker node setup. This setup ensures that your {{site.data.keyword.satelliteshort}} control plane has sufficient compute capacity to run basic {{site.data.keyword.satelliteshort}} workloads and that your control plane continues to run, even if one compute host becomes unavailable.
 
-<img src="/images/satellite_ha_default.png" alt="Default setup for the {{site.data.keyword.satelliteshort}} control plane" width="350" style="width: 350px; border-style: none"/>
+![Default setup for the {{site.data.keyword.satelliteshort}} control plane.](images/satellite_ha_default.png "{{site.data.keyword.satelliteshort}} control plane"){: caption="Figure 1. {{site.data.keyword.satelliteshort}} control plane" caption-side="bottom"}
 
 Review the characteristics of the basic setup.
 

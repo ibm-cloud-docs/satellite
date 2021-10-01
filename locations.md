@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -75,10 +75,10 @@ To create a location from the console,
     3. The **Resource group** is set to `default` by default.
     4. For **Managed from**: Select the {{site.data.keyword.cloud_notm}} region that you want to use to manage your location. For more information about why you must select an {{site.data.keyword.cloud_notm}} region, see [About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the region that is closest to where your host machines physically reside that you plan to attach to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
     5. For **Zones**: The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider.
-        * [Alibaba regions and zones](https://www.alibabacloud.com/help/doc-detail/89155.htm){: external}, such as `us-east-1a` and `us-east-1b`.
-        * [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, and `us-east-1c`.
-        * [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
-        * [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
+        - [Alibaba regions and zones](https://www.alibabacloud.com/help/doc-detail/89155.htm){: external}, such as `us-east-1a` and `us-east-1b`.
+        - [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, and `us-east-1c`.
+        - [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
+        - [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
 4. In the **Object Storage** section, you can click **Edit** to optionally enter the exact name of an existing {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data. Otherwise, a new bucket is automatically created in an {{site.data.keyword.cos_short}} instance in your account.
 5. In the **Summary** panel, review your order details, and then click **Create location**. When you create the location, a location control plane master is deployed to one of the zones that are located in the {{site.data.keyword.cloud_notm}} region that you selected.
 6. Continue with [attaching hosts to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) to finish the setup of your {{site.data.keyword.satelliteshort}} location control plane.
@@ -129,7 +129,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     {: pre}
 
     Example output
-    ```
+    ```sh
     Name         ID                     Status            Ready   Created        Hosts (used/total)   Managed From   
     mylocation   brhtfum2015a6mgqj16g   action required   no      1 minute ago   0 / 3                Washington DC   
     ```
@@ -199,7 +199,7 @@ To create the control plane,
     {: pre}
 
     Example output
-    ```
+    ```sh
     Name             ID                     State        Status   Cluster   Worker ID   Worker IP   
     machine-name-1   aaaaa1a11aaaaaa111aa   unassigned   -        -         -           -   
     machine-name-2   bbbbbbb22bb2bbb222b2   unassigned   -        -         -           -   
@@ -214,7 +214,7 @@ To create the control plane,
     {: pre}
 
     Example output
-    ```
+    ```sh
     Retrieving host details...
 
     Name:     mymachine1   
@@ -270,7 +270,7 @@ To create the control plane,
     {: pre}
 
     Example output
-    ```
+    ```sh
     Retrieving hosts...
     OK
     Name              ID                     State      Status   Cluster          Worker ID                                                 Worker IP   
@@ -291,7 +291,7 @@ To create the control plane,
     {: pre}
 
     Example output
-    ```
+    ```sh
     OK
     Name         ID                     Status      Ready   Created      Hosts (used/total)   Managed From   
     mylocation   brhtfum2015a6mgqj16g   normal      yes     4 days ago   3 / 3                Washington DC   
@@ -305,7 +305,7 @@ To create the control plane,
     {: pre}
 
     Example output
-    ```
+    ```sh
     Retrieving location subdomains...
     OK
     Hostname                                                                                              Records                                                                                               Health Monitor   SSL Cert Status   SSL Cert Secret Name                                          Secret Namespace   
@@ -343,7 +343,7 @@ As you attach more resources to your {{site.data.keyword.satelliteshort}} locati
 
 When you list locations, such as with the `ibmcloud sat location ls` command or in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, the location enters an `Action required` health state. You see warning messages similar to the following example.
 
-```
+```sh
 Hosts in the location control plane are running out of disk space.
 
 Hosts in the location control plane have critical CPU or memory usage issues.

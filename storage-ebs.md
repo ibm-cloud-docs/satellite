@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -111,7 +111,7 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
         {: pre}
 
         Example output
-        ```  
+        ```sh
         ebs-csi-controller-7bb59dbcdd-8d866     6/6     Running   0          38s
         ebs-csi-controller-7bb59dbcdd-cbgl5     6/6     Running   0          38s
         ebs-csi-node-4hzf9                      3/3     Running   0          38s
@@ -127,7 +127,7 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
         {: pre}
 
         Example output
-        ```         
+        ```sh     
         sat-aws-block-bronze      ebs.csi.aws.com    Delete          WaitForFirstConsumer   true                   2d8h
         sat-aws-block-gold        ebs.csi.aws.com    Delete          WaitForFirstConsumer   true                   2d8h
         sat-aws-block-silver      ebs.csi.aws.com    Delete          WaitForFirstConsumer   true                   2d8h
@@ -178,7 +178,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                   STATUS    VOLUME   CAPACITY   ACCESS MODES   STORAGECLASS           AGE
     sat-aws-block-bronze   Pending                                      sat-aws-block-bronze   17s
     ```
@@ -219,7 +219,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     app                                 1/1     Running   0          2m58s
     ```
@@ -232,7 +232,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                 STATUS  VOLUME                                   CAPACITY   ACCESS MODES   STORAGECLASS           AGE
     sat-aws-block-bronze Bound   pvc-86d2f9f4-78d4-4bb2-ab73-39726d144981 125Gi      RWO            sat-aws-block-bronze   33m
     ```
@@ -255,7 +255,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
         {: pre}
 
         Example output
-        ```
+        ```sh
         Tue Mar 2 20:09:19 UTC 2021
         Tue Mar 2 20:09:25 UTC 2021
         Tue Mar 2 20:09:31 UTC 2021
@@ -312,7 +312,7 @@ Removing your AWS EBS instance permanently removes all the data that is stored o
         {: pre}
 
         Example output
-        ```
+        ```sh
         app    sat-aws-block-bronze
         ```
         {: screen}

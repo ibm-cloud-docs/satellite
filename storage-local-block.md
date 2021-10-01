@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -130,7 +130,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     {: pre}
 
     Example output
-    ```
+    ```sh
     node/<worker-IP> labeled
     node/<worker-IP> labeled
     node/<worker-IP> labeled
@@ -242,7 +242,7 @@ After you [create a local block storage configuration](#config-storage-local-blo
 
     Example output
 
-    ```
+    ```sh
     NAME                                         READY   STATUS    RESTARTS   AGE
     pod/local-disk-local-diskmaker-qdrjs         1/1     Running   0          100s
     pod/local-disk-local-provisioner-b6v4n       1/1     Running   0          100s
@@ -271,7 +271,7 @@ After you [create a local block storage configuration](#config-storage-local-blo
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS           REASON   AGE
     local-pv-88842685   20Gi       RWO            Delete           Available           sat-local-block-gold            90s
     ```
@@ -375,7 +375,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     {: pre}
 
     Example output
-    ```
+    ```sh
     brw-rw-rw-. 1 root disk 202, 32 Mar  3 21:24 /dev/nvme2n1
     ```
     {: screen}
@@ -394,7 +394,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     {: pre}
 
     Example output
-    ```
+    ```sh
     b   l   o   c   k   _   d   a   t   a
     ```
     {: screen}
@@ -424,7 +424,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                         READY   STATUS    RESTARTS   AGE
     pod/local-disk-local-diskmaker-clvg6         1/1     Running   0          29h
     pod/local-disk-local-diskmaker-kqddq         1/1     Running   0          29h
@@ -468,7 +468,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
     {: pre}
 
     Example output
-    ```
+    ```sh
     No resources found in local-storage namespace.
     ```
     {: pre}
@@ -506,7 +506,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
     {: pre}
 
     Example output
-    ```
+    ```sh
     app    sat-local-block-gold
     ```
     {: screen}

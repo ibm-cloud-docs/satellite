@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -343,7 +343,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         {: pre}
 
         Example output
-        ```
+        ```sh
         NAME                 AGE   PHASE   EXTERNAL   CREATED AT             VERSION
         ocs-storagecluster   72m   Ready              2021-02-10T06:00:20Z   4.6.0
         ```
@@ -356,7 +356,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         {: pre}
 
         Example output
-        ```
+        ```sh
         NAME                                                              READY   STATUS      RESTARTS   AGE
         csi-cephfsplugin-9g2d5                                            3/3     Running     0          8m11s
         csi-cephfsplugin-g42wv                                            3/3     Running     0          8m11s
@@ -404,7 +404,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                          PROVISIONER                             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
     localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  107s
     localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  107s
@@ -425,7 +425,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                            STORAGECLASS   REASON   AGE
     local-pv-180cfc58   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-b                localfile               12m
     local-pv-67f21982   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-a                localfile               12m
@@ -502,7 +502,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     app                                 1/1     Running   0          2m58s
     ```
@@ -522,7 +522,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
         {: pre}
 
         Example output
-        ```
+        ```sh
         Tue Mar 2 20:09:19 UTC 2021
         Tue Mar 2 20:09:25 UTC 2021
         Tue Mar 2 20:09:31 UTC 2021
@@ -619,7 +619,7 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
         {: pre}
 
         Example output
-        ```
+        ```sh
         app    sat-ocs-cephfs-gold
         ```
         {: screen}
@@ -749,7 +749,7 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     {: codeblock}
 
     Example output
-    ```
+    ```sh
     removed '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6/ceph-volume.log'
     removed directory: '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6'
     removed directory: '/var/lib/rook/openshift-storage/log'
@@ -774,7 +774,7 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     {: pre}
 
     Example output
-    ```
+    ```sh
     local-pv-180cfc58   139Gi      RWO            Delete           Available           localfile               11m
     local-pv-67f21982   139Gi      RWO            Delete           Available           localfile               12m
     local-pv-80c5166    100Gi      RWO            Delete           Available           localblock              12m
@@ -797,7 +797,7 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     {: pre}
 
     Example output
-    ```
+    ```sh
     localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
     localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
     ocs-storagecluster-ceph-rbd   openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   41m
@@ -813,7 +813,7 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     {: pre}
 
     Example output
-    ```
+    ```sh
     storageclass.storage.k8s.io "localblock" deleted
     storageclass.storage.k8s.io "localfile" deleted
     storageclass.storage.k8s.io "ocs-storagecluster-ceph-rgw" deleted

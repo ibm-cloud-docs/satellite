@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -218,7 +218,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                                   READY   STATUS             RESTARTS   AGE
     pod/ibm-spectrum-scale-csi-attacher-0                  1/1     Running            2          173m
     pod/ibm-spectrum-scale-csi-k2978                       2/2     Running            0          152m
@@ -367,7 +367,7 @@ You can use the `ibm-spectrum-scale-csi-driver` to create PVCs that you can use 
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     app                                 1/1     Running   0          2m58s
     ```
@@ -387,7 +387,7 @@ You can use the `ibm-spectrum-scale-csi-driver` to create PVCs that you can use 
         {: pre}
 
         Example output
-        ```
+        ```sh
         Wed May 5 20:37:04 UTC 2021
         Wed May 5 20:37:10 UTC 2021
         Wed May 5 20:37:15 UTC 2021

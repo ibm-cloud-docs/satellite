@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -111,7 +111,7 @@ The {{site.data.keyword.monitoringfull_notm}} component generates certain alerts
 {: shortdesc}
 
 Example log
-```
+```sh
 {"logSourceCRN":"crn:v1:bluemix:public:satellite:us-south:a/f601ad712b0dd981276cf3b995554afc:c1hk4ek107l5au5mq8hg::","saveServiceCopy":true,"Details":{"message":"R0025: The Satellite location has OpenShift clusters in critical health.","errorDetails":"Customer etcd cluster moved down to 1 or less available pods. Quorum broke. Manual recovery of cluster needed.","messageID":"R0025"}}
 ```
 {: screen}
@@ -134,7 +134,7 @@ Enablement of resource deployment logs report the current status of whether reso
 {: shortdesc}
 
 Example log
-```
+```sh
 {"logSourceCRN":"crn:v1:bluemix:public:satellite:us-south:a/f601ad712b0dd981276cf3b995554afc:c1hk4ek107l5au5mq8hg::","saveServiceCopy":true,"message":"Enablement of resource deployment in the location is set false due to R0012: The location control plane does not have hosts in all 3 zones. Add available hosts to your location for the control plane. R0025: The Satellite location has OpenShift clusters in critical health."}
 ```
 {: screen}
@@ -157,7 +157,7 @@ Endpoint health status logs report the current health check status of the {{site
 - If logs report `Failed to reach endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is unreachable.
 
 Example log
-```
+```sh
 {"logSourceCRN":"crn:v1:bluemix:public:satellite:us-east:a/6ef045fd2b43266cfe8e6388dd2ec098:c0rcidjw0s3rf9v8sms0::","saveServiceCopy":true,"message":"Endpoint health status: Failed to reach endpoint. Get \"http://c-03.us-east.link.satellite.cloud.ibm.com:32900\": read tcp 172.XX.XXX.XXX:58564-\u003e166.9.XX.XXX:32900: read: connection reset by peer. Endpoint: http://c-03.us-east.link.satellite.cloud.ibm.com:32900"}
 ```
 {: screen}
@@ -175,9 +175,9 @@ Example log
 
 1. Search for your question and post in the {{site.data.keyword.cloud_notm}} [Slack](https://cloud.ibm.com/kubernetes/slack){: external}, in the `#satellite` channel.
 2. Review forums such as Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
-    * For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
-    * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.openshiftshort}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
-    * See [Getting help](/docs/get-support?topic=get-support-using-avatar#using-avatar) for more details about using the forums.
+    - For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
+    - If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.openshiftshort}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
+    - See [Getting help](/docs/get-support?topic=get-support-using-avatar#using-avatar) for more details about using the forums.
 
 ## Contacting support
 {: #help-support}

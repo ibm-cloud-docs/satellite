@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -255,7 +255,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         {: pre}
 
         Example output
-        ```
+        ```sh
         NAME                 AGE   PHASE   EXTERNAL   CREATED AT             VERSION
         ocs-storagecluster   72m   Ready              2021-02-10T06:00:20Z   4.6.0
         ```
@@ -268,7 +268,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         {: pre}
 
         Example output
-        ```
+        ```sh
         NAME                                                              READY   STATUS      RESTARTS   AGE
         csi-cephfsplugin-9g2d5                                            3/3     Running     0          8m11s
         csi-cephfsplugin-g42wv                                            3/3     Running     0          8m11s

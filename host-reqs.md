@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -46,7 +46,7 @@ Review the following requirements that relate to the computing and system setup 
 Hosts must have access to {{site.data.keyword.redhat_notm}} updates and the following packages.
 {: shortdesc}
 
-```
+```sh
 Repository 'rhel-server-rhscl-7-rpms' is enabled for this system.
 Repository 'rhel-7-server-optional-rpms' is enabled for this system.
 Repository 'rhel-7-server-rh-common-rpms' is enabled for this system.
@@ -109,7 +109,7 @@ In general, do not set any custom networking configurations on your hosts, such 
 - Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
 - You cannot use custom iptables to route traffic to the public or private network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables.
 - The following IP address ranges are reserved, and must not be used in any of the networks that you want to use in {{site.data.keyword.satellitelong_notm}}, including the host networks.
-    ```
+    ```sh
     172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, 172.20.0.0/16, and 192.168.255.0/24
     ```
     {: screen}
@@ -134,7 +134,7 @@ In general, do not set any custom networking configurations on your hosts, such 
     {: pre}
 
     In this example output, `eth0` is the default network interface:
-    ```
+    ```sh
     default via 161.202.250.1 dev eth0 onlink
     ```
     {: screen}
@@ -337,7 +337,7 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 5. In the `ping statistics` output, note the average (`avg`) round-trip distance in milliseconds (ms) between the host and the {{site.data.keyword.cloud_notm}} region, and compare whether the connection meets the latency requirement of less than or equal to 200 milliseconds (`<= 200ms`).
 
     Example of a connection that meets the latency requirements
-    ```
+    ```sh
     --- 169.63.123.154 ping statistics ---
     25 packets transmitted, 25 packets received, 0.0% packet loss
     round-trip min/avg/max/stddev = 48.131/77.716/181.397/27.893 ms
@@ -345,7 +345,7 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     {: screen}
 
     Example of a connection that does not meet the latency requirements
-    ```
+    ```sh
     --- 158.175.120.210 ping statistics ---
     9 packets transmitted, 9 packets received, 0.0% packet loss
     round-trip min/avg/max/stddev = 138.453/217.370/419.901/108.211 ms

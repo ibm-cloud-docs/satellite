@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -160,7 +160,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
     Example output
-    ```
+    ```sh
     trident-kubectl-nas                 1/1     Running   0          2m32s
     ```
     {: screen}
@@ -178,7 +178,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                    READY   STATUS    RESTARTS   AGE
     pod/trident-csi-2nrt4                   2/2     Running   0          14m
     pod/trident-csi-7f999bfb96-z4dr5        6/6     Running   0          14m
@@ -239,7 +239,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
     netapp-pvc   Bound    pvc-acd9e5b4-0b24-4e20-ac00-69a05148c799   10Gi       RWX            sat-netapp-file-gold   39s
     ```
@@ -280,7 +280,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     app   1/1     Running   0          50s
     ```
@@ -300,7 +300,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
         {: pre}
 
         Example output
-        ```
+        ```sh
         Wed May 19 13:28:31 UTC 2021
         Wed May 19 13:28:37 UTC 2021
         Wed May 19 13:28:42 UTC 2021
@@ -334,7 +334,7 @@ Before you remove your storage configuration, remove the app pods and PVCs that 
     {: pre}
 
     Example output
-    ```
+    ```sh
     app    sat-netapp-file-gold
     ```
     {: screen}

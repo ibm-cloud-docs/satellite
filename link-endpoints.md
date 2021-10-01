@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -265,7 +265,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
     {: pre}
 
     Example output
-    ```
+    ```sh
     Name               ID                     Status   Ready   Created       Hosts (used/total)   Managed From
     port-antwerp       brlono42051up3k4htu0   normal   yes     2 weeks ago   6 / 7                London
     ```
@@ -300,7 +300,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
 
     Example output
     
-    ```
+    ```sh
     ID                           Name                                         Destination Type   Address
     c0mnbnkw0jl8si22djkg_cEomQ   openshift-api-c0mpnn4w0bv28oq2dks0           location           TCP  c-02.us-east.link.satellite.cloud.ibm.com:32823
     c0mnbnkw0jl8si22djkg_6UTZd   satellite-healthcheck-c0mnbnkw0jl8si22djkg   location           HTTP c-02.us-east.link.satellite.cloud.ibm.com:32822
@@ -380,7 +380,7 @@ Use the {{site.data.keyword.satelliteshort}} Link connector host name and port t
         {: pre}
 
         Example output
-        ```
+        ```sh
         NAME                                READY   STATUS    RESTARTS   AGE
         nginx-deployment-85ff79dd56-6lrpg   1/1     Running   0          11s
         ```
@@ -452,7 +452,7 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
     {: pre}
 
     Example output
-    ```
+    ```sh
     Name               ID                     Status   Ready   Created       Hosts (used/total)   Managed From
     port-antwerp       brlono42051up3k4htu0   normal   yes     2 weeks ago   6 / 7                London
     ```
@@ -487,7 +487,7 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
 
     Example output
     
-    ```
+    ```sh
     ID                           Name                                         Destination Type   Address
     c0mnbnkw0jl8si22djkg_cEomQ   openshift-api-c0mpnn4w0bv28oq2dks0           location           TCP  c-02.us-east.link.satellite.cloud.ibm.com:32823
     c0mnbnkw0jl8si22djkg_6UTZd   satellite-healthcheck-c0mnbnkw0jl8si22djkg   location           HTTP c-02.us-east.link.satellite.cloud.ibm.com:32822
@@ -569,7 +569,7 @@ Before you begin, install a packet capture tool, such as [`tcpdump`](https://www
     {: pre}
 
     Example output
-    ```
+    ```sh
     ID                           Name                                         Destination Type   Address
     c0mnbnkw0jl8si22djkg_cEomQ   openshift-api-c0mpnn4w0bv28oq2dks0           location           TCP  c-02.us-east.link.satellite.cloud.ibm.com:32823
     c0mnbnkw0jl8si22djkg_6UTZd   satellite-healthcheck-c0mnbnkw0jl8si22djkg   location           HTTP c-02.us-east.link.satellite.cloud.ibm.com:32822
@@ -596,7 +596,7 @@ Before you begin, install a packet capture tool, such as [`tcpdump`](https://www
 3. In the output, you can check the sources and destinations of packets that are sent through the endpoint.
 
     Example output for a cloud endpoint that allows sources in a {{site.data.keyword.satelliteshort}} location (`10.171.52.151`) to access a target resource in {{site.data.keyword.cloud_notm}} (`166.9.12.121`).
-    ```
+    ```sh
     tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
     listening on any, link-type LINUX_SLL (Linux cooked), capture size 262144 bytes
     05:58:13.471632 IP 10.171.52.151.33666 > 166.9.12.121.filenet-nch: Flags [S], seq 2853445049, win 29200, options [mss 1460,sackOK,TS val 592612262 ecr 0,nop,wscale 7], length 0

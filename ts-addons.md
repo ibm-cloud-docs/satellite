@@ -19,22 +19,20 @@ content-type: troubleshoot
 When you try to use a cluster add-on, the cluster add-on does not work. For example, you installed the Kubernetes web terminal add-on but cannot open the add-on.
 {: tsSymptoms}
 
-
 Add-ons might not work for several reason.
 {: tsCauses}
 
-* The add-on is not supported for clusters in a {{site.data.keyword.satelliteshort}} location.
-* The add-on is in an unhealthy state.
-* The add-on settings are misconfigured, such as renaming or editing a configmap.
-* The add-on cannot be backed up in {{site.data.keyword.cos_full_notm}} due to conflicting service instance and bucket endpoints.
-
+- The add-on is not supported for clusters in a {{site.data.keyword.satelliteshort}} location.
+- The add-on is in an unhealthy state.
+- The add-on settings are misconfigured, such as renaming or editing a configmap.
+- The add-on cannot be backed up in {{site.data.keyword.cos_full_notm}} due to conflicting service instance and bucket endpoints.
 
 Take the following steps to troubleshoot the add-on.
 {: tsResolve}
 
 1. Check that the [add-on is supported](/docs/openshift?topic=openshift-managed-addons#addons-satellite). If not, uninstall the add-on.
 2. If the add-on is misconfigured, refresh the cluster master to restore the add-on to the default settings. 
-    ```
+    ```sh
     ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
     ```
     {: pre}

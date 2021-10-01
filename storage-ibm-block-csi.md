@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -295,7 +295,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     demo-statefulset-file-system-0       1/1     Running   0          2m58s
     ```
@@ -315,7 +315,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
         {: pre}
 
         Example output
-        ```
+        ```sh
         Testing
         ```
         {: screen}

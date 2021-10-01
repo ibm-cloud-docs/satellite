@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -43,10 +43,10 @@ When you use a {{site.data.keyword.satelliteshort}} storage template to create a
 
 | Feature | {{site.data.keyword.satelliteshort}} storage templates | Bring your own drivers |
 | --- | --- | --- |
-| Integrated with the {{site.data.keyword.satelliteshort}} interface. | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |  |
-| Quickly and consistently install storage drivers across multiple clusters. | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |  |
-| Repeatable, site-specific or storage-specific configurations. | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |  |
-| Certified and tested with {{site.data.keyword.satelliteshort}}. | <img src="images/icon-checkmark-filled.svg" width="32" alt="Feature available" style="width:32px;" /> |  |
+| Integrated with the {{site.data.keyword.satelliteshort}} interface. | ![Feature available.](images/icon-checkmark-filled.svg) |  |
+| Quickly and consistently install storage drivers across multiple clusters. | ![Feature available.](images/icon-checkmark-filled.svg) |  |
+| Repeatable, site-specific or storage-specific configurations. | ![Feature available.](images/icon-checkmark-filled.svg) |  |
+| Certified and tested with {{site.data.keyword.satelliteshort}}. | ![Feature available.](images/icon-checkmark-filled.svg) |  |
 {: caption="Comparison of supported features between using {{site.data.keyword.satelliteshort}} storage templates and bringing your own storage drivers" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is a description of the feature. The second column is the feature support on Satellite. The third column is the feature support for bring your own drivers."}
 

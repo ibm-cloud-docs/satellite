@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -110,7 +110,7 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
         {: pre}
 
         Example output
-        ```  
+        ```sh
         efs-csi-node-gfm9x                      3/3     Running   0          7m48s
         efs-csi-node-hz45b                      3/3     Running   0          7m48s
         efs-csi-node-pv8m7                      3/3     Running   0          7m48s
@@ -124,7 +124,7 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
         {: pre}
 
         Example output
-        ```             
+        ```sh         
         sat-aws-file-gold     efs.csi.aws.com      Delete          Immediate              false                  8m27s
         ```
         {: screen}
@@ -173,7 +173,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         {: pre}
 
         Example output
-        ```
+        ```sh
         NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM        STORAGECLASS           REASON   AGE
         efs    5Gi        RWO            Retain           Available                  sat-aws-file-gold               34m
         ```
@@ -209,7 +209,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         {: pre}
 
         Example output
-        ```
+        ```sh
         NAME      STATUS        VOLUME     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
         efs       Bound         efs        5Gi        RWO            sat-aws-file-gold   36m
         ```
@@ -250,7 +250,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     app                                 1/1     Running   0          2m58s
     ```
@@ -270,7 +270,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         {: pre}
 
         Example output
-        ```
+        ```sh
         Tue Mar 2 20:09:19 UTC 2021
         Tue Mar 2 20:09:25 UTC 2021
         Tue Mar 2 20:09:31 UTC 2021
@@ -311,7 +311,7 @@ Removing your AWS EFS instance permanently removes all the data that is stored o
         {: pre}
 
         Example output
-        ```
+        ```sh
         app    sat-aws-block-bronze
         ```
         {: screen}

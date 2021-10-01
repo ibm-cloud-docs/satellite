@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -215,7 +215,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
     Example output
-    ```
+    ```sh
     csi-azuredisk-controller-849d854b96-6jbjg   5/5     Running   0          167m
     csi-azuredisk-controller-849d854b96-lkplx   5/5     Running   0          167m
     csi-azuredisk-node-7qwlj                    3/3     Running   6          167m
@@ -231,7 +231,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
     Example output
-    ```
+    ```sh
     sat-azure-block-bronze           disk.csi.azure.com   Delete          Immediate              true                   167m
     sat-azure-block-bronze-metro     disk.csi.azure.com   Delete          WaitForFirstConsumer   true                   167m
     sat-azure-block-gold             disk.csi.azure.com   Delete          Immediate              true                   167m

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -140,7 +140,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
     Example output
-    ```
+    ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     trident-csi-2nrt4                   2/2     Running   0          87s
     trident-csi-7f999bfb96-z4dr5        6/6     Running   0          87s
