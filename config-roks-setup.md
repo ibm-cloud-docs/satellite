@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -34,7 +34,7 @@ After you complete these steps, the cluster can be added to a cluster group in y
 5. [Log in to your {{site.data.keyword.openshiftshort}} cluster](/docs/openshift?topic=openshift-access_cluster) and run the command in your cluster. The command creates the `razeedeploy` project, custom resource definitions and RBAC policies on your cluster that are required to make your cluster visible to {{site.data.keyword.satelliteshort}} Config.
 
     Example output
-    ```
+    ```sh
     namespace/razeedeploy created
     serviceaccount/razeedeploy-sa created
     clusterrole.rbac.authorization.k8s.io/razeedeploy-admin-cr created
@@ -51,7 +51,7 @@ After you complete these steps, the cluster can be added to a cluster group in y
     {: pre}
 
     Example output 
-    ```
+    ```sh
     NAME                                                  READY     STATUS      RESTARTS   AGE
     clustersubscription-c9cfb6f8b-7p5sw            1/1     Running     0          41m
     encryptedresource-controller-5c68f9746-vhdsk   1/1     Running     0          41m
@@ -94,12 +94,11 @@ Removing {{site.data.keyword.satelliteshort}} Config components automatically re
     {: pre}
 
     Example output
-    ```
+    ```sh
     No resources found.
     ```
     {: screen}
 
 5. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, find the cluster that you want to remove from {{site.data.keyword.satelliteshort}} Config. 
 6. From the actions menu, click **Unregister** and verify that your cluster is removed from the {{site.data.keyword.satelliteshort}} cluster dashboard. 
-
 

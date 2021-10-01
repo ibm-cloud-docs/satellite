@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -85,7 +85,7 @@ To create the configuration:
     {: pre}
 
     Example output
-    ```
+    ```sh
     Creating configuration...
     OK
     Configuration <configuration_name> was successfully created with ID 116fffde-0835-467c-8987-67dd42e4e393.
@@ -111,7 +111,7 @@ To create the configuration:
 
     Example output
     
-    ```
+    ```sh
     Creating configuration version...
     OK
     Configuration Version <version_name> was successfully created with ID ad5ae7a9-4f74-486c-816a-32de98de00df.
@@ -134,7 +134,7 @@ To create the configuration:
     {: caption="Understanding this command's components" caption-side="top"}
 
     Example output
-    ```
+    ```sh
     Creating subscription...
     OK
     Subscription <subscription_name> was successfully created with ID f6114bd5-f71e-4335-b034-ca45fa3cab81.
@@ -142,5 +142,4 @@ To create the configuration:
     {: screen}
 
 6. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-setup-clusters-satconfig) to review the rollout status of your Kubernetes resources.
-
 

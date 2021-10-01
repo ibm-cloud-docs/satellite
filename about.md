@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -27,6 +27,7 @@ For more information, see the [{{site.data.keyword.satelliteshort}} product page
 
 ## Benefits of using {{site.data.keyword.satelliteshort}}
 {: #about-benefits}
+
 Review some of the key benefits for using {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
 

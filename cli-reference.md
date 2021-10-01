@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -42,7 +42,7 @@ Use these commands to register clusters for use with [{{site.data.keyword.satell
 Get the details of a cluster that is registered with the {{site.data.keyword.satelliteshort}} Config component.
 {: shortdesc}
 
-```
+```sh
 ibmcloud sat cluster get --cluster CLUSTER [-q]
 ```
 {: pre}
@@ -57,7 +57,7 @@ ibmcloud sat cluster get --cluster CLUSTER [-q]
 {: #cli-cluster-get-command-options}
 
 `--cluster, -c CLUSTER`
-:   Required. The name or ID of the cluster. To list registered clusters, run <code>ibmcloud sat cluster ls</code>.</dd>
+:   Required. The name or ID of the cluster. To list registered clusters, run `ibmcloud sat cluster ls`.</dd>
 
 `-q`
 :   Optional. Do not show the message of the day or update reminders.
@@ -446,7 +446,7 @@ ibmcloud sat config create --name NAME [-q]
 `--name NAME`
 :    Required. The name for your configuration.
 
-`-q `
+`-q`
 :    Optional. Do not show the message of the day or update reminders.
 
 
@@ -483,7 +483,7 @@ ibmcloud sat config get --config CONFIG [--output JSON] [-q]
 `--output JSON`
 :    Optional. Displays the command output in JSON format.
 
-`--q `
+`--q`
 :    Optional. Do not show the message of the day or update reminders.
 
 
@@ -555,7 +555,7 @@ ibmcloud sat config rename --config CONFIG --name NEW_NAME [-q]
 `--name NEW_NAME`
 :    Required. The new name that you want to give your configuration.
 
-`--q `
+`--q`
 :    Optional. Do not show the message of the day or update reminders.
 
 
@@ -595,7 +595,7 @@ ibmcloud sat config rm --config CONFIG [-f] [-q]
 `-f`
 :    Optional. Force the command to run with no user prompts.
 
-`--q `
+`--q`
 :    Optional. Do not show the message of the day or update reminders.
 
 
@@ -641,7 +641,7 @@ ibmcloud sat config version create --name NAME --read-config FILEPATH --config C
 `--description DESCRIPTION`
 :    Optional. A description for your version, such as the purpose of the Kubernetes resources that the version contains. For example, `Added replicas and zone affinity for HA version of app for multizone clusters`.
 
-`--q `
+`--q`
 :    Optional. Do not show the message of the day or update reminders.
 
 
@@ -1271,16 +1271,18 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 :    Required. Enter a name for your location. The {{site.data.keyword.satelliteshort}} location name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Do not reuse the same name for multiple locations, even if you deleted another location with the same name.
 
 `--cos-bucket COS_BUCKET_NAME`
-:    Optional. Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data. Otherwise, a new bucket is automatically created in your {{site.data.keyword.cos_short}} instance.<p class="important">Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.</p>
+:    Optional. Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data. Otherwise, a new bucket is automatically created in your {{site.data.keyword.cos_short}} instance.
+     Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.
+     {: important}
 
 `--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME`
-:    Specify three names for high availability zones in your location. The names of the zones <strong>must match exactly</strong> the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider.
+:    Specify three names for high availability zones in your location. The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider.
      1. [Alibaba regions and zones])https://www.alibabacloud.com/help/doc-detail/188196.htm), such as `us-east-1` and `us-west-1`.
      2. [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, `us-east-1c`.
-     3. [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do <strong>not</strong> use only the location name (`eastus`) or the zone number (`1`).
+     3. [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
      4. [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
      
-     Optional: If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names such as `zone-1`.
+     Optional: If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names, such as `zone-1`.
 
 `--logging-account-id LOGGING_ACCOUNT`
 :    Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.la_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.
