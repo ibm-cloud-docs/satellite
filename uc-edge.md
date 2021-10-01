@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -63,6 +63,8 @@ As the edge environment system administrator, you enable a serverless tool to si
 3. [Access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 3. Using the OperatorHub, [install the {{site.data.keyword.openshiftshort}} Serverless operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
 4. [Install the Knative Serving Operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
+
+You deployed {{site.data.keyword.satelliteshort}} with a serverless component.
 
 ### Step 3: Run model inferencing at the edge
 {: #edge-example-inferencing}

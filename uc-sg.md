@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,7 +24,7 @@ Deploy {{site.data.keyword.satellitelong_notm}} as a secure solution for connect
 While you can set up many possible solutions to enable secure connections between your on-premises network and {{site.data.keyword.cloud_notm}}, you can use {{site.data.keyword.satelliteshort}} to control client communications among your hybrid cloud deployments.
 {: shortdesc}
 
-For example, you might use a minimal {{site.data.keyword.satelliteshort}} location deployment as an alternative to the [ {{site.data.keyword.SecureGateway}} solution](/docs/SecureGateway?topic=SecureGateway-getting-started-with-sg). {{site.data.keyword.satelliteshort}} provides the same application-level transport through common ports as {{site.data.keyword.SecureGateway}}, with greater client visibility and audit control. The {{site.data.keyword.satelliteshort}} Link functionality improves upon the {{site.data.keyword.SecureGateway}} client experience with a highly available and secure-by-default communication between the cloud and on-premises networks, third-party clouds, or network edge.
+For example, you might use a minimal {{site.data.keyword.satelliteshort}} location deployment as an alternative to the [{{site.data.keyword.SecureGateway}} solution](/docs/SecureGateway?topic=SecureGateway-getting-started-with-sg). {{site.data.keyword.satelliteshort}} provides the same application-level transport through common ports as {{site.data.keyword.SecureGateway}}, with greater client visibility and audit control. The {{site.data.keyword.satelliteshort}} Link functionality improves upon the {{site.data.keyword.SecureGateway}} client experience with a highly available and secure-by-default communication between the cloud and on-premises networks, third-party clouds, or network edge.
 
 On-premises setup with a {{site.data.keyword.satelliteshort}} location
 :   A minimum deployment of {{site.data.keyword.satelliteshort}} includes using three RHEL 7 hosts to set up a {{site.data.keyword.satelliteshort}} location control plane. These hosts might be in your on-premises network or in other clouds. Then, you can attach more hosts to your location and deploy {{site.data.keyword.cloud_notm}} managed services to run on these hosts. For example, you can deploy an {{site.data.keyword.openshiftshort}} cluster to your on-premises hosts that are attached to your {{site.data.keyword.satelliteshort}} location. Then, you can deploy any apps that need secure access to {{site.data.keyword.cloud_notm}} to your {{site.data.keyword.openshiftshort}} cluster.
