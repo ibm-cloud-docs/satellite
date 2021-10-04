@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -61,8 +61,8 @@ As the edge environment system administrator, you enable a serverless tool to si
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create) on your edge computing infrastructure.
 2. [Create a managed {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=openshift-satellite-clusters) in the {{site.data.keyword.satelliteshort}} location.
 3. [Access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
-3. Using the OperatorHub, [install the {{site.data.keyword.openshiftshort}} Serverless operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
-4. [Install the Knative Serving Operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
+4. Using the OperatorHub, [install the {{site.data.keyword.openshiftshort}} Serverless operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
+5. [Install the Knative Serving Operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
 
 You deployed {{site.data.keyword.satelliteshort}} with a serverless component.
 

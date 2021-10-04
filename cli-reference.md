@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1282,7 +1282,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
      3. [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
      4. [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
      
-     Optional: If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names, such as `zone-1`.
+:    Optional: If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names, such as `zone-1`.
 
 `--logging-account-id LOGGING_ACCOUNT`
 :    Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.la_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.

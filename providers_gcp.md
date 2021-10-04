@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -74,7 +74,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 As described in the [host networking requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network), your GCP hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. You might find that you need to update your firewall settings in GCP, similar to the following example.
 {: shortdesc}
 
-```
+```sh
 Network default
 
 Priority 1000

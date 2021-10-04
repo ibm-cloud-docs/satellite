@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -142,10 +142,10 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
     4. Optional: Verify that your network security group meets the host networking requirements, such as in the [example settings](#azure-reqs-firewall).
     
 6. Create virtual machines to serve as the hosts for your {{site.data.keyword.satelliteshort}} location resources, including the control plane and any {{site.data.keyword.openshiftshort}} clusters that you want to create. The following command creates 6 VMs at the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for compute, disks, and image. The VMs are created in the resource group and network security group that you previously created. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_create){: external}.
-        ```sh
-        az vm create --name <vm_name> --resource-group <resource_group> --admin-user <username> --admin-password <password> --image RedHat:RHEL:7-LVM:latest --nsg <network_security_group> --os-disk-name <disk_name> --os-disk-size-gb 128 --size Standard_D4s_v3 --count 6 --custom-data <filepath_to_host_registration_script>
-        ```
-        {: pre}
+    ```sh
+    az vm create --name <vm_name> --resource-group <resource_group> --admin-user <username> --admin-password <password> --image RedHat:RHEL:7-LVM:latest --nsg <network_security_group> --os-disk-name <disk_name> --os-disk-size-gb 128 --size Standard_D4s_v3 --count 6 --custom-data <filepath_to_host_registration_script>
+    ```
+    {: pre}
 
 7. Wait for the instances to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete.
 8. Monitor the progress of the registration script.
@@ -180,7 +180,7 @@ As described in the [host networking requirements](/docs/satellite?topic=satelli
 
 The following example is a security group that you might create for Azure.
 
-```
+```sh
 "securityRules": [
             {
                 "name": "satellite",

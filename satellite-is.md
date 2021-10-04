@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud, satellite infrastructure service
 
@@ -112,10 +112,9 @@ The following table outlines a sample selection of hosts in a {{site.data.keywor
 | Small | 4   | 32  | 25  | 100 | 0   | 5   |
 | Medium | 8   | 64  | 25  | 100 | 0   | 5   |
 | Large | 16  | 128 | 25  | 100 | 0   | 5   |
-| Tertiary-Medium | 8   | 64  | 100 | 500 | 1000 | 0   |
-| Tertiary-Large | 16  | 128 | 100 | 1000 | 2000 | 5   |
-| Tertiary-XLarge | 16  | 128 | 100 | 1000 | 4000 | 0   |
-{: summary="The table shows available host pools. Rows are to be read from the left to right. The first column is a size for the host pool. The second column is the number of vCPU in each host (each vCPU is roughly equivalent to a logical core on the underlying server). The third column is the amount of memory in gigabytes for the host machines. The third column is the size in gigabytes of the primary (operating system) storage that is attached to the host machines. The fourth column is the size in gigabytes of the secondary (ephemeral) storage that is attached to the host machines. The fifth column is the size in gigabytes of the tertiary (persistent) storage that is attached to the host machines. The fifth column is the number of unassigned hosts of that type."}
+| Tertiary-Medium | 8   | 64  | 100 | 500 | 1000 | 0  |
+| Tertiary-Large | 16  | 128 | 100 | 1000 | 2000 | 5  |
+| Tertiary-XLarge | 16  | 128 | 100 | 1000 | 4000 | 0  |
 {: caption="{{site.data.keyword.satelliteshort}} Infrastructure Service host pool sizes."}
 
 ### Required license for operating system and container platform
@@ -148,7 +147,6 @@ As described in the [minimum host requirements](/docs/satellite?topic=satellite-
 | --- | --- | --- | --- |
 | Data | Eth | 10 Gbps | 2 - 28 per rack domain |
 | Remote Management | Eth | 1 Gbps  | 2 - 4 per location |
-{: summary="The table shows the required connections. Rows are to be read from the left to right. The first column is the required connection. The second column is the type of connection. The third column is the speed in gigabits per second. The fourth column is a range of the number of required ports."}
 {: caption="{{site.data.keyword.satelliteshort}} Infrastructure Service required data and remote management connections."}
 
 #### IP addresses
@@ -245,7 +243,6 @@ Change management includes tasks such as deployment, configuration, upgrades, pa
 {: caption="Responsibilities for change management." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
-<br />
 
 ### Identity and access management
 {: #satis-iam-responsibilities}
@@ -257,13 +254,12 @@ Identity and access management includes tasks such as authentication, authorizat
 |----------|-----------------------|--------|
 |{{site.data.keyword.satelliteshort}} Location | - Provide an interface to assign access control to locations via IAM. \n - Use customer-provided access to query {{site.data.keyword.satelliteshort}} APIs for the status of hosts that are attached to the location. | - Use the provided tools to [manage authentication, authorization, and access control policies](/docs/satellite?topic=satellite-iam). \n - Provide the {{site.data.keyword.IBM_notm}} team access to run {{site.data.keyword.satelliteshort}} automation against the location to monitor the status of attached hosts. |
 | {{site.data.keyword.satelliteshort}} Host | - Disable the ability to SSH into hosts after you assign the hosts to a location control plane or cluster, to enhance security. \n - Add hosts to the {{site.data.keyword.satelliteshort}} location, with the agreed upon number of available host pools. \n - After setting up the hosts, {{site.data.keyword.IBM_notm}} does not have access to the hosts unless you grant access. | - [Assign](/docs/satellite?topic=satellite-hosts#host-assign) hosts to a cluster. After assigning the host, SSH access is disabled and access to the host is controlled via [{{site.data.keyword.cloud_notm}} IAM access](/docs/openshift?topic=openshift-users). |
-|{{site.data.keyword.satelliteshort}} Config| - Provide an interface to assign access control to configurations via IAM. | - Use the provided tools to [manage authentication, authorization, and access control policies](/docs/satellite?topic=satellite-iam) to use {{site.data.keyword.satelliteshort}} configurations and subscriptions to create, update, and delete Kubernetes resources.<p class="note">Access in IAM to {{site.data.keyword.satelliteshort}} Config does not give users access to the clusters, nor the ability to log in and manage the Kubernetes resources from the cluster. Users with access to a cluster might log in and manually change the Kubernetes resources.</p> |
+|{{site.data.keyword.satelliteshort}} Config| - Provide an interface to assign access control to configurations via IAM. | - Use the provided tools to [manage authentication, authorization, and access control policies](/docs/satellite?topic=satellite-iam) to use {{site.data.keyword.satelliteshort}} configurations and subscriptions to create, update, and delete Kubernetes resources.<p class="note">Access in IAM to {{site.data.keyword.satelliteshort}} Config does not give users access to the clusters, nor the ability to log in and manage the Kubernetes resources from the cluster. Users with access to a cluster might log in and manually change the Kubernetes resources. |
 |{{site.data.keyword.satelliteshort}} Link | - Provide an interface to assign access control to endpoints via IAM. | - Use the provided tools to [manage authentication, authorization, and access control policies](/docs/satellite?topic=satellite-iam). |
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
 {: caption="Responsibilities for identity and access management." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
-<br />
 
 ### Security and regulation compliance
 {: #satis-security-compliance}
@@ -282,7 +278,6 @@ Security and regulation compliance includes tasks such as security controls impl
 {: caption="Responsibilities for security and regulation compliance." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
 
-<br />
 
 ### Disaster recovery
 {: #satis-disaster-recovery}

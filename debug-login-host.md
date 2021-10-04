@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -41,7 +41,7 @@ You can only SSH into the machine if you did not assign the host to a cluster, o
 
     | Message | Description |
     | -------------- | -------------- |
-    | `export HOME=/root`   \n  `HOME=/root` \n ` '[' '!' -f /var/log/firstboot.flag ']'`  \n  `~` | The first boot did not complete successfully. Check the `/tmp/bootstrap/bootstrap_base.log` file and continue looking for errors. |
+    | `export HOME=/root`   \n  `HOME=/root` \n `'[' '!' -f /var/log/firstboot.flag ']'`  \n  `~` | The first boot did not complete successfully. Check the `/tmp/bootstrap/bootstrap_base.log` file and continue looking for errors. |
     | `No package matching '\''container-selinux'\'' found available, installed or updated`.  \n `No package rh-python36 available. Error: Nothing to do`. \n  (Note that the package name might be replaced with another package name.) |See [Host registration script fails](/docs/satellite?topic=satellite-host-registration-script-fails). |
     | `curl: (6) Could not resolve host: <URL>.com; Unknown error` \n `tar -xvf bootstrap.tar` \n `tar: This does not look like a tar archive` \n `tar: Exiting with failure status due to previous errors` \n `[[ -n ‘’ ]]` \n `echo ‘Failed to untar bootstrap.tar’` \n `Failed to untar bootstrap.tar` \n `+ rm -rf /tmp/bootstrap` | The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-hosts#host-remove), and try to [add](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assign](/docs/satellite?topic=satellite-hosts#host-assign) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps. |
     {: caption="Table 1. Common host machine registration and bootstrapping errors" caption-side="top"}

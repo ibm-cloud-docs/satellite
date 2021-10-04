@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-04"
 
 keywords: satellite cli, install satellite cli, satellite cli commands
 
@@ -32,32 +32,32 @@ Set up the {{site.data.keyword.cloud_notm}} command-line interface (CLI), the pl
     If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
     {: tip}
 
-4. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.containershort_notm}}. This plug-in includes `ibmcloud sat` commands to manage {{site.data.keyword.satelliteshort}} resources and `ibmcloud oc` to manage {{site.data.keyword.openshiftshort}} cluster resources.
+3. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.containershort_notm}}. This plug-in includes `ibmcloud sat` commands to manage {{site.data.keyword.satelliteshort}} resources and `ibmcloud oc` to manage {{site.data.keyword.openshiftshort}} cluster resources.
     ```sh
     ibmcloud plugin install container-service
     ```
     {: pre}
 
-5. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by {{site.data.keyword.IBM_notm}} , and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
+4. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by {{site.data.keyword.IBM_notm}} , and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
     ```sh
     ibmcloud plugin install container-registry
     ```
     {: pre}
 
-6. Optional: To create a logging configuration for {{site.data.keyword.la_full_notm}} or a monitoring configuration for {{site.data.keyword.mon_full_notm}} for your cluster, install the {{site.data.keyword.containerlong_notm}} observability plug-in (`ibmcloud ob`).
+5. Optional: To create a logging configuration for {{site.data.keyword.la_full_notm}} or a monitoring configuration for {{site.data.keyword.mon_full_notm}} for your cluster, install the {{site.data.keyword.containerlong_notm}} observability plug-in (`ibmcloud ob`).
     ```sh
     ibmcloud plugin install observe-service
     ```
     {: pre}
 
-8. Verify that the plug-ins are installed correctly.
+6. Verify that the plug-ins are installed correctly.
     ```sh
     ibmcloud plugin list
     ```
     {: pre}
 
     Example output
-    ```
+    ```sh
     Listing installed plug-ins...
 
     Plugin Name                            Version   Status
@@ -66,7 +66,9 @@ Set up the {{site.data.keyword.cloud_notm}} command-line interface (CLI), the pl
     ```
     {: screen}
 
-9. To work with OpenShift Container Platform workloads, [install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+7. To work with OpenShift Container Platform workloads, [install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+
+
 
 
 ## Updating the CLI
@@ -98,7 +100,7 @@ Update the CLIs regularly to use new features.
         ```
         {: pre}
 
-        Because {{site.data.keyword.satelliteshort}} commands are included in the {{site.data.keyword.containerlong_notm}} CLI plug-in, look for the `container-service/kubernetes-service ` plug-in in your CLI output.
+        Because {{site.data.keyword.satelliteshort}} commands are included in the {{site.data.keyword.containerlong_notm}} CLI plug-in, look for the `container-service/kubernetes-service` plug-in in your CLI output.
         {: tip}
 
 ## Uninstalling the CLI

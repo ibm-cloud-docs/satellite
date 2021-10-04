@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -103,8 +103,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     3. From the **Instance type** section, select one of the [supported AWS instance types](#aws-instance-types).
     4. From the **Key pair (login)** section, select the pem key that you want to use to log in to your machines later. If you do not have a pem key, create one.
     5. In the **Network settings**, select **Virtual Private Cloud (VPC)** and an existing subnet and a security group that allows network traffic as defined in [Security group settings](#aws-reqs-secgroup). If you do not have a subnet or security group that you want to use, create one.
-    6. In the **Storage (volumes)** section, expand the default root volume and update the size of the boot volume to a minimum of 100 GB.
-	1. Add a second disk with at least 100 GB capacity. For more information about storage requirements, see [Host storage and attached devices](/docs/satellite?topic=satellite-host-reqs#reqs-host-storage).
+    6. In the **Storage (volumes)** section, expand the default root volume and update the size of the boot volume to a minimum of 100 GB. Add a second disk with at least 100 GB capacity. For more information about storage requirements, see [Host storage and attached devices](/docs/satellite?topic=satellite-host-reqs#reqs-host-storage).
     7. Expand the **Advanced details** and go to the **User Data** field.
     8. Enter the host registration script that you modified earlier.
     9. Click **Create launch template**.
@@ -126,8 +125,8 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
         ```
         {: pre}  
 
-1. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.   
-1. Assign your AWS hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign).
+11. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.   
+12. Assign your AWS hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign).
 
 
 ## Supported AWS instance types
@@ -152,7 +151,7 @@ As described in the [host networking requirements](/docs/satellite?topic=satelli
 
 The following example is a security group that you might create for AWS.
 
-```
+```sh
 {
 	"Description": "Security group for {{site.data.keyword.satellitelong_notm}} hosts",
 	"GroupName": "Satellite",

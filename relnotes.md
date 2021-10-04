@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -340,7 +340,7 @@ Exposing apps in {{site.data.keyword.satelliteshort}} clusters
 :    Added an overview of the [options for exposing apps in Satellite clusters](/docs/openshift?topic=openshift-sat-expose-apps) and steps for setting up each option.
 
 {{site.data.keyword.satelliteshort}} Infrastructure Service
-:    [Order managed infrastructure from {{site.data.keyword.IBM_notm}} ](/docs/satellite?topic=satellite-infrastructure-service) to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
+:    [Order managed infrastructure from {{site.data.keyword.IBM_notm}}](/docs/satellite?topic=satellite-infrastructure-service) to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
   
 New! Template for fast provisioning on AWS
 :    [Automate your {{site.data.keyword.satelliteshort}} location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template), available for AWS infrastructure.
@@ -569,7 +569,7 @@ Review the release notes for 14 September 2020.
 {: shortdesc}
 
 Host requirements
-:    Clarified that the <code>localhost</code> value must resolve to a valid local IP address, typically `127.0.0.1`, on a [host](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
+:    Clarified that the `localhost` value must resolve to a valid local IP address, typically `127.0.0.1`, on a [host](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
 
 IAM
 :    Updated [assigning access to {{site.data.keyword.satelliteshort}} Config in {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam#iam-resource-types) to note that you cannot scope access policies to specific configurations, subscriptions, or {{site.data.keyword.cloud_notm}} resource group.

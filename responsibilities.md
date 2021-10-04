@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud, RACI
 
@@ -75,9 +75,8 @@ Incident and operations management includes tasks such as monitoring, event mana
 |{{site.data.keyword.satelliteshort}} Link | - Set up the {{site.data.keyword.satelliteshort}} link connector in the {{site.data.keyword.satelliteshort}} location to connect the control plane worker nodes to the control plane master. \n - Provide an interface to allow connections between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} or any publicly accessible endpoint. \n - Provide the ability to enable and disable connections between your location and an endpoint. \n - Automatically collect incoming and outgoing network traffic for an endpoint. \n - Provide a dashboard to review endpoint metrics, and automatically send endpoint logs to your {{site.data.keyword.la_full_notm}} instance. \n - Automatically forward link events to your {{site.data.keyword.at_full_notm}} instance. | - Use the provided tools to [create and manage](/docs/satellite?topic=satellite-link-location-cloud) {{site.data.keyword.satelliteshort}} location endpoints. \n - Ensure that the {{site.data.keyword.satelliteshort}} link connector in the {{site.data.keyword.satelliteshort}} control plane is [enabled](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint) to allow network traffic between your location and endpoints outside your location. \n - Enable any connections that you need to successfully run the apps in your location and debug any connection issues for your endpoints. |
 | {{site.data.keyword.satelliteshort}} Storage | - Provide an interface to initiate operational activities, such as creating storage configurations and assign configurations to clusters that are attached to a location.  \n - Provide a set of storage templates to automatically install storage driver components in an attached cluster and provide storage classes to manage app storage.  | -  Select the storage type that best meets your app's requirements for data types, data access frequency, performance, durability, resiliency, availability, scalability, and encryption.  \n -  Procure any physical or virtual storage instances in your on-premises data center or in other cloud providers that cannot be automatically provisioned by using the installed storage driver.  \n -  Use the provided tools to create storage configurations and to assign configurations to an attached cluster.  \n -  Use the {{site.data.keyword.openshiftshort}} CLI to provision persistent volumes and persistent volume claims to fulfill storage requirements for your apps.  \n -  Debug any issues that occur when using storage for your apps.  |
 | {{site.data.keyword.satelliteshort}}-enabled services | - Provide the ability to deploy a select group of {{site.data.keyword.cloud_notm}} services such as [{{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters) to a {{site.data.keyword.satelliteshort}} location. \n - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. | - Use the provided tools to set up additional services as needed. \n - Provide enough hosts for the services to use as compute capacity, per the service documentation. \n - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
-{: caption="Table 2. Responsibilities for incident and operations." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
-
+{: caption="Table 2. Responsibilities for incident and operations" caption-side="top"}
 
 ### Change management
 {: #change-management}
@@ -93,9 +92,8 @@ Change management includes tasks such as deployment, configuration, operating sy
 |{{site.data.keyword.satelliteshort}} Link | - Maintain {{site.data.keyword.satelliteshort}} link connector versions. | - Use the provided tools to [create, update, or delete the endpoints](/docs/satellite?topic=satellite-link-location-cloud) that you need. \n - [Enable and disable endpoints](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint) to allow or block network traffic between your location and a service's endpoint. |
 | {{site.data.keyword.satelliteshort}} Storage | - Provide an interface to initiate a change management operation, such as deleting storage configurations or removing a cluster from a storage configuration.  \n - Provide version updates for {{site.data.keyword.IBM_notm}}-provided storage templates.  | -  Use the tools to delete storage configurations and cluster assignments. Note that removing these configurations, uninstalls the storage drivers in assigned clusters. Your PVCs, PVs, and data are not deleted. However, you might not be able to access your data until storage drivers are re-installed and storage configurations are restored in your cluster.   \n -  Apply {{site.data.keyword.IBM_notm}}-provided storage template version updates to ensure compliance and support for installed storage drivers. |
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. For example, with {{site.data.keyword.openshiftlong_notm}} clusters, {{site.data.keyword.IBM_notm}} provides patch version updates for the masters automatically and for the worker nodes that you initiate. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
-{: caption="Table 3. Responsibilities for change management." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
-
+{: caption="Table 3. Responsibilities for change management" caption-side="top"}
 
 ### Identity and access management
 {: #iam-responsibilities}
@@ -111,9 +109,8 @@ Identity and access management includes tasks such as authentication, authorizat
 |{{site.data.keyword.satelliteshort}} Link | - Provide an interface to assign access control to endpoints via IAM. | - Use the provided tools to [manage authentication, authorization, and access control policies](/docs/satellite?topic=satellite-iam). |
 | {{site.data.keyword.satelliteshort}} Storage | N/A | - Decide and configure read and write access to storage for your apps by using persistent volumes and persistent volume claims.  |
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
-{: caption="Table 4. Responsibilities for identity and access management." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
-
+{: caption="Table 4. Responsibilities for identity and access management." caption-side="top"}
 
 ### Security and regulation compliance
 {: #security-compliance}
@@ -130,9 +127,8 @@ Security and regulation compliance includes tasks such as security controls impl
 |{{site.data.keyword.satelliteshort}} Link | - Establish a secure connection between {{site.data.keyword.cloud_notm}} and {{site.data.keyword.satelliteshort}} locations by using the {{site.data.keyword.satelliteshort}} link connector. \n - Provide the ability to control access to endpoints via {{site.data.keyword.cloud_notm}} IAM. \n - Provide the ability to monitor network traffic between your location and endpoints outside of your location. | - Set up and audit [link endpoints](/docs/satellite?topic=satellite-link-location-cloud) across locations. |
 | {{site.data.keyword.satelliteshort}} Storage | -  Provide security updates and patches for {{site.data.keyword.IBM_notm}}-provided storage templates.  | -  Apply provided security and version updates for {{site.data.keyword.IBM_notm}}-provided storage templates to keep your installed storage drivers compliant and supported.  \n -  Implement mechanisms to back up your data to meet data retention requirements.  \n - Maintain responsibility for your data and how your apps consume the data.  \n - Ensure that your data is stored highly available by using snapshots, data replication, data synchronization, or other high availability mechanisms. |
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
-{: caption="Table 5. Responsibilities for security and regulation compliance." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
-
+{: caption="Table 5. Responsibilities for security and regulation compliance." caption-side="top"}
 
 ### Disaster recovery
 {: #disaster-recovery}
@@ -148,7 +144,6 @@ Disaster recovery includes tasks such as providing dependencies on disaster reco
 |{{site.data.keyword.satelliteshort}} Link | N/A | - Reinstate any necessary [endpoints](/docs/satellite?topic=satellite-link-location-cloud) to your resources after recovering from a disaster. |
 | {{site.data.keyword.satelliteshort}} Storage | - Back up information about storage configurations and assigned clusters.  | - Ensure that your data is stored highly available by using snapshots, data replication, data synchronization, or other high availability mechanisms.  \n - Back up your data to meet compliance and regulatory requirements for data retention.  \n - Use the provided tools from your storage provider or in your on-prem data center to monitor physical storage instances and replace defective instances as necessary. |
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
-{: caption="Table 6. Responsibilities for disaster recovery." caption-side="top"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
-
+{: caption="Table 6. Responsibilities for disaster recovery." caption-side="top"}
 

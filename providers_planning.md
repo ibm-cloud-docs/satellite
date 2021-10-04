@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -170,32 +170,32 @@ Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort
 {: shortdesc}
 
 1. Verify that you have the required [permissions in your Azure account](/docs/satellite?topic=satellite-iam#permissions-azure) to create a {{site.data.keyword.satelliteshort}} location from a template.
-1. [Sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli){: external} from the command line.
+2. [Sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli){: external} from the command line.
     ```sh
     az login
     ```
     {: pre}
 
-2. List the available subscriptions in your account.
+3. List the available subscriptions in your account.
     ```sh
     az account list
     ```
     {: pre}
 
-3. Set the subscription to create your Azure resources in.
+4. Set the subscription to create your Azure resources in.
     ```sh
     az account set --subscription="<subscription_ID>"
     ```
     {: pre}
 
-4. Create a service principal identity with the Contributor role, scoped to your subscription. These credentials are used by {{site.data.keyword.satellitelong_notm}} to provision resources in your Azure account. For more information, see the [Azure documentation](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli){: external}.
+5. Create a service principal identity with the Contributor role, scoped to your subscription. These credentials are used by {{site.data.keyword.satellitelong_notm}} to provision resources in your Azure account. For more information, see the [Azure documentation](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli){: external}.
     ```sh
     az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_ID>" -n"<service_principal_name>"
     ```
     {: pre}
 
-5. In the output, note the values of the `appID`, `password`, and `tenant` fields.
-    ```
+6. In the output, note the values of the `appID`, `password`, and `tenant` fields.
+    ```sh
     {
     "appId": "<azure-client-id>",
     "displayName": "<service_principal_name>",
@@ -206,7 +206,7 @@ Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort
     ```
     {: screen}
 
-6. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. 
+7. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. 
     ```json
     {
         "app_id":"string",

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -23,20 +23,20 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
 {: #review-messages-logs}
 
 1. View your locations in the console or list your locations in the CLI, and review the **Status**. If the status is not healthy, continue to the next step. For more information, see [Viewing location health](/docs/satellite?topic=satellite-monitor#location-health).
-    ```
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     Name         ID                     Status            Ready   Created      Hosts (used/total)   Managed From   
     Port-North   aaaaa1a11aaaaaa111aa   action required   no      6 days ago   3 / 5                Washington DC  
     ```
     {: screen}
 
 2. Get the details for your location, and review the **Message**. From the console, you can click the location and hover over the tooltip in the title with the location name and health.
-    ```
+    ```sh
     ibmcloud sat location get --location <location_name_or_ID>
     ```
     {: pre}
@@ -106,13 +106,13 @@ For more details on the issue:
 2. Search the platform logs for the error code for more details, such as failed API method due to a permissions error.
 3. If the details indicate a permission error:
     1. As the account administrator, log in to the {{site.data.keyword.cloud_notm}} CLI and target the resource group and region that the location is in.
-        ```
+        ```sh
         ibmcloud login -g <resource_group> -r <region>
         ```
         {: pre}
 
     2. Reset the API key that is used for permissions.
-        ```
+        ```sh
         ibmcloud ks api-key reset
         ```
         {: pre}
@@ -148,8 +148,8 @@ R0032 Manually assign hosts to the control plane across all 3 zones.
 **Steps to resolve**
 
 Your location has no available hosts for {{site.data.keyword.satelliteshort}} to automatically assign to the location control plane, and might be reaching capacity limits. You can choose among the following options:
-*   [Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) more hosts to the location control plane. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
-*   [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
+* [Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) more hosts to the location control plane. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
+* [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
 
 ## R0011, R0040, R0041: Issues with the control plane hosts
 {: #R0011}
@@ -167,7 +167,7 @@ R0041 Unknown issues are detected with the {{site.data.keyword.satelliteshort}} 
 **Steps to resolve**
 
 1. Check the **Status** of your hosts.
-    ```
+    ```sh
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
     {: pre}
@@ -187,9 +187,9 @@ R0012 The location control plane does not have hosts in all 3 zones. Add availab
 **Steps to resolve**
 
 If you just assigned hosts to the control plane, wait a while for the bootstrapping process to complete. Otherwise, [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones for the location itself, to run control plane operations.
-*   If you did assign at least 2 hosts in each of the 3 zones, check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.
-*   If you did assign at least 2 hosts per zone, make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system and networking configuration.
-*   If you did assign at least 2 hosts in each of the 3 zones but the bootstrapping process failed, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
+* If you did assign at least 2 hosts in each of the 3 zones, check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.
+* If you did assign at least 2 hosts per zone, make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system and networking configuration.
+* If you did assign at least 2 hosts in each of the 3 zones but the bootstrapping process failed, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
 
 
 ## R0013: Unavailable zone
@@ -201,7 +201,8 @@ R0013 A zone in the location control plane is unavailable. Attach more hosts to 
 
 **Steps to resolve**
 
-[Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least 2 hosts to each of the 3 zones for the location itself, to run control plane operations. If you did assign at least 2 hosts in each of the 3 zones:
+[Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least 2 hosts to each of the 3 zones for the location itself, to run control plane operations. If you did assign at least 2 hosts in each of the 3 zones, follow these steps.
+
 1. Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.
 2. Make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system and networking configuration.
 3. [Log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
@@ -217,7 +218,7 @@ R0014 Verify that the {{site.data.keyword.satelliteshort}} location has a DNS re
 **Steps to resolve**
 
 1. Verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of `assigned` and a **Status** of `Ready`.
-    ```
+    ```sh
     ibmcloud sat host ls --location <location_ID_or_name>
     ```
     {: pre}
@@ -268,13 +269,13 @@ R0026 Hosts in the location control plane are running out of disk space. Assign 
 **Steps to resolve**
 
 1. List the hosts that are assigned to the control plane.
-    ```
+    ```sh
     ibmcloud sat host ls --location <location_name_or_ID> | grep infrastructure
     ```
     {: pre}
 
 2. Check the details of the hosts.
-    ```
+    ```sh
     ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>
     ```
     {: pre}
@@ -332,13 +333,13 @@ To test TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts:
     {: note}
 
 2. To check TCP connectivity, verify that `netcat` receives a response from all other hosts on port `10250`. If the operation times out, review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) to unblock the ports on the host in your infrastructure provider.
-    ```
+    ```sh
     nc -zv <host_IP> 10250
     ```
     {: pre}
 
 3. To check ICMP connectivity, verify that a ping is successful to all other hosts. Repeat this step for each IP address of the hosts that are attached to your location. If the ping times out, review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) to unblock the ports on the host in your infrastructure provider.
-    ```
+    ```sh
     ping <host_IP>
     ```
     {: pre}
@@ -363,7 +364,7 @@ To test DNS resolution:
     {: note}
 
 2. Ensure that DNS resolution is working properly.
-    ```
+    ```sh
     dig +short +timeout=5 +nocookie cloud.ibm.com
     ```
     {: pre}
@@ -401,7 +402,7 @@ To test NTP on your hosts:
     {: note}
 
 2. Ensure that the time that is reported by the host does not differ from the actual time by more than 3 minutes. If the time differs by more than 3 minutes, verify your NTP solution with your infrastructure provider.
-    ```
+    ```sh
     date +%s
     ```
     {: pre}
@@ -424,7 +425,7 @@ See [Why is {{site.data.keyword.cloud_notm}} unable to check my location's healt
 
 **Location message**
 
-```
+```sh
 R0048 The etcd backup for a cluster in your location failed to complete within the past day.
 ```
 {: screen}
@@ -433,28 +434,13 @@ R0048 The etcd backup for a cluster in your location failed to complete within t
 
 The etcd data is backed up every 8 hours from your {{site.data.keyword.satelliteshort}} location control plane to a bucket in your {{site.data.keyword.cos_full_notm}} instance. If this backup consecutively fails 3 times over 24 hours, problems might exist with the {{site.data.keyword.cos_short}} bucket or service instance, or with your {{site.data.keyword.satelliteshort}} location's connection to the {{site.data.keyword.cos_short}} instance.
 
-1. Ensure that the hosts that you assigned to the location control plane are able to access the {{site.data.keyword.cos_full_notm}} endpoint for the {{site.data.keyword.cloud_notm}} region that your location is managed from. For example, in your host firewall, you must allow outbound connectivity from your control plane hosts to the following endpoints:
+1. Ensure that the hosts that you assigned to the location control plane are able to access the {{site.data.keyword.cos_full_notm}} endpoint for the {{site.data.keyword.cloud_notm}} region that your location is managed from. For example, in your host firewall, you must allow outbound connectivity from your control plane hosts to the following endpoints.
 
-    <table summary="The table shows the required outbound connectivity for hosts to the {{site.data.keyword.cos_short}} endpoint for the region. Rows are to be read from the left to right. The region that your {{site.data.keyword.satelliteshort}} location is managed from is in the first column. The {{site.data.keyword.cos_short}} endpoint for that region is in the second column.">
-    <caption>Required outbound connectivity for hosts to {{site.data.keyword.cos_short}} endpoints</caption>
-    <table>
-    <thead>
-    <tr>
-    <th>Region</th>
-    <th>{{site.data.keyword.cos_short}} endpoint</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-    <td><code>wdc</code></td>
-    <td><code>s3.us.cloud-object-storage.appdomain.cloud</code></td>
-    </tr>
-    <tr>
-    <td><code>lon</code></td>
-    <td><code>s3.eu.cloud-object-storage.appdomain.cloud</code></td>
-    </tr>
-    </tbody>
-    </table>
+    | Region | {{site.data.keyword.cos_short}} endpoint |
+    | ------ | -------------- |
+    | `wdc` | `s3.us.cloud-object-storage.appdomain.cloud` |
+    | `lon` | `s3.eu.cloud-object-storage.appdomain.cloud` |
+    {: caption="Table 1. Required outbound connectivity for hosts to {{site.data.keyword.cos_short}} endpoints" caption-side="top"}
 
 2. Verify that the {{site.data.keyword.cos_short}} service instance and bucket that back up your etcd data are available and were not deleted.
     1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.
