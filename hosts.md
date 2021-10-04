@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -555,13 +555,13 @@ Choose from one of the following scenarios,
     2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign). These hosts automatically receive the new update when you assign them.
     3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old worker node hosts that you previously noted](#host-remove).
 
-### Updating worker node hosts in the {{site.keyword.data.openshiftlong_notm}} console
+### Updating worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console
 {: #host-update-roks-console}
 
-You can update worker node hosts by using the {{site.keyword.data.openshiftlong_notm}} console. 
+You can update worker node hosts by using the {{site.data.keyword.openshiftlong_notm}} console. 
 {: shortdesc}
 
-The option to update worker node hosts in the {{site.keyword.data.openshiftlong_notm}} console is available in beta.
+The option to update worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console is available in beta.
 {: beta}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} console and click **OpenShift** > **Clusters**.
