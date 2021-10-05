@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-05"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -97,12 +97,12 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
         ```yaml
         apiVersion: v1
         data:
-        slclient.toml: # Enter your base64 encoded config.toml
+          slclient.toml: # Enter your base64 encoded config.toml
         kind: Secret
         metadata:
-        name: storage-secret-store
-        namespace: kube-system
-        type: Opaque
+          name: storage-secret-store
+          namespace: kube-system
+          type: Opaque
         ```
         {: codeblock}
 
