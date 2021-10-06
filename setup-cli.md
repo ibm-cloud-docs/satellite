@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-04"
 
 keywords: satellite cli, install satellite cli, satellite cli commands
 
@@ -24,7 +24,7 @@ Set up the {{site.data.keyword.cloud_notm}} command-line interface (CLI), the pl
     {: tip}
 
 2. Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted.
-    ```
+    ```sh
     ibmcloud login
     ```
     {: pre}
@@ -32,32 +32,32 @@ Set up the {{site.data.keyword.cloud_notm}} command-line interface (CLI), the pl
     If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
     {: tip}
 
-4. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.containershort_notm}}. This plug-in includes `ibmcloud sat` commands to manage {{site.data.keyword.satelliteshort}} resources and `ibmcloud oc` to manage {{site.data.keyword.openshiftshort}} cluster resources.
-    ```
+3. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.containershort_notm}}. This plug-in includes `ibmcloud sat` commands to manage {{site.data.keyword.satelliteshort}} resources and `ibmcloud oc` to manage {{site.data.keyword.openshiftshort}} cluster resources.
+    ```sh
     ibmcloud plugin install container-service
     ```
     {: pre}
 
-5. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by {{site.data.keyword.IBM_notm}} , and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
-    ```
+4. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by {{site.data.keyword.IBM_notm}} , and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
+    ```sh
     ibmcloud plugin install container-registry
     ```
     {: pre}
 
-6. Optional: To create a logging configuration for {{site.data.keyword.la_full_notm}} or a monitoring configuration for {{site.data.keyword.mon_full_notm}} for your cluster, install the {{site.data.keyword.containerlong_notm}} observability plug-in (`ibmcloud ob`).
-    ```
+5. Optional: To create a logging configuration for {{site.data.keyword.la_full_notm}} or a monitoring configuration for {{site.data.keyword.mon_full_notm}} for your cluster, install the {{site.data.keyword.containerlong_notm}} observability plug-in (`ibmcloud ob`).
+    ```sh
     ibmcloud plugin install observe-service
     ```
     {: pre}
 
-8. Verify that the plug-ins are installed correctly.
-    ```
+6. Verify that the plug-ins are installed correctly.
+    ```sh
     ibmcloud plugin list
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     Listing installed plug-ins...
 
     Plugin Name                            Version   Status
@@ -66,9 +66,10 @@ Set up the {{site.data.keyword.cloud_notm}} command-line interface (CLI), the pl
     ```
     {: screen}
 
-9. To work with OpenShift Container Platform workloads, [install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
+7. To work with OpenShift Container Platform workloads, [install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 
-<br />
+
+
 
 ## Updating the CLI
 {: #update-sat-cli}
@@ -78,7 +79,7 @@ Update the CLIs regularly to use new features.
 
 1. Update the {{site.data.keyword.cloud_notm}} CLI. Download the [latest version](/docs/cli?topic=cli-getting-started) and run the installer.
 2. Log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted.
-    ```
+    ```sh
     ibmcloud login
     ```
     {: pre}
@@ -88,18 +89,18 @@ Update the CLIs regularly to use new features.
 
 3. Update the CLI plug-in for {{site.data.keyword.satelliteshort}} commands. {{site.data.keyword.satelliteshort}} commands are part of the {{site.data.keyword.containerlong_notm}} CLI plug-in.
     1. Install the update from the {{site.data.keyword.cloud_notm}} plug-in repository.
-        ```
+        ```sh
         ibmcloud plugin update kubernetes-service
         ```
         {: pre}
 
     2. Verify the plug-in installation by running the following command and checking the list of the plug-ins that are installed.
-        ```
+        ```sh
         ibmcloud plugin list
         ```
         {: pre}
 
-        Because {{site.data.keyword.satelliteshort}} commands are included in the {{site.data.keyword.containerlong_notm}} CLI plug-in, look for the `container-service/kubernetes-service ` plug-in in your CLI output.
+        Because {{site.data.keyword.satelliteshort}} commands are included in the {{site.data.keyword.containerlong_notm}} CLI plug-in, look for the `container-service/kubernetes-service` plug-in in your CLI output.
         {: tip}
 
 ## Uninstalling the CLI
@@ -113,14 +114,14 @@ If you no longer need the CLI, you can uninstall it.
     The {{site.data.keyword.satellitelong_notm}} CLI plug-in is included in the {{site.data.keyword.containerlong_notm}} plug-in. Removing the plug-in, automatically removes access to both CLI plug-ins.
     {: note}
 
-    ```
+    ```sh
     ibmcloud plugin uninstall kubernetes-service
     ```
     {: pre}
 
 2. Verify that the plug-in is uninstalled by running the following command and checking the list of the plug-ins that are installed.
 
-    ```
+    ```sh
     ibmcloud plugin list
     ```
     {: pre}
@@ -135,12 +136,12 @@ If you no longer need the CLI, you can uninstall it.
 For reference information about CLIs that you installed, see the documentation for those tools.
 {: shortdesc}
 
--   [`ibmcloud` commands](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_cli#ibmcloud_cli)
--   [`ibmcloud sat` commands](/docs/satellite?topic=satellite-satellite-cli-reference)
--   [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli)
--   [`ibmcloud cr` commands](/docs/Registry?topic=container-registry-cli-plugin-containerregcli)
--   [`ibmcloud ob` commands](/docs/containers?topic=containers-observability_cli)
--   [`oc` commands](https://docs.openshift.com/container-platform/4.5/cli_reference/openshift_cli/developer-cli-commands.html){: external}
--   [`kubectl` commands](https://kubectl.docs.kubernetes.io/){: external}
+- [`ibmcloud` commands](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_cli#ibmcloud_cli)
+- [`ibmcloud sat` commands](/docs/satellite?topic=satellite-satellite-cli-reference)
+- [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli)
+- [`ibmcloud cr` commands](/docs/Registry?topic=container-registry-cli-plugin-containerregcli)
+- [`ibmcloud ob` commands](/docs/containers?topic=containers-observability_cli)
+- [`oc` commands](https://docs.openshift.com/container-platform/4.5/cli_reference/openshift_cli/developer-cli-commands.html){: external}
+- [`kubectl` commands](https://kubectl.docs.kubernetes.io/){: external}
 
 

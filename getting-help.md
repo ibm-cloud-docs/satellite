@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -22,11 +22,11 @@ Still having issues? Review different ways to get help and support for {{site.da
 ## General ways to resolve issues
 {: #help-general}
 
-* Make sure that your command-line tools are up to date.
-    * In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up to date so that you can use all available commands and flags.
-    * Make sure that your `kubectl` and `oc` CLI client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
-* Keep the clusters and hosts in your {{site.data.keyword.satelliteshort}} location up to date.
-* Enable and review [logging](#review-logs) and [monitoring](/docs/satellite?topic=satellite-monitor) details to troubleshoot your {{site.data.keyword.satelliteshort}} components.
+- Make sure that your command-line tools are up to date.
+    - In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up to date so that you can use all available commands and flags.
+    - Make sure that your `kubectl` and `oc` CLI client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `kubectl` client versions that are 2 or more versions apart from the server version (n +/- 2).
+- Keep the clusters and hosts in your {{site.data.keyword.satelliteshort}} location up to date.
+- Enable and review [logging](#review-logs) and [monitoring](/docs/satellite?topic=satellite-monitor) details to troubleshoot your {{site.data.keyword.satelliteshort}} components.
 
 ## Reviewing cloud issues and status
 {: #help-cloud-status}
@@ -110,8 +110,8 @@ The {{site.data.keyword.monitoringfull_notm}} component generates certain alerts
 `R00XX` error logs report messages and more detailed information about issues with your location setup and host infrastructure. For more information about each `R00XX` error message, including troubleshooting steps, see [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug).
 {: shortdesc}
 
-Example log:
-```
+Example log
+```sh
 {"logSourceCRN":"crn:v1:bluemix:public:satellite:us-south:a/f601ad712b0dd981276cf3b995554afc:c1hk4ek107l5au5mq8hg::","saveServiceCopy":true,"Details":{"message":"R0025: The Satellite location has OpenShift clusters in critical health.","errorDetails":"Customer etcd cluster moved down to 1 or less available pods. Quorum broke. Manual recovery of cluster needed.","messageID":"R0025"}}
 ```
 {: screen}
@@ -133,8 +133,8 @@ Example log:
 Enablement of resource deployment logs report the current status of whether resources such as hosts, clusters, or {{site.data.keyword.satelliteshort}}-enabled service instances can be changed or deployed in your location, and the reason for this status. For example, resource deployment might be set to false due to one or more location errors.
 {: shortdesc}
 
-Example log:
-```
+Example log
+```sh
 {"logSourceCRN":"crn:v1:bluemix:public:satellite:us-south:a/f601ad712b0dd981276cf3b995554afc:c1hk4ek107l5au5mq8hg::","saveServiceCopy":true,"message":"Enablement of resource deployment in the location is set false due to R0012: The location control plane does not have hosts in all 3 zones. Add available hosts to your location for the control plane. R0025: The Satellite location has OpenShift clusters in critical health."}
 ```
 {: screen}
@@ -153,11 +153,11 @@ Example log:
 Endpoint health status logs report the current health check status of the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint. For more information, see [Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?](/docs/satellite?topic=satellite-ts-location-healthcheck).
 {: shortdesc}
 
-* If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable and healthy.
-* If logs report `Failed to reach endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is unreachable.
+- If logs report `Successfully checked endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable and healthy.
+- If logs report `Failed to reach endpoint`, your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is unreachable.
 
-Example log:
-```
+Example log
+```sh
 {"logSourceCRN":"crn:v1:bluemix:public:satellite:us-east:a/6ef045fd2b43266cfe8e6388dd2ec098:c0rcidjw0s3rf9v8sms0::","saveServiceCopy":true,"message":"Endpoint health status: Failed to reach endpoint. Get \"http://c-03.us-east.link.satellite.cloud.ibm.com:32900\": read tcp 172.XX.XXX.XXX:58564-\u003e166.9.XX.XXX:32900: read: connection reset by peer. Endpoint: http://c-03.us-east.link.satellite.cloud.ibm.com:32900"}
 ```
 {: screen}
@@ -175,21 +175,21 @@ Example log:
 
 1. Search for your question and post in the {{site.data.keyword.cloud_notm}} [Slack](https://cloud.ibm.com/kubernetes/slack){: external}, in the `#satellite` channel.
 2. Review forums such as Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
-    * For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
-    * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.openshiftshort}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
-    * See [Getting help](/docs/get-support?topic=get-support-using-avatar#using-avatar) for more details about using the forums.
+    - For questions about {{site.data.keyword.satelliteshort}}, use the tags `ibm-cloud` and `satellite`.
+    - If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.openshiftshort}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`, and `containers`.
+    - See [Getting help](/docs/get-support?topic=get-support-using-avatar#using-avatar) for more details about using the forums.
 
 ## Contacting support
 {: #help-support}
 
 1. Before you open a support case, gather relevant information about your {{site.data.keyword.satelliteshort}} environment.
     1. Get the details of the resource that you want help with troubleshooting, such as your {{site.data.keyword.satelliteshort}} location or a host.
-        ```
+        ```sh
         ibmcloud sat location get --location <location_name_or_ID>
         ```
         {: pre}
 
-        ```
+        ```sh
         ibmcloud sat host get --location <location_name_or_ID> --host <host_ID>
         ```
         {: pre}
@@ -201,7 +201,7 @@ Example log:
     {: tip}
 
 2. Contact {{site.data.keyword.IBM_notm}} Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an {{site.data.keyword.IBM_notm}} support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
-3. For the **Problem type**, search for or select **{{site.data.keyword.openshiftlong_notm}}**.
+3. For the **Problem type**, search for or select **{{site.data.keyword.satelliteshort}}**.
 4. For the **Case details**, provide a descriptive title and include the details that you previously gathered. From the **Resources**, you can also select the cluster that the issue is related to, if any.
 
 

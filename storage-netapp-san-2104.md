@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-06"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -46,33 +46,35 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 {: #sat-storage-netapp-cli-san-2104}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
     ```sh
     ibmcloud login
     ```
     {: pre}
 
-1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
-
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-    ```
+
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
 
 1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
     ```sh
     ibmcloud target -r us-east
     ```
     {: pre}
 
 1. If you use a resource group other than `default`, target it.
+
     ```sh
     ibmcloud target -g <resource-group>
     ```
     {: pre}
     
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
+
     ```sh
     ibmcloud sat storage template ls
     ```
@@ -98,7 +100,6 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp-2104), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
-<br />
 
 
 
@@ -112,19 +113,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
 1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat group ls
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud oc cluster ls --provider satellite
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat service ls --location <location>
       ```
@@ -132,19 +133,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
       ```
@@ -162,7 +163,6 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-<br />
 
 ## NetApp Trident storage configuration parameter reference
 {: #sat-storage-netapp-params-cli-san-2104}
@@ -180,8 +180,6 @@ For more information about the NetApp Trident configuration parameters, see the 
 | `limitAggregateUsage` | Optional | Limit provisioning of volumes if parent volume usage exceeds this value. For example, if a volume is requested that causes parent volume usage to exceed this value, the volume provisioning fails. Example: `80%`  | `(not enforced by default)` |
 {: caption="Table 1. NetApp Trident storage parameter reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter. The fourth column is the default value, if one is provided."}
-
-<br />
 
 ## Storage class reference
 {: #netapp-sc-reference-san-2104}
@@ -204,12 +202,12 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 | Storage class name | Type | File system | IOPs | Encryption |Reclaim policy |
 | --- | --- | --- | --- | --- | --- |
-| `sat-netapp-block-gold` | Ontap-SAN | ext4 | no QoS limits. | Encryption disabled. | Delete |
-| `sat-netapp-block-gold-encrypted` | Ontap-SAN | ext4 | no QoS limits. | Encryption enabled. | Delete |
-| `sat-netapp-block-silver` | Ontap-SAN | ext4 | User-defined QoS limit. | Encryption disabled. | Delete |
-| `sat-netapp-block-silver-encrypted` | Ontap-SAN | ext4 | User-defined QoS limit. | Encryption enabled. | Delete |
-| `sat-netapp-block-bronze` | Ontap-SAN | ext4 | User defined QoS limit. | Encryption disabled. | Delete |
-| `sat-netapp-block-bronze-encrypted` | Ontap-SAN | ext4 | User-defined QoS limit. | Encryption enabled. | Delete |
+| `sat-netapp-block-gold` | ONTAP-SAN | ext4 | no QoS limits. | Encryption disabled. | Delete |
+| `sat-netapp-block-gold-encrypted` | ONTAP-SAN | ext4 | no QoS limits. | Encryption enabled. | Delete |
+| `sat-netapp-block-silver` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption disabled. | Delete |
+| `sat-netapp-block-silver-encrypted` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption enabled. | Delete |
+| `sat-netapp-block-bronze` | ONTAP-SAN | ext4 | User defined QoS limit. | Encryption disabled. | Delete |
+| `sat-netapp-block-bronze-encrypted` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption enabled. | Delete |
 {: caption="Table 2. NetApp ONTAP-SAN storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 

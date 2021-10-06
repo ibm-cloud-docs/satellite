@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,19 +19,19 @@ content-type: troubleshoot
 When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations), {{site.data.keyword.IBM_notm}} automatically sets up a master for the location control plane in {{site.data.keyword.cloud_notm}}. Additionally, you must assign at least three hosts to the {{site.data.keyword.satelliteshort}} location control plane as worker nodes to run location components that {{site.data.keyword.IBM_notm}} configures. If the location control plane that runs on your hosts has issues, you can debug the location control plane.
 
 1. Get your {{site.data.keyword.satelliteshort}} location ID.
-    ```
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
 
 2. List the **Hostnames** of the subdomains for your location control plane hosts.
-    ```
+    ```sh
     ibmcloud sat location dns ls --location <location_name_or_ID>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     Retrieving location subdomains...
     OK
     Hostname                                                                                                 Records                                                                                                Health Monitor   SSL Cert Status   SSL Cert Secret Name                                          Secret  Namespace   
@@ -44,13 +44,13 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     {: screen}
 
 3. Check the health of the control plane location subdomains by curling each hostname endpoint. If the endpoint returns a `200` response for each host, the control plane worker node is healthy and serving Kubernetes traffic. If not, continue to the next step.
-    ```
+    ```sh
     curl -v http://<hostname>:30000
     ```
     {: pre}
 
-    Example output of a failed response:
-    ```
+    Example output of a failed response
+    ```sh
     * Rebuilt URL to: http://169.xx.xxx.xxx:30000/
     *   Trying 169.xx.xxx.xxx...
     * TCP_NODELAY set
@@ -62,8 +62,8 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     ```
     {: screen}
 
-    Example output of a `200` response:
-    ```
+    Example output of a `200` response
+    ```sh
     * Rebuilt URL to: http://169.xx.xxx.xxx:30000/
     *   Trying 169.xx.xxx.xxx...
     * TCP_NODELAY set
@@ -87,13 +87,13 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     {: screen}
 
 3. Find the **ID** of the host that did not return a `200` response. You can compare the `Host: 169.xx.xxx.xxx` from the previous step with the **Worker IP** in the output of the following command.
-    ```
+    ```sh
     ibmcloud sat host ls --location <location_ID> | grep infrastructure
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     Name     ID                     State        Status   Cluster          Worker ID                Worker IP   
     host1    aaaaa1a11aaaaaa111aa   assigned     Ready    infrastructure   sat-virtualser-1234...   169.xx.xxx.xxx   
     host2    bbbbbbb22bb2bbb222b2   assigned     Ready    infrastructure   sat-virtualser-1234...   169.xx.xxx.xxx  

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-06"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -31,7 +31,6 @@ Set up [OpenShift Data Foundation](https://docs.openshift.com/container-platform
     1. Create HMAC credentials for your {{site.data.keyword.cos_full_notm}} instance.
     1. Create a Kubernetes secret that uses your {{site.data.keyword.cos_full_notm}} HMAC credentials.
 
-<br />
 
 ### Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance
 {: #sat-storage-ocs-remote-cos}
@@ -52,6 +51,9 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
     ibmcloud resource service-key-create cos-cred-rw Writer --instance-name noobaa-store --parameters '{"HMAC": true}'
     ```
     {: pre}
+    
+## Creating a secret that contains your {{site.data.keyword.satelliteshort}} Link credentials
+{: #odf-sat-link-remote}
 
 After you [create a link endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-about) and before you install ODF, create a Kubernetes secret with your link credentials.
 {: shortdesc}
@@ -137,33 +139,35 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
 {: #sat-storage-ocs-remote-cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
     ```sh
     ibmcloud login
     ```
     {: pre}
 
-1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
-
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-    ```
+
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
 
 1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
     ```sh
     ibmcloud target -r us-east
     ```
     {: pre}
 
 1. If you use a resource group other than `default`, target it.
+
     ```sh
     ibmcloud target -g <resource-group>
     ```
     {: pre}
     
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
+
     ```sh
     ibmcloud sat storage template ls
     ```
@@ -184,7 +188,6 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
 
 1. [Assign your storage configuration to clusters](#assign-storage-ocs-remote).
 
-<br />
 
 ## Assigning your ODF storage configuration to a cluster
 {: #assign-storage-ocs-remote}
@@ -204,19 +207,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
 1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat group ls
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud oc cluster ls --provider satellite
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat service ls --location <location>
       ```
@@ -224,19 +227,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
       ```
@@ -256,7 +259,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```sh
         NAME                 AGE   PHASE   EXTERNAL   CREATED AT             VERSION
         ocs-storagecluster   72m   Ready              2021-02-10T06:00:20Z   4.6.0
@@ -269,7 +272,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```sh
         NAME                                                              READY   STATUS      RESTARTS   AGE
         csi-cephfsplugin-9g2d5                                            3/3     Running     0          8m11s
@@ -321,7 +324,7 @@ Don't delete your storage configurations or assignments. Deleting configurations
 
 To upgrade the ODF version of your configuration, complete the following steps:
 1. Get the details of your ODF configuration.
-    ```
+    ```sh
     ibmcloud sat storage config get <config-name>
     ```
 2. Create a new configuration with the same `ocs-cluster-name` and details. Make sure to change the `template-version` to the version that you want to upgrade to and set the `ocs-upgrade` parameter to `true`.
@@ -429,8 +432,6 @@ Use the command line to remove a storage assignment.
 {: caption="Table 1. OpenShift Container storage parameter reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is optional. The third column is a brief description of the parameter. The second column is the default value of the parameter."}
 
-
-<br />
 
 ## Storage class reference
 {: #sat-storage-ocs-remote-sc-ref}

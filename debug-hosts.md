@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,13 +20,13 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
 {: shortdesc}
 
 1. Review the health and status of your hosts. From the CLI, list your hosts in a location. From the console, click your location, and then click the **Hosts** tab.
-    ```
+    ```sh
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     Name               ID                     State        Status   Cluster          Worker ID   Worker IP   
     satellite-test-1   aaaaa1a11aaaaaa111aa   assigned     -        infrastructure   -           -   
     ```

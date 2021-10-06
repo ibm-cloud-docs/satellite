@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-30"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -19,8 +19,6 @@ Review the storage class reference for the storage provider that you want to use
 {: shortdesc}
 
 
-<br />
-
 ## AWS EBS
 {: #ebs-ref}
 
@@ -35,7 +33,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You
 {: caption="Table 1. AWS EBS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the volume type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the default IOPs per GB. The size column is the supported size range. The seventh column is disk type. The eighth column is encryption support. The ninth column is the volume binding mode. The tenth column is the reclaim policy."}
 
-<br />
 
 ## AWS EFS
 {: #efs-ref}
@@ -50,7 +47,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 {: caption="Table 2. AWS EFS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
 
-<br />
 
 ## Azure Disk
 {: #azure-disk-ref}
@@ -80,7 +76,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 {: caption="Table 3. Local block storage class reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
 
-<br />
 
 ## Local file storage
 {: #local-file-ref}
@@ -94,7 +89,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 {: caption="Table 4. Local file storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
 
-<br />
 
 
 
@@ -112,7 +106,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 {: caption="Table 5. NetApp ONTAP-NAS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
-<br />
 
 
 
@@ -130,8 +123,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 {: caption="Table 6. NetApp ONTAP-SAN storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
-<br />
-
 ## OpenShift Data Foundation for local volumes
 {: #ocs-local-ref}
 
@@ -146,8 +137,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 {: caption="Table 7. NetApp ONTAP-SAN storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
-
-<br />
 
 ## OpenShift Data Foundation for remote volumes
 {: #ocs-remote-ref}

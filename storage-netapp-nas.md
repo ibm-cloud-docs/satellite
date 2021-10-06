@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-06"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -20,41 +20,41 @@ Set up [NetApp ONTAP-NAS storage](https://netapp-trident.readthedocs.io/en/stabl
 Before you can create storage configurations by using the NetApp NAS template, you must deploy the [NetApp ONTAP-NAS template](/docs/satellite?topic=satellite-config-storage-netapp-trident) which installs the required operator.
 {: important}
 
-<br />
-
 
 
 ## Creating a NetApp ONTAP-NAS storage configuration in the command line
 {: #sat-storage-netapp-cli-nas}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
     ```sh
     ibmcloud login
     ```
     {: pre}
 
-1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
-
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-    ```
+
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
 
 1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
     ```sh
     ibmcloud target -r us-east
     ```
     {: pre}
 
 1. If you use a resource group other than `default`, target it.
+
     ```sh
     ibmcloud target -g <resource-group>
     ```
     {: pre}
     
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
+
     ```sh
     ibmcloud sat storage template ls
     ```
@@ -78,7 +78,6 @@ Before you can create storage configurations by using the NetApp NAS template, y
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp-nas), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
-<br />
 
 
 
@@ -92,19 +91,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: pre}
 
 1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat group ls
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud oc cluster ls --provider satellite
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat service ls --location <location>
       ```
@@ -112,19 +111,19 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-    * **Group**
+    - Group
       ```sh
       ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
       ```
       {: pre}
 
-    * **Cluster**
+    - Cluster
       ```sh
       ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
       ```
       {: pre}
 
-    * **{{site.data.keyword.satelliteshort}}-enabled service cluster**
+    - {{site.data.keyword.satelliteshort}}-enabled service cluster
       ```sh
       ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
       ```
@@ -142,7 +141,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     trident-kubectl-nas                 1/1     Running   0          2m32s
     ```
@@ -160,7 +159,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-    **Example output**
+    Example output
     ```sh
     NAME                                    READY   STATUS    RESTARTS   AGE
     pod/trident-csi-2nrt4                   2/2     Running   0          14m
@@ -186,7 +185,6 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: screen}
 
-<br />
 
 ## Deploying an app that uses ONTAP-NAS storage
 {: #sat-storage-netapp-nas-deploy}
@@ -222,8 +220,8 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     NAME         STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
     netapp-pvc   Bound    pvc-acd9e5b4-0b24-4e20-ac00-69a05148c799   10Gi       RWX            sat-netapp-file-gold   39s
     ```
@@ -263,8 +261,8 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     app   1/1     Running   0          50s
     ```
@@ -283,7 +281,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
         ```
         {: pre}
 
-        **Example output**:
+        Example output
         ```sh
         Wed May 19 13:28:31 UTC 2021
         Wed May 19 13:28:37 UTC 2021
@@ -298,7 +296,6 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
         ```
         {: pre}
 
-<br />
 
 ## Removing NetApp ONTAP-NAS storage from your apps
 {: #netapp-nas-rm}
@@ -318,8 +315,8 @@ Before you remove your storage configuration, remove the app pods and PVCs that 
     ```
     {: pre}
 
-    **Example output**:
-    ```
+    Example output
+    ```sh
     app    sat-netapp-file-gold
     ```
     {: screen}
@@ -355,7 +352,6 @@ Before you remove your storage configuration, remove the app pods and PVCs that 
 
 7. [Remove your NetApp ONTAP-NAS storage configuration from your cluster](#netapp-nas-template-rm-cli)
 
-<br />
 
 
 ### Removing the NetApp ONTAP-NAS storage assignment and configuration from the CLI
@@ -426,7 +422,6 @@ For more information about the NetApp ONTAP-NAS configuration parameters, see th
 {: caption="Table 1. NetApp ONTAP-NAS storage parameter reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
-<br />
 
 ## Storage class reference
 {: #netapp-sc-reference-nas}

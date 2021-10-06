@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -35,7 +35,7 @@ Follow these steps to resolve your issue
 {: tsResolve}
 
 1. Review the location subdomains and check the **Records** for the IP addresses of the hosts that are registered in the DNS for the subdomain.
-    ```
+    ```sh
     ibmcloud sat location dns ls --location <location_name_or_ID>
     ```
     {: pre}
@@ -49,19 +49,19 @@ Follow these steps to resolve your issue
             3. [Attach the host](/docs/satellite?topic=satellite-hosts#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location, but do not assign it. Later, after you complete these troubleshooting steps, you can [re-assign the host](/docs/satellite?topic=satellite-hosts#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or cluster.
             4. SSH into the host machine.
     2. Look up **each** location subdomain that you found in step 1. Check whether the IP address that resolves matches the host IP addresses that you found in step 1. If the host's DNS resolver does not resolve the subdomains to the expected IP addresses, ensure that your hosts have the [required minimum outbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound).
-        ```
+        ```sh
         nslookup <subdomain>
         ```
         {: pre}
 
     3. Use `netcat` on each location subdomain on port 30000 to test host connectivity. If any subdomain's `netcat` operation times out, ensure that your hosts meet the [host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
-        ```
+        ```sh
         nc -zv <subdomain> 30000
         ```
         {: pre}
 
         Successful output:
-        ```
+        ```sh
         Ncat: Version 7.50 ( https://nmap.org/ncat )
         Ncat: Connection refused.
         ```

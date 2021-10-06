@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-06"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -44,27 +44,28 @@ Use the CLI to create an AWS EFS storage configuration for your location.
 
 Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs).
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
     ```sh
     ibmcloud login
     ```
     {: pre}
 
-1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
-
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-    ```
+
+    ```sh
     ibmcloud sat location ls
     ```
     {: pre}
 
 1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
     ```sh
     ibmcloud target -r us-east
     ```
     {: pre}
 
 1. If you use a resource group other than `default`, target it.
+
     ```sh
     ibmcloud target -g <resource-group>
     ```
@@ -109,8 +110,8 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
         ```
         {: pre}
 
-        Example output:
-        ```sh   
+        Example output
+        ```sh
         efs-csi-node-gfm9x                      3/3     Running   0          7m48s
         efs-csi-node-hz45b                      3/3     Running   0          7m48s
         efs-csi-node-pv8m7                      3/3     Running   0          7m48s
@@ -123,8 +124,8 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
         ```
         {: pre}
 
-        Example output:
-        ```             
+        Example output
+        ```sh         
         sat-aws-file-gold     efs.csi.aws.com      Delete          Immediate              false                  8m27s
         ```
         {: screen}
@@ -172,8 +173,8 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+        ```sh
         NAME   CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM        STORAGECLASS           REASON   AGE
         efs    5Gi        RWO            Retain           Available                  sat-aws-file-gold               34m
         ```
@@ -208,8 +209,8 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+        ```sh
         NAME      STATUS        VOLUME     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
         efs       Bound         efs        5Gi        RWO            sat-aws-file-gold   36m
         ```
@@ -249,8 +250,8 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
     ```
     {: pre}
 
-    Example output:
-    ```
+    Example output
+    ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     app                                 1/1     Running   0          2m58s
     ```
@@ -269,7 +270,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         ```
         {: pre}
 
-        Example output:
+        Example output
         ```sh
         Tue Mar 2 20:09:19 UTC 2021
         Tue Mar 2 20:09:25 UTC 2021
@@ -310,8 +311,8 @@ Removing your AWS EFS instance permanently removes all the data that is stored o
         ```
         {: pre}
 
-        Example output:
-        ```
+        Example output
+        ```sh
         app    sat-aws-block-bronze
         ```
         {: screen}
@@ -408,7 +409,6 @@ Use the CLI to remove a storage configuration.
 
 ## AWS EFS storage configuration parameter reference
 {: #sat-storage-aws-efs-params-cli}
-
 
 | Parameter | Required? | Description | Default if not provided |
 | --- | --- | --- | --- |

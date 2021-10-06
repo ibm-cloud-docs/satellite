@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,11 +24,12 @@ Create an {{site.data.keyword.satellitelong}} location with {{site.data.keyword.
 Common challenges of edge workloads include training the machine learning models and using predictive model inferencing. With {{site.data.keyword.satelliteshort}}, you can access the {{site.data.keyword.cloud_notm}} services that addresses these challenges where your edge workloads actually run.
 {: shortdesc}
 
-**Training a machine learning model** typically involves significant compute resources for memory, GPU, and storage. Instead of installing and managing training model software onto your compute infrastructure, you can add the compute infrastructure to a {{site.data.keyword.satelliteshort}} location. Then, you can access {{site.data.keyword.cpd_full}}, which includes tools such as {{site.data.keyword.DSX_short}} and {{site.data.keyword.pm_full}} for data analysis and model training. By accessing these tools as cloud services, you simplify the installation and management of the software. You also can use these same cloud services across all of your edge infrastructure, no matter the underlying infrastructure provider.
+Training a machine learning model
+:    Training your machine learning model typically involves significant compute resources for memory, GPU, and storage. Instead of installing and managing training model software onto your compute infrastructure, you can add the compute infrastructure to a {{site.data.keyword.satelliteshort}} location. Then, you can access {{site.data.keyword.cpd_full}}, which includes tools such as {{site.data.keyword.DSX_short}} and {{site.data.keyword.pm_full}} for data analysis and model training. By accessing these tools as cloud services, you simplify the installation and management of the software. You also can use these same cloud services across all of your edge infrastructure, no matter the underlying infrastructure provider.
 
-**Model inferencing** is the task of using a trained model to make predictions, detect anomalies, and categorize data from your edge environment. Because of memory, storage, and latency requirements, model inferencing is most effectively run as near to your IoT sensors and other data sources as possible. You can create a {{site.data.keyword.satelliteshort}} location with managed {{site.data.keyword.openshiftshort}} clusters right where your data is located in your edge environments. Then, you can set up a serverless programming model such as Red Hat&trade; OpenShift&trade; Serverless&trade; to provide a simplified programming model with a REST interface to query your trained model to produce a prediction.
+Model inferencing
+:    Model inferencing is the task of using a trained model to make predictions, detect anomalies, and categorize data from your edge environment. Because of memory, storage, and latency requirements, model inferencing is most effectively run as near to your IoT sensors and other data sources as possible. You can create a {{site.data.keyword.satelliteshort}} location with managed {{site.data.keyword.openshiftshort}} clusters right where your data is located in your edge environments. Then, you can set up a serverless programming model such as Red Hat&trade; OpenShift&trade; Serverless&trade; to provide a simplified programming model with a REST interface to query your trained model to produce a prediction.
 
-<br />
 
 ## Setting up your edge solution with {{site.data.keyword.satelliteshort}}
 {: #edge-solution}
@@ -60,8 +61,10 @@ As the edge environment system administrator, you enable a serverless tool to si
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create) on your edge computing infrastructure.
 2. [Create a managed {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=openshift-satellite-clusters) in the {{site.data.keyword.satelliteshort}} location.
 3. [Access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
-3. Using the OperatorHub, [install the {{site.data.keyword.openshiftshort}} Serverless operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
-4. [Install the Knative Serving Operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
+4. Using the OperatorHub, [install the {{site.data.keyword.openshiftshort}} Serverless operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
+5. [Install the Knative Serving Operator](https://docs.openshift.com/container-platform/4.6/serverless/serverless-getting-started.html){: external}.
+
+You deployed {{site.data.keyword.satelliteshort}} with a serverless component.
 
 ### Step 3: Run model inferencing at the edge
 {: #edge-example-inferencing}
@@ -74,5 +77,3 @@ As the AI developer, run model inferencing on your edge data by using the server
 3. [Deploy the image](https://developers.redhat.com/blog/2020/04/30/serverless-applications-made-faster-and-simpler-with-openshift-serverless-ga/){: external} to your {{site.data.keyword.openshiftshort}} Serverless processor that runs in your {{site.data.keyword.satelliteshort}} cluster. You can use the {{site.data.keyword.openshiftshort}} web console in the developer perspective, or use the `kn` command line tool for {{site.data.keyword.satelliteshort}} Serverless.
 
 Now, you have a managed {{site.data.keyword.satelliteshort}} location that runs on your edge environment and performs on-demand model inferencing for your edge data through your AI-trained model and {{site.data.keyword.openshiftshort}} Serverless.
-
-

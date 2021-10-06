@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,8 +44,6 @@ Review the following ways that you can secure access to your location:
 * [Manage access for {{site.data.keyword.satelliteshort}} by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/satellite?topic=satellite-iam)
 * Monitor user-initiated activities by [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 * In the case of a potential security incident, [reset the key that the control plane uses to communicate with all of the hosts in the Satellite location](/docs/satellite?topic=satellite-hosts#host-key-reset)
-
-<br />
 
 ## {{site.data.keyword.IBM_notm}} operational access
 {: #operational-access}
@@ -97,7 +95,6 @@ Note that your on-location workloads continue to run independently even if the l
 
 For more information about making your {{site.data.keyword.satelliteshort}} location highly available, see [High availability and disaster recovery for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
 
-<br />
 
 ## Digital certificates for {{site.data.keyword.satelliteshort}} hosts and domains
 {: #certs-hosts-domains}
@@ -117,7 +114,6 @@ Let's Encrypt certificates are automatically generated for several {{site.data.k
 {: caption="Certificates for {{site.data.keyword.satelliteshort}} domains and hosts" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the name of the {{site.data.keyword.satelliteshort}} component. The second column shows an example of the domain for which the certificate is issued. The third column is the amount of time that the certificate is valid for. The fourth column indicates whether you or {{site.data.keyword.IBM_notm}} is responsible for certificate regeneration. The fifth column describes the process during which the certificate is regenerated."}
 
-<br />
 
 ## Platform compliance and certification
 {: #platform-compliance}
@@ -139,5 +135,3 @@ For an overview of who is responsible for particular cloud resources when using 
 {: #compliance-services}
 
 To see the security options and compliance standards of a {{site.data.keyword.satelliteshort}}-enabled service, review the documentation for each {{site.data.keyword.satelliteshort}}-enabled service. For example, for {{site.data.keyword.openshiftshort}} clusters, see [What compliance standards does the service meet?](/docs/openshift?topic=openshift-faqs#standards) in the {{site.data.keyword.openshiftlong_notm}} documentation.
-
-

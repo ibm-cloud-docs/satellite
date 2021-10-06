@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,7 +20,7 @@ content-type: troubleshoot
 When you try to SSH into a host machine that is assigned in {{site.data.keyword.satelliteshort}}, you see a message similar to the following.
 {: tsSymptoms}
 
-```
+```sh
 Permission denied, please try again.
 ```
 {: screen}
@@ -29,10 +29,7 @@ Permission denied, please try again.
 After the host is successfully assigned to a {{site.data.keyword.satelliteshort}} location control plane or cluster, {{site.data.keyword.satelliteshort}} disables the ability to SSH into the host for security purposes.
 {: tsCauses}
 
-
 You cannot SSH into the host. If you need to modify settings on host machines in a cluster, try deploying a daemon set, such as in the [Tuning performance](/docs/containers?topic=containers-kernel) example.
 {: tsResolve}
 
 If you remove a host from your location or remove the entire location, you must reload the machine in your host infrastructure provider to SSH into the host again.
-
-
