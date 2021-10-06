@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-06"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -27,27 +27,28 @@ When you create a local block storage configuration, you specify the local block
 Before you can create a local block storage configuration, you must identify the worker nodes in your clusters that have the required available disks. Then, label these worker nodes so that the local storage drivers are installed on only these worker nodes.
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
     ```sh
     ibmcloud login
     ```
     {: pre}
 
-1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
-
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+
     ```sh
     ibmcloud sat location ls
     ```
     {: pre}
 
 1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
     ```sh
     ibmcloud target -r us-east
     ```
     {: pre}
 
 1. If you use a resource group other than `default`, target it.
+
     ```sh
     ibmcloud target -g <resource-group>
     ```
@@ -58,6 +59,7 @@ Before you can create a local block storage configuration, you must identify the
 4. [Label the worker nodes](#sat-storage-block-local-labels) that have an available disk and that you want to use in your configuration. The local storage drivers are installed only on the labeled worker nodes.
 
 
+
 ### Getting the device details for your local block storage configuration
 {: #sat-storage-block-local-devices}
 
@@ -65,39 +67,48 @@ When you create your local block storage configuration, you must specify which d
 {: shortdesc}
 
 1. Log in to your cluster and get a list of available worker nodes. Make a note of the worker nodes that you want to use in your configuration.
+
     ```sh
     oc get nodes
     ```
     {: pre}
 
 2. Log in to each worker node that you want to use for your local storage configuration.
+
     ```sh
     oc debug node/<node-name>
     ```
     {: pre}
 
 3. When the debug pod is deployed on the worker node, run the following commands to list the available disks on the worker node.
+
     1. Allow host binaries.
-    ```sh
-    chroot /host
-    ```
-    {: pre}
+    
+        ```sh
+        chroot /host
+        ```
+        {: pre}
 
     1. List your devices.
-    ```sh
-    lsblk
-    ```
-    {: pre}
+    
+        ```sh
+        lsblk
+        ```
+        {: pre}
 
     1. Get the details of your devices. Verify that the devices that you want to use are unmounted and unformatted.
-    ```sh
-    fdisk -l
-    ```
-    {: pre}
+    
+        ```sh
+        fdisk -l
+        ```
+        {: pre}
 
 
 4. List available block storage disks on your worker node. You must use unmounted disks for the local storage configuration. In the following example output from the `lsblk` command, the `nvme2n1` disk is unmounted and has no partitions.
-    ```
+
+
+    ```sh
+
     NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     nvme0n1     259:3    0   100G  0 disk 
     |-nvme0n1p1 259:4    0     1M  0 part 
@@ -118,18 +129,21 @@ After you have [retrieved the device paths for the disks that you want to use in
 {: shortdesc}
 
 1. Get the worker node IP addresses.
+
     ```sh
     oc get nodes
     ```
     {: pre}
 
 2. Label the worker nodes that you retrieved earlier. The local storage drivers are deployed to the worker nodes with this label. You can use the `storage=local-block` label in the example command or you can create your own label in the `key=value` format.
+
     ```sh
     oc label nodes <worker-IP> <worker-IP> <worker-IP> "storage=local-block"
     ```
     {: pre}
 
     Example output
+
     ```sh
     node/<worker-IP> labeled
     node/<worker-IP> labeled
@@ -138,6 +152,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     {: screen}
 
 3. Verify that the label is added to the worker nodes that you want to use. Run the following command to display the labels on your worker nodes and highlight the label that you added previous step.
+
     ```sh
     oc get nodes --show-labels | grep --color=always storage=local-block
     ```
@@ -151,18 +166,21 @@ After you have [retrieved the device paths for the disks that you want to use in
 
 1. Review the [Local block storage configuration parameters](#sat-storage-local-block-params-cli).
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
+
     ```sh
     ibmcloud sat storage template ls
     ```
     {: pre}
     
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name local-volume-block --template-version <template-version> --param "label-key=storage" --param "label-value=local-block" --param "devicepath=<devicepath>"
     ```
     {: pre}
 
 1. Verify that your storage configuration is created.
+
     ```sh
     ibmcloud sat storage config get --config <config>
     ```
@@ -176,6 +194,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 {: #assign-storage-local-block}
 
 After you [create a local block storage configuration](#config-storage-local-block), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
+
 
 
 
@@ -235,6 +254,7 @@ After you [create a local block storage configuration](#config-storage-local-blo
     ```
     {: pre}
 5. List all of the resources in the `local-storage` namespace and verify the driver pods are `Running`.
+
     ```sh
     oc get all -n local-storage
     ```
@@ -265,12 +285,14 @@ After you [create a local block storage configuration](#config-storage-local-blo
     {: screen}
 
 6. List the PVs and verify that the status is `Available`.
+
     ```sh
     oc get pv
     ```
     {: pre}
 
     Example output
+
     ```sh
     NAME                CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS           REASON   AGE
     local-pv-88842685   20Gi       RWO            Delete           Available           sat-local-block-gold            90s
@@ -290,6 +312,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
 {: tip}
 
 1. Save the following PVC YAML file on your local machine called `local-pvc.yaml`.
+
     ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
@@ -307,12 +330,14 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     {: codeblock}
 
 2. Create the PVC in your cluster.
+
     ```sh
     oc create -f local-pvc.yaml
     ```
     {: pre}
 
 3. Verify that your PVC is created. Note that the `volumeBindingMode` for the `sat-local-block-gold` storage class is `waitForFirstConsumer`.
+
     ```sh
     oc get pvc | grep local
     ```
@@ -322,6 +347,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     {: tip}
 
 4. Deploy an app pod that uses your local storage PVC. Save the following example app YAML as a file on your local machine called `app.yaml`. In this example, the `nodeAffinity` spec ensures that this pod is only scheduled to a worker node with the specified label.
+
     ```yaml
     apiVersion: v1
     kind: Pod
@@ -351,59 +377,72 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     {: codeblock}
 
 5. Create the app pod in your cluster.
+
     ```sh
     oc create -f app.yaml
     ```
     {: pre}
 
 6. Log in to your app pod and verify that you can write to your local disk.
+
     ```sh
     kubectl exec <pod_name> -it bash
     ```
     {: pre}
 
 7. Change directories to the `dev` folder.
+
     ```sh
     cd dev
     ```
     {: pre}
 
 8. Run the `ls -lR <device-path>` command to verify your device details and that your app pod can has read and write permissions to your block device which is indicated by `brw` in the command output.
+
     ```sh
     ls -lR /dev/nvme2n1
     ```
     {: pre}
 
     Example output
+
     ```sh
     brw-rw-rw-. 1 root disk 202, 32 Mar  3 21:24 /dev/nvme2n1
     ```
     {: screen}
 
 9. **Optional** Run the following commands to write data to your block device.
+
     1. Write "block_data" to the local storage device that you mounted to your app. Replace `<device-path>` with the path to your storage device. Example: `/dev/nvme2n1`.
-    ```sh
-    kubectl exec <pod_name> -- bash -c "echo "block_data" | dd conv=unblock of=<device-path>"
-    ```
-    {: pre}
+    
+        ```sh
+        kubectl exec <pod_name> -- bash -c "echo "block_data" | dd conv=unblock of=<device-path>"
+        ```
+        {: pre}
 
     2. Verify the data is written to your device. Replace `<device-path>` with the path to your storage device. Example: `/dev/nvme2n1`.
-    ```sh
-    kubectl exec <pod_name> -- bash -c "od -An -c -N 10 <device-path>"
-    ```
-    {: pre}
 
-    Example output
-    ```sh
-    b   l   o   c   k   _   d   a   t   a
-    ```
-    {: screen}
+        ```sh
+        kubectl exec <pod_name> -- bash -c "od -An -c -N 10 <device-path>"
+        ```
+        {: pre}
+
+        Example output
+        
+        ```sh
+        b   l   o   c   k   _   d   a   t   a
+        ```
+        {: screen}
+
+
 
 11. Delete the `test` pod.
+
     ```sh
     oc delete pod <pod_name>
     ```
     {: pre}
+
 
 
 ## Removing the local block storage configuration from your cluster
@@ -418,6 +457,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
 
 
 1. List the resources in the `local-storage` namespace. When you delete your storage assignment, these resources are removed.
+
     ```sh
     oc get all -n local-storage
     ```
@@ -450,119 +490,140 @@ Removing the storage configuration, uninstalls the local storage operator resour
     {: pre}
 
 1. List your storage assignments and find the one that you used for your cluster. 
+
     ```sh
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
     ```
     {: pre}
 
 2. Remove the assignment. After the assignment is removed, the local storage driver pods and storage classes are removed from all clusters that were part of the storage assignment. 
+
     ```sh
     ibmcloud sat storage assignment rm --assignment <assignment_ID>
     ```
     {: pre}
 
 3. List the resources in the `local-storage` namespace and verify that the local storage driver pods are removed. 
+
     ```sh
     oc get all -n local-storage
     ```
     {: pre}
 
     Example output
+
     ```sh
     No resources found in local-storage namespace.
     ```
     {: pre}
 
 4. List of the storage classes in your cluster and verify that the local storage classes are removed. 
+
     ```sh
     oc get sc
     ```
     {: pre}
 
 5. Optional: Remove the storage configuration. 
+
     1. List the storage configurations. 
-    ```sh
-    ibmcloud sat storage config ls
-    ```
-    {: pre}
+    
+        ```sh
+        ibmcloud sat storage config ls
+        ```
+        {: pre}
 
     2. Remove the storage configuration.
-    ```sh
-    ibmcloud sat storage config rm --config <config_name>
-    ```
-    {: pre}
+    
+        ```sh
+        ibmcloud sat storage config rm --config <config_name>
+        ```
+        {: pre}
 
 6. List your PVCs and note the name of the PVC that you want to remove. 
+
     ```sh
     oc get pvc
     ```
     {: pre}
 
 7. Remove any pods that currently mount the PVC. 
-    1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC. 
-    ```sh
-    oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
-    ```
-    {: pre}
 
-    Example output
-    ```sh
-    app    sat-local-block-gold
-    ```
-    {: screen}
+
+    1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC. 
+    
+        ```sh
+        oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+        ```
+        {: pre}
+
+        Example output
+        
+        ```sh
+        app    sat-local-block-gold
+        ```
+        {: screen}
+
 
     2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
-    ```sh
-    oc delete pod <pod_name>
-    ```
-    {: pre}
+    
+        ```sh
+        oc delete pod <pod_name>
+        ```
+        {: pre}
 
-    ```sh
-    oc delete deployment <deployment-name>
-    ```
-    {: pre}
+        ```sh
+        oc delete deployment <deployment-name>
+        ```
+        {: pre}
 
-    3. Verify that the pod or the deployment is removed. 
-    ```sh
-    oc get pods
-    ```
-    {: pre}
+    3. Verify that the pod or the deployment is removed.
+     
+        ```sh
+        oc get pods
+        ```
+        {: pre}
 
-    ```sh
-    oc get deployments
-    ```
-    {: pre}
+        ```sh
+        oc get deployments
+        ```
+        {: pre}
 
 8. Delete the PVC. Because all {{site.data.keyword.IBM_notm}}-provided local block storage classes are specified with a `Retain` reclaim policy, the PV and PVC are not automatically deleted when you delete your app or deployment. 
+
     ```sh
     oc delete pvc <pvc-name>
     ```
     {: pre}
 
 9. Verify that your PVC is removed.
+
     ```sh
     oc get pvc
     ```
     {: pre}
 
 10. List your PVs and note the name of the PVs that you want to remove.
+
     ```sh
     oc get pv
     ```
     {: pre}
 
 11. Delete the PVs. Deleting your PVs will make your disks available for other workloads.
+
     ```sh
     oc delete pv <pv-name>
     ```
     {: pre}
 
 12. Verify that your PV is removed.
+
     ```sh
     oc get pv
     ```
     {: pre}
-    
+
 
 ## Local block storage configuration parameter reference
 {: #sat-storage-local-block-params-cli}

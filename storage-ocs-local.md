@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-05"
+lastupdated: "2021-10-06"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -44,12 +44,14 @@ If you want to use {{site.data.keyword.cos_full_notm}} as your object service, c
 {: shortdesc}
 
 1. Create an {{site.data.keyword.cos_full_notm}} service instance.
+
     ```sh
     ibmcloud resource service-instance-create noobaa-store cloud-object-storage standard global
     ```
     {: pre}
 
-2. Create HMAC credentials and note the service access key and access key ID of your HMAC credentials
+2. Create HMAC credentials and note the service access key and access key ID of your HMAC credentials.
+
     ```sh
     ibmcloud resource service-key-create cos-cred-rw Writer --instance-name noobaa-store --parameters '{"HMAC": true}'
     ```
@@ -102,7 +104,7 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
         metadata:
           name: storage-secret-store
           namespace: kube-system
-          type: Opaque
+        type: Opaque
         ```
         {: codeblock}
 
@@ -148,32 +150,39 @@ The following steps show how you can manually retrieve the local device informat
 {: tip}
 
 1. Log in to your cluster and get a list of available worker nodes. Make a note of the worker nodes that you want to use in your ODF configuration.
+
     ```sh
     oc get nodes
     ```
     {: pre}
 
 2. Log in to each worker node that you want to use for your ODF configuration.
+
     ```sh
     oc debug node/<node-name>
     ```
     {: pre}
 
 3. When the debug pod is deployed on the worker node, run the following commands to list the available disks on the worker node.
+
     1. Allow host binaries.
-    ```sh
-    chroot /host
-    ```
-    {: pre}
+    
+        ```sh
+        chroot /host
+        ```
+        {: pre}
 
     1. List your devices.
-    ```sh
-    lsblk
-    ```
-    {: pre}
+    
+        ```sh
+        lsblk
+        ```
+        {: pre}
 
 4. Review the command output for available disks. Disks that can be used for your ODF configuration must be unmounted. In the following example output from the `lsblk` command, the `sdc` disk has two available, unformatted partitions that you can use for the OSD and MON device paths for this worker node. If your worker node has raw disks without partitions, you need one disk for the OSD and one disk for the MON. As a best practice, and to maximize storage capacity on this disk, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your ODF configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration.
-    ```
+
+
+    ```sh
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     sda      8:0    0   931G  0 disk
     |-sda1   8:1    0   256M  0 part /boot
@@ -195,7 +204,7 @@ The following steps show how you can manually retrieve the local device informat
     {: pre}
 
 6. Review the command output and make a note of the `by-id` values for the disks that you want to use in your configuration. In the following example output, the disk ids for the `sdc1` and `sdc2` partitions are: `scsi-3600605b00d87b43027b3bc310a64c6c9-part1` and `scsi-3600605b00d87b43027b3bc310a64c6c9-part2`.
-    ```
+    ```sh
     lrwxrwxrwx. 1 root root  9 Feb  9 04:15 scsi-3600605b00d87b43027b3bbb603150cc6 -> ../../sda
     lrwxrwxrwx. 1 root root 10 Feb  9 04:15 scsi-3600605b00d87b43027b3bbb603150cc6-part1 -> ../../sda1
     lrwxrwxrwx. 1 root root 10 Feb  9 04:15 scsi-3600605b00d87b43027b3bbb603150cc6-part2 -> ../../sda2
@@ -222,33 +231,35 @@ The following steps show how you can manually retrieve the local device informat
 {: #sat-storage-ocs-local-cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
     ```sh
     ibmcloud login
     ```
     {: pre}
 
-1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
-
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+
     ```sh
     ibmcloud sat location ls
     ```
     {: pre}
 
 1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
     ```sh
     ibmcloud target -r us-east
     ```
     {: pre}
 
 1. If you use a resource group other than `default`, target it.
+
     ```sh
     ibmcloud target -g <resource-group>
     ```
     {: pre}
     
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
+
     ```sh
     ibmcloud sat storage template ls
     ```
@@ -266,6 +277,7 @@ The following steps show how you can manually retrieve the local device informat
     {: pre}
 
 1. Verify that your configuration was created.
+
     ```sh
     ibmcloud sat storage config get --config <config>
     ```
@@ -334,15 +346,17 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-5. Verify that the storage configuration resources are deployed. Note that this process might take up to 10 minutes to complete.
+1. Verify that the storage configuration resources are deployed. Note that this process might take up to 10 minutes to complete.
 
     1. Get the `storagecluster` that you deployed and verify that the phase is `Ready`.
+    
         ```sh
         oc get storagecluster -n openshift-storage
         ```
         {: pre}
 
         Example output
+
         ```sh
         NAME                 AGE   PHASE   EXTERNAL   CREATED AT             VERSION
         ocs-storagecluster   72m   Ready              2021-02-10T06:00:20Z   4.6.0
@@ -350,12 +364,14 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         {: screen}
 
     2. Get a list of pods in the `openshift-storage` namespace and verify that the status is `Running`.
+    
         ```sh
         oc get pods -n openshift-storage
         ```
         {: pre}
 
         Example output
+
         ```sh
         NAME                                                              READY   STATUS      RESTARTS   AGE
         csi-cephfsplugin-9g2d5                                            3/3     Running     0          8m11s
@@ -397,7 +413,8 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         ```
         {: screen}
 
-6. List the ODF storage classes.
+2. List the ODF storage classes.
+
     ```sh
     oc get sc
     ```
@@ -418,13 +435,15 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: screen}
 
-7. List the persistent volumes and verify that your MON and OSD volumes are created.
+3. List the persistent volumes and verify that your MON and OSD volumes are created.
+
     ```sh
     oc get pv
     ```
     {: pre}
 
     Example output
+
     ```sh
     NAME                CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                            STORAGECLASS   REASON   AGE
     local-pv-180cfc58   139Gi      RWO            Delete           Bound    openshift-storage/rook-ceph-mon-b                localfile               12m
@@ -446,6 +465,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
 {: shortdesc}
 
 1. Create a YAML configuration file for your PVC. In order for the PVC to match the PV, you must use the same values for the storage class and the size of the storage.
+
     ```yaml
     apiVersion: v1
     kind: PersistentVolumeClaim
@@ -462,12 +482,14 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
     {: codeblock}
 
 2. Create the PVC in your cluster.
+
     ```sh
     oc apply -f pvc.yaml
     ```
     {: pre}
 
 3. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file.
+
     ```yaml
     apiVersion: v1
     kind: Pod
@@ -489,33 +511,39 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
     ```
     {: codeblock}
 
-5. Create the pod in your cluster.
+4. Create the pod in your cluster.
+
     ```sh
     oc apply -f pod.yaml
     ```
     {: pre}
 
-6. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+5. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+
     ```sh
     oc get pods
     ```
     {: pre}
 
     Example output
+
     ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     app                                 1/1     Running   0          2m58s
     ```
     {: screen}
 
-7. Verify that the app can write data.
+6. Verify that the app can write data.
+
     1. Log in to your pod.
+    
         ```sh
         oc exec <app-pod-name> -it bash
         ```
         {: pre}
 
     2. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
+    
         ```sh
         cat /test/test.txt
         ```
@@ -533,6 +561,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
         {: screen}
 
     3. Exit the pod.
+    
         ```sh
         exit
         ```
@@ -552,19 +581,19 @@ Deleting configurations and assignments might result in data loss.
 {: important}
 
 In the following example, the ODF configuration is updated to use template version 4.7,
-* `--name` - Enter a name for your new configuration.
-* `--template-name` - Use the same parameter value as in your existing configuration.
-* `--template-version` - Enter the template version that you want to use to upgrade your configuration.
-* `ocs-cluster-name` - Use the same parameter value as in your existing configuration.
-* `osd-device-path` - Use the same parameter value as in your existing configuration.
-* `mon-device-path` - Use the same parameter value as in your existing configuration.
-* `num-of-osd` - Use the same parameter value as in your existing configuration.
-* `worker-nodes` - Use the same parameter value as in your existing configuration.
-* `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
-* `ibm-cos-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-* `ibm-cos-secret-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-* `ibm-cos-endpoint` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-* `ibm-cos-location` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+- `--name` - Enter a name for your new configuration.
+- `--template-name` - Use the same parameter value as in your existing configuration.
+- `--template-version` - Enter the template version that you want to use to upgrade your configuration.
+- `ocs-cluster-name` - Use the same parameter value as in your existing configuration.
+- `osd-device-path` - Use the same parameter value as in your existing configuration.
+- `mon-device-path` - Use the same parameter value as in your existing configuration.
+- `num-of-osd` - Use the same parameter value as in your existing configuration.
+- `worker-nodes` - Use the same parameter value as in your existing configuration.
+- `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
+- `ibm-cos-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+- `ibm-cos-secret-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+- `ibm-cos-endpoint` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
+- `ibm-cos-location` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
 
 1. Get the details of your ODF configuration.
     ```sh
@@ -730,50 +759,57 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     {: codeblock}
 
 7. Run the `cleanup.sh` script.
+
     ```sh
     sh ./cleanup.sh
     ```
     {: pre}
 
 8. After you run the cleanup script, log in to each worker node and run the following commands.
+
     1. Deploy a debug pod and run `chroot /host`.
-    ```sh
-    oc debug node/<node_name> -- chroot /host
-    ```
-    {: pre}
+    
+        ```bash
+        oc debug node/<node_name> -- chroot /host
+        ```
+        {: pre}
 
     2. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your ODF configuration.
-    ```sh
-    rm -rvf /var/lib/rook /mnt/local-storage
-    ```
-    {: codeblock}
+        ```bash
+        rm -rvf /var/lib/rook /mnt/local-storage
+        ```
+        {: codeblock}
 
-    Example output
-    ```sh
-    removed '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6/ceph-volume.log'
-    removed directory: '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6'
-    removed directory: '/var/lib/rook/openshift-storage/log'
-    removed directory: '/var/lib/rook/openshift-storage/crash/posted'
-    removed directory: '/var/lib/rook/openshift-storage/crash'
-    removed '/var/lib/rook/openshift-storage/client.admin.keyring'
-    removed '/var/lib/rook/openshift-storage/openshift-storage.config'
-    removed directory: '/var/lib/rook/openshift-storage'
-    removed directory: '/var/lib/rook'
-    removed '/mnt/local-storage/localblock/nvme3n1'
-    removed directory: '/mnt/local-storage/localblock'
-    removed '/mnt/local-storage/localfile/nvme2n1'
-    removed directory: '/mnt/local-storage/localfile'
-    removed directory: '/mnt/local-storage'
-    ```
-    {: screen}
+        Example output
+        
+        ```sh
+        removed '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6/ceph-volume.log'
+        removed directory: '/var/lib/rook/openshift-storage/log/ocs-deviceset-0-data-0-6fgp6'
+        removed directory: '/var/lib/rook/openshift-storage/log'
+        removed directory: '/var/lib/rook/openshift-storage/crash/posted'
+        removed directory: '/var/lib/rook/openshift-storage/crash'
+        removed '/var/lib/rook/openshift-storage/client.admin.keyring'
+        removed '/var/lib/rook/openshift-storage/openshift-storage.config'
+        removed directory: '/var/lib/rook/openshift-storage'
+        removed directory: '/var/lib/rook'
+        removed '/mnt/local-storage/localblock/nvme3n1'
+        removed directory: '/mnt/local-storage/localblock'
+        removed '/mnt/local-storage/localfile/nvme2n1'
+        removed directory: '/mnt/local-storage/localfile'
+        removed directory: '/mnt/local-storage'
+        ```
+        {: screen}
 
-10. **Optional**: If you no longer want to use the local volumes that you used in your ODF configuration, you can delete them from the cluster. List the local PVs.
+
+9. **Optional**: If you no longer want to use the local volumes that you used in your ODF configuration, you can delete them from the cluster. List the local PVs.
+
     ```sh
     oc get pv
     ```
     {: pre}
 
     Example output
+
     ```sh
     local-pv-180cfc58   139Gi      RWO            Delete           Available           localfile               11m
     local-pv-67f21982   139Gi      RWO            Delete           Available           localfile               12m
@@ -784,19 +820,22 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     ```
     {: screen}
 
-11. Delete the local PVs.
+10. Delete the local PVs.
+
     ```sh
     oc delete pv <pv_name> <pv_name> <pv_name>
     ```
     {: pre}
 
-12. List the ODF and local storage classes.
+11. List the ODF and local storage classes.
+
     ```sh
     oc get sc
     ```
     {: pre}
 
     Example output
+
     ```sh
     localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
     localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
@@ -806,13 +845,15 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     ```
     {: screen}
 
-13. Delete the storage classes.
+12. Delete the storage classes.
+
     ```sh
     oc delete sc localblock localfile ocs-storagecluster-ceph-rbd ocs-storagecluster-ceph-rgw ocs-storagecluster-cephfs
     ```
     {: pre}
 
     Example output
+
     ```sh
     storageclass.storage.k8s.io "localblock" deleted
     storageclass.storage.k8s.io "localfile" deleted

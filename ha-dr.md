@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -76,6 +76,7 @@ Spread across zones
 Automatic backups to Object Storage
 :    All {{site.data.keyword.satelliteshort}} control plane data is backed up to an {{site.data.keyword.cos_full_notm}} service instance so that your location can be restored after a disaster. Access to this instance is protected by {{site.data.keyword.iamshort}} and all data is automatically encrypted during transit and at rest. Note that when you create a location, you also provide an {{site.data.keyword.cos_short}} service instance that you control for backup of the location control plane worker nodes.
 
+
 Because the {{site.data.keyword.satelliteshort}} control plane master is managed by {{site.data.keyword.IBM_notm}} , you cannot change the number of master instances or how high availability is configured. However, you must to ensure that your control plane worker nodes are configured for high availability. The control plan worker nodes can ensure that the workloads that run in your location have enough compute capacity, even if compute hosts become unavailable.
 {: note}
 
@@ -144,4 +145,7 @@ The following image shows a high availability setup of your control plane worker
 The following image shows a highly available setup for compute hosts that are in another cloud provider. All virtual machines are hosted on a separate physical machine that is dedicated to you only. To ensure further isolation and availability, all compute hosts are spread across multiple availability zones within the same metro. Because the availability zones belong to the same metro, the requirements for networking speed and latency between the hosts are met.
 {: shortdesc}
 
-![High availability setup with compute hosts that are at another cloud provider.](images/satellite_ha_aws.png "High availability setup with compute hosts that are at another cloud provider."){: caption="Figure 1. High availability setup with compute hosts that are at another cloud provider." caption-side="bottom"}
+
+![High availability setup with compute hosts that are at another cloud provider.](/images/satellite_ha_aws.png)
+
+

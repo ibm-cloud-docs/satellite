@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-10-06"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -93,7 +93,7 @@ One of the components that is set up in the {{site.data.keyword.satelliteshort}}
 ### Workload isolation in your {{site.data.keyword.satelliteshort}} location
 {: #workload-isolation-location}
 
-Because you manage the host infrastructure that you bring to your {{site.data.keyword.satelliteshort}} location, you are responsible to isolate app workloads that run on your infrastructure. If you host and run {{site.data.keyword.cloud_notm}} services in your location, such as {{site.data.keyword.openshiftlong_notm}}, you can leverage the tools and features that this service provides to isolate your workloads. For more information about available options, refer to the service documentation.
+Because you manage the host infrastructure that you bring to your {{site.data.keyword.satelliteshort}} location, you are responsible to isolate app workloads that run on your infrastructure. If you host and run {{site.data.keyword.cloud_notm}} services in your location, such as {{site.data.keyword.openshiftlong_notm}}, you can leverage the tools and features that this service provides to isolate your workloads. For more information about available options, see the service documentation.
 
 
 ## Dependencies to other {{site.data.keyword.cloud_notm}} services
@@ -102,8 +102,8 @@ Because you manage the host infrastructure that you bring to your {{site.data.ke
 Review the {{site.data.keyword.cloud_notm}} services that your {{site.data.keyword.satellitelong_notm}} location connects to over the public network.
 {: shortdesc}
 
-|Service name|Description|
-|------------|-------------------------------------|
+| Service name | Description |
+| --- | --- |
 | {{site.data.keyword.cloudaccesstrailshort}} | {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward {{site.data.keyword.satelliteshort}} audit events to the {{site.data.keyword.at_full_notm}} service instance that you set up. For more information, see [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).|
 | {{site.data.keyword.cloudcerts_short}} | This service is used to retrieve the TLS certificates for custom Ingress domains in a {{site.data.keyword.openshiftlong_notm}} cluster in a {{site.data.keyword.satelliteshort}} location.|
 |{{site.data.keyword.registryshort}}|This service is used to store the container images that {{site.data.keyword.satellitelong_notm}} uses to run the service.|
@@ -123,11 +123,11 @@ Review the {{site.data.keyword.cloud_notm}} services that your {{site.data.keywo
 Review the list of third-party services that {{site.data.keyword.satellitelong_notm}} connects to over the public network.
 {: shortdesc}
 
-|Service name|Description|
-|------------|-------------------------------------|
+| Service name | Description |
+| --- | --- |
 | Akamai | Akamai is the primary provider for DNS, global load balancing, and web firewall capabilities in {{site.data.keyword.satellitelong_notm}}.|
-|Let's Encrypt|This service is used as the certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_long_notm}}.|
-{: caption="Satellite dependencies to third-party services." caption-side="top"}
+| Let's Encrypt | This service is used as the certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_long_notm}}. |
+{: caption="{{site.data.keyword.satelliteshort}} dependencies to third-party services." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
 
 

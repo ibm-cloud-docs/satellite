@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-06"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -20,7 +20,7 @@ The Azure Disk CSI driver implements the CSI specification for container orchest
 
 For an overview of the available features of the Azure Disk CSI driver, see [Features](https://github.com/kubernetes-sigs/azuredisk-csi-driver#features){: external}.
 
-The Azure Disk CSI driver template for {{site.data.keyword.satelliteshort}} is currently available in beta and should not be used for production workloads.
+The Azure Disk CSI driver template for {{site.data.keyword.satelliteshort}} is currently available for cluster versions 4.7 and later. The template is currently in beta and should not be used for production workloads.
 {: beta}
 
 
@@ -32,30 +32,39 @@ Set up [Azure Disk storage](https://docs.microsoft.com/en-us/azure/aks/azure-dis
 
 To use the Azure Disk CSI driver storage template, complete the following tasks:
 
-1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-2. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure. For more information about how to add hosts from Azure to your {{site.data.keyword.satelliteshort}} location so that you can assign them to a cluster, see [Adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure).
-4. [Label your worker nodes](#azure-disk-label-nodes).
-5. [Create your configuration file](#azure-disk-config-file).
+1. Create an Azure location by using the [location template](/docs/satellite?topic=satellite-azure) or manually [adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach). 
+    If you choose to manually assign hosts, you must [label your worker nodes](#azure-disk-label-nodes) before creating your storage configuration.
+    {: important}
+    
+2. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure.
+3. [Create your configuration file](#azure-disk-config-file).
 
-### Labeling your worker nodes
+### Optional: Labeling your worker nodes
 {: #azure-disk-label-nodes}
 
 Complete the following steps to add the required labels to your worker nodes for the Azure Disk CSI driver template.
 {: shortdesc}
 
+If you manually assigned your Azure hosts to your location and did not use the template, you must [label your worker nodes](#azure-disk-label-nodes) before creating your storage configuration.
+{: important}
+
+
 1. List your Azure worker nodes and make a note of the `name` of each node.
+
     ```sh
     oc get nodes
     ```
     {: pre}
 
 1. Get the details of each node and make a note of the `zone` that the node is in. For example: `eastus-1`.
+
     ```sh
     oc get nodes <node-name> -o yaml | grep zone
     ```
     {: pre}
 
 1. Label your worker nodes with the `zone` value that you retrieved earlier. Replace `<node-name>` and `<zone>` with the node name and zone of your worker node. For example, if you have a worker node in zone: `eastus-1`, use the following commands to add `eastus-1` as a label to the worker node in the `eastus-1` zone.
+
     ```sh
     oc label node <node-name> topology.kubernetes.io/zone-
     oc label node <node-name> topology.kubernetes.io/zone=<zone> --overwrite
@@ -67,7 +76,7 @@ Complete the following steps to add the required labels to your worker nodes for
 ### Creating your Azure configuration file
 {: #azure-disk-config-file}
 
-Create a configuration file that contains your Azure Disk settings.
+Create a configuration file with your Azure Disk settings.
 {: shortdesc}
 
 1. Copy the following cloud provider configuration JSON and save it as a filed called `azure.json` on your local machine. For more information about the cloud provider configuration file parameters, see [Cluster config](https://kubernetes-sigs.github.io/cloud-provider-azure/install/configs/#cluster-config).
@@ -93,11 +102,11 @@ Create a configuration file that contains your Azure Disk settings.
     {: codeblock}
 
 1. Encode your cloud provider configuration file to base64.
+
     ```sh
     cat azure.json | base64 | awk '{printf $0}'; echo
     ```
     {: pre}
-
 
 
 ## Creating an Azure Disk configuration in the command line
@@ -107,27 +116,28 @@ Create a storage configuration in the command line by using the Azure Disk templ
 {: shortdesc}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
     ```sh
     ibmcloud login
     ```
     {: pre}
 
-1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing).
-
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+
     ```sh
     ibmcloud sat location ls
     ```
     {: pre}
 
 1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
     ```sh
     ibmcloud target -r us-east
     ```
     {: pre}
 
 1. If you use a resource group other than `default`, target it.
+
     ```sh
     ibmcloud target -g <resource-group>
     ```
@@ -135,12 +145,14 @@ Create a storage configuration in the command line by using the Azure Disk templ
     
 1. Review the [template parameters](#sat-storage-azure-disk-params-cli).
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name azuredisk-csi-driver --template-version 1.4.0 -p "cloud-config=<base64-encoded-config-file>"
     ```
     {: pre}
 
 1. Verify that your storage configuration is created.
+
     ```sh
     ibmcloud sat storage config get --config <config>
     ```
@@ -208,7 +220,8 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-5. Verify that the storage configuration resources are deployed.
+1. Verify that the storage configuration resources are deployed.
+
     ```sh
     kubectl get pods -n kube-system | grep azure
     ```
@@ -225,12 +238,14 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     {: screen}
 
 1. List the Azure Disk storage classes.
+
     ```sh
     oc get sc | grep azure
     ```
     {: pre}
 
     Example output
+
     ```sh
     sat-azure-block-bronze           disk.csi.azure.com   Delete          Immediate              true                   167m
     sat-azure-block-bronze-metro     disk.csi.azure.com   Delete          WaitForFirstConsumer   true                   167m
@@ -246,6 +261,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 1. [Deploy an app that uses your Azure Disk storage](#storage-azure-csi-app-deploy).
 
 
+
 ## Deploying an app that uses your Azure Disk storage
 {: #storage-azure-csi-app-deploy}
 
@@ -253,6 +269,7 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
 {: shortdesc}
 
 1. Create a PVC that references an Azure Disk storage class that you created earlier.
+
     ```yaml
     apiVersion: v1
     kind: PersistentVolumeClaim
@@ -269,18 +286,21 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     {: codeblock}
 
 1. Create the PVC in your cluster.
+
     ```sh
     oc apply -f pvc-azuredisk.yaml
     ```
     {: pre}
 
 1. Verify that the PVC is created and the status is `Bound`.
+
     ```sh
     oc get pvc
     ```
     {: pre}
 
 1. Create a YAML configuration file for a stateful set that mounts the PVC that you created.
+
     ```yaml
     apiVersion: apps/v1
     kind: StatefulSet
@@ -328,38 +348,43 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     {: codeblock}
 
 1. Create the pod in your cluster.
+
     ```sh
     oc apply -f statefulset-azuredisk.yaml
     ```
     {: pre}
 
 1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+
     ```sh
     oc get pods
     ```
     {: pre}
-
-    Example output
-    ```
+    
+    ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
     statefulset-azuredisk       1/1     Running   0          2m58s
     ```
     {: screen}
 
 1. Verify that the app can write to your Azure Disk by logging in to your pod.
+
     ```sh
     oc exec statefulset-azuredisk -it bash
     ```
     {: pre}
 
 1. View the contents of the `outfile` file to confirm that your app can write data to your persistent storage.
+
     ```sh
     cat /mnt/azuredisk/outfile
     ```
     {: pre}
 
     Example output
-    ```
+
+    
+    ```sh
     Fri Jul 16 07:49:39 EDT 2021
     Fri Jul 16 07:49:39 EDT 2021
     Fri Jul 16 07:49:39 EDT 2021
@@ -367,10 +392,12 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     {: screen}
 
 1. Exit the pod.
+
     ```sh
     exit
     ```
     {: pre}
+
 
 
 ## Removing Azure Disk storage from your apps
@@ -380,25 +407,31 @@ If you no longer need your Azure Disk configuration, you can remove your apps, P
 {: shortdesc}
 
 1. List your PVCs and note the name of the PVC that you want to remove.
+
     ```sh
     oc get pvc
     ```
     {: pre}
 
 1. Remove any pods that mount the PVC.
+
     1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC.
+    
         ```sh
         oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
         ```
         {: pre}
 
         Example output
-        ```
+
+        
+        ```sh
         app    sat-azure-block-platinum
         ```
         {: screen}
 
     1. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
+    
         ```sh
         oc delete pod <pod_name>
         ```
@@ -410,6 +443,7 @@ If you no longer need your Azure Disk configuration, you can remove your apps, P
         {: pre}
 
     1. Verify that the pod or the deployment is removed.
+    
         ```sh
         oc get pods
         ```
@@ -420,17 +454,20 @@ If you no longer need your Azure Disk configuration, you can remove your apps, P
         ```
         {: pre}
 
-1. Delete the PVC. Because all of the Azure Disk storage classes are specified with a `Delete` reclaim policy, the PV and the disks in your Azure account are automatically deleted when you delete the PVC.
+1. Delete the PVC. Because the Azure Disk storage classes have a `Delete` reclaim policy, the PV and the disks in your Azure account are automatically deleted when you delete the PVC.
+
     ```sh
     oc delete pvc <pvc_name>
     ```
     {: pre}
 
 1. Verify that your PV is automatically removed.
+
     ```sh
     oc get pv
     ```
     {: pre}
+
 
 
 
@@ -444,43 +481,50 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 {: important}
 
 1. List your storage assignments and find the one that you used for your cluster.
+
     ```sh
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
     ```
     {: pre}
 
 2. Remove the assignment. After the assignment is removed, the driver pods and storage classes are removed from all clusters that were part of the storage assignment.
+
     ```sh
     ibmcloud sat storage assignment rm --assignment <assignment_ID>
     ```
     {: pre}
 
 3. Verify that the driver is removed from your cluster.
+
     1. List of the storage classes in your cluster and verify that the storage classes are removed.
+    
         ```sh
         oc get sc
         ```
         {: pre}
 
     2. List the pods in the `kube-system` namespace and verify that the storage driver pods are removed.
+    
         ```sh
         oc get pods -n kube-system | grep azure
         ```
         {: pre}
 
 4. Optional: Remove the storage configuration.
+
     1. List the storage configurations.
+    
         ```sh
         ibmcloud sat storage config ls
         ```
         {: pre}
 
     2. Remove the storage configuration.
+    
         ```sh
         ibmcloud sat storage config rm --config <config_name>
         ```
         {: pre}
-
 
 
 ## Parameter reference
@@ -491,6 +535,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 | `cloud-config` | Required | Enter the base64 encoded value that you created from your `azure.json` conifguration file. | N/A |
 {: caption="Table 1. Parameter reference for Azure Disk storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter."}
+
 
 
 ## Storage class reference
@@ -508,4 +553,5 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 | `sat-azure-block-bronze-metro` | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | WaitForFirstConsumer |
 {: caption="Table 2. Storage class reference for Azure Disk storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the IOPs range per disk. The third column is the size range . The fourth column is the disk type. The fifth column is the reclaim policy. The sixth column is the volume binding mode."}
+
 
