@@ -104,7 +104,7 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
         metadata:
           name: storage-secret-store
           namespace: kube-system
-        type: Opaque
+          type: Opaque
         ```
         {: codeblock}
 
