@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-10-12"
 
 keywords: satellite, hybrid, multicloud, alibaba
 
@@ -47,7 +47,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 
 You need at least 3 virtual machines to use as hosts that meet the [host requirements](/docs/satellite?topic=satellite-host-reqs). If you do not have 3 virtual machines that meet these requirements, create them.
 
-1. Log into your [Alibaba account](https://www.alibabacloud.com/){: external}.
+1. Log into your [Alibaba account](https://us.alibabacloud.com/en){: external}.
 2. From the [VPC console](https://vpc.console.aliyun.com/vpc){: external}, create or select an existing Virtual Private Cloud. When you create a VPC, you must create a vSwitch in each zone where you want to add hosts.
 3. Select the **Resources** tab.
 4. Verify that you have a **Route table** and at least one **vSwitch**. 

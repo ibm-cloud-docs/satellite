@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,6 +18,24 @@ subcollection: satellite
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
+
+
+## October 2021
+{: #release-oct-2021}
+
+Review the release notes for October 2021.
+{: shortdesc}
+
+### 12 October 2021
+{: #12oct2021}
+{: release-note}
+
+Review the release notes for 12 October 2021.
+{: shortdesc}
+
+CLI changelog
+:    Updated the CLI plug-in changelog page for the [release of version 1.0.327](/docs/satellite?topic=satellite-satellite-cli-reference).
+
 
 ## September 2021
 {: #release-sep-2021}
@@ -426,7 +444,7 @@ Logging and monitoring
 :    Added information about how to set up [logging and monitoring for {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health).
 
 Worker pool management
-:    Described how to manage [worker pools in {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-worker-pools), such as host labels for host autoassignment.
+:    Described how to manage [worker pools in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-worker-pools-sat), such as host labels for host autoassignment.
 
 ## January 2021
 {: #january21}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -42,7 +42,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     {: pre}
 
     Example output:
-    ```
+    ```sh
     Name:                           Port-NewYork   
     ID:                             aaaaa1a11aaaaaa111aa   
     Created:                        2020-06-05 13:50:58 -0400 (6 days ago)   
