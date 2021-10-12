@@ -104,16 +104,7 @@ toc:
   - navgroup:
       id: reference
       topics: 
-        - topicgroup:
-            label: API reference
-            topics:
-            - link:
-                label: Satellite locations, hosts, and clusters
-                href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster
-            - link:
-                label: Satellite links, endpoints, and sources
-                href: https://pages.github.ibm.com/{{site.data.keyword.IBM_notm}}-Cloud-Platform-Networking/satellite-link-api/#/
-            - link:
+        - link:
                 label: API reference
                 href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster
         - topicgroup:
