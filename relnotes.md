@@ -26,11 +26,11 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 Review the release notes for October 2021.
 {: shortdesc}
 
-### 11 October 2021
-{: #11oct2021}
+### 12 October 2021
+{: #12oct2021}
 {: release-note}
 
-Review the release notes for 11 October 2021.
+Review the release notes for 12 October 2021.
 {: shortdesc}
 
 CLI changelog
@@ -444,7 +444,7 @@ Logging and monitoring
 :    Added information about how to set up [logging and monitoring for {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health).
 
 Worker pool management
-:    Described how to manage [worker pools in {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters#satcluster-worker-pools), such as host labels for host autoassignment.
+:    Described how to manage [worker pools in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-worker-pools-sat), such as host labels for host autoassignment.
 
 ## January 2021
 {: #january21}
