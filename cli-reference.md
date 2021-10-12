@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-12"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -445,6 +445,9 @@ ibmcloud sat config create --name NAME [-q]
 
 `--name NAME`
 :    Required. The name for your configuration.
+
+`--data-location DATA-LOCATION`
+:    Optional. The location to store the data associated with the {{site.data.keyword.satelliteshort}} configuration, such as the definitions of Kubernetes resources to be deployed to your clusters. For example: `tok`. For a list of {{site.data.keyword.satelliteshort}} locations, see [Supported IBM Cloud locations](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions).
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
@@ -1250,7 +1253,7 @@ Create a {{site.data.keyword.satelliteshort}} location. When you create a locati
 {: shortdesc}
 
 ```sh
-ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS_BUCKET_NAME] [--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME] [--logging-account-id LOGGING_ACCOUNT] [-q]
+ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS_BUCKET_NAME] [--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME] [--logging-account-id LOGGING_ACCOUNT][--provider INFRASTRUCTURE_PROVIDER] [--provider-region PROVIDER_REGION] [--provider-credential PATH_TO_PROVIDER_CREDENTIAL] [-q]
 ```
 {: pre}
 
@@ -1286,6 +1289,16 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 
 `--logging-account-id LOGGING_ACCOUNT`
 :    Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.la_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.
+
+
+`--provider INFRASTRUCTURE_PROVIDER`
+:    Optional. The name of the infrastructure provider to create the {{site.data.keyword.satelliteshort}} location in. Accepted values are `aws`, `azure`, `gcp`. If you include this option, you must also include the `--provider-credential` option.
+
+`--provider-region PROVIDER_REGION`
+:    Optional. The name of the region in the infrastructure provider where you plan to create all the hosts for the {{site.data.keyword.satelliteshort}} location, such as `us-east-1` in AWS. Consult your infrastructure provider for the region name. If you include this option, you must also include the `--provider` option.
+
+`--provider-credential PATH_TO_PROVIDER_CREDENTIAL`
+:    Optional. The path to a JSON file on your local machine that has the credentials of the infrastructure provider for the {{site.data.keyword.satelliteshort}} location. The credential format is provider-specific. For more information, see [Providing {{site.data.keyword.satelliteshort}} with credentials to your infrastructure provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-credentials). If you include this option, you must also include the `--provider` option.
 
 
 `-q`
@@ -1728,7 +1741,7 @@ List your {{site.data.keyword.satelliteshort}} storage assignments.
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --service-cluster-id CLUSTER) [-q]
+ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --location LOCATION | --service-cluster-id CLUSTER) [-q]
 ```
 {: pre}
 
@@ -1741,10 +1754,13 @@ ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --service-cluster-id 
 {: #cli-storage-assign-ls-command-options}
 
 `--cluster CLUSTER_ID`
-:    The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.  If you do not include this flag, you must specify the `--service-cluster-id`  flag.
+:    The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.  If you do not include this flag, you must specify the `--service-cluster-id` flag or the `--location` flag.
+
+`--location LOCATION`
+:    The name of the {{site.data.keyword.satelliteshort}} location for which you want to list the assignments. To list the available locations, run `ibmcloud sat location ls`. This flag is not available for service admin. If you do not include this flag, you must specify the `--cluster` flag or the `--service-cluster-id` flag.
 
 `--service-cluster-id CLUSTER_ID`
-:    The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster`  flag.
+:    The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster` flag or the `--location` flag.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.

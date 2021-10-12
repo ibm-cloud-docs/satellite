@@ -151,5 +151,6 @@ toc:
               - topicgroup:
                   label: Storage
                   topics:
+                    - debug-storage.md
                     - ts-storage-cleanup.md
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -146,6 +146,9 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
     az vm create --name <vm_name> --resource-group <resource_group> --admin-user <username> --admin-password <password> --image RedHat:RHEL:7-LVM:latest --nsg <network_security_group> --os-disk-name <disk_name> --os-disk-size-gb 128 --size Standard_D4s_v3 --count 6 --custom-data <filepath_to_host_registration_script>
     ```
     {: pre}
+    
+    If you don't want to pass the `--custom-data` command option during VM creation, you can run the host registration script on each VM after provisioning.
+    {: tip}
 
 7. Wait for the instances to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete.
 8. Monitor the progress of the registration script.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,7 +20,7 @@ content-type: troubleshoot
 After you assign hosts to your {{site.data.keyword.satelliteshort}} location control plane, you see a message similar to the following.
 {: tsSymptoms}
 
-```
+```sh
 R0036 The location subdomains are not correctly routing traffic to your control plane hosts. Verify that the location subdomains are registered with the correct IP addresses for your control plane hosts with the 'ibmcloud sat location dns' commands.
 ```
 {: screen}
@@ -28,6 +28,7 @@ R0036 The location subdomains are not correctly routing traffic to your control 
 
 The {{site.data.keyword.satelliteshort}} location control plane is inaccessible through the location subdomains due to one of the following reasons:
 {: tsCauses}
+
 * The hosts are behind a firewall that blocks traffic within the location.
 * The DNS resolver for one or more hosts is not properly resolving the registered DNS endpoints.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-12"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -87,7 +87,7 @@ When you create your file storage configuration, you must specify which devices 
     ```
     {: screen}
 
-6. Repeat the previous steps for each worker node that you want to use for your local file storage configuration.
+5. Repeat the previous steps for each worker node that you want to use for your local file storage configuration.
 
 
 
@@ -174,6 +174,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 3. Review the [Local file storage configuration parameters](#sat-storage-local-file-params-cli).
 4. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
+
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name local-volume-file --template-version <template-version> --param "label-key=storage" --param "label-value=local-file" --param "devicepath=<devicepath>" --param "fstype=<fstype>"
     ```
@@ -252,7 +253,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
     ```
     {: pre}
 
-5. Verify that the storage configuration resources are deployed. Get a list of all the resources in the `local-storage` namespace.
+1. Verify that the storage configuration resources are deployed. Get a list of all the resources in the `local-storage` namespace.
 
     ```sh
     oc get all -n local-storage
@@ -282,7 +283,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
     ```
     {: screen}
 
-6. List the storage classes that are available.
+1. List the storage classes that are available.
 
     ```sh
     oc get sc -n local-storage | grep local
@@ -296,7 +297,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
     ```
     {: screen}
 
-7. List the PVs and verify that the status is `Available`. The local disks that you specified when you created your configuration are available as persistent volumes.
+1. List the PVs and verify that the status is `Available`. The local disks that you specified when you created your configuration are available as persistent volumes.
 
     ```sh
     oc get pv
@@ -421,7 +422,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     ```
     {: screen}
 
-9. Remove the test file and log out of the pod.
+8. Remove the test file and log out of the pod.
 
     ```sh
     rm test.txt && exit
@@ -509,16 +510,16 @@ Removing the storage configuration, uninstalls the local storage operator resour
 
 6. Optional: Remove the storage configuration. 
     1. List the storage configurations. 
-    ```sh
-    ibmcloud sat storage config ls
-    ```
-    {: pre}
+        ```sh
+        ibmcloud sat storage config ls
+        ```
+        {: pre}
 
     2. Remove the storage configuration.
-    ```sh
-    ibmcloud sat storage config rm --config <config_name>
-    ```
-    {: pre}
+        ```sh
+        ibmcloud sat storage config rm --config <config_name>
+        ```
+        {: pre}
 
 7. List your PVCs and note the name of the PVC that you want to remove. 
     ```sh
@@ -567,35 +568,35 @@ Removing the storage configuration, uninstalls the local storage operator resour
         ```
         {: pre}
 
-8. Delete the PVC. Because all {{site.data.keyword.IBM_notm}}-provided local block storage classes are specified with a `Retain` reclaim policy, the PV and PVC are not automatically deleted when you delete your app or deployment. 
+9. Delete the PVC. Because all {{site.data.keyword.IBM_notm}}-provided local block storage classes are specified with a `Retain` reclaim policy, the PV and PVC are not automatically deleted when you delete your app or deployment. 
 
     ```sh
     oc delete pvc <pvc-name>
     ```
     {: pre}
 
-9. Verify that your PVC is removed.
+10. Verify that your PVC is removed.
 
     ```sh
     oc get pvc
     ```
     {: pre}
 
-10. List your PVs and note the name of the PVs that you want to remove.
+11. List your PVs and note the name of the PVs that you want to remove.
 
     ```sh
     oc get pv
     ```
     {: pre}
 
-11. Delete the PVs. Deleting your PVs will make your disks available for other workloads.
+12. Delete the PVs. Deleting your PVs will make your disks available for other workloads.
 
     ```sh
     oc delete pv <pv-name>
     ```
     {: pre}
 
-12. Verify that your PV is removed.
+13. Verify that your PV is removed.
 
     ```sh
     oc get pv
