@@ -21,6 +21,7 @@ toc:
             - about.md
             - uc-sg.md
             - uc-edge.md
+            - relnotes.md
   - navgroup:
       id: howto
       topics:
