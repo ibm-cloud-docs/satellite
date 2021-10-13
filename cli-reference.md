@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-13"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1720,6 +1720,9 @@ ibmcloud sat storage assignment get --assignment ASSIGNMENT
 
 `--assignment ASSIGNMENT`
 :    Required. The name of the storage assignment. To list {{site.data.keyword.satelliteshort}} storage configurations, run `ibmcloud sat storage assignment ls`.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
