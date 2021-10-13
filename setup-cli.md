@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-13"
 
 keywords: satellite cli, install satellite cli, satellite cli commands
 
@@ -139,7 +139,7 @@ For reference information about CLIs that you installed, see the documentation f
 - [`ibmcloud` commands](/docs/cli/reference/ibmcloud?topic=cli-ibmcloud_cli#ibmcloud_cli)
 - [`ibmcloud sat` commands](/docs/satellite?topic=satellite-satellite-cli-reference)
 - [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli)
-- [`ibmcloud cr` commands](/docs/Registry?topic=Registry-containerregcli)
+- [`ibmcloud cr` commands](/docs/Registry?topic=container-registry-cli-plugin-containerregcli)
 - [`ibmcloud ob` commands](/docs/containers?topic=containers-observability_cli)
 - [`oc` commands](https://docs.openshift.com/container-platform/4.5/cli_reference/openshift_cli/developer-cli-commands.html){: external}
 - [`kubectl` commands](https://kubectl.docs.kubernetes.io/){: external}

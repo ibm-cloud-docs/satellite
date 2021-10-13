@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-13"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -209,7 +209,7 @@ ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER] --group GROUP [-
 #### Minimum required permissions
 {: #cluster-group-attach-min-perm
  
- {site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+ {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
 {: #cluster-group-attach-command-options}
@@ -1720,6 +1720,9 @@ ibmcloud sat storage assignment get --assignment ASSIGNMENT
 
 `--assignment ASSIGNMENT`
 :    Required. The name of the storage assignment. To list {{site.data.keyword.satelliteshort}} storage configurations, run `ibmcloud sat storage assignment ls`.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.

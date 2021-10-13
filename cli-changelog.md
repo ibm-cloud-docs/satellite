@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-13"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference
 
@@ -31,6 +31,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.331 | 12 Oct 2021 | Adds the `--output` flag option for the `ibmcloud sat storage get` command. |
 | 1.0.327 | 11 Oct 2021 | Adds the `--data-location` option for the `ibmcloud sat config create` command and the `--location` option for the `ibmcloud sat storage assingment ls` command. Updates the help text in various languages. |
 | 1.0.312 | 09 Aug 2021 | 1. Includes the subscription status in the output of the `ibmcloud sat subscription get` and `ibmcloud sat subscription ls` commands.  \n 1. Adds the option to display the output of the `ibmcloud sat subscription get` and `ibmcloud sat subscription ls` commands in JSON format.  \n 1. Updates the help text in various languages.  \n 1. Displays OpenVPN Server Port details in the `ibmcloud sat location get` command output. | 
 | 1.0.300 | 12 Jul 2021 | Adds the following parameters to the `ibmcloud sat location create` command so that you can optionally specify an infrastructure provider along with the region and credentials for the provider: `--provider`, `--provider-region`, and `--provider-credential`. Updates the help text in various languages.|

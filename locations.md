@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -178,7 +178,7 @@ When you set up the {{site.data.keyword.satelliteshort}} location control plane,
 
 - You must attach compute hosts in groups of 3 to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any provider-specific requirements. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
 - The minimum of 3 hosts for the control plane is for demonstration purposes. To continue to use the location for production workloads, [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale) in multiples of 3, such as 6, 9, or 12 hosts.
-- Make sure that your hosts meet the [latency requirements](/docs/satellite?topic=satellite-about#architecture-latency).
+- Make sure that your hosts meet the [latency requirements](/docs/satellite?topic=satellite-service-architecture#architecture-latency).
 
 ### Setting up the control plane from the console
 {: #control-plane-ui}
