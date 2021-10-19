@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -129,10 +129,10 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 12. Assign your AWS hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign).
 
 
-## Supported AWS instance types
+## AWS instance types
 {: #aws-instance-types}
 
-Review the following [AWS EC2 instance types](https://aws.amazon.com/ec2/instance-types/){: external} that you can use as hosts in {{site.data.keyword.satellitelong_notm}}.
+Review the following suggested [AWS EC2 instance types](https://aws.amazon.com/ec2/instance-types/){: external} that you can use as hosts in {{site.data.keyword.satellitelong_notm}}. You can use other AWS instance types as long as they meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
 | Instance | vCPU | Memory (GiB) | Storage disk (GiB) | Network bandwidth (Gbps) |
@@ -140,8 +140,9 @@ Review the following [AWS EC2 instance types](https://aws.amazon.com/ec2/instanc
 | m5d.xlarge | 4 | 16 | At least 100 GB SSD attached | Up to 10 |
 | m5d.2xlarge | 8 | 32 | At least 100 GB SSD attached | Up to 10 |
 | m5d.4xlarge | 16 | 64 | At least 100 GB SSD attached | Up to 10 |
-{: caption="Supported AWS instance types" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the name of the supported instance. The second column is the number of vCPUs. The third column is the memory in gibibytes (GiB). THe fourth column is the number of storage disks and their size in gibibytes (GiB). The fifth column is the network bandwidth in gigabits per second (Gbps)."}
+{: caption="AWS instance types" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the name of the instance. The second column is the number of vCPUs. The third column is the memory in gibibytes (GiB). The fourth column is the number of storage disks and their size in gibibytes (GiB). The fifth column is the network bandwidth in gigabits per second (Gbps)."}
+
 
 ## Security group settings
 {: #aws-reqs-secgroup}
@@ -247,5 +248,4 @@ The following example is a security group that you might create for AWS.
 {: #aws-reqs-console-access}
 
 The private IP addresses of your instances are automatically registered and added to your location's DNS record and the cluster's subdomain. This setup prevents users that are not connected to your hosts' private network from accessing the cluster from a local machine or opening the {{site.data.keyword.openshiftshort}} web console. You must be connected to your hosts' private network, such as through VPN access, to [connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se). Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
-
 

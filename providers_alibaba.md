@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-19"
 
 keywords: satellite, hybrid, multicloud, alibaba
 
@@ -52,7 +52,12 @@ You need at least 3 virtual machines to use as hosts that meet the [host require
 3. Select the **Resources** tab.
 4. Verify that you have a **Route table** and at least one **vSwitch**. 
 5. Create a security group by clicking **add** from the **Security groups** section. For more information about the values to set, see [Security group settings](#alibaba-reqs-secgroup).
-6. From the [Elastic Computing Service (ECS)](https://ecs.console.aliyun.com/server#/home) console, create a minimum of 3 instances that meet the Satellite host requirements. Make sure to select the VPC, vSwitch, and security group that you created earlier, and to create or use an existing SSH key file to log in to the machine later. You can optionally assign a public IP address to your instance to log in to your host without using a VPN. These instances must meet the [host requirements](/docs/satellite?topic=satellite-host-reqs).
+6. From the [Elastic Computing Service (ECS)](https://ecs.console.aliyun.com/server#/home) console, create a minimum of 3 instances that meet the Satellite [host requirements](/docs/satellite?topic=satellite-host-reqs).
+
+    1. Install [Red Hat Enterprise Linux 7.9 64bit](https://marketplace.alibabacloud.com/products/56732001/Red_Hat_Enterprise_Linux_7_9_64bit-sgcmjj00025569.html){: external} from the Alibaba Marketplace.
+    2. Select the VPC, vSwitch, and security group that you created earlier.
+    3. Create or use an existing SSH key file to log in to the machine. 
+    4. Optionally assign a public IP address to your instance to log in to your host without using a VPN.
     
 7. If you created a new key-pair when you created your instances,
 
