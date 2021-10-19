@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -192,7 +192,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM console to assign an access policy 
 12. From the access group **Access policies** table, verify that the Editor policy is added to the access group.
 
 
-### Assigning access policy to access group with the console
+### Assigning access policy to access group with the CLI
 {: #iam-assign-cli}
 
 Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an access group to manage {{site.data.keyword.satelliteshort}} resources as shown in the following example.
