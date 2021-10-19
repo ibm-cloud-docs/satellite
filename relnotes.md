@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-10-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -121,7 +121,7 @@ Review the release notes for 19 July 2021.
 {: shortdesc}
 
 End of UDP endpoint support
-:    The UDP protocol is no longer supported for `cloud` and `location` endpoints that you create in {{site.data.keyword.satelliteshort}} Link. For more information, see [Encyrption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
+:    The UDP protocol is no longer supported for `cloud` and `location` endpoints that you create in {{site.data.keyword.satelliteshort}} Link. For more information, see [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
 
 ### 16 July 2021
 {: #16jul2021}

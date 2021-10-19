@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -61,7 +61,7 @@ Review the following image to see how your personal and sensitive information is
 
 ![Satellite data security](images/satellite_data_security.png)
 
-Information|Location|Access and data management|Backup|Encryption|
+
 
 (1) All personal and sensitive information
 :   Review the location, access, backup and encryption details for personal and sensitive information.
@@ -75,7 +75,7 @@ Information|Location|Access and data management|Backup|Encryption|
     - **Location**: Data is backed up from the {{site.data.keyword.satelliteshort}} persistent storage instance to an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_full_notm}} instance.
     - **Access and data management**: Access to the {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_full_notm}} service instance is controlled by {{site.data.keyword.iamshort}} (IAM) and granted to the {{site.data.keyword.satelliteshort}} service team and {{site.data.keyword.IBM_notm}} Site Reliability Engineers (SRE) only.
     - **Backup**: Every hour
-    - **Encryption**: All backup data is protected in transit and at rest by a root key that {{site.data.keyword.IBM_notm}} creates and stores in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.keymanagementservicelong_notm}} service instance.|
+    - **Encryption**: All backup data is protected in transit and at rest by a root key that {{site.data.keyword.IBM_notm}} creates and stores in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.keymanagementservicelong_notm}} service instance.
     
 (3) All {{site.data.keyword.satelliteshort}} control plane and cluster data
 :   Review the location, access, backup and encryption details for control plane and cluster data.
