@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-19"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -28,7 +28,7 @@ To use AWS EBS storage for your apps, the {{site.data.keyword.satelliteshort}} h
 To use the AWS EBS storage template, complete the following tasks:
 
 - [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-- [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Amazon Web Services (AWS). For more information about how to add hosts from AWS to your {{site.data.keyword.satelliteshort}} location so that you can assign them to a cluster, see [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach).
+- [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters) that runs on compute hosts in Amazon Web Services (AWS). For more information about how to add hosts from AWS to your {{site.data.keyword.satelliteshort}} location so that you can assign them to a cluster, see [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach).
 
 
 ## Creating an AWS EBS storage configuration
