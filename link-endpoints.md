@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints
+# Connecting {{site.data.keyword.satelliteshort}} locations with external services by using Link endpoints
 {: #link-location-cloud}
 
 Open up {{site.data.keyword.satelliteshort}} endpoints in the {{site.data.keyword.satelliteshort}} control plane to control and audit network traffic between your {{site.data.keyword.satellitelong}} location and services, servers, or apps that run outside of the location.
@@ -120,7 +120,7 @@ Cloud endpoint
 :    Source requests from your {{site.data.keyword.satelliteshort}} location to your destination resource that runs outside of the location contain an HTTP header such as `linkconnector_hostname:port`. When the request is sent from the {{site.data.keyword.satelliteshort}} Link connector to the {{site.data.keyword.satelliteshort}} Link tunnel server, the {{site.data.keyword.satelliteshort}} Link tunnel server changes the HTTP header on the request to the destination host name and port, such as `dest_hostname:dest_port`. The {{site.data.keyword.satelliteshort}} Link tunnel server then uses the destination's host name and port to forward the request to the correct destination resource.
 
 Location endpoint
-:     Source requests from clients that run outside the location to your destination resource in your {{site.data.keyword.satelliteshort}} location contain an HTTP header such as `linkserver_hostname:endpoint_port`. The {{site.data.keyword.satelliteshort}} Link tunnel server changes the HTTP header on the request to the destination host name and port, such as `dest_hostname:dest_port`, and sends the request to the {{site.data.keyword.satelliteshort}} Link connector. The {{site.data.keyword.satelliteshort}} Link connector then uses the destination's host name and port to send the request to the correct destination resource.
+:    Source requests from clients that run outside the location to your destination resource in your {{site.data.keyword.satelliteshort}} location contain an HTTP header such as `linkserver_hostname:endpoint_port`. The {{site.data.keyword.satelliteshort}} Link tunnel server changes the HTTP header on the request to the destination host name and port, such as `dest_hostname:dest_port`, and sends the request to the {{site.data.keyword.satelliteshort}} Link connector. The {{site.data.keyword.satelliteshort}} Link connector then uses the destination's host name and port to send the request to the correct destination resource.
 
 #### HTTP tunnel
 {: #link-http-tunnel}
@@ -168,6 +168,7 @@ The following table describes the Link endpoints that are automatically created 
 | `satellite-cos-<location_ID>` | Allows the control plane data of your {{site.data.keyword.satelliteshort}} location to be backed up to your {{site.data.keyword.cos_full}} instance. Control plane master data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own. | `cloud` | One per location |
 | `satellite-iam-<location_ID>` | Allows requests to your {{site.data.keyword.satelliteshort}} location to be authenticated and user actions to be authorized by Identity and Access Management (IAM). | `cloud` | One per location |
 | `satellite-logdna-<location_ID>` | Allows logs for your {{site.data.keyword.satelliteshort}} location to be sent to your {{site.data.keyword.la_full}} instance. | `cloud` | One per location |
+| `satellite-logdnaapi-<location_ID>` | Allows your {{site.data.keyword.satelliteshort}} location to communicate with the {{site.data.keyword.la_full}} API. | `cloud` | One per location |
 | `satellite-sysdig-<location_ID>` | Allows metrics for your {{site.data.keyword.satelliteshort}} location to be sent to your {{site.data.keyword.mon_full}} instance. | `cloud` | One per location |
 | `satellite-sysdigapi-<location_ID>` | Allows your {{site.data.keyword.satelliteshort}} location to communicate with the {{site.data.keyword.mon_full_notm}} API. | `cloud` | One per location |
 | `openshift-api-<cluster_ID>` | Allows the {{site.data.keyword.openshiftlong_notm}} API to communicate with the master for the service cluster. | `location` | One per {{site.data.keyword.satelliteshort}}-enabled service in your location |
@@ -226,13 +227,13 @@ Create an endpoint of type `cloud` so that sources in your {{site.data.keyword.s
 Before you begin, ensure that you have the following items.
 
 Source client
-:     A {{site.data.keyword.satelliteshort}} cluster or a host that you attached to your location. For more information about how to create a {{site.data.keyword.satelliteshort}} cluster, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). To use a host, [attach a host to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) but do not assign the host to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster. Assigning the host starts a bootstrapping process that removes SSH access to your host.
+:    A {{site.data.keyword.satelliteshort}} cluster or a host that you attached to your location. For more information about how to create a {{site.data.keyword.satelliteshort}} cluster, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). To use a host, [attach a host to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) but do not assign the host to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster. Assigning the host starts a bootstrapping process that removes SSH access to your host.
 
 Destination resource
-:     A service, server, or app that runs outside of the location but that is accessible from within {{site.data.keyword.cloud_notm}}. For example, you can use the private service endpoint for an {{site.data.keyword.cloud_notm}} service, because that private service endpoint is routable from within the {{site.data.keyword.cloud_notm}} network. If you want to connect to a service that runs outside of {{site.data.keyword.cloud_notm}}, this service must be accessible from within the {{site.data.keyword.cloud_notm}} network.
+:    A service, server, or app that runs outside of the location but that is accessible from within {{site.data.keyword.cloud_notm}}. For example, you can use the private service endpoint for an {{site.data.keyword.cloud_notm}} service, because that private service endpoint is routable from within the {{site.data.keyword.cloud_notm}} network. If you want to connect to a service that runs outside of {{site.data.keyword.cloud_notm}}, this service must be accessible from within the {{site.data.keyword.cloud_notm}} network.
 
 Permissions
-:     The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Link** resource in {{site.data.keyword.satellitelong_notm}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+:    The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Link** resource in {{site.data.keyword.satellitelong_notm}}.For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 ### Creating cloud endpoints by using the console
 {: #link-cloud-ui}
@@ -415,7 +416,7 @@ Destination resource
 :    A service, server, or app that runs in a {{site.data.keyword.satelliteshort}} cluster or a host that you attached to your location. For more information about how to create a {{site.data.keyword.satelliteshort}} cluster, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). To use a host, [attach a host to your location](/docs/satellite?topic=satellite-hosts#attach-hosts) but do not assign the host to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}} cluster. Assigning the host starts a bootstrapping process that removes SSH access to your host.
 
 Permissions
-:     The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Link** resource in {{site.data.keyword.satellitelong_notm}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+:    The **Administrator** {{site.data.keyword.cloud_notm}} IAM platform role for the **Link** resource in {{site.data.keyword.satellitelong_notm}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 ### Creating location endpoints by using the console
 {: #link-location-ui}
