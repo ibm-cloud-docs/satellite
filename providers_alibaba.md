@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-21"
 
 keywords: satellite, hybrid, multicloud, alibaba
 
@@ -80,27 +80,36 @@ Before you can attach your hosts, you must install the required Red Hat Enterpri
     ssh -i <path-to-pemfile> cloud-user@<PUBLIC_IP>
     ```
     {: pre}
-
-3. Register your system with Red Hat and then install the packages.
-    ```sh
-    sudo bash
-    subscription-manager register --username=<username> --password=<password> 
-    subscription-manager refresh
-    subscription-manager attach --auto
-    subscription-manager status
-    subscription-manager repos --enable rhel-7-server-optional-rpms --enable rhel-server-rhscl-7-rpms
-    subscription-manager repos --enable rhel-server-rhscl-7-rpms
-    subscription-manager repos --enable rhel-7-server-optional-rpms
-    subscription-manager repos --enable rhel-7-server-rh-common-rpms
-    subscription-manager repos --enable rhel-7-server-supplementary-rpms
-    subscription-manager repos --enable rhel-7-server-extras-rpms
-    yum install rh-python36 -y
-    yum install container-selinux -y
-    ```
-    {: codeblock}
     
-    Depending on your custom image, these packages might already be installed.
-    {: note}
+
+
+3. Register your system with Red Hat and then install the required packages for {{site.data.keyword.satelliteshort}}. 
+
+    1. Note that Alibaba Cloud does not support the YUM package manager or subscription manager by default, which means that to install the required packages and updates for {{site.data.keyword.satelliteshort}} on your hosts, you must provide your Red Hat account credentials in the host attach script. Run the following command on your hosts and replace `<username>` and `<password>` with your Red Hat account credentials to register your host.
+        ```sh
+        sudo bash
+        subscription-manager register --username=<username> --password=<password>
+        ```
+        {: pre}
+    
+    2. After you register with subscription manager, install the required packages.
+        ```sh
+        subscription-manager refresh
+        subscription-manager attach --auto
+        subscription-manager status
+        subscription-manager repos --enable rhel-7-server-optional-rpms --enable rhel-server-rhscl-7-rpms
+        subscription-manager repos --enable rhel-server-rhscl-7-rpms
+        subscription-manager repos --enable rhel-7-server-optional-rpms
+        subscription-manager repos --enable rhel-7-server-rh-common-rpms
+        subscription-manager repos --enable rhel-7-server-supplementary-rpms
+        subscription-manager repos --enable rhel-7-server-extras-rpms
+        yum install rh-python36 -y
+        yum install container-selinux -y
+        ```
+        {: codeblock}
+        
+        Depending on your custom image, these packages might already be installed.
+        {: note}
 
 ### 4. Upload and run the host attach script
 {: #alibaba-host-script-run}
