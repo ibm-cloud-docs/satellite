@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -199,6 +199,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
 {: shortdesc}
 
 1. Log in to {{site.data.keyword.cloud_notm}}. If you have a federated account, include the `--sso` flag.
+
     ```sh
     ibmcloud login [--sso]
     ```
@@ -207,12 +208,14 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
 2. Create an {{site.data.keyword.cloud_notm}} IAM access policy for {{site.data.keyword.satellitelong_notm}}. Scope the access policy based on what you want to assign access to. For more information, review the following example commands and table.
 
     For example, run the following command to assign a user the Administrator role for all your {{site.data.keyword.satelliteshort}} locations in the default resource group.
+    
     ```sh
     ibmcloud iam user-policy-create user@email.com --service-name satellite --resource-group-name default --resource-type location --roles Administrator
     ```
     {: pre}
 
     Run the following command to assign an access group the Editor role to a specific {{site.data.keyword.satelliteshort}} location.
+    
     ```sh
     ibmcloud iam access-group-policy-create team1 --service-name satellite --resource-type location --resource Port-NewYork --roles Editor
     ```
@@ -230,12 +233,14 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
 
 3. Verify that the user or access group has the assigned role.
     - For individual users
+    
         ```sh
         ibmcloud iam user-policies <user@email.com>
         ```
         {: pre}
 
     - For access groups
+    
         ```sh
         ibmcloud iam access-group-policies <access_group>
         ```
@@ -297,7 +302,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Update a host. | `/hostqueue/updateHost` | [`host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update) | | | ![Feature available.](images/icon-checkmark-filled.svg) | ![Feature available.](images/icon-checkmark-filled.svg) | ![Feature available.](images/icon-checkmark-filled.svg) |
 | Remove a host from a {{site.data.keyword.satelliteshort}} location control plane or cluster.| `/hostqueue/removeHost` |[`host rm`](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm) | | | ![Feature available.](images/icon-checkmark-filled.svg)|![Feature available.](images/icon-checkmark-filled.svg)|![Feature available.](images/icon-checkmark-filled.svg)|
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="bottom"}
 {: #platform-table1}
 {: tab-title="Locations and hosts"}
 {: tab-group="iam-platform"}
@@ -325,7 +330,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 | List the {{site.data.keyword.satelliteshort}} endpoints that a client (source) is configured for and the enabled status of the client (source) for each endpoint. |	`GET /v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | ![Feature available.](images/icon-checkmark-filled.svg) | ![Feature available.](images/icon-checkmark-filled.svg) | ![Feature available.](images/icon-checkmark-filled.svg) | ![Feature available.](images/icon-checkmark-filled.svg) |
 | Enable or disable a client (source) for one or more {{site.data.keyword.satelliteshort}} endpoints.	| `PATCH ​/v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | | ![Feature available.](images/icon-checkmark-filled.svg) | ![Feature available.](images/icon-checkmark-filled.svg) | ![Feature available.](images/icon-checkmark-filled.svg) |
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="bottom"}
 {: #platform-table2}
 {: tab-title="Link"}
 {: tab-group="iam-platform"}
@@ -338,7 +343,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Delete a configuration for Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. |`removeChannel` |[`config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-rm) | | | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 | View an organization in {{site.data.keyword.satelliteshort}} Config. | `organization`| - | | | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="bottom"}
 {: #platform-table3}
 {: tab-title="Configuration"}
 {: tab-group="iam-platform"}
@@ -349,7 +354,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 |-----|---|---|-----|-----|-----|--------|---|
 | Set the configuration version that a cluster group is subscribed to in {{site.data.keyword.satelliteshort}} Config. | `setSubscription`| [`subscription update --version`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update)| | | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="bottom"}
 {: #platform-table4}
 {: tab-title="Subscription"}
 {: tab-group="iam-platform"}
@@ -363,7 +368,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 | Remove a cluster from {{site.data.keyword.satelliteshort}} Config. | `deleteCluster`|[`cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister) | | | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 | View clusters that are attached to {{site.data.keyword.satelliteshort}} Config. |`clusters` calls |[`cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls)</br> [`cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-get) | | | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="bottom"}
 {: #platform-table5}
 {: tab-title="Cluster"}
 {: tab-group="iam-platform"}
@@ -378,7 +383,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 | View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config. |`groups` |[`cluster-group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls) </br>[`cluster-group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get) | | | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 | Remove a cluster group. |`removeGroup` |[`cluster-group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm) | | | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="bottom"}
 {: #platform-table6}
 {: tab-title="Clustergroup"}
 {: tab-group="iam-platform"}
@@ -389,7 +394,7 @@ Click the tabs in the following table to review the actions that are mapped to p
 |-----|---|---|-----|-----|-----|--------|---|
 | View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. | `resources` calls | `resource ls`| | | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with platform access roles." caption-side="top"}
+{: caption="Actions that you can take with platform access roles." caption-side="bottom"}
 {: #platform-table7}
 {: tab-title="Resource"}
 {: tab-group="iam-platform"}
@@ -415,7 +420,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 | List the {{site.data.keyword.satelliteshort}} endpoints that a client (source) is configured for and the enabled status of the client (source) for each endpoint. | `GET /v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | | | | ![Feature available.](images/icon-checkmark-filled.svg) |	|
 | Enable or disable a client (source) for one or more {{site.data.keyword.satelliteshort}} endpoints.	| `PATCH ​/v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | | | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: caption="Actions that you can take with service access roles." caption-side="bottom"}
 {: #service-table1}
 {: tab-title="Link"}
 {: tab-group="iam-service"}
@@ -434,7 +439,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 | View an organization in {{site.data.keyword.satelliteshort}} Config. |`organization` | - | | ![Feature available.](images/icon-checkmark-filled.svg) | |![Feature available.](images/icon-checkmark-filled.svg) | ![Feature available.](images/icon-checkmark-filled.svg)|
 | Manage an organization in {{site.data.keyword.satelliteshort}} Config | - | | | | |  |![Feature available.](images/icon-checkmark-filled.svg) |
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: caption="Actions that you can take with service access roles." caption-side="bottom"}
 {: #service-table2}
 {: tab-title="Configuration"}
 {: tab-group="iam-service"}
@@ -449,7 +454,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 | Set the configuration version of Kubernetes resources for a subscription in {{site.data.keyword.satelliteshort}} Config. | `setSubscription`|[`subscription update --version`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update) | | | | ![Feature available.](images/icon-checkmark-filled.svg) |![Feature available.](images/icon-checkmark-filled.svg)|
 | Delete a subscription to a configuration of Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. |`removeSubscription` |[`subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-rm) | | | | ![Feature available.](images/icon-checkmark-filled.svg) |![Feature available.](images/icon-checkmark-filled.svg)|
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: caption="Actions that you can take with service access roles." caption-side="bottom"}
 {: #service-table3}
 {: tab-title="Subscription"}
 {: tab-group="iam-service"}
@@ -463,7 +468,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 | Remove a cluster from {{site.data.keyword.satelliteshort}} Config. | `deleteCluster`|[`cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister) | | | |  |![Feature available.](images/icon-checkmark-filled.svg) |
 | View clusters that are attached to {{site.data.keyword.satelliteshort}} Config. | `clusters` calls |[`cluster ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-ls) </br> [`cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-get) | |![Feature available.](images/icon-checkmark-filled.svg) | |  |![Feature available.](images/icon-checkmark-filled.svg) |
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: caption="Actions that you can take with service access roles." caption-side="bottom"}
 {: #service-table4}
 {: tab-title="Cluster"}
 {: tab-group="iam-service"}
@@ -478,7 +483,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 | View cluster groups that are attached to {{site.data.keyword.satelliteshort}} Config. |`groups` |[`cluster-group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls) </br>[`cluster-group get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-get) | | ![Feature available.](images/icon-checkmark-filled.svg)| | | ![Feature available.](images/icon-checkmark-filled.svg) |
 | Remove a cluster group. |`removeGroup` |[`cluster-group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm) | | | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: caption="Actions that you can take with service access roles." caption-side="bottom"}
 {: #service-table5}
 {: tab-title="Clustergroup"}
 {: tab-group="iam-service"}
@@ -489,7 +494,7 @@ Click the tabs in the following table to review the actions that are mapped to s
 |-----|---|---|-----|-----|-----|--------|----|
 | View Kubernetes resources that are managed by {{site.data.keyword.satelliteshort}} Config. | `resources` calls | [`resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls) </br> [`resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get) | | ![Feature available.](images/icon-checkmark-filled.svg) | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 {: class="comparison-tab-table"}
-{: caption="Actions that you can take with service access roles." caption-side="top"}
+{: caption="Actions that you can take with service access roles." caption-side="bottom"}
 {: #service-table6}
 {: tab-title="Resources"}
 {: tab-group="iam-service"}
@@ -525,7 +530,7 @@ Wondering which access roles to assign to your {{site.data.keyword.satelliteshor
 | Location administrator | **Administrator** platform role for the location and link resources. **Administrator** platform role to {{site.data.keyword.openshiftshort}} clusters. **Manager** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data.|
 | DevOps operator | **Editor** platform role for the location and link resources. **Deployer** service role for the configurations. **Operator** platform role to {{site.data.keyword.openshiftshort}} clusters.|
 | Operator or site reliability engineer | **Administrator** platform role for the location and link resources. **Manager** service role for the configuration resources. **Administrator** platform role and **Manager** service role to {{site.data.keyword.openshiftshort}} clusters. |
-{: caption="Types of roles you might assign to meet different use cases." caption-side="top"}
+{: caption="Types of roles you might assign to meet different use cases." caption-side="bottom"}
 {: summary="The first column contains the use case, which is typically the role of an access group or user. The second column is the example role and scope of the role that you assign the user in {{site.data.keyword.cloud_notm}} IAM."}
 
 ## API keys in {{site.data.keyword.cloud_notm}}

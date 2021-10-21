@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -86,7 +86,7 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     ```
     {: screen}
 
-3. Find the **ID** of the host that did not return a `200` response. You can compare the `Host: 169.xx.xxx.xxx` from the previous step with the **Worker IP** in the output of the following command.
+4. Find the **ID** of the host that did not return a `200` response. You can compare the `Host: 169.xx.xxx.xxx` from the previous step with the **Worker IP** in the output of the following command.
     ```sh
     ibmcloud sat host ls --location <location_ID> | grep infrastructure
     ```
@@ -101,8 +101,8 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     ```
     {: screen}
 
-4. [Add a host to the control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) in the same zone so that the location control plane has enough compute resources to continue running when you remove the unhealthy host.
-5. [Remove the unhealthy host from the location control plane](/docs/satellite?topic=satellite-hosts#host-remove).
-6. Optional: You can reload the operating system on the unhealthy host and try to attach and assign the host to {{site.data.keyword.satellitelong_notm}} again.
+5. [Add a host to the control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) in the same zone so that the location control plane has enough compute resources to continue running when you remove the unhealthy host.
+6. [Remove the unhealthy host from the location control plane](/docs/satellite?topic=satellite-hosts#host-remove).
+7. Optional: You can reload the operating system on the unhealthy host and try to attach and assign the host to {{site.data.keyword.satellitelong_notm}} again.
 
 
