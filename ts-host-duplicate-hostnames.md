@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-22"
 
 keywords: satellite, host, location
 
@@ -36,41 +36,42 @@ If the cluster master still recognizes the host, you must rename and reload the 
 1. Follow your host infrastructure provider's instructions to rename the host. 
 
     **For hosts provisioned through {{site.data.keyword.cloud_notm}}**:
-        1. Log in to the {{site.data.keyword.cloud_notm}} console and navigate to **Classic infrastructure**>**Device list**.
-        2. In the **Devices** table, locate the host you want to rename. Click the **Action** menu and select **Rename**.
-        3. Rename the host. 
+
+    1. Log in to the {{site.data.keyword.cloud_notm}} console and navigate to **Classic infrastructure**>**Device list**.
+    2. In the **Devices** table, locate the host you want to rename. Click the **Action** menu and select **Rename**.
+    3. Rename the host. 
 
 2. Follow your host infrastructure provider's instructions to reload the host.
 
     **For hosts provisioned through {{site.data.keyword.cloud_notm}}**:
 
-        **In the {{site.data.keyword.cloud_notm}} console**:
-            1. Navigate to **Classic infrastructure**>**Device list**.
-            2. In the **Devices** table, click on the host you want to reload. 
-            3. From the **Actions** drop down menu, select **OS Reload**.
-            4. Click **Reload**. Note that it may take several minutes for the reload process to complete.
+    - **In the {{site.data.keyword.cloud_notm}} console**:
+        1. Navigate to **Classic infrastructure**>**Device list**.
+        2. In the **Devices** table, click on the host you want to reload. 
+        3. From the **Actions** drop down menu, select **OS Reload**.
+        4. Click **Reload**. Note that it may take several minutes for the reload process to complete.
 
-        **In the CLI:**
-            1. List your hosts and note the **ID** of the host you want to reload.
+    - **In the CLI:**
+        1. List your hosts and note the **ID** of the host you want to reload.
 
-                ```sh
-                ibmcloud sl vs list
-                ```
-                {: pre}
+            ```sh
+            ibmcloud sl vs list
+            ```
+            {: pre}
 
-            2. Run the `ibmcloud sl vs reload` command. Note that it may take several minutes for the reload process to complete.
+        2. Run the `ibmcloud sl vs reload` command. Note that it may take several minutes for the reload process to complete.
 
-                ```sh
-                ibmcloud sl vs reload <host_id>
-                ```
-                {: pre}
+            ```sh
+            ibmcloud sl vs reload <host_id>
+            ```
+            {: pre}
 
-            3. Check if the host is ready.
+        3. Check if the host is ready.
 
-                ```sh
-                ibmcloud sl vs ready <host_id>
-                ```
-                {: pre}
+            ```sh
+            ibmcloud sl vs ready <host_id>
+            ```
+            {: pre}
 
 3. [Attach the host to the location](/docs/satellite?topic=satellite-hosts#attach-hosts). 
 
