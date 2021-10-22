@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-20"
+lastupdated: "2021-10-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -180,6 +180,8 @@ If you do not open all outbound connectivity, you must allow the following outbo
 To secure your outbound connectivity, allow only TCP on the Kubernetes API server NodePorts and UDP on the VPN NodePorts for your location. You can find your active NodePorts by running the **`ibmcloud sat location get --location <location>`** command.
 {: tip}
 
+
+
 #### Dallas
 {: #dal-outbound}
 
@@ -204,7 +206,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 163.74.65.138</br>163.75.70.50</br>169.53.160.154 | - TCP 443, 30000 - 32767  \n - UDP 30000 - 32767 |
 | Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.ca-tor.cloud-object-storage.appdomain.cloud` | HTTPS |
 | Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | - 158.85.124.194  \n - 158.85.79.18  \n - 158.85.86.234  \n - 163.74.67.114  \n - 163.74.70.82  \n - 163.74.70.90  \n - 163.74.70.98  \n - 163.75.70.74  \n - 163.75.70.82  \n - 163.75.70.90  \n - 163.75.70.98  \n - 169.55.154.154  \n **Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.ca-tor.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
-| Allow hosts to be attached to a location and assigned to services in the location | All hosts | All IP addresses listed for **US East** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips), or allow all outbound | TCP 443 |
+| Allow hosts to be attached to a location and assigned to services in the location | All hosts | All IP addresses listed for **Toronto** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for Toronto (`tor`) in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips) | See documentation |
 | Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts |  - 0.rhel.pool.ntp.org  \n - 1.rhel.pool.ntp.org  \n - 2.rhel.pool.ntp.org  \n - 3.rhel.pool.ntp.org | NTP protocol and UDP port 123 |
@@ -218,7 +220,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 |-----------|---------|--------------|------------------|
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 169.63.123.154</br>169.63.110.114</br>169.62.13.2</br>169.60.123.162</br>169.59.152.58</br>52.117.93.26 | - TCP 443, 30000 - 32767  \n UDP 30000 - 32767 |
 | Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.us.cloud-object-storage.appdomain.cloud` | HTTPS |
-| Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | - 52.117.112.242  \n - 169.47.156.154  \n - 169.47.174.178  \n - 169.59.135.26  \n - 169.60.122.226  \n - 169.61.101.226  \n - 169.62.1.34  \n - 169.62.53.58  \n - 169.63.113.122  \n - 169.63.121.178  \n - 169.63.133.10  \n - 169.63.148.250  \n -  **Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.us-east.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
+| Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | - 52.117.112.242  \n - 169.47.156.154  \n - 169.47.174.178  \n - 169.59.135.26  \n - 169.60.122.226  \n - 169.61.101.226  \n - 169.62.1.34  \n - 169.62.53.58  \n - 169.63.113.122  \n - 169.63.121.178  \n - 169.63.133.10  \n - 169.63.148.250  \n **Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.us-east.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | All IP addresses listed for **US East** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **US East** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips) | [See documentation](/docs/openshift?topic=openshift-firewall#master_ips) |
 | Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |

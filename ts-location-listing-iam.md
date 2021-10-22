@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -54,13 +54,14 @@ Ask the location owner to update your access policy in {{site.data.keyword.cloud
     {: pre}
 
 2. List the access policies for the user or access group, and note the **Policy ID** that grants access to the {{site.data.keyword.satelliteshort}} location.
-    - For individual users
+    * For individual users
         ```sh
         ibmcloud iam user-policies <user@email.com>
         ```
         {: pre}
 
-    - For access groups
+    * For access groups
+
         ```sh
         ibmcloud iam access-group-policies <access_group>
         ```
@@ -71,8 +72,8 @@ Ask the location owner to update your access policy in {{site.data.keyword.cloud
         Policy ID:   11a11111-bb2b-3c33-444d-ee5ee55ee55e
         Roles:       Viewer   
         Resources:                         
-                  Service Name    satellite      
-                  Resource Type   location   
+                Service Name    satellite      
+                Resource Type   location   
         ```
         {: screen}
 

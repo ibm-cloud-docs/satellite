@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-10-22"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -15,8 +15,11 @@ subcollection: satellite
 # OpenShift Data Foundation for remote devices
 {: #config-storage-ocs-remote}
 
-Set up [OpenShift Data Foundation](https://docs.openshift.com/container-platform/4.6/storage/persistent_storage/persistent-storage-ocs.html){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up OpenShift Data Foundation for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
+
+OpenShift Data Foundation is available in only internal mode, which means that your apps run in the same cluster as your storage. External mode, or storage heavy configurations, where your storage is located in a separate cluster from your apps is not supported.
+{: note}
 
 ## Prerequisites
 {: #sat-storage-ocs-remote-prereq}
@@ -30,6 +33,7 @@ Set up [OpenShift Data Foundation](https://docs.openshift.com/container-platform
 1. **Optional**: [Create an {{site.data.keyword.IBM_notm}} {{site.data.keyword.cos_full_notm}} service instance](#sat-storage-ocs-remote-cos).
     1. Create HMAC credentials for your {{site.data.keyword.cos_full_notm}} instance.
     1. Create a Kubernetes secret that uses your {{site.data.keyword.cos_full_notm}} HMAC credentials.
+1. Create a {{site.data.keyword.satelliteshort}} Link.
 
 
 ### Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance
@@ -55,31 +59,13 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
 ## Creating a secret that contains your {{site.data.keyword.satelliteshort}} Link credentials
 {: #odf-sat-link-remote}
 
-After you [create a link endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-about) and before you install ODF, create a Kubernetes secret with your link credentials.
+Before you install ODF, create a Kubernetes secret with your link credentials.
 {: shortdesc}
 
-1. Create a `config.toml` file with your link endpoint credentials.
-
-    ```sh
-    [Bluemix]
-    iam_url = "https://iam.bluemix.net"
-    iam_client_id = "bx"
-    iam_client_secret = "bx"
-    iam_api_key = "XXXXX" # Enter your IAM API key
-    containers_api_route_private = "XXXXXX" # Enter your link endpoint. Don't include the trailing slash. Example: https://s111faab2f1e11cfc11a1-6b11a1aaa9c111ba51a11125d8aa1111-c000.us-east.satellite.appdomain.cloud:11111
-
-    [VPC]
-    provider_type = "g2"
-    ```
-    {: codeblock}
-
-1. Encode your `config.toml` file to base64.
-
-    ```sh
-    cat ./config.toml | base64
-    ```
-    {: pre}
-
+1. Get the details of your `satellite-containersApi` endpoint.
+    1. From the {[sat-console]} select the location where you want to deploy ODF.
+    2. Click **Link endpoints**, then click the `satellite-containersApi` endpoint.
+    3. On the Endpoint details page, copy the endpoint.
 1. List the secrets in the `kube-system` namespace of your cluster and look for the `storage-secret-store`.
 
     ```sh
@@ -89,21 +75,29 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
 
 1. If the `storage-secret-store` secret doesn't exist, create it.
 
-    1. Create a `secret.yaml` file that has the base64 encoded `config.toml` value that you created earlier.
+    1. Create a `secret.yaml` file that contains your IAM API key and the link endpoint you retrieved earlier.
 
         ```yaml
         apiVersion: v1
-        data:
-          slclient.toml: # Enter your base64 encoded config.toml
         kind: Secret
         metadata:
           name: storage-secret-store
           namespace: kube-system
         type: Opaque
+        stringData:
+          slclient.toml: |-
+            [Bluemix]
+              iam_url = "https://iam.cloud.ibm.com"
+              iam_client_id = "bx"
+              iam_client_secret = "bx"
+              iam_api_key = "<iam_api_key>" # Enter your IAM API key
+              containers_api_route_private = "<link_endpoint>" # Enter the link endpoint that you retrieved earlier.
+            [VPC]
+              provider_type = "g2"
         ```
         {: codeblock}
 
-    1. Create the secret in your cluster.
+    1. Create the secret in your cluster. 
 
         ```sh
         oc create -f secret.yaml -n kube-system
@@ -119,21 +113,32 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
         ```
         {: pre}
 
-        Example output
         ```yaml
         apiVersion: v1
-        data:
-          slclient.toml: XXX # Enter your base64 encoded config.toml
         kind: Secret
         metadata:
-          annotations:
-            kubectl.kubernetes.io/last-applied-configuration: |
+          name: storage-secret-store
+          namespace: kube-system
+        type: Opaque
+        stringData:
+          slclient.toml: |-
+            [Bluemix]
+              iam_url = "https://iam.cloud.ibm.com"
+              iam_client_id = "bx"
+              iam_client_secret = "bx"
+              iam_api_key = "<iam_api_key>" # Enter your IAM API key
+              containers_api_route_private = "<link_endpoint>" # Enter the link endpoint that you created earlier.
+            [VPC]
+              provider_type = "g2"
         ```
-        {: screen}
-    
-    1. Paste the base64 encoded `config.toml` value that you created earlier in the `data.slclient.toml` field.
+        {: codeblock}
 
     1. Save and close the file to apply the secret to your cluster.
+    
+
+
+
+
 
 ## Creating an OpenShift Data Foundation configuration in the command line
 {: #sat-storage-ocs-remote-cli}
@@ -176,7 +181,7 @@ After you [create a link endpoint](/docs/satellite?topic=satellite-link-location
 1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-remote-params-cli).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Don't specify the {{site.data.keyword.cos_short}} parameters if your existing configuration doesn't use {{site.data.keyword.cos_full_notm}}.  
     ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name>" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=<mon-size>" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=<osd-size>" -p "num-of-osd=1" -p "worker-nodes=<worker-IP>,<worker-IP>,<worker-IP>" -p "ibm-cos-endpoint=<cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
+    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name>" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=<mon-size>" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=<osd-size>" -p "num-of-osd=1" -p "worker-nodes=<worker-IP>,<worker-IP>,<worker-IP>" -p "ibm-cos-endpoint=<cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "container-private-endpoint=<link-endpoint>"
     ```
     {: pre}
 
@@ -335,6 +340,7 @@ To upgrade the ODF version of your configuration, complete the following steps:
     - `template-version` - Enter the template version that you want to use to upgrade your configuration.
     - `ocs-cluster-name` - Use the same parameter value as in your existing configuration.
     - `mon-storage-class` - Use the same parameter value as in your existing configuration.
+    - `container-private-endpoint` - Use the same parameter as in your existing configuration.
     - `mon-size` - Use the same parameter value as in your existing configuration.
     - `osd-storage-class` - Use the same parameter value as in your existing configuration.
     - `osd-size` - Use the same parameter value as in your existing configuration.
@@ -346,19 +352,19 @@ To upgrade the ODF version of your configuration, complete the following steps:
     - `ibm-cos-secret-key` - Use the same parameter value as in your existing configuration.
     - `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
 
-2. Get the configuration details of your `ocscluster` custom resource.
+3. Get the configuration details of your `ocscluster` custom resource.
     ```sh
     kubectl get ocscluster <ocs-cluster-name>
     ```
     {: pre}
 
-3. Save the configuration details. When you upgrade your ODF version, you must enter the same configuration details and set the `template-version` to the version you want to upgrade to and set the `ocs-upgrade` parameter to `true`. Don't specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. Note that Kubernetes resouces can't contain capital letters or special characters. Enter an `ocs-cluster-name` that uses only lowercase letters, numbers, `-`, or `.`.
+4. Save the configuration details. When you upgrade your ODF version, you must enter the same configuration details and set the `template-version` to the version you want to upgrade to and set the `ocs-upgrade` parameter to `true`. Don't specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. Note that Kubernetes resources can't contain capital letters or special characters. Enter an `ocs-cluster-name` that uses only lowercase letters, numbers, `-`, or `.`.
     ```sh
-    ibmcloud sat storage config create --name ocs-config --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=testocscluster" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=50Gi" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=150Gi" -p "num-of-osd=1" -p "worker-nodes=169.48.170.83,169.48.170.88,169.48.170.90" -p "ocs-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
+    ibmcloud sat storage config create --name ocs-config --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=testocscluster" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=50Gi" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=150Gi" -p "num-of-osd=1" -p "worker-nodes=169.48.170.83,169.48.170.88,169.48.170.90" -p "ocs-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "container-private-endpoint=<link-endpoint>"
     ```
     {: pre}
 
-4. [Assign your configuration to your clusters](#assign-storage-ocs-remote-cli).
+5. [Assign your configuration to your clusters](#assign-storage-ocs-remote-cli).
 
 
 
@@ -414,21 +420,22 @@ Use the command line to remove a storage assignment.
 ## OpenShift Data Foundation configuration parameter reference
 {: #sat-storage-ocs-remote-params-cli}
 
-| Parameter | Required? | Description | Default value if not provided | Datatype |
+| Parameter | Required? | Description | Default value if not provided | Data type |
 | --- | --- | --- | --- | --- |
-| `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. Note that Kubernetes resouces can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | string |
-| `mon-storage-class` | Required | Enter the storage class that you want to use for the MON pods. For multizone clusters, be sure to specify a storage class with the `waitForFirstConsumer` volume binding mode. | N/A | csv |
+| `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. Note that Kubernetes resouces can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
+| `container-private-endpoint` | Required | Enter the private link endpoint that you retrieved earlier. For example: `https://s111feeb1a1e11cfc11a1-1b14a1ccc9c111bf11a11125d8aa1111-c000.us-east.satellite.appdomain.cloud:32232`. |  N/A | `string`
+| `mon-storage-class` | Required | Enter the storage class that you want to use for the MON pods. For multizone clusters, be sure to specify a storage class with the `waitForFirstConsumer` volume binding mode. | N/A | `csv` |
 | `mon-size` | Required | Enter the size of the storage volumes that you want to provision for the MON pods. You must specify at least `20Gi`. |
-| `osd-storage-class` | Required | Enter the storage class that you want to use for the OSD pods. For multizone clusters, be sure to specify a storage class with the `waitForFirstConsumer` volume binding mode. | N/A | csv |
+| `osd-storage-class` | Required | Enter the storage class that you want to use for the OSD pods. For multizone clusters, be sure to specify a storage class with the `waitForFirstConsumer` volume binding mode. | N/A | `csv` |
 | `osd-size`| Required | Enter the size of the storage disks that you want to dynamically provision. You must specify at least `100Gi`. | 
-| `num-of-osd` | Optional | Enter the number of OSDs. ODF creates 3 times the value specified. | 1 | integer |
-|`worker-nodes` | Optional | Enter the IP addresses of the worker nodes that you want to use in your ODF configuration. Your configuration must have at least 3 worker nodes. If this value is not specified, all of the worker nodes in the cluster are included in your ODF configuration. Example: `169.48.170.90` | N/A |csv |
-| `billing-type` | Optional | Enter the billing option that you want to use. You can enter either `hourly` or `monthly`. | `hourly` | string |
-| `ocs-upgrade` | Optional | Set to `true` if you want to upgrade the major version of ODF while creating a configuration of the newer version. | false | boolean |
-| `ibm-cos-access-key` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter your access key ID. For more information about how to retrieve your access key, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main){: external}. |
-| `ibm-cos-secret-access-key` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter your secret access key. For more information about how to retrieve your secret access key, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main){: external}. |
-| `ibm-cos-endpoint` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter the {{site.data.keyword.cos_full_notm}} regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A | 
-| `ibm-cos-location` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter the {{site.data.keyword.cos_full_notm}} region. Example: `us-east-standard`. | N/A |
+| `num-of-osd` | Optional | Enter the number of OSDs. ODF creates 3 times the value specified. | 1 | `integer` |
+|`worker-nodes` | Optional | Enter the IP addresses of the worker nodes that you want to use in your ODF configuration. Your configuration must have at least 3 worker nodes. If this value is not specified, all of the worker nodes in the cluster are included in your ODF configuration. You can retrieve this parameter by running `oc get nodes`. | N/A | `csv` |
+| `billing-type` | Optional | Enter the billing option that you want to use. You can enter either `hourly` or `monthly`. | `hourly` | `string` |
+| `ocs-upgrade` | Optional | Set to `true` if you want to upgrade the major version of ODF while creating a configuration of the newer version. | false | `boolean` |
+| `ibm-cos-access-key` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter your access key ID. For more information about how to retrieve your access key, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main){: external}. | N/A | `string` |
+| `ibm-cos-secret-access-key` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter your secret access key. For more information about how to retrieve your secret access key, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main){: external}. | N/A | `string` |
+| `ibm-cos-endpoint` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter the {{site.data.keyword.cos_full_notm}} regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A | `string` |
+| `ibm-cos-location` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter the {{site.data.keyword.cos_full_notm}} region. Example: `us-east-standard`. | N/A | `string` |
 {: caption="Table 1. OpenShift Container storage parameter reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is optional. The third column is a brief description of the parameter. The second column is the default value of the parameter."}
 
@@ -447,4 +454,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 {: caption="Table 2. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
-
