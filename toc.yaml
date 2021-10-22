@@ -140,6 +140,7 @@ toc:
                     - ts-host-ssh-login.md
                     - ts-host-registration-fail.md
                     - ts-host-assign-fail.md
+                    - ts-host-duplicate-hostnames.md
                     - ts-host-console-update-fail.md
               - topicgroup:
                   label: Clusters

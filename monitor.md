@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -169,6 +169,7 @@ After you set up {{site.data.keyword.mon_short}} with the pre-defined dashboard 
 
 Review the following metrics that are available for your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
+
 
 #### Location tunnel numbers
 {: #ibm_satellite_link_location_tunnel_count}
