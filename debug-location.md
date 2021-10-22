@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-10-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -355,7 +355,7 @@ Steps to resolve
 ## R0048: etcd backup failure
 {: #R0048}
 
-Location message*
+Location message
 :    R0048: The etcd backup for a cluster in your location failed to complete within the past day.
 
 Steps to resolve
