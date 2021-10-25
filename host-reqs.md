@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-22"
+lastupdated: "2021-10-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -198,6 +198,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 {: caption="Required outbound connectivity for hosts on the primary network interface in the Dallas region" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
+
 #### Toronto
 {: #tor-outbound}
 
@@ -272,6 +273,15 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | - 0.rhel.pool.ntp.org  \n - 1.rhel.pool.ntp.org  \n - 2.rhel.pool.ntp.org  \n - 3.rhel.pool.ntp.org | - |
 {: caption="Required outbound connectivity for hosts on the primary network interface in the Frankfurt region" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
+
+## Outbound connectivity for {{site.data.keyword.satelliteshort}} services
+{: #host-outbound-services}
+
+In addition to the [outbound connectivity](#reqs-host-network-firewall-outbound) for {{site.data.keyword.satelliteshort}}, be sure that you allow the required outbound connectivity for the {{site.data.keyword.satelliteshort}} services that you want to use. Review the following service documentation for outbound connectivity requirements.
+
+- [{{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-satellite-clusters)
+
+
 
 ## Host latency
 {: #host-latency-test}

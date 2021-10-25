@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-22"
+lastupdated: "2021-10-25"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -59,85 +59,6 @@ If you want to use {{site.data.keyword.cos_full_notm}} as your object service, c
     ibmcloud resource service-key-create cos-cred-rw Writer --instance-name noobaa-store --parameters '{"HMAC": true}'
     ```
     {: pre}
-
-## Creating a secret that contains your {{site.data.keyword.satelliteshort}} Link credentials
-{: #odf-sat-link-local}
-
-Before you install ODF, create a Kubernetes secret with your link credentials.
-{: shortdesc}
-
-1. Get the details of your `satellite-containersApi` endpoint.
-    1. From the {[sat-console]} select the location where you want to deploy ODF.
-    2. Click **Link endpoints**, then click the `satellite-containersApi` endpoint.
-    3. On the Endpoint details page, copy the endpoint.
-1. List the secrets in the `kube-system` namespace of your cluster and look for the `storage-secret-store`.
-
-    ```sh
-    oc get secrets -n kube-system | grep storage-secret-store
-    ```
-    {: pre}
-
-1. If the `storage-secret-store` secret doesn't exist, create it.
-
-    1. Create a `secret.yaml` file that contains your IAM API key and the link endpoint you retrieved earlier.
-
-        ```yaml
-        apiVersion: v1
-        kind: Secret
-        metadata:
-          name: storage-secret-store
-          namespace: kube-system
-        type: Opaque
-        stringData:
-          slclient.toml: |-
-            [Bluemix]
-              iam_url = "https://iam.cloud.ibm.com"
-              iam_client_id = "bx"
-              iam_client_secret = "bx"
-              iam_api_key = "<iam_api_key>" # Enter your IAM API key
-              containers_api_route_private = "<link_endpoint>" # Enter the link endpoint that you retrieved earlier.
-            [VPC]
-              provider_type = "g2"
-        ```
-        {: codeblock}
-
-    1. Create the secret in your cluster. 
-
-        ```sh
-        oc create -f secret.yaml -n kube-system
-        ```
-        {: pre}
-
-1. If the `storage-secret-store` secret exists, update it.
-
-    1. Edit the `storage-secret-store` secret.
-
-        ```sh
-        oc edit secret storage-secret-store -n kube-system
-        ```
-        {: pre}
-
-        ```yaml
-        apiVersion: v1
-        kind: Secret
-        metadata:
-          name: storage-secret-store
-          namespace: kube-system
-        type: Opaque
-        stringData:
-          slclient.toml: |-
-            [Bluemix]
-              iam_url = "https://iam.cloud.ibm.com"
-              iam_client_id = "bx"
-              iam_client_secret = "bx"
-              iam_api_key = "<iam_api_key>" # Enter your IAM API key
-              containers_api_route_private = "<link_endpoint>" # Enter the link endpoint that you created earlier.
-            [VPC]
-              provider_type = "g2"
-        ```
-        {: codeblock}
-
-    1. Save and close the file to apply the secret to your cluster.
 
 
 ## Getting the device details for your ODF configuration
@@ -280,7 +201,7 @@ The following steps show how you can manually retrieve the local device informat
     {: note}
 
     ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "container-private-endpoint=<link-endpoint>"
+    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "container-private-endpoint=<link-endpoint>" -p "iam-api-key=<iam-api-key>"
     ```
     {: pre}
 
@@ -597,6 +518,7 @@ In the following example, the ODF configuration is updated to use template versi
 - `mon-device-path` - Use the same parameter value as in your existing configuration.
 - `num-of-osd` - Use the same parameter value as in your existing configuration.
 - `container-private-endpoint` - Use the same parameter value as in your existing configuration.
+- `iam-api-key` - Use the same parameter value as in your existing configuration.
 - `worker-nodes` - Use the same parameter value as in your existing configuration.
 - `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
 - `ibm-cos-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this paramter if you do not use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
@@ -881,7 +803,8 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 | `--name` | Required | Enter a name for your storage configuration. Note that Kubernetes resouces can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
 | `--template-name` | Required | Enter `ocs-local`. | N/A | `string` |
 | `--template-version` | Required | Enter `4.7`. | N/A | `string` |
-| `container-private-endpoint` | Required | Enter the private Link endpoint that you retreived earlier. For example: `https://s111feeb1a1e11cfc11a1-1b14a1ccc9c111bf11a11125d8aa1111-c000.us-east.satellite.appdomain.cloud:32232` | N/A | `string` |
+| `container-private-endpoint` | Required | Enter the `satellite-containersApi` endpoint for you location.  \n 1. From the {[sat-console]} select the location where you want to deploy ODF.  \n 2. Click **Link endpoints**, then click the `satellite-containersApi` endpoint.  \n 3. On the Endpoint details page, copy the endpoint. For example: `https://s111feeb1a1e11cfc11a1-1b14a1ccc9c111bf11a11125d8aa1111-c000.us-east.satellite.appdomain.cloud:32232` | N/A | `string` |
+| `iam-api-key` | Required | Enter your IAM API key. | N/A | `string` | 
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. Note that Kubernetes resouces can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
 | `mon-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths for the storage devices that you want to use for the ODF monitoring (MON) pods. The devices that you specify must have at least 20GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>` or `/dev/disk/by-path/` for VMware. Example `mon-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A | `string` |
 | `osd-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths for the devices that you want to use for the OSD pods. The devices that you specify are used as your storage devices in your ODF configuration. Your OSD devices must have at least 100GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>` or `/dev/disk/by-path/` for VMware and `osd-device-path` or `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2` for a partitioned device. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A | `string` |
