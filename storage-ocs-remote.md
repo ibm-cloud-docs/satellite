@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-25"
+lastupdated: "2021-10-26"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -341,7 +341,7 @@ Use the command line to remove a storage assignment.
 | Parameter | Required? | Description | Default value if not provided | Data type |
 | --- | --- | --- | --- | --- |
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. Note that Kubernetes resouces can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
-| `container-private-endpoint` | Required | Enter the `satellite-containersApi` endpoint for you location.  \n 1. From the {[sat-console]} select the location where you want to deploy ODF.  \n 2. Click **Link endpoints**, then click the `satellite-containersApi` endpoint.  \n 3. On the Endpoint details page, copy the endpoint. For example: `https://s111feeb1a1e11cfc11a1-1b14a1ccc9c111bf11a11125d8aa1111-c000.us-east.satellite.appdomain.cloud:32232` | N/A | `string` |
+| `container-private-endpoint` | Required | Enter the `satellite-containersApi` endpoint for you location.  \n 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} select the location where you want to deploy ODF.  \n 2. Click **Link endpoints**, then click the `satellite-containersApi` endpoint.  \n 3. On the Endpoint details page, copy the endpoint. For example: `https://s111feeb1a1e11cfc11a1-1b14a1ccc9c111bf11a11125d8aa1111-c000.us-east.satellite.appdomain.cloud:32232` | N/A | `string` |
 | `iam-api-key` | Required | Enter your IAM API key. | N/A | `string` | 
 | `mon-storage-class` | Required | Enter the storage class that you want to use for the MON pods. For multizone clusters, be sure to specify a storage class with the `waitForFirstConsumer` volume binding mode. | N/A | `csv` |
 | `mon-size` | Required | Enter the size of the storage volumes that you want to provision for the MON pods. You must specify at least `20Gi`. |

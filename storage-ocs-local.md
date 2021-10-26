@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-25"
+lastupdated: "2021-10-26"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -803,7 +803,7 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 | `--name` | Required | Enter a name for your storage configuration. Note that Kubernetes resouces can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
 | `--template-name` | Required | Enter `ocs-local`. | N/A | `string` |
 | `--template-version` | Required | Enter `4.7`. | N/A | `string` |
-| `container-private-endpoint` | Required | Enter the `satellite-containersApi` endpoint for you location.  \n 1. From the {[sat-console]} select the location where you want to deploy ODF.  \n 2. Click **Link endpoints**, then click the `satellite-containersApi` endpoint.  \n 3. On the Endpoint details page, copy the endpoint. For example: `https://s111feeb1a1e11cfc11a1-1b14a1ccc9c111bf11a11125d8aa1111-c000.us-east.satellite.appdomain.cloud:32232` | N/A | `string` |
+| `container-private-endpoint` | Required | Enter the `satellite-containersApi` endpoint for you location.  \n 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} select the location where you want to deploy ODF.  \n 2. Click **Link endpoints**, then click the `satellite-containersApi` endpoint.  \n 3. On the Endpoint details page, copy the endpoint. For example: `https://s111feeb1a1e11cfc11a1-1b14a1ccc9c111bf11a11125d8aa1111-c000.us-east.satellite.appdomain.cloud:32232` | N/A | `string` |
 | `iam-api-key` | Required | Enter your IAM API key. | N/A | `string` | 
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. Note that Kubernetes resouces can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
 | `mon-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths for the storage devices that you want to use for the ODF monitoring (MON) pods. The devices that you specify must have at least 20GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>` or `/dev/disk/by-path/` for VMware. Example `mon-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A | `string` |
