@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-10-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -38,7 +38,7 @@ If you already have a {{site.data.keyword.la_short}} instance in the same {{site
 ### Viewing logs for your {{site.data.keyword.satelliteshort}} location
 {: #view-la}
 
-Because the {{site.data.keyword.la_full_notm}} instance is enabled for platform-level log collection, logs for all {{site.data.keyword.la_short}}-integrated services are shown in the {{site.data.keyword.la_short}} dashboard. You can apply filters to only view logs for your {{site.data.keyword.satelliteshort}} location.
+Because the {{site.data.keyword.la_full_notm}} instance is enabled for platform-level log collection, logs for all {{site.data.keyword.la_short}}-integrated services are shown in the {{site.data.keyword.la_short}} dashboard. You can apply filters to view only logs for your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 1. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){: external}, click **Open Dashboard** for your {{site.data.keyword.la_short}} instance.
@@ -62,7 +62,7 @@ Logs are collected for your location and posted every 60 seconds.
 #### What kinds of logs are collected?
 {: #analyze-la-types}
 
-By default, three types of logs are automatically generated for your {{site.data.keyword.satelliteshort}} location: [`R00XX`-level error messages](#logs-error), [the status of whether resource deployment to the location is enabled](#logs-deploy), and [the status of {{site.data.keyword.satelliteshort}} Link](#logs-link). Review the following sections for example logs for each log type and descriptions of each log field.
+By default, three types of logs are automatically generated for your {{site.data.keyword.satelliteshort}} location: [`R00XX`-level error messages](#logs-error), [the status of whether resource deployment to the location is enabled](#logs-deploy), and [the status of {{site.data.keyword.satelliteshort}} Link](#logs-link). Review the following sections for an example of each log type and descriptions of each log field.
 
 #### How can I set up alerts for location error logs?
 {: #analyze-la-alert}
@@ -145,6 +145,7 @@ Example log
 |`message`|The status of whether your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable, and the endpoint that was health checked.|
 {: caption="Pre-defined fields for endpoint health status logs" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
+
 
 ## Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events
 {: #setup-at}
