@@ -280,7 +280,7 @@ The following steps show how you can manually retrieve the local device informat
     {: note}
 
     ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "container-private-endpoint=<link-endpoint>"
+    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name" -p "osd-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "mon-device-path=/dev/disk/by-id/<device-1>,/dev/disk/by-id/<device-2>,/dev/disk/by-id/<device-3>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-IP>,<worker-node-IP>,<worker-node-IP>" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "container-private-endpoint=<link-endpoint>" -p "iam-api-key=<iam-api-key>"
     ```
     {: pre}
 
