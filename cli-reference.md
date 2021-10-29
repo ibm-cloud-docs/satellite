@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-10-28"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -752,7 +752,7 @@ Create a {{site.data.keyword.satelliteshort}} endpoint.
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOUD|LOCATION --dest-hostname FQDN_OR_IP --dest-port PORT [--dest-protocol PROTOCOL] --source-protocol PROTOCOL [--output JSON] [-q]
+ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOUD|LOCATION --dest-hostname FQDN_OR_IP --dest-port PORT [--dest-protocol PROTOCOL] --source-protocol PROTOCOL [--sni SNI] [--output JSON] [-q] 
 ```
 {: pre}
 
@@ -785,6 +785,9 @@ ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOU
 `--source-protocol PROTOCOL`
 :    Required. The protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
 
+`--sni`
+:    Optional. If you specify a `tls` or `https` source protocol and want a separate hostname to be added to the TLS handshake, include the server name indicator.
+
 `--output JSON`
 :    Optional. Displays the command output in JSON format.
 
@@ -796,7 +799,7 @@ ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOU
 {: #cli-endpoint-create-example}
 
 ```sh
-ibmcloud sat endpoint create --location aaaaaaaa1111a1aaaa11a --name demo-svc --dest-type cloud --dest-hostname myhost.example.com --dest-port 80 --source-protocol TCP
+ibmcloud sat endpoint create --location aaaaaaaa1111a1aaaa11a --name demo-svc --dest-type cloud --dest-hostname myhost.example.com --dest-port 80 --source-protocol TCP --sni aaaa1111aaaa111a
 ```
 {: pre}
 
@@ -924,7 +927,7 @@ Update an endpoint. Only the options that you specify are updated.
 {: shortdesc}
 
 ```sh
-ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--name NAME] [--dest-hostname FQDN_OR_IP] [--dest-port PORT] [--dest-protocol PROTOCOL] [--source-protocol PROTOCOL] [-q]
+ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--name NAME] [--dest-hostname FQDN_OR_IP] [--dest-port PORT] [--dest-protocol PROTOCOL] [--source-protocol PROTOCOL] [--sni SNI] [-q]
 ```
 {: pre}
 
@@ -957,6 +960,9 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 `--source-protocol PROTOCOL`
 :    Optional. The protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
 
+`--sni`
+:    Optional. If you specify a `tls` or `https` source protocol and want a separate hostname to be added to the TLS handshake, include the server name indicator.
+
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
 
@@ -965,7 +971,7 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 {: #cli-endpoint-update-example}
 
 ```sh
-ibmcloud sat endpoint update --location aaaaaaaa1111a1aaaa11a --endpoint aaaaaaaa1111a1aaaa11a_bb22b --name new_demo_svc --dest-hostname myupdatedhost.example.com --dest-port 8080
+ibmcloud sat endpoint update --location aaaaaaaa1111a1aaaa11a --endpoint aaaaaaaa1111a1aaaa11a_bb22b --name new_demo_svc --dest-hostname myupdatedhost.example.com --dest-port 8080 
 ```
 {: pre}
 
