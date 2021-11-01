@@ -44,7 +44,7 @@ toc:
             - hosts.md
             - link:
                 label: Creating OpenShift clusters in Satellite
-                href: https://cloud.ibm.com/docs/openshift/openshift-satellite-clusters
+                href: /openshift/openshift-satellite-clusters
         - topicgroup:
             label: Deploying Kubernetes resources across clusters with Satellite Config
             topics:
