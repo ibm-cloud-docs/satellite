@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-28"
+lastupdated: "2021-11-01"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -799,7 +799,7 @@ ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOU
 {: #cli-endpoint-create-example}
 
 ```sh
-ibmcloud sat endpoint create --location aaaaaaaa1111a1aaaa11a --name demo-svc --dest-type cloud --dest-hostname myhost.example.com --dest-port 80 --source-protocol TCP --sni aaaa1111aaaa111a
+ibmcloud sat endpoint create --location aaaaaaaa1111a1aaaa11a --name demo-svc --dest-type cloud --dest-hostname myhost.example.com --dest-port 80 --source-protocol tls --sni myhost.example.com
 ```
 {: pre}
 
@@ -971,7 +971,7 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 {: #cli-endpoint-update-example}
 
 ```sh
-ibmcloud sat endpoint update --location aaaaaaaa1111a1aaaa11a --endpoint aaaaaaaa1111a1aaaa11a_bb22b --name new_demo_svc --dest-hostname myupdatedhost.example.com --dest-port 8080 
+ibmcloud sat endpoint update --location aaaaaaaa1111a1aaaa11a --endpoint aaaaaaaa1111a1aaaa11a_bb22b --name new_demo_svc --dest-hostname myupdatedhost.example.com --dest-port 8080 --source-protocol tls --sni myhost.example.com
 ```
 {: pre}
 
