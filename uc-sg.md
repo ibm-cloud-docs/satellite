@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-11-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -51,7 +51,7 @@ As system administrator, you set up a {{site.data.keyword.satelliteshort}} locat
 {: shortdesc}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create) in your on-premises infrastructure.
-2. [Create a managed {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=openshift-satellite-clusters) in the {{site.data.keyword.satelliteshort}} location.
+2. [Create a managed {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in the {{site.data.keyword.satelliteshort}} location.
 3. [Access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 4. [Deploy the apps](/docs/openshift?topic=openshift-deploy_app) that require communication to apps, servers, or services that run outside of the {{site.data.keyword.satelliteshort}} location, such as in {{site.data.keyword.cloud_notm}}.
 
