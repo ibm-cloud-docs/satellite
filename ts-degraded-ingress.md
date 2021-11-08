@@ -71,7 +71,8 @@ While you can't fix the warning state of your Ingress, you can update the Ingres
     - `managedFields`
     - `status`
     
-In addition, change the `endpointPublishingStrategy` to use a `NodePortService` instead of a `LoadBalancerService`. Your final YAML file looks similar to the following:
+    In addition, change the `endpointPublishingStrategy` to use a `NodePortService` instead of a `LoadBalancerService`. Your final YAML file looks similar to the following example.
+    
     ```yaml
     apiVersion: operator.openshift.io/v1
     kind: IngressController
