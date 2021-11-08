@@ -150,6 +150,7 @@ toc:
                     - ts-console-fail.md
                     - ts-cluster-operations.md
                     - ts-addons.md
+                    - ts-degraded-ingress.md
               - topicgroup:
                   label: Storage
                   topics:
