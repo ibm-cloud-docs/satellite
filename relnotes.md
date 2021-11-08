@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-11-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,6 +18,19 @@ subcollection: satellite
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
+
+## November 2021
+{: #release-nov-2021}
+
+Review the release notes for November 2021.
+{: shortdesc}
+
+### 8 November 2021
+{: #8nov2021}
+{: release-note}
+
+Troubleshooting a degraded Ingress operator
+:   For more information, see [Why is my Ingress operator in a warning state?](/docs/satellite?topic=satellite-ts-degraded-ingress).
 
 
 ## October 2021

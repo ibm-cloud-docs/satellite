@@ -13,7 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why is my Ingress is in a warning state?
+# Why is my Ingress in a warning state?
 {: #ts-degraded-ingress}
 
 
@@ -94,14 +94,14 @@ In addition, change the `endpointPublishingStrategy` to use a `NodePortService` 
         - key: dedicated
           value: edge
     ```
-    {: screen}
+   {: screen}
 
 3. Remove the existing Ingress controller from your cluster.
     ```sh
     oc delete ingresscontroller default -n openshift-ingress-operator
     ```
     {: pre}
-
+    
 4. Re-create the Ingress controller by using the YAML file that you created earlier. Note that you must re-create the Ingress controller before {{site.data.keyword.openshiftshort}} can automatically re-create the controller with the old configuration.
     ```sh
     oc apply -f ingress.yaml
