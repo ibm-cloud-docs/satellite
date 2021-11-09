@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-11-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -83,6 +83,9 @@ Review the following image to see how your personal and sensitive information is
     - **Access and data management**: Access to the customer-owned {{site.data.keyword.cos_full_notm}} service instance is controlled by IAM.
     - **Backup**: Every 8 hours
     - **Encryption**: Data is automatically encrypted by using the default built-in encryption mechanisms in {{site.data.keyword.cos_full_notm}}. You can further choose to protect your data by using a root key in {{site.data.keyword.keymanagementservicelong_notm}} and use the key to encrypt the data in your bucket. For more information, see the [{{site.data.keyword.cos_full_notm}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-encryption).
+
+The time to recover a location or cluster is dependent on the size of the location or cluster and the network latency between IBM Cloud and your host infrastructure. 
+{: note}
 
 
 ## Which {{site.data.keyword.cloud_notm}} region is my information stored in?
