@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,6 +24,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 Review the release notes for November 2021.
 {: shortdesc}
+
+### 9 November 2021
+{: #9nov2021}
+{: release-note}
+
+Azure Disk CSI driver template
+:   Previously, when you created a storage configuration by using the Azure Disk storage template, you passed your Azure configuration parameters as one base64 encoded string. Now, each of the Azure configuration parameters is exposed as a command-line option. For more information, see [Azure Disk CSI driver](/docs/satellite?topic=satellite-config-storage-azure-csi).
 
 ### 8 November 2021
 {: #8nov2021}
