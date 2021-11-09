@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-11-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -98,7 +98,11 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     {: pre}
 
     ```sh
-    subscription-manager repos --enable=*
+    subscription-manager repos --enable rhel-server-rhscl-7-rpms
+    subscription-manager repos --enable rhel-7-server-optional-rpms
+    subscription-manager repos --enable rhel-7-server-rh-common-rpms
+    subscription-manager repos --enable rhel-7-server-supplementary-rpms
+    subscription-manager repos --enable rhel-7-server-extras-rpms
     ```
     {: pre}
 
