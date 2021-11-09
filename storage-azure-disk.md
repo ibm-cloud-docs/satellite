@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-11-09"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -73,40 +73,36 @@ If you manually assigned your Azure hosts to your location and did not use the t
 
 1. Repeat the previous steps for each worker node.
 
-### Creating your Azure configuration file
+### Gathering your Azure Disk configuration parameters
 {: #azure-disk-config-file}
 
 Create a configuration file with your Azure Disk settings.
 {: shortdesc}
 
-1. Copy the following cloud provider configuration JSON and save it as a filed called `azure.json` on your local machine. For more information about the cloud provider configuration file parameters, see [Cluster config](https://kubernetes-sigs.github.io/cloud-provider-azure/install/configs/#cluster-config).
-    ```json
-    {
-        "cloud":"AzurePublicCloud",                    // required
-        "tenantId": "xxxx-xxxx-xxxx-xxxx-xxxx",        // required
-        "subscriptionId": "xxxx-xxxx-xxxx-xxxx-xxxx",  // required
-        "resourceGroup": "resource-group-name",        // required
-        "location": "location",                         // required
-        "aadClientId": "xxxx-xxxx-xxxx-xxxx-xxxx",     // required if using service principal
-        "aadClientSecret": "xxxx-xxxx-xxxx-xxxx-xxxx", // required if using service principal
-        "useManagedIdentityExtension": false,          // set true if using managed identity
-        "userAssignedIdentityID": "",                  // required if using managed identity
-        "useInstanceMetadata": true,                   // optional
-        "vmType": "standard",                          // optional
-        "subnetName": "k8s-subnet",                    // optional
-        "vnetName": "k8s-vnet-11111111",               // optional
-        "vnetResourceGroup": "",                       // optional
-        "cloudProviderBackoff": true                   // optional
-    }
-    ```
-    {: codeblock}
-
-1. Encode your cloud provider configuration file to base64.
-
+1. List the Azure Disk storage template parameters.
     ```sh
-    cat azure.json | base64 | awk '{printf $0}'; echo
+    ibmcloud sat storage template get --name azuredisk-csi-driver --version <version>
     ```
     {: pre}
+    
+    Example output
+    ```sh
+    Name                Display Name                           Description                                Required   Type     Default   
+    aadClientId         Azure Active Directory Client ID       Azure Active Directory Client ID.          true       string   -   
+    aadClientSecret     Azure Active Directory Client Secret   Azure Active Directory Client Secret.      true       string   -   
+    location            location                               Location where the machines are created.   true       string   -   
+    resourceGroup       Resource Group.                        Resource Group.                            true       string   -   
+    securityGroupName   Network Security Group Name            Network Security Group Name.               true       string   -   
+    subscriptionId      Subscription ID                        Subscription ID.                           true       string   -   
+    tenantId            Tenant ID                              Tenant ID.                                 true       string   -   
+    vmType              Virtual Machnine Type                  Virtual Machnine Type.                     true       string   -   
+    vnetName            Virtual Network Name                   Virtual Network Name.                      true       string   -  
+    ```
+    {: screen}
+
+
+1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/account/){: external} and retrieve the required parameters. For more information about the parameters, see [Cluster config](https://kubernetes-sigs.github.io/cloud-provider-azure/install/configs/#cluster-config).
+
 
 
 ## Creating an Azure Disk configuration in the command line
@@ -147,7 +143,8 @@ Create a storage configuration in the command line by using the Azure Disk templ
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
     ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name azuredisk-csi-driver --template-version 1.4.0 -p "cloud-config=<base64-encoded-config-file>"
+    ibmcloud sat storage config create --name <config-name> --template-name azuredisk-csi-driver --template-version 1.4.0 --location <location> -p "tenantId=<tenantId>" -p "subscriptionId=<subscription_ID>" -p "aadClientId=<Azure_AD_ClientId>" -p "aadClientSecret=<Azure_AD_Client_Secret>" -p "resourceGroup=<resource_group>" -p "location=<location>" -p "vmType=<vm_type>" -p "securityGroupName=<security_group_name>" -p "vnetName=<vnet_name>"
+
     ```
     {: pre}
 
@@ -237,7 +234,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: screen}
 
-1. List the Azure Disk storage classes.
+2. List the Azure Disk storage classes.
 
     ```sh
     oc get sc | grep azure
@@ -258,7 +255,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: screen}
 
-1. [Deploy an app that uses your Azure Disk storage](#storage-azure-csi-app-deploy).
+3. [Deploy an app that uses your Azure Disk storage](#storage-azure-csi-app-deploy).
 
 
 
@@ -530,11 +527,19 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 ## Parameter reference
 {: #sat-storage-azure-disk-params-cli}
 
-| Parameter | Required? | Description | Default value if not provided |
-| --- | --- | --- | --- |
-| `cloud-config` | Required | Enter the base64 encoded value that you created from your `azure.json` conifguration file. | N/A |
+| Parameter | Required? | Description | 
+| --- | --- | --- | 
+| `tenantId` | Required | The Azure tenant ID that you want to use for your configuration. |
+| `subscriptionId` | Required | You Azure subscription ID. |
+| `aadClientId` | Required | Your Azure Activery Directory Client ID. |
+| `aadClientSecret` | Required | Your Azure Active Directory Client Secret. |
+| `resourceGroup` | Required | The name of your Azure resource group. |
+| `location` | Required | The location of your Azure hosts. |
+| `vmType` | Required | The virtual machine type. For example: `standard` or `VMSS`. |
+| `securityGroupName` | Required | The security group name. |
+| `vnetName` | Required | The name of the virtual network. |
 {: caption="Table 1. Parameter reference for Azure Disk storage" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter."}
+{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates required parameters. The third column is a brief description of the parameter."}
 
 
 
