@@ -151,6 +151,7 @@ toc:
                     - ts-cluster-operations.md
                     - ts-addons.md
                     - ts-degraded-ingress.md
+                    - ts-cluster-ocp-console.md
               - topicgroup:
                   label: Storage
                   topics:
