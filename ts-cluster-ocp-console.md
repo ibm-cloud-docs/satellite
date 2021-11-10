@@ -14,7 +14,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 # Why can't I access the {{site.data.keyword.openshiftshort}} web console?
-{: ts-sat-ocp-console}
+{: #ts-sat-ocp-console}
 
 When you try to access your {{site.data.keyword.satelliteshort}} cluster through the {{site.data.keyword.openshiftshort}} console, you see an error message similar to the following:
 {: tsSymptoms}
