@@ -37,7 +37,7 @@ New location error message is added.
 {: release-note}
 
 Troubleshooting a `certificate expired` error for the {{site.data.keyword.openshiftshort}} console
-:   For more information see [Why can't I access the {{site.data.keyword.openshiftshort}} web console?](/docs/satellite?topic=satellite-ts-cluster-ocp-console).
+:   For more information see [Why can't I access the {{site.data.keyword.openshiftshort}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console).
 
 ### 9 November 2021
 {: #9nov2021}
