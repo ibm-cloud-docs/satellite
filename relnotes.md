@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,12 +25,19 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 Review the release notes for November 2021.
 {: shortdesc}
 
+### 11 November 2021
+{: #11nov2021}
+{: release-note}
+
+New location error message is added. 
+:    For more information see [R0052: Ingress certificate generation issues](/docs/satellite?topic=satellite-ts-locations-debug#R0052).
+
 ### 10 November 2021
 {: #10nov2021}
 {: release-note}
 
 Troubleshooting a `certificate expired` error for the {{site.data.keyword.openshiftshort}} console
-:   For more information see [Why can't I access the {{site.data.keyword.openshiftshort}} web console?](/docs/satellite?topic=satellite-ts-cluster-ocp-console).
+:   For more information see [Why can't I access the {{site.data.keyword.openshiftshort}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console).
 
 ### 9 November 2021
 {: #9nov2021}

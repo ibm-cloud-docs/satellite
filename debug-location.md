@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-22"
+lastupdated: "2021-11-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -394,4 +394,11 @@ Location message
 Steps to resolve
 :    [Open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
 
+## R0052: Ingress certificate generation issues
+{: #R0052}
 
+Location message
+:    Ingress certificates have not been generated for the location endpoints.
+
+Steps to resolve
+:    {{site.data.keyword.cloud_notm}} Support is notified and is working to resolve the issue. Try again later. 
