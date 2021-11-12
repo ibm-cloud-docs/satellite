@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-11-12"
 
 keywords: satellite cli, install satellite cli, satellite cli commands
 
@@ -11,6 +11,7 @@ subcollection: satellite
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands
 {: #setup-cli}

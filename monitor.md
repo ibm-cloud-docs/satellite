@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-11-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -11,6 +11,7 @@ subcollection: satellite
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Monitoring for {{site.data.keyword.satelliteshort}}
 {: #monitor}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-11-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,6 +17,7 @@ subcollection: satellite
 
 You can use built-in security features in {{site.data.keyword.satellitelong}} for risk analysis and security protection. These features help you to protect your {{site.data.keyword.satelliteshort}} workloads that run on your location infrastructure and network communication.
 {: shortdesc}
+
 
 ## Data security
 {: #secure-data}

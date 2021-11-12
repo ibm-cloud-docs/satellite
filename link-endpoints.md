@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-11-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,6 +18,7 @@ subcollection: satellite
 
 Open up {{site.data.keyword.satelliteshort}} endpoints in the {{site.data.keyword.satelliteshort}} control plane to control and audit network traffic between your {{site.data.keyword.satellitelong}} location and services, servers, or apps that run outside of the location.
 {: shortdesc}
+
 
 ## About {{site.data.keyword.satelliteshort}} endpoints
 {: #link-about}

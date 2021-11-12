@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-12"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -11,6 +11,7 @@ subcollection: satellite
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # OpenShift Data Foundation for remote devices
 {: #config-storage-ocs-remote}

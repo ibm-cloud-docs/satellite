@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-29"
+lastupdated: "2021-11-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,6 +19,7 @@ content-type: faq
 
 Review frequently asked questions (FAQs) for using {{site.data.keyword.satellitelong}}.
 {: shortdesc}
+
 
 ## What is {{site.data.keyword.satellitelong_notm}} and how does it work?
 {: #what-is-satellite}
