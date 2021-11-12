@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-11-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,6 +18,7 @@ subcollection: satellite
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
+
 
 ## November 2021
 {: #release-nov-2021}

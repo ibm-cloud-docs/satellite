@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-10"
+lastupdated: "2021-11-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,6 +19,7 @@ Integrate {{site.data.keyword.satelliteshort}} and other {{site.data.keyword.clo
 {: shortdesc}
 
 Logging for your {{site.data.keyword.satelliteshort}} location and for the {{site.data.keyword.cloud_notm}} services that run in your location must be set up separately. For example, to collect logs for your {{site.data.keyword.satelliteshort}} location setup, you enable a {{site.data.keyword.la_short}} instance to collect platform logs in the same region that your location is managed from. Then, to collect logs for a {{site.data.keyword.openshiftlong_notm}} cluster that runs in your {{site.data.keyword.satelliteshort}} location, you create a logging agent in your cluster to automatically collect and forward pod logs to a {{site.data.keyword.la_short}} instance. Note that you can use the same {{site.data.keyword.la_short}} instance to collect logs for both your {{site.data.keyword.satelliteshort}} location and services that run in your {{site.data.keyword.satelliteshort}} location.
+
 
 ## Setting up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs
 {: #setup-la}
