@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-15"
 
 keywords: satellite cli, install satellite cli, satellite cli commands
 

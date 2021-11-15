@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-11-15"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
