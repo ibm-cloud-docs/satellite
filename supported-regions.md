@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-09-30"
+lastupdated: "2021-11-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,12 +21,13 @@ Review the {{site.data.keyword.cloud}} regions that you can choose from to manag
 
 |Geography|Country|Multizone Metro|Location|Region|Zone|
 |---------|-------|---------------|--------|------|----|
-| Asia Pacific | Japan | Tokyo | `tok` | `jp-tok` | `jp-tok-1`</br>`jp-tok-2`</br>`jp-tok-3`|
-| North America | Canada | Toronto | `tor`| `ca-tor`|`tor-1`</br>`tor-4`</br>`tor-5`|
-| North America | United States | Dallas | `dal`| `us-south`|`us-south-1`</br>`us-south-2`</br>`us-south-3`|
-| North America | United States | Washington DC | `wdc`| `us-east`|`us-east-1`</br>`us-east-2`</br>`us-east-3`|
-| Europe | Germany | Frankfurt | `fra` | `eu-de` | `eu-de-1`</br>`eu-de-2`</br>`eu-de-3`|
-| Europe | United Kingdom | London | `lon` | `eu-gb`|`eu-gb-1`</br>`eu-gb-2`</br>`eu-gb-3`|
+| Asia Pacific | Japan | Tokyo | `tok` | `jp-tok` | `jp-tok-1`  \n `jp-tok-2`  \n `jp-tok-3`|
+| North America | Canada | Toronto | `tor`| `ca-tor`|`tor-1`  \n `tor-4`  \n `tor-5`|
+| North America | United States | Dallas | `dal`| `us-south`|`us-south-1`  \n `us-south-2`  \n `us-south-3`|
+| North America | United States | Washington DC | `wdc`| `us-east`|`us-east-1`  \n `us-east-2`  \n `us-east-3`|
+| Europe | Germany | Frankfurt | `fra` | `eu-de` | `eu-de-1`  \n `eu-de-2`  \n `eu-de-3`|
+| Europe | United Kingdom | London | `lon` | `eu-gb`|`eu-gb-1`  \n `eu-gb-2`  \n `eu-gb-3`|
+| South America | Brazil | Sao Paulo | `sao` | `br-sao` | `br-sao-1`  \n `br-sao-2`  \n `br-sao-3` |
 {: caption="Supported {{site.data.keyword.cloud_notm}} locations to manage your {{site.data.keyword.satelliteshort}} location." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the geography. The second column is the country. The third column is the multizone metro. The fourth column is the region. The fifth column has the possible zones."}
 
@@ -67,5 +68,4 @@ Between {{site.data.keyword.cloud_notm}} and the location
 
 Between hosts in your location
 :   Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or {{site.data.keyword.satelliteshort}}-enabled service. For example, in cloud providers such as AWS, this setup typically means that all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. As latency increases, you might see impacts to performance, including provisioning and recovery times, reduced worker nodes in the cluster, {{site.data.keyword.satelliteshort}}-enabled service degradation, and in extreme cases, failures in your cluster applications.
-
 

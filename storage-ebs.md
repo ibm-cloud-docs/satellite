@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-19"
+lastupdated: "2021-11-15"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 

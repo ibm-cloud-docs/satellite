@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-12"
+lastupdated: "2021-11-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -142,7 +142,7 @@ In general, do not set any custom networking configurations on your hosts, such 
 
 - All hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPV4 backend connectivity to the other hosts in the location on the network interface that serves as the default route (`eth0`, `ens0`, or `bond0`).
 
-### Inbound connectivity
+## Inbound connectivity
 {: #reqs-host-network-firewall-inbound}
 
 Hosts must have inbound connectivity on the primary network interface via the default gateway or firewall of the system.
@@ -158,7 +158,7 @@ For example, if the primary network interface for a host is `eth0`, you must ope
 {: caption="Required inbound connectivity for hosts on the primary network interface" caption-side="top"}
 {: summary="The table shows the required inbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
-### Outbound connectivity
+## Outbound connectivity
 {: #reqs-host-network-firewall-outbound}
 
 Hosts must have outbound connectivity to all ports and IP addresses on the primary network interface via the default gateway of the system.
@@ -183,7 +183,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 
 
 
-#### Dallas
+### Dallas
 {: #dal-outbound}
 
 
@@ -200,13 +200,13 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
 
-#### Toronto
+### Toronto
 {: #tor-outbound}
 
 |Description|Source IP|Destination IP|Protocol and ports|
 |-----------|---------|--------------|------------------|
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 163.74.65.138</br>163.75.70.50</br>169.53.160.154 | - TCP 443, 30000 - 32767  \n - UDP 30000 - 32767 |
-| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.ca-tor.cloud-object-storage.appdomain.cloud` | HTTPS |
+| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.us.cloud-object-storage.appdomain.cloud` | HTTPS |
 | Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | - 158.85.124.194  \n - 158.85.79.18  \n - 158.85.86.234  \n - 163.74.67.114  \n - 163.74.70.82  \n - 163.74.70.90  \n - 163.74.70.98  \n - 163.75.70.74  \n - 163.75.70.82  \n - 163.75.70.90  \n - 163.75.70.98  \n - 169.55.154.154  \n **Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.ca-tor.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | All IP addresses listed for **Toronto** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and client or authorized user | All IP addresses listed for Toronto (`tor`) in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips) | See documentation |
@@ -215,7 +215,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 {: caption="Required outbound connectivity for hosts on the primary network interface in the Toronto region" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
-#### Washington D.C.
+### Washington D.C.
 {: #wdc-outbound}
 
 |Description|Source IP|Destination IP|Protocol and ports|
@@ -230,7 +230,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 {: caption="Required outbound connectivity for hosts on the primary network interface in the Washington DC region" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
-#### London
+### London
 {: #lon-outbound}
 
 |Description|Source IP|Destination IP|Protocol and ports|
@@ -245,13 +245,13 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 {: caption="Required outbound connectivity for hosts on the primary network interface in the London region" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
-#### Tokyo
+### Tokyo
 {: #tok-outbound}
 
 |Description|Source IP|Destination IP|Protocol and ports|
 |-----------|---------|--------------|------------------|
 | Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 161.202.104.226</br>128.168.67.106</br>165.192.108.10 | - TCP 443, 30000 - 32767  \n - UDP 30000 - 32767 |
-| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.tok.ap.cloud-object-storage.appdomain.cloud` | HTTPS |
+| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.ap.cloud-object-storage.appdomain.cloud` | HTTPS |
 | Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | - 161.202.150.66  \n - 128.168.89.146  \n - 165.192.71.226  \n - 169.56.18.98  \n - 128.168.68.42  \n - 165.192.76.2  \n - 161.202.235.106  \n - 128.168.106.18  \n - 165.192.111.170  \n - 161.202.89.122  \n - 128.168.151.170  \n - 165.192.64.2  \n **Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.jp-tok.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
 | Allow hosts to be attached to a location and assigned to services in the location | All hosts | All IP addresses listed for **AP North** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips), or allow all outbound | TCP 443 |
 | Allow [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies) to set up and manage your location | All hosts and clients or authorized users | All IP addresses listed for **AP North** in the [{{site.data.keyword.openshiftlong_notm}} firewall documentation](/docs/openshift?topic=openshift-firewall#master_ips) | [See documentation](/docs/openshift?topic=openshift-firewall#master_ips) |
@@ -260,7 +260,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 {: caption="Required outbound connectivity for hosts on the primary network interface in the Tokyo region" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
-#### Frankfurt
+### Frankfurt
 {: #fra-outbound}
 
 |Description|Source IP|Destination IP|Protocol and ports|
@@ -274,6 +274,24 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | - 0.rhel.pool.ntp.org  \n - 1.rhel.pool.ntp.org  \n - 2.rhel.pool.ntp.org  \n - 3.rhel.pool.ntp.org | - |
 {: caption="Required outbound connectivity for hosts on the primary network interface in the Frankfurt region" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
+
+
+
+
+### Sao Paulo
+{: #sao-outbound}
+
+|Description|Source IP|Destination IP|Protocol and ports|
+|-----------|---------|--------------|------------------|
+| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 163.107.67.18</br>163.109.71.82</br>169.57.144.42 | - TCP 443, 30000 - 32767  \n - UDP 30000 - 32767 |
+| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.us.cloud-object-storage.appdomain.cloud` | HTTPS |
+| Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | - 163.107.67.26  \n - 163.107.69.114  \n - 163.107.70.162  \n - 163.107.70.74  \n - 163.109.67.210  \n - 163.109.70.226  \n - 163.109.70.234  \n - 163.109.71.90  \n - 169.57.155.74  \n - 169.57.162.26  \n - 169.57.163.90  \n - 169.57.215.218  \n **Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.br-sao.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
+| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | - 0.rhel.pool.ntp.org  \n - 1.rhel.pool.ntp.org  \n - 2.rhel.pool.ntp.org  \n - 3.rhel.pool.ntp.org | - |
+{: caption="Required outbound connectivity for hosts on the primary network interface in the Sao Paulo region" caption-side="top"}
+{: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
+
+
 
 ## Outbound connectivity for {{site.data.keyword.satelliteshort}} services
 {: #host-outbound-services}
@@ -325,6 +343,10 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     - **London**
 
       158.175.120.210</br>141.125.97.106</br>158.176.139.66
+      
+    - **Sao Paolo**
+    
+      163.107.67.18</br>163.109.71.82</br>169.57.144.42
 
     - **Tokyo**
 
