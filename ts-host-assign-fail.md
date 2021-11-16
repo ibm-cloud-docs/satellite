@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-11-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -117,7 +117,7 @@ Review the following table to help troubleshoot network connectivity issues to {
 | Private regional bootstrap endpoint| `curl -v https://private.us-south.containers.cloud.ibm.com/bootstrap/firstboot` |
 |{{site.data.keyword.registrylong_notm}} region | `curl -v https://us.icr.io` |
 {: class="simple-tab-table"}
-{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Dallas." caption-side="bottom"}
+{: caption="Endpoints to test when your location is managed from Dallas." caption-side="bottom"}
 {: #check-ep-dallas}
 {: tab-title="Dallas"}
 {: tab-group="check-ep"}
@@ -129,10 +129,28 @@ Review the following table to help troubleshoot network connectivity issues to {
 | Private regional bootstrap endpoint| `curl -v https://private.eu-de.containers.cloud.ibm.com/bootstrap/firstboot` |
 |{{site.data.keyword.registrylong_notm}} region | `curl -v https://de.icr.io` |
 {: class="simple-tab-table"}
-{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Frankfurt." caption-side="bottom"}
+{: caption="Endpoints to test when your location is managed from Frankfurt." caption-side="bottom"}
 {: #check-ep-frankfurt}
 {: tab-title="Frankfurt"}
 {: tab-group="check-ep"}
+
+
+
+| Endpoint | Command to check endpoint |
+| --- | ------------------------- |
+| Public regional endpoint| `nslookup origin.br-sao.containers.cloud.ibm.com` |
+| Public regional bootstrap endpoint | `curl -v https://origin.br-sao.containers.cloud.ibm.com/bootstrap/firstboot` |
+| Private regional bootstrap endpoint| `curl -v https://private.br-sao.containers.cloud.ibm.com/bootstrap/firstboot` |
+|{{site.data.keyword.registrylong_notm}} region | `curl -v https://br-sao.icr.io` |
+{: class="simple-tab-table"}
+{: caption="Endpoints to test when your location is managed from Sao Paulo." caption-side="bottom"}
+{: #check-ep-saopaulo}
+{: tab-title="Sao Paulo"}
+{: tab-group="check-ep"}
+
+
+
+
 
 | Endpoint | Command to check endpoint |
 | --- | ------------------------- |
@@ -141,7 +159,7 @@ Review the following table to help troubleshoot network connectivity issues to {
 | Private regional bootstrap endpoint | `curl -v https://private.eu-gb.containers.cloud.ibm.com/bootstrap/firstboot` |
 |{{site.data.keyword.registrylong_notm}} region | `curl -v https://uk.icr.io` |
 {: class="simple-tab-table"}
-{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from London." caption-side="bottom"}
+{: caption="Endpoints to test when your location is managed from London." caption-side="bottom"}
 {: #check-ep-london}
 {: tab-title="London"}
 {: tab-group="check-ep"}
@@ -153,7 +171,7 @@ Review the following table to help troubleshoot network connectivity issues to {
 | Private regional bootstrap endpoint | `curl -v https://private.jp-tok.containers.cloud.ibm.com/bootstrap/firstboot` |
 |{{site.data.keyword.registrylong_notm}} region | `curl -v https://jp.icr.io` |
 {: class="simple-tab-table"}
-{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Tokyo." caption-side="bottom"}
+{: caption="Endpoints to test when your location is managed from Tokyo." caption-side="bottom"}
 {: #check-ep-tokyo}
 {: tab-title="Tokyo"}
 {: tab-group="check-ep"}
@@ -165,7 +183,7 @@ Review the following table to help troubleshoot network connectivity issues to {
 | Private regional bootstrap endpoint | `curl -v https://private.ca-tor.containers.cloud.ibm.com/bootstrap/firstboot` |
 |{{site.data.keyword.registrylong_notm}} region | `curl -v https://jp.icr.io` |
 {: class="simple-tab-table"}
-{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Toronto." caption-side="bottom"}
+{: caption="Endpoints to test when your location is managed from Toronto." caption-side="bottom"}
 {: #check-ep-toronto}
 {: tab-title="Toronto"}
 {: tab-group="check-ep"}
@@ -177,8 +195,7 @@ Review the following table to help troubleshoot network connectivity issues to {
 | Private regional bootstrap endpoint | `curl -v https://private.us-east.containers.cloud.ibm.com/bootstrap/firstboot` |
 |{{site.data.keyword.registrylong_notm}} region | `curl -v https://us.icr.io` |
 {: class="simple-tab-table"}
-{: caption="Endpoints to test when your {{site.data.keyword.satelliteshort}} location is managed from Washington DC." caption-side="bottom"}
+{: caption="Endpoints to test when your location is managed from Washington DC." caption-side="bottom"}
 {: #check-ep-dc}
 {: tab-title="Washington, DC"}
 {: tab-group="check-ep"}
-
