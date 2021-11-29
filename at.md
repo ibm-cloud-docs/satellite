@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-29"
 
 keywords: satellite at events, satellite activity tracker, satconfig events, satlink events, satellite config events, satellite link events, satellite location events, satellite host events
 
@@ -75,6 +75,45 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 {: summary="The rows are read from left to right. The first column is the name of the action event that is sent to Activity Tracker. The second column is a description of the event."}
 
 
+## Events for {{site.data.keyword.satelliteshort}} storage
+{: #at_actions_storage}
+
+| Action | Description |
+| --- | --- |
+| `satellite.storage-template.get` | A storage template is retrieved. |
+| `satellite.storage-template.list` | A list of storage templates is retrieved. | 
+| `satellite.storage-configuration.get` | A storage configuration is retrieved. | 
+| `satellite.storage-configuration.list` | A list of storage configurations is retrieved. | 
+| `satellite.storage-configuration.get-desired` | A desired storage configuration is returned. |
+| `satellite.storage-configuration.set-desired` | A desired storage configuration request is created. |
+| `satellite.storage-configuration.delete-desired` | A storage request is deleted. |
+| `satellite.storage-configuration.expand-desired` | The desired capacity of a storage request is increased. |
+| `satellite.storage-configuration.ack-desired-capacity` | A storage capacity expansion request is acknowledged. |
+| `satellite.storage-configuration.get-assigned` | Assigned storage configuration details is returned. | 
+| `satellite.storage-configuration.create` | A storage configuration is created. | 
+| `satellite.storage-configuration.delete` | A storage configuration is deleted. | 
+| `satellite.storage-configuration.update` | A storage configuration is updated. |
+{: caption="Storage actions that generate events." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the name of the action event that is sent to Activity Tracker. The second column is a description of the event."}
+
+
+## Events for {{site.data.keyword.satelliteshort}} assignments
+{: #at_actions_assignments}
+
+| Action | Description |
+| --- | --- |
+| `satellite.subscription.get` | The details of assignment are retrieved. |
+| `satellite.subscription.list` | A list of assignments is retrieved. | 
+| `satellite.subscription.get-by-name` | An assignment is retrieved. |
+| `satellite.subscription.get-by-config` | An assignment is retrieved by using the associated configuration. | 
+| `satellite.subscription.get-by-controller` | A list of assignments is retrieved by using a location. |
+| `satellite.subscription.get-by-clusterid` | A list of assignments is retrieved by using the cluster ID. | 
+| `satellite.subscription.create` | An assignment is created. | 
+| `satellite.subscription.delete` | An assignment is deleted. | 
+| `satellite.subscription.update` | An assignment is updated. | 
+| `satellite.available.classes.get` | A list of available storage classes for an assignment is retrieved. |
+{: caption="Assignment actions that generate events." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the name of the action event that is sent to Activity Tracker. The second column is a description of the event."}
 
 
 ## Viewing events

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-11-29"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -99,7 +99,7 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
 1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-remote-params-cli).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Don't specify the {{site.data.keyword.cos_short}} parameters if your existing configuration doesn't use {{site.data.keyword.cos_full_notm}}.  
     ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name>" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=<mon-size>" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=<osd-size>" -p "num-of-osd=1" -p "worker-nodes=<worker-IP>,<worker-IP>,<worker-IP>" -p "ibm-cos-endpoint=<cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "container-private-endpoint=<link-endpoint>" -p "iam-api-key=<iam-api-key>"
+    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name>" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=<mon-size>" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=<osd-size>" -p "num-of-osd=1" -p "worker-nodes=<worker-IP>,<worker-IP>,<worker-IP>" -p "ibm-cos-endpoint=<cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "iam-api-key=<iam-api-key>"
     ```
     {: pre}
 
@@ -258,7 +258,6 @@ To upgrade the ODF version of your configuration, complete the following steps:
     - `template-version` - Enter the template version that you want to use to upgrade your configuration.
     - `ocs-cluster-name` - Use the same parameter value as in your existing configuration.
     - `mon-storage-class` - Use the same parameter value as in your existing configuration.
-    - `container-private-endpoint` - Use the same parameter as in your existing configuration.
     - `iam-api-key` - Use the same parameter as in your existing configuration.
     - `mon-size` - Use the same parameter value as in your existing configuration.
     - `osd-storage-class` - Use the same parameter value as in your existing configuration.
@@ -279,7 +278,7 @@ To upgrade the ODF version of your configuration, complete the following steps:
 
 4. Save the configuration details. When you upgrade your ODF version, you must enter the same configuration details and set the `template-version` to the version you want to upgrade to and set the `ocs-upgrade` parameter to `true`. Don't specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. Note that Kubernetes resources can't contain capital letters or special characters. Enter an `ocs-cluster-name` that uses only lowercase letters, numbers, `-`, or `.`.
     ```sh
-    ibmcloud sat storage config create --name ocs-config --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=testocscluster" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=50Gi" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=150Gi" -p "num-of-osd=1" -p "worker-nodes=169.48.170.83,169.48.170.88,169.48.170.90" -p "ocs-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "container-private-endpoint=<link-endpoint>" -p "iam-api-key=<iam-api-key>"
+    ibmcloud sat storage config create --name ocs-config --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=testocscluster" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=50Gi" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=150Gi" -p "num-of-osd=1" -p "worker-nodes=169.48.170.83,169.48.170.88,169.48.170.90" -p "ocs-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "iam-api-key=<iam-api-key>"
     ```
     {: pre}
 
@@ -342,7 +341,6 @@ Use the command line to remove a storage assignment.
 | Parameter | Required? | Description | Default value if not provided | Data type |
 | --- | --- | --- | --- | --- |
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. Note that Kubernetes resouces can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
-| `container-private-endpoint` | Required | Enter the `satellite-containersApi` endpoint for you location.  \n 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} select the location where you want to deploy ODF.  \n 2. Click **Link endpoints**, then click the `satellite-containersApi` endpoint.  \n 3. On the Endpoint details page, copy the endpoint. For example: `https://s111feeb1a1e11cfc11a1-1b14a1ccc9c111bf11a11125d8aa1111-c000.us-east.satellite.appdomain.cloud:32232` | N/A | `string` |
 | `iam-api-key` | Required | Enter your IAM API key. | N/A | `string` | 
 | `mon-storage-class` | Required | Enter the storage class that you want to use for the MON pods. For multizone clusters, be sure to specify a storage class with the `waitForFirstConsumer` volume binding mode. | N/A | `csv` |
 | `mon-size` | Required | Enter the size of the storage volumes that you want to provision for the MON pods. You must specify at least `20Gi`. |
