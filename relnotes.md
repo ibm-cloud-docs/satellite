@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-11-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,6 +25,17 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 Review the release notes for November 2021.
 {: shortdesc}
+
+### 29 November 2021
+{: #29nov2021}
+{: release-note}
+
+
+{{site.data.keyword.openshiftshort}} Data Foundation
+:   Updated deployment parameters for {{site.data.keyword.openshiftshort}} Data Foundation. The `container-private-endpoint` parameter is no longer required.
+
+{{site.data.keyword.at_short}}
+:   New {{site.data.keyword.at_short}} events are available for {{site.data.keyword.satelliteshort}} storage. For more information, see [Auditing events](/docs/satellite?topic=satellite-at_events).
 
 ### 16 November 2021
 {: #16nov2021}
@@ -581,7 +592,7 @@ Review the release notes for 18 November 2020.
 {: shortdesc}
 
 Internal registry
-:    Added information on how to [Set up the internal container image registry](/docs/satellite?topic=openshift-satellite-clusters#satcluster-internal-registry) for {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} locations.
+:    Added information on how to [Set up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry) for {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} locations.
 
 Service overview
 :    Added an [About {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about) topic to help you learn about {{site.data.keyword.satelliteshort}} terminology, service architecture, and components.
