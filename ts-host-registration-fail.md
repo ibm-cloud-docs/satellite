@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-01"
+lastupdated: "2021-12-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -27,7 +27,7 @@ Error: Nothing to do
 {: screen}
 
 
-Your machine does not meet the minimum requirements to become a {{site.data.keyword.satelliteshort}} host. In particular, you must have the following packages installed on your RHEL 7 machine.
+Your machine does not meet the minimum requirements to become a {{site.data.keyword.satelliteshort}} host. In particular, you must have the following packages installed on your Red Hat Enterprise Linux 7 machine.
 {: tsCauses}
 
 ```sh

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-18"
+lastupdated: "2021-12-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -92,7 +92,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
     - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
     - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
     - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
-2. Confirm that you have at least three host machines in separate zones that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 vCPUs and 16 GB of memory with RHEL 7 packages and any provider-specific requirement from the guide. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
+2. Confirm that you have at least three host machines in separate zones that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 vCPUs and 16 GB of memory with Red Hat Enterprise Linux 7 packages and any provider-specific requirement from the guide. Make sure that you use minimal Red Hat Enterprise Linux images. Do not install the LAMP stack.
 
     A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).
     {: tip}
@@ -102,7 +102,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
 ### Attaching hosts from on-premises data centers and edge networks
 {: #gs-attach-hosts-onprem}
 
-1. In your on-premises environment, identify or create at least three host machines in physically separate racks, which are called _zones_ in {{site.data.keyword.satelliteshort}}, that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 vCPUs and 16 GB of memory with RHEL 7 packages.
+1. In your on-premises environment, identify or create at least three host machines in physically separate racks, which are called _zones_ in {{site.data.keyword.satelliteshort}}, that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 vCPUs and 16 GB of memory with Red Hat Enterprise Linux 7 packages.
 
     A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).
     {: tip}
@@ -126,7 +126,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
         ```
         {: pre}
 
-    4. Update your host to have the required RHEL 7 packages. For more information about how to install these packages, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
+    4. Update your host to have the required Red Hat Enterprise Linux 7 packages. For more information about how to install these packages, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
     5. Run the script.
         ```sh
         sudo nohup bash /tmp/attach.sh &

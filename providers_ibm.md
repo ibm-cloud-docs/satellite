@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-12-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -28,12 +28,12 @@ Test out an {{site.data.keyword.satellitelong}} location with virtual instances 
 You can create your {{site.data.keyword.satelliteshort}} location by using hosts that you added from {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
+All hosts that you want to add must meet the general host requirements, such as the Red Hat Enterprise Linux 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create).
 
-1. Follow the steps to create a [classic public virtual server](/docs/virtual-servers?topic=virtual-servers-ordering-vs-public) or a virtual server instance in a [VPC](/docs/vpc?topic=vpc-creating-virtual-servers). Make sure that you select a supported RHEL 7 operating system, configure the machine with at least 4 CPU and 16 RAM, and add a boot disk with a size of at least 100 GB. 
+1. Follow the steps to create a [classic public virtual server](/docs/virtual-servers?topic=virtual-servers-ordering-vs-public) or a virtual server instance in a [VPC](/docs/vpc?topic=vpc-creating-virtual-servers). Make sure that you select a supported Red Hat Enterprise Linux 7 operating system, configure the machine with at least 4 CPU and 16 RAM, and add a boot disk with a size of at least 100 GB. 
 2. Wait for your virtual server instance to be provisioned.
 3. Get the registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location.
     ```sh
