@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-12-02"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -439,7 +439,29 @@ If you no longer plan on using local file storage in your cluster, you can unass
 Removing the storage configuration, uninstalls the local storage operator resources and the `sat-local-file-gold` storage class from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
 {: important}
 
+<staging>
 
+### Remove the local file storage configuration from the console
+{: #sat-storage-rm-local-file-ui}
+
+
+Use the console to remove a storage configuration. 
+{: shortdesc}
+
+1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, select the storage configuration that you subscribed your clusters to. 
+
+2. Find the subscription that you want to remove and from the actions menu, click **Remove**. After the subscription is removed, the local storage operator pods and storage classes are removed from all clusters that your storage configuration was assigned to. 
+
+3. Optional: Follow step 3 in [Removing the local storage configuration from the CLI](#rm-local-file-temp-cli) to verify that the local storage driver pods and storage classes are removed from your clusters. 
+
+4. Optional: Remove your storage configuration. 
+    1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, find the storage configuration that you want to remove. 
+    2. From the actions menu, click **Delete**.
+
+### Remove the local file storage configuration from the command line
+{: #rm-local-file-temp-cli}
+
+</staging>
 
 1. List the resources in the `local-storage` namespace. When you delete your storage assignment, these resources are removed.
     ```sh

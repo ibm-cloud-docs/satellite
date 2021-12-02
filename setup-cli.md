@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-12-02"
 
 keywords: satellite cli, install satellite cli, satellite cli commands
 
@@ -31,13 +31,27 @@ Set up the {{site.data.keyword.cloud_notm}} command-line interface (CLI), the pl
     {: pre}
 
     If you have a federated ID, use `ibmcloud login --sso` to log in to the {{site.data.keyword.cloud_notm}} CLI. Enter your username and use the provided URL in your CLI output to retrieve your one-time passcode. You know you have a federated ID when the login fails without the `--sso` and succeeds with the `--sso` option.
-    {: tip}
+    {: tip}<staging-internal>
+
+3. To create and manage {{site.data.keyword.satelliteshort}} resources in a staging environment instead of a production environment, install the {{site.data.keyword.satellitelong_notm}} staging plug-in.
+
+    1. Install the staging environment repo.
+        ```sh
+        ibmcloud plugin repo-add stage https://plugins.test.cloud.ibm.com
+        ```
+        {: pre}
+
+    2. Install the {{site.data.keyword.containershort_notm}} staging plug-in, which includes the `ibmcloud sat` commands. Follow the prompt to confirm the installation.
+        ```sh
+        ibmcloud plugin install container-service -r stage
+        ```
+        {: pre}</staging-internal><prod>
 
 3. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.containershort_notm}}. This plug-in includes `ibmcloud sat` commands to manage {{site.data.keyword.satelliteshort}} resources and `ibmcloud oc` to manage {{site.data.keyword.openshiftshort}} cluster resources.
     ```sh
     ibmcloud plugin install container-service
     ```
-    {: pre}
+    {: pre}</prod>
 
 4. Install the {{site.data.keyword.cloud_notm}} plug-in for {{site.data.keyword.registrylong_notm}} (`ibmcloud cr`). Use this plug-in to set up your own namespace in a multi-tenant, highly available, and scalable private image registry that is hosted by {{site.data.keyword.IBM_notm}} , and to store and share Docker images with other users. Docker images are required to deploy containers into a cluster.
     ```sh
@@ -69,7 +83,13 @@ Set up the {{site.data.keyword.cloud_notm}} command-line interface (CLI), the pl
 
 7. To work with OpenShift Container Platform workloads, [install the `oc` CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 
+<staging-internal>
 
+8. Optional: If you plan to use {{site.data.keyword.cloud_notm}} infrastructure in your {{site.data.keyword.satelliteshort}} location, install the infrastructure plug-ins.
+    ```sh
+    ibmcloud plugin install infrastructure-service
+    ```
+    {: pre}</staging-internal>
 
 
 ## Updating the CLI
@@ -141,7 +161,8 @@ For reference information about CLIs that you installed, see the documentation f
 - [`ibmcloud sat` commands](/docs/satellite?topic=satellite-satellite-cli-reference)
 - [`ibmcloud oc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli)
 - [`ibmcloud cr` commands](/docs/Registry?topic=container-registry-cli-plugin-containerregcli)
-- [`ibmcloud ob` commands](/docs/containers?topic=containers-observability_cli)
+- [`ibmcloud ob` commands](/docs/containers?topic=containers-observability_cli)<staging-internal>
+- [`ibmcloud sl` commands](/docs/cli?topic=cli-cli-virtual-servers)</staging-internal>
 - [`oc` commands](https://docs.openshift.com/container-platform/4.5/cli_reference/openshift_cli/developer-cli-commands.html){: external}
 - [`kubectl` commands](https://kubectl.docs.kubernetes.io/){: external}
 

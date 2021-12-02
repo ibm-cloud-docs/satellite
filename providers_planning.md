@@ -240,6 +240,26 @@ Retrieve the Google Cloud Platform (GCP) credentials that {{site.data.keyword.sa
     ```
     {: screen}
 
+<ff-vmware>
 
+### VMWare credentials
+{: #infra-creds-vmware}
+
+Retrieve the VMWare credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your VMWare cloud on your behalf.
+{: shortdesc}
+
+1. Verify that you have the required [permissions in your VMWare account](/docs/satellite?topic=satellite-iam#permissions-vmware) to create a {{site.data.keyword.satelliteshort}} location from a template.
+2. Get your VMware username, password, and the URL or fully-qualified domain name (FQDN) of your vCenter Server. For more information, see the [VMware configuration documentation](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vcenter.configuration.doc/GUID-223C2821-BD98-4C7A-936B-7DBE96291BA4.html){: external}.
+3. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. 
+    ```json
+    {
+        "vcenter_url":"string",
+        "username":"string",
+        "password": "string"
+    }
+    ```
+    {: screen}
+
+</ff-vmware>
 
 

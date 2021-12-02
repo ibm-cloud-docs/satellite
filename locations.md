@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -72,7 +72,7 @@ Before you begin
 
 To create a location from the console,
 
-1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
+1. From the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, click **Create location**.
 
 2. Click **Manual setup**.
 
@@ -387,7 +387,7 @@ As you attach more resources to your {{site.data.keyword.satelliteshort}} locati
 ### How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?
 {: #control-plane-attach-capacity}
 
-When you list locations, such as with the `ibmcloud sat location ls` command or in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, the location enters an `Action required` health state. You see warning messages similar to the following example.
+When you list locations, such as with the `ibmcloud sat location ls` command or in the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, the location enters an `Action required` health state. You see warning messages similar to the following example.
 
 ```sh
 Hosts in the location control plane are running out of disk space.
@@ -512,7 +512,7 @@ When you are done and your new location is healthy, you can [remove the previous
 When you set up a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your location healthy. For more information, see [{{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default). For troubleshooting help, see [Debugging location health](/docs/satellite?topic=satellite-ts-locations-debug).
 {: shortdesc}
 
-You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running `ibmcloud sat location ls`.
+You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, or by running `ibmcloud sat location ls`.
 
 | Health state | Description
 | --- | --- |
@@ -547,7 +547,7 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your locations.
 
 1. [Remove all {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-remove) from your location.
 2. [Remove all hosts](/docs/satellite?topic=satellite-hosts#host-remove) from your location.
-3. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} **Locations** table, hover over the location that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
+3. From the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external} **Locations** table, hover over the location that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 4. Click **Remove location**, enter the location name to confirm the deletion, and click **Remove**.
 
 Now that the location is removed, check the hosts in your underlying infrastructure provider. To reuse the hosts for other purposes, you must reload the operating system. If you no longer need the hosts, delete them from your infrastructure provider.

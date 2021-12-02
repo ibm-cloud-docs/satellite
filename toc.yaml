@@ -18,10 +18,17 @@ toc:
       - topicgroup:
           label: Understanding Satellite use cases
           topics:
-            - about.md
+            - about.md<staging-uc>
+            - uc-ov.md</staging-uc>
             - uc-sg.md
-            - uc-edge.md
-      - relnotes.md
+            - uc-edge.md<staging-internal>
+            - adopters.md</staging-internal>
+      - relnotes.md<staging>
+  - navgroup:
+      id: tutorial
+      topics:
+        - tutorial.md
+        - direct-link.md</staging>
   - navgroup:
       id: howto
       topics:
@@ -53,7 +60,8 @@ toc:
               - config-sat-setup.md
               - config-manage.md
               - config-roks-setup.md
-        - link-endpoints.md
+        - link-endpoints.md<staging>
+        - satellite-mesh-mvp.md</staging>
         - topicgroup:
             label: Logging and monitoring
             topics:
@@ -80,8 +88,10 @@ toc:
               - topicgroup:
                   label: NetApp storage templates
                   topics:
-                    - storage-netapp-trident.md
-                    - storage-netapp-nas.md
+                    - storage-netapp-trident.md<staging>
+                    - storage-netapp-nas-2104.md</staging>
+                    - storage-netapp-nas.md<staging>
+                    - storage-netapp-san-2104.md</staging>
                     - storage-netapp-san.md
               - topicgroup:
                   label: Red Hat storage templates
@@ -89,7 +99,8 @@ toc:
                     - storage-local-block.md
                     - storage-local-file.md
                     - storage-ocs-local.md
-                    - storage-ocs-remote.md
+                    - storage-ocs-remote.md<staging>
+              - storage-cos.md</staging>
               - storage-ref.md
         - topicgroup:
             label: Enhancing security
@@ -104,9 +115,18 @@ toc:
   - navgroup:
       id: reference
       topics: 
-        - link:
-                label: API reference
+        <staging-apidoc>- topicgroup:
+            label: API reference
+            topics:
+            - link:
+                label: Satellite locations, hosts, and clusters
                 href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster
+            - link:
+                label: Satellite links, endpoints, and sources
+                href: https://pages.github.ibm.com/{{site.data.keyword.IBM_notm}}-Cloud-Platform-Networking/satellite-link-api/#/
+            </staging-apidoc><prod-apidoc>- link:
+                label: API reference
+                href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster</prod-apidoc>
         - topicgroup:
             label: CLI plug-in reference
             topics:
@@ -148,7 +168,8 @@ toc:
                   label: Clusters
                   topics:
                     - debug-clusters.md
-                    - ts-cluster-satconfig-updates.md
+                    - ts-cluster-satconfig-updates.md<staging>
+                    - ts-kubectl-fail.md</staging>
                     - ts-console-fail.md
                     - ts-cluster-operations.md
                     - ts-addons.md
@@ -158,5 +179,9 @@ toc:
                   label: Storage
                   topics:
                     - debug-storage.md
-                    - ts-storage-cleanup.md
+                    - ts-storage-cleanup.md<staging-cli>
+  - navgroup:
+      id: reference
+      topics:
+        - cli-reference-new-1.md</staging-cli>
 

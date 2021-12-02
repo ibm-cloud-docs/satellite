@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -612,5 +612,13 @@ To allow users in Microsoft Azure to do various actions for {{site.data.keyword.
 To allow users in Google Cloud Platform to do various actions for {{site.data.keyword.satelliteshort}}, you can grant the users the **Editor** role to the project in GCP IAM. For more information about the permissions of this role, see the [GCP documentation](https://cloud.google.com/iam/docs/permissions-reference){: external}.
 {: shortdesc}
 
+<ff-vmware>
 
+### VMware permissions
+{: #permissions-vmware}
+
+To allow users in VMware to do various actions for {{site.data.keyword.satelliteshort}}, grant the users the **Administrator** role for the VMware vSphere vCenter servers. For more information, see the [VMware documentation](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.security.doc/GUID-5372F580-5C23-4E9C-8A4E-EF1B4DD9033E.html){: external}.
+{: shortdesc}
+
+</ff-vmware>
 

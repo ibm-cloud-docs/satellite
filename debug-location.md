@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -372,7 +372,7 @@ To determine where your problem exists,
     {: caption="Table 1. Required outbound connectivity for hosts to {{site.data.keyword.cos_short}} endpoints" caption-side="top"}
 
 2. Verify that the {{site.data.keyword.cos_short}} service instance and bucket that back up your etcd data are available and were not deleted.
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.
+    1. From the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, click the name of your location.
     2. In the details section of your location overview, copy the name of the **{{site.data.keyword.cos_short}} bucket**.
     3. In the {{site.data.keyword.cloud_notm}} console, navigate to your [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}.
     4. Expand the **Storage** row.

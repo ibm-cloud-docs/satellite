@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -37,7 +37,7 @@ To troubleshoot the health check for the Link endpoint:
 {: tsResolve}
 
 1. Verify that the automated health check endpoint for your location is enabled.
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.
+    1. From the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, click the name of your location.
     2. From the **Link endpoints** tab, verify that the **Status** for the endpoint in the format `satellite-healthcheck-<location_ID>` is toggled to **Enabled**.
 
 2. Verify that the {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable.

@@ -1,4 +1,4 @@
----
+<staging-cli>---
 
 copyright:
   years: 2021
@@ -10,11 +10,8 @@ subcollection: satellite
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
-
-
-# CLI reference for {{site.data.keyword.satelliteshort}} commands
-{: #satellite-cli-reference}
+# CLI reference for {{site.data.keyword.satelliteshort}} commands NEW 1
+{: #1-satellite-cli-reference-1}
 
 Refer to these commands when you want to automate the creation and management of your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
@@ -22,51 +19,130 @@ Refer to these commands when you want to automate the creation and management of
 To install the CLI, see [Setting up the CLI](/docs/satellite?topic=satellite-setup-cli). 	
 {: tip}
 
-## `ibmcloud sat` commands
-{: #satellite-cli-map}
 
-The following image depicts the structure and grouping of the `ibmcloud sat` commands.
+## `ibmcloud sat` commands
+{: #1-satellite-cli-map}
+
+The table below lists the ibmcloud sat command groups. 
 {: shortdesc}
 
-![Image of the structure and groupings of commands in the `ibmcloud sat` CLI plug-in.](images/cli_ref_imagemap.png "Structure and grouping of commands"){: caption="Figure 1. Structure and grouping of commands in the Satellite CLI plug-in" caption-side="bottom"}
+## Option 1 -- top level commands and sub groups in separate columns
+{: option1}
+
+| Command group | Description | Top level commands | Sub groups |
+| --- | --- | --- | --- |
+| [Cluster](#1-1-sat-cluster-commands) | Use these commands to register clusters for use with {{site.data.keyword.satelliteshort}} configurations. | `cluster get`, `cluster ls`, `cluster register`, `cluster unregister` | N/A |
+| [Cluster group](#1-cluster-group-commands) | Use these commands to create cluster groups. Then subscribe your cluster group to a {{site.data.keyword.satelliteshort}} configuration to deploy Kubernetes resources. | `group attach`, `group create`, `group detach`, `group get`, `group ls`, `group rm` | N/A |
+| [Config](#1-sat-config-configuration-commands) | Use these commands to create and manage Satellite configurations and upload Kubernetes resource definitions as versions to the configuration. Then, use Satellite subscription commands to specify the Red Hat OpenShift on IBM Cloud clusters where you want to deploy your Kubernetes resources. | `config create`, `config get`, `config ls` | `config version` |
+| [Endpoint](#1-sat-endpoint-commands) | Use these commands to create and manage Satellite Link endpoints to allow network traffic between your IBM Cloud Satellite location and services, servers, or apps that run in IBM Cloud. | `endpoint create`, `endpoint get`, `endpoint ls`, `endpoint rm`, `endpoint update` | N/A |
+| [Host](#1-sat-host-commands) | Use these commands to view, manage, or delete your Satellite hosts. | `host assign`, `host attach`, `host get`, `host ls`, `host rm`, `host update` | N/A |
+| [Location](#1-sat-location-commands) | Use these commands to create and manage Satellite locations.  | `location create`, `location get`, `location ls`, `location rm`, | `location dns` |
+| [Resource](#1-sat-resource-commands) | Use these commands to view the Kubernetes resources that run in clusters that are registered with Satellite Configuration. | `resource get`, `resource ls` | N/A |
+| [Service](#1-sat-service-commands) | Use these commands to view the Satellite-enabled service clusters that are deployed to your Satellite location. | `service ls` | N/A |
+| [Storage](#1-sat-storage-commands) | Use these commands to view the storage resources that run in clusters that are registered with Satellite Config. | N/A | `storage assignment`, `storage config`, `storage template`  |
+| [Subscription](#1-sat-config-subscription-commands) | Use these commands to manage subscriptions to Satellite configurations for your registered clusters.| N/A |
+| [Other](#1-other-commands) | Review other commands for managing Satellite resources, such as commands from other IBM Cloud services that might be useful. | N/A |
+{: caption="Satellite CLI plugin command groups" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the command grou. The second column is a brief description of the command group. The third column lists the top-level commands in the command group. The fourth column lists the sub-command groups."}
+
+## Option 2 -- sub groups in their own rows
+{: option2}
+
+| Command group | Description | Commands |
+| --- | --- | --- |
+| [Cluster](#1-1-sat-cluster-commands) | View or register a {{site.data.keyword.satelliteshort}} cluster. | `cluster get`  \n `cluster ls`  \n `cluster register`  \n `cluster unregister` |
+| [Cluster group](#1-cluster-group-commands) | Create, view, and manage {{site.data.keyword.satelliteshort}} cluster groups. |  \n `group attach`  \n `group create`  \n `group detach`  \n `group get`  \n`group ls`  \n `group rm` | 
+| [Config](#1-sat-config-configuration-commands) | Create, view, and manage Satellite configurations. | `config create`  \n `config get`  \n `config ls` |
+| [Config version]() | Add, view, or delete Satellite configuration versions. | 
+| [Endpoint](#1-sat-endpoint-commands) | Create, view, and manage Satellite Link endpoints. | `endpoint create`  \n `endpoint get`  \n `endpoint ls`  \n `endpoint rm`  \n `endpoint update` | 
+| [Host](#1-sat-host-commands) | View, manage, or delete your Satellite hosts. | `host assign`  \n `host attach`  \n `host get`  \n `host ls`  \n `host rm`  \n `host update` | 
+| [Location](#1-sat-location-commands) | Create, view, and manage Satellite locations.  | `location create`  \n `location get`  \n `location ls`  \n `location rm` \n | 
+| [Location DNS]() | Register and view a DNS record for your {{site.keyword.satelliteshort}} location. | `location dns create` \n `location dns ls` |
+| [Resource](#1-sat-resource-commands) | View Kubernetes resources that run in clusters that are registered with Satellite Configuration. |  `resource get`  \n `resource ls` |
+| [Service](#1-sat-service-commands) | View the Satellite-enabled service clusters that are deployed to your Satellite location. | `service ls` | 
+| [Storage assignment](#1-sat-storage-commands) | Create, view and manage the storage resources that run in clusters that are registered with Satellite Config. |  `storage assignment create`  \n `storange assignment get`  \n `storage assignment ls`  \n `storage assignment rm` |
+| [Storage config](#1-sat-storage-commands) | Create, view and manage the storage resources that run in clusters that are registered with Satellite Config. |  `storage config create`  \n `storage config get`  \n `storage config ls`  \n `storage config rm` |
+| [Storage config sc](#1-sat-storage-commands) | Add, view, and manage custom storage classes. | `storage config sc add`  \n `storage config sc get`  \n `storage config sc ls` |
+| [Storage template](#1-sat-storage-commands) | View your storage templates. | `storage template get`  \n `storage template ls` |
+| [Subscription](#1-sat-config-subscription-commands) | Manage subscriptions to Satellite configurations for your registered clusters. | `subscription create`  \n `subscription get`  \n `subscription ls`  \n `subscription rm`  \n `subscription update` 
+| [Other](#1-other-commands) | Review other commands for managing Satellite resources, such as commands from other IBM Cloud services that might be useful. |
+{: caption="Satellite CLI plugin command groups" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the command grou. The second column is a brief description of the command group. The third column lists the top-level commands in the command group. The fourth column lists the sub-command groups."}
+
+## Option 3 -- top level commands and subgroups in the same column
+{: option3}
+
+| Command group | Description | Commands |
+| --- | --- | --- |
+| [Cluster](#1-1-sat-cluster-commands) | View or register a {{site.data.keyword.satelliteshort}} cluster. | **Top level commands**:  \n  `cluster get`  \n `cluster ls`  \n `cluster register`  \n `cluster unregister` |
+| [Cluster group](#1-cluster-group-commands) | Create, view, and manage {{site.data.keyword.satelliteshort}} cluster groups. | **Top level commands**:  \n `group attach`  \n `group create`  \n `group detach`  \n `group get`  \n `group ls`  \n `group rm` | 
+| [Config](#1-sat-config-configuration-commands) | Create, view, and manage Satellite configurations. | **Top level commands**:  \n `config create`  \n `config get`  \n `config ls`  \n \n **Sub group**:  \n `config version` |
+| [Endpoint](#1-sat-endpoint-commands) | Create, view, and manage Satellite Link endpoints. | **Top level commands**:  \n `endpoint create`  \n `endpoint get`  \n `endpoint ls`  \n `endpoint rm`  \n `endpoint update` | 
+| [Host](#1-sat-host-commands) | View, manage, or delete your Satellite hosts. | **Top level commands**:  \n `host assign`  \n `host attach`  \n `host get`  \n `host ls`  \n `host rm`  \n `host update` | 
+| [Location](#1-sat-location-commands) | Create, view, and manage Satellite locations.  | **Top level commands**:  \n `location create`  \n `location get`  \n `location ls`  \n `location rm` \n \n **Sub group**:  \n `location dns` | 
+| [Resource](#1-sat-resource-commands) | View Kubernetes resources that run in clusters that are registered with Satellite Configuration. | **Top level commands**:  \n `resource get`  \n `resource ls` |
+| [Service](#1-sat-service-commands) | View the Satellite-enabled service clusters that are deployed to your Satellite location. | `service ls` | 
+| [Storage](#1-sat-storage-commands) | Create, view and manage the storage resources that run in clusters that are registered with Satellite Config. | **Sub groups**:  \n `storage assignment`  \n `storage config`  \n `storage template`  |
+| [Subscription](#1-sat-config-subscription-commands) |M anage subscriptions to Satellite configurations for your registered clusters.| 
+| [Other](#1-other-commands) | Review other commands for managing Satellite resources, such as commands from other IBM Cloud services that might be useful. |
+{: caption="Satellite CLI plugin command groups" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the command grou. The second column is a brief description of the command group. The third column lists the top-level commands in the command group. The fourth column lists the sub-command groups."}
+
+
+## Option 4 -- commands not in a list format
+{: option4}
+
+| Command group | Description | Commands |
+| --- | --- | --- |
+| [Cluster](#1-sat-cluster-commands) | View or register a {{site.data.keyword.satelliteshort}} cluster. | **Top level commands**:  \n  `cluster get`, `cluster ls`, `cluster register`, `cluster unregister` |
+| [Cluster group](#1-cluster-group-commands) | Create, view, and manage {{site.data.keyword.satelliteshort}} cluster groups. | **Top level commands**:  \n `group attach`, `group create`, `group detach`, `group get`, `group ls`, `group rm` | 
+| [Config](#1-sat-config-configuration-commands) | Create, view, and manage Satellite configurations. | **Top level commands**:  \n `config create`  \n `config get`, `config ls`, \n \n **Sub group**:  \n `config version` |
+| [Endpoint](#1-sat-endpoint-commands) | Create, view, and manage Satellite Link endpoints. | **Top level commands**: `endpoint create`, `endpoint get`,`endpoint ls`, `endpoint rm`, `endpoint update` | 
+| [Host](#1-sat-host-commands) | View, manage, or delete your Satellite hosts. | **Top level commands**: `host assign`, `host attach`, `host get`, `host ls`,`host rm`, `host update` | 
+| [Location](#1-sat-location-commands) | Create, view, and manage Satellite locations.  | **Top level commands**: `location create`, `location get`, `location ls`,`location rm` \n \n **Sub group**: `location dns` | 
+| [Resource](#1-sat-resource-commands) | View Kubernetes resources that run in clusters that are registered with Satellite Configuration. | **Top level commands**: `resource get`, `resource ls` |
+| [Service](#1-sat-service-commands) | View the Satellite-enabled service clusters that are deployed to your Satellite location. | `service ls` | 
+| [Storage](#1-sat-storage-commands) | Create, view and manage the storage resources that run in clusters that are registered with Satellite Config. | **Sub groups**: `storage assignment`, `storage config`, `storage template`  |
+| [Subscription](#1-sat-config-subscription-commands) | Manage subscriptions to Satellite configurations for your registered clusters. | **Top level commands**: `subscription create`, `subscription get`, `subscription ls`, `subscription rm`, `subscription update` |
+| [Other](#1-other-commands) | Review other commands for managing Satellite resources, such as commands from other IBM Cloud services that might be useful. |
+{: caption="Satellite CLI plugin command groups" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the command grou. The second column is a brief description of the command group. The third column lists the top-level commands in the command group. The fourth column lists the sub-command groups."}
+
 
 ## Cluster commands
-{: #sat-cluster-commands}
+{: #1-sat-cluster-commands}
 
 Use these commands to register clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config). You can use configurations to consistently deploy and update apps across clusters.
 {: shortdesc}
 
 ### `ibmcloud sat cluster get`
-{: #cli-cluster-get}
+{: #1-cli-cluster-get}
 
 Get the details of a cluster that is registered with the {{site.data.keyword.satelliteshort}} Config component.
 {: shortdesc}
 
 ```sh
-ibmcloud sat cluster get --cluster CLUSTER [-q] [--output JSON]
+ibmcloud sat cluster get --cluster CLUSTER [-q]
 ```
 {: pre}
 
 
 #### Minimum required permissions
-{: #cli-cluster-get-min-permissions}
+{: #1-cli-cluster-get-min-permissions}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-cluster-get-command-options}
+{: #1-cli-cluster-get-command-options}
 
 `--cluster, -c CLUSTER`
-:   Required. The name or ID of the cluster. To list registered clusters, run `ibmcloud sat cluster ls`.
-
-`--output JSON`
-:    Optional. Displays the command output in JSON format.
+:   Required. The name or ID of the cluster. To list registered clusters, run `ibmcloud sat cluster ls`.</dd>
 
 `-q`
 :   Optional. Do not show the message of the day or update reminders.
 
 #### Example
-{: #cli-cluster-get-example}
+{: #1-cli-cluster-get-example}
 
 ```sh
 ibmcloud sat cluster get -c mycluster
@@ -75,7 +151,7 @@ ibmcloud sat cluster get -c mycluster
 
 
 ### `ibmcloud sat cluster ls`
-{: #cli-cluster-ls}
+{: #1-cli-cluster-ls}
 
 View a list of clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component. You can use {{site.data.keyword.satelliteshort}} configurations to consistently deploy and update apps to these clusters.
 {: shortdesc}
@@ -86,12 +162,12 @@ ibmcloud sat cluster ls [--filter FILTER] [--limit NUMBER] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-cluster-ls-min-perm}
+{: #1-cli-cluster-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-cluster-ls-command-options}
+{: #1-cli-cluster-ls-command-options}
 
 `--filter FILTER`
 :    Optional. Filter results by a cluster property. Currently, the only supported cluster property is the cluster ID.
@@ -104,7 +180,7 @@ ibmcloud sat cluster ls [--filter FILTER] [--limit NUMBER] [-q]
 
 
 #### Example
-{: #cli-cluster-ls-example}
+{: #1-cli-cluster-ls-example}
 
 ```sh
 ibmcloud sat cluster ls
@@ -114,7 +190,7 @@ ibmcloud sat cluster ls
 
 
 ### `ibmcloud sat cluster register`
-{: #cli-cluster-register}
+{: #1-cli-cluster-register}
 
 Get a `kubectl` command to run in your cluster to install the {{site.data.keyword.satelliteshort}} Config agent. The {{site.data.keyword.satelliteshort}} Config agent is automatically installed in clusters that you run in your {{site.data.keyword.satelliteshort}} location. For all clusters that run in {{site.data.keyword.cloud_notm}}, you must use this command to install the {{site.data.keyword.satelliteshort}} Config agent so that you can include these clusters in {{site.data.keyword.satelliteshort}} configurations. After you get the command, [log in to your cluster](/docs/openshift?topic=openshift-access_cluster#access_public_se) and run the command.
 {: shortdesc}
@@ -127,12 +203,12 @@ ibmcloud sat cluster register [--silent] [-q]
 
 
 #### Minimum required permissions
-{: #cli-cluster-register-min-perm}
+{: #1-cli-cluster-register-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-cluster-register-command-options}
+{: #1-cli-cluster-register-command-options}
 
 `--silent`
     :    Return only the registration command in the CLI output.
@@ -142,7 +218,7 @@ ibmcloud sat cluster register [--silent] [-q]
 
 
 #### Example
-{: #cli-cluster-register-example}
+{: #1-cli-cluster-register-example}
 
 ```sh
 ibmcloud sat cluster register
@@ -150,7 +226,7 @@ ibmcloud sat cluster register
 {: pre}
 
 ### `ibmcloud sat cluster unregister`
-{: #cli-cluster-unregister}
+{: #1-cli-cluster-unregister}
 
 Unregister a cluster from the {{site.data.keyword.satelliteshort}} Config component. You can no longer subscribe the cluster to automatically deploy Kubernetes resources from a configuration, but the cluster and its existing resources still run.
 {: shortdesc}
@@ -163,12 +239,12 @@ ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
 
 
 #### Minimum required permissions
-{: #cli-cluster-unregister-min-perm}
+{: #1-cli-cluster-unregister-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-cluster-unregister-command-options}
+{: #1-cli-cluster-unregister-command-options}
 
 `--cluster, -c CLUSTER`
 :    Required. The cluster that you want to unregister from {{site.data.keyword.satelliteshort}}. To list registered clusters, run `ibmcloud sat cluster ls`.
@@ -181,7 +257,7 @@ ibmcloud sat cluster unregister --cluster CLUSTER [-f] [-q]
 
 
 #### Example
-{: #cli-cluster-unregister-example}
+{: #1-cli-cluster-unregister-example}
 
 ```sh
 ibmcloud sat cluster unregister -c mycluster
@@ -191,15 +267,15 @@ ibmcloud sat cluster unregister -c mycluster
 
 
 ## Cluster group commands
-{: #cluster-group-commands}
+{: #1-cluster-group-commands}
 
 Use these commands to create cluster groups. Then, subscribe your cluster group to a {{site.data.keyword.satelliteshort}} configuration to automatically deploy Kubernetes resources to these clusters.
 {: shortdesc}
 
 ### `ibmcloud sat group attach`
-{: #cluster-group-attach}
+{: #1-cluster-group-attach}
 
-Add a {{site.data.keyword.openshiftlong_notm}} cluster to your cluster group. The cluster can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}. To add a cluster that runs in {{site.data.keyword.cloud_notm}}, you must first [register the cluster](#cli-cluster-register) with the {{site.data.keyword.satelliteshort}} Config component.
+Add a {{site.data.keyword.openshiftlong_notm}} cluster to your cluster group. The cluster can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}. To add a cluster that runs in {{site.data.keyword.cloud_notm}}, you must first [register the cluster](#1-cli-cluster-register) with the {{site.data.keyword.satelliteshort}} Config component.
 {: shortdesc}
 
 ```sh
@@ -210,12 +286,12 @@ ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER] --group GROUP [-
 
 
 #### Minimum required permissions
-{: #cluster-group-attach-min-perm
+{: #1-cluster-group-attach-min-perm}
  
  {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cluster-group-attach-command-options}
+{: #1-cluster-group-attach-command-options}
 
 `--cluster, -c CLUSTER`
 :    Required. The cluster that you want to add to the cluster group. To list registered clusters, run `ibmcloud sat cluster ls`.
@@ -228,7 +304,7 @@ ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER] --group GROUP [-
 
 
 #### Example
-{: #cluster-group-attach-example}
+{: #1-cluster-group-attach-example}
 
 ```sh
 ibmcloud sat group attach --cluster mycluster --group mygroup
@@ -237,7 +313,7 @@ ibmcloud sat group attach --cluster mycluster --group mygroup
 
 
 ### `ibmcloud sat group create`
-{: #cluster-group-create}
+{: #1-cluster-group-create}
 
 Create a cluster group. After you created the cluster group, you can subscribe the cluster group to a {{site.data.keyword.satelliteshort}} configuration.
 {: shortdesc}
@@ -249,12 +325,12 @@ ibmcloud sat group create --name NAME [--cluster CLUSTER] [-q]
 
 
 #### Minimum required permissions
-{: #cluster-group-create-min-perm}
+{: #1-cluster-group-create-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cluster-group-create-command-options}
+{: #1-cluster-group-create-command-options}
 
 `--name NAME`
 :    Required. The name for the cluster group.  
@@ -267,7 +343,7 @@ ibmcloud sat group create --name NAME [--cluster CLUSTER] [-q]
 
 
 #### Example
-{: #cluster-group-create-example}
+{: #1-cluster-group-create-example}
 
 ```sh
 ibmcloud sat group create --name mygroup
@@ -277,7 +353,7 @@ ibmcloud sat group create --name mygroup
 
 
 ### `ibmcloud sat group detach`
-{: #cluster-group-detach}
+{: #1-cluster-group-detach}
 
 Remove a {{site.data.keyword.openshiftlong_notm}} cluster from a cluster group.
 {: shortdesc}
@@ -288,12 +364,12 @@ ibmcloud sat group detach --group GROUP --cluster CLUSTER [-f] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cluster-group-detach-min-perm}
+{: #1-cluster-group-detach-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cluster-group-detach-command-options}
+{: #1-cluster-group-detach-command-options}
 
 `--group GROUP`
 :    Required. The name or ID of the cluster group where you want to remove a cluster. To list available cluster groups, run `ibmcloud sat group ls`.  
@@ -309,7 +385,7 @@ ibmcloud sat group detach --group GROUP --cluster CLUSTER [-f] [-q]
 
 
 #### Example
-{: #cluster-group-detach-example}
+{: #1-cluster-group-detach-example}
 
 ```sh
 ibmcloud sat group detach --group mygroup --cluster mycluster
@@ -318,7 +394,7 @@ ibmcloud sat group detach --group mygroup --cluster mycluster
 
 
 ### `ibmcloud sat group get`
-{: #cluster-group-get}
+{: #1-cluster-group-get}
 
 Retrieve details of a cluster group, such as the clusters that are included in your cluster group.
 {: shortdesc}
@@ -329,12 +405,12 @@ ibmcloud sat group get --group GROUP [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cluster-group-get-min-perm}
+{: #1-cluster-group-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cluster-group-get-command-options}
+{: #1-cluster-group-get-command-options}
 
 `--group, -g GROUP`
 :    Required. The name or ID of the cluster group that you want to retrieve details for. To list available cluster groups, run `ibmcloud sat group ls`.  
@@ -344,7 +420,7 @@ ibmcloud sat group get --group GROUP [-q]
 
 
 #### Example
-{: #cluster-group-get-example}
+{: #1-cluster-group-get-example}
 
 ```sh
 ibmcloud sat group get --group mygroup
@@ -352,7 +428,7 @@ ibmcloud sat group get --group mygroup
 {: pre}
 
 ### `ibmcloud sat group ls`
-{: #cluster-group-ls}
+{: #1-cluster-group-ls}
 
 List all cluster groups in your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
@@ -363,19 +439,19 @@ ibmcloud sat group ls [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cluster-group-ls-min-perm}
+{: #1-cluster-group-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cluster-group-ls-command-options}
+{: #1-cluster-group-ls-command-options}
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
 
 
 #### Example
-{: #cluster-group-ls-example}
+{: #1-cluster-group-ls-example}
 
 ```sh
 ibmcloud sat group ls
@@ -384,7 +460,7 @@ ibmcloud sat group ls
 
 
 ### `ibmcloud sat group rm`
-{: #cluster-group-rm}
+{: #1-cluster-group-rm}
 
 Remove a cluster group.
 {: shortdesc}
@@ -396,12 +472,12 @@ ibmcloud sat group rm --group GROUP [-f] [-q]
 
 
 #### Minimum required permissions
-{: #cluster-group-rm-min-perm}
+{: #1-cluster-group-rm-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cluster-group-rm-command-options}
+{: #1-cluster-group-rm-command-options}
 
 `--group, -g GROUP`
 :    Required. The name or ID of the cluster group that you want to remove. To list available cluster groups, run `ibmcloud sat group ls`.  
@@ -414,7 +490,7 @@ ibmcloud sat group rm --group GROUP [-f] [-q]
 
 
 #### Example
-{: #cluster-group-rm-example}
+{: #1-cluster-group-rm-example}
 
 ```sh
 ibmcloud sat group rm --group mygroup
@@ -422,13 +498,13 @@ ibmcloud sat group rm --group mygroup
 {: pre}
 
 ## Config commands
-{: #sat-config-configuration-commands}
+{: #1-sat-config-configuration-commands}
 
-Use these commands to create and manage {{site.data.keyword.satelliteshort}} configurations and upload Kubernetes resource definitions as versions to the configuration. Then, use [{{site.data.keyword.satelliteshort}} subscription commands](#sat-config-subscription-commands) to specify the {{site.data.keyword.openshiftlong_notm}} clusters where you want to deploy your Kubernetes resources. For more information, see [Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config).
+Use these commands to create and manage {{site.data.keyword.satelliteshort}} configurations and upload Kubernetes resource definitions as versions to the configuration. Then, use [{{site.data.keyword.satelliteshort}} subscription commands](#1-sat-config-subscription-commands) to specify the {{site.data.keyword.openshiftlong_notm}} clusters where you want to deploy your Kubernetes resources. For more information, see [Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config).
 {: shortdesc}
 
 ### `ibmcloud sat config create`
-{: #cli-config-configuration-create}
+{: #1-cli-config-configuration-create}
 
 Create a {{site.data.keyword.satelliteshort}} configuration. After you create a configuration, you can add Kubernetes resource definitions as versions to the configuration.
 {: shortdesc}
@@ -439,12 +515,12 @@ ibmcloud sat config create --name NAME [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-configuration-create-min-perm}
+{: #1-cli-config-configuration-create-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-configuration-create-command-options}
+{: #1-cli-config-configuration-create-command-options}
 
 `--name NAME`
 :    Required. The name for your configuration.
@@ -457,7 +533,7 @@ ibmcloud sat config create --name NAME [-q]
 
 
 #### Example
-{: #cli-config-configuration-create-example}
+{: #1-cli-config-configuration-create-example}
 
 ```sh
 ibmcloud sat config create --name myconfig
@@ -465,7 +541,7 @@ ibmcloud sat config create --name myconfig
 {: pre}
 
 ### `ibmcloud sat config get`
-{: #cli-config-configuration-get}
+{: #1-cli-config-configuration-get}
 
 Get the details of a {{site.data.keyword.satelliteshort}} configuration, such as the versions that you added or the {{site.data.keyword.satelliteshort}} subscriptions that are associated with the configuration.
 {: shortdesc}
@@ -476,12 +552,12 @@ ibmcloud sat config get --config CONFIG [--output JSON] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-configuration-get-min-perm}
+{: #1-cli-config-configuration-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-configuration-get-command-options}
+{: #1-cli-config-configuration-get-command-options}
 
 `--config CONFIG`
 :    Required. The name or ID of your configuration. To list available configurations, run `ibmcloud sat config ls`.
@@ -494,7 +570,7 @@ ibmcloud sat config get --config CONFIG [--output JSON] [-q]
 
 
 #### Example
-{: #cli-config-configuration-get-example}
+{: #1-cli-config-configuration-get-example}
 
 ```sh
 ibmcloud sat config get --config myapp_prod
@@ -503,7 +579,7 @@ ibmcloud sat config get --config myapp_prod
 
 
 ### `ibmcloud sat config ls`
-{: #cli-config-configuration-ls}
+{: #1-cli-config-configuration-ls}
 
 List your {{site.data.keyword.satelliteshort}} configurations.
 {: shortdesc}
@@ -514,19 +590,19 @@ ibmcloud sat config ls [--output JSON]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-configuration-ls-min-perm}
+{: #1-cli-config-configuration-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-configuration-ls-command-options}
+{: #1-cli-config-configuration-ls-command-options}
 
 `--output JSON`
 :    Optional. Displays the command output in JSON format.
 
 
 #### Example
-{: #cli-config-configuration-ls-example}
+{: #1-cli-config-configuration-ls-example}
 
 ```sh
 ibmcloud sat config ls
@@ -534,7 +610,7 @@ ibmcloud sat config ls
 {: pre}
 
 ### `ibmcloud sat config rename`
-{: #cli-config-configuration-rename}
+{: #1-cli-config-configuration-rename}
 
 Rename a {{site.data.keyword.satelliteshort}} configuration.
 {: shortdesc}
@@ -548,12 +624,12 @@ ibmcloud sat config rename --config CONFIG --name NEW_NAME [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-configuration-rename-min-perm}
+{: #1-cli-config-configuration-rename-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-configuration-rename-command-option}
+{: #1-cli-config-configuration-rename-command-option}
 
 `--config CONFIG`
 :    Required. The name of the configuration that you want to change. To list available configurations, run `ibmcloud sat config ls`.
@@ -566,7 +642,7 @@ ibmcloud sat config rename --config CONFIG --name NEW_NAME [-q]
 
 
 #### Example
-{: #cli-config-configuration-rename-example}
+{: #1-cli-config-configuration-rename-example}
 
 ```sh
 ibmcloud sat config rename --config myapp_prod --name myapp_staging
@@ -574,7 +650,7 @@ ibmcloud sat config rename --config myapp_prod --name myapp_staging
 {: pre}
 
 ### `ibmcloud sat config rm`
-{: #cli-config-configuration-rm}
+{: #1-cli-config-configuration-rm}
 
 Remove a {{site.data.keyword.satelliteshort}} configuration.
 {: shortdesc}
@@ -588,12 +664,12 @@ ibmcloud sat config rm --config CONFIG [-f] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-configuration-rm-min-perm}
+{: #1-cli-config-configuration-rm-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-configuration-rm-command-options}
+{: #1-cli-config-configuration-rm-command-options}
 
 `--config CONFIG`
 :    Required. The name of your configuration that you want to remove. To list available configurations, run `ibmcloud sat config ls`.
@@ -606,7 +682,7 @@ ibmcloud sat config rm --config CONFIG [-f] [-q]
 
 
 #### Example
-{: #cli-config-configuration-rm-example}
+{: #1-cli-config-configuration-rm-example}
 
 ```sh
 ibmcloud sat config rm --config myapp_prod
@@ -614,7 +690,7 @@ ibmcloud sat config rm --config myapp_prod
 {: pre}
 
 ### `ibmcloud sat config version create`
-{: #cli-config-configuration-version-create}
+{: #1-cli-config-configuration-version-create}
 
 Add a Kubernetes resource definition as a version to your {{site.data.keyword.satelliteshort}} configuration. You can later use the [`ibmcloud sat subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-create) command to specify the clusters where you want to deploy the version.
 {: shortdesc}
@@ -625,12 +701,12 @@ ibmcloud sat config version create --name NAME --read-config FILEPATH --config C
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-configuration-version-create-min-perm}
+{: #1-cli-config-configuration-version-create-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-configuration-version-create-command-options}
+{: #1-cli-config-configuration-version-create-command-options}
 
 `--name NAME`
 :    Required. A name for your version, such as `1.0` or `black friday`.
@@ -652,7 +728,7 @@ ibmcloud sat config version create --name NAME --read-config FILEPATH --config C
 
 
 #### Example
-{: #cli-config-configuration-version-create-example}
+{: #1-cli-config-configuration-version-create-example}
 
 ```sh
 ibmcloud sat config version create --name 1.0 --read-config ~/file/path/myapp.yaml --config myapp_prod --file-format yaml
@@ -660,7 +736,7 @@ ibmcloud sat config version create --name 1.0 --read-config ~/file/path/myapp.ya
 {: pre}
 
 ### `ibmcloud sat config version get`
-{: #cli-config-configuration-version-get}
+{: #1-cli-config-configuration-version-get}
 
 Get the details of a particular version that you added to your {{site.data.keyword.satelliteshort}} configuration.
 {: shortdesc}
@@ -671,12 +747,12 @@ ibmcloud sat config version get --config CONFIG --version VERSION [--output JSON
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-configuration-version-get-min-perm}
+{: #1-cli-config-configuration-version-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-configuration-version-get-command-options}
+{: #1-cli-config-configuration-version-get-command-options}
 
 `--config CONFIG`
 :    Required. The name or ID of the configuration that the version belongs to. To list available configurations, run `ibmcloud sat config ls`.
@@ -695,7 +771,7 @@ ibmcloud sat config version get --config CONFIG --version VERSION [--output JSON
 
 
 #### Example
-{: #cli-config-configuration-version-get-example}
+{: #1-cli-config-configuration-version-get-example}
 
 ```sh
 ibmcloud sat config version get --config myapp_prod --version 1.0
@@ -703,7 +779,7 @@ ibmcloud sat config version get --config myapp_prod --version 1.0
 {: pre}
 
 ### `ibmcloud sat config version rm`
-{: #cli-config-configuration-version-rm}
+{: #1-cli-config-configuration-version-rm}
 
 Remove a version from your {{site.data.keyword.satelliteshort}} configuration.
 {: shortdesc}
@@ -714,12 +790,12 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-configuration-version-rm-min-perm}
+{: #1-cli-config-configuration-version-rm-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-configuration-version-rm-command-options}
+{: #1-cli-config-configuration-version-rm-command-options}
 
 `--config CONFIG`
 :    Required. The name or ID of the configuration where you want to remove a version. To list available configurations, run `ibmcloud sat config ls`.
@@ -735,7 +811,7 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 
 
 #### Example
-{: #cli-config-configuration-version-rm-example}
+{: #1-cli-config-configuration-version-rm-example}
 
 ```sh
 ibmcloud sat config version rm --config myapp_prod --version 1.0
@@ -743,13 +819,13 @@ ibmcloud sat config version rm --config myapp_prod --version 1.0
 {: pre}
 
 ## Endpoint commands
-{: #sat-endpoint-commands}
+{: #1-sat-endpoint-commands}
 
 Use these commands to create and manage {{site.data.keyword.satelliteshort}} Link endpoints to allow network traffic between your {{site.data.keyword.satellitelong}} location and services, servers, or apps that run in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 ### `ibmcloud sat endpoint create`
-{: #cli-endpoint-create}
+{: #1-cli-endpoint-create}
 
 Create a {{site.data.keyword.satelliteshort}} endpoint.
 {: shortdesc}
@@ -760,12 +836,12 @@ ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOU
 {: pre}
 
 #### Minimum required permissions
-{: #cli-endpoint-create-min-perm}
+{: #1-cli-endpoint-create-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-endpoint-create-command-options}
+{: #1-cli-endpoint-create-command-options}
 
 `--location LOCATION_ID`
 :    Required. The ID of your location. To list locations, run `ibmcloud sat location ls`.
@@ -799,7 +875,7 @@ ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOU
 
 
 #### Example
-{: #cli-endpoint-create-example}
+{: #1-cli-endpoint-create-example}
 
 ```sh
 ibmcloud sat endpoint create --location aaaaaaaa1111a1aaaa11a --name demo-svc --dest-type cloud --dest-hostname myhost.example.com --dest-port 80 --source-protocol tls --sni myhost.example.com
@@ -808,7 +884,7 @@ ibmcloud sat endpoint create --location aaaaaaaa1111a1aaaa11a --name demo-svc --
 
 
 ### `ibmcloud sat endpoint get`
-{: #cli-endpoint-get}
+{: #1-cli-endpoint-get}
 
 View the details of an endpoint.
 {: shortdesc}
@@ -819,12 +895,12 @@ ibmcloud sat endpoint get --endpoint ENDPOINT_ID --location LOCATION_ID [--outpu
 {: pre}
 
 #### Minimum required permissions
-{: #cli-endpoint-get-min-perm}
+{: #1-cli-endpoint-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-endpoint-get-command-options}
+{: #1-cli-endpoint-get-command-options}
 
 `--endpoint ENDPOINT_ID`
 :    Required. The ID of the endpoint. To list available endpoints, run `ibmcloud sat endpoint ls --location &lt;location_ID&gt;`.
@@ -840,7 +916,7 @@ ibmcloud sat endpoint get --endpoint ENDPOINT_ID --location LOCATION_ID [--outpu
 
 
 #### Example
-{: #cli-endpoint-get-example}
+{: #1-cli-endpoint-get-example}
 
 ```sh
 ibmcloud sat endpoint get --endpoint aaaaaaaa1111a1aaaa11a_bb22b --location aaaaaaaa1111a1aaaa11a
@@ -849,7 +925,7 @@ ibmcloud sat endpoint get --endpoint aaaaaaaa1111a1aaaa11a_bb22b --location aaaa
 
 
 ### `ibmcloud sat endpoint ls`
-{: #cli-endpoint-ls}
+{: #1-cli-endpoint-ls}
 
 View a list of all {{site.data.keyword.satelliteshort}} endpoints for a location.
 {: shortdesc}
@@ -860,12 +936,12 @@ ibmcloud sat endpoint ls --location LOCATION_ID [--output JSON] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-endpoint-ls-min-perm}
+{: #1-cli-endpoint-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-endpoint-ls-command-options}
+{: #1-cli-endpoint-ls-command-options}
 
 `--location LOCATION_ID`
 :    Required. The ID of your location. To list locations, run `ibmcloud sat location ls`.
@@ -878,7 +954,7 @@ ibmcloud sat endpoint ls --location LOCATION_ID [--output JSON] [-q]
 
 
 #### Example
-{: #cli-endpoint-ls-example}
+{: #1-cli-endpoint-ls-example}
 
 ```sh
 ibmcloud sat endpoint ls --location aaaaaaaa1111a1aaaa11a
@@ -886,7 +962,7 @@ ibmcloud sat endpoint ls --location aaaaaaaa1111a1aaaa11a
 {: pre}
 
 ### `ibmcloud sat endpoint rm`
-{: #cli-endpoint-rm}
+{: #1-cli-endpoint-rm}
 
 Delete an endpoint from your location. The connection between the source and destination resources is removed.
 {: shortdesc}
@@ -897,12 +973,12 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT_ID --location LOCATION_ID [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-endpoint-rm-min-perm}
+{: #1-cli-endpoint-rm-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-endpoint-rm-command-options}
+{: #1-cli-endpoint-rm-command-options}
 
 `--endpoint ENDPOINT_ID`
 :    Required. The ID of the endpoint. To list endpoint, run `ibmcloud sat endpoint ls --location &lt;location_ID&gt;`.
@@ -915,7 +991,7 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT_ID --location LOCATION_ID [-q]
 
 
 #### Example
-{: #cli-endpoint-rm-example}
+{: #1-cli-endpoint-rm-example}
 
 ```sh
 ibmcloud sat endpoint rm --endpoint aaaaaaaa1111a1aaaa11a_bb22b --location aaaaaaaa1111a1aaaa11a
@@ -924,7 +1000,7 @@ ibmcloud sat endpoint rm --endpoint aaaaaaaa1111a1aaaa11a_bb22b --location aaaaa
 
 
 ### `ibmcloud sat endpoint update`
-{: #cli-endpoint-update}
+{: #1-cli-endpoint-update}
 
 Update an endpoint. Only the options that you specify are updated.
 {: shortdesc}
@@ -935,12 +1011,12 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 {: pre}
 
 #### Minimum required permissions
-{: #cli-endpoint-update-min-perm}
+{: #1-cli-endpoint-update-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Link** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-endpoint-update-command-options}
+{: #1-cli-endpoint-update-command-options}
 
 `--location LOCATION_ID`
 :    Required. The ID of your location. To list locations, run `ibmcloud sat location ls`.
@@ -971,7 +1047,7 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 
 
 #### Example
-{: #cli-endpoint-update-example}
+{: #1-cli-endpoint-update-example}
 
 ```sh
 ibmcloud sat endpoint update --location aaaaaaaa1111a1aaaa11a --endpoint aaaaaaaa1111a1aaaa11a_bb22b --name new_demo_svc --dest-hostname myupdatedhost.example.com --dest-port 8080 --source-protocol tls --sni myhost.example.com
@@ -980,10 +1056,10 @@ ibmcloud sat endpoint update --location aaaaaaaa1111a1aaaa11a --endpoint aaaaaaa
 
 
 ## Host commands
-{: #sat-host-commands}
+{: #1-sat-host-commands}
 
 ### `ibmcloud sat host assign`
-{: #host-assign}
+{: #1-host-assign}
 
 Add your compute host to the {{site.data.keyword.satelliteshort}} control plane or any other {{site.data.keyword.openshiftshort}} cluster that you created in your location.
 {: shortdesc}
@@ -994,12 +1070,12 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 {: pre}
 
 #### Minimum required permissions
-{: #host-assign-min-perm}
+{: #1-host-assign-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #host-assign-command-options}
+{: #1-host-assign-command-options}
 
 `--location LOCATION`
 :    Required. Enter the ID or name of the location where the {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster exists to which you want to assign the compute host. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
@@ -1023,7 +1099,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 :    Optional. Do not show the message of the day or update reminders.
 
 #### Example
-{: #host-assign-example}
+{: #1-host-assign-example}
 
 ```sh
 ibmcloud sat host assign --location aaaaaaaa1111a1aaaa11a --host myhost1 --zone us-east-1 --cluster aaaaaaaa1111a1aaaa11a --host-label "use=satloc"
@@ -1031,7 +1107,7 @@ ibmcloud sat host assign --location aaaaaaaa1111a1aaaa11a --host myhost1 --zone 
 {: pre}
 
 ### `ibmcloud sat host attach`
-{: #host-attach}
+{: #1-host-attach}
 
 Create and download a script that you run on all the compute hosts that you want to make visible to your location.
 {: shortdesc}
@@ -1042,12 +1118,12 @@ ibmcloud sat host attach --location LOCATION [--host-label "LABEL"] [-q] [--rese
 {: pre}
 
 #### Minimum required permissions
-{: #host-attach-min-perm}
+{: #1-host-attach-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #host-attach-command-options}
+{: #1-host-attach-command-options}
 
 `--location LOCATION`
 :    Required. Enter the ID or name of the {{site.data.keyword.satelliteshort}} location where you want to add compute hosts. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
@@ -1063,7 +1139,7 @@ ibmcloud sat host attach --location LOCATION [--host-label "LABEL"] [-q] [--rese
 
 
 #### Example
-{: #host-attach-example}
+{: #1-host-attach-example}
 
 ```sh
 ibmcloud sat host attach --location aaaaaaaa1111a1aaaa11a --host-label "use=satloc"
@@ -1072,12 +1148,12 @@ ibmcloud sat host attach --location aaaaaaaa1111a1aaaa11a --host-label "use=satl
 
 
 ### `ibmcloud sat host get`
-{: #host-get}
+{: #1-host-get}
 
 View the details of a compute host that was made visible to a location.
 {: shortdesc}
 
-To make a host visible to a location, you must run a script on each host machine. For more information, see the [`ibmcloud sat host attach`](#host-attach) command.
+To make a host visible to a location, you must run a script on each host machine. For more information, see the [`ibmcloud sat host attach`](#1-host-attach) command.
 {: tip}
 
 ```sh
@@ -1086,12 +1162,12 @@ ibmcloud sat host get --location LOCATION --host HOST [--output json] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #host-get-min-perm}
+{: #1-host-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #host-get-command-options}
+{: #1-host-get-command-options}
 
 `--location LOCATION`
 :    Required. Enter the ID or name of the location that the host belongs to. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
@@ -1107,7 +1183,7 @@ ibmcloud sat host get --location LOCATION --host HOST [--output json] [-q]
 
 
 #### Example
-{: #host-get-example}
+{: #1-host-get-example}
 
 ```sh
 ibmcloud sat host get --location aaaaaaaa1111a1aaaa11a --host myhost1
@@ -1115,12 +1191,12 @@ ibmcloud sat host get --location aaaaaaaa1111a1aaaa11a --host myhost1
 {: pre}
 
 ### `ibmcloud sat host ls`
-{: #host-ls}
+{: #1-host-ls}
 
 List all compute hosts that are visible to your location.
 {: shortdesc}
 
-To make a host visible to a location, you must run a script on each host machine. For more information, see the [`ibmcloud sat host attach`](#host-attach) command.
+To make a host visible to a location, you must run a script on each host machine. For more information, see the [`ibmcloud sat host attach`](#1-host-attach) command.
 {: tip}
 
 ```sh
@@ -1129,12 +1205,12 @@ ibmcloud sat host ls --location LOCATION [--output json] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #host-ls-min-perm}
+{: #1-host-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #host-ls-command-options}
+{: #1-host-ls-command-options}
 
 `--location LOCATION`
 :    Required. Enter the ID or name of the location that you want to list compute hosts for. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
@@ -1147,7 +1223,7 @@ ibmcloud sat host ls --location LOCATION [--output json] [-q]
 
 
 #### Example to list all hosts in a location
-{: #host-ls-example-listall}
+{: #1-host-ls-example-listall}
 
 ```sh
 ibmcloud sat host ls --location aaaaaaaa1111a1aaaa11a
@@ -1155,9 +1231,9 @@ ibmcloud sat host ls --location aaaaaaaa1111a1aaaa11a
 {: pre}
 
 #### Example to list available hosts in a location (unassigned)
-{: #host-ls-example-list-available}
+{: #1-host-ls-example-list-available}
 
-If no hosts are returned, you do not have any available hosts in the location. You can [attach more hosts](#host-attach).
+If no hosts are returned, you do not have any available hosts in the location. You can [attach more hosts](#1-host-attach).
 
 ```sh
 ibmcloud sat host ls --location aaaaaaaa1111a1aaaa11a | grep -i unassigned
@@ -1166,7 +1242,7 @@ ibmcloud sat host ls --location aaaaaaaa1111a1aaaa11a | grep -i unassigned
 
 
 ### `ibmcloud sat host rm`
-{: #host-rm}
+{: #1-host-rm}
 
 Remove a host from a location.
 {: shortdesc}
@@ -1177,12 +1253,12 @@ ibmcloud sat host rm --location LOCATION --host HOST [-f ] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #host-rm-min-perm}
+{: #1-host-rm-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #host-rm-command-options}
+{: #1-host-rm-command-options}
 
 `--location LOCATION`
 :    Required. Enter the ID or name of the location where you want to remove a compute host. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
@@ -1198,7 +1274,7 @@ ibmcloud sat host rm --location LOCATION --host HOST [-f ] [-q]
 
 
 #### Example
-{: #host-rm-example}
+{: #1-host-rm-example}
 
 ```sh
 ibmcloud sat host rm --location aaaaaaaa1111a1aaaa11a --host myhost1
@@ -1207,7 +1283,7 @@ ibmcloud sat host rm --location aaaaaaaa1111a1aaaa11a --host myhost1
 
 
 ### `ibmcloud sat host update`
-{: #host-update}
+{: #1-host-update}
 
 Update information about your compute host, such as the zones and host labels that are used for [host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov). You can update only available hosts, not hosts that are assigned to a resource such as a cluster.
 {: shortdesc}
@@ -1218,12 +1294,12 @@ ibmcloud sat host update --location LOCATION --host HOST [--host-label "KEY=VALU
 {: pre}
 
 #### Minimum required permissions
-{: #host-update-min-perm}
+{: #1-host-update-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #host-update-command-options}
+{: #1-host-update-command-options}
 
 `--location LOCATION`
 :    Required. Enter the ID or name of the location that the compute host is assigned to. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
@@ -1242,7 +1318,7 @@ ibmcloud sat host update --location LOCATION --host HOST [--host-label "KEY=VALU
 
 
 #### Example
-{: #host-update-example}
+{: #1-host-update-example}
 
 ```sh
 ibmcloud sat host update --location aaaaaaaa1111a1aaaa11a --host myhost1
@@ -1250,13 +1326,13 @@ ibmcloud sat host update --location aaaaaaaa1111a1aaaa11a --host myhost1
 {: pre}
 
 ## Location commands
-{: #sat-location-commands}
+{: #1-sat-location-commands}
 
 Use these commands to create and manage {{site.data.keyword.satelliteshort}} locations.
 {: shortdesc}
 
 ### `ibmcloud sat location create`
-{: #location-create}
+{: #1-location-create}
 
 Create a {{site.data.keyword.satelliteshort}} location. When you create a location, a location master is automatically deployed in one of the {{site.data.keyword.cloud_notm}} regions that you select during location creation. The location master is used to manage the location from the public {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
@@ -1268,13 +1344,13 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 
 
 #### Minimum required permissions
-{: #location-create-min-perm}
+{: #1-location-create-min-perm}
 
 - To run this operation, {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 - To create a location, you also need to set up [permissions to other cloud services](/docs/satellite?topic=satellite-iam#iam-roles-usecases).
 
 #### Command options
-{: #location-create-command-options}
+{: #1-location-create-command-options}
 
 `--managed-from REGION`
 :    Required. The {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} control plane resources are managed from. Select the {{site.data.keyword.cloud_notm}} region that is nearest to where your physical machines are. For a list of supported regions, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
@@ -1314,7 +1390,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 :    Optional. Do not show the message of the day or update reminders.
 
 #### Example
-{: #location-create-example}
+{: #1-location-create-example}
 
 ```sh
 ibmcloud sat location create --managed-from wdc --name mylocation
@@ -1322,7 +1398,7 @@ ibmcloud sat location create --managed-from wdc --name mylocation
 {: pre}
 
 ### `ibmcloud sat location dns ls`
-{: #location-dns-ls}
+{: #1-location-dns-ls}
 
 List the DNS record for your location.
 
@@ -1332,12 +1408,12 @@ ibmcloud sat location dns ls --location LOCATION [--output json] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #location-dns-ls-min-perm}
+{: #1-location-dns-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #location-dns-ls-command-options}
+{: #1-location-dns-ls-command-options}
 
 
 `--location LOCATION`
@@ -1351,7 +1427,7 @@ ibmcloud sat location dns ls --location LOCATION [--output json] [-q]
 
 
 #### Example
-{: #location-dns-ls-example}
+{: #1-location-dns-ls-example}
 
 ```sh
 ibmcloud sat location dns ls --location aaaaaaaa1111a1aaaa11a
@@ -1360,7 +1436,7 @@ ibmcloud sat location dns ls --location aaaaaaaa1111a1aaaa11a
 
 
 ### `ibmcloud sat location dns register`
-{: #location-dns-register}
+{: #1-location-dns-register}
 
 Create a DNS record for your location and register the public or private IP addresses of your compute hosts that you added to the {{site.data.keyword.satelliteshort}} control plane to enable load balancing and health checking of your location.
 
@@ -1374,12 +1450,12 @@ ibmcloud sat location dns register --location LOCATION --ip HOST_IP_ADDRESS [--o
 
 
 #### Minimum required permissions
-{: #location-dns-register-min-perm}
+{: #1-location-dns-register-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #location-dns-register-command-options}
+{: #1-location-dns-register-command-options}
 
 `--location LOCATION`
 :    Required. Enter the name or ID of the location for which you want to create a DNS record and register the public or private IP addresses of your control plane hosts. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
@@ -1396,7 +1472,7 @@ ibmcloud sat location dns register --location LOCATION --ip HOST_IP_ADDRESS [--o
 
 
 #### Example
-{: #location-dns-register-example}
+{: #1-location-dns-register-example}
 
 ```sh
 ibmcloud sat location dns register --location aaaaaaaa1111a1aaaa11a --ip 169.67.23.145. --ip 1669.67.23.167
@@ -1405,7 +1481,7 @@ ibmcloud sat location dns register --location aaaaaaaa1111a1aaaa11a --ip 169.67.
 
 
 ### `ibmcloud sat location get`
-{: #location-get}
+{: #1-location-get}
 
 Retrieve the details of a {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
@@ -1417,12 +1493,12 @@ ibmcloud sat location get --location LOCATION [--output json] [-q]
 
 
 #### Minimum required permissions
-{: #location-get-min-perm}
+{: #1-location-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #location-get-command-options}
+{: #1-location-get-command-options}
 
 `--location LOCATION`
 :    Required. Enter the ID or name of the location that you want to retrieve details for. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
@@ -1435,7 +1511,7 @@ ibmcloud sat location get --location LOCATION [--output json] [-q]
 
 
 #### Example
-{: #location-get-example}
+{: #1-location-get-example}
 
 ```sh
 ibmcloud sat location get --location aaaaaaaa1111a1aaaa11a
@@ -1443,7 +1519,7 @@ ibmcloud sat location get --location aaaaaaaa1111a1aaaa11a
 
 
 ### `ibmcloud sat location ls`
-{: #location-ls}
+{: #1-location-ls}
 
 List all {{site.data.keyword.satelliteshort}} location in your account.
 {: shortdesc}
@@ -1454,12 +1530,12 @@ ibmcloud sat location ls [--output json] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #location-ls-min-perm}
+{: #1-location-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #location-ls-command-options}
+{: #1-location-ls-command-options}
 
 
 `--output json`
@@ -1470,7 +1546,7 @@ ibmcloud sat location ls [--output json] [-q]
 
 
 #### Example
-{: #location-ls-example}
+{: #1-location-ls-example}
 
 ```sh
 ibmcloud sat location ls
@@ -1478,7 +1554,7 @@ ibmcloud sat location ls
 {: pre}
 
 ### `ibmcloud sat location rm`
-{: #location-rm}
+{: #1-location-rm}
 
 Remove a {{site.data.keyword.satelliteshort}} location from your account.
 {: shortdesc}
@@ -1492,12 +1568,12 @@ ibmcloud sat location rm --location LOCATION [-f] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #location-rm-min-perm}
+{: #1-location-rm-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for the **Location** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #location-rm-command-options}
+{: #1-location-rm-command-options}
 
 
 `--location LOCATION`
@@ -1510,7 +1586,7 @@ ibmcloud sat location rm --location LOCATION [-f] [-q]
 :    Optional. Do not show the message of the day or update reminders.
 
 #### Example
-{: #location-rm-example}
+{: #1-location-rm-example}
 
 ```sh
 ibmcloud sat location rm --location mylocation
@@ -1518,13 +1594,13 @@ ibmcloud sat location rm --location mylocation
 {: pre}<cli-next-2072>
 
 ## {{site.data.keyword.satelliteshort}} Mesh commands
-{: #sat-mesh-commands}
+{: #1-sat-mesh-commands}
 
 Use these commands to create and manage a {{site.data.keyword.satelliteshort}} Mesh instance. For more information see [Installing Satellite Mesh](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-install).
 {: shortdesc}
 
 ### `ibmcloud sat mesh create`
-{: #cli-mesh-create}
+{: #1-cli-mesh-create}
 
 Create a new {{site.data.keyword.satelliteshort}} Mesh instance with an existing Satellite cluster.
 {: shortdesc}
@@ -1535,12 +1611,12 @@ ibmcloud sat mesh create --cluster CLUSTER_ID --name NAME [--output OUTPUT] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-mesh-create-min-perm}
+{: #1-cli-mesh-create-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-mesh-create-command-options}
+{: #1-cli-mesh-create-command-options}
 
 `--cluster CLUSTER`
 :    Required. The ID of the {{site.data.keyword.satelliteshort}} cluster where you want to install {{site.data.keyword.satelliteshort}} Mesh instance. This cluster is where the data plane is deployed. To view available clusters, run `ibmcloud sat cluster ls`.
@@ -1555,34 +1631,34 @@ ibmcloud sat mesh create --cluster CLUSTER_ID --name NAME [--output OUTPUT] [-q]
 :    Optional. Do not show the message of the day or update reminders.
 
 #### Example
-{: #cli-mesh-create-example}
+{: #1-cli-mesh-create-example}
 
 ```sh
-ibmcloud sat mesh create --cluster <cluster_id> --name <mesh_name>
+ibmcloud sat mesh create --cluster <cluster_id> --name <sat_mesh_name>
 ```
 {: pre}
 
 
 ### `ibmcloud sat mesh get`
-{: #cli-mesh-get}
+{: #1-cli-mesh-get}
 
 View the details of an existing {{site.data.keyword.satelliteshort}} Mesh instance.
 {: shortdesc}
 
 ```sh
-ibmcloud sat mesh get  --mesh MESH_NAME [--output OUTPUT] [-q]
+ibmcloud sat mesh get  --mesh MESH [--output OUTPUT] [-q]
 ```
 {: pre}
 
 #### Minimum required permissions
-{: #cli-mesh-get-min-perm}
+{: #1-cli-mesh-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-mesh-get-command-options}
+{: #1-cli-mesh-get-command-options}
 
-`--mesh MESH_NAME`
+`--mesh MESH`
 :    Required. The name or ID of the {{site.data.keyword.satelliteshort}} Mesh instance you want to view. To view available {{site.data.keyword.satelliteshort}} Mesh instances, run `ibmcloud sat mesh ls`.
 
 `--output json`
@@ -1593,15 +1669,15 @@ ibmcloud sat mesh get  --mesh MESH_NAME [--output OUTPUT] [-q]
 
 
 #### Example
-{: #cli-mesh-get-example}
+{: #1-cli-mesh-get-example}
 
 ```sh
-ibmcloud sat mesh get --mesh <mesh_name>
+ibmcloud sat mesh get --name <sat_mesh_name>
 ```
 {: pre}
 
 ### `ibmcloud sat mesh ls`
-{: #cli-mesh-ls}
+{: #1-cli-mesh-ls}
 
 View all existing {{site.data.keyword.satelliteshort}} Mesh instances.
 
@@ -1611,12 +1687,12 @@ ibmcloud sat mesh ls [--output OUTPUT] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-mesh-ls-min-perm}
+{: #1-cli-mesh-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-mesh-ls-command-options}
+{: #1-cli-mesh-ls-command-options}
 
 
 `--output json`
@@ -1626,7 +1702,7 @@ ibmcloud sat mesh ls [--output OUTPUT] [-q]
 :    Optional. Do not show the message of the day or update reminders.
 
 #### Example
-{: #cli-mesh-ls-example}
+{: #1-cli-mesh-ls-example}
 
 ```sh
 ibmcloud sat mesh ls
@@ -1634,22 +1710,22 @@ ibmcloud sat mesh ls
 {: pre}
 
 ### `ibmcloud sat mesh rm`
-{: #cli-mesh-rm}
+{: #1-cli-mesh-rm}
 
 Delete an existing {{site.data.keyword.satelliteshort}} Mesh instance.
 
 ```sh
-ibmcloud sat mesh rm  --mesh MESH_NAME [--output OUTPUT] [-q]
+ibmcloud sat mesh rm  --mesh MESH [--output OUTPUT] [-q]
 ```
 {: pre}
 
 #### Minimum required permissions
-{: #cli-mesh-rm-min-perm}
+{: #1-cli-mesh-rm-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-mesh-rm-command-options}
+{: #1-cli-mesh-rm-command-options}
 
 `--mesh MESH`
 :    Required. The name or ID of the {{site.data.keyword.satelliteshort}} Mesh instance you want to delete.
@@ -1661,22 +1737,22 @@ ibmcloud sat mesh rm  --mesh MESH_NAME [--output OUTPUT] [-q]
 :    Optional. Do not show the message of the day or update reminders.
 
 #### Example
-{: #cli-mesh-rm-example}
+{: #1-cli-mesh-rm-example}
 
 ```sh
-ibmcloud sat mesh rm --mesh <mesh_name>
+ibmcloud sat mesh rm --name <sat_mesh_name>
 ```
 {: pre}</cli-next-2072>
 
 
 ## Resource commands
-{: #sat-resource-commands}
+{: #1-sat-resource-commands}
 
 Use these commands to view the Kubernetes resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} Configuration](/docs/satellite?topic=satellite-cluster-config).
 {: shortdesc}
 
 ### `ibmcloud sat resource get`
-{: #cli-resource-get}
+{: #1-cli-resource-get}
 
 Get the details of a Kubernetes resource that is managed by a {{site.data.keyword.satelliteshort}} configuration.
 {: shortdesc}
@@ -1687,12 +1763,12 @@ ibmcloud sat resource get --resource RESOURCE [--save-data] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-resource-get-min-perm}
+{: #1-cli-resource-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-resource-get-command-options}
+{: #1-cli-resource-get-command-options}
 
 `--resource RESOURCE`
 :    Required. The ID of the Kubernetes resource. To list Kubernetes resources, run `ibmcloud sat resource ls`.
@@ -1705,7 +1781,7 @@ ibmcloud sat resource get --resource RESOURCE [--save-data] [-q]
 
 
 #### Example
-{: #cli-resource-get-example}
+{: #1-cli-resource-get-example}
 
 ```sh
 ibmcloud sat resource get --resource 1234567
@@ -1713,7 +1789,7 @@ ibmcloud sat resource get --resource 1234567
 {: pre}
 
 ### `ibmcloud sat resource ls`
-{: #cli-resource-ls}
+{: #1-cli-resource-ls}
 
 Search for and list Kubernetes resources that are managed by a {{site.data.keyword.satelliteshort}} configuration.
 {: shortdesc}
@@ -1724,12 +1800,12 @@ ibmcloud sat resource ls [--cluster CLUSTER] [--limit NUMBER] [--search STRING] 
 {: pre}
 
 #### Minimum required permissions
-{: #cli-resource-ls-min-perm}
+{: #1-cli-resource-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-resource-ls-command-options}
+{: #1-cli-resource-ls-command-options}
 
 `--cluster CLUSTER`
 :    Optional. The name or ID of the registered cluster that the Kubernetes resource runs in. To list registered clusters, run `ibmcloud sat cluster ls`.
@@ -1745,7 +1821,7 @@ ibmcloud sat resource ls [--cluster CLUSTER] [--limit NUMBER] [--search STRING] 
 
 
 #### Example
-{: #cli-resource-ls-example}
+{: #1-cli-resource-ls-example}
 
 ```sh
 ibmcloud sat resource ls
@@ -1753,13 +1829,13 @@ ibmcloud sat resource ls
 {: pre}
 
 ## Service commands
-{: #sat-service-commands}
+{: #1-sat-service-commands}
 
 Use these commands to view the {{site.data.keyword.satelliteshort}}-enabled service clusters that are deployed to your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 ### `ibmcloud sat service ls`
-{: #cli-service-ls}
+{: #1-cli-service-ls}
 
 List all {{site.data.keyword.satelliteshort}}-enabled service clusters in your location to review details such as requested host resources. For more information about how {{site.data.keyword.satelliteshort}}-enabled service clusters request resources, see [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov).
 {: shortdesc}
@@ -1771,12 +1847,12 @@ ibmcloud sat service ls --location LOCATION [--output OUTPUT] [-q]
 
 
 #### Minimum required permissions
-{: #cli-service-ls-min-perm}
+{: #1-cli-service-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Cluster** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-service-ls-command-options}
+{: #1-cli-service-ls-command-options}
 
 `--location LOCATION`
 :    Required. Enter the ID or name of the location where the {{site.data.keyword.satelliteshort}}-enabled service clusters exist. To retrieve the location ID or name, run `ibmcloud sat location ls`.
@@ -1789,7 +1865,7 @@ ibmcloud sat service ls --location LOCATION [--output OUTPUT] [-q]
 
 
 #### Example
-{: #cli-service-ls-example}
+{: #1-cli-service-ls-example}
 
 ```sh
 ibmcloud sat service ls --location mylocation
@@ -1798,7 +1874,7 @@ ibmcloud sat service ls --location mylocation
 
 
 ## Storage commands
-{: #sat-storage-commands}
+{: #1-sat-storage-commands}
 
 Use these commands to view the storage resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config).
 {: shortdesc}
@@ -1811,7 +1887,7 @@ Before working with your {{site.data.keyword.satelliteshort}} storage assignment
 
 
 ### `ibmcloud sat storage assignment create`
-{: #cli-storage-assign-create}
+{: #1-cli-storage-assign-create}
 
 Create a {{site.data.keyword.satelliteshort}} storage assignment to deploy storage drivers to your clusters.
 {: shortdesc}
@@ -1823,12 +1899,12 @@ ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | -
 
 
 #### Minimum required permissions
-{: #cli-storage-assign-create-min-perm}
+{: #1-cli-storage-assign-create-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-assign-create-command-options}
+{: #1-cli-storage-assign-create-command-options}
 
 `--config CONFIG`
 :    Required. The name of the storage configuration that you want to assign to your cluster group. To list {{site.data.keyword.satelliteshort}} storage configurations, run `ibmcloud sat storage config ls`.
@@ -1850,7 +1926,7 @@ ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | -
 
 
 #### Example
-{: #cli-storage-assign-create-example}
+{: #1-cli-storage-assign-create-example}
 
 ```sh
 ibmcloud sat storage assignment create --group staging --config file100 --name file100-staging
@@ -1860,7 +1936,7 @@ ibmcloud sat storage assignment create --group staging --config file100 --name f
 
 
 ### `ibmcloud sat storage assignment get`
-{: #cli-storage-assign-get}
+{: #1-cli-storage-assign-get}
 
 Get the details of a {{site.data.keyword.satelliteshort}} storage assignment.
 {: shortdesc}
@@ -1871,12 +1947,12 @@ ibmcloud sat storage assignment get --assignment ASSIGNMENT
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-assign-get-min-perm}
+{: #1-cli-storage-assign-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-assign-get-command-options}
+{: #1-cli-storage-assign-get-command-options}
 
 `--assignment ASSIGNMENT`
 :    Required. The name of the storage assignment. To list {{site.data.keyword.satelliteshort}} storage configurations, run `ibmcloud sat storage assignment ls`.
@@ -1889,7 +1965,7 @@ ibmcloud sat storage assignment get --assignment ASSIGNMENT
 
 
 #### Example
-{: #cli-storage-assign-get-example}
+{: #1-cli-storage-assign-get-example}
 
 ```sh
 ibmcloud sat storage assignment get --assignment my-assignment
@@ -1898,7 +1974,7 @@ ibmcloud sat storage assignment get --assignment my-assignment
 
 
 ### `ibmcloud sat storage assignment ls`
-{: #cli-storage-assign-ls}
+{: #1-cli-storage-assign-ls}
 
 List your {{site.data.keyword.satelliteshort}} storage assignments.
 {: shortdesc}
@@ -1909,12 +1985,12 @@ ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --location LOCATION |
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-assign-ls-min-perm}
+{: #1-cli-storage-assign-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-assign-ls-command-options}
+{: #1-cli-storage-assign-ls-command-options}
 
 `--cluster CLUSTER_ID`
 :    The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.  If you do not include this flag, you must specify the `--service-cluster-id` flag or the `--location` flag.
@@ -1930,7 +2006,7 @@ ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --location LOCATION |
 
 
 #### Example
-{: #cli-storage-assign-ls-example}
+{: #1-cli-storage-assign-ls-example}
 
 ```sh
 ibmcloud sat storage assignment ls [-q]
@@ -1939,7 +2015,7 @@ ibmcloud sat storage assignment ls [-q]
 
 
 ### `ibmcloud sat storage assignment rm`
-{: #cli-storage-assign-rm}
+{: #1-cli-storage-assign-rm}
 
 Remove a {{site.data.keyword.satelliteshort}} storage assignment. When you remove a storage assignment from a cluster or cluster groups, the storage configuration resources such as storage drivers and storage classes are removed.
 {: shortdesc}
@@ -1950,12 +2026,12 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-assign-rm-min-perm}
+{: #1-cli-storage-assign-rm-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-assign-rm-command-options}
+{: #1-cli-storage-assign-rm-command-options}
 
 `--assignment ASSIGNMENT`
 :    Required. The name of the storage assignment that you want to remove. To list storage assignments, run `ibmcloud sat storage assignment ls`.
@@ -1968,7 +2044,7 @@ ibmcloud sat storage assignment rm --assignment ASSIGNMENT [-f] [-q]
 
 
 #### Example
-{: #cli-storage-assign-rm-example}
+{: #1-cli-storage-assign-rm-example}
 
 ```sh
 ibmcloud sat storage assignment rm --assignment my-storage-assignment
@@ -1977,7 +2053,7 @@ ibmcloud sat storage assignment rm --assignment my-storage-assignment
 
 
 ### `ibmcloud sat storage assignment update`
-{: #cli-storage-assign-update}
+{: #1-cli-storage-assign-update}
 
 Update a {{site.data.keyword.satelliteshort}} storage assignment. You can use the `assignment update` command to add clusters or cluster groups to your storage assignments or change the assignment name.
 {: shortdesc}
@@ -1988,12 +2064,12 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP] [
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-assign-update-min-perm}
+{: #1-cli-storage-assign-update-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-assign-update-command-options}
+{: #1-cli-storage-assign-update-command-options}
 
 `--assignment ASSIGNMENT`
 :    Required. The name of the storage assignment. To list storage assignments, run `ibmcloud sat storage assignment ls`.
@@ -2012,7 +2088,7 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP] [
 
 
 #### Example
-{: #cli-storage-assign-update-example}
+{: #1-cli-storage-assign-update-example}
 
 ```sh
 ibmcloud sat storage assignment update --assignment ASSIGNMENT --group GROUP --name NAME [-f] [-q]
@@ -2021,7 +2097,7 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT --group GROUP --n
 
 
 ### `ibmcloud sat storage config create`
-{: #cli-storage-config-create}
+{: #1-cli-storage-config-create}
 
 Create a {{site.data.keyword.satelliteshort}} storage configuration that you can assign to your clusters to install storage drivers in your clusters.
 {: shortdesc}
@@ -2032,12 +2108,12 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-config-create-min-perm}
+{: #1-cli-storage-config-create-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-config-create-command-options}
+{: #1-cli-storage-config-create-command-options}
 
 `--location LOCATION`
 :    Required. Enter the ID or name of the location where you want to create the storage configuration. To retrieve the location ID or name, run `ibmcloud sat location ls`.
@@ -2062,7 +2138,7 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 
 
 #### Example
-{: #cli-storage-config-create-example}
+{: #1-cli-storage-config-create-example}
 
 ```sh
 ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version 4.6 --source-branch main --source-org my-github-org
@@ -2071,7 +2147,7 @@ ibmcloud sat storage config create --name <config_name> --location <location> --
 
 
 ### `ibmcloud sat storage config get`
-{: #cli-storage-config-get}
+{: #1-cli-storage-config-get}
 
 Get the details of a {{site.data.keyword.satelliteshort}} storage config.
 {: shortdesc}
@@ -2082,12 +2158,12 @@ ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-config-get-min-perm}
+{: #1-cli-storage-config-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-config-get-command-options}
+{: #1-cli-storage-config-get-command-options}
 
 `--config CONFIG`
 :    Required. The name of the storage configuration.
@@ -2100,7 +2176,7 @@ ibmcloud sat storage config get --config CONFIG [--output OUTPUT] [-q]
 
 
 #### Example
-{: #cli-storage-config-get-example}
+{: #1-cli-storage-config-get-example}
 
 ```sh
 ibmcloud sat storage config get --config ocs-config
@@ -2109,7 +2185,7 @@ ibmcloud sat storage config get --config ocs-config
 
 
 ### `ibmcloud sat storage config ls`
-{: #cli-storage-config-ls}
+{: #1-cli-storage-config-ls}
 
 List your {{site.data.keyword.satelliteshort}} storage configurations.
 {: shortdesc}
@@ -2120,12 +2196,12 @@ ibmcloud sat storage config ls [--location LOCATION] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-config-ls-min-perm}
+{: #1-cli-storage-config-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-config-ls-command-options}
+{: #1-cli-storage-config-ls-command-options}
 
 `--location LOCATION`
 :    Optional. Enter the ID or name of the location where you want to list storage configurations. To retrieve the location ID or name, run `ibmcloud sat location ls`.
@@ -2135,7 +2211,7 @@ ibmcloud sat storage config ls [--location LOCATION] [-q]
 
 
 #### Example
-{: #cli-storage-config-ls-example}
+{: #1-cli-storage-config-ls-example}
 
 ```sh
 ibmcloud sat storage config ls
@@ -2143,7 +2219,7 @@ ibmcloud sat storage config ls
 {: pre}
 
 ### `ibmcloud sat storage config rm`
-{: #cli-storage-config-rm}
+{: #1-cli-storage-config-rm}
 
 Remove a {{site.data.keyword.satelliteshort}} storage configuration.
 {: shortdesc}
@@ -2154,12 +2230,12 @@ ibmcloud sat storage config rm --config CONFIG [-f] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-config-rm-min-perm}
+{: #1-cli-storage-config-rm-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-config-rm-command-options}
+{: #1-cli-storage-config-rm-command-options}
 
 `--config CONFIG`
 :    Required. The name of the storage configuration that you want to remove. To list {{site.data.keyword.satelliteshort}} storage configurations, run `ibmcloud sat storage config ls`.
@@ -2172,7 +2248,7 @@ ibmcloud sat storage config rm --config CONFIG [-f] [-q]
 
 
 #### Example
-{: #cli-storage-config-rm-example}
+{: #1-cli-storage-config-rm-example}
 
 ```sh
 ibmcloud sat storage config rm --config ocs-config
@@ -2181,7 +2257,7 @@ ibmcloud sat storage config rm --config ocs-config
 
 
 ### `ibmcloud sat storage config sc add`
-{: #cli-storage-config-sc-add}
+{: #1-cli-storage-config-sc-add}
 
 Add a custom storage class to a {{site.data.keyword.satelliteshort}} storage configuration.
 {: shortdesc}
@@ -2192,12 +2268,12 @@ ibmcloud sat storage config sc add --config-name CONFIG --name NAME [--param PAR
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-config-sc-add-min-perm}
+{: #1-cli-storage-config-sc-add-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for the **Configuration** resource type in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-config-sc-add-command-options}
+{: #1-cli-storage-config-sc-add-command-options}
 
 `--config CONFIG`
 :    Required. The name of the storage configuration that you want to add a storage class to. To list {{site.data.keyword.satelliteshort}} storage configurations, run `ibmcloud sat storage config ls`.
@@ -2213,7 +2289,7 @@ ibmcloud sat storage config sc add --config-name CONFIG --name NAME [--param PAR
 
 
 #### Example
-{: #cli-storage-config-sc-add-example}
+{: #1-cli-storage-config-sc-add-example}
 
 ```sh
 ibmcloud sat storage config sc add --config ocs-config --name my-sc --param key=value --param key=value
@@ -2222,7 +2298,7 @@ ibmcloud sat storage config sc add --config ocs-config --name my-sc --param key=
 
 
 ### `ibmcloud sat storage config sc get`
-{: #cli-storage-config-sc-get}
+{: #1-cli-storage-config-sc-get}
 
 Get the details of a custom storage class in a {{site.data.keyword.satelliteshort}} storage configuration.
 {: shortdesc}
@@ -2233,12 +2309,12 @@ ibmcloud sat storage config sc get --config CONFIG --sc SC [--output OUTPUT] [-q
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-config-sc-get-min-perm}
+{: #1-cli-storage-config-sc-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-config-sc-get-command-options}
+{: #1-cli-storage-config-sc-get-command-options}
 
 `--config CONFIG`
 :    Required. The name of the storage configuration that you want to get storage class details from. To list {{site.data.keyword.satelliteshort}} storage configurations, run `ibmcloud sat storage config ls`.
@@ -2254,7 +2330,7 @@ ibmcloud sat storage config sc get --config CONFIG --sc SC [--output OUTPUT] [-q
 
 
 #### Example
-{: #cli-storage-config-sc-get-example}
+{: #1-cli-storage-config-sc-get-example}
 
 ```sh
 ibmcloud sat storage config sc get --config ocs-config --sc my-sc
@@ -2263,7 +2339,7 @@ ibmcloud sat storage config sc get --config ocs-config --sc my-sc
 
 
 ### `ibmcloud sat storage config sc ls`
-{: #cli-storage-config-sc-ls}
+{: #1-cli-storage-config-sc-ls}
 
 List the custom storage classes in a {{site.data.keyword.satelliteshort}} storage configuration.
 {: shortdesc}
@@ -2274,12 +2350,12 @@ ibmcloud sat storage config sc ls --config CONFIG [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-config-sc-ls-min-perm}
+{: #1-cli-storage-config-sc-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-config-sc-ls-command-options}
+{: #1-cli-storage-config-sc-ls-command-options}
 
 `--config CONFIG`
 :    Required. The name of the storage configuration that you want to retrieve storage classes from. To list {{site.data.keyword.satelliteshort}} storage configurations, run `ibmcloud sat storage config ls`.
@@ -2289,7 +2365,7 @@ ibmcloud sat storage config sc ls --config CONFIG [-q]
 
 
 #### Example
-{: #cli-storage-config-sc-ls-example}
+{: #1-cli-storage-config-sc-ls-example}
 
 ```sh
 ibmcloud sat storage config sc ls --config ocs-config
@@ -2298,7 +2374,7 @@ ibmcloud sat storage config sc ls --config ocs-config
 
 
 ### `ibmcloud sat storage template get`
-{: #cli-storage-template-get}
+{: #1-cli-storage-template-get}
 
 Get the details of a {{site.data.keyword.satelliteshort}} storage template.
 {: shortdesc}
@@ -2309,12 +2385,12 @@ ibmcloud sat storage template get --name NAME --version VERSION
 {: pre}
 
 #### Minimum required permissions
-{: #cli-storage-template-get-min-perm}
+{: #1-cli-storage-template-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-template-get-command-options}
+{: #1-cli-storage-template-get-command-options}
 
 `--name NAME`
 :    Required. The name of the storage template that you want to retrieve.
@@ -2327,7 +2403,7 @@ ibmcloud sat storage template get --name NAME --version VERSION
 
 
 #### Example
-{: #cli-storage-template-get-example}
+{: #1-cli-storage-template-get-example}
 
 ```sh
 ibmcloud sat storage template get --name ocs --version 4.3
@@ -2336,7 +2412,7 @@ ibmcloud sat storage template get --name ocs --version 4.3
 
 
 ### `ibmcloud sat storage template ls`
-{: #cli-storage-template-ls}
+{: #1-cli-storage-template-ls}
 
 List your {{site.data.keyword.satelliteshort}} storage templates.
 {: shortdesc}
@@ -2350,19 +2426,19 @@ You can run `ibmcloud sat storage templates` as an alias of the `ibmcloud sat st
 {: tip}
 
 #### Minimum required permissions
-{: #cli-storage-template-ls-min-perm}
+{: #1-cli-storage-template-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-storage-template-ls-command-options}
+{: #1-cli-storage-template-ls-command-options}
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
 
 
 #### Example
-{: #cli-storage-template-ls-example}
+{: #1-cli-storage-template-ls-example}
 
 ```sh
 ibmcloud sat storage template ls
@@ -2371,7 +2447,7 @@ ibmcloud sat storage template ls
 
 
 ## Subscription commands
-{: #sat-config-subscription-commands}
+{: #1-sat-config-subscription-commands}
 
 Use these commands to manage subscriptions to {{site.data.keyword.satelliteshort}} configurations for your registered clusters.
 {: shortdesc}
@@ -2380,7 +2456,7 @@ You can use the `sub` alias for `subscription` commands.
 {: tip}
 
 ### `ibmcloud sat subscription create`
-{: #cli-config-subscription-create}
+{: #1-cli-config-subscription-create}
 
 Create a subscription for {{site.data.keyword.openshiftlong_notm}} clusters to deploy a {{site.data.keyword.satelliteshort}} configuration version. After you create the subscription, the associated {{site.data.keyword.satelliteshort}} configuration version is automatically deployed to the subscribed clusters.
 {: shortdesc}
@@ -2391,12 +2467,12 @@ ibmcloud sat subscription create --name NAME --group GROUP [--group GROUP] --con
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-subscription-create-min-perm}
+{: #1-cli-config-subscription-create-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-subscription-create-command-options}
+{: #1-cli-config-subscription-create-command-options}
 
 `--name NAME`
 :    Required. The name to give your subscription.
@@ -2415,7 +2491,7 @@ ibmcloud sat subscription create --name NAME --group GROUP [--group GROUP] --con
 
 
 #### Example
-{: #cli-config-subscription-create-example}
+{: #1-cli-config-subscription-create-example}
 
 ```sh
 ibmcloud sat subscription create --name myapp_prod_subscription --group mygroup --config myapp_prod --version 1.0
@@ -2424,7 +2500,7 @@ ibmcloud sat subscription create --name myapp_prod_subscription --group mygroup 
 
 
 ### `ibmcloud sat subscription get`
-{: #cli-config-subscription-get}
+{: #1-cli-config-subscription-get}
 
 Get the details of a subscription, such as the {{site.data.keyword.satelliteshort}} configuration that the subscription is for or the registered clusters that are subscribed.
 {: shortdesc}
@@ -2435,12 +2511,12 @@ ibmcloud sat subscription get --subscription SUBSCRIPTION [--output JSON] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-subscription-get-min-perm}
+{: #1-cli-config-subscription-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-subscription-get-command-options}
+{: #1-cli-config-subscription-get-command-options}
 
 `--subscription SUBSCRIPTION`
 :    Required. The name or ID of your subscription. To list subscriptions in your {{site.data.keyword.cloud_notm}} account, run `ibmcloud sat subscription ls`.
@@ -2453,7 +2529,7 @@ ibmcloud sat subscription get --subscription SUBSCRIPTION [--output JSON] [-q]
 
 
 #### Example
-{: #cli-config-subscription-get-example}
+{: #1-cli-config-subscription-get-example}
 
 ```sh
 ibmcloud sat subscription get --subscription myapp_prod_subscription
@@ -2462,7 +2538,7 @@ ibmcloud sat subscription get --subscription myapp_prod_subscription
 
 
 ### `ibmcloud sat subscription ls`
-{: #cli-config-subscription-ls}
+{: #1-cli-config-subscription-ls}
 
 List the subscriptions to {{site.data.keyword.satelliteshort}} configurations in your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}
@@ -2473,12 +2549,12 @@ ibmcloud sat subscription ls [--cluster CLUSTER] [--output JSON] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-subscription-ls-min-perm}
+{: #1-cli-config-subscription-ls-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-subscription-ls-command-options}
+{: #1-cli-config-subscription-ls-command-options}
 
 `--cluster, -c CLUSTER`
 :    Optional. The name or ID of the cluster that you want to list subscriptions from. To list registered clusters, run `ibmcloud sat cluster ls`.
@@ -2491,7 +2567,7 @@ ibmcloud sat subscription ls [--cluster CLUSTER] [--output JSON] [-q]
 
 
 #### Example
-{: #cli-config-subscription-ls-example}
+{: #1-cli-config-subscription-ls-example}
 
 ```sh
 ibmcloud sat subscription ls
@@ -2500,7 +2576,7 @@ ibmcloud sat subscription ls
 
 
 ### `ibmcloud sat subscription rm`
-{: #cli-config-subscription-rm}
+{: #1-cli-config-subscription-rm}
 
 Remove a subscription.
 {: shortdesc}
@@ -2514,12 +2590,12 @@ ibmcloud sat subscription rm --subscription SUBSCRIPTION [-f] [-q]
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-subscription-rm-min-perm}
+{: #1-cli-config-subscription-rm-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-subscription-rm-command-options}
+{: #1-cli-config-subscription-rm-command-options}
 
 `--subscription SUBSCRIPTION`
 :    Required. The name or ID of your subscription. To list subscriptions in your {{site.data.keyword.cloud_notm}} account, run `ibmcloud sat subscription ls`.
@@ -2532,7 +2608,7 @@ ibmcloud sat subscription rm --subscription SUBSCRIPTION [-f] [-q]
 
 
 #### Example
-{: #cli-config-subscription-rm-example}
+{: #1-cli-config-subscription-rm-example}
 
 ```sh
 ibmcloud sat subscription rm --subscription myapp_prod_subscription
@@ -2541,7 +2617,7 @@ ibmcloud sat subscription rm --subscription myapp_prod_subscription
 
 
 ### `ibmcloud sat subscription update`
-{: #cli-config-subscription-update}
+{: #1-cli-config-subscription-update}
 
 Update a subscription, such as to change the subscription name, the configuration version, or the subscribed cluster group. After you update the subscription, the configuration version is automatically deployed to all subscribed clusters.
 {: shortdesc}
@@ -2552,12 +2628,12 @@ ibmcloud sat subscription update --subscription SUBSCRIPTION [--name NAME] [--gr
 {: pre}
 
 #### Minimum required permissions
-{: #cli-config-subscription-update-min-perm}
+{: #1-cli-config-subscription-update-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-config-subscription-update-command-options}
+{: #1-cli-config-subscription-update-command-options}
 
 `--subscription SUBSCRIPTION`
 :    Required. The name or ID of the subscription that you want to update. To list subscriptions in your {{site.data.keyword.cloud_notm}} account, run `ibmcloud sat subscription ls`.
@@ -2579,7 +2655,7 @@ ibmcloud sat subscription update --subscription SUBSCRIPTION [--name NAME] [--gr
 
 
 #### Example
-{: #cli-config-subscription-update-example}
+{: #1-cli-config-subscription-update-example}
 
 ```sh
 ibmcloud sat subscription update --subscription myapp_prod_subscription --name myapp_staging_subscription --group mygroup --version 1.0
@@ -2587,13 +2663,13 @@ ibmcloud sat subscription update --subscription myapp_prod_subscription --name m
 {: pre}
 
 ## Other commands
-{: #other-commands}
+{: #1-other-commands}
 
 Review other commands for managing {{site.data.keyword.satelliteshort}} resources, such as commands from other {{site.data.keyword.cloud_notm}} services that might be useful.
 {: shortdesc}
 
 ### `ibmcloud sat messages`
-{: #cli-messages}
+{: #1-cli-messages}
 
 View current messages from {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
@@ -2604,17 +2680,19 @@ ibmcloud sat messages
 {: pre}
 
 #### Minimum required permissions
-{: #cli-messages-min-perm}
+{: #1-cli-messages-min-perm}
 
 None
 
 #### Command options
-{: #cli-messages-command-options}
+{: #1-cli-messages-command-options}
 
 None
 
 ### {{site.data.keyword.openshiftlong_notm}} commands (`ibmcloud oc`)
-{: #cluster-create}
+{: #1-cluster-create}
 
 For commands to manage {{site.data.keyword.openshiftshort}} clusters in your {{site.data.keyword.satelliteshort}} locations, such as `ibmcloud oc cluster create satellite`, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#sat_commands).
-{: shortdesc}
+{: shortdesc}</staging-cli>
+
+

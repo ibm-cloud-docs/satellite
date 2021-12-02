@@ -334,7 +334,7 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 ### Assigning hosts from the console
 {: #host-assign-ui}
 
-1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Locations**.
+1. From the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, click **Locations**.
 2. Select the location where you attached the host machines that you want to assign to your {{site.data.keyword.satelliteshort}} resource.
 3. In the **Hosts** tab, from the actions menu of each host machine that you want to add to your resource, click **Assign host**.
 4. Select the cluster that you created, and choose one of the available zones. When you assign the hosts to a cluster, {{site.data.keyword.IBM_notm}} bootstraps your machine. This process might take a few minutes to complete. During the bootstrapping process, the Health of your machine changes from **Ready** to **Provisioning**.
@@ -454,7 +454,7 @@ To review the changes that are included in each version update, see the [Version
 #### Checking if a version update is available from the {{site.data.keyword.cloud_notm}} console
 {: #host-update-workers-check-console}
 
-1. Log in to the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}.
+1. Log in to the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}.
 2. Click the location with the hosts that you want to update.
 3. Click the **Hosts** tab.
 4. From the host list, click the link to the **Cluster** for the host that you want to update. A new tab opens for the {{site.data.keyword.openshiftlong_notm}} cluster details.
@@ -666,7 +666,7 @@ When you reset the host key, all existing hosts that are attached to your locati
 When you attach hosts to a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your hosts healthy. For more information, see [{{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default). For troubleshooting help, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 {: shortdesc}
 
-You can review the host health from the **Hosts** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running `ibmcloud sat host ls --location <location_name_or_ID>`.
+You can review the host health from the **Hosts** table in the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, or by running `ibmcloud sat host ls --location <location_name_or_ID>`.
 
 | Health state | Description |
 | --- | --- |
@@ -702,7 +702,7 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as com
 {: shortdesc}
 
 1. Make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep.
-2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Locations** and then click your location.
+2. From the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, click **Locations** and then click your location.
 3. From the **Hosts** table, find the host that you want to remove.
 4. Depending on the type of host, remove the host from a cluster before you remove the host.
     1. If the host **Cluster** is `Control plane`, continue to the next step.

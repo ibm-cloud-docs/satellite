@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -83,7 +83,7 @@ The access through the `openshift-api-<cluster_ID>` endpoint is isolated from yo
 
 Default {{site.data.keyword.satelliteshort}} Link endpoints are created for your location's control plane cluster and for any other {{site.data.keyword.satelliteshort}}-enabled services that you run in your location. These default {{site.data.keyword.satelliteshort}} Link endpoints are accessible only from within the {{site.data.keyword.cloud_notm}} private network. To review these endpoints, see [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints). You have full control over these default endpoints, including the ability to disable them. However, disabling these endpoints prevents your location from being fully managed and updated, and the endpoints cannot be removed.
 
-{{site.data.keyword.satelliteshort}} Link provides built-in controls to help you restrict which clients can access endpoints. For more information, see [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about).
+{{site.data.keyword.satelliteshort}} Link provides built-in controls to help you restrict which clients can access endpoints.<staging-auto-source> For example, one source is configured for each of the default endpoints of type `location` that are automatically created for your {{site.data.keyword.satelliteshort}} location. This source is the IP address from which any {{site.data.keyword.IBM_notm}}-initiated activities on your location can originate. Because no other sources are configured in the source list for the endpoint, no other requests can originate from any other services or resources to your location through that endpoint.</staging-auto-source> For more information, see [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about).
 
 Additionally, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance. For example, after you set up event auditing, you can review all events that relate to the masters for the clusters that run in your location, including events that are initiated by {{site.data.keyword.cloud_notm}}. To get started with auditing, see [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-location-cloud#link-audit).
 
@@ -111,7 +111,7 @@ Let's Encrypt certificates are automatically generated for several {{site.data.k
 | `ce00` Ingress subdomains | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-ce00.us-south.satellite.appdomain.cloud` | 90 days | {{site.data.keyword.IBM_notm}} | [Automatically regenerated 37 days before expiration](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_ibm). |
 | Worker node connection to the API server | 10.240.128.09 | 3 years | You | [Update hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-hosts#host-update-workers). |
 | {{site.data.keyword.satelliteshort}} control plane master API endpoint | `http://c103-1.containers.cloud.ibm.com/` | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | Regenerated during automated rollouts for major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane master hosts. |
-| {{site.data.keyword.satelliteshort}} control plane master hosts | - | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | [Update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location). |
+| {{site.data.keyword.satelliteshort}} control plane master hosts | - | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | <prod>[Update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location).</prod><staging>Regenerated during automated rollouts for major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane master hosts.</staging> |
 {: caption="Certificates for {{site.data.keyword.satelliteshort}} domains and hosts" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the name of the {{site.data.keyword.satelliteshort}} component. The second column shows an example of the domain for which the certificate is issued. The third column is the amount of time that the certificate is valid for. The fourth column indicates whether you or {{site.data.keyword.IBM_notm}} is responsible for certificate regeneration. The fifth column describes the process during which the certificate is regenerated."}
 

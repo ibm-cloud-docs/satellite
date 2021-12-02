@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-12-02"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -33,10 +33,40 @@ To use the AWS EFS storage template, complete the following tasks:
 ## Creating an AWS EFS storage configuration
 {: #sat-storage-aws-efs}
 
-You can use the CLI to create an AWS EFS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EFS storage for your apps. 
+You can use the <staging>[console](#sat-storage-aws-efs-ui) or [</staging>CLI<staging>](#sat-storage-aws-efs-cli)</staging> to create an AWS EFS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EFS storage for your apps. 
 {: shortdesc}
 
+<staging>
 
+### Creating an AWS EFS storage configuration from the console
+{: #sat-storage-aws-efs-ui}
+
+
+Use the console to create an AWS EFS storage configuration for your location.
+{: shortdesc}
+
+Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs).
+
+1. From the [{{site.data.keyword.satelliteshort}} location dashboard](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
+2. Select the **Storage** tab and click **Create storage configuration**.
+3. Enter the details for your storage configuration.
+    1. Enter a name for your storage configuration.
+    2. From the **Storage type** drop-down list, select the **AWS EFS CSI driver**.
+    3. From the **Version** drop-down list, select the storage driver version that you want to install.
+    4. Click **Next** to go to the **Parameters** page.
+4. Click **Next** to go to the **Storage classes** page.
+5. Review the storage classes that get created in a cluster that you subscribe to your storage configuration.
+6. Click **Complete** to create your storage configuration.
+7. Assign your storage configuration to a cluster.
+    1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, select the configuration that you created.
+    2. Click **Create a subscription**.
+    3. Enter a name for your subscription, select a version and a cluster group. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EFS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location.
+    4. Click **Create** to create your subscription. After the subscription is created, your storage configuration is deployed to all clusters in your cluster group.
+8. Follow step 7 in [Creating an AWS EFS storage configuration from the CLI](#sat-storage-aws-efs-cli) to verify that the AWS EFS driver is successfully installed in your cluster.
+
+### Creating an AWS EFS storage configuration from the CLI
+{: #sat-storage-aws-efs-cli}
+</staging>
 
 
 Use the CLI to create an AWS EFS storage configuration for your location.
@@ -363,7 +393,28 @@ If you no longer plan on using AWS EFS storage in your cluster, you can unassign
 Removing the storage configuration, uninstalls the AWS EFS driver from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
+<staging>
 
+### Removing the AWS EFS storage configuration from the console
+{: #aws-efs-template-rm-ui}
+
+
+Use the console to remove a storage configuration.
+{: shortdesc}
+
+1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, select the storage configuration that you subscribed your clusters to.
+
+2. Find the subscription that you want to remove and from the actions menu, click **Remove**. After the subscription is removed, the AWS EFS driver pods and storage class are removed from all clusters that were subscribed to your storage configuration.
+
+3. Optional: Follow step 3 in [Removing the AWS EFS storage configuration from the CLI](#aws-ebs-template-rm-cli) to verify that the AWS driver pods and storage class are removed from your clusters.
+
+4. Optional: Remove your storage configuration.
+    1. From the [{{site.data.keyword.satelliteshort}} Configuration dashboard](https://cloud.ibm.com/satellite/configuration){: external}, find the storage configuration that you want to remove.
+    2. From the actions menu, click **Delete**.
+
+### Removing the AWS EFS storage configuration from the CLI
+{: #aws-efs-template-rm-cli}
+</staging>
 
 Use the CLI to remove a storage configuration.
 {: shortdesc}

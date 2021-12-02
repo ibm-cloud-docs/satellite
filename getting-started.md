@@ -51,7 +51,7 @@ Before you begin
     2. **Optional**: Create a bucket with **Cross-Region** resiliency in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`. Pass in the name of this bucket when you create the {{site.data.keyword.satelliteshort}} location.
 
 To create a location,
-1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
+1. From the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, click **Create location**.
 
 2. Click **Manual setup**.
 
@@ -107,7 +107,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
     A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).
     {: tip}
 
-2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the location that you previously created in Step 1.
+2. From the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, click the location that you previously created in Step 1.
 3. From the **Hosts** tab, click **Attach host**.
 4. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use:satcp` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane.
 5. Enter a file name for your script or use the name that is generated for you.

@@ -35,7 +35,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create).
 
-1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add Alibaba hosts.
+1. From the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, select the location where you want to add Alibaba hosts.
 2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
     1. From the **Hosts** tab, click **Attach host**.
     2. Optional: Enter any host labels that are used later to [automatically assign hosts to {{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the autoassignment, such as `env=prod` or `service=database`.
@@ -143,7 +143,7 @@ Before you can attach your hosts, you must install the required Red Hat Enterpri
     ```
     {: pre}  
 
-6. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Status** of `Ready` when a connection to the machine can be established. Note that the hosts show a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.   
+6. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}. All hosts show a **Status** of `Ready` when a connection to the machine can be established. Note that the hosts show a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.   
 
 7. Repeat [step 3](#alibaba-host-install-packages) and [step 4](#alibaba-host-install-packages) for each instance that you want to add to your location.
 
@@ -152,7 +152,7 @@ Before you can attach your hosts, you must install the required Red Hat Enterpri
 
 The {{site.data.keyword.satelliteshort}} control plane manages the clusters and {{site.data.keyword.cloud_notm}} services that run in your location and provides a secure connection from your location to {{site.data.keyword.cloud_notm}}. You must add at least 3 hosts for high availability.
 
-1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a {{site.data.keyword.satelliteshort}} control plane. This location must be in a `Action required` state.
+1. From the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, select the location where you want to create a {{site.data.keyword.satelliteshort}} control plane. This location must be in a `Action required` state.
 2. From the **Getting started** page, select **Configure the control plane**.
 3. Select the hosts that you want to use for your control plane. These hosts must be a `Ready` state and `Unassigned` availability.
 4. Click **Next**.

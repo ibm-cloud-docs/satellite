@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud, satellite infrastructure service
 
@@ -58,7 +58,7 @@ After you and {{site.data.keyword.IBM_notm}} agree to the installation plan, you
 2. {{site.data.keyword.IBM_notm}} specialists work onsite to install the infrastructure, connect the power and network, validate the configuration, and establish remote access.
 3. The {{site.data.keyword.IBM_notm}} operations team creates the {{site.data.keyword.satellitelong_notm}} location with the {{site.data.keyword.satelliteshort}} Infrastructure Service hardware that was set up.
 
-Now that your {{site.data.keyword.satelliteshort}} location is created, you can view the location from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}.
+Now that your {{site.data.keyword.satelliteshort}} location is created, you can view the location from the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}.
 
 ### Stage 3: Transitioning to daily operations
 {: #satis-gs-ops}

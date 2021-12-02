@@ -19,7 +19,13 @@ subcollection: satellite
 {{site.data.keyword.satellitelong}} comes with usage requirements, default service settings, and limitations to ensure security, convenience, and basic functionality.
 {: shortdesc}
 
+<staging>
 
+## General service
+{: #reqs-service}
+
+Review the following general requirements and limitations for {{site.data.keyword.satellitelong_notm}}, such as the basic components like location.
+{: shortdesc}</staging>
 
 ## Locations
 {: #reqs-locations}
