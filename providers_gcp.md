@@ -12,6 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # Google Cloud Platform (GCP)
 {: #gcp}
 
@@ -29,7 +30,7 @@ All hosts that you want to add must meet the general host requirements, such as 
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create).
 
-1. From the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, select the location where you want to add GCP hosts.
+1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add GCP hosts.
 2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
     1. From the **Hosts** tab, click **Attach host**.
     2. Optional: Enter any host labels that are used later to [automatically assign hosts to {{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the autoassignment, such as `env=prod` or `service=database`.
@@ -65,7 +66,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     10. Verify that your network allows access as describe in the [Network firewall settings](#gcp-reqs-firewall). Make changes as necessary.
 8. From the [GCP **Compute Engine** dashboard](https://console.cloud.google.com/compute){: external}, select **Instance templates** and find the instance template that you created.
 9. From the actions menu, click **Create VM** to create an instance from your template. You can alternatively click **Create Instance Group** to create an instance group to add multiple instances at the same time. Make sure that you spread your instances across multiple zones for higher availability.
-10. Wait for the instance to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete. You can monitor the progress of the script by reviewing the logs for your instance. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+10. Wait for the instance to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete. You can monitor the progress of the script by reviewing the logs for your instance. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 11. Assign your GCP hosts to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-hosts#host-assign).
 
 ## Network firewall settings
