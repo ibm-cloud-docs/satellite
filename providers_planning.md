@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -47,7 +47,7 @@ Your {{site.data.keyword.satelliteshort}} location starts with your actual infra
         - Between hosts in your location: Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or {{site.data.keyword.satelliteshort}}-enabled service. For example, in cloud providers such as AWS, this setup typically means that all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. As latency increases, you might see impacts to performance, including provisioning and recovery times, reduced worker nodes in the cluster, {{site.data.keyword.satelliteshort}}-enabled service degradation, and in extreme cases, failures in your cluster applications.
         
 3. In each of the three zones in your infrastructure provider, plan to create compatible hosts to add to {{site.data.keyword.satelliteshort}}. The host instances in your infrastructure provider become the compute hosts to run the services in your {{site.data.keyword.satelliteshort}} location, like the worker nodes in a {{site.data.keyword.openshiftlong_notm}} cluster.
-    - Each host must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}, such as Red Hat Enterprise Linux 7 operating system; at least 4 CPU, 16 RAM, and 100GB storage per host; full network connectivity between hosts in the same location; and more.
+    - Each host must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}, such as RHEL 7 operating system; at least 4 CPU, 16 RAM, and 100GB storage per host; full network connectivity between hosts in the same location; and more.
     - To calculate how many hosts you need, see [Sizing your {{site.data.keyword.satelliteshort}} location](#location-sizing).
 4. Use your infrastructure to power your {{site.data.keyword.satelliteshort}} resources.
     1. Create your {{site.data.keyword.satelliteshort}} location based on the zones and hosts in your infrastructure provider. For more information, see [Deciding how to create your {{site.data.keyword.satelliteshort}} location](#create-options).

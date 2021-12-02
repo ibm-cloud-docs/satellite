@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -29,7 +29,7 @@ Your host might have encountered an issue during the bootstrapping process. For 
 You might have set up a firewall or other change that prevents access to a dependency.
 
 In particular, the bootstrapping process depends upon the following access.
-- Access to Red Hat Enterprise Linux Satellite servers and the required packages installed on the host machine.
+- Access to RHEL Satellite servers and the required packages installed on the host machine.
 - Access to {{site.data.keyword.registrylong_notm}} endpoints to pull down required images.
 - Access to the Kubernetes master of the {{site.data.keyword.satelliteshort}} cluster that you want to assign the host to. Access might be blocked because the host cannot communicate with the service endpoint of the cluster, or because a Kubernetes resource within the cluster such as a webhook intercepts and blocks communication with the Kubernetes API server.
 

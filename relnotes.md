@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -646,7 +646,7 @@ IAM
 :    Updated [assigning access to {{site.data.keyword.satelliteshort}} Config in {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam#iam-resource-types) to note that you cannot scope access policies to specific configurations, subscriptions, or {{site.data.keyword.cloud_notm}} resource group.
 
 Provider documentation
-:    Updated the provider requirements, such as examples for installing Red Hat Enterprise Linux packages on GCP hosts before you attach the host to your {{site.data.keyword.satelliteshort}} location.
+:    Updated the provider requirements, such as examples for installing RHEL packages on GCP hosts before you attach the host to your {{site.data.keyword.satelliteshort}} location.
   
 Service requirements
 :    Added that you can provision up to [40 {{site.data.keyword.cloud_notm}} service instances per {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-requirements#reqs-services).

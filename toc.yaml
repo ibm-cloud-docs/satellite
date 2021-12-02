@@ -113,6 +113,7 @@ toc:
               - cli-reference.md
               - cli-changelog.md
         - limitations.md
+        - managed-services.md
         - supported-regions.md
         - responsibilities.md
         - license-notices.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -70,7 +70,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 4. Enter a file name for your script or use the name that is generated for you.
 5. Click **Download script** to generate the host script and download the script to your local machine.
 
-    Depending on the provider of the host, you might also need to update the [required Red Hat Enterprise Linux 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) Red Hat Enterprise Linux package updates.
+    Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) RHEL package updates.
     {: note}
 
 6. Follow the cloud provider-specific steps to update the script and attach your host.
@@ -95,7 +95,7 @@ Before you begin, make sure that you have created host machines that meet the [m
         ```
         {: pre}
 
-    4. Update your host to have the required Red Hat Enterprise Linux 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
+    4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
     5. Run the script.
         ```sh
         sudo nohup bash /tmp/attach.sh &
@@ -137,7 +137,7 @@ Before you begin, make sure that you have created host machines that meet the [m
     ```
     {: screen}
 
-    Depending on the provider of the host, you might also need to update the [required Red Hat Enterprise Linux 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) Red Hat Enterprise Linux package updates.
+    Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) RHEL package updates.
     {: note}
 
 2. On your local machine, find the script.
@@ -163,7 +163,7 @@ Before you begin, make sure that you have created host machines that meet the [m
         ```
         {: pre}
 
-    4. Update your host to have the required Red Hat Enterprise Linux 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
+    4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
     5. Run the script.
         ```sh
         sudo nohup bash /tmp/attach.sh &

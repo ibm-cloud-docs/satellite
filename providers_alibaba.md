@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud, alibaba
 
@@ -25,7 +25,7 @@ Review the following host requirements that are specific to hosts that are in th
 You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Alibaba Cloud.
 {: shortdesc}
 
-All hosts that you want to add must meet the host requirements, such as the Red Hat Enterprise Linux 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
+All hosts that you want to add must meet the host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations). Note that your location displays `Action required` until you add hosts and create the control plane.

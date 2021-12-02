@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-01"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,7 +24,7 @@ Learn how you can set up an {{site.data.keyword.satellitelong_notm}} location wi
 You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Google Cloud Platform (GCP).
 {: shortdesc}
 
-All hosts that you want to add must meet the general host requirements, such as the Red Hat Enterprise Linux 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
+All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create).
@@ -35,7 +35,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     2. Optional: Enter any host labels that are used later to [automatically assign hosts to {{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the autoassignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine.
-3. Open the registration script. After the `API_URL` line, add a section to pull the required Red Hat Enterprise Linux packages with the subscription manager.
+3. Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
     ```sh
     # Enable GCP RHEL package updates
     yum update --disablerepo=* --enablerepo="*" -y
