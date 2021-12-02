@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Usage requirements
+# Limitations, default settings, and usage requirements
 {: #requirements}
 
 {{site.data.keyword.satellitelong}} comes with usage requirements, default service settings, and limitations to ensure security, convenience, and basic functionality.
@@ -82,26 +82,20 @@ Review the following application configuration requirements for {{site.data.keyw
 {: shortdesc}
 
 {{site.data.keyword.satelliteshort}} Config access to modify Kubernetes resources within a cluster
-
-:     By default, {{site.data.keyword.satelliteshort}} Config is limited to what Kubernetes resources it can read and modify in your clusters. You must grant {{site.data.keyword.satelliteshort}} Config access in each cluster where you want to use {{site.data.keyword.satelliteshort}} Config to manage your Kubernetes resources.
-
-:     Choose from the following options.
-      - Opt in to cluster admin access when you create the cluster in the [console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console) or [CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli) with the `--enable-admin-agent` flag. Note that you must perform a one-time `oc login` in each cluster to synchronize the admin permissions.
-      - To opt in after creating a cluster or to scope the access, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
+:    By default, {{site.data.keyword.satelliteshort}} Config is limited to what Kubernetes resources it can read and modify in your clusters. You must grant {{site.data.keyword.satelliteshort}} Config access in each cluster where you want to use {{site.data.keyword.satelliteshort}} Config to manage your Kubernetes resources.
+:    Choose from the following options.
+     - Opt in to cluster admin access when you create the cluster in the [console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console) or [CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli) with the `--enable-admin-agent` flag. Note that you must perform a one-time `oc login` in each cluster to synchronize the admin permissions.
+     - To opt in after creating a cluster or to scope the access, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
 
 {{site.data.keyword.satelliteshort}} Config and {{site.data.keyword.cloud_notm}} IAM
-
-:     You cannot scope access policies for {{site.data.keyword.satelliteshort}} Config resources (configuration, subscription, cluster, or cluster group) to an {{site.data.keyword.cloud_notm}} resource group. {{site.data.keyword.satelliteshort}} Config uses the open source Razee project, which authenticates users by using the organization. The organization supports only the account ID, not resource groups.
-
-:     You cannot scope access policies to particular configuration or subscription resources. When you assign a policy in the {{site.data.keyword.cloud_notm}} IAM console, leave the **Resource** field blank for configurations or subscriptions. Instead, you can scope the access policy to a cluster group for more control of how your {{site.data.keyword.satelliteshort}} Config resources are deployed.
-
-:     To let users view the Kubernetes resources that run in clusters with {{site.data.keyword.satelliteshort}} Config, you must assign an access policy with the appropriate role (Administrator, Manager, or Reader) to {{site.data.keyword.satellitelong_notm}} (and not scoped to a particular resource or resource type).
-
-:     After you enable {{site.data.keyword.satelliteshort}} Config permissions when you create a {{site.data.keyword.satelliteshort}} cluster in the console or in the CLI with the `--enable-admin-agent` flag for the `ibmcloud oc cluster create satellite` command, you must set the context of the cluster to synchronize permissions. You can set the cluster context by launching the {{site.data.keyword.openshiftshort}} web console or by running the `ibmcloud oc cluster config` command in the CLI. **Note**: If you registered a {{site.data.keyword.openshiftlong_notm}} cluster in the public cloud to use with {{site.data.keyword.satelliteshort}} Config, you do not need to set the cluster context to synchronize permissions.
+:    You cannot scope access policies for {{site.data.keyword.satelliteshort}} Config resources (configuration, subscription, cluster, or cluster group) to an {{site.data.keyword.cloud_notm}} resource group. {{site.data.keyword.satelliteshort}} Config uses the open source Razee project, which authenticates users by using the organization. The organization supports only the account ID, not resource groups.
+:    You cannot scope access policies to particular configuration or subscription resources. When you assign a policy in the {{site.data.keyword.cloud_notm}} IAM console, leave the **Resource** field blank for configurations or subscriptions. Instead, you can scope the access policy to a cluster group for more control of how your {{site.data.keyword.satelliteshort}} Config resources are deployed.
+:    To let users view the Kubernetes resources that run in clusters with {{site.data.keyword.satelliteshort}} Config, you must assign an access policy with the appropriate role (Administrator, Manager, or Reader) to {{site.data.keyword.satellitelong_notm}} (and not scoped to a particular resource or resource type).
+:    After you enable {{site.data.keyword.satelliteshort}} Config permissions when you create a {{site.data.keyword.satelliteshort}} cluster in the console or in the CLI with the `--enable-admin-agent` flag for the `ibmcloud oc cluster create satellite` command, you must set the context of the cluster to synchronize permissions. You can set the cluster context by launching the {{site.data.keyword.openshiftshort}} web console or by running the `ibmcloud oc cluster config` command in the CLI. **Note**: If you registered a {{site.data.keyword.openshiftlong_notm}} cluster in the public cloud to use with {{site.data.keyword.satelliteshort}} Config, you do not need to set the cluster context to synchronize permissions.
 
 Configuration files in {{site.data.keyword.satelliteshort}} Config
-:     - You can upload only an individual configuration file of Kubernetes resources per release version. You cannot upload a directory or several different configuration files.
-      - Configuration files are subject to Kubernetes requirements, such as that the manifest must be expressed in YAML format.
+:    - You can upload only an individual configuration file of Kubernetes resources per release version. You cannot upload a directory or several different configuration files.
+     - Configuration files are subject to Kubernetes requirements, such as that the manifest must be expressed in YAML format.
 
 ## {{site.data.keyword.cloud_notm}} services
 {: #reqs-services}
@@ -111,5 +105,6 @@ You can have up to 40 instances of a supported {{site.data.keyword.cloud_notm}} 
 
 Each supported service might have its own limitations to run in {{site.data.keyword.satelliteshort}}.
 - {{site.data.keyword.openshiftlong_notm}}: See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation.
+- {{site.data.keyword.cloud_notm}} Databases (ICD): See See [{{site.data.keyword.cloud_notm}} Databases (ICD) enabled by {{site.data.keyword.satellitelong_notm}}](/docs/cloud-databases?topic=cloud-databases-satellite-get-started).
 
 
