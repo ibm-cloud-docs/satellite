@@ -64,7 +64,7 @@ You can review the health of {{site.data.keyword.satelliteshort}} resources such
 When you set up a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your location healthy. For more information, see [{{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default). For troubleshooting help, see [Debugging location health](/docs/satellite?topic=satellite-ts-locations-debug).
 {: shortdesc}
 
-You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, or by running `ibmcloud sat location ls`.
+You can review the host health from the **Locations** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running `ibmcloud sat location ls`.
 
 | Health state | Description
 | --- | --- |
@@ -86,7 +86,7 @@ You can review the host health from the **Locations** table in the [{{site.data.
 When you attach hosts to a {{site.data.keyword.satelliteshort}} location, {{site.data.keyword.cloud_notm}} monitors the host and reports back statuses that you can use to keep your hosts healthy. For more information, see [{{site.data.keyword.IBM_notm}} monitoring to resolve and report location alerts](/docs/satellite?topic=satellite-monitor#monitoring-default). For troubleshooting help, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 {: shortdesc}
 
-You can review the host health from the **Hosts** table in the [{{site.data.keyword.satelliteshort}} console](<staging>https://test.cloud.ibm.com/satellite/locations</staging><prod>https://cloud.ibm.com/satellite/locations</prod>){: external}, or by running `ibmcloud sat host ls --location <location_name_or_ID>`.
+You can review the host health from the **Hosts** table in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running `ibmcloud sat host ls --location <location_name_or_ID>`.
 
 | Health state | Description |
 | --- | --- |
@@ -342,10 +342,10 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 ## Setting up monitoring for clusters
 {: #setup-clusters}
 
-To understand and set up monitoring for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the <staging-kedge>{{site.data.keyword.openshiftlong_notm}} documentation for [monitoring](/docs/openshift?topic=openshift-health-monitor).</staging-kedge><prod-kedge>tutorials in the [{{site.data.keyword.mon_full_notm}} documentation](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster).
+To understand and set up monitoring for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.mon_full_notm}} documentation](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster).
 {: shortdesc}
 
 You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
-{: note}</prod-kedge>
+{: note}
 
 

@@ -21,39 +21,7 @@ As a security officer, auditor, or manager, you can use {{site.data.keyword.at_f
 
 {{site.data.keyword.at_full_notm}} records user-initiated activities that change the state of a service in {{site.data.keyword.cloud_notm}}. You can use this service to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. In addition, you can be alerted about actions as they happen. The events that are collected comply with the Cloud Auditing Data Federation (CADF) standard. For more information, see the [getting started tutorial for {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started#getting-started).
 
-<staging-at-loc>
 
-
-## Events for {{site.data.keyword.satelliteshort}} locations
-{: #at_actions_locations}
-
-| Action             | Description      |
-|--------------------|------------------|
-| `satellite.link.create` </br> `containers-kubernetes.cluster.create` | A {{site.data.keyword.satelliteshort}} location, control plane, and {{site.data.keyword.satelliteshort}} Link connector are created. |
-| `satellite.link.delete` </br> `containers-kubernetes.cluster.delete` | A {{site.data.keyword.satelliteshort}} location, control plane, and {{site.data.keyword.satelliteshort}} Link connector are removed. |
-| `satellite.link.get` | Details for a {{site.data.keyword.satelliteshort}} location are retrieved. |
-| `containers-kubernetes.location.get` | The details of a {{site.data.keyword.satelliteshort}} location are returned. |
-| `containers-kubernetes.location.list` | The {{site.data.keyword.satelliteshort}} locations in the {{site.data.keyword.cloud_notm}} account are listed. |
-| `containers-kubernetes.cluster.remove` | The location control plane for a {{site.data.keyword.satelliteshort}} location is removed. Any resources in the {{site.data.keyword.satelliteshort}} location are also removed.|
-{: caption="{{site.data.keyword.satelliteshort}} location actions that generate events." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the name of the action event that is sent to Activity Tracker. The second column is a description of the event."}
-
-## Events for {{site.data.keyword.satelliteshort}} hosts
-{: #at_actions_hosts}
-
-| Action             | Description      |
-|--------------------|------------------|
-| `containers-kubernetes.assignment.create` | A host is assigned to a resource in a {{site.data.keyword.satelliteshort}} location, such as a cluster. |
-| `containers-kubernetes.assignment.get` | The assignment of a host to a resource in a {{site.data.keyword.satelliteshort}} location is returned. |
-| `containers-kubernetes.cluster-host.list` | The hosts that are attached to a {{site.data.keyword.satelliteshort}} location are listed. |
-| `containers-kubernetes.cluster-host.register` | A host is attached to a {{site.data.keyword.satelliteshort}} location. |
-| `containers-kubernetes.cluster-host.remove` | A host is removed from a {{site.data.keyword.satelliteshort}} location. **Note**: The host is not deleted from the underlying infrastructure provider. |
-| `containers-kubernetes.cluster-host.update` | Details for a {{site.data.keyword.satelliteshort}} host, such as labels or zones, are updated. |
-| `containers-kubernetes.cluster-host-registration-script.create` | A registration script to attach a host to a {{site.data.keyword.satelliteshort}} location is created. |
-{: caption="{{site.data.keyword.satelliteshort}} host actions that generate events." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the name of the action event that is sent to Activity Tracker. The second column is a description of the event."}
-
-</staging-at-loc>
 
 ## Events for {{site.data.keyword.satelliteshort}} clusters
 {: #at_actions_clusters}

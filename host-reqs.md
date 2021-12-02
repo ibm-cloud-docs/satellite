@@ -36,11 +36,7 @@ Review the following requirements that relate to the computing and system setup 
 
 - Hosts must run Red Hat Enterprise Linux 7 on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
 - Hosts can be physical or virtual machines.
-- Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](#reqs-host-storage). <staging-internal>**Internal only**: On {{site.data.keyword.IBM_notm}} Cloud infrastructure classic virtual servers, the public RHEL image for the 100 GB machine has some issues, but you can use a 25 GB primary disk instead. For example, you can use the following command.
-    ```sh
-    ibmcloud sl vs create -D cloud.ibm --os REDHAT_7_64 -c 16 -m 16384 -n 1000 --datacenter dal10 --vlan-public <VLAN_ID> --vlan-private <VLAN_ID> --disk 25 -H <hostname>
-    ```
-    {: pre}</staging-internal>
+- Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](#reqs-host-storage). 
 
 - If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
 - Hostnames can contain only lowercase alphanumeric characters, `-`, or `.`.
@@ -234,23 +230,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 {: caption="Required outbound connectivity for hosts on the primary network interface in the London region" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
-<osa>
 
-### Osaka
-{: #osa-outbound}
-
-|Description|Source IP|Destination IP|Protocol and ports|
-| --- | --- | --- | --- |
-| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts |  | - TCP 443, 30000 - 32767  \n - UDP 30000 - 32767 |
-| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.ap.cloud-object-storage.appdomain.cloud` | HTTPS |
-| Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | NEEDED **Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.jp-osa.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
-| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
-| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | - 0.rhel.pool.ntp.org  \n - 1.rhel.pool.ntp.org  \n - 2.rhel.pool.ntp.org  \n - 3.rhel.pool.ntp.org | - |
-{: caption="Required outbound connectivity for hosts on the primary network interface in the Osaka region" caption-side="top"}
-{: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
-
-
-</osa>
 
 ### Sao Paulo
 {: #sao-outbound}
@@ -265,23 +245,7 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 {: caption="Required outbound connectivity for hosts on the primary network interface in the Sao Paulo region" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
-<syd>
 
-### Sydney
-{: #syd-outbound}
-
-|Description|Source IP|Destination IP|Protocol and ports|
-| --- | --- | --- | --- |
-| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 130.198.65.82</br>135.90.66.194</br>168.1.58.90 | - TCP 443, 30000 - 32767  \n - UDP 30000 - 32767 |
-| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.ap.cloud-object-storage.appdomain.cloud` | HTTPS |
-| Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | NEEDED **Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.au-syd.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
-| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
-| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | - 0.rhel.pool.ntp.org  \n - 1.rhel.pool.ntp.org  \n - 2.rhel.pool.ntp.org  \n - 3.rhel.pool.ntp.org | - |
-{: caption="Required outbound connectivity for hosts on the primary network interface in the Sydney region" caption-side="top"}
-{: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
-
-
-</syd>
 
 ### Tokyo
 {: #tok-outbound}

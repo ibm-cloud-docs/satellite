@@ -20,10 +20,8 @@ Review the {{site.data.keyword.cloud}} regions that you can choose from to manag
 {: shortdesc}
 
 | Geography | Country | Multizone Metro | Location | Region | Zone |
-| --- | --- | --- | --- | --- | --- |<syd>
-| Asia Pacific | Australia | Sydney | `syd` | `au-syd` | `au-syd-1`  \n `au-syd-2`  \n `au-syd-3`|</syd>
-| Asia Pacific | Japan | Tokyo | `tok` | `jp-tok` | `jp-tok-1`  \n `jp-tok-2`  \n `jp-tok-3`|<osa>
-| Asia Pacific | Japan | Osaka | `osa` | `jp-osa` | `jp-osa-1`  \n `jp-osa-2`  \n `jp-osa-3`|</osa>
+| --- | --- | --- | --- | --- | --- |
+| Asia Pacific | Japan | Tokyo | `tok` | `jp-tok` | `jp-tok-1`  \n `jp-tok-2`  \n `jp-tok-3`|
 | North America | Canada | Toronto | `tor`| `ca-tor`|`tor-1`  \n `tor-4`  \n `tor-5`|
 | North America | United States | Dallas | `dal`| `us-south`|`us-south-1`  \n `us-south-2`  \n `us-south-3`|
 | North America | United States | Washington DC | `wdc`| `us-east`|`us-east-1`  \n `us-east-2`  \n `us-east-3`|

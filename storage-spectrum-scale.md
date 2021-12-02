@@ -544,18 +544,6 @@ Do not install the {{site.data.keyword.IBM_notm}} Spectrum Scale management API 
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameters is required. The third column is a brief description of the parameter."}
 
 
-<staging>
 
-## Storage class reference
-{: #sat-storage-spectrum-scale-sc-ref2}
-
-Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.keyword.IBM_notm}} Spectrum Scale. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
-{: shortdesc}
-
-
-| Storage class name | Type | Reclaim policy |
-| --- | --- | --- |
-| `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
-</staging>
 
 

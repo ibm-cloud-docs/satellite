@@ -237,43 +237,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         ```
         {: screen}
 
-<staging-ocs-scaling>
 
-## Scaling your ODF configuration
-{: #sat-storage-ocs-remote-scale-config}
-
-You can scale your ODF configuration by increasing the `num-of-osd`. When you increase the number of OSDs, ODF provisions additional storage disks of the same capacity in GiB as your initial OSDs. For example, if your cluster has 3 worker nodes and you specified an `osd-size` of `150Gi` in your initial configuration, ODF dynamically provisions 3 disks of `150Gi` each.
-{: shortdesc}
-
-Don't delete your storage configurations or assignments. Deleting configurations and assignments might result in data loss.
-{: important}
-
-| Initial `osd-size` | Initial `num-of-osd` | Storage capacity | Increased `num-of-osd` value | Storage capacity after increasing `num-of-osd` |
-| --- | --- | --- | --- | --- |
-| 150Gi | 1 | 150Gi | 2 | 300Gi |
-| 200Gi | 1 | 200Gi | 2 | 400Gi |
-{: caption="Table 1. OpenShift Container Storage scaling." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the initial OSD size. The second column is the number of OSDs. The third column is the total storage capacity."}
-
-1. Create the storage configuration and specify the updated values. In this example, the `num-of-osd` parameter is updated to 2, to double the storage capacity.
-    ```sh
-    ibmcloud sat storage config create --name ocs-config2 --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=testocscluster" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=50Gi" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=150Gi" -p "num-of-osd=2" -p "worker-nodes=169.48.170.83,169.48.170.88,169.48.170.90" -p "ibm-cos-endpoint=https://s3.us-east.cloud-object-storage.appdomain.cloud" -p "ibm-cos-location=us-east-standard" -p "ibm-cos-access-key=xxx" -p "ibm-cos-secret-key=yyy" -p "iam-api-key=<iam-api-key>"
-    ```
-    {: pre}
-
-2. Create an assignment for this configuration.
-    ```sh
-    ibmcloud sat storage assignment create --name ocs-sub2 --group test-group2 --config ocs-config2
-    ```
-    {: pre}
-
-3. Verify that the additional OSDs are created. 
-    ```sh
-    oc get pv
-    ```
-    {: screen}
-
-</staging-ocs-scaling>
 
 ## Upgrading your ODF configuration
 {: #sat-storage-ocs-remote-upgrade-config}

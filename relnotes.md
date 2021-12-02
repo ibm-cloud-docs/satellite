@@ -19,27 +19,7 @@ subcollection: satellite
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
 
-<staging>
 
-## December 2021
-{: #release-dec-2021}
-
-
-<osa>
-
-**New! Osaka location**
-:   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Osaka** (`osa`, `jp-osa`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). 
-
-<osa>
-
-<syd>
-
-**New! Sydney location**
-:   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Sydney** (`syd`, `au-syd`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). 
-
-</syd>
-
-</staging>
 
 ## November 2021
 {: #release-nov-2021}
@@ -566,9 +546,7 @@ Host requirements
 Review the release notes for 12 January 2021.
 {: shortdesc}
 
-<staging-internal>
-Adopter's guide
-:    Added an [adopter's guide for {{site.data.keyword.satelliteshort}}-enabled service providers](/docs/satellite?topic=satellite-adopters) to onboard their services to {{site.data.keyword.satelliteshort}}.</staging-internal>
+
 
 Host updates
 :    Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-hosts#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-hosts#host-update-location).
@@ -690,20 +668,4 @@ Review the release notes for 21 August 2020.
 New! {{site.data.keyword.satellitelong_notm}} is now available as a closed beta.
 :    For more information about the service and how it works, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/cloud/satellite){: external}. To register for the beta, go [here](https://cloud.ibm.com/satellite/overview){: external}.
 
-<staging-internal>
 
-## July 2020
-{: #july20}
-
-Review the release notes for July 2020.
-{: shortdesc}
-
-### 1 July 2020
-{: #01jul2020}
-{: release-note}
-
-Review the release notes for 1 July 2020.
-{: shortdesc}
-
-This documentation is internal-only, and a work in progress. Product release dates are to be determined.
-</staging-internal>
