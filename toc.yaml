@@ -113,6 +113,7 @@ toc:
               - cli-reference.md
               - cli-changelog.md
         - limitations.md
+        - managed-services.md
         - supported-regions.md
         - responsibilities.md
         - license-notices.md
@@ -138,6 +139,7 @@ toc:
                     - debug-hosts.md
                     - debug-login-host.md
                     - ts-host-ssh-login.md
+                    - ts-host-fail-attach.md
                     - ts-host-registration-fail.md
                     - ts-host-assign-fail.md
                     - ts-host-duplicate-hostnames.md

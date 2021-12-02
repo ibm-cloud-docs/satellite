@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-15"
+lastupdated: "2021-12-02"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -43,7 +43,7 @@ Get the details of a cluster that is registered with the {{site.data.keyword.sat
 {: shortdesc}
 
 ```sh
-ibmcloud sat cluster get --cluster CLUSTER [-q]
+ibmcloud sat cluster get --cluster CLUSTER [-q] [--output JSON]
 ```
 {: pre}
 
@@ -57,7 +57,10 @@ ibmcloud sat cluster get --cluster CLUSTER [-q]
 {: #cli-cluster-get-command-options}
 
 `--cluster, -c CLUSTER`
-:   Required. The name or ID of the cluster. To list registered clusters, run `ibmcloud sat cluster ls`.</dd>
+:   Required. The name or ID of the cluster. To list registered clusters, run `ibmcloud sat cluster ls`.
+
+`--output JSON`
+:    Optional. Displays the command output in JSON format.
 
 `-q`
 :   Optional. Do not show the message of the day or update reminders.

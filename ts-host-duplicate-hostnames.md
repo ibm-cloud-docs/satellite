@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-10-22"
+lastupdated: "2021-12-02"
 
 keywords: satellite, host, location
 
@@ -12,7 +12,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 # Why can't I reuse a host in a different {{site.data.keyword.satelliteshort}} location?
 {: sat-host-reattach-fail}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-28"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,11 +44,17 @@ If you experience an issue with a {{site.data.keyword.satelliteshort}}-enabled s
 
 For example, if you cannot access the {{site.data.keyword.openshiftshort}} console for an {{site.data.keyword.openshiftshort}} cluster on {{site.data.keyword.satelliteshort}}, first check whether the issue is [specific to your {{site.data.keyword.satelliteshort}} location setup](/docs/satellite?topic=satellite-ts-console-fail). If your {{site.data.keyword.satelliteshort}} location setup is not the source of the issue, then check the [{{site.data.keyword.openshiftlong_notm}} documentation for troubleshooting console issues](/docs/openshift?topic=openshift-ocp-debug).
 
-##  Reviewing {{site.data.keyword.satelliteshort}} location logs
+##  Reviewing logs
 {: #review-logs}
 
-Troubleshoot issues by analyzing logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup and collected in an {{site.data.keyword.la_full_notm}} instance. For more information, see [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health).
+You can review logs to troubleshoot issues.
 {: shortdesc}
+
+If your host is not assigned to a cluster, or if the assignment fails, you can SSH into the host machine and view logs. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host by using SSH for security purposes. For more information about viewing logs on your host machine, see [Logging in to a host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login).
+
+If you are using {{site.data.keyword.bpshort}}, you can view job log details to find information about your deployment. For more information, see [Reviewing the {{site.data.keyword.bpshort}} job details](/docs/schematics?topic=schematics-workspace-setup&interface=ui#job-logs).
+
+You can also view logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup and collected in an {{site.data.keyword.la_full_notm}} instance. For more information, see [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health).
 
 ## Feedback and questions
 {: #feedback-qs}
@@ -83,4 +89,3 @@ Troubleshoot issues by analyzing logs that are automatically generated for your 
 2. Contact {{site.data.keyword.IBM_notm}} Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an {{site.data.keyword.IBM_notm}} support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
 3. For the **Problem type**, search for or select **{{site.data.keyword.satelliteshort}}**.
 4. For the **Case details**, provide a descriptive title and include the details that you previously gathered. From the **Resources**, you can also select the cluster that the issue is related to, if any.
-

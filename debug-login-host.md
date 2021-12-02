@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-12-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,10 +19,10 @@ content-type: troubleshoot
 You might need to log in to your host machine to debug a host issue further.
 {: shortdesc}
 
-You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
+You can SSH into the host machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host by using SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the host machine.
 {: note}
 
-1. Log in to the machine.
+1. Log in to the host machine.
     ```sh
     ssh root@<IP_address>
     ```
@@ -37,7 +37,14 @@ You can only SSH into the machine if you did not assign the host to a cluster, o
     1. The `nohup.out` logs from the host registration attempt.
     2. The `/var/log/firstboot.log` for the first bootstrapping attempt. If the host registration failed, you do not have this file.
     3. The `/tmp/bootstrap/bootstrap_base.log` for the base bootstrapping process, if the first boot was unsuccessful. If the host registration failed, you do not have this file.
-3. Review the logs for errors. Some common errors include the following errors.
+
+3. Run the `journalctl` command when you attempt to attach your host again. For example, 
+    ```sh
+    journalctl -u ibm-host-attach --no-pager
+    ```
+    {: pre}
+    
+4. Review the logs for errors. Some common errors include the following errors.
 
     | Message | Description |
     | -------------- | -------------- |

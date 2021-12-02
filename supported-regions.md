@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-16"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,8 +19,8 @@ subcollection: satellite
 Review the {{site.data.keyword.cloud}} regions that you can choose from to manage your {{site.data.keyword.satelliteshort}} location. The hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location control plane must have a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round-trip time (RTT) to the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from. As latency increases, you might see impacts to performance, including {{site.data.keyword.satelliteshort}} Link throughput, {{site.data.keyword.satelliteshort}}-enabled service provisioning time, host failure recovery time, and in extreme cases, the availability of resources that run in the {{site.data.keyword.satelliteshort}} location control plane like {{site.data.keyword.openshiftshort}} cluster masters. For more information, see [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-reqs#host-latency-mzr).
 {: shortdesc}
 
-|Geography|Country|Multizone Metro|Location|Region|Zone|
-|---------|-------|---------------|--------|------|----|
+| Geography | Country | Multizone Metro | Location | Region | Zone |
+| --- | --- | --- | --- | --- | --- |
 | Asia Pacific | Japan | Tokyo | `tok` | `jp-tok` | `jp-tok-1`  \n `jp-tok-2`  \n `jp-tok-3`|
 | North America | Canada | Toronto | `tor`| `ca-tor`|`tor-1`  \n `tor-4`  \n `tor-5`|
 | North America | United States | Dallas | `dal`| `us-south`|`us-south-1`  \n `us-south-2`  \n `us-south-3`|

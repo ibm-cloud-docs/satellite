@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-21"
+lastupdated: "2021-12-02"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -11,6 +11,7 @@ subcollection: satellite
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Setting up {{site.data.keyword.satelliteshort}} hosts
