@@ -21,6 +21,7 @@ toc:
             - about.md
             - uc-sg.md
             - uc-edge.md
+      - responsibilities.md
       - relnotes.md
   - navgroup:
       id: howto
@@ -54,6 +55,7 @@ toc:
               - config-manage.md
               - config-roks-setup.md
         - link-endpoints.md
+        - satellite-mesh-mvp.md
         - topicgroup:
             label: Logging and monitoring
             topics:
@@ -115,7 +117,6 @@ toc:
         - limitations.md
         - managed-services.md
         - supported-regions.md
-        - responsibilities.md
         - license-notices.md
   - navgroup:
       id: help
