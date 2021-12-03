@@ -31,6 +31,11 @@ Review the release notes for December 2021.
 **New! Satellite Mesh**!
 : Satellite Mesh is available for select customers in beta. For more information, see [Setting up a service mesh with Satellite Mesh](/docs/satellite?topic=satellite-sat-mesh).
 
+CLI changelog
+:    Updated the CLI plug-in changelog page for the [release of version 1.0.353](/docs/satellite?topic=satellite-satellite-cli-changelog).
+
+
+
 ## November 2021
 {: #release-nov-2021}
 
@@ -98,7 +103,7 @@ Review the release notes for 12 October 2021.
 {: shortdesc}
 
 CLI changelog
-:    Updated the CLI plug-in changelog page for the [release of version 1.0.327](/docs/satellite?topic=satellite-satellite-cli-reference).
+:    Updated the CLI plug-in changelog page for the [release of version 1.0.327](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 
 ## September 2021
@@ -159,7 +164,7 @@ Review the release notes for 9 August 2021.
 {: shortdesc}
 
 CLI changelog
-:    Updated the CLI plug-in changelog page for the [release of version 1.0.312](/docs/satellite?topic=satellite-satellite-cli-reference).
+:    Updated the CLI plug-in changelog page for the [release of version 1.0.312](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 3 August 2021
 {: #3aug2021}

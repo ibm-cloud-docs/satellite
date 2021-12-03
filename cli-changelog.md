@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-13"
+lastupdated: "2021-12-03"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference
 
@@ -31,6 +31,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.331 | 03 Dec 2021 | 1. Adds [{{site.data.keyword.satelliteshort}} Mesh](/docs/satellite?topic=satellite-sat-mesh) beta functionality.  \n 2. Updates the `ibmcloud sat location get` command output to include `Ignition Server Port` and `Konnectivity Server Port`.  \n 3. Updates the help text in various languages. |
 | 1.0.331 | 12 Oct 2021 | Adds the `--output` flag option for the `ibmcloud sat storage get` command. |
 | 1.0.327 | 11 Oct 2021 | Adds the `--data-location` option for the `ibmcloud sat config create` command and the `--location` option for the `ibmcloud sat storage assingment ls` command. Updates the help text in various languages. |
 | 1.0.312 | 09 Aug 2021 | 1. Includes the subscription status in the output of the `ibmcloud sat subscription get` and `ibmcloud sat subscription ls` commands.  \n 1. Adds the option to display the output of the `ibmcloud sat subscription get` and `ibmcloud sat subscription ls` commands in JSON format.  \n 1. Updates the help text in various languages.  \n 1. Displays OpenVPN Server Port details in the `ibmcloud sat location get` command output. | 
@@ -45,4 +46,3 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 | 1.0.178 | 06 Oct 2020 |  1. Adds `http-tunnel` as a supported source or destination protocol in the `ibmcloud sat endpoint create` and `ibmcloud sat endpoint update` commands.  \n 1. Updates the Go version to 1.15.2.  \n 1. Updates the help text in various languages. |
 {: caption="Overview of version changes for version 1.0 of the CLI plug-in for Satellite commands" caption-side="top"}
 {: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."}
-
