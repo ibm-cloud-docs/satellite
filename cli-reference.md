@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-03"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1514,6 +1514,159 @@ ibmcloud sat location rm --location LOCATION [-f] [-q]
 
 ```sh
 ibmcloud sat location rm --location mylocation
+```
+{: pre}
+
+## {{site.data.keyword.satelliteshort}} Mesh commands
+{: #sat-mesh-commands}
+
+Use these commands to create and manage a {{site.data.keyword.satelliteshort}} Mesh instance. For more information see [Installing Satellite Mesh](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-install).
+{: shortdesc}
+
+### `ibmcloud sat mesh create`
+{: #cli-mesh-create}
+
+Create a new {{site.data.keyword.satelliteshort}} Mesh instance with an existing Satellite cluster.
+{: shortdesc}
+
+```sh
+ibmcloud sat mesh create --cluster CLUSTER_ID --name NAME [--output OUTPUT] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #cli-mesh-create-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #cli-mesh-create-command-options}
+
+`--cluster CLUSTER`
+:    Required. The ID of the {{site.data.keyword.satelliteshort}} cluster where you want to install the {{site.data.keyword.satelliteshort}} Mesh instance. This cluster is where the data plane is deployed. To view available clusters, run `ibmcloud sat cluster ls`.
+
+`--name NAME`
+:    Required. The name of the new {{site.data.keyword.satelliteshort}} Mesh instance.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #cli-mesh-create-example}
+
+```sh
+ibmcloud sat mesh create --cluster <cluster_id> --name <mesh_name>
+```
+{: pre}
+
+
+### `ibmcloud sat mesh get`
+{: #cli-mesh-get}
+
+View the details of an existing {{site.data.keyword.satelliteshort}} Mesh instance.
+{: shortdesc}
+
+```sh
+ibmcloud sat mesh get  --mesh MESH_NAME [--output OUTPUT] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #cli-mesh-get-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #cli-mesh-get-command-options}
+
+`--mesh MESH_NAME`
+:    Required. The name or ID of the {{site.data.keyword.satelliteshort}} Mesh instance you want to view. To view available {{site.data.keyword.satelliteshort}} Mesh instances, run `ibmcloud sat mesh ls`.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+
+#### Example
+{: #cli-mesh-get-example}
+
+```sh
+ibmcloud sat mesh get --mesh <mesh_name>
+```
+{: pre}
+
+### `ibmcloud sat mesh ls`
+{: #cli-mesh-ls}
+
+View existing {{site.data.keyword.satelliteshort}} Mesh instances in a location.
+
+```sh
+ibmcloud sat mesh ls --location LOCATION [--output OUTPUT] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #cli-mesh-ls-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #cli-mesh-ls-command-options}
+
+`--location LOCATION`
+:    The name of the {{site.data.keyword.satelliteshort}} location from which you want to list {{site.data.keyword.satelliteshort}} Mesh instances.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #cli-mesh-ls-example}
+
+```sh
+ibmcloud sat mesh ls
+```
+{: pre}
+
+### `ibmcloud sat mesh rm`
+{: #cli-mesh-rm}
+
+Delete an existing {{site.data.keyword.satelliteshort}} Mesh instance.
+
+```sh
+ibmcloud sat mesh rm  --mesh MESH_NAME [--output OUTPUT] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #cli-mesh-rm-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #cli-mesh-rm-command-options}
+
+`--mesh MESH_NAME`
+:    Required. The name or ID of the {{site.data.keyword.satelliteshort}} Mesh instance you want to delete.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #cli-mesh-rm-example}
+
+```sh
+ibmcloud sat mesh rm --mesh <mesh_name>
 ```
 {: pre}
 
