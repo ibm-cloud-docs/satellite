@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,8 +18,18 @@ subcollection: satellite
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
+## December 2021
+{: #release-dec-2021}
 
+Review the release notes for December 2021.
+{: shortdesc}
 
+### 3 December 2021
+{: #3dec2021}
+{: release-note}
+
+**New! Satellite Mesh**!
+: Satellite Mesh is available for select customers in beta. For more information, see [Setting up a service mesh with Satellite Mesh](/docs/satellite?topic=satellite-sat-mesh).
 
 ## November 2021
 {: #release-nov-2021}
