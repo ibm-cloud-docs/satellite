@@ -1,8 +1,8 @@
 
 {
-    "title": "IBM Cloud Satellite Service",
+    "title": "Satellite",
     "lastupdated": "2021-12-01",
-    "introduction": "Explore the capabilities of IBM Cloud Satellite Service and discover the tools to deploy, manage, and controll your app workloads. ",
+    "introduction": "Explore the capabilities of IBM Cloud Satellite and discover the tools to manage your locations, hosts, and app workloads. ",
     "section_devtools": {
       "api": "https://containers.cloud.ibm.com/global/swagger-global-api/", 
       "cli": "/docs/satellite?topic=satellite-setup-cli", 
@@ -11,12 +11,12 @@
     "section_recommended": [
       {
         "title": "See what's new",
-        "description": "Read about the latest changes to IBM Cloud Satellite Service. ",
+        "description": "Read about the latest changes to Satellite. ",
         "href": "/docs/satellite?topic=satellite-release-notes"
       },  
       {
-        "title": "Understand IBM Cloud Satellite Service",
-        "description": "Review frequently asked questions and key technologies that IBM Cloud Satellite Service uses.",
+        "title": "Understand Satellite",
+        "description": "Review frequently asked questions about Satellite.",
         "href": "/docs/satellite?topic=satellite-faqs" 
       },
       {
@@ -26,7 +26,7 @@
       },
       {
         "title": "Prepare your infrastructure environment",
-        "description": "Plan how to set up your infrastructure environment to use with IBM Cloud Satellite",
+        "description": "Plan your Satellite environment.",
         "href": "/docs/satellite?topic=satellite-infrastructure-plan"
       },
       {
@@ -49,4 +49,3 @@
     
   }
   
-
