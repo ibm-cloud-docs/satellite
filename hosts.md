@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-07"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -315,7 +315,7 @@ If you [disabled host autoassignment](#host-autoassign-disable), you can re-enab
 2. [Resize the worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance) to set the requested size per zone, rebalance the worker pool, and enable autoassignment again.
 
 ## Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources
-{: #host-assign}
+{: #host-assign-manual}
 
 After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity, such as clusters or {{site.data.keyword.satelliteshort}}-enabled services.
 {: shortdesc}
