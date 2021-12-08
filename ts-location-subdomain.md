@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-12-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -47,7 +47,7 @@ Follow these steps to resolve your issue
         * If the host is assigned to the {{site.data.keyword.satelliteshort}} location control plane or a cluster:
             1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#host-remove).
             2. Reload the operating system of the host or reboot the instance.
-            3. [Attach the host](/docs/satellite?topic=satellite-hosts#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location, but do not assign it. Later, after you complete these troubleshooting steps, you can [re-assign the host](/docs/satellite?topic=satellite-hosts#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or cluster.
+            3. [Attach the host](/docs/satellite?topic=satellite-hosts#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location, but do not assign it. Later, after you complete these troubleshooting steps, you can [re-assign the host](/docs/satellite?topic=satellite-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane or cluster.
             4. SSH into the host machine.
     2. Look up **each** location subdomain that you found in step 1. Check whether the IP address that resolves matches the host IP addresses that you found in step 1. If the host's DNS resolver does not resolve the subdomains to the expected IP addresses, ensure that your hosts have the [required minimum outbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound).
         ```sh

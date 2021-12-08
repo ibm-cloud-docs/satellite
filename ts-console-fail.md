@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-12-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -38,7 +38,7 @@ Choose from the following options.
 {: tsResolve}
 
 Worker nodes do not exist in each zone of the default worker pool
-:    If you use host autoassignment, [attach hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to your {{site.data.keyword.satelliteshort}} location in the zone where you do not have worker nodes so that hosts can be assigned to the default worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts in that zone to your cluster](/docs/satellite?topic=satellite-hosts#host-assign).
+:    If you use host autoassignment, [attach hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to your {{site.data.keyword.satelliteshort}} location in the zone where you do not have worker nodes so that hosts can be assigned to the default worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts in that zone to your cluster](/docs/satellite?topic=satellite-hosts#host-assign-manual).
 
 Host private IP addresses are used for Ingress subdomain
 :    Connect to your hosts' private network to access to your cluster and open the {{site.data.keyword.openshiftshort}} web console. For example, you might connect to your on-premises local network, or use a VPN such as [Wireguard](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift) to connect to your cloud provider's private network. 
