@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-05"
+lastupdated: "2021-12-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -48,10 +48,11 @@ Because {{site.data.keyword.satelliteshort}} is an extension of {{site.data.keyw
 Do not use sensitive or personally identifiable information for the names, labels, tags, or other metadata for the following items.
 {: important}
 
-* {{site.data.keyword.satelliteshort}} resources, such as the names of locations, hosts, {{site.data.keyword.satelliteshort}} Link endpoints, {{site.data.keyword.satelliteshort}} Config configurations, versions, subscriptions, cluster group names, or storage configurations.
-* {{site.data.keyword.satelliteshort}}-enabled service resources, such as the names of service instances or clusters.
-* Kubernetes resources that run in clusters in your {{site.data.keyword.satelliteshort}} location, such as the names of deployments, pods, services, or config maps.
-* Any other resources that run in your {{site.data.keyword.satelliteshort}} location.
+- {{site.data.keyword.satelliteshort}} resources, such as the names of locations, hosts, {{site.data.keyword.satelliteshort}} Link endpoints, {{site.data.keyword.satelliteshort}} configurations, versions, subscriptions, cluster group names, or storage configurations.
+- {{site.data.keyword.satelliteshort}}-enabled service resources, such as the names of service instances or clusters.
+- Managed Kubernetes resources that run in clusters in your {{site.data.keyword.satelliteshort}} location, such as the names and resource definitions of deployments, pods, services, secrets, or config maps.
+- The definitions of resources managed by {{site.data.keyword.satelliteshort}} config, including their data. Sensitive keys or personally identifiable information should be managed with {{site.data.keyword.secrets-manager_short}}, or encrypted with {{site.data.keyword.keymanagementserviceshort}}.
+- Any other resources that run in your {{site.data.keyword.satelliteshort}} location.
 
 ## How is my information stored, backed up, and encrypted?
 {: #sat-data-encryption}
@@ -59,7 +60,7 @@ Do not use sensitive or personally identifiable information for the names, label
 Review the following image to see how your personal and sensitive information is stored, backed up, and encrypted.
 {: shortdesc}
 
-![Satellite data security](images/satellite_data_security.png)
+![{{site.data.keyword.satelliteshort}} data security](images/satellite_data_security.png "Data security"){: caption="Figure 1. Satellite data security" caption-side="bottom"}
 
 
 
