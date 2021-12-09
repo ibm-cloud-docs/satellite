@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-08"
+lastupdated: "2021-12-09"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -253,7 +253,7 @@ Hosts must be assigned as worker nodes in each zone of the default worker pool i
 Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts.
 
 1. Review the host labels that the worker pools use to request compute capacity. You have several options.
-    - [Create a worker pool in a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-create-labels) with the host labels that you want to use for autoassignment.
+    - [Create a worker pool in a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-create-labels) with the host labels that you want to use for autoassignment.
     - Review existing worker pools for their host labels. Note that you cannot update the host labels that a worker pool has. You can review the **Host labels** by running the `ibmcloud oc worker-pool get -c <cluster> --worker-pool <worker_pool>` command.
     - Review the host labels that a {{site.data.keyword.satelliteshort}}-enabled service cluster uses to request resources from the {{site.data.keyword.satelliteshort}}-enabled service instance console.
 2. Review the host labels that your available hosts have. Remember that hosts automatically get `cpu` and `memory` labels when you attach the host to your {{site.data.keyword.satelliteshort}} location.
@@ -302,7 +302,7 @@ Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{sit
 The following actions disable host autoassignment for a worker pool. Later, you can [reenable host autoassignment](#host-autoassign-enable).
 {: shortdesc}
 
-- [Manually assign hosts to a worker pool](#host-assign).
+- [Manually assign hosts to a worker pool](#host-assign-manual).
 - [Delete an individual worker node from a worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance).
 
 ### Re-enabling host autoassignment
@@ -500,7 +500,7 @@ Before you begin
 To apply a minor or patch update,
 
 1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
-2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign). These hosts automatically receive the update when you assign them.
+2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign-manual). These hosts automatically receive the update when you assign them.
 3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](#host-remove).
 
 #### Applying major version updates to worker node host
@@ -553,7 +553,7 @@ Choose from one of the following scenarios,
 - Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled service.
 
     1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts that you attach must match the number of hosts that you want to update.
-    2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign). These hosts automatically receive the new update when you assign them.
+    2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign-manual). These hosts automatically receive the new update when you assign them.
     3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old worker node hosts that you previously noted](#host-remove).
 
 ### Updating worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console
@@ -617,11 +617,11 @@ To apply a version update, you must detach, reload, and reattach your host to th
 When you update control plane hosts, **do not assign or remove multiple hosts at the same time** as doing so may break the control plane. You must wait for a host assignment or removal to complete before assigning or removing another host.
 {: important}
 
-1. Optional: [Attach](#attach-hosts) and [assign](#host-assign) extra hosts to the {{site.data.keyword.satelliteshort}} location control plane to handle the compute capacity while your existing hosts are updating.
+1. Optional: [Attach](#attach-hosts) and [assign](#host-assign-manual) extra hosts to the {{site.data.keyword.satelliteshort}} location control plane to handle the compute capacity while your existing hosts are updating.
 2. [Remove the host that you want to update from your {{site.data.keyword.satelliteshort}} location](#host-remove).
 3. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
 4. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-5. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
+5. [Assign the host](#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
 
 ## Updating host metadata
@@ -657,7 +657,7 @@ When you reset the host key, all existing hosts that are attached to your locati
 3. [Remove one host from your {{site.data.keyword.satelliteshort}} location](#host-remove).
 4. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
 5. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location. The host registration script now uses the new host key.
-6. [Assign the host](#host-assign) back to your {{site.data.keyword.satelliteshort}} location control plane or {{site.data.keyword.satelliteshort}}-enabled service.
+6. [Assign the host](#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane or {{site.data.keyword.satelliteshort}}-enabled service.
 7. Repeat steps 3 - 6 for each host in your location so that each host uses the new key to communicate with the {{site.data.keyword.satelliteshort}} API server.
 
 
