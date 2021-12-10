@@ -201,10 +201,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 | --- | --- | --- |
 | `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
 
-## {{site.data.keyword.IBM_notm}} Systems block storage
-{: #sat-storage-ibm-block-csi-sc-ref}
-
-
 
 
 
