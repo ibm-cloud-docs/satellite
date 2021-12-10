@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-10"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -63,18 +63,19 @@ Complete the following steps, but do not create an {{site.data.keyword.cloud_not
 1. Follow the steps to [run {{site.data.keyword.IBM_notm}} Spectrum Scale commands without remote root login](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=cgc-running-spectrum-scale-commands-without-remote-root-login){: external}, but do not create a Spectrum Scale cluster.
 
 1. [Switch to the `sudo` user and create a Spectrum Scale cluster on the worker nodes](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=login-configuring-cluster-use-sudo-wrapper-scripts){: external}.
-    * Verify that the cluster is using sudo wrappers.
-    * Verify Spectrum Scale starts up on all worker nodes by running the following commands.
-        ```sh
-        sudo /usr/lpp/mmfs/bin/mmstartup -a -- sudo /usr/lpp/mmfs/bin/mmgetstate -a
-        ```
-	{: pre}
+1. Verify that the cluster is using sudo wrappers.
+1. Verify Spectrum Scale starts up on all worker nodes by running the following commands.
+    ```sh
+    sudo /usr/lpp/mmfs/bin/mmstartup -a -- sudo /usr/lpp/mmfs/bin/mmgetstate -a
+    ```
+    {: pre}
 
-    * Enable autostart for Spectrum Scale.
-	```sh
-	sudo /usr/lpp/mmfs/bin/mmchconfig autoload=yes
-	```
-	{: pre}
+1. Enable autostart for Spectrum Scale.
+
+    ```sh
+    sudo /usr/lpp/mmfs/bin/mmchconfig autoload=yes
+    ```
+    {: pre}
 
 1. [Attach your {{site.data.keyword.IBM_notm}} Spectrum Scale Nodes to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-hosts#attach-hosts)
     * Make sure your system is configured for the desired default route if you have more than one clustering network.
@@ -150,6 +151,11 @@ In some environments, your worker node names might be different from your {{site
     {: pre}
 
 1. [Assign your storage configuration to clusters](#assign-storage-spectrum-scale).
+
+
+
+
+
 
 
 ## Assigning your Spectrum Scale storage configuration to a cluster
@@ -249,6 +255,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 ### Changing the Spectrum Scale CSI driver mount point
 {: #ess-change-mount-point}
+
 After you deploy the `ess` template, you must change the Spectrum Scale CSI driver mount point to `/var/data/kubelet`.
 {: shortdesc}
 
@@ -435,13 +442,13 @@ Use the CLI to remove a storage configuration.
         ```
         {: pre}
 
-    1. Optional: If you created custom storage classes, remove them.
+    2. Optional: If you created custom storage classes, remove them.
         ```sh
         oc delete sc <storage-class-name>
         ```
         {: pre}
 
-    2. List the pods in the `ibm-spectrum-scale-csi-driver` namespace and verify that the storage driver pods are removed.
+    3. List the pods in the `ibm-spectrum-scale-csi-driver` namespace and verify that the storage driver pods are removed.
         ```sh
         oc get pods -n ibm-spectrum-scale-csi-driver
         ```
@@ -504,6 +511,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 
 ## Limitations
 {: #sat-storage-spectrum-scale-limits}
+
 Do not install the {{site.data.keyword.IBM_notm}} Spectrum Scale management API GUI on worker nodes that are managed by {{site.data.keyword.satelliteshort}}.
 {: important}
 
@@ -544,6 +552,17 @@ Do not install the {{site.data.keyword.IBM_notm}} Spectrum Scale management API 
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameters is required. The third column is a brief description of the parameter."}
 
 
+
+## Storage class reference
+{: #sat-storage-spectrum-scale-sc-ref2}
+
+Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.keyword.IBM_notm}} Spectrum Scale. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+{: shortdesc}
+
+
+| Storage class name | Type | Reclaim policy |
+| --- | --- | --- |
+| `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
 
 
 

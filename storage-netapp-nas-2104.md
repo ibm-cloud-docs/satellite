@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-12-10"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -93,6 +93,9 @@ Before you can create storage configurations by using the NetApp NAS template, y
     ibmcloud sat storage config get --config <config>
     ```
     {: pre}
+    
+    
+
 
 ## Assigning your NetApp ONTAP-NAS storage configuration to a cluster
 {: #assign-storage-netapp-nas-2104}

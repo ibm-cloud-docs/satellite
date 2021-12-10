@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-10"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -85,25 +85,30 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
     ```
     {: pre}
 
-5. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to use. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EBS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location.
+
+
+### Assigning your storage configuration to clusters or cluster groups
+{: #ebs-config-assign}
+
+1. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to use. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EBS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location.
     ```sh
     ibmcloud sat group ls
     ```
     {: pre}
 
-6. Create a storage assignment for your cluster group. After you create the assignment, the AWS EBS driver is installed in all clusters that belong to the cluster group. Replace `<group>` with the name of your cluster group, `<config>` with the name of your storage configuration, and `<name>` with a name for your storage assignment. For more information, see the [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create) command.
+2. Create a storage assignment for your cluster group. After you create the assignment, the AWS EBS driver is installed in all clusters that belong to the cluster group. Replace `<group>` with the name of your cluster group, `<config>` with the name of your storage configuration, and `<name>` with a name for your storage assignment. For more information, see the [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create) command.
     ```sh
     ibmcloud sat storage assignment create --group <group_name> --config <config_name> --name <assignment_name>
     ```
     {: pre}
 
-7. Verify that your assignment is created.
+3. Verify that your assignment is created.
     ```sh
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
     ```
     {: pre}
 
-8. Verify that the AWS EBS storage configuration resources are successfully deployed in your cluster.
+4. Verify that the AWS EBS storage configuration resources are successfully deployed in your cluster.
     1. [Access your cluster](/docs/openshift?topic=openshift-access_cluster).
     2. List the AWS EBS driver pods in the `kube-system` namespace and verify that the status is `Running`.
         ```sh

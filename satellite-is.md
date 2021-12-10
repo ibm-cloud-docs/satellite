@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-08"
+lastupdated: "2021-12-10"
 
 keywords: satellite, hybrid, multicloud, satellite infrastructure service
 
@@ -295,4 +295,3 @@ Disaster recovery includes tasks such as providing dependencies on disaster reco
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
 {: caption="Responsibilities for disaster recovery." caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column describes the task that a party might have responsibility for. The second column describes {{site.data.keyword.IBM_notm}} responsibilities for that task. The third column describes your responsibilities as the customer for that task."}
-
