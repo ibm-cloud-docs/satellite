@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-10"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -90,19 +90,24 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
     ```
     {: pre}
 
-5. Create a storage assignment for your cluster group. After you create the assignment, the AWS EFS driver is installed in all clusters that belong to the cluster group. Replace `<group_name>` with the name of your cluster group, `<config_name>` with the name of your storage configuration, and `<assignment_name>` with a name for your storage assignment. For more information, see the [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create) command.
+
+
+### Assigning your storage configuration to clusters or cluster groups
+{: #efs-config-assign}
+
+1. Create a storage assignment for your cluster group. After you create the assignment, the AWS EFS driver is installed in all clusters that belong to the cluster group. Replace `<group_name>` with the name of your cluster group, `<config_name>` with the name of your storage configuration, and `<assignment_name>` with a name for your storage assignment. For more information, see the [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create) command.
     ```sh
     ibmcloud sat storage assignment create --group <group_name> --config <config_name> --name <assignment_name>
     ```
     {: pre}
 
-6. Verify that your assignment is created.
+2. Verify that your assignment is created.
     ```sh
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
     ```
     {: pre}
 
-7. Verify that the AWS EFS storage configuration resources are successfully deployed in your cluster.
+3. Verify that the AWS EFS storage configuration resources are successfully deployed in your cluster.
     1. [Access your cluster](/docs/openshift?topic=openshift-access_cluster).
     2. List the AWS EFS driver pods in the `kube-system` namespace and verify that the status is `Running`.
         ```sh

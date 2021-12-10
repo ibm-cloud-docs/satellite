@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-06"
+lastupdated: "2021-12-10"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -32,10 +32,6 @@ Be sure to complete all prerequisite and installation steps before assigning hos
 {: important}
 
 Review the [compatibility and requirements documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=installation-compatibility-requirements){: external}.
-
-
-
-
 
 
 ## Creating a block storage configuration in the command line
@@ -69,6 +65,7 @@ Review the [compatibility and requirements documentation](https://www.ibm.com/do
     ```
     {: pre}
     
+1. Review the [template parameters](#sat-storage-block-csi-params-cli).
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
 
     ```sh
@@ -88,7 +85,9 @@ Review the [compatibility and requirements documentation](https://www.ibm.com/do
     ```
     {: pre}
 
-1. [Assign your storage configuration to clusters](#assign-storage-block-csi).
+1. [Assign your storage configuration to your clusters](#assign-storage-block-csi).
+
+
 
 
 

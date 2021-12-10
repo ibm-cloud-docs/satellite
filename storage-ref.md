@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-10"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -92,6 +92,24 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 
 
 
+## NetApp ONTAP-NAS 21.04
+{: #netapp-nas-ref-2104}
+
+Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-NAS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+
+| Storage class name | Type | File system | IOPs | Encryption | Reclaim policy |
+| --- | --- | --- | --- | --- | --- |
+| `sat-netapp-file-gold` | ONTAP-NAS | NFS | no QoS limits | Encryption disabled. | Delete |
+| `sat-netapp-file-gold-encrypted` | ONTAP-NAS | NFS | no QoS limits | Encryption enabled. | Delete |
+| `sat-netapp-file-silver` | ONTAP-NAS | NFS | User defined QoS limit. | Encryption disabled. | Delete |
+| `sat-netapp-file-silver-encrypted` | ONTAP-NAS | NFS | User defined QoS limit. | Encryption enabled. | Delete |
+| `sat-netapp-file-bronze` | ONTAP-NAS | NFS | User-defined QoS limit. | Encryption disabled. | Delete |
+| `sat-netapp-file-bronze-encrypted` | ONTAP-NAS | NFS | User-defined QoS limit.| Encryption enabled. | Delete |
+{: caption="NetApp ONTAP-NAS storage class reference." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
+
+
+
 ## NetApp ONTAP-NAS 20.07
 {: #netapp-nas-ref}
 
@@ -107,6 +125,23 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 
+
+
+## NetApp ONTAP-SAN 21.04
+{: #netapp-san-ref-2104}
+
+Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-SAN. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+
+| Storage class name | Type | File system | IOPs | Encryption |Reclaim policy |
+| --- | --- | --- | --- | --- | --- |
+| `sat-netapp-block-gold` | ONTAP-SAN | ext4 | no QoS limits. | Encryption disabled. | Delete |
+| `sat-netapp-block-gold-encrypted` | ONTAP-SAN | ext4 | no QoS limits. | Encryption enabled. | Delete |
+| `sat-netapp-block-silver` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption disabled. | Delete |
+| `sat-netapp-block-silver-encrypted` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption enabled. | Delete |
+| `sat-netapp-block-bronze` | ONTAP-SAN | ext4 | User defined QoS limit. | Encryption disabled. | Delete |
+| `sat-netapp-block-bronze-encrypted` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption enabled. | Delete |
+{: caption="NetApp ONTAP-SAN storage class reference." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 
 ## NetApp ONTAP-SAN 20.07
@@ -152,6 +187,24 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 {: caption="Table 8. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
+
+
+
+## {{site.data.keyword.IBM_notm}} Spectrum Scale
+{: #spec-scale-sc-ref}
+
+Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.keyword.IBM_notm}} Spectrum Scale. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+{: shortdesc}
+
+
+| Storage class name | Type | Reclaim policy |
+| --- | --- | --- |
+| `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
+
+## {{site.data.keyword.IBM_notm}} Systems block storage
+{: #sat-storage-ibm-block-csi-sc-ref}
+
+
 
 
 

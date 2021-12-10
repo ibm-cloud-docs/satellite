@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-12-10"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -83,7 +83,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 1. Verify that the `netapp-trident` [driver](/docs/satellite?topic=satellite-config-storage-netapp-trident) is deployed on your clusters.
 1. Review the template parameters and retrieve the values from your NetApp cluster.
 1. Review the [NetApp Trident storage configuration parameters](#sat-storage-netapp-params-cli-san-2104).
-1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     ```sh
     ibmcloud sat storage config create --name 'ontapsan-config' --location <location id> --template-name 'netapp-ontap-san' --template-version '21.04' -p 'managementLIF=10.0.0.1' -p 'dataLIF=10.0.0.2' -p 'svm=svm-san' -p 'username=admin' -p 'password=<admin password>'
     ```
@@ -94,6 +94,9 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
     ibmcloud sat storage config get --config <config>
     ```
     {: pre}
+    
+
+
 
 ## Assigning your NetApp storage configuration to a cluster
 {: #assign-storage-netapp-san-2104}

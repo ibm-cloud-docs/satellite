@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-11-09"
+lastupdated: "2021-12-10"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -156,6 +156,7 @@ Create a storage configuration in the command line by using the Azure Disk templ
     {: pre}
 
 1. [Assign your storage configuration to clusters](#assign-storage-azure).
+
 
 
 ## Assigning your Azure storage configuration to a cluster
