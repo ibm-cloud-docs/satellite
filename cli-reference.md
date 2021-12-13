@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-07"
+lastupdated: "2021-12-13"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1283,7 +1283,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 {: #location-create-command-options}
 
 `--managed-from REGION`
-:    Required. The {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} control plane resources are managed from. Select the {{site.data.keyword.cloud_notm}} region that is nearest to where your physical machines are. For a list of supported regions, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
+:    Required. The {{site.data.keyword.cloud_notm}} region, such as `wdc` or `lon`, that your {{site.data.keyword.satelliteshort}} location is managed from. You can use any region, but to reduce latency between {{site.data.keyword.cloud_notm}} and your location, choose the region that is closest to the compute hosts that you plan to attach to your location later. For a list of supported {{site.data.keyword.cloud_notm}} regions, see [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
 
 `--name NAME`
 :    Required. Enter a name for your location. The {{site.data.keyword.satelliteshort}} location name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Do not reuse the same name for multiple locations, even if you deleted another location with the same name.
