@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-08"
+lastupdated: "2021-12-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,7 +19,37 @@ subcollection: satellite
 Learn how you can set up an {{site.data.keyword.satellitelong_notm}} location with virtual instances that you created in Google Cloud Platform (GCP).
 {: shortdesc}
 
-## Adding GCP hosts to {{site.data.keyword.satelliteshort}}
+## Automating your GCP location setup with a {{site.data.keyword.bpshort}} template
+{: #gcp-template}
+
+Automate your GCP setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-about-schematics) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your GCP account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
+{: shortdesc}
+
+For more configuration options, you can [manually attach GCP hosts to a {{site.data.keyword.satelliteshort}} location](#gcp-host-attach).
+{: tip}
+
+Before you begin, make sure that you have the correct [{{site.data.keyword.cloud_notm}} permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations, including to {{site.data.keyword.satelliteshort}} and {{site.data.keyword.bpshort}}. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
+
+1. In your GCP cloud provider, [set up your account credentials](/docs/satellite?topic=satellite-infrastructure-plan##infra-creds-gcp).
+2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
+3. In the **Get started** section, click **GCP Quick Start**.
+4. Upload your GCP credentials file.
+6. Review the **GCP environment** details that are prepopulated. By default, enough VMs are created to provide hosts for 1 small location that can run about 2 demo clusters. To change the subscription, region, instance type, or number of VMs for the hosts, click the **Edit** pencil icon.
+7. Review the **Satellite location** details. If you edited the GCP environment details, you might want to click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
+8. In the **Summary** pane, review the cost estimate.
+9. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
+10. Optional: To review the provisioning progress, review the logs in the {{site.data.keyword.bpshort}} workspace that is automatically created for you.
+    1. Click **Manage in Schematics**. If you see an error, navigate to the [{{site.data.keyword.bpshort}} workspaces console](https://cloud.ibm.com/schematics/workspaces){: external} and click the name of your workspace, such as `us.east.cartOrder...`.
+    2. From the **Activity** tab, find the current activity row and click **View log** to review the log details.
+    3. Wait for the {{site.data.keyword.bpshort}} action to finish and the workspace to enter an **Active** state.
+
+Well done, your {{site.data.keyword.satelliteshort}} location is creating! You can review the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to see when your location is in a **Normal** state and ready to use.
+
+What's next?
+
+The {{site.data.keyword.bpshort}} template helped with the initial creation, but you are in control for subsequent location management actions, such as [attaching more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts), [creating {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters), or [scaling the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale). If you [remove](/docs/satellite?topic=satellite-locations#location-remove) your {{site.data.keyword.satelliteshort}} location, make sure to [remove your workspace in {{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-workspace-setup#del-workspace), too.
+
+## Manually adding GCP hosts to {{site.data.keyword.satelliteshort}}
 {: #gcp-host-attach}
 
 You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Google Cloud Platform (GCP).
