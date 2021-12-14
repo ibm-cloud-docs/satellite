@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-12-13"
+lastupdated: "2021-12-14"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -120,7 +120,7 @@ Get a `kubectl` command to run in your cluster to install the {{site.data.keywor
 {: shortdesc}
 
 ```sh
-ibmcloud sat cluster register [--silent] [-q]
+ibmcloud sat cluster register --name NAME [--location LOCATION] [--silent] [-q]
 ```
 {: pre}
 
@@ -134,8 +134,14 @@ ibmcloud sat cluster register [--silent] [-q]
 #### Command options
 {: #cli-cluster-register-command-options}
 
+`--name NAME`
+:    The name of the cluster that you want to register.
+
+`--location LOCATION`
+:    Optional. The name or ID of the Satellite location. 
+
 `--silent`
-    :    Return only the registration command in the CLI output.
+:    Optional. Return only the registration command in the CLI output.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
@@ -145,7 +151,7 @@ ibmcloud sat cluster register [--silent] [-q]
 {: #cli-cluster-register-example}
 
 ```sh
-ibmcloud sat cluster register
+ibmcloud sat cluster register --name mycluster
 ```
 {: pre}
 
@@ -1268,7 +1274,7 @@ Create a {{site.data.keyword.satelliteshort}} location. When you create a locati
 {: shortdesc}
 
 ```sh
-ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS_BUCKET_NAME] [--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME] [--logging-account-id LOGGING_ACCOUNT][--provider INFRASTRUCTURE_PROVIDER] [--provider-region PROVIDER_REGION] [--provider-credential PATH_TO_PROVIDER_CREDENTIAL] [-q]
+ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS_BUCKET_NAME] [--description DESCRIPTION] [--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME] [--logging-account-id LOGGING_ACCOUNT][--provider INFRASTRUCTURE_PROVIDER] [--provider-region PROVIDER_REGION] [--provider-credential PATH_TO_PROVIDER_CREDENTIAL] [-q]
 ```
 {: pre}
 
@@ -1293,6 +1299,9 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
      Do not delete your {{site.data.keyword.cos_short}} instance or this bucket. If the service instance or bucket is deleted, your {{site.data.keyword.satelliteshort}} location control plane data cannot be backed up.
      {: important}
 
+`--description DESCRIPTION`
+:    Optional. A description of the Satellite location. 
+
 `--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME`
 :    Specify three names for high availability zones in your location. The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider.
      1. [Alibaba regions and zones](https://www.alibabacloud.com/help/doc-detail/188196.htm), such as `us-east-1` and `us-west-1`.
@@ -1304,7 +1313,6 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 
 `--logging-account-id LOGGING_ACCOUNT`
 :    Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.la_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.
-
 
 `--provider INFRASTRUCTURE_PROVIDER`
 :    Optional. The name of the infrastructure provider to create the {{site.data.keyword.satelliteshort}} location in. Accepted values are `aws`, `azure`, `gcp`. If you include this option, you must also include the `--provider-credential` option.

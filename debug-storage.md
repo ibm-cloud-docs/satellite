@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-10-12"
+lastupdated: "2021-12-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -191,6 +191,7 @@ Error type: Services
 
 Response code: `404`
 
+
 ### ST0019
 {: #st0019}
 
@@ -294,7 +295,7 @@ Response code: `404`
 ### ST0030
 {: #st0030}
 
-{{site.data.keyword.satelliteshort}} cluster not found corresponding to the given cluster ID: `<cluster-id>`
+Cluster not found corresponding to the given cluster ID: `<cluster-id>`
 {: shortdesc}
 
 Error type: Bad request
