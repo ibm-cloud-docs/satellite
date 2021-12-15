@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-10"
+lastupdated: "2021-12-15"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -65,7 +65,6 @@ Review the [compatibility and requirements documentation](https://www.ibm.com/do
     ```
     {: pre}
     
-1. Review the [template parameters](#sat-storage-block-csi-params-cli).
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
 
     ```sh
