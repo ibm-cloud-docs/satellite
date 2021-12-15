@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,6 +21,7 @@ Review the {{site.data.keyword.cloud}} regions that you can choose from to manag
 
 | Geography | Country | Multizone Metro | Location | Region | Zone |
 | --- | --- | --- | --- | --- | --- |
+| Asia Pacific | Australia | Sydney | `syd` | `au-syd` | `au-syd-1`  \n `au-syd-2`  \n `au-syd-3`|
 | Asia Pacific | Japan | Tokyo | `tok` | `jp-tok` | `jp-tok-1`  \n `jp-tok-2`  \n `jp-tok-3`|
 | North America | Canada | Toronto | `tor`| `ca-tor`|`tor-1`  \n `tor-4`  \n `tor-5`|
 | North America | United States | Dallas | `dal`| `us-south`|`us-south-1`  \n `us-south-2`  \n `us-south-3`|
