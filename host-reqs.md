@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-14"
+lastupdated: "2021-12-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -244,6 +244,25 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | - 0.rhel.pool.ntp.org  \n - 1.rhel.pool.ntp.org  \n - 2.rhel.pool.ntp.org  \n - 3.rhel.pool.ntp.org | - |
 {: caption="Required outbound connectivity for hosts on the primary network interface in the Sao Paulo region" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
+
+
+
+### Sydney
+{: #syd-outbound}
+
+{{site.data.keyword.satelliteshort}} Link flow logs for Location endpoints created in the Sydney (`au-syd`) region are inconsistent or might not work.
+{: important}
+
+|Description|Source IP|Destination IP|Protocol and ports|
+| --- | --- | --- | --- |
+| Allow control plane worker nodes to communicate with the control plane master | Control plane hosts | 130.198.65.82</br>135.90.66.194</br>168.1.58.90 | - TCP 443, 30000 - 32767  \n - UDP 30000 - 32767 |
+| Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}} | Control plane hosts | `s3.ap.cloud-object-storage.appdomain.cloud` | HTTPS |
+| Allow Link connectors to connect to the Link tunnel server endpoint | Control plane hosts | - 130.198.70.242  \n - 130.198.75.74  \n - 130.198.79.130  \n - 130.198.86.50  \n - 135.90.64.226  \n - 135.90.67.154  -\n - 135.90.70.74  \n - 135.90.93.74  \n - 168.1.1.250  \n - 168.1.195.90  \n - 168.1.201.194  \n 168.1.57.122  \n - **Tip**: To programmatically retrieve this list of IP addresses, you can run `dig c-<XX>-ws.au-syd.link.satellite.cloud.ibm.com +short` from a host that is attached to your location but unassigned to any resources. Replace `<XX>` with `01`, `02`, and so on, and run this `dig` until no further DNS results are returned. | TCP 443 |
+| Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API | Control plane hosts | [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} | TCP 80, 443 |
+| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | - 0.rhel.pool.ntp.org  \n - 1.rhel.pool.ntp.org  \n - 2.rhel.pool.ntp.org  \n - 3.rhel.pool.ntp.org | - |
+{: caption="Required outbound connectivity for hosts on the primary network interface in the Sydney region" caption-side="top"}
+{: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
+
 
 
 

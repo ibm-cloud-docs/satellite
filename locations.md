@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -32,6 +32,7 @@ You can set up {{site.data.keyword.satelliteshort}} locations with a {{site.data
 
 - [AWS](/docs/satellite?topic=satellite-aws#aws-template)
 - [Azure](/docs/satellite?topic=satellite-azure#azure-template)
+- [GCP](/docs/satellite?topic=satellite-gcp#gcp-template)
 
 
 What's next?
