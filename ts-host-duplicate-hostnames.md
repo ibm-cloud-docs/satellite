@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2021
-lastupdated: "2021-12-02"
+lastupdated: "2021-12-16"
 
 keywords: satellite, host, location
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 {: sat-host-reattach-fail}
 
 
-When you try to resue an existing host by assigning it to a new location, you see a message similar to the following error: 
+When you try to resue an existing host by assigning it to a new location, you see a message similar to the following error. 
 {: tsSymptoms}
 
 ```sh
