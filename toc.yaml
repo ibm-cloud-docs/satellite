@@ -143,6 +143,7 @@ toc:
                     - ts-host-fail-attach.md
                     - ts-host-registration-fail.md
                     - ts-host-assign-fail.md
+                    - ts-host-assign-fail-file-system.md
                     - ts-host-duplicate-hostnames.md
                     - ts-host-console-update-fail.md
               - topicgroup:
@@ -160,4 +161,3 @@ toc:
                   topics:
                     - debug-storage.md
                     - ts-storage-cleanup.md
-

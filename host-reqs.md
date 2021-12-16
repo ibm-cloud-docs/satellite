@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2021
-lastupdated: "2021-12-15"
+lastupdated: "2021-12-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -40,6 +40,7 @@ Review the following requirements that relate to the computing and system setup 
 
 - If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
 - Hostnames can contain only lowercase alphanumeric characters, `-`, or `.`.
+- Hosts must have an ext4 filesystem for the boot disk.
 
 ### Packages and other machine configurations
 {: #reqs-host-packages}
