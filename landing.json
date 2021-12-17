@@ -6,7 +6,7 @@
     "section_devtools": {
       "api": "https://containers.cloud.ibm.com/global/swagger-global-api/", 
       "cli": "/docs/satellite?topic=satellite-setup-cli", 
-      "terraform": "/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-tutorial-tf-clusters"
+      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/satellite_cluster"
     },
     "section_recommended": [
       {
