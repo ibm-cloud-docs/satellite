@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-14"
+  years: 2020, 2022
+lastupdated: "2022-01-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -65,6 +65,7 @@ Before you begin
     2. Create a bucket in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. The {{site.data.keyword.cos_full_notm}} bucket must be in the same region as your {{site.data.keyword.satelliteshort}} location. The bucket endpoint must match the instance endpoint, such as a **Cross Region** bucket for a **Global** instance. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`. Create a separate bucket for each {{site.data.keyword.satelliteshort}} location that you create in your account.
     3. When you create your {{site.data.keyword.satelliteshort}} location, enter the exact name of the bucket you created earlier or an existing bucket in your {{site.data.keyword.cos_full_notm}} instance. If no bucket name is provided, a bucket is created for you.
 
+
 1. [Set up an {{site.data.keyword.cos_full_notm}} instance](https://cloud.ibm.com/objectstorage/create){: external} that you plan to use for all of your {{site.data.keyword.satelliteshort}} locations in your account. 
 2. **Optional** If you want to manually create a bucket for your {{site.data.keyword.satelliteshort}} location. Make sure that the bucket is set up with **Cross Region** resiliency. Give the bucket a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`. If you have multiple {{site.data.keyword.satelliteshort}} location in your account, create a separate bucket for each {{site.data.keyword.satelliteshort}} location that you create in your account.
 3. When you create your {{site.data.keyword.satelliteshort}} location, enter the exact name of the bucket you created earlier or an existing bucket in your {{site.data.keyword.cos_full_notm}} instance. If you don't provide a bucket name when you create your location, a bucket is dynamically provisioned.
@@ -110,6 +111,9 @@ Before you begin
 - You must have an existing {{site.data.keyword.cos_full_notm}} service instance so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance. For example, to set up a dedicated {{site.data.keyword.cos_short}} instance and bucket:
     1. [Set up a {{site.data.keyword.cos_full_notm}} instance](https://cloud.ibm.com/objectstorage/create){: external} that you plan to use for all of your {{site.data.keyword.satelliteshort}} locations in your account.
     2. **Optional** Create a bucket with **Cross-Region** resiliency in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. The {{site.data.keyword.cos_full_notm}} bucket must be in the same region as your {{site.data.keyword.satelliteshort}} location. Create a separate bucket for each {{site.data.keyword.satelliteshort}} location that you create in your account. Pass in the name of this bucket when you create the {{site.data.keyword.satelliteshort}} location.
+
+     If you want to create a cross-regional bucket in the CLI with the `ibmcloud cos create-bucket` command, you must first run `ibmcloud cos config region` and `ibmcloud cos endpoint-url` to set the cross region endpoint. For a list of cross region endpoints available for {{site.data.keyword.cos_full_notm}}, see [Cross Region Endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo). 
+    {: tip}
 
 Don't delete your {{site.data.keyword.cos_short}} instance or this bucket. If you delete your service instance or bucket, you can't back up your {{site.data.keyword.satelliteshort}} location control plane data.
 {: important}
