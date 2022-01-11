@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-16"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -250,9 +250,6 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 
 ### Sydney
 {: #syd-outbound}
-
-{{site.data.keyword.satelliteshort}} Link flow logs for Location endpoints created in the Sydney (`au-syd`) region are inconsistent or might not work.
-{: important}
 
 |Description|Source IP|Destination IP|Protocol and ports|
 | --- | --- | --- | --- |
