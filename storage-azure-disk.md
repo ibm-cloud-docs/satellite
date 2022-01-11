@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-10"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -532,7 +532,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 | --- | --- | --- | 
 | `tenantId` | Required | The Azure tenant ID that you want to use for your configuration. |
 | `subscriptionId` | Required | You Azure subscription ID. |
-| `aadClientId` | Required | Your Azure Activery Directory Client ID. |
+| `aadClientId` | Required | Your Azure Active Directory Client ID. |
 | `aadClientSecret` | Required | Your Azure Active Directory Client Secret. |
 | `resourceGroup` | Required | The name of your Azure resource group. |
 | `location` | Required | The location of your Azure hosts. |

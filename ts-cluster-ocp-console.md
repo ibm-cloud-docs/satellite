@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2021
-lastupdated: "2021-11-11"
+  years: 2021, 2022
+lastupdated: "2022-01-11"
 
 keywords: satellite, certificate, expired, console
 
@@ -24,7 +24,7 @@ When you try to access your {{site.data.keyword.satelliteshort}} cluster through
 ```
 {: screen}
 
-An expired or unvalidated security ticket is preventing you from accessing the {{site.data.keyword.openshiftshort}} console.  
+An expired or invalidated security ticket is preventing you from accessing the {{site.data.keyword.openshiftshort}} console.  
 {:tsCauses}
 
 Follow the steps to validate your certificate.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-14"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -46,7 +46,7 @@ Because the {{site.data.keyword.la_full_notm}} instance is enabled for platform-
 {: shortdesc}
 
 1. In the [**Logging** dashboard](https://cloud.ibm.com/observe/logging){: external}, click **Open Dashboard** for your {{site.data.keyword.la_short}} instance.
-2. In the Filters toolbar, click **Sources**, select `satellite`, and click **Apply**. The logs for all of your {{site.data.keyword.satelliteshort}} locations in the region are shown.
+2. In the Filters toolbar, click **Sources**, select `satellite`, and click **Apply**. The logs for all your {{site.data.keyword.satelliteshort}} locations in the region are shown.
 3. To filter for a specific {{site.data.keyword.satelliteshort}} location, click **Apps** in the Filters toolbar, select the CRN for your {{site.data.keyword.satelliteshort}} location, and click **Apply**. To identify the CRN for your location, get your location ID by running `ibmcloud sat location ls`, look for this location's ID at the end of the listed CRNs.
 
 For more tips on identifying logs in the dashboard, review how you can [search and filter logs](/docs/log-analysis?topic=log-analysis-view_logs).

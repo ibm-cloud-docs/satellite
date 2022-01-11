@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-02"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -223,7 +223,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
     
     | Scope | CLI option | Description |
     | -------------- | -------------- | -------------- |
-    | User | N/A | You can assign the policy to an individual or group of users. Place this positional argument immediately following the command. For an individual user, enter the email address of the user. For an access group, enter th ename of the access group of users. You can create an access group with the `ibmcloud iam access-group-create` command. To list available access groups, run `ibmcloud iam access-groups`. To add a user to an access group, run `ibmcloud iam access-group-user-add <access_group_name> <user_email>`. | 
+    | User | N/A | You can assign the policy to an individual or group of users. Place this positional argument immediately following the command. For an individual user, enter the email address of the user. For an access group, enter the name of the access group of users. You can create an access group with the `ibmcloud iam access-group-create` command. To list available access groups, run `ibmcloud iam access-groups`. To add a user to an access group, run `ibmcloud iam access-group-user-add <access_group_name> <user_email>`. | 
     | {{site.data.keyword.cloud_notm}} service | `--service-name` | Enter `satellite` to scope the access policy to {{site.data.keyword.satellitelong_notm}}. |
     | Resource group | `--resource-group-name` | You can grant a policy for a resource group. If you do not specify a resource group, the policy applies to all service instances for all resource groups. To list available resource groups, run `ibmcloud resource groups`. |
     | {{site.data.keyword.satelliteshort}} resource| `--resource-type` | You can limit the policy to a type of resource within {{site.data.keyword.satellitelong_notm}}, such as all {{site.data.keyword.satelliteshort}} locations or {{site.data.keyword.satelliteshort}} configurations. To review resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types). Possible values include `location`, `link`, `configuration`, `cluster`, `clustergroup`, and `subscription`. If you scope an access policy to the `location` resource type, the users must target the regional endpoint to interact with the location. For more information, see the [troubleshooting topic](/docs/satellite?topic=satellite-ts-location-missing-location). |
@@ -262,7 +262,7 @@ Keep in mind that you need permissions to {{site.data.keyword.cloud_notm}} servi
 ### Access policies
 {: #iam-roles-policies}
 
-Policies enable access at different levels. Some of the options for {{site.data.keyword.satellitelong_notm}} include the following.
+Policies enable access at different levels. Some options for {{site.data.keyword.satellitelong_notm}} include the following.
 {: shortdesc}
 
 - Access across all {{site.data.keyword.satelliteshort}} service instances of all resource types in your account.

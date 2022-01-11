@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-16"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -13,7 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why does host assign fail with a crio error? 
+# Why does host assign fail with a `crio` error? 
 {: #host-assign-file-system}
 
 When you try to assign a host to a cluster, you see a message similar to the following error.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-10-01"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -94,7 +94,7 @@ Do not delete or patch the resource finalizers in the `kube-system` namespace.
     ```
     {: screen}
 
-3. For each resource that has remaining instances, run the following `kubectl patch` command to remove the finalizers and delete the resource. After all of the resources that have remaining instances have been patched, the namespace is removed.
+3. For each resource that has remaining instances, run the following `kubectl patch` command to remove the finalizers and delete the resource. After all the resources that have remaining instances have been patched, the namespace is removed.
     ```sh
     kubectl -n <namespace> patch <resource>/<instance> -p '{"metadata":{"finalizers":[]}}' --type=merge
     ```
@@ -106,7 +106,7 @@ Do not delete or patch the resource finalizers in the `kube-system` namespace.
     ```
     {: pre}
 
-4. After you have removed the finalizers on all of the remaining resources, run the `oc get ns` command to verify that namespace has been removed.
+4. After you have removed the finalizers on all the remaining resources, run the `oc get ns` command to verify that namespace has been removed.
     ```sh
     oc get ns
     ```

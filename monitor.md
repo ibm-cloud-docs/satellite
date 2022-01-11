@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-08"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -307,7 +307,7 @@ Review the following global and additional attributes that are available for seg
 #### Global attributes
 {: #global-attributes}
 
-The following global attributes are available for segmenting all of the [available metrics](#available-metrics).
+The following global attributes are available for segmenting all the [available metrics](#available-metrics).
 {: shortdesc}
 
 | Attribute | Attribute Name | Attribute Description |

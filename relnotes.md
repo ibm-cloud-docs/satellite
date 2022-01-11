@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-15"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -75,7 +75,7 @@ Review the release notes for November 2021.
 {: #16nov2021}
 {: release-note}
 
-**New! Sao Paolo location**
+**New! Sao Paulo location**
 :   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Sao Paolo** (`sao`, `br-sao`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). 
 
 ### 11 November 2021
@@ -389,7 +389,7 @@ Review the release notes for March 2021.
 Review the release notes for 25 March 2021.
 {: shortdesc}
 
-Security and complianc
+Security and compliance
 :    Added an [overview of security and compliance](/docs/satellite?topic=satellite-compliance) information for {{site.data.keyword.satelliteshort}}.
 
 ### 23 March 2021
@@ -410,7 +410,7 @@ Review the release notes for 12 March 2021.
 {: shortdesc}
 
 Resetting the host key
-:    In the event of a potential security violation, you can [reset the key](/docs/satellite?topic=satellite-hosts#host-key-reset) that the control plane uses to communicate with all of the hosts in the {{site.data.keyword.satelliteshort}} location.
+:    In the event of a potential security violation, you can [reset the key](/docs/satellite?topic=satellite-hosts#host-key-reset) that the control plane uses to communicate with all the hosts in the {{site.data.keyword.satelliteshort}} location.
 
 Troubleshooting location health checks
 :    Added steps for troubleshooting when [{{site.data.keyword.cloud_notm}} is unable to check a location's health](/docs/satellite?topic=satellite-ts-location-healthcheck).
