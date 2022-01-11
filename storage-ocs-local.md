@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-02"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # OpenShift Data Foundation using local disks
 {: #config-storage-ocs-local}
 
-Set up OpenShift Data Foundationfor {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up OpenShift Data Foundation for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 OpenShift Data Foundation is available in only internal mode, which means that your apps run in the same cluster as your storage. External mode, or storage heavy configurations, where your storage is located in a separate cluster from your apps is not supported.
@@ -31,7 +31,7 @@ To use the ODF storage with the local storage operator and local storage devices
 - [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters).
     - Your cluster must have a minimum of 3 worker nodes with at least 16CPUs and 64GB RAM per worker node.
     - Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to having one of the following local storage configurations.
-        * Two extra raw devices per worker node in addition to the minimum host requirments. These disks must not be partitioned or formatted file systems. If your devices are not partitioned, each node must have 2 free disks. One disk for the OSD and one disk for the MON.
+        * Two extra raw devices per worker node in addition to the minimum host requirements. These disks must not be partitioned or formatted file systems. If your devices are not partitioned, each node must have 2 free disks. One disk for the OSD and one disk for the MON.
         * Two extra raw partitions per worker node in addition to the minimum host requirements. These disks must not be  formatted file systems. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
 - [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups).
 - [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-satcon-create).
@@ -804,7 +804,7 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 | `--template-version` | Required | Enter `4.7`. | N/A | `string` |
 | `iam-api-key` | Required | Enter your IAM API key. | N/A | `string` | 
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
-| `mon-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths for the storage devices that you want to use for the ODF monitoring (MON) pods. The devices that you specify must have at least 20GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>` or `/dev/disk/by-path/` for VMware. Example `mon-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A | `string` |
+| `mon-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths   the storage devices that you want to use for the ODF monitoring (MON) pods. The devices that you specify must have at least 20GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>` or `/dev/disk/by-path/` for VMware. Example `mon-device-path` value for a partitioned device: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A | `string` |
 | `osd-device-path` | Required | Enter a comma-separated list of the `disk-by-id` paths for the devices that you want to use for the OSD pods. The devices that you specify are used as your storage devices in your ODF configuration. Your OSD devices must have at least 100GiB of space and must be unformatted and unmounted. The parameter format is `/dev/disk/by-id/<device-id>` or `/dev/disk/by-path/` for VMware and `osd-device-path` or `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2` for a partitioned device. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1`,`/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2`. | N/A | `string` |
 | `ibm-cos-access-key` | Optional | Enter the {{site.data.keyword.cos_full_notm}} access key ID. Do not encode this value to base64. Your {{site.data.keyword.cos_short}} access key ID is used to create a Kubernetes secret in your cluster. | N/A | `string` |
 | `ibm-cos-secret-access-key` | Optional | Enter the {{site.data.keyword.cos_full_notm}} secret access key. Do not encode this value to base64. Your {{site.data.keyword.cos_short}} secret access key is used to create a Kubernetes secret in your cluster. |N/A | `string` |

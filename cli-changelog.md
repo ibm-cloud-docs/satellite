@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-03"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference
 
@@ -11,6 +11,8 @@ subcollection: satellite
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
+
 
 # CLI changelog for {{site.data.keyword.satelliteshort}} commands
 {: #satellite-cli-changelog}

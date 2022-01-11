@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-10"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -187,7 +187,7 @@ For more information about the NetApp Trident configuration parameters, see the 
 ## Storage class reference
 {: #netapp-sc-reference-san-2104}
 
-Before deployings apps that use the `sat-netapp` storage classes, review the following notes.
+Before you deploy apps that use the `sat-netapp` storage classes, review the following notes.
 
 By default, the `sat-netapp-file-gold` storage class doesn't include any QoS limits (unlimited IOPS).
 {: note}

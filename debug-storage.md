@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-14"
+  years: 2020, 2022
+lastupdated: "2022-01-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -26,7 +26,7 @@ You can debug storage by reviewing the provided health information.
 {: #st0001}
 
 The cluster ID is not specified in the body of your request. To list cluster IDs, run `ibmcloud ks cluster ls`.
-
+{: shortdesc}
 
 Response code: `400`
 
@@ -35,7 +35,7 @@ Response code: `400`
 {: #st0002}
 
 The input parameters in the request body are either incomplete or in the wrong format. Be sure to include all required parameters in your request in JSON format.
-{: shordesc}
+{: shortdesc}
 
 
 Response code: `404`
@@ -43,7 +43,7 @@ Response code: `404`
 ### ST0003
 {: ST0003}
 
-Internal server error occured.
+Internal server error occurred.
 {: shortdesc}
 
 Error type: General
@@ -100,7 +100,7 @@ User is not authorized to create service subscription on `<cluster-id>` cluster 
 
 Error type: Authorization
 
-Reponse code: `401`
+Response code: `401`
 
 Verify that storage configuration and service cluster both should be on same {{site.data.keyword.satelliteshort}} location, if not create a configuration and then re-try.
 
@@ -235,7 +235,7 @@ Response code: `500`
 ### ST0023
 {: #st0023}
 
-Unable to update configuration with name `<ConfigurationName>`. `<number>` assignments depend on this configuration.  remove them before updating this configuraion or create a new configuration
+Unable to update configuration with name `<ConfigurationName>`. `<number>` assignments depend on this configuration.  remove them before updating this configuration or create a new configuration
 {: shortdesc}
 
 Error type: Services
@@ -431,7 +431,7 @@ Backend service access denied.
 {: shortdesc}
 
 Error type: Services
-Reponse code: 403
+Response code: 403
 
 ### ST0044
 {: #st0044}
