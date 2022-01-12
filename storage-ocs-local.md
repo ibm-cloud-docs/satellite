@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-12"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 # OpenShift Data Foundation using local disks
-{: #config-storage-ocs-local}
+{: #config-storage-odf-local}
 
 Set up OpenShift Data Foundation for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
@@ -23,7 +23,7 @@ OpenShift Data Foundation is available in only internal mode, which means that y
 
 
 ## Prerequisites
-{: #sat-storage-ocs-local-prereq}
+{: #sat-storage-odf-local-prereq}
 
 To use the ODF storage with the local storage operator and local storage devices, complete the following tasks:
 
@@ -33,15 +33,13 @@ To use the ODF storage with the local storage operator and local storage devices
     - Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to having one of the following local storage configurations.
         * Two extra raw devices per worker node in addition to the minimum host requirements. These disks must not be partitioned or formatted file systems. If your devices are not partitioned, each node must have 2 free disks. One disk for the OSD and one disk for the MON.
         * Two extra raw partitions per worker node in addition to the minimum host requirements. These disks must not be  formatted file systems. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
-- [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups).
-- [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-satcon-create).
-- [Set up {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-location-cloud#link-about).
-- **Optional**: If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-ocs-local-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you don't specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and ODF is installed.
-- [Get the details of the raw, unformatted devices that you want to use for your configuration](#sat-storage-ocs-local-devices). The device IDs of your storage disks are used to create your {{site.data.keyword.satelliteshort}} storage configuration.
+- [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access ).
+- **Optional**: If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-odf-local-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you don't specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and ODF is installed.
+- [Get the details of the raw, unformatted devices that you want to use for your configuration](#sat-storage-odf-local-devices). The device IDs of your storage disks are used to create your {{site.data.keyword.satelliteshort}} storage configuration.
 
 
 ## Optional: Setting up an {{site.data.keyword.cos_full_notm}} backing store
-{: #sat-storage-ocs-local-cos}
+{: #sat-storage-odf-local-cos}
 
 If you want to use {{site.data.keyword.cos_full_notm}} as your object service, create an {{site.data.keyword.cos_short}} service instance and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you don't specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create more backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after assigning the configuration to to your clusters and installing ODF.
 {: shortdesc}
@@ -62,7 +60,7 @@ If you want to use {{site.data.keyword.cos_full_notm}} as your object service, c
 
 
 ## Getting the device details for your ODF configuration
-{: #sat-storage-ocs-local-devices}
+{: #sat-storage-odf-local-devices}
 
 When you create your ODF configuration, you must specify the device paths of the disks that you want to use in your storage cluster. The storage cluster is comprised of the object storage daemon (OSD) pods and the monitoring (MON) pods. The devices that you specify as OSD devices are your storage devices where your app data is stored and the devices that you specify as MON devices are managed by the MON pod and used to store and maintain the storage cluster mapping and monitor storage events. For more information about the OSD and MON, see the [Ceph documentation](https://docs.ceph.com/en/latest/start/intro/){: external}.
 
@@ -157,7 +155,7 @@ The following steps show how you can manually retrieve the local device informat
 
 
 ## Creating an OpenShift Data Foundation configuration in the command line
-{: #sat-storage-ocs-local-cli}
+{: #sat-storage-odf-local-cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -194,7 +192,7 @@ The following steps show how you can manually retrieve the local device informat
     ```
     {: pre}
     
-1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-local-params-cli).
+1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-odf-local-params-cli).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values. If you are using a {{site.data.keyword.cos_short}} backing store, be sure to specify the regional public endpoint in the following format: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. Don't specify the {{site.data.keyword.cos_short}} parameters if your existing configuration doesn't use {{site.data.keyword.cos_full_notm}}.
 
     Note that you must specify separate disks or separate partitions for each `mon-device-path` and `osd-device-path`. You must assign one disk or one partition for each OSD or MON storage device. For disks without partitions, specify separate disks. For partitioned disks, you can specify the same disk, but you must specify separate partitions.
@@ -212,13 +210,13 @@ The following steps show how you can manually retrieve the local device informat
     ```
     {: pre}
 
-1. [Assign your storage configuration to clusters](#assign-storage-ocs-local).
+1. [Assign your storage configuration to clusters](#assign-storage-odf-local).
 
 
 ## Assigning your ODF storage configuration to a cluster
-{: #assign-storage-ocs-local}
+{: #assign-storage-odf-local}
 
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-ocs-local), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
+After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-odf-local), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 
 
@@ -388,7 +386,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 ## Deploying an app that uses OpenShift Data Foundation
-{: #sat-storage-ocs-local-deploy}
+{: #sat-storage-odf-local-deploy}
 
 You can use the ODF storage classes to create PVCs for the apps in your clusters.
 {: shortdesc}
@@ -501,7 +499,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
 
 
 ## Upgrading your ODF version
-{: #ocs-local-upgrade}
+{: #odf-local-upgrade}
 
 To upgrade the ODF version of your configuration, get the details of your configuration and create a new configuration with the same `ocs-cluster-name` and details, but with the `template-version` set to the target version that you want to upgrade to and the `ocs-upgrade` parameter to `true`.
 {: shortdesc}
@@ -560,7 +558,7 @@ In the following example, the ODF configuration is updated to use template versi
 
 
 ## Removing OpenShift Data Foundation from your apps
-{: #ocs-local-rm}
+{: #odf-local-rm}
 
 If you no longer need your OpenShift Data Foundation, you can remove your PVC, PV, and the ODF operator from your clusters.
 {: shortdesc}
@@ -620,7 +618,7 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
 
 
 ## Removing the ODF local storage configuration from your cluster
-{: #ocs-local-template-rm}
+{: #odf-local-template-rm}
 
 If you no longer plan to use OpenShift Data Foundation in your cluster, you can remove the assignment from your cluster from the storage configuration.
 {: shortdesc}
@@ -795,12 +793,12 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     {: screen}
 
 ## OpenShift Data Foundation configuration parameter reference
-{: #sat-storage-ocs-local-params-cli}
+{: #sat-storage-odf-local-params-cli}
 
 | Parameter | Required? | Description | Default value if not provided | Data type | 
 | --- | --- | --- | --- | --- | 
 | `--name` | Required | Enter a name for your storage configuration. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
-| `--template-name` | Required | Enter `ocs-local`. | N/A | `string` |
+| `--template-name` | Required | Enter `odf-local`. | N/A | `string` |
 | `--template-version` | Required | Enter `4.7`. | N/A | `string` |
 | `iam-api-key` | Required | Enter your IAM API key. | N/A | `string` | 
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
@@ -821,17 +819,9 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 
 
 ## Storage class reference
-{: #sat-storage-ocs-local-sc-ref}
+{: #sat-storage-odf-local-sc-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Data Foundation. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
-{: shortdesc}
-
-| Storage class name | Type | File system | Provisioner | Volume binding mode | Allow volume expansion | Reclaim policy |
-| --- | --- | --- | --- | --- | --- | --- |
-| `sat-ocs-cephrbd-gold` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | Immediate | True | Delete |
-| `sat-ocs-cephfs-gold` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | Immediate | True |Delete |
-| `sat-ocs-cephrgw-gold` | Object | N/A | `openshift-storage.ceph.rook.io/bucket` | Immediate | N/A | Delete |
-| `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
+{[storage-class-odf-local.md]}
 {: caption="Table 2. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
 
