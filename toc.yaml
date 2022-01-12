@@ -9,7 +9,7 @@ toc:
     version: 2
     console-page: /satellite
     product-page: https://www.ibm.com/cloud/satellite
-    
+ 
   entries: 
   - navgroup: 
       id: learn
@@ -21,31 +21,42 @@ toc:
             - about.md
             - uc-sg.md
             - uc-edge.md
-      - responsibilities.md
       - relnotes.md
   - navgroup:
       id: howto
       topics:
         - setup-cli.md
+        - providers_planning.md
+        - host-understand.md
         - topicgroup:
-            label: Preparing your infrastructure to use in Satellite
-            topics: 
-              - providers_planning.md
-              - host-reqs.md
-              - satellite-is.md
+            label: Creating locations
+            topics:
+              - control-plane.md
+              - location-create.md
               - providers_alibaba.md
               - providers_aws.md
               - providers_gcp.md
               - providers_azure.md
               - providers_ibm.md
-        - locations.md
         - topicgroup:
-            label: Assigning Satellite hosts to services and clusters
+            label: Managing hosts
             topics:
-            - hosts.md
-            - link:
-                label: Creating OpenShift clusters in Satellite
-                href: /openshift/openshift-satellite-clusters
+              - host-attach.md
+              - host-assign.md
+              - host-update-control.md
+              - host-update-worker.md
+              - host-monitor.md
+              - host-remove.md
+        - topicgroup:
+            label: Managing locations
+            topics:
+              - locations.md
+              - location-copy.md
+              - location-monitor.md
+              - location-remove.md
+        - link:
+            label: Creating OpenShift clusters in Satellite
+            href: /openshift/openshift-satellite-clusters
         - topicgroup:
             label: Deploying Kubernetes resources across clusters with Satellite Config
             topics:
@@ -61,6 +72,7 @@ toc:
             topics:
               - health.md
               - monitor.md
+              - at.md
         - topicgroup:
             label: Setting up storage
             topics: 
@@ -83,7 +95,9 @@ toc:
                   label: NetApp storage templates
                   topics:
                     - storage-netapp-trident.md
+                    - storage-netapp-nas-2104.md
                     - storage-netapp-nas.md
+                    - storage-netapp-san-2104.md
                     - storage-netapp-san.md
               - topicgroup:
                   label: Red Hat storage templates
@@ -98,11 +112,9 @@ toc:
             topics:
               - iam.md
               - architecture-workload-isolation.md
-              - ha-dr.md
               - compliance.md
               - service-connection.md
               - data-security.md
-              - at.md
   - navgroup:
       id: reference
       topics: 
@@ -114,9 +126,27 @@ toc:
             topics:
               - cli-reference.md
               - cli-changelog.md
+        - topicgroup:
+            label: Host requirements
+            topics:
+              - host-reqs.md
+              - host-reqs-storage.md
+              - host-reqs-network.md
+              - host-reqs-inbound.md
+              - host-reqs-outbound.md
+              - host-reqs-latency.md
+        - topicgroup:
+            label: IBM Cloud Satellite Infrastructure Service
+            topics:
+              - sat-is.md
+              - sat-is-understand.md
+              - sat-is-responsibilities.md
+
         - limitations.md
         - managed-services.md
         - supported-regions.md
+        - responsibilities.md
+        - ha-dr.md
         - license-notices.md
   - navgroup:
       id: help
@@ -143,7 +173,6 @@ toc:
                     - ts-host-fail-attach.md
                     - ts-host-registration-fail.md
                     - ts-host-assign-fail.md
-                    - ts-host-assign-fail-file-system.md
                     - ts-host-duplicate-hostnames.md
                     - ts-host-console-update-fail.md
               - topicgroup:

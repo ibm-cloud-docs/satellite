@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-08"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -244,6 +244,24 @@ The following example is a security group that you might create for AWS.
 }
 ```
 {: screen}
+
+## AWS credentials
+{: #infra-creds-aws}
+
+Retrieve the Amazon Web Services (AWS) credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your AWS cloud on your behalf.
+{: shortdesc}
+
+1. Verify that you have the required [permissions in your AWS account](/docs/satellite?topic=satellite-iam#permissions-aws) to create a {{site.data.keyword.satelliteshort}} location from a template.
+2. [Create a separate IAM user that is scoped to EC2 access](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html)){: external}.
+3. [Retrieve the access key ID and secret access key credentials for the IAM user](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys){: external}.
+4. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. The `client_id` is the ID of the access key and the `client_secret` is the secret access key that you created for the IAM user in AWS.
+    ```json
+    {
+        "client_id":"string",
+        "client_secret": "string"
+    }
+    ```
+    {: screen}
 
 ## Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console
 {: #aws-reqs-console-access}
