@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-02"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -14,7 +14,7 @@ subcollection: satellite
 
 
 # OpenShift Data Foundation for remote devices
-{: #config-storage-ocs-remote}
+{: #config-storage-odf-remote}
 
 Set up OpenShift Data Foundation for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
@@ -23,7 +23,7 @@ OpenShift Data Foundation is available in only internal mode, which means that y
 {: note}
 
 ## Prerequisites
-{: #sat-storage-ocs-remote-prereq}
+{: #sat-storage-odf-remote-prereq}
 
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. If you don't have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters). Review the following requirements when you create your cluster.
@@ -31,16 +31,16 @@ OpenShift Data Foundation is available in only internal mode, which means that y
 1. Your cluster must have a minimum of 3 worker nodes with at least 16CPUs and 64GB RAM per worker node.
 1. Your cluster must have a remote block storage provisioner available. For example, you can deploy the [AWS EBS](/docs/satellite?topic=satellite-config-storage-ebs) {{site.data.keyword.satelliteshort}} storage template to install the EBS block drivers that you can then use to provision AWS EBS volumes for ODF.
 1. The OCP version must be compatible with the ODF version that you want to install. 
-1. **Optional**: [Create an {{site.data.keyword.IBM_notm}} {{site.data.keyword.cos_full_notm}} service instance](#sat-storage-ocs-remote-cos).
+1. **Optional**: [Create an {{site.data.keyword.IBM_notm}} {{site.data.keyword.cos_full_notm}} service instance](#sat-storage-odf-remote-cos).
     1. Create HMAC credentials for your {{site.data.keyword.cos_full_notm}} instance.
     1. Create a Kubernetes secret that uses your {{site.data.keyword.cos_full_notm}} HMAC credentials.
 1. Create a {{site.data.keyword.satelliteshort}} Link.
 
 
 ### Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance
-{: #sat-storage-ocs-remote-cos}
+{: #sat-storage-odf-remote-cos}
 
-If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-ocs-remote-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you don't specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create more backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after assigning the configuration to to your clusters and installing ODF.
+If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-odf-remote-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you don't specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create more backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after assigning the configuration to to your clusters and installing ODF.
 {: shortdesc}
 
 Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store of your ODF remote configuration. Then, create a set of HMAC credentials and a Kubernetes secret that uses your {{site.data.keyword.cos_full_notm}} HMAC credentials.
@@ -59,7 +59,7 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
 
 
 ## Creating an OpenShift Data Foundation configuration in the command line
-{: #sat-storage-ocs-remote-cli}
+{: #sat-storage-odf-remote-cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -96,7 +96,7 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
     ```
     {: pre}
     
-1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-remote-params-cli).
+1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-odf-remote-params-cli).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Don't specify the {{site.data.keyword.cos_short}} parameters if your existing configuration doesn't use {{site.data.keyword.cos_full_notm}}.  
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name>" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=<mon-size>" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=<osd-size>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-name>,<worker-node-name>,<worker-node-name>" -p "ibm-cos-endpoint=<cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "iam-api-key=<iam-api-key>"
@@ -109,19 +109,19 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
     ```
     {: pre}
 
-1. [Assign your storage configuration to clusters](#assign-storage-ocs-remote).
+1. [Assign your storage configuration to clusters](#assign-storage-odf-remote).
 
 
 ## Assigning your ODF storage configuration to a cluster
-{: #assign-storage-ocs-remote}
+{: #assign-storage-odf-remote}
 
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-ocs-remote), you can assign your configuration to your {{site.data.keyword.satelliteshort}}.
+After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-odf-remote), you can assign your configuration to your {{site.data.keyword.satelliteshort}}.
 
 
 
 
 ### Assigning a storage configuration in the command line
-{: #assign-storage-ocs-remote-cli}
+{: #assign-storage-odf-remote-cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -240,7 +240,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 ## Upgrading your ODF configuration
-{: #sat-storage-ocs-remote-upgrade-config}
+{: #sat-storage-odf-remote-upgrade-config}
 
 Don't delete your storage configurations or assignments. Deleting configurations and assignments might result in data loss.
 {: important}
@@ -282,12 +282,12 @@ To upgrade the ODF version of your configuration, complete the following steps:
     ```
     {: pre}
 
-5. [Assign your configuration to your clusters](#assign-storage-ocs-remote-cli).
+5. [Assign your configuration to your clusters](#assign-storage-odf-remote-cli).
 
 
 
 ### Removing the ODF remote storage assignment from the command line
-{: #ocs-remote-template-rm-cli}
+{: #odf-remote-template-rm-cli}
 
 Use the command line to remove a storage assignment.
 {: shortdesc}
@@ -336,7 +336,7 @@ Use the command line to remove a storage assignment.
     {: pre}
 
 ## OpenShift Data Foundation configuration parameter reference
-{: #sat-storage-ocs-remote-params-cli}
+{: #sat-storage-odf-remote-params-cli}
 
 | Parameter | Required? | Description | Default value if not provided | Data type |
 | --- | --- | --- | --- | --- |
@@ -359,16 +359,8 @@ Use the command line to remove a storage assignment.
 
 
 ## Storage class reference
-{: #sat-storage-ocs-remote-sc-ref}
+{: #sat-storage-odf-remote-sc-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Data Foundation. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
-{: shortdesc}
-
-| Storage class name | Type | File system | Provisioner | Volume binding mode | Allow volume expansion | Reclaim policy |
-| --- | --- | --- | --- | --- | --- | --- |
-| `sat-ocs-cephrbd-gold` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | Immediate | True | Delete |
-| `sat-ocs-cephfs-gold` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | Immediate | True |Delete |
-| `sat-ocs-cephrgw-gold` | Object | N/A | `openshift-storage.ceph.rook.io/bucket` | Immediate | N/A | Delete |
-| `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
+{[storage-class-odf-remote.md]}
 {: caption="Table 2. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
