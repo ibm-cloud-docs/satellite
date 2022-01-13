@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-13"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -89,14 +89,17 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
     ```
     {: pre}
     
-1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
+
+1. List the available templates and versions and review the output. Make a note of the template and version that you want to use. Your storage template version and cluster version must match. 
 
     ```sh
     ibmcloud sat storage template ls
     ```
     {: pre}
     
-1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-odf-remote-params-cli).
+    
+1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-remote-params-cli).
+
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Don't specify the {{site.data.keyword.cos_short}} parameters if your existing configuration doesn't use {{site.data.keyword.cos_full_notm}}.  
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=<ocs-cluster-name>" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=<mon-size>" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=<osd-size>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-name>,<worker-node-name>,<worker-node-name>" -p "ibm-cos-endpoint=<cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "iam-api-key=<iam-api-key>"
