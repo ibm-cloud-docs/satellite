@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-02"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: satellite, hybrid, multicloud, alibaba
 
@@ -176,6 +176,8 @@ Example security group for Alibaba
 
 In addition to these inbound rules, you must allow all outbound connectivity to all ports and IP addresses.
 {: note}
+
+
 
 ## Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console
 {: #alibaba-reqs-console-access}

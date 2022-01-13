@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-10"
+  years: 2020, 2022
+lastupdated: "2022-01-13"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -72,7 +72,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 
 | Storage class name | Type | Reclaim policy |
 | --- | --- | --- |
-| `sat-local-block-gold ` | Block | Retain |
+| `sat-local-block-gold` | Block | Retain |
 {: caption="Table 3. Local block storage class reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
 

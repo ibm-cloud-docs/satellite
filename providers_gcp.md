@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-16"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -30,7 +30,7 @@ For more configuration options, you can [manually attach GCP hosts to a {{site.d
 
 Before you begin, make sure that you have the correct [{{site.data.keyword.cloud_notm}} permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations, including to {{site.data.keyword.satelliteshort}} and {{site.data.keyword.bpshort}}. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
 
-1. In your GCP cloud provider, [set up your account credentials](/docs/satellite?topic=satellite-infrastructure-plan#infra-creds-gcp).
+1. In your GCP cloud provider, [set up your account credentials](/docs/satellite?topic=satellite-infrastructure-plan##infra-creds-gcp).
 2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
 3. In the **Get started** section, click **GCP Quick Start**.
 4. Upload your GCP credentials file.
@@ -129,6 +129,31 @@ tcp:30000-32767
 udp:30000-32767
 ```
 {: screen}
+
+
+## Google Cloud Platform credentials
+{: #infra-creds-gcp}
+
+Retrieve the Google Cloud Platform (GCP) credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your GCP cloud on your behalf.
+{: shortdesc}
+
+1. [Create a service account and service account key](https://cloud.google.com/docs/authentication/getting-started#creating_a_service_account){: external} with at least the required [GCP permissions](/docs/satellite?topic=satellite-iam#permissions-gcp). As part of creating the service account, a JSON key file is downloaded to your local machine.
+2. Open the JSON key file on your local machine, and verify that the format matches the following example. You can provide this JSON key file as your GCP credentials for actions such as creating a {{site.data.keyword.satelliteshort}} location.
+    ```json
+    {
+        "type":"string",
+        "project_id":"string",
+        "private_key_id": "string",
+        "private_key": "string",
+        "client_email": "string",
+        "client_id": "string",
+        "auth_uri": "string",
+        "token_uri": "string",
+        "auth_provider_x509_cert_url": "string",
+        "client_x509_cert_url": "string"
+    }
+    ```
+    {: screen}
 
 ## Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console
 {: #gcp-reqs-console-access}

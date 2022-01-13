@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-02"
+  years: 2020, 2022
+lastupdated: "2022-01-13"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -164,7 +164,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     {: pre}
     
 2. Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
-1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
+1. List the available templates and versions and review the output. Make a note of the template and version that you want to use. Your storage template version and cluster version must match. 
 
     ```sh
     ibmcloud sat storage template ls

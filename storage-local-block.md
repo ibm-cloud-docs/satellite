@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-02"
+  years: 2020, 2022
+lastupdated: "2022-01-13"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -165,13 +165,14 @@ After you have [retrieved the device paths for the disks that you want to use in
 {: #sat-storage-local-block-cli}
 
 1. Review the [Local block storage configuration parameters](#sat-storage-local-block-params-cli).
-1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
+
+1. List the available templates and versions and review the output. Make a note of the template and version that you want to use. Your storage template version and cluster version must match. 
 
     ```sh
     ibmcloud sat storage template ls
     ```
     {: pre}
-    
+
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
     ```sh
@@ -649,7 +650,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 
 | Storage class name | Type | Reclaim policy |
 | --- | --- | --- |
-| `sat-local-block-gold ` | Block | Retain |
+| `sat-local-block-gold` | Block | Retain |
 {: caption="Table 2. Local block storage class reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
 

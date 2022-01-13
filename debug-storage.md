@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -123,7 +123,7 @@ How to fix it: Verify your service clusters by running `ibmcloud sat services --
 ### ST0010
 {: #st0010}
 
-User don`t have access to perform this operation
+User don't have access to perform this operation
 {: shortdesc}
 
 Error type: Authorization,

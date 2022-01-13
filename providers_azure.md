@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-08"
+  years: 2020, 2022
+lastupdated: "2022-01-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -231,6 +231,59 @@ The following example is a security group that you might create for Azure.
             }
 ```
 {: screen}
+
+## Microsoft Azure credentials
+{: #infra-creds-azure}
+
+Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your Azure cloud on your behalf.
+{: shortdesc}
+
+1. Verify that you have the required [permissions in your Azure account](/docs/satellite?topic=satellite-iam#permissions-azure) to create a {{site.data.keyword.satelliteshort}} location from a template.
+2. [Sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli){: external} from the command line.
+    ```sh
+    az login
+    ```
+    {: pre}
+
+3. List the available subscriptions in your account.
+    ```sh
+    az account list
+    ```
+    {: pre}
+
+4. Set the subscription to create your Azure resources in.
+    ```sh
+    az account set --subscription="<subscription_ID>"
+    ```
+    {: pre}
+
+5. Create a service principal identity with the Contributor role, scoped to your subscription. These credentials are used by {{site.data.keyword.satellitelong_notm}} to provision resources in your Azure account. For more information, see the [Azure documentation](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli){: external}.
+    ```sh
+    az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_ID>" -n"<service_principal_name>"
+    ```
+    {: pre}
+
+6. In the output, note the values of the `appID`, `password`, and `tenant` fields.
+    ```sh
+    {
+    "appId": "<azure-client-id>",
+    "displayName": "<service_principal_name>",
+    "name": "http://<service_principal_name>",
+    "password": "<azure-secret-key>",
+    "tenant": "<tenant-id>"
+    }
+    ```
+    {: screen}
+
+7. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. 
+    ```json
+    {
+        "app_id":"string",
+        "tenant_id":"string",
+        "password": "string"
+    }
+    ```
+    {: screen}
 
 ## Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console
 {: #azure-reqs-console-access}
