@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-14"
+  years: 2022
+lastupdated: "2022-01-13"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 

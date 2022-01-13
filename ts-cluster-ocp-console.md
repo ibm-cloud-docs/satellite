@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-13"
 
 keywords: satellite, certificate, expired, console
 
