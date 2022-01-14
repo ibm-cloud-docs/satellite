@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-14"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -994,7 +994,7 @@ ibmcloud sat endpoint update --location aaaaaaaa1111a1aaaa11a --endpoint aaaaaaa
 Add your compute host to the {{site.data.keyword.satelliteshort}} control plane or any other {{site.data.keyword.openshiftshort}} cluster that you created in your location.
 {: shortdesc}
 
-You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-hosts#host-remove-console). Then, reassign the host to a different zone. You don't need to delete the host from the location.
+You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove-console). Then, reassign the host to a different zone. You don't need to delete the host from the location.
 {: important}
 
 ```sh
@@ -1218,10 +1218,10 @@ ibmcloud sat host rm --location aaaaaaaa1111a1aaaa11a --host myhost1
 ### `ibmcloud sat host update`
 {: #host-update}
 
-Update information about your compute host, such as the zones and host labels that are used for [host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov). You can update only available hosts, not hosts that are assigned to a resource such as a cluster.
+Update information about your compute host, such as the zones and host labels that are used for [host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov). You can update only available hosts, not hosts that are assigned to a resource such as a cluster.
 {: shortdesc}
 
-You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-hosts#host-remove-console). Then, reassign the host to a different zone. You don't need to delete the host from the location.
+You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove-console). Then, reassign the host to a different zone. You don't need to delete the host from the location.
 {: important}
 
 ```sh
@@ -1777,7 +1777,7 @@ Use these commands to view the {{site.data.keyword.satelliteshort}}-enabled serv
 ### `ibmcloud sat service ls`
 {: #cli-service-ls}
 
-List all {{site.data.keyword.satelliteshort}}-enabled service clusters in your location to review details such as requested host resources. For more information about how {{site.data.keyword.satelliteshort}}-enabled service clusters request resources, see [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov).
+List all {{site.data.keyword.satelliteshort}}-enabled service clusters in your location to review details such as requested host resources. For more information about how {{site.data.keyword.satelliteshort}}-enabled service clusters request resources, see [Using host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
 {: shortdesc}
 
 ```sh

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -63,6 +63,6 @@ To resolve this issue, follow these steps.
         {: pre}
 
 2. Make sure that your machine meets the other [host minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as minimum CPU and memory sizes.
-3. [Run the registration script](/docs/satellite?topic=satellite-hosts#attach-hosts) on your machine again.
+3. [Run the registration script](/docs/satellite?topic=satellite-attach-hosts) on your machine again.
 
 

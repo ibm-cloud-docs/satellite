@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -122,8 +122,8 @@ Location message
 Steps to resolve
 :    Your location has no available hosts for {{site.data.keyword.satelliteshort}} to automatically assign to the location control plane, and might be reaching capacity limits. You can choose from the following options.
 
-- [Attach](/docs/satellite?topic=satellite-hosts#attach-hosts) and [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) more hosts to the location control plane. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
-- [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
+- [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) more hosts to the location control plane. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
+- [Remove](/docs/satellite?topic=satellite-host-remove) and [reattach the host](/docs/satellite?topic=satellite-attach-hosts).
 
 ## R0011, R0040, R0041: Issues with the control plane hosts
 {: #R0011}
@@ -140,7 +140,7 @@ Steps to resolve
          ```
          {: pre}
 
-     2. If you have no hosts, [attach](/docs/satellite?topic=satellite-hosts#attach-hosts) hosts to your location.
+     2. If you have no hosts, [attach](/docs/satellite?topic=satellite-attach-hosts) hosts to your location.
      3. Make sure that you have at least 6 hosts (2 hosts per zone across 3 zones) that are assigned to the **infrastructure** cluster for the location, to run location control plane operations.
      4. If your hosts have no status and are unassigned, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
      5. Review the host status to [resolve the host issue](/docs/satellite?topic=satellite-ts-hosts-debug).
@@ -170,7 +170,7 @@ Steps to resolve
 :    1. Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.
      2. Make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system and networking configuration.
      3. [Log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
-     4. [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts). When you remove a host, the host is unassigned from the location control plane, and you must assign another host to the zone.
+     4. [Remove](/docs/satellite?topic=satellite-host-remove) and [reattach the host](/docs/satellite?topic=satellite-attach-hosts). When you remove a host, the host is unassigned from the location control plane, and you must assign another host to the zone.
 
 ## R0014: DNS record for control plane
 {: #R0014}
@@ -197,7 +197,7 @@ Location message
      {: #R0016}
 
 Steps to resolve
-:    [Attach more hosts](/docs/satellite?topic=satellite-hosts#attach-hosts) to the location. If you attached hosts that are not showing up as available, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
+:    [Attach more hosts](/docs/satellite?topic=satellite-attach-hosts) to the location. If you attached hosts that are not showing up as available, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 
 ## R0024, R0025, R0038: Cluster issues
 {: #R0024}
@@ -231,7 +231,7 @@ Steps to resolve
          ```
          {: pre}
 
-:    3. In the infrastructure provider for the host, check the disk space of your host machine. Each host must have at least 20 GB disk available. [Remove](/docs/satellite?topic=satellite-hosts#host-remove) and [reattach the host](/docs/satellite?topic=satellite-hosts#attach-hosts).
+:    3. In the infrastructure provider for the host, check the disk space of your host machine. Each host must have at least 20 GB disk available. [Remove](/docs/satellite?topic=satellite-host-remove) and [reattach the host](/docs/satellite?topic=satellite-attach-hosts).
 :    4. If debugging and reattaching the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
 
 ## R0033, R0034, R0035: Control plane capacity issues
@@ -246,7 +246,7 @@ Steps to resolve
 :    1. In each zone, check the CPU and memory size of the hosts.
          - Across all hosts in a zone, at least 3 CPU total must be available.
          - Across all hosts in a zone, at least 4 GB memory total must be available.
-     2. [Attach 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts).
+     2. [Attach 3 more hosts to the location](/docs/satellite?topic=satellite-attach-hosts).
      3. [Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones to add capacity for control plane operations. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
 
 ## R0036: Location subdomain traffic routing
@@ -265,21 +265,21 @@ Location message
 :    R0043: The location does not meet the following requirement: Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID.
 
 Steps to resolve
-:    Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block access to certain ports that might block communication across hosts. Review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) and unblock the ports on the host in your infrastructure provider.
+:    Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block access to certain ports that might block communication across hosts. Review [Host network requirements](/docs/satellite?topic=satellite-reqs-host-network) and unblock the ports on the host in your infrastructure provider.
 
 To test TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts,
 1. SSH into a host that is attached to your location but that is not assigned to any resources.
 
-    You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
+    You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system to restore the ability to SSH into the machine.
     {: note}
 
-2. To check TCP connectivity, verify that `netcat` receives a response from all other hosts on port `10250`. If the operation times out, review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) to unblock the ports on the host in your infrastructure provider.
+2. To check TCP connectivity, verify that `netcat` receives a response from all other hosts on port `10250`. If the operation times out, review [Host network requirements](/docs/satellite?topic=satellite-reqs-host-network) to unblock the ports on the host in your infrastructure provider.
     ```sh
     nc -zv <host_IP> 10250
     ```
     {: pre}
 
-3. To check ICMP connectivity, verify that a ping is successful to all other hosts. Repeat this step for each IP address of the hosts that are attached to your location. If the ping times out, review [Host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network) to unblock the ports on the host in your infrastructure provider.
+3. To check ICMP connectivity, verify that a ping is successful to all other hosts. Repeat this step for each IP address of the hosts that are attached to your location. If the ping times out, review [Host network requirements](/docs/satellite?topic=satellite-reqs-host-network) to unblock the ports on the host in your infrastructure provider.
     ```sh
     ping <host_IP>
     ```
@@ -294,12 +294,12 @@ Location message
 :    R0044: DNS issues have been detected on one or more hosts. Verify that your DNS solution is working as expected. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID.
 
 Steps to resolve
-:    One or more hosts in your locations is unable to resolve DNS queries or a search domain is causing unexpected issues. Verify that your DNS solution is working as expected and that all hosts meet the [network host requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
+:    One or more hosts in your locations is unable to resolve DNS queries or a search domain is causing unexpected issues. Verify that your DNS solution is working as expected and that all hosts meet the [network host requirements](/docs/satellite?topic=satellite-reqs-host-network).
 
 To test DNS resolution,
 1. SSH into a host that is attached to your location but that is not assigned to any resources.
 
-    You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
+    You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system to restore the ability to SSH into the machine.
     {: note}
 
 2. Ensure that DNS resolution is working properly.
@@ -318,7 +318,7 @@ Location message
 
 Steps to resolve
 :    1. [Set up {{site.data.keyword.la_short}} for {{site.data.keyword.satelliteshort}} location platform logs](/docs/satellite?topic=satellite-health#setup-la) for more information about which hosts are affected.
-     2. [Remove](/docs/satellite?topic=satellite-hosts#host-remove) the affected hosts and [reattach new hosts](/docs/satellite?topic=satellite-hosts#attach-hosts).
+     2. [Remove](/docs/satellite?topic=satellite-host-remove) the affected hosts and [reattach new hosts](/docs/satellite?topic=satellite-attach-hosts).
      3. If you still have issues, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
 
 ## R0046: NTP issues
@@ -333,7 +333,7 @@ Steps to resolve
 To test NTP on your hosts,
 1. SSH into a host that is attached to your location but that is not assigned to any resources.
 
-    You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-hosts#host-remove) and reload the operating system to restore the ability to SSH into the machine.
+    You can only SSH into the machine if you did not assign the host to a cluster, or if the assignment failed. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system to restore the ability to SSH into the machine.
     {: note}
 
 2. Ensure that the time that is reported by the host does not differ from the actual time by more than 3 minutes. If the time differs by more than 3 minutes, verify your NTP solution with your infrastructure provider.

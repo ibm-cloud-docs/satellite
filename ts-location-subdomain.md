@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -45,19 +45,19 @@ Follow these steps to resolve your issue
     1. Log in to the host machine.
         * If the host is not assigned to the {{site.data.keyword.satelliteshort}} location control plane or a cluster, you can SSH into the host machine.
         * If the host is assigned to the {{site.data.keyword.satelliteshort}} location control plane or a cluster:
-            1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-hosts#host-remove).
+            1. [Remove the host from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove).
             2. Reload the operating system of the host or reboot the instance.
 
-            3. [Attach the host](/docs/satellite?topic=satellite-hosts#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location, but do not assign it. Later, after you complete these troubleshooting steps, you can [re-assign the host](/docs/satellite?topic=satellite-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane or cluster.
+            3. [Attach the host](/docs/satellite?topic=satellite-attach-hosts) back to your {{site.data.keyword.satelliteshort}} location, but do not assign it. Later, after you complete these troubleshooting steps, you can [re-assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane or cluster.
 
             4. SSH into the host machine.
-    2. Look up **each** location subdomain that you found in step 1. Check whether the IP address that resolves matches the host IP addresses that you found in step 1. If the host's DNS resolver does not resolve the subdomains to the expected IP addresses, ensure that your hosts have the [required minimum outbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound).
+    2. Look up **each** location subdomain that you found in step 1. Check whether the IP address that resolves matches the host IP addresses that you found in step 1. If the host's DNS resolver does not resolve the subdomains to the expected IP addresses, ensure that your hosts have the [required minimum outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound).
         ```sh
         nslookup <subdomain>
         ```
         {: pre}
 
-    3. Use `netcat` on each location subdomain on port 30000 to test host connectivity. If any subdomain's `netcat` operation times out, ensure that your hosts meet the [host network requirements](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
+    3. Use `netcat` on each location subdomain on port 30000 to test host connectivity. If any subdomain's `netcat` operation times out, ensure that your hosts meet the [host network requirements](/docs/satellite?topic=satellite-reqs-host-network).
         ```sh
         nc -zv <subdomain> 30000
         ```

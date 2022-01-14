@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-14"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -110,7 +110,7 @@ Before you begin
 To apply a minor or patch update,
 
 1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
-2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign-manual). These hosts automatically receive the update when you assign them.
+2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). These hosts automatically receive the update when you assign them.
 3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](#host-remove).
 
 ### Applying major version updates to worker node host
@@ -163,7 +163,7 @@ Choose from one of the following scenarios,
 - Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled service.
 
     1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts that you attach must match the number of hosts that you want to update.
-    2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](#host-assign-manual). These hosts automatically receive the new update when you assign them.
+    2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). These hosts automatically receive the new update when you assign them.
     3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old worker node hosts that you previously noted](#host-remove).
 
 ## Updating worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console

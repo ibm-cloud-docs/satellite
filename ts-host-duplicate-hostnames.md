@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-14"
 
 keywords: satellite, host, location
 
@@ -72,5 +72,5 @@ If the cluster master still recognizes the host, you must rename and reload the 
             ```
             {: pre}
 
-3. [Attach the host to the location](/docs/satellite?topic=satellite-hosts#attach-hosts). 
+3. [Attach the host to the location](/docs/satellite?topic=satellite-attach-hosts). 
 
