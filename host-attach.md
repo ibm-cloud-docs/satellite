@@ -18,7 +18,7 @@ subcollection: satellite
 After you create the location, add compute capacity to your location so that you can set up {{site.data.keyword.openshiftshort}} clusters or interact with other IBM services.
 {: shortdesc}
 
-Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#location-sizing).
+Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing).
 {: tip}
 
 ## Attaching hosts from the console

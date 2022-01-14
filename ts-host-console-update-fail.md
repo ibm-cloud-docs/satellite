@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-14"
 
 keywords: satellite, host, update
 
@@ -19,6 +19,6 @@ content-type: troubleshoot
 When you try to update your worker node hosts in the {{site.data.keyword.openshiftlong}} console, the update process fails. 
 {: tsSymptoms}
 
-If the update process fails in the console, follow the steps to [manually update the hosts in the CLI](/docs/satellite?topic=satellite-hosts#host-update-cli).
+If the update process fails in the console, follow the steps to [manually update the hosts in the CLI](/docs/satellite?topic=satellite-host-update-workers).
 {: tsResolve}
 

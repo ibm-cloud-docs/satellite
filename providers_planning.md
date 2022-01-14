@@ -55,7 +55,7 @@ Your {{site.data.keyword.satelliteshort}} location starts with your infrastructu
 4. Use your infrastructure to power your {{site.data.keyword.satelliteshort}} resources.
 
     1. Create your {{site.data.keyword.satelliteshort}} location based on the zones and hosts in your infrastructure provider. 
-    2. [Assign hosts](/docs/satellite?topic=satellite-hosts) to {{site.data.keyword.satelliteshort}}-enabled services like {{site.data.keyword.openshiftlong_notm}} clusters.
+    2. [Assign hosts](/docs/satellite?topic=satellite-host-concept) to {{site.data.keyword.satelliteshort}}-enabled services like {{site.data.keyword.openshiftlong_notm}} clusters.
 
 
 

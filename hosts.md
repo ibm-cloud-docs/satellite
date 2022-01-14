@@ -45,7 +45,7 @@ Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshor
 After you create the location, you must attach compute capacity to your location so that you can run the {{site.data.keyword.satelliteshort}} control plane or set up {{site.data.keyword.openshiftshort}} clusters.
 {: shortdesc}
 
-Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#location-sizing).   \n
+Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing).   \n
 Using AWS hosts? You can use a [launch template](/docs/satellite?topic=satellite-aws) to attach hosts to your {{site.data.keyword.satelliteshort}} location.
 {: tip}
 

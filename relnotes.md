@@ -582,7 +582,7 @@ Review the release notes for 12 January 2021.
 
 
 Host updates
-:    Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-hosts#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-hosts#host-update-location).
+:    Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-host-concept#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-host-update-location).
 
 ## December 2020
 {: #december20}

@@ -994,7 +994,7 @@ ibmcloud sat endpoint update --location aaaaaaaa1111a1aaaa11a --endpoint aaaaaaa
 Add your compute host to the {{site.data.keyword.satelliteshort}} control plane or any other {{site.data.keyword.openshiftshort}} cluster that you created in your location.
 {: shortdesc}
 
-You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove-console). Then, reassign the host to a different zone. You don't need to delete the host from the location.
+You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove). Then, reassign the host to a different zone. You don't need to delete the host from the location.
 {: important}
 
 ```sh
@@ -1221,7 +1221,7 @@ ibmcloud sat host rm --location aaaaaaaa1111a1aaaa11a --host myhost1
 Update information about your compute host, such as the zones and host labels that are used for [host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov). You can update only available hosts, not hosts that are assigned to a resource such as a cluster.
 {: shortdesc}
 
-You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove-console). Then, reassign the host to a different zone. You don't need to delete the host from the location.
+You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove). Then, reassign the host to a different zone. You don't need to delete the host from the location.
 {: important}
 
 ```sh

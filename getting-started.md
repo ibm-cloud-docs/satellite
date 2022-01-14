@@ -153,7 +153,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
 To complete the setup of your {{site.data.keyword.satelliteshort}} location, you must assign the 3 compute hosts that you attached in the previous step to the {{site.data.keyword.satelliteshort}} location control plane. The control plane runs the components to securely connect your location to {{site.data.keyword.cloud_notm}}. For more information, see the [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture).
 {: shortdesc}
 
-You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove-console). Then, reassign the host to a different zone. You don't need to delete the host from the location.
+You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove). Then, reassign the host to a different zone. You don't need to delete the host from the location.
 {: important}
 
 1. From the actions menu of each host machine that you attached, click **Assign host**.
