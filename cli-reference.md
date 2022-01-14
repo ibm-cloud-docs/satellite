@@ -33,7 +33,7 @@ The following image depicts the structure and grouping of the `ibmcloud sat` com
 ## Cluster commands
 {: #sat-cluster-commands}
 
-Use these commands to register clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config). You can use configurations to consistently deploy and update apps across clusters.
+Use these commands to register clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-setup-clusters-satconfig). You can use configurations to consistently deploy and update apps across clusters.
 {: shortdesc}
 
 ### `ibmcloud sat cluster get`
@@ -430,7 +430,7 @@ ibmcloud sat group rm --group mygroup
 ## Config commands
 {: #sat-config-configuration-commands}
 
-Use these commands to create and manage {{site.data.keyword.satelliteshort}} configurations and upload Kubernetes resource definitions as versions to the configuration. Then, use [{{site.data.keyword.satelliteshort}} subscription commands](#sat-config-subscription-commands) to specify the {{site.data.keyword.openshiftlong_notm}} clusters where you want to deploy your Kubernetes resources. For more information, see [Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config).
+Use these commands to create and manage {{site.data.keyword.satelliteshort}} configurations and upload Kubernetes resource definitions as versions to the configuration. Then, use [{{site.data.keyword.satelliteshort}} subscription commands](#sat-config-subscription-commands) to specify the {{site.data.keyword.openshiftlong_notm}} clusters where you want to deploy your Kubernetes resources. For more information, see [Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 {: shortdesc}
 
 ### `ibmcloud sat config create`
@@ -1688,7 +1688,7 @@ ibmcloud sat mesh rm --mesh <mesh_name>
 ## Resource commands
 {: #sat-resource-commands}
 
-Use these commands to view the Kubernetes resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} Configuration](/docs/satellite?topic=satellite-cluster-config).
+Use these commands to view the Kubernetes resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} Configuration](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 {: shortdesc}
 
 ### `ibmcloud sat resource get`
@@ -1816,7 +1816,7 @@ ibmcloud sat service ls --location mylocation
 ## Storage commands
 {: #sat-storage-commands}
 
-Use these commands to view the storage resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config).
+Use these commands to view the storage resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 {: shortdesc}
 
 The `ibmcloud sat storage assignment` group of commands are available in beta.
