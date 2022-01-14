@@ -25,10 +25,24 @@ To install the CLI, see [Setting up the CLI](/docs/satellite?topic=satellite-set
 ## `ibmcloud sat` commands
 {: #satellite-cli-map}
 
-The following image depicts the structure and grouping of the `ibmcloud sat` commands.
+The tables below list the `ibmcloud sat` command groups. For a complete list of all `ibmcloud sat` commands as they are structured in the CLI, see the [{{site.data.keyword.satelliteshort}} CLI map](/docs/containers?topic=satellite-icsat_map).
 {: shortdesc}
 
-![Image of the structure and groupings of commands in the `ibmcloud sat` CLI plug-in.](images/cli_ref_imagemap.png "Structure and grouping of commands"){: caption="Figure 1. Structure and grouping of commands in the Satellite CLI plug-in" caption-side="bottom"}
+| Command group | Description | 
+| --- | --- |
+| [Cluster commands](#sat-cluster-commands) | View and manage Satellite clusters. |
+| [Cluster group commands](#cluster-group-commands)| View and manage Satellite cluster groups. |
+| [Config commands](#sat-config-configuration-commands)| Create, view, and manage Satellite configurations. |
+| [Endpoint commands](#sat-endpoint-commands)| Create, view, and manage Satellite endpoints. |
+| [Host commands](#sat-host-commands)| View and modify Satellite host settings. |
+| [Location commands](#sat-location-commands)| Create, view, and modify Satellite locations. |
+| **Beta** [Satellite Mesh commands](#sat-mesh-commands)| Create, view, and manage Satellite Mesh instances. |
+| [Resource commands](#sat-resource-commands)| Search and view Kubernetes resources that are managed by Satellite. |
+| [Service commands](#sat-service-commands)| View Satellite service clusters. |
+| [Storage commands](#sat-storage-commands)| View and manage Satellite storage resources. |
+| [Subscription commands](#sat-config-subscription-commands)| View and manage Satellite subscriptions to deploy Kubernetes configuration files to your clusters. |
+{: summary="The rows are read from left to right. The first column is the command group. The second column is a description of the command group."}
+{: caption="{{site.data.keyword.satelliteshort}} CLI command groups" caption-side="top"}
 
 ## Cluster commands
 {: #sat-cluster-commands}
@@ -1725,6 +1739,45 @@ ibmcloud sat resource get --resource RESOURCE [--save-data] [-q]
 
 ```sh
 ibmcloud sat resource get --resource 1234567
+```
+{: pre}
+
+### `ibmcloud sat resource history get`
+{: #cli-resource-history-get}
+
+Get the history of a Kubernetes resource.
+{: shortdesc}
+
+```sh
+ibmcloud sat resource history --resource RESOURCE [--limit LIMIT] [--output json] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #cli-resource-get-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #cli-resource-get-command-options}
+
+`--resource RESOURCE`
+:    Required. The ID of the Kubernetes resource. To list Kubernetes resources, run `ibmcloud sat resource ls`.
+
+`--limit LIMIT`
+:    Optional. The maximum number of history entries to return. Enter a value less than 500.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #cli-resource-get-example}
+
+```sh
+ibmcloud sat resource history get --resource 123456 --limit 200
 ```
 {: pre}
 
