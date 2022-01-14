@@ -30,7 +30,7 @@ The following diagram presents the initial setup steps for hosts.
 
 ![Concept overview of Satellite host setup](/images/host-process.png){: caption="Figure 1. The initial setup process for {{site.data.keyword.satelliteshort}} hosts." caption-side="bottom"}
 
-1. **Attach**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [attach the host](#attach-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud). After the host is attached and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
+1. **Attach**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [attach the host](/docs/satellite?topic=satellite-attach-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan). After the host is attached and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
 
 2. **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service. For example, a basic setup has 6 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} location control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
 
@@ -52,7 +52,7 @@ Using AWS hosts? You can use a [launch template](/docs/satellite?topic=satellite
 When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.
 {: important}
 
-- Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
+- Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
 - Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or {{site.data.keyword.satelliteshort}}-enabled service. For example, in cloud providers such as AWS, this setup typically means that all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. As latency increases, you might see impacts to performance, including provisioning and recovery times, reduced worker nodes in the cluster, {{site.data.keyword.satelliteshort}}-enabled service degradation, and in extreme cases, failures in your cluster applications.
 - Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then {{site.data.keyword.IBM_notm}} can automatically assign hosts when clusters or the {{site.data.keyword.satelliteshort}} location control plane request more capacity.
 
@@ -62,7 +62,7 @@ When you set up the {{site.data.keyword.satelliteshort}} location control plane,
 Use the {{site.data.keyword.satelliteshort}} console to attach hosts to your location.
 {: shortdesc}
 
-Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
+Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
 {: important}
 
 1. From the [**Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to attach hosts.  
@@ -119,7 +119,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to attach hosts to your location.
 {: shortdesc}
 
-Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
+Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in other cloud providers. For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
 {: important}
 
 1. Generate a script that you can copy and run on your machines to attach them as hosts to your location. You might want to include a label to identify the purpose of the hosts, such as `use:satloc`, because the hosts provide compute capacity for the {{site.data.keyword.satelliteshort}} location. Your hosts automatically are assigned labels for the CPU and memory size if these values can be detected on the machine.
@@ -250,7 +250,7 @@ Hosts must be assigned as worker nodes in each zone of the default worker pool i
 {{site.data.keyword.satellitelong_notm}} can automatically assign hosts to worker pools in {{site.data.keyword.satelliteshort}} clusters that request compute capacity via host labels such as `cpu`.
 {: shortdesc}
 
-Before you begin, make sure that you [attach hosts](#attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts.
+Before you begin, make sure that you [attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts.
 
 1. Review the host labels that the worker pools use to request compute capacity. You have several options.
     - [Create a worker pool in a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-create-labels) with the host labels that you want to use for autoassignment.
@@ -330,7 +330,7 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 {: #host-assign-prereq}
 
 1. Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Operator** platform role for {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
-2. [Attach hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts), and check that the hosts are healthy and **unassigned**.
+2. [Attach hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts), and check that the hosts are healthy and **unassigned**.
 
 ### Assigning hosts from the console
 {: #host-assign-ui}
@@ -499,9 +499,9 @@ Before you begin
 
 To apply a minor or patch update,
 
-1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
+1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
 2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). These hosts automatically receive the update when you assign them.
-3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](#host-remove).
+3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](/docs/satellite?topic=satellite-host-remove).
 
 #### Applying major version updates to worker node host
 {: #host-update-workers-major}
@@ -552,9 +552,9 @@ Choose from one of the following scenarios,
 
 - Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled service.
 
-    1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts that you attach must match the number of hosts that you want to update.
+    1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts). The number of hosts that you attach must match the number of hosts that you want to update.
     2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). These hosts automatically receive the new update when you assign them.
-    3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old worker node hosts that you previously noted](#host-remove).
+    3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old worker node hosts that you previously noted](/docs/satellite?topic=satellite-host-remove).
 
 ### Updating worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console
 {: #host-update-roks-console}
@@ -617,10 +617,10 @@ To apply a version update, you must detach, reload, and reattach your host to th
 When you update control plane hosts, **do not assign or remove multiple hosts at the same time** as doing so may break the control plane. You must wait for a host assignment or removal to complete before assigning or removing another host.
 {: important}
 
-1. Optional: [Attach](#attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) extra hosts to the {{site.data.keyword.satelliteshort}} location control plane to handle the compute capacity while your existing hosts are updating.
-2. [Remove the host that you want to update from your {{site.data.keyword.satelliteshort}} location](#host-remove).
+1. Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) extra hosts to the {{site.data.keyword.satelliteshort}} location control plane to handle the compute capacity while your existing hosts are updating.
+2. [Remove the host that you want to update from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove).
 3. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
-4. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
+4. [Attach the host](/docs/satellite?topic=satellite-attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
 5. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.openshiftshort}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
 
@@ -654,9 +654,9 @@ When you reset the host key, all existing hosts that are attached to your locati
     ```
     {: pre}
 
-3. [Remove one host from your {{site.data.keyword.satelliteshort}} location](#host-remove).
+3. [Remove one host from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove).
 4. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
-5. [Attach the host](#attach-hosts) back to your {{site.data.keyword.satelliteshort}} location. The host registration script now uses the new host key.
+5. [Attach the host](/docs/satellite?topic=satellite-attach-hosts) back to your {{site.data.keyword.satelliteshort}} location. The host registration script now uses the new host key.
 6. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane or {{site.data.keyword.satelliteshort}}-enabled service.
 7. Repeat steps 3 - 6 for each host in your location so that each host uses the new key to communicate with the {{site.data.keyword.satelliteshort}} API server.
 

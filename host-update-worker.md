@@ -109,9 +109,9 @@ Before you begin
 
 To apply a minor or patch update,
 
-1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
+1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
 2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). These hosts automatically receive the update when you assign them.
-3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](#host-remove).
+3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](/docs/satellite?topic=satellite-host-remove).
 
 ### Applying major version updates to worker node host
 {: #host-update-workers-major}
@@ -162,9 +162,9 @@ Choose from one of the following scenarios,
 
 - Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled service.
 
-    1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](#attach-hosts). The number of hosts that you attach must match the number of hosts that you want to update.
+    1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts). The number of hosts that you attach must match the number of hosts that you want to update.
     2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). These hosts automatically receive the new update when you assign them.
-    3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old worker node hosts that you previously noted](#host-remove).
+    3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old worker node hosts that you previously noted](/docs/satellite?topic=satellite-host-remove).
 
 ## Updating worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console
 {: #host-update-roks-console}

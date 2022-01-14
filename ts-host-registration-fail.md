@@ -42,7 +42,7 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 To resolve this issue, follow these steps.
 {: tsResolve}
 
-1. Add the required packages to your machine. For example, in {{site.data.keyword.IBM_notm}} Cloud infrastructure you can run the following commands to add the required packages. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
+1. Add the required packages to your machine. For example, in {{site.data.keyword.IBM_notm}} Cloud infrastructure you can run the following commands to add the required packages. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
     1. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
         ```sh
         subscription-manager refresh

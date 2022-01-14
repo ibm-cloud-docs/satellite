@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-14"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -197,7 +197,7 @@ The following steps show how you can manually retrieve the local device informat
     
     
     
-1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-ocs-local-params-cli).
+1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-odf-local-params-cli).
 
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values. If you are using a {{site.data.keyword.cos_short}} backing store, be sure to specify the regional public endpoint in the following format: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. Don't specify the {{site.data.keyword.cos_short}} parameters if your existing configuration doesn't use {{site.data.keyword.cos_full_notm}}.
 

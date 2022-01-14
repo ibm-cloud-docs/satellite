@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,7 +18,7 @@ subcollection: satellite
 Review the following requirements that relate to the computing and system setup of host machines for {{site.data.keyword.satellitelong}}.
 {: shortdesc}
 
-Want to add hosts from other cloud providers to your location? See [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
+Want to add hosts from other cloud providers to your location? See [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
 {: tip}
 
 Can't meet these host requirements? [Contact {{site.data.keyword.IBM_notm}} Support](/docs/get-support?topic=get-support-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
@@ -70,5 +70,5 @@ You might need to refresh your packages on the host machine. For example, in {{s
     ```
     {: pre}
 
-For more information about how to enable the {{site.data.keyword.redhat_notm}} packages in hosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud).
+For more information about how to enable the {{site.data.keyword.redhat_notm}} packages in hosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
 {: tip}
