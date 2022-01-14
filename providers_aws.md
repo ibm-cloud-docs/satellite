@@ -31,7 +31,7 @@ For more configuration options, you can [manually attach AWS hosts to a {{site.d
 
 Before you begin, make sure that you have the correct [{{site.data.keyword.cloud_notm}} permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations, including to {{site.data.keyword.satelliteshort}} and {{site.data.keyword.bpshort}}. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
 
-1. In your AWS cloud provider, [set up your account credentials](/docs/satellite?topic=satellite-infrastructure-plan#infra-creds-aws).
+1. In your AWS cloud provider, [set up your account credentials](#infra-creds-aws).
 2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
 3. In the **Setup** section, click **Amazon Web Services**.
 4. In the **AWS credentials** section, enter the **AWS access key ID** and **AWS secret access key** values that you previously created.

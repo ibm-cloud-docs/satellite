@@ -176,7 +176,7 @@ When you set up the {{site.data.keyword.satelliteshort}} location control plane,
 {: important}
 
 - You must attach compute hosts in groups of 3 to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any provider-specific requirements. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
-- The minimum of 3 hosts for the control plane is for demonstration purposes. To continue to use the location for production workloads, [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale) in multiples of 3, such as 6, 9, or 12 hosts.
+- The minimum of 3 hosts for the control plane is for demonstration purposes. To continue to use the location for production workloads, [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane]/docs/satellite?topic=satellite-control-plane-scale in multiples of 3, such as 6, 9, or 12 hosts.
 - Make sure that your hosts meet the [latency requirements](/docs/satellite?topic=satellite-service-architecture#architecture-latency).
 
 ### Setting up the control plane from the console
@@ -204,7 +204,7 @@ To attach hosts as worker nodes to the control plane,
 
 8. Refer to step 7 in [Setting up the control plane from the CLI](#control-plane-cli) to verify that your DNS records were successfully created.
 
-9. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale).
+9. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane]/docs/satellite?topic=satellite-control-plane-scale.
 
 ### Setting up the control plane from the CLI
 {: #control-plane-cli}
@@ -362,7 +362,7 @@ To create the control plane,
     ```
     {: screen}
 
-8. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](#control-plane-scale).
+8. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane]/docs/satellite?topic=satellite-control-plane-scale.
 
 ### What's next?
 {: #location-control-plane-next}

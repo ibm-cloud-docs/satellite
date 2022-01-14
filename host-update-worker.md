@@ -158,7 +158,7 @@ Choose from one of the following scenarios,
 
 - Applying a major update to the control plane hosts.
 
-    See [Procedure to update control plane hosts](#host-update-cp-procedure).
+    See [Procedure to update control plane hosts]/docs/satellite?topic=satellite-host-update-location.
 
 - Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled service.
 

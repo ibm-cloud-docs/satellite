@@ -548,7 +548,7 @@ Choose from one of the following scenarios,
 
 - Applying a major update to the control plane hosts.
 
-    See [Procedure to update control plane hosts](#host-update-cp-procedure).
+    See [Procedure to update control plane hosts]/docs/satellite?topic=satellite-host-update-location.
 
 - Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled service.
 
@@ -578,7 +578,7 @@ The option to update worker node hosts in the {{site.data.keyword.openshiftlong_
 {: shortdesc}
 
 1. Review the [Considerations before you update](#host-update-considerations) to make sure that you have enough capacity to keep your location healthy during the host update.
-2. Follow the [Procedure to update control plane hosts](#host-update-cp-procedure).
+2. Follow the [Procedure to update control plane hosts]/docs/satellite?topic=satellite-host-update-location.
 
 ### Considerations before you update control plane hosts
 {: #host-update-considerations}

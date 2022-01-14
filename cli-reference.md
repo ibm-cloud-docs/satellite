@@ -1321,7 +1321,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 :    Optional. The name of the region in the infrastructure provider where you plan to create all the hosts for the {{site.data.keyword.satelliteshort}} location, such as `us-east-1` in AWS. Consult your infrastructure provider for the region name. If you include this option, you must also include the `--provider` option.
 
 `--provider-credential PATH_TO_PROVIDER_CREDENTIAL`
-:    Optional. The path to a JSON file on your local machine that has the credentials of the infrastructure provider for the {{site.data.keyword.satelliteshort}} location. The credential format is provider-specific. For more information, see [Providing {{site.data.keyword.satelliteshort}} with credentials to your infrastructure provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-credentials). If you include this option, you must also include the `--provider` option.
+:    Optional. The path to a JSON file on your local machine that has the credentials of the infrastructure provider for the {{site.data.keyword.satelliteshort}} location. The credential format is provider-specific. For more information, see [Providing {{site.data.keyword.satelliteshort}} with credentials to your infrastructure provider](/docs/satellite?topic=satellite-infrastructure-plan). If you include this option, you must also include the `--provider` option.
 
 
 `-q`
