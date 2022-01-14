@@ -124,6 +124,7 @@ toc:
         - topicgroup:
             label: CLI plug-in reference
             topics:
+              - cli-map.md
               - cli-reference.md
               - cli-changelog.md
         - topicgroup:
@@ -190,3 +191,4 @@ toc:
                   topics:
                     - debug-storage.md
                     - ts-storage-cleanup.md
+

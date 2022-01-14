@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-10"
+  years: 2020, 2022
+lastupdated: "2022-01-14"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -77,7 +77,7 @@ Complete the following steps, but do not create an {{site.data.keyword.cloud_not
     ```
     {: pre}
 
-1. [Attach your {{site.data.keyword.IBM_notm}} Spectrum Scale Nodes to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-hosts#attach-hosts)
+1. [Attach your {{site.data.keyword.IBM_notm}} Spectrum Scale Nodes to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-attach-hosts)
     * Make sure your system is configured for the desired default route if you have more than one clustering network.
     * Make sure that default route has a path to the public network, possibly via NAT or VPN.
 

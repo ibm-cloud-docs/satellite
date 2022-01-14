@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -28,7 +28,7 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your locations.
 {: shortdesc}
 
 1. [Remove all {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-remove) from your location.
-2. [Remove all hosts](/docs/satellite?topic=satellite-hosts#host-remove) from your location.
+2. [Remove all hosts](/docs/satellite?topic=satellite-host-remove) from your location.
 3. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} **Locations** table, hover over the location that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
 4. Click **Remove location**, enter the location name to confirm the deletion, and click **Remove**.
 
@@ -42,7 +42,7 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove 
 
 1. [Remove all {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-remove) from your location.
 
-2. [Remove all hosts](/docs/satellite?topic=satellite-hosts#host-remove-cli) from your location.
+2. [Remove all hosts](/docs/satellite?topic=satellite-host-remove-cli) from your location.
 
 3. Remove the location.
 

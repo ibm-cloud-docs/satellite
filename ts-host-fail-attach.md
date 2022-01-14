@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-02"
+  years: 2022
+lastupdated: "2022-01-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -45,4 +45,6 @@ To resolve this issue, follow these steps.
     dbus-uuidgen --ensure
     ```
     {: pre}
-    
+
+4. Reattach your hosts.
+

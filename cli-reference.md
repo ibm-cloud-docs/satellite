@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-14"
+  years: 2022
+lastupdated: "2022-01-14"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -25,15 +25,29 @@ To install the CLI, see [Setting up the CLI](/docs/satellite?topic=satellite-set
 ## `ibmcloud sat` commands
 {: #satellite-cli-map}
 
-The following image depicts the structure and grouping of the `ibmcloud sat` commands.
+The tables below list the `ibmcloud sat` command groups. For a complete list of all `ibmcloud sat` commands as they are structured in the CLI, see the [{{site.data.keyword.satelliteshort}} CLI map](/docs/containers?topic=satellite-icsat_map).
 {: shortdesc}
 
-![Image of the structure and groupings of commands in the `ibmcloud sat` CLI plug-in.](images/cli_ref_imagemap.png "Structure and grouping of commands"){: caption="Figure 1. Structure and grouping of commands in the Satellite CLI plug-in" caption-side="bottom"}
+| Command group | Description | 
+| --- | --- |
+| [Cluster commands](#sat-cluster-commands) | View and manage Satellite clusters. |
+| [Cluster group commands](#cluster-group-commands)| View and manage Satellite cluster groups. |
+| [Config commands](#sat-config-configuration-commands)| Create, view, and manage Satellite configurations. |
+| [Endpoint commands](#sat-endpoint-commands)| Create, view, and manage Satellite endpoints. |
+| [Host commands](#sat-host-commands)| View and modify Satellite host settings. |
+| [Location commands](#sat-location-commands)| Create, view, and modify Satellite locations. |
+| **Beta** [Satellite Mesh commands](#sat-mesh-commands)| Create, view, and manage Satellite Mesh instances. |
+| [Resource commands](#sat-resource-commands)| Search and view Kubernetes resources that are managed by Satellite. |
+| [Service commands](#sat-service-commands)| View Satellite service clusters. |
+| [Storage commands](#sat-storage-commands)| View and manage Satellite storage resources. |
+| [Subscription commands](#sat-config-subscription-commands)| View and manage Satellite subscriptions to deploy Kubernetes configuration files to your clusters. |
+{: summary="The rows are read from left to right. The first column is the command group. The second column is a description of the command group."}
+{: caption="{{site.data.keyword.satelliteshort}} CLI command groups" caption-side="top"}
 
 ## Cluster commands
 {: #sat-cluster-commands}
 
-Use these commands to register clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config). You can use configurations to consistently deploy and update apps across clusters.
+Use these commands to register clusters for use with [{{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-setup-clusters-satconfig). You can use configurations to consistently deploy and update apps across clusters.
 {: shortdesc}
 
 ### `ibmcloud sat cluster get`
@@ -430,7 +444,7 @@ ibmcloud sat group rm --group mygroup
 ## Config commands
 {: #sat-config-configuration-commands}
 
-Use these commands to create and manage {{site.data.keyword.satelliteshort}} configurations and upload Kubernetes resource definitions as versions to the configuration. Then, use [{{site.data.keyword.satelliteshort}} subscription commands](#sat-config-subscription-commands) to specify the {{site.data.keyword.openshiftlong_notm}} clusters where you want to deploy your Kubernetes resources. For more information, see [Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-cluster-config).
+Use these commands to create and manage {{site.data.keyword.satelliteshort}} configurations and upload Kubernetes resource definitions as versions to the configuration. Then, use [{{site.data.keyword.satelliteshort}} subscription commands](#sat-config-subscription-commands) to specify the {{site.data.keyword.openshiftlong_notm}} clusters where you want to deploy your Kubernetes resources. For more information, see [Deploying Kubernetes resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 {: shortdesc}
 
 ### `ibmcloud sat config create`
@@ -994,7 +1008,7 @@ ibmcloud sat endpoint update --location aaaaaaaa1111a1aaaa11a --endpoint aaaaaaa
 Add your compute host to the {{site.data.keyword.satelliteshort}} control plane or any other {{site.data.keyword.openshiftshort}} cluster that you created in your location.
 {: shortdesc}
 
-You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-hosts#host-remove-console). Then, reassign the host to a different zone. You don't need to delete the host from the location.
+You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove). Then, reassign the host to a different zone. You don't need to delete the host from the location.
 {: important}
 
 ```sh
@@ -1218,10 +1232,10 @@ ibmcloud sat host rm --location aaaaaaaa1111a1aaaa11a --host myhost1
 ### `ibmcloud sat host update`
 {: #host-update}
 
-Update information about your compute host, such as the zones and host labels that are used for [host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov). You can update only available hosts, not hosts that are assigned to a resource such as a cluster.
+Update information about your compute host, such as the zones and host labels that are used for [host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov). You can update only available hosts, not hosts that are assigned to a resource such as a cluster.
 {: shortdesc}
 
-You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-hosts#host-remove-console). Then, reassign the host to a different zone. You don't need to delete the host from the location.
+You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove). Then, reassign the host to a different zone. You don't need to delete the host from the location.
 {: important}
 
 ```sh
@@ -1321,7 +1335,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 :    Optional. The name of the region in the infrastructure provider where you plan to create all the hosts for the {{site.data.keyword.satelliteshort}} location, such as `us-east-1` in AWS. Consult your infrastructure provider for the region name. If you include this option, you must also include the `--provider` option.
 
 `--provider-credential PATH_TO_PROVIDER_CREDENTIAL`
-:    Optional. The path to a JSON file on your local machine that has the credentials of the infrastructure provider for the {{site.data.keyword.satelliteshort}} location. The credential format is provider-specific. For more information, see [Providing {{site.data.keyword.satelliteshort}} with credentials to your infrastructure provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-credentials). If you include this option, you must also include the `--provider` option.
+:    Optional. The path to a JSON file on your local machine that has the credentials of the infrastructure provider for the {{site.data.keyword.satelliteshort}} location. The credential format is provider-specific. For more information, see [Providing {{site.data.keyword.satelliteshort}} with credentials to your infrastructure provider](/docs/satellite?topic=satellite-infrastructure-plan). If you include this option, you must also include the `--provider` option.
 
 
 `-q`
@@ -1688,7 +1702,7 @@ ibmcloud sat mesh rm --mesh <mesh_name>
 ## Resource commands
 {: #sat-resource-commands}
 
-Use these commands to view the Kubernetes resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} Configuration](/docs/satellite?topic=satellite-cluster-config).
+Use these commands to view the Kubernetes resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} Configuration](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 {: shortdesc}
 
 ### `ibmcloud sat resource get`
@@ -1725,6 +1739,45 @@ ibmcloud sat resource get --resource RESOURCE [--save-data] [-q]
 
 ```sh
 ibmcloud sat resource get --resource 1234567
+```
+{: pre}
+
+### `ibmcloud sat resource history get`
+{: #cli-resource-history-get}
+
+Get the history of a Kubernetes resource.
+{: shortdesc}
+
+```sh
+ibmcloud sat resource history --resource RESOURCE [--limit LIMIT] [--output json] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #cli-resource-get-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #cli-resource-get-command-options}
+
+`--resource RESOURCE`
+:    Required. The ID of the Kubernetes resource. To list Kubernetes resources, run `ibmcloud sat resource ls`.
+
+`--limit LIMIT`
+:    Optional. The maximum number of history entries to return. Enter a value less than 500.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #cli-resource-get-example}
+
+```sh
+ibmcloud sat resource history get --resource 123456 --limit 200
 ```
 {: pre}
 
@@ -1777,7 +1830,7 @@ Use these commands to view the {{site.data.keyword.satelliteshort}}-enabled serv
 ### `ibmcloud sat service ls`
 {: #cli-service-ls}
 
-List all {{site.data.keyword.satelliteshort}}-enabled service clusters in your location to review details such as requested host resources. For more information about how {{site.data.keyword.satelliteshort}}-enabled service clusters request resources, see [Using host autoassignment](/docs/satellite?topic=satellite-hosts#host-autoassign-ov).
+List all {{site.data.keyword.satelliteshort}}-enabled service clusters in your location to review details such as requested host resources. For more information about how {{site.data.keyword.satelliteshort}}-enabled service clusters request resources, see [Using host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
 {: shortdesc}
 
 ```sh
@@ -1816,7 +1869,7 @@ ibmcloud sat service ls --location mylocation
 ## Storage commands
 {: #sat-storage-commands}
 
-Use these commands to view the storage resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config).
+Use these commands to view the storage resources that run in clusters that are registered with [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 {: shortdesc}
 
 The `ibmcloud sat storage assignment` group of commands are available in beta.

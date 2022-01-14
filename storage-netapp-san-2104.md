@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-13"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 

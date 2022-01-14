@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-12"
+lastupdated: "2022-01-14"
 
 keywords: satellite, hybrid, multicloud, satellite infrastructure service
 
@@ -31,7 +31,7 @@ subcollection: satellite
 
 Your {{site.data.keyword.satelliteshort}} Infrastructure Service location will maintain a selection of unallocated hosts at all times.  Additional unallocated hosts will be created as you assign hosts in your location.  You can customize the quantity and size of the unallocated hosts in your {{site.data.keyword.satelliteshort}} location during the planning process to better fit the mix of workloads you deploy.  It can also be adjusted after deployment as your needs change.
 
-To use your hosts, create {{site.data.keyword.satelliteshort}} resources such as {{site.data.keyword.satelliteshort}}-enabled services or clusters. Then, assign the hosts to these resources, either [automatically](/docs/satellite?topic=satellite-hosts#host-autoassign-ov) or [manually](/docs/satellite?topic=satellite-hosts#host-assign-manual).
+To use your hosts, create {{site.data.keyword.satelliteshort}} resources such as {{site.data.keyword.satelliteshort}}-enabled services or clusters. Then, assign the hosts to these resources, either [automatically](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) or [manually](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
 
 The following table outlines a sample selection of hosts in a {{site.data.keyword.satelliteshort}} Infrastructure Service location. To scale the type and number of {{site.data.keyword.satelliteshort}} Infrastructure Service hosts in your location, work with your {{site.data.keyword.IBM_notm}} contact.
 

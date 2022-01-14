@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2021
-lastupdated: "2021-12-02"
+  years: 2020, 2022
+lastupdated: "2022-01-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,7 +44,7 @@ Review the following ways that you can secure access to your location:
 * Consider the types of [user access to resources that run in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#user-access)
 * [Manage access for {{site.data.keyword.satelliteshort}} by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/satellite?topic=satellite-iam)
 * Monitor user-initiated activities by [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
-* In the case of a potential security incident, [reset the key that the control plane uses to communicate with all of the hosts in the Satellite location](/docs/satellite?topic=satellite-hosts#host-key-reset)
+* In the case of a potential security incident, [reset the key that the control plane uses to communicate with all of the hosts in the Satellite location](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
 
 ## {{site.data.keyword.IBM_notm}} operational access
 {: #operational-access}
@@ -59,7 +59,7 @@ Operations such as host attachment, host assignment, and major and minor version
 
 Regular maintenance and automation tooling accesses the masters of {{site.data.keyword.satelliteshort}}-enabled service clusters in your location through the default `openshift-api-<cluster_ID>` Link endpoint. This endpoint allows the {{site.data.keyword.openshiftlong_notm}} API to communicate with the master for the service cluster. For example, if you create an {{site.data.keyword.openshiftshort}} cluster to run applications in your location, all version updates for that cluster's master are automatically applied through the default `openshift-api-<cluster_ID>` Link endpoint for that cluster.
 
-Updates to {{site.data.keyword.satelliteshort}}-enabled services that are running on hosts in your location are initiated by the {{site.data.keyword.cloud_notm}} team for that service. When a change is ready to be rolled out to a service, the {{site.data.keyword.satelliteshort}}-enabled service team uses [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config) to upload a new version of the service to the subscription that the {{site.data.keyword.satelliteshort}}-enabled service cluster is included in. To apply the service update through {{site.data.keyword.satelliteshort}} Config, the control plane automation for the {{site.data.keyword.satellitelong_notm}} API server, which exists in {{site.data.keyword.cloud_notm}}, deploys the update to the master of the {{site.data.keyword.satelliteshort}}-enabled service cluster in your location through the default `openshift-api-<cluster_ID>` Link endpoint. The cluster master then applies the updates to the worker nodes in the cluster.
+Updates to {{site.data.keyword.satelliteshort}}-enabled services that are running on hosts in your location are initiated by the {{site.data.keyword.cloud_notm}} team for that service. When a change is ready to be rolled out to a service, the {{site.data.keyword.satelliteshort}}-enabled service team uses [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig) to upload a new version of the service to the subscription that the {{site.data.keyword.satelliteshort}}-enabled service cluster is included in. To apply the service update through {{site.data.keyword.satelliteshort}} Config, the control plane automation for the {{site.data.keyword.satellitelong_notm}} API server, which exists in {{site.data.keyword.cloud_notm}}, deploys the update to the master of the {{site.data.keyword.satelliteshort}}-enabled service cluster in your location through the default `openshift-api-<cluster_ID>` Link endpoint. The cluster master then applies the updates to the worker nodes in the cluster.
 
 ### What access do {{site.data.keyword.IBM_notm}} SREs have to my location control plane, including the masters of {{site.data.keyword.satelliteshort}}-enabled service clusters?
 {: #operational-access-control-plane}
@@ -109,9 +109,9 @@ Let's Encrypt certificates are automatically generated for several {{site.data.k
 | Default endpoints for {{site.data.keyword.cloud_notm}} services (IAM, {{site.data.keyword.cos_short}}, {{site.data.keyword.mon_short}}, {{site.data.keyword.la_short}}) | `m65f0b26d6c5f695647f5-6b64a6ccc9c596bf59a86625d8fa2202-c000.us-east.satellite.appdomain.cloud` | 90 days | {{site.data.keyword.IBM_notm}} | The Link tunnel server regenerates the certificate, and the Link Connector automatically reboots to reflect the rotated certificate. |
 | `c000`, `c001`, `c002`, and `c003` subdomains for each location zone | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-c000.us-south.satellite.appdomain.cloud` | 19800 hours (~2.26 years) | You | Regenerated during a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) or [cluster master update](/docs/containers?topic=containers-update#master). |
 | `ce00` Ingress subdomains | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-ce00.us-south.satellite.appdomain.cloud` | 90 days | {{site.data.keyword.IBM_notm}} | [Automatically regenerated 37 days before expiration](/docs/openshift?topic=openshift-ingress-roks4#manage_certs_ibm). |
-| Worker node connection to the API server | 10.240.128.09 | 3 years | You | [Update hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-hosts#host-update-workers). |
+| Worker node connection to the API server | 10.240.128.09 | 3 years | You | [Update hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-concept#host-update-workers). |
 | {{site.data.keyword.satelliteshort}} control plane master API endpoint | `http://c103-1.containers.cloud.ibm.com/` | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | Regenerated during automated rollouts for major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane master hosts. |
-| {{site.data.keyword.satelliteshort}} control plane master hosts | - | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | [Update control plane hosts](/docs/satellite?topic=satellite-hosts#host-update-location). |
+| {{site.data.keyword.satelliteshort}} control plane master hosts | - | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | [Update control plane hosts](/docs/satellite?topic=satellite-host-update-location). |
 {: caption="Certificates for {{site.data.keyword.satelliteshort}} domains and hosts" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the name of the {{site.data.keyword.satelliteshort}} component. The second column shows an example of the domain for which the certificate is issued. The third column is the amount of time that the certificate is valid for. The fourth column indicates whether you or {{site.data.keyword.IBM_notm}} is responsible for certificate regeneration. The fifth column describes the process during which the certificate is regenerated."}
 
@@ -130,7 +130,7 @@ See the [{{site.data.keyword.satelliteshort}} FAQ for compliance standards](/doc
 ### Which areas of security compliance am I responsible for?
 {: #compliance-responsibilities}
 
-For an overview of who is responsible for particular cloud resources when using {{site.data.keyword.satellitelong_notm}}, see the table in [Overview of shared responsibilities](/docs/satellite?topic=satellite-responsibilities#overview-by-resource). For a detailed description of areas in which responsibilities are shared between you and {{site.data.keyword.IBM_notm}} for security and compliance, see [Tasks for shared responsibilities: Security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance). If you use {{site.data.keyword.satelliteshort}} Infrastructure Service as your infrastructure provider, [review the {{site.data.keyword.satelliteshort}} Infrastructure Service responsibilities instead](/docs/satellite?topic=satellite-infrastructure-service#satis-responsibilities).
+For an overview of who is responsible for particular cloud resources when using {{site.data.keyword.satellitelong_notm}}, see the table in [Overview of shared responsibilities](/docs/satellite?topic=satellite-responsibilities#overview-by-resource). For a detailed description of areas in which responsibilities are shared between you and {{site.data.keyword.IBM_notm}} for security and compliance, see [Tasks for shared responsibilities: Security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance). If you use {{site.data.keyword.satelliteshort}} Infrastructure Service as your infrastructure provider, [review the {{site.data.keyword.satelliteshort}} Infrastructure Service responsibilities instead](/docs/satellite?topic=satellite-satis-responsibilities).
 
 ### What are the security compliance responsibilities of {{site.data.keyword.satelliteshort}}-enabled services?
 {: #compliance-services}

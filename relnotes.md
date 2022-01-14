@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -164,8 +164,8 @@ Review the release notes for 15 September 2021.
 OpenShift Data Foundation
 :   OpenShift Data Foundation is generally available for {{site.data.keyword.satelliteshort}} cluster. For more information see, the following links.
     - [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
-    - [Deploying OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-ocs-local).
-    - [Deploying OpenShift Data Foundation using remote, dynamically provisioned disks](/docs/satellite?topic=satellite-config-storage-ocs-remote).
+    - [Deploying OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-odf-local).
+    - [Deploying OpenShift Data Foundation using remote, dynamically provisioned disks](/docs/satellite?topic=satellite-config-storage-odf-remote).
 
 
 ## August 2021
@@ -270,7 +270,7 @@ Review the release notes for 18 June 2021.
 {: shortdesc}
 
 IP addresses for Link tunnel server endpoints
-:    Updates the [required outbound connectivity for hosts](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound) to include IP addresses for Link tunnel server endpoints.
+:    Updates the [required outbound connectivity for hosts](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound) to include IP addresses for Link tunnel server endpoints.
 
 ### 9 June 2021
 {: #9jun2021}
@@ -374,7 +374,7 @@ Logging
 :    Expanded information for collecting and analyzing logs for your {{site.data.keyword.satelliteshort}} location, including the types of available logs, how to set up log alerts, and how to use logs to troubleshoot location and host errors.
 
 New! Storage template for remote OpenShift Data Foundation
-:    The {{site.data.keyword.satelliteshort}} storage template for [using OpenShift Container Storage with remote devices](/docs/satellite?topic=satellite-config-storage-ocs-remote) is now available.
+:    The {{site.data.keyword.satelliteshort}} storage template for [using OpenShift Container Storage with remote devices](/docs/satellite?topic=satellite-config-storage-odf-remote) is now available.
 
 ## March 2021
 {: #mar21}
@@ -400,7 +400,7 @@ Review the release notes for 23 March 2021.
 {: shortdesc}
 
 OpenShift Data Foundation using local disks
-:    Added steps for removing an ODF configuration and updated the [configuration parameter reference](/docs/satellite?topic=satellite-config-storage-ocs-local#sat-storage-ocs-local-params-cli).
+:    Added steps for removing an ODF configuration and updated the [configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-params-cli).
 
 ### 12 March 2021
 {: #12mar2021}
@@ -410,7 +410,7 @@ Review the release notes for 12 March 2021.
 {: shortdesc}
 
 Resetting the host key
-:    In the event of a potential security violation, you can [reset the key](/docs/satellite?topic=satellite-hosts#host-key-reset) that the control plane uses to communicate with all the hosts in the {{site.data.keyword.satelliteshort}} location.
+:    In the event of a potential security violation, you can [reset the key](/docs/satellite?topic=satellite-host-update-location#host-key-reset) that the control plane uses to communicate with all the hosts in the {{site.data.keyword.satelliteshort}} location.
 
 Troubleshooting location health checks
 :    Added steps for troubleshooting when [{{site.data.keyword.cloud_notm}} is unable to check a location's health](/docs/satellite?topic=satellite-ts-location-healthcheck).
@@ -445,7 +445,7 @@ Exposing apps in {{site.data.keyword.satelliteshort}} clusters
 :    Added an overview of the [options for exposing apps in Satellite clusters](/docs/openshift?topic=openshift-sat-expose-apps) and steps for setting up each option.
 
 {{site.data.keyword.satelliteshort}} Infrastructure Service
-:    [Order managed infrastructure from {{site.data.keyword.IBM_notm}}](/docs/satellite?topic=satellite-infrastructure-service) to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
+:    [Order managed infrastructure from {{site.data.keyword.IBM_notm}}](/docs/satellite?topic=satellite-satis-infra-about) to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
   
 New! Template for fast provisioning on AWS
 :    [Automate your {{site.data.keyword.satelliteshort}} location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template), available for AWS infrastructure.
@@ -525,7 +525,7 @@ CLI changelog
 :    Updated the CLI plug-in changelog page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 Host autoassignment
-:    Added information about how [{{site.data.keyword.satelliteshort}} can automatically assign hosts](/docs/satellite?topic=satellite-hosts#host-autoassign-ov) to worker pools in clusters or {{site.data.keyword.satelliteshort}}-enabled services that use host labels to request compute capacity.
+:    Added information about how [{{site.data.keyword.satelliteshort}} can automatically assign hosts](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) to worker pools in clusters or {{site.data.keyword.satelliteshort}}-enabled services that use host labels to request compute capacity.
 
 Logging and monitoring
 :    Added information about how to set up [logging and monitoring for {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health).
@@ -570,7 +570,7 @@ Review the release notes for 15 January 2021.
 {: shortdesc}
 
 Host requirements
-:    Updated the [{{site.data.keyword.redhat_notm}} package repositories](/docs/satellite?topic=satellite-host-reqs#reqs-host-system) that you must enable on hosts.
+:    Updated the [{{site.data.keyword.redhat_notm}} package repositories](/docs/satellite?topic=satellite-host-reqs) that you must enable on hosts.
 
 ### 12 January 2021
 {: #12jan2021}
@@ -582,7 +582,7 @@ Review the release notes for 12 January 2021.
 
 
 Host updates
-:    Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-hosts#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-hosts#host-update-location).
+:    Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-host-concept#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-host-update-location).
 
 ## December 2020
 {: #december20}
@@ -607,7 +607,7 @@ Physical machine support
 :    Physical machine hosts are now supported for your {{site.data.keyword.satelliteshort}} location.
 
 Host network requirements
-:    Updated the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound) on hosts' primary networks.
+:    Updated the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound) on hosts' primary networks.
 
 AWS and GCP host DNS
 :    When you use AWS and GCP hosts for your {{site.data.keyword.satelliteshort}} location, the requirement to manually configure DNS for the location control plane and for cluster load balancing is removed. The hosts' private IP addresses are automatically registered in DNS.
@@ -645,7 +645,7 @@ Review the release notes for 8 October 2020.
 {: shortdesc}
 
 Host network requirements
-:    Added the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-host-reqs#reqs-host-network-firewall-outbound) on hosts' public networks.
+:    Added the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound) on hosts' public networks.
 
 ### 6 October 2020
 {: #06oct2020}
@@ -674,7 +674,7 @@ Review the release notes for 14 September 2020.
 {: shortdesc}
 
 Host requirements
-:    Clarified that the `localhost` value must resolve to a valid local IP address, typically `127.0.0.1`, on a [host](/docs/satellite?topic=satellite-host-reqs#reqs-host-network).
+:    Clarified that the `localhost` value must resolve to a valid local IP address, typically `127.0.0.1`, on a [host](/docs/satellite?topic=satellite-reqs-host-network).
 
 IAM
 :    Updated [assigning access to {{site.data.keyword.satelliteshort}} Config in {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam#iam-resource-types) to note that you cannot scope access policies to specific configurations, subscriptions, or {{site.data.keyword.cloud_notm}} resource group.

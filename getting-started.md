@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-05"
+lastupdated: "2022-01-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -36,7 +36,7 @@ To get started, consider the type of infrastructure that you want to use.
 
 - **I have on-prem, cloud, or edge infrastructure**: Continue with the [getting started steps](#create-location).
 - **I use Alibaba Cloud, Amazon Web Services, Google Cloud Platform, or Microsoft Azure**: You can continue with the [getting started steps](#create-location), or try an [automated setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
-- **I don't have my own infrastructure or want to order some**: For a managed offering where {{site.data.keyword.IBM_notm}} sends you the infrastructure and sets up the location, check out [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
+- **I don't have my own infrastructure or want to order some**: For a managed offering where {{site.data.keyword.IBM_notm}} sends you the infrastructure and sets up the location, check out [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-satis-infra-about).
 
 ## Step 1: Create your location
 {: #create-location}
@@ -98,7 +98,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
     - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
 2. Confirm that you have at least three host machines in separate zones that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 vCPUs and 16 GB of memory with RHEL 7 packages and any provider-specific requirement from the guide. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
 
-    A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).
+    A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-control-plane-scale).
     {: tip}
 
 3. Continue with [Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} location control plane](#assign-hosts-to-cp).
@@ -108,7 +108,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
 
 1. In your on-premises environment, identify or create at least three host machines in physically separate racks, which are called _zones_ in {{site.data.keyword.satelliteshort}}, that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 vCPUs and 16 GB of memory with RHEL 7 packages.
 
-    A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#control-plane-scale).
+    A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-control-plane-scale).
     {: tip}
 
 2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the location that you previously created in Step 1.
@@ -153,7 +153,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
 To complete the setup of your {{site.data.keyword.satelliteshort}} location, you must assign the 3 compute hosts that you attached in the previous step to the {{site.data.keyword.satelliteshort}} location control plane. The control plane runs the components to securely connect your location to {{site.data.keyword.cloud_notm}}. For more information, see the [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture).
 {: shortdesc}
 
-You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-hosts#host-remove-console). Then, reassign the host to a different zone. You don't need to delete the host from the location.
+You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove). Then, reassign the host to a different zone. You don't need to delete the host from the location.
 {: important}
 
 1. From the actions menu of each host machine that you attached, click **Assign host**.
@@ -173,7 +173,7 @@ Now that your {{site.data.keyword.satelliteshort}} location is set up, you are r
 {: shortdesc}
 
 1. Repeat steps 2 and 3 to add three more hosts to your {{site.data.keyword.satelliteshort}} location, so that you can use the location for more than just demonstration purposes.
-2. [Attach at least 3 more hosts to the location](/docs/satellite?topic=satellite-hosts#attach-hosts) to add compute capacity to your location so that you can run {{site.data.keyword.satelliteshort}}-enabled services.
+2. [Attach at least 3 more hosts to the location](/docs/satellite?topic=satellite-attach-hosts) to add compute capacity to your location so that you can run {{site.data.keyword.satelliteshort}}-enabled services.
 3. Create a {{site.data.keyword.satelliteshort}}-enabled service, such as a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters). You assign the additional hosts that you previously attached as worker nodes to provide the compute power for the cluster.
 4. [Attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing) and start [deploying Kubernetes resources to these clusters](/docs/satellite?topic=satellite-satcon-create) with {{site.data.keyword.satelliteshort}} Configs.
 5. [Learn more about the {{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
