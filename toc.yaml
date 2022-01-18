@@ -66,7 +66,7 @@ toc:
               - config-manage.md
               - config-roks-setup.md
         - topicgroup:
-            label: Connecting {{site.data.keyword.satelliteshort}} locations with external services by using Link endpoints
+            label: Connecting Satellite locations with external services by using Link endpoints
             topics:
               - link-endpoints.md
               - link-create-endpoints.md

@@ -467,8 +467,8 @@ subcollection: satellite
 * [Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-satcon-existing#remove-satconfig)
 
 
-## Connecting {{site.data.keyword.satelliteshort}} locations with external services by using Link endpoints
-{: #sitemap_connecting__locations_with_external_services_by_using_link_endpoints}
+## Connecting Satellite locations with external services by using Link endpoints
+{: #sitemap_connecting_satellite_locations_with_external_services_by_using_link_endpoints}
 
 
 [Understanding Link endpoints and {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-link-location-cloud#link-location-cloud)
