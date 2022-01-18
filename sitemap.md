@@ -675,6 +675,8 @@ subcollection: satellite
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-ebs-sc-reference)
 
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-ebs#sat-ebs-support)
+
 [AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#config-storage-efs)
 
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-efs-prereqs)
@@ -692,6 +694,8 @@ subcollection: satellite
 * [AWS EFS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-params-cli)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-efs#efs-sc-reference)
+
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-efs#sat-efs-support)
 
 
 ### Azure storage templates
@@ -719,6 +723,8 @@ subcollection: satellite
 * [Parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-disk-params-cli)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-sc-ref)
+
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-azure-disk-support)
 
 
 ### IBM storage templates
@@ -784,6 +790,8 @@ subcollection: satellite
 
     * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-template-rm-cli)
 
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-trident-support)
+
 [NetApp ONTAP-NAS 21.04](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#config-storage-netapp-nas-2104)
 
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-pre)
@@ -804,6 +812,8 @@ subcollection: satellite
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-sc-reference-nas)
 
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#sat-nas-2104-support)
+
 [NetApp ONTAP-NAS 20.07](/docs/satellite?topic=satellite-config-storage-netapp-nas#config-storage-netapp-nas)
 
 * [Creating a NetApp ONTAP-NAS storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-cli-nas)
@@ -822,6 +832,8 @@ subcollection: satellite
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-sc-reference-nas)
 
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-nas-support)
+
 [NetApp ONTAP-SAN 21.04](/docs/satellite?topic=satellite-config-storage-netapp-2104#config-storage-netapp-2104)
 
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-netapp-2104#netapp-san-2104-pre)
@@ -836,6 +848,8 @@ subcollection: satellite
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-2104#netapp-sc-reference-san-2104)
 
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-san-2104-support)
+
 [NetApp ONTAP-SAN 20.07](/docs/satellite?topic=satellite-config-storage-netapp#config-storage-netapp)
 
 * [Creating a NetApp Trident SAN storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-cli-san)
@@ -847,6 +861,8 @@ subcollection: satellite
 * [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-params-cli-san)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp#netapp-sc-reference-san)
+
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp#sat-netapp-san-support)
 
 
 ### Red Hat storage templates
@@ -875,6 +891,8 @@ subcollection: satellite
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
 
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-local-block#sat-local-block-support)
+
 [Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file#config-storage-local-file)
 
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-local-file#prerequisites)
@@ -896,6 +914,8 @@ subcollection: satellite
 * [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
+
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-local-file#sat-local-block-support)
 
 [OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-odf-local#config-storage-odf-local)
 

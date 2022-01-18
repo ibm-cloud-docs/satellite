@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-18"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -653,5 +653,10 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 | `sat-local-block-gold` | Block | Retain |
 {: caption="Table 2. Local block storage class reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
+
+
+## Getting help and support
+{: #sat-local-block-support}
+If you run into an issue with using the Local Storage Operator - Block template, you can open an issue in the [Redhat Customer Portal](https://access.redhat.com/){: external}. 
 
 
