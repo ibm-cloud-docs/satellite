@@ -120,7 +120,7 @@ toc:
       topics: 
         - link:
                 label: API reference
-                href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster
+                href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-cluster
         - topicgroup:
             label: CLI plug-in reference
             topics:

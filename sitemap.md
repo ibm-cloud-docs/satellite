@@ -1068,7 +1068,7 @@ subcollection: satellite
 ## API reference
 {: #sitemap_api-reference}
 
-[API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster){: external}
+[API reference](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-cluster){: external}
 
 
 ## CLI plug-in reference
