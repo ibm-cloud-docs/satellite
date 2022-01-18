@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -340,7 +340,7 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 
 
 ## Setting up monitoring for clusters
-{: #setup-clusters}
+{: #setup-clusters-monitoring}
 
 To understand and set up monitoring for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.mon_full_notm}} documentation](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster).
 {: shortdesc}

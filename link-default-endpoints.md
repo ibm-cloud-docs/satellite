@@ -12,43 +12,8 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-# Securing your connection
-{: #service-connection}
-
-With {{site.data.keyword.satellitelong_notm}}, you bring {{site.data.keyword.cloud_notm}} to your own infrastructure environment by creating a {{site.data.keyword.satelliteshort}} location. This setup means that you do not need [{{site.data.keyword.cloud_notm}} service endpoints](/docs/account?topic=account-service-endpoints-overview) to access {{site.data.keyword.cloud_notm}}. Instead, {{site.data.keyword.cloud_notm}} needs a {{site.data.keyword.satelliteshort}} Link endpoint to access your infrastructure environment. You can access services in your {{site.data.keyword.satelliteshort}} location by creating {{site.data.keyword.satelliteshort}} Link endpoints, using the cluster URL, or creating a route or similar service for workloads in a cluster.
-{: shortdesc}
-
-## Access to resources that run in your {{site.data.keyword.satelliteshort}} location
-{: #user-access}
-
-You can access the resources that run in your {{site.data.keyword.satelliteshort}} location in several ways, depending on what users need to access: service-instance clusters in your {{site.data.keyword.satelliteshort}} location, a resource in your {{site.data.keyword.satelliteshort}} location from the {{site.data.keyword.IBM_notm}} private network, or an application workload in a cluster in your {{site.data.keyword.satelliteshort}} location.
-{: shortdesc}
-
-### Service-instance clusters
-{: #user-access-service}
-
-A cluster service URL is automatically created for any {{site.data.keyword.satelliteshort}}-enabled services that you run in your location, such as a {{site.data.keyword.openshiftlong_notm}} cluster. These URLs allow you to access your {{site.data.keyword.cloud_notm}} service that runs in your location over the public network or from within your hosts' private network, depending on whether your location hosts have public and private or private only connectivity.
-{: shortdesc}
-
-For example, when you create an {{site.data.keyword.satellitelong_notm}} cluster, the cluster is accessible through a URL that consists one of the subdomains for your location and a port, such as `https://pacfd8bdae2d04696301d-6b64a6ccc9c596bf59a86625d8fa2202-ce00.us-east.satellite.appdomain.cloud:32200`. When you access your cluster, such as by using the `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` command or by getting a login token from the {{site.data.keyword.openshiftshort}} web console, this URL is automatically used for your connection to the cluster master. Note that if you use hosts that have private network connectivity only for your location, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console.
-
-For more information about connecting to services that run in your {{site.data.keyword.satelliteshort}} location by using the cluster service URL, see the documentation for that service, such as the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
-
-### {{site.data.keyword.IBM_notm}} private network access with {{site.data.keyword.satelliteshort}} Link
-{: #user-access-loc-ep}
-
-If you have a resource on the {{site.data.keyword.IBM_notm}} private network that requires access to your {{site.data.keyword.satelliteshort}} location, you can [create a `location` endpoint in {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-location-cloud#link-location).
-{: shortdesc}
-
-### Application workloads that run in clusters
-{: #user-access-apps}
-
-To make your apps available, see the options for [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
-{: shortdesc}
-
-## {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location
-{: #ibm-cloud-access}
+# Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location
+{: #default-link-endpoints}
 
 Default {{site.data.keyword.satelliteshort}} Link endpoints are created for your location's control plane cluster and for any other {{site.data.keyword.satelliteshort}}-enabled services that you run in your location. These default {{site.data.keyword.satelliteshort}} Link endpoints are accessible only from within the {{site.data.keyword.cloud_notm}} private network.
 {: shortdesc}
@@ -74,7 +39,3 @@ The following table describes the Link endpoints that are automatically created 
 
 These endpoints are used to manage and update your location and are enabled by default. If you disable any of these endpoints, your client services that are running on your {{site.data.keyword.satelliteshort}} location can be negatively impacted. To avoid issues, do not disable these endpoints.
 {: important}
-
-For more information about {{site.data.keyword.satelliteshort}} Link endpoints and what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud).
-
-

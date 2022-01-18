@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -38,7 +38,7 @@ The {{site.data.keyword.bpshort}} template helped with the initial creation, but
 
 
 ## Manually creating {{site.data.keyword.satelliteshort}} locations
-{: #location-create}
+{: #location-create-manual}
 
 You can create {{site.data.keyword.satelliteshort}} locations for each place that you like, such as your company's ports in the north and south of the country. A {{site.data.keyword.satelliteshort}} location represents a data center that you fill with your own infrastructure resources to run your own workloads and {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}

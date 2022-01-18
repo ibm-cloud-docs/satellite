@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-18"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -559,5 +559,9 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 | `sat-azure-block-bronze-metro` | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | WaitForFirstConsumer |
 {: caption="Table 2. Storage class reference for Azure Disk storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the IOPs range per disk. The third column is the size range . The fourth column is the disk type. The fifth column is the reclaim policy. The sixth column is the volume binding mode."}
+
+## Getting help and support
+{: #sat-azure-disk-support}
+If you run into an issue with using Azure, you can open an issue in the [Azure Service Portal](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview){: external}. 
 
 

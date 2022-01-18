@@ -65,7 +65,12 @@ toc:
               - config-sat-setup.md
               - config-manage.md
               - config-roks-setup.md
-        - link-endpoints.md
+        - topicgroup:
+            label: Connecting Satellite locations with external services by using Link endpoints
+            topics:
+              - link-endpoints.md
+              - link-create-endpoints.md
+              - link-audit-monitor.md
         - satellite-mesh-mvp.md
         - topicgroup:
             label: Logging and monitoring
@@ -120,7 +125,7 @@ toc:
       topics: 
         - link:
                 label: API reference
-                href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-beta-cluster
+                href: https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite-cluster
         - topicgroup:
             label: CLI plug-in reference
             topics:
@@ -139,7 +144,7 @@ toc:
         - topicgroup:
             label: IBM Cloud Satellite Infrastructure Service
             topics:
-              - sat-is.md
+              - satellite-is.md
               - sat-is-understand.md
               - sat-is-responsibilities.md
 
@@ -191,4 +196,5 @@ toc:
                   topics:
                     - debug-storage.md
                     - ts-storage-cleanup.md
+        - sitemap.md
 
