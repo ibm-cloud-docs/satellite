@@ -69,6 +69,7 @@ toc:
             label: Connecting Satellite locations with external services by using Link endpoints
             topics:
               - link-endpoints.md
+              - link-default-endpoints.md
               - link-create-endpoints.md
               - link-audit-monitor.md
         - satellite-mesh-mvp.md

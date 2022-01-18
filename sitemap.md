@@ -511,6 +511,8 @@ subcollection: satellite
 
     * [Example: Enable and audit limited access to a {{site.data.keyword.satelliteshort}} location from {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-link-location-cloud#link-example-audit-limited-access)
 
+[Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-default-link-endpoints#default-link-endpoints)
+
 [Creating and managing link endpoints](/docs/satellite?topic=satellite-link-cloud-over#link-cloud-over)
 
 * [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-cloud-over#link-cloud)
