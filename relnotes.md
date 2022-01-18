@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,6 +19,22 @@ subcollection: satellite
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
 
+## January 2022
+{: #release-jan-2022}
+
+Review the release notes for January 2022.
+{: shortdesc}
+
+### 18 January 2022
+{: #18jan2022}
+{: release-note}
+
+**New!** {{site.data.keyword.satellitelong_notm}} CLI Map
+:    The [{{site.data.keyword.satellitelong_notm}} CLI Map](/docs/satellite?topic=satellite-icsat_map) lists all `ibmcloud sat` commands as they are structured in the CLI. Use this page as a visual reference for how ibmcloud sat commands are organized, or to quickly find a specific command. 
+
+
+**New!** Site map
+:   A site map is available for the {{site.data.keyword.satelliteshort}} [documentation](/docs/satellite?topic=satellite-sitemap).
 
 ## December 2021
 {: #release-dec-2021}
