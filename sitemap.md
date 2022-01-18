@@ -1315,6 +1315,22 @@ subcollection: satellite
 {: #sitemap_ibm_cloud_satellite_infrastructure_service}
 
 
+[Getting started with {{site.data.keyword.satellitelong_notm}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service#infrastructure-service)
+
+* [Requesting a {{site.data.keyword.satelliteshort}} Infrastructure Service environment](/docs/satellite?topic=satellite-infrastructure-service#satis-getting-started)
+
+* [Stage 1: Planning your setup](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-plan)
+
+* [Stage 2: Installing your on-prem infrastructure](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-install)
+
+* [Stage 3: Transitioning to daily operations](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-ops)
+
+    * [Application workloads](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-ops-app)
+
+    * [Usage and capacity planning](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-ops-capacity)
+
+    * [Support requests](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-ops-support)
+
 [Understanding {{site.data.keyword.satelliteshort}} Infrastructure Service components](/docs/satellite?topic=satellite-satis-infra-about#satis-infra-about)
 
 * [Compute resources](/docs/satellite?topic=satellite-satis-infra-about#satis-infra-compute)

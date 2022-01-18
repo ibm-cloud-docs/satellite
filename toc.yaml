@@ -139,7 +139,7 @@ toc:
         - topicgroup:
             label: IBM Cloud Satellite Infrastructure Service
             topics:
-              - sat-is.md
+              - satellite-is.md
               - sat-is-understand.md
               - sat-is-responsibilities.md
 
