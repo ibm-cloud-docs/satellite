@@ -255,7 +255,7 @@ subcollection: satellite
 
 * [Automating your location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template)
 
-* [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create)
+* [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual)
 
     * [Creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
 
@@ -591,9 +591,9 @@ subcollection: satellite
 
 * [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 
-* [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters)
+* [Setting up logging for clusters](/docs/satellite?topic=satellite-health#setup-clusters-logging)
 
-    * [Enabling a logging instance in your cluster](/docs/satellite?topic=satellite-health#enable-clusters)
+    * [Enabling a logging instance in your cluster](/docs/satellite?topic=satellite-health#enable-clusters-logging)
 
 [Monitoring for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-monitor#monitor)
 
@@ -621,7 +621,7 @@ subcollection: satellite
 
     * [Attributes for segmentation](/docs/satellite?topic=satellite-monitor#attributes)
 
-* [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters)
+* [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters-monitoring)
 
 [Auditing events](/docs/satellite?topic=satellite-at_events#at_events)
 
@@ -810,7 +810,7 @@ subcollection: satellite
 
 * [NetApp ONTAP-NAS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#sat-storage-netapp-params-cli-nas-2104)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-sc-reference-nas)
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-sc-reference-nas-2104)
 
 * [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#sat-nas-2104-support)
 

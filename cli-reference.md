@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-18"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1754,12 +1754,12 @@ ibmcloud sat resource history --resource RESOURCE [--limit LIMIT] [--output json
 {: pre}
 
 #### Minimum required permissions
-{: #cli-resource-get-min-perm}
+{: #cli-resource-history-get-min-perm}
 
 {{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
 #### Command options
-{: #cli-resource-get-command-options}
+{: #cli-resource-history-get-command-options}
 
 `--resource RESOURCE`
 :    Required. The ID of the Kubernetes resource. To list Kubernetes resources, run `ibmcloud sat resource ls`.
@@ -1774,7 +1774,7 @@ ibmcloud sat resource history --resource RESOURCE [--limit LIMIT] [--output json
 :    Optional. Do not show the message of the day or update reminders.
 
 #### Example
-{: #cli-resource-get-example}
+{: #cli-resource-history-get-example}
 
 ```sh
 ibmcloud sat resource history get --resource 123456 --limit 200

@@ -474,7 +474,7 @@ For more information about the NetApp ONTAP-NAS configuration parameters, see th
 
 
 ## Storage class reference
-{: #netapp-sc-reference-nas}
+{: #netapp-sc-reference-nas-2104}
 
 Before you deploy an app that uses the `sat-netapp` storage classes, review the following notes.
 {: shortdesc}
@@ -508,5 +508,4 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 ## Getting help and support
 {: #sat-nas-2104-support}
 If you run into an issue with using Netapp Trident, you can visit the [Netapp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 
-
 
