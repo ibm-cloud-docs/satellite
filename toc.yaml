@@ -65,7 +65,12 @@ toc:
               - config-sat-setup.md
               - config-manage.md
               - config-roks-setup.md
-        - link-endpoints.md
+        - topicgroup:
+            label: Connecting {{site.data.keyword.satelliteshort}} locations with external services by using Link endpoints
+            topics:
+              - link-endpoints.md
+              - link-create-endpoints.md
+              - link-audit-monitor.md
         - satellite-mesh-mvp.md
         - topicgroup:
             label: Logging and monitoring

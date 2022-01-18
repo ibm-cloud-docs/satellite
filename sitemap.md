@@ -471,47 +471,79 @@ subcollection: satellite
 {: #sitemap_connecting__locations_with_external_services_by_using_link_endpoints}
 
 
-[Connecting {{site.data.keyword.satelliteshort}} locations with external services by using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-location-cloud)
+[Understanding Link endpoints and {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-link-location-cloud#link-location-cloud)
 
-* [About {{site.data.keyword.satelliteshort}} endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-about)
+* [Architecture](/docs/satellite?topic=satellite-link-location-cloud#link-architecture)
 
-    * [Architecture](/docs/satellite?topic=satellite-link-location-cloud#link-architecture)
+    * [Cloud endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-endpoint)
 
-    * [External network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security)
+    * [Location endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-location-endpoint)
 
-    * [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
+* [External network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security)
 
-    * [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
+    * [Do I need to allow any unique inbound traffic from internet-facing ports through firewalls to my location?](/docs/satellite?topic=satellite-link-location-cloud#link-unique-inbound)
 
-    * [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints)
+    * [If {{site.data.keyword.IBM_notm}} owns the Link tunnel, how can I validate that our data is inaccessible? My organization's security policy does not allow tunnels from our networks.](/docs/satellite?topic=satellite-link-location-cloud#link-tunnel-data-inaccessible)
 
-    * [Use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
+    * [How do I make my data secure in transit?](/docs/satellite?topic=satellite-link-location-cloud#link-data-secure-transit)
 
-* [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-location-cloud#link-cloud)
+* [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols)
 
-    * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-ui)
+    * [TCP and TLS](/docs/satellite?topic=satellite-link-location-cloud#link-tcp-tls)
 
-    * [Creating cloud endpoints with the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-cli)
+    * [HTTP and HTTPS](/docs/satellite?topic=satellite-link-location-cloud#link-http-https)
 
-    * [Testing connections through cloud endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-cloud-test)
+    * [HTTP tunnel](/docs/satellite?topic=satellite-link-location-cloud#link-http-tunnel)
 
-* [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-location-cloud#link-location)
+    * [Server-side certificate authentication for TLS and HTTPS](/docs/satellite?topic=satellite-link-location-cloud#link-server-side-cert)
 
-    * [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-location-cloud#link-location-ui)
+* [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about)
 
-    * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-location-cloud#link-location-cli)
+    * [Restricting access with source lists](/docs/satellite?topic=satellite-link-location-cloud#link-source-lists)
 
-    * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-sources)
+    * [Auditing user-initiated events](/docs/satellite?topic=satellite-link-location-cloud#link-audit-events)
 
-* [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-location-cloud#link-audit)
+* [Use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
 
-* [Logging and monitoring network traffic for endpoints](/docs/satellite?topic=satellite-link-location-cloud#link-health)
+    * [Can I use Link endpoints to...](/docs/satellite?topic=satellite-link-location-cloud#link-use-link-endpoints)
 
-    * [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-location-cloud#link-mon)
+    * [Example: Connect from a {{site.data.keyword.satelliteshort}} location to a service in another cloud provider](/docs/satellite?topic=satellite-link-location-cloud#link-example-connect-location)
 
-    * [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-location-cloud#link-packet-capture)
+    * [Example: Enable and audit limited access to a {{site.data.keyword.satelliteshort}} location from {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-link-location-cloud#link-example-audit-limited-access)
 
-* [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-location-cloud#enable_disable_endpoint)
+[Creating and managing link endpoints](/docs/satellite?topic=satellite-link-cloud-over#link-cloud-over)
+
+* [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-cloud-over#link-cloud)
+
+    * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-cloud-over#link-cloud-ui)
+
+    * [Creating cloud endpoints with the CLI](/docs/satellite?topic=satellite-link-cloud-over#link-cloud-cli)
+
+* [Testing connections through cloud endpoints](/docs/satellite?topic=satellite-link-cloud-over#link-cloud-test)
+
+    * [Example for testing the connection from an unassigned host](/docs/satellite?topic=satellite-link-cloud-over#link-example-unassigned-host)
+
+    * [Example for testing the connection from a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=satellite-link-cloud-over#link-example-connection-cluster)
+
+* [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-cloud-over#link-location)
+
+    * [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-cloud-over#link-location-ui)
+
+    * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-cloud-over#link-location-cli)
+
+    * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-cloud-over#link-sources)
+
+* [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-cloud-over#enable_disable_endpoint)
+
+[Auditing, logging, and monitoring {{site.data.keyword.satelliteshort}} Link endpoints](/docs/satellite?topic=satellite-link-cloud-monitor#link-cloud-monitor)
+
+* [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-cloud-monitor#link-audit)
+
+* [Logging and monitoring network traffic for endpoints](/docs/satellite?topic=satellite-link-cloud-monitor#link-health)
+
+    * [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-cloud-monitor#link-mon)
+
+    * [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-cloud-monitor#link-packet-capture)
 
 
 ## Setting up a service mesh with {{site.data.keyword.satelliteshort}} Mesh
