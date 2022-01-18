@@ -191,4 +191,5 @@ toc:
                   topics:
                     - debug-storage.md
                     - ts-storage-cleanup.md
+        - sitemap.md
 
