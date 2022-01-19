@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-19"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -24,7 +24,7 @@ With {{site.data.keyword.satelliteshort}} Config, you create a configuration to 
 The following image shows how you can use a {{site.data.keyword.satelliteshort}} configuration to consistently deploy Kubernetes resources across {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
-![How {{site.data.keyword.satelliteshort}} configurations work](/images/satcon.png)
+![How {{site.data.keyword.satelliteshort}} configurations work](/images/satcon.png){: caption="Figure 1. How Satellite configurations work" caption-side="bottom"}
 
 1. A user creates a {{site.data.keyword.satelliteshort}} configuration and uploads Kubernetes resource files to it. Each Kubernetes resource file that you upload represents a version within the configuration.
 2. The user creates a {{site.data.keyword.satelliteshort}} subscription and specifies which Kubernetes resource file version is deployed to a group of {{site.data.keyword.openshiftlong_notm}} clusters.

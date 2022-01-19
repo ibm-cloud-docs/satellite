@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud, satellite infrastructure service
 
@@ -47,7 +47,7 @@ After you submit the {{site.data.keyword.satelliteshort}} Infrastructure Service
     - Networking setup including ports and IP address ranges
     - Coordinating physical access
     - Installation setup dates
-3. You and {{site.data.keyword.IBM_notm}} review the [shared responsibilities](#satis-responsibilities) that you have with {{site.data.keyword.satelliteshort}} Infrastructure Service.
+3. You and {{site.data.keyword.IBM_notm}} review the [shared responsibilities](/docs/satellite?topic=satellite-satis-responsibilities) that you have with {{site.data.keyword.satelliteshort}} Infrastructure Service.
 
 ## Stage 2: Installing your on-prem infrastructure
 {: #satis-gs-install}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -77,7 +77,7 @@ All hosts that you want to add must meet the general host requirements, such as 
 {: note}
 
 Before you begin
-* [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create).
+* [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 * [Install the Azure command line interface (`az`)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli){: external}.
 * Make sure that you have user admin credentials to your Azure account.
 

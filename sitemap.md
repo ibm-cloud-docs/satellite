@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-19"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -25,7 +25,7 @@ subcollection: satellite
 
 [Getting started with {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-getting-started#getting-started)
 
-* [Video demonstration of setting up an on-prem location](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
+* [Setting up an on-prem location](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
 
 * [Start by considering your infrastructure](/docs/satellite?topic=satellite-getting-started#gs-start-here)
 
@@ -511,29 +511,31 @@ subcollection: satellite
 
     * [Example: Enable and audit limited access to a {{site.data.keyword.satelliteshort}} location from {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-link-location-cloud#link-example-audit-limited-access)
 
-[Creating and managing link endpoints](/docs/satellite?topic=satellite-link-cloud-over#link-cloud-over)
+[Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-default-link-endpoints#default-link-endpoints)
 
-* [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-cloud-over#link-cloud)
+[Creating and managing link endpoints](/docs/satellite?topic=satellite-link-cloud-create#link-cloud-create)
 
-    * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-cloud-over#link-cloud-ui)
+* [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-cloud-create#link-cloud)
 
-    * [Creating cloud endpoints with the CLI](/docs/satellite?topic=satellite-link-cloud-over#link-cloud-cli)
+    * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-cloud-create#link-cloud-ui)
 
-* [Testing connections through cloud endpoints](/docs/satellite?topic=satellite-link-cloud-over#link-cloud-test)
+    * [Creating cloud endpoints with the CLI](/docs/satellite?topic=satellite-link-cloud-create#link-cloud-cli)
 
-    * [Example for testing the connection from an unassigned host](/docs/satellite?topic=satellite-link-cloud-over#link-example-unassigned-host)
+* [Testing connections through cloud endpoints](/docs/satellite?topic=satellite-link-cloud-create#link-cloud-test)
 
-    * [Example for testing the connection from a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=satellite-link-cloud-over#link-example-connection-cluster)
+    * [Example for testing the connection from an unassigned host](/docs/satellite?topic=satellite-link-cloud-create#link-example-unassigned-host)
 
-* [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-cloud-over#link-location)
+    * [Example for testing the connection from a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=satellite-link-cloud-create#link-example-connection-cluster)
 
-    * [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-cloud-over#link-location-ui)
+* [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-cloud-create#link-location)
 
-    * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-cloud-over#link-location-cli)
+    * [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-cloud-create#link-location-ui)
 
-    * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-cloud-over#link-sources)
+    * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-cloud-create#link-location-cli)
 
-* [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-cloud-over#enable_disable_endpoint)
+    * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-cloud-create#link-sources)
+
+* [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-cloud-create#enable_disable_endpoint)
 
 [Auditing, logging, and monitoring {{site.data.keyword.satelliteshort}} Link endpoints](/docs/satellite?topic=satellite-link-cloud-monitor#link-cloud-monitor)
 

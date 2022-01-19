@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -184,5 +184,5 @@ The option to update worker node hosts in the {{site.data.keyword.openshiftlong_
 ## Updating host metadata
 {: #host-update-metadata}
 
-If you want to update metadata about a host, such as labels or zones, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). This metadata is used to help manage your hosts, such as for [autoassignment](#host-autoassign-ov). The metadata update does not apply security patches or operating system updates.
+If you want to update metadata about a host, such as labels or zones, see the [`ibmcloud sat host update` command](/docs/satellite?topic=satellite-satellite-cli-reference#host-update). This metadata is used to help manage your hosts, such as for [autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov). The metadata update does not apply security patches or operating system updates.
 {: shortdesc}

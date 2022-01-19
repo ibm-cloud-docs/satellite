@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -144,12 +144,12 @@ If your destination resource has a certificate, you do not need to provide the c
 ### Restricting access with source lists
 {: #link-source-lists}
 
-By default, after you set up an endpoint, any client can connect to the destination resource through the endpoint. For example, for a location endpoint, any client that is connected to the {{site.data.keyword.cloud_notm}} private network can use the endpoint to connect to the destination resource that runs in your {{site.data.keyword.satelliteshort}} location. To limit access to the destination resource, you can [specify a list of source IP ranges](#link-sources) so that only trusted clients can access the endpoint. Note that currently you can create source lists only for endpoints of type `location` and cannot create source lists for endpoints of type `cloud`.
+By default, after you set up an endpoint, any client can connect to the destination resource through the endpoint. For example, for a location endpoint, any client that is connected to the {{site.data.keyword.cloud_notm}} private network can use the endpoint to connect to the destination resource that runs in your {{site.data.keyword.satelliteshort}} location. To limit access to the destination resource, you can [specify a list of source IP ranges](/docs/satellite?topic=satellite-link-cloud-create#link-sources) so that only trusted clients can access the endpoint. Note that currently you can create source lists only for endpoints of type `location` and cannot create source lists for endpoints of type `cloud`.
 
 ### Auditing user-initiated events
 {: #link-audit-events}
 
-After you set up source lists for endpoints, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance. To get started with auditing, see [Auditing events for endpoint actions](#link-audit).
+After you set up source lists for endpoints, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance. To get started with auditing, see [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-cloud-monitor#link-audit).
 
 ## Use cases
 {: #link-usecases}

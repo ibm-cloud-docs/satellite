@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -42,7 +42,7 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove 
 
 1. [Remove all {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-remove) from your location.
 
-2. [Remove all hosts](/docs/satellite?topic=satellite-host-remove-cli) from your location.
+2. [Remove all hosts](/docs/satellite?topic=satellite-host-remove) from your location.
 
 3. Remove the location.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -38,7 +38,7 @@ For more information about connecting to services that run in your {{site.data.k
 ### {{site.data.keyword.IBM_notm}} private network access with {{site.data.keyword.satelliteshort}} Link
 {: #user-access-loc-ep}
 
-If you have a resource on the {{site.data.keyword.IBM_notm}} private network that requires access to your {{site.data.keyword.satelliteshort}} location, you can [create a `location` endpoint in {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-location-cloud#link-location).
+If you have a resource on the {{site.data.keyword.IBM_notm}} private network that requires access to your {{site.data.keyword.satelliteshort}} location, you can [create a `location` endpoint in {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-cloud-create#link-location).
 {: shortdesc}
 
 ### Application workloads that run in clusters

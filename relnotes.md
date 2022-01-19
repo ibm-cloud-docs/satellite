@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -449,7 +449,7 @@ Review the release notes for 1 March 2021.
 {: shortdesc}
 
 New! General availability of {{site.data.keyword.satellitelong}}
-:    {{site.data.keyword.satellitelong_notm}} is now generally available. If you created locations during the closed beta, you must [re-create your locations](/docs/satellite?topic=satellite-locations#location-copy) for the general availability release. For more information about what you are charged for when you use {{site.data.keyword.satellitelong_notm}}, see the [FAQs](/docs/satellite?topic=satellite-faqs#pricing).
+:    {{site.data.keyword.satellitelong_notm}} is now generally available. If you created locations during the closed beta, you must [re-create your locations](/docs/satellite?topic=satellite-location-copy) for the general availability release. For more information about what you are charged for when you use {{site.data.keyword.satellitelong_notm}}, see the [FAQs](/docs/satellite?topic=satellite-faqs#pricing).
 
 CLI changelog
 :    Updated the CLI plug-in changelog page for the [release of version 1.0.233](/docs/satellite?topic=satellite-satellite-cli-changelog).
@@ -461,7 +461,7 @@ Exposing apps in {{site.data.keyword.satelliteshort}} clusters
 :    Added an overview of the [options for exposing apps in Satellite clusters](/docs/openshift?topic=openshift-sat-expose-apps) and steps for setting up each option.
 
 {{site.data.keyword.satelliteshort}} Infrastructure Service
-:    [Order managed infrastructure from {{site.data.keyword.IBM_notm}}](/docs/satellite?topic=satellite-satis-infra-about) to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
+:    [Order managed infrastructure from {{site.data.keyword.IBM_notm}}](/docs/satellite?topic=satellite-infrastructure-service) to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
   
 New! Template for fast provisioning on AWS
 :    [Automate your {{site.data.keyword.satelliteshort}} location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template), available for AWS infrastructure.
@@ -525,7 +525,7 @@ Review the release notes for 12 February 2021.
 {: shortdesc}
 
 Link endpoints
-:    Added information about [default Link endpoints](/docs/satellite?topic=satellite-link-location-cloud#default-link-endpoints) that are automatically created for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location.
+:    Added information about [default Link endpoints](/docs/satellite?topic=satellite-default-link-endpoints) that are automatically created for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location.
 
 Securing service connections
 :    Added a topic to explain all points of access to your {{site.data.keyword.satelliteshort}} location. For more information, see [Securing your connection to Satellite](/docs/satellite?topic=satellite-service-connection).
@@ -598,7 +598,7 @@ Review the release notes for 12 January 2021.
 
 
 Host updates
-:    Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-host-concept#host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-host-update-location).
+:    Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-host-update-location).
 
 ## December 2020
 {: #december20}

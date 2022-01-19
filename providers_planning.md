@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,7 +19,7 @@ subcollection: satellite
 Plan how to set up your infrastructure environment to use with {{site.data.keyword.satellitelong}}. Your infrastructure environment can be an on-premises data center, in another cloud provider, or on compatible edge devices anywhere.
 {: shortdesc}
 
-Don't have your own infrastructure or want a managed solution? [Check out {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-satis-infra-about).
+Don't have your own infrastructure or want a managed solution? [Check out {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
 {: tip}
 
 Your {{site.data.keyword.satelliteshort}} location starts with your infrastructure, such as another cloud provider or on-prem. Your infrastructure provides the basis for the hosts and zones that you use to build out your {{site.data.keyword.satelliteshort}} location. For more details on the different responsibilities for your infrastructure and {{site.data.keyword.satelliteshort}} resources, see [Your responsibilities](/docs/satellite?topic=satellite-responsibilities).
@@ -29,7 +29,7 @@ Your {{site.data.keyword.satelliteshort}} location starts with your infrastructu
 
 1. Choose the infrastructure provider that you want to use to create a {{site.data.keyword.satelliteshort}} location.
     On-premises
-    :    You can use a data center with existing infrastructure, or order infrastructure from {{site.data.keyword.IBM_notm}} with [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-satis-infra-about). You might not even have a data center, but rather an edge location that meets the minimum hardware requirements, such as three racks at one of your company's local sites.
+    :    You can use a data center with existing infrastructure, or order infrastructure from {{site.data.keyword.IBM_notm}} with [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service). You might not even have a data center, but rather an edge location that meets the minimum hardware requirements, such as three racks at one of your company's local sites.
     
     Non-{{site.data.keyword.IBM_notm}} cloud provider
     :    You can use a cloud provider of your choice, such as Amazon Web Services (AWS), Google Cloud Platform (GCP), or Microsoft Azure. For more information, see [Cloud infrastructure like AWS, Azure, and GCP](/docs/satellite?topic=satellite-infrastructure-plan).
@@ -50,7 +50,7 @@ Your {{site.data.keyword.satelliteshort}} location starts with your infrastructu
         
 3. In each of the three zones in your infrastructure provider, plan to create compatible hosts to add to {{site.data.keyword.satelliteshort}}. The host instances in your infrastructure provider become the compute hosts to run the services in your {{site.data.keyword.satelliteshort}} location, similar to the worker nodes in a {{site.data.keyword.openshiftlong_notm}} cluster.
     - Each host must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}, such as RHEL 7 operating system; at least 4 CPU, 16 RAM, and 100 GB storage per host; full network connectivity between hosts in the same location; and more.
-    - To calculate how many hosts you need, see [Sizing your {{site.data.keyword.satelliteshort}} location](#location-sizing).
+    - To calculate how many hosts you need, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing).
     
 4. Use your infrastructure to power your {{site.data.keyword.satelliteshort}} resources.
 
