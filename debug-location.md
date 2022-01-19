@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -135,7 +135,7 @@ Location message
 
 Steps to resolve
 :    1. Check the **Status** of your hosts.
-         ```sh
+:        ```sh
          ibmcloud sat host ls --location <location_name_or_ID>
          ```
          {: pre}
@@ -180,7 +180,7 @@ Location message
 
 Steps to resolve
 :    1. Verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of `assigned` and a **Status** of `Ready`.
-         ```sh
+:        ```sh
          ibmcloud sat host ls --location <location_ID_or_name>
          ```
          {: pre}
@@ -220,13 +220,13 @@ Location message
 
 Steps to resolve
 :    1. List the hosts that are assigned to the control plane.
-         ```sh
+:        ```sh
          ibmcloud sat host ls --location <location_name_or_ID> | grep infrastructure
          ```
          {: pre}
 
 :    2. Check the details of the hosts.
-         ```sh
+:        ```sh
          ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>
          ```
          {: pre}

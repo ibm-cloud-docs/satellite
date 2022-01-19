@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,26 +24,22 @@ Review what options you have to make your {{site.data.keyword.satellitelong}} lo
 High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms.
 {: shortdesc}
 
-**What level of availability do I need?**
+What level of availability do I need?
+:    You can achieve high availability on different levels in your backing infrastructure for the {{site.data.keyword.satelliteshort}} location, the {{site.data.keyword.satelliteshort}} location control plane, and within the different components of the clusters that you deploy to the location. The level of availability that is right for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the resources that you want to expend.
 
-You can achieve high availability on different levels in your backing infrastructure for the {{site.data.keyword.satelliteshort}} location, the {{site.data.keyword.satelliteshort}} location control plane, and within the different components of the clusters that you deploy to the location. The level of availability that is right for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the resources that you want to expend.
+What level of availability does {{site.data.keyword.cloud_notm}} offer?
+:    For {{site.data.keyword.cloud_notm}}, see [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime).
 
-**What level of availability does {{site.data.keyword.cloud_notm}} offer?**
+:    For {{site.data.keyword.satelliteshort}}, review the following topics.
+:    - [High availability of the {{site.data.keyword.satelliteshort}} control plane master](#ha-control-plane-master).
+     - [High availability of the {{site.data.keyword.satelliteshort}} control plane worker nodes](#ha-control-plane-worker).
+     - [High availability of {{site.data.keyword.cloud_notm}} services](#ha-cloud-services).
 
-For {{site.data.keyword.cloud_notm}}, see [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime).
+Where is the service located?
+:    See [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
 
-For {{site.data.keyword.satelliteshort}}, review the following topics.
-* [High availability of the {{site.data.keyword.satelliteshort}} control plane master](#ha-control-plane-master).
-* [High availability of the {{site.data.keyword.satelliteshort}} control plane worker nodes](#ha-control-plane-worker).
-* [High availability of {{site.data.keyword.cloud_notm}} services](#ha-cloud-services).
-
-**Where is the service located?**
-
-See [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
-
-**What am I responsible to configure disaster recovery options for?**
-
-See [Your responsibilities](/docs/satellite?topic=satellite-responsibilities#disaster-recovery).
+What am I responsible to configure disaster recovery options for?
+:    See [Your responsibilities](/docs/satellite?topic=satellite-responsibilities#disaster-recovery).
 
 ## Understanding high availability in {{site.data.keyword.satellitelong_notm}}
 {: #ha-understand}
@@ -146,5 +142,5 @@ The following image shows a highly available setup for compute hosts that are in
 {: shortdesc}
 
 
-![High availability setup with compute hosts that are at another cloud provider.](/images/satellite_ha_aws.png)
+![High availability setup with compute hosts that are at another cloud provider.](/images/satellite_ha_aws.png){: caption="Figure 1. High availability setup with compute hosts that are at another cloud provider" caption-side="bottom"}
 

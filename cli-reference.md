@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-19"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -230,7 +230,7 @@ ibmcloud sat group attach --cluster CLUSTER [--cluster CLUSTER] --group GROUP [-
 
 
 #### Minimum required permissions
-{: #cluster-group-attach-min-perm
+{: #cluster-group-attach-min-perm}
  
  {{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Cluster group** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 
