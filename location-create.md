@@ -138,7 +138,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     
     `--ha-zone <ZONE1_NAME> --ha-zone <ZONE2_NAME> --ha-zone <ZONE3_NAME>`
         :   Optional: If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names such as `zone-1`. Specify three names for high availability zones in your location. The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider. 
-        - [Alibaba regions and zones](https://www.alibabacloud.com/help/doc-detail/188196.htm), such as `us-east-1` and `us-west-1`.
+        - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/doc-detail/188196.htm){: external}, such as `us-east-1` and `us-west-1`.
         - [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, `us-east-1c`.
         - [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
         - [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.

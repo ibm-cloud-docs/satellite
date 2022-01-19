@@ -573,7 +573,7 @@ To create and manage the underlying infrastructure in other cloud providers, you
 ### Alibaba permissions
 {: #permissions-alibaba}
 
-To allow users in Alibaba to do various actions for {{site.data.keyword.satelliteshort}}, you can grant the users access to the **AliyunECSFullAccess** security policy or create a custom security policy that allows access to only specific instances. For more information about the permissions of this role, see the [Alibaba documentation](https://www.alibabacloud.com/help/doc-detail/273910.htm?spm=a2c63.p38356.b99.453.566659d8FD2xbU){: external}.
+To allow users in Alibaba to do various actions for {{site.data.keyword.satelliteshort}}, you can grant the users access to the **AliyunECSFullAccess** security policy or create a custom security policy that allows access to only specific instances. For more information about the permissions of this role, see the [Alibaba documentation](https://www.alibabacloud.com/help/en/doc-detail/273910.htm){: external}.
 {: shortdesc}
 
 ### AWS permissions
