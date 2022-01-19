@@ -61,7 +61,7 @@ As system administrator, you set up a {{site.data.keyword.satelliteshort}} locat
 Next, you create {{site.data.keyword.satelliteshort}} Link endpoints to allow apps that run in your {{site.data.keyword.satelliteshort}} location to access resources in {{site.data.keyword.cloud_notm}}, or vice versa.
 {: shortdesc}
 
-1. Create a [`cloud` endpoint](/docs/satellite?topic=satellite-link-cloud-create#link-cloud) to connect your {{site.data.keyword.satelliteshort}} location client app to a resource that runs in {{site.data.keyword.cloud_notm}}, or a [`location` endpoint](/docs/satellite?topic=satellite-link-location-cloud#link-location) to connect a resource that runs in {{site.data.keyword.cloud_notm}} to your {{site.data.keyword.satelliteshort}} location app.
+1. Create a [`cloud` endpoint](/docs/satellite?topic=satellite-link-cloud-create#link-cloud) to connect your {{site.data.keyword.satelliteshort}} location client app to a resource that runs in {{site.data.keyword.cloud_notm}}, or a [`location` endpoint](/docs/satellite?topic=satellite-link-cloud-create#link-location) to connect a resource that runs in {{site.data.keyword.cloud_notm}} to your {{site.data.keyword.satelliteshort}} location app.
 2. For a `location` endpoint, [set up a source list](/docs/satellite?topic=satellite-link-cloud-create#link-sources) to limit and control access from {{site.data.keyword.cloud_notm}} to the app in your {{site.data.keyword.satelliteshort}} location.
 3. [Audit events for endpoint actions](/docs/satellite?topic=satellite-link-cloud-monitor#link-audit).
 

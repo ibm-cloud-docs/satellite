@@ -25,7 +25,7 @@ subcollection: satellite
 
 [Getting started with {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-getting-started#getting-started)
 
-* [Video demonstration of setting up an on-prem location](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
+* [Setting up an on-prem location](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
 
 * [Start by considering your infrastructure](/docs/satellite?topic=satellite-getting-started#gs-start-here)
 

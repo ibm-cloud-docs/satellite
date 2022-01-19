@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,7 +20,7 @@ subcollection: satellite
 With {{site.data.keyword.satellitelong_notm}}, you use your own compute infrastructure that is in your on-premises data center, other cloud providers, or edge networks to create a {{site.data.keyword.satelliteshort}} location. Then, you use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on your infrastructure, and consistently deploy, manage, and control your app workloads.
 {: shortdesc}
 
-## Video demonstration of setting up an on-prem location
+## Setting up an on-prem location
 {: #gs-video-demo}
 
 Want to see a preview before trying out the steps yourself? Check out the following video of setting up a {{site.data.keyword.satelliteshort}} location for on-prem edge devices.
@@ -36,7 +36,7 @@ To get started, consider the type of infrastructure that you want to use.
 
 - **I have on-prem, cloud, or edge infrastructure**: Continue with the [getting started steps](#create-location).
 - **I use Alibaba Cloud, Amazon Web Services, Google Cloud Platform, or Microsoft Azure**: You can continue with the [getting started steps](#create-location), or try an [automated setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template).
-- **I don't have my own infrastructure or want to order some**: For a managed offering where {{site.data.keyword.IBM_notm}} sends you the infrastructure and sets up the location, check out [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-satis-infra-about).
+- **I don't have my own infrastructure or want to order some**: For a managed offering where {{site.data.keyword.IBM_notm}} sends you the infrastructure and sets up the location, check out [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
 
 ## Step 1: Create your location
 {: #create-location}
