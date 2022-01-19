@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -58,7 +58,7 @@ The trained model is saved back to {{site.data.keyword.cos_full_notm}}, so that 
 As the edge environment system administrator, you enable a serverless tool to simplify model inferencing at the edge.
 {: shortdesc} 
 
-1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create) on your edge computing infrastructure.
+1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) on your edge computing infrastructure.
 2. [Create a managed {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=openshift-satellite-clusters) in the {{site.data.keyword.satelliteshort}} location.
 3. [Access the {{site.data.keyword.openshiftshort}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 4. Using the OperatorHub, [install the {{site.data.keyword.openshiftshort}} Serverless operator](https://cloud.redhat.com/learn/topics/serverless){: external}.
