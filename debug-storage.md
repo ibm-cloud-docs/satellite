@@ -456,6 +456,7 @@ Response code: `400`
 
 ### ST0046
 {: #st0046}
+
 This storage configuration is already up to date with the latest revision. No newer revision available for '{{.TemplateName}}' at version '{{.TemplateVersion}}'. Current revision: '{{.CurrentRevision}}' and latest revision.
 
 Error type: Bad request
@@ -464,6 +465,7 @@ Response code: 406
 
 ### ST0047
 {: #st0047}
+
 The {{.Param1}} value '{{.Param2}}' should only contain alphabets, numbers, underscore and hyphen.
 
 Error type: Bad request
@@ -515,5 +517,7 @@ Unable to create or update storage configuration. Multiple storage classes defin
 Error type: Bad request
 
 Response code: `400`
+
+
 
 
