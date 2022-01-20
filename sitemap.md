@@ -1770,4 +1770,18 @@ subcollection: satellite
 
     * [ST0045](/docs/satellite?topic=satellite-debug-storage#st0045)
 
+    * [ST0046](/docs/satellite?topic=satellite-debug-storage#st0046)
+
+    * [ST0047](/docs/satellite?topic=satellite-debug-storage#st0047)
+
+    * [ST0048](/docs/satellite?topic=satellite-debug-storage#st0048)
+
+    * [ST0049](/docs/satellite?topic=satellite-debug-storage#st0049)
+
+    * [ST0050](/docs/satellite?topic=satellite-debug-storage#st0050)
+
+    * [ST0051](/docs/satellite?topic=satellite-debug-storage#st0051)
+
+    * [ST0052](/docs/satellite?topic=satellite-debug-storage#st0052)
+
 [Why is the namespace where my storage operator was deployed stuck in **Terminating** status?](/docs/satellite?topic=satellite-storage-namespace-terminating#storage-namespace-terminating)
