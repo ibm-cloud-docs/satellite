@@ -19,6 +19,7 @@ subcollection: satellite
 
 
 
+
 ## Getting started with {{site.data.keyword.satellitelong_notm}}
 {: #sitemap_getting_started_with_}
 
@@ -1563,7 +1564,7 @@ subcollection: satellite
 
 * [Identifying issues for {{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-get-help#help-services)
 
-* [ Reviewing logs](/docs/satellite?topic=satellite-get-help#review-logs)
+* [Reviewing logs](/docs/satellite?topic=satellite-get-help#review-logs)
 
 * [Feedback and questions](/docs/satellite?topic=satellite-get-help#feedback-qs)
 
