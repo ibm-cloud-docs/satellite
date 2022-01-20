@@ -83,6 +83,8 @@ subcollection: satellite
 
 * [January 2022](/docs/satellite?topic=satellite-release-notes#release-jan-2022)
 
+    * [20 January 2022](/docs/satellite?topic=satellite-release-notes#20jan2022)
+
     * [18 January 2022](/docs/satellite?topic=satellite-release-notes#18jan2022)
 
 * [December 2021](/docs/satellite?topic=satellite-release-notes#release-dec-2021)
@@ -755,15 +757,13 @@ subcollection: satellite
 
     * [Rebuilding the portability layer](/docs/satellite?topic=satellite-config-storage-spectrum-scale#ess-ts-rebuilding)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref)
-
 * [Additional references](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-ref)
 
 * [Limitations](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-limits)
 
     * [Spectrum Scale configuration parameter reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-params-cli)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref2)
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref)
 
 [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi#config-storage-block-csi)
 
@@ -933,6 +933,8 @@ subcollection: satellite
 
 * [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-deploy)
 
+    * [Scaling your ODF configuration by attaching raw disks](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-scale-odf-local-disk)
+
 * [Upgrading your ODF version](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-upgrade)
 
 * [Removing OpenShift Data Foundation from your apps](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-rm)
@@ -940,6 +942,10 @@ subcollection: satellite
 * [Removing the ODF local storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-template-rm)
 
 * [OpenShift Data Foundation configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-params-cli)
+
+    * [Version 4.8 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-47)
+
+    * [Version 4.7 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-47)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-sc-ref)
 
@@ -960,6 +966,10 @@ subcollection: satellite
     * [Removing the ODF remote storage assignment from the command line](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-template-rm-cli)
 
 * [OpenShift Data Foundation configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-params-cli)
+
+    * [Version 4.8 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-48-params)
+
+    * [Version 4.7 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-47-params)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-sc-ref)
 
