@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-20"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -60,14 +60,14 @@ Before you can create storage configurations by using the NetApp SAN template, y
     ```
     {: pre}
     
-3. Review the [NetApp Trident storage configuration parameters](#sat-storage-netapp-params-cli-san).
-4. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+1. Review the [NetApp Trident storage configuration parameters](#sat-storage-netapp-params-cli-san).
+1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name netapp-ontap-san --template-version <template_version> --param "managementLIF=<managementLIF>" --param "dataLIF=<dataLIF>" --param "svm=<svm>" --param "username=<username>" --param "password=<password>"
     ```
     {: pre}
 
-5. Verify that your storage configuration is created.
+1. Verify that your storage configuration is created.
     ```sh
     ibmcloud sat storage config get --config <config>
     ```
@@ -134,7 +134,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-5. Verify that the storage configuration resources are deployed.
+1. Verify that the storage configuration resources are deployed.
     ```sh
     oc get pods -A | grep <template-name>
     ```
@@ -179,6 +179,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 ## Getting help and support
 {: #sat-netapp-san-support}
+
 If you run into an issue with using Netapp Trident, you can visit the [Netapp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 
 
 

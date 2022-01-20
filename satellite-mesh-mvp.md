@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-20"
 
 keywords: satellite, mesh, istio, microservices
 
@@ -129,7 +129,7 @@ Installing {{site.data.keyword.satelliteshort}} Mesh:
     {: pre}
 
     Example output
-    ```
+    ```sh
     Mesh name:                 test_mesh
     Mesh ID:                   a0612m7djht6mqewwjw5
     Data plane cluster name:   test_cluster

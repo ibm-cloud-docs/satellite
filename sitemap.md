@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -897,7 +897,7 @@ subcollection: satellite
 
 [Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file#config-storage-local-file)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-local-file#prerequisites)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-local-file#config-storage-local-file-prereqs)
 
     * [Getting the device details for your local file storage configuration](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-devices)
 
@@ -1654,6 +1654,8 @@ subcollection: satellite
 * [Debugging hosts for connectivity issues](/docs/satellite?topic=satellite-assign-fails#debug-host-connectivity)
 
 * [Endpoints to verify connectivity by {{site.data.keyword.cloud_notm}} multizone metro](/docs/satellite?topic=satellite-assign-fails#endpoints-to-verify)
+
+[Why can't I reuse a host in a different {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-sat-host-reattach-fail#sat-host-reattach-fail)
 
 [Why can't I update my worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console?](/docs/satellite?topic=satellite-ts-hosts-update-roks-console#ts-hosts-update-roks-console)
 

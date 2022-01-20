@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -28,6 +28,7 @@ Your {{site.data.keyword.satelliteshort}} location starts with your infrastructu
 ![Concept overview of planning your infrastructure](/images/satellite-infra-plan.png){: caption="Figure 1. Your {{site.data.keyword.satelliteshort}} location is built atop the zones and hosts in your infrastructure provider." caption-side="bottom"}
 
 1. Choose the infrastructure provider that you want to use to create a {{site.data.keyword.satelliteshort}} location.
+
     On-premises
     :    You can use a data center with existing infrastructure, or order infrastructure from {{site.data.keyword.IBM_notm}} with [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service). You might not even have a data center, but rather an edge location that meets the minimum hardware requirements, such as three racks at one of your company's local sites.
     

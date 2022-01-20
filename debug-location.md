@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -181,9 +181,9 @@ Location message
 Steps to resolve
 :    1. Verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of `assigned` and a **Status** of `Ready`.
 :        ```sh
-         ibmcloud sat host ls --location <location_ID_or_name>
-         ```
-         {: pre}
+:        ibmcloud sat host ls --location <location_ID_or_name>
+:        ```
+:        {: pre}
          
 :    2. If all hosts show the correct state and status, the DNS record for your location is not yet created. This process can take up to 30 minutes to complete after all hosts are successfully assigned to your location.
      3. If one or more hosts do not show the correct state or status, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).

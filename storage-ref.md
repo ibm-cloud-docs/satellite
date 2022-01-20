@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-20"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -43,7 +43,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 | Storage class name | File system | Reclaim policy |
 | --- | --- | --- |
 | `sat-aws-file-gold` | NFS | Delete |
-
 {: caption="Table 2. AWS EFS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
 
@@ -200,6 +199,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 | Storage class name | Type | Reclaim policy |
 | --- | --- | --- |
 | `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
+{: caption="Table 9. Storage class reference for IBM Spectrum Scale storage" caption-side="top"}
 
 
 

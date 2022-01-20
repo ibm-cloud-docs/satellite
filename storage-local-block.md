@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-20"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -54,9 +54,9 @@ Before you can create a local block storage configuration, you must identify the
     ```
     {: pre}
     
-2. Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
-3. [Get the device details of your worker nodes](#sat-storage-block-local-devices).
-4. [Label the worker nodes](#sat-storage-block-local-labels) that have an available disk and that you want to use in your configuration. The local storage drivers are installed only on the labeled worker nodes.
+1. Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
+1. [Get the device details of your worker nodes](#sat-storage-block-local-devices).
+1. [Label the worker nodes](#sat-storage-block-local-labels) that have an available disk and that you want to use in your configuration. The local storage drivers are installed only on the labeled worker nodes.
 
 
 
@@ -119,12 +119,13 @@ When you create your local block storage configuration, you must specify which d
     ```
     {: screen}
 
-6. Repeat the previous steps for each worker node that you want to use for your local block storage configuration.  
+5. Repeat the previous steps for each worker node that you want to use for your local block storage configuration.  
 
 
 
 ### Labeling your worker nodes
 {: #sat-storage-block-local-labels}
+
 After you have [retrieved the device paths for the disks that you want to use in your configuration](#sat-storage-block-local-devices), label the worker nodes where the disks are located.
 {: shortdesc}
 
@@ -254,7 +255,8 @@ After you [create a local block storage configuration](#config-storage-local-blo
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
     ```
     {: pre}
-5. List all of the resources in the `local-storage` namespace and verify the driver pods are `Running`.
+
+1. List all of the resources in the `local-storage` namespace and verify the driver pods are `Running`.
 
     ```sh
     oc get all -n local-storage
@@ -285,7 +287,7 @@ After you [create a local block storage configuration](#config-storage-local-blo
     ```
     {: screen}
 
-6. List the PVs and verify that the status is `Available`.
+1. List the PVs and verify that the status is `Available`.
 
     ```sh
     oc get pv
@@ -300,7 +302,7 @@ After you [create a local block storage configuration](#config-storage-local-blo
     ```
     {: screen}
 
-8. [Create a PVC that references your local PV, then deploy an app that uses your local storage](#deploy-app-local-block).
+1. [Create a PVC that references your local PV, then deploy an app that uses your local storage](#deploy-app-local-block).
 
 
 ## Deploying an app that uses your local block storage
@@ -437,7 +439,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
 
 
 
-11. Delete the `test` pod.
+10. Delete the `test` pod.
 
     ```sh
     oc delete pod <pod_name>
@@ -497,14 +499,14 @@ Removing the storage configuration, uninstalls the local storage operator resour
     ```
     {: pre}
 
-2. Remove the assignment. After the assignment is removed, the local storage driver pods and storage classes are removed from all clusters that were part of the storage assignment. 
+1. Remove the assignment. After the assignment is removed, the local storage driver pods and storage classes are removed from all clusters that were part of the storage assignment. 
 
     ```sh
     ibmcloud sat storage assignment rm --assignment <assignment_ID>
     ```
     {: pre}
 
-3. List the resources in the `local-storage` namespace and verify that the local storage driver pods are removed. 
+1. List the resources in the `local-storage` namespace and verify that the local storage driver pods are removed. 
 
     ```sh
     oc get all -n local-storage
@@ -518,14 +520,14 @@ Removing the storage configuration, uninstalls the local storage operator resour
     ```
     {: pre}
 
-4. List of the storage classes in your cluster and verify that the local storage classes are removed. 
+1. List of the storage classes in your cluster and verify that the local storage classes are removed. 
 
     ```sh
     oc get sc
     ```
     {: pre}
 
-5. Optional: Remove the storage configuration. 
+1. Optional: Remove the storage configuration. 
 
     1. List the storage configurations. 
     
@@ -541,14 +543,14 @@ Removing the storage configuration, uninstalls the local storage operator resour
         ```
         {: pre}
 
-6. List your PVCs and note the name of the PVC that you want to remove. 
+1. List your PVCs and note the name of the PVC that you want to remove. 
 
     ```sh
     oc get pvc
     ```
     {: pre}
 
-7. Remove any pods that currently mount the PVC. 
+1. Remove any pods that currently mount the PVC. 
 
 
     1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC. 
@@ -590,35 +592,35 @@ Removing the storage configuration, uninstalls the local storage operator resour
         ```
         {: pre}
 
-8. Delete the PVC. Because all {{site.data.keyword.IBM_notm}}-provided local block storage classes are specified with a `Retain` reclaim policy, the PV and PVC are not automatically deleted when you delete your app or deployment. 
+1. Delete the PVC. Because all {{site.data.keyword.IBM_notm}}-provided local block storage classes are specified with a `Retain` reclaim policy, the PV and PVC are not automatically deleted when you delete your app or deployment. 
 
     ```sh
     oc delete pvc <pvc-name>
     ```
     {: pre}
 
-9. Verify that your PVC is removed.
+1. Verify that your PVC is removed.
 
     ```sh
     oc get pvc
     ```
     {: pre}
 
-10. List your PVs and note the name of the PVs that you want to remove.
+1. List your PVs and note the name of the PVs that you want to remove.
 
     ```sh
     oc get pv
     ```
     {: pre}
 
-11. Delete the PVs. Deleting your PVs will make your disks available for other workloads.
+1. Delete the PVs. Deleting your PVs will make your disks available for other workloads.
 
     ```sh
     oc delete pv <pv-name>
     ```
     {: pre}
 
-12. Verify that your PV is removed.
+1. Verify that your PV is removed.
 
     ```sh
     oc get pv
@@ -657,6 +659,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 
 ## Getting help and support
 {: #sat-local-block-support}
+
 If you run into an issue with using the Local Storage Operator - Block template, you can open an issue in the [Redhat Customer Portal](https://access.redhat.com/){: external}. 
 
 

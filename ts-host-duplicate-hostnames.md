@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-20"
 
 keywords: satellite, host, location
 
@@ -14,7 +14,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 # Why can't I reuse a host in a different {{site.data.keyword.satelliteshort}} location?
-{: sat-host-reattach-fail}
+{: #sat-host-reattach-fail}
 
 
 When you try to reuse an existing host by assigning it to a new location, you see a message similar to the following error. 
@@ -26,7 +26,7 @@ Unable to assign host. Could not find a host to assign to your Satellite cluster
 {: screen}
 
 If the host is not removed from the cluster before it is removed from the original location, the cluster master retains the information about the host. When the host is later added to a new location, a duplicate hostname is recognized and the assignment fails.
-{:tsCauses}
+{: tsCauses}
 
 
 If the cluster master still recognizes the host, you must rename and reload the host before you can attach it to a new location.

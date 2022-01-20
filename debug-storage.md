@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -41,7 +41,7 @@ The input parameters in the request body are either incomplete or in the wrong f
 Response code: `404`
 
 ### ST0003
-{: st0003}
+{: #st0003}
 
 Internal server error occurred.
 {: shortdesc}
@@ -51,7 +51,7 @@ Error type: General
 Response code: `500`
 
 ### ST0004
-{: st0004}
+{: #st0004}
 
 The specified volume ID could not be found.
 {: shortdesc}
@@ -61,7 +61,7 @@ Error type: Bad request
 Response code: `404`
 
 ### ST0005
-{: st0005}
+{: #st0005}
 
 The specified worker node could not be found.
 {: shortdesc}

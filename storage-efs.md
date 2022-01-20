@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-20"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -43,6 +43,7 @@ Use the CLI to create an AWS EFS storage configuration for your location.
 {: shortdesc}
 
 Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs).
+
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
     ```sh
@@ -72,19 +73,19 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
     {: pre}
     
 1. Review the [AWS EFS storage configuration parameters](#sat-storage-aws-efs-params-cli).
-2. Create an AWS EFS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
+1. Create an AWS EFS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name aws-efs-csi-driver --template-version <template_version>
     ```
     {: pre}
 
-3. Verify that your storage configuration is created.
+1. Verify that your storage configuration is created.
     ```sh
     ibmcloud sat storage config get --config <config_name>
     ```
     {: pre}
 
-4. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to use. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EFS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location.
+1. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to use. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EFS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location.
     ```sh
     ibmcloud sat group ls
     ```
@@ -167,13 +168,13 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         {: codeblock}
 
     2. Create the PV in your cluster.
-        ```
+        ```sh
         oc apply -f pv.yaml
         ```
         {: pre}
 
     3. Verify that the PV is created. Note that the PV remains in an `Available` status as no matching PVC is found yet.
-        ```
+        ```sh
         oc get pv
         ```
         {: pre}
@@ -292,7 +293,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         ```
         {: pre}
 
-9. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you used and verify that the file system grows in size.   
+8. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you used and verify that the file system grows in size.   
 
 ## Removing AWS EFS storage from your apps
 {: #aws-efs-rm}
@@ -432,13 +433,13 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 | Storage class name | File system | Reclaim policy |
 | --- | --- | --- |
 | `sat-aws-file-gold` | NFS | Delete |
-
 {: caption="Table 2. AWS EFS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
 
 
 ## Getting help and support
 {: #sat-efs-support}
+
 If you run into an issue with using AWS EFS, you can refer to the [AWS Knowledge Center](https://aws.amazon.com/premiumsupport/knowledge-center/){: external} and review some documentation for some of the most frequently asked questions for various AWS services. The [AWS Support Center](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fsupport%2Fhome%3Fstate%3DhashArgs%2523%252F%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fsupportcenter&forceMobileApp=0&code_challenge=u3nT-WHT9gSG_PS93w4dwD6R_PWLj1eOU9GLUMEOkzo&code_challenge_method=SHA-256){: external} is another resource available to AWS customers looking for more in-depth support options. 
 
 
