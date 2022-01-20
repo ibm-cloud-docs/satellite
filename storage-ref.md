@@ -203,7 +203,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 | Storage class name | Type | Reclaim policy |
 | --- | --- | --- |
 | `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
-{: caption="Table 1. IBM Spectrum Scale storage class reference." caption-side="top"}
+{: caption="Table 9. IBM Spectrum Scale storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameters is required. The third column is a brief description of the parameter."}
 
 
