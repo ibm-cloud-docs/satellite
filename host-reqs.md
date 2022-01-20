@@ -50,7 +50,7 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 ```
 {: screen}
 
-The hosts must not have any additional packages, configuration, or other customizations. After the host is created, do not change the default packages or operating system settings, such as disabling SELinux. For more information, see [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software).
+The hosts must not have any additional packages, configuration, or other customizations. For more information, see [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software).
 {: important}
 
 You might need to refresh your packages on the host machine. For example, in {{site.data.keyword.IBM_notm}} Cloud infrastructure you can run the following commands to add the required packages.
@@ -71,4 +71,6 @@ You might need to refresh your packages on the host machine. For example, in {{s
     {: pre}
 
 For more information about how to enable the {{site.data.keyword.redhat_notm}} packages in hosts that you add from other cloud providers, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
-{: tip}
+
+After the host is created, do not change the default packages or operating system settings, such as disabling SELinux or IPv6.
+{: important}
