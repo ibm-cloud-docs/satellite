@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-20"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -135,7 +135,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-5. Verify that the storage configuration resources are deployed.
+1. Verify that the storage configuration resources are deployed.
     ```sh
     oc get pods -n trident
     ```
@@ -199,6 +199,7 @@ Use the CLI to remove a storage assignment and storage configuration.
 
 ## Getting help and support
 {: #sat-trident-support}
+
 If you run into an issue with using Netapp Trident, you can visit the [Netapp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 
 
 

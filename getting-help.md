@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,7 +44,7 @@ If you experience an issue with a {{site.data.keyword.satelliteshort}}-enabled s
 
 For example, if you cannot access the {{site.data.keyword.openshiftshort}} console for an {{site.data.keyword.openshiftshort}} cluster on {{site.data.keyword.satelliteshort}}, first check whether the issue is [specific to your {{site.data.keyword.satelliteshort}} location setup](/docs/satellite?topic=satellite-ts-console-fail). If your {{site.data.keyword.satelliteshort}} location setup is not the source of the issue, then check the [{{site.data.keyword.openshiftlong_notm}} documentation for troubleshooting console issues](/docs/openshift?topic=openshift-ocp-debug).
 
-##  Reviewing logs
+## Reviewing logs
 {: #review-logs}
 
 You can review logs to troubleshoot issues.

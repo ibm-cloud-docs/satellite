@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-20"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -235,7 +235,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: screen}
 
-2. List the Azure Disk storage classes.
+1. List the Azure Disk storage classes.
 
     ```sh
     oc get sc | grep azure
@@ -256,7 +256,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: screen}
 
-3. [Deploy an app that uses your Azure Disk storage](#storage-azure-csi-app-deploy).
+1. [Deploy an app that uses your Azure Disk storage](#storage-azure-csi-app-deploy).
 
 
 
@@ -531,7 +531,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 | Parameter | Required? | Description | 
 | --- | --- | --- | 
 | `tenantId` | Required | The Azure tenant ID that you want to use for your configuration. |
-| `subscriptionId` | Required | You Azure subscription ID. |
+| `subscriptionId` | Required | Your Azure subscription ID. |
 | `aadClientId` | Required | Your Azure Active Directory Client ID. |
 | `aadClientSecret` | Required | Your Azure Active Directory Client Secret. |
 | `resourceGroup` | Required | The name of your Azure resource group. |
@@ -562,6 +562,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 
 ## Getting help and support
 {: #sat-azure-disk-support}
+
 If you run into an issue with using Azure, you can open an issue in the [Azure Service Portal](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview){: external}. 
 
 

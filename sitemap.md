@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -14,6 +14,7 @@ subcollection: satellite
 
 # Site map
 {: #sitemap}
+
 
 
 
@@ -82,6 +83,8 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-release-notes#release-notes)
 
 * [January 2022](/docs/satellite?topic=satellite-release-notes#release-jan-2022)
+
+    * [20 January 2022](/docs/satellite?topic=satellite-release-notes#20jan2022)
 
     * [18 January 2022](/docs/satellite?topic=satellite-release-notes#18jan2022)
 
@@ -560,7 +563,7 @@ subcollection: satellite
 
     * [What are the benefits of {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-benefits)
 
-    * [Which Istio and Red Hat OpenShift Service Mesh features are supported on {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#which-istio-and-red-hat-openshift-service-mesh-features-are-supported-on--mesh?)
+    * [Which Istio and Red Hat OpenShift Service Mesh features are supported on {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-istio-redhat)
 
 * [Architecture](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-architecture)
 
@@ -755,15 +758,13 @@ subcollection: satellite
 
     * [Rebuilding the portability layer](/docs/satellite?topic=satellite-config-storage-spectrum-scale#ess-ts-rebuilding)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref)
-
 * [Additional references](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-ref)
 
 * [Limitations](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-limits)
 
     * [Spectrum Scale configuration parameter reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-params-cli)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref2)
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref)
 
 [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi#config-storage-block-csi)
 
@@ -897,7 +898,7 @@ subcollection: satellite
 
 [Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file#config-storage-local-file)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-local-file#prerequisites)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-local-file#config-storage-local-file-prereqs)
 
     * [Getting the device details for your local file storage configuration](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-devices)
 
@@ -1565,7 +1566,7 @@ subcollection: satellite
 
 * [Identifying issues for {{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-get-help#help-services)
 
-* [ Reviewing logs](/docs/satellite?topic=satellite-get-help#review-logs)
+* [Reviewing logs](/docs/satellite?topic=satellite-get-help#review-logs)
 
 * [Feedback and questions](/docs/satellite?topic=satellite-get-help#feedback-qs)
 
@@ -1654,6 +1655,8 @@ subcollection: satellite
 * [Debugging hosts for connectivity issues](/docs/satellite?topic=satellite-assign-fails#debug-host-connectivity)
 
 * [Endpoints to verify connectivity by {{site.data.keyword.cloud_notm}} multizone metro](/docs/satellite?topic=satellite-assign-fails#endpoints-to-verify)
+
+[Why can't I reuse a host in a different {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-sat-host-reattach-fail#sat-host-reattach-fail)
 
 [Why can't I update my worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console?](/docs/satellite?topic=satellite-ts-hosts-update-roks-console#ts-hosts-update-roks-console)
 
@@ -1768,5 +1771,19 @@ subcollection: satellite
     * [ST0044](/docs/satellite?topic=satellite-debug-storage#st0044)
 
     * [ST0045](/docs/satellite?topic=satellite-debug-storage#st0045)
+
+    * [ST0046](/docs/satellite?topic=satellite-debug-storage#st0046)
+
+    * [ST0047](/docs/satellite?topic=satellite-debug-storage#st0047)
+
+    * [ST0048](/docs/satellite?topic=satellite-debug-storage#st0048)
+
+    * [ST0049](/docs/satellite?topic=satellite-debug-storage#st0049)
+
+    * [ST0050](/docs/satellite?topic=satellite-debug-storage#st0050)
+
+    * [ST0051](/docs/satellite?topic=satellite-debug-storage#st0051)
+
+    * [ST0052](/docs/satellite?topic=satellite-debug-storage#st0052)
 
 [Why is the namespace where my storage operator was deployed stuck in **Terminating** status?](/docs/satellite?topic=satellite-storage-namespace-terminating#storage-namespace-terminating)

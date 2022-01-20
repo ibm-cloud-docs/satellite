@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-20"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -246,7 +246,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
     ```
     {: pre}
 
-3. Verify that the PVC is created. Make sure that the PVC is in a `Bound` status.
+1. Verify that the PVC is created. Make sure that the PVC is in a `Bound` status.
 
     ```sh
     oc get pvc
@@ -261,7 +261,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
     ```
     {: screen}
 
-4. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file on your ONTAP-NAS volume mount path.
+1. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file on your ONTAP-NAS volume mount path.
 
     ```yaml
     apiVersion: v1
@@ -284,14 +284,14 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
     ```
     {: codeblock}
 
-5. Create the pod in your cluster.
+1. Create the pod in your cluster.
 
     ```sh
     oc apply -f pod.yaml
     ```
     {: pre}
 
-6. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
 
     ```sh
     oc get pods
@@ -305,7 +305,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
     ```
     {: screen}
 
-7. Verify that the app can write to your ONTAP-NAS instance.
+1. Verify that the app can write to your ONTAP-NAS instance.
 
     1. Log in to your pod.
     
@@ -448,7 +448,7 @@ Use the CLI to remove a storage assignment and storage configuration.
     ```
     {: pre}
 
-7. **Next steps**: [Remove the NetApp Trident operator from your cluster](/docs/satellite?topic=satellite-config-storage-netapp-trident).
+6. **Next steps**: [Remove the NetApp Trident operator from your cluster](/docs/satellite?topic=satellite-config-storage-netapp-trident).
 
 
 
@@ -507,5 +507,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 ## Getting help and support
 {: #sat-nas-2104-support}
+
 If you run into an issue with using Netapp Trident, you can visit the [Netapp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 
 

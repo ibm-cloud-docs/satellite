@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-20"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -10,7 +10,9 @@ subcollection: satellite
 
 ---
 
-{{site.data.keyword.attribute-definition-list}}
+
+
+
 
 
 # OpenShift Data Foundation for remote devices
@@ -51,7 +53,7 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
     ```
     {: pre}
 
-2. Create HMAC credentials. Make a note of your credentials.
+1. Create HMAC credentials. Make a note of your credentials.
     ```sh
     ibmcloud resource service-key-create cos-cred-rw Writer --instance-name noobaa-store --parameters '{"HMAC": true}'
     ```
@@ -177,7 +179,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-5. Verify that the storage configuration resources are deployed.
+1. Verify that the storage configuration resources are deployed.
 
     1. Get the `storagecluster` that you deployed and verify that the phase is `Ready`.
         ```sh
@@ -192,7 +194,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         ```
         {: screen}
 
-    2. Get a list of pods in the `openshift-storage` namespace and verify that the status is `Running`.
+    1. Get a list of pods in the `openshift-storage` namespace and verify that the status is `Running`.
         ```sh
         oc get pods -n openshift-storage
         ```
@@ -253,7 +255,7 @@ To upgrade the ODF version of your configuration, complete the following steps:
     ```sh
     ibmcloud sat storage config get <config-name>
     ```
-2. Create a new configuration with the same `ocs-cluster-name` and details. Make sure to change the `template-version` to the version that you want to upgrade to and set the `ocs-upgrade` parameter to `true`.
+1. Create a new configuration with the same `ocs-cluster-name` and details. Make sure to change the `template-version` to the version that you want to upgrade to and set the `ocs-upgrade` parameter to `true`.
 
     In the following example, the ODF configuration is updated to use template version 4.7. When you create the configuration, the following parameter changes are required.
     - `name` - Enter a name for your new configuration.
@@ -273,19 +275,19 @@ To upgrade the ODF version of your configuration, complete the following steps:
     - `ibm-cos-secret-key` - Use the same parameter value as in your existing configuration.
     - `ocs-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
 
-3. Get the configuration details of your `ocscluster` custom resource.
+1. Get the configuration details of your `ocscluster` custom resource.
     ```sh
     kubectl get ocscluster <ocs-cluster-name>
     ```
     {: pre}
 
-4. Save the configuration details. When you upgrade your ODF version, you must enter the same configuration details and set the `template-version` to the version you want to upgrade to and set the `ocs-upgrade` parameter to `true`. Don't specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. Note that Kubernetes resources can't contain capital letters or special characters. Enter an `ocs-cluster-name` that uses only lowercase letters, numbers, `-`, or `.`.
+1. Save the configuration details. When you upgrade your ODF version, you must enter the same configuration details and set the `template-version` to the version you want to upgrade to and set the `ocs-upgrade` parameter to `true`. Don't specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. Note that Kubernetes resources can't contain capital letters or special characters. Enter an `ocs-cluster-name` that uses only lowercase letters, numbers, `-`, or `.`.
     ```sh
     ibmcloud sat storage config create --name ocs-config --template-name odf-remote --template-version <template_version> -p "ocs-cluster-name=testocscluster" -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=50Gi" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=150Gi" -p "num-of-osd=1" -p "worker-nodes=169.48.170.83,169.48.170.88,169.48.170.90" -p "ocs-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "iam-api-key=<iam-api-key>"
     ```
     {: pre}
 
-5. [Assign your configuration to your clusters](#assign-storage-odf-remote-cli).
+1. [Assign your configuration to your clusters](#assign-storage-odf-remote-cli).
 
 
 
@@ -301,13 +303,13 @@ Use the command line to remove a storage assignment.
     ```
     {: pre}
 
-2. Remove the assignment. After the assignment is removed, the ODF driver pods and storage classes are removed from all clusters that were part of the storage assignment.
+1. Remove the assignment. After the assignment is removed, the ODF driver pods and storage classes are removed from all clusters that were part of the storage assignment.
     ```sh
     ibmcloud sat storage assignment rm --assignment <assignment_ID>
     ```
     {: pre}
 
-3. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
+1. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
     ```sh
     #!/bin/bash
     ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
@@ -332,7 +334,7 @@ Use the command line to remove a storage assignment.
     ```
     {: pre}
 
-4. Run the `cleanup.sh` script.
+1. Run the `cleanup.sh` script.
     ```sh
     sh ./cleanup.sh
     ```
@@ -343,6 +345,9 @@ Use the command line to remove a storage assignment.
 
 | Parameter | Required? | Description | Default value if not provided | Data type |
 | --- | --- | --- | --- | --- |
+| `--name` | Required | Enter a name for your storage configuration. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
+| `--template-name` | Required | Enter `odf-local`. | N/A | `string` |
+| `--template-version` | Required | Note that your cluster version and template version must match. For example, Enter `4.7` for `4.7` clusters or `4.8` for 4.8 clusters. To list available template version run `ibmcloud sat storage template ls`. | N/A | `string` |
 | `ocs-cluster-name` | Required | Enter a name for your `OcsCluster` custom resource. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
 | `iam-api-key` | Required | Enter your IAM API key. | N/A | `string` | 
 | `mon-storage-class` | Required | Enter the storage class that you want to use for the MON pods. For multizone clusters, be sure to specify a storage class with the `waitForFirstConsumer` volume binding mode. | N/A | `csv` |
@@ -375,3 +380,5 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 {: caption="Table 2. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
+
+

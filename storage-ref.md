@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-20"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -43,7 +43,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 | Storage class name | File system | Reclaim policy |
 | --- | --- | --- |
 | `sat-aws-file-gold` | NFS | Delete |
-
 {: caption="Table 2. AWS EFS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
 
@@ -170,6 +169,8 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-cephfs-gold` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | Immediate | True |Delete |
 | `sat-ocs-cephrgw-gold` | Object | N/A | `openshift-storage.ceph.rook.io/bucket` | Immediate | N/A | Delete |
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
+| `sat-ocs-cephrbd-gold-metro` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
+| `sat-ocs-cephfs-gold-metro` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 {: caption="Table 7. NetApp ONTAP-SAN storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
@@ -185,6 +186,8 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-cephfs-gold` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | Immediate | True |Delete |
 | `sat-ocs-cephrgw-gold` | Object | N/A | `openshift-storage.ceph.rook.io/bucket` | Immediate | N/A | Delete |
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
+| `sat-ocs-cephrbd-gold-metro` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
+| `sat-ocs-cephfs-gold-metro` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 {: caption="Table 8. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
 
@@ -200,6 +203,9 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 | Storage class name | Type | Reclaim policy |
 | --- | --- | --- |
 | `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
+{: caption="Table 9. IBM Spectrum Scale storage class reference." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameters is required. The third column is a brief description of the parameter."}
+
 
 
 

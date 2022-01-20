@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-20"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -11,6 +11,11 @@ subcollection: satellite
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
+
+
+
+
 
 # OpenShift Data Foundation using local disks
 {: #config-storage-odf-local}
@@ -51,7 +56,7 @@ If you want to use {{site.data.keyword.cos_full_notm}} as your object service, c
     ```
     {: pre}
 
-2. Create HMAC credentials and note the service access key and access key ID of your HMAC credentials.
+1. Create HMAC credentials and note the service access key and access key ID of your HMAC credentials.
 
     ```sh
     ibmcloud resource service-key-create cos-cred-rw Writer --instance-name noobaa-store --parameters '{"HMAC": true}'
@@ -74,14 +79,14 @@ The following steps show how you can manually retrieve the local device informat
     ```
     {: pre}
 
-2. Log in to each worker node that you want to use for your ODF configuration.
+1. Log in to each worker node that you want to use for your ODF configuration.
 
     ```sh
     oc debug node/<node-name>
     ```
     {: pre}
 
-3. When the debug pod is deployed on the worker node, run the following commands to list the available disks on the worker node.
+1. When the debug pod is deployed on the worker node, run the following commands to list the available disks on the worker node.
 
     1. Allow host binaries.
     
@@ -97,7 +102,7 @@ The following steps show how you can manually retrieve the local device informat
         ```
         {: pre}
 
-4. Review the command output for available disks. Disks that can be used for your ODF configuration must be unmounted. In the following example output from the `lsblk` command, the `sdc` disk has two available, unformatted partitions that you can use for the OSD and MON device paths for this worker node. If your worker node has raw disks without partitions, you need one disk for the OSD and one disk for the MON. As a best practice, and to maximize storage capacity on this disk, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your ODF configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration.
+1. Review the command output for available disks. Disks that can be used for your ODF configuration must be unmounted. In the following example output from the `lsblk` command, the `sdc` disk has two available, unformatted partitions that you can use for the OSD and MON device paths for this worker node. If your worker node has raw disks without partitions, you need one disk for the OSD and one disk for the MON. As a best practice, and to maximize storage capacity on this disk, you can specify the smaller partition or disk for the MON, and the larger partition or disk for the OSD. Note that the initial storage capacity of your ODF configuration is equal to the size of the disk that you specify as the `osd-device-path` when you create your configuration.
 
 
     ```sh
@@ -114,7 +119,7 @@ The following steps show how you can manually retrieve the local device informat
     ```
     {: screen}
 
-5. Find the `by-id` for each disk that you want to use in your configuration. In this case, the `sdc1` and `sdc2` partitions are unformatted and unmounted. The `by-id` for each disk is specified as a command parameter when you create your configuration.
+1. Find the `by-id` for each disk that you want to use in your configuration. In this case, the `sdc1` and `sdc2` partitions are unformatted and unmounted. The `by-id` for each disk is specified as a command parameter when you create your configuration.
 
     ```sh
     ls -l /dev/disk/by-id/
@@ -129,8 +134,7 @@ The following steps show how you can manually retrieve the local device informat
     {: pre}
     
     
-
-6. Review the command output and make a note of the `by-id` values for the disks that you want to use in your configuration. In the following example output, the disk ids for the `sdc1` and `sdc2` partitions are: `scsi-3600605b00d87b43027b3bc310a64c6c9-part1` and `scsi-3600605b00d87b43027b3bc310a64c6c9-part2`.
+1. Review the command output and make a note of the `by-id` values for the disks that you want to use in your configuration. In the following example output, the disk ids for the `sdc1` and `sdc2` partitions are: `scsi-3600605b00d87b43027b3bc310a64c6c9-part1` and `scsi-3600605b00d87b43027b3bc310a64c6c9-part2`.
     ```sh
     lrwxrwxrwx. 1 root root  9 Feb  9 04:15 scsi-3600605b00d87b43027b3bbb603150cc6 -> ../../sda
     lrwxrwxrwx. 1 root root 10 Feb  9 04:15 scsi-3600605b00d87b43027b3bbb603150cc6-part1 -> ../../sda1
@@ -144,7 +148,7 @@ The following steps show how you can manually retrieve the local device informat
     ```
     {: screen}
 
-7. Repeat the previous steps for each worker node that you want to use for your ODF configuration.   
+1. Repeat the previous steps for each worker node that you want to use for your ODF configuration.   
 
 
 
@@ -346,7 +350,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         ```
         {: screen}
 
-2. List the ODF storage classes.
+1. List the ODF storage classes.
 
     ```sh
     oc get sc
@@ -368,7 +372,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: screen}
 
-3. List the persistent volumes and verify that your MON and OSD volumes are created.
+1. List the persistent volumes and verify that your MON and OSD volumes are created.
 
     ```sh
     oc get pv
@@ -414,14 +418,14 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
     ```
     {: codeblock}
 
-2. Create the PVC in your cluster.
+1. Create the PVC in your cluster.
 
     ```sh
     oc apply -f pvc.yaml
     ```
     {: pre}
 
-3. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file.
+1. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file.
 
     ```yaml
     apiVersion: v1
@@ -444,14 +448,14 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
     ```
     {: codeblock}
 
-4. Create the pod in your cluster.
+1. Create the pod in your cluster.
 
     ```sh
     oc apply -f pod.yaml
     ```
     {: pre}
 
-5. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
 
     ```sh
     oc get pods
@@ -466,7 +470,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
     ```
     {: screen}
 
-6. Verify that the app can write data.
+1. Verify that the app can write data.
 
     1. Log in to your pod.
     
@@ -475,7 +479,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
         ```
         {: pre}
 
-    2. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
+    1. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
     
         ```sh
         cat /test/test.txt
@@ -493,7 +497,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
         ```
         {: screen}
 
-    3. Exit the pod.
+    1. Exit the pod.
     
         ```sh
         exit
@@ -536,26 +540,26 @@ In the following example, the ODF configuration is updated to use template versi
     ```
     {: pre}
 
-2. Get the configuration details of your `ocscluster` custom resource.
+1. Get the configuration details of your `ocscluster` custom resource.
 
     ```sh
     oc get ocscluster <ocs-cluster-name>
     ```
     {: pre}
 
-3. Save the configuration details. When you upgrade your ODF version, you must enter the same configuration details as in your existing ODF configuration. In addition, you must set the `template-version` to the version you want to upgrade to and change the `ocs-upgrade` parameter to `true`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. Note that Kubernetes resources can't contain capital letters or special characters. Enter an `ocs-cluster-name` that uses only lowercase letters, numbers, `-`, or `.`.
+1. Save the configuration details. When you upgrade your ODF version, you must enter the same configuration details as in your existing ODF configuration. In addition, you must set the `template-version` to the version you want to upgrade to and change the `ocs-upgrade` parameter to `true`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. Note that Kubernetes resources can't contain capital letters or special characters. Enter an `ocs-cluster-name` that uses only lowercase letters, numbers, `-`, or `.`.
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "ocs-cluster-name=testocscluster" -p "osd-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part2,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part2" -p "mon-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part1,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part1" -p "num-of-osd=1" -p "worker-nodes=<worker-node-name>,<worker-node-name>,<worker-node-name>" -p "ocs-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
     ```
     {: pre}
 
-4. Assign your configuration to your clusters.
+1. Assign your configuration to your clusters.
     ```sh
     ibmcloud sat storage assignment create --name <name> --group <group> --config <config>
     ```
     {: pre}
 
-5. Verify that your configuration is updated
+1. Verify that your configuration is updated
     ```sh
     ibmcloud sat storage config get --config <config>
     ```
@@ -575,7 +579,7 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
     ```
     {: pre}
 
-2. Remove any pods that mount the PVC.
+1. Remove any pods that mount the PVC.
     1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you don't have any pods that currently use your PVC.
         ```sh
         oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
@@ -588,7 +592,7 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
         ```
         {: screen}
 
-    2. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
+    1. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
         ```sh
         oc delete pod <pod_name>
         ```
@@ -599,7 +603,7 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
         ```
         {: pre}
 
-    3. Verify that the pod or the deployment is removed.
+    1. Verify that the pod or the deployment is removed.
         ```sh
         oc get pods
         ```
@@ -610,13 +614,13 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
         ```
         {: pre}
 
-3. Delete the PVC.
+1. Delete the PVC.
     ```sh
     oc delete pvc <pvc_name>
     ```
     {: pre}
 
-4. Delete the corresponding PV.
+1. Delete the corresponding PV.
     ```sh
     oc delete pv <pv_name>
     ```
@@ -639,31 +643,31 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     ```
     {: pre}
 
-2. Remove the assignment. After the assignment is removed, the ODF driver pods and storage classes are removed from all clusters that were part of the storage assignment.
+1. Remove the assignment. After the assignment is removed, the ODF driver pods and storage classes are removed from all clusters that were part of the storage assignment.
     ```sh
     ibmcloud sat storage assignment rm --assignment <assignment_ID>
     ```
     {: pre}
 
-3. List your storage assignments and find the one that you used for your cluster.
+1. List your storage assignments and find the one that you used for your cluster.
     ```sh
     ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
     ```
     {: pre}
 
-4. Remove the assignment. After the assignment is removed, the local file driver pods and storage classes are removed from all clusters that were part of the storage assignment.
+1. Remove the assignment. After the assignment is removed, the local file driver pods and storage classes are removed from all clusters that were part of the storage assignment.
     ```sh
     ibmcloud sat storage assignment rm --assignment <assignment_ID>
     ```
     {: pre}
 
-5. Remove your storage assignment.
+1. Remove your storage assignment.
     ```sh
     ibmcloud sat storage assignment rm --assignment <assignment>
     ```
     {: pre}
 
-6. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
+1. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
     ```sh
     #!/bin/bash
     ocscluster_name=`oc get ocscluster | awk 'NR==2 {print $1}'`
@@ -693,14 +697,14 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     ```
     {: codeblock}
 
-7. Run the `cleanup.sh` script.
+1. Run the `cleanup.sh` script.
 
     ```sh
     sh ./cleanup.sh
     ```
     {: pre}
 
-8. After you run the cleanup script, log in to each worker node and run the following commands.
+1. After you run the cleanup script, log in to each worker node and run the following commands.
 
     1. Deploy a debug pod and run `chroot /host`.
     
@@ -709,7 +713,7 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
         ```
         {: pre}
 
-    2. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your ODF configuration.
+    1. Run the following command to remove any files or directories on the specified paths. Repeat this step for each worker node that you used in your ODF configuration.
         ```bash
         rm -rvf /var/lib/rook /mnt/local-storage
         ```
@@ -736,7 +740,7 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
         {: screen}
 
 
-9. **Optional**: If you no longer want to use the local volumes that you used in your ODF configuration, you can delete them from the cluster. List the local PVs.
+1. **Optional**: If you no longer want to use the local volumes that you used in your ODF configuration, you can delete them from the cluster. List the local PVs.
 
     ```sh
     oc get pv
@@ -755,14 +759,14 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     ```
     {: screen}
 
-10. Delete the local PVs.
+1. Delete the local PVs.
 
     ```sh
     oc delete pv <pv_name> <pv_name> <pv_name>
     ```
     {: pre}
 
-11. List the ODF and local storage classes.
+1. List the ODF and local storage classes.
 
     ```sh
     oc get sc
@@ -780,7 +784,7 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     ```
     {: screen}
 
-12. Delete the storage classes.
+1. Delete the storage classes.
 
     ```sh
     oc delete sc localblock localfile ocs-storagecluster-ceph-rbd ocs-storagecluster-ceph-rgw ocs-storagecluster-cephfs
@@ -804,6 +808,8 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 | Parameter | Required? | Description | Default value if not provided | Data type | 
 | --- | --- | --- | --- | --- | 
 | `--name` | Required | Enter a name for your storage configuration. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name that uses only lowercase letters, numbers, `-`, or `.`. | N/A | `string` |
+| `--template-name` | Required | Enter `odf-local`. | N/A | `string` |
+| `--template-version` | Required | Note that your cluster version and template version must match. For example, Enter `4.7` for `4.7` clusters or `4.8` for 4.8 clusters. To list available template version run `ibmcloud sat storage template ls`. | N/A | `string` |
 | `--template-name` | Required | Enter `odf-local`. | N/A | `string` |
 | `--template-version` | Required | Enter `4.7`. | N/A | `string` |
 | `iam-api-key` | Required | Enter your IAM API key. | N/A | `string` | 
@@ -838,3 +844,5 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 {: caption="Table 2. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
+
+

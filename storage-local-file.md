@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-20"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -22,6 +22,8 @@ When you create a local file storage configuration, you specify the local storag
 
 
 ## Prerequisites
+{: #config-storage-local-file-prereqs}
+
 Before you can create a local file storage configuration, you must identify the worker nodes in your clusters that have the required available disks. Then, label these worker nodes so that the local storage drivers are installed on only these worker nodes.
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 2. If you do not have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) or [attach existing {{site.data.keyword.openshiftlong_notm}} clusters to your location](/docs/satellite?topic=satellite-satcon-existing). Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
@@ -163,7 +165,7 @@ After you have [retrieved the device paths for the disks that you want to use in
     ```
     {: pre}
     
-2. Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
+1. Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use. Your storage template version and cluster version must match. 
 
     ```sh
@@ -171,8 +173,8 @@ After you have [retrieved the device paths for the disks that you want to use in
     ```
     {: pre}
     
-3. Review the [Local file storage configuration parameters](#sat-storage-local-file-params-cli).
-4. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+1. Review the [Local file storage configuration parameters](#sat-storage-local-file-params-cli).
+1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
     ```sh
@@ -180,14 +182,14 @@ After you have [retrieved the device paths for the disks that you want to use in
     ```
     {: pre}
 
-5. Verify that your storage configuration is created.
+1. Verify that your storage configuration is created.
 
     ```sh
     ibmcloud sat storage config get --config <config>
     ```
     {: pre}
 
-6. [Assign your configuration to clusters](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file).
+1. [Assign your configuration to clusters](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file).
 
 
 
@@ -312,7 +314,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
     ```
     {: screen}
 
-8. [Create a PVC that references your local PV, then deploy an app that uses your local storage](#deploy-app-local-file).
+1. [Create a PVC that references your local PV, then deploy an app that uses your local storage](#deploy-app-local-file).
 
 
 
@@ -635,6 +637,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 
 ## Getting help and support
 {: #sat-local-block-support}
+
 If you run into an issue with using the Local Storage Operator - File template, you can open an issue in the [Redhat Customer Portal](https://access.redhat.com/){: external}. 
 
 

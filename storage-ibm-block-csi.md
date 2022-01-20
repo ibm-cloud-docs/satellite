@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-20"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -153,7 +153,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-5. Verify that the storage configuration resources are deployed.
+1. Verify that the storage configuration resources are deployed.
     ```sh
     oc get all -A | grep block
     ```

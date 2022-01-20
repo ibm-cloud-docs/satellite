@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-18"
+lastupdated: "2022-01-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -165,7 +165,7 @@ To access these logs, [provision an instance of {{site.data.keyword.at_full_notm
 To understand and set up logging for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.la_full_notm}} documentation](/docs/log-analysis?topic=log-analysis-tutorial-use-logdna).
 {: shortdesc}
 
-You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must [manually deploy logging agents to your cluster](#enable-clusters) to forward logs to {{site.data.keyword.la_short}}.
+You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must [manually deploy logging agents to your cluster](#enable-clusters-logging) to forward logs to {{site.data.keyword.la_short}}.
 {: note}
 
 ### Enabling a logging instance in your cluster

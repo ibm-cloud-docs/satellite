@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-20"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -219,7 +219,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-5. Verify that the storage configuration resources are deployed.
+1. Verify that the storage configuration resources are deployed.
     ```sh
     oc get all -n ibm-spectrum-scale-csi-driver
     ```
@@ -491,18 +491,6 @@ sudo cp /usr/src/kernels/3.10.0-1160.15.2.el7.x86_64/include/uapi/linux/*.h /usr
 ```
 {: codeblock}
 
-
-## Storage class reference
-{: #sat-storage-spectrum-scale-sc-ref}
-
-Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.keyword.IBM_notm}} Spectrum Scale. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
-{: shortdesc}
-
-
-| Storage class name | Type | Reclaim policy |
-| --- | --- | --- |
-| `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
-
 ## Additional references
 {: #sat-storage-spectrum-scale-ref}
 
@@ -554,7 +542,7 @@ Do not install the {{site.data.keyword.IBM_notm}} Spectrum Scale management API 
 
 
 ## Storage class reference
-{: #sat-storage-spectrum-scale-sc-ref2}
+{: #sat-storage-spectrum-scale-sc-ref}
 
 Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.keyword.IBM_notm}} Spectrum Scale. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
@@ -563,6 +551,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 | Storage class name | Type | Reclaim policy |
 | --- | --- | --- |
 | `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
-
+{: caption="Table 1. IBM Spectrum Scale storage class reference." caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameters is required. The third column is a brief description of the parameter."}
 
 

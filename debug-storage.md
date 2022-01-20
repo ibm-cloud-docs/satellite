@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -41,7 +41,7 @@ The input parameters in the request body are either incomplete or in the wrong f
 Response code: `404`
 
 ### ST0003
-{: st0003}
+{: #st0003}
 
 Internal server error occurred.
 {: shortdesc}
@@ -51,7 +51,7 @@ Error type: General
 Response code: `500`
 
 ### ST0004
-{: st0004}
+{: #st0004}
 
 The specified volume ID could not be found.
 {: shortdesc}
@@ -61,7 +61,7 @@ Error type: Bad request
 Response code: `404`
 
 ### ST0005
-{: st0005}
+{: #st0005}
 
 The specified worker node could not be found.
 {: shortdesc}
@@ -446,11 +446,78 @@ Response code: `400`
 ### ST0045
 {: #st0045}
 
-total-capacity should be a positive integer and the unit of total-capacity should be in the form of E, T, G, M, K, B
+Total-capacity should be a positive integer and the unit of total-capacity should be in the form of E, T, G, M, K, B
 {: shortdesc}
 
 Error type: Bad request
 
 
 Response code: `400`
+
+### ST0046
+{: #st0046}
+
+This storage configuration is already up to date with the latest revision. No newer revision available for '{{.TemplateName}}' at version '{{.TemplateVersion}}'. Current revision: '{{.CurrentRevision}}' and latest revision.
+
+Error type: Bad request
+
+Response code: 406 
+
+### ST0047
+{: #st0047}
+
+The {{.Param1}} value '{{.Param2}}' should only contain alphabets, numbers, underscore and hyphen.
+
+Error type: Bad request
+
+Response code: `400`
+
+### ST0048
+{: #st0048}
+
+Failed to update desired storage configuration. Assignment creation failed.
+
+Error type: Services
+
+Response code: `500`
+
+
+### ST0049
+{: #st0049}
+
+Configuration is created in '{{.ConfigLocation}}' location but the cluster is in '{{.ClusterLocation}}' location. Please recreate the configuration in '{{.ClusterLocation}}' location and retry.
+
+Error type: Bad request
+
+Response code: `400`
+
+### ST0050
+{: #st0050}
+
+The controller ID is not specified in the request.
+
+Error type: Bad request
+
+Response code: `400`
+
+### ST0051
+{: #st0051}
+
+Failed to retrieve '{{.ObjectType}}'. BackendError: {{.BackendError}}
+
+Error type: Services
+
+Response code: `500`
+
+### ST0052
+{: #st0052}
+
+Unable to create or update storage configuration. Multiple storage classes defined with the name '{{.StorageClassName}}'.
+
+Error type: Bad request
+
+Response code: `400`
+
+
+
 

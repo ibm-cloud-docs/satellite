@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -35,7 +35,7 @@ If you do not open all outbound connectivity, you must allow the following outbo
 To secure your outbound connectivity, allow only TCP on the Kubernetes API server NodePorts and UDP on the VPN NodePorts for your location. You can find your active NodePorts by running the **`ibmcloud sat location get --location <location>`** command.
 {: tip}
 
-In addition to the [outbound connectivity](#reqs-host-network-firewall-outbound) for {{site.data.keyword.satelliteshort}}, be sure that you allow the required outbound connectivity for the {{site.data.keyword.satelliteshort}} services that you want to use. Review the service documentation for outbound connectivity requirements. For more information, see [Supported managed services for Satellite](/docs/satellite-working?topic=satellite-working-managed-services).
+In addition to the [outbound connectivity](#reqs-host-network-firewall-outbound) for {{site.data.keyword.satelliteshort}}, be sure that you allow the required outbound connectivity for the {{site.data.keyword.satelliteshort}} services that you want to use. Review the service documentation for outbound connectivity requirements. For more information, see [Supported managed services for Satellite](/docs/satellite?topic=satellite-managed-services).
 {: note}
 
 ## Dallas
