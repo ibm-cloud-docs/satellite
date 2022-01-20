@@ -135,7 +135,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: pre}
 
-5. Verify that the `trident-kubectl-nas` pod is deployed in the `trident` namespace.
+1. Verify that the `trident-kubectl-nas` pod is deployed in the `trident` namespace.
     ```sh
     oc get pods -n trident | grep trident-kubectl-nas
     ```
@@ -147,13 +147,13 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: screen}
 
-6. Verify that the `sat-netapp` storage classes are deployed.
+1. Verify that the `sat-netapp` storage classes are deployed.
     ```sh
     oc get sc | grep netapp
     ```
     {: pre}
 
-7. Verify that all resources in the `trident` namespace are `Running` or `Ready`.
+1. Verify that all resources in the `trident` namespace are `Running` or `Ready`.
     ```sh
     oc get all -n trident
     ```

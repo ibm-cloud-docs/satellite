@@ -134,12 +134,7 @@ Location message
 :    R0041: Unknown issues are detected with the {{site.data.keyword.satelliteshort}} location control plane hosts. Ensure that hosts meet the minimum requirements, http://ibm.biz/sat-host-reqs. If you still have issues, contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID. {: #R0041}
 
 Steps to resolve
-:    1. Check the **Status** of your hosts.
-:        ```sh
-         ibmcloud sat host ls --location <location_name_or_ID>
-         ```
-         {: pre}
-
+:    1. Check the **Status** of your hosts. `ibmcloud sat host ls --location <location_name_or_ID>`
      2. If you have no hosts, [attach](/docs/satellite?topic=satellite-attach-hosts) hosts to your location.
      3. Make sure that you have at least 6 hosts (2 hosts per zone across 3 zones) that are assigned to the **infrastructure** cluster for the location, to run location control plane operations.
      4. If your hosts have no status and are unassigned, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
@@ -179,13 +174,8 @@ Location message
 :    R0014: Verify that the {{site.data.keyword.satelliteshort}} location has a DNS record for load balancing requests to the location control plane.
 
 Steps to resolve
-:    1. Verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of `assigned` and a **Status** of `Ready`.
-:        ```sh
-:        ibmcloud sat host ls --location <location_ID_or_name>
-:        ```
-:        {: pre}
-         
-:    2. If all hosts show the correct state and status, the DNS record for your location is not yet created. This process can take up to 30 minutes to complete after all hosts are successfully assigned to your location.
+:    1. Verify that all hosts in your {{site.data.keyword.satelliteshort}} control plane show a **State** of `assigned` and a **Status** of `Ready` by running `ibmcloud sat host ls --location <location_ID_or_name>`.
+     2. If all hosts show the correct state and status, the DNS record for your location is not yet created. This process can take up to 30 minutes to complete after all hosts are successfully assigned to your location.
      3. If one or more hosts do not show the correct state or status, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 
 ## R0015, R0016: Host issues
@@ -219,20 +209,10 @@ Location message
 :    R0026: Hosts in the location control plane are running out of disk space. Assign more hosts to the location control plane, or reload the hosts with disk space issues.
 
 Steps to resolve
-:    1. List the hosts that are assigned to the control plane.
-:        ```sh
-         ibmcloud sat host ls --location <location_name_or_ID> | grep infrastructure
-         ```
-         {: pre}
-
-:    2. Check the details of the hosts.
-:        ```sh
-         ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>
-         ```
-         {: pre}
-
-:    3. In the infrastructure provider for the host, check the disk space of your host machine. Each host must have at least 20 GB disk available. [Remove](/docs/satellite?topic=satellite-host-remove) and [reattach the host](/docs/satellite?topic=satellite-attach-hosts).
-:    4. If debugging and reattaching the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+:    1. List the hosts that are assigned to the control plane. by running `ibmcloud sat host ls --location <location_name_or_ID> | grep infrastructure`.
+     2. Check the details of the hosts by running `ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>`.
+     3. In the infrastructure provider for the host, check the disk space of your host machine. Each host must have at least 20 GB disk available. [Remove](/docs/satellite?topic=satellite-host-remove) and [reattach the host](/docs/satellite?topic=satellite-attach-hosts).
+     4. If debugging and reattaching the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
 
 ## R0033, R0034, R0035: Control plane capacity issues
 {: #R0033}

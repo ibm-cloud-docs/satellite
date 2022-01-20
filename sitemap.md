@@ -562,7 +562,7 @@ subcollection: satellite
 
     * [What are the benefits of {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-benefits)
 
-    * [Which Istio and Red Hat OpenShift Service Mesh features are supported on {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#which-istio-and-red-hat-openshift-service-mesh-features-are-supported-on--mesh?)
+    * [Which Istio and Red Hat OpenShift Service Mesh features are supported on {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-istio-redhat)
 
 * [Architecture](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-architecture)
 

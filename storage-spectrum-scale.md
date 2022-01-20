@@ -555,4 +555,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameters is required. The third column is a brief description of the parameter."}
 
 
-

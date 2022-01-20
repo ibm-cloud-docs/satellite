@@ -42,7 +42,7 @@ A service mesh is a configurable, language-independent infrastructure layer that
 - **Integrated CLI**: With a single command, you can install and configure {{site.data.keyword.satelliteshort}} Mesh onto your cluster. 
 
 ### Which Istio and Red Hat OpenShift Service Mesh features are supported on {{site.data.keyword.satelliteshort}} Mesh?
-{: sat-mesh-istio-redhat}
+{: #sat-mesh-istio-redhat}
 
 **Supported Istio features**
 The following Istio features are supported on {{site.data.keyword.satelliteshort}} Mesh. For more information, see the [Istio documentation](https://istio.io/v1.9/docs/tasks/){: external}.
