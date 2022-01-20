@@ -25,15 +25,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 Review the release notes for January 2022.
 {: shortdesc}
 
-### 20 January 2022
-{: #20jan2022}
-{: release-note}
 
-OpenShift Data Foundation
-:   New and updated template parameters for the OpenShift Data Foundation {{site.data.keyword.satelliteshort}} templates.
-:   Automatic disk discovery is now available for the `odf-local` template version 4.8. Enable this feature by setting the `auto-disk-discovery=true` parameter. For more information, see [ODF using local disks](/docs/satellite?topic=satellite-config-storage-odf-local).
-:   The `monDevicePaths` and `monSize` parameters are no longer required for the `odf-local` template version 4.8.
-:   The `monStorageClassName` and `monSize` parameters are no longer required for the `odf-remote` template version 4.8.
 
 ### 18 January 2022
 {: #18jan2022}
