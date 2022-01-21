@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-21"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1986,13 +1986,16 @@ ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --location LOCATION |
 {: #cli-storage-assign-ls-command-options}
 
 `--cluster CLUSTER_ID`
-:    The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.  If you do not include this flag, you must specify the `--service-cluster-id` flag or the `--location` flag.
+:    The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.  If you do not include this flag, you must specify the `--config` flag, the `--location` flag, or the `--service-cluster-id`flag.
+
+`--config CONFIG`
+:    The name or ID of a {{site.data.keyword.satelliteshort}} storage configuration. To list available storage configurations, run `ibmcloud sat storage config ls`. If you do not include this flag, you must specify the `--cluster` flag, the `--location` flag, or the `--service-cluster-id` flag.
 
 `--location LOCATION`
-:    The name of the {{site.data.keyword.satelliteshort}} location for which you want to list the assignments. To list the available locations, run `ibmcloud sat location ls`. This flag is not available for service admin. If you do not include this flag, you must specify the `--cluster` flag or the `--service-cluster-id` flag.
+:    The name of the {{site.data.keyword.satelliteshort}} location for which you want to list the assignments. To list the available locations, run `ibmcloud sat location ls`. This flag is not available for service admin. If you do not include this flag, you must specify the `--cluster` flag, the `--config` flag, or the `--service-cluster-id` flag.
 
 `--service-cluster-id CLUSTER_ID`
-:    The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster` flag or the `--location` flag.
+:    The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster` flag, the `--config` flag, or the `--location` flag.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
