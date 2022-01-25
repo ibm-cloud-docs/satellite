@@ -337,7 +337,7 @@ subcollection: satellite
 {: #sitemap_managing_hosts}
 
 
-[Adding hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts#attach-hosts)
+[Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts#attach-hosts)
 
 * [Attaching hosts from the console](/docs/satellite?topic=satellite-attach-hosts#attach-hosts-console)
 
