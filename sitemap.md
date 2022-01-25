@@ -944,7 +944,7 @@ subcollection: satellite
 
 * [OpenShift Data Foundation configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-params-cli)
 
-    * [Version 4.8 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-47)
+    * [Version 4.8 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-48)
 
     * [Version 4.7 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-47)
 

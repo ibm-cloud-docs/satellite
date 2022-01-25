@@ -857,7 +857,7 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 {: #sat-storage-odf-local-params-cli}
 
 ### Version 4.8 parameters
-{: #odf-params-47}
+{: #odf-params-48}
 
 | Parameter | Required? | Description | Default value if not provided | Data type | 
 | --- | --- | --- | --- | --- | 
