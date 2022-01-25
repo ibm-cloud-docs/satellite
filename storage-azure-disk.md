@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-25"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -428,7 +428,7 @@ If you no longer need your Azure Disk configuration, you can remove your apps, P
         ```
         {: screen}
 
-    1. Remove the pod that uses the PVC. If the pod is part of a deployment, remove the deployment.
+    1. Remove the pod that uses the PVC. If the pod is part of a deployment or statefulset, remove the deployment or statefulset.
     
         ```sh
         oc delete pod <pod_name>
@@ -438,9 +438,14 @@ If you no longer need your Azure Disk configuration, you can remove your apps, P
         ```sh
         oc delete deployment <deployment_name>
         ```
+        {: pre} 
+
+        ```sh
+        oc delete statefulset <statefulset_name>
+        ```
         {: pre}
 
-    1. Verify that the pod or the deployment is removed.
+    1. Verify that the pod, deployment, or statefulset is removed.
     
         ```sh
         oc get pods
@@ -449,6 +454,11 @@ If you no longer need your Azure Disk configuration, you can remove your apps, P
 
         ```sh
         oc get deployments
+        ```
+        {: pre}
+
+        ```sh
+        oc get statefulset
         ```
         {: pre}
 
