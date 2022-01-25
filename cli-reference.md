@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-21"
+lastupdated: "2022-01-25"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -319,7 +319,7 @@ ibmcloud sat group detach --group GROUP --cluster CLUSTER [-f] [-q]
 :    Required. The name or ID of the cluster group where you want to remove a cluster. To list available cluster groups, run `ibmcloud sat group ls`.  
 
 `--cluster, -c CLUSTER`
-:    Optional. The name or ID of the cluster that you want to remove from your cluster group. To list the clusters that are included in your cluster group, run `ibmcloud sat group get --group &lt;cluster_group_name_or_ID&gt;`.
+:    Optional. The name or ID of the cluster that you want to remove from your cluster group. To list the clusters that are included in your cluster group, run `ibmcloud sat group get --group <cluster_group_name_or_ID>`.
 
 `-f`
 :    Optional. Force the command to run with no user prompts.
@@ -702,7 +702,7 @@ ibmcloud sat config version get --config CONFIG --version VERSION [--output JSON
 :    Required. The name or ID of the configuration that the version belongs to. To list available configurations, run `ibmcloud sat config ls`.
 
 `--version VERSION`
-:    Required. The name or ID of your version. To list versions in your configuration, run `ibmcloud sat config get --config &lt;configuration_name_or_ID&gt;`.
+:    Required. The name or ID of your version. To list versions in your configuration, run `ibmcloud sat config get --config <configuration_name_or_ID>`.
 
 `--output JSON`
 :    Optional. Displays the command output in JSON format.
@@ -745,7 +745,7 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 :    Required. The name or ID of the configuration where you want to remove a version. To list available configurations, run `ibmcloud sat config ls`.
 
 `--version VERSION`
-:    Required. The name or ID of your version. To list versions in your configuration, run `ibmcloud sat config get --config &lt;configuration_name_or_ID&gt;`.
+:    Required. The name or ID of your version. To list versions in your configuration, run `ibmcloud sat config get --config <configuration_name_or_ID>`.
 
 `-f`
 :    Optional. Force the command to run with no user prompts.
@@ -847,7 +847,7 @@ ibmcloud sat endpoint get --endpoint ENDPOINT_ID --location LOCATION_ID [--outpu
 {: #cli-endpoint-get-command-options}
 
 `--endpoint ENDPOINT_ID`
-:    Required. The ID of the endpoint. To list available endpoints, run `ibmcloud sat endpoint ls --location &lt;location_ID&gt;`.
+:    Required. The ID of the endpoint. To list available endpoints, run `ibmcloud sat endpoint ls --location <location_ID>`.
 
 `--location LOCATION_ID`
 :    Required. The ID of your location. To list locations, run `ibmcloud sat location ls`.
@@ -925,7 +925,7 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT_ID --location LOCATION_ID [-q]
 {: #cli-endpoint-rm-command-options}
 
 `--endpoint ENDPOINT_ID`
-:    Required. The ID of the endpoint. To list endpoint, run `ibmcloud sat endpoint ls --location &lt;location_ID&gt;`.
+:    Required. The ID of the endpoint. To list endpoint, run `ibmcloud sat endpoint ls --location <location_ID>`.
 
 `--location LOCATION_ID`
 :    Required. The ID of your location. To list locations, run `ibmcloud sat location ls`.
@@ -1031,7 +1031,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 :    Required. Enter the ID or name of the cluster where you want to assign your compute host. If you want to assign your compute host to the {{site.data.keyword.satelliteshort}} control plane, use the location ID or name. To assign the compute host to an {{site.data.keyword.openshiftshort}} cluster, use the ID or name of the cluster. To retrieve the cluster ID or name, run `ibmcloud sat cluster ls`.  
 
 `--host HOST`
-:    Required. Enter the ID of the host that you want to assign to the {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. To retrieve the host ID, run `ibmcloud sat host ls --location &lt;location_ID_or_name&gt;`.  
+:    Required. Enter the ID of the host that you want to assign to the {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. To retrieve the host ID, run `ibmcloud sat host ls --location <location_ID_or_name>`.  
 
 `--zone ZONE`
 :    Required. The name of the zone where you want to assign the compute host. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field.
@@ -1040,7 +1040,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 :    Optional. Enter the name or ID of the worker pool in your {{site.data.keyword.openshiftshort}} cluster to which you want to add your compute host. If you want to assign hosts to your {{site.data.keyword.satelliteshort}} control plane, this flag is not required. When you assign hosts to an {{site.data.keyword.openshiftshort}} cluster, you can include this flag to specify the worker pool. If no worker pool is specified, the host is assigned to the default worker pool of the cluster.  
 
 `--host-label LABEL`, `-hl LABEL`
-:    Optional. Enter any labels as a key-value pair that you want to use to identify the host that you want to assign to your {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. The first host that has this label and is in an unassigned state it automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;`.  
+:    Optional. Enter any labels as a key-value pair that you want to use to identify the host that you want to assign to your {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. The first host that has this label and is in an unassigned state it automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.  
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
@@ -1120,7 +1120,7 @@ ibmcloud sat host get --location LOCATION --host HOST [--output json] [-q]
 :    Required. Enter the ID or name of the location that the host belongs to. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
 
 `--host HOST`
-:    Required. Enter the ID of the host that you want to retrieve details for. To retrieve the host ID, run `ibmcloud sat host ls &lt;location_ID_or_name&gt;`.  
+:    Required. Enter the ID of the host that you want to retrieve details for. To retrieve the host ID, run `ibmcloud sat host ls <location_ID_or_name>`.  
 
 `--output json`
     :    Optional. Prints the command output in JSON format.
@@ -1211,7 +1211,7 @@ ibmcloud sat host rm --location LOCATION --host HOST [-f ] [-q]
 :    Required. Enter the ID or name of the location where you want to remove a compute host. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
 
 `--host HOST`
-:    Required. Enter the ID of the host that you want to remove. To retrieve the host ID, run `ibmcloud sat host ls &lt;location_ID_or_name&gt;`.  
+:    Required. Enter the ID of the host that you want to remove. To retrieve the host ID, run `ibmcloud sat host ls <location_ID_or_nam>`.  
 
 `-f`
     :    Optional. Force the command to run with no user prompts.
@@ -1255,13 +1255,13 @@ ibmcloud sat host update --location LOCATION --host HOST [--host-label "KEY=VALU
 :    Required. Enter the ID or name of the location that the compute host is assigned to. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
 
 `--host HOST`
-:    Required. Enter the ID of the host that you want to update. To retrieve the host ID, run `ibmcloud sat host ls --location &lt;location_ID_or_name&gt;`.  
+:    Required. Enter the ID of the host that you want to update. To retrieve the host ID, run `ibmcloud sat host ls --location <location_ID_or_name>`.  
 
 `--host-label KEY=VALUE`, `-hl KEY=VALUE`
-:    Optional. Label the host with a key-value pair to use for host autoassignment. To find existing host labels, run `ibmcloud sat host get --host &lt;host_name_or_ID&gt; --location &lt;location_name_or_ID&gt;`. Repeat this flag for multiple host labels.
+:    Optional. Label the host with a key-value pair to use for host autoassignment. To find existing host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`. Repeat this flag for multiple host labels.
 
 `--zone ZONE`
-:    Optional. Specify the zone that you want the host to use for autoassignment. Generally, this zone matches the zone of the infrastructure provider where the host machine is, such as a cloud provider zone or on-prem rack. To find the zones in your {{site.data.keyword.satelliteshort}} location, run `ibmcloud sat location get --location &lt;location_name_or_ID&gt;` and check the **Host zones**.
+:    Optional. Specify the zone that you want the host to use for autoassignment. Generally, this zone matches the zone of the infrastructure provider where the host machine is, such as a cloud provider zone or on-prem rack. To find the zones in your {{site.data.keyword.satelliteshort}} location, run `ibmcloud sat location get --location <location_name_or_ID>` and check the **Host zones**.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
@@ -1413,7 +1413,7 @@ ibmcloud sat location dns register --location LOCATION --ip HOST_IP_ADDRESS [--o
 :    Required. Enter the name or ID of the location for which you want to create a DNS record and register the public or private IP addresses of your control plane hosts. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
 
 `--ip HOST_IP_ADDRESS`
-:    Required. Enter the IP address of a compute host that you added to your {{site.data.keyword.satelliteshort}} control plane. To retrieve the IP, run `ibmcloud sat host ls --location &lt;location_ID_or_name&gt;`ID. To register multiple IP addresses, you can use multiple `--ip` flags in the same command.   
+:    Required. Enter the IP address of a compute host that you added to your {{site.data.keyword.satelliteshort}} control plane. To retrieve the IP, run `ibmcloud sat host ls --location <location_ID_or_name>`ID. To register multiple IP addresses, you can use multiple `--ip` flags in the same command.   
 
 `--output json`
     :    Optional. Prints the command output in JSON format.
@@ -2477,7 +2477,7 @@ ibmcloud sat subscription create --name NAME --group GROUP [--group GROUP] --con
 :    Required. The name of the configuration where you added the Kubernetes resource definition as a version that you want to deploy to your clusters. To list available configurations, run `ibmcloud sat config ls`.
 
 `--version VERSION`
-:    Required. The name or ID of the version that you want to deploy to the clusters in your cluster group. To list versions in your configuration, run `ibmcloud sat config get --config &lt;configuration_name_or_ID&gt;`.
+:    Required. The name or ID of the version that you want to deploy to the clusters in your cluster group. To list versions in your configuration, run `ibmcloud sat config get --config <configuration_name_or_ID>`.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
@@ -2638,7 +2638,7 @@ ibmcloud sat subscription update --subscription SUBSCRIPTION [--name NAME] [--gr
 :    Optional. The name or ID of the cluster group that you want to subscribe. To list available cluster groups, run `ibmcloud sat group ls`.
 
 `--version VERSION`
-:    Required. The name or ID of your configuration version that you want to subscribe clusters to. To list versions in your configuration, run `ibmcloud sat config get --config &lt;configuration_name_or_ID&gt;`.
+:    Required. The name or ID of your configuration version that you want to subscribe clusters to. To list versions in your configuration, run `ibmcloud sat config get --config <configuration_name_or_ID>`.
 
 `-f`
 :    Optional. Force the command to run with no user prompts.
