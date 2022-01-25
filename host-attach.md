@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-25"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Adding hosts to your {{site.data.keyword.satelliteshort}} location
+# Attaching hosts to your {{site.data.keyword.satelliteshort}} location
 {: #attach-hosts}
 
 After you create the location, add compute capacity to your location so that you can set up {{site.data.keyword.openshiftshort}} clusters or interact with other IBM services.

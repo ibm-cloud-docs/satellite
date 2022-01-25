@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -26,15 +26,15 @@ Review the release notes for January 2022.
 {: shortdesc}
 
 
-### 20 January 2022
-{: #20jan2022}
+### 25 January 2022
+{: #25jan2022}
 {: release-note}
 
 OpenShift Data Foundation
 :   New and updated template parameters for the OpenShift Data Foundation {{site.data.keyword.satelliteshort}} templates.
-:   Automatic disk discovery is now available for the `odf-local` template version 4.8. Enable this feature by setting the `auto-disk-discovery=true` parameter. For more information, see [ODF using local disks](/docs/satellite?topic=satellite-config-storage-odf-local).
-:   The `monDevicePaths` and `monSize` parameters are no longer required for the `odf-local` template version 4.8.
-:   The `monStorageClassName` and `monSize` parameters are no longer required for the `odf-remote` template version 4.8.
+    - Automatic disk discovery is now available for the `odf-local` template version 4.8. Enable this feature by setting the `auto-disk-discovery=true` parameter. For more information, see [ODF using local disks](/docs/satellite?topic=satellite-config-storage-odf-local).
+    - The `monDevicePaths` and `monSize` parameters are no longer required for the `odf-local` template version 4.8.
+    - The `monStorageClassName` and `monSize` parameters are no longer required for the `odf-remote` template version 4.8.
 
 
 ### 18 January 2022
@@ -55,19 +55,12 @@ Review the release notes for December 2021.
 {: shortdesc}
 
 
-
-
-
 ### 15 December 2021
 {: #15dec2021}
 {: release-note}
 
-
-
 **New! Sydney location**
 :   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Sydney** (`syd`, `au-syd`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). Note that {{site.data.keyword.satelliteshort}} Link flow logs for Location endpoints created in the Sydney (`au-syd`) region are inconsistent or might not work.
-
-
 
 
 ### 3 December 2021
