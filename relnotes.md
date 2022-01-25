@@ -55,19 +55,12 @@ Review the release notes for December 2021.
 {: shortdesc}
 
 
-
-
-
 ### 15 December 2021
 {: #15dec2021}
 {: release-note}
 
-
-
 **New! Sydney location**
 :   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Sydney** (`syd`, `au-syd`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). Note that {{site.data.keyword.satelliteshort}} Link flow logs for Location endpoints created in the Sydney (`au-syd`) region are inconsistent or might not work.
-
-
 
 
 ### 3 December 2021

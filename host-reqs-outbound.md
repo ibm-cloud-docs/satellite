@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-25"
 
 keywords: satellite, hybrid, multicloud
 
@@ -112,7 +112,6 @@ See the following outbound requirements for the Sao Paulo region.
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
 
 
-
 ## Sydney
 {: #syd-outbound}
 
@@ -128,8 +127,6 @@ See the following outbound requirements for the Sydney region.
 | Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers | All hosts | - 0.rhel.pool.ntp.org  \n - 1.rhel.pool.ntp.org  \n - 2.rhel.pool.ntp.org  \n - 3.rhel.pool.ntp.org | - |
 {: caption="Required outbound connectivity for hosts on the primary network interface in the Sydney region" caption-side="top"}
 {: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
-
-
 
 
 ## Tokyo
