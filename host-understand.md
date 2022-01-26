@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-26"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Understanding {{site.data.keyword.satelliteshort}} hosts
 {: #host-concept}
 
-A {{site.data.keyword.satelliteshort}} host represents a compute machine of your own infrastructure, such as an on-premises data center or another cloud provider. You can attach hosts to a {{site.data.keyword.satelliteshort}} location, and then assign the hosts to run {{site.data.keyword.cloud_notm}} services such as {{site.data.keyword.openshiftlong_notm}} clusters.
+A {{site.data.keyword.satelliteshort}} host represents a compute machine of your own infrastructure, such as an on-premises data center or a public cloud provider. You can attach hosts to a {{site.data.keyword.satelliteshort}} location, and then assign the hosts to run {{site.data.keyword.cloud_notm}} services such as {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
 The following diagram presents the initial setup steps for hosts.

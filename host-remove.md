@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-26"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -12,22 +12,24 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Removing hosts
+
+# Removing hosts and locations
 {: #host-remove}
 
 When you remove a host from your location, the host is unassigned from a {{site.data.keyword.satelliteshort}}-enabled service cluster or the {{site.data.keyword.satelliteshort}} location control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete an {{site.data.keyword.openshiftshort}} cluster or resize a worker pool, the hosts are still attached to your location, but you must detach and reattach the hosts to use them with another {{site.data.keyword.satelliteshort}} resource.
 {: shortdesc}
 
 After removal, the host machine still exists in your underlying infrastructure provider. Reload the operating system before using the host machine for another purpose.
-
-Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep. Note that the underlying host infrastructure is not deleted because you manage the infrastructure yourself.
-{: important}
+{: tip}
 
 ## Removing hosts from the console
 {: #host-remove-console}
 
 Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as compute capacity from the {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
+
+Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep.
+{: important}
 
 1. Make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep.
 2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Locations** and then click your location.
@@ -46,11 +48,14 @@ Use the {{site.data.keyword.satelliteshort}} console to remove your hosts as com
     - To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
     - To no longer use the host, delete the host from your infrastructure provider.
 
-## Removing hosts from the CLI
+## Removing hosts with the CLI
 {: #host-remove-cli}
 
 Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove your hosts as compute capacity from the {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
+
+Removing a host cannot be undone. Before you remove a host, make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep. Note that the underlying host infrastructure is not deleted.
+{: important}
 
 1. Make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep.
 2. Log in your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` flag, or create an API key to log in.
@@ -97,3 +102,49 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove 
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
     - To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
     - To no longer use the host, delete the host from your infrastructure provider.
+
+## Removing locations from the console
+{: #location-remove-console}
+
+Use the {{site.data.keyword.satelliteshort}} console to remove your locations.
+{: shortdesc}
+
+Removing a location cannot be undone. Before you remove a location, back up any information that you want to keep and remove any hosts and clusters that run in the location. Note that the underlying host infrastructure is not automatically deleted when you delete a location because you manage the infrastructure yourself.
+{: important}
+
+1. [Remove all {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-remove) from your location.
+2. [Remove all hosts](/docs/satellite?topic=satellite-host-remove) from your location.
+3. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} **Locations** table, hover over the location that you want to remove and click the **Action menu** icon ![Action menu icon](../icons/action-menu-icon.svg).
+4. Click **Remove location**, enter the location name to confirm the deletion, and click **Remove**.
+
+Now that the location is removed, check the hosts in your underlying infrastructure provider. To reuse the hosts for other purposes, you must reload the operating system. If you no longer need the hosts, delete them from your infrastructure provider.
+
+### Removing locations with the CLI
+{: #location-remove-cli}
+
+Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove your locations.
+{: shortdesc}
+
+Removing a location cannot be undone. Before you remove a location, back up any information that you want to keep and remove any hosts and clusters that run in the location. Note that the underlying host infrastructure is not automatically deleted when you delete a location because you manage the infrastructure yourself.
+{: important}
+
+1. [Remove all {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-remove) from your location.
+
+2. [Remove all hosts](#host-remove) from your location.
+
+3. Remove the location.
+
+    ```sh
+    ibmcloud sat location rm --location <location_name_or_ID>
+    ```
+    {: pre}
+
+4. Confirm that your location is removed. The location no longer is displayed in the output of the following command.
+
+    ```sh
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+Now that the location is removed, check the hosts in your underlying infrastructure provider. To reuse the hosts for other purposes, you must reload the operating system. If you no longer need the hosts, delete them from your infrastructure provider.
+

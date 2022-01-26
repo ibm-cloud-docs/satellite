@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-01-26"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -246,6 +246,57 @@ subcollection: satellite
 [Understanding {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-host-concept#host-concept)
 
 
+## Preparing your host infrastructure
+{: #sitemap_preparing_your_host_infrastructure}
+
+
+[Host system requirements](/docs/satellite?topic=satellite-host-reqs#host-reqs)
+
+* [Computing characteristics](/docs/satellite?topic=satellite-host-reqs#reqs-host-compute)
+
+* [Packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages)
+
+[Host storage and attached devices](/docs/satellite?topic=satellite-reqs-host-storage#reqs-host-storage)
+
+[Host network requirements](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network)
+
+* [Networking configurations](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-config)
+
+* [Host network bandwidth](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-bandwidth)
+
+* [Network gateways and interfaces](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-interface)
+
+* [Inbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound)
+
+* [Outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound)
+
+    * [Dallas](/docs/satellite?topic=satellite-reqs-host-network#dal-outbound)
+
+    * [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network#fra-outbound)
+
+    * [London](/docs/satellite?topic=satellite-reqs-host-network#lon-outbound)
+
+    * [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network#sao-outbound)
+
+    * [Sydney](/docs/satellite?topic=satellite-reqs-host-network#syd-outbound)
+
+    * [Tokyo](/docs/satellite?topic=satellite-reqs-host-network#tok-outbound)
+
+    * [Toronto](/docs/satellite?topic=satellite-reqs-host-network#tor-outbound)
+
+    * [Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network#wdc-outbound)
+
+[Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
+
+* [{{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-master-worker)
+
+* [Customer-provided worker nodes in the {{site.data.keyword.satelliteshort}} location control plane to worker nodes that run {{site.data.keyword.satelliteshort}}-enabled services like {{site.data.keyword.openshiftshort}} clusters in the same location](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-woker-worker)
+
+* [Customer-provided worker nodes that are assigned to the same resource, like the {{site.data.keyword.satelliteshort}} location control plane or a cluster](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-customer-provided)
+
+* [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr)
+
+
 ## Creating locations
 {: #sitemap_creating_locations}
 
@@ -253,6 +304,12 @@ subcollection: satellite
 [Understanding Satellite locations](/docs/satellite?topic=satellite-about-locations#about-locations)
 
 * [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing)
+
+* [How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity)
+
+* [How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?](/docs/satellite?topic=satellite-about-locations#control-plane-scale-up)
+
+* [How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?](/docs/satellite?topic=satellite-about-locations#control-plane-how-many-clusters)
 
 [Creating a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#locations)
 
@@ -333,8 +390,8 @@ subcollection: satellite
 * [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
 
 
-## Managing hosts
-{: #sitemap_managing_hosts}
+## Managing hosts and locations
+{: #sitemap_managing_hosts_and_locations}
 
 
 [Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts#attach-hosts)
@@ -389,38 +446,17 @@ subcollection: satellite
 
 * [Updating host metadata](/docs/satellite?topic=satellite-host-update-workers#host-update-metadata)
 
-[Monitoring host health](/docs/satellite?topic=satellite-host-monitor-health#host-monitor-health)
+[Copying a location](/docs/satellite?topic=satellite-location-copy#location-copy)
 
-[Removing hosts](/docs/satellite?topic=satellite-host-remove#host-remove)
+[Removing hosts and locations](/docs/satellite?topic=satellite-host-remove#host-remove)
 
 * [Removing hosts from the console](/docs/satellite?topic=satellite-host-remove#host-remove-console)
 
-* [Removing hosts from the CLI](/docs/satellite?topic=satellite-host-remove#host-remove-cli)
+* [Removing hosts with the CLI](/docs/satellite?topic=satellite-host-remove#host-remove-cli)
 
+* [Removing locations from the console](/docs/satellite?topic=satellite-host-remove#location-remove-console)
 
-## Managing locations
-{: #sitemap_managing_locations}
-
-
-[Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-control-plane-scale#control-plane-scale)
-
-* [How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?](/docs/satellite?topic=satellite-control-plane-scale#control-plane-attach-capacity)
-
-* [How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?](/docs/satellite?topic=satellite-control-plane-scale#control-plane-how-many-clusters)
-
-* [How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?](/docs/satellite?topic=satellite-control-plane-scale#control-plane-scale-up)
-
-[Copying a location](/docs/satellite?topic=satellite-location-copy#location-copy)
-
-[Monitoring location health](/docs/satellite?topic=satellite-location-monitor-health#location-monitor-health)
-
-[Removing locations](/docs/satellite?topic=satellite-location-remove#location-remove)
-
-* [Removing locations from the console](/docs/satellite?topic=satellite-location-remove#location-remove-console)
-
-* [Removing locations from the CLI](/docs/satellite?topic=satellite-location-remove#location-remove-cli)
-
-[Creating OpenShift clusters in Satellite](/docs/openshift?topic=openshift-satellite-clusters)
+    * [Removing locations with the CLI](/docs/satellite?topic=satellite-host-remove#location-remove-cli)
 
 
 ## Deploying Kubernetes resources across clusters with Satellite Config
@@ -627,6 +663,10 @@ subcollection: satellite
     * [Attributes for segmentation](/docs/satellite?topic=satellite-monitor#attributes)
 
 * [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters-monitoring)
+
+[Monitoring host health](/docs/satellite?topic=satellite-host-monitor-health#host-monitor-health)
+
+[Monitoring location health](/docs/satellite?topic=satellite-location-monitor-health#location-monitor-health)
 
 [Auditing events](/docs/satellite?topic=satellite-at_events#at_events)
 
@@ -1325,57 +1365,6 @@ subcollection: satellite
 * [Version 1.0](/docs/satellite?topic=satellite-satellite-cli-changelog#10)
 
 
-## Host requirements
-{: #sitemap_host_requirements}
-
-
-[Host system requirements](/docs/satellite?topic=satellite-host-reqs#host-reqs)
-
-* [Computing characteristics](/docs/satellite?topic=satellite-host-reqs#reqs-host-compute)
-
-* [Packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages)
-
-[Host storage and attached devices](/docs/satellite?topic=satellite-reqs-host-storage#reqs-host-storage)
-
-[Host network requirements](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network)
-
-* [Networking configurations](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-config)
-
-* [Host network bandwidth](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-bandwidth)
-
-* [Network gateways and interfaces](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-interface)
-
-[Inbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-firewall-inbound#reqs-host-network-firewall-inbound)
-
-[Outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#reqs-host-network-firewall-outbound)
-
-* [Dallas](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#dal-outbound)
-
-* [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#fra-outbound)
-
-* [London](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#lon-outbound)
-
-* [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#sao-outbound)
-
-* [Sydney](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#syd-outbound)
-
-* [Tokyo](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#tok-outbound)
-
-* [Toronto](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#tor-outbound)
-
-* [Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#wdc-outbound)
-
-[Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
-
-* [{{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-master-worker)
-
-* [Customer-provided worker nodes in the {{site.data.keyword.satelliteshort}} location control plane to worker nodes that run {{site.data.keyword.satelliteshort}}-enabled services like {{site.data.keyword.openshiftshort}} clusters in the same location](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-woker-worker)
-
-* [Customer-provided worker nodes that are assigned to the same resource, like the {{site.data.keyword.satelliteshort}} location control plane or a cluster](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-customer-provided)
-
-* [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr)
-
-
 ## IBM Cloud Satellite Infrastructure Service
 {: #sitemap_ibm_cloud_satellite_infrastructure_service}
 
@@ -1513,7 +1502,7 @@ subcollection: satellite
 
     * [Example for a high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
 
-    * [Example for a high availability setup in another cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
+    * [Example for a high availability setup in a public cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
 
 
 ## {{site.data.keyword.satellitelong_notm}} notices

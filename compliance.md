@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -33,18 +33,19 @@ See [Securing your data in {{site.data.keyword.satellitelong_notm}}](/docs/satel
 ### How do I make my data secure over {{site.data.keyword.satelliteshort}} Link?
 {: #secure-data-link}
 
-Your {{site.data.keyword.satelliteshort}} location infrastructure is a part of your local network (on-prem hosts) or the network of another cloud provider, but is managed remotely via secure {{site.data.keyword.satelliteshort}} Link access from {{site.data.keyword.cloud_notm}}. All communication over {{site.data.keyword.satelliteshort}} Link is encrypted by {{site.data.keyword.IBM_notm}}. When you create an endpoint, you can optionally specify an additional data encryption protocol for the endpoint connection between the client source and destination resource. For example, even if the traffic is not encrypted on the source side, you can specify your own additional TLS encryption for the connection that goes over the internet.
+Your {{site.data.keyword.satelliteshort}} location infrastructure is a part of your local network (on-prem hosts) or the network of your cloud provider, but is managed remotely by using secure {{site.data.keyword.satelliteshort}} Link access from {{site.data.keyword.cloud_notm}}. All communication over {{site.data.keyword.satelliteshort}} Link is encrypted by {{site.data.keyword.IBM_notm}}. When you create an endpoint, you can optionally specify an additional data encryption protocol for the endpoint connection between the client source and destination resource. For example, even if the traffic is not encrypted on the source side, you can specify your own additional TLS encryption for the connection that goes over the internet.
 
 To review information about how {{site.data.keyword.satelliteshort}} Link handles each type of connection protocol, see [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). To review other frequently asked questions about {{site.data.keyword.satelliteshort}} Link network security, see [External network requirements and security](/docs/satellite?topic=satellite-link-location-cloud#link-security).
 
 ### What measures can I take to secure user access to data in my location?
 {: #secure-data-access}
 
-Review the following ways that you can secure access to your location:
-* Consider the types of [user access to resources that run in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#user-access)
-* [Manage access for {{site.data.keyword.satelliteshort}} by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/satellite?topic=satellite-iam)
-* Monitor user-initiated activities by [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
-* In the case of a potential security incident, [reset the key that the control plane uses to communicate with all of the hosts in the Satellite location](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
+Review the following ways that you can secure access to your location.
+
+- Consider the types of [user access to resources that run in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-connection#user-access)
+- [Manage access for {{site.data.keyword.satelliteshort}} by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/satellite?topic=satellite-iam)
+- Monitor user-initiated activities by [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
+- In the case of a potential security incident, [reset the key that the control plane uses to communicate with all of the hosts in the Satellite location](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
 
 ## {{site.data.keyword.IBM_notm}} operational access
 {: #operational-access}
