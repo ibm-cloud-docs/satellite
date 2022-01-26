@@ -266,25 +266,25 @@ subcollection: satellite
 
 * [Network gateways and interfaces](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-interface)
 
-[Inbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-firewall-inbound#reqs-host-network-firewall-inbound)
+* [Inbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound)
 
-[Outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#reqs-host-network-firewall-outbound)
+* [Outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound)
 
-* [Dallas](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#dal-outbound)
+    * [Dallas](/docs/satellite?topic=satellite-reqs-host-network#dal-outbound)
 
-* [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#fra-outbound)
+    * [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network#fra-outbound)
 
-* [London](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#lon-outbound)
+    * [London](/docs/satellite?topic=satellite-reqs-host-network#lon-outbound)
 
-* [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#sao-outbound)
+    * [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network#sao-outbound)
 
-* [Sydney](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#syd-outbound)
+    * [Sydney](/docs/satellite?topic=satellite-reqs-host-network#syd-outbound)
 
-* [Tokyo](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#tok-outbound)
+    * [Tokyo](/docs/satellite?topic=satellite-reqs-host-network#tok-outbound)
 
-* [Toronto](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#tor-outbound)
+    * [Toronto](/docs/satellite?topic=satellite-reqs-host-network#tor-outbound)
 
-* [Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound#wdc-outbound)
+    * [Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network#wdc-outbound)
 
 [Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
 
