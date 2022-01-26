@@ -1502,7 +1502,7 @@ subcollection: satellite
 
     * [Example for a high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
 
-    * [Example for a high availability setup in another cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
+    * [Example for a high availability setup in a public cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
 
 
 ## {{site.data.keyword.satellitelong_notm}} notices
