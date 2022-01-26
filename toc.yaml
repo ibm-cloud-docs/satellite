@@ -29,6 +29,15 @@ toc:
         - providers_planning.md
         - host-understand.md
         - topicgroup:
+            label: Preparing your host infrastructure
+            topics:
+              - host-reqs.md
+              - host-reqs-storage.md
+              - host-reqs-network.md
+              - host-reqs-inbound.md
+              - host-reqs-outbound.md
+              - host-reqs-latency.md
+        - topicgroup:
             label: Creating locations
             topics:
               - control-plane.md
@@ -39,24 +48,14 @@ toc:
               - providers_azure.md
               - providers_ibm.md
         - topicgroup:
-            label: Managing hosts
+            label: Managing hosts and locations
             topics:
               - host-attach.md
               - host-assign.md
               - host-update-control.md
               - host-update-worker.md
-              - host-monitor.md
-              - host-remove.md
-        - topicgroup:
-            label: Managing locations
-            topics:
-              - locations.md
               - location-copy.md
-              - location-monitor.md
-              - location-remove.md
-        - link:
-            label: Creating OpenShift clusters in Satellite
-            href: /openshift/openshift-satellite-clusters
+              - host-remove.md
         - topicgroup:
             label: Deploying Kubernetes resources across clusters with Satellite Config
             topics:
@@ -78,6 +77,8 @@ toc:
             topics:
               - health.md
               - monitor.md
+              - host-monitor.md
+              - location-monitor.md
               - at.md
         - topicgroup:
             label: Setting up storage
@@ -134,21 +135,11 @@ toc:
               - cli-reference.md
               - cli-changelog.md
         - topicgroup:
-            label: Host requirements
-            topics:
-              - host-reqs.md
-              - host-reqs-storage.md
-              - host-reqs-network.md
-              - host-reqs-inbound.md
-              - host-reqs-outbound.md
-              - host-reqs-latency.md
-        - topicgroup:
             label: IBM Cloud Satellite Infrastructure Service
             topics:
               - satellite-is.md
               - sat-is-understand.md
               - sat-is-responsibilities.md
-
         - limitations.md
         - managed-services.md
         - supported-regions.md
