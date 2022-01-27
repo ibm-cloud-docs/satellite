@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -100,7 +100,7 @@ All communication over {{site.data.keyword.satelliteshort}} Link is encrypted by
 
 Review the following information about how {{site.data.keyword.satelliteshort}} Link handles each type of connection protocol.
 
-If you use the {{site.data.keyword.satelliteshort}} console to create an endpoint, the destination protocol is inherited from the source protocol that you select. To specify a destination protocol, use the CLI to create an endpoint and include the `--dest-protocol` flag in the `ibmcloud sat endpoint create` command.
+If you use the {{site.data.keyword.satelliteshort}} console to create an endpoint, the destination protocol is inherited from the source protocol that you select. To specify a destination protocol, use the CLI to create an endpoint and include the `--dest-protocol` option in the `ibmcloud sat endpoint create` command.
 {: note}
 
 ### TCP and TLS

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-26"
+lastupdated: "2022-01-27"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -83,6 +83,8 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-release-notes#release-notes)
 
 * [January 2022](/docs/satellite?topic=satellite-release-notes#release-jan-2022)
+
+    * [27 January 2022](/docs/satellite?topic=satellite-release-notes#27jan2022)
 
     * [25 January 2022](/docs/satellite?topic=satellite-release-notes#25jan2022)
 
@@ -383,8 +385,6 @@ subcollection: satellite
 
 * [Microsoft Azure credentials](/docs/satellite?topic=satellite-azure#infra-creds-azure)
 
-* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-azure#azure-reqs-console-access)
-
 [{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm#ibm)
 
 * [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
@@ -456,7 +456,7 @@ subcollection: satellite
 
 * [Removing locations from the console](/docs/satellite?topic=satellite-host-remove#location-remove-console)
 
-    * [Removing locations with the CLI](/docs/satellite?topic=satellite-host-remove#location-remove-cli)
+* [Removing locations with the CLI](/docs/satellite?topic=satellite-host-remove#location-remove-cli)
 
 
 ## Deploying Kubernetes resources across clusters with Satellite Config

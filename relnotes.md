@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,6 +25,12 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 Review the release notes for January 2022.
 {: shortdesc}
 
+### 27 January 2022
+{: #27jan2022}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} 
+:   {{site.data.keyword.cos_full_notm}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [About {{site.data.keyword.cos_short}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite).
 
 ### 25 January 2022
 {: #25jan2022}
@@ -291,7 +297,7 @@ Review the release notes for 18 June 2021.
 {: shortdesc}
 
 IP addresses for Link tunnel server endpoints
-:    Updates the [required outbound connectivity for hosts](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound) to include IP addresses for Link tunnel server endpoints.
+:    Updates the [required outbound connectivity for hosts](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound) to include IP addresses for Link tunnel server endpoints.
 
 ### 9 June 2021
 {: #9jun2021}
@@ -628,7 +634,7 @@ Physical machine support
 :    Physical machine hosts are now supported for your {{site.data.keyword.satelliteshort}} location.
 
 Host network requirements
-:    Updated the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound) on hosts' primary networks.
+:    Updated the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound) on hosts' primary networks.
 
 AWS and GCP host DNS
 :    When you use AWS and GCP hosts for your {{site.data.keyword.satelliteshort}} location, the requirement to manually configure DNS for the location control plane and for cluster load balancing is removed. The hosts' private IP addresses are automatically registered in DNS.
@@ -666,7 +672,7 @@ Review the release notes for 8 October 2020.
 {: shortdesc}
 
 Host network requirements
-:    Added the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-firewall-outbound) on hosts' public networks.
+:    Added the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound) on hosts' public networks.
 
 ### 6 October 2020
 {: #06oct2020}

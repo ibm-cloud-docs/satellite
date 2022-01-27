@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -198,7 +198,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM console to assign an access policy 
 Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an access group to manage {{site.data.keyword.satelliteshort}} resources as shown in the following example.
 {: shortdesc}
 
-1. Log in to {{site.data.keyword.cloud_notm}}. If you have a federated account, include the `--sso` flag.
+1. Log in to {{site.data.keyword.cloud_notm}}. If you have a federated account, include the `--sso` option.
 
     ```sh
     ibmcloud login [--sso]

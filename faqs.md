@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-26"
+lastupdated: "2022-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -120,7 +120,7 @@ Other {{site.data.keyword.satelliteshort}}-enabled services often set up a clust
 ### {{site.data.keyword.satelliteshort}} locations
 {: #pricing-satloc}
 
-When you create a location, you must create a {{site.data.keyword.satelliteshort}} location control plane to manage the location. You need only one control plane per location, although you might need to add more hosts depending on the [size of your location](/docs/satellite?topic=satellite-control-plane-scale).
+When you create a location, you must create a {{site.data.keyword.satelliteshort}} location control plane to manage the location. You need only one control plane per location, although you might need to add more hosts depending on the [size of your location](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity).
 {: shortdesc}
 
 | Type of charge | How the charge is applied | What the charge covers |
@@ -137,7 +137,7 @@ When you create a location, you must create a {{site.data.keyword.satelliteshort
 All clusters in your {{site.data.keyword.satelliteshort}} location are installed with OpenShift Container Platform, which incurs a licensing fee from Red Hat. However, you must bring your own OCP license, such as if you have an {{site.data.keyword.cloud_notm}} Pak or other OCP entitlement.
 {: shortdesc}
 
-When you create the cluster, make sure to include your Red Hat pull secret to entitle the cluster to run OCP, either by uploading the pull secret in the console or by including the `--pull-secret` flag in the `ibmcloud oc cluster create satellite` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
+When you create the cluster, make sure to include your Red Hat pull secret to entitle the cluster to run OCP, either by uploading the pull secret in the console or by including the `--pull-secret` option in the `ibmcloud oc cluster create satellite` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
 
 
 
