@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-01-27"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -803,7 +803,7 @@ ibmcloud sat endpoint create --location LOCATION_ID --name NAME --dest-type CLOU
 :    Required. The port that the destination resource listens on for incoming requests. Make sure that the port matches the destination protocol.
 
 `--dest-protocol PROTOCOL`
-:    Optional. The protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
+:    Optional. The protocol of the destination resource. If you do not specify this option, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
 
 `--source-protocol PROTOCOL`
 :    Required. The protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
@@ -978,7 +978,7 @@ ibmcloud sat endpoint update --location LOCATION_ID --endpoint ENDPOINT_ID [--na
 :    Optional. The port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol.
 
 `--dest-protocol PROTOCOL`
-:    Optional. The protocol of the destination resource. Supported protocols include `tcp` and `tls`. If you do not specify this flag, the destination protocol is inherited from the source protocol. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
+:    Optional. The protocol of the destination resource. Supported protocols include `tcp` and `tls`. If you do not specify this option, the destination protocol is inherited from the source protocol. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
 
 `--source-protocol PROTOCOL`
 :    Optional. The protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
@@ -1037,7 +1037,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 :    Required. The name of the zone where you want to assign the compute host. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field.
 
 `--worker-pool WORKER_POOL`
-:    Optional. Enter the name or ID of the worker pool in your {{site.data.keyword.openshiftshort}} cluster to which you want to add your compute host. If you want to assign hosts to your {{site.data.keyword.satelliteshort}} control plane, this flag is not required. When you assign hosts to an {{site.data.keyword.openshiftshort}} cluster, you can include this flag to specify the worker pool. If no worker pool is specified, the host is assigned to the default worker pool of the cluster.  
+:    Optional. Enter the name or ID of the worker pool in your {{site.data.keyword.openshiftshort}} cluster to which you want to add your compute host. If you want to assign hosts to your {{site.data.keyword.satelliteshort}} control plane, this option is not required. When you assign hosts to an {{site.data.keyword.openshiftshort}} cluster, you can include this option to specify the worker pool. If no worker pool is specified, the host is assigned to the default worker pool of the cluster.  
 
 `--host-label LABEL`, `-hl LABEL`
 :    Optional. Enter any labels as a key-value pair that you want to use to identify the host that you want to assign to your {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.openshiftshort}} cluster. The first host that has this label and is in an unassigned state it automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.  
@@ -1258,7 +1258,7 @@ ibmcloud sat host update --location LOCATION --host HOST [--host-label "KEY=VALU
 :    Required. Enter the ID of the host that you want to update. To retrieve the host ID, run `ibmcloud sat host ls --location <location_ID_or_name>`.  
 
 `--host-label KEY=VALUE`, `-hl KEY=VALUE`
-:    Optional. Label the host with a key-value pair to use for host autoassignment. To find existing host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`. Repeat this flag for multiple host labels.
+:    Optional. Label the host with a key-value pair to use for host autoassignment. To find existing host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`. Repeat this option for multiple host labels.
 
 `--zone ZONE`
 :    Optional. Specify the zone that you want the host to use for autoassignment. Generally, this zone matches the zone of the infrastructure provider where the host machine is, such as a cloud provider zone or on-prem rack. To find the zones in your {{site.data.keyword.satelliteshort}} location, run `ibmcloud sat location get --location <location_name_or_ID>` and check the **Host zones**.
@@ -1323,7 +1323,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
      3. [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
      4. [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
      
-:    Optional: If you use this flag, zone names must be specified in three repeated flags. If you do not use this flag, the zones in your location are assigned names, such as `zone-1`.
+:    Optional: If you use this option, zone names must be specified in three repeated flags. If you do not use this option, the zones in your location are assigned names, such as `zone-1`.
 
 `--logging-account-id LOGGING_ACCOUNT`
 :    Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.la_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.
@@ -1903,13 +1903,13 @@ ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | -
 :    Required. The name of the storage configuration that you want to assign to your cluster group. To list {{site.data.keyword.satelliteshort}} storage configurations, run `ibmcloud sat storage config ls`.
 
 `--cluster CLUSTER_ID`
-:    The ID of a {{site.data.keyword.satelliteshort}} cluster. To list {{site.data.keyword.satelliteshort}} clusters, run `ibmcloud oc cluster ls --provider satellite`. To assign the storage configuration to multiple clusters at once, create a cluster group or run this command with this flag multiple times. If you do not include this flag, you must specify the `--group` or the `--service-cluster-id` flag.
+:    The ID of a {{site.data.keyword.satelliteshort}} cluster. To list {{site.data.keyword.satelliteshort}} clusters, run `ibmcloud oc cluster ls --provider satellite`. To assign the storage configuration to multiple clusters at once, create a cluster group or run this command with this option multiple times. If you do not include this option, you must specify the `--group` or the `--service-cluster-id` option.
 
 `--group GROUP`
-:    The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run `ibmcloud sat group ls`. To assign the storage configuration to multiple cluster groups at the same time, repeat this flag. If you do not include this flag, you must specify the `--cluster` or the `--service-cluster-id` flag.
+:    The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run `ibmcloud sat group ls`. To assign the storage configuration to multiple cluster groups at the same time, repeat this option. If you do not include this option, you must specify the `--cluster` or the `--service-cluster-id` option.
 
 `--service-cluster-id CLUSTER_ID`
-:    The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster` or the `--group` flag.
+:    The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this option, you must specify the `--cluster` or the `--group` option.
 
 `--name NAME`
 :    Optional. Enter a name for your storage assignment.
@@ -1986,13 +1986,13 @@ ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --location LOCATION |
 {: #cli-storage-assign-ls-command-options}
 
 `--cluster CLUSTER_ID`
-:    The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.  If you do not include this flag, you must specify the `--location` flag, or the `--service-cluster-id`flag.
+:    The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.  If you do not include this option, you must specify the `--location` option, or the `--service-cluster-id`option.
 
 `--location LOCATION`
-:    The name of the {{site.data.keyword.satelliteshort}} location for which you want to list the assignments. To list the available locations, run `ibmcloud sat location ls`. This flag is not available for service admin. If you do not include this flag, you must specify the `--cluster` flag, or the `--service-cluster-id` flag.
+:    The name of the {{site.data.keyword.satelliteshort}} location for which you want to list the assignments. To list the available locations, run `ibmcloud sat location ls`. This option is not available for service admin. If you do not include this option, you must specify the `--cluster` option, or the `--service-cluster-id` option.
 
 `--service-cluster-id CLUSTER_ID`
-:    The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this flag, you must specify the `--cluster` flag, or the `--location` flag.
+:    The ID of a {{site.data.keyword.satelliteshort}}-enabled service cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this option, you must specify the `--cluster` option, or the `--location` option.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
@@ -2275,7 +2275,7 @@ ibmcloud sat storage config sc add --config-name CONFIG --name NAME [--param PAR
 :    Required. The name of the custom storage class that you wand to add to your configuration.
 
 `--param`
-:    Optional. The custom parameters to provide to the storage class. Parameters are passed as KEY=VALUE pairs. You can pass multiple parameters by specifying the `--param` flag multiple times.
+:    Optional. The custom parameters to provide to the storage class. Parameters are passed as KEY=VALUE pairs. You can pass multiple parameters by specifying the `--param` option multiple times.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.

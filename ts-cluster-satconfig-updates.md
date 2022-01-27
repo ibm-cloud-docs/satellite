@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -38,7 +38,7 @@ To resolve this issue, follow these steps.
         ```
         {: screen}
 
-    2. Log in to your cluster. If you are not connected to your location host network, include the `--endpoint link` flag. For more login options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
+    2. Log in to your cluster. If you are not connected to your location host network, include the `--endpoint link` option. For more login options, see [Accessing {{site.data.keyword.openshiftshort}} clusters](/docs/openshift?topic=openshift-access_cluster).
         ```sh
         ibmcloud oc cluster config -c <cluster_name_or_ID> --admin [--endpoint link]
         ```

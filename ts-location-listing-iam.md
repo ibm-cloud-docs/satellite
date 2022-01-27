@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -47,7 +47,7 @@ If you still cannot view the {{site.data.keyword.satelliteshort}} location, ask 
 
 Ask the location owner to update your access policy in {{site.data.keyword.cloud_notm}} IAM so that access to {{site.data.keyword.satelliteshort}} locations is no longer scoped to locations. The steps vary depending on how the location owner set up your access policy. The following commands provide examples for updating access group and individual policies from the CLI. For more information, see [Managing access for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-iam).
 
-1. Log in to {{site.data.keyword.cloud_notm}}. If you have a federated account, include the `--sso` flag.
+1. Log in to {{site.data.keyword.cloud_notm}}. If you have a federated account, include the `--sso` option.
     ```sh
     ibmcloud login [--sso]
     ```

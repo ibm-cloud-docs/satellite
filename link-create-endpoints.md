@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -88,7 +88,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
     | `--dest-type cloud` | Enter `cloud` to indicate that the destination resource runs outside of the location. | 
     | `--dest-hostname <FQDN_or_IP>` | Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, which must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}} such as a private cloud service endpoint. | 
     | `--dest-port <port>` | Enter the port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol. | 
-    | `--dest-protocol <destination-protocol>` | Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). | 
+    | `--dest-protocol <destination-protocol>` | Optional: Enter the protocol of the destination resource. If you do not specify this option, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). | 
     | `--source-protocol <source-protocol>` | Enter the protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). | 
     |  `--sni <sni>` | Optional. If you specify a `tls` or `https` source protocol and want a separate hostname to be added to the TLS handshake, include the server name indicator. |
     {: summary="This table is read from left to right. The first column has the command component. The second column has the description of the component."}
@@ -141,7 +141,7 @@ Use the {{site.data.keyword.satelliteshort}} Link connector host name and port t
 ### Example for testing the connection from a {{site.data.keyword.satelliteshort}} cluster
 {: #link-example-connection-cluster}
 
-1. Target your cluster. If you are not connected to your location host network, include the `--endpoint link` flag.
+1. Target your cluster. If you are not connected to your location host network, include the `--endpoint link` option.
     ```sh
     ibmcloud oc cluster config --cluster <cluster_name> --admin [--endpoint link]
     ```
@@ -278,7 +278,7 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
     | `--dest-type cloud` | Enter `cloud` to indicate that the destination resource runs outside of the location. | 
     | `--dest-hostname <FQDN_or_IP>` | Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, which must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}} such as a private cloud service endpoint. | 
     | `--dest-port <port>` | Enter the port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol. | 
-    | `--dest-protocol <destination-protocol>` | Optional: Enter the protocol of the destination resource. If you do not specify this flag, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). | 
+    | `--dest-protocol <destination-protocol>` | Optional: Enter the protocol of the destination resource. If you do not specify this option, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). | 
     | `--source-protocol <source-protocol>` | Enter the protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). | 
     |  `--sni <sni>` | Optional. If you specify a `tls` or `https` source protocol and want a separate hostname to be added to the TLS handshake, include the server name indicator. |
     {: summary="This table is read from left to right. The first column has the API component. The second column has the description of the component."}

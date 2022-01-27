@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-26"
+lastupdated: "2022-01-27"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -58,7 +58,7 @@ Removing a host cannot be undone. Before you remove a host, make sure that your 
 {: important}
 
 1. Make sure that your cluster or location control plane has enough compute resources to continue running even after you remove the host, or back up any data that you want to keep.
-2. Log in your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` flag, or create an API key to log in.
+2. Log in your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` option, or create an API key to log in.
     ```sh
     ibmcloud login [--sso]
     ```
