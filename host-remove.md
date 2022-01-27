@@ -119,7 +119,7 @@ Removing a location cannot be undone. Before you remove a location, back up any 
 
 Now that the location is removed, check the hosts in your underlying infrastructure provider. To reuse the hosts for other purposes, you must reload the operating system. If you no longer need the hosts, delete them from your infrastructure provider.
 
-### Removing locations with the CLI
+## Removing locations with the CLI
 {: #location-remove-cli}
 
 Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to remove your locations.

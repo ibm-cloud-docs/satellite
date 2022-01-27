@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-14"
+lastupdated: "2022-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -104,7 +104,7 @@ Review your options to remove your personal and sensitive information from {{sit
 Removing personal and sensitive information is permanent and non-reversible. Make sure that you want to permanently remove your information before you proceed.
 {: important}
 
-[Deleting a location](/docs/satellite?topic=satellite-location-remove) does not remove all information from {{site.data.keyword.satellitelong_notm}}. When you delete a location, location-specific information is removed from the etcd instance that is managed by {{site.data.keyword.IBM_notm}}. However, your information still exists in the following places.
+[Deleting a location](/docs/satellite?topic=satellite-host-remove#location-remove-console) does not remove all information from {{site.data.keyword.satellitelong_notm}}. When you delete a location, location-specific information is removed from the etcd instance that is managed by {{site.data.keyword.IBM_notm}}. However, your information still exists in the following places.
 
 - **Data that {{site.data.keyword.IBM_notm}} manages**: A backup of the {{site.data.keyword.satelliteshort}} location is in {{site.data.keyword.cos_full_notm}} and can still be accessed by the {{site.data.keyword.IBM_notm}} service team. To remove all data that {{site.data.keyword.IBM_notm}} stores, choose between the following options. Note that removing your personal and sensitive information requires all your {{site.data.keyword.satelliteshort}} locations to be deleted as well. Make sure that you backed up your data before your proceed.
 

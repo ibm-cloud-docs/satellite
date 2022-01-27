@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -98,7 +98,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
     - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
 2. Confirm that you have at least three host machines in separate zones that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 vCPUs and 16 GB of memory with RHEL 7 packages and any provider-specific requirement from the guide. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
 
-    A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-control-plane-scale).
+    A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity).
     {: tip}
 
 3. Continue with [Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} location control plane](#assign-hosts-to-cp).
@@ -108,7 +108,7 @@ No matter what infrastructure provider you use, all host machines must meet the 
 
 1. In your on-premises environment, identify or create at least three host machines in physically separate racks, which are called _zones_ in {{site.data.keyword.satelliteshort}}, that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs), such as 4 vCPUs and 16 GB of memory with RHEL 7 packages.
 
-    A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-control-plane-scale).
+    A setup of three host machines in separate zones is the minimum configuration for a demonstration location. A demonstration location can run only a few resources, such as one or two small clusters. If you want to continue to use the location after the demonstration, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity).
     {: tip}
 
 2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the location that you previously created in Step 1.

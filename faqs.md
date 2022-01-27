@@ -120,7 +120,7 @@ Other {{site.data.keyword.satelliteshort}}-enabled services often set up a clust
 ### {{site.data.keyword.satelliteshort}} locations
 {: #pricing-satloc}
 
-When you create a location, you must create a {{site.data.keyword.satelliteshort}} location control plane to manage the location. You need only one control plane per location, although you might need to add more hosts depending on the [size of your location](/docs/satellite?topic=satellite-control-plane-scale).
+When you create a location, you must create a {{site.data.keyword.satelliteshort}} location control plane to manage the location. You need only one control plane per location, although you might need to add more hosts depending on the [size of your location](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity).
 {: shortdesc}
 
 | Type of charge | How the charge is applied | What the charge covers |
