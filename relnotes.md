@@ -29,8 +29,8 @@ Review the release notes for January 2022.
 {: #27jan2022}
 {: release-note}
 
-{{site.data.keyword.cos_full_notm}} for {{site.data.keyword.satellitelong_notm}} 
-:   {{site.data.keyword.cos_short}} for {{site.data.keyword.satelliteshort}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [About {{site.data.keyword.cos_short}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite).
+{{site.data.keyword.cos_full_notm}} 
+:   {{site.data.keyword.cos_full_notm}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [About {{site.data.keyword.cos_short}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite).
 
 ### 25 January 2022
 {: #25jan2022}
