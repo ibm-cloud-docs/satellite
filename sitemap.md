@@ -298,6 +298,8 @@ subcollection: satellite
 
 * [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr)
 
+[Supported managed services for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-managed-services#managed-services)
+
 
 ## Creating locations
 {: #sitemap_creating_locations}
@@ -1433,13 +1435,6 @@ subcollection: satellite
 * [Config](/docs/satellite?topic=satellite-requirements#reqs-config)
 
 * [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-requirements#reqs-services)
-
-
-## Supported managed services for {{site.data.keyword.satelliteshort}}
-{: #sitemap_supported_managed_services_for_}
-
-
-[Supported managed services for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-managed-services#managed-services)
 
 
 ## Supported {{site.data.keyword.cloud_notm}} locations
