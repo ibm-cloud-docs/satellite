@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-01-28"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -964,9 +964,9 @@ subcollection: satellite
 
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-prereq)
 
-* [Optional: Setting up an {{site.data.keyword.cos_full_notm}} backing store](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-cos)
+* [(Optional) Setting up an {{site.data.keyword.cos_full_notm}} backing store](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-cos)
 
-* [Getting the device details for your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-devices)
+* [(Optional) Getting the device details for your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-devices)
 
 * [Creating an OpenShift Data Foundation configuration in the command line](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-cli)
 
