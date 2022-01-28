@@ -292,13 +292,13 @@ subcollection: satellite
 
 * [{{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-master-worker)
 
-* [Customer-provided worker nodes in the {{site.data.keyword.satelliteshort}} location control plane to worker nodes that run {{site.data.keyword.satelliteshort}}-enabled services like {{site.data.keyword.openshiftshort}} clusters in the same location](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-woker-worker)
+* [Customer-provided worker nodes in the {{site.data.keyword.satelliteshort}} location control plane to worker nodes that run [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s like {{site.data.keyword.openshiftshort}} clusters in the same location](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-woker-worker)
 
 * [Customer-provided worker nodes that are assigned to the same resource, like the {{site.data.keyword.satelliteshort}} location control plane or a cluster](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-customer-provided)
 
 * [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr)
 
-[Supported managed services for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-managed-services#managed-services)
+[Supported [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services]](/docs/satellite?topic=satellite-managed-services#managed-services)
 
 
 ## Creating locations
@@ -428,7 +428,7 @@ subcollection: satellite
 
 * [Resetting the host key](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
 
-[Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled services such as clusters](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
+[Updating hosts that are assigned as worker nodes to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s such as clusters](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
 
 * [Checking if a version update is available for worker node hosts](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-check)
 
@@ -1127,9 +1127,9 @@ subcollection: satellite
 
     * [What automated access does {{site.data.keyword.IBM_notm}} have to my location?](/docs/satellite?topic=satellite-compliance#operational-access-automated)
 
-    * [What access do {{site.data.keyword.IBM_notm}} SREs have to my location control plane, including the masters of {{site.data.keyword.satelliteshort}}-enabled service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-control-plane)
+    * [What access do {{site.data.keyword.IBM_notm}} SREs have to my location control plane, including the masters of [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters?](/docs/satellite?topic=satellite-compliance#operational-access-control-plane)
 
-    * [What access do {{site.data.keyword.IBM_notm}} SREs have to my data and workloads that run in my {{site.data.keyword.satelliteshort}}-enabled service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-workloads)
+    * [What access do {{site.data.keyword.IBM_notm}} SREs have to my data and workloads that run in my [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters?](/docs/satellite?topic=satellite-compliance#operational-access-workloads)
 
     * [How can I monitor and manage {{site.data.keyword.IBM_notm}} access into my location? How can I know that there are no backdoor access points on the hosts?](/docs/satellite?topic=satellite-compliance#operational-access-monitor)
 
@@ -1143,7 +1143,7 @@ subcollection: satellite
 
     * [Which areas of security compliance am I responsible for?](/docs/satellite?topic=satellite-compliance#compliance-responsibilities)
 
-    * [What are the security compliance responsibilities of {{site.data.keyword.satelliteshort}}-enabled services?](/docs/satellite?topic=satellite-compliance#compliance-services)
+    * [What are the security compliance responsibilities of [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s?](/docs/satellite?topic=satellite-compliance#compliance-services)
 
 [Securing your connection](/docs/satellite?topic=satellite-service-connection#service-connection)
 
@@ -1529,7 +1529,7 @@ subcollection: satellite
 
 * [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing)
 
-    * [{{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-faqs#pricing-services)
+    * [[{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s](/docs/satellite?topic=satellite-faqs#pricing-services)
 
     * [{{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-faqs#pricing-satloc)
 
@@ -1558,7 +1558,7 @@ subcollection: satellite
 
 * [Reviewing cloud issues and status](/docs/satellite?topic=satellite-get-help#help-cloud-status)
 
-* [Identifying issues for {{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-get-help#help-services)
+* [Identifying issues for [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s](/docs/satellite?topic=satellite-get-help#help-services)
 
 * [Reviewing logs](/docs/satellite?topic=satellite-get-help#review-logs)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-28"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -12,19 +12,19 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled services such as clusters
+# Updating hosts that are assigned as worker nodes to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s such as clusters
 {: #host-update-workers}
 
-{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled services. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates.
+{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates.
 {: shortdesc}
 
-Do not use the `ibmcloud ks worker update` command for hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled services.
+Do not use the `ibmcloud ks worker update` command for hosts that are assigned as worker nodes to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s.
 {: important}
 
 ## Checking if a version update is available for worker node hosts
 {: #host-update-workers-check}
 
-You can check if a version update is available for a host that is assigned as a worker node to a {{site.data.keyword.satelliteshort}}-enabled service by using the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console.
+You can check if a version update is available for a host that is assigned as a worker node to a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) by using the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
 To review the changes that are included in each version update, see the [Version changelog for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
@@ -87,7 +87,7 @@ To determine the type of update that is available, compare your current worker n
 ### Applying minor and patch version updates to worker node hosts
 {: #host-update-workers-minor}
 
-Hosts that are attached to a location do not update automatically. To apply a minor version update, you must first attach and assign new hosts to your {{site.data.keyword.satelliteshort}}-enabled service and then remove the old hosts.
+Hosts that are attached to a location do not update automatically. To apply a minor version update, you must first attach and assign new hosts to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) and then remove the old hosts.
 {: shortdesc}
 
 Before you begin
@@ -116,7 +116,7 @@ To apply a minor or patch update,
 ### Applying major version updates to worker node host
 {: #host-update-workers-major}
 
-Hosts that are attached to a location do not update automatically. To apply a major version update to your worker node hosts, you must attach, assign, and remove hosts one at at time from your {{site.data.keyword.satelliteshort}} location's control plane. Then, you attach, assign, and remove hosts from your {{site.data.keyword.satelliteshort}}-enabled service.
+Hosts that are attached to a location do not update automatically. To apply a major version update to your worker node hosts, you must attach, assign, and remove hosts one at at time from your {{site.data.keyword.satelliteshort}} location's control plane. Then, you attach, assign, and remove hosts from your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services).
 {: shortdesc}
 
 Before you begin
@@ -139,7 +139,7 @@ Before you begin
    ```
    {: screen}
 
-2. List your current hosts that are assigned as worker nodes to your {{site.data.keyword.satelliteshort}}-enabled service and make note of their IDs. This helps determine which hosts to remove from your {{site.data.keyword.satelliteshort}}-enabled service after applying the update.
+2. List your current hosts that are assigned as worker nodes to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) and make note of their IDs. This helps determine which hosts to remove from your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) after applying the update.
 
     ```sh
     ibmcloud ks worker ls -c <cluster_name_or_ID>
@@ -160,7 +160,7 @@ Choose from one of the following scenarios,
 
     See [Procedure to update control plane hosts]/docs/satellite?topic=satellite-host-update-location.
 
-- Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled service.
+- Applying a major update to your hosts assigned to a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services).
 
     1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts). The number of hosts that you attach must match the number of hosts that you want to update.
     2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). These hosts automatically receive the new update when you assign them.

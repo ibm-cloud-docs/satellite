@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-01-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -28,7 +28,7 @@ For every location that you create, {{site.data.keyword.IBM_notm}} stores certai
 ### Stored information when you create a {{site.data.keyword.satelliteshort}} location
 {: #sat-sensitive-data-default}
 
-The following information is stored when you create a {{site.data.keyword.satelliteshort}} location:
+The following information is stored when you create a {{site.data.keyword.satelliteshort}} location.
 
 **Personal information:**
 - The email address of the {{site.data.keyword.cloud_notm}} account that created the location.
@@ -49,7 +49,7 @@ Do not use sensitive or personally identifiable information for the names, label
 {: important}
 
 - {{site.data.keyword.satelliteshort}} resources, such as the names of locations, hosts, {{site.data.keyword.satelliteshort}} Link endpoints, {{site.data.keyword.satelliteshort}} configurations, versions, subscriptions, cluster group names, or storage configurations.
-- {{site.data.keyword.satelliteshort}}-enabled service resources, such as the names of service instances or clusters.
+- [{{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-managed-services) resources, such as the names of service instances or clusters.
 - Managed Kubernetes resources that run in clusters in your {{site.data.keyword.satelliteshort}} location, such as the names and resource definitions of deployments, pods, services, secrets, or config maps.
 - The definitions of resources managed by {{site.data.keyword.satelliteshort}} config, including their data. Sensitive keys or personally identifiable information should be managed with {{site.data.keyword.secrets-manager_short}}, or encrypted with {{site.data.keyword.keymanagementserviceshort}}.
 - Any other resources that run in your {{site.data.keyword.satelliteshort}} location.

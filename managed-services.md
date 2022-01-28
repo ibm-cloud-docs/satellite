@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-01-28"
 
 keywords: satellite, hybrid, multicloud, managed services
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Supported managed services for {{site.data.keyword.satelliteshort}}
+# Supported [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services]
 {: #managed-services}
 
 Learn about what services are supported by {{site.data.keyword.satellitelong_notm}}.

@@ -254,7 +254,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
       ```
       {: pre}
 
-    - {{site.data.keyword.satelliteshort}}-enabled service cluster
+    - [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) cluster
       ```sh
       ibmcloud sat service ls --location <location>
       ```
@@ -274,7 +274,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
       ```
       {: pre}
 
-    - {{site.data.keyword.satelliteshort}}-enabled service cluster
+    - [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) cluster
       ```sh
       ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
       ```
