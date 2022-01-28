@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-25"
+lastupdated: "2022-01-28"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -37,10 +37,10 @@ To use the ODF storage with the local storage operator and local storage devices
         * Two extra raw partitions per worker node in addition to the minimum host requirements. These disks must not be  formatted file systems. If your raw devices are partitioned, they must have at least 2 partitions per disk, per worker node.
 - [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access ).
 - **Optional**: If you want to use {{site.data.keyword.cos_full_notm}} as your object service, [Create an {{site.data.keyword.cos_short}} service instance](#sat-storage-odf-local-cos) and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is used as the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you don't specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create additional backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after your storage configuration is assigned to your clusters and ODF is installed.
-- [Get the details of the raw, unformatted devices that you want to use for your configuration](#sat-storage-odf-local-devices). The device IDs of your storage disks are used to create your {{site.data.keyword.satelliteshort}} storage configuration.
+- **Optional**: [Get the details of the raw, unformatted devices that you want to use for your configuration](#sat-storage-odf-local-devices). The device IDs of your storage disks are used to create your {{site.data.keyword.satelliteshort}} storage configuration.
 
 
-## Optional: Setting up an {{site.data.keyword.cos_full_notm}} backing store
+## (Optional) Setting up an {{site.data.keyword.cos_full_notm}} backing store
 {: #sat-storage-odf-local-cos}
 
 If you want to use {{site.data.keyword.cos_full_notm}} as your object service, create an {{site.data.keyword.cos_short}} service instance and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you don't specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create more backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after assigning the configuration to to your clusters and installing ODF.
@@ -61,15 +61,13 @@ If you want to use {{site.data.keyword.cos_full_notm}} as your object service, c
     {: pre}
 
 
-## Getting the device details for your ODF configuration
+## (Optional) Getting the device details for your ODF configuration
 {: #sat-storage-odf-local-devices}
 
+The following steps show how you can manually retrieve the local device information from each worker node in your cluster. Note that for version 4.8 clusters and later, you can automatically find the available devices on your worker nodes by setting the `auto-discover-devices=true` parameter. However, if you have a 4.7 cluster, you must complete the following steps to retrieve the device paths for the disks on your worker nodes.
+{: important}
+
 When you create your ODF configuration, you must specify the device paths of the disks that you want to use in your storage cluster. The storage cluster is comprised of the object storage daemon (OSD) pods and the monitoring (MON) pods. The devices that you specify as OSD devices are your storage devices where your app data is stored and the devices that you specify as MON devices are managed by the MON pod and used to store and maintain the storage cluster mapping and monitor storage events. For more information about the OSD and MON, see the [Ceph documentation](https://docs.ceph.com/en/latest/start/intro/){: external}.
-
-
-
-The following steps show how you can manually retrieve the local device information from each worker node in your clusters. For version 4.8 clusters and later, you can also use the [disk](https://access.redhat.com/solutions/4928841) to retrieve a list of all the local devices in your cluster.
-{: tip}
 
 1. Log in to your cluster and get a list of available worker nodes. Make a note of the worker nodes that you want to use in your ODF configuration.
 
@@ -256,7 +254,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
       ```
       {: pre}
 
-    - {{site.data.keyword.satelliteshort}}-enabled service cluster
+    - [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) cluster
       ```sh
       ibmcloud sat service ls --location <location>
       ```
@@ -276,7 +274,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
       ```
       {: pre}
 
-    - {{site.data.keyword.satelliteshort}}-enabled service cluster
+    - [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) cluster
       ```sh
       ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
       ```

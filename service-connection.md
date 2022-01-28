@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -28,7 +28,7 @@ You can access the resources that run in your {{site.data.keyword.satelliteshort
 ### Service-instance clusters
 {: #user-access-service}
 
-A cluster service URL is automatically created for any {{site.data.keyword.satelliteshort}}-enabled services that you run in your location, such as a {{site.data.keyword.openshiftlong_notm}} cluster. These URLs allow you to access your {{site.data.keyword.cloud_notm}} service that runs in your location over the public network or from within your hosts' private network, depending on whether your location hosts have public and private or private only connectivity.
+A cluster service URL is automatically created for any [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) that you run in your location, such as a {{site.data.keyword.openshiftlong_notm}} cluster. These URLs allow you to access your {{site.data.keyword.cloud_notm}} service that runs in your location over the public network or from within your hosts' private network, depending on whether your location hosts have public and private or private only connectivity.
 {: shortdesc}
 
 For example, when you create an {{site.data.keyword.satellitelong_notm}} cluster, the cluster is accessible through a URL that consists one of the subdomains for your location and a port, such as `https://pacfd8bdae2d04696301d-6b64a6ccc9c596bf59a86625d8fa2202-ce00.us-east.satellite.appdomain.cloud:32200`. When you access your cluster, such as by using the `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` command or by getting a login token from the {{site.data.keyword.openshiftshort}} web console, this URL is automatically used for your connection to the cluster master. Note that if you use hosts that have private network connectivity only for your location, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.openshiftshort}} web console.
@@ -68,7 +68,7 @@ The following table describes the Link endpoints that are automatically created 
 | `satellite-logdnaapi-<location_ID>` | Allows your {{site.data.keyword.satelliteshort}} location to communicate with the {{site.data.keyword.la_full}} API. | `cloud` | One per {{site.data.keyword.satelliteshort}} location |
 | `satellite-sysdig-<location_ID>` | Allows metrics for your {{site.data.keyword.satelliteshort}} location to be sent to your {{site.data.keyword.mon_full}} instance. | `cloud` | One per location |
 | `satellite-sysdigapi-<location_ID>` | Allows your {{site.data.keyword.satelliteshort}} location to communicate with the {{site.data.keyword.mon_full_notm}} API. | `cloud` | One per {{site.data.keyword.satelliteshort}} location |
-| `openshift-api-<cluster_ID>` | Allows the {{site.data.keyword.openshiftlong_notm}} API to communicate with the master for the service cluster. | `location` | One per {{site.data.keyword.satelliteshort}}-enabled service in your location |
+| `openshift-api-<cluster_ID>` | Allows the {{site.data.keyword.openshiftlong_notm}} API to communicate with the master for the service cluster. | `location` | One per [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) in your location |
 {: caption="Default Link endpoints." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the name of the default endpoint. The second column describes what the endpoint is for. The third column describes how many instances of the endpoint are created and for which component the endpoint is created."}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-01-28"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -32,9 +32,9 @@ The following diagram presents the initial setup steps for hosts.
 
 1. **Attach**: Your machine becomes a {{site.data.keyword.satelliteshort}} host after you successfully [attach the host](/docs/satellite?topic=satellite-attach-hosts) to a {{site.data.keyword.satelliteshort}} location by running a registration script on the machine. Your machine must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan). After the host is attached and a heartbeat can be detected, its health is **ready** and its status is **unassigned**. You can still log in to the machine via SSH to troubleshoot any issues.
 
-2. **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service. For example, a basic setup has 6 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} location control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
+2. **Assign**: The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} control plane or a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). For example, a basic setup has 6 hosts that are assigned as worker nodes to the {{site.data.keyword.satelliteshort}} location control plane. Other hosts might be assigned to {{site.data.keyword.openshiftlong_notm}} clusters as worker nodes for your Kubernetes workloads, or to other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. After you assign a host, it enters a **provisioning** status.
 
-3. **Bootstrap**: When you assign a host, the host is bootstrapped to become a worker node in a {{site.data.keyword.satelliteshort}}-enabled service such as a managed {{site.data.keyword.openshiftlong_notm}} cluster or your {{site.data.keyword.satelliteshort}} control plane. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, software packages for the {{site.data.keyword.satelliteshort}}-enabled service, such as {{site.data.keyword.openshiftshort}}, are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
+3. **Bootstrap**: When you assign a host, the host is bootstrapped to become a worker node in a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) such as a managed {{site.data.keyword.openshiftlong_notm}} cluster or your {{site.data.keyword.satelliteshort}} control plane. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, software packages for the [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services), such as {{site.data.keyword.openshiftshort}}, are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 
 Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshort}} location control plane, {{site.data.keyword.openshiftlong_notm}} cluster, or as compute capacity for other {{site.data.keyword.satelliteshort}}-enabled services. If you run an {{site.data.keyword.openshiftshort}} cluster, you can log in to the clusters and use Kubernetes or {{site.data.keyword.openshiftshort}} APIs to manage your containerized workloads, or use [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig) to manage your workloads across clusters.
 
@@ -53,7 +53,7 @@ When you set up the {{site.data.keyword.satelliteshort}} location control plane,
 {: important}
 
 - Hosts must meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For more information about how to configure hosts in other cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
-- Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or {{site.data.keyword.satelliteshort}}-enabled service. For example, in cloud providers such as AWS, this setup typically means that all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. As latency increases, you might see impacts to performance, including provisioning and recovery times, reduced worker nodes in the cluster, {{site.data.keyword.satelliteshort}}-enabled service degradation, and in extreme cases, failures in your cluster applications.
+- Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). For example, in cloud providers such as AWS, this setup typically means that all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. As latency increases, you might see impacts to performance, including provisioning and recovery times, reduced worker nodes in the cluster, [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) degradation, and in extreme cases, failures in your cluster applications.
 - Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then {{site.data.keyword.IBM_notm}} can automatically assign hosts when clusters or the {{site.data.keyword.satelliteshort}} location control plane request more capacity.
 
 ### Attaching hosts from the console
@@ -198,7 +198,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 ## Using host autoassignment
 {: #host-autoassign-ov}
 
-By default, available hosts are automatically assigned to worker pools in {{site.data.keyword.satelliteshort}} resources, such as a cluster or a {{site.data.keyword.satelliteshort}}-enabled service. The worker pools use host labels to request compute capacity from available {{site.data.keyword.satelliteshort}} hosts with matching labels. You can disable and enable host autoassignment.
+By default, available hosts are automatically assigned to worker pools in {{site.data.keyword.satelliteshort}} resources, such as a cluster or a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). The worker pools use host labels to request compute capacity from available {{site.data.keyword.satelliteshort}} hosts with matching labels. You can disable and enable host autoassignment.
 {: shortdesc}
 
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
@@ -255,7 +255,7 @@ Before you begin, make sure that you [attach hosts](/docs/satellite?topic=satell
 1. Review the host labels that the worker pools use to request compute capacity. You have several options.
     - [Create a worker pool in a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-create-labels) with the host labels that you want to use for autoassignment.
     - Review existing worker pools for their host labels. Note that you cannot update the host labels that a worker pool has. You can review the **Host labels** by running the `ibmcloud oc worker-pool get -c <cluster> --worker-pool <worker_pool>` command.
-    - Review the host labels that a {{site.data.keyword.satelliteshort}}-enabled service cluster uses to request resources from the {{site.data.keyword.satelliteshort}}-enabled service instance console.
+    - Review the host labels that a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) cluster uses to request resources from the [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) instance console.
 2. Review the host labels that your available hosts have. Remember that hosts automatically get `cpu` and `memory` labels when you attach the host to your {{site.data.keyword.satelliteshort}} location.
     1. Get the {{site.data.keyword.satelliteshort}} location name.
         ```sh
@@ -317,7 +317,7 @@ If you [disabled host autoassignment](#host-autoassign-disable), you can re-enab
 ## Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources
 {: #host-assign-manual}
 
-After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity, such as clusters or {{site.data.keyword.satelliteshort}}-enabled services.
+After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity, such as clusters or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s.
 {: shortdesc}
 
 You can also use [host autoassignment](#host-autoassign-ov) for worker pools in {{site.data.keyword.satelliteshort}} clusters. However, you must manually assign hosts to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
@@ -405,19 +405,19 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
     {: screen}
 
 
-## Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled services like clusters
+## Updating hosts that are assigned as worker nodes to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s like clusters
 {: #host-update-workers}
 
-{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled services. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates.
+{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates.
 {: shortdesc}
 
-Do not use the `ibmcloud ks worker update` command for hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled services.
+Do not use the `ibmcloud ks worker update` command for hosts that are assigned as worker nodes to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s.
 {: important}
 
 ### Checking if a version update is available for worker node hosts
 {: #host-update-workers-check}
 
-You can check if a version update is available for a host that is assigned as a worker node to a {{site.data.keyword.satelliteshort}}-enabled service by using the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console.
+You can check if a version update is available for a host that is assigned as a worker node to a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) by using the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
 To review the changes that are included in each version update, see the [Version changelog for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
@@ -477,7 +477,7 @@ To determine the type of update that is available, compare your current worker n
 #### Applying minor and patch version updates to worker node hosts
 {: #host-update-workers-minor}
 
-Hosts that are attached to a location do not update automatically. To apply a minor version update, you must first attach and assign new hosts to your {{site.data.keyword.satelliteshort}}-enabled service and then remove the old hosts.
+Hosts that are attached to a location do not update automatically. To apply a minor version update, you must first attach and assign new hosts to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) and then remove the old hosts.
 {: shortdesc}
 
 Before you begin
@@ -506,7 +506,7 @@ To apply a minor or patch update,
 #### Applying major version updates to worker node host
 {: #host-update-workers-major}
 
-Hosts that are attached to a location do not update automatically. To apply a major version update to your worker node hosts, you must attach, assign, and remove hosts one at at time from your {{site.data.keyword.satelliteshort}} location's control plane. Then, you attach, assign, and remove hosts from your {{site.data.keyword.satelliteshort}}-enabled service.
+Hosts that are attached to a location do not update automatically. To apply a major version update to your worker node hosts, you must attach, assign, and remove hosts one at at time from your {{site.data.keyword.satelliteshort}} location's control plane. Then, you attach, assign, and remove hosts from your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services).
 {: shortdesc}
 
 Before you begin
@@ -529,7 +529,7 @@ Before you begin
    ```
    {: screen}
 
-2. List your current hosts that are assigned as worker nodes to your {{site.data.keyword.satelliteshort}}-enabled service and make note of their IDs. This helps determine which hosts to remove from your {{site.data.keyword.satelliteshort}}-enabled service after applying the update.
+2. List your current hosts that are assigned as worker nodes to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) and make note of their IDs. This helps determine which hosts to remove from your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) after applying the update.
 
     ```sh
     ibmcloud ks worker ls -c <cluster_name_or_ID>
@@ -550,7 +550,7 @@ Choose from one of the following scenarios,
 
     See [Procedure to update control plane hosts]/docs/satellite?topic=satellite-host-update-location.
 
-- Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled service.
+- Applying a major update to your hosts assigned to a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services).
 
     1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts). The number of hosts that you attach must match the number of hosts that you want to update.
     2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). These hosts automatically receive the new update when you assign them.
@@ -596,9 +596,9 @@ You might check for a version update to meet your required security cadence, suc
 
 Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity).
 
-**Do the hosts in my {{site.data.keyword.satelliteshort}}-enabled services have to run the same version as my {{site.data.keyword.satelliteshort}} location control plane?**
+**Do the hosts in my [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s have to run the same version as my {{site.data.keyword.satelliteshort}} location control plane?**
 
-No, the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane do not have to run the same version as the hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled services that run in the location, like clusters. However, all hosts in the location must run a supported version.
+No, the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane do not have to run the same version as the hosts that are assigned to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s that run in the location, like clusters. However, all hosts in the location must run a supported version.
 
 To review supported {{site.data.keyword.openshiftshort}} versions that hosts can run, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-openshift_versions#version_types) or run `ibmcloud ks versions` in the command line. 
 
@@ -637,7 +637,7 @@ If you want to update metadata about a host, such as labels or zones, see the [`
 Reset the key that the control plane uses to communicate with all of the hosts in the {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
-When you create a location, a key is generated that the {{site.data.keyword.satelliteshort}} API server uses to attach hosts to the location and assign hosts to the control plane or to {{site.data.keyword.satelliteshort}}-enabled services. As you use your location, you might want to reset the existing host key. For example, in the case of a potential security incident, you can reset the key when you request a host attachment script. All existing hosts that run the previous version of the script can no longer communicate with the API for your {{site.data.keyword.satelliteshort}} location, and you can remove and reattach the existing hosts by using the script with the new key.
+When you create a location, a key is generated that the {{site.data.keyword.satelliteshort}} API server uses to attach hosts to the location and assign hosts to the control plane or to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s. As you use your location, you might want to reset the existing host key. For example, in the case of a potential security incident, you can reset the key when you request a host attachment script. All existing hosts that run the previous version of the script can no longer communicate with the API for your {{site.data.keyword.satelliteshort}} location, and you can remove and reattach the existing hosts by using the script with the new key.
 
 When you reset the host key, all existing hosts that are attached to your location can no longer communicate with the {{site.data.keyword.satelliteshort}} API server. Until they are reattached, existing hosts have authentication errors and cannot be managed by the control plane, such as for updates.
 {: note}
@@ -657,7 +657,7 @@ When you reset the host key, all existing hosts that are attached to your locati
 3. [Remove one host from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove).
 4. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
 5. [Attach the host](/docs/satellite?topic=satellite-attach-hosts) back to your {{site.data.keyword.satelliteshort}} location. The host registration script now uses the new host key.
-6. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane or {{site.data.keyword.satelliteshort}}-enabled service.
+6. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services).
 7. Repeat steps 3 - 6 for each host in your location so that each host uses the new key to communicate with the {{site.data.keyword.satelliteshort}} API server.
 
 
@@ -688,7 +688,7 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 ## Removing hosts
 {: #host-remove}
 
-When you remove a host from your location, the host is unassigned from a {{site.data.keyword.satelliteshort}}-enabled service cluster or the {{site.data.keyword.satelliteshort}} location control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete an {{site.data.keyword.openshiftshort}} cluster or resize a worker pool, the hosts are still attached to your location, but you must detach and reattach the hosts to use them with another {{site.data.keyword.satelliteshort}} resource.
+When you remove a host from your location, the host is unassigned from a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) cluster or the {{site.data.keyword.satelliteshort}} location control plane, detached from the location, and no longer available to run workloads from {{site.data.keyword.satelliteshort}}. If you delete an {{site.data.keyword.openshiftshort}} cluster or resize a worker pool, the hosts are still attached to your location, but you must detach and reattach the hosts to use them with another {{site.data.keyword.satelliteshort}} resource.
 {: shortdesc}
 
 After removal, the host machine still exists in your underlying infrastructure provider. Reload the operating system before using the host machine for another purpose.

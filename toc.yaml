@@ -37,6 +37,7 @@ toc:
               - host-reqs-inbound.md
               - host-reqs-outbound.md
               - host-reqs-latency.md
+              - managed-services.md
         - topicgroup:
             label: Creating locations
             topics:
@@ -141,7 +142,6 @@ toc:
               - sat-is-understand.md
               - sat-is-responsibilities.md
         - limitations.md
-        - managed-services.md
         - supported-regions.md
         - responsibilities.md
         - ha-dr.md
