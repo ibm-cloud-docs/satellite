@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-01-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Securing access between {{site.data.keyword.cloud_notm}} and on-prem resources with {{site.data.keyword.satelliteshort}} Link
+# Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions
 {: #sg-usecase}
 
 Deploy {{site.data.keyword.satellitelong_notm}} as a secure solution for connecting resources in a protected on-premises environment to cloud resources.
