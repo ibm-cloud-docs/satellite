@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-01"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -293,7 +293,7 @@ subcollection: satellite
 
 * [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr)
 
-[Supported [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services]](/docs/satellite?topic=satellite-managed-services#managed-services)
+[Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services#managed-services)
 
 
 ## Creating locations
