@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-02-02"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -62,6 +62,8 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 | `sat-azure-block-bronze-metro` | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | WaitForFirstConsumer |
 {: caption="Table 2. Azure Disk storage class reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the IOPs range per disk. The third column is the size range . The fourth column is the disk type. The fifth column is the reclaim policy. The sixth column is the volume binding mode."}
+
+
 
 ## Local block storage
 {: #local-block-ref}

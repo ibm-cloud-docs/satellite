@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -537,6 +537,9 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 
 ## Parameter reference
 {: #sat-storage-azure-disk-params-cli}
+
+For help finding these paramters, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest){: external}
+{: tip}
 
 | Parameter | Required? | Description | 
 | --- | --- | --- | 
