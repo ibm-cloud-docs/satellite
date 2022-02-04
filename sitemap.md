@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-02"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -43,8 +43,8 @@ subcollection: satellite
 * [What's next](/docs/satellite?topic=satellite-getting-started#whats-next)
 
 
-## Understanding Satellite use cases
-{: #sitemap_understanding_satellite_use_cases}
+## About {{site.data.keyword.satelliteshort}}
+{: #sitemap_about_}
 
 
 [About {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about#about)
@@ -53,15 +53,10 @@ subcollection: satellite
 
 * [{{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-about#components)
 
-[Securing access between {{site.data.keyword.cloud_notm}} and on-prem resources with {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-sg-usecase#sg-usecase)
 
-* [{{site.data.keyword.satelliteshort}} as a Layer 4 connection solution](/docs/satellite?topic=satellite-sg-usecase#sg-alt)
+## Understanding Satellite use cases
+{: #sitemap_understanding_satellite_use_cases}
 
-* [Setting up a secure connection to {{site.data.keyword.cloud_notm}} with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sg-usecase#sg-alt-setup)
-
-    * [Step 1: Deploy {{site.data.keyword.satelliteshort}} to your on-premises environment](/docs/satellite?topic=satellite-sg-usecase#sg-example-loc)
-
-    * [Step 2: Set up secure communication channels by using {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-sg-usecase#sg-example-link)
 
 [Edge environments for AI, IoT, and machine learning](/docs/satellite?topic=satellite-edge-usecase#edge-usecase)
 
@@ -298,7 +293,7 @@ subcollection: satellite
 
 * [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr)
 
-[Supported [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services]](/docs/satellite?topic=satellite-managed-services#managed-services)
+[Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services#managed-services)
 
 
 ## Creating locations
@@ -1041,6 +1036,21 @@ subcollection: satellite
 * [OpenShift Data Foundation for remote volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-remote-ref)
 
 * [{{site.data.keyword.IBM_notm}} Spectrum Scale](/docs/satellite?topic=satellite-storage-class-ref#spec-scale-sc-ref)
+
+
+## Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions
+{: #sitemap_setting_up__as_a_secure_gateway_for_on-prem_solutions}
+
+
+[Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions](/docs/satellite?topic=satellite-sg-usecase#sg-usecase)
+
+* [{{site.data.keyword.satelliteshort}} as a Layer 4 connection solution](/docs/satellite?topic=satellite-sg-usecase#sg-alt)
+
+* [Setting up a secure connection to {{site.data.keyword.cloud_notm}} with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sg-usecase#sg-alt-setup)
+
+    * [Step 1: Deploy {{site.data.keyword.satelliteshort}} to your on-premises environment](/docs/satellite?topic=satellite-sg-usecase#sg-example-loc)
+
+    * [Step 2: Set up secure communication channels by using {{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-sg-usecase#sg-example-link)
 
 
 ## Enhancing security

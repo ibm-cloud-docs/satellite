@@ -15,11 +15,11 @@ toc:
       id: learn
       topics:
       - getting-started.md
+      - about.md
       - topicgroup:
           label: Understanding Satellite use cases
           topics:
-            - about.md
-            - uc-sg.md
+            
             - uc-edge.md
       - relnotes.md
   - navgroup:
@@ -115,6 +115,7 @@ toc:
                     - storage-ocs-local.md
                     - storage-ocs-remote.md
               - storage-ref.md
+        - uc-sg.md
         - topicgroup:
             label: Enhancing security
             topics:

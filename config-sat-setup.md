@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-02-04"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -80,9 +80,16 @@ To create the configuration:
 
 3. Create a {{site.data.keyword.satelliteshort}} configuration.
     ```sh
-    ibmcloud sat config create --name <configuration_name>
+    ibmcloud sat config create --name <configuration_name> [--data-location <location>] [-q]
     ```
     {: pre}
+    
+    | Component | Description | 
+    |--------------------|------------------|
+    | `--name <configuration_name>` | Enter the name of the Satellite configuration. | 
+    | `--data-location <location>` | Enter the location to store your {{site.data.keyword.satelliteshort}} configurations, for example `us-east`. {{site.data.keyword.satelliteshort}} configurations are Kubernetes resource definitions, like configmaps, storage classes, or secrets that are deployed to the clusters in your location through subscriptions. If `--data-location` is not specified, your configurations are stored in `us-east` by default. These locations are {{site.data.keyword.cos_full_notm}} buckets that are owned by {{site.data.keyword.IBM_notm}} and are pre-provisioned for each region. For more information about how your data is stored, see [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security). For a list of locations, see [Supported locations](/docs/satellite?topic=satellite-sat-regions).  |
+    | `-q` | Do not show the message of the day or update reminders. | 
+    {: caption="Understanding this command's components" caption-side="top"}
 
     Example output
     ```sh
@@ -142,4 +149,3 @@ To create the configuration:
     {: screen}
 
 6. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-setup-clusters-satconfig) to review the rollout status of your Kubernetes resources.
-
