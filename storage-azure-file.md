@@ -45,14 +45,14 @@ Set up [Azure File storage](https://docs.microsoft.com/en-us/azure/aks/azure-fil
 To use the Azure File CSI driver storage template, complete the following tasks: 
 
 1. Create an Azure location by using the [location template](/docs/satellite?topic=satellite-azure) or manually [adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach). 
-    If you choose to manually assign hosts, you must [label your worker nodes](#azure-disk-label-nodes) before creating your storage configuration.
+    If you choose to manually assign hosts, you must [label your worker nodes](#azure-file-label-nodes) before creating your storage configuration.
     {: important}
     
 2. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure.
 3. [Create your configuration file](#azure-file-config-file).
 
 ### Optional: Labeling your worker nodes
-{: azure-file-label-nodes}
+{: #azure-file-label-nodes}
 
 Complete the following steps to add the required labels to your worker nodes for the Azure File CSI driver template.
 {: shortdesc}
@@ -84,8 +84,8 @@ If you manually assigned your Azure hosts to your location and did not use an au
 1. Repeat the previous steps for each worker node.
 
 
-### Gathering your Azure File configuration paramerters
-{: azure-file-config-file}
+### Gathering your Azure File configuration parameters
+{: #azure-file-config-file}
 
 Create a configuration file with your Azure File settings. 
 {: shortdesc}
@@ -153,7 +153,6 @@ Create a storage configuration in the command line by using the Azure File templ
 
     ```sh
     ibmcloud sat storage config create --name <config-name> --template-name azurefile-csi-driver --template-version 1.9.0 --location <location> -p "tenantId=<tenantId>" -p "subscriptionId=<subscription_ID>" -p "aadClientId=<Azure_AD_ClientId>" -p "aadClientSecret=<Azure_AD_Client_Secret>" -p "resourceGroup=<resource_group>" -p "location=<location>" -p "vmType=<vm_type>" -p "securityGroupName=<security_group_name>" -p "vnetName=<vnet_name>"
-
     ```
     {: pre}
 
@@ -163,9 +162,9 @@ Create a storage configuration in the command line by using the Azure File templ
     ibmcloud sat storage config get --config <config>
     ```
     {: pre}
+    
 
-1. **Optional** [Create a custom storage class](#azurefile-add-sc).
-1. [Assign your storage configuration to your cluster or clusters](#assign-storage-azure).
+1. [Assign your storage configuration to your cluster or clusters](#assign-storage-azurefile).
 
 
 
@@ -193,7 +192,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 ### Assigning a storage configuration in the command line 
-{: assign-storage-azurefile-csi-cli}
+{: #assign-storage-azurefile-csi-cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -287,7 +286,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 1. [Deploy an app that uses your Azure File storage](#storage-azure-file-csi-app-deploy).
 
 ## Deploying an app that uses your Azure File storage
-{: storage-azure-file-csi-app-deploy}
+{: #storage-azure-file-csi-app-deploy}
 
 You can use the Azure File driver to create PVCs that you can use in your cluster workloads.
 {: shortdesc}
@@ -395,7 +394,7 @@ You can use the Azure File driver to create PVCs that you can use in your cluste
     ```
     {: pre}
 
-1. View the contents of the `outfile` file to confirm that your app can write data to your presistent storage.
+1. View the contents of the `outfile` file to confirm that your app can write data to your persistent storage.
 
     ```sh
     cat /mnt/azurefile/outfile
@@ -555,7 +554,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 ## Parameter reference
 {: #sat-storage-azure-file-params-cli}
 
-For help finding these paramters, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest){: external}
+For help finding these parameters, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest){: external}
 {: tip}
 
 | Parameter | Required? | Description | 
