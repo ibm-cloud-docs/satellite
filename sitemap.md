@@ -233,13 +233,6 @@ subcollection: satellite
 * [CLI reference documentation](/docs/satellite?topic=satellite-setup-cli#cli-ref-docs)
 
 
-## Planning your infrastructure environment for {{site.data.keyword.satelliteshort}}
-{: #sitemap_planning_your_infrastructure_environment_for_}
-
-
-[Planning your infrastructure environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan#infrastructure-plan)
-
-
 ## Understanding {{site.data.keyword.satelliteshort}} hosts
 {: #sitemap_understanding__hosts}
 
@@ -331,64 +324,6 @@ subcollection: satellite
     * [Setting up the control plane from the CLI](/docs/satellite?topic=satellite-locations#control-plane-cli)
 
     * [What's next?](/docs/satellite?topic=satellite-locations#location-control-plane-next)
-
-[Alibaba Cloud](/docs/satellite?topic=satellite-alibaba#alibaba)
-
-* [Adding Alibaba hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-alibaba#alibaba-host-attach)
-
-    * [1. Download the host script](/docs/satellite?topic=satellite-alibaba#alibaba-host-script)
-
-    * [2. Set up your virtual machines](/docs/satellite?topic=satellite-alibaba#alibaba-host-vm)
-
-    * [3. Connect to your instance and install packages](/docs/satellite?topic=satellite-alibaba#alibaba-host-install-packages)
-
-    * [4. Upload and run the host attach script](/docs/satellite?topic=satellite-alibaba#alibaba-host-script-run)
-
-    * [5. Configure the control plane](/docs/satellite?topic=satellite-alibaba#alibaba-host-control-plane)
-
-* [Security group settings](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-secgroup)
-
-* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-console-access)
-
-[Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws#aws)
-
-* [Automating your AWS location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-aws#aws-template)
-
-* [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach)
-
-* [AWS instance types](/docs/satellite?topic=satellite-aws#aws-instance-types)
-
-* [Security group settings](/docs/satellite?topic=satellite-aws#aws-reqs-secgroup)
-
-* [AWS credentials](/docs/satellite?topic=satellite-aws#infra-creds-aws)
-
-* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-aws#aws-reqs-console-access)
-
-[Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp#gcp)
-
-* [Automating your GCP location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-gcp#gcp-template)
-
-* [Manually adding GCP hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-gcp#gcp-host-attach)
-
-* [Network firewall settings](/docs/satellite?topic=satellite-gcp#gcp-reqs-firewall)
-
-* [Google Cloud Platform credentials](/docs/satellite?topic=satellite-gcp#infra-creds-gcp)
-
-* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-gcp#gcp-reqs-console-access)
-
-[Microsoft Azure](/docs/satellite?topic=satellite-azure#azure)
-
-* [Automating your Azure location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-azure#azure-template)
-
-* [Adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach)
-
-* [Security group settings](/docs/satellite?topic=satellite-azure#azure-reqs-firewall)
-
-* [Microsoft Azure credentials](/docs/satellite?topic=satellite-azure#infra-creds-azure)
-
-[{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm#ibm)
-
-* [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
 
 
 ## Managing hosts and locations
@@ -1663,6 +1598,8 @@ subcollection: satellite
 * [Debugging hosts for connectivity issues](/docs/satellite?topic=satellite-assign-fails#debug-host-connectivity)
 
 * [Endpoints to verify connectivity by {{site.data.keyword.cloud_notm}} multizone metro](/docs/satellite?topic=satellite-assign-fails#endpoints-to-verify)
+
+[Why does host assign fail with a `crio` error?](/docs/satellite?topic=satellite-host-assign-file-system#host-assign-file-system)
 
 [Why can't I reuse a host in a different {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-sat-host-reattach-fail#sat-host-reattach-fail)
 
