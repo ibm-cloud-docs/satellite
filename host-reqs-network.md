@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-09"
+lastupdated: "2022-02-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -101,6 +101,8 @@ In addition to the [outbound connectivity](#reqs-host-network-firewall-outbound)
 
 To secure your outbound connectivity, allow only TCP on the Kubernetes API server NodePorts and UDP on the VPN NodePorts for your location. You can find your active NodePorts by running the **`ibmcloud sat location get --location <location>`** command.
 {: tip}
+
+
 
 
 
