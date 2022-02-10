@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-02-10"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -538,20 +538,20 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 ## Parameter reference
 {: #sat-storage-azure-disk-params-cli}
 
-For help finding these paramters, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest){: external}
+For help finding these parameters, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest){: external}
 {: tip}
 
 | Parameter | Required? | Description | 
 | --- | --- | --- | 
-| `tenantId` | Required | The Azure tenant ID that you want to use for your configuration. |
-| `subscriptionId` | Required | Your Azure subscription ID. |
-| `aadClientId` | Required | Your Azure Active Directory Client ID. |
+| `tenantId` | Required | The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. |
+| `subscriptionId` | Required | Your Azure subscription ID. You can find your subscription ID in the Azure portal or by running the `az account subscription list` command. |
+| `aadClientId` | Required | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az identity list` command. |
 | `aadClientSecret` | Required | Your Azure Active Directory Client Secret. |
-| `resourceGroup` | Required | The name of your Azure resource group. |
-| `location` | Required | The location of your Azure hosts. |
-| `vmType` | Required | The virtual machine type. For example: `standard` or `VMSS`. |
-| `securityGroupName` | Required | The security group name. |
-| `vnetName` | Required | The name of the virtual network. |
+| `resourceGroup` | Required | The name of your Azure resource group. You can find your resource group in the Azure portal or by running the `az group list` command. |
+| `location` | Required | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal. For example `useast` |
+| `vmType` | Required | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. |
+| `securityGroupName` | Required | The security group name. You can find your security group name in the Azure portal by running the `az network nsg list` command. |
+| `vnetName` | Required | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet subnet list` command. |
 {: caption="Table 1. Parameter reference for Azure Disk storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates required parameters. The third column is a brief description of the parameter."}
 

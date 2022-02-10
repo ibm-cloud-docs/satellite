@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -26,12 +26,12 @@ The hosts that you want to attach to the {{site.data.keyword.satelliteshort}} lo
 ## Customer-provided worker nodes in the {{site.data.keyword.satelliteshort}} location control plane to worker nodes that run [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s like {{site.data.keyword.openshiftshort}} clusters in the same location
 {: #host-latency-test-woker-worker}
 
-Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). For example, in cloud providers such as AWS, this setup typically means that all of the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. As latency increases, you might see impacts to performance, including provisioning and recovery times, reduced worker nodes in the cluster, [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) degradation, and in extreme cases, failures in your cluster applications.
+Your host infrastructure setup must have a low latency connection of less than or equal to 100 milliseconds (`<= 100ms`) round-trip time (RTT) between the hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane worker nodes and the hosts that are used for other resources in the location, like clusters or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). For example, in cloud providers such as AWS, this setup typically means that all the hosts in the {{site.data.keyword.satelliteshort}} location are from the same cloud region, like `us-east-1`. As latency increases, you might see impacts to performance, including provisioning and recovery times, reduced worker nodes in the cluster, [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) degradation, and in extreme cases, failures in your cluster applications.
 
 ## Customer-provided worker nodes that are assigned to the same resource, like the {{site.data.keyword.satelliteshort}} location control plane or a cluster
 {: #host-latency-test-customer-provided}
 
-Your host infrastructure setup must have a low latency connection of less than or equal to 10 milliseconds (`<= 10ms`) round-trip time (RTT) among all of the hosts that are assigned to the same {{site.data.keyword.satelliteshort}} resource, such as the {{site.data.keyword.satelliteshort}} location control plane, a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services), or cluster. As latency increases, you might see impacts to performance, including [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s like databases or cluster application failures.
+Your host infrastructure setup must have a low latency connection of less than or equal to 10 milliseconds (`<= 10ms`) round-trip time (RTT) among all the hosts that are assigned to the same {{site.data.keyword.satelliteshort}} resource, such as the {{site.data.keyword.satelliteshort}} location control plane, a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services), or cluster. As latency increases, you might see impacts to performance, including [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s like databases or cluster application failures.
 
 ## Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts
 {: #host-latency-mzr}
@@ -44,31 +44,31 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 2. Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test.
     - **Dallas**
 
-      52.117.39.146</br>169.48.134.66</br>169.63.36.210
+      52.117.39.146, 169.48.134.66, 169.63.36.210
 
     - **Frankfurt**
 
-      149.81.188.122</br>158.177.88.18</br>161.156.38.122
+      149.81.188.122, 158.177.88.18, 161.156.38.122
 
     - **London**
 
-      158.175.120.210</br>141.125.97.106</br>158.176.139.66
+      158.175.120.210, 141.125.97.106, 158.176.139.66
       
     - **Sao Paolo**
     
-      163.107.67.18</br>163.109.71.82</br>169.57.144.42
+      163.107.67.18, 163.109.71.82, 169.57.144.42
 
     - **Tokyo**
 
-      161.202.104.226</br>128.168.67.106</br>165.192.108.10
+      161.202.104.226, 128.168.67.106, 165.192.108.10
 
     - **Toronto**
     
-      163.74.65.138</br>163.75.70.50</br>169.53.160.154
+      163.74.65.138, 163.75.70.50, 169.53.160.154
 
     - **Washington, DC**
 
-      169.63.123.154</br>169.63.110.114</br>169.62.13.2</br>169.60.123.162</br>169.59.152.58</br>52.117.93.26
+      169.63.123.154, 169.63.110.114, 169.62.13.2, 169.60.123.162, 169.59.152.58, 52.117.93.26
 
 3. From your host, ping the IP addresses of the {{site.data.keyword.cloud_notm}} region.
     ```sh

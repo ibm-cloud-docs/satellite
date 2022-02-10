@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,6 +18,16 @@ subcollection: satellite
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
+
+## February 2022
+{: #release-feb-2022}
+
+### 10 Februrary 2022
+{: #10feb2022}
+{: release-note}
+
+New! Beta support for the Azure File CSI driver template
+:    You can use the Azure File CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Azure File CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-azurefile-csi).
 
 ## January 2022
 {: #release-jan-2022}

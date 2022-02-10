@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-01-13"
+lastupdated: "2022-02-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -15,6 +15,7 @@ content-type: troubleshoot
 
 # Why is my Ingress in a warning state?
 {: #ts-degraded-ingress}
+
 
 
 When you look at the status of your Ingress setup, you see an error message similar to the following example.
@@ -70,26 +71,26 @@ While you can't fix the warning state of your Ingress, you can update the Ingres
     - `creationTimestamp`
     - `managedFields`
     - `status`
+    - `finalizers`
+    - `generation`
+    - `resourceVersion`
+    - `selfLink`
+    - `uid`
+
     
-    In addition, change the `endpointPublishingStrategy` to use a `NodePortService` instead of a `LoadBalancerService`. Your final YAML file looks similar to the following example.
+    In addition, change the `endpointPublishingStrategy` to `Private` instead of `LoadBalancerService`. Your final YAML file looks similar to the following example.
     
     ```yaml
     apiVersion: operator.openshift.io/v1
     kind: IngressController
     metadata:
-      finalizers:
-      - ingresscontroller.operator.openshift.io/finalizer-ingresscontroller
-      generation: 2
       name: default
       namespace: openshift-ingress-operator
-      resourceVersion: "109594"
-      selfLink: /apis/operator.openshift.io/v1/namespaces/openshift-ingress-operator/ingresscontrollers/default
-      uid: d4d74d1c-d0a9-4df5-826d-772dc82dca14
     spec:
       defaultCertificate:
         name: mycluster-97db6e22bd363f060fa80637cd5e2463-0000
       endpointPublishingStrategy:
-        type: NodePortService
+        type: Private
       nodePlacement:
         tolerations:
         - key: dedicated
@@ -97,19 +98,39 @@ While you can't fix the warning state of your Ingress, you can update the Ingres
     ```
    {: screen}
 
-3. Remove the existing Ingress controller from your cluster.
+3. Scale down the IngressController operator.
+    ```sh
+    oc scale --replicas=0 deployment/ingress-operator -n openshift-ingress-operator
+    ```
+    {: pre}
+
+4. Remove the finalizer from the current default Ingress controller.
+    ```sh
+    oc patch ingresscontroller default -n openshift-ingress-operator -p '{"metadata":{"finalizers":null}}' --type=merge
+    ```
+    {: pre}
+
+5. Remove the existing Ingress controller from your cluster.
     ```sh
     oc delete ingresscontroller default -n openshift-ingress-operator
     ```
     {: pre}
     
-4. Re-create the Ingress controller by using the YAML file that you created earlier. Note that you must re-create the Ingress controller before {{site.data.keyword.openshiftshort}} can automatically re-create the controller with the old configuration.
+6. Re-create the Ingress controller by using the YAML file that you created earlier. Note that you must re-create the Ingress controller before {{site.data.keyword.openshiftshort}} can automatically re-create the controller with the old configuration.
     ```sh
     oc apply -f ingress.yaml
     ```
     {: pre}
 
-5. Verify that the Ingress controller is not in a degraded state anymore.
+7. Scale up the IngressController operator.
+    ```sh
+    oc scale --replicas=1 deployment/ingress-operator -n openshift-ingress-operator
+    ```
+    {: pre}
+
+
+
+8. Verify that the Ingress controller is not in a degraded state anymore.
     ```sh
     oc describe ingresscontroller default -n openshift-ingress-operator 
     ```
