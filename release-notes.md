@@ -22,8 +22,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## February 2022
 {: #release-feb-2022}
 
-
-
 ### 10 February 2022
 {: #10feb2022}
 {: release-note}
