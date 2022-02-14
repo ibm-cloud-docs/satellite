@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -22,7 +22,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## February 2022
 {: #release-feb-2022}
 
-### 10 Februrary 2022
+
+
+### 10 February 2022
 {: #10feb2022}
 {: release-note}
 

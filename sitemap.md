@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-11"
+lastupdated: "2022-02-14"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -78,7 +78,7 @@ subcollection: satellite
 
 * [February 2022](/docs/satellite?topic=satellite-release-notes#release-feb-2022)
 
-    * [10 Februrary 2022](/docs/satellite?topic=satellite-release-notes#10feb2022)
+    * [10 February 2022](/docs/satellite?topic=satellite-release-notes#10feb2022)
 
 * [January 2022](/docs/satellite?topic=satellite-release-notes#release-jan-2022)
 
@@ -269,6 +269,8 @@ subcollection: satellite
 * [Inbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound)
 
 * [Outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound)
+
+    * [Required outbound connectivity for hosts in all regions](/docs/satellite?topic=satellite-reqs-host-network#all-regions-outbound)
 
     * [Dallas](/docs/satellite?topic=satellite-reqs-host-network#dal-outbound)
 
