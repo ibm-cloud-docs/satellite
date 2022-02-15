@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-14"
+lastupdated: "2022-02-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -22,9 +22,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## February 2022
 {: #release-feb-2022}
 
-### 10 February 2022
-{: #10feb2022}
-{: release-note}
+
+
+
 
 New! Beta support for the Azure File CSI driver template
 :    You can use the Azure File CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Azure File CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-azurefile-csi).
@@ -76,7 +76,7 @@ Review the release notes for December 2021.
 {: release-note}
 
 **New! Sydney location**
-:   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Sydney** (`syd`, `au-syd`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). Note that {{site.data.keyword.satelliteshort}} Link flow logs for Location endpoints created in the Sydney (`au-syd`) region are inconsistent or might not work.
+:   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Sydney** (`syd`, `au-syd`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). 
 
 
 ### 3 December 2021
@@ -88,7 +88,6 @@ Review the release notes for December 2021.
 
 CLI changelog
 :    Updated the CLI plug-in changelog page for the [release of version 1.0.353](/docs/satellite?topic=satellite-satellite-cli-changelog).
-
 
 
 ## November 2021

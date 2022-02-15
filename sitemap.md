@@ -78,8 +78,6 @@ subcollection: satellite
 
 * [February 2022](/docs/satellite?topic=satellite-release-notes#release-feb-2022)
 
-    * [10 February 2022](/docs/satellite?topic=satellite-release-notes#10feb2022)
-
 * [January 2022](/docs/satellite?topic=satellite-release-notes#release-jan-2022)
 
     * [27 January 2022](/docs/satellite?topic=satellite-release-notes#27jan2022)
