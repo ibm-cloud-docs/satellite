@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -37,7 +37,7 @@ You can use {{site.data.keyword.cloud_notm}} IAM to assign access to different r
 ### Location
 {: #iam-resource-loc}
 
-Review details about the {{site.data.keyword.satelliteshort}} Config IAM resource type.
+Review details about the {{site.data.keyword.satelliteshort}} location IAM resource type.
 {: shortdesc}
 
 If you scope an access policy to the `location` resource type, the users must target the regional endpoint to interact with the location. For more information, see the [troubleshooting topic](/docs/satellite?topic=satellite-ts-location-missing-location).
