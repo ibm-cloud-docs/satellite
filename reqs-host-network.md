@@ -120,9 +120,6 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 
 
 
-
-
-
 ### Dallas
 {: #dal-outbound}
 
@@ -142,10 +139,12 @@ Allow Link connectors to connect to the Link tunnel server endpoint
 :   **Source**: Control plane hosts
 :   **Destination IPs**: 169.48.139.210, 169.48.188.146, 169.59.239.66, 169.60.2.74, 169.61.140.18, 169.61.156.226, 169.61.31.178, 169.61.38.178, 169.62.221.10
 :   **Destination hostnames**: `c-01-ws.us-south.link.satellite.cloud.ibm.com`, `c-02-ws.us-south.link.satellite.cloud.ibm.com`, `c-03-ws.us-south.link.satellite.cloud.ibm.com`, `c-04-ws.us-south.link.satellite.cloud.ibm.com`
-    You can find the hostnames or IPs by running the `dig c-<XX>-ws.us-south.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
-    {: tip}
-    
+
 :   **Protocol and ports**: TCP 443
+
+You can find the hostnames or IPs by running the `dig c-<XX>-ws.us-south.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
+{: tip}
+    
 
 Allow hosts to be attached to a location and assigned to services in the location
 :   **Source**: All hosts
@@ -196,10 +195,11 @@ Allow Link connectors to connect to the Link tunnel server endpoint
 :   **Source**: Control plane hosts
 :   **Destination IPs**: 149.81.188.130, 149.81.188.138, 149.81.188.146, 149.81.188.154, 158.177.109.210, 158.177.169.162, 158.177.179.154, 158.177.75.210, 161.156.38.10, 161.156.38.18, 161.156.38.2, 161.156.38.26  
 :   **Destination hostnames**:  `c-01-ws.eu-de.link.satellite.cloud.ibm.com`, `c-02-ws.eu-de.link.satellite.cloud.ibm.com`, `c-03-ws.eu-de.link.satellite.cloud.ibm.com`, `c-04-ws.eu-de.link.satellite.cloud.ibm.com`
-    You can find the hostnames or IPs by running the `dig c-<XX>-ws.eu-de.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
-    {: tip}
-    
 :   **Protocol and ports**: TCP 443
+
+You can find the hostnames or IPs by running the `dig c-<XX>-ws.eu-de.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
+{: tip}
+
 
 Allow hosts to be attached to a location and assigned to services in the location
 :   **Source**: All hosts
@@ -249,14 +249,14 @@ Allow Link connectors to connect to the Link tunnel server endpoint
 :   **Source**: Control plane hosts
 :   **Destination IPs**: 141.125.137.50, 141.125.137.98, 141.125.66.114, 141.125.87.226, 158.175.125.50, 158.175.130.138, 158.175.131.242, 158.175.140.106, 158.176.104.186, 158.176.135.26, 158.176.142.106, 158.176.74.242
 :   **Destination hostnames**: `c-01-ws.eu-gb.link.satellite.cloud.ibm.com`, `c-02-ws.eu-gb.link.satellite.cloud.ibm.com`, `c-03-ws.eu-gb.link.satellite.cloud.ibm.com`, `c-04-ws.eu-gb.link.satellite.cloud.ibm.com`
-    You can find the hostnames or IPs by running the `dig c-<XX>-ws.eu-gb.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
-    {: tip}
-    
 :   **Protocol and ports**: TCP 443
+
+You can find the hostnames or IPs by running the `dig c-<XX>-ws.eu-gb.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
+{: tip}
 
 Allow hosts to be attached to a location and assigned to services in the location
 :   **Source**: All hosts
- - 141.125.74.4, 158.175.157.149,  158.176.131.107  
+:   **Destination IPs**: 141.125.74.4, 158.175.157.149,  158.176.131.107  
 :   **Destination hostnames**: `origin.eu-gb.containers.cloud.ibm.com`
 :   **Protocol and ports**: TCP 443
 
@@ -305,10 +305,10 @@ Allow Link connectors to connect to the Link tunnel server endpoint
 :   **Source**: Control plane hosts
 :   **Destination IPs**: 163.107.67.26, 163.107.69.114, 163.107.70.162, 163.107.70.74, 163.109.67.210, 163.109.70.226, 163.109.70.234, 163.109.71.90, 169.57.155.74, 169.57.162.26, 169.57.163.90, 169.57.215.218 
 :   **Destination hostnames**: `c-01-ws.br-sao.link.satellite.cloud.ibm.com`, `c-02-ws.br-sao.link.satellite.cloud.ibm.com`, `c-03-ws.br-sao.link.satellite.cloud.ibm.com`, `c-04-ws.br-sao.link.satellite.cloud.ibm.com`
-    You can find the hostnames or IPs by running the `dig c-<XX>-ws.br-sao.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
-    {: tip}
-    
 :   **Protocol and ports**: TCP 443
+
+You can find the hostnames or IPs by running the `dig c-<XX>-ws.br-sao.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
+{: tip}
 
 Allow hosts to be attached to a location and assigned to services in the location
 :   **Source**: All hosts
@@ -360,10 +360,10 @@ Allow Link connectors to connect to the Link tunnel server endpoint
 :   **Source**: Control plane hosts
 :   **Destination IPs**: 130.198.70.242, 130.198.75.74, 130.198.79.130, 130.198.86.50, 135.90.64.226, 135.90.67.154, 135.90.70.74, 135.90.93.74, 168.1.1.250, 168.1.195.90, 168.1.201.194, 168.1.57.122 
 :   **Destination hostnames**: `c-01-ws.au-syd.link.satellite.cloud.ibm.com`, `c-02-ws.au-syd.link.satellite.cloud.ibm.com`, `c-03-ws.au-syd.link.satellite.cloud.ibm.com`, `c-04-ws.au-syd.link.satellite.cloud.ibm.com`
-    You can find the hostnames or IPs by running the `dig c-<XX>-ws.au-syd.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
-    {: tip}
-    
 :   **Protocol and ports**: TCP 443
+
+You can find the hostnames or IPs by running the `dig c-<XX>-ws.au-syd.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
+{: tip}
 
 Allow hosts to be attached to a location and assigned to services in the location
 :   **Source**: All hosts
@@ -414,10 +414,10 @@ Allow Link connectors to connect to the Link tunnel server endpoint
 :   **Source**: Control plane hosts
 :   **Destination IPs**: 161.202.150.66, 128.168.89.146, 165.192.71.226, 169.56.18.98, 128.168.68.42, 165.192.76.2, 161.202.235.106, 128.168.106.18, 165.192.111.170, 161.202.89.122, 128.168.151.170, 165.192.64.2 
 :   **Destination hostnames**: `c-01-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-02-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-03-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-04-ws.jp-tok.link.satellite.cloud.ibm.com`
-    You can find the hostnames or IPs by running the `dig c-<XX>-ws.jp-tok.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
-    {: tip}
-    
 :   **Protocol and ports**: TCP 443
+
+You can find the hostnames or IPs by running the `dig c-<XX>-ws.jp-tok.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
+{: tip}
 
 Allow hosts to be attached to a location and assigned to services in the location
 :   **Source**: All hosts
@@ -448,8 +448,6 @@ Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
 :   **Protocol and ports**: TCP 443 and 80
 
 
-
-
 ### Toronto
 {: #tor-outbound}
 
@@ -469,10 +467,10 @@ Allow Link connectors to connect to the Link tunnel server endpoint
 :   **Source**: Control plane hosts
 :   **Destination IPs**: 158.85.124.194, 158.85.79.18, 158.85.86.234, 163.74.67.114, 163.74.70.82, 163.74.70.90, 163.74.70.98, 163.75.70.74, 163.75.70.82, 163.75.70.90, 163.75.70.98, 169.55.154.154 
 :   **Destination hostnames**: `c-01-ws.ca-tor.link.satellite.cloud.ibm.com`, `c-02-ws.ca-tor.link.satellite.cloud.ibm.com`, `c-03-ws.ca-tor.link.satellite.cloud.ibm.com`, `c-04-ws.ca-tor.link.satellite.cloud.ibm.com`
-    You can find the hostnames or IPs by running the `dig c-<XX>-ws.ca-tor.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
-    {: tip}
-    
 :   **Protocol and ports**: TCP 443
+
+You can find the hostnames or IPs by running the `dig c-<XX>-ws.ca-tor.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
+{: tip}
 
 Allow hosts to be attached to a location and assigned to services in the location
 :   **Source**: All hosts
@@ -524,10 +522,10 @@ Allow Link connectors to connect to the Link tunnel server endpoint
 :   **Source**: Control plane hosts
 :   **Destination IPs**: 52.117.112.242, 169.47.156.154, 169.47.174.178, 169.59.135.26, 169.60.122.226, 169.61.101.226, 169.62.1.34, 169.62.53.58, 169.63.113.122, 169.63.121.178, 169.63.133.10, 169.63.148.250 
 :   **Destination hostnames**: `c-01-ws.us-east.link.satellite.cloud.ibm.com`, `c-02-ws.us-eat.link.satellite.cloud.ibm.com`, `c-03-ws.us-east.link.satellite.cloud.ibm.com`, `c-04-ws.us-east.link.satellite.cloud.ibm.com`
-    You can find the hostnames or IPs by running the `dig c-<XX>-ws.us-east.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
-    {: tip}
-    
 :   **Protocol and ports**: TCP 443
+
+You can find the hostnames or IPs by running the `dig c-<XX>-ws.us-east.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
+{: tip}
 
 Allow hosts to be attached to a location and assigned to services in the location
 :   **Source**: All hosts
