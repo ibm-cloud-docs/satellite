@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-15"
+lastupdated: "2022-02-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,7 +24,17 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 
 
+### 16 February 2022
+{: #16feb2022}
+{: release-note}
 
+Host connectivity
+:   Updated the [outbound connectivity for hosts](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound) page to include hostnames as well as IP addresses.
+
+
+### 10 February 2022
+{: #10feb2022}
+{: release-note}
 
 New! Beta support for the Azure File CSI driver template
 :    You can use the Azure File CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Azure File CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-azurefile-csi).

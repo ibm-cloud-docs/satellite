@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-16"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -698,23 +698,6 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
     ```
     {: pre}
 
-1. List your storage assignments and find the one that you used for your cluster.
-    ```sh
-    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
-    ```
-    {: pre}
-
-1. Remove the assignment. After the assignment is removed, the local file driver pods and storage classes are removed from all clusters that were part of the storage assignment.
-    ```sh
-    ibmcloud sat storage assignment rm --assignment <assignment_ID>
-    ```
-    {: pre}
-
-1. Remove your storage assignment.
-    ```sh
-    ibmcloud sat storage assignment rm --assignment <assignment>
-    ```
-    {: pre}
 
 1. Clean up the remaining Kubernetes resources from your cluster. Save the following script in a file called `cleanup.sh` to your local machine.
     ```sh

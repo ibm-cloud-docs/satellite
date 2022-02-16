@@ -80,7 +80,7 @@ For example, if the primary network interface for a host is `eth0`, you must ope
 ## Outbound connectivity
 {: #reqs-host-network-firewall-outbound}
 
-Hosts must have outbound connectivity to all ports and IP addresses on the primary network interface through the default gateway of the system.
+Hosts must have outbound connectivity to all ports and IP addresses on the primary network interface through the default gateway.
 {: shortdec}
 
 For example, if the primary network interface is public, you can try these commands to test that your host has outbound network connectivity on the public network.
@@ -97,7 +97,7 @@ curl -k [node 1-n]:22
 
 If you do not open all outbound connectivity, you must allow the following outbound connectivity in your firewall. The required IP addresses vary with the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
 
-In addition to the [outbound connectivity](#reqs-host-network-firewall-outbound) for {{site.data.keyword.satelliteshort}}, be sure that you allow the required outbound connectivity for the {{site.data.keyword.satelliteshort}} services that you want to use. Review the service documentation for outbound connectivity requirements. For example, if you are creating OpenShift clusters, you must allow your hosts to access the LaunchDarkly service. For more information, see [Supported managed services for Satellite](/docs/satellite?topic=satellite-managed-services). 
+In addition to the [outbound connectivity](#reqs-host-network-firewall-outbound) for {{site.data.keyword.satelliteshort}}, be sure that you allow the required outbound connectivity for the {{site.data.keyword.satelliteshort}} services that you want to use. Review the service documentation for outbound connectivity requirements. For more information, see [Supported managed services for Satellite](/docs/satellite?topic=satellite-managed-services). 
 
 To secure your outbound connectivity, allow only TCP on the Kubernetes API server NodePorts and UDP on the VPN NodePorts for your location. You can find your active NodePorts by running the **`ibmcloud sat location get --location <location>`** command.
 {: tip}
