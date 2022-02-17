@@ -41,7 +41,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     1. From the **Hosts** tab, click **Attach host**.
     2. Optional: Enter any host labels that are used later to [automatically assign hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
-    4. Click **Download script** to generate the host script and download the script to your local system.
+    4. Click **Download script** to generate the host script and download the script to your local system. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
 
 ### 2. Set up your virtual machines
 {: #alibaba-host-vm}
