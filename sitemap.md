@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-16"
+lastupdated: "2022-02-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -406,15 +406,15 @@ subcollection: satellite
 
 [Assigning hosts to worker pools](/docs/satellite?topic=satellite-assigning-hosts#assigning-hosts)
 
-* [Using host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov)
+* [Using host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov)
 
     * [About host labels](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-about)
 
     * [Automatically assigning hosts](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign)
 
-    * [Disabling host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-disable)
+    * [Disabling host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-disable)
 
-    * [Re-enabling host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-enable)
+    * [Re-enabling host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-enable)
 
 * [Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual)
 
@@ -548,7 +548,7 @@ subcollection: satellite
 
 * [Use cases](/docs/satellite?topic=satellite-link-location-cloud#link-usecases)
 
-    * [Can I use Link endpoints to...](/docs/satellite?topic=satellite-link-location-cloud#link-use-link-endpoints)
+    * [Can I use Link endpoints to](/docs/satellite?topic=satellite-link-location-cloud#link-use-link-endpoints)
 
     * [Example: Connect from a {{site.data.keyword.satelliteshort}} location to a service in another cloud provider](/docs/satellite?topic=satellite-link-location-cloud#link-example-connect-location)
 

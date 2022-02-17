@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-16"
+lastupdated: "2022-02-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -54,7 +54,7 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 
       158.175.120.210, 141.125.97.106, 158.176.139.66
       
-    - **Sao Paolo**
+    - **Sao Paulo**
     
       163.107.67.18, 163.109.71.82, 169.57.144.42
 

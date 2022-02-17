@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -81,7 +81,7 @@ No. {{site.data.keyword.satelliteshort}} Link uses standard web security ports t
 ### If {{site.data.keyword.IBM_notm}} owns the Link tunnel, how can I validate that our data is inaccessible? My organization's security policy does not allow tunnels from our networks.
 {: #link-tunnel-data-inaccessible}
 
-{{site.data.keyword.satelliteshort}} Link uses a zero-trust model; {{site.data.keyword.cloud_notm}} has no access to your workloads by default. Any management of infrastructure in your location that is initiated by {{site.data.keyword.IBM_notm}} Site Reliability Engineers over {{site.data.keyword.satelliteshort}} Link is isolated from your workloads and the network connections, such as the Link endpoints, that your workloads use. For more information about what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [{{site.data.keyword.IBM_notm}} operational access](/docs/satellite?topic=satellite-compliance#operational-access). For any other connections into your location that your applications require, you can use {{site.data.keyword.satelliteshort}} Link to create layer 4 communications by setting up an endpoint for each destination resource in your location. All connections through your endpoints are under your control at all times, including completely disabling endpoints.
+{{site.data.keyword.satelliteshort}} Link uses a zero-trust model; {{site.data.keyword.cloud_notm}} has no access to your workloads by default. Any management of infrastructure in your location that is initiated by {{site.data.keyword.IBM_notm}} Site Reliability Engineers over {{site.data.keyword.satelliteshort}} Link is isolated from your workloads and the network connections, such as the Link endpoints, that your workloads use. For more information about what kinds of access {{site.data.keyword.cloud_notm}} has to your {{site.data.keyword.satelliteshort}} location, see [{{site.data.keyword.IBM_notm}} operational access](/docs/satellite?topic=satellite-compliance#operational-access). For any other connections into your location that your applications require, you can use {{site.data.keyword.satelliteshort}} Link to create layer 4 communications by setting up an endpoint for each destination resource in your location. All connections through your endpoints are always under your control, including completely disabling endpoints.
 
 ### How do I make my data secure in transit?
 {: #link-data-secure-transit}
@@ -157,7 +157,7 @@ After you set up source lists for endpoints, you can configure auditing to monit
 Review the following list of general use cases and example use cases for {{site.data.keyword.satelliteshort}} Link endpoints.
 {: shortdesc}
 
-### Can I use Link endpoints to...
+### Can I use Link endpoints to
 {: #link-use-link-endpoints}
 
 

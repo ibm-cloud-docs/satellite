@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-17"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -256,7 +256,7 @@ After you [create a local block storage configuration](#config-storage-local-blo
     ```
     {: pre}
 
-1. List all of the resources in the `local-storage` namespace and verify the driver pods are `Running`.
+1. List all the resources in the `local-storage` namespace and verify the driver pods are `Running`.
 
     ```sh
     oc get all -n local-storage
@@ -660,6 +660,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 ## Getting help and support
 {: #sat-local-block-support}
 
-If you run into an issue with using the Local Storage Operator - Block template, you can open an issue in the [Redhat Customer Portal](https://access.redhat.com/){: external}. 
+If you run into an issue with using the Local Storage Operator - Block template, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}. 
 
 
