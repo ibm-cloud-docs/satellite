@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-17"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -638,6 +638,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 ## Getting help and support
 {: #sat-local-block-support}
 
-If you run into an issue with using the Local Storage Operator - File template, you can open an issue in the [Redhat Customer Portal](https://access.redhat.com/){: external}. 
+If you run into an issue with using the Local Storage Operator - File template, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}. 
 
 

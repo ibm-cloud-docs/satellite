@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 {: #host-not-attaching}
 
 
-When you run your host attach script, some of the hosts are not attaching to your location, but you do not receive an error message. Your host machines are virtual machine clones.
+When you run your host attach script, some hosts are not attaching to your location, but you do not receive an error message. Your host machines are virtual machine clones.
 {: tsSymptoms}
 
 If you are using cloned virtual machines, these clones might not have a unique network identity and Satellite cannot attach them all to the location. To verify that the network identities are not unique, SSH into the host and run the following commands.

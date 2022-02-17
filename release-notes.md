@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-16"
+lastupdated: "2022-02-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -122,7 +122,7 @@ Review the release notes for November 2021.
 {: release-note}
 
 **New! Sao Paulo location**
-:   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Sao Paolo** (`sao`, `br-sao`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). 
+:   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Sao Paulo** (`sao`, `br-sao`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). 
 
 ### 11 November 2021
 {: #11nov2021}
@@ -570,14 +570,14 @@ Review the release notes for 8 February 2021.
 CLI changelog
 :    Updated the CLI plug-in changelog page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
-Host autoassignment
+Host auto assignment
 :    Added information about how [{{site.data.keyword.satelliteshort}} can automatically assign hosts](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) to worker pools in clusters or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s that use host labels to request compute capacity.
 
 Logging and monitoring
 :    Added information about how to set up [logging and monitoring for {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health).
 
 Worker pool management
-:    Described how to manage [worker pools in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-worker-pools-sat), such as host labels for host autoassignment.
+:    Described how to manage [worker pools in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-worker-pools-sat), such as host labels for host auto assignment.
 
 ## January 2021
 {: #january21}

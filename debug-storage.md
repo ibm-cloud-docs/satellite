@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-02-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -127,6 +127,7 @@ User don't have access to perform this operation
 {: shortdesc}
 
 Error type: Authorization,
+
 How to fix it:  login as location or service admin and then perform this operation,
 
 Response code: `400`
@@ -144,7 +145,7 @@ Response code: `400`
 ### ST0014
 {: #st0014}
 
-The required input parameter `<parameter>` in the request body is  either missing or unsupported. The specified value is `<parameter>` . The expected value(s) is/are `<value>`
+The required input parameter `<parameter>` in the request body is  either missing or unsupported. The specified value is `<parameter>` . The expected value(s) is(are) `<value>`
 {: shortdesc}
 
 Error type: Bad request
@@ -299,6 +300,7 @@ Cluster not found corresponding to the given cluster ID: `<cluster-id>`
 {: shortdesc}
 
 Error type: Bad request
+
 How to fix it: To list all the {{site.data.keyword.satelliteshort}} clusters you have access to, run `ibmcloud oc cluster ls --provider=satellite`
 
 Response code: `404`
@@ -340,6 +342,7 @@ Failed to remove old temporary storage configuration with name: `<ObjectName>`.
 {: shortdesc}
 
 Error type: Services
+
 How to fix it: To remove the storage configuration manually, run `ibmcloud sat storage config rm --config=<config-name>`
 
 Response code: `500`

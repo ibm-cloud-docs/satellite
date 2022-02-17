@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-17"
 
 keywords: satellite, hybrid, multicloud, satellite infrastructure service
 
@@ -102,7 +102,7 @@ Disaster recovery includes tasks such as providing dependencies on disaster reco
 |----------|-----------------------|--------|
 |{{site.data.keyword.satelliteshort}} Location| - Back up location information to recover {{site.data.keyword.satelliteshort}} location control plane components to an {{site.data.keyword.IBM_notm}}-managed bucket in your {{site.data.keyword.cos_full_notm}} instance. \n - Monitor the health of the location, automatically resolve issues when possible, and alert {{site.data.keyword.IBM_notm}} site reliability engineers when manual intervention is required. | - Define the disaster recovery requirements for the environment. \n - Manage backups of applications and data stored in the location. \n - Provide access to the backup in your [{{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) if you need to recover a location. |
 | {{site.data.keyword.satelliteshort}} Host | - Back up information for hosts that are assigned to the location control plane to an {{site.data.keyword.IBM_notm}}-managed {{site.data.keyword.cos_full_notm}} instance. \n - Back up information for hosts that are assigned to {{site.data.keyword.satelliteshort}} clusters to an {{site.data.keyword.cos_full_notm}} instance in your account. \n - Maintain, repair, or replace hardware as needed. | N/A |
-|{{site.data.keyword.satelliteshort}} Config| - Back up information about saved {{site.data.keyword.satelliteshort}} Configs in etcd. \n - When service is restored, automatically deploy configuration files to available clusters. | - Design, implement and test a disaster recovery plan for your [highly available apps](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps). |
+|{{site.data.keyword.satelliteshort}} Config| - Back up information about saved {{site.data.keyword.satelliteshort}} configurations in etcd. \n - When service is restored, automatically deploy configuration files to available clusters. | - Design, implement and test a disaster recovery plan for your [highly available apps](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps). |
 |{{site.data.keyword.satelliteshort}} Link | N/A | - Reinstate any necessary [endpoints](/docs/satellite?topic=satellite-link-location-cloud) to your resources after recovering from a disaster. |
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
 {: caption="Responsibilities for disaster recovery." caption-side="bottom"}

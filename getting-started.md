@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-28"
+lastupdated: "2022-02-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -48,7 +48,7 @@ Before you begin
 
 - You must be the {{site.data.keyword.cloud_notm}} account owner, or have the administrator permissions to the required {{site.data.keyword.cloud_notm}} services in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 - You must have an existing {{site.data.keyword.cos_full_notm}} service instance so that control plane data for your {{site.data.keyword.satelliteshort}} location can be backed up to a bucket in that instance. For example, to set up a dedicated {{site.data.keyword.cos_short}} instance and bucket,
-    1. [Set up a {{site.data.keyword.cos_full_notm}} instance](https://cloud.ibm.com/objectstorage/create){: external} that you plan to use for all of your {{site.data.keyword.satelliteshort}} locations in your account.
+    1. [Set up a {{site.data.keyword.cos_full_notm}} instance](https://cloud.ibm.com/objectstorage/create){: external} that you plan to use for all your {{site.data.keyword.satelliteshort}} locations in your account.
     2. **Optional**: Create a bucket with **Cross-Region** resiliency in this service instance to back up your {{site.data.keyword.satelliteshort}} location control plane. Use a name that can help you identify it later, such as `bucket-<satloc_name>-<region>`. Pass in the name of this bucket when you create the {{site.data.keyword.satelliteshort}} location.
 
     If you want to create a cross-regional bucket in the CLI with the `ibmcloud cos create-bucket` command, you must first run `ibmcloud cos config region` and `ibmcloud cos endpoint-url` to set the cross region endpoint. For a list of cross region endpoints available for {{site.data.keyword.cos_full_notm}}, see [Cross Region Endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints#endpoints-geo). 

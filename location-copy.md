@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-01-27"
+lastupdated: "2022-02-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -32,7 +32,7 @@ To copy your {{site.data.keyword.satelliteshort}} location to a new location, yo
     ```
     {: pre}
 
-3. Get the details of a host and optionally save the details to a local file. In particular, note the labels for **cpu** and **memory** so that you know your host configuration. Repeat this step for each host in your location.
+3. Get the details of a host and optionally save the details to a local file. In particular, note the labels for **CPU** and **memory** so that you know your host configuration. Repeat this step for each host in your location.
 
     ```sh
     ibmcloud sat host get --location <location_ID> --host <host_ID> [> host1.txt]

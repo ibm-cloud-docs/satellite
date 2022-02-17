@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-17"
 
 keywords: satellite, hybrid, multicloud, alibaba
 
@@ -39,9 +39,9 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add Alibaba hosts.
 2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
     1. From the **Hosts** tab, click **Attach host**.
-    2. Optional: Enter any host labels that are used later to [automatically assign hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the autoassignment, such as `env=prod` or `service=database`.
+    2. Optional: Enter any host labels that are used later to [automatically assign hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
-    4. Click **Download script** to generate the host script and download the script to your local system.
+    4. Click **Download script** to generate the host script and download the script to your local system. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
 
 ### 2. Set up your virtual machines
 {: #alibaba-host-vm}
@@ -72,7 +72,7 @@ You need at least 3 virtual machines to use as hosts that meet the [host require
 ### 3. Connect to your instance and install packages
 {: #alibaba-host-install-packages}
 
-Before you can attach your hosts, you must install the required Red Hat Enterprise Linux packages in order to connect to {{site.data.keyword.satelliteshort}}.
+Before you can attach your hosts, you must install the required Red Hat Enterprise Linux packages to connect to {{site.data.keyword.satelliteshort}}.
 
 1. From your Alibaba instance page, find the public IP address for each instance that you want to add.
 2. Connect to the first Alibaba instance.

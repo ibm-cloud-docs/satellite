@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-17"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1082,7 +1082,7 @@ ibmcloud sat host attach --location LOCATION [--host-label "LABEL"] [-q] [--rese
 :    Optional. Do not show the message of the day or update reminders.
 
 `--reset-key`
-:    Optional. Reset the key that the control plane uses to communicate with all of the hosts in the location. Then, run the script from this command to attach new hosts and all existing hosts back to the location. Until they are reattached, existing hosts have authentication errors and cannot be managed by the control plane, such as for updates.
+:    Optional. Reset the key that the control plane uses to communicate with all the hosts in the location. Then, run the script from this command to attach new hosts and all existing hosts back to the location. Until they are reattached, existing hosts have authentication errors and cannot be managed by the control plane, such as for updates.
 
 
 #### Example
@@ -1232,7 +1232,7 @@ ibmcloud sat host rm --location aaaaaaaa1111a1aaaa11a --host myhost1
 ### `ibmcloud sat host update`
 {: #host-update}
 
-Update information about your compute host, such as the zones and host labels that are used for [host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov). You can update only available hosts, not hosts that are assigned to a resource such as a cluster.
+Update information about your compute host, such as the zones and host labels that are used for [host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov). You can update only available hosts, not hosts that are assigned to a resource such as a cluster.
 {: shortdesc}
 
 You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove). Then, reassign the host to a different zone. You don't need to delete the host from the location.
@@ -1258,10 +1258,10 @@ ibmcloud sat host update --location LOCATION --host HOST [--host-label "KEY=VALU
 :    Required. Enter the ID of the host that you want to update. To retrieve the host ID, run `ibmcloud sat host ls --location <location_ID_or_name>`.  
 
 `--host-label KEY=VALUE`, `-hl KEY=VALUE`
-:    Optional. Label the host with a key-value pair to use for host autoassignment. To find existing host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`. Repeat this option for multiple host labels.
+:    Optional. Label the host with a key-value pair to use for host auto assignment. To find existing host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`. Repeat this option for multiple host labels.
 
 `--zone ZONE`
-:    Optional. Specify the zone that you want the host to use for autoassignment. Generally, this zone matches the zone of the infrastructure provider where the host machine is, such as a cloud provider zone or on-prem rack. To find the zones in your {{site.data.keyword.satelliteshort}} location, run `ibmcloud sat location get --location <location_name_or_ID>` and check the **Host zones**.
+:    Optional. Specify the zone that you want the host to use for auto assignment. Generally, this zone matches the zone of the infrastructure provider where the host machine is, such as a cloud provider zone or on-prem rack. To find the zones in your {{site.data.keyword.satelliteshort}} location, run `ibmcloud sat location get --location <location_name_or_ID>` and check the **Host zones**.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
@@ -1830,7 +1830,7 @@ Use these commands to view the [{{site.data.keyword.satelliteshort}}-enabled {{s
 ### `ibmcloud sat service ls`
 {: #cli-service-ls}
 
-List all [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters in your location to review details such as requested host resources. For more information about how [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters request resources, see [Using host autoassignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
+List all [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters in your location to review details such as requested host resources. For more information about how [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters request resources, see [Using host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
 {: shortdesc}
 
 ```sh

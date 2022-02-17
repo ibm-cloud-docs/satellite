@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-16"
+lastupdated: "2022-02-17"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -65,7 +65,7 @@ When you update control plane hosts, **do not assign or remove multiple hosts at
 ## Resetting the host key
 {: #host-key-reset}
 
-Reset the key that the control plane uses to communicate with all of the hosts in the {{site.data.keyword.satelliteshort}} location.
+Reset the key that the control plane uses to communicate with all the hosts in the {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 When you create a location, a key is generated that the {{site.data.keyword.satelliteshort}} API server uses to attach hosts to the location and assign hosts to the control plane or to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s. This generated key is an API key, which should be treated and protected as sensitive information. As you use your location, you might want to reset the existing host key. For example, in the case of a potential security incident, you can reset the key when you request a host attachment script. All existing hosts that run the previous version of the script can no longer communicate with the API for your {{site.data.keyword.satelliteshort}} location, and you can remove and reattach the existing hosts by using the script with the new key.

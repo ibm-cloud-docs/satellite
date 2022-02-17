@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-17"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -32,9 +32,9 @@ Before you begin, make sure that you have created host machines that meet the [m
 
 1. From the [**Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to attach hosts.  
 2. From the **Hosts** tab, click **Attach host**.
-3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. By default, your hosts get a `cpu` label, but you might want to add more to control the autoassignment, such as `env=prod` or `service=database`.
+3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. By default, your hosts get a `cpu` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
 4. Enter a file name for your script or use the name that is generated for you.
-5. Click **Download script** to generate the host script and download the script to your local machine.
+5. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
 
     Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) RHEL package updates.
     {: note}
@@ -142,7 +142,7 @@ Before you begin, make sure that you have created host machines that meet the [m
         ```
         {: pre}
 
-4. Verify that your hosts are attached to your location. Your hosts are not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster which is why all of them show an `unassigned` state without any cluster or worker node information.
+4. Verify that your hosts are attached to your location. Your hosts are not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster which is why hosts show an `unassigned` state without any cluster or worker node information.
     ```sh
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
