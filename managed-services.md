@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-02-18"
 
 keywords: satellite, hybrid, multicloud, managed services
 

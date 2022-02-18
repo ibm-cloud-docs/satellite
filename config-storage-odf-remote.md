@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-02-18"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
