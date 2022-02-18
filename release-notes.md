@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-17"
+lastupdated: "2022-02-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #release-feb-2022}
 
 
+
+### 18 February 2022
+{: #18feb2022}
+{: release-note}
+
+CLI changelog
+:    Updated the CLI plug-in changelog page for the [release of version 1.0.372](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 16 February 2022
 {: #16feb2022}

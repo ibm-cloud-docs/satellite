@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-10"
+lastupdated: "2022-02-18"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
