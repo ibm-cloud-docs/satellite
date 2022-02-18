@@ -92,6 +92,7 @@ toc:
                   label: Azure storage templates
                   topics:
                     - config-storage-azure-csi.md
+                    - config-storage-azurefile-csi.md
               - topicgroup:
                   label: IBM storage templates
                   topics:

@@ -777,6 +777,32 @@ subcollection: satellite
 
 * [Getting help and support](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-azure-disk-support)
 
+[Azure File CSI Driver](/docs/satellite?topic=satellite-config-storage-azurefile-csi#config-storage-azurefile-csi)
+
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-csi-prereq)
+
+    * [Optional: Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-label-nodes)
+
+    * [Gathering your Azure File configuration parameters](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-config-file)
+
+* [Creating an Azure File configuration in the command line](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-csi-cli)
+
+* [Assigning your Azure storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-azurefile-csi#assign-storage-azurefile)
+
+    * [Assigning a storage configuration in the console](/docs/satellite?topic=satellite-config-storage-azurefile-csi#assign-storage-azurefile-csi-ui)
+
+    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-azurefile-csi#assign-storage-azurefile-csi-cli)
+
+* [Deploying an app that uses your Azure File storage](/docs/satellite?topic=satellite-config-storage-azurefile-csi#storage-azure-file-csi-app-deploy)
+
+* [Removing Azure file storage from your apps](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-rm)
+
+* [Removing the Azure File storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-template-rm)
+
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-params-cli)
+
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-sc-ref)
+
 
 ### IBM storage templates
 {: #sitemap_ibm_storage_templates}
