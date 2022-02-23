@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-23"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -94,40 +94,5 @@ One of the components that is set up in the {{site.data.keyword.satelliteshort}}
 {: #workload-isolation-location}
 
 Because you manage the host infrastructure that you bring to your {{site.data.keyword.satelliteshort}} location, you are responsible to isolate app workloads that run on your infrastructure. If you host and run {{site.data.keyword.cloud_notm}} services in your location, such as {{site.data.keyword.openshiftlong_notm}}, you can leverage the tools and features that this service provides to isolate your workloads. For more information about available options, see the service documentation.
-
-
-## Dependencies to other {{site.data.keyword.cloud_notm}} services
-{: #cloud-service-dependencies}
-
-Review the {{site.data.keyword.cloud_notm}} services that your {{site.data.keyword.satellitelong_notm}} location connects to over the public network.
-{: shortdesc}
-
-| Service name | Description |
-| --- | --- |
-| {{site.data.keyword.cloudaccesstrailshort}} | {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full_notm}} to forward {{site.data.keyword.satelliteshort}} audit events to the {{site.data.keyword.at_full_notm}} service instance that you set up. For more information, see [Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events).|
-| {{site.data.keyword.cloudcerts_short}} | This service is used to retrieve the TLS certificates for custom Ingress domains in a {{site.data.keyword.openshiftlong_notm}} cluster in a {{site.data.keyword.satelliteshort}} location.|
-|{{site.data.keyword.registryshort}}|This service is used to store the container images that {{site.data.keyword.satellitelong_notm}} uses to run the service.|
-| {{site.data.keyword.databases-for-mongodb}} | {{site.data.keyword.satelliteshort}} Config indexes data that is stored in Cloud Object Storage by using {{site.data.keyword.databases-for-mongodb}}. {{site.data.keyword.satelliteshort}} Link stores endpoint data in {{site.data.keyword.databases-for-mongodb}}.|
-| {{site.data.keyword.cloud_notm}} Platform | To authenticate requests to the service and authorize user actions, {{site.data.keyword.satellitelong_notm}} implements platform and service access roles in Identity and Access Management (IAM). For more information about required IAM permissions to work with the service, see [Managing access for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-iam). |
-|{{site.data.keyword.la_short}}|{{site.data.keyword.satellitelong_notm}} sends location logs to {{site.data.keyword.la_full_notm}}. These logs are monitored and analyzed by the service team to detect service issues and malicious activities. |
-|{{site.data.keyword.mon_short}}|{{site.data.keyword.satellitelong_notm}} sends service metrics to {{site.data.keyword.mon_full_notm}}. These metrics are monitored by the service team to identify capacity and performance issues of the service. |
-|{{site.data.keyword.cos_short}} (COS)|This service is used to back up the control plane data of a {{site.data.keyword.satelliteshort}} location. The service instance is owned by the customer who controls access to the instance by using IAM policies. All data is encrypted in transit and at rest.|
-{: caption="Satellite dependencies to other IBM Cloud services." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
-
-
-
-## Dependencies to third-party services
-{: #3rd-party-dependencies}
-
-Review the list of third-party services that {{site.data.keyword.satellitelong_notm}} connects to over the public network.
-{: shortdesc}
-
-| Service name | Description |
-| --- | --- |
-| Akamai | Akamai is the primary provider for DNS, global load balancing, and web firewall capabilities in {{site.data.keyword.satellitelong_notm}}.|
-| Let's Encrypt | This service is used as the certificate authority to generate SSL certificates for customer owned public endpoints. All generated certificates are managed in {{site.data.keyword.cloudcerts_long_notm}}. |
-{: caption="{{site.data.keyword.satelliteshort}} dependencies to third-party services." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the service. The second column is a description of the service."}
 
 

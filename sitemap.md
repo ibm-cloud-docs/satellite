@@ -1154,10 +1154,6 @@ subcollection: satellite
 
     * [Workload isolation in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-architecture#workload-isolation-location)
 
-* [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies)
-
-* [Dependencies to third-party services](/docs/satellite?topic=satellite-service-architecture#3rd-party-dependencies)
-
 [Security and compliance](/docs/satellite?topic=satellite-compliance#compliance)
 
 * [Data security](/docs/satellite?topic=satellite-compliance#secure-data)
