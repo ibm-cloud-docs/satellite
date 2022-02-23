@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-02-23"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1603,7 +1603,7 @@ subcollection: satellite
 
 * [Reviewing cloud issues and status](/docs/satellite?topic=satellite-get-help#help-cloud-status)
 
-* [Identifying issues for [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s](/docs/satellite?topic=satellite-get-help#help-services)
+* [Identifying issues for {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-get-help#help-services)
 
 * [Reviewing logs](/docs/satellite?topic=satellite-get-help#review-logs)
 
