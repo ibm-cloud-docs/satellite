@@ -434,7 +434,7 @@ subcollection: satellite
 
 * [Resetting the host key](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
 
-[Updating hosts that are assigned as worker nodes to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s such as clusters](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
+[Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
 
 * [Checking if a version update is available for worker node hosts](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-check)
 
