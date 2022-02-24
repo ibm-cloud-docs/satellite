@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services
+# Supported Satellite-enabled IBM Cloud services
 {: #managed-services}
 
 Learn about what services are supported by {{site.data.keyword.satellitelong_notm}}.
