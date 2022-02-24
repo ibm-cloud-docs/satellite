@@ -387,7 +387,7 @@ If you only have a location without any clusters, then you cannot reset the API 
 {: #R0050}
 
 Location message
-:    The Link connector is experiencing token authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID. {: #R0050}
+:    The Link connector is experiencing token authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID. 
 :    The Link connector cannot retrieve the location ID. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID. {: #R0051}
 
 Steps to resolve
