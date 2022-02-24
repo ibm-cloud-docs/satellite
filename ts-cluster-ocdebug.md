@@ -13,7 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I log into my nodes or debug them with `oc debug` command?
+# Why can't I log into my worker nodes or debug them with `oc debug` command?
 {: #ts-cluster-ocdebug}
 
 When you log into the terminal of worker node or run the `oc debug node` command from the CLI, you receive the following error.
@@ -41,4 +41,4 @@ To resolve this issue, determine which node is causing the error. Then, stop tha
 
 If you cannot determine which node is causing the issue, [reboot your {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-update-location) one at a time and try running `oc debug node`. If you are still receiving the error, then [reboot one worker node at a time](/docs/satellite?topic=satellite-host-update-workers).
 
-If you can determine that a particular worker node that is causing the problem and the `oc debug node` command is successful on other worker nodes, then replace the host where `oc debug node` command fails.
+If you can determine that a particular worker node is causing the problem and the `oc debug node` command is successful on other worker nodes, then replace the host where the `oc debug node` command fails.

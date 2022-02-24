@@ -31,6 +31,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {{site.data.keyword.keymanagementservicefull_notm}} 
 :   {{site.data.keyword.keymanagementservicefull_notm}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) and [About {{site.data.keyword.keymanagementserviceshort}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite).
 
+New troubleshooting issue for errors when you run the `oc debug` command 
+:   See [Why can't I log into my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug).
+
 ### 18 February 2022
 {: #18feb2022}
 {: release-note}

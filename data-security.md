@@ -90,7 +90,7 @@ The time to recover a location or cluster is dependent on the size of the locati
 {: note}
 
 ## Where can I find information about the data that my managed services store?
-{: #managed-services}
+{: #managed-services-data}
 
 You can find information about the data that is stored by your managed service by reading the data security topic for each service.
 

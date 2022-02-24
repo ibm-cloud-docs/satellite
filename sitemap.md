@@ -1210,7 +1210,7 @@ subcollection: satellite
 
 * [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
 
-* [Where can I find information about the data that my managed services store?](/docs/satellite?topic=satellite-data-security#managed-services)
+* [Where can I find information about the data that my managed services store?](/docs/satellite?topic=satellite-data-security#managed-services-data)
 
 * [Which {{site.data.keyword.cloud_notm}} region is my information stored in?](/docs/satellite?topic=satellite-data-security#sat_data-location)
 
@@ -1722,7 +1722,7 @@ subcollection: satellite
 
 [Why can't I access the {{site.data.keyword.openshiftshort}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console#ts-sat-ocp-console)
 
-[Why can't I log into my nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug#ts-cluster-ocdebug)
+[Why can't I log into my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug#ts-cluster-ocdebug)
 
 
 ### Storage
