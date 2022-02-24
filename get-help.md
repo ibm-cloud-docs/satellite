@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -36,7 +36,7 @@ Still having issues? Review different ways to get help and support for {{site.da
 3. Review the [requirements, limitations, and known issues documentation](/docs/satellite?topic=satellite-requirements).
 4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [{{site.data.keyword.IBM_notm}} open source and third-party policy](https://www.ibm.com/support/pages/node/737271){: external}.
 
-## Identifying issues for [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s
+## Identifying issues for {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service
 {: #help-services}
 
 If you experience an issue with a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) in your location, first check whether your issue is listed in the troubleshooting topics in the {{site.data.keyword.satelliteshort}} documentation. If the issue is not listed in the {{site.data.keyword.satelliteshort}} documentation, check the {{site.data.keyword.cloud_notm}} documentation set for the service.

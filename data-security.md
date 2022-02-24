@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -30,14 +30,14 @@ For every location that you create, {{site.data.keyword.IBM_notm}} stores certai
 
 The following information is stored when you create a {{site.data.keyword.satelliteshort}} location.
 
-**Personal information:**
-- The email address of the {{site.data.keyword.cloud_notm}} account that created the location.
+Personal information
+:    The email address of the {{site.data.keyword.cloud_notm}} account that created the location.
 
-**Sensitive information:**
-- The TLS certificate and secret that is used for the assigned {{site.data.keyword.satelliteshort}} control plane domain.
-- The Certificate Authority that is used for the TLS certificate.
-- An {{site.data.keyword.IBM_notm}}-owned encryption key for each location that is used to encrypt the TLS certificates, secrets, and Certificate Authority of the {{site.data.keyword.satelliteshort}} control plane domain.
-- {{site.data.keyword.satelliteshort}} control plane and {{site.data.keyword.satelliteshort}} cluster data that can be used to restore the control plane and clusters in case of a disaster.
+Sensitive information
+:    - The TLS certificate and secret that is used for the assigned {{site.data.keyword.satelliteshort}} control plane domain.
+     - The Certificate Authority that is used for the TLS certificate.
+     - An {{site.data.keyword.IBM_notm}}-owned encryption key for each location that is used to encrypt the TLS certificates, secrets, and Certificate Authority of the {{site.data.keyword.satelliteshort}} control plane domain.
+     - {{site.data.keyword.satelliteshort}} control plane and {{site.data.keyword.satelliteshort}} cluster data that can be used to restore the control plane and clusters in case of a disaster.
 
 ### Stored information from resources that you create
 {: #sat-sensitive-data-user-added}
@@ -86,9 +86,13 @@ Review the following image to see how your personal and sensitive information is
     - **Location control plane Backup**: Every hour
     - **Encryption**: Data is automatically encrypted by using the default built-in encryption mechanisms in {{site.data.keyword.cos_full_notm}}. You can further choose to protect your data by using a root key in {{site.data.keyword.keymanagementservicelong_notm}} and use the key to encrypt the data in your bucket. For more information, see the [{{site.data.keyword.cos_full_notm}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-encryption).
 
-The time to recover a location or cluster is dependent on the size of the location or cluster and the network latency between IBM Cloud and your host infrastructure. 
+The time to recover a location or cluster is dependent on the size of the location or cluster and the network latency between {{site.data.keyword.cloud_notm}} and your host infrastructure. 
 {: note}
 
+## Where can I find information about the data that my managed services store?
+{: #managed-services-data}
+
+You can find information about the data that is stored by your managed service by reading the data security topic for each service.
 
 ## Which {{site.data.keyword.cloud_notm}} region is my information stored in?
 {: #sat_data-location}
@@ -115,5 +119,4 @@ Removing personal and sensitive information is permanent and non-reversible. Mak
 - **Cluster data in {{site.data.keyword.cos_full_notm}}**: When you create a {{site.data.keyword.openshiftlong_notm}} cluster, some cluster data is backed up to an {{site.data.keyword.cos_short}} instance in your account. To delete the data, review the [{{site.data.keyword.cos_short}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-security).
 
 - **Cluster data on the local host**: Because the cluster masters run on your {{site.data.keyword.satelliteshort}} location control plane hosts, the data is still available on the physical hosts in your infrastructure provider after you delete the {{site.data.keyword.satelliteshort}} location. To delete the data, consult your infrastructure provider documentation to reload the operating system or delete the host.
-
 

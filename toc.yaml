@@ -184,6 +184,7 @@ toc:
                     - addon-errors.md
                     - ts-degraded-ingress.md
                     - ts-sat-ocp-console.md
+                    - ts-cluster-ocdebug.md
               - topicgroup:
                   label: Storage
                   topics:

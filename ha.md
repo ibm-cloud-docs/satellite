@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -70,10 +70,9 @@ Spread across zones
 :    {{site.data.keyword.IBM_notm}} automatically spreads the control plane master instances across multiple zones within the same {{site.data.keyword.cloud_notm}} multizone metro. For example, if you choose to manage your location from the `wdc` metro in US East region, your control plane master instances are spread across the `us-east-1`, `us-east-2`, and `us-east-3` zones. This zonal spread ensures that your control plane master is available, even if one zone becomes unavailable.
 
 Automatic backups to Object Storage
-:    All {{site.data.keyword.satelliteshort}} control plane data is backed up to an {{site.data.keyword.cos_full_notm}} service instance so that your location can be restored after a disaster. Access to this instance is protected by {{site.data.keyword.iamshort}} and all data is automatically encrypted during transit and at rest. Note that when you create a location, you also provide an {{site.data.keyword.cos_short}} service instance that you control for backup of the location control plane worker nodes.
+:    All {{site.data.keyword.satelliteshort}} control plane data is backed up to an {{site.data.keyword.cos_full_notm}} service instance so that your location can be restored after a disaster. Access to this instance is protected by {{site.data.keyword.iamshort}} and all data is automatically encrypted during transit and at rest. Note that when you create a location, you also provide an {{site.data.keyword.cos_short}} service instance that you control for backup of the location control plane worker nodes. Control plane master data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own.
 
-
-Because the {{site.data.keyword.satelliteshort}} control plane master is managed by {{site.data.keyword.IBM_notm}} , you cannot change the number of master instances or how high availability is configured. However, you must to ensure that your control plane worker nodes are configured for high availability. The control plan worker nodes can ensure that the workloads that run in your location have enough compute capacity, even if compute hosts become unavailable. The time to recover a location or cluster is dependent on the size of the location or cluster and the network latency between IBM Cloud and your host infrastructure. 
+Because the {{site.data.keyword.satelliteshort}} control plane master is managed by {{site.data.keyword.IBM_notm}}, you cannot change the number of master instances or how high availability is configured. However, you must to ensure that your control plane worker nodes are configured for high availability. The control plan worker nodes can ensure that the workloads that run in your location have enough compute capacity, even if compute hosts become unavailable. The time to recover a location or cluster is dependent on the size of the location or cluster and the network latency between {{site.data.keyword.cloud_notm}} and your host infrastructure. 
 {: note}
 
 ### High availability of the {{site.data.keyword.satelliteshort}} control plane worker nodes

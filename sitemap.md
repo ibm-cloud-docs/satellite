@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-24"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -77,6 +77,8 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-release-notes#release-notes)
 
 * [February 2022](/docs/satellite?topic=satellite-release-notes#release-feb-2022)
+
+    * [24 February 2022](/docs/satellite?topic=satellite-release-notes#24feb2022)
 
     * [18 February 2022](/docs/satellite?topic=satellite-release-notes#18feb2022)
 
@@ -302,7 +304,7 @@ subcollection: satellite
 
 * [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr)
 
-[Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services#managed-services)
+[Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services#managed-services)
 
 
 ## Creating locations
@@ -432,7 +434,7 @@ subcollection: satellite
 
 * [Resetting the host key](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
 
-[Updating hosts that are assigned as worker nodes to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s such as clusters](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
+[Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
 
 * [Checking if a version update is available for worker node hosts](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-check)
 
@@ -1154,10 +1156,6 @@ subcollection: satellite
 
     * [Workload isolation in your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-service-architecture#workload-isolation-location)
 
-* [Dependencies to other {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-service-architecture#cloud-service-dependencies)
-
-* [Dependencies to third-party services](/docs/satellite?topic=satellite-service-architecture#3rd-party-dependencies)
-
 [Security and compliance](/docs/satellite?topic=satellite-compliance#compliance)
 
 * [Data security](/docs/satellite?topic=satellite-compliance#secure-data)
@@ -1211,6 +1209,8 @@ subcollection: satellite
     * [Stored information from resources that you create](/docs/satellite?topic=satellite-data-security#sat-sensitive-data-user-added)
 
 * [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
+
+* [Where can I find information about the data that my managed services store?](/docs/satellite?topic=satellite-data-security#managed-services-data)
 
 * [Which {{site.data.keyword.cloud_notm}} region is my information stored in?](/docs/satellite?topic=satellite-data-security#sat_data-location)
 
@@ -1603,7 +1603,7 @@ subcollection: satellite
 
 * [Reviewing cloud issues and status](/docs/satellite?topic=satellite-get-help#help-cloud-status)
 
-* [Identifying issues for [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s](/docs/satellite?topic=satellite-get-help#help-services)
+* [Identifying issues for {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-get-help#help-services)
 
 * [Reviewing logs](/docs/satellite?topic=satellite-get-help#review-logs)
 
@@ -1653,7 +1653,9 @@ subcollection: satellite
 
 * [R0048: etcd backup failure](/docs/satellite?topic=satellite-ts-locations-debug#R0048)
 
-* [R0049, R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues](/docs/satellite?topic=satellite-ts-locations-debug#R0049)
+* [R0049: {{site.data.keyword.satelliteshort}} Link IAM API key issue](/docs/satellite?topic=satellite-ts-locations-debug#R0049)
+
+* [R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues](/docs/satellite?topic=satellite-ts-locations-debug#R0050)
 
 * [R0052: Ingress certificate generation issues](/docs/satellite?topic=satellite-ts-locations-debug#R0052)
 
@@ -1719,6 +1721,8 @@ subcollection: satellite
 [Why is my Ingress in a warning state?](/docs/satellite?topic=satellite-ts-degraded-ingress#ts-degraded-ingress)
 
 [Why can't I access the {{site.data.keyword.openshiftshort}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console#ts-sat-ocp-console)
+
+[Why can't I log into my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug#ts-cluster-ocdebug)
 
 
 ### Storage
