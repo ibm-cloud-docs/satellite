@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-23"
+lastupdated: "2022-02-24"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -77,6 +77,8 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-release-notes#release-notes)
 
 * [February 2022](/docs/satellite?topic=satellite-release-notes#release-feb-2022)
+
+    * [24 February 2022](/docs/satellite?topic=satellite-release-notes#24feb2022)
 
     * [18 February 2022](/docs/satellite?topic=satellite-release-notes#18feb2022)
 
