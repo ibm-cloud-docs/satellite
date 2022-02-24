@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-24"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference
 
@@ -31,7 +31,8 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 |Version|Release date|Changes|
 |-------|------------|-------|
-| 1.0.372 | 18 Feb 2022 | 1. Updates the `ibmcloud ks location get` command output to indicate whether or not the location has IaaS provider credentials stored.  \n 2. Updates the `ibmcloud ks storage assignment ls` command to include the `--config` flag option, allowing you to only list storage assignments created with the specified configuration.  |
+| 1.0.374 | 24 Feb 2022 | - Removes the default zone in the `ibmcloud sat cluster create` command.  \n - Fixes a routing issue for the `ibmcloud sat storage assignment create --cluster` and the `ibmcloud sat storage assignment ls --cluster` commands. | 
+| 1.0.372 | 18 Feb 2022 | 1. Updates the `ibmcloud ks location get` command output to indicate whether the location has IaaS provider credentials stored.  \n 2. Updates the `ibmcloud ks storage assignment ls` command to include the `--config` flag option, allowing you to list only storage assignments created with the specified configuration.  |
 | 1.0.331 | 03 Dec 2021 | 1. Adds [{{site.data.keyword.satelliteshort}} Mesh](/docs/satellite?topic=satellite-sat-mesh) beta functionality.  \n 2. Updates the `ibmcloud sat location get` command output to include `Ignition Server Port` and `Konnectivity Server Port`.  \n 3. Updates the help text in various languages. |
 | 1.0.331 | 12 Oct 2021 | Adds the `--output` option for the `ibmcloud sat storage get` command. |
 | 1.0.327 | 11 Oct 2021 | Adds the `--data-location` option for the `ibmcloud sat config create` command and the `--location` option for the `ibmcloud sat storage assingment ls` command. Updates the help text in various languages. |
