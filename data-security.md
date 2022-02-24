@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-21"
+lastupdated: "2022-02-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -89,6 +89,10 @@ Review the following image to see how your personal and sensitive information is
 The time to recover a location or cluster is dependent on the size of the location or cluster and the network latency between IBM Cloud and your host infrastructure. 
 {: note}
 
+## Where can I find information about the data that my managed services store?
+{: #managed-services}
+
+You can find information about the data that is stored by your managed service by reading the data security topic for each service.
 
 ## Which {{site.data.keyword.cloud_notm}} region is my information stored in?
 {: #sat_data-location}
@@ -115,5 +119,4 @@ Removing personal and sensitive information is permanent and non-reversible. Mak
 - **Cluster data in {{site.data.keyword.cos_full_notm}}**: When you create a {{site.data.keyword.openshiftlong_notm}} cluster, some cluster data is backed up to an {{site.data.keyword.cos_short}} instance in your account. To delete the data, review the [{{site.data.keyword.cos_short}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-security).
 
 - **Cluster data on the local host**: Because the cluster masters run on your {{site.data.keyword.satelliteshort}} location control plane hosts, the data is still available on the physical hosts in your infrastructure provider after you delete the {{site.data.keyword.satelliteshort}} location. To delete the data, consult your infrastructure provider documentation to reload the operating system or delete the host.
-
 

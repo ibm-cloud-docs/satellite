@@ -1210,6 +1210,8 @@ subcollection: satellite
 
 * [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
 
+* [Where can I find information about the data that my managed services store?](/docs/satellite?topic=satellite-data-security#managed-services)
+
 * [Which {{site.data.keyword.cloud_notm}} region is my information stored in?](/docs/satellite?topic=satellite-data-security#sat_data-location)
 
 * [How can I remove my information?](/docs/satellite?topic=satellite-data-security#sat-data-removal)
