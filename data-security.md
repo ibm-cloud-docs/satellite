@@ -30,14 +30,14 @@ For every location that you create, {{site.data.keyword.IBM_notm}} stores certai
 
 The following information is stored when you create a {{site.data.keyword.satelliteshort}} location.
 
-**Personal information:**
-- The email address of the {{site.data.keyword.cloud_notm}} account that created the location.
+Personal information
+:    The email address of the {{site.data.keyword.cloud_notm}} account that created the location.
 
-**Sensitive information:**
-- The TLS certificate and secret that is used for the assigned {{site.data.keyword.satelliteshort}} control plane domain.
-- The Certificate Authority that is used for the TLS certificate.
-- An {{site.data.keyword.IBM_notm}}-owned encryption key for each location that is used to encrypt the TLS certificates, secrets, and Certificate Authority of the {{site.data.keyword.satelliteshort}} control plane domain.
-- {{site.data.keyword.satelliteshort}} control plane and {{site.data.keyword.satelliteshort}} cluster data that can be used to restore the control plane and clusters in case of a disaster.
+Sensitive information
+:    - The TLS certificate and secret that is used for the assigned {{site.data.keyword.satelliteshort}} control plane domain.
+     - The Certificate Authority that is used for the TLS certificate.
+     - An {{site.data.keyword.IBM_notm}}-owned encryption key for each location that is used to encrypt the TLS certificates, secrets, and Certificate Authority of the {{site.data.keyword.satelliteshort}} control plane domain.
+     - {{site.data.keyword.satelliteshort}} control plane and {{site.data.keyword.satelliteshort}} cluster data that can be used to restore the control plane and clusters in case of a disaster.
 
 ### Stored information from resources that you create
 {: #sat-sensitive-data-user-added}
@@ -86,7 +86,7 @@ Review the following image to see how your personal and sensitive information is
     - **Location control plane Backup**: Every hour
     - **Encryption**: Data is automatically encrypted by using the default built-in encryption mechanisms in {{site.data.keyword.cos_full_notm}}. You can further choose to protect your data by using a root key in {{site.data.keyword.keymanagementservicelong_notm}} and use the key to encrypt the data in your bucket. For more information, see the [{{site.data.keyword.cos_full_notm}} documentation](/docs/cloud-object-storage?topic=cloud-object-storage-encryption).
 
-The time to recover a location or cluster is dependent on the size of the location or cluster and the network latency between IBM Cloud and your host infrastructure. 
+The time to recover a location or cluster is dependent on the size of the location or cluster and the network latency between {{site.data.keyword.cloud_notm}} and your host infrastructure. 
 {: note}
 
 ## Where can I find information about the data that my managed services store?
