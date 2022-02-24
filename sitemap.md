@@ -1653,7 +1653,9 @@ subcollection: satellite
 
 * [R0048: etcd backup failure](/docs/satellite?topic=satellite-ts-locations-debug#R0048)
 
-* [R0049, R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues](/docs/satellite?topic=satellite-ts-locations-debug#R0049)
+* [R0049: {{site.data.keyword.satelliteshort}} Link IAM API key issue](/docs/satellite?topic=satellite-ts-locations-debug#R0049)
+
+* [R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues](/docs/satellite?topic=satellite-ts-locations-debug#R0050)
 
 * [R0052: Ingress certificate generation issues](/docs/satellite?topic=satellite-ts-locations-debug#R0052)
 

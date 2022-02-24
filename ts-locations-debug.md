@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-02-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -364,11 +364,29 @@ To determine where your problem exists,
 
 3. If the control plane hosts can reach the {{site.data.keyword.cos_short}} endpoint, and the {{site.data.keyword.cos_short}} service instance and bucket exist, [open a support case](/docs/satellite?topic=satellite-get-help) to investigate backup failures and include your {{site.data.keyword.satelliteshort}} location ID.
 
-## R0049, R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues
+## R0049: {{site.data.keyword.satelliteshort}} Link IAM API key issue
 {: #R0049}
 
 Location message
-:    The Link connector is experiencing authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID.
+:    The Link connector is experiencing authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.
+
+This error is reported because the IAM API key that is set for the region or resource group that the location is in does not have the required permissions in {{site.data.keyword.satelliteshort}} or {{site.data.keyword.containershort}}, usually because the permissions of the API key owner changed or the API owner left the account.
+
+Steps to resolve
+:    If you have a {{site.data.keyword.satelliteshort}} location and a Red Hat {{site.data.keyword.openshiftshort}} cluster in that location and you are the account owner or a user with Administrator permission for all {{site.data.keyword.satelliteshort}} components, you can resolve this issue by resetting the API key. Note that when you reset the API key, the old key is deleted. Be sure to check if other services are using this API key.
+:    1. Log into {{site.data.keyword.satelliteshort}}: `ibmcloud login`.
+     2. Target the region that the location is managed from: `ibmcloud target -r <region>`.
+     3. Target the resource group that the location is in: `ibmcloud target -g <resource-group>`.
+     4. Reset the IAM API key for that region or resource group: `ibmcloud ks api-key reset --region <region>`.
+     5. Review that the API key was set: `ibmcloud ks api-key info --cluster <roks_cluster_in_location>`.
+
+If you only have a location with no clusters, then you cannot reset the API key. Instead, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can get your location ID by running the `ibmcloud sat location ls` command.
+
+
+## R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues
+{: #R0050}
+
+Location message
 :    The Link connector is experiencing token authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID. {: #R0050}
 :    The Link connector cannot retrieve the location ID. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID. {: #R0051}
 
