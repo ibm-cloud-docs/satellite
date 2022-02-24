@@ -28,6 +28,10 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #24feb2022}
 {: release-note}
 
+CLI change log
+:    Updated the CLI plug-in change log page for the [release of version 1.0.374](/docs/satellite?topic=satellite-satellite-cli-changelog).
+
+
 {{site.data.keyword.keymanagementservicefull_notm}} 
 :   {{site.data.keyword.keymanagementservicefull_notm}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) and [About {{site.data.keyword.keymanagementserviceshort}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite).
 
