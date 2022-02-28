@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-22"
+lastupdated: "2022-02-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -164,6 +164,13 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`
 :   **Protocol and ports**: TCP 443
 
+Allow hosts to communicate with Red Hat Container Registry
+:   **Source**: All {{site.data.keyword.openshiftshort}} hosts
+:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
+:   **Destination hostnames**: `registry.redhat.io`
+:   **Protocol and ports**: TCP 443
+
+
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs and hostnames**: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
@@ -219,6 +226,12 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `de.icr.io`, `registry.eu-de.bluemix.net`
 :   **Protocol and ports**: TCP 443
 
+Allow hosts to communicate with Red Hat Container Registry
+:   **Source**: All {{site.data.keyword.openshiftshort}} hosts
+:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
+:   **Destination hostnames**: `registry.redhat.io`
+:   **Protocol and ports**: TCP 443
+
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs and hostnames**: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
@@ -269,6 +282,12 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs**:   N/A 
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `uk.icr.io`, `registry.eu-gb.bluemix.net`
+:   **Protocol and ports**: TCP 443
+
+Allow hosts to communicate with Red Hat Container Registry
+:   **Source**: All {{site.data.keyword.openshiftshort}} hosts
+:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
+:   **Destination hostnames**: `registry.redhat.io`
 :   **Protocol and ports**: TCP 443
 
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
@@ -328,6 +347,12 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `br.icr.io`
 :   **Protocol and ports**: TCP 443
 
+Allow hosts to communicate with Red Hat Container Registry
+:   **Source**: All {{site.data.keyword.openshiftshort}} hosts
+:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
+:   **Destination hostnames**: `registry.redhat.io`
+:   **Protocol and ports**: TCP 443
+
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs and hostnames**: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
@@ -381,6 +406,12 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs**: N/A
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `au.icr.io`, `registry.au-syd.bluemix.net`
+:   **Protocol and ports**: TCP 443
+
+Allow hosts to communicate with Red Hat Container Registry
+:   **Source**: All {{site.data.keyword.openshiftshort}} hosts
+:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
+:   **Destination hostnames**: `registry.redhat.io`
 :   **Protocol and ports**: TCP 443
 
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
@@ -437,6 +468,12 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `jp.icr.io`
 :   **Protocol and ports**: TCP 443
 
+Allow hosts to communicate with Red Hat Container Registry
+:   **Source**: All {{site.data.keyword.openshiftshort}} hosts
+:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
+:   **Destination hostnames**: `registry.redhat.io`
+:   **Protocol and ports**: TCP 443
+
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs and hostnames**: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
@@ -488,6 +525,12 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs**: N/A
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `ca.icr.io`
+:   **Protocol and ports**: TCP 443
+
+Allow hosts to communicate with Red Hat Container Registry
+:   **Source**: All {{site.data.keyword.openshiftshort}} hosts
+:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
+:   **Destination hostnames**: `registry.redhat.io`
 :   **Protocol and ports**: TCP 443
 
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
@@ -545,6 +588,12 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`
 :   **Protocol and ports**: TCP 443
 
+Allow hosts to communicate with Red Hat Container Registry
+:   **Source**: All {{site.data.keyword.openshiftshort}} hosts
+:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
+:   **Destination hostnames**: `registry.redhat.io`
+:   **Protocol and ports**: TCP 443
+
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs and hostnames**: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
@@ -554,7 +603,6 @@ Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs and hostnames**: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
 :   **Protocol and ports**: TCP 443 and 80
-
 
 
 
