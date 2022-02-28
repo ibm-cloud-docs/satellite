@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-02-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,6 +21,14 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## February 2022
 {: #release-feb-2022}
+
+### 28 February 2022
+{: #28feb2022}
+{: release-note}
+
+Host outbound connectivity
+:   Updated the [host outbound network requirements](/docs/satellite?topic=satellite-reqs-host-network) page to include Red Hat Container Registry.
+
 
 
 
