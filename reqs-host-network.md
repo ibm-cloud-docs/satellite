@@ -106,14 +106,35 @@ To secure your outbound connectivity, allow only TCP on the Kubernetes API serve
 ### Required outbound connectivity for hosts in all regions
 {: #all-regions-outbound}
 
-| Description | Source | Destination | Protocol and ports |
-| --- | --- | --- | --- |
-| Allow hosts to connect to {{site.data.keyword.IBM_notm}} | All {{site.data.keyword.satelliteshort}} hosts | - `cloud.ibm.com`  \n - `containers.cloud.ibm.com` | Port 443 |
-| Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers| All {{site.data.keyword.satelliteshort}} hosts | - `0.rhel.pool.ntp.org`  \n - `1.rhel.pool.ntp.org`  \n - `2.rhel.pool.ntp.org`  \n - `3.rhel.pool.ntp.org` | NTP protocol and UDP port 123 |
-| Allow hosts to communicate with {{site.data.keyword.iamshort}} | All {{site.data.keyword.satelliteshort}} hosts | - `https://iam.bluemix.net`  \n - `https://iam.cloud.ibm.com` | TCP 443. **Note**: Your firewall must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your firewall does not support Layer 7, you can allow all HTTPS network traffic on port 443. |
-| Allow hosts to connect to the LaunchDarkly service.| Control plane hosts | - `app.launchdarkly.com`  \n - `clientstream.launchdarkly.com` | HTTPS 443 |
-{: caption="Required outbound connectivity for Satellite hosts" caption-side="top"}
-{: summary="The table shows the required outbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source addresses are in the second column. The destination addresses are in the third column. The protocol and ports are in the fourth column."}
+Allow hosts to connect to {{site.data.keyword.IBM_notm}}
+:   **Source**: All {{site.data.keyword.satelliteshort}} hosts
+:   **Destination**: `cloud.ibm.com`, `containers.cloud.ibm.com`
+:   **Protocol and ports**: Port 443
+
+Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers
+:   **Source**: All {{site.data.keyword.satelliteshort}} hosts
+:   **Destination**: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
+:   **Protocol and ports**: NTP protocol and UDP port 123
+
+Allow hosts to communicate with {{site.data.keyword.iamshort}}
+:   **Source**: All {{site.data.keyword.satelliteshort}} hosts
+:   **Destination** `https://iam.bluemix.net`, `https://iam.cloud.ibm.com`
+:   Protocol and ports**: TCP 443
+
+Your firewall must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your firewall does not support Layer 7, you can allow all HTTPS network traffic on port 443.
+{: note}
+
+Allow hosts to connect to the LaunchDarkly service
+:   **Source**: Control plane hosts
+:   **Destination**: `app.launchdarkly.com`,`clientstream.launchdarkly.com`
+:   **Protocol and ports**: HTTPS 443
+
+Allow hosts to communicate with Red Hat Container Registry
+:   **Source**: All {{site.data.keyword.redhat_openshift_notm}} hosts
+:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
+:   **Destination hostnames**: `registry.redhat.io`, `quay.io`
+:   **Protocol and ports**: TCP 443
+
 
 
 
@@ -164,11 +185,7 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`
 :   **Protocol and ports**: TCP 443
 
-Allow hosts to communicate with Red Hat Container Registry
-:   **Source**: All {{site.data.keyword.redhat_openshift_notm}} hosts
-:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
-:   **Destination hostnames**: `registry.redhat.io`
-:   **Protocol and ports**: TCP 443
+
 
 
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
@@ -226,11 +243,7 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `de.icr.io`, `registry.eu-de.bluemix.net`
 :   **Protocol and ports**: TCP 443
 
-Allow hosts to communicate with Red Hat Container Registry
-:   **Source**: All {{site.data.keyword.redhat_openshift_notm}} hosts
-:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
-:   **Destination hostnames**: `registry.redhat.io`
-:   **Protocol and ports**: TCP 443
+
 
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
@@ -284,11 +297,7 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `uk.icr.io`, `registry.eu-gb.bluemix.net`
 :   **Protocol and ports**: TCP 443
 
-Allow hosts to communicate with Red Hat Container Registry
-:   **Source**: All {{site.data.keyword.redhat_openshift_notm}} hosts
-:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
-:   **Destination hostnames**: `registry.redhat.io`
-:   **Protocol and ports**: TCP 443
+
 
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
@@ -347,11 +356,7 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `br.icr.io`
 :   **Protocol and ports**: TCP 443
 
-Allow hosts to communicate with Red Hat Container Registry
-:   **Source**: All {{site.data.keyword.redhat_openshift_notm}} hosts
-:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
-:   **Destination hostnames**: `registry.redhat.io`
-:   **Protocol and ports**: TCP 443
+
 
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
@@ -408,11 +413,7 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `au.icr.io`, `registry.au-syd.bluemix.net`
 :   **Protocol and ports**: TCP 443
 
-Allow hosts to communicate with Red Hat Container Registry
-:   **Source**: All {{site.data.keyword.redhat_openshift_notm}} hosts
-:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
-:   **Destination hostnames**: `registry.redhat.io`
-:   **Protocol and ports**: TCP 443
+
 
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
@@ -468,12 +469,6 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `jp.icr.io`
 :   **Protocol and ports**: TCP 443
 
-Allow hosts to communicate with Red Hat Container Registry
-:   **Source**: All {{site.data.keyword.redhat_openshift_notm}} hosts
-:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
-:   **Destination hostnames**: `registry.redhat.io`
-:   **Protocol and ports**: TCP 443
-
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs and hostnames**: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
@@ -527,11 +522,7 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `ca.icr.io`
 :   **Protocol and ports**: TCP 443
 
-Allow hosts to communicate with Red Hat Container Registry
-:   **Source**: All {{site.data.keyword.redhat_openshift_notm}} hosts
-:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
-:   **Destination hostnames**: `registry.redhat.io`
-:   **Protocol and ports**: TCP 443
+
 
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
@@ -588,11 +579,7 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`
 :   **Protocol and ports**: TCP 443
 
-Allow hosts to communicate with Red Hat Container Registry
-:   **Source**: All {{site.data.keyword.redhat_openshift_notm}} hosts
-:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
-:   **Destination hostnames**: `registry.redhat.io`
-:   **Protocol and ports**: TCP 443
+
 
 Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
