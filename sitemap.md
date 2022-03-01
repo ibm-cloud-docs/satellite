@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-02-28"
+lastupdated: "2022-03-01"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -300,7 +300,7 @@ subcollection: satellite
 
 * [{{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-master-worker)
 
-* [Customer-provided worker nodes in the {{site.data.keyword.satelliteshort}} location control plane to worker nodes that run [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s like {{site.data.keyword.openshiftshort}} clusters in the same location](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-woker-worker)
+* [Customer-provided worker nodes in the {{site.data.keyword.satelliteshort}} location control plane to worker nodes that run [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s like {{site.data.keyword.redhat_openshift_notm}} clusters in the same location](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-woker-worker)
 
 * [Customer-provided worker nodes that are assigned to the same resource, like the {{site.data.keyword.satelliteshort}} location control plane or a cluster](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-customer-provided)
 
@@ -357,7 +357,7 @@ subcollection: satellite
 
 * [Security group settings](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-secgroup)
 
-* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-console-access)
+* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-console-access)
 
 [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws#aws)
 
@@ -371,7 +371,7 @@ subcollection: satellite
 
 * [AWS credentials](/docs/satellite?topic=satellite-aws#infra-creds-aws)
 
-* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-aws#aws-reqs-console-access)
+* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/satellite?topic=satellite-aws#aws-reqs-console-access)
 
 [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp#gcp)
 
@@ -383,7 +383,7 @@ subcollection: satellite
 
 * [Google Cloud Platform credentials](/docs/satellite?topic=satellite-gcp#infra-creds-gcp)
 
-* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.openshiftshort}} web console](/docs/satellite?topic=satellite-gcp#gcp-reqs-console-access)
+* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/satellite?topic=satellite-gcp#gcp-reqs-console-access)
 
 [Microsoft Azure](/docs/satellite?topic=satellite-azure#azure)
 
@@ -511,7 +511,7 @@ subcollection: satellite
 
 [Using {{site.data.keyword.satelliteshort}} Config with existing {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-satcon-existing#satcon-existing)
 
-* [Registering existing {{site.data.keyword.openshiftshort}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing#register-openshift-clusters)
+* [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing#register-openshift-clusters)
 
 * [Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-satcon-existing#remove-satconfig)
 
@@ -1124,7 +1124,7 @@ subcollection: satellite
 
     * [Service access roles](/docs/satellite?topic=satellite-iam#iam-roles-service)
 
-    * [Platform and service roles for {{site.data.keyword.openshiftshort}} clusters](/docs/satellite?topic=satellite-iam#iam-roles-clusters)
+    * [Platform and service roles for {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/satellite?topic=satellite-iam#iam-roles-clusters)
 
 * [Common use cases and roles in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
 
@@ -1592,7 +1592,7 @@ subcollection: satellite
 
 * [What {{site.data.keyword.cloud_notm}} services can I use with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-faqs#supported-services)
 
-* [What managed add-ons can I use with {{site.data.keyword.openshiftshort}} clusters in my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-faqs#faq-managed-addons)
+* [What managed add-ons can I use with {{site.data.keyword.redhat_openshift_notm}} clusters in my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-faqs#faq-managed-addons)
 
 
 ## Troubleshooting errors
@@ -1714,7 +1714,7 @@ subcollection: satellite
 
 [Why does the list of Kubernetes resources not show up or update after registering my cluster with {{site.data.keyword.satelliteshort}} Config?](/docs/satellite?topic=satellite-satconfig-cluster-access-error#satconfig-cluster-access-error)
 
-[Why can't I access the {{site.data.keyword.openshiftshort}} console without a VPN on the VPC?](/docs/satellite?topic=satellite-ts-console-fail#ts-console-fail)
+[Why can't I access the {{site.data.keyword.redhat_openshift_notm}} console without a VPN on the VPC?](/docs/satellite?topic=satellite-ts-console-fail#ts-console-fail)
 
 [Why can't I update or complete other actions with my cluster?](/docs/satellite?topic=satellite-ts-cluster-operations-blocked#ts-cluster-operations-blocked)
 
@@ -1722,7 +1722,7 @@ subcollection: satellite
 
 [Why is my Ingress in a warning state?](/docs/satellite?topic=satellite-ts-degraded-ingress#ts-degraded-ingress)
 
-[Why can't I access the {{site.data.keyword.openshiftshort}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console#ts-sat-ocp-console)
+[Why can't I access the {{site.data.keyword.redhat_openshift_notm}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console#ts-sat-ocp-console)
 
 [Why can't I log into my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug#ts-cluster-ocdebug)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -162,7 +162,7 @@ To access these logs, [provision an instance of {{site.data.keyword.at_full_notm
 ## Setting up logging for clusters
 {: #setup-clusters-logging}
 
-To understand and set up logging for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.la_full_notm}} documentation](/docs/log-analysis?topic=log-analysis-tutorial-use-logdna).
+To understand and set up logging for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.la_full_notm}} documentation](/docs/log-analysis?topic=log-analysis-tutorial-use-logdna).
 {: shortdesc}
 
 You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging for {{site.data.keyword.satelliteshort}} clusters. You must [manually deploy logging agents to your cluster](#enable-clusters-logging) to forward logs to {{site.data.keyword.la_short}}.
@@ -178,9 +178,9 @@ To enable a logging instance in your {{site.data.keyword.satelliteshort}} cluste
 
 2. From the [Logging](https://cloud.ibm.com/observe/logging){: external} page, click on the logging instance. 
 
-3. Click on **Logging sources** and navigate to the **{{site.data.keyword.openshiftshort}}** tab.
+3. Click on **Logging sources** and navigate to the **{{site.data.keyword.redhat_openshift_notm}}** tab.
 
-4. Follow the instructions in the **{{site.data.keyword.openshiftshort}}** tab to install the logging agent. 
+4. Follow the instructions in the **{{site.data.keyword.redhat_openshift_notm}}** tab to install the logging agent. 
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Attaching hosts to your {{site.data.keyword.satelliteshort}} location
 {: #attach-hosts}
 
-After you create the location, add compute capacity to your location so that you can set up {{site.data.keyword.openshiftshort}} clusters or interact with other IBM services.
+After you create the location, add compute capacity to your location so that you can set up {{site.data.keyword.redhat_openshift_notm}} clusters or interact with other IBM services.
 {: shortdesc}
 
 Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing).
@@ -142,7 +142,7 @@ Before you begin, make sure that you have created host machines that meet the [m
         ```
         {: pre}
 
-4. Verify that your hosts are attached to your location. Your hosts are not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.openshiftshort}} cluster which is why hosts show an `unassigned` state without any cluster or worker node information.
+4. Verify that your hosts are attached to your location. Your hosts are not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.redhat_openshift_notm}} cluster which is why hosts show an `unassigned` state without any cluster or worker node information.
     ```sh
     ibmcloud sat host ls --location <location_name_or_ID>
     ```

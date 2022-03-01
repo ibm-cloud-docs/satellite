@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -51,13 +51,13 @@ Type:                  Degraded
 {: screen}
 
 
-By default, {{site.data.keyword.satellitelong_notm}} sets up a default {{site.data.keyword.openshiftshort}} router in your cluster and exposes this router by using a load balancer service. Because {{site.data.keyword.satelliteshort}} does not own and control the host infrastructure, no load balancer can be created automatically, leading to the load balancer service to remain in a pending state and the Ingress operator to report a degraded state. However, Ingress functionality to your cluster continues to work.
+By default, {{site.data.keyword.satellitelong_notm}} sets up a default {{site.data.keyword.redhat_openshift_notm}} router in your cluster and exposes this router by using a load balancer service. Because {{site.data.keyword.satelliteshort}} does not own and control the host infrastructure, no load balancer can be created automatically, leading to the load balancer service to remain in a pending state and the Ingress operator to report a degraded state. However, Ingress functionality to your cluster continues to work.
 {: tsCauses}
 
-A degraded Ingress operator can prevent you from installing or updating other {{site.data.keyword.openshiftshort}} operators in your cluster.
+A degraded Ingress operator can prevent you from installing or updating other {{site.data.keyword.redhat_openshift_notm}} operators in your cluster.
 
 
-While you can't fix the warning state of your Ingress, you can update the Ingress controller so that it no longer reports a degraded state. You can then install or update other {{site.data.keyword.openshiftshort}} operators in your cluster.
+While you can't fix the warning state of your Ingress, you can update the Ingress controller so that it no longer reports a degraded state. You can then install or update other {{site.data.keyword.redhat_openshift_notm}} operators in your cluster.
 {: tsResolve}
 
 1. Get the configuration for your existing Ingress controller in your cluster and save this configuration to a YAML file on your local machine.
@@ -116,7 +116,7 @@ While you can't fix the warning state of your Ingress, you can update the Ingres
     ```
     {: pre}
     
-6. Re-create the Ingress controller by using the YAML file that you created earlier. Note that you must re-create the Ingress controller before {{site.data.keyword.openshiftshort}} can automatically re-create the controller with the old configuration.
+6. Re-create the Ingress controller by using the YAML file that you created earlier. Note that you must re-create the Ingress controller before {{site.data.keyword.redhat_openshift_notm}} can automatically re-create the controller with the old configuration.
     ```sh
     oc apply -f ingress.yaml
     ```
