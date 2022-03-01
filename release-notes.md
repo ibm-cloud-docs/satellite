@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-28"
+lastupdated: "2022-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -140,8 +140,8 @@ Review the release notes for November 2021.
 {: release-note}
 
 
-{{site.data.keyword.openshiftshort}} Data Foundation
-:   Updated deployment parameters for {{site.data.keyword.openshiftshort}} Data Foundation. The `container-private-endpoint` parameter is no longer required.
+{{site.data.keyword.redhat_openshift_notm}} Data Foundation
+:   Updated deployment parameters for {{site.data.keyword.redhat_openshift_notm}} Data Foundation. The `container-private-endpoint` parameter is no longer required.
 
 {{site.data.keyword.at_short}}
 :   New {{site.data.keyword.at_short}} events are available for {{site.data.keyword.satelliteshort}} storage. For more information, see [Auditing events](/docs/satellite?topic=satellite-at_events).
@@ -164,8 +164,8 @@ New location error message is added.
 {: #10nov2021}
 {: release-note}
 
-Troubleshooting a `certificate expired` error for the {{site.data.keyword.openshiftshort}} console
-:   For more information see [Why can't I access the {{site.data.keyword.openshiftshort}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console).
+Troubleshooting a `certificate expired` error for the {{site.data.keyword.redhat_openshift_notm}} console
+:   For more information see [Why can't I access the {{site.data.keyword.redhat_openshift_notm}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console).
 
 ### 9 November 2021
 {: #9nov2021}

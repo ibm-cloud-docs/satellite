@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: satellite, certificate, expired, console
 
@@ -13,10 +13,10 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I access the {{site.data.keyword.openshiftshort}} web console?
+# Why can't I access the {{site.data.keyword.redhat_openshift_notm}} web console?
 {: #ts-sat-ocp-console}
 
-When you try to access your {{site.data.keyword.satelliteshort}} cluster through the {{site.data.keyword.openshiftshort}} console, you see an error message similar to the following:
+When you try to access your {{site.data.keyword.satelliteshort}} cluster through the {{site.data.keyword.redhat_openshift_notm}} console, you see an error message similar to the following:
 {: tsSymptoms}
 
 ```sh
@@ -24,7 +24,7 @@ When you try to access your {{site.data.keyword.satelliteshort}} cluster through
 ```
 {: screen}
 
-An expired or invalidated security ticket is preventing you from accessing the {{site.data.keyword.openshiftshort}} console.  
+An expired or invalidated security ticket is preventing you from accessing the {{site.data.keyword.redhat_openshift_notm}} console.  
 {: tsCauses}
 
 Follow the steps to validate your certificate.

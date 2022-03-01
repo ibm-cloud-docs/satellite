@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -44,8 +44,8 @@ Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location 
 | Scenario | Action |
 | --- | --- |
 | Location control plane does not have a host in three separate zones. | Check for attached, unassigned hosts in the location. If a host is available, assign the host to the location control plane for the missing zone, giving preference to hosts with a label that matches the zone. |
-| Cluster capacity exceeds 80% in a zone. | Prevent or allow {{site.data.keyword.openshiftshort}} clusters to be created. Assign available hosts to a location control plane for more compute resources. |
-| {{site.data.keyword.openshiftshort}} clusters are in an unhealthy state. | Resolve certain health issues with {{site.data.keyword.openshiftshort}} clusters. |
+| Cluster capacity exceeds 80% in a zone. | Prevent or allow {{site.data.keyword.redhat_openshift_notm}} clusters to be created. Assign available hosts to a location control plane for more compute resources. |
+| {{site.data.keyword.redhat_openshift_notm}} clusters are in an unhealthy state. | Resolve certain health issues with {{site.data.keyword.redhat_openshift_notm}} clusters. |
 | Default monitoring tools like Prometheus do not work. | Send alerts to your {{site.data.keyword.la_full_notm}} instance and return a status message with further troubleshooting information. |
 | Ingress subdomain registration fails. | Alert {{site.data.keyword.IBM_notm}} engineers to troubleshoot the issues further and return a status message with further troubleshooting information. |
 {: caption="{{site.data.keyword.IBM_notm}} monitoring actions to address certain scenarios." caption-side="top"}
@@ -342,7 +342,7 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 ## Setting up monitoring for clusters
 {: #setup-clusters-monitoring}
 
-To understand and set up monitoring for {{site.data.keyword.openshiftshort}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.mon_full_notm}} documentation](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster).
+To understand and set up monitoring for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see the tutorials in the [{{site.data.keyword.mon_full_notm}} documentation](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster).
 {: shortdesc}
 
 You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
