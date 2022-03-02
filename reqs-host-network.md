@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -130,10 +130,7 @@ Allow hosts to connect to the LaunchDarkly service
 :   **Protocol and ports**: HTTPS 443
 
 Allow hosts to communicate with Red Hat Container Registry
-:   **Source**: All {{site.data.keyword.redhat_openshift_notm}} hosts
-:   **Destination IPs**: [Red Hat Container Registry IPs](https://access.redhat.com/sites/default/files/cdn_redhat_com_cac.json){: external}
-:   **Destination hostnames**: `registry.redhat.io`, `quay.io`
-:   **Protocol and ports**: TCP 443
+:   See [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
 
