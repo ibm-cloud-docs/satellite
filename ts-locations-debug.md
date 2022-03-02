@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -401,3 +401,5 @@ Location message
 
 Steps to resolve
 :    {{site.data.keyword.cloud_notm}} Support is notified and is working to resolve the issue. Try again later. 
+
+
