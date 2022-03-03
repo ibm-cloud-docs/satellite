@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,6 +18,18 @@ subcollection: satellite
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
+
+## March 2022
+{: #release-mar-2022}
+
+# 3 March 2022
+{: #3mar2022}
+{: release-note}
+
+
+New! Beta support for the Google Compute Engine CSI driver template
+:    You can use the Google Compute Engine CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Google Compute Engine CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-gcp-csi).
+
 
 ## February 2022
 {: #release-feb-2022}

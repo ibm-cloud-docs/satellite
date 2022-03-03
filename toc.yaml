@@ -95,6 +95,10 @@ toc:
                     - config-storage-azure-csi.md
                     - config-storage-azurefile-csi.md
               - topicgroup:
+                  label: Google storage templates
+                  topics:
+                  - config-storage-gcp-csi.md
+              - topicgroup:
                   label: IBM storage templates
                   topics:
                     - config-storage-spectrum-scale.md

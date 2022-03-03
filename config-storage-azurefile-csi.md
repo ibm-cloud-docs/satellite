@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-03"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file
 
@@ -71,34 +71,6 @@ If you manually assigned your Azure hosts to your location and did not use an au
     {: pre}
 
 1. Repeat the previous steps for each worker node.
-
-
-### Gathering your Azure File configuration parameters
-{: #azure-file-config-file}
-
-Create a configuration file with your Azure File settings. 
-{: shortdesc}
-
-1. List the Azure File storage template parameters.
-    ```sh
-    ibmcloud sat storage template get --name azurefile-csi-driver --version <version>
-    ```
-    {: pre}
-    
-    Example output
-    ```sh
-    Name                Display Name        Description                                                                       Required   Type   Default   
-    aadClientId         aadClientId         aadClientId                                                                       true       text   -   
-    aadClientSecret     aadClientSecret     aadClientSecret                                                                   true       text   -   
-    location            location            location                                                                          true       text   -   
-    resourceGroup       resourceGroup       resourceGroup                                                                     true       text   -   
-    securityGroupName   securityGroupName   securityGroupName                                                                 true       text   -   
-    subscriptionId      subscriptionId      subscriptionId                                                                    true       text   -   
-    tenantId            tenantId            tenantId : The base64 encoded string generated from the azure.json config file.   true       text   -   
-    vmType              vmType              vmType                                                                            true       text   -   
-    vnetName            vnetName            vnetName                                                                          true       text   -   
-    ```
-    {: screen}
 
 1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/account/){: external} and retrieve the required parameters. For more information about the parameters, see the [parameter reference](#sat-storage-azure-file-params-cli).
 
