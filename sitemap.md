@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-03"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -75,6 +75,10 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-release-notes#release-notes)
+
+* [March 2022](/docs/satellite?topic=satellite-release-notes#release-mar-2022)
+
+    * [3 March 2022](/docs/satellite?topic=satellite-release-notes#3mar2022)
 
 * [February 2022](/docs/satellite?topic=satellite-release-notes#release-feb-2022)
 
@@ -674,10 +678,6 @@ subcollection: satellite
 
 * [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters-monitoring)
 
-[Monitoring host health](/docs/satellite?topic=satellite-host-monitor-health#host-monitor-health)
-
-[Monitoring location health](/docs/satellite?topic=satellite-location-monitor-health#location-monitor-health)
-
 [Auditing events](/docs/satellite?topic=satellite-at_events#at_events)
 
 * [Events for {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-at_events#at_actions_clusters)
@@ -787,8 +787,6 @@ subcollection: satellite
 
     * [Optional: Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-label-nodes)
 
-    * [Gathering your Azure File configuration parameters](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-config-file)
-
 * [Creating an Azure File configuration in the command line](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-csi-cli)
 
 * [Assigning your Azure storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-azurefile-csi#assign-storage-azurefile)
@@ -806,6 +804,31 @@ subcollection: satellite
 * [Parameter reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-params-cli)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-sc-ref)
+
+
+### Google storage templates
+{: #sitemap_google_storage_templates}
+
+
+[Google Compute Engine persistent disk Container Storage Interface (CSI) Driver](/docs/satellite?topic=satellite-config-storage-gcp-csi#config-storage-gcp-csi)
+
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-csi-prereq)
+
+* [Creating the Google Compute Engine persistent disk configuration in the command line](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-create-config)
+
+    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-gcp-csi#assign-storage-gcp-csi)
+
+* [Deploying an app that uses Google Compute Engine persistent disk](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-deploy-app)
+
+* [Removing storage from your apps](/docs/satellite?topic=satellite-config-storage-gcp-csi#gce-rm-apps)
+
+* [Removing the storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-gcp-csi#gce-template-rm)
+
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-csi-params-cli)
+
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-ref)
+
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-gcp-csi-support)
 
 
 ### IBM storage templates

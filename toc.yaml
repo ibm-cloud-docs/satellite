@@ -55,6 +55,7 @@ toc:
               - host-update-workers.md
               - location-copy.md
               - host-remove.md
+              - link-agent.md
         - topicgroup:
             label: Deploying Kubernetes resources across clusters with Satellite Config
             topics:
@@ -76,8 +77,6 @@ toc:
             topics:
               - health.md
               - monitor.md
-              - host-monitor-health.md
-              - location-monitor-health.md
               - at-events.md
         - topicgroup:
             label: Setting up storage
@@ -93,6 +92,10 @@ toc:
                   topics:
                     - config-storage-azure-csi.md
                     - config-storage-azurefile-csi.md
+              - topicgroup:
+                  label: Google storage templates
+                  topics:
+                  - config-storage-gcp-csi.md
               - topicgroup:
                   label: IBM storage templates
                   topics:
