@@ -55,6 +55,7 @@ toc:
               - host-update-workers.md
               - location-copy.md
               - host-remove.md
+              - link-agent.md
         - topicgroup:
             label: Deploying Kubernetes resources across clusters with Satellite Config
             topics:
