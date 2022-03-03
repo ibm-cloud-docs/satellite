@@ -22,7 +22,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## March 2022
 {: #release-mar-2022}
 
-# 3 March 2022
+### 3 March 2022
 {: #3mar2022}
 {: release-note}
 

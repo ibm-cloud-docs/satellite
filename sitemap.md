@@ -78,12 +78,7 @@ subcollection: satellite
 
 * [March 2022](/docs/satellite?topic=satellite-release-notes#release-mar-2022)
 
-
-## 3 March 2022
-{: #sitemap_3_march_2022}
-
-
-[3 March 2022](/docs/satellite?topic=satellite-release-notes#3mar2022)
+    * [3 March 2022](/docs/satellite?topic=satellite-release-notes#3mar2022)
 
 * [February 2022](/docs/satellite?topic=satellite-release-notes#release-feb-2022)
 
@@ -682,10 +677,6 @@ subcollection: satellite
     * [Attributes for segmentation](/docs/satellite?topic=satellite-monitor#attributes)
 
 * [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters-monitoring)
-
-[Monitoring host health](/docs/satellite?topic=satellite-host-monitor-health#host-monitor-health)
-
-[Monitoring location health](/docs/satellite?topic=satellite-location-monitor-health#location-monitor-health)
 
 [Auditing events](/docs/satellite?topic=satellite-at_events#at_events)
 

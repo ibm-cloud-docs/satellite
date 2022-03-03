@@ -77,8 +77,6 @@ toc:
             topics:
               - health.md
               - monitor.md
-              - host-monitor-health.md
-              - location-monitor-health.md
               - at-events.md
         - topicgroup:
             label: Setting up storage
