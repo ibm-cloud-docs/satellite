@@ -15,7 +15,7 @@ subcollection: satellite
 # Google Compute Engine persistent disk Container Storage Interface (CSI) Driver
 {: #config-storage-gcp-csi}
 
-The Compute Engine persistent disk Container Storage Interface (CSI) [Driver](](https://github.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/tree/v1.0.4){: external} is a CSI compliant driver that you can use to manage the lifecycle of your Google Compute Engine persistent disks.
+The Compute Engine persistent disk Container Storage Interface (CSI) [Driver](https://github.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/tree/v1.0.4){: external} is a CSI compliant driver that you can use to manage the lifecycle of your Google Compute Engine persistent disks.
 {: shortdesc}
 
  The template is currently in beta and should not be used for production workloads. 
