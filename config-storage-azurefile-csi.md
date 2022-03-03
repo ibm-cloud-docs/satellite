@@ -38,7 +38,7 @@ To use the Azure File CSI driver storage template, complete the following tasks:
     {: important}
     
 2. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure.
-3. [Create your configuration file](#azure-file-config-file).
+3. [Create your configuration file](#sat-storage-azure-file-csi-cli).
 
 ### Optional: Labeling your worker nodes
 {: #azure-file-label-nodes}

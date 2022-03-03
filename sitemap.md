@@ -827,7 +827,13 @@ subcollection: satellite
 
     * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-gcp-csi#assign-storage-gcp-csi)
 
-* [Parameter reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#parameter-reference)
+* [Deploying an app that uses Google Compute Engine persistent disk](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-deploy-app)
+
+* [Removing storage from your apps](/docs/satellite?topic=satellite-config-storage-gcp-csi#gce-rm-apps)
+
+* [Removing the storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-gcp-csi#gce-template-rm)
+
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-csi-params-cli)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-ref)
 

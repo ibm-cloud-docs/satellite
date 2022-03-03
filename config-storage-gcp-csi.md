@@ -155,7 +155,7 @@ Create a storage configuration in the command line by using the Google Compute E
   sat-gce-block-silver-metro     pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   false                  21s
   ```
 
-1. [Deploy an app that uses your persistent disk storage](#sat-storage-gcp-app-deploy)
+1. [Deploy an app that uses your persistent disk storage](#sat-storage-gcp-deploy-app)
 
 ## Deploying an app that uses Google Compute Engine persistent disk
 {: #sat-storage-gcp-deploy-app}
@@ -399,7 +399,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 
 
 ## Parameter reference
-{: sat-storage-gcp-csi-params-cli}
+{: #sat-storage-gcp-csi-params-cli}
 
 | Parameter | Required? | Description | Default value if not provided |
 | --- | --- | --- | --- |
