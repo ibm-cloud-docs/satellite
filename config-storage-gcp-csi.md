@@ -153,6 +153,7 @@ Create a storage configuration in the command line by using the Google Compute E
   sat-gce-block-platinum-metro   pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   false                  20s
   sat-gce-block-silver           pd.csi.storage.gke.io   Delete          Immediate              false                  20s
   sat-gce-block-silver-metro     pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   false                  21s
+  ```
 
 1. [Deploy an app that uses your persistent disk storage](#sat-storage-gcp-app-deploy)
 
