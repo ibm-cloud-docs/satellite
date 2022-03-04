@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-03-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -31,6 +31,9 @@ You can set up {{site.data.keyword.satelliteshort}} locations with a {{site.data
 - [AWS](/docs/satellite?topic=satellite-aws#aws-template)
 - [Azure](/docs/satellite?topic=satellite-azure#azure-template)
 - [GCP](/docs/satellite?topic=satellite-gcp#gcp-template)
+
+If you are using this template for demonstration purposes, do not assign all of your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+{: note}
 
 What's next?
 
@@ -162,7 +165,6 @@ The location control plane runs resources that are managed by {{site.data.keywor
 {: shortdesc}
 
 When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.
-{: important}
 
 - You must attach compute hosts in groups of 3 to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any provider-specific requirements. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
 - The minimum of 3 hosts for the control plane is for demonstration purposes. To continue to use the location for production workloads, [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity) in multiples of 3, such as 6, 9, or 12 hosts.
