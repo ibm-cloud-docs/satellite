@@ -15,7 +15,7 @@ subcollection: satellite
 # Google Compute Engine persistent disk Container Storage Interface (CSI) Driver
 {: #config-storage-gcp-csi}
 
-The Compute Engine persistent disk Container Storage Interface (CSI) [Driver](](https://github.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/tree/v1.0.4){: external} is a CSI compliant driver that you can use to manage the lifecycle of your Google Compute Engine persistent disks.
+The Compute Engine persistent disk Container Storage Interface (CSI) [Driver](https://github.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/tree/v1.0.4){: external} is a CSI compliant driver that you can use to manage the lifecycle of your Google Compute Engine persistent disks.
 {: shortdesc}
 
  The template is currently in beta and should not be used for production workloads. 
@@ -62,19 +62,22 @@ Create a storage configuration in the command line by using the Google Compute E
     ```
     {: pre}
     
+
 1. Review the [template parameters](#sat-storage-gcp-csi-params-cli).
+
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
-  ```sh
-  ibmcloud sat storage config create --name <config_name> --template-name gcp-compute-persistent-disk-csi-driver --template-version 1.0.4 --location <location_name> -p "project_id= ****" -p "private_key_id= ****" -p "private_key= **** -p "client_email=****" -p "client_id=******" -p "auth_uri=****" -p "token_uri=****" -p "auth_provider_x509_cert_url=****" -p "client_x509_cert_url=****"
-  ```
-  {: pre}
+    ```sh
+    ibmcloud sat storage config create --name <config_name> --template-name gcp-compute-persistent-disk-csi-driver --template-version 1.0.4 --location <location_name> -p "project_id=" -p "private_key_id= " -p "private_key=" -p "client_email=" -p "client_id=" -p "auth_uri=" -p "token_uri=" -p "auth_provider_x509_cert_url=" -p "client_x509_cert_url="
+    ```
+    {: pre}
 
 1. Verify that your storage configuration is created.
-  ```sh
-  {{icsat}} storage config get --config <CONFIG>
-  ```
-  {: pre}
+
+    ```sh
+    {{icsat}} storage config get --config <CONFIG>
+    ```
+    {: pre}
 
 1. [Assign your storage configuration to clusters](#assign-storage-gcp-csi)
 
@@ -133,27 +136,30 @@ Create a storage configuration in the command line by using the Google Compute E
     {: pre}
 
 1. Verify that the storage configuration resources are deployed. 
-  ```sh
-  kubectl get pods -n gce-pd-csi-driver | grep gce
-  csi-gce-pd-controller-7d89bf967d-92mc8                    5/5     Running             0          14m
-  csi-gce-pd-node-4d66j                                     2/2     Running             0          14m
-  csi-gce-pd-node-4mcvr                                     2/2     Running             0          14m
-  csi-gce-pd-node-8vsmb                                     2/2     Running             0          14m
-  ```
-  {: screen}
+
+    ```sh
+    kubectl get pods -n gce-pd-csi-driver | grep gce
+    csi-gce-pd-controller-7d89bf967d-92mc8                    5/5     Running             0          14m
+    csi-gce-pd-node-4d66j                                     2/2     Running             0          14m
+    csi-gce-pd-node-4mcvr                                     2/2     Running             0          14m
+    csi-gce-pd-node-8vsmb                                     2/2     Running             0          14m
+    ```
+    {: screen}
 
 1. List the storage classes.
-  ```sh
-  kubectl get sc -n gce-pd-csi-driver
-  sat-gce-block-bronze           pd.csi.storage.gke.io   Delete          Immediate              false                  20s
-  sat-gce-block-bronze-metro     pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   false                  21s
-  sat-gce-block-gold             pd.csi.storage.gke.io   Delete          Immediate              false                  20s
-  sat-gce-block-gold-metro       pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   false                  21s
-  sat-gce-block-platinum         pd.csi.storage.gke.io   Delete          Immediate              false                  19s
-  sat-gce-block-platinum-metro   pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   false                  20s
-  sat-gce-block-silver           pd.csi.storage.gke.io   Delete          Immediate              false                  20s
-  sat-gce-block-silver-metro     pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   false                  21s
-  ```
+
+    ```sh
+    kubectl get sc -n gce-pd-csi-driver
+    sat-gce-block-bronze           pd.csi.storage.gke.io   Delete          Immediate              false                  20s
+    sat-gce-block-bronze-metro     pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   false                  21s
+    sat-gce-block-gold             pd.csi.storage.gke.io   Delete          Immediate              false                  20s
+    sat-gce-block-gold-metro       pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   false                  21s
+    sat-gce-block-platinum         pd.csi.storage.gke.io   Delete          Immediate              false                  19s
+    sat-gce-block-platinum-metro   pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   false                  20s
+    sat-gce-block-silver           pd.csi.storage.gke.io   Delete          Immediate              false                  20s
+    sat-gce-block-silver-metro     pd.csi.storage.gke.io   Delete          WaitForFirstConsumer   false                  21s
+    ```
+    {: screen}
 
 1. [Deploy an app that uses your persistent disk storage](#sat-storage-gcp-deploy-app)
 
@@ -182,10 +188,10 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
         
 1. Create the PVC in your cluster. 
 
-  ```sh
-  oc apply -f pvc-gce.yaml
-  ```
-  {: pre}
+    ```sh
+    oc apply -f pvc-gce.yaml
+    ```
+    {: pre}
 
 1. Create a YAML configuration file for a pod that mounts the PVC that you created. 
 
@@ -215,10 +221,10 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
 
 1. Create the pod in your cluster.
 
-  ```sh
-  oc apply -f app-gcp.yaml
-  ```
-  {: pre}
+    ```sh
+    oc apply -f app-gcp.yaml
+    ```
+    {: pre}
 
 1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
 
