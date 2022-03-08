@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-08"
 
-keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, 
+keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce
 
 subcollection: satellite
 
@@ -175,13 +175,13 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-      name: pod-pvc
+      name: pvc-gce
     spec:
       accessModes:
         - ReadWriteOnce
       resources:
         requests:
-          storage: 200 Gi
+          storage: 10Gi
       storageClassName: sat-gce-block-silver
     ```
     {: codeblock}
@@ -196,33 +196,55 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
 1. Create a YAML configuration file for a pod that mounts the PVC that you created. 
 
     ```yaml
-    apiVersion: v1
-    kind: Pod
+    apiVersion: apps/v1
+    kind: StatefulSet
     metadata:
-      name: web-server
+      name: statefulset-gce
+      labels:
+        app: nginx
     spec:
-      containers:
-      - name: web-server
-        image: nginx
-        command:
-            - "/bin/sh"
-            - "-c"
-            - while true; do echo $(date) >> /mnt/googledisk/outfile; sleep 1; done
-        volumeMounts:
-          - mountPath: /mnt/googledisk
-            name: mypvc
-      volumes:
-      - name: mypvc
-        persistentVolumeClaim:
-          claimName: podpvc
-          readOnly: false
+      podManagementPolicy: Parallel  # default is OrderedReady
+      serviceName: statefulset-gce
+      replicas: 1
+      template:
+        metadata:
+          labels:
+            app: nginx
+        spec:
+          nodeSelector:
+            "kubernetes.io/os": linux
+          containers:
+            - name: statefulset-gce
+              image: mcr.microsoft.com/oss/nginx/nginx:1.19.5
+              command:
+                - "/bin/bash"
+                - "-c"
+                - set -euo pipefail; while true; do echo $(date) >> /mnt/gce/outfile; sleep 1; done
+              volumeMounts:
+                - name: persistent-storage
+                  mountPath: /mnt/gce
+      updateStrategy:
+        type: RollingUpdate
+      selector:
+        matchLabels:
+          app: nginx
+      volumeClaimTemplates:
+        - metadata:
+            name: persistent-storage
+            annotations:
+              volume.beta.kubernetes.io/storage-class: sat-gce-block-silver
+          spec:
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 10Gi
     ```
     {: codeblock}
 
 1. Create the pod in your cluster.
 
     ```sh
-    oc apply -f app-gcp.yaml
+    oc apply -f statefulset-gce.yaml
     ```
     {: pre}
 
@@ -235,7 +257,7 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
     
     ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
-    web-server                          1/1     Running   0          2m58s
+    statefulset-gce                          1/1     Running   0          2m58s
     ```
     {: screen}
 
@@ -249,7 +271,7 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
 1. View the contents of the `outfile` file to confirm that your app can write data to your persistent storage.
 
     ```sh
-    cat /mnt/googledisk/outfile
+    cat /mnt/gce/outfile
     ```
     {: pre}
 
