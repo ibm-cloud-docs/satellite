@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-08"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -25,7 +25,7 @@ To install the CLI, see [Setting up the CLI](/docs/satellite?topic=satellite-set
 ## `ibmcloud sat` commands
 {: #satellite-cli-map}
 
-The tables below list the `ibmcloud sat` command groups. For a complete list of all `ibmcloud sat` commands as they are structured in the CLI, see the [{{site.data.keyword.satelliteshort}} CLI map](/docs/containers?topic=satellite-icsat_map).
+The tables below list the `ibmcloud sat` command groups. For a complete list of all `ibmcloud sat` commands as they are structured in the CLI, see the [{{site.data.keyword.satelliteshort}} CLI map](/docs/satellite?topic=satellite-icsat_map).
 {: shortdesc}
 
 | Command group | Description | 
