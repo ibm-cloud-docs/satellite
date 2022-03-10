@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-10"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -91,6 +91,7 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
 
 * [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create).
 * **`ibmcloud sat location dns`**: Create and manage subdomains for the hosts assigned to the control plane in a Satellite location.
+   <cli-next-2135>* [`ibmcloud sat location dns get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-get).</cli-next-2135>
     * [`ibmcloud sat location dns ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-ls).
     * [`ibmcloud sat location dns register`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-register).
 * [`ibmcloud sat location get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-get).

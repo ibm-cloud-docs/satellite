@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-10"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1349,6 +1349,50 @@ ibmcloud sat location create --managed-from wdc --name mylocation
 ```
 {: pre}
 
+<cli-next-2135>
+
+### `ibmcloud sat location dns get`
+{: #location-dns-get}
+
+View the details of a registered subdomain in a Satellite location.
+{: shortdesc}
+
+```sh
+ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN [--output OUTPUT] [-q]
+```
+{: pre}
+
+
+#### Minimum required permissions
+{: #location-dns-get-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #location-dns-get-command-options}
+
+`--location LOCATION`
+:    Required. Enter the ID or name of the location that you want to retrieve DNS record for. To retrieve the location ID or name, run `ibmcloud sat location ls`.
+
+`--subdomain SUBDOMAIN`
+:    Required. Enter the ID or name of the subdomain that you want to retrieve DNS record for. To list existing subdomains, run `ibmcloud sat location dns ls`.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #location-get-example}
+
+```sh
+ibmcloud sat location dns get --location aaaaaaaa1111a1aaaa11a --subdomain s1b9782f9f75feeb8a5a4-d683ff82e51c94176a53d
+```
+{: pre}
+
+</cli-next-2135>
+
 ### `ibmcloud sat location dns ls`
 {: #location-dns-ls}
 
@@ -1372,7 +1416,7 @@ ibmcloud sat location dns ls --location LOCATION [--output json] [-q]
 :    Required. Enter the ID or name of the location that you want to show the DNS record for. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
 
 `--output json`
-    :    Optional. Prints the command output in JSON format.
+:    Optional. Prints the command output in JSON format.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
@@ -1416,7 +1460,7 @@ ibmcloud sat location dns register --location LOCATION --ip HOST_IP_ADDRESS [--o
 :    Required. Enter the IP address of a compute host that you added to your {{site.data.keyword.satelliteshort}} control plane. To retrieve the IP, run `ibmcloud sat host ls --location <location_ID_or_name>`ID. To register multiple IP addresses, you can use multiple `--ip` flags in the same command.   
 
 `--output json`
-    :    Optional. Prints the command output in JSON format.
+:    Optional. Prints the command output in JSON format.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
@@ -1456,7 +1500,7 @@ ibmcloud sat location get --location LOCATION [--output json] [-q]
 :    Required. Enter the ID or name of the location that you want to retrieve details for. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
 
 `--output json`
-    :    Optional. Prints the command output in JSON format.
+:    Optional. Prints the command output in JSON format.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.

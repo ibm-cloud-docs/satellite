@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1351,6 +1351,8 @@ subcollection: satellite
 * [Location commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-location-commands)
 
     * [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create)
+
+    * [`ibmcloud sat location dns get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-get)
 
     * [`ibmcloud sat location dns ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-ls)
 
