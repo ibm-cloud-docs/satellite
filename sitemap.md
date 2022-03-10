@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -77,6 +77,8 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-release-notes#release-notes)
 
 * [March 2022](/docs/satellite?topic=satellite-release-notes#release-mar-2022)
+
+    * [10 March 2022](/docs/satellite?topic=satellite-release-notes#3mar2022)
 
     * [3 March 2022](/docs/satellite?topic=satellite-release-notes#3mar2022)
 
@@ -835,6 +837,18 @@ subcollection: satellite
 {: #sitemap_ibm_storage_templates}
 
 
+[{{site.data.keyword.IBM_notm}} Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi#config-storage-block-csi)
+
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-prereq)
+
+* [Creating a block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-cli)
+
+* [Assigning your block storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi)
+
+    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-cli)
+
+* [Deploying an app that uses your {{site.data.keyword.IBM_notm}} block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
+
 [{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale#config-storage-spectrum-scale)
 
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-prereq)
@@ -865,17 +879,25 @@ subcollection: satellite
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref)
 
-[{{site.data.keyword.IBM_notm}} Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi#config-storage-block-csi)
+[{{site.data.keyword.block_storage_is_short}} Container Storage Interface (CSI) Driver](/docs/satellite?topic=satellite-config-storage-vpc-csi#config-storage-vpc-csi)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-prereq)
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-csi-prereq)
 
-* [Creating a block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-cli)
+* [Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-create-config)
 
-* [Assigning your block storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi)
+    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-cli)
+* [Deploying an app that uses {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-deploy-app)
 
-* [Deploying an app that uses your {{site.data.keyword.IBM_notm}} block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
+* [Removing storage from your apps](/docs/satellite?topic=satellite-config-storage-vpc-csi#removing-storage-from-your-apps)
+
+* [Removing the storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-template-rm)
+
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-csi-params-cli)
+
+* [Storage class reference](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-ref)
+
+* [Getting help and support](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-vpc-csi-support)
 
 
 ### NetApp storage templates
@@ -1098,6 +1120,8 @@ subcollection: satellite
 * [OpenShift Data Foundation for remote volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-remote-ref)
 
 * [{{site.data.keyword.IBM_notm}} Spectrum Scale](/docs/satellite?topic=satellite-storage-class-ref#spec-scale-sc-ref)
+
+* [{{site.data.keyword.IBM_notm}} VPC block storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-vpc-csi-sc-ref)
 
 
 ## Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions
@@ -1351,6 +1375,8 @@ subcollection: satellite
 * [Location commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-location-commands)
 
     * [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create)
+
+    * [`ibmcloud sat location dns get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-get)
 
     * [`ibmcloud sat location dns ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-ls)
 

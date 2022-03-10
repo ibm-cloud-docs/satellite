@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,6 +21,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## March 2022
 {: #release-mar-2022}
+
+### 10 March 2022
+{: #3mar2022}
+{: release-note}
+
+New! Beta support for the {{site.data.keyword.block_storage_is_short}} CSI driver template
+:    You can use the {{site.data.keyword.block_storage_is_short}} CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.block_storage_is_short}} CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-vpc-csi).
 
 ### 3 March 2022
 {: #3mar2022}

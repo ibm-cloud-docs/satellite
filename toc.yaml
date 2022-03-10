@@ -99,8 +99,9 @@ toc:
               - topicgroup:
                   label: IBM storage templates
                   topics:
+                    - config-storage-block-csi.md 
                     - config-storage-spectrum-scale.md
-                    - config-storage-block-csi.md
+                    - config-storage-vpc-csi.md
               - topicgroup:
                   label: NetApp storage templates
                   topics:
