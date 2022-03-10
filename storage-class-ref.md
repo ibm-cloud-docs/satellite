@@ -213,3 +213,23 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 
 
 
+## {{site.data.keyword.IBM_notm}} VPC block storage
+{: #sat-storage-ibm-vpc-csi-sc-ref}
+
+
+    Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+{: shortdesc}
+
+ Storage class name | Default Read IOPS per GB | Default Write IOPS per GB | Size range (per disk) | Hard disk | Reclaim policy | Volume Binding Mode |
+| --- | --- | --- | --- | --- | --- | --- |
+| `sat-vpc-block-gold-metro` | 10 | 10 | 10 GB - 4 TB | SSD | Delete | WaitForFirstConsumer |
+| `ibmc-vpc-block-metro-5iops-tier`  | 5 | 5 | 10 GB - 9600 GB | SSD | Delete | WaitForFirstConsumer |
+| `ibmc-vpc-block-metro-custom` | Custom | Custom | Based on IOPS | SSD | Delete | WaitForFirstConsumer |
+| `ibmc-vpc-block-metro-general-purpose` | 3 | 3 | 10 GB - 16 TB | SSD | Delete | WaitForFirstConsumer |
+| `ibmc-vpc-block-metro-retain-10iops-tier`  | 10 | 10 | 10 GB - 4 TB | SSD | Retain | WaitForFirstConsumer |
+| `ibmc-vpc-block-metro-retain-5iops-tier` | 5 | 5 | 10 GB - 9600 GB | SSD | Retain | WaitForFirstConsumer |
+| `ibmc-vpc-block-metro-retain-custom`  | Cusstom | Custom | Based on IOPS | SSD | Retain | WaitForFirstConsumer |
+| `ibmc-vpc-block-metro-retain-general-purpose` | 3 | 3 | 10 GiB - 16 TB | SSD | Retain | WaitForFirstConsumer |
+{: caption="Table 10. Storage class reference for IBM VPC block storage" caption-side="top"}
+
+
