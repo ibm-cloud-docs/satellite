@@ -80,22 +80,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 {: caption="Table 2. Azure file storage class reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the IOPs range per disk. The third column is the size range."}
 
-## Azure Disk
-{: #azure-disk-ref}
-
-| Storage class name | IOPS range per disk | Size range | Disk type | Reclaim policy | Volume Binding Mode |
-| --- | --- | --- | --- | --- | --- |
-| `sat-azure-block-platinum` |  1200 - 160000 | 4 GiB - 64 TiB | SSD | Delete | Immediate |
-| `sat-azure-block-platinum-metro`  | 1200 - 160000 | 4 GiB - 64 TiB | SSD | Delete | WaitForFirstConsumer |
-| `sat-azure-block-gold` | 120 - 20000 | 32 GiB - 32 TiB | SSD | Delete | Immediate |
-| `sat-azure-block-gold-metro` | 120 - 20000 | 32 GiB - 32 TiB | SSD | Delete | WaitForFirstConsumer |
-| `sat-azure-block-silver`  | 120 - 6000 | N/A | SSD | Delete | Immediate |
-| `sat-azure-block-silver-metro` | 120 - 6000 | N/A | SSD | Delete | WaitForFirstConsumer |
-| `sat-azure-block-bronze`  | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | Immediate |
-| `sat-azure-block-bronze-metro` | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | WaitForFirstConsumer |
-{: caption="Table 3. Azure block storage class reference" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the IOPs range per disk. The third column is the size range."
-
 ## Google Compute Engine 
 {: #google-csi-ref}
 
@@ -267,7 +251,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 {: #sat-storage-ibm-vpc-csi-sc-ref}
 
 
-    Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
  Storage class name | Default Read IOPS per GB | Default Write IOPS per GB | Size range (per disk) | Hard disk | Reclaim policy | Volume Binding Mode |
