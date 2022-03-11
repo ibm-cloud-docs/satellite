@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-11"
 
 keywords: satellite storage, vpc, csi, satellite configurations, vpc storage,
 
@@ -74,7 +74,7 @@ Create a storage configuration in the command line by using the {{site.data.keyw
 1. Verify that your storage configuration is created.
 
     ```sh
-    {{icsat}} storage config get --config <CONFIG>
+    ibmcloud sat storage config get --config <CONFIG>
     ```
     {: pre}
 
