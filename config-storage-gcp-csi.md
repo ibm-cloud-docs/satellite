@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-11"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce
 
@@ -75,7 +75,7 @@ Create a storage configuration in the command line by using the Google Compute E
 1. Verify that your storage configuration is created.
 
     ```sh
-    {{icsat}} storage config get --config <CONFIG>
+    ibmcloud sat storage config get --config <CONFIG>
     ```
     {: pre}
 

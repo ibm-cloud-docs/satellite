@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-11"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -35,7 +35,7 @@ OpenShift Data Foundation is available in only internal mode, which means that y
 1. **Optional**: [Create an {{site.data.keyword.IBM_notm}} {{site.data.keyword.cos_full_notm}} service instance](#sat-storage-odf-remote-cos).
     1. Create HMAC credentials for your {{site.data.keyword.cos_full_notm}} instance.
     1. Create a Kubernetes secret that uses your {{site.data.keyword.cos_full_notm}} HMAC credentials.
-1. Create a {{site.data.keyword.satelliteshort}} Link.
+
 
 
 ### Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance

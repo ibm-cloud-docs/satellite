@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-11"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1102,6 +1102,10 @@ subcollection: satellite
 * [AWS EFS](/docs/satellite?topic=satellite-storage-class-ref#efs-ref)
 
 * [Azure Disk](/docs/satellite?topic=satellite-storage-class-ref#azure-disk-ref)
+
+* [Azure File](/docs/satellite?topic=satellite-storage-class-ref#azure-file-ref)
+
+* [Google Compute Engine](/docs/satellite?topic=satellite-storage-class-ref#google-csi-ref)
 
 * [Local block storage](/docs/satellite?topic=satellite-storage-class-ref#local-block-ref)
 

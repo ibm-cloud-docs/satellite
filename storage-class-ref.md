@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-11"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -64,6 +64,40 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the IOPs range per disk. The third column is the size range . The fourth column is the disk type. The fifth column is the reclaim policy. The sixth column is the volume binding mode."}
 
 
+## Azure File
+{: #azure-file-ref}
+
+| Storage class name | Reclaim policy | Volume Binding Mode |
+| --- | --- | --- |
+| `sat-azure-file-platinum`  | Delete | Immediate |
+| `sat-azure-file-platinum-metro` | Delete | WaitForFirstConsumer |
+| `sat-azure-file-gold` | Delete | Immediate |
+| `sat-azure-file-gold-metro` | Delete | WaitForFirstConsumer |
+| `sat-azure-file-silver` | Delete | Immediate |
+| `sat-azure-file-silver-metro` | Delete | WaitForFirstConsumer |
+| `sat-azure-file-bronze` | Delete | Immediate |
+| `sat-azure-file-bronze-metro` | Delete | WaitForFirstConsumer |
+{: caption="Table 2. Azure file storage class reference" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the IOPs range per disk. The third column is the size range."}
+
+## Google Compute Engine 
+{: #google-csi-ref}
+
+Review the {{site.data.keyword.satelliteshort}} storage classes for Google compute engine persistent disk storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+{: shortdesc}
+
+ Storage class name | Default Read IOPS per GB | Default Write IOPS per GB | Size range (per disk) | Hard disk | Reclaim policy | Volume Binding Mode |
+| --- | --- | --- | --- | --- | --- | --- |
+| `sat-gce-block-platinum` | NA | NA | 500 GB - 64 TB | SSD | Delete | Immediate |
+| `sat-gce-block-platinum-metro`  | NA | NA | 500 GB - 64 TB | SSD | Delete | WaitForFirstConsumer |
+| `sat-gce-block-gold` | 30 | 30 | 10 GB - 64 TB | SSD | Delete | Immediate |
+| `sat-gce-block-gold-metro` | 30 | 30 | 10 GB - 64 TB | SSD | Delete | WaitForFirstConsumer |
+| `sat-gce-block-silver`  | 6 | 30 | 10 GB - 64 GB | SSD | Delete | Immediate |
+| `sat-gce-block-silver-metro` | 6 | 6 | 10 GB - 64 GB | SSD | Delete | WaitForFirstConsumer |
+| `sat-gce-block-bronze`  | 0.75 | 1.5 | 10 GiB - 64 TiB | HDD | Delete | Immediate |
+| `sat-gce-block-bronze-metro` | 0.75 | 1.5 | 10 GiB - 64 TiB | HDD | Delete | WaitForFirstConsumer |
+{: caption="Table 4. Google Compute Engine storage class reference" caption-side="top"}
+{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
 
 ## Local block storage
 {: #local-block-ref}
@@ -74,7 +108,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 | Storage class name | Type | Reclaim policy |
 | --- | --- | --- |
 | `sat-local-block-gold` | Block | Retain |
-{: caption="Table 3. Local block storage class reference" caption-side="top"}
+{: caption="Table 5. Local block storage class reference" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
 
 
@@ -87,7 +121,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 | Storage class name | File system | Reclaim policy |
 | --- | --- | --- |
 | `sat-local-file-gold` | `ext4` or `xfs` | Retain |
-{: caption="Table 4. Local file storage class reference." caption-side="top"}
+{: caption="Table 6. Local file storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
 
 
@@ -106,7 +140,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-file-silver-encrypted` | ONTAP-NAS | NFS | User defined QoS limit. | Encryption enabled. | Delete |
 | `sat-netapp-file-bronze` | ONTAP-NAS | NFS | User-defined QoS limit. | Encryption disabled. | Delete |
 | `sat-netapp-file-bronze-encrypted` | ONTAP-NAS | NFS | User-defined QoS limit.| Encryption enabled. | Delete |
-{: caption="NetApp ONTAP-NAS storage class reference." caption-side="top"}
+{: caption="Table 7. NetApp ONTAP-NAS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 
@@ -122,7 +156,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-file-gold` | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-silver` | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete |
-{: caption="Table 5. NetApp ONTAP-NAS storage class reference." caption-side="top"}
+{: caption="Table 8. NetApp ONTAP-NAS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 
@@ -141,7 +175,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-block-silver-encrypted` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption enabled. | Delete |
 | `sat-netapp-block-bronze` | ONTAP-SAN | ext4 | User defined QoS limit. | Encryption disabled. | Delete |
 | `sat-netapp-block-bronze-encrypted` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption enabled. | Delete |
-{: caption="NetApp ONTAP-SAN storage class reference." caption-side="top"}
+{: caption="Table 9. NetApp ONTAP-SAN storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 
@@ -156,7 +190,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-block-gold` | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-silver` | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-bronze` | ONTAP-SAN | Block | Delete |
-{: caption="Table 6. NetApp ONTAP-SAN storage class reference." caption-side="top"}
+{: caption="Table 10. NetApp ONTAP-SAN storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 ## OpenShift Data Foundation for local volumes
@@ -173,7 +207,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 | `sat-ocs-cephrbd-gold-metro` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 | `sat-ocs-cephfs-gold-metro` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
-{: caption="Table 7. NetApp ONTAP-SAN storage class reference." caption-side="top"}
+{: caption="Table 11. NetApp ONTAP-SAN storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 ## OpenShift Data Foundation for remote volumes
@@ -190,7 +224,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 | `sat-ocs-cephrbd-gold-metro` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 | `sat-ocs-cephfs-gold-metro` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
-{: caption="Table 8. Storage class reference for OpenShift Container storage" caption-side="top"}
+{: caption="Table 12. Storage class reference for OpenShift Container storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
 
 
@@ -205,7 +239,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 | Storage class name | Type | Reclaim policy |
 | --- | --- | --- |
 | `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
-{: caption="Table 9. IBM Spectrum Scale storage class reference." caption-side="top"}
+{: caption="Table 13. IBM Spectrum Scale storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameters is required. The third column is a brief description of the parameter."}
 
 
@@ -217,7 +251,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 {: #sat-storage-ibm-vpc-csi-sc-ref}
 
 
-    Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
  Storage class name | Default Read IOPS per GB | Default Write IOPS per GB | Size range (per disk) | Hard disk | Reclaim policy | Volume Binding Mode |
@@ -230,6 +264,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 | `ibmc-vpc-block-metro-retain-5iops-tier` | 5 | 5 | 10 GB - 9600 GB | SSD | Retain | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-retain-custom`  | Cusstom | Custom | Based on IOPS | SSD | Retain | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-retain-general-purpose` | 3 | 3 | 10 GiB - 16 TB | SSD | Retain | WaitForFirstConsumer |
-{: caption="Table 10. Storage class reference for IBM VPC block storage" caption-side="top"}
+{: caption="Table 14. Storage class reference for IBM VPC block storage" caption-side="top"}
 
 

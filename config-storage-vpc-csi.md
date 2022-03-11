@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-11"
 
 keywords: satellite storage, vpc, csi, satellite configurations, vpc storage,
 
@@ -74,7 +74,7 @@ Create a storage configuration in the command line by using the {{site.data.keyw
 1. Verify that your storage configuration is created.
 
     ```sh
-    {{icsat}} storage config get --config <CONFIG>
+    ibmcloud sat storage config get --config <CONFIG>
     ```
     {: pre}
 
@@ -425,7 +425,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 {: #sat-storage-vpc-ref}
 
 
-    Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
 {: shortdesc}
 
  Storage class name | Default Read IOPS per GB | Default Write IOPS per GB | Size range (per disk) | Hard disk | Reclaim policy | Volume Binding Mode |
