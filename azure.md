@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-04"
+lastupdated: "2022-03-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -26,7 +26,7 @@ Learn how you can set up an {{site.data.keyword.satellitelong}} location with vi
 Automate your Azure setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-about-schematics) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your Azure account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
 {: shortdesc}
 
-For more configuration options, you can [manually attach Azure hosts to a {{site.data.keyword.satelliteshort}} location](#azure-host-attach).
+To customize your Azure setup, you can [manually attach Azure hosts to a {{site.data.keyword.satelliteshort}} location](#azure-host-attach).
 {: tip}
 
 Before you begin, make sure that you have the correct [{{site.data.keyword.cloud_notm}} permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations, including to {{site.data.keyword.satelliteshort}} and {{site.data.keyword.bpshort}}. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
@@ -48,7 +48,7 @@ Before you begin, make sure that you have the correct [{{site.data.keyword.cloud
 Well done, your {{site.data.keyword.satelliteshort}} location is creating! You can review the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to see when your location is in a **Normal** state and ready to use.
 
 
-The following resources are created by the template in the resource group of your Azure cloud subscription.
+The template creates a resource group of your Azure cloud subscription and then creates the following resources.
 
 - 1 virtual network that spans the region.
 - 1 network security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
@@ -56,7 +56,7 @@ The following resources are created by the template in the resource group of you
 - 1 network interface for each virtual machine.
 - 1 disk for each virtual machine.
 
-The following resources are created by the template in your {{site.data.keyword.cloud_notm}} account.
+The template creates the following resources in your {{site.data.keyword.cloud_notm}} account.
 
 - 1 {{site.data.keyword.satelliteshort}} location.
 - 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
@@ -234,6 +234,9 @@ The following example is a security group that you might create for Azure.
             }
 ```
 {: screen}
+
+For more information, see [Network security groups](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview){: external} in Microsoft Azure documentation.
+
 
 ## Microsoft Azure credentials
 {: #infra-creds-azure}

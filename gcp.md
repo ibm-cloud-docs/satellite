@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -132,6 +132,8 @@ tcp:30000-32767
 udp:30000-32767
 ```
 {: screen}
+
+For more information, see [VPC firewall rules overview](https://cloud.google.com/vpc/docs/firewalls){: external} in the Google Cloud Platform documentation.
 
 
 ## Google Cloud Platform credentials

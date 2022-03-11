@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-11"
 
 keywords: satellite, hybrid, multicloud, alibaba
 
@@ -176,6 +176,8 @@ Example security group for Alibaba
 
 In addition to these inbound rules, you must allow all outbound connectivity to all ports and IP addresses.
 {: note}
+
+For more information, see [Security groups](https://www.alibabacloud.com/help/en/doc-detail/25467.html){: external} in the Alibaba documentation.
 
 
 

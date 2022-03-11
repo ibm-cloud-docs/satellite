@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-04"
+lastupdated: "2022-03-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -247,6 +247,8 @@ The following example is a security group that you might create for AWS.
 }
 ```
 {: screen}
+
+For more information, see [Control traffic to resources using security groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html){: external} in the AWS documentation.
 
 ## AWS credentials
 {: #infra-creds-aws}
