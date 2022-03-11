@@ -1103,6 +1103,12 @@ subcollection: satellite
 
 * [Azure Disk](/docs/satellite?topic=satellite-storage-class-ref#azure-disk-ref)
 
+* [Azure File](/docs/satellite?topic=satellite-storage-class-ref#azure-file-ref)
+
+* [Azure Disk](/docs/satellite?topic=satellite-storage-class-ref#azure-disk-ref)
+
+* [Google Compute Engine](/docs/satellite?topic=satellite-storage-class-ref#google-csi-ref)
+
 * [Local block storage](/docs/satellite?topic=satellite-storage-class-ref#local-block-ref)
 
 * [Local file storage](/docs/satellite?topic=satellite-storage-class-ref#local-file-ref)
