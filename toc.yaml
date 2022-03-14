@@ -1,6 +1,7 @@
 toc:
   properties:
     subcollection: satellite
+    service-name: satellite
     category: compute
     audience: service
     href: /docs/satellite

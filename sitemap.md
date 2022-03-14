@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-11"
+lastupdated: "2022-03-14"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -889,7 +889,7 @@ subcollection: satellite
 
 * [Deploying an app that uses {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-deploy-app)
 
-* [Removing storage from your apps](/docs/satellite?topic=satellite-config-storage-vpc-csi#removing-storage-from-your-apps)
+* [Removing storage from your apps](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-rm-apps)
 
 * [Removing the storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-template-rm)
 
@@ -1379,8 +1379,6 @@ subcollection: satellite
 * [Location commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-location-commands)
 
     * [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create)
-
-    * [`ibmcloud sat location dns get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-get)
 
     * [`ibmcloud sat location dns ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-ls)
 
