@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-03"
+lastupdated: "2022-03-14"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -600,7 +600,7 @@ Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}
 
 No, the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane do not have to run the same version as the hosts that are assigned to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s that run in the location, like clusters. However, all hosts in the location must run a supported version.
 
-To review supported {{site.data.keyword.redhat_openshift_notm}} versions that hosts can run, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-openshift_versions#version_types) or run `ibmcloud ks versions` in the command line. 
+To review supported {{site.data.keyword.redhat_openshift_notm}} versions that hosts can run, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-openshift_changelog) or run `ibmcloud ks versions` in the command line. 
 
 **Is my {{site.data.keyword.satelliteshort}} location control plane subdomain still reachable when I update the hosts?**
 
