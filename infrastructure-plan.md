@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -33,10 +33,10 @@ Your {{site.data.keyword.satelliteshort}} location starts with your infrastructu
     :    You can use a data center with existing infrastructure, or order infrastructure from {{site.data.keyword.IBM_notm}} with [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service). You might not even have a data center, but rather an edge location that meets the minimum hardware requirements, such as three racks at one of your company's local sites.
     
     Non-{{site.data.keyword.IBM_notm}} cloud provider
-    :    You can use a cloud provider of your choice, such as Amazon Web Services (AWS), Google Cloud Platform (GCP), or Microsoft Azure. For more information, see [Cloud infrastructure like AWS, Azure, and GCP](/docs/satellite?topic=satellite-infrastructure-plan).
+    :    You can use a cloud provider of your choice, such as [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba).
     
     {{site.data.keyword.cloud_notm}}
-    :    You can use {{site.data.keyword.cloud_notm}}. For more information, see [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm).
+    :    You can use [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm).
     
 2. In your infrastructure provider, identify a multizone location that meets the latency requirements.
 
