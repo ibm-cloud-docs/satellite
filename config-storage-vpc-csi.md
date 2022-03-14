@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-11"
+lastupdated: "2022-03-14"
 
 keywords: satellite storage, vpc, csi, satellite configurations, vpc storage,
 
@@ -276,7 +276,7 @@ You can use the `ibm-vpc-block-csi-driver` to create PVCs that you can use in yo
     {: pre}
 
 ## Removing storage from your apps
-{:vpc-csi-rm-apps}
+{: #vpc-csi-rm-apps}
 
 If you no longer need your {{site.data.keyword.block_storage_is_short}} configuration, you can remove your apps, PVCs, PVs, and assignment from your clusters.
 {: shortdesc}
