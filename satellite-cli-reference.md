@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-16"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1547,8 +1547,11 @@ ibmcloud sat location rm --location mylocation
 ```
 {: pre}
 
-## {{site.data.keyword.satelliteshort}} Mesh commands
+## Beta: {{site.data.keyword.satelliteshort}} Mesh commands
 {: #sat-mesh-commands}
+
+The `ibmcloud sat mesh` group of commands are available to a limited group of early adopters in beta.
+{: beta}
 
 Use these commands to create and manage a {{site.data.keyword.satelliteshort}} Mesh instance. For more information see [Installing Satellite Mesh](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-install).
 {: shortdesc}
@@ -1598,6 +1601,7 @@ ibmcloud sat mesh create --cluster <cluster_id> --name <mesh_name>
 
 View the details of an existing {{site.data.keyword.satelliteshort}} Mesh instance.
 {: shortdesc}
+
 
 ```sh
 ibmcloud sat mesh get  --mesh MESH_NAME [--output OUTPUT] [-q]
@@ -1699,7 +1703,6 @@ ibmcloud sat mesh rm  --mesh MESH_NAME [--output OUTPUT] [-q]
 ibmcloud sat mesh rm --mesh <mesh_name>
 ```
 {: pre}
-
 
 ## Resource commands
 {: #sat-resource-commands}
