@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -96,7 +96,7 @@ Name of the resource type
 
 Type of role that you can assign for the resource in IAM
 :    Platform access **Viewer**, **Operator**, **Editor**, and **Administrator** roles
-:    Custom **{{site.data.keyword.satelliteshort}} Link Source and Endpoint Controller** and **{{site.data.keyword.satelliteshort}} Link Source Access Controller** service access roles
+:    Custom **{{site.data.keyword.satelliteshort}} Link Administrator** and **{{site.data.keyword.satelliteshort}} Link Source Access Controller** service access roles
 
 What you can scope an access policy for the resource to
 :    Account

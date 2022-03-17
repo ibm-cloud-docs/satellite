@@ -1390,7 +1390,7 @@ subcollection: satellite
 
     * [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm)
 
-* [{{site.data.keyword.satelliteshort}} Mesh commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-mesh-commands)
+* [Beta: {{site.data.keyword.satelliteshort}} Mesh commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-mesh-commands)
 
     * [`ibmcloud sat mesh create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-create)
 
