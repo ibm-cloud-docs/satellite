@@ -282,27 +282,29 @@ subcollection: satellite
 
 * [Network gateways and interfaces](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-interface)
 
-* [Inbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound)
+* [Inbound connectivity for requirements {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound)
 
-* [Outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound)
+* [Outbound connectivity for hosts in all locations](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound)
 
     * [Required outbound connectivity for hosts in all regions](/docs/satellite?topic=satellite-reqs-host-network#all-regions-outbound)
 
-    * [Dallas](/docs/satellite?topic=satellite-reqs-host-network#dal-outbound)
+[Required outbound connectivity for hosts in standard locations](/docs/satellite?topic=satellite-reqs-host-network-outbound#reqs-host-network-outbound)
 
-    * [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network#fra-outbound)
+* [Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound#dal-outbound)
 
-    * [London](/docs/satellite?topic=satellite-reqs-host-network#lon-outbound)
+* [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound#fra-outbound)
 
-    * [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network#sao-outbound)
+* [London](/docs/satellite?topic=satellite-reqs-host-network-outbound#lon-outbound)
 
-    * [Sydney](/docs/satellite?topic=satellite-reqs-host-network#syd-outbound)
+* [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound#sao-outbound)
 
-    * [Tokyo](/docs/satellite?topic=satellite-reqs-host-network#tok-outbound)
+* [Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound#syd-outbound)
 
-    * [Toronto](/docs/satellite?topic=satellite-reqs-host-network#tor-outbound)
+* [Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound#tok-outbound)
 
-    * [Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network#wdc-outbound)
+* [Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound#tor-outbound)
+
+* [Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound#wdc-outbound)
 
 [Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
 

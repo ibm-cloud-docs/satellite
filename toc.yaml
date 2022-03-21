@@ -35,6 +35,7 @@ toc:
               - host-reqs.md
               - reqs-host-storage.md
               - reqs-host-network.md
+              - reqs-host-network-outbound.md
               - host-latency-test.md
               - managed-services.md
         - topicgroup:
