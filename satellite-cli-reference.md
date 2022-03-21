@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-21"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1704,6 +1704,39 @@ ibmcloud sat mesh rm --mesh <mesh_name>
 ```
 {: pre}
 
+### `ibmcloud sat mesh versions`
+{: #cli-mesh-versions}
+
+List available {{site.data.keyword.satelliteshort}} Mesh versions.
+
+```sh
+ibmcloud sat mesh versions [--output OUTPUT] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #cli-mesh-versions-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #cli-mesh-versions-command-options}
+
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #cli-mesh-versions-example}
+
+```sh
+ibmcloud sat mesh versions
+```
+{: pre}
+
 ## Resource commands
 {: #sat-resource-commands}
 
@@ -1978,7 +2011,7 @@ List your {{site.data.keyword.satelliteshort}} storage assignments.
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --config CONFIG |--location LOCATION | --service-cluster-id CLUSTER) [-q]
+ibmcloud sat storage assignment ls [--output OUTPUT] (--cluster CLUSTER_ID | --config CONFIG |--location LOCATION | --service-cluster-id CLUSTER) [-q]
 ```
 {: pre}
 
@@ -1989,6 +2022,9 @@ ibmcloud sat storage assignment ls (--cluster CLUSTER_ID | --config CONFIG |--lo
 
 #### Command options
 {: #cli-storage-assign-ls-command-options}
+
+`--output OUTPUT`
+:     Prints the command output in the provided format. Available options: json
 
 `--cluster CLUSTER_ID`
 :    The ID of a {{site.data.keyword.satelliteshort}} cluster that you created for which you want to list the assignments. To find the cluster ID, run `ibmcloud oc cluster ls --provider satellite`.  If you do not include this option, you must specify the `--config` option, the `--location` option, or the `--service-cluster-id`option.
@@ -2192,7 +2228,7 @@ List your {{site.data.keyword.satelliteshort}} storage configurations.
 {: shortdesc}
 
 ```sh
-ibmcloud sat storage config ls [--location LOCATION] [-q]
+ibmcloud sat storage config ls [--location LOCATION] [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -2206,6 +2242,9 @@ ibmcloud sat storage config ls [--location LOCATION] [-q]
 
 `--location LOCATION`
 :    Optional. Enter the ID or name of the location where you want to list storage configurations. To retrieve the location ID or name, run `ibmcloud sat location ls`.
+
+`--output OUTPUT`
+:     Prints the command output in the provided format. Available options: json
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
