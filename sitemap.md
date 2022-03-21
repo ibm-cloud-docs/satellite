@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-21"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -77,6 +77,8 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-release-notes#release-notes)
 
 * [March 2022](/docs/satellite?topic=satellite-release-notes#release-mar-2022)
+
+    * [21 March 2022](/docs/satellite?topic=satellite-release-notes#21mar2022)
 
     * [10 March 2022](/docs/satellite?topic=satellite-release-notes#10mar2022)
 
@@ -1399,6 +1401,8 @@ subcollection: satellite
     * [`ibmcloud sat mesh ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-ls)
 
     * [`ibmcloud sat mesh rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-rm)
+
+    * [`ibmcloud sat mesh versions`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-versions)
 
 * [Resource commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands)
 
