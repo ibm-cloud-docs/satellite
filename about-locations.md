@@ -4,9 +4,9 @@ copyright:
   years: 2020, 2022
 lastupdated: "2022-03-22"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, location, locations, control plane
 
-subcollection: satellite-working
+subcollection: satellite
 
 ---
 
