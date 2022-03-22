@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-22"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -432,7 +432,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 
 | Storage class name | File system | Reclaim policy |
 | --- | --- | --- |
-| `sat-aws-file-gold` | NFS | Delete |
+| `sat-aws-file-gold` **Default** | NFS | Delete |
 {: caption="Table 2. AWS EFS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-22"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file
 
@@ -541,7 +541,7 @@ For help finding these parameters, see the [Azure CLI documentation](https://doc
 | `sat-azure-file-platinum`  | Delete | Immediate |
 | `sat-azure-file-platinum-metro` | Delete | WaitForFirstConsumer |
 | `sat-azure-file-gold` | Delete | Immediate |
-| `sat-azure-file-gold-metro` | Delete | WaitForFirstConsumer |
+| `sat-azure-file-gold-metro` **Default** | Delete | WaitForFirstConsumer |
 | `sat-azure-file-silver` | Delete | Immediate |
 | `sat-azure-file-silver-metro` | Delete | WaitForFirstConsumer |
 | `sat-azure-file-bronze` | Delete | Immediate |

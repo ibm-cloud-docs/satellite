@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-22"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -171,7 +171,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 | Storage class name | Type | File system | Reclaim policy |
 | --- | --- | --- | --- | 
-| `sat-netapp-block-gold` | ONTAP-SAN | Block | Delete |
+| `sat-netapp-block-gold` **Default** | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-silver` | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-bronze` | ONTAP-SAN | Block | Delete |
 {: caption="Table 2. NetApp ONTAP-SAN storage class reference." caption-side="top"}
