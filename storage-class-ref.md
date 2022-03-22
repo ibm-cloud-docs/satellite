@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-11"
+lastupdated: "2022-03-22"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -27,7 +27,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You
 
 | Storage class name | EBS volume type | File system type | Provisioner | Default IOPS per GB | Size range | Hard disk | Encrypted? | Volume binding mode | Reclaim policy | More info | 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `sat-aws-block-gold` | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 6.25 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external}
+| `sat-aws-block-gold` **Default** | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 6.25 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external}
 | `sat-aws-block-silver` | gp3 | ext4 | `ebs.csi.aws.com` | N/A | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external} |
 | `sat-aws-block-bronze` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#hard-disk-drives){: external} |
 {: caption="Table 1. AWS EBS storage class reference." caption-side="top"}
@@ -42,7 +42,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 
 | Storage class name | File system | Reclaim policy |
 | --- | --- | --- |
-| `sat-aws-file-gold` | NFS | Delete |
+| `sat-aws-file-gold` **Default** | NFS | Delete |
 {: caption="Table 2. AWS EFS storage class reference." caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
 
@@ -55,7 +55,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 | `sat-azure-block-platinum` |  1200 - 160000 | 4 GiB - 64 TiB | SSD | Delete | Immediate |
 | `sat-azure-block-platinum-metro`  | 1200 - 160000 | 4 GiB - 64 TiB | SSD | Delete | WaitForFirstConsumer |
 | `sat-azure-block-gold` | 120 - 20000 | 32 GiB - 32 TiB | SSD | Delete | Immediate |
-| `sat-azure-block-gold-metro` | 120 - 20000 | 32 GiB - 32 TiB | SSD | Delete | WaitForFirstConsumer |
+| `sat-azure-block-gold-metro` **Default** | 120 - 20000 | 32 GiB - 32 TiB | SSD | Delete | WaitForFirstConsumer |
 | `sat-azure-block-silver`  | 120 - 6000 | N/A | SSD | Delete | Immediate |
 | `sat-azure-block-silver-metro` | 120 - 6000 | N/A | SSD | Delete | WaitForFirstConsumer |
 | `sat-azure-block-bronze`  | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | Immediate |
@@ -72,7 +72,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 | `sat-azure-file-platinum`  | Delete | Immediate |
 | `sat-azure-file-platinum-metro` | Delete | WaitForFirstConsumer |
 | `sat-azure-file-gold` | Delete | Immediate |
-| `sat-azure-file-gold-metro` | Delete | WaitForFirstConsumer |
+| `sat-azure-file-gold-metro` **Default** | Delete | WaitForFirstConsumer |
 | `sat-azure-file-silver` | Delete | Immediate |
 | `sat-azure-file-silver-metro` | Delete | WaitForFirstConsumer |
 | `sat-azure-file-bronze` | Delete | Immediate |
@@ -91,7 +91,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for Google compu
 | `sat-gce-block-platinum` | NA | NA | 500 GB - 64 TB | SSD | Delete | Immediate |
 | `sat-gce-block-platinum-metro`  | NA | NA | 500 GB - 64 TB | SSD | Delete | WaitForFirstConsumer |
 | `sat-gce-block-gold` | 30 | 30 | 10 GB - 64 TB | SSD | Delete | Immediate |
-| `sat-gce-block-gold-metro` | 30 | 30 | 10 GB - 64 TB | SSD | Delete | WaitForFirstConsumer |
+| `sat-gce-block-gold-metro` **Default** | 30 | 30 | 10 GB - 64 TB | SSD | Delete | WaitForFirstConsumer |
 | `sat-gce-block-silver`  | 6 | 30 | 10 GB - 64 GB | SSD | Delete | Immediate |
 | `sat-gce-block-silver-metro` | 6 | 6 | 10 GB - 64 GB | SSD | Delete | WaitForFirstConsumer |
 | `sat-gce-block-bronze`  | 0.75 | 1.5 | 10 GiB - 64 TiB | HDD | Delete | Immediate |
@@ -134,7 +134,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 | Storage class name | Type | File system | IOPs | Encryption | Reclaim policy |
 | --- | --- | --- | --- | --- | --- |
-| `sat-netapp-file-gold` | ONTAP-NAS | NFS | no QoS limits | Encryption disabled. | Delete |
+| `sat-netapp-file-gold` **Default** | ONTAP-NAS | NFS | no QoS limits | Encryption disabled. | Delete |
 | `sat-netapp-file-gold-encrypted` | ONTAP-NAS | NFS | no QoS limits | Encryption enabled. | Delete |
 | `sat-netapp-file-silver` | ONTAP-NAS | NFS | User defined QoS limit. | Encryption disabled. | Delete |
 | `sat-netapp-file-silver-encrypted` | ONTAP-NAS | NFS | User defined QoS limit. | Encryption enabled. | Delete |
@@ -153,7 +153,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 | Storage class name | Type | File system | Reclaim policy |
 | --- | --- | --- | --- | 
-| `sat-netapp-file-gold` | ONTAP-NAS | File | Delete |
+| `sat-netapp-file-gold` **Default** | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-silver` | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete |
 {: caption="Table 8. NetApp ONTAP-NAS storage class reference." caption-side="top"}
@@ -169,7 +169,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 | Storage class name | Type | File system | IOPs | Encryption |Reclaim policy |
 | --- | --- | --- | --- | --- | --- |
-| `sat-netapp-block-gold` | ONTAP-SAN | ext4 | no QoS limits. | Encryption disabled. | Delete |
+| `sat-netapp-block-gold` **Default** | ONTAP-SAN | ext4 | no QoS limits. | Encryption disabled. | Delete |
 | `sat-netapp-block-gold-encrypted` | ONTAP-SAN | ext4 | no QoS limits. | Encryption enabled. | Delete |
 | `sat-netapp-block-silver` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption disabled. | Delete |
 | `sat-netapp-block-silver-encrypted` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption enabled. | Delete |
@@ -187,7 +187,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 
 | Storage class name | Type | File system | Reclaim policy |
 | --- | --- | --- | --- | 
-| `sat-netapp-block-gold` | ONTAP-SAN | Block | Delete |
+| `sat-netapp-block-gold` **Default** | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-silver` | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-bronze` | ONTAP-SAN | Block | Delete |
 {: caption="Table 10. NetApp ONTAP-SAN storage class reference." caption-side="top"}
@@ -204,7 +204,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-cephrbd-gold` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | Immediate | True | Delete |
 | `sat-ocs-cephfs-gold` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | Immediate | True |Delete |
 | `sat-ocs-cephrgw-gold` | Object | N/A | `openshift-storage.ceph.rook.io/bucket` | Immediate | N/A | Delete |
-| `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
+| `sat-ocs-noobaa-gold` **Default** | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 | `sat-ocs-cephrbd-gold-metro` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 | `sat-ocs-cephfs-gold-metro` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 {: caption="Table 11. NetApp ONTAP-SAN storage class reference." caption-side="top"}
@@ -221,7 +221,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-cephrbd-gold` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | Immediate | True | Delete |
 | `sat-ocs-cephfs-gold` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | Immediate | True |Delete |
 | `sat-ocs-cephrgw-gold` | Object | N/A | `openshift-storage.ceph.rook.io/bucket` | Immediate | N/A | Delete |
-| `sat-ocs-noobaa-gold` | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
+| `sat-ocs-noobaa-gold` **Default** | OBC | N/A | `openshift-storage.noobaa.io/obc` | Immediate | N/A | Delete |
 | `sat-ocs-cephrbd-gold-metro` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 | `sat-ocs-cephfs-gold-metro` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 {: caption="Table 12. Storage class reference for OpenShift Container storage" caption-side="top"}
@@ -256,7 +256,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC bloc
 
  Storage class name | Default Read IOPS per GB | Default Write IOPS per GB | Size range (per disk) | Hard disk | Reclaim policy | Volume Binding Mode |
 | --- | --- | --- | --- | --- | --- | --- |
-| `sat-vpc-block-gold-metro` | 10 | 10 | 10 GB - 4 TB | SSD | Delete | WaitForFirstConsumer |
+| `sat-vpc-block-gold-metro` **Dfault** | 10 | 10 | 10 GB - 4 TB | SSD | Delete | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-5iops-tier`  | 5 | 5 | 10 GB - 9600 GB | SSD | Delete | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-custom` | Custom | Custom | Based on IOPS | SSD | Delete | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-general-purpose` | 3 | 3 | 10 GB - 16 TB | SSD | Delete | WaitForFirstConsumer |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-14"
+lastupdated: "2022-03-22"
 
 keywords: satellite storage, vpc, csi, satellite configurations, vpc storage,
 
@@ -430,7 +430,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC bloc
 
  Storage class name | Default Read IOPS per GB | Default Write IOPS per GB | Size range (per disk) | Hard disk | Reclaim policy | Volume Binding Mode |
 | --- | --- | --- | --- | --- | --- | --- |
-| `sat-vpc-block-gold-metro` | 10 | 10 | 10 GB - 4 TB | SSD | Delete | WaitForFirstConsumer |
+| `sat-vpc-block-gold-metro` **Dfault** | 10 | 10 | 10 GB - 4 TB | SSD | Delete | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-5iops-tier`  | 5 | 5 | 10 GB - 9600 GB | SSD | Delete | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-custom` | Custom | Custom | Based on IOPS | SSD | Delete | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-general-purpose` | 3 | 3 | 10 GB - 16 TB | SSD | Delete | WaitForFirstConsumer |

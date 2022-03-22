@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-22"
 
-keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
+keywords: satellite, hybrid, multicloud, assigning hosts, host autoassignment, host auto assignment, host labels
 
 subcollection: satellite
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Assigning hosts to worker pools
 {: #assigning-hosts}
 
-After you have attached your hosts, you can assign them to the control plane or to worker pools.
+After you have attached your hosts to {{site.data.keyword.satellitelong_notm}}, you can assign them to the control plane or to worker pools.
 {: shortdesc}
 
 ## Using host auto assignment
@@ -48,7 +48,7 @@ Hosts can have more labels than worker pools
 Matching is exact
 :    Host labels must equal (`=`) each other exactly. Even if the host label is a number, no less than (`<`), greater than (`>`), or other operators are used for matching.
 
-#### Example scenario
+#### Example scenario for host auto assignment
 {: #host-autoassign-example-scenario}
 
 Say that you have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `us-east-1a` and the following host labels.

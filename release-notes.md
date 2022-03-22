@@ -22,12 +22,16 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## March 2022
 {: #release-mar-2022}
 
+
+
+
 ### 21 March 2022
 {: #21mar2022}
 {: release-note}
 
 CLI change log
 :    Updated the CLI plug-in change log page for the [release of version 1.0.384](/docs/satellite?topic=satellite-satellite-cli-changelog).
+
 
 ### 10 March 2022
 {: #10mar2022}
@@ -54,8 +58,6 @@ New! Beta support for the Google Compute Engine CSI driver template
 
 Host outbound connectivity
 :   Updated the [host outbound network requirements](/docs/satellite?topic=satellite-reqs-host-network) page to include Red Hat Container Registry.
-
-
 
 
 ### 24 February 2022

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-22"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -25,13 +25,13 @@ subcollection: satellite
 
 [Getting started with {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-getting-started#getting-started)
 
-* [Setting up an on-prem location](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
+* [Setting up an on-prem location for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
 
-* [Start by considering your infrastructure](/docs/satellite?topic=satellite-getting-started#gs-start-here)
+* [Start by considering your infrastructure for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#gs-start-here)
 
 * [Step 1: Create your location](/docs/satellite?topic=satellite-getting-started#create-location)
 
-* [Step 2: Attach compute hosts to your location](/docs/satellite?topic=satellite-getting-started#attach-hosts-to-location)
+* [Step 2: Attach compute hosts to your location in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#attach-hosts-to-location)
 
     * [Attaching hosts from cloud providers](/docs/satellite?topic=satellite-getting-started#gs-attach-hosts-cloud)
 
@@ -39,7 +39,7 @@ subcollection: satellite
 
 * [Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-getting-started#assign-hosts-to-cp)
 
-* [What's next](/docs/satellite?topic=satellite-getting-started#whats-next)
+* [What's next for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#whats-next)
 
 
 ## About {{site.data.keyword.satelliteshort}}
@@ -282,27 +282,29 @@ subcollection: satellite
 
 * [Network gateways and interfaces](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-interface)
 
-* [Inbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound)
+* [Inbound connectivity for requirements {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound)
 
-* [Outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound)
+* [Outbound connectivity for hosts in all locations](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound)
 
     * [Required outbound connectivity for hosts in all regions](/docs/satellite?topic=satellite-reqs-host-network#all-regions-outbound)
 
-    * [Dallas](/docs/satellite?topic=satellite-reqs-host-network#dal-outbound)
+[Required outbound connectivity for hosts in standard locations](/docs/satellite?topic=satellite-reqs-host-network-outbound#reqs-host-network-outbound)
 
-    * [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network#fra-outbound)
+* [Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound#dal-outbound)
 
-    * [London](/docs/satellite?topic=satellite-reqs-host-network#lon-outbound)
+* [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound#fra-outbound)
 
-    * [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network#sao-outbound)
+* [London](/docs/satellite?topic=satellite-reqs-host-network-outbound#lon-outbound)
 
-    * [Sydney](/docs/satellite?topic=satellite-reqs-host-network#syd-outbound)
+* [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound#sao-outbound)
 
-    * [Tokyo](/docs/satellite?topic=satellite-reqs-host-network#tok-outbound)
+* [Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound#syd-outbound)
 
-    * [Toronto](/docs/satellite?topic=satellite-reqs-host-network#tor-outbound)
+* [Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound#tok-outbound)
 
-    * [Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network#wdc-outbound)
+* [Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound#tor-outbound)
+
+* [Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound#wdc-outbound)
 
 [Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
 
@@ -399,7 +401,7 @@ subcollection: satellite
 
 * [Adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach)
 
-* [Security group settings](/docs/satellite?topic=satellite-azure#azure-reqs-firewall)
+* [Security group settings for Azure](/docs/satellite?topic=satellite-azure#azure-reqs-firewall)
 
 * [Microsoft Azure credentials](/docs/satellite?topic=satellite-azure#infra-creds-azure)
 
@@ -682,7 +684,7 @@ subcollection: satellite
 
 * [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters-monitoring)
 
-[Auditing events](/docs/satellite?topic=satellite-at_events#at_events)
+[Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events#at_events)
 
 * [Events for {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-at_events#at_actions_clusters)
 
@@ -694,7 +696,7 @@ subcollection: satellite
 
 * [Events for {{site.data.keyword.satelliteshort}} assignments](/docs/satellite?topic=satellite-at_events#at_actions_assignments)
 
-* [Viewing events](/docs/satellite?topic=satellite-at_events#at_ui)
+* [Viewing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events#at_ui)
 
 
 ## Setting up storage
@@ -1715,6 +1717,8 @@ subcollection: satellite
 * [R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues](/docs/satellite?topic=satellite-ts-locations-debug#R0050)
 
 * [R0052: Ingress certificate generation issues](/docs/satellite?topic=satellite-ts-locations-debug#R0052)
+
+* [R0057: Outbound traffic to IAM is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0057)
 
 
 ### Locations

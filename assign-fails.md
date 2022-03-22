@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,11 +17,10 @@ content-type: troubleshoot
 {: #assign-fails}
 
 
-You try to assign a host to {{site.data.keyword.satelliteshort}} resource such as a cluster, but the assignment does not succeed.
+You try to assign a host to {{site.data.keyword.satellitelong_notm}} resource such as a cluster, but the assignment does not succeed.
 {: tsSymptoms}
 
 When you check your host, the health state might be `unresponsive`, `unknown`, or `reload-required`.
-
 
 Your host might have encountered an issue during the bootstrapping process. For example, the underlying infrastructure of the host machine changed and no longer meets the [minimum requirements](/docs/satellite?topic=satellite-host-reqs), such as for network connectivity.
 {: tsCauses}
