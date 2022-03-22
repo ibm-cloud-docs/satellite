@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-03-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,7 +16,7 @@ content-type: troubleshoot
 # Why doesn't my cluster add-on work?
 {: #addon-errors}
 
-When you try to use a cluster add-on, the cluster add-on does not work. For example, you installed the Kubernetes web terminal add-on but cannot open the add-on.
+When you try to use a cluster add-on in {{site.data.keyword.satellitelong}}, the cluster add-on does not work. For example, you installed the Kubernetes web terminal add-on but cannot open the add-on.
 {: tsSymptoms}
 
 Add-ons might not work for several reason.

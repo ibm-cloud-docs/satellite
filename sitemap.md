@@ -25,13 +25,13 @@ subcollection: satellite
 
 [Getting started with {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-getting-started#getting-started)
 
-* [Setting up an on-prem location](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
+* [Setting up an on-prem location for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
 
-* [Start by considering your infrastructure](/docs/satellite?topic=satellite-getting-started#gs-start-here)
+* [Start by considering your infrastructure for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#gs-start-here)
 
 * [Step 1: Create your location](/docs/satellite?topic=satellite-getting-started#create-location)
 
-* [Step 2: Attach compute hosts to your location](/docs/satellite?topic=satellite-getting-started#attach-hosts-to-location)
+* [Step 2: Attach compute hosts to your location in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#attach-hosts-to-location)
 
     * [Attaching hosts from cloud providers](/docs/satellite?topic=satellite-getting-started#gs-attach-hosts-cloud)
 
@@ -39,7 +39,7 @@ subcollection: satellite
 
 * [Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-getting-started#assign-hosts-to-cp)
 
-* [What's next](/docs/satellite?topic=satellite-getting-started#whats-next)
+* [What's next for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#whats-next)
 
 
 ## About {{site.data.keyword.satelliteshort}}
@@ -401,7 +401,7 @@ subcollection: satellite
 
 * [Adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach)
 
-* [Security group settings](/docs/satellite?topic=satellite-azure#azure-reqs-firewall)
+* [Security group settings for Azure](/docs/satellite?topic=satellite-azure#azure-reqs-firewall)
 
 * [Microsoft Azure credentials](/docs/satellite?topic=satellite-azure#infra-creds-azure)
 
@@ -684,7 +684,7 @@ subcollection: satellite
 
 * [Setting up monitoring for clusters](/docs/satellite?topic=satellite-monitor#setup-clusters-monitoring)
 
-[Auditing events](/docs/satellite?topic=satellite-at_events#at_events)
+[Auditing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events#at_events)
 
 * [Events for {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-at_events#at_actions_clusters)
 
@@ -696,7 +696,7 @@ subcollection: satellite
 
 * [Events for {{site.data.keyword.satelliteshort}} assignments](/docs/satellite?topic=satellite-at_events#at_actions_assignments)
 
-* [Viewing events](/docs/satellite?topic=satellite-at_events#at_ui)
+* [Viewing events for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-at_events#at_ui)
 
 
 ## Setting up storage

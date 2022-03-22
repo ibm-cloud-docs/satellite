@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-11"
+lastupdated: "2022-03-22"
 
 keywords: satellite, hybrid, multicloud, alibaba
 
@@ -17,13 +17,13 @@ subcollection: satellite
 # Alibaba Cloud
 {: #alibaba}
 
-Review the following host requirements that are specific to hosts that are in the Alibaba Cloud. For required access in Alibaba Cloud, see [Alibaba permissions](/docs/satellite?topic=satellite-iam#permissions-alibaba).
+You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Alibaba Cloud. Review the following host requirements that are specific to hosts that are in the Alibaba Cloud. For required access in Alibaba Cloud, see [Alibaba permissions](/docs/satellite?topic=satellite-iam#permissions-alibaba).
 {: shortdesc}
 
 ## Adding Alibaba hosts to {{site.data.keyword.satelliteshort}}
 {: #alibaba-host-attach}
 
-You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Alibaba Cloud.
+Add your Alibaba Cloud hosts manually to {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
 All hosts that you want to add must meet the host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-22"
 
-keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
+keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
 subcollection: satellite
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Attaching hosts to your {{site.data.keyword.satelliteshort}} location
 {: #attach-hosts}
 
-After you create the location, add compute capacity to your location so that you can set up {{site.data.keyword.redhat_openshift_notm}} clusters or interact with other IBM services.
+After you create the location in {{site.data.keyword.satellitelong}}, add compute capacity to your location so that you can set up {{site.data.keyword.redhat_openshift_notm}} clusters or interact with other [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services).
 {: shortdesc}
 
 Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing).

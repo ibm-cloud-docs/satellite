@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-25"
+lastupdated: "2022-03-22"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
 subcollection: satellite
 
@@ -20,7 +20,7 @@ subcollection: satellite
 With {{site.data.keyword.satellitelong_notm}}, you use your own compute infrastructure that is in your on-premises data center, other cloud providers, or edge networks to create a {{site.data.keyword.satelliteshort}} location. Then, you use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on your infrastructure, and consistently deploy, manage, and control your app workloads.
 {: shortdesc}
 
-## Setting up an on-prem location
+## Setting up an on-prem location for {{site.data.keyword.satelliteshort}}
 {: #gs-video-demo}
 
 Want to see a preview before trying out the steps yourself? Check out the following video of setting up a {{site.data.keyword.satelliteshort}} location for on-prem edge devices.
@@ -28,7 +28,7 @@ Want to see a preview before trying out the steps yourself? Check out the follow
 
 ![Setting up an On-Premises Satellite Location with Mini Personal Computers](https://www.youtube.com/embed/8WNjwlN5gMk){: video output="iframe" data-script="none" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
-## Start by considering your infrastructure
+## Start by considering your infrastructure for {{site.data.keyword.satelliteshort}}
 {: #gs-start-here}
 
 To get started, consider the type of infrastructure that you want to use.
@@ -76,7 +76,7 @@ To create a location,
 
 5. In the **Summary** panel, review your order details, and then click **Create location**. When you create the location, a location control plane master is deployed to one of the zones that are located in the {{site.data.keyword.cloud_notm}} region that you selected.
 
-## Step 2: Attach compute hosts to your location
+## Step 2: Attach compute hosts to your location in {{site.data.keyword.satelliteshort}}
 {: #attach-hosts-to-location}
 
 With your location set up, you can now attach host machines to your location. The steps vary depending on the infrastructure provider that you use, [cloud providers](#gs-attach-hosts-cloud) or [on-premises data centers and edge networks](#gs-attach-hosts-onprem).
@@ -164,7 +164,7 @@ You can't change the zone of a host while it is assigned to the control plane or
     After your hosts are successfully assigned to the control plane, it takes another 20-30 minutes until {{site.data.keyword.IBM_notm}} monitoring is properly set up for your location. In addition, a DNS record is created for your location and the IP addresses of your hosts are automatically registered and added to your DNS record to allow load balancing and health checking for your location. This process can take up to 30 minutes to complete. During this process, your location status continues to show an **action required** state, and you might see intermittent errors, such as `Satellite is attempting to recover` or `Verify that the Satellite location has a DNS record for load balancing requests to the location control plane`.
     {: note}
 
-## What's next
+## What's next for {{site.data.keyword.satelliteshort}}
 {: #whats-next}
 
 Now that your {{site.data.keyword.satelliteshort}} location is set up, you are ready to fill up the location with {{site.data.keyword.cloud_notm}} services.
