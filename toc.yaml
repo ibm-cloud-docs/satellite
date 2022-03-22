@@ -180,6 +180,7 @@ toc:
                     - host-assign-file-system.md
                     - sat-host-reattach-fail.md
                     - ts-hosts-update-roks-console.md
+                    - ts-http-proxy.md
               - topicgroup:
                   label: Clusters
                   topics:
