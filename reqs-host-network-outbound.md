@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -50,12 +50,12 @@ Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Con
 :   **Source**: {{site.data.keyword.satelliteshort}} control plane hosts
 :   **Destination IPs**:  [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} 
 :   **Destination hostnames**: `api.us-south.link.satellite.cloud.ibm.com`, `config.us-south.satellite.cloud.ibm.com`, `us-south.containers.cloud.ibm.com`
-:   **Protocol and ports**: TCP 80, 443
+:   **Protocol and ports**: TCP 443
 
 Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs**:   N/A
-:   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`
+:   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`,
 :   **Protocol and ports**: TCP 443
 
 ## Frankfurt
@@ -89,12 +89,12 @@ Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Con
 :   **Source**: {{site.data.keyword.satelliteshort}} control plane hosts
 :   **Destination IPs**: [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external}
 :   **Destination hostnames**: `api.eu-de.link.satellite.cloud.ibm.com`, `config.eu-de.satellite.cloud.ibm.com`, `eu-de.containers.cloud.ibm.com` 
-:   **Protocol and ports**: TCP 80, 443
+:   **Protocol and ports**: TCP 443
 
 Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs**: N/A
-:   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `de.icr.io`, `registry.eu-de.bluemix.net`
+:   **Destination hostnames**: `icr.io`, `registry.bluemix.net`, `de.icr.io`, `registry.eu-de.bluemix.net`
 :   **Protocol and ports**: TCP 443
 
 
@@ -128,12 +128,12 @@ Allow hosts to be attached to a location and assigned to services in the locatio
 Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API
 :   **Source**: {{site.data.keyword.satelliteshort}} control plane hosts
  [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external}  |  - `api.eu-gb.link.satellite.cloud.ibm.com`, `config.eu-gb.satellite.cloud.ibm.com`, `eu-gb.containers.cloud.ibm.com` 
-:   **Protocol and ports**: TCP 80, 443
+:   **Protocol and ports**: TCP 443
 
 Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs**:   N/A 
-:   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `uk.icr.io`, `registry.eu-gb.bluemix.net`
+:   **Destination hostnames**: `icr.io`, `registry.bluemix.net`, `uk.icr.io`, `registry.eu-gb.bluemix.net`
 :   **Protocol and ports**: TCP 443
 
 
@@ -170,12 +170,12 @@ Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Con
 :   **Source**: {{site.data.keyword.satelliteshort}} control plane hosts
 :   **Destination IPs**: [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} 
 :   **Destination hostnames**: `api.br-sao.link.satellite.cloud.ibm.com`, `config.br-sao.satellite.cloud.ibm.com`, `br-sao.containers.cloud.ibm.com` 
-:   **Protocol and ports**: TCP 80, 443
+:   **Protocol and ports**: TCP 443
 
 Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs**:   N/A
-:   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `br.icr.io`
+:   **Destination hostnames**: `icr.io`, `registry.bluemix.net`, `br.icr.io`
 :   **Protocol and ports**: TCP 443
 
 
@@ -213,12 +213,12 @@ Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Con
 :   **Source**: {{site.data.keyword.satelliteshort}} control plane hosts
 :   **Destination IPs**: [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} 
 :   **Destination hostnames**: `api.au-syd.link.satellite.cloud.ibm.com`, `config.au-syd.satellite.cloud.ibm.com`, `au-syd.containers.cloud.ibm.com`
-:   **Protocol and ports**: TCP 80, 443
+:   **Protocol and ports**: TCP 443
 
 Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs**: N/A
-:   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `au.icr.io`, `registry.au-syd.bluemix.net`
+:   **Destination hostnames**: `icr.io`, `registry.bluemix.net`, `au.icr.io`, `registry.au-syd.bluemix.net`
 :   **Protocol and ports**: TCP 443
 
 
@@ -253,12 +253,12 @@ Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Con
 :   **Source**: {{site.data.keyword.satelliteshort}} control plane hosts
 :   **Destination IPs**: [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} 
 :   **Destination hostnames**: `api.jp-tok.link.satellite.cloud.ibm.com`, `config.jp-tok.satellite.cloud.ibm.com`, `jp-tok.containers.cloud.ibm.com` 
-:   **Protocol and ports**: TCP 80, 443
+:   **Protocol and ports**: TCP 443
 
 Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs**: N/A
-:   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `jp.icr.io`
+:   **Destination hostnames**: `icr.io`, `registry.bluemix.net`, `jp.icr.io`
 :   **Protocol and ports**: TCP 443
 
 ## Toronto
@@ -292,12 +292,12 @@ Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Con
 :   **Source**: {{site.data.keyword.satelliteshort}} control plane hosts
 :   **Destination IPs**: [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} 
 :   **Destination hostnames**: `api.ca-tor.link.satellite.cloud.ibm.com`, `config.ca-tor.satellite.cloud.ibm.com`, `ca-tor.containers.cloud.ibm.com`
-:   **Protocol and ports**: TCP 80, 443
+:   **Protocol and ports**: TCP 443
 
 Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs**: N/A
-:   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`, `ca.icr.io`
+:   **Destination hostnames**: `icr.io`, `registry.bluemix.net`, `ca.icr.io`
 :   **Protocol and ports**: TCP 443
 
 
@@ -334,10 +334,10 @@ Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} the
 :   **Source**: {{site.data.keyword.satelliteshort}} control plane hosts
  [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} 
 :   **Destination hostnames**: `api.us-east.link.satellite.cloud.ibm.com`, `config.us-east.satellite.cloud.ibm.com`, `us-east.containers.cloud.ibm.com` 
-:   **Protocol and ports**: TCP 80, 443
+:   **Protocol and ports**: TCP 443
 
 Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs**: N/A
-:   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`
+:   **Destination hostnames**: `icr.io`, `us.icr.io`, `registry.bluemix.net`,
 :   **Protocol and ports**: TCP 443
