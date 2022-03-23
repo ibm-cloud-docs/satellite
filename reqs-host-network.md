@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -144,6 +144,6 @@ Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}.
 Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}.
 :   **Source**: All {{site.data.keyword.satelliteshort}} hosts
 :   **Destination IPs and hostnames**: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
-:   **Protocol and ports**: TCP 443 and 80
+:   **Protocol and ports**: TCP 443
 
 
