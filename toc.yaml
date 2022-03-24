@@ -35,7 +35,19 @@ toc:
               - host-reqs.md
               - reqs-host-storage.md
               - reqs-host-network.md
-              - reqs-host-network-outbound.md
+              - topicgroup:
+                  label: Host outbound connectivity requirements
+                  topics:
+                    - reqs-host-network-outbound.md
+                    - reqs-host-network-outbound-dal.md
+                    - reqs-host-network-outbound-fra.md
+                    - reqs-host-network-outbound-lon.md
+                    - reqs-host-network-outbound-osa.md
+                    - reqs-host-network-outbound-sao.md
+                    - reqs-host-network-outbound-syd.md
+                    - reqs-host-network-outbound-tok.md
+                    - reqs-host-network-outbound-tor.md
+                    - reqs-host-network-outbound-wdc.md
               - host-latency-test.md
               - managed-services.md
         - topicgroup:

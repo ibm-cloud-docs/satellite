@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-24"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -286,25 +286,28 @@ subcollection: satellite
 
 * [Outbound connectivity for hosts in all locations](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound)
 
-    * [Required outbound connectivity for hosts in all regions](/docs/satellite?topic=satellite-reqs-host-network#all-regions-outbound)
 
-[Required outbound connectivity for hosts in standard locations](/docs/satellite?topic=satellite-reqs-host-network-outbound#reqs-host-network-outbound)
+### Host outbound connectivity requirements
+{: #sitemap_host_outbound_connectivity_requirements}
 
-* [Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound#dal-outbound)
 
-* [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound#fra-outbound)
+[Required outbound connectivity for hosts in all regions](/docs/satellite?topic=satellite-reqs-host-network-outbound#reqs-host-network-outbound)
 
-* [London](/docs/satellite?topic=satellite-reqs-host-network-outbound#lon-outbound)
+[Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#reqs-host-network-outbound-dal)
 
-* [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound#sao-outbound)
+* [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#reqs-host-network-outbound-fra)
 
-* [Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound#syd-outbound)
+[London](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#reqs-host-network-outbound-lon)
 
-* [Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound#tok-outbound)
+[Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#reqs-host-network-outbound-sao)
 
-* [Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound#tor-outbound)
+[Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#reqs-host-network-outbound-syd)
 
-* [Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound#wdc-outbound)
+[Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#reqs-host-network-outbound-tok)
+
+[Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#reqs-host-network-outbound-tor)
+
+[Washington, D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#reqs-host-network-outbound-wdc)
 
 [Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
 
