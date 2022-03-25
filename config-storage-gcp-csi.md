@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-23"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce
 
@@ -65,7 +65,7 @@ Create a storage configuration in the command line by using the Google Compute E
 
 1. Review the [template parameters](#sat-storage-gcp-csi-params-cli).
 
-1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
     ```sh
     ibmcloud sat storage config create --name <config_name> --template-name gcp-compute-persistent-disk-csi-driver --template-version 1.0.4 --location <location_name> -p "project_id=" -p "private_key_id= " -p "private_key=" -p "client_email=" -p "client_id=" -p "auth_uri=" -p "token_uri=" -p "auth_provider_x509_cert_url=" -p "client_x509_cert_url="

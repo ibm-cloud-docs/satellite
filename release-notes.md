@@ -2,11 +2,13 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-03-25"
 
 keywords: satellite, hybrid, multicloud
 
 subcollection: satellite
+
+content-type: release-notes
 
 ---
 
@@ -14,19 +16,19 @@ subcollection: satellite
 
 
 # Release notes
-{: #release-notes}
+{: #satellite-relnotes}
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
 
 ## March 2022
-{: #release-mar-2022}
+{: #satellite-mar22}
 
 
 
 
 ### 21 March 2022
-{: #21mar2022}
+{: #satellite-mar2122}
 {: release-note}
 
 CLI change log
@@ -34,14 +36,14 @@ CLI change log
 
 
 ### 10 March 2022
-{: #10mar2022}
+{: #satellite-mar1022}
 {: release-note}
 
 New! Beta support for the {{site.data.keyword.block_storage_is_short}} CSI driver template
 :    You can use the {{site.data.keyword.block_storage_is_short}} CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.block_storage_is_short}} CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-vpc-csi).
 
 ### 3 March 2022
-{: #3mar2022}
+{: #satellite-mar322}
 {: release-note}
 
 
@@ -50,10 +52,10 @@ New! Beta support for the Google Compute Engine CSI driver template
 
 
 ## February 2022
-{: #release-feb-2022}
+{: #satellite-feb22}
 
 ### 28 February 2022
-{: #28feb2022}
+{: #satellite-feb2822}
 {: release-note}
 
 Host outbound connectivity
@@ -61,7 +63,7 @@ Host outbound connectivity
 
 
 ### 24 February 2022
-{: #24feb2022}
+{: #satellite-feb2422}
 {: release-note}
 
 CLI change log
@@ -75,14 +77,14 @@ New troubleshooting issue for errors when you run the `oc debug` command
 :   See [Why can't I log into my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug).
 
 ### 18 February 2022
-{: #18feb2022}
+{: #satellite-feb1822}
 {: release-note}
 
 CLI changelog
 :    Updated the CLI plug-in changelog page for the [release of version 1.0.372](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 16 February 2022
-{: #16feb2022}
+{: #satellite-feb1622}
 {: release-note}
 
 Host connectivity
@@ -90,27 +92,27 @@ Host connectivity
 
 
 ### 10 February 2022
-{: #10feb2022}
+{: #satellite-feb1022}
 {: release-note}
 
 New! Beta support for the Azure File CSI driver template
 :    You can use the Azure File CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Azure File CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-azurefile-csi).
 
 ## January 2022
-{: #release-jan-2022}
+{: #satellite-jan22}
 
 Review the release notes for January 2022.
 {: shortdesc}
 
 ### 27 January 2022
-{: #27jan2022}
+{: #satellite-jan2722}
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} 
 :   {{site.data.keyword.cos_full_notm}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) and [About {{site.data.keyword.cos_short}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite).
 
 ### 25 January 2022
-{: #25jan2022}
+{: #satellite-jan2522}
 {: release-note}
 
 OpenShift Data Foundation
@@ -121,7 +123,7 @@ OpenShift Data Foundation
 
 
 ### 18 January 2022
-{: #18jan2022}
+{: #satellite-jan1822}
 {: release-note}
 
 **New!** {{site.data.keyword.satellitelong_notm}} CLI Map
@@ -132,14 +134,14 @@ OpenShift Data Foundation
 :   A site map is available for the {{site.data.keyword.satelliteshort}} [documentation](/docs/satellite?topic=satellite-sitemap).
 
 ## December 2021
-{: #release-dec-2021}
+{: #satellite-dec21}
 
 Review the release notes for December 2021.
 {: shortdesc}
 
 
 ### 15 December 2021
-{: #15dec2021}
+{: #satellite-dec1521}
 {: release-note}
 
 **New! Sydney location**
@@ -147,7 +149,7 @@ Review the release notes for December 2021.
 
 
 ### 3 December 2021
-{: #3dec2021}
+{: #satellite-dec321}
 {: release-note}
 
 **New! Satellite Mesh**!
@@ -158,13 +160,13 @@ CLI changelog
 
 
 ## November 2021
-{: #release-nov-2021}
+{: #satellite-nov21}
 
 Review the release notes for November 2021.
 {: shortdesc}
 
 ### 29 November 2021
-{: #29nov2021}
+{: #satellite-nov2921}
 {: release-note}
 
 
@@ -175,35 +177,35 @@ Review the release notes for November 2021.
 :   New {{site.data.keyword.at_short}} events are available for {{site.data.keyword.satelliteshort}} storage. For more information, see [Auditing events](/docs/satellite?topic=satellite-at_events).
 
 ### 16 November 2021
-{: #16nov2021}
+{: #satellite-nov1621}
 {: release-note}
 
 **New! Sao Paulo location**
 :   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Sao Paulo** (`sao`, `br-sao`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). 
 
 ### 11 November 2021
-{: #11nov2021}
+{: #satellite-nov1121}
 {: release-note}
 
 New location error message is added. 
 :    For more information see [R0052: Ingress certificate generation issues](/docs/satellite?topic=satellite-ts-locations-debug#R0052).
 
 ### 10 November 2021
-{: #10nov2021}
+{: #satellite-nov1021}
 {: release-note}
 
 Troubleshooting a `certificate expired` error for the {{site.data.keyword.redhat_openshift_notm}} console
 :   For more information see [Why can't I access the {{site.data.keyword.redhat_openshift_notm}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console).
 
 ### 9 November 2021
-{: #9nov2021}
+{: #satellite-nov921}
 {: release-note}
 
 Azure Disk CSI driver template
 :   Previously, when you created a storage configuration by using the Azure Disk storage template, you passed your Azure configuration parameters as one base64 encoded string. Now, each of the Azure configuration parameters is exposed as a command-line option. For more information, see [Azure Disk CSI driver](/docs/satellite?topic=satellite-config-storage-azure-csi).
 
 ### 8 November 2021
-{: #8nov2021}
+{: #satellite-nov821}
 {: release-note}
 
 Troubleshooting a degraded Ingress operator
@@ -211,13 +213,13 @@ Troubleshooting a degraded Ingress operator
 
 
 ## October 2021
-{: #release-oct-2021}
+{: #satellite-oct21}
 
 Review the release notes for October 2021.
 {: shortdesc}
 
 ### 12 October 2021
-{: #12oct2021}
+{: #satellite-oct1221}
 {: release-note}
 
 Review the release notes for 12 October 2021.
@@ -228,13 +230,13 @@ CLI changelog
 
 
 ## September 2021
-{: #release-sep-2021}
+{: #satellite-sep21}
 
 Review the release notes for September 2021.
 {: shortdesc}
 
 ### 29 September 2021
-{: #29sep2021}
+{: #satellite-sep2921}
 {: release-note}
 
 Review the release notes for 29 September 2021.
@@ -247,7 +249,7 @@ Review the release notes for 29 September 2021.
 :   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Toronto** (`tor`, `ca-tor`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). 
 
 ### 23 September 2021
-{: #23sep2021}
+{: #satellite-sep2321}
 {: release-note}
 
 Review the release notes for 23 September 2021.
@@ -258,7 +260,7 @@ Review the release notes for 23 September 2021.
 
 
 ### 15 September 2021
-{: #15sep2021}
+{: #satellite-sep1521}
 {: release-note}
 
 Review the release notes for 15 September 2021.
@@ -272,13 +274,13 @@ OpenShift Data Foundation
 
 
 ## August 2021
-{: #aug21}
+{: #satellite-aug21}
 
 Review the release notes for August 2021.
 {: shortdesc}
 
 ### 9 August 2021
-{: #9aug2021}
+{: #satellite-aug921}
 {: release-note}
 
 Review the release notes for 9 August 2021.
@@ -288,7 +290,7 @@ CLI changelog
 :    Updated the CLI plug-in changelog page for the [release of version 1.0.312](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 3 August 2021
-{: #3aug2021}
+{: #satellite-aug321}
 {: release-note}
 
 Review the release notes for 3 August 2021.
@@ -298,13 +300,13 @@ New! Dallas location
 :    You can now manage {{site.data.keyword.satelliteshort}} locations from the **Dallas** (`dal`, `us-south`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions).
 
 ## July 2021
-{: #july21}
+{: #satellite-jul21}
 
 Review the release notes for July 2021.
 {: shortdesc}
 
 ### 19 July 2021
-{: #19jul2021}
+{: #satellite-jul1921}
 {: release-note}
 
 Review the release notes for 19 July 2021.
@@ -314,7 +316,7 @@ End of UDP endpoint support
 :    The UDP protocol is no longer supported for `cloud` and `location` endpoints that you create in {{site.data.keyword.satelliteshort}} Link. For more information, see [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
 
 ### 16 July 2021
-{: #16jul2021}
+{: #satellite-jul1621}
 {: release-note}
 
 Review the release notes for 16 July 2021.
@@ -324,7 +326,7 @@ New! Beta support for the Azure Disk CSI driver template
 :    You can use the Azure Disk CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Azure Disk CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-azure-csi).
 
 ### 8 July 2021
-{: #8jul2021}
+{: #satellite-jul821}
 {: release-note}
 
 Review the release notes for 8 July 2021.
@@ -334,13 +336,13 @@ DNS provider change from Cloudflare to Akamai
 :    On 08 July, the DNS provider is changed from Cloudflare to Akamai for all `containers.cloud.ibm.com` domains. Previously, to use {{site.data.keyword.satelliteshort}} Config and to access the {{site.data.keyword.satelliteshort}} Link API, you were required to allow outbound connectivity from your control plane hosts to the IP addresses for Cloudflare's proxied load balancers. Now, you must instead allow access to [Akamai's source IP addresses](https://github.com/{{site.data.keyword.IBM_notm}}-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} on TCP ports 80 and 443. After the migration completes, you can remove the Cloudflare IP address rules.
 
 ## June 2021
-{: #june21}
+{: #satellite-jun21}
 
 Review the release notes for June 2021.
 {: shortdesc}
 
 ### 30 June 2021
-{: #30jun2021}
+{: #satellite-jun3021}
 {: release-note}
 
 Review the release notes for 30 June 2021.
@@ -353,7 +355,7 @@ New! [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_not
 :    For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/deploy-managed-cloud-native-databases-anywhere-with-ibm-cloud-satellite){: external}.
 
 ### 24 June 2021
-{: #24jun2021}
+{: #satellite-jun2421}
 {: release-note}
 
 Review the release notes for 24 June 2021.
@@ -366,7 +368,7 @@ CLI changelog
 :    Updated the CLI plug-in changelog page for the [release of version 1.0.295](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 18 June 2021
-{: #18jun2021}
+{: #satellite-jun1821}
 {: release-note}
 
 Review the release notes for 18 June 2021.
@@ -376,7 +378,7 @@ IP addresses for Link tunnel server endpoints
 :    Updates the [required outbound connectivity for hosts](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound) to include IP addresses for Link tunnel server endpoints.
 
 ### 9 June 2021
-{: #9jun2021}
+{: #satellite-jun921}
 {: release-note}
 
 Review the release notes for 9 June 2021.
@@ -389,13 +391,13 @@ Digital certificates
 :    Added information about [certificates for various {{site.data.keyword.satellitelong_notm}} domains and hosts](/docs/satellite?topic=satellite-compliance#certs-hosts-domains).
 
 ## May 2021
-{: #may21}
+{: #satellite-may21}
 
 Review the release notes for May 2021.
 {: shortdesc}
 
 ### 26 May 2021
-{: #26may2021}
+{: #satellite-may2621}
 {: release-note}
 
 Review the release notes for 26 May 2021.
@@ -405,7 +407,7 @@ CLI changelog
 :    Updated the CLI plug-in changelog page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 19 May 2021
-{: #19may2021}
+{: #satellite-may1921}
 {: release-note}
 
 Review the release notes for 19 May 2021.
@@ -415,7 +417,7 @@ New! NetApp ONTAP-NAS storage driver template
 :    You can use the NetApp ONTAP-NAS storage driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [NetApp ONTAP-NAS storage driver documentation](/docs/satellite?topic=satellite-config-storage-netapp-nas).
 
 ### 12 May 2021
-{: #12may2021}
+{: #satellite-may1221}
 {: release-note}
 
 Review the release notes for 12 May 2021.
@@ -425,7 +427,7 @@ New! {{site.data.keyword.IBM_notm}} Systems block storage CSI driver template
 :    You can use the {{site.data.keyword.IBM_notm}} Systems block storage CSI driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver documentation](/docs/satellite?topic=satellite-config-storage-block-csi).
 
 ### 7 May 2021
-{: #7may2021}
+{: #satellite-may721}
 {: release-note}
 
 Review the release notes for 7 May 2021.
@@ -435,13 +437,13 @@ New! Spectrum Scale CSI driver template
 :    You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale Container Storage Interface (CSI) driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.IBM_notm}} Spectrum Scale driver documentation](/docs/satellite?topic=satellite-config-storage-spectrum-scale).
 
 ## April 2021
-{: #apr21}
+{: #satellite-apr21}
 
 Review the release notes for April 2021.
 {: shortdesc}
 
 ### 26 April 2021
-{: #26apr2021}
+{: #satellite-apr2621}
 {: release-note}
 
 Review the release notes for 26 April 2021.
@@ -451,7 +453,7 @@ CLI changelog
 Updated the CLI plug-in changelog page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 15 April 2021
-{: #15apr2021}
+{: #satellite-apr1521}
 {: release-note}
 
 Review the release notes for 15 April 2021.
@@ -467,7 +469,7 @@ Use case
 When you create a location from the console, you can now [enter the name of an existing {{site.data.keyword.cos_full_notm}} bucket](/docs/satellite?topic=satellite-locations#location-create-console) that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data.
 
 ### 9 April 2021
-{: #9apr2021}
+{: #satellite-apr921}
 {: release-note}
 
 Review the release notes for 9 April 2021.
@@ -480,13 +482,13 @@ New! Storage template for remote OpenShift Data Foundation
 :    The {{site.data.keyword.satelliteshort}} storage template for [using OpenShift Container Storage with remote devices](/docs/satellite?topic=satellite-config-storage-odf-remote) is now available.
 
 ## March 2021
-{: #mar21}
+{: #satellite-mar21}
 
 Review the release notes for March 2021.
 {: shortdesc}
 
 ### 25 March 2021
-{: #25mar2021}
+{: #satellite-mar2521}
 {: release-note}
 
 Review the release notes for 25 March 2021.
@@ -496,7 +498,7 @@ Security and compliance
 :    Added an [overview of security and compliance](/docs/satellite?topic=satellite-compliance) information for {{site.data.keyword.satelliteshort}}.
 
 ### 23 March 2021
-{: #23mar2021}
+{: #satellite-mar2321}
 {: release-note}
 
 Review the release notes for 23 March 2021.
@@ -506,7 +508,7 @@ OpenShift Data Foundation using local disks
 :    Added steps for removing an ODF configuration and updated the [configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-params-cli).
 
 ### 12 March 2021
-{: #12mar2021}
+{: #satellite-mar1221}
 {: release-note}
 
 Review the release notes for 12 March 2021.
@@ -519,7 +521,7 @@ Troubleshooting location health checks
 :    Added steps for troubleshooting when [{{site.data.keyword.cloud_notm}} is unable to check a location's health](/docs/satellite?topic=satellite-ts-location-healthcheck).
 
 ### 10 March 2021
-{: #10mar2021}
+{: #satellite-mar1021}
 {: release-note}
 
 Review the release notes for 10 March 2021.
@@ -529,7 +531,7 @@ New `health-pending` host state
 :    To review the state of your hosts, see [Viewing host health](/docs/satellite?topic=satellite-monitor#host-health).
 
 ### 1 March 2021
-{: #01mar2021}
+{: #satellite-mar0121}
 {: release-note}
 
 Review the release notes for 1 March 2021.
@@ -554,13 +556,13 @@ New! Template for fast provisioning on AWS
 :    [Automate your {{site.data.keyword.satelliteshort}} location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template), available for AWS infrastructure.
 
 ## February 2021
-{: #february21}
+{: #satellite-feb21}
 
 Review the release notes for February 2021.
 {: shortdesc}
 
 ### 25 February 2021
-{: #25feb2021}
+{: #satellite-feb2521}
 {: release-note}
 
 Review the release notes for 25 February 2021.
@@ -573,7 +575,7 @@ CLI changelog
 :    Updated the CLI plug-in changelog page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 23 February 2021
-{: #23feb2021}
+{: #satellite-feb2321}
 {: release-note}
 
 Review the release notes for 23 February 2021.
@@ -595,7 +597,7 @@ Reviewing resources
 :    Added a topic for [reviewing resources that are managed by {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources).
 
 ### 18 February 2021
-{: #18feb2021}
+{: #satellite-feb1821}
 {: release-note}
 
 Review the release notes for 18 February 2021.
@@ -605,7 +607,7 @@ Securing service connections
 :    Added a [{{site.data.keyword.satelliteshort}} connection overview](/docs/satellite?topic=satellite-service-connection) to describe user access to resources that run in your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location.
 
 ### 12 February 2021
-{: #12feb2021}
+{: #satellite-feb1221}
 {: release-note}
 
 Review the release notes for 12 February 2021.
@@ -618,7 +620,7 @@ Securing service connections
 :    Added a topic to explain all points of access to your {{site.data.keyword.satelliteshort}} location. For more information, see [Securing your connection to Satellite](/docs/satellite?topic=satellite-service-connection).
 
 ### 8 February 2021
-{: #08feb2021}
+{: #satellite-feb0821}
 {: release-note}
 
 Review the release notes for 8 February 2021.
@@ -637,13 +639,13 @@ Worker pool management
 :    Described how to manage [worker pools in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-worker-pools-sat), such as host labels for host auto assignment.
 
 ## January 2021
-{: #january21}
+{: #satellite-jan21}
 
 Review the release notes for January 2021.
 {: shortdesc}
 
 ### 29 January 2021
-{: #29jan2021}
+{: #satellite-jan2921}
 {: release-note}
 
 Review the release notes for 29 January 2021.
@@ -656,7 +658,7 @@ AWS hosts
 :    Added information about the [maximum number of endpoints](/docs/satellite?topic=satellite-requirements#reqs-link) that you can create for one location.
 
 ### 25 January 2021
-{: #25jan2021}
+{: #satellite-jan2521}
 {: release-note}
 
 Review the release notes for 25 January 2021.
@@ -666,7 +668,7 @@ Review the release notes for 25 January 2021.
 :    Expanded information about endpoint security and access controls, and added example use cases.
 
 ### 15 January 2021
-{: #15jan2021}
+{: #satellite-jan1521}
 {: release-note}
 
 Review the release notes for 15 January 2021.
@@ -676,7 +678,7 @@ Host requirements
 :    Updated the [{{site.data.keyword.redhat_notm}} package repositories](/docs/satellite?topic=satellite-host-reqs) that you must enable on hosts.
 
 ### 12 January 2021
-{: #12jan2021}
+{: #satellite-jan1221}
 {: release-note}
 
 Review the release notes for 12 January 2021.
@@ -688,13 +690,13 @@ Host updates
 :    Added how to update hosts that are used as worker nodes in [clusters](/docs/satellite?topic=satellite-host-update-workers) and the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-host-update-location).
 
 ## December 2020
-{: #december20}
+{: #satellite-dec20}
 
 Review the release notes for December 2020.
 {: shortdesc}
 
 ### 9 December 2020
-{: #09dec2020}
+{: #satellite-dec0920}
 {: release-note}
 
 Review the release notes for 9 December 2020.
@@ -716,13 +718,13 @@ AWS and GCP host DNS
 :    When you use AWS and GCP hosts for your {{site.data.keyword.satelliteshort}} location, the requirement to manually configure DNS for the location control plane and for cluster load balancing is removed. The hosts' private IP addresses are automatically registered in DNS.
 
 ## November 2020
-{: #november20}
+{: #satellite-nov20}
 
 Review the release notes for November 2020.
 {: shortdesc}
 
 ### 18 November 2020
-{: #18nov2020}
+{: #satellite-nov1820}
 {: release-note}
 
 Review the release notes for 18 November 2020.
@@ -735,13 +737,13 @@ Service overview
 :    Added an [About {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about) topic to help you learn about {{site.data.keyword.satelliteshort}} terminology, service architecture, and components.
 
 ## October 2020
-{: #october20}
+{: #satellite-oct20}
 
 Review the release notes for October 2020.
 {: shortdesc}
 
 ### 8 October 2020
-{: #08oct2020}
+{: #satellite-oct0820}
 {: release-note}
 
 Review the release notes for 8 October 2020.
@@ -751,7 +753,7 @@ Host network requirements
 :    Added the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound) on hosts' public networks.
 
 ### 6 October 2020
-{: #06oct2020}
+{: #satellite-oct0620}
 {: release-note}
 
 Review the release notes for 6 October 2020.
@@ -764,13 +766,13 @@ Location subdomain troubleshooting
 :    Added steps for further troubleshooting when [the location subdomain does not route traffic to control plane hosts](/docs/satellite?topic=satellite-ts-location-subdomain).
 
 ## September 2020
-{: #september20}
+{: #satellite-sep20}
 
 Review the release notes for September 2020.
 {: shortdesc}
 
 ### 14 September 2020
-{: #14sep2020}
+{: #satellite-sep1420}
 {: release-note}
 
 Review the release notes for 14 September 2020.
@@ -789,13 +791,13 @@ Service requirements
 :    Added that you can provision up to [40 {{site.data.keyword.cloud_notm}} service instances per {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-requirements#reqs-services).
 
 ## August 2020
-{: #august20}
+{: #satellite-aug20}
 
 Review the release notes for August 2020.
 {: shortdesc}
 
 ### 21 August 2020
-{: #21aug2020}
+{: #satellite-aug2120}
 {: release-note}
 
 Review the release notes for 21 August 2020.
