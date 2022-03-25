@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-03-25"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -74,165 +74,475 @@ subcollection: satellite
 {: #sitemap_release_notes}
 
 
-[Release notes](/docs/satellite?topic=satellite-release-notes#release-notes)
+[Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
-* [March 2022](/docs/satellite?topic=satellite-release-notes#release-mar-2022)
+* [March 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar22)
 
-    * [21 March 2022](/docs/satellite?topic=satellite-release-notes#21mar2022)
+    * [21 March 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2122)
 
-    * [10 March 2022](/docs/satellite?topic=satellite-release-notes#10mar2022)
+        * CLI change log
 
-    * [3 March 2022](/docs/satellite?topic=satellite-release-notes#3mar2022)
+    * [10 March 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar1022)
 
-* [February 2022](/docs/satellite?topic=satellite-release-notes#release-feb-2022)
+        * New! Beta support for the {{site.data.keyword.block_storage_is_short}} CSI driver template
 
-    * [28 February 2022](/docs/satellite?topic=satellite-release-notes#28feb2022)
+    * [3 March 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar322)
 
-    * [24 February 2022](/docs/satellite?topic=satellite-release-notes#24feb2022)
+        * New! Beta support for the Google Compute Engine CSI driver template
 
-    * [18 February 2022](/docs/satellite?topic=satellite-release-notes#18feb2022)
+* [February 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb22)
 
-    * [16 February 2022](/docs/satellite?topic=satellite-release-notes#16feb2022)
+    * [28 February 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb2822)
 
-    * [10 February 2022](/docs/satellite?topic=satellite-release-notes#10feb2022)
+        * Host outbound connectivity
 
-* [January 2022](/docs/satellite?topic=satellite-release-notes#release-jan-2022)
+    * [24 February 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb2422)
 
-    * [27 January 2022](/docs/satellite?topic=satellite-release-notes#27jan2022)
+        * CLI change log
 
-    * [25 January 2022](/docs/satellite?topic=satellite-release-notes#25jan2022)
+        * {{site.data.keyword.keymanagementservicefull_notm}} 
 
-    * [18 January 2022](/docs/satellite?topic=satellite-release-notes#18jan2022)
+        * New troubleshooting issue for errors when you run the `oc debug` command 
 
-* [December 2021](/docs/satellite?topic=satellite-release-notes#release-dec-2021)
+    * [18 February 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1822)
 
-    * [15 December 2021](/docs/satellite?topic=satellite-release-notes#15dec2021)
+        * CLI changelog
 
-    * [3 December 2021](/docs/satellite?topic=satellite-release-notes#3dec2021)
+    * [16 February 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1622)
 
-* [November 2021](/docs/satellite?topic=satellite-release-notes#release-nov-2021)
+        * Host connectivity
 
-    * [29 November 2021](/docs/satellite?topic=satellite-release-notes#29nov2021)
+    * [10 February 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1022)
 
-    * [16 November 2021](/docs/satellite?topic=satellite-release-notes#16nov2021)
+        * New! Beta support for the Azure File CSI driver template
 
-    * [11 November 2021](/docs/satellite?topic=satellite-release-notes#11nov2021)
+* [January 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan22)
 
-    * [10 November 2021](/docs/satellite?topic=satellite-release-notes#10nov2021)
+    * Review the release notes for January 2022.
 
-    * [9 November 2021](/docs/satellite?topic=satellite-release-notes#9nov2021)
+    * [27 January 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan2722)
 
-    * [8 November 2021](/docs/satellite?topic=satellite-release-notes#8nov2021)
+        * {{site.data.keyword.cos_full_notm}} 
 
-* [October 2021](/docs/satellite?topic=satellite-release-notes#release-oct-2021)
+    * [25 January 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan2522)
 
-    * [12 October 2021](/docs/satellite?topic=satellite-release-notes#12oct2021)
+        * OpenShift Data Foundation
 
-* [September 2021](/docs/satellite?topic=satellite-release-notes#release-sep-2021)
+    * [18 January 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan1822)
 
-    * [29 September 2021](/docs/satellite?topic=satellite-release-notes#29sep2021)
+        * **New!** {{site.data.keyword.satellitelong_notm}} CLI Map
 
-    * [23 September 2021](/docs/satellite?topic=satellite-release-notes#23sep2021)
+        * **New!** Site map
 
-    * [15 September 2021](/docs/satellite?topic=satellite-release-notes#15sep2021)
+* [December 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec21)
 
-* [August 2021](/docs/satellite?topic=satellite-release-notes#aug21)
+    * Review the release notes for December 2021.
 
-    * [9 August 2021](/docs/satellite?topic=satellite-release-notes#9aug2021)
+    * [15 December 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec1521)
 
-    * [3 August 2021](/docs/satellite?topic=satellite-release-notes#3aug2021)
+        * **New! Sydney location**
 
-* [July 2021](/docs/satellite?topic=satellite-release-notes#july21)
+    * [3 December 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec321)
 
-    * [19 July 2021](/docs/satellite?topic=satellite-release-notes#19jul2021)
+        * **New! Satellite Mesh**!
 
-    * [16 July 2021](/docs/satellite?topic=satellite-release-notes#16jul2021)
+        * CLI changelog
 
-    * [8 July 2021](/docs/satellite?topic=satellite-release-notes#8jul2021)
+* [November 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov21)
 
-* [June 2021](/docs/satellite?topic=satellite-release-notes#june21)
+    * Review the release notes for November 2021.
 
-    * [30 June 2021](/docs/satellite?topic=satellite-release-notes#30jun2021)
+    * [29 November 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov2921)
 
-    * [24 June 2021](/docs/satellite?topic=satellite-release-notes#24jun2021)
+        * {{site.data.keyword.redhat_openshift_notm}} Data Foundation
 
-    * [18 June 2021](/docs/satellite?topic=satellite-release-notes#18jun2021)
+        * {{site.data.keyword.at_short}}
 
-    * [9 June 2021](/docs/satellite?topic=satellite-release-notes#9jun2021)
+    * [16 November 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov1621)
 
-* [May 2021](/docs/satellite?topic=satellite-release-notes#may21)
+        * **New! Sao Paulo location**
 
-    * [26 May 2021](/docs/satellite?topic=satellite-release-notes#26may2021)
+    * [11 November 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov1121)
 
-    * [19 May 2021](/docs/satellite?topic=satellite-release-notes#19may2021)
+        * New location error message is added. 
 
-    * [12 May 2021](/docs/satellite?topic=satellite-release-notes#12may2021)
+    * [10 November 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov1021)
 
-    * [7 May 2021](/docs/satellite?topic=satellite-release-notes#7may2021)
+        * Troubleshooting a `certificate expired` error for the {{site.data.keyword.redhat_openshift_notm}} console
 
-* [April 2021](/docs/satellite?topic=satellite-release-notes#apr21)
+    * [9 November 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov921)
 
-    * [26 April 2021](/docs/satellite?topic=satellite-release-notes#26apr2021)
+        * Azure Disk CSI driver template
 
-    * [15 April 2021](/docs/satellite?topic=satellite-release-notes#15apr2021)
+    * [8 November 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov821)
 
-    * [9 April 2021](/docs/satellite?topic=satellite-release-notes#9apr2021)
+        * Troubleshooting a degraded Ingress operator
 
-* [March 2021](/docs/satellite?topic=satellite-release-notes#mar21)
+* [October 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct21)
 
-    * [25 March 2021](/docs/satellite?topic=satellite-release-notes#25mar2021)
+    * Review the release notes for October 2021.
 
-    * [23 March 2021](/docs/satellite?topic=satellite-release-notes#23mar2021)
+    * [12 October 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct1221)
 
-    * [12 March 2021](/docs/satellite?topic=satellite-release-notes#12mar2021)
+        * Review the release notes for 12 October 2021.
 
-    * [10 March 2021](/docs/satellite?topic=satellite-release-notes#10mar2021)
+        * CLI changelog
 
-    * [1 March 2021](/docs/satellite?topic=satellite-release-notes#01mar2021)
+* [September 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep21)
 
-* [February 2021](/docs/satellite?topic=satellite-release-notes#february21)
+    * Review the release notes for September 2021.
 
-    * [25 February 2021](/docs/satellite?topic=satellite-release-notes#25feb2021)
+    * [29 September 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep2921)
 
-    * [23 February 2021](/docs/satellite?topic=satellite-release-notes#23feb2021)
+        * Review the release notes for 29 September 2021.
 
-    * [18 February 2021](/docs/satellite?topic=satellite-release-notes#18feb2021)
+        * **New! Alibaba host support**
 
-    * [12 February 2021](/docs/satellite?topic=satellite-release-notes#12feb2021)
+        * **New! Toronto location**
 
-    * [8 February 2021](/docs/satellite?topic=satellite-release-notes#08feb2021)
+    * [23 September 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep2321)
 
-* [January 2021](/docs/satellite?topic=satellite-release-notes#january21)
+        * Review the release notes for 23 September 2021.
 
-    * [29 January 2021](/docs/satellite?topic=satellite-release-notes#29jan2021)
+        * **New! Tokyo location**
 
-    * [25 January 2021](/docs/satellite?topic=satellite-release-notes#25jan2021)
+    * [15 September 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep1521)
 
-    * [15 January 2021](/docs/satellite?topic=satellite-release-notes#15jan2021)
+        * Review the release notes for 15 September 2021.
 
-    * [12 January 2021](/docs/satellite?topic=satellite-release-notes#12jan2021)
+        * OpenShift Data Foundation
 
-* [December 2020](/docs/satellite?topic=satellite-release-notes#december20)
+* [August 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug21)
 
-    * [9 December 2020](/docs/satellite?topic=satellite-release-notes#09dec2020)
+    * Review the release notes for August 2021.
 
-* [November 2020](/docs/satellite?topic=satellite-release-notes#november20)
+    * [9 August 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug921)
 
-    * [18 November 2020](/docs/satellite?topic=satellite-release-notes#18nov2020)
+        * Review the release notes for 9 August 2021.
 
-* [October 2020](/docs/satellite?topic=satellite-release-notes#october20)
+        * CLI changelog
 
-    * [8 October 2020](/docs/satellite?topic=satellite-release-notes#08oct2020)
+    * [3 August 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug321)
 
-    * [6 October 2020](/docs/satellite?topic=satellite-release-notes#06oct2020)
+        * Review the release notes for 3 August 2021.
 
-* [September 2020](/docs/satellite?topic=satellite-release-notes#september20)
+        * New! Dallas location
 
-    * [14 September 2020](/docs/satellite?topic=satellite-release-notes#14sep2020)
+* [July 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul21)
 
-* [August 2020](/docs/satellite?topic=satellite-release-notes#august20)
+    * Review the release notes for July 2021.
 
-    * [21 August 2020](/docs/satellite?topic=satellite-release-notes#21aug2020)
+    * [19 July 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul1921)
+
+        * Review the release notes for 19 July 2021.
+
+        * End of UDP endpoint support
+
+    * [16 July 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul1621)
+
+        * Review the release notes for 16 July 2021.
+
+        * New! Beta support for the Azure Disk CSI driver template
+
+    * [8 July 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jul821)
+
+        * Review the release notes for 8 July 2021.
+
+        * DNS provider change from Cloudflare to Akamai
+
+* [June 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun21)
+
+    * Review the release notes for June 2021.
+
+    * [30 June 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun3021)
+
+        * Review the release notes for 30 June 2021.
+
+        * New! General availability of the {{site.data.keyword.satelliteshort}} storage templates. 
+
+        * New! [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s</strong>: Many {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} are now available to deploy to your {{site.data.keyword.satelliteshort}} location. 
+
+    * [24 June 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun2421)
+
+        * Review the release notes for 24 June 2021.
+
+        * Azure template
+
+        * CLI changelog
+
+    * [18 June 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun1821)
+
+        * Review the release notes for 18 June 2021.
+
+        * IP addresses for Link tunnel server endpoints
+
+    * [9 June 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun921)
+
+        * Review the release notes for 9 June 2021.
+
+        * New! Frankfurt location
+
+        * Digital certificates
+
+* [May 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may21)
+
+    * Review the release notes for May 2021.
+
+    * [26 May 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may2621)
+
+        * Review the release notes for 26 May 2021.
+
+        * CLI changelog
+
+    * [19 May 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1921)
+
+        * Review the release notes for 19 May 2021.
+
+        * New! NetApp ONTAP-NAS storage driver template
+
+    * [12 May 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1221)
+
+        * Review the release notes for 12 May 2021.
+
+        * New! {{site.data.keyword.IBM_notm}} Systems block storage CSI driver template
+
+    * [7 May 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may721)
+
+        * Review the release notes for 7 May 2021.
+
+        * New! Spectrum Scale CSI driver template
+
+* [April 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr21)
+
+    * Review the release notes for April 2021.
+
+    * [26 April 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2621)
+
+        * Review the release notes for 26 April 2021.
+
+        * CLI changelog
+
+        * Updated the CLI plug-in changelog page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
+
+    * [15 April 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1521)
+
+        * Review the release notes for 15 April 2021.
+
+        * Cluster add-ons
+
+        * Use case
+
+        * When you create a location from the console, you can now [enter the name of an existing {{site.data.keyword.cos_full_notm}} bucket](/docs/satellite?topic=satellite-locations#location-create-console) that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data.
+
+    * [9 April 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr921)
+
+        * Review the release notes for 9 April 2021.
+
+        * Logging
+
+        * New! Storage template for remote OpenShift Data Foundation
+
+* [March 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar21)
+
+    * Review the release notes for March 2021.
+
+    * [25 March 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2521)
+
+        * Review the release notes for 25 March 2021.
+
+        * Security and compliance
+
+    * [23 March 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2321)
+
+        * Review the release notes for 23 March 2021.
+
+        * OpenShift Data Foundation using local disks
+
+    * [12 March 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar1221)
+
+        * Review the release notes for 12 March 2021.
+
+        * Resetting the host key
+
+        * Troubleshooting location health checks
+
+    * [10 March 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar1021)
+
+        * Review the release notes for 10 March 2021.
+
+        * New `health-pending` host state
+
+    * [1 March 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar0121)
+
+        * Review the release notes for 1 March 2021.
+
+        * New! General availability of {{site.data.keyword.satellitelong}}
+
+        * CLI changelog
+
+        * Cloud provider guides
+
+        * Exposing apps in {{site.data.keyword.satelliteshort}} clusters
+
+        * {{site.data.keyword.satelliteshort}} Infrastructure Service
+
+        * New! Template for fast provisioning on AWS
+
+* [February 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb21)
+
+    * Review the release notes for February 2021.
+
+    * [25 February 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb2521)
+
+        * Review the release notes for 25 February 2021.
+
+        * Auditing events
+
+        * CLI changelog
+
+    * [23 February 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb2321)
+
+        * Review the release notes for 23 February 2021.
+
+        * Accessing clusters
+
+        * Host requirements
+
+        * Link endpoints
+
+        * Monitoring
+
+        * Reviewing resources
+
+    * [18 February 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1821)
+
+        * Review the release notes for 18 February 2021.
+
+        * Securing service connections
+
+    * [12 February 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1221)
+
+        * Review the release notes for 12 February 2021.
+
+        * Link endpoints
+
+        * Securing service connections
+
+    * [8 February 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb0821)
+
+        * Review the release notes for 8 February 2021.
+
+        * CLI changelog
+
+        * Host auto assignment
+
+        * Logging and monitoring
+
+        * Worker pool management
+
+* [January 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan21)
+
+    * Review the release notes for January 2021.
+
+    * [29 January 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan2921)
+
+        * Review the release notes for 29 January 2021.
+
+        * AWS hosts
+
+        * {{site.data.keyword.satelliteshort}} Link
+
+    * [25 January 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan2521)
+
+        * Review the release notes for 25 January 2021.
+
+        * {{site.data.keyword.satelliteshort}} Link
+
+    * [15 January 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan1521)
+
+        * Review the release notes for 15 January 2021.
+
+        * Host requirements
+
+    * [12 January 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan1221)
+
+        * Review the release notes for 12 January 2021.
+
+        * Host updates
+
+* [December 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec20)
+
+    * Review the release notes for December 2020.
+
+    * [9 December 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0920)
+
+        * Review the release notes for 9 December 2020.
+
+        * Private hosts
+
+        * Azure host support
+
+        * Physical machine support
+
+        * Host network requirements
+
+        * AWS and GCP host DNS
+
+* [November 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov20)
+
+    * Review the release notes for November 2020.
+
+    * [18 November 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov1820)
+
+        * Review the release notes for 18 November 2020.
+
+        * Internal registry
+
+        * Service overview
+
+* [October 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct20)
+
+    * Review the release notes for October 2020.
+
+    * [8 October 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0820)
+
+        * Review the release notes for 8 October 2020.
+
+        * Host network requirements
+
+    * [6 October 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct0620)
+
+        * Review the release notes for 6 October 2020.
+
+        * CLI changelog
+
+        * Location subdomain troubleshooting
+
+* [September 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep20)
+
+    * Review the release notes for September 2020.
+
+    * [14 September 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep1420)
+
+        * Review the release notes for 14 September 2020.
+
+        * Host requirements
+
+        * IAM
+
+        * Provider documentation
+
+        * Service requirements
+
+* [August 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug20)
+
+    * Review the release notes for August 2020.
+
+    * [21 August 2020](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug2120)
+
+        * Review the release notes for 21 August 2020.
+
+        * New! {{site.data.keyword.satellitelong_notm}} is now available as a closed beta.
 
 
 ## Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands
