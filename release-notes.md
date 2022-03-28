@@ -2,13 +2,13 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-25"
+lastupdated: "2022-03-28"
 
 keywords: satellite, hybrid, multicloud
 
 subcollection: satellite
 
-content-type: release-notes
+content-type: release-note
 
 ---
 
