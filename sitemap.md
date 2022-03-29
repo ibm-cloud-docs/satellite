@@ -558,11 +558,19 @@ subcollection: satellite
 * [CLI reference documentation](/docs/satellite?topic=satellite-setup-cli#cli-ref-docs)
 
 
-## Planning your infrastructure environment for {{site.data.keyword.satelliteshort}}
-{: #sitemap_planning_your_infrastructure_environment_for_}
+## Planning your environment for {{site.data.keyword.satelliteshort}}
+{: #sitemap_planning_your_environment_for_}
 
 
-[Planning your infrastructure environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan#infrastructure-plan)
+[Planning your environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan#infrastructure-plan)
+
+* [Planning your infrastruccture](/docs/satellite?topic=satellite-infrastructure-plan#infra-plan-infra)
+
+    * [Plan your infrastructure provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-plan-provider)
+
+    * [Plan for a multizone location](/docs/satellite?topic=satellite-infrastructure-plan#infra-plan-multizone)
+
+    * [Plan your host systems](/docs/satellite?topic=satellite-infrastructure-plan#infra-plan-compatible)
 
 
 ## Understanding {{site.data.keyword.satelliteshort}} hosts

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-29"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane
 
@@ -19,7 +19,7 @@ subcollection: satellite
 A location in {{site.data.keyword.satellitelong}} is a representation of an environment in your infrastructure provider, such as an on-prem data center or public cloud, that you want to bring {{site.data.keyword.cloud_notm}} services to so that you can run workloads in your own environment. You create the location by attaching host machines from across at least 3 zones in your infrastructure. 
 {: shortdesc}
 
-To set up a Satellite location, you must first create the location, attach hosts to it, and then create the location control plane.
+To set up a Satellite location, you must first create the location, attach hosts to it, and then create the location control plane. Note that in order to use [Red Hat CoreOS](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) for your worker nodes, you must enable it in your location. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations). 
 
 The location control plane runs resources that are managed by Satellite to help manage the hosts, clusters, and other resources that you attach to the location.
 
