@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-03-28"
 
-keywords: satellite, hybrid, multicloud, hypershift
+keywords: satellite, hybrid, multicloud, hypershift, core os
 
 subcollection: satellite
 
