@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-30"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1060,7 +1060,7 @@ Create and download a script that you run on all the compute hosts that you want
 {: shortdesc}
 
 ```sh
-ibmcloud sat host attach --location LOCATION [--host-label "LABEL"] [-q] [--reset-key]
+ibmcloud sat host attach --location LOCATION [--host-label "LABEL"]  [-q] [--reset-key]
 ```
 {: pre}
 
@@ -1076,7 +1076,7 @@ ibmcloud sat host attach --location LOCATION [--host-label "LABEL"] [-q] [--rese
 :    Required. Enter the ID or name of the {{site.data.keyword.satelliteshort}} location where you want to add compute hosts. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
 
 `--host-label LABEL`, `-hl LABEL`
-:    Optional. Enter any labels as a key-value-pair that you want to add to your compute hosts. Labels can help find hosts more easily later.  
+:    Optional. Enter any labels as a key-value-pair that you want to add to your compute hosts. Labels can help find hosts more easily later. 
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
