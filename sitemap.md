@@ -1528,6 +1528,8 @@ subcollection: satellite
 
 * [OpenShift Data Foundation configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-params-cli)
 
+    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-49)
+
     * [Version 4.8 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-48)
 
     * [Version 4.7 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-47)
@@ -1551,6 +1553,8 @@ subcollection: satellite
     * [Removing the ODF remote storage assignment from the command line](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-template-rm-cli)
 
 * [OpenShift Data Foundation configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-params-cli)
+
+    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-49-params)
 
     * [Version 4.8 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-48-params)
 
