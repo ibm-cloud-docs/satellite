@@ -572,6 +572,16 @@ subcollection: satellite
 
     * [Plan your host systems](/docs/satellite?topic=satellite-infrastructure-plan#infra-plan-compatible)
 
+* [Deciding how to create your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#create-options)
+
+    * [On-premises infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-onprem)
+
+    * [Cloud provider infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud)
+
+    * [{{site.data.keyword.IBM_notm}}-managed infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-sat-is)
+
+* [Providing {{site.data.keyword.satelliteshort}} with credentials to your cloud provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-credentials)
+
 
 ## Understanding {{site.data.keyword.satelliteshort}} hosts
 {: #sitemap_understanding__hosts}
@@ -588,7 +598,7 @@ subcollection: satellite
 
 * [Computing characteristics](/docs/satellite?topic=satellite-host-reqs#reqs-host-compute)
 
-* [Packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages)
+* [RHEL packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages)
 
 [Host storage and attached devices](/docs/satellite?topic=satellite-reqs-host-storage#reqs-host-storage)
 
@@ -875,7 +885,7 @@ subcollection: satellite
 
 [Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts#attach-hosts)
 
-* [Attaching hosts from the console](/docs/satellite?topic=satellite-attach-hosts#attach-hosts-console)
+* [Attaching hosts with the console](/docs/satellite?topic=satellite-attach-hosts#attach-hosts-console)
 
 * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-attach-hosts#attach-hosts-cli)
 

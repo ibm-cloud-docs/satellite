@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-03-30"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -18,10 +18,12 @@ subcollection: satellite
 After you create the location in {{site.data.keyword.satellitelong}}, add compute capacity to your location so that you can set up {{site.data.keyword.redhat_openshift_notm}} clusters or interact with other [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services).
 {: shortdesc}
 
+In order to attach Red Hat CoreOS hosts, you must have Red Hat CoreOS enabled in your location. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations). Note that you can still attach RHEL hosts to a location that is enabled for Red Hat CoreOS.
+
 Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing).
 {: tip}
 
-## Attaching hosts from the console
+## Attaching hosts with the console
 {: #attach-hosts-console}
 
 Use the {{site.data.keyword.satelliteshort}} console to attach hosts to your location.
@@ -36,7 +38,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 4. Enter a file name for your script or use the name that is generated for you.
 5. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
 
-    Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) RHEL package updates.
+    Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) RHEL package updates. If your hosts are running the latest Red Hat CoreOS images, you do not need to update the packages.
     {: note}
 
 6. Follow the cloud provider-specific steps to update the script and attach your host.
@@ -61,7 +63,7 @@ Before you begin, make sure that you have created host machines that meet the [m
         ```
         {: pre}
 
-    4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
+    4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}. If your hosts are running the latest Red Hat CoreOS images, you do not need to update the packages.
     5. Run the script.
         ```sh
         sudo nohup bash /tmp/attach.sh &
@@ -103,7 +105,7 @@ Before you begin, make sure that you have created host machines that meet the [m
     ```
     {: screen}
 
-    Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) RHEL package updates.
+    Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) RHEL package updates. If your hosts are running the latest Red Hat CoreOS images, you do not need to update the packages.
     {: note}
 
 2. On your local machine, find the script.
@@ -129,8 +131,8 @@ Before you begin, make sure that you have created host machines that meet the [m
         ```
         {: pre}
 
-    4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
-    5. Run the script.
+    4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}. If your hosts are running the latest Red Hat CoreOS images, you do not need to update the packages.
+    6. Run the script.
         ```sh
         sudo nohup bash /tmp/attach.sh &
         ```
@@ -158,4 +160,6 @@ Before you begin, make sure that you have created host machines that meet the [m
     {: screen}
 
 5. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
+
+
 

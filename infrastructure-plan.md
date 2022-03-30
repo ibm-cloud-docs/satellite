@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-03-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -68,6 +68,37 @@ In each of the three zones in your infrastructure provider, plan to create compa
 
 
 
+## Deciding how to create your {{site.data.keyword.satelliteshort}} location
+{: #create-options}
+
+Depending on your infrastructure provider, you have different options to create a {{site.data.keyword.satelliteshort}} location.
+{: shortdesc}
+
+### On-premises infrastructure
+{: #create-options-onprem}
+
+For on-prem infrastructure, you can manually setup a {{site.data.keyword.satelliteshort}} location. For more information, see [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create-manual).
+{: shortdesc}
+
+### Cloud provider infrastructure
+{: #create-options-cloud}
+
+For cloud provider infrastructure, you can follow provider-specific guides. For more information, see [Creating a Satellite location](/docs/satellite?topic=satellite-locations).
+{: shortdesc}
+
+### {{site.data.keyword.IBM_notm}}-managed infrastructure
+{: #create-options-sat-is}
+
+{{site.data.keyword.IBM_notm}} can send infrastructure and set up a {{site.data.keyword.satelliteshort}} location for you. See [Getting started with {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
+{: shortdesc}
+
+## Providing {{site.data.keyword.satelliteshort}} with credentials to your cloud provider
+{: #infra-credentials}
+
+For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf in a cloud provider, you must provide credentials to the cloud provider. For example, you might [automate your location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template) or use a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) that sets up a {{site.data.keyword.satelliteshort}} location for you.
+{: shortdesc}
+
+The credentials that you provide are stored and encrypted in etcd of the {{site.data.keyword.satelliteshort}} location control plane master. For more information, see [Securing your data](/docs/satellite?topic=satellite-data-security).
 
 
 
