@@ -158,8 +158,6 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     1. [Attach compute hosts to your location](/docs/satellite?topic=satellite-attach-hosts).
     2. Assign these hosts as worker nodes to the [{{site.data.keyword.satelliteshort}} location control plane](#setup-control-plane).
 
-
-
 ## Setting up the {{site.data.keyword.satelliteshort}} location control plane
 {: #setup-control-plane}
 
