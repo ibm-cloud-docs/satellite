@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-03-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -116,7 +116,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
 2. Create a {{site.data.keyword.satelliteshort}} location.
 
     ```sh
-    ibmcloud sat location create --managed-from <region> --name <location_name> --ha-zone zone1_name --ha-zone zone2_name --ha-zone zone3_name [--cos-bucket cos_bucket_name] --coreos-enabled
+    ibmcloud sat location create --managed-from <region> --name <location_name> --ha-zone zone1_name --ha-zone zone2_name --ha-zone zone3_name [--cos-bucket cos_bucket_name] 
     ```
     {: pre}
 

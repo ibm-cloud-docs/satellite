@@ -26,7 +26,7 @@ Can't meet these host requirements? [Contact {{site.data.keyword.IBM_notm}} Supp
 ## Computing characteristics
 {: #reqs-host-compute}
 
-- Hosts must run Red Hat Enterprise Linux 7 or the latest Red Hat CoreOS on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
+- Hosts must run Red Hat Enterprise Linux 7 on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
 - Hosts can be physical or virtual machines. However, if your hosts are cloned virtual machines, be sure that each one has a unique network identity. For more information, see [Why aren't my hosts attaching to my location?](/docs/satellite?topic=satellite-host-not-attaching).
 - Hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
 
@@ -40,8 +40,6 @@ Can't meet these host requirements? [Contact {{site.data.keyword.IBM_notm}} Supp
 Hosts must have access to {{site.data.keyword.redhat_notm}} updates and the following packages. 
 {: shortdesc}
 
-If your hosts are running the latest Red Hat CoreOS images, you do not need to update the packages.
-{: note}
 
 ```sh
 Repository 'rhel-server-rhscl-7-rpms' is enabled for this system.
