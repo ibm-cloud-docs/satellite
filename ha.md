@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-03-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -146,20 +146,13 @@ The following image shows a highly available setup for compute hosts that are in
 ## Disconnected Usage
 {: #disconnected-usage}
 
-{{site.data.keyword.satelliteshort}} Locations and {{site.data.keyword.openshiftlong_notm}} can run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for 72 hours by default.
+{{site.data.keyword.satelliteshort}} Locations and {{site.data.keyword.openshiftlong_notm}} can run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for 72 hours.
 {: shortdesc}
 
-You can modify this setting by changing the `accessTokenMaxAgeSeconds` value in the yaml file.
-
-1. Get the cluster OAuth and save it to a file.
-   ```sh
-   oc get oauth cluster -o yaml
-   ```
-   {: pre}
+You can modify this setting by changing the `accessTokenMaxAgeSeconds` value in the YAML file.
 
 
-
-1. Edit the `tokenConfig: accessTokenMaxAgeSeconds:` value. 
+2. Create a file called `accessTokenMaxAgeSeconds.yaml` with the following contents.
 
 
     ```yaml
@@ -169,11 +162,11 @@ You can modify this setting by changing the `accessTokenMaxAgeSeconds` value in 
         name: cluster
       spec:
         tokenConfig:
-          accessTokenMaxAgeSeconds: 172800
+          accessTokenMaxAgeSeconds: 259200
     ```
     {: codeblock}
 
-1. Reapply the OAuth resource to your cluster.
+1. Apply the OAuth resource to your cluster.
 
     ```sh
     oc apply -f accessTokenMaxAgeSeconds.yaml
