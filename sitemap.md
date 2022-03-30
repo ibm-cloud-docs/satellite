@@ -611,21 +611,159 @@ subcollection: satellite
 
 [Required outbound connectivity for hosts in all regions](/docs/satellite?topic=satellite-reqs-host-network-outbound#reqs-host-network-outbound)
 
+* [Allow hosts to connect to {{site.data.keyword.IBM_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound#host-out-ibm)
+
+* [Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers](/docs/satellite?topic=satellite-reqs-host-network-outbound#host-out-ntp)
+
+* [Allow hosts to communicate with {{site.data.keyword.iamshort}}](/docs/satellite?topic=satellite-reqs-host-network-outbound#host-out-iam)
+
+* [Allow hosts to connect to the LaunchDarkly service](/docs/satellite?topic=satellite-reqs-host-network-outbound#host-out-ld)
+
+* [Allow hosts to communicate with Red Hat Container Registry](/docs/satellite?topic=satellite-reqs-host-network-outbound#host-out-cr)
+
 [Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#reqs-host-network-outbound-dal)
+
+* [Allow control plane worker nodes to communicate with the control plane master](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-cp-dal)
+
+* [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-worker-dal)
+
+* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-link-dal)
+
+* [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-services-dal)
+
+* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-akamai-dal)
+
+* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-cr-dal)
+
+* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-mon-dal)
+
+* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-la-dal)
 
 [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#reqs-host-network-outbound-fra)
 
+* [Allow control plane worker nodes to communicate with the control plane master](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#host-out-cp-fra)
+
+* [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#host-out-worker-fra)
+
+* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#host-out-link-fra)
+
+* [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#host-out-services-fra)
+
+* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#host-out-akamai-fra)
+
+* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#host-out-cr-fra)
+
+* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#host-out-mon-fra)
+
+* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#host-out-la-fra)
+
 [London](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#reqs-host-network-outbound-lon)
+
+* [Allow control plane worker nodes to communicate with the control plane master](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-cp-lon)
+
+* [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-worker-lon)
+
+* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-link-lon)
+
+* [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-services-lon)
+
+* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-akamai-lon)
+
+* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-cr-lon)
+
+* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-mon-lon)
+
+* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-la-lon)
 
 [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#reqs-host-network-outbound-sao)
 
+* [Allow control plane worker nodes to communicate with the control plane master](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#host-out-cp-sao)
+
+* [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#host-out-worker-sao)
+
+* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#host-out-link-sao)
+
+* [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#host-out-services-sao)
+
+* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#host-out-akamai-sao)
+
+* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#host-out-cr-sao)
+
+* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#host-out-mon-sao)
+
+* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#host-out-la-sao)
+
 [Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#reqs-host-network-outbound-syd)
+
+* [Allow control plane worker nodes to communicate with the control plane master](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#host-out-cp-syd)
+
+* [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#host-out-worker-syd)
+
+* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#host-out-link-syd)
+
+* [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#host-out-services-syd)
+
+* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#host-out-akamai-syd)
+
+* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#host-out-cr-syd)
+
+* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#host-out-mon-syd)
+
+* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#host-out-la-syd)
 
 [Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#reqs-host-network-outbound-tok)
 
+* [Allow control plane worker nodes to communicate with the control plane master](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-cp-tok)
+
+* [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-worker-tok)
+
+* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-link-tok)
+
+* [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-services-tok)
+
+* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-akamai-tok)
+
+* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-cr-tok)
+
+* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-mon-tok)
+
+* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-la-tok)
+
 [Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#reqs-host-network-outbound-tor)
 
+* [Allow control plane worker nodes to communicate with the control plane master](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#host-out-cp-tor)
+
+* [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#host-out-worker-tor)
+
+* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#host-out-link-tor)
+
+* [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#host-out-services-tor)
+
+* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#host-out-akamai-tor)
+
+* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#host-out-cr-tor)
+
+* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#host-out-mon-tor)
+
+* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#host-out-la-tor)
+
 [Washington, D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#reqs-host-network-outbound-wdc)
+
+* [Allow control plane worker nodes to communicate with the control plane master](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-cp-wdc)
+
+* [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-worker-wdc)
+
+* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-link-wdc)
+
+* [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-services-wdc)
+
+* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} the service API, Config API, and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-akamai-wdc)
+
+* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-cr-wdc)
+
+* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-mon-wdc)
+
+* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-la-wdc)
 
 [Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
 

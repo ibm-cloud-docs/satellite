@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-03-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -81,6 +81,8 @@ Cloud and location endpoints
 Review the following application configuration requirements for {{site.data.keyword.satelliteshort}} Config.
 {: shortdesc}
 
+
+
 {{site.data.keyword.satelliteshort}} Config access to modify Kubernetes resources within a cluster
 :    By default, {{site.data.keyword.satelliteshort}} Config is limited to what Kubernetes resources it can read and modify in your clusters. You must grant {{site.data.keyword.satelliteshort}} Config access in each cluster where you want to use {{site.data.keyword.satelliteshort}} Config to manage your Kubernetes resources.
 :    Choose from the following options.
@@ -106,5 +108,4 @@ You can have up to 40 instances of a supported {{site.data.keyword.cloud_notm}} 
 Each supported service might have its own limitations to run in {{site.data.keyword.satelliteshort}}.
 - {{site.data.keyword.openshiftlong_notm}}: See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation.
 - {{site.data.keyword.cloud_notm}} Databases (ICD): See See [{{site.data.keyword.cloud_notm}} Databases (ICD) enabled by {{site.data.keyword.satellitelong_notm}}](/docs/cloud-databases?topic=cloud-databases-satellite-get-started).
-
 
