@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-30"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -15,10 +15,10 @@ subcollection: satellite
 # Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters
 {: #host-update-workers}
 
-{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates.
+{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services). The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates.
 {: shortdesc}
 
-Do not use the `ibmcloud ks worker update` command for hosts that are assigned as worker nodes to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services)s.
+Do not use the `ibmcloud ks worker update` command for hosts that are assigned as worker nodes to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
 {: important}
 
 ## Checking if a version update is available for worker node hosts
