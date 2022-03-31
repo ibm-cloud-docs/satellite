@@ -22,7 +22,7 @@ A location in {{site.data.keyword.satellitelong}} is a representation of an envi
 To set up a Satellite location, you must first create the location, attach hosts to it, and then create the location control plane. 
 
 
-{: note}
+
 
 The location control plane runs resources that are managed by Satellite to help manage the hosts, clusters, and other resources that you attach to the location.
 
