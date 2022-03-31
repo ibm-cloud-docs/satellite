@@ -26,6 +26,9 @@ Not sure if your infrastructure is ready to use for {{site.data.keyword.satellit
 Automate your setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-about-schematics) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in a cloud provider, and set up the {{site.data.keyword.satelliteshort}} location control plane for you.
 {: shortdesc}
 
+To enable your location for Red Hat CoreOS, create your location [manually](#location-create-manual).
+{: tip}
+
 You can set up {{site.data.keyword.satelliteshort}} locations with a {{site.data.keyword.bpshort}} template for the following cloud providers. 
 
 - [AWS](/docs/satellite?topic=satellite-aws#aws-template)
@@ -274,6 +277,14 @@ To create the control plane,
     ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satloc" --zone <zone>
     ```
     {: pre}
+    
+    Example for assigning a host that is enabled for Red Hat CoreOS.
+    
+    ```sh
+    ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satloc" --zone <zone> 
+
+    ```
+    {: pre} 
 
 
     `--location <location_name_or_ID>`

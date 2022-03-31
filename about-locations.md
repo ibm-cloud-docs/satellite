@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-03-31"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane
 
@@ -21,6 +21,9 @@ A location in {{site.data.keyword.satellitelong}} is a representation of an envi
 
 To set up a Satellite location, you must first create the location, attach hosts to it, and then create the location control plane. 
 
+
+{: note}
+
 The location control plane runs resources that are managed by Satellite to help manage the hosts, clusters, and other resources that you attach to the location.
 
 When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.	
@@ -30,6 +33,7 @@ When you set up the {{site.data.keyword.satelliteshort}} location control plane,
 - Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then {{site.data.keyword.IBM_notm}} can automatically assign hosts when clusters or the {{site.data.keyword.satelliteshort}} location control plane request more capacity.
 
 {{site.data.keyword.satelliteshort}} uses {{site.data.keyword.cos_short}} to store data about your location and backups for your location's clusters. You can choose to have a bucket created automatically when you create your location or specify an existing bucket. If you want to use an existing bucket, it must have cross-regional resiliency.
+
 
 ## Sizing your {{site.data.keyword.satelliteshort}} location
 {: #location-sizing}
@@ -112,4 +116,3 @@ The following tables provide examples of the number of hosts that the control pl
 {: #16cpu-64ram}
 {: tab-title="16 vCPU, 64GB RAM"}
 {: tab-group="loc-size"}
-
