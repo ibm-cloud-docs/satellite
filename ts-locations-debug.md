@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-03-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -402,24 +402,4 @@ Location message
 Steps to resolve
 :    {{site.data.keyword.cloud_notm}} Support is notified and is working to resolve the issue. Try again later. 
 
-## R0057: Outbound traffic to IAM is failing
-{: #R0057}
-
-Location message
-:    Outbound traffic to IBM Cloud IAM is failing. To ensure that all host requirements are met, see [Host system requirements](/docs/satellite?topic=satellite-host-reqs). More information is available in the IBM Cloud Platform Logs. If the issue persists, contact IBM Cloud Support and include your Satellite location ID.
-
-Steps to resolve
-:    Check the health status and ensure that the host system requirements are met.
-
-1. Run the following command to check the health status. 
-
-```sh
-curl https://iam.cloud.ibm.com/healthz 
-```
-{: pre}
-
-2. If the output from the previous step indicates a failure, check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs). 
-3. If you have met all of the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can get your location ID by running the `ibmcloud sat location ls` command.
-
-For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0057` error logs](/docs/satellite?topic=satellite-health#logs-error).
 

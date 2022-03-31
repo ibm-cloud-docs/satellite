@@ -2193,8 +2193,6 @@ subcollection: satellite
 
 * [R0052: Ingress certificate generation issues](/docs/satellite?topic=satellite-ts-locations-debug#R0052)
 
-* [R0057: Outbound traffic to IAM is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0057)
-
 
 ### Locations
 {: #sitemap_locations}
