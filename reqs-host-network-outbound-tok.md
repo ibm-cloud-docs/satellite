@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-03-31"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -74,13 +74,13 @@ All {{site.data.keyword.satelliteshort}} hosts
 {: #host-out-mon-tok}
 
 All {{site.data.keyword.satelliteshort}} hosts
-:   **Destination IPs and hostnames**: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
-:   **Protocol and ports** TCP 443 and 6443
+* Destination IPs and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
+* Protocol and ports: TCP 443 and 6443
 
 ## Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
 {: #host-out-la-tok}
 
 All {{site.data.keyword.satelliteshort}} hosts
-:   **Destination IPs and hostnames**: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
+* Destination IPs and hostnames: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
 * Protocol and ports: TCP 443
 
