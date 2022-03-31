@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-03-31"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -87,7 +87,9 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to attach 
 Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in public cloud providers. For more information about how to configure hosts in public cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
 {: important}
 
-1. Generate a script that you can copy and run on your machines to attach them as hosts to your location. You might want to include a label to identify the purpose of the hosts, such as `use:satloc`, because the hosts provide compute capacity for the {{site.data.keyword.satelliteshort}} location. Your hosts automatically are assigned labels for the CPU and memory size if these values can be detected on the machine.
+1. Generate a script that you can copy and run on your machines to attach them as hosts to your location. You might want to include a label to identify the purpose of the hosts, such as `use:satloc`, because the hosts provide compute capacity for the {{site.data.keyword.satelliteshort}} location. Your hosts automatically are assigned labels for the CPU and memory size if these values can be detected on the machine. 
+
+    Example for RHEL7 host script
     ```sh
     ibmcloud sat host attach --location <location_name> [-hl "use=satloc"]
     ```

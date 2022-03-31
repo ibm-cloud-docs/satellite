@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-03-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,8 +21,11 @@ content-type: release-note
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
 
+
+
 ## March 2022
 {: #satellite-mar22}
+
 
 
 

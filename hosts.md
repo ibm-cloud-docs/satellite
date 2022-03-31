@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-03-31"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -303,7 +303,7 @@ The following actions disable host auto assignment for a worker pool. Later, you
 {: shortdesc}
 
 - [Manually assign hosts to a worker pool](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
-- [Delete an individual worker node from a worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance).
+- [Delete an individual worker node from a worker pool](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-maintenance).
 
 ### Re-enabling host auto assignment
 {: #host-autoassign-enable}
@@ -312,7 +312,7 @@ If you [disabled host auto assignment](#host-autoassign-disable), you can re-ena
 {: shortdesc}
 
 1. Make sure that you have [available hosts with labels that match the host labels of the worker pool](#host-autoassign).
-2. [Resize the worker pool](/docs/satellite?topic=openshift-satellite-clusters#sat-pool-maintenance) to set the requested size per zone, rebalance the worker pool, and enable auto assignment again.
+2. [Resize the worker pool](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-maintenance) to set the requested size per zone, rebalance the worker pool, and enable auto assignment again.
 
 ## Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources
 {: #host-assign-manual}

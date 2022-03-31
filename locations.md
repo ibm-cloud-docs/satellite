@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-03-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,6 +25,8 @@ Not sure if your infrastructure is ready to use for {{site.data.keyword.satellit
 
 Automate your setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-about-schematics) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in a cloud provider, and set up the {{site.data.keyword.satelliteshort}} location control plane for you.
 {: shortdesc}
+
+
 
 You can set up {{site.data.keyword.satelliteshort}} locations with a {{site.data.keyword.bpshort}} template for the following cloud providers. 
 
@@ -81,7 +83,7 @@ To create a location from the console,
     4. For **Managed from**: Select the {{site.data.keyword.cloud_notm}} region that you want to use to manage your location. For more information about why you must select an {{site.data.keyword.cloud_notm}} region, see [About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the region that is closest to where your host machines physically reside that you plan to attach to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
 
     5. For **Zones**: The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider.
-        - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/doc-detail/89155.htm){: external}, such as `us-east-1a` and `us-east-1b`.
+        - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/elastic-compute-service/latest/regions-and-zones){: external}, such as `us-east-1a` and `us-east-1b`.
         - [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, and `us-east-1c`.
         - [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
         - [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
@@ -131,7 +133,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     
     `--ha-zone <ZONE1_NAME> --ha-zone <ZONE2_NAME> --ha-zone <ZONE3_NAME>`
         :   Optional: If you use this option, zone names must be specified in three repeated flags. If you do not use this option, the zones in your location are assigned names such as `zone-1`. Specify three names for high availability zones in your location. The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider. 
-        - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/doc-detail/188196.htm){: external}, such as `us-east-1` and `us-west-1`.
+        - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/elastic-compute-service/latest/regions-and-zones){: external}, such as `us-east-1` and `us-west-1`.
         - [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, `us-east-1c`.
         - [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
         - [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
@@ -158,8 +160,6 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     1. [Attach compute hosts to your location](/docs/satellite?topic=satellite-attach-hosts).
     2. Assign these hosts as worker nodes to the [{{site.data.keyword.satelliteshort}} location control plane](#setup-control-plane).
 
-
-
 ## Setting up the {{site.data.keyword.satelliteshort}} location control plane
 {: #setup-control-plane}
 
@@ -169,7 +169,7 @@ The location control plane runs resources that are managed by {{site.data.keywor
 When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.
 
 - You must attach compute hosts in groups of 3 to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any provider-specific requirements. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
-- The minimum of 3 hosts for the control plane is for demonstration purposes. To continue to use the location for production workloads, [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity) in multiples of 3, such as 6, 9, or 12 hosts.
+- The minimum of 3 hosts for the control plane is for demonstration purposes. However, depending on your control plane set up, 3 hosts might be sufficient for production workloads. To continue to use the location for production workloads, ensure your control plane meets the [suggested high-availability configuration](/docs/satellite?topic=satellite-ha#satellite-ha-setup) for network redundancy, distribution across physical locations, etc. You can also [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity) in multiples of 3, such as 6, 9, or 12 hosts.
 - Make sure that your hosts meet the [latency requirements](/docs/satellite?topic=satellite-service-architecture#architecture-latency).
 
 ### Setting up the control plane from the console

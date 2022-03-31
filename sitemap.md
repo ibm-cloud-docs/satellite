@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-03-31"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -564,7 +564,7 @@ subcollection: satellite
 
 [Planning your environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan#infrastructure-plan)
 
-* [Planning your infrastruccture](/docs/satellite?topic=satellite-infrastructure-plan#infra-plan-infra)
+* [Planning your infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#infra-plan-infra)
 
     * [Plan your infrastructure provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-plan-provider)
 

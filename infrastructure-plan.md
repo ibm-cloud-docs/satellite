@@ -27,7 +27,7 @@ Your {{site.data.keyword.satelliteshort}} location starts with your infrastructu
 
 ![Concept overview of planning your infrastructure](/images/satellite-infra-plan.png){: caption="Figure 1. Your {{site.data.keyword.satelliteshort}} location is built atop the zones and hosts in your infrastructure provider." caption-side="bottom"}
 
-## Planning your infrastruccture
+## Planning your infrastructure
 {: #infra-plan-infra}
 
 ### Plan your infrastructure provider
@@ -62,7 +62,7 @@ Latency between hosts in your location
 {: #infra-plan-compatible}
 
 In each of the three zones in your infrastructure provider, plan to create compatible hosts to add to {{site.data.keyword.satelliteshort}}. The host instances in your infrastructure provider become the compute hosts to run the services in your {{site.data.keyword.satelliteshort}} location, similar to the worker nodes in a {{site.data.keyword.openshiftlong_notm}} cluster.
-- Each host must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}, such as RHEL 7 operating system; at least 4 CPU, 16 RAM, and 100 GB storage per host; full network connectivity between hosts in the same location; and more.
+- Each host must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}, such as [supported operating system]; at least 4 CPU, 16 RAM, and 100 GB storage per host; full network connectivity between hosts in the same location; and more.
 - To calculate how many hosts you need, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing).
 
 
