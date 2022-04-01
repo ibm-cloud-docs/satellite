@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -69,7 +69,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     2. Optional: Enter any host labels that are used later to [automatically assign hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services)](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
-3. Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
+3. (RHEL only) Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
     ```sh
     # Enable GCP RHEL package updates
     yum update --disablerepo=* --enablerepo="*" -y
@@ -77,7 +77,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     yum install container-selinux -y
     yum install subscription-manager -y
     ```
-    {: codeblock}  
+    {: codeblock}
 
 4. From the [GCP **Compute Engine** dashboard](https://console.cloud.google.com/compute){: external}, select **Instance templates**.
 5. Click **Create instance template**.
@@ -88,7 +88,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 
     1. Enter a name for your instance template.
     2. In the **Machine configuration** section, select the **Series** and **Machine type** that you want to use. You can select any series that you want, but make sure that the machine type meets the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for CPU and memory.
-    3. In the **Boot disk** section, click **Change** to change the default operating system and boot disk size. Make sure to select Red Hat Enterprise Linux 7 as your operating system and to change your boot disk size to a minimum of 100 GB.
+    3. In the **Boot disk** section, click **Change** to change the default operating system and boot disk size. Make sure to select Red Hat Enterprise Linux 7 as your operating system for Red Hat Enterprise Linux and to change your boot disk size to a minimum of 100 GB.
     4. Optional: If you want your machines to allow HTTP and HTTPS traffic, select **Allow HTTP traffic** and **Allow HTTPS traffic** from the **Firewall** section of your instance template.
     5. Click **Management, security, disks, networking, sole tenancy** to view additional networking and security settings.
     6. In the **Management** tab, locate the **Startup script** field and enter the registration script that you modified earlier.

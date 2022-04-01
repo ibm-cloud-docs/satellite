@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-01"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -89,10 +89,10 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add Azure hosts.
 2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
     1. From the **Hosts** tab, click **Attach host**.
-    2. Optional: Add host labels that are used later to [automatically assign hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services)](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. By default, your hosts get a `cpu` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
+    2. Optional: Add host labels that are used later to [automatically assign hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services)](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. By default, your hosts get a `cpu` and `memory` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
-3. Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
+3. (RHEL only) Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
     ```sh
     # Grow the base volume group first
     echo -e "r\ne\ny\nw\ny\ny\n" | gdisk /dev/sda
@@ -117,7 +117,6 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
     echo "repos enabled"
     ```
     {: codeblock}
-
 4. From your local command line, [sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest){: external}.
     ```sh
     az login
@@ -146,15 +145,17 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
     4. Optional: Verify that your network security group meets the host networking requirements, such as in the [example settings](#azure-reqs-firewall).
     
 6. Create virtual machines to serve as the hosts for your {{site.data.keyword.satelliteshort}} location resources, including the control plane and any {{site.data.keyword.redhat_openshift_notm}} clusters that you want to create. The following command creates 6 VMs at the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for compute, disks, and image. The VMs are created in the resource group and network security group that you previously created. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_create){: external}.
-    ```sh
-    az vm create --name <vm_name> --resource-group <resource_group> --admin-user <username> --admin-password <password> --image RedHat:RHEL:7-LVM:latest --nsg <network_security_group> --os-disk-name <disk_name> --os-disk-size-gb 128 --size Standard_D4s_v3 --count 6 --custom-data <filepath_to_host_registration_script>
-    ```
-    {: pre}
+    
+    - Create Red Hat Enterprise Linux hosts
+        ```sh
+        az vm create --name <vm_name> --resource-group RESOURCE-GROUP --admin-user USERNAME --admin-password PASSWORD --image RedHat:RHEL:7-LVM:latest --nsg <network_security_group> --os-disk-name DISK_NAME --os-disk-size-gb 128 --size Standard_D4s_v3 --count 6 --custom-data FILEPATH_TO_HOST_REGISTRATION_SCRIPT
+        ```
+        {: pre}
     
     If you don't want to pass the `--custom-data` command option during VM creation, you can run the host registration script on each VM after provisioning.
     {: tip}
 
-7. Wait for the instances to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete.
+7. Wait for the instances to create. During the creation of your instance, the script runs automatically. This process takes a few minutes to complete.
 8. Monitor the progress of the registration script.
     1.  Get the public IP address of one of your instances. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_list_ip_addresses){: external}.
         ```sh
@@ -177,6 +178,7 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
 9. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, check that your hosts are shown in the **Hosts** tab of your location. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 
 10. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
+
 
 
 ## Security group settings for Azure
@@ -290,4 +292,3 @@ Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort
     }
     ```
     {: screen}
-
