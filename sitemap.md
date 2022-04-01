@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -887,7 +887,11 @@ subcollection: satellite
 
 * [Attaching hosts with the console](/docs/satellite?topic=satellite-attach-hosts#attach-hosts-console)
 
+    * [Attaching RHEL hosts to an on-premises data center with the console](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts-console)
+
 * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-attach-hosts#attach-hosts-cli)
+
+    * [Attaching RHEL hosts to an on-premises data center from the CLI](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts-cli)
 
 [Assigning hosts to worker pools](/docs/satellite?topic=satellite-assigning-hosts#assigning-hosts)
 

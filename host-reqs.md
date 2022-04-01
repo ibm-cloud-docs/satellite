@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-01"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -33,6 +33,8 @@ Can't meet these host requirements? [Contact {{site.data.keyword.IBM_notm}} Supp
 - If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
 - Hostnames can contain only lowercase alphanumeric characters, `-`, or `.`.
 - Hosts must have an ext4 filesystem for the boot disk.
+
+
 
 ## RHEL packages and other machine configurations
 {: #reqs-host-packages}

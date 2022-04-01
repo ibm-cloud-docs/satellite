@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host autoassignment, host auto assignment, host labels
 
@@ -27,8 +27,7 @@ By default, available hosts are automatically assigned to worker pools in {{site
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
 {: note}
 
-Host auto
-assignment is not available for the {{site.data.keyword.satelliteshort}} location control plane.
+Host autoassignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. Your cluster must be available before it can be assigned.
 {: note}
 
 ### About host labels
@@ -40,7 +39,7 @@ Host auto assignment works by matching requesting labels from worker pools in {{
 Keep in mind the following information about the host labels that are used for auto assignment.
 
 Default host labels
-:    When you attach a host to a {{site.data.keyword.satelliteshort}} location, the host automatically gets labels for `cpu` and `memory` (in bytes). You cannot remove these labels. You can include additional host labels, or update the host metadata later.
+:    When you attach a host to a {{site.data.keyword.satelliteshort}} location, the host automatically gets labels for `cpu` and `memory` (in bytes). You cannot remove these labels. You can include additional host labels, or update the host metadata later. 
 
 Hosts can have more labels than worker pools
 :    For example, your host might have `cpu`, `memory`, and `env` host labels, but the requesting worker pool has only a `cpu` host label. Host auto assignment matches just the `cpu` labels. Note that the reverse does not work. If a worker pool has more labels than a host, the host cannot be auto assigned to the worker pool.
@@ -54,16 +53,19 @@ Matching is exact
 Say that you have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `us-east-1a` and the following host labels.
 - `cpu=4`
 - `env=prod`
+- `os=rhel`
 
 Your {{site.data.keyword.satelliteshort}} location has available (unassigned) hosts with host labels as follows.
-- Host A: `cpu=4, memory=32, env=prod, zone=us-east-1b`
-- Host B: `cpu=4, memory=32, zone=us-east-1a`
-- Host C: `cpu=4, memory=64, env=prod`
+- Host A: `cpu=4, memory=32, env=prod, zone=us-east-1b` `os=rhel`
+- Host B: `cpu=4, memory=32, zone=us-east-1a` `os=rhel`
+- Host C: `cpu=4, memory=64, env=prod` `os=rhel`
+- Host D: `cpu=4, memory=64, env=prod` `os=rhcos`
 
 If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B.
 - Host A meets the CPU and `env=prod` label requests, but can only be assigned in `us-east-1b`. Because the `default` worker pool is only in `us-east-1a`, Host A is not assigned.
 - Host B meets the CPU and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
 - Host C is automatically assigned because it matches the `cpu=4` and `env=prod` host labels, and does not have any zone restrictions. The `memory=64` host label is not considered, because the worker pool does not request a `memory` label.
+- Host D meets the CPU, zone, and `env=prod` label requests, but does not meet the `os` request of `rhel`.
 
 Hosts must be assigned as worker nodes in each zone of the default worker pool in your cluster. If your default worker pool spans multiple zones, ensure that you have hosts with matching labels that can be assigned in each zone.
 {: note}
@@ -105,7 +107,7 @@ Before you begin, make sure that you [attach hosts](/docs/satellite?topic=satell
         Labels      
         app      webserver   
         cpu      4   
-        memory   3874564   
+        memory   3874564
         ...
         ```
         {: screen}

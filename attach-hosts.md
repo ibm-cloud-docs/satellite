@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -32,9 +32,10 @@ Before you begin, make sure that you have created host machines that meet the [m
 
 1. From the [**Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to attach hosts.  
 2. From the **Hosts** tab, click **Attach host**.
-3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. By default, your hosts get a `cpu` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
+3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster. By default, your hosts get a `cpu` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`. 
 4. Enter a file name for your script or use the name that is generated for you.
-5. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
+5. Select **RHEL 7** or **RHCOS** to download the host script for your host system.
+6. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
 
     Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) RHEL package updates. 
     {: note}
@@ -46,37 +47,41 @@ Before you begin, make sure that you have created host machines that meet the [m
     - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
     - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
 
-    **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine.
+### Attaching RHEL hosts to an on-premises data center with the console
+{: #attach-rhel-hosts-console}
 
-    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
-    2. Copy the script from your local machine to your host.
-        ```sh
-        scp -i <filepath_to_key_file> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
-        ```
-        {: pre}        
+To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine.
 
-    3. Log in to your host.
-        ```sh
-        ssh -i <filepath_to_key_file> <username>@<IP_address>
-        ```
-        {: pre}
+1. [Download the host script](#attach-hosts-console) for your location. 
+2. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
+3. Copy the script from your local machine to your host.
+    ```sh
+    scp -i <filepath_to_key_file> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
+    ```
+    {: pre}        
 
-    4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}. 
-    5. Run the script.
-        ```sh
-        sudo nohup bash /tmp/attach.sh &
-        ```
-        {: pre}
+4. Log in to your host.
+    ```sh
+    ssh -i <filepath_to_key_file> <username>@<IP_address>
+    ```
+    {: pre}
 
-    6. Monitor the progress of the registration script.
-        ```sh
-        journalctl -f -u ibm-host-attach
-        ```
-        {: pre}
+5. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
+6. Run the script.
+    ```sh
+    sudo nohup bash /tmp/attach.sh &
+    ```
+    {: pre}
 
-7. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. This process might take a few minutes to complete. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+7. Monitor the progress of the registration script.
+    ```sh
+    journalctl -f -u ibm-host-attach
+    ```
+    {: pre}
 
-8. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
+8. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. This process might take a few minutes to complete. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+
+9. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
 ## Attaching hosts from the CLI
 {: #attach-hosts-cli}
@@ -94,7 +99,7 @@ Before you begin, make sure that you have created host machines that meet the [m
     ibmcloud sat host attach --location <location_name> [-hl "use=satloc"]
     ```
     {: pre}
-
+    
     Example output
     ```sh
     Creating host registration script...
@@ -104,6 +109,8 @@ Before you begin, make sure that you have created host machines that meet the [m
     <filepath_to_script>/register-host_mylocation_123456789.sh
     ```
     {: screen}
+
+
 
     Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) RHEL package updates. 
     {: note}
@@ -116,35 +123,39 @@ Before you begin, make sure that you have created host machines that meet the [m
     - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
     - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
 
-    **On-premises data center**: To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine.
+### Attaching RHEL hosts to an on-premises data center from the CLI
+{: #attach-rhel-hosts-cli}
 
-    1. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
-    2. Copy the script from your local machine to your host.
-        ```sh
-        scp -i <filepath_to_key_file> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
-        ```
-        {: pre}        
+To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine.
 
-    3. Log in to your host.
-        ```sh
-        ssh -i <filepath_to_key_file> <username>@<IP_address>
-        ```
-        {: pre}
+1. [Download the host script](##attach-hosts-cli) for your location. 
+2. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
+3. Copy the script from your local machine to your host.
+    ```sh
+    scp -i <filepath_to_key_file> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
+    ```
+    {: pre}        
 
-    4. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}. 
-    6. Run the script.
-        ```sh
-        sudo nohup bash /tmp/attach.sh &
-        ```
-        {: pre}
+4. Log in to your host.
+    ```sh
+    ssh -i <filepath_to_key_file> <username>@<IP_address>
+    ```
+    {: pre}
 
-    6. Monitor the progress of the registration script.
-        ```sh
-        journalctl -f -u ibm-host-attach
-        ```
-        {: pre}
+5. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}. 
+6. Run the script.
+    ```sh
+    sudo nohup bash /tmp/attach.sh &
+    ```
+    {: pre}
 
-4. Verify that your hosts are attached to your location. Your hosts are not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.redhat_openshift_notm}} cluster which is why hosts show an `unassigned` state without any cluster or worker node information.
+7. Monitor the progress of the registration script.
+    ```sh
+    journalctl -f -u ibm-host-attach
+    ```
+    {: pre}
+
+8. Verify that your hosts are attached to your location. Your hosts are not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.redhat_openshift_notm}} cluster which is why hosts show an `unassigned` state without any cluster or worker node information.
     ```sh
     ibmcloud sat host ls --location <location_name_or_ID>
     ```
@@ -159,7 +170,7 @@ Before you begin, make sure that you have created host machines that meet the [m
     ```
     {: screen}
 
-5. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
+9. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
 
 
