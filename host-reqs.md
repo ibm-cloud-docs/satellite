@@ -36,7 +36,7 @@ Can't meet these host requirements? [Contact {{site.data.keyword.IBM_notm}} Supp
 
 
 
-## RHEL packages and other machine configurations
+## Red Hat Enterprise Linux (RHEL) packages and other machine configurations
 {: #reqs-host-packages}
 
 Hosts must have access to {{site.data.keyword.redhat_notm}} updates and the following packages. 

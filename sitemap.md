@@ -598,7 +598,7 @@ subcollection: satellite
 
 * [Computing characteristics](/docs/satellite?topic=satellite-host-reqs#reqs-host-compute)
 
-* [RHEL packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages)
+* [Red Hat Enterprise Linux (RHEL) packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages)
 
 [Host storage and attached devices](/docs/satellite?topic=satellite-reqs-host-storage#reqs-host-storage)
 

@@ -109,9 +109,7 @@ Before you begin, make sure that you have created host machines that meet the [m
     <filepath_to_script>/register-host_mylocation_123456789.sh
     ```
     {: screen}
-
-
-
+    
     Depending on the provider of the host, you might also need to update the [required RHEL 7 packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. For example, see the [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), or [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) RHEL package updates. 
     {: note}
 
