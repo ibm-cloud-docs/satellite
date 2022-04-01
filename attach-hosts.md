@@ -128,7 +128,7 @@ Before you begin, make sure that you have created host machines that meet the [m
 
 To add host machines that reside in your on-premises data center, you can follow these general steps to run the host registration script on your machine.
 
-1. [Download the host script](##attach-hosts-cli) for your location. 
+1. [Download the host script](#attach-hosts-cli) for your location. 
 2. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
 3. Copy the script from your local machine to your host.
     ```sh
