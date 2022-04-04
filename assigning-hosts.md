@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-04"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host autoassignment, host auto assignment, host labels
 
@@ -59,13 +59,11 @@ Your {{site.data.keyword.satelliteshort}} location has available (unassigned) ho
 - Host A: `cpu=4, memory=32, env=prod, zone=us-east-1b` `os=rhel`
 - Host B: `cpu=4, memory=32, zone=us-east-1a` `os=rhel`
 - Host C: `cpu=4, memory=64, env=prod` `os=rhel`
-- Host D: `cpu=4, memory=64, env=prod` `os=RHCOS`
 
 If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B.
 - Host A meets the CPU and `env=prod` label requests, but can only be assigned in `us-east-1b`. Because the `default` worker pool is only in `us-east-1a`, Host A is not assigned.
 - Host B meets the CPU and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
 - Host C is automatically assigned because it matches the `cpu=4` and `env=prod` host labels, and does not have any zone restrictions. The `memory=64` host label is not considered, because the worker pool does not request a `memory` label.
-- Host D meets the CPU, zone, and `env=prod` label requests, but does not meet the `os` request of `RHEL7`, and so is not assigned.
 
 Hosts must be assigned as worker nodes in each zone of the default worker pool in your cluster. If your default worker pool spans multiple zones, ensure that you have hosts with matching labels that can be assigned in each zone.
 {: note}
