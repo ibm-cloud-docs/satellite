@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-04"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2221,7 +2221,7 @@ subcollection: satellite
 
 [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug#ts-hosts-debug)
 
-[Logging in to a host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login)
+[Logging in to a RHEL host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login)
 
 [Why can't I SSH into my host machines?](/docs/satellite?topic=satellite-ssh-login-denied#ssh-login-denied)
 

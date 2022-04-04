@@ -13,7 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Logging in to a host machine to debug
+# Logging in to a RHEL host machine to debug
 {: #ts-hosts-login}
 
 You might need to log in to your host machine to debug a host issue further.
@@ -28,21 +28,34 @@ You can SSH into the host machine if you did not assign the host to a cluster, o
     ```
     {: pre}
 
-2. Check the various log output files from the host registration and host bootstrapping processes. Replace `<filepath>` with the following files to check in order.
-    ```sh
-    tail <filepath>
-    ```
-    {: pre}
+2. Check the various log output files from the host registration and host bootstrapping processes. Replace `<filepath>` with the following files to check in order. Depending on the issue, certain log files might or might not files be present on the host.
 
     1. The `nohup.out` logs from the host registration attempt.
     2. The `/var/log/firstboot.log` for the first bootstrapping attempt. If the host registration failed, you do not have this file.
     3. The `/tmp/bootstrap/bootstrap_base.log` for the base bootstrapping process, if the first boot was unsuccessful. If the host registration failed, you do not have this file.
+    
+        ```sh
+        tail <filepath>
+        ```
+        {: pre}
 
-3. Run the `journalctl` command when you attempt to attach your host again. For example, 
+3. Run the `journalctl` commands when you attempt to attach your host again to log the systemd service that is causing the issue.
+
+    ```sh
+    journalctl -u ibm-host-agent --no-pager
+    ```
+    {: pre}
+    
+    ```sh
+    journalctl -u ibm-first-boot --no-pager
+    ```
+    {: pre}
+    
     ```sh
     journalctl -u ibm-host-attach --no-pager
     ```
     {: pre}
+   
     
 4. Review the logs for errors. Some common errors include the following messages.
 

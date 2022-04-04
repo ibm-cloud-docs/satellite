@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-04"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -180,7 +180,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Verify that your assignment is created.
     ```sh
-    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
+    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
     ```
     {: pre}
 
@@ -308,7 +308,7 @@ Use the command line to remove a storage assignment.
 
 1. List your storage assignments and find the one that you used for your cluster.
     ```sh
-    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
+    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
     ```
     {: pre}
 

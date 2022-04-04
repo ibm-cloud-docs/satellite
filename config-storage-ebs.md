@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-04-04"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -105,7 +105,7 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 
 3. Verify that your assignment is created.
     ```sh
-    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
+    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
     ```
     {: pre}
 
@@ -379,7 +379,7 @@ Use the CLI to remove a storage configuration.
 
 1. List your storage assignments and find the one that you used for your cluster.
     ```sh
-    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
+    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
     ```
     {: pre}
 
