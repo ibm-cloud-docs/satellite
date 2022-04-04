@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-04"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -75,6 +75,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
+
+    * [April 4](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0422)
+
+        * {{site.data.keyword.IBM_notm}} Spectrum Scale driver
 
 * [March 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar22)
 
@@ -598,7 +604,7 @@ subcollection: satellite
 
 * [Computing characteristics](/docs/satellite?topic=satellite-host-reqs#reqs-host-compute)
 
-* [RHEL packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages)
+* [Red Hat Enterprise Linux (RHEL) packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages)
 
 [Host storage and attached devices](/docs/satellite?topic=satellite-reqs-host-storage#reqs-host-storage)
 
@@ -844,6 +850,8 @@ subcollection: satellite
 
 * [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach)
 
+* [Manually running AWS instances with the CLI](/docs/satellite?topic=satellite-aws#aws-hosts-cli)
+
 * [AWS instance types](/docs/satellite?topic=satellite-aws#aws-instance-types)
 
 * [Security group settings](/docs/satellite?topic=satellite-aws#aws-reqs-secgroup)
@@ -856,7 +864,7 @@ subcollection: satellite
 
 * [Automating your GCP location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-gcp#gcp-template)
 
-* [Manually adding GCP hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-gcp#gcp-host-attach)
+* [Manually adding hosts to {{site.data.keyword.satelliteshort}} in the GCP console](/docs/satellite?topic=satellite-gcp#gcp-host-attach)
 
 * [Network firewall settings](/docs/satellite?topic=satellite-gcp#gcp-reqs-firewall)
 
@@ -887,7 +895,11 @@ subcollection: satellite
 
 * [Attaching hosts with the console](/docs/satellite?topic=satellite-attach-hosts#attach-hosts-console)
 
+    * [Attaching RHEL hosts to an on-premises data center with the console](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts-console)
+
 * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-attach-hosts#attach-hosts-cli)
+
+    * [Attaching RHEL hosts to an on-premises data center from the CLI](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts-cli)
 
 [Assigning hosts to worker pools](/docs/satellite?topic=satellite-assigning-hosts#assigning-hosts)
 
@@ -1322,7 +1334,7 @@ subcollection: satellite
 
 * [Deploying an app that uses your {{site.data.keyword.IBM_notm}} block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
 
-[{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale#config-storage-spectrum-scale)
+[Deprecated {{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale#config-storage-spectrum-scale)
 
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-prereq)
 
@@ -2193,8 +2205,6 @@ subcollection: satellite
 
 * [R0052: Ingress certificate generation issues](/docs/satellite?topic=satellite-ts-locations-debug#R0052)
 
-* [R0057: Outbound traffic to IAM is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0057)
-
 
 ### Locations
 {: #sitemap_locations}
@@ -2219,7 +2229,7 @@ subcollection: satellite
 
 [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug#ts-hosts-debug)
 
-[Logging in to a host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login)
+[Logging in to a RHEL host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login)
 
 [Why can't I SSH into my host machines?](/docs/satellite?topic=satellite-ssh-login-denied#ssh-login-denied)
 

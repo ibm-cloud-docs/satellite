@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -52,11 +52,13 @@ What's next?
 
 The {{site.data.keyword.bpshort}} template helped with the initial creation, but you are in control for subsequent location management actions, such as [attaching more hosts](/docs/satellite?topic=satellite-attach-hosts), [creating {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=openshift-satellite-clusters), or [scaling the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity). If you [remove](/docs/satellite?topic=satellite-host-remove#location-remove-console) your {{site.data.keyword.satelliteshort}} location, make sure to [remove your workspace in {{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-workspace-setup#del-workspace), too.
 
-## Manually adding GCP hosts to {{site.data.keyword.satelliteshort}}
+## Manually adding hosts to {{site.data.keyword.satelliteshort}} in the GCP console
 {: #gcp-host-attach}
 
-You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Google Cloud Platform (GCP).
+You can create your {{site.data.keyword.satelliteshort}} location by using hosts that you added from Google Cloud Platform (GCP).
 {: shortdesc}
+
+
 
 All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
@@ -66,10 +68,10 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add GCP hosts.
 2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
     1. From the **Hosts** tab, click **Attach host**.
-    2. Optional: Enter any host labels that are used later to [automatically assign hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services)](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
+    2. Optional: Enter any host labels that are used later to [automatically assign](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
-3. Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
+3. **RHEL hosts only** Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
     ```sh
     # Enable GCP RHEL package updates
     yum update --disablerepo=* --enablerepo="*" -y
@@ -77,7 +79,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     yum install container-selinux -y
     yum install subscription-manager -y
     ```
-    {: codeblock}  
+    {: codeblock}
 
 4. From the [GCP **Compute Engine** dashboard](https://console.cloud.google.com/compute){: external}, select **Instance templates**.
 5. Click **Create instance template**.
@@ -88,7 +90,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 
     1. Enter a name for your instance template.
     2. In the **Machine configuration** section, select the **Series** and **Machine type** that you want to use. You can select any series that you want, but make sure that the machine type meets the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for CPU and memory.
-    3. In the **Boot disk** section, click **Change** to change the default operating system and boot disk size. Make sure to select Red Hat Enterprise Linux 7 as your operating system and to change your boot disk size to a minimum of 100 GB.
+    3. In the **Boot disk** section, click **Change** to change the default operating system and boot disk size. Make sure to select Red Hat Enterprise Linux 7 as your operating system for Red Hat Enterprise Linux and to change your boot disk size to a minimum of 100 GB.
     4. Optional: If you want your machines to allow HTTP and HTTPS traffic, select **Allow HTTP traffic** and **Allow HTTPS traffic** from the **Firewall** section of your instance template.
     5. Click **Management, security, disks, networking, sole tenancy** to view additional networking and security settings.
     6. In the **Management** tab, locate the **Startup script** field and enter the registration script that you modified earlier.
@@ -101,6 +103,8 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 9. From the actions menu, click **Create VM** to create an instance from your template. You can alternatively click **Create Instance Group** to create an instance group to add multiple instances at the same time. Make sure that you spread your instances across multiple zones for higher availability.
 10. Wait for the instance to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete. You can monitor the progress of the script by reviewing the logs for your instance. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 11. Assign your GCP hosts to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
+
+
 
 ## Network firewall settings
 {: #gcp-reqs-firewall}

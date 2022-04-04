@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-04"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -12,8 +12,10 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.IBM_notm}} Spectrum Scale driver
+# Deprecated {{site.data.keyword.IBM_notm}} Spectrum Scale driver
 {: #config-storage-spectrum-scale}
+
+The {{site.data.keyword.IBM_notm}} Spectrum Scale driver is deprecated as of April 04, 2022. Please reach out to scale@us.ibm.com for further compatibility details and options. 
 
 Set up [{{site.data.keyword.IBM_notm}} Spectrum Scale](https://www.ibm.com/docs/en/spectrum-scale-csi){: external} storage for {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
@@ -215,7 +217,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Verify that your assignment is created.
     ```sh
-    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>) | grep <storage-assignment-name>
+    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
     ```
     {: pre}
 
@@ -425,7 +427,7 @@ Use the CLI to remove a storage configuration.
 
 1. List your storage assignments and find the one that you used for your cluster.
     ```sh
-    ibmcloud sat storage assignment ls (--cluster <cluster_id> | --service-cluster-id <cluster_id>)
+    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
     ```
     {: pre}
 

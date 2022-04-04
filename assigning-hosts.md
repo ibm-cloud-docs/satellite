@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-04"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host autoassignment, host auto assignment, host labels
 
@@ -27,8 +27,7 @@ By default, available hosts are automatically assigned to worker pools in {{site
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
 {: note}
 
-Host auto
-assignment is not available for the {{site.data.keyword.satelliteshort}} location control plane.
+Host autoassignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. Your cluster must be available before it can be assigned.
 {: note}
 
 ### About host labels
@@ -40,7 +39,7 @@ Host auto assignment works by matching requesting labels from worker pools in {{
 Keep in mind the following information about the host labels that are used for auto assignment.
 
 Default host labels
-:    When you attach a host to a {{site.data.keyword.satelliteshort}} location, the host automatically gets labels for `cpu` and `memory` (in bytes). You cannot remove these labels. You can include additional host labels, or update the host metadata later.
+:    When you attach a host to a {{site.data.keyword.satelliteshort}} location, the host automatically gets labels for `cpu` and `memory` (in bytes). You cannot remove these labels. You can include additional host labels, or update the host metadata later. 
 
 Hosts can have more labels than worker pools
 :    For example, your host might have `cpu`, `memory`, and `env` host labels, but the requesting worker pool has only a `cpu` host label. Host auto assignment matches just the `cpu` labels. Note that the reverse does not work. If a worker pool has more labels than a host, the host cannot be auto assigned to the worker pool.
@@ -54,11 +53,12 @@ Matching is exact
 Say that you have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `us-east-1a` and the following host labels.
 - `cpu=4`
 - `env=prod`
+- `os=RHEL7`
 
 Your {{site.data.keyword.satelliteshort}} location has available (unassigned) hosts with host labels as follows.
-- Host A: `cpu=4, memory=32, env=prod, zone=us-east-1b`
-- Host B: `cpu=4, memory=32, zone=us-east-1a`
-- Host C: `cpu=4, memory=64, env=prod`
+- Host A: `cpu=4, memory=32, env=prod, zone=us-east-1b` `os=rhel`
+- Host B: `cpu=4, memory=32, zone=us-east-1a` `os=rhel`
+- Host C: `cpu=4, memory=64, env=prod` `os=rhel`
 
 If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B.
 - Host A meets the CPU and `env=prod` label requests, but can only be assigned in `us-east-1b`. Because the `default` worker pool is only in `us-east-1a`, Host A is not assigned.
@@ -105,7 +105,7 @@ Before you begin, make sure that you [attach hosts](/docs/satellite?topic=satell
         Labels      
         app      webserver   
         cpu      4   
-        memory   3874564   
+        memory   3874564
         ...
         ```
         {: screen}
@@ -179,28 +179,28 @@ Before you begin,
 
 2. Assign at least 3 compute hosts from your location as worker nodes to your {{site.data.keyword.satelliteshort}} control plane or an existing {{site.data.keyword.openshiftlong_notm}} cluster. When you assign the host, {{site.data.keyword.IBM_notm}} bootstraps your machine. This process might take a few minutes to complete. You can choose to assign a host by using the host ID, or you can also define the label that the host must have to be assigned to the location.
 
-    The following example assigns a host by using the host ID.
-    ```sh
-    ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host <host_ID> --worker-pool default --zone <zone>
-    ```
-    {: pre}
+    - The following example assigns a host by using the host ID.
+        ```sh
+        ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host <host_ID> --worker-pool default --zone <zone>
+        ```
+        {: pre}
 
-   The following example assigns a host by using the `use:satcluster` label.
-    ```sh
-    ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satcluster" --worker-pool default --zone us-east-1
-    ```
-    {: pre}
+   - The following example assigns a host by using the `use:satcluster` label.
+        ```sh
+        ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satcluster" --worker-pool default --zone us-east-1
+        ```
+        {: pre}
     
-    | Component             | Description      | 
-    |--------------------|------------------|
-    | `--location <location_name_or_ID>` | Enter the name or ID of the location where you created the cluster. To retrieve the location name or ID, run `ibmcloud sat location ls`.  | 
-    | `--cluster <cluster_name_or_ID>` | Enter the name or ID of the {{site.data.keyword.openshiftlong_notm}} cluster that you created earlier. To retrieve the cluster name or ID, run `ibmcloud ks cluster ls`. If you want to assign hosts to the {{site.data.keyword.satelliteshort}} control plane, you must enter the location ID as your cluster ID. To retrieve the location ID, run `ibmcloud sat location ls`. |
-    | `--host <host_name_or_ID>` | Enter the host ID to assign as worker nodes to the {{site.data.keyword.satelliteshort}} resource. To view the host ID, run `ibmcloud sat host ls --location <location_name>`. You can also use the `--host-label` option to identify the host that you want to assign to your cluster. |
-    | `--host-label <label>` | Enter the label that you want to use to identify the host that you want to assign. The label must be a key-value pair, and must exist on the host machine. When you run this command with the `label` option, the first host that is in an `unassigned` state and matches the label is assigned to your {{site.data.keyword.satelliteshort}} resource. |
-    | `--worker-pool <worker-pool>` | Enter the name of the worker pool where you want to attach your compute hosts. To find available worker pools in your cluster, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`. If you do not specify this option, your compute host is automatically added to the default worker pool. |
-    | `--zone <zone>` | The name of the zone where you want to assign the compute host. To see the zone names for your location, run `ibmcloud sat location get --location` and look for the `Host Zones` field. |
-    {: caption="Table 1. Understanding this command's components" caption-side="top"}
-    {: summary="This table is read from left to right. The first column has the command component. The second column has the description of the command."}
+        | Component             | Description      | 
+        |--------------------|------------------|
+        | `--location <location_name_or_ID>` | Enter the name or ID of the location where you created the cluster. To retrieve the location name or ID, run `ibmcloud sat location ls`.  | 
+        | `--cluster <cluster_name_or_ID>` | Enter the name or ID of the {{site.data.keyword.openshiftlong_notm}} cluster that you created earlier. To retrieve the cluster name or ID, run `ibmcloud ks cluster ls`. If you want to assign hosts to the {{site.data.keyword.satelliteshort}} control plane, you must enter the location ID as your cluster ID. To retrieve the location ID, run `ibmcloud sat location ls`. |
+        | `--host <host_name_or_ID>` | Enter the host ID to assign as worker nodes to the {{site.data.keyword.satelliteshort}} resource. To view the host ID, run `ibmcloud sat host ls --location <location_name>`. You can also use the `--host-label` option to identify the host that you want to assign to your cluster. |
+        | `--host-label <label>` | Enter the label that you want to use to identify the host that you want to assign. The label must be a key-value pair, and must exist on the host machine. When you run this command with the `label` option, the first host that is in an `unassigned` state and matches the label is assigned to your {{site.data.keyword.satelliteshort}} resource. |
+        | `--worker-pool <worker-pool>` | Enter the name of the worker pool where you want to attach your compute hosts. To find available worker pools in your cluster, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`. If you do not specify this option, your compute host is automatically added to the default worker pool. |
+        | `--zone <zone>` | The name of the zone where you want to assign the compute host. To see the zone names for your location, run `ibmcloud sat location get --location` and look for the `Host Zones` field. |
+        {: caption="Table 1. Understanding this command's components" caption-side="top"}
+        {: summary="This table is read from left to right. The first column has the command component. The second column has the description of the command."}
 
 3. Repeat the previous step for all compute hosts that you want to assign as worker nodes to your {{site.data.keyword.satelliteshort}} resource.
 4. Wait a few minutes until the bootstrapping process for all computes hosts is complete and your hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource. All hosts are assigned a cluster, a worker node ID, and an IP address.

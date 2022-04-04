@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-04-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -42,91 +42,91 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     ```
     {: pre}
 
-4. Retrieve the IP address and ID of your machine.
-    * Classic
+4. (RHEL only) Run the host script by following these steps,
+    1. Retrieve the IP address and ID of your machine.
+        * Classic
+            ```sh
+            ibmcloud sl vs list
+            ```
+            {: pre}
+
+        * VPC
+            ```sh
+            ibmcloud is instances
+            ```
+            {: pre}
+
+    2. Retrieve the credentials to log in to your virtual machine.
+        * Classic
+            ```sh
+            ibmcloud sl vs credentials <vm_ID>
+            ```
+            {: pre}
+
+        * VPC
+            ```sh
+            ibmcloud is instance-initialization-values <instance_ID>
+            ```
+            {: pre}
+
+    3. Copy the script from your local machine to the virtual server instance.
         ```sh
-        ibmcloud sl vs list
+        scp <path_to_attachHost.sh> root@<ip_address>:/tmp/attach.sh
         ```
         {: pre}
 
-    * VPC
+        If you use an SSH key to log in, make sure to convert the key to `.key` format and use the following command.
         ```sh
-        ibmcloud is instances
+        scp -i <filepath_to_key_file.key> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
         ```
         {: pre}
 
-5. Retrieve the credentials to log in to your virtual machine.
-    * Classic
+    4. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
         ```sh
-        ibmcloud sl vs credentials <vm_ID>
+        ssh root@<ip_address>
         ```
         {: pre}
 
-    * VPC
+        If you use an SSH key to log in, use the following command.
         ```sh
-        ibmcloud is instance-initialization-values <instance_ID>
+        ssh -i <filepath_to_key_file.key> <username>@<IP_address>
         ```
         {: pre}
 
-6. Copy the script from your local machine to the virtual server instance.
-    ```sh
-    scp <path_to_attachHost.sh> root@<ip_address>:/tmp/attach.sh
-    ```
-    {: pre}
+    5. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
+        ```sh
+        subscription-manager refresh
+        ```
+        {: pre}
 
-    If you use an SSH key to log in, make sure to convert the key to `.key` format and use the following command.
-    ```sh
-    scp -i <filepath_to_key_file.key> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
-    ```
-    {: pre}
+        ```sh
+        subscription-manager repos --enable rhel-server-rhscl-7-rpms
+        subscription-manager repos --enable rhel-7-server-optional-rpms
+        subscription-manager repos --enable rhel-7-server-rh-common-rpms
+        subscription-manager repos --enable rhel-7-server-supplementary-rpms
+        subscription-manager repos --enable rhel-7-server-extras-rpms
+        ```
+        {: pre}
 
-7. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
-    ```sh
-    ssh root@<ip_address>
-    ```
-    {: pre}
+    6. Run the registration script on your machine.
+        ```sh
+        nohup bash /tmp/attach.sh &
+        ```
+        {: pre}
+        
+    7. Monitor the progress of the registration script.
+        ```sh
+        journalctl -f -u ibm-host-attach
+        ```
+        {: pre}
 
-    If you use an SSH key to log in, use the following command.
-    ```sh
-    ssh -i <filepath_to_key_file.key> <username>@<IP_address>
-    ```
-    {: pre}
+    8. Exit the SSH session.  	
+        ```sh
+        exit
+        ```
+        {: pre}
 
-8. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
-    ```sh
-    subscription-manager refresh
-    ```
-    {: pre}
+6. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 
-    ```sh
-    subscription-manager repos --enable rhel-server-rhscl-7-rpms
-    subscription-manager repos --enable rhel-7-server-optional-rpms
-    subscription-manager repos --enable rhel-7-server-rh-common-rpms
-    subscription-manager repos --enable rhel-7-server-supplementary-rpms
-    subscription-manager repos --enable rhel-7-server-extras-rpms
-    ```
-    {: pre}
-
-9. Run the registration script on your machine.
-    ```sh
-    nohup bash /tmp/attach.sh &
-    ```
-    {: pre}
-
-10. Monitor the progress of the registration script.
-    ```sh
-    journalctl -f -u ibm-host-attach
-    ```
-    {: pre}
-
-11. Exit the SSH session.  	
-    ```sh
-    exit
-    ```
-    {: pre}
-
-12. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
-
-13. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
-
+7. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
 

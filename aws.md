@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,6 +19,7 @@ subcollection: satellite
 
 Add Amazon Web Services (AWS) cloud hosts to {{site.data.keyword.satellitelong_notm}}. Review the following host requirements that are specific to hosts that are in the Amazon Web Services cloud. For required access in AWS cloud, see [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws).
 {: shortdesc}
+
 
 ## Automating your AWS location setup with a {{site.data.keyword.bpshort}} template
 {: #aws-template}
@@ -77,15 +78,17 @@ You can create your {{site.data.keyword.satellitelong_notm}} location by using h
 All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
+
+
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add AWS hosts.
 2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
     1. From the **Hosts** tab, click **Attach host**.
-    2. Optional: Enter any host labels that are used later to [automatically assign hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services)](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
+    2. Optional: Enter any host labels that are used later to [automatically assign](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov)) hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` and `memory` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
-3. Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
+3. **RHEL only** Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
     ```sh
     # Enable AWS RHEL package updates
     yum update -y
@@ -95,7 +98,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     echo "repos enabled"
     ```
     {: codeblock}
-
+    
 4. From the [AWS EC2 dashboard](https://console.aws.amazon.com/ec2/v2/home){: external}, go to **Instances** > **Launch Templates**.
 5. Click **Create Launch template** and enter the template details as follows.
 
@@ -103,7 +106,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     {: tip}
 
     1. Enter a name for your launch template.
-    2. In the **Amazon machine image (AMI)** section, make sure to select a supported Red Hat Enterprise Linux 7 operating system, such as RHEL 7.7 that you can find by entering the AMI ID `ami-030e754805234517e`.
+    2. In the **Amazon machine image (AMI)** section, make sure to select a supported Red Hat Enterprise Linux 7 operating system, such as RHEL 7.7 that you can find by entering the AMI ID `ami-030e754805234517e`. 
     3. From the **Instance type** section, select one of the [supported AWS instance types](#aws-instance-types).
     4. From the **Key pair (login)** section, select the pem key that you want to use to log in to your machines later. If you do not have a pem key, create one.
     5. In the **Network settings**, select **Virtual Private Cloud (VPC)** and an existing subnet and a security group that allows network traffic as defined in [Security group settings](#aws-reqs-secgroup). If you do not have a subnet or security group that you want to use, create one.
@@ -132,6 +135,17 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 11. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.   
 12. Assign your AWS hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
 
+## Manually running AWS instances with the CLI
+{: #aws-hosts-cli}
+
+You can use the AWS ClI to run your EC2 instances and attach them to your {{site.data.keyword.satelliteshort}} location. For more information, see the `aws ec2 run-instances` [command reference](https://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html){: external}.
+
+Example command to run AWS EC2 instances.
+
+```sh
+aws ec2 run-instances --count COUNT --instance-type INSTANCE-TYPE --launch-template LaunchTemplateName=AWS-LAUNCH-TEMPLATE --user-data file://ATTACH-SCRIPT-LOCATION 
+```
+{: pre}
 
 ## AWS instance types
 {: #aws-instance-types}
@@ -156,7 +170,7 @@ As described in the [host networking requirements](/docs/satellite?topic=satelli
 
 The following example is a security group that you might create for AWS.
 
-```sh
+```json
 {
 	"Description": "Security group for {{site.data.keyword.satellitelong_notm}} hosts",
 	"GroupName": "Satellite",
@@ -246,7 +260,7 @@ The following example is a security group that you might create for AWS.
 	"VpcId": "<vpc_ID>"
 }
 ```
-{: screen}
+{: codeblock}
 
 For more information, see [Control traffic to resources using security groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html){: external} in the AWS documentation.
 
@@ -272,4 +286,3 @@ Retrieve the Amazon Web Services (AWS) credentials that {{site.data.keyword.sate
 {: #aws-reqs-console-access}
 
 The private IP addresses of your instances are automatically registered and added to your location's DNS record and the cluster's subdomain. This setup prevents users that are not connected to your hosts' private network from accessing the cluster from a local machine or opening the {{site.data.keyword.redhat_openshift_notm}} web console. You must be connected to your hosts' private network, such as through VPN access, to [connect to your cluster and access the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se). Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
-

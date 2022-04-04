@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-01"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -34,7 +34,9 @@ Can't meet these host requirements? [Contact {{site.data.keyword.IBM_notm}} Supp
 - Hostnames can contain only lowercase alphanumeric characters, `-`, or `.`.
 - Hosts must have an ext4 filesystem for the boot disk.
 
-## RHEL packages and other machine configurations
+
+
+## Red Hat Enterprise Linux (RHEL) packages and other machine configurations
 {: #reqs-host-packages}
 
 Hosts must have access to {{site.data.keyword.redhat_notm}} updates and the following packages. 
