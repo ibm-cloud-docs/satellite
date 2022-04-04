@@ -76,6 +76,9 @@ The {{site.data.keyword.bpshort}} template helped with the initial creation, but
 You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Microsoft Azure.
 {: shortdesc}
 
+
+
+
 All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
@@ -92,7 +95,7 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
     2. Optional: Add host labels that are used later to [automatically assign](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) in the location. Labels must be provided as key-value pairs, and must match the request from the service. By default, your hosts get a `cpu` and `memory` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
-3. (RHEL only) Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
+3. **RHEL only** Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
     ```sh
     # Grow the base volume group first
     echo -e "r\ne\ny\nw\ny\ny\n" | gdisk /dev/sda
@@ -117,6 +120,7 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
     echo "repos enabled"
     ```
     {: codeblock}
+
 4. From your local command line, [sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest){: external}.
     ```sh
     az login
@@ -189,7 +193,7 @@ As described in the [host networking requirements](/docs/satellite?topic=satelli
 
 The following example is a security group that you might create for Azure.
 
-```sh
+```json
 "securityRules": [
             {
                 "name": "satellite",
@@ -234,6 +238,7 @@ The following example is a security group that you might create for Azure.
                     "destinationAddressPrefixes": []
                 }
             }
+]
 ```
 {: screen}
 
@@ -272,7 +277,7 @@ Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort
     {: pre}
 
 6. In the output, note the values of the `appID`, `password`, and `tenant` fields.
-    ```sh
+    ```json
     {
     "appId": "<azure-client-id>",
     "displayName": "<service_principal_name>",

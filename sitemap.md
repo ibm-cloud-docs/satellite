@@ -850,6 +850,8 @@ subcollection: satellite
 
 * [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach)
 
+* [Manually running AWS instances with the CLI](/docs/satellite?topic=satellite-aws#aws-hosts-cli)
+
 * [AWS instance types](/docs/satellite?topic=satellite-aws#aws-instance-types)
 
 * [Security group settings](/docs/satellite?topic=satellite-aws#aws-reqs-secgroup)

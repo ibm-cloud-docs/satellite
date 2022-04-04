@@ -78,6 +78,8 @@ You can create your {{site.data.keyword.satellitelong_notm}} location by using h
 All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
+
+
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add AWS hosts.
@@ -96,6 +98,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     echo "repos enabled"
     ```
     {: codeblock}
+    
 4. From the [AWS EC2 dashboard](https://console.aws.amazon.com/ec2/v2/home){: external}, go to **Instances** > **Launch Templates**.
 5. Click **Create Launch template** and enter the template details as follows.
 
@@ -132,6 +135,17 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 11. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.   
 12. Assign your AWS hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
 
+## Manually running AWS instances with the CLI
+{: #aws-hosts-cli}
+
+You can use the AWS ClI to run your EC2 instances and attach them to your {{site.data.keyword.satelliteshort}} location. For more information, see the `aws ec2 run-instances` [command reference](https://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html){: external}.
+
+Example command to run AWS EC2 instances.
+
+```sh
+aws ec2 run-instances --count COUNT --instance-type INSTANCE-TYPE --launch-template LaunchTemplateName=AWS-LAUNCH-TEMPLATE --user-data file://ATTACH-SCRIPT-LOCATION 
+```
+{: pre}
 
 ## AWS instance types
 {: #aws-instance-types}
@@ -156,7 +170,7 @@ As described in the [host networking requirements](/docs/satellite?topic=satelli
 
 The following example is a security group that you might create for AWS.
 
-```sh
+```json
 {
 	"Description": "Security group for {{site.data.keyword.satellitelong_notm}} hosts",
 	"GroupName": "Satellite",
@@ -246,7 +260,7 @@ The following example is a security group that you might create for AWS.
 	"VpcId": "<vpc_ID>"
 }
 ```
-{: screen}
+{: codeblock}
 
 For more information, see [Control traffic to resources using security groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html){: external} in the AWS documentation.
 
