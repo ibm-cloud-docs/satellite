@@ -12,8 +12,10 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.IBM_notm}} Spectrum Scale driver
+# Deprecated {{site.data.keyword.IBM_notm}} Spectrum Scale driver
 {: #config-storage-spectrum-scale}
+
+The {{site.data.keyword.IBM_notm}} Spectrum Scale driver is deprecated as of April 04, 2022. Please reach out to scale@us.ibm.com for further compatibility details and options. 
 
 Set up [{{site.data.keyword.IBM_notm}} Spectrum Scale](https://www.ibm.com/docs/en/spectrum-scale-csi){: external} storage for {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}

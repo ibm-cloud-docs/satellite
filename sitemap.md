@@ -76,6 +76,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
+
+    * [April 4](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0422)
+
+        * {{site.data.keyword.IBM_notm}} Spectrum Scale driver
+
 * [March 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar22)
 
     * [21 March 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2122)
@@ -1326,7 +1332,7 @@ subcollection: satellite
 
 * [Deploying an app that uses your {{site.data.keyword.IBM_notm}} block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
 
-[{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale#config-storage-spectrum-scale)
+[Deprecated {{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale#config-storage-spectrum-scale)
 
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-prereq)
 

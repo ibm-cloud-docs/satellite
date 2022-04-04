@@ -22,6 +22,19 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: shortdesc}
 
 
+## April 2022
+{: #satellite-apr22}
+
+
+### April 4
+{: #satellite-apr0422}
+{: release-note}
+
+{{site.data.keyword.IBM_notm}} Spectrum Scale driver
+:   The [{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale) is now deprecated. Please reach out to scale@us.ibm.com for further compatibility details and options.
+
+
+
 
 ## March 2022
 {: #satellite-mar22}
