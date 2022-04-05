@@ -26,6 +26,7 @@ Before creating region specific firewall rules, make sure to create the general 
 
 
 {{site.data.keyword.satelliteshort}} control plane hosts
+
 * Destination IPs: 52.117.39.146, 169.48.134.66, 169.63.36.210
 * Destination hostnames: `c119.us-south.satellite.cloud.ibm.com`, `c119-1.us-south.satellite.cloud.ibm.com`, `c119-2.us-south.satellite.cloud.ibm.com`, `c119-3.us-south.satellite.cloud.ibm.com`, `c119-e.us-south.satellite.cloud.ibm.com`
 * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767
@@ -35,7 +36,7 @@ Before creating region specific firewall rules, make sure to create the general 
 
 {{site.data.keyword.satelliteshort}} control plane hosts
 * Destination IPs: N/A
-:   **Destination hostnames** `s3.us.cloud-object-storage.appdomain.cloud`
+Destination hostnames: `s3.us.cloud-object-storage.appdomain.cloud`
 * Protocol and ports: HTTPS
 
 ## Allow Link connectors to connect to the Link tunnel server endpoint

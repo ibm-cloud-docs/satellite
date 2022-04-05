@@ -23,8 +23,7 @@ You can add hosts from other cloud providers to your location. For more informat
 Can't meet these host requirements? [Contact {{site.data.keyword.IBM_notm}} Support](/docs/get-support?topic=get-support-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
 {: note}
 
-To check your host set up, you can use the `satellite-host-check` script. For more information, see [Checking your host set up](/docs/satellite?topic=satellite-host-network-check).
-{: tip}
+
 
 ## Computing characteristics
 {: #reqs-host-compute}
