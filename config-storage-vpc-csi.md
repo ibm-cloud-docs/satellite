@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-05"
 
-keywords: satellite storage, vpc, csi, satellite configurations, vpc storage,
+keywords: satellite storage, csi, satellite configurations, block storage,
 
 subcollection: satellite
 

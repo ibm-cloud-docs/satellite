@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-05"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -17,6 +17,8 @@ subcollection: satellite
 
 Before creating region specific firewall rules, make sure to create the general firewall rules for hosts in any region.
 {: shortdesc}
+
+
 
 
 ## Allow control plane worker nodes to communicate with the control plane master
@@ -67,7 +69,7 @@ All {{site.data.keyword.satelliteshort}} hosts
 
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs: N/A
-* Destination hostnames: `icr.io`, `registry.bluemix.net`, `jp.icr.io`
+* Destination hostnames: `icr.io`, `registry.bluemix.net`, `jp.icr.io`, `registry.au-syd.bluemix.net`, `au.icr.io`
 * Protocol and ports: TCP 443
 
 ## Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}

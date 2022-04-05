@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-05"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -18,12 +18,15 @@ subcollection: satellite
 Before creating region specific firewall rules, make sure to create the general firewall rules for hosts in any region.
 {: shortdesc}
 
+
+
 ## Allow control plane worker nodes to communicate with the control plane master
 {: #host-out-cp-dal}
 
 
 
 {{site.data.keyword.satelliteshort}} control plane hosts
+
 * Destination IPs: 52.117.39.146, 169.48.134.66, 169.63.36.210
 * Destination hostnames: `c119.us-south.satellite.cloud.ibm.com`, `c119-1.us-south.satellite.cloud.ibm.com`, `c119-2.us-south.satellite.cloud.ibm.com`, `c119-3.us-south.satellite.cloud.ibm.com`, `c119-e.us-south.satellite.cloud.ibm.com`
 * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767
@@ -33,7 +36,7 @@ Before creating region specific firewall rules, make sure to create the general 
 
 {{site.data.keyword.satelliteshort}} control plane hosts
 * Destination IPs: N/A
-:   **Destination hostnames** `s3.us.cloud-object-storage.appdomain.cloud`
+Destination hostnames: `s3.us.cloud-object-storage.appdomain.cloud`
 * Protocol and ports: HTTPS
 
 ## Allow Link connectors to connect to the Link tunnel server endpoint
