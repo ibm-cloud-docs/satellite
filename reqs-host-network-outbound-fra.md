@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-05"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os, core os
 
@@ -15,6 +15,11 @@ subcollection: satellite
 
 # Frankfurt
 {: #reqs-host-network-outbound-fra}
+
+Before creating region specific firewall rules, make sure to create the general firewall rules for hosts in any region.
+{: shortdesc}
+
+
 
 
 ## Allow control plane worker nodes to communicate with the control plane master

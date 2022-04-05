@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-24"
+lastupdated: "2022-04-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,6 +17,8 @@ subcollection: satellite
 
 Review the following requirements that relate to the network setup of host machines.
 {: shortdesc}
+
+
 
 ## Networking configurations
 {: #reqs-host-network-config}
@@ -47,6 +49,7 @@ In general, do not set any custom networking configurations on your hosts, such 
 {: #reqs-host-network-interface}
 
 - All {{site.data.keyword.satelliteshort}} hosts must use the same default gateway.
+- Host kernels must have IPv6 support enabled. Do not disable IPv6.
 - Hosts can have multiple IPv4 network interfaces. However, the `eth0`, `ens0`, or `bond0` network interface must serve as the default route. To find the default network interface for a host, SSH into the host and run the following command:
     ```sh
     ip route | grep default | awk '{print $5}'
@@ -59,7 +62,7 @@ In general, do not set any custom networking configurations on your hosts, such 
     ```
     {: screen}
 
-- All {{site.data.keyword.satelliteshort}} hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPV4 backend connectivity to the other hosts in the location on the network interface that serves as the default route (`eth0`, `ens0`, or `bond0`).
+- All {{site.data.keyword.satelliteshort}} hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPv4 backend connectivity to the other hosts in the location on the network interface that serves as the default route (`eth0`, `ens0`, or `bond0`).
 
 
 ## Inbound connectivity for requirements {{site.data.keyword.satelliteshort}} hosts

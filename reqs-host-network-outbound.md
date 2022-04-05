@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,6 +20,8 @@ Review the following outbound connectivity requirements for hosts in all regions
 
 In addition to the following general outbound connectivity requirements, hosts must also meet the regional outbound connectivity requirements for the region your location is in.
 {: important}
+
+
 
 
 
