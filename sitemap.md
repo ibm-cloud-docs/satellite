@@ -1504,6 +1504,10 @@ subcollection: satellite
 
 * [Local block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-params-cli)
 
+    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-block#version-49-parameters)
+
+    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-block#versions-46-48-parameters)
+
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
 
 * [Getting help and support](/docs/satellite?topic=satellite-config-storage-local-block#sat-local-block-support)
@@ -1527,6 +1531,10 @@ subcollection: satellite
 * [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-remove-local-file-config)
 
 * [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
+
+    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-file#version-49-parameters)
+
+    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-file#versions-46-48-parameters)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
 
