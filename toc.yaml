@@ -49,6 +49,7 @@ toc:
                     - reqs-host-network-outbound-tor.md
                     - reqs-host-network-outbound-wdc.md
               - host-latency-test.md
+              - host-network-check.md
               - managed-services.md
         - topicgroup:
             label: Creating locations

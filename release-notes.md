@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-04-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -26,9 +26,15 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-apr22}
 
 
+### 6 April 2022
+{: #satellite-apr0522}
+{: release-note}
+
+**New!** Check your host setup before attaching hosts to your location.
+:   You can now use the `sat-host-check` to verify your hosts meets the requirements for {{site.data.keyword.satelliteshort}}. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 
 
-### April 4
+### 4 April 2022
 {: #satellite-apr0422}
 {: release-note}
 

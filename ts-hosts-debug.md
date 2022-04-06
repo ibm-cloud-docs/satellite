@@ -21,6 +21,9 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
 {: shortdesc}
 
 
+To check your host set up, you can use the `satellite-host-check` script. For more information, see [Checking your host set up](/docs/satellite?topic=satellite-host-network-check).
+{: tip}
+
 
 1. Review the health and status of your hosts. From the CLI, list your hosts in a location. From the console, click your location, and then click the **Hosts** tab.
     ```sh
