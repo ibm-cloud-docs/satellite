@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-04-06"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -18,6 +18,9 @@ subcollection: satellite
 Before creating region specific firewall rules, make sure to create the general firewall rules for hosts in any region.
 {: shortdesc}
 
+
+To check your host set up, you can use the `satellite-host-check` script. For more information, see [Checking your host set up](/docs/satellite?topic=satellite-host-network-check).
+{: tip}
 
 
 ## Allow control plane worker nodes to communicate with the control plane master

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-04-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,6 +18,9 @@ subcollection: satellite
 Review the following requirements that relate to the network setup of host machines.
 {: shortdesc}
 
+
+To check your host set up, you can use the `satellite-host-check` script. For more information, see [Checking your host set up](/docs/satellite?topic=satellite-host-network-check).
+{: tip}
 
 
 ## Networking configurations

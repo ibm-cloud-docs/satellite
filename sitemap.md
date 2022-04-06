@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-06"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -78,7 +78,11 @@ subcollection: satellite
 
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
 
-    * [April 4](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0422)
+    * [6 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0522)
+
+        * **New!** Check your host setup before attaching hosts to your location.
+
+    * [4 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0422)
 
         * {{site.data.keyword.IBM_notm}} Spectrum Scale driver
 
@@ -791,6 +795,8 @@ subcollection: satellite
 
 * [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr)
 
+[Checking your host setup](/docs/satellite?topic=satellite-host-network-check#host-network-check)
+
 [Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services#managed-services)
 
 
@@ -1498,6 +1504,10 @@ subcollection: satellite
 
 * [Local block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-params-cli)
 
+    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-block#version-49-parameters)
+
+    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-block#versions-46-48-parameters)
+
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
 
 * [Getting help and support](/docs/satellite?topic=satellite-config-storage-local-block#sat-local-block-support)
@@ -1521,6 +1531,10 @@ subcollection: satellite
 * [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-remove-local-file-config)
 
 * [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
+
+    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-file#version-49-parameters)
+
+    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-file#versions-46-48-parameters)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
 
