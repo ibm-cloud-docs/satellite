@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-23"
+lastupdated: "2022-04-07"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference
 
@@ -31,6 +31,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.394 | 7 April 2022 | Adds the `ibmcloud sat location dns get` command. |
 | 1.0.384 | 21 March 2022 | Adds Beta command to [list available {{site.data.keyword.satelliteshort}} Mesh versions](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-versions). |
 | 1.0.374 | 24 Feb 2022 | - Removes the default zone in the `ibmcloud ks cluster create satellite` command.  \n - Fixes a routing issue for the `ibmcloud sat storage assignment create --cluster` and the `ibmcloud sat storage assignment ls --cluster` commands. | 
 | 1.0.372 | 18 Feb 2022 | 1. Updates the `ibmcloud ks location get` command output to indicate whether the location has IaaS provider credentials stored.  \n 2. Updates the `ibmcloud ks storage assignment ls` command to include the `--config` flag option, allowing you to list only storage assignments created with the specified configuration.  |

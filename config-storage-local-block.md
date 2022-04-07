@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-07"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -26,6 +26,8 @@ When you create a local block storage configuration, you specify the local block
 
 Before you can create a local block storage configuration, you must identify the worker nodes in your clusters that have the required available disks. Then, label these worker nodes so that the local storage drivers are installed on only these worker nodes.
 
+1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
+1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
     ```sh

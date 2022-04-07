@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-07"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1349,7 +1349,45 @@ ibmcloud sat location create --managed-from wdc --name mylocation
 ```
 {: pre}
 
+### `ibmcloud sat location dns get`
+{: #location-dns-get}
 
+View the details of a registered subdomain in a Satellite location.
+{: shortdesc}
+
+```sh
+ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN [--output OUTPUT] [-q]
+```
+{: pre}
+
+
+#### Minimum required permissions
+{: #location-dns-get-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #location-dns-get-command-options}
+
+`--location LOCATION`
+:    Required. Enter the ID or name of the location that you want to retrieve DNS record for. To retrieve the location ID or name, run `ibmcloud sat location ls`.
+
+`--subdomain SUBDOMAIN`
+:    Required. Enter the ID or name of the subdomain that you want to retrieve DNS record for. To list existing subdomains, run `ibmcloud sat location dns ls`.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #location-get-example}
+
+```sh
+ibmcloud sat location dns get --location aaaaaaaa1111a1aaaa11a --subdomain s1b9782f9f75feeb8a5a4-d683ff82e51c94176a53d
+```
+{: pre}
 
 ### `ibmcloud sat location dns ls`
 {: #location-dns-ls}
@@ -2139,6 +2177,9 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT --group GROUP --n
 Create a {{site.data.keyword.satelliteshort}} storage configuration that you can assign to your clusters to install storage drivers in your clusters.
 {: shortdesc}
 
+Before you can use storage templates and configurations to manage your storage resources across locations and clusters, make sure you [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+{: note}
+
 ```sh
 ibmcloud sat storage config create --location LOCATION --name NAME --template-name NAME --template-version VERSION [--param PARAM ...] [-q] [--source-branch BRANCH] [--source-org ORG]
 ```
@@ -2319,7 +2360,7 @@ ibmcloud sat storage config sc add --config-name CONFIG --name NAME [--param PAR
 :    Required. The name of the storage configuration that you want to add a storage class to. To list {{site.data.keyword.satelliteshort}} storage configurations, run `ibmcloud sat storage config ls`.
 
 `--name`
-:    Required. The name of the custom storage class that you wand to add to your configuration.
+:    Required. The name of the custom storage class that you want to add to your configuration.
 
 `--param`
 :    Optional. The custom parameters to provide to the storage class. Parameters are passed as KEY=VALUE pairs. You can pass multiple parameters by specifying the `--param` option multiple times.

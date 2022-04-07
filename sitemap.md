@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -820,7 +820,7 @@ subcollection: satellite
 
 * [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual)
 
-    * [Creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
+    * [Manually creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
 
     * [Creating locations from the CLI](/docs/satellite?topic=satellite-locations#locations-create-cli)
 
@@ -1196,6 +1196,8 @@ subcollection: satellite
 
 * [What are the benefits of using templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-benefits)
 
+* [I want to deploy services that consume storage, which deployment option should I use?](/docs/satellite?topic=satellite-sat-storage-template-ov#i-want-to-deploy-services-that-consume-storage,-which-deployment-option-should-i-use?)
+
 * [How do storage templates work?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-flow)
 
 * [Which storage providers have {{site.data.keyword.satelliteshort}} storage templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-ov-providers)
@@ -1397,6 +1399,8 @@ subcollection: satellite
 
 [NetApp Trident Operator](/docs/satellite?topic=satellite-config-storage-netapp-trident#config-storage-netapp-trident)
 
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-storage-netapp-trident-prereq)
+
 * [Creating a NetApp Trident storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-storage-netapp-cli)
 
 * [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp)
@@ -1430,6 +1434,8 @@ subcollection: satellite
 * [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#sat-nas-2104-support)
 
 [NetApp ONTAP-NAS 20.07](/docs/satellite?topic=satellite-config-storage-netapp-nas#config-storage-netapp-nas)
+
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-nas-pre)
 
 * [Creating a NetApp ONTAP-NAS storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-cli-nas)
 
@@ -1466,6 +1472,8 @@ subcollection: satellite
 * [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-san-2104-support)
 
 [NetApp ONTAP-SAN 20.07](/docs/satellite?topic=satellite-config-storage-netapp#config-storage-netapp)
+
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-san-prereq)
 
 * [Creating a NetApp Trident SAN storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-cli-san)
 
@@ -1597,38 +1605,6 @@ subcollection: satellite
     * [Version 4.7 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-47-params)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-sc-ref)
-
-[Storage class reference](/docs/satellite?topic=satellite-storage-class-ref#storage-class-ref)
-
-* [AWS EBS](/docs/satellite?topic=satellite-storage-class-ref#ebs-ref)
-
-* [AWS EFS](/docs/satellite?topic=satellite-storage-class-ref#efs-ref)
-
-* [Azure Disk](/docs/satellite?topic=satellite-storage-class-ref#azure-disk-ref)
-
-* [Azure File](/docs/satellite?topic=satellite-storage-class-ref#azure-file-ref)
-
-* [Google Compute Engine](/docs/satellite?topic=satellite-storage-class-ref#google-csi-ref)
-
-* [Local block storage](/docs/satellite?topic=satellite-storage-class-ref#local-block-ref)
-
-* [Local file storage](/docs/satellite?topic=satellite-storage-class-ref#local-file-ref)
-
-* [NetApp ONTAP-NAS 21.04](/docs/satellite?topic=satellite-storage-class-ref#netapp-nas-ref-2104)
-
-* [NetApp ONTAP-NAS 20.07](/docs/satellite?topic=satellite-storage-class-ref#netapp-nas-ref)
-
-* [NetApp ONTAP-SAN 21.04](/docs/satellite?topic=satellite-storage-class-ref#netapp-san-ref-2104)
-
-* [NetApp ONTAP-SAN 20.07](/docs/satellite?topic=satellite-storage-class-ref#netapp-san-ref)
-
-* [OpenShift Data Foundation for local volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-local-ref)
-
-* [OpenShift Data Foundation for remote volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-remote-ref)
-
-* [{{site.data.keyword.IBM_notm}} Spectrum Scale](/docs/satellite?topic=satellite-storage-class-ref#spec-scale-sc-ref)
-
-* [{{site.data.keyword.IBM_notm}} VPC block storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-vpc-csi-sc-ref)
 
 
 ## Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions
@@ -1883,6 +1859,8 @@ subcollection: satellite
 
     * [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create)
 
+    * [`ibmcloud sat location dns get`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-get)
+
     * [`ibmcloud sat location dns ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-ls)
 
     * [`ibmcloud sat location dns register`](/docs/satellite?topic=satellite-satellite-cli-reference#location-dns-register)
@@ -2112,6 +2090,43 @@ subcollection: satellite
 [{{site.data.keyword.satellitelong_notm}} notices](/docs/satellite?topic=satellite-sat-notices#sat-notices)
 
 * [Creative Commons Attribution Share Alike 4.0 Generic](/docs/satellite?topic=satellite-sat-notices#cc-40-generic)
+
+
+## Storage class reference
+{: #sitemap_storage_class_reference}
+
+
+[Storage class reference](/docs/satellite?topic=satellite-storage-class-ref#storage-class-ref)
+
+* [AWS EBS](/docs/satellite?topic=satellite-storage-class-ref#ebs-ref)
+
+* [AWS EFS](/docs/satellite?topic=satellite-storage-class-ref#efs-ref)
+
+* [Azure Disk](/docs/satellite?topic=satellite-storage-class-ref#azure-disk-ref)
+
+* [Azure File](/docs/satellite?topic=satellite-storage-class-ref#azure-file-ref)
+
+* [Google Compute Engine](/docs/satellite?topic=satellite-storage-class-ref#google-csi-ref)
+
+* [Local block storage](/docs/satellite?topic=satellite-storage-class-ref#local-block-ref)
+
+* [Local file storage](/docs/satellite?topic=satellite-storage-class-ref#local-file-ref)
+
+* [NetApp ONTAP-NAS 21.04](/docs/satellite?topic=satellite-storage-class-ref#netapp-nas-ref-2104)
+
+* [NetApp ONTAP-NAS 20.07](/docs/satellite?topic=satellite-storage-class-ref#netapp-nas-ref)
+
+* [NetApp ONTAP-SAN 21.04](/docs/satellite?topic=satellite-storage-class-ref#netapp-san-ref-2104)
+
+* [NetApp ONTAP-SAN 20.07](/docs/satellite?topic=satellite-storage-class-ref#netapp-san-ref)
+
+* [OpenShift Data Foundation for local volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-local-ref)
+
+* [OpenShift Data Foundation for remote volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-remote-ref)
+
+* [{{site.data.keyword.IBM_notm}} Spectrum Scale](/docs/satellite?topic=satellite-storage-class-ref#spec-scale-sc-ref)
+
+* [{{site.data.keyword.IBM_notm}} VPC block storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-vpc-csi-sc-ref)
 
 
 ## FAQs

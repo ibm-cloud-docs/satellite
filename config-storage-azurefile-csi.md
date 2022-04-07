@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-07"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file
 
@@ -31,14 +31,18 @@ The Azure File CSI driver template for {{site.data.keyword.satelliteshort}} is c
 Set up [Azure File storage](https://docs.microsoft.com/en-us/azure/aks/azure-files-csi){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
+
 To use the Azure File CSI driver storage template, complete the following tasks: 
 
 1. Create an Azure location by using the [location template](/docs/satellite?topic=satellite-azure) or manually [adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach). 
     If you choose to manually assign hosts, you must [label your worker nodes](#azure-file-label-nodes) before creating your storage configuration.
     {: important}
     
-2. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure.
-3. [Create your configuration file](#sat-storage-azure-file-csi-cli).
+1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+
+1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure.
+
+1. [Create your configuration file](#sat-storage-azure-file-csi-cli).
 
 ### Optional: Labeling your worker nodes
 {: #azure-file-label-nodes}
