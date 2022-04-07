@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -820,7 +820,7 @@ subcollection: satellite
 
 * [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual)
 
-    * [Creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
+    * [Manually creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
 
     * [Creating locations from the CLI](/docs/satellite?topic=satellite-locations#locations-create-cli)
 
