@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-07"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -24,11 +24,14 @@ Before you can decide what type of storage is the right solution for your {{site
 You can configure storage on {{site.data.keyword.satelliteshort}} by using one of the provided storage configuration templates or by manually installing your own storage drivers.
 {: shortdesc}
 
-Automatic installation with templates
-:   You can create storage configurations by [using the {{site.data.keyword.satelliteshort}} storage template for your storage provider](#storage-template-ov-providers). After you create a storage configuration by using a template, you can assign your storage configuration to your clusters. By using storage templates, you can create storage configurations that can be consistently assigned across your clusters.
+Before you can use storage templates and configurations to manage your storage resources across locations and clusters, make sure you [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig) in your location.
+{: note}
 
-Manual installation
-:   You can also bring your own storage drivers to {{site.data.keyword.satelliteshort}} by installing them from OperatorHub, installing Helm charts, creating configurations, or by using your preferred method of deploying images to your clusters including images and drivers from various {{site.data.keyword.cloud_notm}} storage and partner solutions. Bringing your own storage driver is functionally supported, but you are responsible for the entire lifecycle operations, installation, troubleshooting, and support.
+Automated deployments across clusters with {{site.data.keyword.satelliteshort}} storage templates
+:   You can create storage configurations by [using the {{site.data.keyword.satelliteshort}} storage template for the storage provider or driver](#storage-template-ov-providers) that you want to use. After you create a storage configuration by using a template, you can assign your storage configuration to your clusters or services. By using storage templates, you can create storage configurations that can be consistently assigned, updated, and managed across the clusters, service clusters, and cluster groups in your location.
+
+Manual installation of operators, drivers, and plug-ins
+:   You can also bring your own storage drivers to {{site.data.keyword.satelliteshort}} by installing them from OperatorHub, installing Helm charts, creating configurations, or by using your preferred method of deploying images to your clusters including images and drivers from various {{site.data.keyword.cloud_notm}} storage and partner solutions. Bringing your own storage driver is functionally supported, but you are responsible for the entire lifecycle operations, installation, troubleshooting, and support. Note that bringing your own drivers or operators to your {{site.data.keyword.satelliteshort}} clusters is possible, if you want to deploy services that use storage make sure you use one of the provided storage templates.
 
 
 ## What are the benefits of using templates?
@@ -41,15 +44,21 @@ The {{site.data.keyword.satelliteshort}} storage templates are provided and test
 
 When you use a {{site.data.keyword.satelliteshort}} storage template to create a configuration, you include the details for the storage provider that you want to use. Each template contains a set of parameters that is specific to the storage provider. These parameters include things like credentials, device information, worker nodes, and more. After you use a template to create a storage configuration, you can reuse that configuration to assign storage across your {{site.data.keyword.satelliteshort}} clusters.
 
-| Feature | {{site.data.keyword.satelliteshort}} storage templates | Bring your own drivers |
+You can also quickly update the configuration parameters and apply them automatically across clusters, service clusters, and cluster groups in your locations.
+
+| Feature or benefit | {{site.data.keyword.satelliteshort}} storage templates | Bring your own drivers |
 | --- | --- | --- |
-| Integrated with the {{site.data.keyword.satelliteshort}} interface. | ![Feature available.](images/icon-checkmark-filled.svg) |  |
-| Quickly and consistently install storage drivers across multiple clusters. | ![Feature available.](images/icon-checkmark-filled.svg) |  |
-| Repeatable, site-specific or storage-specific configurations. | ![Feature available.](images/icon-checkmark-filled.svg) |  |
-| Certified and tested with {{site.data.keyword.satelliteshort}}. | ![Feature available.](images/icon-checkmark-filled.svg) |  |
+| Integrated with the {{site.data.keyword.satelliteshort}} interface. | Yes | No |
+| Quickly and consistently install storage drivers across multiple clusters. | Yes| No |
+| Repeatable, site-specific or storage-specific configurations. | Yes | No |
+| Certified and tested with {{site.data.keyword.satelliteshort}}. | Yes| No |
 {: caption="Comparison of supported features between using {{site.data.keyword.satelliteshort}} storage templates and bringing your own storage drivers" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is a description of the feature. The second column is the feature support on Satellite. The third column is the feature support for bring your own drivers."}
 
+## I want to deploy services that consume storage, which deployment option should I use?
+{: storage-template-services}
+
+Since {{site.data.keyword.satelliteshort}} storage templates are supported by {{site.data.keyword.cloud_notm}} and the configurations that you create by deploying templates can be used across your {{site.data.keyword.satelliteshort}} clusters, service clusters, and cluster groups, templates are the preferred option when setting up storage for services in {{site.data.keyword.satelliteshort}}.
 
 ## How do storage templates work?
 {: #storage-template-flow}
@@ -73,15 +82,4 @@ The following image depicts the workflow for creating a {{site.data.keyword.sate
 You can create a {{site.data.keyword.satelliteshort}} storage configuration by using a template for the storage provider that you want to use. If your preferred storage provider does not have a template, you can [create your own configuration template](https://github.com/{{site.data.keyword.IBM_notm}}/ibm-satellite-storage){: external} or you can manually deploy storage drivers. The following list includes the storage templates are currently available to deploy to your {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
 
-* [Amazon Elastic Block Storage (EBS)](/docs/satellite?topic=satellite-config-storage-ebs)
-* [Amazon Elastic File System (EFS)](/docs/satellite?topic=satellite-config-storage-efs)
-* **Deprecated** [{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale)
-* [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi)
-* [NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp-trident)
-* [NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas)
-* [NetApp ONTAP-SAN](/docs/satellite?topic=satellite-config-storage-netapp)
-* [Red Hat Local Storage Operator - Block](/docs/satellite?topic=satellite-config-storage-local-block)
-* [Red Hat Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file)
-* [Red Hat OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-odf-local)
-* [Red Hat OpenShift Data Foundation using remote volumes](/docs/satellite?topic=satellite-config-storage-odf-remote)
-* [Google Compute Engine persistent disk CSI driver](/docs/satellite?topic=satellite-config-storage-gcp-csi)
+For a list of available storage templates and storage classes, review the [site map](https://cloud.ibm.com/docs/satellite?topic=satellite-sitemap#sitemap_storage-class-ref).

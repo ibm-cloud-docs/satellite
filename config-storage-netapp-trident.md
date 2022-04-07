@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-07"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -21,7 +21,11 @@ You must deploy the NetApp Trident template to your clusters before you can crea
 {: important}
 
 
+## Prerequisites
+{: #sat-storage-netapp-trident-prereq}
 
+1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
+1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 
 ## Creating a NetApp Trident storage configuration in the command line
 {: #sat-storage-netapp-cli}

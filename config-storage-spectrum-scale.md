@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-07"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -52,7 +52,8 @@ Multiple volume access modes
 
 Complete the following steps, but do not create an {{site.data.keyword.cloud_notm}} Spectrum Scale cluster.
 {: shortdesc}
-
+1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
+1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 1. [Follow the steps to install Spectrum Scale as root](https://www.ibm.com/docs/en/spectrum-scale/5.1.0?topic=isslndp-manually-installing-spectrum-scale-software-packages-linux-nodes){: external} and make sure that you install all the required packages by running the following command.
     ```sh
     yum install -y kernel-devel cpp gcc gcc-c++ binutils python3

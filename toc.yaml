@@ -132,7 +132,6 @@ toc:
                     - config-storage-local-file.md
                     - config-storage-odf-local.md
                     - config-storage-odf-remote.md
-              - storage-class-ref.md
         - sg-usecase.md
         - topicgroup:
             label: Enhancing security
@@ -165,6 +164,7 @@ toc:
         - responsibilities.md
         - ha.md
         - sat-notices.md
+        - storage-class-ref.md
   - navgroup:
       id: help
       topics:

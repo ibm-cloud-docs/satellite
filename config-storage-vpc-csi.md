@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-05"
+lastupdated: "2022-04-07"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -24,7 +24,9 @@ The {{site.data.keyword.block_storage_is_short}} Container Storage Interface (CS
 ## Prerequisites
 {: #sat-storage-vpc-csi-prereq}
 
-[Create an API key for access to your clusters](https://cloud.ibm.com/iam/apikeys){: external}
+1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
+1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+1. [Create an API key for access to your clusters](https://cloud.ibm.com/iam/apikeys){: external}
 
 
 ## Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line
