@@ -1349,7 +1349,45 @@ ibmcloud sat location create --managed-from wdc --name mylocation
 ```
 {: pre}
 
+### `ibmcloud sat location dns get`
+{: #location-dns-get}
 
+View the details of a registered subdomain in a Satellite location.
+{: shortdesc}
+
+```sh
+ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN [--output OUTPUT] [-q]
+```
+{: pre}
+
+
+#### Minimum required permissions
+{: #location-dns-get-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Location** resource in the {{site.data.keyword.satelliteshort}} location. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #location-dns-get-command-options}
+
+`--location LOCATION`
+:    Required. Enter the ID or name of the location that you want to retrieve DNS record for. To retrieve the location ID or name, run `ibmcloud sat location ls`.
+
+`--subdomain SUBDOMAIN`
+:    Required. Enter the ID or name of the subdomain that you want to retrieve DNS record for. To list existing subdomains, run `ibmcloud sat location dns ls`.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #location-get-example}
+
+```sh
+ibmcloud sat location dns get --location aaaaaaaa1111a1aaaa11a --subdomain s1b9782f9f75feeb8a5a4-d683ff82e51c94176a53d
+```
+{: pre}
 
 ### `ibmcloud sat location dns ls`
 {: #location-dns-ls}
