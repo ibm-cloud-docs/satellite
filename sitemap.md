@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-08"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2233,6 +2233,10 @@ subcollection: satellite
 * [R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues](/docs/satellite?topic=satellite-ts-locations-debug#R0050)
 
 * [R0052: Ingress certificate generation issues](/docs/satellite?topic=satellite-ts-locations-debug#R0052)
+
+* [R0056: Pod status stuck in `terminating`](/docs/satellite?topic=satellite-ts-locations-debug#R0056)
+
+* [R0057: Outbound traffic to IAM is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0057)
 
 
 ### Locations

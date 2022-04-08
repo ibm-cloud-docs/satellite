@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -400,6 +400,46 @@ Location message
 :    Ingress certificates have not been generated for the location endpoints.
 
 Steps to resolve
-:    {{site.data.keyword.cloud_notm}} Support is notified and is working to resolve the issue. Try again later. 
+:    {{site.data.keyword.cloud_notm}} Support is notified and is working to resolve the issue. Try again later.
+
+
+## R0056: Pod status stuck in `terminating`
+{: #R0056}
+
+Location message
+:    Pods have been stuck in a terminating state on the location control plane node for over an hour.
+
+Steps to resolve
+:    Pods that remain in a terminating state for an hour or more indicate that the location control plane is not healthy. Follow the steps to replace the location control plane hosts.
+
+When you update or replace control plane hosts, **do not assign or remove multiple hosts at the same time** as doing so may break the control plane. You must wait for a host assignment or removal to complete before assigning or removing another host.  \n To avoid possible service disruptions, make sure you attach and assign additional hosts to the control plane before removing any hosts.
+{: important}
+
+1. For each host you want to remove from the control plane, [attach an additional host](/docs/satellite?topic=satellite-attach-hosts).
+2. [Assign the newly-attached hosts](/docs/satellite?topic=satellite-attach-hosts) to your location. Make sure that you only assign hosts one at a time and that each assignment completes before you assign another host.  
+3. [Remove the original hosts from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove). Make sure that you only remove hosts one at a time and that each removal completes before you remove another host. 
+
+For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0056` error logs](docs/satellite?topic=satellite-health#logs-error).
+
+## R0057: Outbound traffic to IAM is failing
+{: #R0057}
+
+Location message
+:    Outbound traffic to IBM Cloud IAM is failing. To ensure that all host requirements are met, see [Host system requirements](/docs/satellite?topic=satellite-host-reqs). More information is available in the IBM Cloud Platform Logs. If the issue persists, contact IBM Cloud Support and include your Satellite location ID.
+
+Steps to resolve
+:    Check the health status and ensure that the host system requirements are met.
+
+1. Run the following command to check the health status. 
+
+    ```sh
+    curl https://iam.cloud.ibm.com/healthz 
+    ```
+    {: pre}
+
+1. If the output from the previous step indicates a failure, check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs). 
+1. If you have met all of the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can get your location ID by running the `ibmcloud sat location ls` command.
+
+For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0057` error logs](docs/satellite?topic=satellite-health#logs-error).
 
 
