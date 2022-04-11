@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-04-11"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -78,7 +78,11 @@ subcollection: satellite
 
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
 
-    * [6 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0522)
+    * [11 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1122)
+
+        * **New! Support for Red Hat CoreOS**
+
+    * [6 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0622)
 
         * **New!** Check your host setup before attaching hosts to your location.
 
@@ -582,6 +586,8 @@ subcollection: satellite
 
     * [Plan your host systems](/docs/satellite?topic=satellite-infrastructure-plan#infra-plan-compatible)
 
+* [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os)
+
 * [Deciding how to create your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#create-options)
 
     * [On-premises infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-onprem)
@@ -607,6 +613,8 @@ subcollection: satellite
 [Host system requirements](/docs/satellite?topic=satellite-host-reqs#host-reqs)
 
 * [Computing characteristics](/docs/satellite?topic=satellite-host-reqs#reqs-host-compute)
+
+* [Red Hat CoreOS (RHCOS) packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages-rhcos)
 
 * [Red Hat Enterprise Linux (RHEL) packages and other machine configurations](/docs/satellite?topic=satellite-host-reqs#reqs-host-packages)
 
@@ -872,6 +880,8 @@ subcollection: satellite
 
 * [Manually adding hosts to {{site.data.keyword.satelliteshort}} in the GCP console](/docs/satellite?topic=satellite-gcp#gcp-host-attach)
 
+* [Manually ordering hosts with the gcloud CLI](/docs/satellite?topic=satellite-gcp#gcp-manual-cli)
+
 * [Network firewall settings](/docs/satellite?topic=satellite-gcp#gcp-reqs-firewall)
 
 * [Google Cloud Platform credentials](/docs/satellite?topic=satellite-gcp#infra-creds-gcp)
@@ -903,9 +913,13 @@ subcollection: satellite
 
     * [Attaching RHEL hosts to an on-premises data center with the console](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts-console)
 
+    * [Attaching RHCOS hosts to an on-premises data center with the console](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts-console)
+
 * [Attaching hosts from the CLI](/docs/satellite?topic=satellite-attach-hosts#attach-hosts-cli)
 
     * [Attaching RHEL hosts to an on-premises data center from the CLI](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts-cli)
+
+    * [Attaching RHCOS hosts to an on-premises data center from the CLI](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts-cli)
 
 [Assigning hosts to worker pools](/docs/satellite?topic=satellite-assigning-hosts#assigning-hosts)
 
@@ -2263,6 +2277,8 @@ subcollection: satellite
 [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug#ts-hosts-debug)
 
 [Logging in to a RHEL host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login)
+
+[Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos#ts-hosts-login-rhcos)
 
 [Why can't I SSH into my host machines?](/docs/satellite?topic=satellite-ssh-login-denied#ssh-login-denied)
 

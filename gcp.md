@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,6 +18,9 @@ subcollection: satellite
 
 Learn how you can set up an {{site.data.keyword.satellitelong_notm}} location with virtual instances that you created in Google Cloud Platform (GCP).
 {: shortdesc}
+
+If your hosts are running Red Hat CoreOS (RHCOS), you must manually attach them to your location.
+{: note}
 
 ## Automating your GCP location setup with a {{site.data.keyword.bpshort}} template
 {: #gcp-template}
@@ -59,6 +62,9 @@ You can create your {{site.data.keyword.satelliteshort}} location by using hosts
 {: shortdesc}
 
 
+If you want to use Red Hat CoreOS (RHCOS) hosts in your location, provide your RHCOS image file to your Google account. For more information, see [Creating custom images](https://cloud.google.com/compute/docs/images/create-delete-deprecate-private-images){: external}. To find RHCOS images, see the list of [available images](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/). Note that you must use at least version 4.9.
+{: important}
+
 
 All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
@@ -90,7 +96,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 
     1. Enter a name for your instance template.
     2. In the **Machine configuration** section, select the **Series** and **Machine type** that you want to use. You can select any series that you want, but make sure that the machine type meets the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for CPU and memory.
-    3. In the **Boot disk** section, click **Change** to change the default operating system and boot disk size. Make sure to select Red Hat Enterprise Linux 7 as your operating system for Red Hat Enterprise Linux and to change your boot disk size to a minimum of 100 GB.
+    3. In the **Boot disk** section, click **Change** to change the default operating system and boot disk size. Make sure to select Red Hat Enterprise Linux 7 as your operating system for Red Hat Enterprise Linux or the Red Hat CoreOS image that you provided earlier and to change your boot disk size to a minimum of 100 GB.
     4. Optional: If you want your machines to allow HTTP and HTTPS traffic, select **Allow HTTP traffic** and **Allow HTTPS traffic** from the **Firewall** section of your instance template.
     5. Click **Management, security, disks, networking, sole tenancy** to view additional networking and security settings.
     6. In the **Management** tab, locate the **Startup script** field and enter the registration script that you modified earlier.
@@ -104,6 +110,18 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 10. Wait for the instance to create. During the creation of your instance, the registration script runs automatically. This process takes a few minutes to complete. You can monitor the progress of the script by reviewing the logs for your instance. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 11. Assign your GCP hosts to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
 
+
+## Manually ordering hosts with the gcloud CLI
+{: #gcp-manual-cli}
+
+When you order your instances, pass the `--metadata-from-file user-data` option and include your attach script. For more information, see the `gcloud compute instances create` [command reference](https://cloud.google.com/sdk/gcloud/reference/compute/instances/create){: external}. 
+
+Example command to order and attach GCP VMs to your {{site.data.keyword.satelliteshort}} location.
+
+```sh
+gcloud compute instances create INSTANCE-1 INSTANCE-2 INSTANCE-3 --machine-type=n2-standard-8 --source-instance-template INSTANCE-TEMPLATE --metadata-from-file user-data=ATTACH-SCRIPT-LOCATION --zone ZONE --image-family=IMAGE-FAMILY --image-project=IMAGE-PROJECT
+```
+{: pre}
 
 
 ## Network firewall settings

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-11"
 
 keywords: satellite, networking, connectivity, hosts
 
@@ -23,6 +23,39 @@ After you create hosts that meet the [system requirements](/docs/satellite?topic
     ssh root@<IP_address>
     ```
     {: pre}
+    
+    1. For RHEL hosts, SSH as root.
+        ```sh
+        ssh root@<IP_address>
+        ```
+        {: pre}
+        
+    1. For RHCOS hosts, copy your public SSH key into your ignition script and log in as core.
+        1. Download the host attach script and add your public SSH key.
+
+            ```json
+            {
+              "ignition": {
+                "version": "3.1.0"
+              },
+              "passwd": {
+                "users": [
+                  {
+                    "name": "core",
+                    "sshAuthorizedKeys": [ "PUBLIC-SSH-KEY" ]
+                  }
+                ]
+              },
+            ...
+            }
+            ```
+            {: codeblock}
+
+        1. Log in to your host as `core`.
+            ```sh
+            ssh core@<IP_address>
+            ```
+            {: pre}
 
 
 1. Download the script and make it executable.

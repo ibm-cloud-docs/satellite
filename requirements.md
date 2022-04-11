@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -81,6 +81,9 @@ Cloud and location endpoints
 Review the following application configuration requirements for {{site.data.keyword.satelliteshort}} Config.
 {: shortdesc}
 
+
+{{site.data.keyword.satelliteshort}} Config is not supported on locations that are enabled for Red Hat CoreOS.
+{: note}
 
 
 {{site.data.keyword.satelliteshort}} Config access to modify Kubernetes resources within a cluster

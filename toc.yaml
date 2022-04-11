@@ -186,6 +186,7 @@ toc:
                   topics:
                     - ts-hosts-debug.md
                     - ts-hosts-login.md
+                    - ts-hosts-login-rhcos.md
                     - ssh-login-denied.md
                     - host-not-attaching.md
                     - host-registration-script-fails.md

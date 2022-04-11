@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-11"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -19,6 +19,9 @@ subcollection: satellite
 
 Learn how you can set up an {{site.data.keyword.satellitelong}} location with virtual instances that you created in Microsoft Azure.
 {: shortdesc}
+
+If your hosts are running Red Hat CoreOS (RHCOS), you must manually attach them to your location.
+{: note}
 
 ## Automating your Azure location setup with a {{site.data.keyword.bpshort}} template
 {: #azure-template}
@@ -77,6 +80,9 @@ You can create your {{site.data.keyword.satellitelong_notm}} location by using h
 {: shortdesc}
 
 
+If you want to use Red Hat CoreOS (RHCOS) hosts in your location, provide your RHCOS image file to your Azure account. For more information, see [Creating custom Linux images](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/imaging){: external}. To find RHCOS images, see the list of [available images](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/). Note that you must use at least version 4.9.
+{: important}
+
 
 
 All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
@@ -92,7 +98,7 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add Azure hosts.
 2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
     1. From the **Hosts** tab, click **Attach host**.
-    2. Optional: Add host labels that are used later to [automatically assign](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) in the location. Labels must be provided as key-value pairs, and must match the request from the service. By default, your hosts get a `cpu` and `memory` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
+    2. Optional: Add host labels that are used later to [automatically assign](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) in the location. Labels must be provided as key-value pairs, and must match the request from the service. By default, your hosts get a `cpu`, `os`, and `memory` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
 3. **RHEL only** Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
@@ -153,6 +159,12 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
     - Create Red Hat Enterprise Linux hosts
         ```sh
         az vm create --name <vm_name> --resource-group RESOURCE-GROUP --admin-user USERNAME --admin-password PASSWORD --image RedHat:RHEL:7-LVM:latest --nsg <network_security_group> --os-disk-name DISK_NAME --os-disk-size-gb 128 --size Standard_D4s_v3 --count 6 --custom-data FILEPATH_TO_HOST_REGISTRATION_SCRIPT
+        ```
+        {: pre}
+        
+    - Ceate Red Hat CoreOS hosts
+        ```sh
+        az vm create --name VM --resource-group RESOURCE-GROUP --image RHCOS-IMAGE --admin-username USERNAME  --admin-password PASSWORD--size Standard_B8ms --data-disk-sizes-gb 100 --custom-data FILEPATH-IGNITION-SCRIPT-LOCATION --os-disk-size-gb 100 --public-ip-sku Standard --generate-ssh-keys
         ```
         {: pre}
     

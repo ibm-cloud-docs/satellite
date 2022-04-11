@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,6 +19,9 @@ subcollection: satellite
 
 Add Amazon Web Services (AWS) cloud hosts to {{site.data.keyword.satellitelong_notm}}. Review the following host requirements that are specific to hosts that are in the Amazon Web Services cloud. For required access in AWS cloud, see [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws).
 {: shortdesc}
+
+If your hosts are running Red Hat CoreOS (RHCOS), you must [manually add](#aws-host-attach) them to your location.
+{: note}
 
 
 ## Automating your AWS location setup with a {{site.data.keyword.bpshort}} template
@@ -79,13 +82,16 @@ All hosts that you want to add must meet the general host requirements, such as 
 {: note}
 
 
+If you want to use Red Hat CoreOS (RHCOS) hosts in your location, provide your Red Hat CoreOS image file to your Amazon account. For more information, see [Importing a VM as an image using](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html){: external}. To find RHCOS images, see the list of [available images](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/). Note that you must use at least version 4.9.
+{: important}
+
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to add AWS hosts.
 2. Retrieve the host registration script that you must run on your hosts to make them visible to your {{site.data.keyword.satellitelong_notm}} location.
     1. From the **Hosts** tab, click **Attach host**.
-    2. Optional: Enter any host labels that are used later to [automatically assign](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov)) hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu` and `memory` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
+    2. Optional: Enter any host labels that are used later to [automatically assign](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov)) hosts to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) in the location. Labels must be provided as key-value pairs, and must match the request from the service. For example, you might have host labels such as `env=prod` or `service=database`. By default, your hosts get a `cpu`, `os`, and `memory` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
 3. **RHEL only** Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
@@ -106,13 +112,13 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     {: tip}
 
     1. Enter a name for your launch template.
-    2. In the **Amazon machine image (AMI)** section, make sure to select a supported Red Hat Enterprise Linux 7 operating system, such as RHEL 7.7 that you can find by entering the AMI ID `ami-030e754805234517e`. 
+    2. In the **Amazon machine image (AMI)** section, make sure to select a supported Red Hat Enterprise Linux 7 operating system, such as RHEL 7.7 that you can find by entering the AMI ID `ami-030e754805234517e`. If you are creating an Red Hat CoreOS host, you must provide the image to AWS. For more information, see [Importing a VM as an image using](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html){: external}.
     3. From the **Instance type** section, select one of the [supported AWS instance types](#aws-instance-types).
     4. From the **Key pair (login)** section, select the pem key that you want to use to log in to your machines later. If you do not have a pem key, create one.
     5. In the **Network settings**, select **Virtual Private Cloud (VPC)** and an existing subnet and a security group that allows network traffic as defined in [Security group settings](#aws-reqs-secgroup). If you do not have a subnet or security group that you want to use, create one.
     6. In the **Storage (volumes)** section, expand the default root volume and update the size of the boot volume to a minimum of 100 GB. Add a second disk with at least 100 GB capacity. For more information about storage requirements, see [Host storage and attached devices](/docs/satellite?topic=satellite-reqs-host-storage).
     7. Expand the **Advanced details** and go to the **User Data** field.
-    8. Enter the host registration script that you modified earlier.
+    8. Enter the host registration script that you modified earlier. If you are adding an RHCOS host, add the ignition script.
     9. Click **Create launch template**.
 6. From the **Launch Templates** dashboard, find the template that you created.
 7. From the **Actions** menu, select **Launch instance from template**.

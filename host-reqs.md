@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-04-11"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -31,9 +31,9 @@ To check your host set up, you can use the `satellite-host-check` script. For mo
 ## Computing characteristics
 {: #reqs-host-compute}
 
-- Hosts must run Red Hat Enterprise Linux 7 on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
+- Hosts must run Red Hat Enterprise Linux 7 or the latest Red Hat CoreOS on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack.
 - Hosts can be physical or virtual machines. However, if your hosts are cloned virtual machines, be sure that each one has a unique network identity. For more information, see [Why aren't my hosts attaching to my location?](/docs/satellite?topic=satellite-host-not-attaching).
-
+- Red Hat CoreOS hosts must have at least 8 vCPU and 16GB memory and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage).
 - RHEL hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
 
 - If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
@@ -42,12 +42,19 @@ To check your host set up, you can use the `satellite-host-check` script. For mo
 
 
 
+## Red Hat CoreOS (RHCOS) packages and other machine configurations
+{: #reqs-host-packages-rhcos}
+
+[Find a Red Hat CoreOS image](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external} for your system and make it available to your cloud provider. You can use any supported RHCOS image for your host.
+
 ## Red Hat Enterprise Linux (RHEL) packages and other machine configurations
 {: #reqs-host-packages}
 
 Hosts must have access to {{site.data.keyword.redhat_notm}} updates and the following packages. 
 {: shortdesc}
 
+These updates are required for hosts that are running RHEL 7. If your hosts are running Red Hat CoreOS images, you do not need to update the packages.
+{: note}
 
 ```sh
 Repository 'rhel-server-rhscl-7-rpms' is enabled for this system.
