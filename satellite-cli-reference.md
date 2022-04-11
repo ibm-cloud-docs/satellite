@@ -1389,7 +1389,7 @@ ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN [--outpu
 :    Optional. Do not show the message of the day or update reminders.
 
 #### Example
-{: #location-get-example}
+{: #location-dns-get-example}
 
 ```sh
 ibmcloud sat location dns get --location aaaaaaaa1111a1aaaa11a --subdomain s1b9782f9f75feeb8a5a4-d683ff82e51c94176a53d

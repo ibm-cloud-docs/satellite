@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-04-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -419,7 +419,7 @@ When you update or replace control plane hosts, **do not assign or remove multip
 2. [Assign the newly-attached hosts](/docs/satellite?topic=satellite-attach-hosts) to your location. Make sure that you only assign hosts one at a time and that each assignment completes before you assign another host.  
 3. [Remove the original hosts from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove). Make sure that you only remove hosts one at a time and that each removal completes before you remove another host. 
 
-For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0056` error logs](docs/satellite?topic=satellite-health#logs-error).
+For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0056` error logs](/docs/satellite?topic=satellite-health#logs-error).
 
 ## R0057: Outbound traffic to IAM is failing
 {: #R0057}
@@ -440,6 +440,6 @@ Steps to resolve
 1. If the output from the previous step indicates a failure, check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs). 
 1. If you have met all of the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can get your location ID by running the `ibmcloud sat location ls` command.
 
-For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0057` error logs](docs/satellite?topic=satellite-health#logs-error).
+For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0057` error logs](/docs/satellite?topic=satellite-health#logs-error).
 
 
