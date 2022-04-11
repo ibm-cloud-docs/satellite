@@ -56,7 +56,7 @@ You can also quickly update the configuration parameters and apply them automati
 {: summary="The rows are read from left to right. The first column is a description of the feature. The second column is the feature support on Satellite. The third column is the feature support for bring your own drivers."}
 
 ## I want to deploy services that consume storage, which deployment option should I use?
-{: storage-template-services}
+{: #storage-template-services}
 
 Since {{site.data.keyword.satelliteshort}} storage templates are supported by {{site.data.keyword.cloud_notm}} and the configurations that you create by deploying templates can be used across your {{site.data.keyword.satelliteshort}} clusters, service clusters, and cluster groups, templates are the preferred option when setting up storage for services in {{site.data.keyword.satelliteshort}}.
 

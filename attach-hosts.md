@@ -205,7 +205,7 @@ To add host machines that reside in your on-premises data center, you can follow
 
 To add host machines that reside in your on-premises data center, you can follow these general steps to run the host ignition script on your machine.
 
-1. [Download the host script](##attach-hosts-cli) for your location.       
+1. [Download the host script](#attach-hosts-cli) for your location.       
 2. Boot your RHCOS machine with the ignition data as the userdata, `--user-data @/tmp/attach_hypershift.ign`.
 3. Verify that your hosts are attached to your location. Your hosts are not yet assigned to the {{site.data.keyword.satelliteshort}} control plane or an {{site.data.keyword.redhat_openshift_notm}} cluster which is why hosts show an `unassigned` state without any cluster or worker node information.
     ```sh

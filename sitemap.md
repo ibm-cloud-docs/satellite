@@ -1210,7 +1210,7 @@ subcollection: satellite
 
 * [What are the benefits of using templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-benefits)
 
-* [I want to deploy services that consume storage, which deployment option should I use?](/docs/satellite?topic=satellite-sat-storage-template-ov#i-want-to-deploy-services-that-consume-storage,-which-deployment-option-should-i-use?)
+* [I want to deploy services that consume storage, which deployment option should I use?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-services)
 
 * [How do storage templates work?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-flow)
 
