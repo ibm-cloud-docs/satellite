@@ -24,7 +24,7 @@ subcollection: satellite
 - 24 compute blades that delivers 1000 vCPU of compute capacity for your {{site.data.keyword.satelliteshort}} Infrastructure Service location. Installed compute capacity can be increased in increments of 8 blades.
 - 120TB of flash storage. Installed storage capacity can be increased in increments of 30TB.  
 
-![An example minimum configuration rack of {{site.data.keyword.satelliteshort}} Infrastructure Service.](images/satellite-is-ov.png "Minimum configuration rack of {{site.data.keyword.satelliteshort}} Infrastructure Service."){: caption="Figure 1. An example deployment of {{site.data.keyword.satelliteshort}} Infrastructure Service." caption-side="bottom"}
+![An example minimum configuration rack of {{site.data.keyword.satelliteshort}} Infrastructure Service.](images/satellite-is-ov.svg "Minimum configuration rack of {{site.data.keyword.satelliteshort}} Infrastructure Service."){: caption="Figure 1. An example deployment of {{site.data.keyword.satelliteshort}} Infrastructure Service." caption-side="bottom"}
 
 ## Compute resources
 {: #satis-infra-compute}
