@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-12"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane
 
@@ -23,6 +23,8 @@ To set up a Satellite location, you must first create the location, attach hosts
 
 In order to use [Red Hat CoreOS (RHCOS)](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) for a maanged service such as worker nodes, you must enable it in your location. You can only enable new locations for RHCOS; you cannot migrate an existing location. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations). Red Hat CoreOS is available only in the `us-south` and `eu-de` regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
 
+## Satellite location control plane
+{: #loc-control-plane}
 
 The location control plane runs resources that are managed by Satellite to help manage the hosts, clusters, and other resources that you attach to the location.
 
@@ -33,7 +35,6 @@ When you set up the {{site.data.keyword.satelliteshort}} location control plane,
 - Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then {{site.data.keyword.IBM_notm}} can automatically assign hosts when clusters or the {{site.data.keyword.satelliteshort}} location control plane request more capacity.
 
 {{site.data.keyword.satelliteshort}} uses {{site.data.keyword.cos_short}} to store data about your location and backups for your location's clusters. You can choose to have a bucket created automatically when you create your location or specify an existing bucket. If you want to use an existing bucket, it must have cross-regional resiliency.
-
 
 ## Sizing your {{site.data.keyword.satelliteshort}} location
 {: #location-sizing}
