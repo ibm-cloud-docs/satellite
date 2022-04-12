@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-04-11"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host autoassignment, host auto assignment, host labels
 
@@ -39,7 +39,7 @@ Host auto assignment works by matching requesting labels from worker pools in {{
 Keep in mind the following information about the host labels that are used for auto assignment.
 
 Default host labels
-:    When you attach a host to a {{site.data.keyword.satelliteshort}} location, the host automatically gets labels for `cpu` and `memory` (in bytes). You cannot remove these labels. You can include additional host labels, or update the host metadata later. 
+:    When you attach a host to a {{site.data.keyword.satelliteshort}} location, the host automatically gets labels for `cpu`, `os`, and `memory` (in bytes). You cannot remove these labels. You can include additional host labels, or update the host metadata later. If the host does not include the `os` label, it is automatically assumed as `RHEL7`.
 
 Hosts can have more labels than worker pools
 :    For example, your host might have `cpu`, `memory`, and `env` host labels, but the requesting worker pool has only a `cpu` host label. Host auto assignment matches just the `cpu` labels. Note that the reverse does not work. If a worker pool has more labels than a host, the host cannot be auto assigned to the worker pool.
@@ -59,11 +59,13 @@ Your {{site.data.keyword.satelliteshort}} location has available (unassigned) ho
 - Host A: `cpu=4, memory=32, env=prod, zone=us-east-1b` `os=rhel`
 - Host B: `cpu=4, memory=32, zone=us-east-1a` `os=rhel`
 - Host C: `cpu=4, memory=64, env=prod` `os=rhel`
+- Host D: `cpu=4, memory=64, env=prod` `os=RHCOS`
 
 If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B.
 - Host A meets the CPU and `env=prod` label requests, but can only be assigned in `us-east-1b`. Because the `default` worker pool is only in `us-east-1a`, Host A is not assigned.
 - Host B meets the CPU and zone requests. However, the host does not have the `env=prod` label, and so is not assigned.
 - Host C is automatically assigned because it matches the `cpu=4` and `env=prod` host labels, and does not have any zone restrictions. The `memory=64` host label is not considered, because the worker pool does not request a `memory` label.
+- Host D meets the CPU, zone, and `env=prod` label requests, but does not meet the `os` request of `RHEL7`, and so is not assigned.
 
 Hosts must be assigned as worker nodes in each zone of the default worker pool in your cluster. If your default worker pool spans multiple zones, ensure that you have hosts with matching labels that can be assigned in each zone.
 {: note}
@@ -106,13 +108,14 @@ Before you begin, make sure that you [attach hosts](/docs/satellite?topic=satell
         app      webserver   
         cpu      4   
         memory   3874564
+        os       RHCOS
         ...
         ```
         {: screen}
 
 3. Update the labels of your available host to match all the labels of the worker pool that you want the host to be available for automatic assignment. You can optionally specify a zone to make sure that the host only gets automatically assigned to that zone.
 
-    The `cpu` and `memory` labels on the host are applied automatically and cannot be edited.
+    The `cpu`, `os`, and `memory` labels on the host are applied automatically and cannot be edited.
     {: note}
 
     ```sh
@@ -201,6 +204,12 @@ Before you begin,
         | `--zone <zone>` | The name of the zone where you want to assign the compute host. To see the zone names for your location, run `ibmcloud sat location get --location` and look for the `Host Zones` field. |
         {: caption="Table 1. Understanding this command's components" caption-side="top"}
         {: summary="This table is read from left to right. The first column has the command component. The second column has the description of the command."}
+        
+   - The following example assigns a host by using the `os=RHCOS` host label.
+       ```sh
+       ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host-label os=RHCOS --zone <zone>
+       ```
+       {: pre}
 
 3. Repeat the previous step for all compute hosts that you want to assign as worker nodes to your {{site.data.keyword.satelliteshort}} resource.
 4. Wait a few minutes until the bootstrapping process for all computes hosts is complete and your hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource. All hosts are assigned a cluster, a worker node ID, and an IP address.

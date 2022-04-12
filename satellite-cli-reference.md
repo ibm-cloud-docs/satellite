@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-11"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1060,7 +1060,7 @@ Create and download a script that you run on all the compute hosts that you want
 {: shortdesc}
 
 ```sh
-ibmcloud sat host attach --location LOCATION [--host-label "LABEL"]  [-q] [--reset-key]
+ibmcloud sat host attach --location LOCATION [--host-label "LABEL"]  [--operating-system SYSTEM] [-q] [--reset-key]
 ```
 {: pre}
 
@@ -1076,7 +1076,10 @@ ibmcloud sat host attach --location LOCATION [--host-label "LABEL"]  [-q] [--res
 :    Required. Enter the ID or name of the {{site.data.keyword.satelliteshort}} location where you want to add compute hosts. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
 
 `--host-label LABEL`, `-hl LABEL`
-:    Optional. Enter any labels as a key-value-pair that you want to add to your compute hosts. Labels can help find hosts more easily later. 
+:    Optional. Enter any labels as a key-value-pair that you want to add to your compute hosts. Labels can help find hosts more easily later.
+
+`--operating-system`
+:    Optional. The operating system for the hosts you want to attach to your location. The available options are `RHEL` and `RHCOS`. For default locations without Red Hat CoreOS enabled, use `RHEL`. If no option is specified, the `RHEL` operating system is applied by default. 
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
@@ -1288,7 +1291,7 @@ Create a {{site.data.keyword.satelliteshort}} location. When you create a locati
 {: shortdesc}
 
 ```sh
-ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS_BUCKET_NAME] [--description DESCRIPTION] [--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME] [--logging-account-id LOGGING_ACCOUNT][--provider INFRASTRUCTURE_PROVIDER] [--provider-region PROVIDER_REGION] [--provider-credential PATH_TO_PROVIDER_CREDENTIAL] [-q]
+ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS_BUCKET_NAME] [--description DESCRIPTION] [--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME] [--coreos-enabled] [--logging-account-id LOGGING_ACCOUNT][--provider INFRASTRUCTURE_PROVIDER] [--provider-region PROVIDER_REGION] [--provider-credential PATH_TO_PROVIDER_CREDENTIAL] [-q]
 ```
 {: pre}
 
@@ -1324,6 +1327,10 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
      4. [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
      
 :    Optional: If you use this option, zone names must be specified in three repeated flags. If you do not use this option, the zones in your location are assigned names, such as `zone-1`.
+
+`--coreos-enabled`
+
+:    Optional. Enable [Red Hat CoreOS](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) features within the {{site.data.keyword.satelliteshort}} location. This action cannot be undone.
 
 `--logging-account-id LOGGING_ACCOUNT`
 :    Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.la_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.
@@ -1382,7 +1389,7 @@ ibmcloud sat location dns get --location LOCATION --subdomain SUBDOMAIN [--outpu
 :    Optional. Do not show the message of the day or update reminders.
 
 #### Example
-{: #location-get-example}
+{: #location-dns-get-example}
 
 ```sh
 ibmcloud sat location dns get --location aaaaaaaa1111a1aaaa11a --subdomain s1b9782f9f75feeb8a5a4-d683ff82e51c94176a53d

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -26,8 +26,19 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-apr22}
 
 
+
+
+
+
+### 12 April 2022
+{: #satellite-apr1222}
+{: release-note}
+
+**New! Support for Red Hat CoreOS**
+:   You can add [Red Hat CoreOS](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) hosts to your Satellite location. Note that Red Hat CoreOS enabled locations are currently available only in new locations that are managed from Dallas (`us-south`) or Frankfurt (`eu-de`). You can't migrate existing locations. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations).
+
 ### 6 April 2022
-{: #satellite-apr0522}
+{: #satellite-apr0622}
 {: release-note}
 
 **New!** Check your host setup before attaching hosts to your location.
@@ -41,14 +52,8 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {{site.data.keyword.IBM_notm}} Spectrum Scale driver
 :   The [{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale) is now deprecated. Please reach out to scale@us.ibm.com for further compatibility details and options.
 
-
-
-
 ## March 2022
 {: #satellite-mar22}
-
-
-
 
 ### 21 March 2022
 {: #satellite-mar2122}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-08"
+lastupdated: "2022-04-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -97,7 +97,7 @@ Every {{site.data.keyword.cloud_notm}} service that you run in your {{site.data.
 
 The following image shows a basic {{site.data.keyword.satelliteshort}} control plane worker node setup. This setup ensures that your {{site.data.keyword.satelliteshort}} control plane has sufficient compute capacity to run basic {{site.data.keyword.satelliteshort}} workloads and that your control plane continues to run, even if one compute host becomes unavailable.
 
-![Default setup for the {{site.data.keyword.satelliteshort}} control plane.](images/satellite_ha_default.png "{{site.data.keyword.satelliteshort}} control plane"){: caption="Figure 1. {{site.data.keyword.satelliteshort}} control plane" caption-side="bottom"}
+![Default setup for the {{site.data.keyword.satelliteshort}} control plane.](images/satellite_ha_default.svg "{{site.data.keyword.satelliteshort}} control plane"){: caption="Figure 2. {{site.data.keyword.satelliteshort}} control plane" caption-side="bottom"}
 
 Review the characteristics of the basic setup.
 
@@ -132,7 +132,7 @@ Depending on where your hosts are, the options that are available to you to incr
 The following image shows a high availability setup of your control plane worker nodes within an on-premises data center. All compute hosts are on a separate rack to ensure that power, network, and storage devices are not shared. Because all compute hosts are located in the same data center, the requirements for networking speed and latency between the hosts are met.
 {: shortdesc}
 
-![High availability setup for an on-premises data center.](images/satellite_ha_onprem.png "High availability setup in an on-premises data center."){: caption="Figure 1. High availability setup for an on-premises data center." caption-side="bottom"}
+![High availability setup for an on-premises data center.](images/satellite_ha_onprem.svg "High availability setup in an on-premises data center."){: caption="Figure 3. High availability setup for an on-premises data center." caption-side="bottom"}
 
 ### Example for a high availability setup in a public cloud provider
 {: #example-ha-cloudprovider}
@@ -141,7 +141,7 @@ The following image shows a highly available setup for compute hosts that are in
 {: shortdesc}
 
 
-![High availability setup with compute hosts that are in a public cloud provider.](/images/satellite_ha_aws.png){: caption="Figure 1. High availability setup with compute hosts that are at a public cloud provider" caption-side="bottom"}
+![High availability setup with compute hosts that are in a public cloud provider.](/images/satellite_ha_aws.svg){: caption="Figure 4. High availability setup with compute hosts that are at a public cloud provider" caption-side="bottom"}
 
 ## Disconnected Usage
 {: #disconnected-usage}

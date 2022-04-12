@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -62,9 +62,24 @@ Latency between hosts in your location
 {: #infra-plan-compatible}
 
 In each of the three zones in your infrastructure provider, plan to create compatible hosts to add to {{site.data.keyword.satelliteshort}}. The host instances in your infrastructure provider become the compute hosts to run the services in your {{site.data.keyword.satelliteshort}} location, similar to the worker nodes in a {{site.data.keyword.openshiftlong_notm}} cluster.
-- Each host must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}, such as [supported operating system]; at least 4 CPU, 16 RAM, and 100 GB storage per host; full network connectivity between hosts in the same location; and more.
+- Each host must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}, such as [supported operating system](#infras-plan-os); at least 4 CPU, 16 RAM, and 100 GB storage per host; full network connectivity between hosts in the same location; and more.
 - To calculate how many hosts you need, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing).
 
+
+
+## Planning your operating system
+{: #infras-plan-os}
+
+Choose your operating system for your hosts. You can choose Red Hat Enterprise Linux 7 or Red Hat CoreOS. If you want to use Red Hat CoreOS for your managed services such as worker nodes, you must create and enable a new location to use it. See [Creating a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
+
+Red Hat Enterprise Linux 7
+:    Select `RHEL7` to choose Red Hat Enterprise Linux 7 (RHEL 7). RHEL 7 is the default operating system supported for {{site.data.keyword.satelliteshort}} hosts.
+    
+Red Hat CoreOS
+:    Select `RHCOS` to choose Red Hat CoreOS (RHCOS). RHCOS is a minimal operating system for running containerized workloads securely and at scale. It is based on RHEL and includes automated, remote upgrade features. For more information about the key benefits of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.10/architecture/architecture-rhcos.html){: external}.
+
+Red Hat CoreOS is available only in the `us-south` and `eu-de` regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
+{: note}
 
 
 

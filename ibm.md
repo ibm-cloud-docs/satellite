@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -23,6 +23,9 @@ Test out an {{site.data.keyword.satellitelong}} location with virtual instances 
 **Testing only**: {{site.data.keyword.satelliteshort}} is an extension of {{site.data.keyword.cloud_notm}} into other infrastructure providers. As such, adding {{site.data.keyword.cloud_notm}} infrastructure hosts to {{site.data.keyword.satelliteshort}} is supported only for testing, demo, or proof of concept purposes. For production workloads in your {{site.data.keyword.satelliteshort}} location, use on-premises, edge, or other cloud provider hosts. You can also create {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud and add them to a {{site.data.keyword.satelliteshort}} Config cluster group to deploy the same app across your {{site.data.keyword.satelliteshort}} and {{site.data.keyword.cloud_notm}} clusters.
 {: important}
 
+If your hosts are running Red Hat CoreOS (RHCOS), you must manually attach them to your location.
+{: note}
+
 ## Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}}
 {: #ibm-host-attach}
 
@@ -34,7 +37,7 @@ All hosts that you want to add must meet the general host requirements, such as 
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 
-1. Follow the steps to create a [classic public virtual server](/docs/virtual-servers?topic=virtual-servers-ordering-vs-public) or a virtual server instance in a [VPC](/docs/vpc?topic=vpc-creating-virtual-servers). Make sure that you select a supported RHEL 7 operating system, configure the machine with at least 4 CPU and 16 RAM, and add a boot disk with a size of at least 100 GB. 
+1. Follow the steps to create a [classic public virtual server](/docs/virtual-servers?topic=virtual-servers-ordering-vs-public) or a virtual server instance in a [VPC](/docs/vpc?topic=vpc-creating-virtual-servers). Make sure that you select a supported RHEL 7 operating system or a supported Red Hat CoreOS image, configure the machine with at least 4 CPU and 16 RAM, and add a boot disk with a size of at least 100 GB. 
 2. Wait for your virtual server instance to be provisioned.
 3. Get the registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
     ```sh
@@ -125,6 +128,12 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
         exit
         ```
         {: pre}
+
+5. (RHCOS only) Run the following command,
+    ```sh
+    ibmcloud is instance-create INSTANCE-NAME VPC VPC-ZONE-NaME VPC-PROFILE-NAME VPC-SUBNET --image VPC-RHCOS-IMAGE-ID --user-data ATTACH_SCRIPT_LOCATION
+    ```
+    {: pre}
 
 6. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 

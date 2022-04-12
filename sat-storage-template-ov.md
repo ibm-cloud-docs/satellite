@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-11"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -56,7 +56,7 @@ You can also quickly update the configuration parameters and apply them automati
 {: summary="The rows are read from left to right. The first column is a description of the feature. The second column is the feature support on Satellite. The third column is the feature support for bring your own drivers."}
 
 ## I want to deploy services that consume storage, which deployment option should I use?
-{: storage-template-services}
+{: #storage-template-services}
 
 Since {{site.data.keyword.satelliteshort}} storage templates are supported by {{site.data.keyword.cloud_notm}} and the configurations that you create by deploying templates can be used across your {{site.data.keyword.satelliteshort}} clusters, service clusters, and cluster groups, templates are the preferred option when setting up storage for services in {{site.data.keyword.satelliteshort}}.
 
@@ -82,4 +82,4 @@ The following image depicts the workflow for creating a {{site.data.keyword.sate
 You can create a {{site.data.keyword.satelliteshort}} storage configuration by using a template for the storage provider that you want to use. If your preferred storage provider does not have a template, you can [create your own configuration template](https://github.com/{{site.data.keyword.IBM_notm}}/ibm-satellite-storage){: external} or you can manually deploy storage drivers. The following list includes the storage templates are currently available to deploy to your {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
 
-For a list of available storage templates and storage classes, review the [site map](https://cloud.ibm.com/docs/satellite?topic=satellite-sitemap#sitemap_storage-class-ref).
+For a list of available storage templates and storage classes, review the [site map](/docs/satellite?topic=satellite-sitemap#sitemap_storage_class_reference).
