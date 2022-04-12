@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-12"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -78,7 +78,7 @@ subcollection: satellite
 
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
 
-    * [11 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1122)
+    * [12 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1222)
 
         * **New! Support for Red Hat CoreOS**
 

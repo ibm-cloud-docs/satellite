@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -30,8 +30,8 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 
 
-### 11 April 2022
-{: #satellite-apr1122}
+### 12 April 2022
+{: #satellite-apr1222}
 {: release-note}
 
 **New! Support for Red Hat CoreOS**
