@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-12"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host autoassignment, host auto assignment, host labels
 
@@ -188,7 +188,7 @@ Before you begin,
         ```
         {: pre}
 
-   - The following example assigns a host by using the `use:satcluster` label.
+    - The following example assigns a host by using the `use:satcluster` label.
         ```sh
         ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satcluster" --worker-pool default --zone us-east-1
         ```
@@ -205,11 +205,11 @@ Before you begin,
         {: caption="Table 1. Understanding this command's components" caption-side="top"}
         {: summary="This table is read from left to right. The first column has the command component. The second column has the description of the command."}
         
-   - The following example assigns a host by using the `os=RHCOS` host label.
-       ```sh
-       ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host-label os=RHCOS --zone <zone>
-       ```
-       {: pre}
+    - The following example assigns a host by using the `os=RHCOS` host label.
+        ```sh
+        ibmcloud sat host assign --location <location_name_or_ID>  --cluster <cluster_name_or_ID> --host-label os=RHCOS --zone <zone>
+        ```
+        {: pre}
 
 3. Repeat the previous step for all compute hosts that you want to assign as worker nodes to your {{site.data.keyword.satelliteshort}} resource.
 4. Wait a few minutes until the bootstrapping process for all computes hosts is complete and your hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource. All hosts are assigned a cluster, a worker node ID, and an IP address.

@@ -814,6 +814,8 @@ subcollection: satellite
 
 [Understanding Satellite locations](/docs/satellite?topic=satellite-about-locations#about-locations)
 
+* [Satellite location control plane](/docs/satellite?topic=satellite-about-locations#loc-control-plane)
+
 * [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing)
 
 * [How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity)

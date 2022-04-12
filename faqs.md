@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-04-12"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, faq, service, host, location
 
 subcollection: satellite
 content-type: faq
@@ -184,7 +184,7 @@ Note that compliance also might depend on the setup of the underlying infrastruc
 {: faq}
 {: support}
 
-For a complete list of {{site.data.keyword.cloud_notm}} services that you can deploy to your {{site.data.keyword.satelliteshort}} location, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog?search=label%3Asatellite_enabled#services){: external}. 
+For a complete list of {{site.data.keyword.cloud_notm}} services that you can deploy to your {{site.data.keyword.satelliteshort}} location, see [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services). 
 
 Keep in mind that each service might:
 * Be available for {{site.data.keyword.satelliteshort}} locations that are managed from select {{site.data.keyword.cloud_notm}} regions only, such as from Washington, DC or London.
