@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -34,14 +34,14 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-apr1222}
 {: release-note}
 
-**New! Support for Red Hat CoreOS**
+New! Support for Red Hat CoreOS
 :   You can add [Red Hat CoreOS](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) hosts to your Satellite location. Note that Red Hat CoreOS enabled locations are currently available only in new locations that are managed from Dallas (`us-south`) or Frankfurt (`eu-de`). You can't migrate existing locations. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations).
 
 ### 6 April 2022
 {: #satellite-apr0622}
 {: release-note}
 
-**New!** Check your host setup before attaching hosts to your location.
+New! Check your host setup before attaching hosts to your location.
 :   You can now use the `sat-host-check` to verify your hosts meets the requirements for {{site.data.keyword.satelliteshort}}. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 
 
@@ -49,7 +49,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-apr0422}
 {: release-note}
 
-{{site.data.keyword.IBM_notm}} Spectrum Scale driver
+{{site.data.keyword.IBM_notm}} Spectrum Scale template
 :   The [{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale) is now deprecated. Please reach out to scale@us.ibm.com for further compatibility details and options.
 
 ## March 2022
@@ -68,7 +68,7 @@ CLI change log
 {: release-note}
 
 New! Beta support for the {{site.data.keyword.block_storage_is_short}} CSI driver template
-:    You can use the {{site.data.keyword.block_storage_is_short}} CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.block_storage_is_short}} CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-vpc-csi).
+:   You can use the {{site.data.keyword.block_storage_is_short}} CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.block_storage_is_short}} CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-vpc-csi).
 
 ### 3 March 2022
 {: #satellite-mar322}
@@ -154,11 +154,11 @@ OpenShift Data Foundation
 {: #satellite-jan1822}
 {: release-note}
 
-**New!** {{site.data.keyword.satellitelong_notm}} CLI Map
+New! {{site.data.keyword.satellitelong_notm}} CLI Map
 :    The [{{site.data.keyword.satellitelong_notm}} CLI Map](/docs/satellite?topic=satellite-icsat_map) lists all `ibmcloud sat` commands as they are structured in the CLI. Use this page as a visual reference for how ibmcloud sat commands are organized, or to quickly find a specific command. 
 
 
-**New!** Site map
+New! Site map
 :   A site map is available for the {{site.data.keyword.satelliteshort}} [documentation](/docs/satellite?topic=satellite-sitemap).
 
 ## December 2021
@@ -172,7 +172,7 @@ Review the release notes for December 2021.
 {: #satellite-dec1521}
 {: release-note}
 
-**New! Sydney location**
+New! Sydney location
 :   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Sydney** (`syd`, `au-syd`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). 
 
 
@@ -180,11 +180,11 @@ Review the release notes for December 2021.
 {: #satellite-dec321}
 {: release-note}
 
-**New! Satellite Mesh**!
+New! Satellite Mesh!
 : Satellite Mesh is available for select customers in beta. For more information, see [Setting up a service mesh with Satellite Mesh](/docs/satellite?topic=satellite-sat-mesh).
 
-CLI changelog
-:    Updated the CLI plug-in changelog page for the [release of version 1.0.353](/docs/satellite?topic=satellite-satellite-cli-changelog).
+CLI change log
+:    Updated the CLI plug-in change log page for the [release of version 1.0.353](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 
 ## November 2021
@@ -477,8 +477,8 @@ Review the release notes for April 2021.
 Review the release notes for 26 April 2021.
 {: shortdesc}
 
-CLI changelog
-Updated the CLI plug-in changelog page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
+CLI change log
+Updated the CLI plug-in change log page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 15 April 2021
 {: #satellite-apr1521}
@@ -488,10 +488,10 @@ Review the release notes for 15 April 2021.
 {: shortdesc}
 
 Cluster add-ons
-:    Added the [list](/docs/satellite?topic=satellite-addon-errors) of supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations.
+:   Added the [list](/docs/satellite?topic=satellite-addon-errors) of supported add-ons for clusters in {{site.data.keyword.satelliteshort}} locations.
 
 Use case
-:    Added an example use case for using [{{site.data.keyword.satelliteshort}} edge environments for AI, IoT, and machine learning](/docs/satellite?topic=satellite-edge-usecase).
+:   Added an example use case for using [{{site.data.keyword.satelliteshort}} edge environments for AI, IoT, and machine learning](/docs/satellite?topic=satellite-edge-usecase).
 
 :    {{site.data.keyword.cos_short}} buckets
 When you create a location from the console, you can now [enter the name of an existing {{site.data.keyword.cos_full_notm}} bucket](/docs/satellite?topic=satellite-locations#location-create-console) that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data.

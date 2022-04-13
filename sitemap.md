@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-04-13"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -80,15 +80,15 @@ subcollection: satellite
 
     * [12 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1222)
 
-        * **New! Support for Red Hat CoreOS**
+        * New! Support for Red Hat CoreOS
 
     * [6 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0622)
 
-        * **New!** Check your host setup before attaching hosts to your location.
+        * New! Check your host setup before attaching hosts to your location.
 
     * [4 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0422)
 
-        * {{site.data.keyword.IBM_notm}} Spectrum Scale driver
+        * {{site.data.keyword.IBM_notm}} Spectrum Scale template
 
 * [March 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar22)
 
@@ -144,9 +144,9 @@ subcollection: satellite
 
     * [18 January 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan1822)
 
-        * **New!** {{site.data.keyword.satellitelong_notm}} CLI Map
+        * New! {{site.data.keyword.satellitelong_notm}} CLI Map
 
-        * **New!** Site map
+        * New! Site map
 
 * [December 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec21)
 
@@ -154,13 +154,13 @@ subcollection: satellite
 
     * [15 December 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec1521)
 
-        * **New! Sydney location**
+        * New! Sydney location
 
     * [3 December 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec321)
 
-        * **New! Satellite Mesh**!
+        * New! Satellite Mesh!
 
-        * CLI changelog
+        * CLI change log
 
 * [November 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov21)
 
@@ -334,9 +334,9 @@ subcollection: satellite
 
         * Review the release notes for 26 April 2021.
 
-        * CLI changelog
+        * CLI change log
 
-        * Updated the CLI plug-in changelog page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
+        * Updated the CLI plug-in change log page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
     * [15 April 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1521)
 
