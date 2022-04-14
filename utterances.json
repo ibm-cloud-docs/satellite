@@ -1,15 +1,4 @@
 {
-    "satellite-locations": [
-        "where is Cloud satellite available",
-        "satellite supported locations",
-        "Where is the satellite service located?",
-        "metros for cloud satellite",
-        "what are the IBM Cloud multizone metros",
-        "Supported IBM Cloud locations to manage your Satellite location.",
-        "Supported IBM Cloud locations",
-        "available locations for Satellite",
-        "What IBM Cloud multizone metro do I choose "
-    ],
     "control-plane-unavailable": [
         "Cloud Satellite service highly available",
         "happens if my Satellite control plane becomes unavailable",
