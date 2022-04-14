@@ -97,7 +97,7 @@ Every {{site.data.keyword.cloud_notm}} service that you run in your {{site.data.
 
 The following image shows a basic {{site.data.keyword.satelliteshort}} control plane worker node setup. This setup ensures that your {{site.data.keyword.satelliteshort}} control plane has sufficient compute capacity to run basic {{site.data.keyword.satelliteshort}} workloads and that your control plane continues to run, even if one compute host becomes unavailable.
 
-![Default setup for the {{site.data.keyword.satelliteshort}} control plane.](images/satellite_ha_default-01.svg "{{site.data.keyword.satelliteshort}} control plane"){: caption="Figure 2. {{site.data.keyword.satelliteshort}} control plane" caption-side="bottom"}
+![Default setup for the {{site.data.keyword.satelliteshort}} control plane.](images/satellite_ha_default-0111.svg "{{site.data.keyword.satelliteshort}} control plane"){: caption="Figure 2. {{site.data.keyword.satelliteshort}} control plane" caption-side="bottom"}
 
 Review the characteristics of the basic setup.
 

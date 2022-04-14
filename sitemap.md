@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-14"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -833,6 +833,8 @@ subcollection: satellite
     * [Manually creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
 
     * [Creating locations from the CLI](/docs/satellite?topic=satellite-locations#locations-create-cli)
+
+    * [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location)
 
 * [Setting up the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane)
 
