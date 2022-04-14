@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -39,103 +39,118 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 
 1. Follow the steps to create a [classic public virtual server](/docs/virtual-servers?topic=virtual-servers-ordering-vs-public) or a virtual server instance in a [VPC](/docs/vpc?topic=vpc-creating-virtual-servers). Make sure that you select a supported RHEL 7 operating system or a supported Red Hat CoreOS image, configure the machine with at least 4 CPU and 16 RAM, and add a boot disk with a size of at least 100 GB. 
 2. Wait for your virtual server instance to be provisioned.
-3. Get the registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
+3. Get the registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location. Note that the token in the script is an API key, which should be treated and protected as sensitive information. Make a note of the location of the attach script. Also note that for RHEL-based locations, the attach script is a Shell script and for CoreOS-enabled locations, the attach script is a CoreOS ignition file.
     ```sh
     ibmcloud sat host attach --location <location_name_or_ID>
     ```
     {: pre}
 
-4. (RHEL only) Run the host script by following these steps,
-    1. Retrieve the IP address and ID of your machine.
-        * Classic
+    * **CoreOS hosts only**: 
+        1. [Download the Red Hat CoreOS image](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external} that you want to use.
+        1. [Create a custom image in VPC](/docs/vpc?topic=vpc-planning-custom-images). 
+        1. Create VPC Gen 2 instances by using your custom image and attach them to your CoreOS-enabled location. Note that the `ATTACH-SCRIPT-LOCATION` parameter is the location of the ignition file you retrieved earlier by running the `ibmcloud sat host attach` command. Make sure to include the `@` sign before the path to your ignition file.
             ```sh
-            ibmcloud sl vs list
+            ibmcloud is instance-create INSTANCE-NAME VPC VPC-ZONE-NAME VPC-PROFILE-NAME VPC-SUBNET --image VPC-RHCOS-IMAGE-ID --user-data @ATTACH-SCRIPT-LOCATION
             ```
             {: pre}
-
-        * VPC
+            
+            Example command to create VPC Gen 2 instances and attach hosts to a CoreOS-enabled location. For more information, about the `instance create` command, see the VPC Gen 2 [command line reference](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#instance-create).
+            
             ```sh
-            ibmcloud is instances
+            ibmcloud is instance-create instance-1 my-vpc us-south-1 bx2d-4x16 0111-11e11111-1c11-1111-11aa-ba1a1d1cd111 --image r001-a1f111b1-11bc-1e1e-b11c-1d11c1111111 --user-data @/var/register-host_coreos.ign
             ```
             {: pre}
+            
+        1. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
 
-    2. Retrieve the credentials to log in to your virtual machine.
-        * Classic
-            ```sh
-            ibmcloud sl vs credentials <vm_ID>
-            ```
-            {: pre}
-
-        * VPC
-            ```sh
-            ibmcloud is instance-initialization-values <instance_ID>
-            ```
-            {: pre}
-
-    3. Copy the script from your local machine to the virtual server instance.
-        ```sh
-        scp <path_to_attachHost.sh> root@<ip_address>:/tmp/attach.sh
-        ```
-        {: pre}
-
-        If you use an SSH key to log in, make sure to convert the key to `.key` format and use the following command.
-        ```sh
-        scp -i <filepath_to_key_file.key> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
-        ```
-        {: pre}
-
-    4. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
-        ```sh
-        ssh root@<ip_address>
-        ```
-        {: pre}
-
-        If you use an SSH key to log in, use the following command.
-        ```sh
-        ssh -i <filepath_to_key_file.key> <username>@<IP_address>
-        ```
-        {: pre}
-
-    5. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
-        ```sh
-        subscription-manager refresh
-        ```
-        {: pre}
-
-        ```sh
-        subscription-manager repos --enable rhel-server-rhscl-7-rpms
-        subscription-manager repos --enable rhel-7-server-optional-rpms
-        subscription-manager repos --enable rhel-7-server-rh-common-rpms
-        subscription-manager repos --enable rhel-7-server-supplementary-rpms
-        subscription-manager repos --enable rhel-7-server-extras-rpms
-        ```
-        {: pre}
-
-    6. Run the registration script on your machine.
-        ```sh
-        nohup bash /tmp/attach.sh &
-        ```
-        {: pre}
+        1. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
         
-    7. Monitor the progress of the registration script.
-        ```sh
-        journalctl -f -u ibm-host-attach
-        ```
-        {: pre}
+        
 
-    8. Exit the SSH session.  	
-        ```sh
-        exit
-        ```
-        {: pre}
+    * **RHEL hosts only**: 
+        1. Retrieve the IP address and ID of your machine.
+            * Classic
+                ```sh
+                ibmcloud sl vs list
+                ```
+                {: pre}
 
-5. (RHCOS only) Run the following command,
-    ```sh
-    ibmcloud is instance-create INSTANCE-NAME VPC VPC-ZONE-NaME VPC-PROFILE-NAME VPC-SUBNET --image VPC-RHCOS-IMAGE-ID --user-data ATTACH_SCRIPT_LOCATION
-    ```
-    {: pre}
+            * VPC
+                ```sh
+                ibmcloud is instances
+                ```
+                {: pre}
 
-6. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+        1. Retrieve the credentials to log in to your virtual machine.
+            * Classic
+                ```sh
+                ibmcloud sl vs credentials <vm_ID>
+                ```
+                {: pre}
 
-7. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
+            * VPC
+                ```sh
+                ibmcloud is instance-initialization-values <instance_ID>
+                ```
+                {: pre}
 
+        1. Copy the script from your local machine to the virtual server instance.
+            ```sh
+            scp <path_to_attachHost.sh> root@<ip_address>:/tmp/attach.sh
+            ```
+            {: pre}
+
+            If you use an SSH key to log in, make sure to convert the key to `.key` format and use the following command.
+            ```sh
+            scp -i <filepath_to_key_file.key> <filepath_to_script> <username>@<IP_address>:/tmp/attach.sh
+            ```
+            {: pre}
+
+        1. Log in to your virtual machine. If prompted, enter the password that you retrieved earlier.
+            ```sh
+            ssh root@<ip_address>
+            ```
+            {: pre}
+
+            If you use an SSH key to log in, use the following command.
+            ```sh
+            ssh -i <filepath_to_key_file.key> <username>@<IP_address>
+            ```
+            {: pre}
+
+        1. Refresh the {{site.data.keyword.redhat_notm}} packages on your machine.
+            ```sh
+            subscription-manager refresh
+            ```
+            {: pre}
+
+            ```sh
+            subscription-manager repos --enable rhel-server-rhscl-7-rpms
+            subscription-manager repos --enable rhel-7-server-optional-rpms
+            subscription-manager repos --enable rhel-7-server-rh-common-rpms
+            subscription-manager repos --enable rhel-7-server-supplementary-rpms
+            subscription-manager repos --enable rhel-7-server-extras-rpms
+            ```
+            {: pre}
+
+        1. Run the registration script on your machine.
+            ```sh
+            nohup bash /tmp/attach.sh &
+            ```
+            {: pre}
+            
+        1. Monitor the progress of the registration script.
+            ```sh
+            journalctl -f -u ibm-host-attach
+            ```
+            {: pre}
+
+        1. Exit the SSH session.  	
+            ```sh
+            exit
+            ```
+            {: pre}
+
+1. Check that your hosts are shown in the **Hosts** tab of your [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. All hosts show a **Health** status of `Ready` when a connection to the machine can be established, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} location control plane or a {{site.data.keyword.openshiftlong_notm}} cluster.
+
+1. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
