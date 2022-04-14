@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -172,6 +172,50 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
 4. To finish the setup of your location:
     1. [Attach compute hosts to your location](/docs/satellite?topic=satellite-attach-hosts).
     2. Assign these hosts as worker nodes to the [{{site.data.keyword.satelliteshort}} location control plane](#setup-control-plane).
+
+Want to verify if your location is enabled for Red Hat CoreOS? See [Is my location enabled for Red Hat CoreOS?](#verify-coreos-location).
+
+### Is my location enabled for Red Hat CoreOS?
+{: #verify-coreos-location}
+
+You can verify that your location is enabled for Red Hat CoreOS by running the **`location get`** command. Look for the `Ignition Server Port:` field to populate. Wait to check until after your location is provisioned. 
+
+Red Hat CoreOS is available only in the `us-south` and `eu-de` regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
+{: note}
+
+
+```sh
+ibmcloud sat location get --location LOCATION
+```
+{: pre}
+
+Example output
+
+```sh
+Name:                           my-coreos-test   
+ID:                             <ID>   
+Created:                        2022-03-26 15:02:00 +0000 (4 days ago)   
+Managed From:                   dal   
+State:                          action required   
+Ready for deployments:          no   
+Message:                        R0012: The location control plane does not have hosts in all 3 zones. Add available hosts to your location for the control plane.   
+Hosts Available:                0   
+Hosts Total:                    0   
+Host Zones:                     us-south-1, us-south-2, us-south-3   
+Provider:                       -   
+Provider Region:                -   
+Provider Credentials:           no   
+Public Service Endpoint URL:    <ENDPOINT>   
+Private Service Endpoint URL:   -   
+OpenVPN Server Port:            -   
+Ignition Server Port:           30119   
+Konnectivity Server Port:       32157
+```
+{: screen}
+
+To create a Red Hat CoreOS-enabled location, see [Manually creating {{site.data.keyword.satelliteshort}} locations](#location-create-manual).
+
+
 
 ## Setting up the {{site.data.keyword.satelliteshort}} location control plane
 {: #setup-control-plane}
