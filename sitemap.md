@@ -80,7 +80,7 @@ subcollection: satellite
 
     * [18 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1822)
 
-        * New! Set up an HTTP proxy for your hosts
+        * Set up an HTTP proxy for your hosts
 
         * New and updated template parameters for the local block and local file storage templates.
 
