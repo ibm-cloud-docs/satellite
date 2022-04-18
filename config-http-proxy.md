@@ -19,6 +19,9 @@ You can configure an HTTP proxy so that all outbound traffic from your {{site.da
 {: shortdesc}
 
 To configure an HTTP proxy, your location must be enabled for Red Hat CoreOS. You cannot configure an HTTP proxy for a location that is RHEL-based. For more information, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location).
+{: note}
+
+Setting up an HTTP proxy is available only for allowlisted accounts.
 {: important}
 
 ## Considerations for HTTP proxy
