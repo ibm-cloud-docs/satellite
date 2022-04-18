@@ -78,7 +78,9 @@ subcollection: satellite
 
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
 
-    * [18 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1222)
+    * [18 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1822)
+
+        * New! Set up an HTTP proxy for your hosts
 
         * New and updated template parameters for the local block and local file storage templates.
 
@@ -976,6 +978,14 @@ subcollection: satellite
 * [Updating host metadata](/docs/satellite?topic=satellite-host-update-workers#host-update-metadata)
 
 [Copying a location](/docs/satellite?topic=satellite-location-copy#location-copy)
+
+[Configuring an HTTP proxy for your {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-config-http-proxy#config-http-proxy)
+
+* [Considerations for HTTP proxy](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy)
+
+* [Configuring your HTTP proxy](/docs/satellite?topic=satellite-config-http-proxy#http-proxy-config)
+
+* [Common mirror locations](/docs/satellite?topic=satellite-config-http-proxy#common-mirror-locations)
 
 [Removing hosts and locations](/docs/satellite?topic=satellite-host-remove#host-remove)
 
@@ -2305,6 +2315,8 @@ subcollection: satellite
 [Why can't I reuse a host in a different {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-sat-host-reattach-fail#sat-host-reattach-fail)
 
 [Why can't I update my worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console?](/docs/satellite?topic=satellite-ts-hosts-update-roks-console#ts-hosts-update-roks-console)
+
+[Why can't my HTTP proxy connect to the Red Hat servers?](/docs/satellite?topic=satellite-ts-http-proxy#ts-http-proxy)
 
 
 ### Clusters

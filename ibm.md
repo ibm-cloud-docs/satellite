@@ -47,7 +47,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 
     * **CoreOS hosts only**: 
         1. [Download the Red Hat CoreOS image](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external} that you want to use.
-        1. You can use {{site.data.keyword.cos_full_notm}} to store your custom image. If you don't already have an instance, [create one](https://cloud.ibm.com/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service) and create at least one bucket.
+        1. You can use {{site.data.keyword.cos_full_notm}} to store your custom image. If you don't already have an instance, [create one](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service) and create at least one bucket.
         
         1. [Upload the Red Hat CoreOS image](/docs/cloud-object-storage?topic=cloud-object-storage-upload) that you downloaded earlier to a bucket in your {{site.data.keyword.cos_short}} instance.
             You can use the Minio command line client to copy your image from a directory on your local machine to your bucket. First, [create a set of HMAC service credentials](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials) and make a note of the `access_key_id` and `secret_access_key`. Then, install the [Minio client](/docs/cloud-object-storage?topic=cloud-object-storage-minio){: external} and configure it to use your credentials.
