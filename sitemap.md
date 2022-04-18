@@ -534,7 +534,7 @@ subcollection: satellite
 
         * Review the release notes for 6 October 2020.
 
-        * CLI changelog
+        * CLI change log
 
         * Location subdomain troubleshooting
 

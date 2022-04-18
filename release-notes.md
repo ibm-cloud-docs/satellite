@@ -794,8 +794,8 @@ Host network requirements
 Review the release notes for 6 October 2020.
 {: shortdesc}
 
-CLI changelog
-:   Added a CLI plug-in changelog page for the [release of version 1.0.178](/docs/satellite?topic=satellite-satellite-cli-changelog).
+CLI change log
+:   Added a CLI plug-in change log page for the [release of version 1.0.178](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 Location subdomain troubleshooting
 :   Added steps for further troubleshooting when [the location subdomain does not route traffic to control plane hosts](/docs/satellite?topic=satellite-ts-location-subdomain).
