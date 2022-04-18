@@ -69,6 +69,7 @@ toc:
               - host-update-location.md
               - host-update-workers.md
               - location-copy.md
+              - config-http-proxy.md
               - link-agent.md
               - host-remove.md
         - topicgroup:
@@ -194,6 +195,7 @@ toc:
                     - host-assign-file-system.md
                     - sat-host-reattach-fail.md
                     - ts-hosts-update-roks-console.md
+                    - ts-http-proxy.md
               - topicgroup:
                   label: Clusters
                   topics:
