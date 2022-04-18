@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-18"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce
 
@@ -26,7 +26,6 @@ The Compute Engine persistent disk Container Storage Interface (CSI) [Driver](ht
 
 1. [Create a Compute Engine service account](https://cloud.google.com/compute/docs/access/service-accounts){: external}.
 1. [Create a JSON web key](https://cloud.google.com/iam/docs/service-accounts#key-types){: external}.
-1. Create a 
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 
 

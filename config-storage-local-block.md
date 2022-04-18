@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-04-18"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -178,8 +178,19 @@ After you have [retrieved the device paths for the disks that you want to use in
 
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
+    Example command to create a configuration with template versions 4.6-4.8.
+
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name local-volume-block --template-version <template-version> --param "label-key=storage" --param "label-value=local-block" --param "devicepath=<devicepath>"
+    ```
+    {: pre}
+
+    Example command to create a configuration with template version 4.9 and automatically discover local storage devices.
+
+    In version 4.9 of the Local Storage Operator - Block template you have the option to pass the `devicepath` parameter or the `auto-discover-devices` parameter. The `auto-discover-devices` parameter can automatically discover available storage devices on your worker nodes. If you don't pass this parameter, or if you pass `auto-discover-devices=false` you must specify the `device-path` parameter. 
+
+    ```sh
+    ibmcloud sat storage config create --name <config_name> --location <location> --template-name local-volume-block --template-version <template-version> --param "label-key=storage" --param "label-value=local-block" --param "dauto-discover-devices=true"
     ```
     {: pre}
 
@@ -679,5 +690,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 {: #sat-local-block-support}
 
 If you run into an issue with using the Local Storage Operator - Block template, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}. 
-
-

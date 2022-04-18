@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-18"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -77,6 +77,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
+
+    * [18 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1222)
+
+        * New and updated template parameters for the local block and local file storage templates.
 
     * [12 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1222)
 
