@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-18"
+lastupdated: "2022-04-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -30,7 +30,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 Set up an HTTP proxy for your hosts
-:   In allowlisted accounts that have locations enabled for Red Hat CoreOS, you can configure an HTTP proxy. For more information, see [Configuring an HTTP proxy for your Satellite hosts](docs/satellite?topic=satellite-config-http-proxy).
+:   In allowlisted accounts that have locations enabled for Red Hat CoreOS, you can configure an HTTP proxy. For more information, see [Configuring an HTTP proxy for your Satellite hosts](/docs/satellite?topic=satellite-config-http-proxy).
 
 New and updated template parameters for the local block and local file storage templates.
 :   Automatic disk discovery is now available for the `local-volume-block` and `local-volume-file` template version 4.9. Enable this feature by setting the `auto-disk-discovery=true` parameter. For more information, see [Local block storage](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-cli) and [Local file storage](/docs/satellite?topic=satellite-config-storage-local-file).

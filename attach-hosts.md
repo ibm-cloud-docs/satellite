@@ -76,7 +76,7 @@ To attach hosts to your location, you must download a host attachment script. Af
         - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
         - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
         - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
-    * If your hosts are in an on-premises data center, see [Attaching on-premises RHCOS hosts](#attach-rhel-hosts) or [Attaching on-premises RHEL hosts](#attach-rhel-hosts-console).
+    * If your hosts are in an on-premises data center, see [Attaching on-premises RHCOS hosts](#attach-rhcos-hosts) or [Attaching on-premises RHEL hosts](#attach-rhel-hosts).
 
 ## Attaching on-premises RHEL hosts to your location
 {: #attach-rhel-hosts}
