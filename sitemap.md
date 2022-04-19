@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-18"
+lastupdated: "2022-04-19"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -917,19 +917,13 @@ subcollection: satellite
 {: #sitemap_managing_hosts_and_locations}
 
 
-[Attaching hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts#attach-hosts)
+[Attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-hosts)
 
-* [Attaching hosts with the console](/docs/satellite?topic=satellite-attach-hosts#attach-hosts-console)
+* [Downloading the host attachment script for your location](/docs/satellite?topic=satellite-attach-hosts#host-attach-download)
 
-    * [Attaching RHEL hosts to an on-premises data center with the console](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts-console)
+* [Attaching on-premises RHEL hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts)
 
-    * [Attaching RHCOS hosts to an on-premises data center with the console](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts-console)
-
-* [Attaching hosts from the CLI](/docs/satellite?topic=satellite-attach-hosts#attach-hosts-cli)
-
-    * [Attaching RHEL hosts to an on-premises data center from the CLI](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts-cli)
-
-    * [Attaching RHCOS hosts to an on-premises data center from the CLI](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts-cli)
+* [Attaching on-premises RHCOS hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts)
 
 [Assigning hosts to worker pools](/docs/satellite?topic=satellite-assigning-hosts#assigning-hosts)
 
