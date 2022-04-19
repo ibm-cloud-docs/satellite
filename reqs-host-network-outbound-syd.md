@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-06"
+lastupdated: "2022-04-19"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -36,9 +36,9 @@ To check your host set up, you can use the `satellite-host-check` script. For mo
 {: #host-out-worker-syd}
 
 {{site.data.keyword.satelliteshort}} control plane hosts
-* Destination IPs:   N/A
-* Destination hostnames: `s3.ap.cloud-object-storage.appdomain.cloud`
-* Protocol and ports: HTTPS
+* Destination IPs: N/A
+* Destination hostnames: `s3.ap.cloud-object-storage.appdomain.cloud` and `*.s3.ap.cloud-object-storage.appdomain.cloud`
+* Protocol and ports: HTTPS 443
 
 ## Allow Link connectors to connect to the Link tunnel server endpoint
 {: #host-out-link-syd}
