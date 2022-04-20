@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-18"
+lastupdated: "2022-04-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -74,9 +74,10 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
             Example command to create VPC Gen 2 instances and attach hosts to a CoreOS-enabled location. For more information, about the `instance create` command, see the VPC Gen 2 [command line reference](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#instance-create).
             
             ```sh
-            ibmcloud is instance-create instance-1 my-vpc us-south-1 bx2d-4x16 0111-11e11111-1c11-1111-11aa-ba1a1d1cd111 --image r001-a1f111b1-11bc-1e1e-b11c-1d11c1111111 --user-data @/var/register-host_coreos.ign --keys SSH-KEY-ID
+            ibmcloud is instance-create instance-1 my-vpc us-south-1 bx2d-4x16 0111-11e11111-1c11-1111-11aa-ba1a1d1cd111 —-keys my-key --image r001-a1f111b1-11bc-1e1e-b11c-1d11c1111111 --user-data @/var/register-host_coreos.ign
             ```
             {: pre}
+           
             
         1. Repeat the previous step to create VPC Gen 2 instances for each host that you want to attach. Plan to attach at least 3 hosts to use in the control plane, and attach additional hosts for any services that you want to use.
             

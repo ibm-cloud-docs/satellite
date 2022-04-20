@@ -31,7 +31,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 New! Osaka location
-:   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Osaka** (`osa`, `jp-osa`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions). Note that {{site.data.keyword.satelliteshort}} Link flow logs for Location endpoints created in the Osaka (`jp-osa`) region are inconsistent or might not work.
+:   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Osaka** (`osa`, `jp-osa`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions).
 
 
 ### 18 April 2022

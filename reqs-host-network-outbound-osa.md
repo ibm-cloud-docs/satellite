@@ -15,9 +15,6 @@ subcollection: satellite
 # Osaka
 {: #reqs-host-network-outbound-osa}
 
-Note that {{site.data.keyword.satelliteshort}} Link flow logs for Location endpoints created in the Osaka (`jp-osa`) region are inconsistent or might not work.
-{: important}
-
 Before creating region specific firewall rules, make sure to create the general firewall rules for hosts in any region.
 {: shortdesc}
 
