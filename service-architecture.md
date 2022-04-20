@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-20"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -23,6 +23,8 @@ Learn about the {{site.data.keyword.satellitelong_notm}} service architecture, i
 
 The following image shows the main components in {{site.data.keyword.satellitelong_notm}} and how they interact with each other.
 {: shortdesc}
+
+
 
 ![Satellite for IBM Cloud service architecture](/images/sat_architecture.png "Satellite service architecture"){: caption="Figure 1. Satellite service architecture" caption-side="bottom"}
 
@@ -95,4 +97,3 @@ One of the components that is set up in the {{site.data.keyword.satelliteshort}}
 {: #workload-isolation-location}
 
 Because you manage the host infrastructure that you bring to your {{site.data.keyword.satelliteshort}} location, you are responsible to isolate app workloads that run on your infrastructure. If you host and run {{site.data.keyword.cloud_notm}} services in your location, such as {{site.data.keyword.openshiftlong_notm}}, you can leverage the tools and features that this service provides to isolate your workloads. For more information about available options, see the service documentation.
-
