@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-19"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os, core os
 
@@ -46,9 +46,9 @@ To check your host set up, you can use the `satellite-host-check` script. For mo
 {: #host-out-worker-fra}
 
 {{site.data.keyword.satelliteshort}} control plane hosts
-* Destination IPs:   N/A
-* Destination hostnames: `s3.eu.cloud-object-storage.appdomain.cloud`
-* Protocol and ports: HTTPS
+* Destination IPs: N/A
+* Destination hostnames: `s3.eu.cloud-object-storage.appdomain.cloud` and `*.s3.eu.cloud-object-storage.appdomain.cloud`
+* Protocol and ports: HTTPS 443
 
 ## Allow Link connectors to connect to the Link tunnel server endpoint
 {: #host-out-link-fra}
@@ -81,7 +81,7 @@ All {{site.data.keyword.satelliteshort}} hosts
 {: #host-out-cr-fra}
 
 All {{site.data.keyword.satelliteshort}} hosts
-* Destination IPs:   N/A
+* Destination IPs: N/A
 * Destination hostnames: `icr.io`, `registry.bluemix.net`, `de.icr.io`, `registry.eu-de.bluemix.net`
 * Protocol and ports: TCP 443
 

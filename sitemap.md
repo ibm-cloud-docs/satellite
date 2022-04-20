@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -77,6 +77,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
+
+    * [20 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2022)
+
+        * New! Osaka location
 
     * [18 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1822)
 
@@ -708,6 +712,24 @@ subcollection: satellite
 * [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-mon-lon)
 
 * [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-la-lon)
+
+[Osaka](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#reqs-host-network-outbound-osa)
+
+* [Allow control plane worker nodes to communicate with the control plane master](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-cp-osa)
+
+* [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-worker-osa)
+
+* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#allow-link-connectors-to-connect-to-the-link-tunnel-server-endpoint)
+
+* [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-services-osa)
+
+* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-akamai-lon)
+
+* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-cr-lon)
+
+* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-mon-lon)
+
+* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-la-lon)
 
 [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#reqs-host-network-outbound-sao)
 
