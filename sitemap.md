@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-20"
+lastupdated: "2022-04-21"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1240,15 +1240,15 @@ subcollection: satellite
 
 [Understanding {{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov#sat-storage-template-ov)
 
-* [How do I configure storage on {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-sat-configure)
+* [What are my options for deploying storage to {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-sat-configure)
+
+* [Which deployment option should I use?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-services)
 
 * [What are the benefits of using templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-benefits)
 
-* [I want to deploy services that consume storage, which deployment option should I use?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-services)
+* [How do templates work?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-flow)
 
-* [How do storage templates work?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-flow)
-
-* [Which storage providers have {{site.data.keyword.satelliteshort}} storage templates?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-ov-providers)
+* [Which storage templates are available?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-ov-providers)
 
 
 ### AWS storage templates
