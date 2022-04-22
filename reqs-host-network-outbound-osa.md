@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-20"
+lastupdated: "2022-04-22"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -53,7 +53,7 @@ You can find the hostnames or IPs by running the `dig c-<XX>-ws.jp-osa.link.sate
 {: #host-out-services-osa}
 
 All {{site.data.keyword.satelliteshort}} hosts
-* Destination IPs: 163.68.68.206, 163.69.64.158, 163.73.64.243
+* Destination IPs: 165.192.69.69, 161.202.126.210, 128.168.71.117
 * Destination hostnames: `origin.jp-osa.containers.cloud.ibm.com`
 * Protocol and ports: TCP 443
 

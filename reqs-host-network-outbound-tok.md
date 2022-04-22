@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-22"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -55,7 +55,7 @@ You can find the hostnames or IPs by running the `dig c-<XX>-ws.jp-tok.link.sate
 {: #host-out-services-tok}
 
 All {{site.data.keyword.satelliteshort}} hosts
-* Destination IPs: 161.202.247.13, 128.168.89.14, 165.192.85.219  
+* Destination IPs: 165.192.69.69, 161.202.126.210, 128.168.71.117
 * Destination hostnames: `origin.jp-tok.containers.cloud.ibm.com`
 * Protocol and ports: TCP 443
 

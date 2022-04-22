@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-22"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -55,7 +55,7 @@ You can find the hostnames or IPs by running the `dig c-<XX>-ws.au-syd.link.sate
 {: #host-out-services-syd}
 
 All {{site.data.keyword.satelliteshort}} hosts
-* Destination IPs: 130.198.71.20, 135.90.77.68, 168.1.20.148  
+* Destination IPs: 130.198.66.26, 135.90.69.66, 168.1.8.195
 * Destination hostnames: `origin.au-syd.containers.cloud.ibm.com` 
 * Protocol and ports: TCP 443
 
