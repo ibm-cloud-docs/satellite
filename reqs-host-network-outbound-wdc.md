@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-22"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -55,7 +55,7 @@ You can find the hostnames or IPs by running the `dig c-<XX>-ws.us-east.link.sat
 {: #host-out-services-wdc}
 
 All {{site.data.keyword.satelliteshort}} hosts
-* Destination IPs: 169.62.30.148, 169.63.121.164, 169.63.170.60  
+* Destination IPs: 169.63.88.186, 169.60.73.142, 169.61.109.34
 * Destination hostnames: `origin.us-east.containers.cloud.ibm.com` 
 * Protocol and ports: TCP 443
 

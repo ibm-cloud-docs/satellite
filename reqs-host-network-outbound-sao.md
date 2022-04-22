@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-22"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -54,7 +54,7 @@ You can find the hostnames or IPs by running the `dig c-<XX>-ws.br-sao.link.sate
 {: #host-out-services-sao}
 
 All {{site.data.keyword.satelliteshort}} hosts
-* Destination IPs: 163.107.65.70, 163.109.64.230, 169.57.163.14  
+* Destination IPs: 169.57.161.130, 163.109.65.146, 163.107.65.74
 * Destination hostnames: `origin.br-sao.containers.cloud.ibm.com`
 * Protocol and ports: TCP 443
 

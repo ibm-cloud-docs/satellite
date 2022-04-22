@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-04-22"
 
 keywords: satellite, mesh, istio, microservices
 
@@ -18,7 +18,7 @@ subcollection: satellite
 {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.satelliteshort}} Mesh provides an easy way to create, configure, connect and monitor your microservices network. 
 {: shortdesc}
 
-{{site.data.keyword.satelliteshort}} Mesh is in a limited beta release and is not available to all customers. It is supported for single Satellite clusters only. Do not use this service for production workloads. 
+{{site.data.keyword.satelliteshort}} Mesh is in a limited beta release and is not available to all customers. It is supported for single Satellite clusters only. Do not use this service for production workloads. {{site.data.keyword.satelliteshort}} Mesh is not available for Red Hat CoreOS enabled locations.
 {: beta}
 
 ## What is a service mesh?

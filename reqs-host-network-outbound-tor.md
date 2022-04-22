@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-04-22"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -55,7 +55,7 @@ You can find the hostnames or IPs by running the `dig c-<XX>-ws.ca-tor.link.sate
 {: #host-out-services-tor}
 
 All {{site.data.keyword.satelliteshort}} hosts
-* Destination IPs: 158.85.95.211, 163.74.65.28, 163.75.64.213  
+* Destination IPs: 163.75.64.114, 163.74.65.18, 158.85.65.194
 * Destination hostnames: `origin.ca-tor.containers.cloud.ibm.com`
 * Protocol and ports: TCP 443
 
