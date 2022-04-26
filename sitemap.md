@@ -78,6 +78,10 @@ subcollection: satellite
 
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
 
+    * [26 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2022)
+
+        * CLI change log
+
     * [20 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2022)
 
         * New! Osaka location
