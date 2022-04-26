@@ -31,7 +31,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 CLI change log
-:    Updated the CLI plug-in change log page for the [release of version 1.0.404](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:    Updated the CLI plug-in change log page for the [release of version 1.0.403](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 20 April 2022
 {: #satellite-apr2022}
