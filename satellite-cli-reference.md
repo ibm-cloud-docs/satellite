@@ -1780,7 +1780,7 @@ ibmcloud sat mesh upgrade  --mesh MESH_NAME [--output OUTPUT] [-q] [--version VE
 :    The version you want to upgrade the {{site.data.keyword.satelliteshort}} Mesh instance to.
 
 #### Example
-{: #cli-mesh-rm-example}
+{: #cli-mesh-upgrade-example}
 
 ```sh
 ibmcloud sat mesh upgrade --mesh <mesh_name> --version 2.0.1
