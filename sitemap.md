@@ -1961,6 +1961,8 @@ subcollection: satellite
 
     * [`ibmcloud sat mesh rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-rm)
 
+    * [`ibmcloud sat mesh upgrade`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-upgrade)
+
     * [`ibmcloud sat mesh versions`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-versions)
 
 * [Resource commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands)

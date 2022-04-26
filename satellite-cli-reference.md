@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-04-26"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1746,6 +1746,44 @@ ibmcloud sat mesh rm  --mesh MESH_NAME [--output OUTPUT] [-q]
 
 ```sh
 ibmcloud sat mesh rm --mesh <mesh_name>
+```
+{: pre}
+
+### `ibmcloud sat mesh upgrade`
+{: #cli-mesh-upgrade}
+
+Upgrade an existing {{site.data.keyword.satelliteshort}} Mesh instance.
+
+```sh
+ibmcloud sat mesh upgrade  --mesh MESH_NAME [--output OUTPUT] [-q] [--version VERSION]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #cli-mesh-upgrade-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #cli-mesh-upgrade-command-options}
+
+`--mesh MESH_NAME`
+:    Required. The name or ID of the {{site.data.keyword.satelliteshort}} Mesh instance you want to upgrade.
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+`--version VERSION`
+:    The version you want to upgrade the {{site.data.keyword.satelliteshort}} Mesh instance to.
+
+#### Example
+{: #cli-mesh-rm-example}
+
+```sh
+ibmcloud sat mesh upgrade --mesh <mesh_name> --version 2.0.1
 ```
 {: pre}
 
