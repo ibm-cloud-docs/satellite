@@ -2215,6 +2215,42 @@ ibmcloud sat storage assignment update --assignment ASSIGNMENT --group GROUP --n
 ```
 {: pre}
 
+### `ibmcloud sat storage assignment upgrade`
+{: #cli-storage-assign-upgrade}
+
+Upgrade a {{site.data.keyword.satelliteshort}} storage assignment. You can use the `assignment upgrade` command to upgrade a Satellite storage assignment to the latest storage configuration version.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT [-f] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #cli-storage-assign-upgrade-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #cli-storage-assign-upgrade-command-options}
+
+`--assignment ASSIGNMENT`
+:    Required. The name of the storage assignment. To list storage assignments, run `ibmcloud sat storage assignment ls`.
+
+`-f`
+:    Optional. Force the command to run with no user prompts.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #cli-storage-assign-upgrade-example}
+
+```sh
+ibmcloud sat storage assignment upgrade --assignment my-storage-assignment
+```
+{: pre}
+
 
 ### `ibmcloud sat storage config create`
 {: #cli-storage-config-create}
@@ -2380,6 +2416,47 @@ ibmcloud sat storage config rm --config CONFIG [-f] [-q]
 ibmcloud sat storage config rm --config ocs-config
 ```
 {: pre}
+
+### `ibmcloud sat storage config upgrade`
+{: #cli-storage-config-upgrade}
+
+Upgrade a {{site.data.keyword.satelliteshort}} storage configuration to the latest configuration version.
+{: shortdesc}
+
+```sh
+ibmcloud sat storage config upgrade --config CONFIG [-f] [--include-assignments] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #cli-storage-config-upgrade-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Configuration** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #cli-storage-config-upgrade-command-options}
+
+`--config CONFIG`
+:    Required. The name of the storage configuration that you want to upgrade. To list {{site.data.keyword.satelliteshort}} storage configurations, run `ibmcloud sat storage config ls`.
+
+`-f`
+:    Optional. Force the command to run with no user prompts.
+
+`--include-assignments`
+:    Optional. Include this option to also update the assignments of the storage configuration to the latest configuration version.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+
+#### Example
+{: #cli-storage-config-upgrade-example}
+
+```sh
+ibmcloud sat storage config upgrade --config ocs-config
+```
+{: pre}
+  
 
 
 ### `ibmcloud sat storage config sc add`
