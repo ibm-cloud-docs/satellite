@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-20"
+lastupdated: "2022-04-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -26,13 +26,19 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-apr22}
 
 
+### 26 April 2022
+{: #satellite-apr2022}
+{: release-note}
+
+CLI change log
+:    Updated the CLI plug-in change log page for the [release of version 1.0.403](/docs/satellite?topic=satellite-satellite-cli-changelog).
+
 ### 20 April 2022
 {: #satellite-apr2022}
 {: release-note}
 
 New! Osaka location
 :   You can now manage {{site.data.keyword.satelliteshort}} locations from the **Osaka** (`osa`, `jp-osa`) [{{site.data.keyword.cloud_notm}} region](/docs/satellite?topic=satellite-sat-regions).
-
 
 ### 18 April 2022
 {: #satellite-apr1822}

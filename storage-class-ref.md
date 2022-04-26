@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-04-26"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -265,5 +265,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC bloc
 | `ibmc-vpc-block-metro-retain-custom`  | Cusstom | Custom | Based on IOPS | SSD | Retain | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-retain-general-purpose` | 3 | 3 | 10 GiB - 16 TB | SSD | Retain | WaitForFirstConsumer |
 {: caption="Table 14. Storage class reference for IBM VPC block storage" caption-side="top"}
+
 
 

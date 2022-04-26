@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-26"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -77,6 +77,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
+
+    * [26 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2022)
+
+        * CLI change log
 
     * [20 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2022)
 
@@ -1654,6 +1658,38 @@ subcollection: satellite
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-sc-ref)
 
+[Storage class reference](/docs/satellite?topic=satellite-storage-class-ref#storage-class-ref)
+
+* [AWS EBS](/docs/satellite?topic=satellite-storage-class-ref#ebs-ref)
+
+* [AWS EFS](/docs/satellite?topic=satellite-storage-class-ref#efs-ref)
+
+* [Azure Disk](/docs/satellite?topic=satellite-storage-class-ref#azure-disk-ref)
+
+* [Azure File](/docs/satellite?topic=satellite-storage-class-ref#azure-file-ref)
+
+* [Google Compute Engine](/docs/satellite?topic=satellite-storage-class-ref#google-csi-ref)
+
+* [Local block storage](/docs/satellite?topic=satellite-storage-class-ref#local-block-ref)
+
+* [Local file storage](/docs/satellite?topic=satellite-storage-class-ref#local-file-ref)
+
+* [NetApp ONTAP-NAS 21.04](/docs/satellite?topic=satellite-storage-class-ref#netapp-nas-ref-2104)
+
+* [NetApp ONTAP-NAS 20.07](/docs/satellite?topic=satellite-storage-class-ref#netapp-nas-ref)
+
+* [NetApp ONTAP-SAN 21.04](/docs/satellite?topic=satellite-storage-class-ref#netapp-san-ref-2104)
+
+* [NetApp ONTAP-SAN 20.07](/docs/satellite?topic=satellite-storage-class-ref#netapp-san-ref)
+
+* [OpenShift Data Foundation for local volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-local-ref)
+
+* [OpenShift Data Foundation for remote volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-remote-ref)
+
+* [{{site.data.keyword.IBM_notm}} Spectrum Scale](/docs/satellite?topic=satellite-storage-class-ref#spec-scale-sc-ref)
+
+* [{{site.data.keyword.IBM_notm}} VPC block storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-vpc-csi-sc-ref)
+
 
 ## Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions
 {: #sitemap_setting_up__as_a_secure_gateway_for_on-prem_solutions}
@@ -1929,6 +1965,8 @@ subcollection: satellite
 
     * [`ibmcloud sat mesh rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-rm)
 
+    * [`ibmcloud sat mesh upgrade`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-upgrade)
+
     * [`ibmcloud sat mesh versions`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-versions)
 
 * [Resource commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands)
@@ -1955,6 +1993,8 @@ subcollection: satellite
 
     * [`ibmcloud sat storage assignment update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-update)
 
+    * [`ibmcloud sat storage assignment upgrade`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-upgrade)
+
     * [`ibmcloud sat storage config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create)
 
     * [`ibmcloud sat storage config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-get)
@@ -1962,6 +2002,8 @@ subcollection: satellite
     * [`ibmcloud sat storage config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-ls)
 
     * [`ibmcloud sat storage config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-rm)
+
+    * [`ibmcloud sat storage config upgrade`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade)
 
     * [`ibmcloud sat storage config sc add`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-sc-add)
 

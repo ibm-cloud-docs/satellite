@@ -132,7 +132,8 @@ toc:
                     - config-storage-local-block.md
                     - config-storage-local-file.md
                     - config-storage-odf-local.md
-                    - config-storage-odf-remote.md
+                    - config-storage-odf-remote.md 
+              - storage-class-ref.md
         - sg-usecase.md
         - topicgroup:
             label: Enhancing security
