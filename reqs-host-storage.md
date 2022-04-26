@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-04-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,4 +25,6 @@ Review the following requirements that relate to the storage setup of host machi
     - If `/usr` is not part of the 100 GB disk space, then it needs to be at least 1.5 GB.
 - For hosts that are used for the {{site.data.keyword.satelliteshort}} location control plane, the attached storage device must support at least 1000 IOPs. For example, a 10 IOPs/GB disk with at least 100 GB capacity. The required IOPS varies with the number of clusters in the location, and the activity of the masters for those clusters.
 - Hosts cannot have a device that is mounted to `/var/data`.
+
+
 
