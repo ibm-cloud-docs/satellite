@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-04-26"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -83,6 +83,20 @@ The following image depicts the workflow for creating a {{site.data.keyword.sate
 
 You can create a {{site.data.keyword.satelliteshort}} storage configuration by using a template for the storage provider that you want to use. If your preferred storage provider does not have a template, you can [create your own configuration template](https://github.com/{{site.data.keyword.IBM_notm}}/ibm-satellite-storage){: external} or you can manually deploy storage drivers. The following list includes the storage templates are currently available to deploy to your {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
+
+
+* [Amazon Elastic Block Storage (EBS)](/docs/satellite?topic=satellite-config-storage-ebs)
+* [Amazon Elastic File System (EFS)](/docs/satellite?topic=satellite-config-storage-efs)
+* **Deprecated** [{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale)
+* [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi)
+* [NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp-trident)
+* [NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas)
+* [NetApp ONTAP-SAN](/docs/satellite?topic=satellite-config-storage-netapp)
+* [Red Hat Local Storage Operator - Block](/docs/satellite?topic=satellite-config-storage-local-block)
+* [Red Hat Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file)
+* [Red Hat OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-odf-local)
+* [Red Hat OpenShift Data Foundation using remote volumes](/docs/satellite?topic=satellite-config-storage-odf-remote)
+* [Google Compute Engine persistent disk CSI driver](/docs/satellite?topic=satellite-config-storage-gcp-csi) 
 
 For a list of available storage templates and storage classes, review the [site map](/docs/satellite?topic=satellite-sitemap#sitemap_storage_class_reference).
 
