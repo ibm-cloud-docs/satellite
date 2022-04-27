@@ -622,7 +622,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
 {: #sat-storage-local-file-params-cli}
 
 ### Version 4.9 parameters
-{: #file-46-48-params}
+{: #file-49-params}
 
 | Parameter | Required? | Description |
 | --- | --- | --- |

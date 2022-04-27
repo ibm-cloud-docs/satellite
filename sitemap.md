@@ -78,7 +78,7 @@ subcollection: satellite
 
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
 
-    * [26 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2022)
+    * [26 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2622)
 
         * CLI change log
 
@@ -1596,7 +1596,7 @@ subcollection: satellite
 
 * [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
 
-    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-file#file-46-48-params)
+    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-file#file-49-params)
 
     * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-file#file-46-48-params)
 
