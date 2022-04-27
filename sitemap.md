@@ -723,7 +723,7 @@ subcollection: satellite
 
 * [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-worker-osa)
 
-* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#allow-link-connectors-to-connect-to-the-link-tunnel-server-endpoint)
+* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-link-osa)
 
 * [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-services-osa)
 
@@ -1568,9 +1568,9 @@ subcollection: satellite
 
 * [Local block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-params-cli)
 
-    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-block#version-49-parameters)
+    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-block#block-49-params)
 
-    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-block#versions-46-48-parameters)
+    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-block#block-46-48-params)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
 
@@ -1596,9 +1596,9 @@ subcollection: satellite
 
 * [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
 
-    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-file#version-49-parameters)
+    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-file#file-46-48-params)
 
-    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-file#versions-46-48-parameters)
+    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-file#file-46-48-params)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
 

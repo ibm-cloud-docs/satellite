@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-18"
+lastupdated: "2022-04-27"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -645,6 +645,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
 {: #sat-storage-local-block-params-cli}
 
 ### Version 4.9 parameters
+{: #block-49-params}
 
 | Parameter | Required? | Description |
 | --- | --- | --- |
@@ -659,6 +660,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is a required parameter. The third column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 ### Versions 4.6-4.8 parameters
+{: #block-46-48-params}
 
 | Parameter | Required? | Description |
 | --- | --- | --- |
@@ -690,3 +692,5 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 {: #sat-local-block-support}
 
 If you run into an issue with using the Local Storage Operator - Block template, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}. 
+
+
