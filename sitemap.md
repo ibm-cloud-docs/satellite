@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-04-27"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1110,6 +1110,10 @@ subcollection: satellite
     * [Example: Enable and audit limited access to a {{site.data.keyword.satelliteshort}} location from {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-link-location-cloud#link-example-audit-limited-access)
 
 [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-default-link-endpoints#default-link-endpoints)
+
+* [Default link endpoints for CoreOS enabled locations](/docs/satellite?topic=satellite-default-link-endpoints#rhcos-default-endpoints)
+
+* [Default link endpoints for locations without CoreOS enabled](/docs/satellite?topic=satellite-default-link-endpoints#non-rhcos-default-endpoints)
 
 [Creating and managing link endpoints](/docs/satellite?topic=satellite-link-cloud-create#link-cloud-create)
 
