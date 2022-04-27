@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-18"
+lastupdated: "2022-04-27"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -622,6 +622,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
 {: #sat-storage-local-file-params-cli}
 
 ### Version 4.9 parameters
+{: #file-49-params}
 
 | Parameter | Required? | Description |
 | --- | --- | --- |
@@ -637,6 +638,7 @@ Removing the storage configuration, uninstalls the local storage operator resour
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is a required parameter. The third column is a brief description of the parameter."}
 
 ### Versions 4.6-4.8 parameters
+{: #file-46-48-params}
 
 | Parameter | Required? | Description |
 | --- | --- | --- |

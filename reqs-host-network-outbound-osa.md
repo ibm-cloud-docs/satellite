@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-04-27"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -40,6 +40,7 @@ To check your host set up, you can use the `satellite-host-check` script. For mo
 * Protocol and ports: HTTPS 443
 
 ## Allow Link connectors to connect to the Link tunnel server endpoint
+{: #host-out-link-osa}
 
 You can find the hostnames or IPs by running the `dig c-<XX>-ws.jp-osa.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
 {: tip}

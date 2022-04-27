@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-13"
+lastupdated: "2022-04-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -152,7 +152,7 @@ The following image shows a highly available setup for compute hosts that are in
 You can modify this setting by changing the `accessTokenMaxAgeSeconds` value in the YAML file.
 
 
-2. Create a file called `accessTokenMaxAgeSeconds.yaml` with the following contents.
+1. Create a file called `accessTokenMaxAgeSeconds.yaml` with the following contents.
 
 
     ```yaml

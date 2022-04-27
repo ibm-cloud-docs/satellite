@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-04-27"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -31,7 +31,7 @@ You have two options when configuring storage in {{site.data.keyword.satellitesh
 :   You can create storage configurations by [using the {{site.data.keyword.satelliteshort}} storage template for the storage provider or driver](#storage-template-ov-providers) that you want to use. After you create a storage configuration by using a template, you can assign your storage configuration to your clusters or services. By using storage templates, you can create storage configurations that can be consistently assigned, updated, and managed across the clusters, service clusters, and cluster groups in your location.
 
 Bring your own Operators, drivers, and plug-ins
-:   You can also bring your own storage drivers to {{site.data.keyword.satelliteshort}} by installing them from the Catalog, OperatorHub, Helm charts, or by using your preferred method of deploying images to your clusters including images and drivers from various {{site.data.keyword.cloud_notm}} storage and partner solutions. Bringing your own storage driver is functionally supported, but you are responsible for the entire lifecycle operations, installation, troubleshooting, and support. Note that bringing your own drivers or operators to your {{site.data.keyword.satelliteshort}} clusters is possible, if you want to deploy services that use storage make sure you use one of the provided storage templates.
+:   You can also bring your own storage drivers to {{site.data.keyword.satelliteshort}} by installing them from the Catalog, OperatorHub, Helm charts, or by using your preferred method of deploying images to your clusters including images and drivers from various {{site.data.keyword.cloud_notm}} storage and partner solutions, for example Portworx. Bringing your own storage driver is functionally supported, but you are responsible for the entire lifecycle operations, installation, troubleshooting, and support. Note that bringing your own drivers or operators to your {{site.data.keyword.satelliteshort}} clusters is possible, if you want to deploy services that use storage make sure you use one of the provided storage templates.
 
 ## Which deployment option should I use?
 {: #storage-template-services}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-04-27"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -78,7 +78,7 @@ subcollection: satellite
 
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
 
-    * [26 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2022)
+    * [26 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2622)
 
         * CLI change log
 
@@ -723,7 +723,7 @@ subcollection: satellite
 
 * [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-worker-osa)
 
-* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#allow-link-connectors-to-connect-to-the-link-tunnel-server-endpoint)
+* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-link-osa)
 
 * [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-services-osa)
 
@@ -1110,6 +1110,10 @@ subcollection: satellite
     * [Example: Enable and audit limited access to a {{site.data.keyword.satelliteshort}} location from {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-link-location-cloud#link-example-audit-limited-access)
 
 [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-default-link-endpoints#default-link-endpoints)
+
+* [Default link endpoints for CoreOS enabled locations](/docs/satellite?topic=satellite-default-link-endpoints#rhcos-default-endpoints)
+
+* [Default link endpoints for locations without CoreOS enabled](/docs/satellite?topic=satellite-default-link-endpoints#non-rhcos-default-endpoints)
 
 [Creating and managing link endpoints](/docs/satellite?topic=satellite-link-cloud-create#link-cloud-create)
 
@@ -1564,9 +1568,9 @@ subcollection: satellite
 
 * [Local block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-params-cli)
 
-    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-block#version-49-parameters)
+    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-block#block-49-params)
 
-    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-block#versions-46-48-parameters)
+    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-block#block-46-48-params)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
 
@@ -1592,9 +1596,9 @@ subcollection: satellite
 
 * [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
 
-    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-file#version-49-parameters)
+    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-file#file-49-params)
 
-    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-file#versions-46-48-parameters)
+    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-file#file-46-48-params)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
 
