@@ -1250,7 +1250,7 @@ subcollection: satellite
 {: #sitemap_setting_up_storage}
 
 
-[Understanding {{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov#sat-storage-template-ov)
+[Understanding {{site.data.keyword.satelliteshort}} storage](/docs/satellite?topic=satellite-sat-storage-template-ov#sat-storage-template-ov)
 
 * [What are my options for deploying storage to {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-sat-configure)
 

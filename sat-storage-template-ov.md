@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-28"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Understanding {{site.data.keyword.satelliteshort}} storage templates
+# Understanding {{site.data.keyword.satelliteshort}} storage
 {: #sat-storage-template-ov}
 
 Before you can decide what type of storage is the right solution for your {{site.data.keyword.satelliteshort}} clusters, you must understand the infrastructure provider, your app requirements, the type of data that you want to store, and how often you want to access this data. For more information, see [choosing a storage solution](/docs/openshift?topic=openshift-storage_planning#choose_storage_solution).
