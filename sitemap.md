@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-28"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -77,6 +77,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
+
+    * [28 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2822)
+
+        * CLI change log
 
     * [26 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2622)
 
@@ -1246,7 +1250,7 @@ subcollection: satellite
 {: #sitemap_setting_up_storage}
 
 
-[Understanding {{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov#sat-storage-template-ov)
+[Understanding {{site.data.keyword.satelliteshort}} storage](/docs/satellite?topic=satellite-sat-storage-template-ov#sat-storage-template-ov)
 
 * [What are my options for deploying storage to {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-sat-configure)
 
