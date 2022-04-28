@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Host storage and attached devices
 {: #reqs-host-storage}
 
-Review the following storage requirements for hosts assigned to the location control plane and hosts assigned to services. Note that depending on the services you want to use, the storage requirements for hosts that are assigned to those services vary. For specific-service requirements, refer to the service documentation.
+Review the following storage requirements for hosts assigned to the location control plane and hosts assigned to services. Note that depending on the services you want to use, the storage requirements for hosts assigned to those services vary. For specific service requirements, refer to the service documentation.
 {: shortdesc}
 
 Hosts can't have a device mounted to `/var/data`.
