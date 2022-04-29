@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-04-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -61,8 +61,8 @@ As the edge environment system administrator, you enable a serverless tool to si
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) on your edge computing infrastructure.
 2. [Create a managed {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=openshift-satellite-clusters) in the {{site.data.keyword.satelliteshort}} location.
 3. [Access the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
-4. Using the OperatorHub, [install the {{site.data.keyword.redhat_openshift_notm}} Serverless operator](https://cloud.redhat.com/learn/topics/serverless){: external}.
-5. [Install the Knative Serving Operator](https://cloud.redhat.com/learn/topics/serverless){: external}.
+4. Using the OperatorHub, [install the {{site.data.keyword.redhat_openshift_notm}} Serverless operator](https://www.redhat.com/en/topics/microservices/why-choose-openshift-serverless){: external}.
+5. [Install the Knative Serving Operator](https://www.redhat.com/en/topics/microservices/why-choose-openshift-serverless){: external}.
 
 You deployed {{site.data.keyword.satelliteshort}} with a serverless component.
 
@@ -74,6 +74,6 @@ As the AI developer, run model inferencing on your edge data by using the server
 
 1. Download the trained model from {{site.data.keyword.cos_full_notm}} to your local development environment.
 2. Create a [Knative-compliant container image](https://knative.dev/docs/serving/samples/hello-world/helloworld-python/index.html){: external}.
-3. [Deploy the image](https://developers.redhat.com/blog/2020/04/30/serverless-applications-made-faster-and-simpler-with-openshift-serverless-ga/){: external} to your {{site.data.keyword.redhat_openshift_notm}} Serverless processor that runs in your {{site.data.keyword.satelliteshort}} cluster. You can use the {{site.data.keyword.redhat_openshift_notm}} web console in the developer perspective, or use the `kn` command line tool for {{site.data.keyword.satelliteshort}} Serverless.
+3. [Deploy the image](https://developers.redhat.com/blog/2020/04/30/serverless-applications-made-faster-and-simpler-with-openshift-serverless-ga){: external} to your {{site.data.keyword.redhat_openshift_notm}} Serverless processor that runs in your {{site.data.keyword.satelliteshort}} cluster. You can use the {{site.data.keyword.redhat_openshift_notm}} web console in the developer perspective, or use the `kn` command line tool for {{site.data.keyword.satelliteshort}} Serverless.
 
 Now, you have a managed {{site.data.keyword.satelliteshort}} location that runs on your edge environment and performs on-demand model inferencing for your edge data through your AI-trained model and {{site.data.keyword.redhat_openshift_notm}} Serverless.
