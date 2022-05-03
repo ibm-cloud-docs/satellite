@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -30,7 +30,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 CLI change log
-:    Updated the CLI plug-in change log page for the [release of version 1.0.404](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.404](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 
 ### 26 April 2022
@@ -38,7 +38,7 @@ CLI change log
 {: release-note}
 
 CLI change log
-:    Updated the CLI plug-in change log page for the [release of version 1.0.403](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.403](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 20 April 2022
 {: #satellite-apr2022}
@@ -89,7 +89,7 @@ New! Check your host setup before attaching hosts to your location.
 {: release-note}
 
 CLI change log
-:    Updated the CLI plug-in change log page for the [release of version 1.0.384](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.384](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 
 ### 10 March 2022
@@ -598,7 +598,7 @@ New! General availability of {{site.data.keyword.satellitelong}}
 :   {{site.data.keyword.satellitelong_notm}} is now generally available. If you created locations during the closed beta, you must [re-create your locations](/docs/satellite?topic=satellite-location-copy) for the general availability release. For more information about what you are charged for when you use {{site.data.keyword.satellitelong_notm}}, see the [FAQs](/docs/satellite?topic=satellite-faqs#pricing).
 
 CLI changelog
-:    Updated the CLI plug-in changelog page for the [release of version 1.0.233](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in changelog page for the [release of version 1.0.233](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 Cloud provider guides
 :   Added instructions to set up {{site.data.keyword.satelliteshort}} locations that use infrastructure from [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), and [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm).
