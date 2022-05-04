@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-05-04"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1886,7 +1886,7 @@ ibmcloud sat resource history --resource RESOURCE [--limit LIMIT] [--output json
 :    Required. The ID of the Kubernetes resource. To list Kubernetes resources, run `ibmcloud sat resource ls`.
 
 `--limit LIMIT`
-:    Optional. The maximum number of history entries to return. Enter a value less than 500.
+:    Optional. The maximum number of history entries to return. 
 
 `--output json`
 :    Optional. Prints the command output in JSON format.
@@ -1925,7 +1925,7 @@ ibmcloud sat resource ls [--cluster CLUSTER] [--limit NUMBER] [--search STRING] 
 :    Optional. The name or ID of the registered cluster that the Kubernetes resource runs in. To list registered clusters, run `ibmcloud sat cluster ls`.
 
 `--limit NUMBER`
-:    Optional. Limit the number of Kubernetes resources that are returned. Enter a number less than 500.
+:    Optional. Limit the number of Kubernetes resources that are returned. 
 
 `--search STRING`
 :    Optional. A string to filter results by, such as the name of a `pod`, `namespace`, or other string.
