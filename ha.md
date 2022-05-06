@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -158,11 +158,11 @@ You can modify this setting by changing the `accessTokenMaxAgeSeconds` value in 
     ```yaml
     apiVersion: config.openshift.io/v1
     kind: OAuth
-      metadata:
-        name: cluster
-      spec:
-        tokenConfig:
-          accessTokenMaxAgeSeconds: 259200
+    metadata:
+       name: cluster
+    spec:
+      tokenConfig:
+        accessTokenMaxAgeSeconds: 259200
     ```
     {: codeblock}
 
