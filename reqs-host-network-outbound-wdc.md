@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-05-09"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -72,7 +72,7 @@ All {{site.data.keyword.satelliteshort}} hosts
 
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs: N/A
-* Destination hostnames: `icr.io`, `us.icr.io`, `registry.bluemix.net`,
+* Destination hostnames: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`
 * Protocol and ports: TCP 443
 
 ## Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
