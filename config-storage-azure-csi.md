@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-10"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -102,7 +102,7 @@ Create a configuration file with your Azure Disk settings.
     {: screen}
 
 
-1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/account/){: external} and retrieve the required parameters. For more information about the parameters, see [Cluster config](https://kubernetes-sigs.github.io/cloud-provider-azure/install/configs/#cluster-config).
+1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/get-started/){: external} and retrieve the required parameters. For more information about the parameters, see [Cluster config](https://kubernetes-sigs.github.io/cloud-provider-azure/install/configs/#cluster-config).
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-10"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file
 
@@ -32,7 +32,7 @@ Set up [Azure File storage](https://docs.microsoft.com/en-us/azure/aks/azure-fil
 {: shortdesc}
 
 
-To use the Azure File CSI driver storage template, complete the following tasks: 
+To use the Azure File CSI driver storage template, complete the following tasks.
 
 1. Create an Azure location by using the [location template](/docs/satellite?topic=satellite-azure) or manually [adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach). 
     If you choose to manually assign hosts, you must [label your worker nodes](#azure-file-label-nodes) before creating your storage configuration.
@@ -76,7 +76,7 @@ If you manually assigned your Azure hosts to your location and did not use an au
 
 1. Repeat the previous steps for each worker node.
 
-1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/account/){: external} and retrieve the required parameters. For more information about the parameters, see the [parameter reference](#sat-storage-azure-file-params-cli).
+1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/get-started/){: external} and retrieve the required parameters. For more information about the parameters, see the [parameter reference](#sat-storage-azure-file-params-cli).
 
 
 ## Creating an Azure File configuration in the command line
