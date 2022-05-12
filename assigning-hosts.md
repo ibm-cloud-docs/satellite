@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-12"
+lastupdated: "2022-05-12"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host autoassignment, host auto assignment, host labels
 
@@ -57,8 +57,8 @@ Say that you have a {{site.data.keyword.satelliteshort}} cluster with a `default
 
 Your {{site.data.keyword.satelliteshort}} location has available (unassigned) hosts with host labels as follows.
 - Host A: `cpu=4, memory=32, env=prod, zone=us-east-1b` `os=rhel`
-- Host B: `cpu=4, memory=32, zone=us-east-1a` `os=rhel`
-- Host C: `cpu=4, memory=64, env=prod` `os=rhel`
+- Host B: `cpu=4, memory=32, zone=us-east-1a` `os=RHEL7`
+- Host C: `cpu=4, memory=64, env=prod` `os=RHEL7`
 - Host D: `cpu=4, memory=64, env=prod` `os=RHCOS`
 
 If you resize the `default` worker pool to request 3 more worker nodes, only Host C can be automatically assigned, but not Host A or Host B.

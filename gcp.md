@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-10"
+lastupdated: "2022-05-12"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
 subcollection: satellite
 
@@ -87,7 +87,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     ```
     {: codeblock}
 
-4. From the [GCP main menu](https://console.cloud.google.com/){: external}, navigate to the **Compute Engine** dashboard and select **Instance templates**.
+4. From the [GCP main menu](https://console.cloud.google.com/getting-started){: external}, navigate to the **Compute Engine** dashboard and select **Instance templates**.
 5. Click **Create instance template**.
 6. Enter the details for your instance template as follows.
 
@@ -103,7 +103,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     7. In the **Networking** tab, choose the network that you want your instances to be connected to. This network must allow access to {{site.data.keyword.satellitelong_notm}} as described in [Firewall settings](#gcp-reqs-firewall). You can check and change the firewall settings for your network in the next step.
     8. Click **Create** to save your instance template.
 7. Optional: Update the firewall settings for the network that you assigned to your instance template.
-    9. From the [GCP main menu](https://console.cloud.google.com/){: external}, navigate to the **VPC Network** dashboard and select **Firewall**.
+    9. From the [GCP main menu](https://console.cloud.google.com/getting-started){: external}, navigate to the **VPC Network** dashboard and select **Firewall**.
     10. Verify that your network allows access as describe in the [Network firewall settings](#gcp-reqs-firewall). Make changes as necessary.
 8. From the GCP **Compute Engine** dashboard, select **Instance templates** and find the instance template that you created.
 9. From the actions menu, click **Create VM** to create an instance from your template. You can alternatively click **Create Instance Group** to create an instance group to add multiple instances at the same time. Make sure that you spread your instances across multiple zones for higher availability.
