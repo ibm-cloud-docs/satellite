@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-12"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -295,6 +295,49 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         {: pre}
 
 8. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you used and verify that the file system grows in size.   
+
+## Upgrading a storage configuration
+{: #aws-efs-upgrade-config}
+
+You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage configurations, make a note of the {{site.data.keyword.satelliteshort}} configuration you want to upgrade.
+    ```sh
+    ibmcloud sat storage config ls
+    ```
+    {: pre}
+
+1. Upgrade the {{site.data.keyword.satelliteshort}} configuration. Note, only the configuration is updated. If you want to upgrade the assignments that use this configuration, you can specify the `--include-assignments` option or you can manually update each assignment using the `assignment update` command.
+    ```sh
+    ibmcloud sat storage config upgrade --config CONFIG [--include-assignments]
+    ```
+    {: pre}
+
+## Upgrading a storage assignment
+{: #aws-efs-upgrade-assignment}
+
+You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to upgrade.
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. List the {{site.data.keyword.satelliteshort}} storage templates to see the latest available versions.
+    ```sh
+    ibmcloud sat storage template ls
+    ```
+    {: pre}
+
+1. Upgrade the {{site.data.keyword.satelliteshort}} assignment.
+    ```sh
+   ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT
+    ```
+    {: pre}
+
+## Updating a storage assignment
+{: #aws-efs-update-assignment}
 
 ## Removing AWS EFS storage from your apps
 {: #aws-efs-rm}
