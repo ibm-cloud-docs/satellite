@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-12"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1279,6 +1279,12 @@ subcollection: satellite
 
 * [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-rm)
 
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-update-assignment)
+
 * [Removing the AWS EBS storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm)
 
 * [AWS EBS storage configuration CLI parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-params-cli)
@@ -1296,6 +1302,12 @@ subcollection: satellite
     * [Assigning your storage configuration to clusters or cluster groups](/docs/satellite?topic=satellite-config-storage-efs#efs-config-assign)
 
 * [Deploying an app that uses AWS EFS storage](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-efs-deploy)
+
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-update-assignment)
 
 * [Removing AWS EFS storage from your apps](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-rm)
 
@@ -1326,6 +1338,12 @@ subcollection: satellite
 
 * [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-config-storage-azure-csi#storage-azure-csi-app-deploy)
 
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-update-assignment)
+
 * [Removing Azure Disk storage from your apps](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-rm)
 
 * [Removing the Azure Disk storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-template-rm)
@@ -1352,6 +1370,12 @@ subcollection: satellite
 
 * [Deploying an app that uses your Azure File storage](/docs/satellite?topic=satellite-config-storage-azurefile-csi#storage-azure-file-csi-app-deploy)
 
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-update-assignment)
+
 * [Removing Azure file storage from your apps](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-rm)
 
 * [Removing the Azure File storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-template-rm)
@@ -1374,6 +1398,12 @@ subcollection: satellite
     * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-gcp-csi#assign-storage-gcp-csi)
 
 * [Deploying an app that uses Google Compute Engine persistent disk](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-deploy-app)
+
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-gcp-csi#gce-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-gcp-csi#gce-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-gcp-csi#gce-update-assignment)
 
 * [Removing storage from your apps](/docs/satellite?topic=satellite-config-storage-gcp-csi#gce-rm-apps)
 
@@ -1442,6 +1472,12 @@ subcollection: satellite
 
 * [Deploying an app that uses {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-deploy-app)
 
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-update-assignment)
+
 * [Removing storage from your apps](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-rm-apps)
 
 * [Removing the storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-template-rm)
@@ -1467,6 +1503,12 @@ subcollection: satellite
 
     * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp-cli)
 
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-update-assignment)
+
     * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-template-rm-cli)
 
 * [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-trident-support)
@@ -1482,6 +1524,12 @@ subcollection: satellite
     * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#assign-storage-netapp-cli-nas-2104)
 
 * [Deploying an app that uses ONTAP-NAS storage](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#sat-storage-netapp-nas-deploy-2104)
+
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-update-assignment)
 
 * [Removing NetApp ONTAP-NAS storage from your apps](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-rm-2104)
 
@@ -1505,6 +1553,12 @@ subcollection: satellite
 
 * [Deploying an app that uses ONTAP-NAS storage](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-nas-deploy)
 
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-update-assignment)
+
 * [Removing NetApp ONTAP-NAS storage from your apps](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-rm)
 
     * [Removing the NetApp ONTAP-NAS storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-template-rm-cli)
@@ -1525,6 +1579,12 @@ subcollection: satellite
 
     * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-2104#assign-storage-netapp-cli-san-2104)
 
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-san-2104-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-san-2104-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-san-2104-update-assignment)
+
 * [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-params-cli-san-2104)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-2104#netapp-sc-reference-san-2104)
@@ -1540,6 +1600,12 @@ subcollection: satellite
 * [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-san)
 
     * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-cli-san)
+
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-netapp#netapp-cli-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp#netapp-cli-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp#netapp-cli-update-assignment)
 
 * [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-params-cli-san)
 
@@ -1568,6 +1634,12 @@ subcollection: satellite
 
 * [Deploying an app that uses your local block storage](/docs/satellite?topic=satellite-config-storage-local-block#deploy-app-local-block)
 
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-update-assignment)
+
 * [Removing the local block storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-remove-local-block-config)
 
 * [Local block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-params-cli)
@@ -1595,6 +1667,12 @@ subcollection: satellite
     * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file-cli)
 
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-config-storage-local-file#deploy-app-local-file)
+
+* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-upgrade-config)
+
+* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-upgrade-assignment)
+
+* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-update-assignment)
 
 * [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-remove-local-file-config)
 

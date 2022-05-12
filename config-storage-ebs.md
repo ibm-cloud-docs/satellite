@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-07"
+lastupdated: "2022-05-12"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -362,7 +362,69 @@ Removing your AWS EBS instance permanently removes all the data that is stored o
 
     2. From the [AWS EC2 dashboard](https://console.aws.amazon.com/ec2/v2/home){: external}, select **Elastic Block Store** > **Volumes** and verify that your AWS EBS instance is removed.
 
+## Upgrading a storage configuration
+{: #aws-ebs-upgrade-config}
 
+You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage configurations, make a note of the {{site.data.keyword.satelliteshort}} configuration you want to upgrade.
+    ```sh
+    ibmcloud sat storage config ls
+    ```
+    {: pre}
+
+1. Upgrade the {{site.data.keyword.satelliteshort}} configuration. Note, only the configuration is updated. If you want to upgrade the assignments that use this configuration, you can specify the `--include-assignments` option or you can manually update each assignment using the `assignment update` command.
+    ```sh
+    ibmcloud sat storage config upgrade --config CONFIG [--include-assignments]
+    ```
+    {: pre}
+
+## Upgrading a storage assignment
+{: #aws-ebs-upgrade-assignment}
+
+You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to upgrade.
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. List the {{site.data.keyword.satelliteshort}} storage templates to see the latest available versions.
+    ```sh
+    ibmcloud sat storage template ls
+    ```
+    {: pre}
+
+1. Upgrade the {{site.data.keyword.satelliteshort}} assignment.
+    ```sh
+   ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT
+    ```
+    {: pre}
+
+## Updating a storage assignment
+{: #aws-ebs-update-assignment}
+
+You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to update and the clusters or cluster groups included in the assignment.
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. Update the {{site.data.keyword.satelliteshort}} assignment. 
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
+    ```
+    {: pre}
+
+    Example command to update assignment name and assign different cluster groups.
+    
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT --name new-name --group group-1 --group group-2 --group group-3
+    ```
+    {: pre}
 
 ## Removing the AWS EBS storage configuration from your cluster
 {: #aws-ebs-template-rm}

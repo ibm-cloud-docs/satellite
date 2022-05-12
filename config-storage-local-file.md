@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-05-12"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -443,6 +443,49 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     ```
     {: pre}
 
+
+## Upgrading a storage configuration
+{: #sat-storage-local-file-upgrade-config}
+
+You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage configurations, make a note of the {{site.data.keyword.satelliteshort}} configuration you want to upgrade.
+    ```sh
+    ibmcloud sat storage config ls
+    ```
+    {: pre}
+
+1. Upgrade the {{site.data.keyword.satelliteshort}} configuration. Note, only the configuration is updated. If you want to upgrade the assignments that use this configuration, you can specify the `--include-assignments` option or you can manually update each assignment using the `assignment update` command.
+    ```sh
+    ibmcloud sat storage config upgrade --config CONFIG [--include-assignments]
+    ```
+    {: pre}
+
+## Upgrading a storage assignment
+{: #sat-storage-local-file-upgrade-assignment}
+
+You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to upgrade.
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. List the {{site.data.keyword.satelliteshort}} storage templates to see the latest available versions.
+    ```sh
+    ibmcloud sat storage template ls
+    ```
+    {: pre}
+
+1. Upgrade the {{site.data.keyword.satelliteshort}} assignment.
+    ```sh
+   ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT
+    ```
+    {: pre}
+
+## Updating a storage assignment
+{: #sat-storage-local-file-update-assignment}
 
 ## Removing the local file storage configuration from your cluster
 {: #sat-storage-remove-local-file-config}
