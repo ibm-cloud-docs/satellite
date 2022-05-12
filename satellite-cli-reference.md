@@ -10,6 +10,7 @@ subcollection: satellite
 
 ---
 
+
 {{site.data.keyword.attribute-definition-list}}
 
 
