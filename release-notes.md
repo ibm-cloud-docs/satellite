@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-02"
+lastupdated: "2022-05-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,6 +21,16 @@ content-type: release-note
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
 {: shortdesc}
 
+
+## May 2022
+{: #satellite-may22}
+
+### 12 May 2022
+{: #satellite-may1222}
+{: release-note}
+
+New! {{site.data.keyword.satelliteshort}} configuration and assignment update commands
+:   You can now update and upgrade your {{site.data.keyword.satelliteshort}} storage configurations and assignments from the CLI. For more information, see the [{{site.data.keyword.satelliteshort}} storage commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-storage-commands).
 
 ## April 2022
 {: #satellite-apr22}

@@ -76,6 +76,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may22)
+
+    * [12 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1222)
+
+        * New! {{site.data.keyword.satelliteshort}} configuration and assignment update commands
+
 * [April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr22)
 
     * [28 April 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2822)
