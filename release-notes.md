@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,6 +24,18 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## May 2022
 {: #satellite-may22}
+
+### 13 May 2022
+{: #satellite-may1322}
+{: release-note}
+
+New! Added {{site.data.keyword.messagehub_full}} as a {{site.date.keyword.satelliteshort}}-enabled service
+:   See [Getting started with {{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting-started).
+
+New location error message is added. 
+:   For more information see [R0058: DNS registration is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0058).
+
+
 
 ### 12 May 2022
 {: #satellite-may1222}

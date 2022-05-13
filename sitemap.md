@@ -78,6 +78,12 @@ subcollection: satellite
 
 * [May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may22)
 
+    * [13 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1322)
+
+        * New! Added {{site.data.keyword.messagehub_full}} as a {{site.date.keyword.satelliteshort}}-enabled service
+
+        * New location error message is added. 
+
     * [12 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1222)
 
         * New! {{site.data.keyword.satelliteshort}} configuration and assignment update commands
@@ -2419,6 +2425,8 @@ subcollection: satellite
 * [R0056: Pod status stuck in `terminating`](/docs/satellite?topic=satellite-ts-locations-debug#R0056)
 
 * [R0057: Outbound traffic to IAM is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0057)
+
+* [R0058: DNS registration is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0058)
 
 
 ### Locations
