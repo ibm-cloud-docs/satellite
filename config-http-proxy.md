@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-18"
+lastupdated: "2022-05-13"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -18,15 +18,13 @@ subcollection: satellite
 You can configure an HTTP proxy so that all outbound traffic from your {{site.data.keyword.satelliteshort}} hosts is routed through the proxy.
 {: shortdesc}
 
-To configure an HTTP proxy, your location must be enabled for Red Hat CoreOS. You cannot configure an HTTP proxy for a location that is RHEL-based. For more information, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location).
-{: note}
-
 Setting up an HTTP proxy is available only for allowlisted accounts.
 {: important}
 
-## Considerations for HTTP proxy
+## What type of location do I need to use HTTP proxy?
 {: #consider-http-proxy}
 
+Consider the following types of locations.
 
 Existing RHEL-based locations
 :   To set up a proxy, your location must be enabled for Red Hat CoreOS (RHCOS). If your existing location is not RHCOS-enabled, then you can't configure an HTTP proxy. Create a RHCOS-enabled location, then [configure your HTTP proxy](#http-proxy-config).
@@ -36,7 +34,6 @@ Existing Red Hat CoreOS-enabled locations with attached hosts
 
 New Red Hat CoreOS-enabled locations
 :   Before attaching your hosts to your location, [configure your HTTP proxy](#http-proxy-config).
-
 
 
 You cannot configure an HTTP proxy for worker to master communications or for connecting to the package mirrors. You must edit each host that is attached to your location, including the hosts that make up the control plane. Your configuration might vary by provider. Consider setting up your proxy outside of the {{site.data.keyword.satelliteshort}} environment to ensure that the configuration works for your infrastructure. Then, configure your proxy in the {{site.data.keyword.satelliteshort}} environment.
@@ -88,14 +85,14 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
     {: codeblock}
     
 5. Save the file.
-6. Navigate to `/etc/environment` on your host. If that file does not exist, create it. 
+6. Navigate to the `/etc/environment` file on your host. If that file does not exist, create it. 
     
     ```sh
     mkdir -p /etc/environment
     ```
     {: pre}
     
-7. Edit the file and add the following information. Enter the `<VALUE>` for `NO_PROXY` from step 2.
+7. Edit the `/etc/environment` file and add the following information. Enter the `<VALUE>` for `NO_PROXY` from step 2.
 
     ```sh
     HTTP_PROXY=xxxxx
