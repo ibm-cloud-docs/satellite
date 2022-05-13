@@ -80,7 +80,7 @@ subcollection: satellite
 
     * [13 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1322)
 
-        * New! Added {{site.data.keyword.messagehub_full}} as a {{site.date.keyword.satelliteshort}}-enabled service
+        * New! Added {{site.data.keyword.messagehub_full}} as a {{site.data.keyword.satelliteshort}}-enabled service
 
         * New location error message is added. 
 
