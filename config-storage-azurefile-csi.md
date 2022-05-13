@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file
 
@@ -590,7 +590,7 @@ For help finding these parameters, see the [Azure CLI documentation](https://doc
 | --- | --- | --- | 
 | `tenantId` | Required | The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. |
 | `subscriptionId` | Required | Your Azure subscription ID. You can find your subscription ID in the Azure portal or by running the `az account subscription list` command. |
-| `aadClientId` | Required | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az identity list` command. |
+| `aadClientId` | Required | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name APP-NAME` command. In the command output, look for the `appID` value. |
 | `aadClientSecret` | Required | Your Azure Active Directory Client Secret. |
 | `resourceGroup` | Required | The name of your Azure resource group. You can find your resource group in the Azure portal or by running the `az group list` command. |
 | `location` | Required | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal. For example `useast` |
