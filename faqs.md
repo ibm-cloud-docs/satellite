@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-21"
+lastupdated: "2022-05-13"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location
 
@@ -67,7 +67,7 @@ See the [{{site.data.keyword.IBM_notm}} open source and third-party policy](http
 {: #host-software}
 {: faq}
 
-To add your own server as a host in your {{site.data.keyword.satelliteshort}} location, the host must meet certain [compute, storage, networking, and system requirements](/docs/satellite?topic=satellite-host-reqs). These requirements specify the Red Hat software packages that must be installed on the Red Hat Enterprise Linux 7 hosts. No other software packages, including vulnerability scanning tools such as McAfee or Qualys, can be installed on the hosts.
+To add your own server as a host in your {{site.data.keyword.satelliteshort}} location, the host must meet certain [compute, storage, networking, and system requirements](/docs/satellite?topic=satellite-host-reqs). These requirements specify the Red Hat software packages that must be installed on the Red Hat Enterprise Linux 7 hosts. Other software packages that make modifications to the hosts, including vulnerability scanning tools such as McAfee or Qualys, cannot be installed on the hosts. But you can install read-only software such as OpenSCAP on the hosts before attaching them to your location.
 
 The reasons that you cannot install extra software on the hosts relate to [{{site.data.keyword.IBM_notm}} 's responsibilities](/docs/satellite?topic=satellite-responsibilities) to manage multiple aspects of the {{site.data.keyword.satelliteshort}} hosts for you, such as installation, access, and maintenance.
 
@@ -195,5 +195,4 @@ Keep in mind that each service might:
 {: #faq-managed-addons}
 
 See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-managed-addons#addons-satellite).
-
 
