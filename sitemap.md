@@ -932,7 +932,7 @@ subcollection: satellite
 
 * [Manually adding hosts to {{site.data.keyword.satelliteshort}} in the GCP console](/docs/satellite?topic=satellite-gcp#gcp-host-attach)
 
-* [Manually ordering hosts with the gcloud CLI](/docs/satellite?topic=satellite-gcp#gcp-manual-cli)
+* [Manually ordering hosts with the `gcloud` CLI](/docs/satellite?topic=satellite-gcp#gcp-manual-cli)
 
 * [Network firewall settings](/docs/satellite?topic=satellite-gcp#gcp-reqs-firewall)
 

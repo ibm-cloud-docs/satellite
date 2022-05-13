@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce
 
@@ -484,7 +484,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 | `token_uri` | Required | Token URI for the Service Account. This can be found in the JSON service account key file. | N/A |
 | `auth_provider_x509_cert_url` | Required | URL for the Auth Provider Certificate. This can be found in the JSON service account key file. | N/A |
 | `client_x509_cert_url` | Required | URL for the Client Certificate. This can be found in the JSON service account key file. | N/A |
-{: caption="Table 1. Parameter reference for Google compute enginge persistent disk storage" caption-side="top"}
+{: caption="Table 1. Parameter reference for Google compute engine persistent disk storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates required parameters. The third column is a brief description of the parameter."}
 
 ## Storage class reference

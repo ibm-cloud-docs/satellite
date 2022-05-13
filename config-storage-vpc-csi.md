@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -483,7 +483,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 | `g2_api_key` | Required | IAM api key. | N/A |
 | `g2_resource_group_id` | Required | Resource group ID. The list resource groups, run `ibmcloud resource groups`. | N/A |
 | `g2_riass_endpoint_url` | Required | PRIASS endpoint url. | N/A |
-| `g2_token_exchange_endpoint_url` | Required | IAM token exchange enpoint url. | N/A |
+| `g2_token_exchange_endpoint_url` | Required | IAM token exchange endpoint url. | N/A |
 {: caption="Table 1. Parameter reference for IBM VPC block storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates required parameters. The third column is a brief description of the parameter."}
 
@@ -496,13 +496,13 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC bloc
 
  Storage class name | Default Read IOPS per GB | Default Write IOPS per GB | Size range (per disk) | Hard disk | Reclaim policy | Volume Binding Mode |
 | --- | --- | --- | --- | --- | --- | --- |
-| `sat-vpc-block-gold-metro` **Dfault** | 10 | 10 | 10 GB - 4 TB | SSD | Delete | WaitForFirstConsumer |
+| `sat-vpc-block-gold-metro` **Default** | 10 | 10 | 10 GB - 4 TB | SSD | Delete | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-5iops-tier`  | 5 | 5 | 10 GB - 9600 GB | SSD | Delete | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-custom` | Custom | Custom | Based on IOPS | SSD | Delete | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-general-purpose` | 3 | 3 | 10 GB - 16 TB | SSD | Delete | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-retain-10iops-tier`  | 10 | 10 | 10 GB - 4 TB | SSD | Retain | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-retain-5iops-tier` | 5 | 5 | 10 GB - 9600 GB | SSD | Retain | WaitForFirstConsumer |
-| `ibmc-vpc-block-metro-retain-custom`  | Cusstom | Custom | Based on IOPS | SSD | Retain | WaitForFirstConsumer |
+| `ibmc-vpc-block-metro-retain-custom`  | Custom | Custom | Based on IOPS | SSD | Retain | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-retain-general-purpose` | 3 | 3 | 10 GiB - 16 TB | SSD | Retain | WaitForFirstConsumer |
 {: caption="Table 2. Storage class reference for IBM Block Storage for VPC" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the reclaim policy. The third column is the volume binding mode."}

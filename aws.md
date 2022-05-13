@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-05-13"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, aws, amazon web services
 
 subcollection: satellite
 
@@ -32,7 +32,7 @@ Automate your AWS setup with templates that use [{{site.data.keyword.bplong}}](/
 
 For more configuration options, you can [manually attach AWS hosts to a {{site.data.keyword.satelliteshort}} location](#aws-host-attach).
 {: tip}
-
+f
 Before you begin, make sure that you have the correct [{{site.data.keyword.cloud_notm}} permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations, including to {{site.data.keyword.satelliteshort}} and {{site.data.keyword.bpshort}}. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
 
 1. In your AWS cloud provider, [set up your account credentials](#infra-creds-aws).
@@ -64,7 +64,7 @@ The following resources are created by the template in your {{site.data.keyword.
 - 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
 - 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location, unassigned, and available to use for services like an {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the number of hosts equals the number that you specified minus the 3 that are assigned to the control plane.
 
-If you are using this template for demonstration purposes, do not assign all of your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 {: note}
 
 What's next?
@@ -114,7 +114,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     1. Enter a name for your launch template.
     2. In the **Amazon machine image (AMI)** section, make sure to select a supported Red Hat Enterprise Linux 7 operating system, such as RHEL 7.7 that you can find by entering the AMI ID `ami-030e754805234517e`. If you are creating an Red Hat CoreOS host, you must provide the image to AWS. For more information, see [Importing a VM as an image using](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html){: external}.
     3. From the **Instance type** section, select one of the [supported AWS instance types](#aws-instance-types).
-    4. From the **Key pair (login)** section, select the pem key that you want to use to log in to your machines later. If you do not have a pem key, create one.
+    4. From the **Key pair (login)** section, select the `.pem` key that you want to use to log in to your machines later. If you do not have a `.pem` key, create one.
     5. In the **Network settings**, select **Virtual Private Cloud (VPC)** and an existing subnet and a security group that allows network traffic as defined in [Security group settings](#aws-reqs-secgroup). If you do not have a subnet or security group that you want to use, create one.
     6. In the **Storage (volumes)** section, expand the default root volume and update the size of the boot volume to a minimum of 100 GB. Add a second disk with at least 100 GB capacity. For more information about storage requirements, see [Host storage and attached devices](/docs/satellite?topic=satellite-reqs-host-storage).
     7. Expand the **Advanced details** and go to the **User Data** field.
@@ -161,9 +161,9 @@ Review the following suggested [AWS EC2 instance types](https://aws.amazon.com/e
 
 | Instance | vCPU | Memory (GiB) | Storage disk (GiB) | Network bandwidth (Gbps) |
 | -------- | ---- | ------------ | ------------------ | ------------------------ |
-| m5d.xlarge | 4 | 16 | At least 100 GB SSD attached | Up to 10 |
-| m5d.2xlarge | 8 | 32 | At least 100 GB SSD attached | Up to 10 |
-| m5d.4xlarge | 16 | 64 | At least 100 GB SSD attached | Up to 10 |
+| `m5d.xlarge` | 4 | 16 | At least 100 GB SSD attached | Up to 10 |
+| `m5d.2xlarge` | 8 | 32 | At least 100 GB SSD attached | Up to 10 |
+| `m5d.4xlarge` | 16 | 64 | At least 100 GB SSD attached | Up to 10 |
 {: caption="AWS instance types" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the name of the instance. The second column is the number of vCPUs. The third column is the memory in gibibytes (GiB). The fourth column is the number of storage disks and their size in gibibytes (GiB). The fifth column is the network bandwidth in gigabits per second (Gbps)."}
 

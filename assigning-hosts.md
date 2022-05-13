@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
-keywords: satellite, hybrid, multicloud, assigning hosts, host autoassignment, host auto assignment, host labels
+keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
 subcollection: satellite
 
@@ -27,7 +27,7 @@ By default, available hosts are automatically assigned to worker pools in {{site
 When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
 {: note}
 
-Host autoassignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. Your cluster must be available before it can be assigned.
+Host auto assignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. Your cluster must be available before it can be assigned.
 {: note}
 
 ### About host labels

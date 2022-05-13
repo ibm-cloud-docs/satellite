@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-05-13"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -65,7 +65,7 @@ The template creates the following resources in your {{site.data.keyword.cloud_n
 - 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
 - 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location, unassigned, and available to use for services like an {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the number of hosts equals the number that you specified minus the 3 that are assigned to the control plane.
 
-If you are using this template for demonstration purposes, do not assign all of your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 {: note}
 
 What's next?
@@ -162,7 +162,7 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
         ```
         {: pre}
         
-    - Ceate Red Hat CoreOS hosts
+    - Create Red Hat CoreOS hosts
         ```sh
         az vm create --name VM --resource-group RESOURCE-GROUP --image RHCOS-IMAGE --admin-username USERNAME  --admin-password PASSWORD--size Standard_B8ms --data-disk-sizes-gb 100 --custom-data FILEPATH-IGNITION-SCRIPT-LOCATION --os-disk-size-gb 100 --public-ip-sku Standard --generate-ssh-keys
         ```

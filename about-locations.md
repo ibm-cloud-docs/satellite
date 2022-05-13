@@ -21,7 +21,7 @@ A location in {{site.data.keyword.satellitelong}} is a representation of an envi
 
 To set up a Satellite location, you must first create the location, attach hosts to it, and then create the location control plane. 
 
-In order to use [Red Hat CoreOS (RHCOS)](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) for a maanged service such as worker nodes, you must enable it in your location. You can only enable new locations for RHCOS; you cannot migrate an existing location. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations). Red Hat CoreOS is available only in the `us-south` and `eu-de` regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10. Want to verify if your location is enabled for Red Hat CoreOS? See [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location).
+To use [Red Hat CoreOS (RHCOS)](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) for a manged service such as worker nodes, you must enable it in your location. You can only enable new locations for RHCOS; you cannot migrate an existing location. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations). Red Hat CoreOS is available only in the `us-south` and `eu-de` regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10. Want to verify if your location is enabled for Red Hat CoreOS? See [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 {: note}
 
 ## Satellite location control plane

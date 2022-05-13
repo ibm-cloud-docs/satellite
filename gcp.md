@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -48,7 +48,7 @@ Before you begin, make sure that you have the correct [{{site.data.keyword.cloud
 
 Well done, your {{site.data.keyword.satelliteshort}} location is creating! You can review the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to see when your location is in a **Normal** state and ready to use.
 
-If you are using this template for demonstration purposes, do not assign all of your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 {: note}
 
 What's next?
@@ -111,7 +111,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
 11. Assign your GCP hosts to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
 
 
-## Manually ordering hosts with the gcloud CLI
+## Manually ordering hosts with the `gcloud` CLI
 {: #gcp-manual-cli}
 
 When you order your instances, pass the `--metadata-from-file user-data` option and include your attach script. For more information, see the `gcloud compute instances create` [command reference](https://cloud.google.com/sdk/gcloud/reference/compute/instances/create){: external}. 
