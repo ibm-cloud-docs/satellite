@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -77,6 +77,12 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may22)
+
+    * [13 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1322)
+
+        * New! Added {{site.data.keyword.messagehub_full}} as a {{site.date.keyword.satelliteshort}}-enabled service
+
+        * New location error message is added. 
 
     * [12 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1222)
 
@@ -1011,7 +1017,7 @@ subcollection: satellite
 
 [Configuring an HTTP proxy for your {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-config-http-proxy#config-http-proxy)
 
-* [Considerations for HTTP proxy](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy)
+* [What type of location do I need to use HTTP proxy?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy)
 
 * [Configuring your HTTP proxy](/docs/satellite?topic=satellite-config-http-proxy#http-proxy-config)
 
@@ -2419,6 +2425,8 @@ subcollection: satellite
 * [R0056: Pod status stuck in `terminating`](/docs/satellite?topic=satellite-ts-locations-debug#R0056)
 
 * [R0057: Outbound traffic to IAM is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0057)
+
+* [R0058: DNS registration is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0058)
 
 
 ### Locations

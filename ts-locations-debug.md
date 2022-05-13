@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-05-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -442,4 +442,12 @@ Steps to resolve
 
 For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0057` error logs](/docs/satellite?topic=satellite-health#logs-error).
 
+## R0058: DNS registration is failing
+{: #R0058}
+
+Location message
+:   A location with this name was recently deleted. If you want to reuse the location name of a recently deleted location, DNS registration might take a week to complete.
+
+Steps to resolve
+:   If you don't need to reuse this location name, delete this location and create a location with a unique name. If the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
 
