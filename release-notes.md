@@ -30,7 +30,8 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 New! Added {{site.data.keyword.messagehub_full}} as a {{site.date.keyword.satelliteshort}}-enabled service
-:   See [Getting started with {{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-getting-started).
+:   See [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) and [About {{site.data.keyword.satellitelong_notm}} for {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-satellite_about).
+
 
 New location error message is added. 
 :   For more information see [R0058: DNS registration is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0058).
