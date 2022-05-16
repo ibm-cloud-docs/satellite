@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-16"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -77,6 +77,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may22)
+
+    * [16 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1622)
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Tokyo** (`tok`, `jp-tok`) region.
 
     * [13 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1322)
 
@@ -789,7 +793,7 @@ subcollection: satellite
 
 [Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#reqs-host-network-outbound-tok)
 
-* [Allow control plane worker nodes to communicate with the control plane master](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-cp-tok)
+* [Allow control plane worker nodes to communicate with the control plane master in locations without CoreOS enabled](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-cp-tok)
 
 * [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-worker-tok)
 
@@ -932,7 +936,7 @@ subcollection: satellite
 
 * [Manually adding hosts to {{site.data.keyword.satelliteshort}} in the GCP console](/docs/satellite?topic=satellite-gcp#gcp-host-attach)
 
-* [Manually ordering hosts with the gcloud CLI](/docs/satellite?topic=satellite-gcp#gcp-manual-cli)
+* [Manually ordering hosts with the `gcloud` CLI](/docs/satellite?topic=satellite-gcp#gcp-manual-cli)
 
 * [Network firewall settings](/docs/satellite?topic=satellite-gcp#gcp-reqs-firewall)
 

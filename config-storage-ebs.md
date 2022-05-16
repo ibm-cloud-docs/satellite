@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -519,6 +519,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You
 ## Getting help and support
 {: #sat-ebs-support}
 
-If you run into an issue with using AWS EBS, you can refer to the [AWS Knowledge Center](https://aws.amazon.com/premiumsupport/knowledge-center/){: external} and review some documentation for some of the most frequently asked questions for various AWS services. The [AWS Support Center](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fsupport%2Fhome%3Fstate%3DhashArgs%2523%252F%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fsupportcenter&forceMobileApp=0&code_challenge=u3nT-WHT9gSG_PS93w4dwD6R_PWLj1eOU9GLUMEOkzo&code_challenge_method=SHA-256){: external} is another resource available to AWS customers looking for more in-depth support options. 
+If you run into an issue with using AWS EBS, you can refer to the [AWS Knowledge Center](https://aws.amazon.com/premiumsupport/knowledge-center/){: external} and review some documentation for the most frequently asked questions for various AWS services. The [AWS Support Center](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fsupport%2Fhome%3Fstate%3DhashArgs%2523%252F%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fsupportcenter&forceMobileApp=0&code_challenge=u3nT-WHT9gSG_PS93w4dwD6R_PWLj1eOU9GLUMEOkzo&code_challenge_method=SHA-256){: external} is another resource available to AWS customers looking for more in-depth support options. 
 
 
