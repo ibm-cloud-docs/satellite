@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,6 +24,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## May 2022
 {: #satellite-may22}
+
+### 16 May 2022
+{: #satellite-may1622}
+{: release-note}
+
+New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Tokyo** (`tok`, `jp-tok`) region.
+:   To create a CoreOS-enabled location in the Tokyo region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 
 ### 13 May 2022
 {: #satellite-may1322}

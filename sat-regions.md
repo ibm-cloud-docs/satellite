@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-20"
+lastupdated: "2022-05-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,7 +20,7 @@ Review the {{site.data.keyword.cloud}} regions that you can choose from to manag
 {: shortdesc}
 
 
-CoreOS enabled locations are currently only available in Dallas and Frankfurt.
+Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), and Tokyo (`jp-tok`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
 {: important}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -87,7 +87,7 @@ Before you begin:
     
     1. The **Description** and **Tags** fields are optional, and are metadata to help you organize your {{site.data.keyword.cloud_notm}} resources.
 
-    1. In the **Managed from** menu, select the {{site.data.keyword.cloud_notm}} region that you want to use to manage your location. Note that Red Hat CoreOS enabled locations are available only in Frankfurt and Dallas. For more information about why you must select an {{site.data.keyword.cloud_notm}} region, see [About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the region that is closest to where your host machines physically reside that you plan to attach to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
+    1. In the **Managed from** menu, select the {{site.data.keyword.cloud_notm}} region that you want to use to manage your location. Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), and Tokyo (`jp-tok`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10. For more information about why you must select an {{site.data.keyword.cloud_notm}} region, see [About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the region that is closest to where your host machines physically reside that you plan to attach to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
 
     1. For **Zones**: The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider.
         - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/elastic-compute-service/latest/regions-and-zones){: external}, such as `us-east-1a` and `us-east-1b`.
@@ -180,7 +180,7 @@ Want to verify if your location is enabled for Red Hat CoreOS? See [Is my locati
 
 You can verify that your location is enabled for Red Hat CoreOS by running the **`location get`** command. Look for the `Ignition Server Port:` field to populate. Wait to check until after your location is provisioned. 
 
-Red Hat CoreOS is available only in the `us-south` and `eu-de` regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
+Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), and Tokyo (`jp-tok`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
 {: note}
 
 

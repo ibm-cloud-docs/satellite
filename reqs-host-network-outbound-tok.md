@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-05-16"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -24,11 +24,16 @@ To check your host set up, you can use the `satellite-host-check` script. For mo
 
 
 
-## Allow control plane worker nodes to communicate with the control plane master
+## Allow control plane worker nodes to communicate with the control plane master in locations without CoreOS enabled
 {: #host-out-cp-tok}
 
+{{site.data.keyword.satelliteshort}} control plane hosts in Red Hat CoreOS enabled locations
+* Destination IPs: 161.202.151.170, 128.168.96.130, 165.192.108.34
+* Destination hostnames: `c117.jp-tok.satellite.cloud.ibm.com`, `c117-1.jp-tok.satellite.cloud.ibm.com`,`c117-2.jp-tok.satellite.cloud.ibm.com`, `c117-3.jp-tok.satellite.cloud.ibm.com`, `c117-e.private.jp-tok.satellite.cloud.ibm.com`
+* Protocol and ports: TCP 30000 - 32767
+
 {{site.data.keyword.satelliteshort}} control plane hosts
-* Destination IPs:  161.202.104.226, 128.168.67.106, 165.192.108.10 
+* Destination IPs: 161.202.104.226, 128.168.67.106, 165.192.108.10 
 * Destination hostnames:  `c114.jp-tok.satellite.cloud.ibm.com`, `c114-1.jp-tok.satellite.cloud.ibm.com`, `c114-2.jp-tok.satellite.cloud.ibm.com`, `c114-3.jp-tok.satellite.cloud.ibm.com`, `c114-e.jp-tok.satellite.cloud.ibm.com` 
 * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767
 
