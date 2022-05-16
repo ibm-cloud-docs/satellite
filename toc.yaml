@@ -22,6 +22,7 @@ toc:
           topics:
             
             - edge-usecase.md
+      - managed-services.md
       - release-notes.md
   - navgroup:
       id: howto
@@ -50,7 +51,6 @@ toc:
                     - reqs-host-network-outbound-wdc.md
               - host-latency-test.md
               - host-network-check.md
-              - managed-services.md
         - topicgroup:
             label: Creating locations
             topics:

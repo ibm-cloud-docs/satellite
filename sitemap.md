@@ -70,6 +70,13 @@ subcollection: satellite
     * [Step 3: Run model inferencing at the edge](/docs/satellite?topic=satellite-edge-usecase#edge-example-inferencing)
 
 
+## Supported Satellite-enabled IBM Cloud services
+{: #sitemap_supported_satellite-enabled_ibm_cloud_services}
+
+
+[Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services#managed-services)
+
+
 ## Release notes
 {: #sitemap_release_notes}
 
@@ -856,8 +863,6 @@ subcollection: satellite
 * [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr)
 
 [Checking your host setup](/docs/satellite?topic=satellite-host-network-check#host-network-check)
-
-[Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services#managed-services)
 
 
 ## Creating locations
