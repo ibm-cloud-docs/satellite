@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-19"
+lastupdated: "2022-05-16"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -81,7 +81,7 @@ To attach hosts to your location, you must download a host attachment script. Af
 ## Attaching on-premises RHEL hosts to your location
 {: #attach-rhel-hosts}
 
-To attach RHEL hosts that reside in your on-premises data center to your location, you can follow these general steps to run the host attachment script.
+To attach RHEL hosts that reside in your on-premises data center to your location, follow these general steps to run the host attachment script.
 
 1. [Download the host script](#attach-hosts) for your location.
 2. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
@@ -114,10 +114,13 @@ To attach RHEL hosts that reside in your on-premises data center to your locatio
 
 9. After you have attached your hosts, assign them to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or use them to create a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
+If your host is not attaching to your location, you can log into the host to debug it. For more information, see [Logging in to a RHEL host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login).
+{: tip}
+
 ## Attaching on-premises RHCOS hosts to your location
 {: #attach-rhcos-hosts}
 
-To attach RHCOS hosts that reside in your on-premises data center to your location, you can follow these general steps to run the host attachment script.
+To attach RHCOS hosts that reside in your on-premises data center to your location, follow these general steps to run the host attachment script.
 
 1. [Download the host script](#attach-hosts) for your location. Note that for RHCOS hosts, the attachment script is a CoreOS ignition (`.ign`) file.
 2. Boot your CoreOS host and include the file path to the ignition script as the `--user-data`. For example: `--user-data @/tmp/attach_hypershift.ign`.
@@ -125,6 +128,8 @@ To attach RHCOS hosts that reside in your on-premises data center to your locati
 4. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
 
+If your host is not attaching to your location, you can log into the host to debug it. For more information, see [Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos).
+{: tip}
 
 
 
