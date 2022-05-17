@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-17"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1292,7 +1292,7 @@ Create a {{site.data.keyword.satelliteshort}} location. When you create a locati
 {: shortdesc}
 
 ```sh
-ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS_BUCKET_NAME] [--description DESCRIPTION] [--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME] [--coreos-enabled] [--logging-account-id LOGGING_ACCOUNT][--provider INFRASTRUCTURE_PROVIDER] [--provider-region PROVIDER_REGION] [--provider-credential PATH_TO_PROVIDER_CREDENTIAL] [-q]
+ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS_BUCKET_NAME] [--description DESCRIPTION] [--ha-zone ZONE1_NAME --ha-zone ZONE2_NAME --ha-zone ZONE3_NAME] [--coreos-enabled] [--logging-account-id LOGGING_ACCOUNT] [--provider INFRASTRUCTURE_PROVIDER] [--provider-region PROVIDER_REGION] [--provider-credential PATH_TO_PROVIDER_CREDENTIAL] [-q]
 ```
 {: pre}
 

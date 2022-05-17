@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-20"
+lastupdated: "2022-05-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -178,6 +178,3 @@ To enable a logging instance in your {{site.data.keyword.satelliteshort}} cluste
 3. Click on **Logging sources** and navigate to the **{{site.data.keyword.redhat_openshift_notm}}** tab.
 
 4. Follow the instructions in the **{{site.data.keyword.redhat_openshift_notm}}** tab to install the logging agent. 
-
-
-

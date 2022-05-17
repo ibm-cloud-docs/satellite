@@ -127,7 +127,9 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
 2. Create a {{site.data.keyword.satelliteshort}} location.
 
     ```sh
-    ibmcloud sat location create --managed-from <region> --name <location_name> --ha-zone zone1_name --ha-zone zone2_name --ha-zone zone3_name [--cos-bucket <cos_bucket_name>] --provider <provider> --provider-credential <path_to_credentials> --coreos-enabled
+
+    ibmcloud sat location create --managed-from <region> --name <location_name> --ha-zone zone1_name --ha-zone zone2_name --ha-zone zone3_name [--cos-bucket cos_bucket_name] --coreos-enabled  
+
     ```
     {: pre}
 
@@ -154,8 +156,8 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     :    Optional. The path to a JSON file on your local machine that has the credentials of the infrastructure provider for the {{site.data.keyword.satelliteshort}} location. The credential format is provider-specific. If you include this option, you must also include the `--provider` option.
   
     `--coreos-enabled`
-    :    Optional. Enable Red Hat CoreOS. This action cannot be undone. For more information, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
-      
+    :    Optional. Enable Red Hat CoreOS. This action cannot be undone. For more information, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).</hyper>
+
         
 3. Verify that your location is created and wait for the location **Status** to change to `action required`. When you create the location, a location control plane master is deployed to the region that you selected during location creation. During this process, the **Status** of the location shows `deploying`. While the master deploys, you can now attach compute capacity to your location to complete the setup of the {{site.data.keyword.satelliteshort}} location control plane.
 
@@ -345,7 +347,6 @@ To create the control plane,
 
     ```
     {: pre}
-
 
     `--location <location_name_or_ID>`
     :   Enter the name or ID of your {{site.data.keyword.satelliteshort}} location. To retrieve the location name or ID, run `ibmcloud sat location ls`.
