@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-05-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -57,12 +57,82 @@ You can SSH into the host machine if you did not assign the host to a cluster, o
     {: pre}
    
     
-4. Review the logs for errors. Some common errors include the following messages.
+4. Review the logs for errors. See the following sections for more details.
 
-| Message | Description |
-| -------------- | -------------- |
-| `export HOME=/root`   \n  `HOME=/root` \n `'[' '!' -f /var/log/firstboot.flag ']'`  \n  `~` | The first boot did not complete successfully. Check the `/tmp/bootstrap/bootstrap_base.log` file and continue looking for errors. |
-| `No package matching '\''container-selinux'\'' found available, installed or updated`.  \n `No package rh-python36 available. Error: Nothing to do`. \n  (Note that the package name might be replaced with another package name.) |See [Host registration script fails](/docs/satellite?topic=satellite-host-registration-script-fails). |
-| `curl: (6) Could not resolve host: <URL>.com; Unknown error` \n `tar -xvf bootstrap.tar` \n `tar: This does not look like a tar archive` \n `tar: Exiting with failure status due to previous errors` \n `[[ -n ‘’ ]]` \n `echo ‘Failed to untar bootstrap.tar’` \n `Failed to untar bootstrap.tar` \n `+ rm -rf /tmp/bootstrap` | The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-host-remove), and try to [add](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps. |
-| `kubectl --kubeconfig=/tmp/bootstrap/priveledgedcertdir/privledged-kubeconfig` | The host is trying to register itself with the location.  \n 1. Find the {{site.data.keyword.satelliteshort}} control plane endpoint with the `ibmcloud sat location get --location <LOCATION_ID>` command.  \n 1. Find the **Public Service Endpoint URL** field, for example, `https://c103-e.containers.cloud.ibm.com:12345`.  \n 1. Confirm your connection exists by running `nc -z -v <ENDPOINT>` from your host, for example, `nc -z -v c103-e.containers.cloud.ibm.com 12345`.  \n 1. Repeat the previous step to verify that your host can connect to each of the required outbound [hostnames for your region](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound). |
-{: caption="Table 1. Common host machine registration and bootstrapping errors" caption-side="top"}
+
+## First boot did not complete successfully
+{: #ts-hosts-login-first-boot}
+
+You receive output similiar to the following messages.
+
+```sh
+export HOME=/root
+HOME=/root
+'[' '!' -f /var/log/firstboot.flag ']'
+~
+```
+{: codeblock}
+
+The first boot did not complete successfully. Check the `/tmp/bootstrap/bootstrap_base.log` file and continue looking for errors.
+
+## Host registration script fails
+{: #ts-hosts-login-host-script}
+
+You receive output similiar to the following messages. Note that the package name might be replaced with another package name.
+
+```sh
+No package matching '\''container-selinux'\'' found available, installed or updated
+No package rh-python36 available. Error: Nothing to do
+```
+{: codeblock}
+
+For more information about these messages, see [Host registration script fails](/docs/satellite?topic=satellite-host-registration-script-fails).
+
+## Machine cannot be reached on the network
+{: #ts-hosts-login-cannot-reach}
+
+You receive output similiar to the following messages.
+
+```sh
+curl: (6) Could not resolve host: <URL>.com; Unknown error
+tar -xvf bootstrap.tar
+tar: This does not look like a tar archive
+tar: Exiting with failure status due to previous errors
+[[ -n ‘’ ]]
+echo ‘Failed to untar bootstrap.tar’
+Failed to untar bootstrap.tar` \n `+ rm -rf /tmp/bootstrap
+```
+{: codeblock}
+
+The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-host-remove), and try to [add](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.
+
+## Host is attempting to register with the location
+{: #ts-hosts-login-host-register}
+
+You receive output similiar to the following message.
+
+```sh
+kubectl --kubeconfig=/tmp/bootstrap/priveledgedcertdir/privledged-kubeconfig
+```
+{: codeblock}
+
+The host is attempting to register with the location.
+
+1. Find the {{site.data.keyword.satelliteshort}} control plane endpoint.
+
+    ```sh
+    ibmcloud sat location get --location <LOCATION_ID>
+    ```
+    {: pre}
+    
+3. Find the **Public Service Endpoint URL** field, for example, `https://c103-e.containers.cloud.ibm.com:12345`.
+4. Confirm your connection exists by running `nc -z -v <ENDPOINT>` from your host. For example,
+    
+    ```sh
+    nc -z -v c103-e.containers.cloud.ibm.com 12345
+    ```
+    {: pre}
+    
+6. Repeat the previous step to verify that your host can connect to each of the required outbound [hostnames for your region](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound).
+
+

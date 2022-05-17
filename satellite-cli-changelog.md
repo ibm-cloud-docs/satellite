@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-05-17"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference
 
@@ -34,10 +34,9 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 | 1.0.404 | 28 Apr 2022 | Adds features visible to select users only. |
 | 1.0.403 | 26 Apr 2022 | 1. Adds the `ibmcloud sat storage assignment upgrade` and `ibmcloud sat storage config upgrade` commands.  \n 2. Updates the CLI help text in various languages. | 
 | 1.0.394 | 7 Apr 2022 | Adds the `ibmcloud sat location dns get` command. |
-| 1.0.384 | 21 Mar 2022 | Adds Beta command to [list available {{site.data.keyword.satelliteshort}} Mesh versions](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-versions). |
 | 1.0.374 | 24 Feb 2022 | 1. Removes the default zone in the `ibmcloud ks cluster create satellite` command. \n 2. Fixes a routing issue for the `ibmcloud sat storage assignment create --cluster` and the `ibmcloud sat storage assignment ls --cluster` commands. |
 | 1.0.372 | 18 Feb 2022 | 1. Updates the `ibmcloud ks location get` command output to indicate whether the location has IaaS provider credentials stored.  \n 2. Updates the `ibmcloud ks storage assignment ls` command to include the `--config` flag option, allowing you to list only storage assignments created with the specified configuration.  |
-| 1.0.331 | 03 Dec 2021 | 1. Adds [{{site.data.keyword.satelliteshort}} Mesh](/docs/satellite?topic=satellite-sat-mesh) beta functionality.  \n 2. Updates the `ibmcloud sat location get` command output to include `Ignition Server Port` and `Konnectivity Server Port`.  \n 3. Updates the help text in various languages. |
+| 1.0.331 | 03 Dec 2021 | 1. Updates the `ibmcloud sat location get` command output to include `Ignition Server Port` and `Konnectivity Server Port`.  \n 2. Updates the help text in various languages. |
 | 1.0.331 | 12 Oct 2021 | Adds the `--output` option for the `ibmcloud sat storage get` command. |
 | 1.0.327 | 11 Oct 2021 | Adds the `--data-location` option for the `ibmcloud sat config create` command and the `--location` option for the `ibmcloud sat storage assingment ls` command. Updates the help text in various languages. |
 | 1.0.312 | 09 Aug 2021 | 1. Includes the subscription status in the output of the `ibmcloud sat subscription get` and `ibmcloud sat subscription ls` commands.  \n 1. Adds the option to display the output of the `ibmcloud sat subscription get` and `ibmcloud sat subscription ls` commands in JSON format.  \n 1. Updates the help text in various languages.  \n 1. Displays OpenVPN Server Port details in the `ibmcloud sat location get` command output. | 

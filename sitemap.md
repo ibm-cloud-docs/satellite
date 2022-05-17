@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-05-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -68,6 +68,13 @@ subcollection: satellite
     * [Step 2: Deploy {{site.data.keyword.satelliteshort}} with a serverless component to your edge environment](/docs/satellite?topic=satellite-edge-usecase#edge-example-serverless)
 
     * [Step 3: Run model inferencing at the edge](/docs/satellite?topic=satellite-edge-usecase#edge-example-inferencing)
+
+
+## Supported Satellite-enabled IBM Cloud services
+{: #sitemap_supported_satellite-enabled_ibm_cloud_services}
+
+
+[Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services#managed-services)
 
 
 ## Release notes
@@ -191,8 +198,6 @@ subcollection: satellite
         * New! Sydney location
 
     * [3 December 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec321)
-
-        * New! Satellite Mesh!
 
         * CLI change log
 
@@ -857,8 +862,6 @@ subcollection: satellite
 
 [Checking your host setup](/docs/satellite?topic=satellite-host-network-check#host-network-check)
 
-[Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services#managed-services)
-
 
 ## Creating locations
 {: #sitemap_creating_locations}
@@ -1168,29 +1171,6 @@ subcollection: satellite
     * [Setting up {{site.data.keyword.mon_short}} for {{site.data.keyword.satelliteshort}} Link metrics](/docs/satellite?topic=satellite-link-cloud-monitor#link-mon)
 
     * [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-cloud-monitor#link-packet-capture)
-
-
-## Setting up a service mesh with {{site.data.keyword.satelliteshort}} Mesh
-{: #sitemap_setting_up_a_service_mesh_with__mesh}
-
-
-[Setting up a service mesh with {{site.data.keyword.satelliteshort}} Mesh](/docs/satellite?topic=satellite-sat-mesh#sat-mesh)
-
-* [What is a service mesh?](/docs/satellite?topic=satellite-sat-mesh#what-is-service-mesh)
-
-* [What is {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-description)
-
-    * [What are the benefits of {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-benefits)
-
-    * [Which Istio and Red Hat OpenShift Service Mesh features are supported on {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-istio-redhat)
-
-* [Architecture](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-architecture)
-
-    * [What comes with {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-components)
-
-* [Installing {{site.data.keyword.satelliteshort}} Mesh](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-install)
-
-* [Removing a {{site.data.keyword.satelliteshort}} Mesh instance](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-remove)
 
 
 ## Logging and monitoring
@@ -2057,20 +2037,6 @@ subcollection: satellite
 
     * [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm)
 
-* [Beta: {{site.data.keyword.satelliteshort}} Mesh commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-mesh-commands)
-
-    * [`ibmcloud sat mesh create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-create)
-
-    * [`ibmcloud sat mesh get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-get)
-
-    * [`ibmcloud sat mesh ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-ls)
-
-    * [`ibmcloud sat mesh rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-rm)
-
-    * [`ibmcloud sat mesh upgrade`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-upgrade)
-
-    * [`ibmcloud sat mesh versions`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-versions)
-
 * [Resource commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands)
 
     * [`ibmcloud sat resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get)
@@ -2458,7 +2424,17 @@ subcollection: satellite
 
 [Logging in to a RHEL host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login)
 
+* [First boot did not complete successfully](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-first-boot)
+
+* [Host registration script fails](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-host-script)
+
+* [Machine cannot be reached on the network](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-cannot-reach)
+
+* [Host is attempting to register with the location](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-host-register)
+
 [Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos#ts-hosts-login-rhcos)
+
+* [Machine cannot be reached on the network](/docs/satellite?topic=satellite-ts-hosts-login-rhcos#ts-hosts-login-cannot-reach)
 
 [Why can't I SSH into my host machines?](/docs/satellite?topic=satellite-ssh-login-denied#ssh-login-denied)
 

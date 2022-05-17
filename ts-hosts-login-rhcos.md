@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-11"
+lastupdated: "2022-05-17"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, rhcos
 
 subcollection: satellite
 content-type: troubleshoot
@@ -67,12 +67,22 @@ You can SSH into the host machine if you did not assign the host to a cluster, o
     
 
     
-1. Review the logs for errors. Some common errors include the following messages.
+1. Review the logs for errors. See the following section for more details.
 
-| Message | Description |
-| -------------- | -------------- |
-| `curl: (6) Could not resolve host` | The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-host-remove), and try to [add](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) the host again. Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps. |
-{: caption="Table 1. Common host machine registration and bootstrapping errors" caption-side="top"}
+## Machine cannot be reached on the network
+{: #ts-hosts-login-cannot-reach}
+
+You receive output similiar to the following messages.
+
+```
+curl: (6) Could not resolve host
+```
+{: codeblock}
+
+The machine cannot be reached on the network. Check that your machine meets the [minimum requirements for network connectivity](/docs/satellite?topic=satellite-host-reqs), [remove the host](/docs/satellite?topic=satellite-host-remove), and try to [add](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) the host again. 
+
+Alternatively, the infrastructure provider network might have issues, such as a failed connection. Consult the infrastructure provider documentation for further debugging steps.
+
 
 
 
