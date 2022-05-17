@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-05-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2463,7 +2463,17 @@ subcollection: satellite
 
 [Logging in to a RHEL host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login)
 
+* [First boot did not complete successfully](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-first-boot)
+
+* [Host registration script fails](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-host-script)
+
+* [Machine cannot be reached on the network](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-cannot-reach)
+
+* [Host is attempting to register with the location](/docs/satellite?topic=satellite-ts-hosts-login#ts-hosts-login-host-register)
+
 [Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos#ts-hosts-login-rhcos)
+
+* [Machine cannot be reached on the network](/docs/satellite?topic=satellite-ts-hosts-login-rhcos#ts-hosts-login-cannot-reach)
 
 [Why can't I SSH into my host machines?](/docs/satellite?topic=satellite-ssh-login-denied#ssh-login-denied)
 

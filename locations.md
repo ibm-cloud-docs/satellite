@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-05-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -127,7 +127,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
 2. Create a {{site.data.keyword.satelliteshort}} location.
 
     ```sh
-    ibmcloud sat location create --managed-from <region> --name <location_name> --ha-zone zone1_name --ha-zone zone2_name --ha-zone zone3_name [--cos-bucket cos_bucket_name] --coreos-enabled
+    ibmcloud sat location create --managed-from <region> --name <location_name> --ha-zone zone1_name --ha-zone zone2_name --ha-zone zone3_name [--cos-bucket <cos_bucket_name>] --provider <provider> --provider-credential <path_to_credentials> --coreos-enabled
     ```
     {: pre}
 
@@ -141,17 +141,21 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     :   Optional: Enter the name of the {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up the control plane data. Otherwise, a new bucket is automatically created in a {{site.data.keyword.cos_short}} instance in your account.
     
     `--ha-zone <ZONE1_NAME> --ha-zone <ZONE2_NAME> --ha-zone <ZONE3_NAME>`
-        :   Optional: If you use this option, zone names must be specified in three repeated flags. If you do not use this option, the zones in your location are assigned names such as `zone-1`. Specify three names for high availability zones in your location. The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider. 
+    :   Optional: If you use this option, zone names must be specified in three repeated flags. If you do not use this option, the zones in your location are assigned names such as `zone-1`. Specify three names for high availability zones in your location. The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone, consult your infrastructure provider. 
         - [Alibaba regions and zones](https://www.alibabacloud.com/help/en/elastic-compute-service/latest/regions-and-zones){: external}, such as `us-east-1` and `us-west-1`.
         - [AWS regions and zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html){: external}, such as `us-east-1a`, `us-east-1b`, `us-east-1c`.
         - [Azure `topology.kubernetes.io/zone` labels](https://docs.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones){: external}, such as `eastus-1`, `eastus-2`, and `eastus-3`. Do **not** use only the location name (`eastus`) or the zone number (`1`).
         - [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones){: external}, such as `us-west1-a`, `us-west1-b`, and `us-west1-c`.
 
+    `--provider <provider>`
+    :    Optional. The name of the infrastructure provider to create the {{site.data.keyword.satelliteshort}} location in. Accepted values are `aws`, `azure`, or `gcp`. If you include this option, you must also include the `--provider-credential` option.    
+    
+    `--provider-credential <path_to_credentials>`
+    :    Optional. The path to a JSON file on your local machine that has the credentials of the infrastructure provider for the {{site.data.keyword.satelliteshort}} location. The credential format is provider-specific. If you include this option, you must also include the `--provider` option.
+  
     `--coreos-enabled`
     :    Optional. Enable Red Hat CoreOS. This action cannot be undone. For more information, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
-
-
-        
+      
         
 3. Verify that your location is created and wait for the location **Status** to change to `action required`. When you create the location, a location control plane master is deployed to the region that you selected during location creation. During this process, the **Status** of the location shows `deploying`. While the master deploys, you can now attach compute capacity to your location to complete the setup of the {{site.data.keyword.satelliteshort}} location control plane.
 
