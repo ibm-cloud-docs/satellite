@@ -199,8 +199,6 @@ subcollection: satellite
 
     * [3 December 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec321)
 
-        * New! Satellite Mesh!
-
         * CLI change log
 
 * [November 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov21)
@@ -1175,29 +1173,6 @@ subcollection: satellite
     * [Running a packet capture of endpoint traffic](/docs/satellite?topic=satellite-link-cloud-monitor#link-packet-capture)
 
 
-## Setting up a service mesh with {{site.data.keyword.satelliteshort}} Mesh
-{: #sitemap_setting_up_a_service_mesh_with__mesh}
-
-
-[Setting up a service mesh with {{site.data.keyword.satelliteshort}} Mesh](/docs/satellite?topic=satellite-sat-mesh#sat-mesh)
-
-* [What is a service mesh?](/docs/satellite?topic=satellite-sat-mesh#what-is-service-mesh)
-
-* [What is {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-description)
-
-    * [What are the benefits of {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-benefits)
-
-    * [Which Istio and Red Hat OpenShift Service Mesh features are supported on {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-istio-redhat)
-
-* [Architecture](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-architecture)
-
-    * [What comes with {{site.data.keyword.satelliteshort}} Mesh?](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-components)
-
-* [Installing {{site.data.keyword.satelliteshort}} Mesh](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-install)
-
-* [Removing a {{site.data.keyword.satelliteshort}} Mesh instance](/docs/satellite?topic=satellite-sat-mesh#sat-mesh-remove)
-
-
 ## Logging and monitoring
 {: #sitemap_logging_and_monitoring}
 
@@ -2061,20 +2036,6 @@ subcollection: satellite
     * [`ibmcloud sat location ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-ls)
 
     * [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm)
-
-* [Beta: {{site.data.keyword.satelliteshort}} Mesh commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-mesh-commands)
-
-    * [`ibmcloud sat mesh create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-create)
-
-    * [`ibmcloud sat mesh get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-get)
-
-    * [`ibmcloud sat mesh ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-ls)
-
-    * [`ibmcloud sat mesh rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-rm)
-
-    * [`ibmcloud sat mesh upgrade`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-upgrade)
-
-    * [`ibmcloud sat mesh versions`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-mesh-versions)
 
 * [Resource commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands)
 

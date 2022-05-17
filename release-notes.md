@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-05-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -238,9 +238,6 @@ New! Sydney location
 ### 3 December 2021
 {: #satellite-dec321}
 {: release-note}
-
-New! Satellite Mesh!
-:   Satellite Mesh is available for select customers in beta. For more information, see [Setting up a service mesh with Satellite Mesh](/docs/satellite?topic=satellite-sat-mesh).
 
 CLI change log
 :   Updated the CLI plug-in change log page for the [release of version 1.0.353](/docs/satellite?topic=satellite-satellite-cli-changelog).
