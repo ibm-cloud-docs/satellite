@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-18"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location
 
@@ -134,10 +134,12 @@ When you create a location, you must create a {{site.data.keyword.satelliteshort
 {: #byo-ocp}
 {: faq}
 
-All clusters in your {{site.data.keyword.satelliteshort}} location are installed with OpenShift Container Platform, which incurs a licensing fee from Red Hat. However, you can bring your own OpenShift Container Platform license for clusters created using your on-premises infrastructure or for clusters created by using IBM Cloud Paks.
+All user clusters in your {{site.data.keyword.satelliteshort}} location are installed with OpenShift Container Platform, which incurs a licensing fee from Red Hat. However, you can bring your own OpenShift Container Platform license for clusters created using your on-premises infrastructure or for clusters created by using IBM Cloud Paks.
 {: shortdesc}
 
 When you create the cluster, make sure to include your Red Hat pull secret to entitle the cluster to run OCP, either by uploading the pull secret in the console or by including the `--pull-secret` option in the `ibmcloud oc cluster create satellite` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
+
+Service clusters, which are the underlying platform for all {{site.data.keyword.cloud_notm}} services are created by services such as {{site.data.keyword.keymanagementserviceshort}} or {{site.data.keyword.cos_full_notm}} and do not require a license.
 
 
 
@@ -195,4 +197,3 @@ Keep in mind that each service might:
 {: #faq-managed-addons}
 
 See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-managed-addons#addons-satellite).
-
