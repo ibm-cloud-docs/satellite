@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
 keywords: satellite, hybrid, multicloud, rhcos
 
@@ -74,7 +74,7 @@ You can SSH into the host machine if you did not assign the host to a cluster, o
 
 You receive output similiar to the following messages.
 
-```
+```sh
 curl: (6) Could not resolve host
 ```
 {: codeblock}

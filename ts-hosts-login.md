@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-18"
 
 keywords: satellite, hybrid, multicloud
 
@@ -125,14 +125,14 @@ The host is attempting to register with the location.
     ```
     {: pre}
     
-3. Find the **Public Service Endpoint URL** field, for example, `https://c103-e.containers.cloud.ibm.com:12345`.
-4. Confirm your connection exists by running `nc -z -v <ENDPOINT>` from your host. For example,
+2. Find the **Public Service Endpoint URL** field, for example, `https://c103-e.containers.cloud.ibm.com:12345`.
+3. Confirm your connection exists by running `nc -z -v <ENDPOINT>` from your host. For example,
     
     ```sh
     nc -z -v c103-e.containers.cloud.ibm.com 12345
     ```
     {: pre}
     
-6. Repeat the previous step to verify that your host can connect to each of the required outbound [hostnames for your region](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound).
+4. Repeat the previous step to verify that your host can connect to each of the required outbound [hostnames for your region](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound).
 
 
