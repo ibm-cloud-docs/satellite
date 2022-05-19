@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-05-19"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -35,9 +35,26 @@ Existing Red Hat CoreOS-enabled locations with attached hosts
 New Red Hat CoreOS-enabled locations
 :   Before attaching your hosts to your location, [configure your HTTP proxy](#http-proxy-config).
 
+## What else do I need to know about HTTP proxy?
+{: #additional-http-proxy}
 
-You cannot configure an HTTP proxy for worker to master communications or for connecting to the package mirrors. You must edit each host that is attached to your location, including the hosts that make up the control plane. Your configuration might vary by provider. Consider setting up your proxy outside of the {{site.data.keyword.satelliteshort}} environment to ensure that the configuration works for your infrastructure. Then, configure your proxy in the {{site.data.keyword.satelliteshort}} environment.
-{: note}
+- You cannot configure an HTTP proxy for worker to master communications or for connecting to the package mirrors. 
+- You must edit each host that is attached to your location, including the hosts that make up the control plane. 
+- Your proxy must be set up with TCP tunneling. While specific steps might vary depending on your provider, follow these general steps to set up TCP tunneling.
+    1. Set up your HTTP proxy to tunnel traffic for all three of your location public service endpoints. To find your endpoints, 
+        
+        ```sh
+        ibmcloud ks location get --location LOCATION_NAME
+        ```
+        {: pre}
+        
+        In the output, find the field **Public Service Endpoint URL**. From that field, you can derive the endpoints. For example, if the field value is `https://c131-e.us-south.satellite.cloud.ibm.com:31726`, then the endpoints are `https://c131-1.us-south.satellite.cloud.ibm.com:31726`, `https://c131-2.us-south.satellite.cloud.ibm.com:31726` and `https://c131-3.us-south.satellite.cloud.ibm.com:31726`.
+        
+    3. Make sure the listener port on the HTTP proxy is the same as on {{site.data.keyword.cloud_notm}}.
+    4. Update the `/etc/hosts` on all your {{site.data.keyword.satelliteshort}} hosts to include the location public service endpoints forward traffic to the proxy, rather than to {{site.data.keyword.cloud_notm}} endpoints.
+
+Your configuration might vary by provider. Consider setting up your proxy outside of the {{site.data.keyword.satelliteshort}} environment to ensure that the configuration works for your infrastructure. Then, configure your proxy in the {{site.data.keyword.satelliteshort}} environment. For more information about setting up and configuring your HTTP proxy, see the blog [Proxying In Cluster Kube-APIServer Traffic in IBM Cloud Satellite](https://lisowski0925.medium.com/proxying-in-cluster-kube-apiserver-traffic-in-ibm-cloud-satellite-162ee07d6e0d){: external}.
+{: tip}
 
 
 
