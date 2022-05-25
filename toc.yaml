@@ -70,7 +70,6 @@ toc:
               - host-update-workers.md
               - location-copy.md
               - config-http-proxy.md
-              - link-agent.md
               - host-remove.md
         - topicgroup:
             label: Deploying Kubernetes resources across clusters with Satellite Config
@@ -87,7 +86,6 @@ toc:
               - default-link-endpoints.md
               - link-cloud-create.md
               - link-cloud-monitor.md
-        - sat-mesh.md
         - topicgroup:
             label: Logging and monitoring
             topics:
