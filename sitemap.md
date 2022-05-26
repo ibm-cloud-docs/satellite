@@ -85,6 +85,10 @@ subcollection: satellite
 
 * [May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may22)
 
+    * [26 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may2622)
+
+        * CLI change log
+
     * [16 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1622)
 
         * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Tokyo** (`tok`, `jp-tok`) region.
