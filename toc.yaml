@@ -179,6 +179,7 @@ toc:
                   topics:
                     - ts-locations-control-plane.md
                     - ts-location-subdomain.md
+                    - ts-dl-r0043.md
                     - ts-location-healthcheck.md
                     - ts-location-missing-location.md
               - topicgroup:

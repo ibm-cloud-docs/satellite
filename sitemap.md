@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-19"
+lastupdated: "2022-05-26"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2408,6 +2408,8 @@ subcollection: satellite
 [Debugging the health of the location control plane](/docs/satellite?topic=satellite-ts-locations-control-plane#ts-locations-control-plane)
 
 [Why does the location subdomain not route traffic to control plane hosts?](/docs/satellite?topic=satellite-ts-location-subdomain#ts-location-subdomain)
+
+[Why do I get an R0043 error after setting up {{site.data.keyword.dl_short}}?](/docs/satellite?topic=satellite-ts-dl-r0043#ts-dl-r0043)
 
 [Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?](/docs/satellite?topic=satellite-ts-location-healthcheck#ts-location-healthcheck)
 
