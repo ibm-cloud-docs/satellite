@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-05-26"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -2192,7 +2192,7 @@ ibmcloud sat storage config rm --config ocs-config
 ### `ibmcloud sat storage config upgrade`
 {: #cli-storage-config-upgrade}
 
-Upgrade a {{site.data.keyword.satelliteshort}} storage configuration to the latest configuration version.
+Upgrade a {{site.data.keyword.satelliteshort}} storage configuration to the latest template revision. Template revisions, if available, include the latest storage driver patch updates.
 {: shortdesc}
 
 ```sh
