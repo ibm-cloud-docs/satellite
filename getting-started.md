@@ -83,7 +83,7 @@ Now that your {{site.data.keyword.satelliteshort}} location is set up, you are r
 4. [Learn more about the {{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 5. Learn more about [Satellite cluster storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov).
 
-#### Video transcript
+### Video transcript
 {: #video-transcript-sat}
 {: notoc}
 
