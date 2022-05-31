@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-05-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,7 +18,7 @@ content-type: release-note
 # Release notes
 {: #satellite-relnotes}
 
-Use the release notes to learn about the latest changes to the {{site.data.keyword.satelliteshort}} documentation that are grouped by month.
+Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
 
 
@@ -174,8 +174,8 @@ New troubleshooting issue for errors when you run the `oc debug` command
 {: #satellite-feb1822}
 {: release-note}
 
-CLI changelog
-:   Updated the CLI plug-in changelog page for the [release of version 1.0.372](/docs/satellite?topic=satellite-satellite-cli-changelog).
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.372](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 16 February 2022
 {: #satellite-feb1622}
@@ -316,8 +316,8 @@ Review the release notes for October 2021.
 Review the release notes for 12 October 2021.
 {: shortdesc}
 
-CLI changelog
-:   Updated the CLI plug-in changelog page for the [release of version 1.0.327](/docs/satellite?topic=satellite-satellite-cli-changelog).
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.327](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 
 ## September 2021
@@ -377,8 +377,8 @@ Review the release notes for August 2021.
 Review the release notes for 9 August 2021.
 {: shortdesc}
 
-CLI changelog
-:   Updated the CLI plug-in changelog page for the [release of version 1.0.312](/docs/satellite?topic=satellite-satellite-cli-changelog).
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.312](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 3 August 2021
 {: #satellite-aug321}
@@ -455,8 +455,8 @@ Review the release notes for 24 June 2021.
 Azure template
 :   Automate the setup of a {{site.data.keyword.satelliteshort}} location in Microsoft Azure cloud infrastructure by using a [{{site.data.keyword.bpshort}}](/docs/satellite?topic=satellite-azure#azure-template).
 
-CLI changelog
-:   Updated the CLI plug-in changelog page for the [release of version 1.0.295](/docs/satellite?topic=satellite-satellite-cli-changelog).
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.295](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 18 June 2021
 {: #satellite-jun1821}
@@ -494,8 +494,8 @@ Review the release notes for May 2021.
 Review the release notes for 26 May 2021.
 {: shortdesc}
 
-CLI changelog
-:   Updated the CLI plug-in changelog page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 19 May 2021
 {: #satellite-may1921}
@@ -631,8 +631,8 @@ Review the release notes for 1 March 2021.
 New! General availability of {{site.data.keyword.satellitelong}}
 :   {{site.data.keyword.satellitelong_notm}} is now generally available. If you created locations during the closed beta, you must [re-create your locations](/docs/satellite?topic=satellite-location-copy) for the general availability release. For more information about what you are charged for when you use {{site.data.keyword.satellitelong_notm}}, see the [FAQs](/docs/satellite?topic=satellite-faqs#pricing).
 
-CLI changelog
-:   Updated the CLI plug-in changelog page for the [release of version 1.0.233](/docs/satellite?topic=satellite-satellite-cli-changelog).
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.233](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 Cloud provider guides
 :   Added instructions to set up {{site.data.keyword.satelliteshort}} locations that use infrastructure from [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), and [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm).
@@ -662,8 +662,8 @@ Review the release notes for 25 February 2021.
 Auditing events
 :   Added a topic for [auditing {{site.data.keyword.satelliteshort}} events with {{site.data.keyword.cloudaccesstrailshort}}](/docs/satellite?topic=satellite-at_events).
 
-CLI changelog
-:   Updated the CLI plug-in changelog page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 23 February 2021
 {: #satellite-feb2321}
@@ -717,8 +717,8 @@ Securing service connections
 Review the release notes for 8 February 2021.
 {: shortdesc}
 
-CLI changelog
-:   Updated the CLI plug-in changelog page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 Host auto assignment
 :   Added information about how [{{site.data.keyword.satelliteshort}} can automatically assign hosts](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) to worker pools in clusters or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) that use host labels to request compute capacity.
