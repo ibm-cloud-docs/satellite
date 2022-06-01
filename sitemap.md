@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-01"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -25,21 +25,13 @@ subcollection: satellite
 
 [Getting started with {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-getting-started#getting-started)
 
-* [Setting up an on-prem location for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#gs-video-demo)
+* [What are {{site.data.keyword.satelliteshort}} locations, hosts, and so on?](/docs/satellite?topic=satellite-getting-started#sat-key-terms)
 
-* [Start by considering your infrastructure for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#gs-start-here)
+* [Choose your infrastructure for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#gs-start-here)
 
-* [Step 1: Create your location](/docs/satellite?topic=satellite-getting-started#create-location)
+    * [Minimum requirements for hosts](/docs/satellite?topic=satellite-getting-started#gs-min-reqs)
 
-* [Step 2: Attach compute hosts to your location in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#attach-hosts-to-location)
-
-    * [Attaching hosts from cloud providers](/docs/satellite?topic=satellite-getting-started#gs-attach-hosts-cloud)
-
-    * [Attaching hosts from on-premises data centers and edge networks](/docs/satellite?topic=satellite-getting-started#gs-attach-hosts-onprem)
-
-* [Step 3: Assign your hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-getting-started#assign-hosts-to-cp)
-
-* [What's next for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#whats-next)
+* [I created a {{site.data.keyword.satelliteshort}} location, what comes next?](/docs/satellite?topic=satellite-getting-started#whats-next)
 
 
 ## About {{site.data.keyword.satelliteshort}}
@@ -82,6 +74,14 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june22)
+
+    * [1 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june122)
+
+        * Getting started page redesign
+
+        * New! Think you know {{site.data.keyword.satelliteshort}}? Take a quiz!
 
 * [May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may22)
 
@@ -165,7 +165,7 @@ subcollection: satellite
 
     * [18 February 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1822)
 
-        * CLI changelog
+        * CLI change log
 
     * [16 February 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1622)
 
@@ -243,7 +243,7 @@ subcollection: satellite
 
         * Review the release notes for 12 October 2021.
 
-        * CLI changelog
+        * CLI change log
 
 * [September 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep21)
 
@@ -277,7 +277,7 @@ subcollection: satellite
 
         * Review the release notes for 9 August 2021.
 
-        * CLI changelog
+        * CLI change log
 
     * [3 August 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug321)
 
@@ -325,7 +325,7 @@ subcollection: satellite
 
         * Azure template
 
-        * CLI changelog
+        * CLI change log
 
     * [18 June 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun1821)
 
@@ -349,7 +349,7 @@ subcollection: satellite
 
         * Review the release notes for 26 May 2021.
 
-        * CLI changelog
+        * CLI change log
 
     * [19 May 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1921)
 
@@ -435,7 +435,7 @@ subcollection: satellite
 
         * New! General availability of {{site.data.keyword.satellitelong}}
 
-        * CLI changelog
+        * CLI change log
 
         * Cloud provider guides
 
@@ -455,7 +455,7 @@ subcollection: satellite
 
         * Auditing events
 
-        * CLI changelog
+        * CLI change log
 
     * [23 February 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb2321)
 
@@ -489,7 +489,7 @@ subcollection: satellite
 
         * Review the release notes for 8 February 2021.
 
-        * CLI changelog
+        * CLI change log
 
         * Host auto assignment
 
@@ -2107,7 +2107,7 @@ subcollection: satellite
 
     * [{{site.data.keyword.openshiftlong_notm}} commands (`ibmcloud oc`)](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-create)
 
-[CLI changelog for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-changelog#satellite-cli-changelog)
+[CLI change log for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-changelog#satellite-cli-changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-satellite-cli-changelog#10)
 
@@ -2483,7 +2483,7 @@ subcollection: satellite
 
 [Why can't I access the {{site.data.keyword.redhat_openshift_notm}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console#ts-sat-ocp-console)
 
-[Why can't I log into my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug#ts-cluster-ocdebug)
+[Why can't I log in to my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug#ts-cluster-ocdebug)
 
 
 ### Storage

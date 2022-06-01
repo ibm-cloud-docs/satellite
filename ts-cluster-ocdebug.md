@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-24"
+lastupdated: "2022-05-31"
 
 keywords: satellite, hybrid, multicloud, troubleshoot
 
@@ -13,10 +13,10 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I log into my worker nodes or debug them with `oc debug` command?
+# Why can't I log in to my worker nodes or debug them with `oc debug` command?
 {: #ts-cluster-ocdebug}
 
-When you log into the terminal of worker node or run the `oc debug node` command from the CLI, you receive the following error.
+When you log in to the terminal of worker node or run the `oc debug node` command from the CLI, you receive the following error.
 {: tsSymptoms}
 
 

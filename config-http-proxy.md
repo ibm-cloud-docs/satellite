@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-06-01"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -44,7 +44,7 @@ New Red Hat CoreOS-enabled locations
     1. Set up your HTTP proxy to tunnel traffic for all three of your location public service endpoints. To find your endpoints, 
         
         ```sh
-        ibmcloud ks location get --location LOCATION_NAME
+        ibmcloud sat location get --location LOCATION_NAME
         ```
         {: pre}
         
@@ -89,7 +89,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
 3. Navigate to `/etc/systemd/system.conf.d` on your host. If that file does not exist, create it. 
     
     ```sh
-    mkdir -p /etc/systemd/system.conf.d
+    mkdir -p etc/systemd && cd etc/systemd && touch system.conf.d
     ```
     {: pre}
 
@@ -105,7 +105,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
 6. Navigate to the `/etc/environment` file on your host. If that file does not exist, create it. 
     
     ```sh
-    mkdir -p /etc/environment
+    mkdir etc && touch etc/environment
     ```
     {: pre}
     
