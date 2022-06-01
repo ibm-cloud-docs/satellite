@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-31"
+lastupdated: "2022-06-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,6 +20,19 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
+
+## June 2022
+{: #satellite-june22}
+
+### 1 June 2022
+{: #satellite-june122}
+{: release-note}
+
+Getting started page redesign
+:   Updated the [Getting started with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started) page with terms, basic location information, and what you can do next.
+
+New! Think you know {{site.data.keyword.satelliteshort}}? Take a quiz!
+:   After you read about {{site.data.keyword.satelliteshort}} terms on the [Getting started with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#sat-key-terms) page, [take a quiz!](https://ibmcloud-quizzes.mybluemix.net/satellite/terms_quiz/quiz.php){: external} and find out how much you learned.
 
 
 ## May 2022

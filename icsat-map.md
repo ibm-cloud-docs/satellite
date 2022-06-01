@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-31"
+lastupdated: "2022-06-01"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -134,7 +134,7 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
     * [`ibmcloud sat storage config create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
     * [`ibmcloud sat storage config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-get).
     * [`ibmcloud sat storage config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-ls).
-    * [`ibmcloud sat storage config param set`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-param-set)
+    
     * [`ibmcloud sat storage config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-rm).
     * [`ibmcloud sat storage config upgrade`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
     * **`ibmcloud sat storage config sc`**: View and manage the storage classes in your Satellite storage configuration.

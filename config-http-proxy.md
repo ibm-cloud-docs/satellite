@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-06-01"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -44,7 +44,7 @@ New Red Hat CoreOS-enabled locations
     1. Set up your HTTP proxy to tunnel traffic for all three of your location public service endpoints. To find your endpoints, 
         
         ```sh
-        ibmcloud ks location get --location LOCATION_NAME
+        ibmcloud sat location get --location LOCATION_NAME
         ```
         {: pre}
         
