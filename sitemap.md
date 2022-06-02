@@ -34,17 +34,6 @@ subcollection: satellite
 * [I created a {{site.data.keyword.satelliteshort}} location, what comes next?](/docs/satellite?topic=satellite-getting-started#whats-next)
 
 
-## About {{site.data.keyword.satelliteshort}}
-{: #sitemap_about_}
-
-
-[About {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about#about)
-
-* [Benefits of using {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about#about-benefits)
-
-* [{{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-about#components)
-
-
 ## Understanding Satellite use cases
 {: #sitemap_understanding_satellite_use_cases}
 
@@ -883,6 +872,8 @@ subcollection: satellite
 
 * [How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?](/docs/satellite?topic=satellite-about-locations#control-plane-how-many-clusters)
 
+* [I created a {{site.data.keyword.satelliteshort}} location, what comes next?](/docs/satellite?topic=satellite-about-locations#loc-whats-next)
+
 [Creating a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#locations)
 
 * [Automating your location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template)
@@ -901,7 +892,7 @@ subcollection: satellite
 
     * [Setting up the control plane from the CLI](/docs/satellite?topic=satellite-locations#control-plane-cli)
 
-    * [What's next?](/docs/satellite?topic=satellite-locations#location-control-plane-next)
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-locations#location-control-plane-next)
 
 [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba#alibaba)
 
@@ -919,7 +910,7 @@ subcollection: satellite
 
 * [Security group settings](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-secgroup)
 
-* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-console-access)
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-alibaba#alibaba-whats-next)
 
 [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws#aws)
 
@@ -935,7 +926,7 @@ subcollection: satellite
 
 * [AWS credentials](/docs/satellite?topic=satellite-aws#infra-creds-aws)
 
-* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/satellite?topic=satellite-aws#aws-reqs-console-access)
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-aws#aws-whats-next)
 
 [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp#gcp)
 
@@ -949,7 +940,7 @@ subcollection: satellite
 
 * [Google Cloud Platform credentials](/docs/satellite?topic=satellite-gcp#infra-creds-gcp)
 
-* [Access to {{site.data.keyword.satelliteshort}} clusters and the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/satellite?topic=satellite-gcp#gcp-reqs-console-access)
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-gcp#gcp-whats-next)
 
 [Microsoft Azure](/docs/satellite?topic=satellite-azure#azure)
 
@@ -961,9 +952,13 @@ subcollection: satellite
 
 * [Microsoft Azure credentials](/docs/satellite?topic=satellite-azure#infra-creds-azure)
 
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-azure#azure-whats-next)
+
 [{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm#ibm)
 
 * [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
 
 
 ## Managing hosts and locations

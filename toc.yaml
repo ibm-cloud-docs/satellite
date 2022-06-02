@@ -16,7 +16,6 @@ toc:
       id: learn
       topics:
       - getting-started.md
-      - about.md
       - topicgroup:
           label: Understanding Satellite use cases
           topics:
