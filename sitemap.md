@@ -1350,9 +1350,15 @@ subcollection: satellite
 
     * [Gathering your Azure Disk configuration parameters](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-config-file)
 
+* [Creating an Azure Disk configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-ui)
+
 * [Creating an Azure Disk configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-cli)
 
 * [Assigning your Azure storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-azure-csi#assign-storage-azure)
+
+    * [Assigning a storage configuration in the console](/docs/satellite?topic=satellite-config-storage-azure-csi#assign-storage-azure-csi-ui)
+
+    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#assign-storage-azure-csi-cli)
 
 * [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-config-storage-azure-csi#storage-azure-csi-app-deploy)
 
@@ -1366,6 +1372,10 @@ subcollection: satellite
 
 * [Removing the Azure Disk storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-template-rm)
 
+    * [Removing the Azure Disk storage configuration from the console](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-template-rm-ui)
+
+    * [Removing the Azure Disk storage configuration from the cli](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-template-rm-cli)
+
 * [Parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-disk-params-cli)
 
 * [Storage class reference](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-sc-ref)
@@ -1377,6 +1387,8 @@ subcollection: satellite
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-csi-prereq)
 
     * [Optional: Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-label-nodes)
+
+* [Creating an Azure File configuration in the console](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-csi-ui)
 
 * [Creating an Azure File configuration in the command line](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-csi-cli)
 
@@ -1397,6 +1409,10 @@ subcollection: satellite
 * [Removing Azure file storage from your apps](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-rm)
 
 * [Removing the Azure File storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-template-rm)
+
+    * [Removing the Azure File storage configuration from the console](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-template-rm-ui)
+
+    * [Removing the Azure File storage configuration from the cli](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-template-rm-cli)
 
 * [Parameter reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-params-cli)
 
