@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-06-02"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce
 
@@ -31,6 +31,7 @@ The Compute Engine persistent disk Container Storage Interface (CSI) [Driver](ht
 
 ## Creating the Google Compute Engine persistent disk configuration in the command line
 {: #sat-storage-gcp-create-config}
+{: cli}
 
 Create a storage configuration in the command line by using the Google Compute Engine persistent disk template.
 {: shortdesc}
@@ -82,8 +83,21 @@ Create a storage configuration in the command line by using the Google Compute E
 
 1. [Assign your storage configuration to clusters](#assign-storage-gcp-csi)
 
+### Creating the Google Compute Engine persistent disk storage configuration from the console
+{: #sat-storage-gcp-ui}
+{: ui}
+
+
+Use the console to create a Google Compute Engine persistent disk storage configuration for your location.
+{: shortdesc}
+
+Before you begin, review and complete the [prerequisites](#sat-storage-gcp-csi-prereq) and review the [parameter reference](#sat-storage-gcp-csi-params-cli).
+
+{sat-storage-config-create-console.md}
+
 ### Assigning a storage configuration in the command line
 {: #assign-storage-gcp-csi}
+{: cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -166,6 +180,7 @@ Create a storage configuration in the command line by using the Google Compute E
 
 ## Deploying an app that uses Google Compute Engine persistent disk
 {: #sat-storage-gcp-deploy-app}
+{: cli}
 
 You can use the `gce-pd-csi-driver` to create PVCs that you can use in your cluster workloads.
 {: shortdesc}
@@ -294,7 +309,8 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
     {: pre}
 
 ## Upgrading a storage configuration
-{: #gce-upgrade-config}
+{: #gcp-upgrade-config}
+{: cli}
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -311,7 +327,8 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     {: pre}
 
 ## Upgrading a storage assignment
-{: #gce-upgrade-assignment}
+{: #gcp-upgrade-assignment}
+{: cli}
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -334,10 +351,12 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     {: pre}
 
 ## Updating a storage assignment
-{: #gce-update-assignment}
+{: #gcp-update-assignment}
+{: cli}
 
 ## Removing storage from your apps
-{: #gce-rm-apps}
+{: #gcp-rm-apps}
+{: cli}
 
 If you no longer need your Google Compute Engine configuration, you can remove your apps, PVCs, PVs, and assignment from your clusters.
 {: shortdesc}
@@ -415,13 +434,31 @@ If you no longer need your Google Compute Engine configuration, you can remove y
     {: pre}
 
 ## Removing the storage configuration from your cluster
-{: #gce-template-rm}
+{: #gcp-template-rm}
+
 
 If you no longer plan on using your persistent disk storage in your cluster, you can use the CLI unassign your cluster from the storage configuration.
 {: shortdesc}
 
 Removing the storage configuration uninstalls the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
+
+### Removing the Google Compute Engine storage configuration from the console
+{: #gcp-template-rm-ui}
+{: ui}
+
+Use the console to remove a storage configuration.
+{: shortdesc}
+
+1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
+1. Select **Actions** > **Delete**
+1. Enter the name of your storage configuration.
+1. Select **Delete**.
+
+
+### Removing the Google Compute Engine storage configuration from the CLI
+{: #gcp-template-rm-cli}
+{: cli}
 
 1. List your storage assignments and find the one that you used for your cluster.
 

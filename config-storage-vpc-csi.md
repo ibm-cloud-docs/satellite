@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-06-02"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -29,11 +29,31 @@ The {{site.data.keyword.block_storage_is_short}} Container Storage Interface (CS
 1. [Create an API key for access to your clusters](https://cloud.ibm.com/iam/apikeys){: external}
 
 
-## Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line
-{: #sat-storage-vpc-create-config}
+
+
+## Creating the {{site.data.keyword.block_storage_is_short}} configuration
+{: #sat-storage-vpc}
 
 Create a storage configuration in the command line by using the {{site.data.keyword.block_storage_is_short}} configuration template.
 {: shortdesc}
+
+## Creating the {{site.data.keyword.block_storage_is_short}} configuration in the console
+{: #sat-storage-vpc-create-config-ui}
+{: ui}
+
+1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
+1. On the **Parameters** tab, enter the parameters for your configuration.
+1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
+
+### Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line
+{: #sat-storage-vpc-create-config-cli}
+{: cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -80,10 +100,29 @@ Create a storage configuration in the command line by using the {{site.data.keyw
     ```
     {: pre}
 
-1. [Assign your storage configuration to clusters](#assign-storage-vpc-csi)
+1. [Assign your storage configuration to clusters](#assign-storage-vpc-csi-cli)
 
 ### Assigning a storage configuration in the command line
-{: #assign-storage-vpc-csi}
+{: #assign-storage-vpc-csi-ui}
+{: ui}
+
+1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
+1. Select the location where you want to create a storage configuration.
+1. Click the **Configurations** tab and click the storage configuration that you want to assign to a cluster group.
+1. On the **Configuration details** page, click **Create subscription**.
+1. In the **Create a subscription** pane, enter a name for your subscription. When you create a subscription you assign your storage configuration to your clusters.
+1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
+1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
+1. Click **Create** to create the subscription.
+1. Verify that your storage configuration is deployed to your cluster. 
+    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to the **Configurations** tab.
+    1. Click the storage configuration that you created and review the **Subscriptions** tab.
+    1. Click the **Subscription** that you created and review the **Rollout status** for your configuration.
+
+
+### Assigning a storage configuration in the command line
+{: #assign-storage-vpc-csi-cli}
+{: cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -164,6 +203,7 @@ Create a storage configuration in the command line by using the {{site.data.keyw
 
 ## Deploying an app that uses {{site.data.keyword.block_storage_is_short}}
 {: #sat-storage-vpc-deploy-app}
+{: cli}
 
 You can use the `ibm-vpc-block-csi-driver` to create PVCs that you can use in your cluster workloads.
 {: shortdesc}
@@ -279,6 +319,7 @@ You can use the `ibm-vpc-block-csi-driver` to create PVCs that you can use in yo
 
 ## Upgrading a storage configuration
 {: #vpc-csi-upgrade-config}
+{: cli}
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -296,6 +337,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 
 ## Upgrading a storage assignment
 {: #vpc-csi-upgrade-assignment}
+{: cli}
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -319,6 +361,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 
 ## Updating a storage assignment
 {: #vpc-csi-update-assignment}
+{: cli}
 
 You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
 
@@ -427,6 +470,19 @@ If you no longer plan on using your {{site.data.keyword.block_storage_is_short}}
 
 Removing the storage configuration uninstalls the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
+
+### Removing the storage configuration using the console
+{: #vpc-csi-rm-ui}
+{: ui}
+
+1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
+1. Select **Actions** > **Delete**
+1. Enter the name of your storage configuration.
+1. Select **Delete**.
+
+### Removing the storage configuration using the cli
+{: #vpc-csi-rm-cli}
+{: cli}
 
 1. List your storage assignments and find the one that you used for your cluster.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-06-02"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
 
@@ -153,6 +153,7 @@ When you create your ODF configuration, you must specify the device paths of the
 
 ## Creating an OpenShift Data Foundation configuration in the command line
 {: #sat-storage-odf-local-cli}
+{: cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -235,6 +236,7 @@ When you create your ODF configuration, you must specify the device paths of the
 
 ## Assigning your ODF storage configuration to a cluster
 {: #assign-storage-odf-local}
+{: cli}
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-odf-local), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
@@ -403,6 +405,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 ## Deploying an app that uses OpenShift Data Foundation
 {: #sat-storage-odf-local-deploy}
+{: cli}
 
 You can use the ODF storage classes to create PVCs for the apps in your clusters.
 {: shortdesc}
@@ -514,6 +517,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
 
 ### Scaling your ODF configuration by attaching raw disks
 {: #sat-storage-scale-odf-local-disk}
+{: cli}
 
 To scale your ODF configuration by adding disks to your worker nodes, create a storage configuration with the same `ocs-cluster-name` and configuration details as your existing configuration, but increase the `num-of-osd` parameter value and specify the new worker node names with the `worker-nodes` parameter.
 
@@ -546,6 +550,7 @@ In the following example, 3 worker nodes are added to the configuration that was
 
 ## Upgrading your ODF version
 {: #odf-local-upgrade}
+{: cli}
 
 To upgrade the ODF version of your configuration, get the details of your configuration and create a new configuration with the same `ocs-cluster-name` and details, but with the `template-version` set to the target version that you want to upgrade to and the `ocs-upgrade` parameter to `true`.
 {: shortdesc}
@@ -621,6 +626,7 @@ In the following example, the ODF configuration is updated to use template versi
 
 ## Removing OpenShift Data Foundation from your apps
 {: #odf-local-rm}
+{: cli}
 
 If you no longer need your OpenShift Data Foundation, you can remove your PVC, PV, and the ODF operator from your clusters.
 {: shortdesc}
@@ -681,6 +687,7 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
 
 ## Removing the ODF local storage configuration from your cluster
 {: #odf-local-template-rm}
+{: cli}
 
 If you no longer plan to use OpenShift Data Foundation in your cluster, you can remove the assignment from your cluster from the storage configuration.
 {: shortdesc}

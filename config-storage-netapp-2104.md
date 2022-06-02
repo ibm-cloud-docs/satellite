@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-06-02"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -43,9 +43,30 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 
 
 
+## Creating a NetApp Trident SAN storage configuration
+{: #sat-storage-nettapp-san-2104}
 
-## Creating a NetApp Trident SAN storage configuration in the command line
+You can use the [console](#sat-storage-netapp-ui-san-2104) or [CLI](#sat-storage-netapp-cli-san-2104) to create a NetApp Trident SAN storage configuration in your location and assign the configuration to your clusters.
+{: shortdesc}
+
+### Creating a NetApp Trident SAN storage configuration in the console
+{: #sat-storage-netapp-ui-san-2104}
+{: ui}
+
+1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
+1. On the **Parameters** tab, enter the parameters for your configuration.
+1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
+
+
+### Creating a NetApp Trident SAN storage configuration in the command line
 {: #sat-storage-netapp-cli-san-2104}
+{: cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -106,10 +127,28 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp-2104), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 
+### Assigning a storage configuration in the console
+{: #assign-storage-netapp-ui-san-2104}
+{: ui}
+
+
+1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
+1. Select the location where you want to create a storage configuration.
+1. Click the **Configurations** tab and click the storage configuration that you want to assign to a cluster group.
+1. On the **Configuration details** page, click **Create subscription**.
+1. In the **Create a subscription** pane, enter a name for your subscription. When you create a subscription you assign your storage configuration to your clusters.
+1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
+1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
+1. Click **Create** to create the subscription.
+1. Verify that your storage configuration is deployed to your cluster. 
+    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to the **Configurations** tab.
+    1. Click the storage configuration that you created and review the **Subscriptions** tab.
+    1. Click the **Subscription** that you created and review the **Rollout status** for your configuration.
 
 
 ### Assigning a storage configuration in the command line
 {: #assign-storage-netapp-cli-san-2104}
+{: cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -171,6 +210,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 ## Upgrading a storage configuration
 {: #sat-storage-netapp-san-2104-upgrade-config}
+{: cli}
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -188,6 +228,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 
 ## Upgrading a storage assignment
 {: #sat-storage-netapp-san-2104-upgrade-assignment}
+{: cli}
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -211,6 +252,28 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 
 ## Updating a storage assignment
 {: #sat-storage-netapp-san-2104-update-assignment}
+{: cli}
+
+You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to update and the clusters or cluster groups included in the assignment.
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. Update the {{site.data.keyword.satelliteshort}} assignment. 
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
+    ```
+    {: pre}
+
+    Example command to update assignment name and assign different cluster groups.
+    
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT --name new-name --group group-1 --group group-2 --group group-3
+    ```
+    {: pre}
 
 ## NetApp Trident storage configuration parameter reference
 {: #sat-storage-netapp-params-cli-san-2104}

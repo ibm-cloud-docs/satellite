@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-06-02"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
 
@@ -35,9 +35,34 @@ To use the AWS EBS storage template, complete the following tasks:
 ## Creating an AWS EBS storage configuration
 {: #sat-storage-aws-ebs}
 
-You can use the CLI to create an AWS EBS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EBS storage for your apps.
+You can use the [console](#sat-storage-aws-ebs-ui) or [CLI](#sat-storage-aws-ebs-cli) to create an AWS EBS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EBS storage for your apps.
 {: shortdesc}
 
+
+### Creating an AWS EBS storage configuration from the console
+{: #sat-storage-aws-ebs-ui}
+{: ui}
+
+
+Use the console to create an AWS EBS storage configuration for your location.
+{: shortdesc}
+
+Before you begin, review and complete the [prerequisites](#aws-ebs-prereq) and review the [parameter reference](#sat-storage-aws-ebs-params-cli).
+
+1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
+1. On the **Parameters** tab, enter the parameters for your configuration.
+1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
+
+
+### Creating an AWS EBS storage configuration from the CLI
+{: #sat-storage-aws-ebs-cli}
+{: cli}
 
 
 Use the command line to create an AWS EBS storage configuration for your location.
@@ -89,8 +114,9 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 
 
 
-### Assigning your storage configuration to clusters or cluster groups
+### Assigning your storage configuration to clusters or cluster groups from the CLI
 {: #ebs-config-assign}
+{: cli}
 
 1. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to use. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EBS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location.
     ```sh
@@ -144,6 +170,7 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 
 ## Deploying an app that uses AWS EBS storage
 {: #sat-storage-ebs-deploy}
+{: cli}
 
 You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for the apps in your clusters.
 {: shortdesc}
@@ -299,6 +326,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
 
 ## Removing AWS EBS storage from your apps
 {: #aws-ebs-rm}
+{: cli}
 
 If you no longer need your AWS EBS instance, you can remove your PVC, PV, and the AWS EBS instance in your AWS account.
 {: shortdesc}
@@ -364,6 +392,7 @@ Removing your AWS EBS instance permanently removes all the data that is stored o
 
 ## Upgrading a storage configuration
 {: #aws-ebs-upgrade-config}
+{: cli}
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -381,6 +410,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 
 ## Upgrading a storage assignment
 {: #aws-ebs-upgrade-assignment}
+{: cli}
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -404,6 +434,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 
 ## Updating a storage assignment
 {: #aws-ebs-update-assignment}
+{: cli}
 
 You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
 
@@ -436,6 +467,22 @@ Removing the storage configuration, uninstalls the AWS EBS driver from all assig
 {: important}
 
 
+
+### Removing the AWS EBS storage configuration from the console
+{: #aws-ebs-template-rm-ui}
+{: ui}
+
+Use the console to remove a storage configuration.
+{: shortdesc}
+
+1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
+1. Select **Actions** > **Delete**
+1. Enter the name of your storage configuration.
+1. Select **Delete**.
+
+### Removing the AWS EBS storage configuration from the CLI
+{: #aws-ebs-template-rm-cli}
+{: cli}
 
 Use the CLI to remove a storage configuration.
 {: shortdesc}
