@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-06-03"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -45,7 +45,7 @@ You can use the [console](#sat-storage-aws-efs-ui) or [CLI](#sat-storage-aws-efs
 Use the console to create an AWS EBS storage configuration for your location.
 {: shortdesc}
 
-Before you begin, review and complete the [prerequisites](#aws-ebs-prereq) and review the [parameter reference](#sat-storage-aws-ebs-params-cli).
+Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs) and review the [parameter reference](#sat-storage-aws-efs-params-cli).
 
 {sat-storage-config-create-console.md}
 
