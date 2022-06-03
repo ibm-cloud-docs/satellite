@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-06-02"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -131,12 +131,25 @@ After you have [retrieved the device paths for the disks that you want to use in
     {: pre}
 
 
+## Creating a local file storage configuration
+{: #sat-storage-local-file}
 
+You can use the [console](#sat-storage-local-file-ui) or [CLI](#sat-storage-local-file-cli) to create a local file storage configuration in your location and assign the configuration to your clusters.
+{: shortdesc}
 
+### Creating a local file storage configuration from the console
+{: #sat-storage-local-file-ui}
+{: ui}
+
+1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
+1. Select **Actions** > **Delete**
+1. Enter the name of your storage configuration.
+1. Select **Delete**.
 
 
 ## Creating a local file storage configuration in the command line
 {: #sat-storage-local-file-cli}
+{: cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -211,10 +224,29 @@ After you have [retrieved the device paths for the disks that you want to use in
 After you [create a local {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-local-file), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 
+### Assigning a storage configuration in the console
+{: #assign-storage-local-file-ui}
+{: ui}
+
+
+1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
+1. Select the location where you want to create a storage configuration.
+1. Click the **Configurations** tab and click the storage configuration that you want to assign to a cluster group.
+1. On the **Configuration details** page, click **Create subscription**.
+1. In the **Create a subscription** pane, enter a name for your subscription. When you create a subscription you assign your storage configuration to your clusters.
+1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
+1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
+1. Click **Create** to create the subscription.
+1. Verify that your storage configuration is deployed to your cluster. 
+    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to the **Configurations** tab.
+    1. Click the storage configuration that you created and review the **Subscriptions** tab.
+    1. Click the **Subscription** that you created and review the **Rollout status** for your configuration.
+
 
 
 ### Assigning a storage configuration in the command line
 {: #assign-storage-local-file-cli}
+{: cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -333,6 +365,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
 
 ## Deploying an app that uses your local file storage
 {: #deploy-app-local-file}
+{: cli}
 
 After you create a local file storage configuration and assign it to your clusters, you can then create an app that uses your local file storage.
 {: shortdesc}
@@ -446,6 +479,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
 
 ## Upgrading a storage configuration
 {: #sat-storage-local-file-upgrade-config}
+{: cli}
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -463,6 +497,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 
 ## Upgrading a storage assignment
 {: #sat-storage-local-file-upgrade-assignment}
+{: cli}
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -486,6 +521,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 
 ## Updating a storage assignment
 {: #sat-storage-local-file-update-assignment}
+{: cli}
 
 ## Removing the local file storage configuration from your cluster
 {: #sat-storage-remove-local-file-config}
@@ -496,6 +532,23 @@ If you no longer plan on using local file storage in your cluster, you can unass
 Removing the storage configuration, uninstalls the local storage operator resources and the `sat-local-file-gold` storage class from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
 {: important}
 
+
+### Remove the local file storage configuration from the console
+{: #sat-storage-rm-local-file-ui}
+{: ui}
+
+
+Use the console to remove a storage configuration. 
+{: shortdesc}
+
+1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
+1. Select **Actions** > **Delete**
+1. Enter the name of your storage configuration.
+1. Select **Delete**.
+
+### Remove the local file storage configuration from the command line
+{: #rm-local-file-temp-cli}
+{: cli}
 
 
 1. List the resources in the `local-storage` namespace. When you delete your storage assignment, these resources are removed.

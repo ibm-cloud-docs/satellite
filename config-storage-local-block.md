@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-06-02"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -162,10 +162,25 @@ After you have [retrieved the device paths for the disks that you want to use in
     {: pre}
 
 
+## Creating a local block storage configuration
+{: #sat-storage-local-block}
+
+You can use the [console](#sat-storage-local-block-ui) or [CLI](#sat-storage-local-block-cli) to create a local block storage configuration in your location and assign the configuration to your clusters.
+{: shortdesc}
+
+### Creating a local block storage configuration from the console
+{: #sat-storage-local-block-ui}
+{: ui}
+
+1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
+1. Select **Actions** > **Delete**
+1. Enter the name of your storage configuration.
+1. Select **Delete**.
 
 
 ## Creating a local block storage configuration in the command line
 {: #sat-storage-local-block-cli}
+{: cli}
 
 1. Review the [Local block storage configuration parameters](#sat-storage-local-block-params-cli).
 
@@ -217,6 +232,7 @@ After you [create a local block storage configuration](#config-storage-local-blo
 
 ### Assigning a storage configuration in the command line
 {: #assign-storage-local-block-cli}
+{: cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -320,6 +336,7 @@ After you [create a local block storage configuration](#config-storage-local-blo
 
 ## Deploying an app that uses your local block storage
 {: #deploy-app-local-block}
+{: cli}
 
 After you create a local block storage configuration and assign it to your clusters, you can then create an app that uses your local block storage.
 {: shortdesc}
@@ -461,6 +478,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
 
 ## Upgrading a storage configuration
 {: #sat-storage-local-block-upgrade-config}
+{: cli}
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -478,6 +496,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 
 ## Upgrading a storage assignment
 {: #sat-storage-local-block-upgrade-assignment}
+{: cli}
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -501,6 +520,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 
 ## Updating a storage assignment
 {: #sat-storage-local-block-update-assignment}
+{: cli}
 
 ## Removing the local block storage configuration from your cluster
 {: #sat-storage-remove-local-block-config}
@@ -512,6 +532,20 @@ Removing the storage configuration, uninstalls the local storage operator resour
 {: important}
 
 
+### Removing the local block storage configuration from the console
+{: #sat-storage-rm-local-block-ui}
+
+Use the console to remove a storage configuration. 
+{: shortdesc}
+
+1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
+1. Select **Actions** > **Delete**
+1. Enter the name of your storage configuration.
+1. Select **Delete**.
+
+### Removing the local block storage configuration from the command line
+{: #rm-local-block-temp-cli}
+{: cli}
 
 1. List the resources in the `local-storage` namespace. When you delete your storage assignment, these resources are removed.
 

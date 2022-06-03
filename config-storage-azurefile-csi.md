@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-06-02"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file
 
@@ -79,8 +79,23 @@ If you manually assigned your Azure hosts to your location and did not use an au
 1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/get-started/){: external} and retrieve the required parameters. For more information about the parameters, see the [parameter reference](#sat-storage-azure-file-params-cli).
 
 
+## Creating an Azure File configuration in the console
+{: #sat-storage-azure-file-csi-ui}
+{: ui}
+
+1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
+1. On the **Parameters** tab, enter the parameters for your configuration.
+1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
+
 ## Creating an Azure File configuration in the command line
 {: #sat-storage-azure-file-csi-cli}
+{: cli}
 
 Create a storage configuration in the command line by using the Azure File template.
 {: shortdesc}
@@ -141,6 +156,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 ### Assigning a storage configuration in the console
 {: #assign-storage-azurefile-csi-ui}
+{: ui}
 
 1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
 1. Select the location where you want to create a storage configuration.
@@ -158,6 +174,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 ### Assigning a storage configuration in the command line 
 {: #assign-storage-azurefile-csi-cli}
+{: cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -252,6 +269,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 ## Deploying an app that uses your Azure File storage
 {: #storage-azure-file-csi-app-deploy}
+{: cli}
 
 You can use the Azure File driver to create PVCs that you can use in your cluster workloads.
 {: shortdesc}
@@ -384,6 +402,7 @@ You can use the Azure File driver to create PVCs that you can use in your cluste
 
 ## Upgrading a storage configuration
 {: #azure-file-upgrade-config}
+{: cli}
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -401,6 +420,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 
 ## Upgrading a storage assignment
 {: #azure-file-upgrade-assignment}
+{: cli}
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -424,6 +444,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 
 ## Updating a storage assignment
 {: #azure-file-update-assignment}
+{: cli}
 
 You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
 
@@ -532,6 +553,19 @@ If you no longer plan on using Azure File storage in your cluster, you can use t
 
 Removing the storage configuration uninstalls the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
+
+### Removing the Azure File storage configuration from the console
+{: #azure-file-template-rm-ui}
+{: ui}
+
+1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
+1. Select **Actions** > **Delete**
+1. Enter the name of your storage configuration.
+1. Select **Delete**.
+
+### Removing the Azure File storage configuration from the cli
+{: #azure-file-template-rm-cli}
+{: cli}
 
 1. List your storage assignments and find the one that you used for your cluster.
 

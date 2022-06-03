@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-04"
+lastupdated: "2022-06-02"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
 
@@ -61,6 +61,7 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
 
 ## Creating an OpenShift Data Foundation configuration in the command line
 {: #sat-storage-odf-remote-cli}
+{: cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -132,6 +133,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 ### Assigning a storage configuration in the command line
 {: #assign-storage-odf-remote-cli}
+{: cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -249,6 +251,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 ## Upgrading your ODF configuration
 {: #sat-storage-odf-remote-upgrade-config}
+{: cli}
 
 Don't delete your storage configurations or assignments. Deleting configurations and assignments might result in data loss.
 {: important}
@@ -302,6 +305,7 @@ To upgrade the ODF version of your configuration, complete the following steps:
 
 ### Removing the ODF remote storage assignment from the command line
 {: #odf-remote-template-rm-cli}
+{: cli}
 
 Use the command line to remove a storage assignment.
 {: shortdesc}

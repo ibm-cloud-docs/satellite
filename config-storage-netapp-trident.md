@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-06-02"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -27,8 +27,22 @@ You must deploy the NetApp Trident template to your clusters before you can crea
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 
+## Creating a NetApp Trident storage configuration from the console
+{: #sat-storage-netapp-ui}
+
+1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
+1. On the **Parameters** tab, enter the parameters for your configuration.
+1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
+
 ## Creating a NetApp Trident storage configuration in the command line
 {: #sat-storage-netapp-cli}
+{: cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -84,9 +98,29 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
+### Assigning a storage configuration in the console
+{: #assign-storage-netapp-ui}
+{: ui}
+
+
+1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
+1. Select the location where you want to create a storage configuration.
+1. Click the **Configurations** tab and click the storage configuration that you want to assign to a cluster group.
+1. On the **Configuration details** page, click **Create subscription**.
+1. In the **Create a subscription** pane, enter a name for your subscription. When you create a subscription you assign your storage configuration to your clusters.
+1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
+1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
+1. Click **Create** to create the subscription.
+1. Verify that your storage configuration is deployed to your cluster. 
+    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to the **Configurations** tab.
+    1. Click the storage configuration that you created and review the **Subscriptions** tab.
+    1. Click the **Subscription** that you created and review the **Rollout status** for your configuration.
+
+
 
 ### Assigning a storage configuration in the command line
 {: #assign-storage-netapp-cli}
+{: cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -158,6 +192,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 ## Upgrading a storage configuration
 {: #netapp-trident-upgrade-config}
+{: cli}
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -175,6 +210,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 
 ## Upgrading a storage assignment
 {: #netapp-trident-upgrade-assignment}
+{: cli}
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -198,10 +234,43 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 
 ## Updating a storage assignment
 {: #netapp-trident-update-assignment}
+{: cli}
 
+You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to update and the clusters or cluster groups included in the assignment.
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. Update the {{site.data.keyword.satelliteshort}} assignment. 
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
+    ```
+    {: pre}
+
+    Example command to update assignment name and assign different cluster groups.
+    
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT --name new-name --group group-1 --group group-2 --group group-3
+    ```
+    {: pre}
+
+### Removing the NetApp Trident storage assignment and configuration from the console
+{: #netapp-trident-template-rm-ui}
+{: ui}
+
+Use the console to remove a storage assignment and storage configuration.
+
+1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
+1. Select **Actions** > **Delete**
+1. Enter the name of your storage configuration.
+1. Select **Delete**.
 
 ### Removing the NetApp Trident storage assignment and configuration from the CLI
 {: #netapp-trident-template-rm-cli}
+{: cli}
 
 Use the CLI to remove a storage assignment and storage configuration.
 {: shortdesc}

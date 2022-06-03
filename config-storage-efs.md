@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-06-03"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -34,10 +34,24 @@ To use the AWS EFS storage template, complete the following tasks:
 ## Creating an AWS EFS storage configuration
 {: #sat-storage-aws-efs}
 
-You can use the CLI to create an AWS EFS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EFS storage for your apps. 
+
+You can use the [console](#sat-storage-aws-efs-ui) or [CLI](#sat-storage-aws-efs-cli) to create an AWS EFS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EFS storage for your apps. 
 {: shortdesc}
 
+### Creating an AWS EBS storage configuration from the console
+{: #sat-storage-aws-efs-ui}
+{: ui}
 
+Use the console to create an AWS EBS storage configuration for your location.
+{: shortdesc}
+
+Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs) and review the [parameter reference](#sat-storage-aws-efs-params-cli).
+
+{sat-storage-config-create-console.md}
+
+### Creating an AWS EFS storage configuration from the CLI
+{: #sat-storage-aws-efs-cli}
+{: cli}
 
 
 Use the CLI to create an AWS EFS storage configuration for your location.
@@ -96,6 +110,7 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
 
 ### Assigning your storage configuration to clusters or cluster groups
 {: #efs-config-assign}
+{: cli}
 
 1. Create a storage assignment for your cluster group. After you create the assignment, the AWS EFS driver is installed in all clusters that belong to the cluster group. Replace `<group_name>` with the name of your cluster group, `<config_name>` with the name of your storage configuration, and `<assignment_name>` with a name for your storage assignment. For more information, see the [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create) command.
     ```sh
@@ -139,6 +154,7 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
 
 ## Deploying an app that uses AWS EFS storage
 {: #sat-storage-efs-deploy}
+{: cli}
 
 You can use the `efs-csi-driver` to statically provision AWS EFS storage for the apps in your clusters.
 {: shortdesc}
@@ -298,6 +314,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
 
 ## Upgrading a storage configuration
 {: #aws-efs-upgrade-config}
+{: cli}
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -315,6 +332,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 
 ## Upgrading a storage assignment
 {: #aws-efs-upgrade-assignment}
+{: cli}
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -338,9 +356,11 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 
 ## Updating a storage assignment
 {: #aws-efs-update-assignment}
+{: cli}
 
 ## Removing AWS EFS storage from your apps
 {: #aws-efs-rm}
+{: cli}
 
 If you no longer need your AWS EFS instance, you can remove your PVC, PV, and the AWS EFS instance in your AWS account.
 {: shortdesc}
@@ -414,6 +434,22 @@ Removing the storage configuration, uninstalls the AWS EFS driver from all assig
 {: important}
 
 
+### Removing the AWS EFS storage configuration from the console
+{: #aws-efs-template-rm-ui}
+{: ui}
+
+Use the console to remove a storage configuration.
+{: shortdesc}
+
+1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
+1. Select **Actions** > **Delete**
+1. Enter the name of your storage configuration.
+1. Select **Delete**.
+
+
+### Removing the AWS EFS storage configuration from the CLI
+{: #aws-efs-template-rm-cli}
+{: cli}
 
 Use the CLI to remove a storage configuration.
 {: shortdesc}
