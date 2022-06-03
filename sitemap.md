@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-06-03"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2438,6 +2438,8 @@ subcollection: satellite
 * [Feedback and questions](/docs/satellite?topic=satellite-get-help#feedback-qs)
 
 * [Contacting support](/docs/satellite?topic=satellite-get-help#help-support)
+
+* [Opting in to receive email notifications](/docs/satellite?topic=satellite-get-help#opt-in-email)
 
 [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug#ts-locations-debug)
 

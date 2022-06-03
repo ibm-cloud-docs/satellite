@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-06-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -89,3 +89,8 @@ You can also view logs that are automatically generated for your {{site.data.key
 2. Contact {{site.data.keyword.IBM_notm}} Support by [opening a case](https://cloud.ibm.com/unifiedsupport/cases/form){: external}. To learn about opening an {{site.data.keyword.IBM_notm}} support case, or about support levels and case severities, see [Contacting support](/docs/get-support?topic=get-support-using-avatar).
 3. For the **Problem type**, search for or select **{{site.data.keyword.satelliteshort}}**.
 4. For the **Case details**, provide a descriptive title and include the details that you previously gathered. From the **Resources**, you can also select the cluster that the issue is related to, if any.
+
+## Opting in to receive email notifications
+{: #opt-in-email}
+
+You can opt in to receive email notifications about {{site.data.keyword.cloud_notm}} platform-related items across your account and resource-related items for incidents, maintenance, security bulletins, and resource activity updates. Email notifications are not turned on by default. To understand how to set up these email notifications, see [Setting email preferences for notifications](/docs/satellite?topic=account-email-prefs).
