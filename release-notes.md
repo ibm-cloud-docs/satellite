@@ -845,7 +845,7 @@ Internal registry
 :   Added information on how to [Set up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry) for {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} locations.
 
 Service overview
-:   Added an [About {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-about) topic to help you learn about {{site.data.keyword.satelliteshort}} terminology, service architecture, and components.
+:   Added an [About {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-faqs) topic to help you learn about {{site.data.keyword.satelliteshort}} terminology, service architecture, and components.
 
 ## October 2020
 {: #satellite-oct20}
