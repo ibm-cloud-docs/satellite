@@ -31,12 +31,8 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 CLI change log
 :   Updated the CLI plug-in change log page for the [release of version 1.0.419](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
-### 6 June 2022
-{: #satellite-june622}
-{: release-note}
-
 New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
-:   To create a CoreOS-enabled location in the Tokyo region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+:   To create a CoreOS-enabled location in the London region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 
 ### 1 June 2022
 {: #satellite-june122}
