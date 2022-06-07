@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-03"
+lastupdated: "2022-06-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -65,6 +65,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june22)
+
+    * [6 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june622)
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
 
     * [1 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june122)
 
