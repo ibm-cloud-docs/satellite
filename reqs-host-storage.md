@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-02"
+lastupdated: "2022-06-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -23,7 +23,7 @@ Hosts can't have a device mounted to `/var/data`. `/tmp` and `/usr` must each ha
 {: note}
 
 
-![Host storage](/images/sat_architecture_host_storage-02-01.svg){: caption="Figure 1. Satellite host storage requirements" caption-side="bottom"}
+![Host storage](/images/sat_architecture_host_storage.svg){: caption="Figure 1. Satellite host storage requirements" caption-side="bottom"}
 
 
 Boot device (Operating system)
