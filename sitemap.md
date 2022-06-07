@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-03"
+lastupdated: "2022-06-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -65,6 +65,14 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june22)
+
+    * [7 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-June722)
+
+        * CLI change log
+
+    * [6 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june622)
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
 
     * [1 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june122)
 
@@ -2163,6 +2171,8 @@ subcollection: satellite
     * [`ibmcloud sat storage config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-get)
 
     * [`ibmcloud sat storage config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-ls)
+
+    * [**Beta** `ibmcloud sat storage config param set`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-param-set)
 
     * [`ibmcloud sat storage config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-rm)
 

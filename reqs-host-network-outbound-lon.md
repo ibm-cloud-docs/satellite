@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-06-07"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -26,7 +26,14 @@ To check your host set up, you can use the `satellite-host-check` script. For mo
 ## Allow control plane worker nodes to communicate with the control plane master
 {: #host-out-cp-lon}
 
-{{site.data.keyword.satelliteshort}} control plane hosts
+
+{{site.data.keyword.satelliteshort}} control plane hosts in Red Hat CoreOS enabled locations
+* Destination IPs: 158.175.113.26,141.125.85.26,158.176.90.58
+* Destination hostnames: `c116.eu-gb.satellite.cloud.ibm.com`, `c116-1.eu-gb.satellite.cloud.ibm.com`, `c116-2.eu-gb.satellite.cloud.ibm.com`, `c116-3.eu-gb.satellite.cloud.ibm.com`, `c116-e.eu-gb.satellite.cloud.ibm.com`
+* Protocol and ports: TCP 30000 - 32767
+
+
+{{site.data.keyword.satelliteshort}} control plane hosts in locations without CoreOS enabled
 * Destination IPs: 158.175.120.210, 141.125.97.106, 158.176.139.66  
 * Destination hostnames:  `c106.eu-gb.satellite.cloud.ibm.com`, `c106-1.eu-gb.satellite.cloud.ibm.com`, `c106-2.eu-gb.satellite.cloud.ibm.com`, `c106-3.eu-gb.satellite.cloud.ibm.com`, `c106-e.eu-gb.satellite.cloud.ibm.com` 
 * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767
