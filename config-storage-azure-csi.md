@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-06-07"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -88,16 +88,16 @@ Create a configuration file with your Azure Disk settings.
     
     Example output
     ```sh
-    Name                Display Name                           Description                                Required   Type     Default   
-    aadClientId         Azure Active Directory Client ID       Azure Active Directory Client ID.          true       string   -   
-    aadClientSecret     Azure Active Directory Client Secret   Azure Active Directory Client Secret.      true       string   -   
-    location            location                               Location where the machines are created.   true       string   -   
-    resourceGroup       Resource Group.                        Resource Group.                            true       string   -   
-    securityGroupName   Network Security Group Name            Network Security Group Name.               true       string   -   
-    subscriptionId      Subscription ID                        Subscription ID.                           true       string   -   
-    tenantId            Tenant ID                              Tenant ID.                                 true       string   -   
-    vmType              Virtual Machnine Type                  Virtual Machnine Type.                     true       string   -   
-    vnetName            Virtual Network Name                   Virtual Network Name.                      true       string   -  
+    Name                Display Name                           Description                                Required   Type     Default   Mutable
+    aadClientId         Azure Active Directory Client ID       Azure Active Directory Client ID.          true       string   -         true
+    aadClientSecret     Azure Active Directory Client Secret   Azure Active Directory Client Secret.      true       string   -         true 
+    location            location                               Location where the machines are created.   true       string   -         true    
+    resourceGroup       Resource Group.                        Resource Group.                            true       string   -         true    
+    securityGroupName   Network Security Group Name            Network Security Group Name.               true       string   -         true    
+    subscriptionId      Subscription ID                        Subscription ID.                           true       string   -         true    
+    tenantId            Tenant ID                              Tenant ID.                                 true       string   -         true    
+    vmType              Virtual Machnine Type                  Virtual Machnine Type.                     true       string   -         true    
+    vnetName            Virtual Network Name                   Virtual Network Name.                      true       string   -         true   
     ```
     {: screen}
 

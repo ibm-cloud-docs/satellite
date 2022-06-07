@@ -24,6 +24,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## June 2022
 {: #satellite-june22}
 
+### 7 June 2022
+{: #satellite-June722}
+{: release-note}
+
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.419](/docs/satellite?topic=satellite-satellite-cli-changelog).
+
 ### 6 June 2022
 {: #satellite-june622}
 {: release-note}
@@ -40,7 +47,6 @@ Getting started page redesign
 
 New! Think you know {{site.data.keyword.satelliteshort}}? Take a quiz!
 :   After you read about {{site.data.keyword.satelliteshort}} terms on the [Getting started with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#sat-key-terms) page, [take a quiz!](https://ibmcloud-quizzes.mybluemix.net/satellite/terms_quiz/quiz.php){: external} and find out how much you learned.
-
 
 ## May 2022
 {: #satellite-may22}

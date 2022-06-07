@@ -66,6 +66,10 @@ subcollection: satellite
 
 * [June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june22)
 
+    * [7 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-June722)
+
+        * CLI change log
+
     * [6 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june622)
 
         * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
@@ -2167,6 +2171,8 @@ subcollection: satellite
     * [`ibmcloud sat storage config get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-get)
 
     * [`ibmcloud sat storage config ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-ls)
+
+    * [**Beta** `ibmcloud sat storage config param set`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-param-set)
 
     * [`ibmcloud sat storage config rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-rm)
 
