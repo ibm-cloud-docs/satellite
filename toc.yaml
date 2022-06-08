@@ -19,7 +19,7 @@ toc:
       - topicgroup:
           label: Understanding Satellite use cases
           topics:
-            
+            - use-case.md
             - edge-usecase.md
       - managed-services.md
       - release-notes.md
