@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-08"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane
 
@@ -132,7 +132,7 @@ The following tables provide examples of the number of hosts that the control pl
 {: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
 {: class="simple-tab-table"}
 {: #4cpu-16ram-coreos}
-{: tab-title="4 vCPU, 16GB RAM (CoreOS)"}
+{: tab-title="8 vCPU, 16GB RAM (CoreOS)"}
 {: tab-group="loc-size"}
 
 | Number of CoreOS control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
