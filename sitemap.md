@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-08"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2692,3 +2692,5 @@ subcollection: satellite
     * [ST0052](/docs/satellite?topic=satellite-debug-storage#st0052)
 
 [Why is the namespace where my storage operator was deployed stuck in **Terminating** status?](/docs/satellite?topic=satellite-storage-namespace-terminating#storage-namespace-terminating)
+
+[Why are my nodes failing to register using Azure File or Azure Disk storage templates?](/docs/satellite?topic=satellite-ts-node-register-failure#ts-node-register-failure)

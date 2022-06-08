@@ -211,5 +211,7 @@ toc:
                   topics:
                     - debug-storage.md
                     - storage-namespace-terminating.md
+                    - ts-authentication-failure.md
+                    - ts-node-register-failure.md
         - sitemap.md
 
