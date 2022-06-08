@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-08"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -37,6 +37,56 @@ subcollection: satellite
 ## Understanding Satellite use cases
 {: #sitemap_understanding_satellite_use_cases}
 
+
+[{{site.data.keyword.satelliteshort}} use cases](/docs/satellite?topic=satellite-use-case#use-case)
+
+* [Benefits of using {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#benefits)
+
+* [Common](/docs/satellite?topic=satellite-use-case#use-case-common)
+
+    * [Deploying {{site.data.keyword.redhat_openshift_notm}} environment as a managed service wherever it is needed](/docs/satellite?topic=satellite-use-case#use-case-common1)
+
+* [Finance](/docs/satellite?topic=satellite-use-case#use-case-finance)
+
+    * [Leveraging mainframe data for customers restricted from moving data to cloud](/docs/satellite?topic=satellite-use-case#use-case-finance1)
+
+    * [Providing a unified environment for developing, verifying, and running containers for customer on third-party clouds](/docs/satellite?topic=satellite-use-case#use-case-finance2)
+
+    * [Extending {{site.data.keyword.cloud_notm}} security and compliance for customers maintaining cloud security](/docs/satellite?topic=satellite-use-case#use-case-finance3)
+
+* [Insurance](/docs/satellite?topic=satellite-use-case#use-case-insurance)
+
+    * [Analytics platform on-premises](/docs/satellite?topic=satellite-use-case#use-case-insurance1)
+
+* [Manufacturing](/docs/satellite?topic=satellite-use-case#use-case-manufacture)
+
+    * [Internet of things (IoT) service platform](/docs/satellite?topic=satellite-use-case#use-case-manufacture1)
+
+    * [Enabling the digital transformation of on-premises legacy systems at steel mills and other manufacturing plants](/docs/satellite?topic=satellite-use-case#use-case-manufacture2)
+
+    * [Establishing a service platform for point of sale (POS) or multi function printer (MFP) systems](/docs/satellite?topic=satellite-use-case#use-case-manufacture3)
+
+    * [Accelerating the establishment of new global sites and plants](/docs/satellite?topic=satellite-use-case#use-case-manufacture4)
+
+    * [Using cloud for cost and speed when starting new services during development phase and move on-premises once established](/docs/satellite?topic=satellite-use-case#use-case-manufacture5)
+
+    * [Deploying applications on-premises, only scaling out to cloud during peak times](/docs/satellite?topic=satellite-use-case#use-case-manufacture6)
+
+* [Distribution](/docs/satellite?topic=satellite-use-case#use-case-distribution)
+
+    * [Delivering and integrating store or warehouse digitization solutions for the distribution or retail sectors](/docs/satellite?topic=satellite-use-case#use-case-distribution1)
+
+* [Public sector or health](/docs/satellite?topic=satellite-use-case#use-case-health)
+
+    * [On-premises service platform](/docs/satellite?topic=satellite-use-case#use-case-health1)
+
+* [Communications](/docs/satellite?topic=satellite-use-case#use-case-communications)
+
+    * [Multi-access edge computing (MEC) platform support service](/docs/satellite?topic=satellite-use-case#use-case-communications1)
+
+* [Utilities](/docs/satellite?topic=satellite-use-case#use-case-utilities)
+
+    * [Expanding the use of smart meters with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-utilities1)
 
 [Edge environments for AI, IoT, and machine learning](/docs/satellite?topic=satellite-edge-usecase#edge-usecase)
 
@@ -2692,3 +2742,5 @@ subcollection: satellite
     * [ST0052](/docs/satellite?topic=satellite-debug-storage#st0052)
 
 [Why is the namespace where my storage operator was deployed stuck in **Terminating** status?](/docs/satellite?topic=satellite-storage-namespace-terminating#storage-namespace-terminating)
+
+[Why are my nodes failing to register using Azure File or Azure Disk storage templates?](/docs/satellite?topic=satellite-ts-node-register-failure#ts-node-register-failure)
