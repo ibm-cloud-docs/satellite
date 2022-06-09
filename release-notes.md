@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-07"
+lastupdated: "2022-06-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## June 2022
 {: #satellite-june22}
+
+### 9 June 2022
+{: #satellite-June922}
+{: release-note}
+
+Satellite use cases
+:   See [Satellite use cases](/docs/satellite?topic=satellite-use-case) for the benefits of using Satellite and some common use cases.
 
 ### 7 June 2022
 {: #satellite-June722}
