@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-06-09"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce
 
@@ -546,4 +546,4 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for Google compu
 ## Getting help and support
 {: #sat-gcp-csi-support}
 
-If you run into an issue with using Google Persistent disk storage, you can open an issue in the [Google Cloud Console](https://console.cloud.google.com/support){: external}.
+If you run into an issue with using Google Persistent disk storage, you can open an issue in the [Google Cloud Console](https://cloud.google.com/support-hub){: external}.
