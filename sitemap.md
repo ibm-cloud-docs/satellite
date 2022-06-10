@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-06-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -366,7 +366,7 @@ subcollection: satellite
 
         * New! General availability of the {{site.data.keyword.satelliteshort}} storage templates. 
 
-        * New! [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services)</strong>: Many {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} are now available to deploy to your {{site.data.keyword.satelliteshort}} location. 
+        * New! {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services</strong>: Many {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} are now available to deploy to your {{site.data.keyword.satelliteshort}} location. 
 
     * [24 June 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jun2421)
 
@@ -907,9 +907,9 @@ subcollection: satellite
 
 * [{{site.data.keyword.IBM_notm}}-managed master to customer-provided worker nodes for the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-master-worker)
 
-* [Customer-provided worker nodes in the {{site.data.keyword.satelliteshort}} location control plane to worker nodes that run [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) like {{site.data.keyword.redhat_openshift_notm}} clusters in the same location](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-woker-worker)
+* [Customer-provided worker nodes in the {{site.data.keyword.satelliteshort}} location control plane to worker nodes that run {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.redhat_openshift_notm}} clusters in the same location](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-woker-worker)
 
-* [Customer-provided worker nodes that are assigned to the same resource, like the {{site.data.keyword.satelliteshort}} location control plane or a cluster](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-customer-provided)
+* [Customer-provided worker nodes that are assigned to the same resource, such as the {{site.data.keyword.satelliteshort}} location control plane or a cluster](/docs/satellite?topic=satellite-host-latency-test#host-latency-test-customer-provided)
 
 * [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr)
 
@@ -1037,7 +1037,7 @@ subcollection: satellite
 
 * [Using host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov)
 
-    * [About host labels](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-about)
+    * [Host labels](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-about)
 
     * [Automatically assigning hosts](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign)
 
@@ -1142,7 +1142,7 @@ subcollection: satellite
 
     * [Review the resources from {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-review-resources)
 
-[Using {{site.data.keyword.satelliteshort}} Config with existing {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-satcon-existing#satcon-existing)
+[Using {{site.data.keyword.satelliteshort}} Config with existing clusters in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-satcon-existing#satcon-existing)
 
 * [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing#register-openshift-clusters)
 
@@ -2023,9 +2023,9 @@ subcollection: satellite
 
     * [What automated access does {{site.data.keyword.IBM_notm}} have to my location?](/docs/satellite?topic=satellite-compliance#operational-access-automated)
 
-    * [What access do {{site.data.keyword.IBM_notm}} SREs have to my location control plane, including the masters of [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters?](/docs/satellite?topic=satellite-compliance#operational-access-control-plane)
+    * [What access do {{site.data.keyword.IBM_notm}} SREs have to my location control plane, including the masters of {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-control-plane)
 
-    * [What access do {{site.data.keyword.IBM_notm}} SREs have to my data and workloads that run in my [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters?](/docs/satellite?topic=satellite-compliance#operational-access-workloads)
+    * [What access do {{site.data.keyword.IBM_notm}} SREs have to my data and workloads that run in my {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-workloads)
 
     * [How can I monitor and manage {{site.data.keyword.IBM_notm}} access into my location? How can I know that there are no backdoor access points on the hosts?](/docs/satellite?topic=satellite-compliance#operational-access-monitor)
 
@@ -2039,7 +2039,7 @@ subcollection: satellite
 
     * [Which areas of security compliance am I responsible for?](/docs/satellite?topic=satellite-compliance#compliance-responsibilities)
 
-    * [What are the security compliance responsibilities of [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services)?](/docs/satellite?topic=satellite-compliance#compliance-services)
+    * [What are the security compliance responsibilities of {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services?](/docs/satellite?topic=satellite-compliance#compliance-services)
 
 [Securing your connection](/docs/satellite?topic=satellite-service-connection#service-connection)
 

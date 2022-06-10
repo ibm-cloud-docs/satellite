@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-06-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -32,7 +32,7 @@ You can use {{site.data.keyword.cloud_notm}} IAM to assign access to different r
 - [{{site.data.keyword.satelliteshort}} location](#iam-resource-loc), including actions for locations and hosts.
 - [{{site.data.keyword.satelliteshort}} Config](#iam-resource-config), including actions for configurations, subscriptions, clusters, cluster groups, resources, and other components that use {{site.data.keyword.satelliteshort}} Config like storage.
 - [{{site.data.keyword.satelliteshort}} Link](#iam-resource-link), including actions for endpoints and sources.
-- [Other services](#iam-resource-services), like {{site.data.keyword.openshiftlong_notm}} clusters and [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
+- [Other services](#iam-resource-services), like {{site.data.keyword.openshiftlong_notm}} clusters and {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services.
 
 ### Location
 {: #iam-resource-loc}
@@ -109,7 +109,7 @@ Description
 ### Other services
 {: #iam-resource-services}
 
-Review details about other [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) IAM resource types.
+Review details about other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service IAM resource types.
 {: shortdesc}
 
 Resource type, IAM role, and scope of access policies
@@ -120,7 +120,7 @@ Description for {{site.data.keyword.openshiftlong_notm}} clusters
 
      If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration. However, you might not be able to access the clusters if you do not have the appropriate roles to those clusters. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} configuration, you might be able to list all the Kubernetes resources that run in registered clusters via the {{site.data.keyword.satelliteshort}} Config API. However, without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.redhat_openshift_notm}} APIs to list Kubernetes resources.
 
-Description of other [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services)
+Description of other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services
 :    Similar to {{site.data.keyword.redhat_openshift_notm}} clusters, authorization to other {{site.data.keyword.cloud_notm}} services that are enabled in {{site.data.keyword.satelliteshort}} is managed in {{site.data.keyword.cloud_notm}} IAM through those services. For more information, see each service's documentation.
 
 ## Assigning access with {{site.data.keyword.cloud_notm}} IAM
@@ -550,7 +550,7 @@ The API key name is in the format `containers-kubernetes-key`. The account owner
 This API key is used to authorize actions to various {{site.data.keyword.cloud_notm}} services, such as one of the following.
 - {{site.data.keyword.openshiftlong_notm}} for clusters.
 - {{site.data.keyword.registrylong_notm}} for images.
-- Service-to-service authorization in IAM for any [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) that you add to your location.
+- Service-to-service authorization in IAM for any {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that you add to your location.
 
 For more information, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-access-creds#api_key_about).
 

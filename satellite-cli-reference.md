@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-06-10"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1717,13 +1717,13 @@ ibmcloud sat resource ls
 ## Service commands
 {: #sat-service-commands}
 
-Use these commands to view the [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters that are deployed to your {{site.data.keyword.satelliteshort}} location.
+Use these commands to view the {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters that are deployed to your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
 ### `ibmcloud sat service ls`
 {: #cli-service-ls}
 
-List all [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters in your location to review details such as requested host resources. For more information about how [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters request resources, see [Using host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
+List all {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters in your location to review details such as requested host resources. For more information about how {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters request resources, see [Using host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
 {: shortdesc}
 
 ```sh
@@ -1741,7 +1741,7 @@ ibmcloud sat service ls --location LOCATION [--output OUTPUT] [-q]
 {: #cli-service-ls-command-options}
 
 `--location LOCATION`
-:    Required. Enter the ID or name of the location where the [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) clusters exist. To retrieve the location ID or name, run `ibmcloud sat location ls`.
+:    Required. Enter the ID or name of the location where the {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters exist. To retrieve the location ID or name, run `ibmcloud sat location ls`.
 
 `--output JSON`
 :    Optional. Displays the command output in JSON format.
@@ -1802,7 +1802,7 @@ ibmcloud sat storage assignment create --config CONFIG (--cluster CLUSTER_ID | -
 :    The ID of the cluster group. To list {{site.data.keyword.satelliteshort}} cluster groups, run `ibmcloud sat group ls`. To assign the storage configuration to multiple cluster groups at the same time, repeat this option. If you do not include this option, you must specify the `--cluster` or the `--service-cluster-id` option.
 
 `--service-cluster-id CLUSTER_ID`
-:    The ID of a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) cluster. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this option, you must specify the `--cluster` or the `--group` option.
+:    The ID of a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this option, you must specify the `--cluster` or the `--group` option.
 
 `--name NAME`
 :    Optional. Enter a name for your storage assignment.
@@ -1891,7 +1891,7 @@ ibmcloud sat storage assignment ls [--output OUTPUT] (--cluster CLUSTER_ID | --c
 :    The name of the {{site.data.keyword.satelliteshort}} location for which you want to list the assignments. To list the available locations, run `ibmcloud sat location ls`. This option is not available for service admin. If you do not include this option, you must specify the `--cluster` option, the `--config` option, or the `--service-cluster-id` option.
 
 `--service-cluster-id CLUSTER_ID`
-:    The ID of a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this option, you must specify the `--cluster` option,the `--config` option, or the `--location` option.
+:    The ID of a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster for which you want to list the assignments. To find the cluster ID, run `ibmcloud sat service ls --location <location>`. If you do not include this option, you must specify the `--cluster` option,the `--config` option, or the `--location` option.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.

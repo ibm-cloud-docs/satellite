@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-06-10"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -30,10 +30,10 @@ When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} ma
 Host auto assignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. Your cluster must be available before it can be assigned.
 {: note}
 
-### About host labels
+### Host labels
 {: #host-autoassign-about}
 
-Host auto assignment works by matching requesting labels from worker pools in {{site.data.keyword.satelliteshort}} clusters to the host and zone labels on available {{site.data.keyword.satelliteshort}} hosts.
+Host auto assignment works by matching labels from worker pools in {{site.data.keyword.satelliteshort}} clusters to the host and zone labels on available {{site.data.keyword.satelliteshort}} hosts.
 {: shortdesc}
 
 Keep in mind the following information about the host labels that are used for auto assignment.
@@ -42,7 +42,7 @@ Default host labels
 :    When you attach a host to a {{site.data.keyword.satelliteshort}} location, the host automatically gets labels for `cpu`, `os`, and `memory` (in bytes). You cannot remove these labels. You can include additional host labels, or update the host metadata later. If the host does not include the `os` label, it is automatically assumed as `RHEL7`.
 
 Hosts can have more labels than worker pools
-:    For example, your host might have `cpu`, `memory`, and `env` host labels, but the requesting worker pool has only a `cpu` host label. Host auto assignment matches just the `cpu` labels. Note that the reverse does not work. If a worker pool has more labels than a host, the host cannot be auto assigned to the worker pool.
+:    For example, your host might have `cpu`, `memory`, and `env` host labels, but the requesting worker pool has only a `cpu` host label. Host auto assignment matches the `cpu` labels. Note that the reverse does not work. If a worker pool has more labels than a host, the host cannot be auto assigned to the worker pool.
 
 Matching is exact
 :    Host labels must equal (`=`) each other exactly. Even if the host label is a number, no less than (`<`), greater than (`>`), or other operators are used for matching.
@@ -73,7 +73,7 @@ Hosts must be assigned as worker nodes in each zone of the default worker pool i
 ### Automatically assigning hosts
 {: #host-autoassign}
 
-{{site.data.keyword.satellitelong_notm}} can automatically assign hosts to worker pools in {{site.data.keyword.satelliteshort}} clusters that request compute capacity via host labels such as `cpu`.
+{{site.data.keyword.satellitelong_notm}} can automatically assign hosts to worker pools in {{site.data.keyword.satelliteshort}} clusters that request compute capacity by using host labels, such as `cpu`.
 {: shortdesc}
 
 Before you begin, make sure that you [attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location, but do not assign the hosts.
@@ -81,7 +81,7 @@ Before you begin, make sure that you [attach hosts](/docs/satellite?topic=satell
 1. Review the host labels that the worker pools use to request compute capacity. You have several options.
     - [Create a worker pool in a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters#sat-pool-create-labels) with the host labels that you want to use for auto assignment.
     - Review existing worker pools for their host labels. Note that you cannot update the host labels that a worker pool has. You can review the **Host labels** by running the `ibmcloud oc worker-pool get -c <cluster> --worker-pool <worker_pool>` command.
-    - Review the host labels that a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) cluster uses to request resources from the [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) instance console.
+    - Review the host labels that a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster uses to request resources from the {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service instance console.
 2. Review the host labels that your available hosts have. Remember that hosts automatically get `cpu` and `memory` labels when you attach the host to your {{site.data.keyword.satelliteshort}} location.
     1. Get the {{site.data.keyword.satelliteshort}} location name.
         ```sh
@@ -144,7 +144,7 @@ If you [disabled host auto assignment](#host-autoassign-disable), you can re-ena
 ## Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources
 {: #host-assign-manual}
 
-After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity, such as clusters or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
+After you attach hosts to a {{site.data.keyword.satelliteshort}} location, you assign them to {{site.data.keyword.satelliteshort}} resources to provide compute capacity, such as clusters or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
 You can also use [host auto assignment](#host-autoassign-ov) for worker pools in {{site.data.keyword.satelliteshort}} clusters. However, you must manually assign hosts to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
