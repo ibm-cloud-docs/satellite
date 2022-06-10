@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-06-10"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -143,7 +143,7 @@ Create a storage configuration in the command line by using the {{site.data.keyw
       ```
       {: pre}
 
-    - [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) cluster
+    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
       ```sh
       ibmcloud sat service ls --location <location>
       ```
@@ -163,7 +163,7 @@ Create a storage configuration in the command line by using the {{site.data.keyw
       ```
       {: pre}
 
-    - [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) cluster
+    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
       ```sh
       ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
       ```

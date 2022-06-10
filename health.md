@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-17"
+lastupdated: "2022-06-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -107,7 +107,7 @@ Example log
 ### Enablement of resource deployment logs
 {: #logs-deploy}
 
-Enablement of resource deployment logs report the current status of whether resources such as hosts, clusters, or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) instances can be changed or deployed in your location, and the reason for this status. For example, resource deployment might be set to false due to one or more location errors.
+Enablement of resource deployment logs report the current status of whether resources such as hosts, clusters, or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service instances can be changed or deployed in your location, and the reason for this status. For example, resource deployment might be set to false due to one or more location errors.
 {: shortdesc}
 
 Example log

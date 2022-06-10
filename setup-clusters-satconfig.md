@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-06-10"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -39,14 +39,14 @@ You do not need to configure access if you already gave {{site.data.keyword.sate
 ## Setting up cluster groups
 {: #setup-clusters-satconfig-groups}
 
-Create a cluster group. The cluster group specifies all {{site.data.keyword.openshiftlong_notm}} clusters that you want to include into the deployment of your Kubernetes resources. The clusters can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}.
+Create a cluster group. The cluster group specifies all clusters that you want to include into the deployment of your Kubernetes resources. The clusters can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
 For example, create a cluster group from the console.
 
 1. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, switch to the **Cluster group** tab and click **Create cluster group**.
 2. Enter a name for your cluster group and click **Create**.
-3. Go to the **Clusters** tab and find the {{site.data.keyword.openshiftlong_notm}} clusters that you want to add to your cluster group.
+3. Go to the **Clusters** tab and find the clusters that you want to add to your cluster group.
 4. From the actions menu, click **Add to group** and choose the name of the cluster group where you want to add the cluster.
 
 Create a cluster group with the CLI.
@@ -74,7 +74,7 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
 Choose from the following options.
 
 - **Admin access when you create a {{site.data.keyword.satelliteshort}} cluster**: You can enable admin permissions when you create the cluster in the console or in the CLI by using the `--enable-admin-agent` option in the `ibmcloud oc cluster create satellite` command. After creating the cluster, you must perform a one-time login by running `ibmcloud ks cluster config` in the command line.
-- **Admin access for {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud**: See [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing).
+- **Admin access for clusters in the public cloud**: See [Registering existing clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing).
 - **Custom access, or access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access**: Complete the following steps.
 
 To customize access, or to add access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access at cluster creation.

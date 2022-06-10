@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-06-10"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -12,10 +12,10 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Using {{site.data.keyword.satelliteshort}} Config with existing {{site.data.keyword.openshiftlong_notm}} clusters in {{site.data.keyword.cloud_notm}} 
+# Using {{site.data.keyword.satelliteshort}} Config with existing clusters in {{site.data.keyword.cloud_notm}} 
 {: #satcon-existing}
 
-You can make existing {{site.data.keyword.openshiftlong_notm}} clusters that you run in {{site.data.keyword.cloud_notm}} available to the {{site.data.keyword.satelliteshort}} Config component so that you can include them when you roll out Kubernetes resource versions across your clusters.
+You can make existing {{site.data.keyword.openshiftlong_notm}} clusters available to the {{site.data.keyword.satelliteshort}} Config component so that you can include them when you roll out Kubernetes resource versions across your clusters.
 {: shortdesc}
 
 ## Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config
@@ -27,7 +27,7 @@ Run a script in your {{site.data.keyword.openshiftlong_notm}} cluster to set up 
 After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-create). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
 {: note}
 
-1. Find the {{site.data.keyword.openshiftlong_notm}} cluster that you want to attach to your location. To list available clusters, run `ibmcloud oc cluster ls` or go to the [{{site.data.keyword.redhat_openshift_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
+1. Find the cluster that you want to attach to your location. To list available clusters, run `ibmcloud oc cluster ls` or go to the [{{site.data.keyword.redhat_openshift_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
 2. From the {{site.data.keyword.satelliteshort}} [**Clusters**](https://cloud.ibm.com/satellite/clusters){: external} dashboard, click **Register cluster**.
 3. Enter the name of your cluster and click **Register cluster**. Registering a cluster creates an entry in the {{site.data.keyword.satelliteshort}} Config configmap. However, your cluster cannot be subscribed to a {{site.data.keyword.satelliteshort}} configuration until you install the {{site.data.keyword.satelliteshort}} Config agent in your cluster.
 4. Copy the command that is displayed to you.
@@ -70,7 +70,7 @@ After you complete these steps, the cluster can be added to a cluster group in y
 ## Removing {{site.data.keyword.satelliteshort}} Config from your cluster
 {: #remove-satconfig}
 
-If you do not want your {{site.data.keyword.openshiftlong_notm}} cluster to be available to {{site.data.keyword.satelliteshort}} Config, you can remove the {{site.data.keyword.satelliteshort}} Config components from your cluster. 
+If you do not want your cluster to be available to {{site.data.keyword.satelliteshort}} Config, you can remove the {{site.data.keyword.satelliteshort}} Config components from your cluster. 
 {: shortdesc}
 
 You can remove {{site.data.keyword.satelliteshort}} Config components only from {{site.data.keyword.openshiftlong_notm}} clusters that you manually registered. If you created a cluster on {{site.data.keyword.satelliteshort}}-provided infrastructure, {{site.data.keyword.satelliteshort}} Config components are automatically set up in the location control plane and cannot be removed. 

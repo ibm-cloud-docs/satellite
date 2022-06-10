@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-06-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -471,7 +471,7 @@ Review the release notes for 30 June 2021.
 New! General availability of the {{site.data.keyword.satelliteshort}} storage templates. 
 :   For more information about storage templates, see [Understanding storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov).
 
-New! [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services)</strong>: Many {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} are now available to deploy to your {{site.data.keyword.satelliteshort}} location. 
+New! {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services</strong>: Many {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} are now available to deploy to your {{site.data.keyword.satelliteshort}} location. 
 :   For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/deploy-managed-cloud-native-databases-anywhere-with-ibm-cloud-satellite){: external}.
 
 ### 24 June 2021
@@ -750,7 +750,7 @@ CLI change log
 :   Updated the CLI plug-in change log page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 Host auto assignment
-:   Added information about how [{{site.data.keyword.satelliteshort}} can automatically assign hosts](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) to worker pools in clusters or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) that use host labels to request compute capacity.
+:   Added information about how [{{site.data.keyword.satelliteshort}} can automatically assign hosts](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) to worker pools in clusters or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that use host labels to request compute capacity.
 
 Logging and monitoring
 :   Added information about how to set up [logging and monitoring for {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health).
@@ -823,7 +823,7 @@ Review the release notes for 9 December 2020.
 {: shortdesc}
 
 Private hosts
-:   Hosts with only private network connectivity are now supported for your {{site.data.keyword.satelliteshort}} location. If hosts have multiple IPv4 network interfaces, the lowest-order, non-loopback network interface with a valid IPv4 address is used as the primary network interface for the hosts. Note that if your hosts have private network connectivity only, authorized users must be in the private host network directly or through a VPN connection to access services that run in your location, such as {{site.data.keyword.openshiftlong_notm}} clusters.
+:   Hosts with only private network connectivity are now supported for your {{site.data.keyword.satelliteshort}} location. If hosts have multiple IPv4 network interfaces, the lowest-order, non-loopback network interface with a valid IPv4 address is used as the primary network interface for the hosts. Note that if your hosts have private network connectivity only, authorized users must be in the private host network directly or through a VPN connection to access services that run in your location, such as {{site.data.keyword.redhat_openshift_notm}} clusters.
 
 Azure host support
 :   Microsoft Azure hosts are now supported for your {{site.data.keyword.satelliteshort}} location.
@@ -851,7 +851,7 @@ Review the release notes for 18 November 2020.
 {: shortdesc}
 
 Internal registry
-:   Added information on how to [Set up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry) for {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} locations.
+:   Added information on how to [Set up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry) for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} locations.
 
 Service overview
 :   Added an [About {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-faqs) topic to help you learn about {{site.data.keyword.satelliteshort}} terminology, service architecture, and components.

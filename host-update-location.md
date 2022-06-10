@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-06-10"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -29,15 +29,15 @@ Review the following considerations before you update your {{site.data.keyword.s
 
 Version updates for hosts become available as the {{site.data.keyword.openshiftlong_notm}} team packages new versions for worker nodes. Typically, worker node version updates are released every two weeks. 
 
-You might check for a version update to meet your required security cadence, such as updates on a monthly or bi-monthly basis. To review available version updates, see the [Version changelog for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
+You might check for a version update to meet your required security cadence, such as updates on a monthly or bi-monthly basis. To review available version updates, see the [Version change log for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
 
 **Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?**
 
 Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-attach-hosts).
 
-**Do the hosts in my [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) have to run the same version as my {{site.data.keyword.satelliteshort}} location control plane?**
+**Do the hosts in my {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services have to run the same version as my {{site.data.keyword.satelliteshort}} location control plane?**
 
-No, the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane do not have to run the same version as the hosts that are assigned to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) that run in the location, like clusters. However, all hosts in the location must run a supported version.
+No, the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane do not have to run the same version as the hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that run in the location, like clusters. However, all hosts in the location must run a supported version.
 
 To review supported {{site.data.keyword.redhat_openshift_notm}} versions that hosts can run, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-openshift_changelog) or run `ibmcloud ks versions` in the command line. 
 
@@ -88,5 +88,5 @@ When you reset the host key, all existing hosts that are attached to your locati
 3. [Remove one host from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove).
 4. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
 5. [Attach the host](/docs/satellite?topic=satellite-attach-hosts) back to your {{site.data.keyword.satelliteshort}} location. The host registration script now uses the new host key.
-6. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane or [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services).
+6. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service.
 7. Repeat steps 3 - 6 for each host in your location so that each host uses the new key to communicate with the {{site.data.keyword.satelliteshort}} API server.

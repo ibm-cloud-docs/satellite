@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-30"
+lastupdated: "2022-06-10"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -18,7 +18,7 @@ subcollection: satellite
 {{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services). The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates.
 {: shortdesc}
 
-Do not use the `ibmcloud ks worker update` command for hosts that are assigned as worker nodes to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
+Do not use the `ibmcloud ks worker update` command for hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services.
 {: important}
 
 ## Checking if a version update is available for worker node hosts
@@ -27,7 +27,7 @@ Do not use the `ibmcloud ks worker update` command for hosts that are assigned a
 You can check if a version update is available for a host that is assigned as a worker node to a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) by using the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
-To review the changes that are included in each version update, see the [Version changelog for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
+To review the changes that are included in each version update, see the [Version change log for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
 
 ### Checking if a version update is available with the {{site.data.keyword.cloud_notm}} CLI
 {: #host-update-workers-check-cli}
@@ -82,7 +82,7 @@ You can update your worker node hosts by using the CLI.
 The process to update a worker node depends on whether the update is a major, minor, or patch update.
 {: shortdesc}
 
-To determine the type of update that is available, compare your current worker node versions to the latest `worker node fix pack` version in the [{{site.data.keyword.redhat_openshift_notm}} version changelog](/docs/openshift?topic=openshift-openshift_changelog). Major updates are indicated by the first digit in the version label (4.x.x), minor updates are indicated by the second digit (x.7.x) and patch updates are indicated by the trailing digits (x.x.23_1528_openshift). For more information on version updates, see [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions).
+To determine the type of update that is available, compare your current worker node versions to the latest `worker node fix pack` version in the [{{site.data.keyword.redhat_openshift_notm}} version change log](/docs/openshift?topic=openshift-openshift_changelog). Major updates are indicated by the first digit in the version label (4.x.x), minor updates are indicated by the second digit (x.7.x) and patch updates are indicated by the trailing digits (x.x.23_1528_openshift). For more information on version updates, see [Version information and update actions](/docs/openshift?topic=openshift-openshift_versions).
 
 ### Applying minor and patch version updates to worker node hosts
 {: #host-update-workers-minor}
@@ -139,7 +139,7 @@ Before you begin
    ```
    {: screen}
 
-2. List your current hosts that are assigned as worker nodes to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) and make note of their IDs. This helps determine which hosts to remove from your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) after applying the update.
+2. List your current hosts that are assigned as worker nodes to your {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service and make note of their IDs. This helps determine which hosts to remove from your {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service after applying the update.
 
     ```sh
     ibmcloud ks worker ls -c <cluster_name_or_ID>
@@ -160,7 +160,7 @@ Choose from one of the following scenarios,
 
     See [Procedure to update control plane hosts]/docs/satellite?topic=satellite-host-update-location.
 
-- Applying a major update to your hosts assigned to a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services).
+- Applying a major update to your hosts assigned to a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service.
 
     1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts). The number of hosts that you attach must match the number of hosts that you want to update.
     2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). These hosts automatically receive the new update when you assign them.

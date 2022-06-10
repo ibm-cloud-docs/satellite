@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-06-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Edge environments for AI, IoT, and machine learning
 {: #edge-usecase}
 
-Create an {{site.data.keyword.satellitelong}} location with {{site.data.keyword.openshiftlong}} clusters on compute infrastructure that is deployed at the edge near your Internet of Things (IoT) devices. Then, through your {{site.data.keyword.satelliteshort}} location, your apps can access a suite of {{site.data.keyword.cloud_notm}} artificial intelligence (AI) and machine learning services to maximize the value of your data wherever the data is located.
+Create an {{site.data.keyword.satellitelong}} location with {{site.data.keyword.redhat_openshift_notm}} clusters on compute infrastructure that is deployed at the edge near your Internet of Things (IoT) devices. Then, through your {{site.data.keyword.satelliteshort}} location, your apps can access a suite of {{site.data.keyword.cloud_notm}} artificial intelligence (AI) and machine learning services to maximize the value of your data wherever the data is located.
 {: shortdesc}
 
 ## Solving common edge workload challenges with {{site.data.keyword.cloud_notm}}
@@ -59,7 +59,7 @@ As the edge environment system administrator, you enable a serverless tool to si
 {: shortdesc} 
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) on your edge computing infrastructure.
-2. [Create a managed {{site.data.keyword.openshiftlong_notm}} cluster](/docs/satellite?topic=openshift-satellite-clusters) in the {{site.data.keyword.satelliteshort}} location.
+2. [Create a managed {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/satellite?topic=openshift-satellite-clusters) in the {{site.data.keyword.satelliteshort}} location.
 3. [Access the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 4. Using the OperatorHub, [install the {{site.data.keyword.redhat_openshift_notm}} Serverless operator](https://www.redhat.com/en/topics/microservices/why-choose-openshift-serverless){: external}.
 5. [Install the Knative Serving Operator](https://www.redhat.com/en/topics/microservices/why-choose-openshift-serverless){: external}.
