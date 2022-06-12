@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-06-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -206,12 +206,12 @@ Steps to resolve
 {: #R0026}
 
 Location message
-:    R0026: Hosts in the location control plane are running out of disk space. Assign more hosts to the location control plane, or reload the hosts with disk space issues.
+:    R0026: Hosts in the location control plane are running out of disk space. Assign more hosts to the location control plane or reload the hosts with disk space issues.
 
 Steps to resolve
 :    1. List the hosts that are assigned to the control plane. by running `ibmcloud sat host ls --location <location_name_or_ID> | grep infrastructure`.
      2. Check the details of the hosts by running `ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>`.
-     3. In the infrastructure provider for the host, check the disk space of your host machine. Each host must have at least 20 GB disk available. [Remove](/docs/satellite?topic=satellite-host-remove) and [reattach the host](/docs/satellite?topic=satellite-attach-hosts).
+     3. In the infrastructure provider for the host, check the disk space of your host machine. Make sure that each host meets the [minimum requirements](/docs/satellite?topic=satellite-reqs-host-storage). [Remove](/docs/satellite?topic=satellite-host-remove) and [reattach the host](/docs/satellite?topic=satellite-attach-hosts).
      4. If debugging and reattaching the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
 
 ## R0033, R0034, R0035: Control plane capacity issues
