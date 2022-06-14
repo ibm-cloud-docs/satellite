@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,15 +24,22 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## June 2022
 {: #satellite-june22}
 
+### 14 June 2022
+{: #satellite-june1422}
+{: release-note}
+ 
+Satellite for resellers
+:   Learn how to set up an enterprise account and resell {{site.data.keyword.satelliteshort}} infrastructure and services to your clients. For more information, see the [{{site.data.keyword.satelliteshort}} [reseller use case](/docs/satellite?topic=satellite-tenancy-model).
+
 ### 9 June 2022
-{: #satellite-June922}
+{: #satellite-june922}
 {: release-note}
 
 Satellite use cases
 :   See [Satellite use cases](/docs/satellite?topic=satellite-use-case) for the benefits of using Satellite and some common use cases.
 
 ### 7 June 2022
-{: #satellite-June722}
+{: #satellite-june722}
 {: release-note}
 
 CLI change log

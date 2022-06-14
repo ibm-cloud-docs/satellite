@@ -20,6 +20,7 @@ toc:
           label: Understanding Satellite use cases
           topics:
             - use-case.md
+            - tenancy-model.md
             - edge-usecase.md
       - managed-services.md
       - release-notes.md
