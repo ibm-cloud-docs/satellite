@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-14"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -104,7 +104,7 @@ Create a configuration file with your Azure Disk settings.
 
 1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/get-started/){: external} and retrieve the required parameters. For more information about the parameters, see [Cluster config](https://kubernetes-sigs.github.io/cloud-provider-azure/install/configs/#cluster-config).
 
-## Creating an Azure Disk configuration in the command line
+## Creating an Azure Disk configuration with the console
 {: #sat-storage-azure-csi-ui}
 {: ui}
 

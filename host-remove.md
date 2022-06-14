@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-14"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -147,4 +147,7 @@ Removing a location cannot be undone. Before you remove a location, back up any 
     {: pre}
 
 Now that the location is removed, check the hosts in your underlying infrastructure provider. To reuse the hosts for other purposes, you must reload the operating system. If you no longer need the hosts, delete them from your infrastructure provider.
+
+If you provisioned storage devices for your location, cluster, or services; or used dynamic provisioning to provision storage in your PVCs, make sure to remove the storage devices that you no longer need after removing your location. If you created a location using cloud provider infrastructure, make sure to remove the storage from your account to avoid incurring charges.
+{: important}
 

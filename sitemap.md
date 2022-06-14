@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-14"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -88,6 +88,36 @@ subcollection: satellite
 
     * [Expanding the use of smart meters with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-utilities1)
 
+[{{site.data.keyword.satelliteshort}} for resellers](/docs/satellite?topic=satellite-tenancy-model#tenancy-model)
+
+* [Account overview](/docs/satellite?topic=satellite-tenancy-model#tenancy-account-overview)
+
+* [Managing client locations and clusters](/docs/satellite?topic=satellite-tenancy-model#location-mgmt-tenancy)
+
+* [Understanding responsibilities for your enterprise and your clients](/docs/satellite?topic=satellite-tenancy-model#responsibilities-tenancy)
+
+* [Setting up your account](/docs/satellite?topic=satellite-tenancy-model#account-setup-tenancy)
+
+    * [Creating an enterprise account](/docs/satellite?topic=satellite-tenancy-model#create-enterprise-tenancy)
+
+    * [Setting up client accounts](/docs/satellite?topic=satellite-tenancy-model#create-account-tenancy)
+
+* [Setting up the client location](/docs/satellite?topic=satellite-tenancy-model#setting-up-locations-tenancy)
+
+    * [Sizing and creating the client location](/docs/satellite?topic=satellite-tenancy-model#create-provision-tenancy)
+
+    * [Attaching hosts to the location](/docs/satellite?topic=satellite-tenancy-model#attach-hosts-tenancy)
+
+    * [Assigning hosts to the control plane](/docs/satellite?topic=satellite-tenancy-model#assign-hosts-tenancy)
+
+* [Creating a cluster, API key, and cluster roles](/docs/satellite?topic=satellite-tenancy-model#create-cluster-key-tenancy)
+
+    * [Creating a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=satellite-tenancy-model#create-cluster-tenancy)
+
+    * [Creating an API key](/docs/satellite?topic=satellite-tenancy-model#create-api-tenancy)
+
+    * [Setting up cluster admin and developer roles](/docs/satellite?topic=satellite-tenancy-model#create-roles-tenancy)
+
 [Edge environments for AI, IoT, and machine learning](/docs/satellite?topic=satellite-edge-usecase#edge-usecase)
 
 * [Solving common edge workload challenges with {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-edge-usecase#edge-challenges)
@@ -116,11 +146,15 @@ subcollection: satellite
 
 * [June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june22)
 
-    * [9 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-June922)
+    * [14 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1422)
+
+        * Satellite for resellers
+
+    * [9 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june922)
 
         * Satellite use cases
 
-    * [7 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-June722)
+    * [7 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june722)
 
         * CLI change log
 
@@ -1405,7 +1439,7 @@ subcollection: satellite
 
     * [Gathering your Azure Disk configuration parameters](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-config-file)
 
-* [Creating an Azure Disk configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-ui)
+* [Creating an Azure Disk configuration with the console](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-ui)
 
 * [Creating an Azure Disk configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-cli)
 
@@ -1563,11 +1597,11 @@ subcollection: satellite
 
 * [Creating the {{site.data.keyword.block_storage_is_short}} configuration](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc)
 
-* [Creating the {{site.data.keyword.block_storage_is_short}} configuration in the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-create-config-ui)
+* [Creating the {{site.data.keyword.block_storage_is_short}} configuration from the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-create-config-ui)
 
     * [Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-create-config-cli)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi-ui)
+    * [Assigning a storage configuration from the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi-ui)
 
     * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi-cli)
 

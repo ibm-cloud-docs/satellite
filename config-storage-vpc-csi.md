@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-14"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -37,7 +37,7 @@ The {{site.data.keyword.block_storage_is_short}} Container Storage Interface (CS
 Create a storage configuration in the command line by using the {{site.data.keyword.block_storage_is_short}} configuration template.
 {: shortdesc}
 
-## Creating the {{site.data.keyword.block_storage_is_short}} configuration in the console
+## Creating the {{site.data.keyword.block_storage_is_short}} configuration from the console
 {: #sat-storage-vpc-create-config-ui}
 {: ui}
 
@@ -102,7 +102,7 @@ Create a storage configuration in the command line by using the {{site.data.keyw
 
 1. [Assign your storage configuration to clusters](#assign-storage-vpc-csi-cli)
 
-### Assigning a storage configuration in the command line
+### Assigning a storage configuration from the console
 {: #assign-storage-vpc-csi-ui}
 {: ui}
 
