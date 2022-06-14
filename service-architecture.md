@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-14"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -35,6 +35,7 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 | ![Legend3](/images/sat_architecture_legend3.png "Satellite service architecture legend 3") | Integrates with Identity and Access Management to control {{site.data.keyword.satelliteshort}} location access and {{site.data.keyword.cos_full_notm}} to back up {{site.data.keyword.satelliteshort}} control plane data. In addition, you can connect to other {{site.data.keyword.cloud_notm}} services to enhance your location capabilities. |
 | ![Legend4](/images/sat_architecture_legend4.png "Satellite service architecture legend 4") | Securely connects the Satellite location to the {{site.data.keyword.cloud_notm}} region that the location is managed from. Incoming and outgoing network traffic on this connection is monitored and can be reviewed and analyzed by the location administrator. |
 | ![Legend5](/images/sat_architecture_legend5.png "Satellite service architecture legend 5") | Latency requirements between {{site.data.keyword.satelliteshort}} components such as the hosts that you use for the control plane and clusters, in milliseconds. As latency increases, you might see service interruptions. |
+{: caption="Legend and description for Satellite architecture image." caption-side="top"}
 
 ### Master and worker node components
 {: #architecture-master-worker}

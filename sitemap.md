@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-14"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1405,7 +1405,7 @@ subcollection: satellite
 
     * [Gathering your Azure Disk configuration parameters](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-config-file)
 
-* [Creating an Azure Disk configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-ui)
+* [Creating an Azure Disk configuration with the console](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-ui)
 
 * [Creating an Azure Disk configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-cli)
 
@@ -1563,11 +1563,11 @@ subcollection: satellite
 
 * [Creating the {{site.data.keyword.block_storage_is_short}} configuration](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc)
 
-* [Creating the {{site.data.keyword.block_storage_is_short}} configuration in the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-create-config-ui)
+* [Creating the {{site.data.keyword.block_storage_is_short}} configuration from the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-create-config-ui)
 
     * [Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-create-config-cli)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi-ui)
+    * [Assigning a storage configuration from the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi-ui)
 
     * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi-cli)
 
