@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-06-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,7 +20,7 @@ When you try to manage your cluster, such as to perform a cluster update, the op
 {: tsSymptoms}
 
 ```sh
-Cluster management is not currently available for this {{site.data.keyword.satelliteshort}} location. The location requires action to enable cluster operations. Please see logs for more detailed information.
+Cluster management is not currently available for this Satellite location. The location requires action to enable cluster operations. Please see logs for more detailed information.
 ```
 {: screen}
 

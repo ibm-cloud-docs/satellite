@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-15"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Amazon Web Services (AWS)
 {: #aws}
 
-Add Amazon Web Services (AWS) cloud hosts to {{site.data.keyword.satellitelong_notm}}. Review the following host requirements that are specific to hosts that are in the Amazon Web Services cloud. For required access in AWS cloud, see [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws).
+Add Amazon Web Services (AWS) cloud hosts to {{site.data.keyword.satellitelong}}. Review the following host requirements that are specific to hosts that are in the Amazon Web Services cloud. For required access in AWS cloud, see [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws).
 {: shortdesc}
 
 If your hosts are running Red Hat CoreOS (RHCOS), you must [manually add](#aws-host-attach) them to your location.
@@ -178,7 +178,7 @@ The following example is a security group that you might create for AWS.
 
 ```json
 {
-	"Description": "Security group for {{site.data.keyword.satellitelong_notm}} hosts",
+	"Description": "Security group for IBM Cloud Satellite hosts",
 	"GroupName": "Satellite",
 	"IpPermissions": [{
 			"FromPort": 80,
