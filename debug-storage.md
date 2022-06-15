@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-06-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -301,7 +301,7 @@ Cluster not found corresponding to the given cluster ID: `<cluster-id>`
 
 Error type: Bad request
 
-How to fix it: To list all the {{site.data.keyword.satelliteshort}} clusters you have access to, run `ibmcloud oc cluster ls --provider=satellite`
+How to fix it: To list all the Satellite clusters you have access to, run `ibmcloud oc cluster ls --provider=satellite`
 
 Response code: `404`
 

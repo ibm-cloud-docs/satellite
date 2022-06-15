@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-06-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -22,7 +22,7 @@ After you assign hosts to your {{site.data.keyword.satelliteshort}} location con
 {: tsSymptoms}
 
 ```sh
-R0047 {{site.data.keyword.cloud_notm}} is unable to use the health check Link endpoint to check the location's health.
+R0047 IBM Cloud is unable to use the health check Link endpoint to check the location's health.
 ```
 {: screen}
 
