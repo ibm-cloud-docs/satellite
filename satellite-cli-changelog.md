@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-15"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference, change log, satellite version
 
@@ -31,7 +31,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 |Version|Release date|Changes|
 |-------|------------|-------|
-| 1.0.419 | 07 Jun 2022 | 1. Adds the new `ibmcloud sat storage config param set` command.  /n 2. Updates the `ibmcloud sat storage template get` command output to indicate whether or not a storage config is mutable. |
+| 1.0.420 | 15 Jun 2022 | 1. Adds the new `ibmcloud sat storage config param set` command.  /n 2. Updates the `ibmcloud sat storage template get` command output to indicate whether or not a storage config is mutable. |
 | 1.0.415 | 26 May 2022 | Updates the help text in various languages. |
 | 1.0.404 | 28 Apr 2022 | Adds features visible to select users only. |
 | 1.0.403 | 26 Apr 2022 | 1. Adds the `ibmcloud sat storage assignment upgrade` and `ibmcloud sat storage config upgrade` commands.  \n 2. Updates the CLI help text in various languages. | 
