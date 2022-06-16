@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-05-09"
+lastupdated: "2022-06-16"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -27,7 +27,11 @@ To check your host set up, you can use the `satellite-host-check` script. For mo
 ## Allow control plane worker nodes to communicate with the control plane master
 {: #host-out-cp-wdc}
 
-{{site.data.keyword.satelliteshort}} control plane hosts
+{{site.data.keyword.satelliteshort}} control plane hosts in CoreOS enabled locations.
+* Destination IPs: 169.55.87.98, 169.63.138.34, 169.62.47.42
+* Destination hostnames: `c121.us-east.satellite.cloud.ibm.com`, `c121-1.us-east.satellite.cloud.ibm.com`, `c121-2.us-east.satellite.cloud.ibm.com`, `c121-3.us-east.satellite.cloud.ibm.com`, `c121-e.us-east.satellite.cloud.ibm.com`
+
+{{site.data.keyword.satelliteshort}} control plane hosts in locations without CoreOS enabled.
 * Destination IPs:  169.63.123.154, 169.63.110.114, 169.62.13.2, 169.60.123.162, 169.59.152.58, 52.117.93.26  
 * Destination hostnames:  `c107.us-east.satellite.cloud.ibm.com`, `c107-1.us-east.satellite.cloud.ibm.com`, `c107-2.us-east.satellite.cloud.ibm.com`, `c107-3.us-east.satellite.cloud.ibm.com`, `c107-e.us-east.satellite.cloud.ibm.com`, `c117.us-east.satellite.cloud.ibm.com`, `c117-1.us-east.satellite.cloud.ibm.com`, `c117-2.us-east.satellite.cloud.ibm.com`, `c117-3.us-east.satellite.cloud.ibm.com`, `c117-e.us-east.satellite.cloud.ibm.com` 
 * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-06-16"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -145,6 +145,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june22)
+
+    * [16 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1622)
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Washington D.C.** (`wdc`, `us-east`) region.
 
     * [14 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1422)
 
