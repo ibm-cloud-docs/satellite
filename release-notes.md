@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-14"
+lastupdated: "2022-06-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,12 +24,21 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## June 2022
 {: #satellite-june22}
 
+
+### 16 June 2022
+{: #satellite-june1622}
+{: release-note}
+
+New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Washington D.C.** (`wdc`, `us-east`) region.
+:   To create a CoreOS-enabled location in the Washington D.C. region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+
 ### 14 June 2022
 {: #satellite-june1422}
 {: release-note}
  
 Satellite for resellers
 :   Learn how to set up an enterprise account and resell {{site.data.keyword.satelliteshort}} infrastructure and services to your clients. For more information, see the [{{site.data.keyword.satelliteshort}} [reseller use case](/docs/satellite?topic=satellite-tenancy-model).
+
 
 ### 9 June 2022
 {: #satellite-june922}
