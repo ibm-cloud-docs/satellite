@@ -48,7 +48,7 @@ Removing a host cannot be undone. Before you remove a host, make sure that your 
     - To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
     - To no longer use the host, delete the host from your infrastructure provider.
     
- After the host is removed, shut it down and do not activated it again without reloading the OS.
+ After the host is removed, shut it down and do not activate it again without reloading the OS.
  {: note}
 
 ## Removing hosts with the CLI
