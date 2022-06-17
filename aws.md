@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-06-17"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services
 
@@ -27,7 +27,7 @@ If your hosts are running Red Hat CoreOS (RHCOS), you must [manually add](#aws-h
 ## Automating your AWS location setup with a {{site.data.keyword.bpshort}} template
 {: #aws-template}
 
-Automate your AWS setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-about-schematics) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your AWS account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
+Automate your AWS setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your AWS account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
 {: shortdesc}
 
 For more configuration options, you can [manually attach AWS hosts to a {{site.data.keyword.satelliteshort}} location](#aws-host-attach).
