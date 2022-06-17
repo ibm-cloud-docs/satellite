@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-14"
+lastupdated: "2022-06-17"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -47,6 +47,9 @@ Removing a host cannot be undone. Before you remove a host, make sure that your 
 7. Follow the instructions from your underlying infrastructure provider to complete one of the following actions:
     - To reuse the host for other purposes, reload the operating system of the host. For example, you might reattach the host to a {{site.data.keyword.satelliteshort}} location later. When you reattach a host, the host name can remain the same as the previous name, but a new host ID is generated.
     - To no longer use the host, delete the host from your infrastructure provider.
+    
+ After the host is removed, shut it down and do not activate it again without reloading the OS.
+ {: note}
 
 ## Removing hosts with the CLI
 {: #host-remove-cli}
@@ -150,4 +153,3 @@ Now that the location is removed, check the hosts in your underlying infrastruct
 
 If you provisioned storage devices for your location, cluster, or services; or used dynamic provisioning to provision storage in your PVCs, make sure to remove the storage devices that you no longer need after removing your location. If you created a location using cloud provider infrastructure, make sure to remove the storage from your account to avoid incurring charges.
 {: important}
-

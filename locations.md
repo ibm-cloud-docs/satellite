@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-06-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -23,7 +23,7 @@ Not sure if your infrastructure is ready to use for {{site.data.keyword.satellit
 ## Automating your location setup with a {{site.data.keyword.bpshort}} template
 {: #satloc-template}
 
-Automate your setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-about-schematics) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in a cloud provider, and set up the {{site.data.keyword.satelliteshort}} location control plane for you.
+Automate your setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in a cloud provider, and set up the {{site.data.keyword.satelliteshort}} location control plane for you.
 {: shortdesc}
 
 
