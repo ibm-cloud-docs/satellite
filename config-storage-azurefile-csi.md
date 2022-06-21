@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-21"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file
 
@@ -132,7 +132,7 @@ Create a storage configuration in the command line by using the Azure File templ
 1. Create a storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
     ```sh
-    ibmcloud sat storage config create --name <config-name> --template-name azurefile-csi-driver --template-version 1.9.0 --location <location> -p "tenantId=<tenantId>" -p "subscriptionId=<subscription_ID>" -p "aadClientId=<Azure_AD_ClientId>" -p "aadClientSecret=<Azure_AD_Client_Secret>" -p "resourceGroup=<resource_group>" -p "location=<location>" -p "vmType=<vm_type>" -p "securityGroupName=<security_group_name>" -p "vnetName=<vnet_name>"
+    ibmcloud sat storage config create --name <config-name> --template-name azurefile-csi-driver --template-version 1.9.0 --location <location> -p "tenantId=<tenantId>" -p "subscriptionId=<subscription_ID>" -p "aadClientId=<Azure_AD_ClientId>" -p "aadClientSecret=<Azure_AD_Client_Secret>" -p "resourceGroup=<resource_group>" -p "location=<location>" -p "vmType=<vm_type>" -p "securityGroupName=<security_group_name>" -p "vnetName=<vnet_name>" -p "subnetName=<subnet_name>"
     ```
     {: pre}
 
@@ -631,6 +631,7 @@ For help finding these parameters, see the [Azure CLI documentation](https://doc
 | `vmType` | Required | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. |
 | `securityGroupName` | Required | The security group name. You can find your security group name in the Azure portal by running the `az network nsg list` command. |
 | `vnetName` | Required | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet subnet list` command. |
+| `subnetName` | Required | The name the subnet under the provided VNet. If the nodes are distributed across multiple subnets, you must provide **one** of the subnet names when creating the configuration. You can find your subnet name by running the `az network vnet subnet list` command. | 
 {: caption="Table 1. Parameter reference for Azure Disk storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates required parameters. The third column is a brief description of the parameter."}
 

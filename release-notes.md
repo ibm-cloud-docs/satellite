@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-06-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## June 2022
 {: #satellite-june22}
+
+### 21 June 2022
+{: #satellite-june2122}
+{: release-note}
+
+New and updated template parameter for the Azure File CSI driver template.
+:   The `subnetName` parameter is now required when creating a configuration. When creating a configuration the user must provide **one** of the subnet names under the Vnet. If the nodes are distributed across multiple subnets, you can manually add the subnet names after creation. For more information see the [Azure File CSI Driver documentation](/docs/satellite?topic=satellite-config-storage-azurefile-csi)
 
 
 ### 16 June 2022

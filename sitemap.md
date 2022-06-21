@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-16"
+lastupdated: "2022-06-21"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -145,6 +145,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june22)
+
+    * [21 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2122)
+
+        * New and updated template parameter for the Azure File CSI driver template.
 
     * [16 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1622)
 
