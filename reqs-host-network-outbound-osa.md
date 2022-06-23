@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-06-23"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -59,7 +59,7 @@ All {{site.data.keyword.satelliteshort}} hosts
 * Protocol and ports: TCP 443
 
 ## Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API
-{: #host-out-akamai-lon}
+{: #host-out-akamai-osa}
 
 {{site.data.keyword.satelliteshort}} control plane hosts
 * Destination IPs: [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} 
@@ -67,7 +67,7 @@ All {{site.data.keyword.satelliteshort}} hosts
 * Protocol and ports: TCP 443
 
 ## Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
-{: #host-out-cr-lon}
+{: #host-out-cr-osa}
 
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs: N/A
@@ -75,16 +75,17 @@ All {{site.data.keyword.satelliteshort}} hosts
 * Protocol and ports: TCP 443
 
 ## Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
-{: #host-out-mon-lon}
+{: #host-out-mon-osa}
 
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
 * Protocol and ports: TCP 443 and 6443
 
 ## Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
-{: #host-out-la-lon}
+{: #host-out-la-osa}
 
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs and hostnames: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
 * Protocol and ports: TCP 443
+
 

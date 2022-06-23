@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-21"
+lastupdated: "2022-06-23"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -146,6 +146,10 @@ subcollection: satellite
 
 * [June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june22)
 
+    * [23 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2322)
+
+        * CLI change log
+
     * [21 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2122)
 
         * New and updated template parameter for the Azure File CSI driver template.
@@ -154,6 +158,12 @@ subcollection: satellite
 
         * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Washington D.C.** (`wdc`, `us-east`) region.
 
+    * [15 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1522)
+
+        * CLI change log
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
+
     * [14 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1422)
 
         * Satellite for resellers
@@ -161,12 +171,6 @@ subcollection: satellite
     * [9 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june922)
 
         * Satellite use cases
-
-    * [7 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june722)
-
-        * CLI change log
-
-        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
 
     * [1 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june122)
 
@@ -847,13 +851,13 @@ subcollection: satellite
 
 * [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-services-osa)
 
-* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-akamai-lon)
+* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-akamai-osa)
 
-* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-cr-lon)
+* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-cr-osa)
 
-* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-mon-lon)
+* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-mon-osa)
 
-* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-la-lon)
+* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-la-osa)
 
 [Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#reqs-host-network-outbound-sao)
 
@@ -2449,43 +2453,6 @@ subcollection: satellite
 * [Creative Commons Attribution Share Alike 4.0 Generic](/docs/satellite?topic=satellite-sat-notices#cc-40-generic)
 
 
-## Storage class reference
-{: #sitemap_storage_class_reference}
-
-
-[Storage class reference](/docs/satellite?topic=satellite-storage-class-ref#storage-class-ref)
-
-* [AWS EBS](/docs/satellite?topic=satellite-storage-class-ref#ebs-ref)
-
-* [AWS EFS](/docs/satellite?topic=satellite-storage-class-ref#efs-ref)
-
-* [Azure Disk](/docs/satellite?topic=satellite-storage-class-ref#azure-disk-ref)
-
-* [Azure File](/docs/satellite?topic=satellite-storage-class-ref#azure-file-ref)
-
-* [Google Compute Engine](/docs/satellite?topic=satellite-storage-class-ref#google-csi-ref)
-
-* [Local block storage](/docs/satellite?topic=satellite-storage-class-ref#local-block-ref)
-
-* [Local file storage](/docs/satellite?topic=satellite-storage-class-ref#local-file-ref)
-
-* [NetApp ONTAP-NAS 21.04](/docs/satellite?topic=satellite-storage-class-ref#netapp-nas-ref-2104)
-
-* [NetApp ONTAP-NAS 20.07](/docs/satellite?topic=satellite-storage-class-ref#netapp-nas-ref)
-
-* [NetApp ONTAP-SAN 21.04](/docs/satellite?topic=satellite-storage-class-ref#netapp-san-ref-2104)
-
-* [NetApp ONTAP-SAN 20.07](/docs/satellite?topic=satellite-storage-class-ref#netapp-san-ref)
-
-* [OpenShift Data Foundation for local volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-local-ref)
-
-* [OpenShift Data Foundation for remote volumes](/docs/satellite?topic=satellite-storage-class-ref#ocs-remote-ref)
-
-* [{{site.data.keyword.IBM_notm}} Spectrum Scale](/docs/satellite?topic=satellite-storage-class-ref#spec-scale-sc-ref)
-
-* [{{site.data.keyword.IBM_notm}} VPC block storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-vpc-csi-sc-ref)
-
-
 ## FAQs
 {: #sitemap_faqs}
 
@@ -2637,7 +2604,7 @@ subcollection: satellite
 
 [Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos#ts-hosts-login-rhcos)
 
-* [Machine cannot be reached on the network](/docs/satellite?topic=satellite-ts-hosts-login-rhcos#ts-hosts-login-cannot-reach)
+* [Machine cannot be reached on the network](/docs/satellite?topic=satellite-ts-hosts-login-rhcos#ts-hosts-login-cannot-reach-rhcos)
 
 [Why can't I SSH into my host machines?](/docs/satellite?topic=satellite-ssh-login-denied#ssh-login-denied)
 

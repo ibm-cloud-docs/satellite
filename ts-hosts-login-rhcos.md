@@ -70,7 +70,7 @@ You can SSH into the host machine if you did not assign the host to a cluster, o
 1. Review the logs for errors. See the following section for more details.
 
 ## Machine cannot be reached on the network
-{: #ts-hosts-login-cannot-reach}
+{: #ts-hosts-login-cannot-reach-rhcos}
 
 You receive output similiar to the following messages.
 
