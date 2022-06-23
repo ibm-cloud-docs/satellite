@@ -146,6 +146,10 @@ subcollection: satellite
 
 * [June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june22)
 
+    * [23 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2322)
+
+        * CLI change log
+
     * [21 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2122)
 
         * New and updated template parameter for the Azure File CSI driver template.
@@ -154,6 +158,12 @@ subcollection: satellite
 
         * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Washington D.C.** (`wdc`, `us-east`) region.
 
+    * [15 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1522)
+
+        * CLI change log
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
+
     * [14 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1422)
 
         * Satellite for resellers
@@ -161,12 +171,6 @@ subcollection: satellite
     * [9 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june922)
 
         * Satellite use cases
-
-    * [7 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june722)
-
-        * CLI change log
-
-        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
 
     * [1 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june122)
 

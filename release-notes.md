@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-21"
+lastupdated: "2022-06-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,6 +24,12 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## June 2022
 {: #satellite-june22}
 
+### 23 June 2022
+{: #satellite-june2322}
+
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.422](/docs/satellite?topic=satellite-satellite-cli-changelog).
+
 ### 21 June 2022
 {: #satellite-june2122}
 {: release-note}
@@ -39,6 +45,16 @@ New and updated template parameter for the Azure File CSI driver template.
 New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Washington D.C.** (`wdc`, `us-east`) region.
 :   To create a CoreOS-enabled location in the Washington D.C. region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 
+### 15 June 2022
+{: #satellite-june1522}
+{: release-note}
+
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.420](/docs/satellite?topic=satellite-satellite-cli-changelog).
+
+New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
+:   To create a CoreOS-enabled location in the London region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+
 ### 14 June 2022
 {: #satellite-june1422}
 {: release-note}
@@ -46,23 +62,12 @@ New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} loca
 Satellite for resellers
 :   Learn how to set up an enterprise account and resell {{site.data.keyword.satelliteshort}} infrastructure and services to your clients. For more information, see the [{{site.data.keyword.satelliteshort}} [reseller use case](/docs/satellite?topic=satellite-tenancy-model).
 
-
 ### 9 June 2022
 {: #satellite-june922}
 {: release-note}
 
 Satellite use cases
 :   See [Satellite use cases](/docs/satellite?topic=satellite-use-case) for the benefits of using Satellite and some common use cases.
-
-### 7 June 2022
-{: #satellite-june722}
-{: release-note}
-
-CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.419](/docs/satellite?topic=satellite-satellite-cli-changelog).
-
-New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
-:   To create a CoreOS-enabled location in the London region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 
 ### 1 June 2022
 {: #satellite-june122}

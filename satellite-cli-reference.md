@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-23"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -2034,7 +2034,7 @@ Before you can use storage templates and configurations to manage your storage r
 {: note}
 
 ```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name NAME --template-version VERSION [--param PARAM ...] [-q] [--source-branch BRANCH] [--source-org ORG]
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name NAME [--template-version VERSION] [--param PARAM ...] [-q] [--source-branch BRANCH] [--source-org ORG]
 ```
 {: pre}
 
@@ -2056,12 +2056,12 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 :    Required. Enter the name of your storage template.
 
 `--template-version TEMPLATE VERSION`
-:    Required. Enter the version of your storage template.
+:    Optional. Enter the version of your storage template.
 
 `--source-org SOURCE ORG`
 :    Optional. Enter the name of the GitHub organization where you forked the `ibm-satellite-storage` repo. You can use the templates in `ibm-satellite-storage` repo to test {{site.data.keyword.satelliteshort}} storage configurations in your cluster.
 
-`--source-repo SOURCE REPO`
+`--source-branch SOURCE BRANCH`
 :    Optional. Enter the name of the branch in your `ibm-satellite-storage` repo that contains the storage templates that you want to use for your configuration. You can use the templates in `ibm-satellite-storage` repo to test {{site.data.keyword.satelliteshort}} storage configurations in your clusters.
 
 `-q`
