@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-17"
+lastupdated: "2022-06-24"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -55,7 +55,7 @@ The template creates a resource group of your Azure cloud subscription and then 
 
 - 1 virtual network that spans the region.
 - 1 network security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
-- 1 virtual machine for each host that you specified, spread evenly across the region. By default, 6 virtual machines are created.
+- 1 virtual machine running RHEL 7 for each host that you specified, spread evenly across the region. By default, 6 virtual machines are created.
 - 1 network interface for each virtual machine.
 - 1 disk for each virtual machine.
 
