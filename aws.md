@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-17"
+lastupdated: "2022-06-24"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services
 
@@ -56,7 +56,7 @@ The following resources are created by the template in your AWS cloud account.
 - 1 virtual private cloud (VPC).
 - 1 subnet for each of the 3 zones in the region.
 - 1 security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
-- 6 EC2 instances spread evenly across zones, or the number of hosts that you specified.
+- 6 RHEL 7 EC2 instances spread evenly across zones, or the number of hosts that you specified.
 
 The following resources are created by the template in your {{site.data.keyword.cloud_notm}} account.
 
