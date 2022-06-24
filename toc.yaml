@@ -195,6 +195,7 @@ toc:
                     - sat-host-reattach-fail.md
                     - ts-hosts-update-roks-console.md
                     - ts-http-proxy.md
+                    - ts-hosts-unassigned-unknown.md
               - topicgroup:
                   label: Clusters
                   topics:
