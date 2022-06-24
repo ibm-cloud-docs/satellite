@@ -744,6 +744,17 @@ subcollection: satellite
 [Understanding {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-host-concept#host-concept)
 
 
+## Understanding Satellite locations
+{: #sitemap_understanding_satellite_locations}
+
+
+[Understanding Satellite locations](/docs/satellite?topic=satellite-about-locations#about-locations)
+
+* [Satellite location control plane](/docs/satellite?topic=satellite-about-locations#loc-control-plane)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what comes next?](/docs/satellite?topic=satellite-about-locations#loc-whats-next)
+
+
 ## Preparing your host infrastructure
 {: #sitemap_preparing_your_host_infrastructure}
 
@@ -966,20 +977,6 @@ subcollection: satellite
 {: #sitemap_creating_locations}
 
 
-[Understanding Satellite locations](/docs/satellite?topic=satellite-about-locations#about-locations)
-
-* [Satellite location control plane](/docs/satellite?topic=satellite-about-locations#loc-control-plane)
-
-* [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing)
-
-* [How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity)
-
-* [How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?](/docs/satellite?topic=satellite-about-locations#control-plane-scale-up)
-
-* [How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?](/docs/satellite?topic=satellite-about-locations#control-plane-how-many-clusters)
-
-* [I created a {{site.data.keyword.satelliteshort}} location, what comes next?](/docs/satellite?topic=satellite-about-locations#loc-whats-next)
-
 [Creating a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#locations)
 
 * [Automating your location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template)
@@ -1065,6 +1062,14 @@ subcollection: satellite
 * [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
+
+[Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing#location-sizing)
+
+* [How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?](/docs/satellite?topic=satellite-location-sizing#control-plane-attach-capacity)
+
+* [How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?](/docs/satellite?topic=satellite-location-sizing#control-plane-scale-up)
+
+* [How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters)
 
 
 ## Managing hosts and locations

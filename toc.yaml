@@ -30,6 +30,7 @@ toc:
         - setup-cli.md
         - infrastructure-plan.md
         - host-concept.md
+        - about-locations.md
         - topicgroup:
             label: Preparing your host infrastructure
             topics:
@@ -54,13 +55,13 @@ toc:
         - topicgroup:
             label: Creating locations
             topics:
-              - about-locations.md
               - locations.md
               - alibaba.md
               - aws.md
               - gcp.md
               - azure.md
               - ibm.md
+              - size-location.md
         - topicgroup:
             label: Managing hosts and locations
             topics:
