@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-06-24"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2440,8 +2440,6 @@ subcollection: satellite
     * [Example for a high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
 
     * [Example for a high availability setup in a public cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
-
-* [Disconnected Usage](/docs/satellite?topic=satellite-ha#disconnected-usage)
 
 
 ## {{site.data.keyword.satellitelong_notm}} notices

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-06"
+lastupdated: "2022-06-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -142,35 +142,4 @@ The following image shows a highly available setup for compute hosts that are in
 
 
 ![High availability setup with compute hosts that are in a public cloud provider.](/images/satellite_ha_aws.svg){: caption="Figure 4. High availability setup with compute hosts that are at a public cloud provider" caption-side="bottom"}
-
-## Disconnected Usage
-{: #disconnected-usage}
-
-{{site.data.keyword.satelliteshort}} Locations and {{site.data.keyword.openshiftlong_notm}} can run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for 72 hours.
-{: shortdesc}
-
-You can modify this setting by changing the `accessTokenMaxAgeSeconds` value in the YAML file.
-
-
-1. Create a file called `accessTokenMaxAgeSeconds.yaml` with the following contents.
-
-
-    ```yaml
-    apiVersion: config.openshift.io/v1
-    kind: OAuth
-    metadata:
-       name: cluster
-    spec:
-      tokenConfig:
-        accessTokenMaxAgeSeconds: 259200
-    ```
-    {: codeblock}
-
-1. Apply the OAuth resource to your cluster.
-
-    ```sh
-    oc apply -f accessTokenMaxAgeSeconds.yaml
-    ```
-    {: pre}
-    
     
