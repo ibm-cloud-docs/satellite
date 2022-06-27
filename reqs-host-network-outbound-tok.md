@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-06-27"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -54,7 +54,7 @@ You can find the hostnames or IPs by running the `dig c-<XX>-ws.jp-tok.link.sate
 {{site.data.keyword.satelliteshort}} control plane hosts
 * Destination IPs: 161.202.150.66, 128.168.89.146, 165.192.71.226, 169.56.18.98, 128.168.68.42, 165.192.76.2, 161.202.235.106, 128.168.106.18, 165.192.111.170, 161.202.89.122, 128.168.151.170, 165.192.64.2 
 * Destination hostnames: `c-01-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-02-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-03-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-04-ws.jp-tok.link.satellite.cloud.ibm.com`
-* Protocol and ports: TCP 443
+* Protocol and ports: HTTPS 443
 
 ## Allow hosts to be attached to a location and assigned to services in the location
 {: #host-out-services-tok}
@@ -62,7 +62,7 @@ You can find the hostnames or IPs by running the `dig c-<XX>-ws.jp-tok.link.sate
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs: 165.192.69.69, 161.202.126.210, 128.168.71.117
 * Destination hostnames: `origin.jp-tok.containers.cloud.ibm.com`
-* Protocol and ports: TCP 443
+* Protocol and ports: HTTPS 443
 
 ## Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API
 {: #host-out-akamai-tok}
@@ -70,7 +70,7 @@ All {{site.data.keyword.satelliteshort}} hosts
 {{site.data.keyword.satelliteshort}} control plane hosts
 * Destination IPs: [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} 
 * Destination hostnames: `api.jp-tok.link.satellite.cloud.ibm.com`, `config.jp-tok.satellite.cloud.ibm.com`, `jp-tok.containers.cloud.ibm.com` 
-* Protocol and ports: TCP 443
+* Protocol and ports: HTTPS 443
 
 ## Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 {: #host-out-cr-tok}
@@ -78,19 +78,19 @@ All {{site.data.keyword.satelliteshort}} hosts
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs: N/A
 * Destination hostnames: `icr.io`, `registry.bluemix.net`, `jp.icr.io`, `registry.au-syd.bluemix.net`, `au.icr.io`
-* Protocol and ports: TCP 443
+* Protocol and ports: HTTPS 443
 
 ## Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 {: #host-out-mon-tok}
 
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
-* Protocol and ports: TCP 443 and 6443
+* Protocol and ports: HTTPS 443 and 6443
 
 ## Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
 {: #host-out-la-tok}
 
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs and hostnames: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
-* Protocol and ports: TCP 443
+* Protocol and ports: HTTPS 443
 
