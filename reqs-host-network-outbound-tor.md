@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-04-22"
+lastupdated: "2022-06-27"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -49,7 +49,7 @@ You can find the hostnames or IPs by running the `dig c-<XX>-ws.ca-tor.link.sate
 {{site.data.keyword.satelliteshort}} control plane hosts
 * Destination IPs: 158.85.124.194, 158.85.79.18, 158.85.86.234, 163.74.67.114, 163.74.70.82, 163.74.70.90, 163.74.70.98, 163.75.70.74, 163.75.70.82, 163.75.70.90, 163.75.70.98, 169.55.154.154 
 * Destination hostnames: `c-01-ws.ca-tor.link.satellite.cloud.ibm.com`, `c-02-ws.ca-tor.link.satellite.cloud.ibm.com`, `c-03-ws.ca-tor.link.satellite.cloud.ibm.com`, `c-04-ws.ca-tor.link.satellite.cloud.ibm.com`
-* Protocol and ports: TCP 443
+* Protocol and ports: HTTPS 443
 
 ## Allow hosts to be attached to a location and assigned to services in the location
 {: #host-out-services-tor}
@@ -57,7 +57,7 @@ You can find the hostnames or IPs by running the `dig c-<XX>-ws.ca-tor.link.sate
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs: 163.75.64.114, 163.74.65.18, 158.85.65.194
 * Destination hostnames: `origin.ca-tor.containers.cloud.ibm.com`
-* Protocol and ports: TCP 443
+* Protocol and ports: HTTPS 443
 
 ## Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API
 {: #host-out-akamai-tor}
@@ -65,7 +65,7 @@ All {{site.data.keyword.satelliteshort}} hosts
 {{site.data.keyword.satelliteshort}} control plane hosts
 * Destination IPs: [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} 
 * Destination hostnames: `api.ca-tor.link.satellite.cloud.ibm.com`, `config.ca-tor.satellite.cloud.ibm.com`, `ca-tor.containers.cloud.ibm.com`
-* Protocol and ports: TCP 443
+* Protocol and ports: HTTPS 443
 
 ## Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
 {: #host-out-cr-tor}
@@ -73,21 +73,21 @@ All {{site.data.keyword.satelliteshort}} hosts
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs: N/A
 * Destination hostnames: `icr.io`, `registry.bluemix.net`, `ca.icr.io`, `us.icr.io`, `registry.ng.bluemix.net`
-* Protocol and ports: TCP 443
+* Protocol and ports: HTTPS 443
 
 ## Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
 {: #host-out-mon-tor}
 
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
-* Protocol and ports: TCP 443 and 6443
+* Protocol and ports: HTTPS 443 and 6443
 
 ## Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
 {: #host-out-la-tor}
 
 All {{site.data.keyword.satelliteshort}} hosts
 * Destination IPs and hostnames: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
-* Protocol and ports: TCP 443
+* Protocol and ports: HTTPS 443
 
 
 

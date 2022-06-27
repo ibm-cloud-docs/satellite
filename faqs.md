@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-06-27"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location
 
@@ -32,7 +32,7 @@ Your {{site.data.keyword.satelliteshort}} location includes tools such as {{site
 
 For more information, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/cloud/satellite){: external}.
 
-## Where is the service available?
+## Where is Satellite available?
 {: #satellite-locations}
 {: faq}
 {: support}
@@ -71,11 +71,11 @@ To add your own server as a host in your {{site.data.keyword.satelliteshort}} lo
 
 The reasons that you cannot install extra software on the hosts relate to [{{site.data.keyword.IBM_notm}} 's responsibilities](/docs/satellite?topic=satellite-responsibilities) to manage multiple aspects of the {{site.data.keyword.satelliteshort}} hosts for you, such as installation, access, and maintenance.
 
-**Installation**: The {{site.data.keyword.satelliteshort}} team tries to keep the host requirements to a minimal level so that many servers across infrastructure providers can meet the requirements to become {{site.data.keyword.satelliteshort}} hosts. By limiting the number of possible software packages, {{site.data.keyword.satelliteshort}} reduces instability and conflicts during installation tasks such as [bootstrapping](/docs/satellite?topic=satellite-host-concept) each host so that all hosts across {{site.data.keyword.satelliteshort}} locations have a consistent set of images and container platform software. This consistency also helps you develop applications and deploy [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) that work across your environments.
+**Installation**: The {{site.data.keyword.satelliteshort}} team tries to keep the host requirements to a minimal level so that many servers across infrastructure providers can meet the requirements to become {{site.data.keyword.satelliteshort}} hosts. By limiting the number of possible software packages, {{site.data.keyword.satelliteshort}} reduces instability and conflicts during installation tasks such as [bootstrapping](/docs/satellite?topic=satellite-host-concept) each host so that all hosts across {{site.data.keyword.satelliteshort}} locations have a consistent set of images and container platform software. This consistency also helps you develop applications and deploy {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that work across your environments.
 
 **Access**: For security purposes, {{site.data.keyword.satelliteshort}} restricts external access to hosts, including SSH. Many extra software packages require access to or from the host, so extra software packages are not allowed to be installed.
 
-**Maintenance**: {{site.data.keyword.IBM_notm}} provides software updates that you choose when to apply to the host. Because {{site.data.keyword.IBM_notm}} is responsible for providing these updates, you cannot install extra software that is not managed by {{site.data.keyword.IBM_notm}}. Extra software also uses mores CPU, memory, and disk storage resources on the host, which impacts the amount available to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) and applications that run on the hosts.
+**Maintenance**: {{site.data.keyword.IBM_notm}} provides software updates that you choose when to apply to the host. Because {{site.data.keyword.IBM_notm}} is responsible for providing these updates, you cannot install extra software that is not managed by {{site.data.keyword.IBM_notm}}. Extra software also uses mores CPU, memory, and disk storage resources on the host, which impacts the amount available to your {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services and applications that run on the hosts.
 
 ## What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?
 {: #pricing}
@@ -90,10 +90,10 @@ The reasons that you cannot install extra software on the hosts relate to [{{sit
 * **Application and networking capabilities at no additional charge**. You do not have separate charges for {{site.data.keyword.satelliteshort}} management capabilities for the locations, hosts, Link endpoints, configuration versions and subscriptions, or other {{site.data.keyword.satelliteshort}} resources.
 * **Consistent {{site.data.keyword.cloud_notm}} experience**. The management fee includes benefits such as the managed {{site.data.keyword.satelliteshort}} master, the installation and security patch updates of OpenShift Container Platform on your {{site.data.keyword.satelliteshort}} location control plane; managing your {{site.data.keyword.satelliteshort}} resources with a suite of API, CLI, and UI tools; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support. For more information, see [the responsibilities topic](/docs/satellite?topic=satellite-responsibilities).
 
-### [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services)
+### {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services
 {: #pricing-services}
 
-Each {{site.data.keyword.cloud_notm}} service instance that you create in your {{site.data.keyword.satelliteshort}} location incurs charges. Review the following [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
+Each {{site.data.keyword.cloud_notm}} service instance that you create in your {{site.data.keyword.satelliteshort}} location incurs charges. Review the following {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
 #### {{site.data.keyword.redhat_openshift_notm}} clusters
@@ -114,13 +114,13 @@ Get the benefits of a [managed {{site.data.keyword.redhat_openshift_notm}} servi
 #### Other services
 {: #pricing-services-other}
 
-Other [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) often set up a cluster in the location for you, to deliver their services. The services also might have their own charges. For more information, consult their documentation.
+Other {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services often set up a cluster in the location for you, to deliver their services. The services also might have their own charges. For more information, consult their documentation.
 {: shortdesc}
 
 ### {{site.data.keyword.satelliteshort}} locations
 {: #pricing-satloc}
 
-When you create a location, you must create a {{site.data.keyword.satelliteshort}} location control plane to manage the location. You need only one control plane per location, although you might need to add more hosts depending on the [size of your location](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity).
+When you create a location, you must create a {{site.data.keyword.satelliteshort}} location control plane to manage the location. You need only one control plane per location, although you might need to add more hosts depending on the [size of your location](/docs/satellite?topic=satellite-location-sizing).
 {: shortdesc}
 
 | Type of charge | How the charge is applied | What the charge covers |
@@ -128,7 +128,6 @@ When you create a location, you must create a {{site.data.keyword.satelliteshort
 | {{site.data.keyword.satelliteshort}} management fee | Per vCPU hour of the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more.  |
 | Infrastructure | Varies by provider | The underlying infrastructure that you bring to {{site.data.keyword.satelliteshort}} is your own, so it has its own charges. Consult your infrastructure provider for more details, such as about the storage, compute, and networking of the hosts in a cloud or on-prem environment. |
 {: caption="{{site.data.keyword.satelliteshort}} location control plane charges." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the type of charge for a {{site.data.keyword.redhat_openshift_notm}} cluster. The second column describes how the charge is applied. The third column describes what is included with the charge."}
 
 ## How do I bring my own OCP license?
 {: #byo-ocp}
@@ -186,7 +185,7 @@ Note that compliance also might depend on the setup of the underlying infrastruc
 {: faq}
 {: support}
 
-For a complete list of {{site.data.keyword.cloud_notm}} services that you can deploy to your {{site.data.keyword.satelliteshort}} location, see [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services). 
+For a complete list of {{site.data.keyword.cloud_notm}} services that you can deploy to your {{site.data.keyword.satelliteshort}} location, see {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services. 
 
 Keep in mind that each service might:
 * Be available for {{site.data.keyword.satelliteshort}} locations that are managed from select {{site.data.keyword.cloud_notm}} regions only, such as from Washington, DC or London.

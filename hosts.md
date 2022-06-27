@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-06-27"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -45,7 +45,7 @@ Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshor
 After you create the location, you must attach compute capacity to your location so that you can run the {{site.data.keyword.satelliteshort}} control plane or set up {{site.data.keyword.redhat_openshift_notm}} clusters.
 {: shortdesc}
 
-Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-about-locations#location-sizing).   \n
+Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).   \n
 Using AWS hosts? You can use a [launch template](/docs/satellite?topic=satellite-aws) to attach hosts to your {{site.data.keyword.satelliteshort}} location.
 {: tip}
 
@@ -594,7 +594,7 @@ You might check for a version update to meet your required security cadence, suc
 
 **Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?**
 
-Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity).
+Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-location-sizing#control-plane-attach-capacity).
 
 **Do the hosts in my {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services have to run the same version as my {{site.data.keyword.satelliteshort}} location control plane?**
 
