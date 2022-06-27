@@ -61,7 +61,7 @@ toc:
               - gcp.md
               - azure.md
               - ibm.md
-              - size-location.md
+              - location-sizing.md
         - topicgroup:
             label: Managing hosts and locations
             topics:
@@ -196,7 +196,7 @@ toc:
                     - sat-host-reattach-fail.md
                     - ts-hosts-update-roks-console.md
                     - ts-http-proxy.md
-                    - ts-hosts-unassigned-unknown.md
+                    - ts-host-unassigned-unknown.md
               - topicgroup:
                   label: Clusters
                   topics:

@@ -22,7 +22,7 @@ Because your {{site.data.keyword.satelliteshort}} location represents your own d
     - What type of availability do I want my workload to have?
     - How many worker nodes (hosts) do I need to handle my workload?
     - How do I monitor resource usage and capacity in my cluster?
-    
+
 ## How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?
 {: #control-plane-attach-capacity}
 
@@ -36,6 +36,8 @@ Hosts in the location control plane have critical CPU or memory usage issues.
 The location control plane is running at max capacity and cannot support any more workloads.
 ```
 {: screen}
+
+After you determine the size of your location, [add hosts to the location control plane](/docs/satellite?topic=satellite-attach-hosts).
 
 ## How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?
 {: #control-plane-scale-up}

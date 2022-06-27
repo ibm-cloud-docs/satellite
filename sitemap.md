@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-24"
+lastupdated: "2022-06-27"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2464,7 +2464,7 @@ subcollection: satellite
 
 * [What is {{site.data.keyword.satellitelong_notm}} and how does it work?](/docs/satellite?topic=satellite-faqs#what-is-satellite)
 
-* [Where is the service available?](/docs/satellite?topic=satellite-faqs#satellite-locations)
+* [Where is Satellite available?](/docs/satellite?topic=satellite-faqs#satellite-locations)
 
 * [Is my location setup highly available?](/docs/satellite?topic=satellite-faqs#satellite-ha)
 
@@ -2476,7 +2476,7 @@ subcollection: satellite
 
 * [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing)
 
-    * [[{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services)](/docs/satellite?topic=satellite-faqs#pricing-services)
+    * [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-faqs#pricing-services)
 
     * [{{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-faqs#pricing-satloc)
 
@@ -2628,6 +2628,8 @@ subcollection: satellite
 [Why can't I update my worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console?](/docs/satellite?topic=satellite-ts-hosts-update-roks-console#ts-hosts-update-roks-console)
 
 [Why can't my HTTP proxy connect to the Red Hat servers?](/docs/satellite?topic=satellite-ts-http-proxy#ts-http-proxy)
+
+[Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown#ts-host-unassigned-unknown)
 
 
 ### Clusters

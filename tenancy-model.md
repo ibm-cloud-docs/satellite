@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-06-24"
+lastupdated: "2022-06-27"
 
 keywords: satellite, hybrid, multicloud, tenancy
 
@@ -88,7 +88,7 @@ After setting up your enterprise account and creating at least one client accoun
 {: #create-provision-tenancy}
 {: step}
 
-1. Gather your client's requirements and decide the location size, host flavors, and storage. Also, decide the number of control plane hosts and the number of hosts that they need for services such as clusters. For help with location planning, see [Understanding Satellite locations](/docs/satellite?topic=satellite-about-locations#location-sizing) and [Planning your environment for Satellite](/docs/satellite?topic=satellite-infrastructure-plan).
+1. Gather your client's requirements and decide the location size, host flavors, and storage. Also, decide the number of control plane hosts and the number of hosts that they need for services such as clusters. For help with location planning, see [Understanding Satellite locations](/docs/satellite?topic=satellite-location-sizing) and [Planning your environment for Satellite](/docs/satellite?topic=satellite-infrastructure-plan).
 
 1. Provision virtual machines or decide your on-premises hosts that you want to use in your location. Make sure that your hosts meet the requirements for the following:
     * [System requirements](/docs/satellite?topic=satellite-host-reqs)
@@ -195,7 +195,7 @@ To attach hosts as worker nodes to the control plane,
     ```
     {: screen}
 
-9. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-about-locations#control-plane-attach-capacity).
+9. To continue to use the location for production workloads, repeat these steps to attach more hosts to the location control plane in multiples of 3, such as 6, 9, or 12 hosts. For more information, see [Adding capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-location-sizing#control-plane-attach-capacity).
 
 
 ## Creating a cluster, API key, and cluster roles
