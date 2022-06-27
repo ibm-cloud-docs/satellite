@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-04-28"
+lastupdated: "2022-06-27"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -98,5 +98,5 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 * [Red Hat OpenShift Data Foundation using remote volumes](/docs/satellite?topic=satellite-config-storage-odf-remote)
 * [Google Compute Engine persistent disk CSI driver](/docs/satellite?topic=satellite-config-storage-gcp-csi) 
 
-For a list of available storage templates and storage classes, review the [site map](/docs/satellite?topic=satellite-sitemap#sitemap_storage_class_reference).
+For a list of available storage templates and storage classes, review the [site map](/docs/satellite?topic=satellite-storage-class-ref#storage-class-ref).
 
