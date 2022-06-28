@@ -146,10 +146,6 @@ subcollection: satellite
 
 * [June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june22)
 
-    * [23 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2322)
-
-        * CLI change log
-
     * [21 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2122)
 
         * New and updated template parameter for the Azure File CSI driver template.
