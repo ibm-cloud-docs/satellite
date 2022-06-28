@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-06-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# High Availability, Disaster Recovery, and Disconnected Usage
+# High availability and disaster recovery
 {: #ha}
 
 Review what options you have to make your {{site.data.keyword.satellitelong}} location highly available.
