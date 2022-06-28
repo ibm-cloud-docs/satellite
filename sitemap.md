@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-06-28"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2422,11 +2422,11 @@ subcollection: satellite
     * [Disaster recovery](/docs/satellite?topic=satellite-responsibilities#disaster-recovery)
 
 
-## High Availability, Disaster Recovery, and Disconnected Usage
-{: #sitemap_high_availability,_disaster_recovery,_and_disconnected_usage}
+## High availability and disaster recovery
+{: #sitemap_high_availability_and_disaster_recovery}
 
 
-[High Availability, Disaster Recovery, and Disconnected Usage](/docs/satellite?topic=satellite-ha#ha)
+[High availability and disaster recovery](/docs/satellite?topic=satellite-ha#ha)
 
 * [About high availability and disaster recovery](/docs/satellite?topic=satellite-ha#ha-about)
 
