@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-06"
+lastupdated: "2022-06-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -34,8 +34,16 @@ In general, do not set any custom networking configurations on your hosts, such 
 - Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
 - You cannot use custom iptables to route traffic to the public or private network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables.
 - The following IP address ranges are reserved, and must not be used in any of the networks that you want to use in {{site.data.keyword.satellitelong_notm}}, including the host networks.
+
+    Non-CoreOS enabled locations:
     ```sh
     172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, 172.20.0.0/16, and 192.168.255.0/24
+    ```
+    {: screen}
+    
+    CoreOS enabled locations:
+    ```sh
+    172.20.0.0/16 and 172.16.0.0/16
     ```
     {: screen}
 
@@ -108,8 +116,6 @@ In addition to the [outbound connectivity](#reqs-host-network-firewall-outbound)
 
 To secure your outbound connectivity, allow only TCP on the Kubernetes API server NodePorts and UDP on the VPN NodePorts for your location. You can find your active NodePorts by running the **`ibmcloud sat location get --location <location>`** command.
 {: tip}
-
-
 
 
 
