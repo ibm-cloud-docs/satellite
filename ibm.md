@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -61,7 +61,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
         
         1. In the **Cloud Object Storage** instances section, select your instance, location, and the bucket where you uploaded your image.
         
-        1. In the **Operating system** section, select **Red Hat Enterprise Linux**, then select **red-coreos-stable-amd64**.
+        1. In the **Operating system** section, select **Red Hat Enterprise Linux**, then select **fedora-coreos-stable-amd64**.
         
         1. Select the **Encryption** that you want to use and click **Create custom image**
 

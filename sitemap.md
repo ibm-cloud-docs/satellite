@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-28"
+lastupdated: "2022-07-05"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2127,29 +2127,29 @@ subcollection: satellite
 {: #sitemap_cli_plug-in_reference}
 
 
-[{{site.data.keyword.satellitelong_notm}} CLI Map](/docs/satellite?topic=satellite-icsat_map#icsat_map)
+[{{site.data.keyword.satellitelong_notm}} CLI map](/docs/satellite?topic=satellite-icsat_map#icsat_map)
 
-* [ibmcloud sat cluster](/docs/satellite?topic=satellite-icsat_map#icsat_map_cluster)
+* [`ibmcloud sat cluster`](/docs/satellite?topic=satellite-icsat_map#icsat_map_cluster)
 
-* [ibmcloud sat config](/docs/satellite?topic=satellite-icsat_map#icsat_map_config)
+* [`ibmcloud sat config`](/docs/satellite?topic=satellite-icsat_map#icsat_map_config)
 
-* [ibmcloud sat endpoint](/docs/satellite?topic=satellite-icsat_map#icsat_map_endpoint)
+* [`ibmcloud sat endpoint`](/docs/satellite?topic=satellite-icsat_map#icsat_map_endpoint)
 
-* [ibmcloud sat group](/docs/satellite?topic=satellite-icsat_map#icsat_map_group)
+* [`ibmcloud sat group`](/docs/satellite?topic=satellite-icsat_map#icsat_map_group)
 
-* [ibmcloud sat host](/docs/satellite?topic=satellite-icsat_map#icsat_map_host)
+* [`ibmcloud sat host`](/docs/satellite?topic=satellite-icsat_map#icsat_map_host)
 
-* [ibmcloud sat location](/docs/satellite?topic=satellite-icsat_map#icsat_map_location)
+* [`ibmcloud sat location`](/docs/satellite?topic=satellite-icsat_map#icsat_map_location)
 
-* [ibmcloud sat resource](/docs/satellite?topic=satellite-icsat_map#icsat_map_resource)
+* [`ibmcloud sat resource`](/docs/satellite?topic=satellite-icsat_map#icsat_map_resource)
 
-* [ibmcloud sat service](/docs/satellite?topic=satellite-icsat_map#icsat_map_service)
+* [`ibmcloud sat service`](/docs/satellite?topic=satellite-icsat_map#icsat_map_service)
 
-* [ibmcloud sat storage](/docs/satellite?topic=satellite-icsat_map#icsat_map_storage)
+* [`ibmcloud sat storage`](/docs/satellite?topic=satellite-icsat_map#icsat_map_storage)
 
-* [ibmcloud sat subscription](/docs/satellite?topic=satellite-icsat_map#icsat_map_subscription)
+* [`ibmcloud sat subscription`](/docs/satellite?topic=satellite-icsat_map#icsat_map_subscription)
 
-* [ibmcloud sat messages](/docs/satellite?topic=satellite-icsat_map#icsat_map_messages)
+* [`ibmcloud sat messages`](/docs/satellite?topic=satellite-icsat_map#icsat_map_messages)
 
 [CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
 
