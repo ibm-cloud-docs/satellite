@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-06-01"
+lastupdated: "2022-07-05"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -84,45 +84,41 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
         ```
         {: screen}
         
-        From this output, the first IP is `172.21.0.1`, which makes the full output for hosts associated with this specific cluster in this example `NO_PROXY=172.20.0.1,172.21.0.1,$REDHAT_PACKAGE_MIRROR_LOCATION` for RHEL hosts and `NO_PROXY=172.20.0.1,172.21.0.1,$REDHAT_PACKAGE_MIRROR_LOCATION` for RHCOS hosts.
+        From this output, the first IP is `172.21.0.1`, which makes the full output for hosts associated with this specific cluster in this example `NO_PROXY=172.20.0.1,172.21.0.1,$REDHAT_PACKAGE_MIRROR_LOCATION` for RHEL hosts and `NO_PROXY=172.20.0.1,172.21.0.1,.REGION.satellite.appdomain.cloud` for RHCOS hosts. For example, `NO_PROXY=172.20.0.1,172.21.0.1,.eu-gb.satellite.appdomain.cloud` is correct for a London mirror location for RHCOS hosts. Note that the RHCOS value includes `.` before the region.
 
-3. Navigate to `/etc/systemd/system.conf.d` on your host. If that file does not exist, create it. 
+3. Navigate to `/etc/systemd/system.conf.d` on your host. If that file does not exist, create it. Enter the `<VALUE>` for `NO_PROXY` from step 2.
     
     ```sh
-    mkdir -p etc/systemd && cd etc/systemd && touch system.conf.d
-    ```
-    {: pre}
-
-4. Edit the file and add the following information. Enter the `<VALUE>` for `NO_PROXY` from step 2.
-
-    ```sh
+    mkdir -p /etc/systemd/system.conf.d
+    cat >"/etc/systemd/system.conf.d/proxy.conf" <<EOF
     [Manager]
-    DefaultEnvironment="HTTP_PROXY=xxxx" "HTTPS_PROXY=xxxxx" "NO_PROXY=<VALUE>"
-    ```
-    {: codeblock}
-    
-5. Save the file.
-6. Navigate to the `/etc/environment` file on your host. If that file does not exist, create it. 
-    
-    ```sh
-    mkdir etc && touch etc/environment
+    DefaultEnvironment="HTTP_PROXY=xxxx" "HTTPS_PROXY=xxxx" "NO_PROXY=<VALUE>"
+    EOF
+    chmod 0644 /etc/systemd/system.conf.d/proxy.conf
     ```
     {: pre}
     
-7. Edit the `/etc/environment` file and add the following information. Enter the `<VALUE>` for `NO_PROXY` from step 2.
-
-    ```sh
-    HTTP_PROXY=xxxxx
-    HTTPS_PROXY=xxxxx
-    NO_PROXY="<VALUE>"
-    ```
-    {: codeblock}
+4. Navigate to the `/etc/environment` file on your host. Enter the `<VALUE>` for `NO_PROXY` from step 2. If that file does not exist, create it. 
     
-8. Save the file.
-9. Reboot your host to pick up this change.
-10. [Attach or reattach](/docs/satellite?topic=satellite-attach-hosts) your host to the location.
-11. Repeat these steps for each host.
-12. [Create a ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with IBM Support with the following format.
+    ```sh
+    mkdir -p /etc/profile.d
+    cat >"/etc/profile.d/ibm-proxy.sh" <<EOF
+    #!/usr/bin/env bash
+    HTTP_PROXY="xxxx"
+    HTTPS_PROXY="xxxx"
+    NO_PROXY="<VALUE>"
+    export HTTP_PROXY
+    export HTTPS_PROXY
+    export NO_PROXY
+    EOF
+    chmod 0755 /etc/profile.d/ibm-proxy.sh
+    ```
+    {: pre}
+    
+5. Reboot your host to pick up this change.
+6. [Attach or reattach](/docs/satellite?topic=satellite-attach-hosts) your host to the location.
+7. Repeat these steps for each host.
+8. [Create a ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with IBM Support with the following format.
     
     ```sh
     Title: Request for addition of HTTP_PROXY config to location <LOCATIONID>
