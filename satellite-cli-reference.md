@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-07-06"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1278,11 +1278,123 @@ ibmcloud sat host update --location aaaaaaaa1111a1aaaa11a --host myhost1
 ```
 {: pre}
 
+## {{site.data.keyword.satelliteshort}} Config key commands
+{: #config-key-commands}
+
+View and manage {{site.data.keyword.satelliteshort}} Config keys.
+{: shortdesc}
+
+### `ibmcloud sat key ls`
+{: #key-ls}
+
+List all Satellite Config keys in your IBM Cloud account.
+{: shortdesc}
+
+```sh
+ibmcloud sat key ls [--output OUTPUT] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #key-ls-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Viewer** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #key-ls-command-options}
+
+`--output json`
+:    Optional. Prints the command output in JSON format.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #key-ls-example}
+
+```sh
+ibmcloud sat key ls
+```
+{: pre}
+
+### `ibmcloud sat key rm`
+{: #key-rm}
+
+Delete a {{site.data.keyword.satelliteshort}} Config key. Once the key is deleted, any cluster still using this key is unable to connect to Satellite Config.
+{: shortdesc}
+
+```sh
+ibmcloud sat key rm --key KEY [-f] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #key-rm-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #key-rm-command-options}
+
+`--key`
+:    The name or the ID of a Satellite Config key.
+
+`-f`
+    :    Optional. Force the command to run with no user prompts.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #key-rm-example}
+
+```sh
+ibmcloud sat key rm --key my_key
+```
+{: pre}
+
+### `ibmcloud sat key rotate`
+{: #key-rotate}
+
+Generate a new key for use by managed clusters to connect to {{site.data.keyword.satelliteshort}} Config.
+{: shortdesc}
+
+```sh
+ibmcloud sat key rotate --name NAME [-f] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #key-rotate-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Administrator** platform role for the **Resource** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #key-rotate-command-options}
+
+`--name`
+:    The name of the new {{site.data.keyword.satelliteshort}} Config key.
+
+`-f`
+    :    Optional. Force the command to run with no user prompts.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #key-rotate-example}
+
+```sh
+ibmcloud sat key rotate --name my_key_name
+```
+{: pre}
+
 ## Location commands
 {: #sat-location-commands}
 
 Use these commands to create and manage {{site.data.keyword.satelliteshort}} locations.
 {: shortdesc}
+
 
 ### `ibmcloud sat location create`
 {: #location-create}
@@ -2550,6 +2662,42 @@ ibmcloud sat subscription get --subscription myapp_prod_subscription
 ```
 {: pre}
 
+### `ibmcloud sat subscription identity set`
+{: #cli-config-subscription-identity-set}
+
+Update a Satellite subscription to use your identity to manage resources. 
+{: shortdesc}
+
+```sh
+ibmcloud sat subscription identity set --subscription SUBSCRIPTION [-f] [-q]
+```
+{: pre}
+
+#### Minimum required permissions
+{: #cli-config-subscription-identity-set-min-perm}
+
+{{site.data.keyword.cloud_notm}} IAM **Editor** platform role for the **Subscription** resource in {{site.data.keyword.satelliteshort}}. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
+
+#### Command options
+{: #cli-config-subscription-identity-set-command-options}
+
+`--subscription SUBSCRIPTION`
+:    Required. The name or ID of your subscription. To list subscriptions in your {{site.data.keyword.cloud_notm}} account, run `ibmcloud sat subscription ls`.
+
+`-f`
+:    Optional. Force the command to run with no user prompts.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+
+#### Example
+{: #cli-config-subscription-identity-set-example}
+
+```sh
+ibmcloud sat subscription identity set --subscription my_subscription
+```
+{: pre}
 
 ### `ibmcloud sat subscription ls`
 {: #cli-config-subscription-ls}

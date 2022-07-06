@@ -1,3 +1,18 @@
+---
+
+copyright:
+  years: 2022, 2022
+lastupdated: "2022-07-06"
+
+keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
+
+subcollection: satellite
+
+---
+
+{{site.data.keyword.attribute-definition-list}}
+
+
 # Sizing your {{site.data.keyword.satelliteshort}} location
 {: #location-sizing}
 
@@ -109,3 +124,5 @@ The following tables provide examples of the number of hosts that the control pl
 {: #16cpu-64ram-coreos}
 {: tab-title="16 vCPU, 64GB RAM (CoreOS)"}
 {: tab-group="loc-size"}
+
+

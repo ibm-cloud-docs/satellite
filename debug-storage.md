@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-07-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -75,7 +75,7 @@ Response code: `404`
 ### ST0006
 {: #st0006}
 
-The service is currently unavailable. Wait a few minutes and try again. MS Backend Error is : `error-message`
+The service is currently unavailable. Wait a few minutes and try again. MS Backend Error is: `error-message`
 {: shortdesc}
 
 Error type: Services
@@ -95,21 +95,21 @@ Response code: `404`
 ### ST0008
 {: #st0008}
 
-User is not authorized to create service subscription on `<cluster-id>` cluster ID
+User is not authorized to create service subscription on `<cluster-id>` cluster ID.
 {: shortdesc}
 
 Error type: Authorization
 
 Response code: `401`
 
-Verify that storage configuration and service cluster both should be on same {{site.data.keyword.satelliteshort}} location, if not create a configuration and then re-try.
+Verify that storage configuration and service cluster both muwt be on same {{site.data.keyword.satelliteshort}} location, if not create a configuration and then retry.
 
 
 
 ### ST0009
 {: #st0009}
 
-`<cluster-id>` cluster is not a service {{site.data.keyword.satelliteshort}} cluster
+`<cluster-id>` cluster is not a service {{site.data.keyword.satelliteshort}} cluster.
 {: shortdesc}
 
 Error type: Bad request
@@ -123,7 +123,7 @@ How to fix it: Verify your service clusters by running `ibmcloud sat services --
 ### ST0010
 {: #st0010}
 
-User don't have access to perform this operation
+User doesn't have access to perform this operation.
 {: shortdesc}
 
 Error type: Authorization,
@@ -145,7 +145,7 @@ Response code: `400`
 ### ST0014
 {: #st0014}
 
-The required input parameter `<parameter>` in the request body is  either missing or unsupported. The specified value is `<parameter>` . The expected value(s) is(are) `<value>`
+The required input parameter `<parameter>` in the request body is  either missing or unsupported. The specified value is `<parameter>`. The expected value(s) is(are) `<value>`.
 {: shortdesc}
 
 Error type: Bad request
@@ -196,7 +196,7 @@ Response code: `404`
 ### ST0019
 {: #st0019}
 
-`<object-type>` not found with the identifier: `<identifier>>`
+`<object-type>` not found with the identifier: `<identifier>>`.
 {: shortdesc}
 
 Error type: Services
@@ -206,7 +206,7 @@ Response code: `404`
 ### ST0020
 {: #st0020}
 
-The request parameter with name `<<parameter-name>` is not supported
+The request parameter with name `<<parameter-name>` is not supported.
 {: shortdesc}
 
 Error type: Services
@@ -216,7 +216,7 @@ Response code: `404`
 ### ST0021
 {: #st0021}
 
-`<object-type>` with the identifier: `{{.ObjetIdentifier>` already exists
+`<object-type>` with the identifier `{{.ObjetIdentifier>` already exists.
 {: shortdesc}
 
 Error type: Services
@@ -236,7 +236,7 @@ Response code: `500`
 ### ST0023
 {: #st0023}
 
-Unable to update configuration with name `<ConfigurationName>`. `<number>` assignments depend on this configuration.  remove them before updating this configuration or create a new configuration
+Unable to update configuration with name `<ConfigurationName>`. `<number>` assignments depend on this configuration.  Remove them before you update this configuration or create a new configuration.
 {: shortdesc}
 
 Error type: Services
@@ -246,7 +246,7 @@ Response code: `500`
 ### ST0024
 {: #st0024}
 
-The given parameter value `<value>` does not match with regular expression `{{.RegEx>`
+The given parameter value `<value>` does not match with regular expression `{{.RegEx>`.
 {: shortdesc}
 
 Error type: Services
@@ -256,7 +256,7 @@ Response code: `400`
 ### ST0025
 {: #st0025}
 
-The length of given parameter value `<value>` is less than minimum allowed length `<minimum-length>`
+The length of given parameter value `<value>` is less than minimum allowed length `<minimum-length>`.
 {: shortdesc}
 
 Error type: Services
@@ -266,7 +266,7 @@ Response code: `400`
 ### ST0026
 {: #st0026}
 
-The length of given parameter value `<value>` is greater than maximum allowed length `<maximum-length`
+The length of given parameter value `<value>` is greater than maximum allowed length `<maximum-length`.
 {: shortdesc}
 
 Error type: Services
@@ -286,7 +286,7 @@ Response code: `404`
 ### ST0028
 {: #st0028}
 
-Unable to add or update storage class as storage class template is not registered for `<template>` and `<version>`
+Unable to add or update storage class as storage class template is not registered for `<template>` and `<version>`.
 {: shortdesc}
 
 Error type: Services
@@ -301,7 +301,7 @@ Cluster not found corresponding to the given cluster ID: `<cluster-id>`
 
 Error type: Bad request
 
-How to fix it: To list all the Satellite clusters you have access to, run `ibmcloud oc cluster ls --provider=satellite`
+How to fix it: To list all the Satellite clusters that you have access to, run `ibmcloud oc cluster ls --provider=satellite`.
 
 Response code: `404`
 
@@ -343,7 +343,7 @@ Failed to remove old temporary storage configuration with name: `<ObjectName>`.
 
 Error type: Services
 
-How to fix it: To remove the storage configuration manually, run `ibmcloud sat storage config rm --config=<config-name>`
+How to fix it: To remove the storage configuration manually, run `ibmcloud sat storage config rm --config=<config-name>`.
 
 Response code: `500`
 
@@ -360,7 +360,7 @@ Response code: `500`
 ### ST0036
 {: #st0036}
 
-Parameter is an invalid UUID
+Parameter is an invalid UUID.
 {: shortdesc}
 
 Error type: Bad request
@@ -380,7 +380,7 @@ Response code: `500`
 ### ST0038
 {: #st0038}
 
-{{site.data.keyword.satelliteshort}} Location `<location>` not found. To list all the {{site.data.keyword.satelliteshort}} locations you have access to, run `ibmcloud sat locations`.
+{{site.data.keyword.satelliteshort}} Location `<location>` not found. To list all the {{site.data.keyword.satelliteshort}} locations that you have access to, run `ibmcloud sat locations`.
 {: shortdesc}
 
 Error type: Bad request
@@ -390,7 +390,7 @@ Response code: `404`
 ### ST0039
 {: #st0039}
 
-{{site.data.keyword.cloud_notm}} {{site.data.keyword.satelliteshort}} is not available in this region. Choose a supported {{site.data.keyword.cloud_notm}} region with `ibmcloud target -r <region>` to manage your {{site.data.keyword.satelliteshort}} location from, and try again. For supported multizone regions, see `http://ibm.biz/satloc-mzr`
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.satelliteshort}} is not available in this region. Choose a supported {{site.data.keyword.cloud_notm}} region with `ibmcloud target -r <region>` to manage your {{site.data.keyword.satelliteshort}} location from, and try again. For supported multizone regions, see `http://ibm.biz/satloc-mzr`.
 {: shortdesc}
 
 Error type: {{site.data.keyword.satelliteshort}}
@@ -410,7 +410,7 @@ Response code: `400`
 ### ST0041
 {: #st0041}
 
-Maximum allowed storage requests limit reached. Existing count:`<ExistingCount}}` allowed count:`{{.AllowedCount>`
+Maximum allowed storage requests limit reached. Existing count:`<ExistingCount}}` allowed count:`{{.AllowedCount>`.
 {: shortdesc}
 
 Error type: Bad request
@@ -420,7 +420,7 @@ Response code: `400`
 ### ST0042
 {: #st0042}
 
-A storage request for volume-type:`<volumeType>` already exists with ID `<requestID>`
+A storage request for volume-type:`<volumeType>` already exists with ID `<requestID>`.
 {: shortdesc}
 
 Error type: Bad request
@@ -439,7 +439,7 @@ Response code: 403
 ### ST0044
 {: #st0044}
 
-Provided total-capacity should be greater than current total-capacity
+Provided total-capacity must be greater than current total-capacity.
 {: shortdesc}
 
 Error type: Bad request
@@ -449,7 +449,7 @@ Response code: `400`
 ### ST0045
 {: #st0045}
 
-Total-capacity should be a positive integer and the unit of total-capacity should be in the form of E, T, G, M, K, B
+Total-capacity must be a positive integer and the unit of total-capacity must be in the form of `E`, `T`, `G`, `M`, `K`, `B`.
 {: shortdesc}
 
 Error type: Bad request
@@ -469,7 +469,7 @@ Response code: 406
 ### ST0047
 {: #st0047}
 
-The {{.Param1}} value '{{.Param2}}' should only contain alphabets, numbers, underscore and hyphen.
+The {{.Param1}} value '{{.Param2}}' must contain only alphabets, numbers, underscore, and hyphen.
 
 Error type: Bad request
 
@@ -478,7 +478,7 @@ Response code: `400`
 ### ST0048
 {: #st0048}
 
-Failed to update desired storage configuration. Assignment creation failed.
+Failed to update wanted storage configuration. Assignment creation failed.
 
 Error type: Services
 
@@ -488,7 +488,7 @@ Response code: `500`
 ### ST0049
 {: #st0049}
 
-Configuration is created in '{{.ConfigLocation}}' location but the cluster is in '{{.ClusterLocation}}' location. Please recreate the configuration in '{{.ClusterLocation}}' location and retry.
+Configuration is created in '{{.ConfigLocation}}' location but the cluster is in '{{.ClusterLocation}}' location. Re-create the configuration in '{{.ClusterLocation}}' location and retry.
 
 Error type: Bad request
 
@@ -506,7 +506,7 @@ Response code: `400`
 ### ST0051
 {: #st0051}
 
-Failed to retrieve '{{.ObjectType}}'. BackendError: {{.BackendError}}
+Failed to retrieve '{{.ObjectType}}'. BackendError: {{.BackendError}}.
 
 Error type: Services
 

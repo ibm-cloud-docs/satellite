@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-06"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce
 
@@ -20,6 +20,9 @@ The Compute Engine persistent disk Container Storage Interface (CSI) [Driver](ht
 
  The template is currently in beta and should not be used for production workloads. 
  {: beta}
+ 
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+{: important}
 
 ## Prerequisites
 {: #sat-storage-gcp-csi-prereq}

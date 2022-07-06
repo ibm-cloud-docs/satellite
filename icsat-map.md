@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-01"
+lastupdated: "2022-07-06"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -13,12 +13,12 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# {{site.data.keyword.satellitelong_notm}} CLI Map
+# {{site.data.keyword.satellitelong_notm}} CLI map
 {: #icsat_map}
 
-This page lists all `ibmcloud sat` commands as they are structured in the CLI. For more details on a specific command, click on the command or see the [{{site.data.keyword.satellitelong_notm}} CLI reference](/docs/containers?topic=containers-kubernetes-service-cli).
+This page lists all `ibmcloud sat` commands as they are structured in the CLI. For more information about a specific command, click on the command or see the [{{site.data.keyword.satellitelong_notm}} CLI reference](/docs/containers?topic=containers-kubernetes-service-cli).
 
-## ibmcloud sat cluster
+## `ibmcloud sat cluster`
 {: #icsat_map_cluster}
 
 [View and manage Satellite clusters](/docs/satellite?topic=satellite-satellite-cli-reference#sat-cluster-commands).
@@ -29,7 +29,7 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
 * [`ibmcloud sat cluster register`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-register).
 * [`ibmcloud sat cluster unregister`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-cluster-unregister).
 
-## ibmcloud sat config
+## `ibmcloud sat config`
 {: #icsat_map_config}
 
 [Create, view, and manage Satellite configurations](/docs/satellite?topic=satellite-satellite-cli-reference#sat-config-configuration-commands).
@@ -45,7 +45,7 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
     * [`ibmcloud sat config version get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-get).
     * [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-version-rm).
 
-## ibmcloud sat endpoint
+## `ibmcloud sat endpoint`
 {: #icsat_map_endpoint}
 
 [Create, view, and manage Satellite endpoints](/docs/satellite?topic=satellite-satellite-cli-reference#sat-endpoint-commands).
@@ -57,7 +57,7 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
 * [`ibmcloud sat endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-rm).
 * [`ibmcloud sat endpoint update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-endpoint-update).
 
-## ibmcloud sat group
+## `ibmcloud sat group`
 {: #icsat_map_group}
 
 [View and manage Satellite cluster groups](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-commands).
@@ -70,7 +70,7 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
 * [`ibmcloud sat group ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-ls).
 * [`ibmcloud sat group rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-group-rm).
 
-## ibmcloud sat host
+## `ibmcloud sat host`
 {: #icsat_map_host}
 
 [View and modify Satellite host settings](/docs/satellite?topic=satellite-satellite-cli-reference#sat-host-commands).
@@ -83,7 +83,18 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
 * [`ibmcloud sat host rm`](/docs/satellite?topic=satellite-satellite-cli-reference#host-rm).
 * [`ibmcloud sat host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update).
 
-## ibmcloud sat location
+## `ibmcloud sat key`
+{: #icsat_map_key}
+
+View and manage {{site.data.keyword.satelliteshort}} Config keys.
+{: shortdesc}
+
+* [`ibmcloud sat key ls`](/docs/satellite?topic=satellite-satellite-cli-reference#key-ls)
+* [`ibmcloud sat key rm`](/docs/satellite?topic=satellite-satellite-cli-reference#key-rm)
+* [`ibmcloud sat key rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#key-rotate)
+
+
+## `ibmcloud sat location`
 {: #icsat_map_location}
 
 [Create, view, and modify Satellite locations](/docs/satellite?topic=satellite-satellite-cli-reference#sat-location-commands).
@@ -98,7 +109,7 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
 * [`ibmcloud sat location ls`](/docs/satellite?topic=satellite-satellite-cli-reference#location-ls).
 * [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm).
 
-## ibmcloud sat resource
+## `ibmcloud sat resource`
 {: #icsat_map_resource}
 
 [Search and view Kubernetes resources that are managed by Satellite](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands).
@@ -109,7 +120,7 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
     * [`ibmcloud sat resource history get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-history-get).
 * [`ibmcloud sat resource ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls).
 
-## ibmcloud sat service
+## `ibmcloud sat service`
 {: #icsat_map_service}
 
 [View Satellite service clusters](/docs/satellite?topic=satellite-satellite-cli-reference#sat-service-commands).
@@ -117,7 +128,7 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
 
 * [`ibmcloud sat service ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-service-ls).
 
-## ibmcloud sat storage
+## `ibmcloud sat storage`
 {: #icsat_map_storage}
 
 [View and manage Satellite storage resources](/docs/satellite?topic=satellite-satellite-cli-reference#sat-storage-commands).
@@ -145,7 +156,7 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
     * [`ibmcloud sat storage template get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-get).
     * [`ibmcloud sat storage template ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-template-ls).
 
-## ibmcloud sat subscription
+## `ibmcloud sat subscription`
 {: #icsat_map_subscription}
 
 [View and manage Satellite subscriptions to deploy Kubernetes configuration files to your clusters](/docs/satellite?topic=satellite-satellite-cli-reference#sat-config-subscription-commands).
@@ -153,11 +164,12 @@ This page lists all `ibmcloud sat` commands as they are structured in the CLI. F
 
 * [`ibmcloud sat subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-create).
 * [`ibmcloud sat subscription get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-get).
+* [`ibmcloud sat subscription identity set`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-identity-set)
 * [`ibmcloud sat subscription ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-ls).
 * [`ibmcloud sat subscription rm`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-rm).
 * [`ibmcloud sat subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-update).
 
-## ibmcloud sat messages
+## `ibmcloud sat messages`
 {: #icsat_map_messages}
 
 [View current messages from {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-satellite-cli-reference#cli-messages).

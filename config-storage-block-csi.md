@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-06"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -24,6 +24,9 @@ Supported {{site.data.keyword.IBM_notm}} storage systems for Satellite include,
 - {{site.data.keyword.IBM_notm}} Spectrum Virtualize Family including {{site.data.keyword.IBM_notm}} SAN Volume Controller (SVC) and {{site.data.keyword.IBM_notm}} FlashSystem® family members built with {{site.data.keyword.IBM_notm}} Spectrum® Virtualize (FlashSystem 5010, 5030, 5100, 5200, 7200, 9100, 9200, 9200R)
 - {{site.data.keyword.IBM_notm}} FlashSystem A9000 and A9000R
 - {{site.data.keyword.IBM_notm}} DS8000 Family
+
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+{: important}
   
 ## Prerequisites
 {: #sat-storage-block-csi-prereq}

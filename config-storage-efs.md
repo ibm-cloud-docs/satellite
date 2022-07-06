@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-03"
+lastupdated: "2022-07-06"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -19,6 +19,9 @@ Set up [Amazon Elastic File System (EFS)](https://docs.aws.amazon.com/efs/?id=do
 {: shortdesc}
 
 To use AWS EFS storage for your apps, your {{site.data.keyword.satelliteshort}} hosts must reside in AWS. Only static provisioning is supported with this storage template. You must manually provision an [AWS EFS file system](https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html){: external} on AWS before you create your {{site.data.keyword.satelliteshort}} storage configuration. Make sure that the EFS device is in the same VPC and subnet that you used for your AWS hosts, and that your hosts and EFS device use the same security group.
+{: important}
+
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
 ## Prerequisites

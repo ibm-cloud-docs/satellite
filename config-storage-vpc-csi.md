@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-14"
+lastupdated: "2022-07-06"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -18,8 +18,12 @@ subcollection: satellite
 
 The {{site.data.keyword.block_storage_is_short}} Container Storage Interface (CSI) [Driver](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver){: external} allows you to manage the lifecycle of your IBM VPC Block Data volumes.
 
- The template is currently in beta and should not be used for production workloads. 
- {: beta}
+The template is currently in beta. Do not use it for production workloads. 
+{: beta}
+
+
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+{: important}
 
 ## Prerequisites
 {: #sat-storage-vpc-csi-prereq}

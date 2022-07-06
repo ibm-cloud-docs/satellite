@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-06"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -19,6 +19,9 @@ The {{site.data.keyword.IBM_notm}} Spectrum Scale driver is deprecated as of Apr
 
 Set up [{{site.data.keyword.IBM_notm}} Spectrum Scale](https://www.ibm.com/docs/en/spectrum-scale-csi){: external} storage for {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
+
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+{: important}
 
 
 You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale Container Storage Interface (CSI) driver to create persistent storage for stateful apps. that run in your {{site.data.keyword.satelliteshort}} clusters.
