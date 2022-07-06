@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-06"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2139,6 +2139,8 @@ subcollection: satellite
 
 * [`ibmcloud sat host`](/docs/satellite?topic=satellite-icsat_map#icsat_map_host)
 
+* [`ibmcloud sat key`](/docs/satellite?topic=satellite-icsat_map#icsat_map_key)
+
 * [`ibmcloud sat location`](/docs/satellite?topic=satellite-icsat_map#icsat_map_location)
 
 * [`ibmcloud sat resource`](/docs/satellite?topic=satellite-icsat_map#icsat_map_resource)
@@ -2223,6 +2225,14 @@ subcollection: satellite
 
     * [`ibmcloud sat host update`](/docs/satellite?topic=satellite-satellite-cli-reference#host-update)
 
+* [{{site.data.keyword.satelliteshort}} Config key commands](/docs/satellite?topic=satellite-satellite-cli-reference#config-key-commands)
+
+    * [`ibmcloud sat key ls`](/docs/satellite?topic=satellite-satellite-cli-reference#key-ls)
+
+    * [`ibmcloud sat key rm`](/docs/satellite?topic=satellite-satellite-cli-reference#key-rm)
+
+    * [`ibmcloud sat key rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#key-rotate)
+
 * [Location commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-location-commands)
 
     * [`ibmcloud sat location create`](/docs/satellite?topic=satellite-satellite-cli-reference#location-create)
@@ -2292,6 +2302,8 @@ subcollection: satellite
     * [`ibmcloud sat subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-create)
 
     * [`ibmcloud sat subscription get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-get)
+
+    * [`ibmcloud sat subscription identity set`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-identity-set)
 
     * [`ibmcloud sat subscription ls`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-ls)
 
