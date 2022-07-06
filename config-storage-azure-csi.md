@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-14"
+lastupdated: "2022-07-06"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -21,6 +21,9 @@ The Azure Disk CSI driver implements the CSI specification for container orchest
 For an overview of the available features of the Azure Disk CSI driver, see [Features](https://github.com/kubernetes-sigs/azuredisk-csi-driver#features){: external}.
 
 The Azure Disk CSI driver template for {{site.data.keyword.satelliteshort}} is currently available for cluster versions 4.7 and later.
+
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+{: important}
 
 
 ## Prerequisites

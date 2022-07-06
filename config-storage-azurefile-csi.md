@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-21"
+lastupdated: "2022-07-06"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file
 
@@ -24,6 +24,9 @@ For an overview of the available features of the Azure File CSI driver, see [Fea
 
 The Azure File CSI driver template for {{site.data.keyword.satelliteshort}} is currently available for cluster versions 4.7 and later. The template is currently in beta and should not be used for production workloads. 
 {: beta}
+
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+{: important}
 
 ## Prerequisites
 {: #sat-storage-azure-file-csi-prereq}
