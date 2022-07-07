@@ -41,16 +41,24 @@ To use the AWS EFS storage template, complete the following tasks:
 You can use the [console](#sat-storage-aws-efs-ui) or [CLI](#sat-storage-aws-efs-cli) to create an AWS EFS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EFS storage for your apps. 
 {: shortdesc}
 
-### Creating an AWS EBS storage configuration from the console
+### Creating an AWS EFS storage configuration from the console
 {: #sat-storage-aws-efs-ui}
 {: ui}
 
-Use the console to create an AWS EBS storage configuration for your location.
+Use the console to create an AWS EFS storage configuration for your location.
 {: shortdesc}
 
 Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs) and review the [parameter reference](#sat-storage-aws-efs-params-cli).
 
-{sat-storage-config-create-console.md}
+1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
+1. On the **Parameters** tab, enter the parameters for your configuration.
+1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
 
 ### Creating an AWS EFS storage configuration from the CLI
 {: #sat-storage-aws-efs-cli}

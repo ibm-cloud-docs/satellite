@@ -1411,7 +1411,7 @@ subcollection: satellite
 
 * [Creating an AWS EFS storage configuration](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs)
 
-    * [Creating an AWS EBS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-ui)
+    * [Creating an AWS EFS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-ui)
 
     * [Creating an AWS EFS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-cli)
 
