@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud, rhcos
 
@@ -72,7 +72,7 @@ You can SSH into the host machine if you did not assign the host to a cluster, o
 ## Machine cannot be reached on the network
 {: #ts-hosts-login-cannot-reach-rhcos}
 
-You receive output similiar to the following messages.
+You receive output similar to the following messages.
 
 ```sh
 curl: (6) Could not resolve host

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
-keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
+keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
 subcollection: satellite
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # NetApp ONTAP-NAS 21.04
 {: #config-storage-netapp-nas-2104}
 
-Set up [NetApp ONTAP-NAS storage](https://netapp-trident.readthedocs.io/en/stable-v21.04/){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [NetApp ONTAP-NAS storage](https://netapp-trident.readthedocs.io/en/stable-v21.04/){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 Before you can create storage configurations by using the NetApp NAS template, you must deploy the [NetApp ONTAP-NAS template](/docs/satellite?topic=satellite-config-storage-netapp-trident) which installs the required operator.
@@ -24,7 +24,7 @@ Before you can create storage configurations by using the NetApp NAS template, y
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-## Prerequisites
+## Prerequisites for NetApp ONTAP-NAS
 {: #netapp-nas-2104-pre}
 
 - You must configure your backend ONTAP cluster as a Trident backend.
@@ -121,7 +121,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp-nas-2104), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 
-### Assigning a storage configuration in the console
+### Assigning a NetApp ONTAP-NAS storage configuration in the console
 {: #assign-storage-netapp-ui-nas-2104}
 {: ui}
 
@@ -140,7 +140,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuration in the command line
+### Assigning a NetApp ONTAP-NAS storage configuration in the command line
 {: #assign-storage-netapp-cli-nas-2104}
 {: cli}
 
@@ -372,7 +372,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
         ```
         {: pre}
 
-## Upgrading a storage configuration
+## Upgrading a NetApp ONTAP-NAS storage configuration
 {: #netapp-nas-2104-upgrade-config}
 {: cli}
 
@@ -390,7 +390,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-## Upgrading a storage assignment
+## Upgrading a NetApp ONTAP-NAS storage assignment
 {: #netapp-nas-2104-upgrade-assignment}
 {: cli}
 
@@ -414,7 +414,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating a storage assignment
+## Updating a NetApp ONTAP-NAS storage assignment
 {: #netapp-nas-2104-update-assignment}
 {: cli}
 
@@ -582,11 +582,10 @@ For more information about the NetApp ONTAP-NAS configuration parameters, see th
 | `limitAggregateUsage` | Optional | Limit provisioning of volumes if parent volume usage exceeds this value. For example, if a volume is requested that causes parent volume usage to exceed this value, the volume provisioning fails. Example: `70%` | `default is 80%` |
 | `nfsMountOptions` | Optional | Specify the NFS mount version. Example: `nfsvers=4` | `""` |
 {: caption="Table 1. NetApp ONTAP-NAS storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter. The fourth column lists the default value, if it is not already provided."}
 
 
 
-## Storage class reference
+## Storage class reference for NetApp ONTAP-NAS
 {: #netapp-sc-reference-nas-2104}
 
 Before you deploy an app that uses the `sat-netapp` storage classes, review the following notes.
@@ -598,10 +597,10 @@ By default, the `sat-netapp-file-gold` storage class doesn't include any QoS lim
 To use the `sat-netapp-file-silver` and `sat-netapp-file-bronze` storage classes, you must create corresponding `silver` and `bronze` QoS policy groups on the storage controller and define the QoS limits. To create a policy group on the storage system, log in to the system CLI and run the `netapp1::> qos policy-group create -policy-group <policy_group_name> -vserver <svm_name> [-min-throughput <min_IOPS>] -max-throughput <max_IOPS>` command.
 {: note}
 
-***min-throughput*** is only supported on all-flash systems. For more information about creating and managing QoS Policy groups, see the [ONTAP 9 Storage Management documentation](https://docs.netapp.com/ontap-9/index.jsp).
+The ***min-throughput*** optino is supported only on all-flash systems. For more information about creating and managing QoS Policy groups, see the [ONTAP 9 Storage Management documentation](https://docs.netapp.com/ontap-9/index.jsp){: external}.
 {: note}
 
-To use an ***encrypted*** storage class, NetApp Volume Encryption (NVE) must be enabled on your storage system by using either the NetApp ONTAP onboard key manager or a supported (off-box) third-party key manager, such as {{site.data.keyword.IBM_notm}} 's TKLM key manager. To enable the onboard key manager, run the `netapp1::> security key-manager onboard enable` command. For more information about configuring encryption, see the [ONTAP 9 Security and Data Encryption documentation](https://docs.netapp.com/us-en/ontap/security-encryption/index.html).
+To use an ***encrypted*** storage class, NetApp Volume Encryption (NVE) must be enabled on your storage system by using either the NetApp ONTAP onboard key manager or a supported (off-box) third-party key manager, such as {{site.data.keyword.IBM_notm}} 's TKLM key manager. To enable the onboard key manager, run the `netapp1::> security key-manager onboard enable` command. For more information about configuring encryption, see the [ONTAP 9 Security and Data Encryption documentation](https://docs.netapp.com/us-en/ontap/security-encryption/index.html){: external}.
 {: note}
 
 Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-NAS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
@@ -615,10 +614,9 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-file-bronze` | ONTAP-NAS | NFS | User-defined QoS limit. | Encryption disabled. | Delete |
 | `sat-netapp-file-bronze-encrypted` | ONTAP-NAS | NFS | User-defined QoS limit.| Encryption enabled. | Delete |
 {: caption="NetApp ONTAP-NAS storage class reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 
-## Getting help and support
+## Getting help and support for NetApp ONTAP-NAS
 {: #sat-nas-2104-support}
 
 If you run into an issue with using NetApp Trident, you can visit the [NetApp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -114,7 +114,7 @@ To attach RHEL hosts that reside in your on-premises data center to your locatio
 
 9. After you have attached your hosts, assign them to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or use them to create a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
-If your host is not attaching to your location, you can log into the host to debug it. For more information, see [Logging in to a RHEL host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login).
+If your host is not attaching to your location, you can log in to the host to debug it. For more information, see [Logging in to a RHEL host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login).
 {: tip}
 
 ## Attaching on-premises RHCOS hosts to your location
@@ -128,7 +128,7 @@ To attach RHCOS hosts that reside in your on-premises data center to your locati
 4. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
 
-If your host is not attaching to your location, you can log into the host to debug it. For more information, see [Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos).
+If your host is not attaching to your location, you can log in to the host to debug it. For more information, see [Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos).
 {: tip}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -39,7 +39,7 @@ Before you begin, make sure that you have the correct [{{site.data.keyword.cloud
 3. In the **Setup** section, click **Azure**.
 4. In the **Azure credentials** section, enter the **Azure client ID (app ID)**, **Azure tenant ID**, and **Azure secret key (password)** values that you previously created for the service principal.
 5. Click **Fetch options from Azure**.
-6. Review the **Azure environment** details that are prepopulated. By default, enough VMs are created to provide hosts for 1 small location that can run about 2 demo clusters. To change the subscription, region, instance type, or number of VMs for the hosts, click the **Edit** pencil icon.
+6. Review the **Azure environment** details that are automatically populated. By default, enough VMs are created to provide hosts for 1 small location that can run about 2 demo clusters. To change the subscription, region, instance type, or number of VMs for the hosts, click the **Edit** pencil icon.
 7. Review the **Satellite location** details. If you edited the Azure environment details, you might want to click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
 8. In the **Summary** pane, review the cost estimate.
 9. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
@@ -324,7 +324,7 @@ Now that your {{site.data.keyword.satelliteshort}} location is set up, you are r
 4. Create [{{site.data.keyword.satelliteshort}} cluster storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov).
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
-Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting supoort; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
+Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
 
 
 

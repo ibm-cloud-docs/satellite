@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -102,7 +102,7 @@ Before you begin:
 
 1. Continue with [attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to finish the setup of your {{site.data.keyword.satelliteshort}} location control plane. Note that the token in the attach script is an API key, which must be treated and protected as sensitive information. 
 
-The host attach script for your location expires one year from the creation date. To make sure that hosts in your location don't have authentication issues, make sure to redownload the host attach script at least once per year and update any unassigned hosts. For more information, see [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown).
+The host attach script for your location expires one year from the creation date. To make sure that hosts in your location don't have authentication issues, download a new copy of the host attach script at least once per year and update any unassigned hosts. For more information, see [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown).
 {: important}
 
 
@@ -237,7 +237,7 @@ The location control plane runs resources that are managed by {{site.data.keywor
 When you set up the {{site.data.keyword.satelliteshort}} location control plane, keep in mind the following host considerations.
 
 - You must attach compute hosts in groups of 3 to your location that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs) and any provider-specific requirements. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
-- The minimum of 3 hosts for the control plane is for demonstration purposes. However, depending on your control plane set up, 3 hosts might be sufficient for production workloads. To continue to use the location for production workloads, ensure your control plane meets the [suggested high-availability configuration](/docs/satellite?topic=satellite-ha#satellite-ha-setup) for network redundancy, distribution across physical locations, etc. You can also [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) in multiples of 3, such as 6, 9, or 12 hosts.
+- The minimum of 3 hosts for the control plane is for demonstration purposes. However, depending on your control plane set up, 3 hosts might be sufficient for production workloads. To continue to use the location for production workloads, ensure your control plane meets the [suggested high-availability configuration](/docs/satellite?topic=satellite-ha#satellite-ha-setup) for network redundancy, distribution across physical locations, and so on. You can also [attach more hosts to the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) in multiples of 3, such as 6, 9, or 12 hosts.
 - Make sure that your hosts meet the [latency requirements](/docs/satellite?topic=satellite-service-architecture#architecture-latency).
 
 ### Setting up the control plane from the console
@@ -467,4 +467,4 @@ Now that your {{site.data.keyword.satelliteshort}} location is set up, you are r
 4. Create [{{site.data.keyword.satelliteshort}} cluster storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov).
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
-Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting supoort; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
+Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.

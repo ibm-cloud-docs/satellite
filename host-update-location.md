@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Updating {{site.data.keyword.satelliteshort}} location control plane hosts
 {: #host-update-location}
 
-{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates by following a process to detach the hosts from your location, reload the host machine in the infrastructure provider, and reattach and reassign the host to the {{site.data.keyword.satelliteshort}} location control plane.
+{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates by detaching the hosts from your location, reloading the host machine in the infrastructure provider, and reattaching and reassigning the host to the {{site.data.keyword.satelliteshort}} location control plane.
 {: shortdesc}
 
 
@@ -25,27 +25,20 @@ subcollection: satellite
 Review the following considerations before you update your {{site.data.keyword.satelliteshort}} location control plane hosts.
 {: shortdesc}
 
-**How can I tell if a version update is available?**
+How can I tell if a version update is available?
+:    Version updates for hosts become available as the {{site.data.keyword.openshiftlong_notm}} team packages new versions for worker nodes. Typically, worker node version updates are released every two weeks. 
+:    You might check for a version update to meet your required security cadence, such as updates on a monthly or bi-monthly basis. To review available version updates, see the [Version change log for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
 
-Version updates for hosts become available as the {{site.data.keyword.openshiftlong_notm}} team packages new versions for worker nodes. Typically, worker node version updates are released every two weeks. 
+Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?
+:    Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-attach-hosts).
 
-You might check for a version update to meet your required security cadence, such as updates on a monthly or bi-monthly basis. To review available version updates, see the [Version change log for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
+Do the hosts in my {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services have to run the same version as my {{site.data.keyword.satelliteshort}} location control plane?
+:    No, the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane do not have to run the same version as the hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that run in the location, like clusters. However, all hosts in the location must run a supported version.
+:    To review supported {{site.data.keyword.redhat_openshift_notm}} versions that hosts can run, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-openshift_changelog) or run `ibmcloud ks versions` in the command line. 
 
-**Does updating the hosts impact the cluster masters that run in the {{site.data.keyword.satelliteshort}} location control plane?**
-
-Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-attach-hosts).
-
-**Do the hosts in my {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services have to run the same version as my {{site.data.keyword.satelliteshort}} location control plane?**
-
-No, the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane do not have to run the same version as the hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that run in the location, like clusters. However, all hosts in the location must run a supported version.
-
-To review supported {{site.data.keyword.redhat_openshift_notm}} versions that hosts can run, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-openshift_changelog) or run `ibmcloud ks versions` in the command line. 
-
-**Is my {{site.data.keyword.satelliteshort}} location control plane subdomain still reachable when I update the hosts?**
-
-If your location subdomain was created automatically for you, the host IP addresses that are registered for the subdomain are automatically managed for you, such as during an update. 
-
-If you manually registered the host IP addresses for the location subdomain with the `ibmcloud sat location dns register` command when you created the {{site.data.keyword.satelliteshort}} location control plane, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.
+Is my {{site.data.keyword.satelliteshort}} location control plane subdomain still reachable when I update the hosts?
+:    If your location subdomain was created automatically for you, the host IP addresses that are registered for the subdomain are automatically managed for you, such as during an update. 
+:    If you manually registered the host IP addresses for the location subdomain with the `ibmcloud sat location dns register` command when you created the {{site.data.keyword.satelliteshort}} location control plane, make sure that you attach three hosts to the control plane before you begin, and manually register these host IPs for the subdomain. Now, these new hosts process requests for the location. Then, you can update the hosts that were previously used for the subdomain.
 
 ## Updating control plane hosts
 {: #host-update-cp-procedure}

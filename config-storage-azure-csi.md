@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
-keywords: azure storage, satellite storage, satellite config, satellite configurations, 
+keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
 subcollection: satellite
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Azure Disk CSI driver
 {: #config-storage-azure-csi}
 
-The Azure Disk CSI driver implements the CSI specification for container orchestrators to manage the lifecycle of Azure Disk volumes.
+The Azure Disk CSI driver for {{site.data.keyword.satellitelong}} implements the CSI specification so that container orchestration tools can manage the lifecycle of Azure Disk volumes.
 {: shortdesc}
 
 For an overview of the available features of the Azure Disk CSI driver, see [Features](https://github.com/kubernetes-sigs/azuredisk-csi-driver#features){: external}.
@@ -26,13 +26,13 @@ Before you can deploy storage templates to clusters in your location, make sure 
 {: important}
 
 
-## Prerequisites
+## Prerequisites for using Azure Disk
 {: #sat-storage-azure-csi-prereq}
 
 Set up [Azure Disk storage](https://docs.microsoft.com/en-us/azure/aks/azure-disk-csi){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
-To use the Azure Disk CSI driver storage template, complete the following tasks:
+To use the Azure Disk CSI driver storage template, complete the following tasks.
 
 1. Create an Azure location by using the [location template](/docs/satellite?topic=satellite-azure) or manually [adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach). 
     If you choose to manually assign hosts, you must [label your worker nodes](#azure-disk-label-nodes) before creating your storage configuration.
@@ -43,7 +43,7 @@ To use the Azure Disk CSI driver storage template, complete the following tasks:
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure.
 1. [Create your configuration file](#azure-disk-config-file).
 
-### Optional: Labeling your worker nodes
+### Optional: Labeling your worker nodes for Azure Disk
 {: #azure-disk-label-nodes}
 
 Complete the following steps to add the required labels to your worker nodes for the Azure Disk CSI driver template.
@@ -177,14 +177,14 @@ Create a storage configuration in the command line by using the Azure Disk templ
 
 
 
-## Assigning your Azure storage configuration to a cluster
+## Assigning your Azure Disk storage configuration to a cluster
 {: #assign-storage-azure}
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-azure-csi), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
 
 
-### Assigning a storage configuration in the console
+### Assigning an Azure Disk storage configuration in the console
 {: #assign-storage-azure-csi-ui}
 {: ui}
 
@@ -203,7 +203,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuration in the command line
+### Assigning an Azure Disk storage configuration in the command line
 {: #assign-storage-azure-csi-cli}
 {: cli}
 
@@ -437,7 +437,7 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     ```
     {: pre}
 
-## Upgrading a storage configuration
+## Upgrading an Azure Disk storage configuration
 {: #azure-disk-upgrade-config}
 {: cli}
 
@@ -455,7 +455,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-## Upgrading a storage assignment
+## Upgrading an Azure Disk storage assignment
 {: #azure-disk-upgrade-assignment}
 {: cli}
 
@@ -479,7 +479,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating a storage assignment
+## Updating an Azure Disk storage assignment
 {: #azure-disk-update-assignment}
 {: cli}
 
@@ -591,7 +591,7 @@ If you no longer need your Azure Disk configuration, you can remove your apps, P
 If you no longer plan on using Azure Disk storage in your cluster, you can use the CLI unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration uninstalls the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 
@@ -655,7 +655,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
         {: pre}
 
 
-## Parameter reference
+## Parameter reference for Azure Disk storage
 {: #sat-storage-azure-disk-params-cli}
 
 For help finding these parameters, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest){: external}
@@ -673,11 +673,10 @@ For help finding these parameters, see the [Azure CLI documentation](https://doc
 | `securityGroupName` | Required | The security group name. You can find your security group name in the Azure portal by running the `az network nsg list` command. |
 | `vnetName` | Required | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet subnet list` command. |
 {: caption="Table 1. Parameter reference for Azure Disk storage" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates required parameters. The third column is a brief description of the parameter."}
 
 
 
-## Storage class reference
+## Storage class reference for Azure Disk
 {: #azure-disk-sc-ref}
 
 | Storage class name | IOPS range per disk | Size range | Disk type | Reclaim policy | Volume Binding Mode |
@@ -691,9 +690,9 @@ For help finding these parameters, see the [Azure CLI documentation](https://doc
 | `sat-azure-block-bronze`  | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | Immediate |
 | `sat-azure-block-bronze-metro` | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | WaitForFirstConsumer |
 {: caption="Table 2. Storage class reference for Azure Disk storage" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the IOPs range per disk. The third column is the size range . The fourth column is the disk type. The fifth column is the reclaim policy. The sixth column is the volume binding mode."}
 
-## Getting help and support
+
+## Getting help and support for Azure Disk storage
 {: #sat-azure-disk-support}
 
 If you run into an issue with using Azure, you can open an issue in the [Azure Service Portal](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview){: external}. 

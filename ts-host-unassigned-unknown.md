@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-06-24"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud, unassigned, unresponsive
 
@@ -27,11 +27,11 @@ t-ca594kp10egvr0u1usv0-41   67f0bf6701a17c5a0c98   unassigned   Unresponsive   *
 ```
 {: screen}
 
-The host attach script for your location expires one year from the creation date. To make sure that hosts in your location don't have authentication issues, make sure to redownload the host attach script at least once per year and update any unassigned hosts.
+The host attach script for your location expires one year from the creation date. To make sure that hosts in your location don't have authentication issues, make sure to download a new copy of the host attach script at least once per year and update any unassigned hosts.
 {: tsCauses}
 
 
-To resolve this issue, remove the hosts from your location, redownload the host attach script for your location, then reattach the hosts. Repeat the following steps for all unresponsive and unassigned hosts in your location.
+To resolve this issue, remove the hosts from your location, download a new copy of the host attach script for your location, then reattach the hosts. Repeat the following steps for all unresponsive and unassigned hosts in your location.
 {: tsResolve}
 
 1. Remove the unresponsive hosts from your location.
@@ -41,7 +41,7 @@ To resolve this issue, remove the hosts from your location, redownload the host 
     ```
     {: pre}
     
-2. Redownload the host attach script for your location.
+2. Download a new copy of the host attach script for your location.
 
     ```sh
     ibmcloud sat host attach --location LOCATION [--host-label "LABEL"]  [--operating-system SYSTEM] [-q] [--reset-key]

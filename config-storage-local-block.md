@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-07"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -15,13 +15,13 @@ subcollection: satellite
 # Local Storage Operator - Block
 {: #config-storage-local-block}
 
-Set up [Persistent storage using local volumes](https://docs.openshift.com/container-platform/4.6/storage/persistent_storage/persistent-storage-local.html#create-local-pvc_persistent-storage-local){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [Persistent storage using local volumes](https://docs.openshift.com/container-platform/4.6/storage/persistent_storage/persistent-storage-local.html#create-local-pvc_persistent-storage-local){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 When you create a local block storage configuration, you specify the local block storage device paths that you want to make available as persistent volumes (PVs) in your clusters. After you assign the storage configuration to a cluster, {{site.data.keyword.satelliteshort}} deploys the local storage operator which mounts the local disks that you specified in your configuration. The operator further creates the local persistent volumes, and creates the `sat-local-block-gold` storage class which you can use to create persistent volumes claims (PVCs). You can then reference your PVCs in your Kubernetes workloads.
 
 
-## Prerequisites
+## Prerequisites for using local block storage
 {: #sat-storage-local-prereqs}
 
 Before you can create a local block storage configuration, you must identify the worker nodes in your clusters that have the required available disks. Then, label these worker nodes so that the local storage drivers are installed on only these worker nodes.
@@ -125,7 +125,7 @@ When you create your local block storage configuration, you must specify which d
 
 
 
-### Labeling your worker nodes
+### Labeling your worker nodes when using local block storage
 {: #sat-storage-block-local-labels}
 
 After you have [retrieved the device paths for the disks that you want to use in your configuration](#sat-storage-block-local-devices), label the worker nodes where the disks are located.
@@ -220,7 +220,7 @@ You can use the [console](#sat-storage-local-block-ui) or [CLI](#sat-storage-loc
 
 
 
-## Assigning your storage configuration to a cluster
+## Assigning your local block storage configuration to a cluster
 {: #assign-storage-local-block}
 
 After you [create a local block storage configuration](#config-storage-local-block), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
@@ -230,7 +230,7 @@ After you [create a local block storage configuration](#config-storage-local-blo
 
 
 
-### Assigning a storage configuration in the command line
+### Assigning a local block storage configuration in the command line
 {: #assign-storage-local-block-cli}
 {: cli}
 
@@ -446,7 +446,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
 
 9. **Optional** Run the following commands to write data to your block device.
 
-    1. Write "block_data" to the local storage device that you mounted to your app. Replace `<device-path>` with the path to your storage device. Example: `/dev/nvme2n1`.
+    1. Write `"block_data"` to the local storage device that you mounted to your app. Replace `<device-path>` with the path to your storage device. Example: `/dev/nvme2n1`.
     
         ```sh
         kubectl exec <pod_name> -- bash -c "echo "block_data" | dd conv=unblock of=<device-path>"
@@ -476,7 +476,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     ```
     {: pre}
 
-## Upgrading a storage configuration
+## Upgrading a local block storage configuration
 {: #sat-storage-local-block-upgrade-config}
 {: cli}
 
@@ -494,7 +494,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-## Upgrading a storage assignment
+## Upgrading a local block storage assignment
 {: #sat-storage-local-block-upgrade-assignment}
 {: cli}
 
@@ -518,7 +518,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating a storage assignment
+## Updating a local block storage assignment
 {: #sat-storage-local-block-update-assignment}
 {: cli}
 
@@ -528,7 +528,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 If you no longer plan on using local block storage in your cluster, you can unassign your cluster from the storage configuration. 
 {: shortdesc}
 
-Removing the storage configuration, uninstalls the local storage operator resources and the `sat-local-block-gold` storage class from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
+Note that if you remove the storage configuration, the local storage operator resources and the `sat-local-block-gold` storage class are then uninstalled from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
 {: important}
 
 
@@ -719,7 +719,7 @@ Use the console to remove a storage configuration.
 ## Local block storage configuration parameter reference
 {: #sat-storage-local-block-params-cli}
 
-### Version 4.9 parameters
+### Local block storage version 4.9 parameters
 {: #block-49-params}
 
 | Parameter | Required? | Description |
@@ -732,9 +732,8 @@ Use the console to remove a storage configuration.
 | `devicepath` | Required | Enter the local storage device paths in the format `/dev/<device>`. The device path begins with `/dev` and includes the disk that you retrieved earlier. For example: `/dev/nvme2n1`. If you specify more than one device path, be sure to separate them with a comma and do not enter any additional spaces between each path. For example: `/dev/nvme2n1`,`/dev/nvme3n1`. For more information on how to retrieve this value, see [Getting the device details](#sat-storage-block-local-devices). |
 | `auto-discover-devices` | Optional | Set to `true` if you want to automatically discover available devices on your worker nodes. You must have unformatted disks available on your worker nodes to use this feature. If you don't pass this parameter, or if you pass `auto-discover-devices=false`, you must specify the `osd-device-path` parameter. | false | boolean |
 {: caption="Table 1. Local block storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is a required parameter. The third column is a brief description of the parameter. The third column is the default value of the parameter."}
 
-### Versions 4.6-4.8 parameters
+### Local block storage versions 4.6-4.8 parameters
 {: #block-46-48-params}
 
 | Parameter | Required? | Description |
@@ -746,11 +745,10 @@ Use the console to remove a storage configuration.
 | `label-value` | Required | Enter the node label value that you added to the worker nodes where you want to install the local storage driver. The local storage drivers are installed only on the worker nodes that have the corresponding label. In the previous example, the label value is `local-block`. |
 | `devicepath` | Required | Enter the local storage device paths in the format `/dev/<device>`. The device path begins with `/dev` and includes the disk that you retrieved earlier. For example: `/dev/nvme2n1`. If you specify more than one device path, be sure to separate them with a comma and do not enter any additional spaces between each path. For example: `/dev/nvme2n1`,`/dev/nvme3n1`. For more information on how to retrieve this value, see [Getting the device details](#sat-storage-block-local-devices). |
 {: caption="Table 2. Local block storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is a required parameter. The third column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 
 
-## Storage class reference
+## Storage class reference for local block storage
 {: #local-block-sc-ref}
 
 Review the {{site.data.keyword.satelliteshort}} storage classes for local block storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
@@ -760,10 +758,9 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 | --- | --- | --- |
 | `sat-local-block-gold` | Block | Retain |
 {: caption="Table 2. Local block storage class reference" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
 
 
-## Getting help and support
+## Getting help and support for local block storage
 {: #sat-local-block-support}
 
 If you run into an issue with using the Local Storage Operator - Block template, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}. 

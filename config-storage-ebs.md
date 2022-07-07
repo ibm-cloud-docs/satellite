@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
-keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage
+keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
 subcollection: satellite
 ---
@@ -14,7 +14,7 @@ subcollection: satellite
 # AWS EBS
 {: #config-storage-ebs}
 
-Set up [Amazon Elastic Block Storage (EBS)](https://docs.aws.amazon.com/ebs/?id=docs_gateway){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [Amazon Elastic Block Storage (EBS)](https://docs.aws.amazon.com/ebs/?id=docs_gateway){: external} for {{site.data.keyword.satellitelong}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 When you create your AWS EBS storage configuration, you provide your AWS credentials which are stored as a Kubernetes secret in the clusters that you assign your configuration to. The secret is mounted inside the CSI controller pod so that when you create a PVC by using one of the {{site.data.keyword.IBM_notm}}-provided storage classes, your AWS credentials are used to dynamically provision an EBS instance.
@@ -25,7 +25,7 @@ To use AWS EBS storage for your apps, the {{site.data.keyword.satelliteshort}} h
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-## Prerequisites
+## Prerequisites for using AWS EBS
 {: #aws-ebs-prereq}
 
 To use the AWS EBS storage template, complete the following tasks:
@@ -117,7 +117,7 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 
 
 
-### Assigning your storage configuration to clusters or cluster groups from the CLI
+### Assigning your AWS EBS storage configuration to clusters or cluster groups from the CLI
 {: #ebs-config-assign}
 {: cli}
 
@@ -393,7 +393,7 @@ Removing your AWS EBS instance permanently removes all the data that is stored o
 
     2. From the [AWS EC2 dashboard](https://console.aws.amazon.com/ec2/v2/home){: external}, select **Elastic Block Store** > **Volumes** and verify that your AWS EBS instance is removed.
 
-## Upgrading a storage configuration
+## Upgrading an AWS EBS storage configuration
 {: #aws-ebs-upgrade-config}
 {: cli}
 
@@ -411,7 +411,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-## Upgrading a storage assignment
+## Upgrading an AWS EBS storage assignment
 {: #aws-ebs-upgrade-assignment}
 {: cli}
 
@@ -435,7 +435,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating a storage assignment
+## Updating an AWS EBS storage assignment
 {: #aws-ebs-update-assignment}
 {: cli}
 
@@ -466,7 +466,7 @@ You can use the `storage assignment update` command to rename your assignment or
 If you no longer plan on using AWS EBS storage in your cluster, you can unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration, uninstalls the AWS EBS driver from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 
@@ -475,7 +475,7 @@ Removing the storage configuration, uninstalls the AWS EBS driver from all assig
 {: #aws-ebs-template-rm-ui}
 {: ui}
 
-Use the console to remove a storage configuration.
+Use the console to remove the AWS EBS storage configuration.
 {: shortdesc}
 
 1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
@@ -487,7 +487,7 @@ Use the console to remove a storage configuration.
 {: #aws-ebs-template-rm-cli}
 {: cli}
 
-Use the CLI to remove a storage configuration.
+Use the CLI to remove the AWS EBS storage configuration.
 {: shortdesc}
 
 1. List your storage assignments and find the one that you used for your cluster.
@@ -549,9 +549,8 @@ Review the AWS EBS storage configuration parameters.
 | `aws-access-key` | Required | Enter your AWS access key. For more information about how retrieve this value, see the [AWS IAM documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external}. |
 | `aws-secret-access-key` | Required | Enter your AWS secret access key. For more information about how retrieve this value, see the [AWS IAM documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external}. |
 {: caption="Table 1. AWS EBS parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
-## Storage class reference
+## Storage class reference for AWS EBS
 {: #sat-ebs-sc-reference}
 
 Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. Note that data volumes are automatically encrypted by an AWS managed default key. For more information, see [Default KMS key for EBS encryption](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_key_mgmt){: external}. For more information on AWS EBS encryption, see [How AWS EBS encryption works](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#how-ebs-encryption-works){: external}.
@@ -566,7 +565,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the volume type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the default IOPs per GB. The size column is the supported size range. The seventh column is disk type. The eighth column is encryption support. The ninth column is the volume binding mode. The tenth column is the reclaim policy."}
 
 
-## Getting help and support
+## Getting help and support for AWS EBS
 {: #sat-ebs-support}
 
 If you run into an issue with using AWS EBS, you can refer to the [AWS Knowledge Center](https://aws.amazon.com/premiumsupport/knowledge-center/){: external} and review some documentation for the most frequently asked questions for various AWS services. The [AWS Support Center](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fsupport%2Fhome%3Fstate%3DhashArgs%2523%252F%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fsupportcenter&forceMobileApp=0&code_challenge=u3nT-WHT9gSG_PS93w4dwD6R_PWLj1eOU9GLUMEOkzo&code_challenge_method=SHA-256){: external} is another resource available to AWS customers looking for more in-depth support options. 

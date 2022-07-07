@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud, tenancy
 
@@ -43,7 +43,7 @@ Keep extra hosts available and unassigned in the location
 | --- | --- | --- | --- |
 | - Prepare requirements template & review client requirements.  \n - Prepare quote.  \n - Create client accounts, locations, and clusters, and API keys. | - Perform requirements assessment.  \n - Complete the requirements template.  \n - Review and approve quote.  \n - Review and confirm environment setup.  \n - Assign cluster operator and developer roles. | Verify cluster operator permissions | Verify cluster developer permissions |
 {: caption="Example responsibility matrix for resellers." caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column describes the reseller enterprise responsibilites. The second column describes the client cluster admin responsibilities. The third column describes the client cluster operator permissions. The fourth column describes the client cluster developer permissions."}
+{: summary="The rows are read from left to right. The first column describes the reseller enterprise responsibilities. The second column describes the client cluster admin responsibilities. The third column describes the client cluster operator permissions. The fourth column describes the client cluster developer permissions."}
 
 ## Setting up your account
 {: #account-setup-tenancy}
@@ -71,7 +71,7 @@ Want to automate this step? After you create an account, you can use the IBM ter
 
 1. In the client account, [provision a {{site.data.keyword.monitoringshort}} instance](/docs/monitoring?topic=monitoring-provision#provision).
 
-1. In the client account, [provision a {{site.data.keyword.cos_full_notm}} instance](/docs/monitoring?topic=monitoring-provision#provision).
+1. In the client account, [provision an {{site.data.keyword.cos_full_notm}} instance](/docs/monitoring?topic=monitoring-provision#provision).
 
 
 Repeat the steps for creating a client account for each client that you add to your enterprise. Then, continue the following steps to setting up the location and cluster.
@@ -135,7 +135,7 @@ Before you begin:
 
 1. Continue with [attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to finish the setup of your {{site.data.keyword.satelliteshort}} location control plane. Note that the token in the attach script is an API key, which must be treated and protected as sensitive information. 
 
-The host attach script for your location expires one year from the creation date. To make sure that hosts in your location don't have authentication issues, make sure to redownload the host attach script at least once per year and update any unassigned hosts. For more information, see [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown).
+The host attach script for your location expires one year from the creation date. To make sure that hosts in your location don't have authentication issues, download a new copy of the host attach script at least once per year and update any unassigned hosts. For more information, see [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown).
 {: important}
 
 

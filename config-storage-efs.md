@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -24,7 +24,7 @@ To use AWS EFS storage for your apps, your {{site.data.keyword.satelliteshort}} 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-## Prerequisites
+## Prerequisites for using AWS EFS
 {: #sat-storage-efs-prereqs}
 
 To use the AWS EFS storage template, complete the following tasks:
@@ -111,7 +111,7 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
 
 
 
-### Assigning your storage configuration to clusters or cluster groups
+### Assigning your AWS EFS storage configuration to clusters or cluster groups
 {: #efs-config-assign}
 {: cli}
 
@@ -315,7 +315,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
 
 8. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you used and verify that the file system grows in size.   
 
-## Upgrading a storage configuration
+## Upgrading an AWS EFS storage configuration
 {: #aws-efs-upgrade-config}
 {: cli}
 
@@ -333,7 +333,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-## Upgrading a storage assignment
+## Upgrading an AWS EFS storage assignment
 {: #aws-efs-upgrade-assignment}
 {: cli}
 
@@ -357,7 +357,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating a storage assignment
+## Updating an AWS EFS storage assignment
 {: #aws-efs-update-assignment}
 {: cli}
 
@@ -433,7 +433,7 @@ Removing your AWS EFS instance permanently removes all the data that is stored o
 If you no longer plan on using AWS EFS storage in your cluster, you can unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration, uninstalls the AWS EFS driver from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 
@@ -505,9 +505,9 @@ Use the CLI to remove a storage configuration.
 | `--template-name` | Required | Enter `aws-efs-csi-driver`. | N/A |
 | `--template-version` | Required | Enter the version of the `aws-efs-csi-driver` template that you want to use. To get a list of storage templates and versions, run `ibmcloud sat storage template ls`. | N/A |
 {: caption="Table 1. AWS EFS parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
-## Storage class reference
+
+## Storage class reference for AWS EFS
 {: #efs-sc-reference}
 
 Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
@@ -517,10 +517,9 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You
 | --- | --- | --- |
 | `sat-aws-file-gold` **Default** | NFS | Delete |
 {: caption="Table 2. AWS EFS storage class reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
 
 
-## Getting help and support
+## Getting help and support for AWS EFS
 {: #sat-efs-support}
 
 If you run into an issue with using AWS EFS, you can refer to the [AWS Knowledge Center](https://aws.amazon.com/premiumsupport/knowledge-center/){: external} and review some documentation for the most frequently asked questions for various AWS services. The [AWS Support Center](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fsupport%2Fhome%3Fstate%3DhashArgs%2523%252F%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fsupportcenter&forceMobileApp=0&code_challenge=u3nT-WHT9gSG_PS93w4dwD6R_PWLj1eOU9GLUMEOkzo&code_challenge_method=SHA-256){: external} is another resource available to AWS customers looking for more in-depth support options. 

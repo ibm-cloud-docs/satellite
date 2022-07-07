@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-08"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud, use case
 
@@ -132,7 +132,7 @@ An IoT service platform can be delivered on cloud or on-premises to meet the use
 {: shortdesc}
 
 Pain points:
-:   For plants with stringent security network requirements, it is not possible to deliver IoT services in the same way as cloud. For these plants, services must be built separately.
+:   For plants with stringent security network requirements, it is impossible to deliver IoT services in the same way as cloud. For these plants, services must be built separately.
 
 {{site.data.keyword.satelliteshort}} enables:
 :   IoT service platform that was previously only available on cloud to be deployed within the customer’s plant, benefiting from use of cloud-like services.
@@ -156,7 +156,7 @@ When providing platform-based management services and data services to store POS
 {: shortdesc}
 
 Pain points:
-:   It is hard to build a service platform that can provide a function for collecting the latest data and other added value, in order to  deliver services leveraging data from POS and MFP equipment. Customers have unique requirements for their system environments, preventing cost effective rollout of the same services.
+:   It is hard to build a service platform that can provide a function for collecting the latest data and other added value to deliver services leveraging data from POS and MFP equipment. Customers have unique requirements for their system environments, preventing cost effective rollout of the same services.
 
 {{site.data.keyword.satelliteshort}} enables: 
 :   It enables delivery of services to both cloud and on-premises environments according to customer requirements, making it easier to integrate with customer servers. Similar experience regardless of environment enables customers to distribute and manage applications using the latest microservices anytime.
@@ -188,7 +188,7 @@ Pain points:
 ### Deploying applications on-premises, only scaling out to cloud during peak times
 {: #use-case-manufacture6}
 
-Using {{site.data.keyword.satelliteshort}} enables applications to be deployed anywhere, on-premises or on cloud. This capability can be used to scale-out (auto-scale) to cloud during peak times such as new product releases to optimize cost.
+Using {{site.data.keyword.satelliteshort}} enables applications to be deployed anywhere, on-premises or on cloud. This capability can be used to scale-out (autoscale) to cloud during peak times such as new product releases to optimize cost.
 {: shortdesc}
 
 Pain points:

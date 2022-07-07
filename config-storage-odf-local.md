@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
-keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, local storage
+keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
 subcollection: satellite
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # OpenShift Data Foundation using local disks
 {: #config-storage-odf-local}
 
-Set up OpenShift Data Foundation for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up OpenShift Data Foundation for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 OpenShift Data Foundation is available in only internal mode, which means that your apps run in the same cluster as your storage. External mode, or storage heavy configurations, where your storage is located in a separate cluster from your apps is not supported.
@@ -26,7 +26,7 @@ OpenShift Data Foundation is available in only internal mode, which means that y
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-## Prerequisites
+## Prerequisites for ODF
 {: #sat-storage-odf-local-prereq}
 
 To use the ODF storage with the local storage operator and local storage devices, complete the following tasks:
@@ -45,7 +45,7 @@ To use the ODF storage with the local storage operator and local storage devices
 1. **Optional**: [Get the details of the raw, unformatted devices that you want to use for your configuration](#sat-storage-odf-local-devices). The device IDs of your storage disks are used to create your {{site.data.keyword.satelliteshort}} storage configuration.
 
 
-## (Optional) Setting up an {{site.data.keyword.cos_full_notm}} backing store
+## (Optional) Setting up an {{site.data.keyword.cos_full_notm}} backing store for ODF
 {: #sat-storage-odf-local-cos}
 
 If you want to use {{site.data.keyword.cos_full_notm}} as your object service, create an {{site.data.keyword.cos_short}} service instance and HMAC credentials. The {{site.data.keyword.cos_short}} instance that you create is the NooBaa backing store in your ODF configuration. The backing store is the underlying storage for the data in your NooBaa buckets. If you don't specify an {{site.data.keyword.cos_full_notm}} service instance when you create your storage configuration, the default NooBaa backing store is configured. You can create more backing stores, including {{site.data.keyword.cos_full_notm}} backing stores after assigning the configuration to to your clusters and installing ODF.
@@ -694,7 +694,7 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
 If you no longer plan to use OpenShift Data Foundation in your cluster, you can remove the assignment from your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration uninstalls the ODF operators from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Note that if you remove the storage configuration, the ODF operators is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 
@@ -849,7 +849,7 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 ## OpenShift Data Foundation configuration parameter reference
 {: #sat-storage-odf-local-params-cli}
 
-### Version 4.9 parameters
+### ODF version 4.9 parameters
 {: #odf-params-49}
 
 | Parameter | Required? | Description | Default value if not provided | Data type | 
@@ -870,9 +870,8 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 | `ocs-upgrade` | Optional | Set to `true` if you want to upgrade the major version of ODF while creating a configuration of the newer version. | false | `boolean`|
 | `auto-discover-devices` | Optional | Set to `true` if you want to automatically discover available devices on your worker nodes. You must have unformatted disks available on your worker nodes to use this feature. If you don't pass this parameter, or if you pass `auto-discover-devices=false`, you must specify the `osd-device-path` parameter. | false | boolean |
 {: caption="Table 1. OpenShift Container storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is optional. The third column is a brief description of the parameter. The fourth column is the default value of the parameter."}
 
-### Version 4.8 parameters
+### ODF version 4.8 parameters
 {: #odf-params-48}
 
 | Parameter | Required? | Description | Default value if not provided | Data type | 
@@ -893,9 +892,9 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 | `ocs-upgrade` | Optional | Set to `true` if you want to upgrade the major version of ODF while creating a configuration of the newer version. | false | `boolean`|
 | `auto-discover-devices` | Optional | Set to `true` if you want to automatically discover available devices on your worker nodes. You must have unformatted disks available on your worker nodes to use this feature. If you don't pass this parameter, or if you pass `auto-discover-devices=false`, you must specify the `osd-device-path` parameter. | false | boolean |
 {: caption="Table 2. OpenShift Container storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is optional. The third column is a brief description of the parameter. The fourth column is the default value of the parameter."}
 
-### Version 4.7 parameters
+
+### ODF version 4.7 parameters
 {: #odf-params-47}
 
 | Parameter | Required? | Description | Default value if not provided | Data type | 
@@ -916,12 +915,11 @@ Removing the storage configuration uninstalls the ODF operators from all assigne
 | `billing-type` | Optional | Enter the billing option that you want to use. You can enter either `essentials` or `advanced`. | `advanced` | `string` |
 | `ocs-upgrade` | Optional | Set to `true` if you want to upgrade the major version of ODF while creating a configuration of the newer version. | false | `boolean`|
 {: caption="Table 3. OpenShift Container storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is optional. The third column is a brief description of the parameter. The fourth column is the default value of the parameter."}
 
 
 
 
-## Storage class reference
+## Storage class reference for ODF
 {: #sat-storage-odf-local-sc-ref}
 
 Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Data Foundation. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
@@ -936,7 +934,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-cephrbd-gold-metro` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 | `sat-ocs-cephfs-gold-metro` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 {: caption="Table 4. Storage class reference for OpenShift Container storage" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
 
 
 

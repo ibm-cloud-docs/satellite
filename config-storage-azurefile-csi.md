@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
-keywords: azure, azure storage, satellite storage, satellite, config, configurations, file
+keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
 subcollection: satellite
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Azure File CSI Driver
 {: #config-storage-azurefile-csi}
 
-The Azure File CSI driver implements the CSI specification for container orchestrators to manage the lifecycle of Azure File volumes.
+The Azure File CSI driver for {{site.data.keyword.satellitelong}} implements CSI specification so that container orchestration tools can manage the lifecycle of Azure File volumes.
 {: shortdesc}
 
 For an overview of the available features of the Azure File CSI driver, see [Features](https://github.com/kubernetes-sigs/azurefile-csi-driver#features){: external}. 
@@ -28,7 +28,7 @@ The Azure File CSI driver template for {{site.data.keyword.satelliteshort}} is c
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-## Prerequisites
+## Prerequisites for using Azure File
 {: #sat-storage-azure-file-csi-prereq}
 
 Set up [Azure File storage](https://docs.microsoft.com/en-us/azure/aks/azure-files-csi){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
@@ -47,7 +47,7 @@ To use the Azure File CSI driver storage template, complete the following tasks.
 
 1. [Create your configuration file](#sat-storage-azure-file-csi-cli).
 
-### Optional: Labeling your worker nodes
+### Optional: Labeling your worker nodes when using Azure File
 {: #azure-file-label-nodes}
 
 Complete the following steps to add the required labels to your worker nodes for the Azure File CSI driver template.
@@ -151,13 +151,13 @@ Create a storage configuration in the command line by using the Azure File templ
 
 
 
-## Assigning your Azure storage configuration to a cluster
+## Assigning your Azure file storage configuration to a cluster
 {: #assign-storage-azurefile}
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-azurefile-csi), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
 
-### Assigning a storage configuration in the console
+### Assigning an Azure File storage configuration in the console
 {: #assign-storage-azurefile-csi-ui}
 {: ui}
 
@@ -175,7 +175,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     1. Click the **Subscription** that you created and review the **Rollout status** for your configuration.
 
 
-### Assigning a storage configuration in the command line 
+### Assigning an Azure File storage configuration in the command line 
 {: #assign-storage-azurefile-csi-cli}
 {: cli}
 
@@ -403,7 +403,7 @@ You can use the Azure File driver to create PVCs that you can use in your cluste
     ```
     {: pre}
 
-## Upgrading a storage configuration
+## Upgrading an Azure File storage configuration
 {: #azure-file-upgrade-config}
 {: cli}
 
@@ -421,7 +421,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-## Upgrading a storage assignment
+## Upgrading an Azure File storage assignment
 {: #azure-file-upgrade-assignment}
 {: cli}
 
@@ -445,7 +445,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating a storage assignment
+## Updating an Azure File storage assignment
 {: #azure-file-update-assignment}
 {: cli}
 
@@ -554,7 +554,7 @@ If you no longer need your Azure File configuration, you can remove your apps, P
 If you no longer plan on using Azure File storage in your cluster, you can use the CLI unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration uninstalls the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 ### Removing the Azure File storage configuration from the console
@@ -617,7 +617,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
         {: pre}
 
 
-## Parameter reference
+## Parameter reference for Azure File
 {: #sat-storage-azure-file-params-cli}
 
 For help finding these parameters, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest){: external}
@@ -636,10 +636,9 @@ For help finding these parameters, see the [Azure CLI documentation](https://doc
 | `vnetName` | Required | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet subnet list` command. |
 | `subnetName` | Required | The name the subnet under the provided VNet. If the nodes are distributed across multiple subnets, you must provide **one** of the subnet names when creating the configuration. You can find your subnet name by running the `az network vnet subnet list` command. | 
 {: caption="Table 1. Parameter reference for Azure Disk storage" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates required parameters. The third column is a brief description of the parameter."}
 
 
-## Storage class reference
+## Storage class reference for Azure File
 {: #azure-file-sc-ref}
 
 | Storage class name | Reclaim policy | Volume Binding Mode |
@@ -653,6 +652,5 @@ For help finding these parameters, see the [Azure CLI documentation](https://doc
 | `sat-azure-file-bronze` | Delete | Immediate |
 | `sat-azure-file-bronze-metro` | Delete | WaitForFirstConsumer |
 {: caption="Table 2. Storage class reference for Azure File storage" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the reclaim policy. The third column is the volume binding mode."}
 
 
