@@ -113,8 +113,7 @@ Let's Encrypt certificates are automatically generated for several {{site.data.k
 | Worker node connection to the API server | 10.240.128.09 | 3 years | You | [Update hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers). |
 | {{site.data.keyword.satelliteshort}} control plane master API endpoint | `http://c103-1.containers.cloud.ibm.com/` | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | Regenerated during automated rollouts for major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane master hosts. |
 | {{site.data.keyword.satelliteshort}} control plane master hosts | - | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | [Update control plane hosts](/docs/satellite?topic=satellite-host-update-location). |
-{: caption="Certificates for {{site.data.keyword.satelliteshort}} domains and hosts" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the name of the {{site.data.keyword.satelliteshort}} component. The second column shows an example of the domain for which the certificate is issued. The third column is the amount of time that the certificate is valid for. The fourth column indicates whether you or {{site.data.keyword.IBM_notm}} is responsible for certificate regeneration. The fifth column describes the process during which the certificate is regenerated."}
+{: caption="Certificates for Satellite domains and hosts" caption-side="top"}
 
 
 ## Platform compliance and certification

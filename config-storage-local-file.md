@@ -15,7 +15,7 @@ subcollection: satellite
 # Local Storage Operator - File
 {: #config-storage-local-file}
 
-Set up [Persistent storage using local volumes](https://docs.openshift.com/container-platform/4.6/storage/persistent_storage/persistent-storage-local.html#create-local-pvc_persistent-storage-local){: external} for {{site.data.keyword.satelliteshort}} clusters.You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [Persistent storage using local volumes](https://docs.openshift.com/container-platform/4.6/storage/persistent_storage/persistent-storage-local.html#create-local-pvc_persistent-storage-local){: external} for {{site.data.keyword.satellitelong}} clusters.You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 When you create a local file storage configuration, you specify the local storage devices that you want to make available as persistent volumes (PVs) in your clusters. After you assign the storage configuration to a cluster, {{site.data.keyword.satelliteshort}} deploys the local storage operator which mounts the local disks that you specified in your configuration. The operator further creates the persistent volumes with the file system type that you specify, and creates the `sat-local-file-gold` storage class which you can use to create persistent volume claims (PVCs). You can then reference your PVCs in your Kubernetes workloads.
@@ -24,7 +24,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 {: important}
 
 
-## Prerequisites
+## Prerequisites for local file storage
 {: #config-storage-local-file-prereqs}
 
 Before you can create a local file storage configuration, you must identify the worker nodes in your clusters that have the required available disks. Then, label these worker nodes so that the local storage drivers are installed on only these worker nodes.
@@ -98,7 +98,7 @@ When you create your file storage configuration, you must specify which devices 
 
 
 
-### Labeling your worker nodes
+### Labeling your worker nodes when using local file storage
 {: #sat-storage-file-local-labels}
 
 After you have [retrieved the device paths for the disks that you want to use in your configuration](#sat-storage-file-local-devices), label the worker nodes where the disks are located.
@@ -221,13 +221,13 @@ You can use the [console](#sat-storage-local-file-ui) or [CLI](#sat-storage-loca
 
 
 
-## Assigning your storage configuration to a cluster
+## Assigning your local file storage configuration to a cluster
 {: #assign-storage-local-file}
 
 After you [create a local {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-local-file), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 
-### Assigning a storage configuration in the console
+### Assigning a local file storage configuration in the console
 {: #assign-storage-local-file-ui}
 {: ui}
 
@@ -247,7 +247,7 @@ After you [create a local {{site.data.keyword.satelliteshort}} storage configura
 
 
 
-### Assigning a storage configuration in the command line
+### Assigning a local file storage configuration in the command line
 {: #assign-storage-local-file-cli}
 {: cli}
 
@@ -480,7 +480,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     {: pre}
 
 
-## Upgrading a storage configuration
+## Upgrading a local file storage configuration
 {: #sat-storage-local-file-upgrade-config}
 {: cli}
 
@@ -498,7 +498,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-## Upgrading a storage assignment
+## Upgrading a local file storage assignment
 {: #sat-storage-local-file-upgrade-assignment}
 {: cli}
 
@@ -522,7 +522,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating a storage assignment
+## Updating a local file storage assignment
 {: #sat-storage-local-file-update-assignment}
 {: cli}
 
@@ -720,7 +720,7 @@ Use the console to remove a storage configuration.
 ## Local file storage configuration parameter reference
 {: #sat-storage-local-file-params-cli}
 
-### Version 4.9 parameters
+### Local file storage version 4.9 parameters
 {: #file-49-params}
 
 | Parameter | Required? | Description |
@@ -734,9 +734,8 @@ Use the console to remove a storage configuration.
 | `fstype` | Required | Enter the file system type that you want to use on your local disks. The supported file system types are: `xfs`, `ext`, `ext3`, and `ext4`.  Example: `ext4`. |
 | `auto-discover-devices` | Optional | Set to `true` if you want to automatically discover available devices on your worker nodes. You must have unformatted disks available on your worker nodes to use this feature. If you don't pass this parameter, or if you pass `auto-discover-devices=false`, you must specify the `osd-device-path` parameter. | false | boolean |
 {: caption="Table 1. Local file storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is a required parameter. The third column is a brief description of the parameter."}
 
-### Versions 4.6-4.8 parameters
+### Local file storage versions 4.6-4.8 parameters
 {: #file-46-48-params}
 
 | Parameter | Required? | Description |
@@ -753,7 +752,7 @@ Use the console to remove a storage configuration.
 
 
 
-## Storage class reference
+## Storage class reference for local file storage
 {: #local-file-sc-reference}
 
 Review the {{site.data.keyword.satelliteshort}} storage classes for local file storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
@@ -763,9 +762,9 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 | --- | --- | --- |
 | `sat-local-file-gold` | `ext4` or `xfs` | Retain |
 {: caption="Table 2. Local file storage class reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the reclaim policy."}
 
-## Getting help and support
+
+## Getting help and support for local file storage
 {: #sat-local-block-support}
 
 If you run into an issue with using the Local Storage Operator - File template, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}. 

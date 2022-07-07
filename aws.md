@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2022
 lastupdated: "2022-07-07"
 
-keywords: satellite, hybrid, multicloud, aws, amazon web services
+keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
 subcollection: satellite
 
@@ -40,10 +40,10 @@ Before you begin, make sure that you have the correct [{{site.data.keyword.cloud
 3. In the **Setup** section, click **Amazon Web Services**.
 4. In the **AWS credentials** section, enter the **AWS access key ID** and **AWS secret access key** values that you previously created.
 5. Click **Fetch options from AWS**.
-7. Review the **Satellite location** details. If you edited the AWS EC2 instances, you might want to click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
-8. In the **Summary** pane, review the cost estimate.
-9. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
-10. Optional: To review the provisioning progress, review the logs in the {{site.data.keyword.bpshort}} workspace that is automatically created for you.
+6. Review the **Satellite location** details. If you edited the AWS EC2 instances, you might want to click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
+7. In the **Summary** pane, review the cost estimate.
+8. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
+9. Optional: To review the provisioning progress, review the logs in the {{site.data.keyword.bpshort}} workspace that is automatically created for you.
     1. Click **Manage in Schematics**. If you see an error, navigate to the [{{site.data.keyword.bpshort}} workspaces console](https://cloud.ibm.com/schematics/workspaces){: external} and click the name of your workspace, such as `us.east.cartOrder...`.
     2. From the **Activity** tab, find the current activity row and click **View log** to review the log details.
     3. Wait for the {{site.data.keyword.bpshort}} action to finish and the workspace to enter an **Active** state.
@@ -166,7 +166,7 @@ Review the following suggested [AWS EC2 instance types](https://aws.amazon.com/e
 {: caption="AWS instance types" caption-side="top"}
 
 
-## Security group settings
+## Security group settings for AWS
 {: #aws-reqs-secgroup}
 
 As described in the [host networking requirements](/docs/satellite?topic=satellite-reqs-host-network), your AWS hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. If you use hosts in a virtual private cloud (VPC), you can create a security group similar to the following example. You can get the owner, group, user, and VPC IDs from your AWS provider resources.

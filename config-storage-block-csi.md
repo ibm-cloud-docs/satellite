@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # {{site.data.keyword.IBM_notm}} Systems block storage CSI driver
 {: #config-storage-block-csi}
 
-The block storage CSI driver is based on an {{site.data.keyword.IBM_notm}} open-source project, and integrated into the {{site.data.keyword.IBM_notm}} Storage orchestration for containers. {{site.data.keyword.IBM_notm}} Storage orchestration for containers enables enterprises to implement a modern container-driven hybrid multicloud environment that can reduce IT costs and enhance business agility, while continuing to derive value from existing systems.
+The block storage CSI driver for {{site.data.keyword.satellitelong}} is based on an {{site.data.keyword.IBM_notm}} open-source project, and integrated into the {{site.data.keyword.IBM_notm}} Storage orchestration for containers. {{site.data.keyword.IBM_notm}} Storage orchestration for containers enables enterprises to implement a modern container-driven hybrid multicloud environment that can reduce IT costs and enhance business agility, while continuing to derive value from existing systems.
 
 For full release notes, compatibility, installation, and user information, see the [block storage CSI driver documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0){: external}.
 
@@ -28,7 +28,7 @@ Supported {{site.data.keyword.IBM_notm}} storage systems for Satellite include,
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
   
-## Prerequisites
+## Prerequisites for using block storage
 {: #sat-storage-block-csi-prereq}
 
 Be sure to complete all prerequisite and installation steps before assigning hosts to your location. Do not create a Kubernetes cluster.
@@ -96,7 +96,7 @@ Be sure to complete all prerequisite and installation steps before assigning hos
 
 
 
-## Assigning your block storage configuration to a cluster
+## Assigning your {{site.data.keyword.IBM_notm}} block storage configuration to a cluster
 {: #assign-storage-block-csi}
 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-block-csi), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
@@ -105,7 +105,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuration in the command line
+### Assigning a block storage configuration in the command line
 {: #assign-storage-block-csi-cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.

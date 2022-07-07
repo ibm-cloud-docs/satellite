@@ -477,7 +477,7 @@ Use the CLI to remove a storage configuration.
 
 5. [Clean up your Spectrum Scale deployment](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=installation-cleaning-up-spectrum-scale-container-storage-interface-driver-operator-by-using-clis){: external}.
 
-## Troubleshooting
+## Troubleshooting for Spectrum Scale
 {: #ess-ts}
 
 ### Rebuilding the portability layer
@@ -499,13 +499,13 @@ sudo cp /usr/src/kernels/3.10.0-1160.15.2.el7.x86_64/include/uapi/linux/*.h /usr
 ```
 {: codeblock}
 
-## Additional references
+## Additional references for Spectrum Scale
 {: #sat-storage-spectrum-scale-ref}
 
 * [{{site.data.keyword.IBM_notm}} Spectrum Scale CSI driver documentation](https://www.ibm.com/docs/en/spectrum-scale-csi){: external}.
 * [Cleaning up your Spectrum Scale deployment](https://www.ibm.com/docs/en/spectrum-scale-csi?topic=installation-cleaning-up-spectrum-scale-container-storage-interface-driver-operator-by-using-clis){: external}.
 
-## Limitations
+## Limitations for Spectrum Scale
 {: #sat-storage-spectrum-scale-limits}
 
 Do not install the {{site.data.keyword.IBM_notm}} Spectrum Scale management API GUI on worker nodes that are managed by {{site.data.keyword.satelliteshort}}.
@@ -545,11 +545,10 @@ Do not install the {{site.data.keyword.IBM_notm}} Spectrum Scale management API 
 | `storage-class-name` | Optional | The name of the {{site.data.keyword.IBM_notm}} Spectrum Scale storage class.  |
 | `vol-backend-fs` | Optional | The name of the file system on which the fileset is created. |
 {: caption="Table 1. OpenShift Container storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameters is required. The third column is a brief description of the parameter."}
 
 
 
-## Storage class reference
+## Storage class reference for spectrum scale
 {: #sat-storage-spectrum-scale-sc-ref}
 
 Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.keyword.IBM_notm}} Spectrum Scale. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
@@ -560,6 +559,5 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 | --- | --- | --- |
 | `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
 {: caption="Table 1. IBM Spectrum Scale storage class reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameters is required. The third column is a brief description of the parameter."}
 
 

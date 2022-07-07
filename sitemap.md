@@ -1021,7 +1021,7 @@ subcollection: satellite
 
 * [AWS instance types](/docs/satellite?topic=satellite-aws#aws-instance-types)
 
-* [Security group settings](/docs/satellite?topic=satellite-aws#aws-reqs-secgroup)
+* [Security group settings for AWS](/docs/satellite?topic=satellite-aws#aws-reqs-secgroup)
 
 * [AWS credentials](/docs/satellite?topic=satellite-aws#infra-creds-aws)
 
@@ -1157,7 +1157,7 @@ subcollection: satellite
 
 * [How {{site.data.keyword.satelliteshort}} configurations work](/docs/satellite?topic=satellite-cluster-config#satcon-flow)
 
-* [Key concepts](/docs/satellite?topic=satellite-cluster-config#satcon-terminology)
+* [Key concepts for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#satcon-terminology)
 
 [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig)
 
@@ -1407,7 +1407,7 @@ subcollection: satellite
 
 [AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#config-storage-efs)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-efs-prereqs)
+* [Prerequisites for using AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-efs-prereqs)
 
 * [Creating an AWS EFS storage configuration](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs)
 
@@ -1415,15 +1415,15 @@ subcollection: satellite
 
     * [Creating an AWS EFS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-cli)
 
-    * [Assigning your storage configuration to clusters or cluster groups](/docs/satellite?topic=satellite-config-storage-efs#efs-config-assign)
+    * [Assigning your AWS EFS storage configuration to clusters or cluster groups](/docs/satellite?topic=satellite-config-storage-efs#efs-config-assign)
 
 * [Deploying an app that uses AWS EFS storage](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-efs-deploy)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-upgrade-config)
+* [Upgrading an AWS EFS storage configuration](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-upgrade-assignment)
+* [Upgrading an AWS EFS storage assignment](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-update-assignment)
+* [Updating an AWS EFS storage assignment](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-update-assignment)
 
 * [Removing AWS EFS storage from your apps](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-rm)
 
@@ -1435,9 +1435,9 @@ subcollection: satellite
 
 * [AWS EFS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-params-cli)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-efs#efs-sc-reference)
+* [Storage class reference for AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#efs-sc-reference)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-efs#sat-efs-support)
+* [Getting help and support for AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#sat-efs-support)
 
 
 ### Azure storage templates
@@ -1446,9 +1446,9 @@ subcollection: satellite
 
 [Azure Disk CSI driver](/docs/satellite?topic=satellite-config-storage-azure-csi#config-storage-azure-csi)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-prereq)
+* [Prerequisites for using Azure Disk](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-prereq)
 
-    * [Optional: Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-label-nodes)
+    * [Optional: Labeling your worker nodes for Azure Disk](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-label-nodes)
 
     * [Gathering your Azure Disk configuration parameters](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-config-file)
 
@@ -1456,19 +1456,19 @@ subcollection: satellite
 
 * [Creating an Azure Disk configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-csi-cli)
 
-* [Assigning your Azure storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-azure-csi#assign-storage-azure)
+* [Assigning your Azure Disk storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-azure-csi#assign-storage-azure)
 
-    * [Assigning a storage configuration in the console](/docs/satellite?topic=satellite-config-storage-azure-csi#assign-storage-azure-csi-ui)
+    * [Assigning an Azure Disk storage configuration in the console](/docs/satellite?topic=satellite-config-storage-azure-csi#assign-storage-azure-csi-ui)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#assign-storage-azure-csi-cli)
+    * [Assigning an Azure Disk storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-azure-csi#assign-storage-azure-csi-cli)
 
 * [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-config-storage-azure-csi#storage-azure-csi-app-deploy)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-upgrade-config)
+* [Upgrading an Azure Disk storage configuration](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-upgrade-assignment)
+* [Upgrading an Azure Disk storage assignment](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-update-assignment)
+* [Updating an Azure Disk storage assignment](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-update-assignment)
 
 * [Removing Azure Disk storage from your apps](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-rm)
 
@@ -1478,35 +1478,35 @@ subcollection: satellite
 
     * [Removing the Azure Disk storage configuration from the cli](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-template-rm-cli)
 
-* [Parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-disk-params-cli)
+* [Parameter reference for Azure Disk storage](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-disk-params-cli)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-sc-ref)
+* [Storage class reference for Azure Disk](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-sc-ref)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-azure-disk-support)
+* [Getting help and support for Azure Disk storage](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-azure-disk-support)
 
 [Azure File CSI Driver](/docs/satellite?topic=satellite-config-storage-azurefile-csi#config-storage-azurefile-csi)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-csi-prereq)
+* [Prerequisites for using Azure File](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-csi-prereq)
 
-    * [Optional: Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-label-nodes)
+    * [Optional: Labeling your worker nodes when using Azure File](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-label-nodes)
 
 * [Creating an Azure File configuration in the console](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-csi-ui)
 
 * [Creating an Azure File configuration in the command line](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-csi-cli)
 
-* [Assigning your Azure storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-azurefile-csi#assign-storage-azurefile)
+* [Assigning your Azure file storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-azurefile-csi#assign-storage-azurefile)
 
-    * [Assigning a storage configuration in the console](/docs/satellite?topic=satellite-config-storage-azurefile-csi#assign-storage-azurefile-csi-ui)
+    * [Assigning an Azure File storage configuration in the console](/docs/satellite?topic=satellite-config-storage-azurefile-csi#assign-storage-azurefile-csi-ui)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-azurefile-csi#assign-storage-azurefile-csi-cli)
+    * [Assigning an Azure File storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-azurefile-csi#assign-storage-azurefile-csi-cli)
 
 * [Deploying an app that uses your Azure File storage](/docs/satellite?topic=satellite-config-storage-azurefile-csi#storage-azure-file-csi-app-deploy)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-upgrade-config)
+* [Upgrading an Azure File storage configuration](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-upgrade-assignment)
+* [Upgrading an Azure File storage assignment](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-update-assignment)
+* [Updating an Azure File storage assignment](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-update-assignment)
 
 * [Removing Azure file storage from your apps](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-rm)
 
@@ -1516,9 +1516,9 @@ subcollection: satellite
 
     * [Removing the Azure File storage configuration from the cli](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-template-rm-cli)
 
-* [Parameter reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-params-cli)
+* [Parameter reference for Azure File](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-params-cli)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-sc-ref)
+* [Storage class reference for Azure File](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-sc-ref)
 
 
 ### Google storage templates
@@ -1527,35 +1527,35 @@ subcollection: satellite
 
 [Google Compute Engine persistent disk Container Storage Interface (CSI) Driver](/docs/satellite?topic=satellite-config-storage-gcp-csi#config-storage-gcp-csi)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-csi-prereq)
+* [Prerequisites for Compute Engine](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-csi-prereq)
 
 * [Creating the Google Compute Engine persistent disk configuration in the command line](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-create-config)
 
     * [Creating the Google Compute Engine persistent disk storage configuration from the console](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-ui)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-gcp-csi#assign-storage-gcp-csi)
+    * [Assigning a Compute Engine storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-gcp-csi#assign-storage-gcp-csi)
 
 * [Deploying an app that uses Google Compute Engine persistent disk](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-deploy-app)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-upgrade-config)
+* [Upgrading a Compute Engine storage configuration](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-upgrade-assignment)
+* [Upgrading a Compute Engine storage assignment](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-update-assignment)
+* [Updating a Compute Engine storage assignment](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-update-assignment)
 
-* [Removing storage from your apps](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-rm-apps)
+* [Removing Compute Engine storage from your apps](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-rm-apps)
 
-* [Removing the storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-template-rm)
+* [Removing the Compute Engine storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-template-rm)
 
     * [Removing the Google Compute Engine storage configuration from the console](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-template-rm-ui)
 
     * [Removing the Google Compute Engine storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-template-rm-cli)
 
-* [Parameter reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-csi-params-cli)
+* [Parameter reference for Google Compute Engine](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-csi-params-cli)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-ref)
+* [Storage class reference for Compute Engine](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-ref)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-gcp-csi-support)
+* [Getting help and support for Google Compute Engine](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-gcp-csi-support)
 
 
 ### IBM storage templates
@@ -1564,13 +1564,13 @@ subcollection: satellite
 
 [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi#config-storage-block-csi)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-prereq)
+* [Prerequisites for using block storage](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-prereq)
 
 * [Creating a block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-block-csi-cli)
 
-* [Assigning your block storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi)
+* [Assigning your {{site.data.keyword.IBM_notm}} block storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-cli)
+    * [Assigning a block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-cli)
 
 * [Deploying an app that uses your {{site.data.keyword.IBM_notm}} block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
 
@@ -1592,21 +1592,21 @@ subcollection: satellite
 
 * [Removing the Spectrum Scale storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-rm-cli)
 
-* [Troubleshooting](/docs/satellite?topic=satellite-config-storage-spectrum-scale#ess-ts)
+* [Troubleshooting for Spectrum Scale](/docs/satellite?topic=satellite-config-storage-spectrum-scale#ess-ts)
 
     * [Rebuilding the portability layer](/docs/satellite?topic=satellite-config-storage-spectrum-scale#ess-ts-rebuilding)
 
-* [Additional references](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-ref)
+* [Additional references for Spectrum Scale](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-ref)
 
-* [Limitations](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-limits)
+* [Limitations for Spectrum Scale](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-limits)
 
     * [Spectrum Scale configuration parameter reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-params-cli)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref)
+* [Storage class reference for spectrum scale](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref)
 
 [{{site.data.keyword.block_storage_is_short}} Container Storage Interface (CSI) Driver](/docs/satellite?topic=satellite-config-storage-vpc-csi#config-storage-vpc-csi)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-csi-prereq)
+* [Prerequisites for {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-csi-prereq)
 
 * [Creating the {{site.data.keyword.block_storage_is_short}} configuration](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc)
 
@@ -1614,31 +1614,31 @@ subcollection: satellite
 
     * [Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-create-config-cli)
 
-    * [Assigning a storage configuration from the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi-ui)
+    * [Assigning a {{site.data.keyword.block_storage_is_short}} storage configuration from the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi-ui)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi-cli)
+    * [Assigning a {{site.data.keyword.block_storage_is_short}} storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi-cli)
 
 * [Deploying an app that uses {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-deploy-app)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-upgrade-config)
+* [Upgrading a {{site.data.keyword.block_storage_is_short}} storage configuration](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-upgrade-assignment)
+* [Upgrading a {{site.data.keyword.block_storage_is_short}} storage assignment](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-update-assignment)
+* [Updating a {{site.data.keyword.block_storage_is_short}} storage assignment](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-update-assignment)
 
-* [Removing storage from your apps](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-rm-apps)
+* [Removing {{site.data.keyword.block_storage_is_short}} storage from your apps](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-rm-apps)
 
-* [Removing the storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-template-rm)
+* [Removing the {{site.data.keyword.block_storage_is_short}} storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-template-rm)
 
-    * [Removing the storage configuration using the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-rm-ui)
+    * [Removing the {{site.data.keyword.block_storage_is_short}} storage configuration using the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-rm-ui)
 
-    * [Removing the storage configuration using the cli](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-rm-cli)
+    * [Removing the {{site.data.keyword.block_storage_is_short}} storage configuration using the cli](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-rm-cli)
 
-* [Parameter reference](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-csi-params-cli)
+* [Parameter reference for {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-csi-params-cli)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-ref)
+* [Storage class reference for {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-ref)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-vpc-csi-support)
+* [Getting help and support for {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-vpc-csi-support)
 
 
 ### NetApp storage templates
@@ -1647,7 +1647,7 @@ subcollection: satellite
 
 [NetApp Trident Operator](/docs/satellite?topic=satellite-config-storage-netapp-trident#config-storage-netapp-trident)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-storage-netapp-trident-prereq)
+* [Prerequisites for NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-storage-netapp-trident-prereq)
 
 * [Creating a NetApp Trident storage configuration from the console](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-storage-netapp-ui)
 
@@ -1655,25 +1655,25 @@ subcollection: satellite
 
 * [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp)
 
-    * [Assigning a storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp-ui)
+    * [Assigning a NetApp Trident storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp-ui)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp-cli)
+    * [Assigning a NetApp Trident storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-trident#assign-storage-netapp-cli)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-upgrade-config)
+* [Upgrading a NetApp Trident storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-upgrade-assignment)
+* [Upgrading a NetApp Trident storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-update-assignment)
+* [Updating a NetApp Trident storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-update-assignment)
 
     * [Removing the NetApp Trident storage assignment and configuration from the console](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-template-rm-ui)
 
     * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-config-storage-netapp-trident#netapp-trident-template-rm-cli)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-trident-support)
+* [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-trident-support)
 
 [NetApp ONTAP-NAS 21.04](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#config-storage-netapp-nas-2104)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-pre)
+* [Prerequisites for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-pre)
 
 * [Creating a NetApp ONTAP-NAS storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#sat-storage-netapp-ui-nas-2104)
 
@@ -1681,17 +1681,17 @@ subcollection: satellite
 
 * [Assigning your NetApp ONTAP-NAS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#assign-storage-netapp-nas-2104)
 
-    * [Assigning a storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#assign-storage-netapp-ui-nas-2104)
+    * [Assigning a NetApp ONTAP-NAS storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#assign-storage-netapp-ui-nas-2104)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#assign-storage-netapp-cli-nas-2104)
+    * [Assigning a NetApp ONTAP-NAS storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#assign-storage-netapp-cli-nas-2104)
 
 * [Deploying an app that uses ONTAP-NAS storage](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#sat-storage-netapp-nas-deploy-2104)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-upgrade-config)
+* [Upgrading a NetApp ONTAP-NAS storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-upgrade-assignment)
+* [Upgrading a NetApp ONTAP-NAS storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-update-assignment)
+* [Updating a NetApp ONTAP-NAS storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-update-assignment)
 
 * [Removing NetApp ONTAP-NAS storage from your apps](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-rm-2104)
 
@@ -1701,13 +1701,13 @@ subcollection: satellite
 
 * [NetApp ONTAP-NAS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#sat-storage-netapp-params-cli-nas-2104)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-sc-reference-nas-2104)
+* [Storage class reference for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-sc-reference-nas-2104)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#sat-nas-2104-support)
+* [Getting help and support for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#sat-nas-2104-support)
 
 [NetApp ONTAP-NAS 20.07](/docs/satellite?topic=satellite-config-storage-netapp-nas#config-storage-netapp-nas)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-nas-pre)
+* [Prerequisites for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-nas-pre)
 
 * [Creating a NetApp ONTAP-NAS storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-ui-nas)
 
@@ -1715,17 +1715,17 @@ subcollection: satellite
 
 * [Assigning your NetApp ONTAP-NAS storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-nas)
 
-    * [Assigning a storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-ui-nas)
+    * [Assigning a NetApp ONTAP-NAS storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-ui-nas)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-cli-nas)
+    * [Assigning a NetApp ONTAP-NAS storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-nas#assign-storage-netapp-cli-nas)
 
 * [Deploying an app that uses ONTAP-NAS storage](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-nas-deploy)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-upgrade-config)
+* [Upgrading a NetApp ONTAP-NAS storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-upgrade-assignment)
+* [Upgrading a NetApp ONTAP-NAS storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-update-assignment)
+* [Updating a NetApp ONTAP-NAS storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-update-assignment)
 
 * [Removing NetApp ONTAP-NAS storage from your apps](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-nas-rm)
 
@@ -1735,13 +1735,13 @@ subcollection: satellite
 
 * [NetApp ONTAP-NAS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-storage-netapp-params-cli-nas)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-sc-reference-nas)
+* [Storage class reference for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas#netapp-sc-reference-nas)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-nas-support)
+* [Getting help and support for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-nas-support)
 
 [NetApp ONTAP-SAN 21.04](/docs/satellite?topic=satellite-config-storage-netapp-2104#config-storage-netapp-2104)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-netapp-2104#netapp-san-2104-pre)
+* [Prerequisites for NetApp ONTAP-SAN storage](/docs/satellite?topic=satellite-config-storage-netapp-2104#netapp-san-2104-pre)
 
 * [Creating a NetApp Trident SAN storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-nettapp-san-2104)
 
@@ -1751,47 +1751,47 @@ subcollection: satellite
 
 * [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp-2104#assign-storage-netapp-san-2104)
 
-    * [Assigning a storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp-2104#assign-storage-netapp-ui-san-2104)
+    * [Assigning a NetApp storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp-2104#assign-storage-netapp-ui-san-2104)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-2104#assign-storage-netapp-cli-san-2104)
+    * [Assigning a NetApp storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp-2104#assign-storage-netapp-cli-san-2104)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-san-2104-upgrade-config)
+* [Upgrading a NetApp storage configuration](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-san-2104-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-san-2104-upgrade-assignment)
+* [Upgrading a NetApp storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-san-2104-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-san-2104-update-assignment)
+* [Updating a NetApp storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-san-2104-update-assignment)
 
 * [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-params-cli-san-2104)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp-2104#netapp-sc-reference-san-2104)
+* [Storage class reference for NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp-2104#netapp-sc-reference-san-2104)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-san-2104-support)
+* [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-san-2104-support)
 
 [NetApp ONTAP-SAN 20.07](/docs/satellite?topic=satellite-config-storage-netapp#config-storage-netapp)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-san-prereq)
+* [Prerequisites for NetApp ONTAP-SAN 20.07](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-san-prereq)
 
 * [Creating a NetApp Trident SAN storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-ui-san)
 
 * [Creating a NetApp Trident SAN storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-cli-san)
 
-* [Assigning your NetApp storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-san)
+* [Assigning your NetApp Trident storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-san)
 
-    * [Assigning a storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-ui-san)
+    * [Assigning a NetApp Trident storage configuration in the console](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-ui-san)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-cli-san)
+    * [Assigning a NetApp Trident storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-netapp#assign-storage-netapp-cli-san)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-netapp#netapp-cli-upgrade-config)
+* [Upgrading a NetApp Trident storage configuration](/docs/satellite?topic=satellite-config-storage-netapp#netapp-cli-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp#netapp-cli-upgrade-assignment)
+* [Upgrading a NetApp Trident storage assignment](/docs/satellite?topic=satellite-config-storage-netapp#netapp-cli-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-netapp#netapp-cli-update-assignment)
+* [Updating a NetApp Trident storage assignment](/docs/satellite?topic=satellite-config-storage-netapp#netapp-cli-update-assignment)
 
 * [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp#sat-storage-netapp-params-cli-san)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-netapp#netapp-sc-reference-san)
+* [Storage class reference for NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp#netapp-sc-reference-san)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-netapp#sat-netapp-san-support)
+* [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp#sat-netapp-san-support)
 
 
 ### Red Hat storage templates
@@ -1800,11 +1800,11 @@ subcollection: satellite
 
 [Local Storage Operator - Block](/docs/satellite?topic=satellite-config-storage-local-block#config-storage-local-block)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-prereqs)
+* [Prerequisites for using local block storage](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-prereqs)
 
     * [Getting the device details for your local block storage configuration](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-block-local-devices)
 
-    * [Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-block-local-labels)
+    * [Labeling your worker nodes when using local block storage](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-block-local-labels)
 
 * [Creating a local block storage configuration](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block)
 
@@ -1812,17 +1812,17 @@ subcollection: satellite
 
 * [Creating a local block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-cli)
 
-* [Assigning your storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-local-block#assign-storage-local-block)
+* [Assigning your local block storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-local-block#assign-storage-local-block)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-block#assign-storage-local-block-cli)
+    * [Assigning a local block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-block#assign-storage-local-block-cli)
 
 * [Deploying an app that uses your local block storage](/docs/satellite?topic=satellite-config-storage-local-block#deploy-app-local-block)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-upgrade-config)
+* [Upgrading a local block storage configuration](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-upgrade-assignment)
+* [Upgrading a local block storage assignment](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-update-assignment)
+* [Updating a local block storage assignment](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-update-assignment)
 
 * [Removing the local block storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-remove-local-block-config)
 
@@ -1832,21 +1832,21 @@ subcollection: satellite
 
 * [Local block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-params-cli)
 
-    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-block#block-49-params)
+    * [Local block storage version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-block#block-49-params)
 
-    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-block#block-46-48-params)
+    * [Local block storage versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-block#block-46-48-params)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
+* [Storage class reference for local block storage](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-local-block#sat-local-block-support)
+* [Getting help and support for local block storage](/docs/satellite?topic=satellite-config-storage-local-block#sat-local-block-support)
 
 [Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file#config-storage-local-file)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-local-file#config-storage-local-file-prereqs)
+* [Prerequisites for local file storage](/docs/satellite?topic=satellite-config-storage-local-file#config-storage-local-file-prereqs)
 
     * [Getting the device details for your local file storage configuration](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-devices)
 
-    * [Labeling your worker nodes](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-labels)
+    * [Labeling your worker nodes when using local file storage](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-file-local-labels)
 
 * [Creating a local file storage configuration](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file)
 
@@ -1854,19 +1854,19 @@ subcollection: satellite
 
 * [Creating a local file storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-cli)
 
-* [Assigning your storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file)
+* [Assigning your local file storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file)
 
-    * [Assigning a storage configuration in the console](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file-ui)
+    * [Assigning a local file storage configuration in the console](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file-ui)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file-cli)
+    * [Assigning a local file storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-local-file#assign-storage-local-file-cli)
 
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-config-storage-local-file#deploy-app-local-file)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-upgrade-config)
+* [Upgrading a local file storage configuration](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-upgrade-assignment)
+* [Upgrading a local file storage assignment](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-update-assignment)
+* [Updating a local file storage assignment](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-update-assignment)
 
 * [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-remove-local-file-config)
 
@@ -1876,13 +1876,13 @@ subcollection: satellite
 
 * [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
 
-    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-file#file-49-params)
+    * [Local file storage version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-local-file#file-49-params)
 
-    * [Versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-file#file-46-48-params)
+    * [Local file storage versions 4.6-4.8 parameters](/docs/satellite?topic=satellite-config-storage-local-file#file-46-48-params)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
+* [Storage class reference for local file storage](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-local-file#sat-local-block-support)
+* [Getting help and support for local file storage](/docs/satellite?topic=satellite-config-storage-local-file#sat-local-block-support)
 
 [OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-odf-local#config-storage-odf-local)
 
@@ -1918,7 +1918,7 @@ subcollection: satellite
 
 [OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-config-storage-odf-remote#config-storage-odf-remote)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-prereq)
+* [Prerequisites for using ODF for remote devices](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-prereq)
 
     * [Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-cos)
 
@@ -1926,7 +1926,7 @@ subcollection: satellite
 
 * [Assigning your ODF storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-odf-remote#assign-storage-odf-remote)
 
-    * [Assigning a storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-odf-remote#assign-storage-odf-remote-cli)
+    * [Assigning a remote device storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-odf-remote#assign-storage-odf-remote-cli)
 
 * [Upgrading your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-upgrade-config)
 
@@ -1934,13 +1934,13 @@ subcollection: satellite
 
 * [OpenShift Data Foundation configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-params-cli)
 
-    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-49-params)
+    * [OpenShift Data Foundation version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-49-params)
 
-    * [Version 4.8 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-48-params)
+    * [OpenShift Data Foundation version 4.8 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-48-params)
 
-    * [Version 4.7 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-47-params)
+    * [OpenShift Data Foundation version 4.7 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-47-params)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-sc-ref)
+* [Storage class reference for OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-sc-ref)
 
 [Storage class reference](/docs/satellite?topic=satellite-storage-class-ref#storage-class-ref)
 
@@ -2106,9 +2106,9 @@ subcollection: satellite
 
     * [Stored information when you create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-data-security#sat-sensitive-data-default)
 
-    * [Stored information from resources that you create](/docs/satellite?topic=satellite-data-security#sat-sensitive-data-user-added)
+    * [Stored information from resources that you create in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-data-security#sat-sensitive-data-user-added)
 
-* [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
+* [How is my information stored, backed up, and encrypted when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
 
 * [Where can I find information about the data that my managed services store?](/docs/satellite?topic=satellite-data-security#managed-services-data)
 
@@ -2565,7 +2565,7 @@ subcollection: satellite
 
 * [R0048: etcd backup failure](/docs/satellite?topic=satellite-ts-locations-debug#R0048)
 
-* [R0049: {{site.data.keyword.satelliteshort}} Link IAM API key issue](/docs/satellite?topic=satellite-ts-locations-debug#r0049--link-iam-api-key-issue)
+* [R0049: {{site.data.keyword.satelliteshort}} Link IAM API key issue](/docs/satellite?topic=satellite-ts-locations-debug#R0049)
 
 * [R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues](/docs/satellite?topic=satellite-ts-locations-debug#R0050)
 
@@ -2669,103 +2669,103 @@ subcollection: satellite
 
 * [Reviewing error messages and logs](/docs/satellite?topic=satellite-debug-storage#review-messages-logs-storage)
 
-    * [ST0001](/docs/satellite?topic=satellite-debug-storage#st0001)
+    * [ST0001 error message](/docs/satellite?topic=satellite-debug-storage#st0001)
 
-    * [ST0002](/docs/satellite?topic=satellite-debug-storage#st0002)
+    * [ST0002 error message](/docs/satellite?topic=satellite-debug-storage#st0002)
 
-    * [ST0003](/docs/satellite?topic=satellite-debug-storage#st0003)
+    * [ST0003 error message](/docs/satellite?topic=satellite-debug-storage#st0003)
 
-    * [ST0004](/docs/satellite?topic=satellite-debug-storage#st0004)
+    * [ST0004 error message](/docs/satellite?topic=satellite-debug-storage#st0004)
 
-    * [ST0005](/docs/satellite?topic=satellite-debug-storage#st0005)
+    * [ST0005 error message](/docs/satellite?topic=satellite-debug-storage#st0005)
 
-    * [ST0006](/docs/satellite?topic=satellite-debug-storage#st0006)
+    * [ST0006 error message](/docs/satellite?topic=satellite-debug-storage#st0006)
 
-    * [ST0007](/docs/satellite?topic=satellite-debug-storage#st0007)
+    * [ST0007 error message](/docs/satellite?topic=satellite-debug-storage#st0007)
 
-    * [ST0008](/docs/satellite?topic=satellite-debug-storage#st0008)
+    * [ST0008 error message](/docs/satellite?topic=satellite-debug-storage#st0008)
 
-    * [ST0009](/docs/satellite?topic=satellite-debug-storage#st0009)
+    * [ST0009 error message](/docs/satellite?topic=satellite-debug-storage#st0009)
 
-    * [ST0010](/docs/satellite?topic=satellite-debug-storage#st0010)
+    * [ST0010 error message](/docs/satellite?topic=satellite-debug-storage#st0010)
 
-    * [ST0013](/docs/satellite?topic=satellite-debug-storage#st0013)
+    * [ST0013 error message](/docs/satellite?topic=satellite-debug-storage#st0013)
 
-    * [ST0014](/docs/satellite?topic=satellite-debug-storage#st0014)
+    * [ST0014 error message](/docs/satellite?topic=satellite-debug-storage#st0014)
 
-    * [ST0015](/docs/satellite?topic=satellite-debug-storage#st0015)
+    * [ST0015 error message](/docs/satellite?topic=satellite-debug-storage#st0015)
 
-    * [ST0016](/docs/satellite?topic=satellite-debug-storage#st0016)
+    * [ST0016 error message](/docs/satellite?topic=satellite-debug-storage#st0016)
 
-    * [ST0017](/docs/satellite?topic=satellite-debug-storage#st0017)
+    * [ST0017 error message](/docs/satellite?topic=satellite-debug-storage#st0017)
 
-    * [ST0018](/docs/satellite?topic=satellite-debug-storage#st0018)
+    * [ST0018 error message](/docs/satellite?topic=satellite-debug-storage#st0018)
 
-    * [ST0019](/docs/satellite?topic=satellite-debug-storage#st0019)
+    * [ST0019 error message](/docs/satellite?topic=satellite-debug-storage#st0019)
 
-    * [ST0020](/docs/satellite?topic=satellite-debug-storage#st0020)
+    * [ST0020 error message](/docs/satellite?topic=satellite-debug-storage#st0020)
 
-    * [ST0021](/docs/satellite?topic=satellite-debug-storage#st0021)
+    * [ST0021 error message](/docs/satellite?topic=satellite-debug-storage#st0021)
 
-    * [ST0022](/docs/satellite?topic=satellite-debug-storage#st0022)
+    * [ST0022 error message](/docs/satellite?topic=satellite-debug-storage#st0022)
 
-    * [ST0023](/docs/satellite?topic=satellite-debug-storage#st0023)
+    * [ST0023 error message](/docs/satellite?topic=satellite-debug-storage#st0023)
 
-    * [ST0024](/docs/satellite?topic=satellite-debug-storage#st0024)
+    * [ST0024 error message](/docs/satellite?topic=satellite-debug-storage#st0024)
 
-    * [ST0025](/docs/satellite?topic=satellite-debug-storage#st0025)
+    * [ST0025 error message](/docs/satellite?topic=satellite-debug-storage#st0025)
 
-    * [ST0026](/docs/satellite?topic=satellite-debug-storage#st0026)
+    * [ST0026 error message](/docs/satellite?topic=satellite-debug-storage#st0026)
 
-    * [ST0027](/docs/satellite?topic=satellite-debug-storage#st0027)
+    * [ST0027 error message](/docs/satellite?topic=satellite-debug-storage#st0027)
 
-    * [ST0028](/docs/satellite?topic=satellite-debug-storage#st0028)
+    * [ST0028 error message](/docs/satellite?topic=satellite-debug-storage#st0028)
 
-    * [ST0030](/docs/satellite?topic=satellite-debug-storage#st0030)
+    * [ST0030 error message](/docs/satellite?topic=satellite-debug-storage#st0030)
 
-    * [ST0031](/docs/satellite?topic=satellite-debug-storage#st0031)
+    * [ST0031 error message](/docs/satellite?topic=satellite-debug-storage#st0031)
 
-    * [ST0032](/docs/satellite?topic=satellite-debug-storage#st0032)
+    * [ST0032 error message](/docs/satellite?topic=satellite-debug-storage#st0032)
 
-    * [ST0033](/docs/satellite?topic=satellite-debug-storage#st0033)
+    * [ST0033 error message](/docs/satellite?topic=satellite-debug-storage#st0033)
 
-    * [ST0034](/docs/satellite?topic=satellite-debug-storage#st0034)
+    * [ST0034 error message](/docs/satellite?topic=satellite-debug-storage#st0034)
 
-    * [ST0035](/docs/satellite?topic=satellite-debug-storage#st0035)
+    * [ST0035 error message](/docs/satellite?topic=satellite-debug-storage#st0035)
 
-    * [ST0036](/docs/satellite?topic=satellite-debug-storage#st0036)
+    * [ST0036 error message](/docs/satellite?topic=satellite-debug-storage#st0036)
 
-    * [ST0037](/docs/satellite?topic=satellite-debug-storage#st0037)
+    * [ST0037 error message](/docs/satellite?topic=satellite-debug-storage#st0037)
 
-    * [ST0038](/docs/satellite?topic=satellite-debug-storage#st0038)
+    * [ST0038 error message](/docs/satellite?topic=satellite-debug-storage#st0038)
 
-    * [ST0039](/docs/satellite?topic=satellite-debug-storage#st0039)
+    * [ST0039 error message](/docs/satellite?topic=satellite-debug-storage#st0039)
 
-    * [ST0040](/docs/satellite?topic=satellite-debug-storage#st0040)
+    * [ST0040 error message](/docs/satellite?topic=satellite-debug-storage#st0040)
 
-    * [ST0041](/docs/satellite?topic=satellite-debug-storage#st0041)
+    * [ST0041 error message](/docs/satellite?topic=satellite-debug-storage#st0041)
 
-    * [ST0042](/docs/satellite?topic=satellite-debug-storage#st0042)
+    * [ST0042 error message](/docs/satellite?topic=satellite-debug-storage#st0042)
 
-    * [ST0043](/docs/satellite?topic=satellite-debug-storage#st0043)
+    * [ST0043 error message](/docs/satellite?topic=satellite-debug-storage#st0043)
 
-    * [ST0044](/docs/satellite?topic=satellite-debug-storage#st0044)
+    * [ST0044 error message](/docs/satellite?topic=satellite-debug-storage#st0044)
 
-    * [ST0045](/docs/satellite?topic=satellite-debug-storage#st0045)
+    * [ST0045 error message](/docs/satellite?topic=satellite-debug-storage#st0045)
 
-    * [ST0046](/docs/satellite?topic=satellite-debug-storage#st0046)
+    * [ST0046 error message](/docs/satellite?topic=satellite-debug-storage#st0046)
 
-    * [ST0047](/docs/satellite?topic=satellite-debug-storage#st0047)
+    * [ST0047 error message](/docs/satellite?topic=satellite-debug-storage#st0047)
 
-    * [ST0048](/docs/satellite?topic=satellite-debug-storage#st0048)
+    * [ST0048 error message](/docs/satellite?topic=satellite-debug-storage#st0048)
 
-    * [ST0049](/docs/satellite?topic=satellite-debug-storage#st0049)
+    * [ST0049 error message](/docs/satellite?topic=satellite-debug-storage#st0049)
 
-    * [ST0050](/docs/satellite?topic=satellite-debug-storage#st0050)
+    * [ST0050 error message](/docs/satellite?topic=satellite-debug-storage#st0050)
 
-    * [ST0051](/docs/satellite?topic=satellite-debug-storage#st0051)
+    * [ST0051 error message](/docs/satellite?topic=satellite-debug-storage#st0051)
 
-    * [ST0052](/docs/satellite?topic=satellite-debug-storage#st0052)
+    * [ST0052 error message](/docs/satellite?topic=satellite-debug-storage#st0052)
 
 [Why is the namespace where my storage operator was deployed stuck in **Terminating** status?](/docs/satellite?topic=satellite-storage-namespace-terminating#storage-namespace-terminating)
 

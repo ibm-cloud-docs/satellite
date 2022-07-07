@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -14,7 +14,7 @@ subcollection: satellite
 # NetApp Trident Operator
 {: #config-storage-netapp-trident}
 
-Set up [NetApp Trident storage](https://netapp-trident.readthedocs.io/en/stable-v20.07/){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [NetApp Trident storage](https://netapp-trident.readthedocs.io/en/stable-v20.07/){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 You must deploy the NetApp Trident template to your clusters before you can create configurations with the NetApp ONTAP-NAS or NetApp ONTAP-SAN templates.
@@ -23,7 +23,7 @@ You must deploy the NetApp Trident template to your clusters before you can crea
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-## Prerequisites
+## Prerequisites for NetApp Trident
 {: #sat-storage-netapp-trident-prereq}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
@@ -100,7 +100,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuration in the console
+### Assigning a NetApp Trident storage configuration in the console
 {: #assign-storage-netapp-ui}
 {: ui}
 
@@ -120,7 +120,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuration in the command line
+### Assigning a NetApp Trident storage configuration in the command line
 {: #assign-storage-netapp-cli}
 {: cli}
 
@@ -192,7 +192,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     ```
     {: screen}
 
-## Upgrading a storage configuration
+## Upgrading a NetApp Trident storage configuration
 {: #netapp-trident-upgrade-config}
 {: cli}
 
@@ -210,7 +210,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-## Upgrading a storage assignment
+## Upgrading a NetApp Trident storage assignment
 {: #netapp-trident-upgrade-assignment}
 {: cli}
 
@@ -234,7 +234,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating a storage assignment
+## Updating a NetApp Trident storage assignment
 {: #netapp-trident-update-assignment}
 {: cli}
 
@@ -315,7 +315,7 @@ Use the CLI to remove a storage assignment and storage configuration.
     ```
     {: pre}
 
-## Getting help and support
+## Getting help and support for NetApp Trident
 {: #sat-trident-support}
 
 If you run into an issue with using NetApp Trident, you can visit the [NetApp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 

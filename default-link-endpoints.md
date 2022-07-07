@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-07"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, default link enpoints, default link
 
 subcollection: satellite
 
@@ -14,6 +14,8 @@ subcollection: satellite
 
 # Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location
 {: #default-link-endpoints}
+
+Find information about default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satellitelong}} location.
 
 ## Default link endpoints for CoreOS enabled locations
 {: #rhcos-default-endpoints}

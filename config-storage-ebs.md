@@ -549,7 +549,6 @@ Review the AWS EBS storage configuration parameters.
 | `aws-access-key` | Required | Enter your AWS access key. For more information about how retrieve this value, see the [AWS IAM documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external}. |
 | `aws-secret-access-key` | Required | Enter your AWS secret access key. For more information about how retrieve this value, see the [AWS IAM documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external}. |
 {: caption="Table 1. AWS EBS parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 ## Storage class reference for AWS EBS
 {: #sat-ebs-sc-reference}

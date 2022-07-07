@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2022
 lastupdated: "2022-07-07"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, release notes, changes
 
 subcollection: satellite
 

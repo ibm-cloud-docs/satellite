@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -14,13 +14,13 @@ subcollection: satellite
 # NetApp ONTAP-NAS 20.07
 {: #config-storage-netapp-nas}
 
-Set up [NetApp ONTAP-NAS storage](https://netapp-trident.readthedocs.io/en/stable-v20.07/){: external} for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [NetApp ONTAP-NAS storage](https://netapp-trident.readthedocs.io/en/stable-v20.07/){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-## Prerequisites
+## Prerequisites for NetApp ONTAP-NAS
 {: #sat-storage-netapp-nas-pre}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
@@ -102,7 +102,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp-nas), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 
-### Assigning a storage configuration in the console
+### Assigning a NetApp ONTAP-NAS storage configuration in the console
 {: #assign-storage-netapp-ui-nas}
 {: ui}
 
@@ -122,7 +122,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
-### Assigning a storage configuration in the command line
+### Assigning a NetApp ONTAP-NAS storage configuration in the command line
 {: #assign-storage-netapp-cli-nas}
 {: cli}
 
@@ -339,7 +339,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
         ```
         {: pre}
 
-## Upgrading a storage configuration
+## Upgrading a NetApp ONTAP-NAS storage configuration
 {: #netapp-nas-upgrade-config}
 {: cli}
 
@@ -357,7 +357,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-## Upgrading a storage assignment
+## Upgrading a NetApp ONTAP-NAS storage assignment
 {: #netapp-nas-upgrade-assignment}
 {: cli}
 
@@ -381,7 +381,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating a storage assignment
+## Updating a NetApp ONTAP-NAS storage assignment
 {: #netapp-nas-update-assignment}
 {: cli}
 
@@ -540,10 +540,9 @@ For more information about the NetApp ONTAP-NAS configuration parameters, see th
 | `limitAggregateUsage` | Optional | Limit provisioning of volumes if the parent volume usage exceeds this value. For example, if a volume is requested that causes the parent volume usage to exceed this value, the volume provisioning fails.  | `80%` |
 | `nfsMountOptions` | Optional | Specify the NFS mount version. Example: `nfsvers=4` | `nfsvers=4` |
 {: caption="Table 1. NetApp ONTAP-NAS storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column is a brief description of the parameter. The third column is the default value of the parameter."}
 
 
-## Storage class reference
+## Storage class reference for NetApp ONTAP-NAS
 {: #netapp-sc-reference-nas}
 
 Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP-NAS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
@@ -555,10 +554,9 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-file-silver` | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete |
 {: caption="Table 2. NetApp ONTAP-NAS storage class reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system. The fourth column is the reclaim policy."}
 
 
-## Getting help and support
+## Getting help and support for NetApp ONTAP-NAS
 {: #sat-nas-support}
 
 If you run into an issue with using NetApp Trident, you can visit the [NetApp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 

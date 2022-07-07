@@ -16,7 +16,7 @@ subcollection: satellite
 # {{site.data.keyword.block_storage_is_short}} Container Storage Interface (CSI) Driver
 {: #config-storage-vpc-csi}
 
-The {{site.data.keyword.block_storage_is_short}} Container Storage Interface (CSI) [Driver](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver){: external} allows you to manage the lifecycle of your IBM VPC Block Data volumes.
+The {{site.data.keyword.block_storage_is_short}} Container Storage Interface (CSI) [Driver](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver){: external} in {{site.data.keyword.satellitelong}} allows you to manage the lifecycle of your IBM VPC Block Data volumes.
 
 The template is currently in beta. Do not use it for production workloads. 
 {: beta}
@@ -25,7 +25,7 @@ The template is currently in beta. Do not use it for production workloads.
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-## Prerequisites
+## Prerequisites for {{site.data.keyword.block_storage_is_short}}
 {: #sat-storage-vpc-csi-prereq}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
@@ -106,7 +106,7 @@ Create a storage configuration in the command line by using the {{site.data.keyw
 
 1. [Assign your storage configuration to clusters](#assign-storage-vpc-csi-cli)
 
-### Assigning a storage configuration from the console
+### Assigning a {{site.data.keyword.block_storage_is_short}} storage configuration from the console
 {: #assign-storage-vpc-csi-ui}
 {: ui}
 
@@ -124,7 +124,7 @@ Create a storage configuration in the command line by using the {{site.data.keyw
     1. Click the **Subscription** that you created and review the **Rollout status** for your configuration.
 
 
-### Assigning a storage configuration in the command line
+### Assigning a {{site.data.keyword.block_storage_is_short}} storage configuration in the command line
 {: #assign-storage-vpc-csi-cli}
 {: cli}
 
@@ -321,7 +321,7 @@ You can use the `ibm-vpc-block-csi-driver` to create PVCs that you can use in yo
     ```
     {: pre}
 
-## Upgrading a storage configuration
+## Upgrading a {{site.data.keyword.block_storage_is_short}} storage configuration
 {: #vpc-csi-upgrade-config}
 {: cli}
 
@@ -339,7 +339,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-## Upgrading a storage assignment
+## Upgrading a {{site.data.keyword.block_storage_is_short}} storage assignment
 {: #vpc-csi-upgrade-assignment}
 {: cli}
 
@@ -363,7 +363,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating a storage assignment
+## Updating a {{site.data.keyword.block_storage_is_short}} storage assignment
 {: #vpc-csi-update-assignment}
 {: cli}
 
@@ -388,7 +388,7 @@ You can use the `storage assignment update` command to rename your assignment or
     ```
     {: pre}
 
-## Removing storage from your apps
+## Removing {{site.data.keyword.block_storage_is_short}} storage from your apps
 {: #vpc-csi-rm-apps}
 
 If you no longer need your {{site.data.keyword.block_storage_is_short}} configuration, you can remove your apps, PVCs, PVs, and assignment from your clusters.
@@ -466,7 +466,7 @@ If you no longer need your {{site.data.keyword.block_storage_is_short}} configur
     ```
     {: pre}
 
-## Removing the storage configuration from your cluster
+## Removing the {{site.data.keyword.block_storage_is_short}} storage configuration from your cluster
 {: #vpc-csi-template-rm}
 
 If you no longer plan on using your {{site.data.keyword.block_storage_is_short}} in your cluster, you can use the CLI unassign your cluster from the storage configuration.
@@ -475,7 +475,7 @@ If you no longer plan on using your {{site.data.keyword.block_storage_is_short}}
 Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
-### Removing the storage configuration using the console
+### Removing the {{site.data.keyword.block_storage_is_short}} storage configuration using the console
 {: #vpc-csi-rm-ui}
 {: ui}
 
@@ -484,7 +484,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 1. Enter the name of your storage configuration.
 1. Select **Delete**.
 
-### Removing the storage configuration using the cli
+### Removing the {{site.data.keyword.block_storage_is_short}} storage configuration using the cli
 {: #vpc-csi-rm-cli}
 {: cli}
 
@@ -535,7 +535,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
         {: pre}
 
 
-## Parameter reference
+## Parameter reference for {{site.data.keyword.block_storage_is_short}}
 {: #sat-storage-vpc-csi-params-cli}
 
 | Parameter | Required? | Description | Default value if not provided |
@@ -545,9 +545,8 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | `g2_riass_endpoint_url` | Required | PRIASS endpoint url. | N/A |
 | `g2_token_exchange_endpoint_url` | Required | IAM token exchange endpoint url. | N/A |
 {: caption="Table 1. Parameter reference for IBM VPC block storage" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates required parameters. The third column is a brief description of the parameter."}
 
-## Storage class reference
+## Storage class reference for {{site.data.keyword.block_storage_is_short}}
 {: #sat-storage-vpc-ref}
 
 
@@ -565,9 +564,8 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC bloc
 | `ibmc-vpc-block-metro-retain-custom`  | Custom | Custom | Based on IOPS | SSD | Retain | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-retain-general-purpose` | 3 | 3 | 10 GiB - 16 TB | SSD | Retain | WaitForFirstConsumer |
 {: caption="Table 2. Storage class reference for IBM Block Storage for VPC" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the reclaim policy. The third column is the volume binding mode."}
 
-## Getting help and support
+## Getting help and support for {{site.data.keyword.block_storage_is_short}}
 {: #sat-vpc-csi-support}
 
 If you run into an issue with using {{site.data.keyword.block_storage_is_short}} you can submit a support request with [{{site.data.keyword.cloud}} Support](https://www.ibm.com/cloud/support){: external}.

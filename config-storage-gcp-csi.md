@@ -4,7 +4,7 @@ copyright:
   years: 2020, 2022
 lastupdated: "2022-07-07"
 
-keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce
+keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
 subcollection: satellite
 
@@ -18,13 +18,13 @@ subcollection: satellite
 The Compute Engine persistent disk Container Storage Interface (CSI) [Driver](https://github.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/tree/v1.0.4){: external} is a CSI compliant driver that you can use to manage the lifecycle of your Google Compute Engine persistent disks.
 {: shortdesc}
 
- The template is currently in beta and should not be used for production workloads. 
+ The template is currently in beta. Do not use it for production workloads. 
  {: beta}
  
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-## Prerequisites
+## Prerequisites for Compute Engine
 {: #sat-storage-gcp-csi-prereq}
 
 1. [Create a Compute Engine service account](https://cloud.google.com/compute/docs/access/service-accounts){: external}.
@@ -98,7 +98,7 @@ Before you begin, review and complete the [prerequisites](#sat-storage-gcp-csi-p
 
 {sat-storage-config-create-console.md}
 
-### Assigning a storage configuration in the command line
+### Assigning a Compute Engine storage configuration in the command line
 {: #assign-storage-gcp-csi}
 {: cli}
 
@@ -311,7 +311,7 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
     ```
     {: pre}
 
-## Upgrading a storage configuration
+## Upgrading a Compute Engine storage configuration
 {: #gcp-upgrade-config}
 {: cli}
 
@@ -329,7 +329,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
 
-## Upgrading a storage assignment
+## Upgrading a Compute Engine storage assignment
 {: #gcp-upgrade-assignment}
 {: cli}
 
@@ -353,11 +353,11 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating a storage assignment
+## Updating a Compute Engine storage assignment
 {: #gcp-update-assignment}
 {: cli}
 
-## Removing storage from your apps
+## Removing Compute Engine storage from your apps
 {: #gcp-rm-apps}
 {: cli}
 
@@ -436,7 +436,7 @@ If you no longer need your Google Compute Engine configuration, you can remove y
     ```
     {: pre}
 
-## Removing the storage configuration from your cluster
+## Removing the Compute Engine storage configuration from your cluster
 {: #gcp-template-rm}
 
 
@@ -510,7 +510,7 @@ Use the console to remove a storage configuration.
         {: pre}
 
 
-## Parameter reference
+## Parameter reference for Google Compute Engine
 {: #sat-storage-gcp-csi-params-cli}
 
 | Parameter | Required? | Description | Default value if not provided |
@@ -527,7 +527,7 @@ Use the console to remove a storage configuration.
 {: caption="Table 1. Parameter reference for Google compute engine persistent disk storage" caption-side="top"}
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates required parameters. The third column is a brief description of the parameter."}
 
-## Storage class reference
+## Storage class reference for Compute Engine
 {: #sat-storage-gcp-ref}
 
 Review the {{site.data.keyword.satelliteshort}} storage classes for Google compute engine persistent disk storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
@@ -544,9 +544,9 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for Google compu
 | `sat-gce-block-bronze`  | 0.75 | 1.5 | 10 GiB - 64 TiB | HDD | Delete | Immediate |
 | `sat-gce-block-bronze-metro` | 0.75 | 1.5 | 10 GiB - 64 TiB | HDD | Delete | WaitForFirstConsumer |
 {: caption="Table 2. Storage class reference for Google compute engine persistent disk storage" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the reclaim policy. The third column is the volume binding mode."}
 
-## Getting help and support
+
+## Getting help and support for Google Compute Engine
 {: #sat-gcp-csi-support}
 
 If you run into an issue with using Google Persistent disk storage, you can open an issue in the [Google Cloud Console](https://cloud.google.com/support-hub){: external}.

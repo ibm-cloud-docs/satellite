@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
-keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote storage
+keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
 subcollection: satellite
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # OpenShift Data Foundation for remote devices
 {: #config-storage-odf-remote}
 
-Set up OpenShift Data Foundation for {{site.data.keyword.satelliteshort}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up OpenShift Data Foundation for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 OpenShift Data Foundation is available in only internal mode, which means that your apps run in the same cluster as your storage. External mode, or storage heavy configurations, where your storage is located in a separate cluster from your apps is not supported.
@@ -26,7 +26,7 @@ OpenShift Data Foundation is available in only internal mode, which means that y
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-## Prerequisites
+## Prerequisites for using ODF for remote devices
 {: #sat-storage-odf-remote-prereq}
 
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
@@ -134,7 +134,7 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
 After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-odf-remote), you can assign your configuration to your {{site.data.keyword.satelliteshort}}.
 
 
-### Assigning a storage configuration in the command line
+### Assigning a remote device storage configuration in the command line
 {: #assign-storage-odf-remote-cli}
 {: cli}
 
@@ -359,7 +359,7 @@ Use the command line to remove a storage assignment.
 ## OpenShift Data Foundation configuration parameter reference
 {: #sat-storage-odf-remote-params-cli}
 
-### Version 4.9 parameters
+### OpenShift Data Foundation version 4.9 parameters
 {: #odf-remote-49-params}
 
 | Parameter | Required? | Description | Default value if not provided | Data type |
@@ -381,9 +381,8 @@ Use the command line to remove a storage assignment.
 | `ibm-cos-endpoint` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter the {{site.data.keyword.cos_full_notm}} regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A | `string` |
 | `ibm-cos-location` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter the {{site.data.keyword.cos_full_notm}} region. Example: `us-east-standard`. | N/A | `string` |
 {: caption="Table 1. OpenShift Container storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is optional. The third column is a brief description of the parameter. The fourth column is the default value of the parameter."}
 
-### Version 4.8 parameters
+### OpenShift Data Foundation version 4.8 parameters
 {: #odf-remote-48-params}
 
 | Parameter | Required? | Description | Default value if not provided | Data type |
@@ -405,9 +404,8 @@ Use the command line to remove a storage assignment.
 | `ibm-cos-endpoint` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter the {{site.data.keyword.cos_full_notm}} regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A | `string` |
 | `ibm-cos-location` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter the {{site.data.keyword.cos_full_notm}} region. Example: `us-east-standard`. | N/A | `string` |
 {: caption="Table 2. OpenShift Container storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is optional. The third column is a brief description of the parameter. The second column is the default value of the parameter."}
 
-### Version 4.7 parameters
+### OpenShift Data Foundation version 4.7 parameters
 {: #odf-remote-47-params}
 
 | Parameter | Required? | Description | Default value if not provided | Data type |
@@ -431,10 +429,9 @@ Use the command line to remove a storage assignment.
 | `ibm-cos-endpoint` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter the {{site.data.keyword.cos_full_notm}} regional public endpoint. Example: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. | N/A | `string` |
 | `ibm-cos-location` | Optional | If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your object store for your ODF cluster, enter the {{site.data.keyword.cos_full_notm}} region. Example: `us-east-standard`. | N/A | `string` |
 {: caption="Table 3. OpenShift Container storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is optional. The third column is a brief description of the parameter. The second column is the default value of the parameter."}
 
 
-## Storage class reference
+## Storage class reference for OpenShift Data Foundation for remote devices
 {: #sat-storage-odf-remote-sc-ref}
 
 Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Data Foundation. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
@@ -449,6 +446,5 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for OpenShift Da
 | `sat-ocs-cephrbd-gold-metro` | Block | ext4 | `openshift-storage.rbd.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 | `sat-ocs-cephfs-gold-metro` | File | N/A | `openshift-storage.cephfs.csi.ceph.com` | WaitForFirstConsumer | True | Delete |
 {: caption="Table 4. Storage class reference for OpenShift Container storage" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the storage type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the volume binding mode. The sixth column is volume expansion support. The seventh column is the reclaim policy."}
 
 

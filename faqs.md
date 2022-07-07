@@ -109,7 +109,6 @@ Get the benefits of a [managed {{site.data.keyword.redhat_openshift_notm}} servi
 | OCP licensing fee | Red Hat charges a fee for Red Hat Enterprise Linux and OpenShift Container Platform per 2 vCPU hour. | This charge is not included in your {{site.data.keyword.cloud_notm}} bill. Instead, you cover this charge by [bringing your own license](#byo-ocp). |
 | Infrastructure | Varies by provider | The underlying infrastructure that you bring to {{site.data.keyword.satelliteshort}} is your own, so it has its own charges. Consult your infrastructure provider for more details, such as about the storage, compute, and networking of the hosts in a cloud or on-prem environment. |
 {: caption="{{site.data.keyword.redhat_openshift_notm}} cluster charges." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the type of charge for a {{site.data.keyword.redhat_openshift_notm}} cluster. The second column describes how the charge is applied. The third column describes what is included with the charge."}
 
 #### Other services
 {: #pricing-services-other}

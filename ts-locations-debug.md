@@ -365,6 +365,7 @@ To determine where your problem exists,
 3. If the control plane hosts can reach the {{site.data.keyword.cos_short}} endpoint, and the {{site.data.keyword.cos_short}} service instance and bucket exist, [open a support case](/docs/satellite?topic=satellite-get-help) to investigate backup failures and include your {{site.data.keyword.satelliteshort}} location ID.
 
 ## R0049: {{site.data.keyword.satelliteshort}} Link IAM API key issue
+{: #R0049}
 
 Location message
 :    The Link connector is experiencing authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.
