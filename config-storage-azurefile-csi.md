@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Azure File CSI Driver
 {: #config-storage-azurefile-csi}
 
-The Azure File CSI driver implements the CSI specification for container orchestrators to manage the lifecycle of Azure File volumes.
+The Azure File CSI driver implements CSI specification so that container orchestration tools can manage the lifecycle of Azure File volumes.
 {: shortdesc}
 
 For an overview of the available features of the Azure File CSI driver, see [Features](https://github.com/kubernetes-sigs/azurefile-csi-driver#features){: external}. 
@@ -554,7 +554,7 @@ If you no longer need your Azure File configuration, you can remove your apps, P
 If you no longer plan on using Azure File storage in your cluster, you can use the CLI unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration uninstalls the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 ### Removing the Azure File storage configuration from the console

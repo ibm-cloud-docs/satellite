@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -29,7 +29,7 @@ You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale Container Storage 
 The {{site.data.keyword.IBM_notm}} Spectrum Scale CSI driver supports the following features.
 
 Static provisioning
-:   You can use your existing directories and filesets as persistent volumes.
+:   You can use your existing directories and file sets as persistent volumes.
 
 Lightweight dynamic provisioning
 :   You can dynamically create directory-based volumes.

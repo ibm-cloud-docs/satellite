@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-07"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -446,7 +446,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
 
 9. **Optional** Run the following commands to write data to your block device.
 
-    1. Write "block_data" to the local storage device that you mounted to your app. Replace `<device-path>` with the path to your storage device. Example: `/dev/nvme2n1`.
+    1. Write `"block_data"` to the local storage device that you mounted to your app. Replace `<device-path>` with the path to your storage device. Example: `/dev/nvme2n1`.
     
         ```sh
         kubectl exec <pod_name> -- bash -c "echo "block_data" | dd conv=unblock of=<device-path>"
@@ -528,7 +528,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 If you no longer plan on using local block storage in your cluster, you can unassign your cluster from the storage configuration. 
 {: shortdesc}
 
-Removing the storage configuration, uninstalls the local storage operator resources and the `sat-local-block-gold` storage class from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
+Note that if you remove the storage configuration, the local storage operator resources and the `sat-local-block-gold` storage class are then uninstalled from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
 {: important}
 
 

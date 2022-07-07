@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -79,12 +79,12 @@ Note that tooling is controlled through the {{site.data.keyword.cloud_notm}} reg
 
 The access through the `openshift-api-<cluster_ID>` endpoint is isolated from your workloads and the network connections, such as the Link endpoints, that your workloads use. The `openshift-api-<cluster_ID>` provides access only to the {{site.data.keyword.satelliteshort}} location control plane. {{site.data.keyword.IBM_notm}} SREs have no access to the hosts that are assigned as worker nodes of your {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters, where you run workloads in your location, because no default Link endpoints are created for workloads that run on these worker nodes, and all SSH access is disabled as part of the host bootstrapping process.
 
-### How can I monitor and manage {{site.data.keyword.IBM_notm}} access into my location? How can I know that there are no backdoor access points on the hosts?
+### How can I monitor and manage {{site.data.keyword.IBM_notm}} access into my location?
 {: #operational-access-monitor}
 
 Default {{site.data.keyword.satelliteshort}} Link endpoints are created for your location's control plane cluster and for any other [{{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-managed-services) that you run in your location. These default {{site.data.keyword.satelliteshort}} Link endpoints are accessible only from within the {{site.data.keyword.cloud_notm}} private network. To review these endpoints, see [Default Link endpoints for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-default-link-endpoints). You have full control over these default endpoints, including the ability to disable them. However, disabling these endpoints prevents your location from being fully managed and updated, and the endpoints cannot be removed.
 
-{{site.data.keyword.satelliteshort}} Link provides built-in controls to help you restrict which clients can access endpoints. For more information, see [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about).
+{{site.data.keyword.satelliteshort}} Link provides built-in controls to help you restrict which clients can access endpoints, ensuring that there are no back door access points on your hosts. For more information, see [Access and audit controls](/docs/satellite?topic=satellite-link-location-cloud#link-audit-about).
 
 Additionally, you can configure auditing to monitor user-initiated events for Link endpoints. {{site.data.keyword.satellitelong_notm}} integrates with {{site.data.keyword.at_full}} to collect and send audit events for all link endpoints in your location to your {{site.data.keyword.at_short}} instance. For example, after you set up event auditing, you can review all events that relate to the masters for the clusters that run in your location, including events that are initiated by {{site.data.keyword.cloud_notm}}. To get started with auditing, see [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-cloud-monitor#link-audit).
 

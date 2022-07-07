@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services
 
@@ -40,7 +40,6 @@ Before you begin, make sure that you have the correct [{{site.data.keyword.cloud
 3. In the **Setup** section, click **Amazon Web Services**.
 4. In the **AWS credentials** section, enter the **AWS access key ID** and **AWS secret access key** values that you previously created.
 5. Click **Fetch options from AWS**.
-6. Review the **AWS EC2 instances** that are prepopulated. By default, enough hosts are created for 1 small location that can run about 2 demo clusters. To change the region, instance type, or number of hosts, click the **Edit** pencil icon.
 7. Review the **Satellite location** details. If you edited the AWS EC2 instances, you might want to click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
 8. In the **Summary** pane, review the cost estimate.
 9. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
@@ -165,7 +164,6 @@ Review the following suggested [AWS EC2 instance types](https://aws.amazon.com/e
 | `m5d.2xlarge` | 8 | 32 | At least 100 GB SSD attached | Up to 10 |
 | `m5d.4xlarge` | 16 | 64 | At least 100 GB SSD attached | Up to 10 |
 {: caption="AWS instance types" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the name of the instance. The second column is the number of vCPUs. The third column is the memory in gibibytes (GiB). The fourth column is the number of storage disks and their size in gibibytes (GiB). The fifth column is the network bandwidth in gigabits per second (Gbps)."}
 
 
 ## Security group settings
@@ -301,7 +299,7 @@ Now that your {{site.data.keyword.satelliteshort}} location is set up, you are r
 4. Create [{{site.data.keyword.satelliteshort}} cluster storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov).
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
-Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting supoort; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
+Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
 
 
 

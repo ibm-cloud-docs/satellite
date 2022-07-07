@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-24"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -49,7 +49,6 @@ Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location 
 | Default monitoring tools like Prometheus do not work. | Send alerts to your {{site.data.keyword.la_full_notm}} instance and return a status message with further troubleshooting information. |
 | Ingress subdomain registration fails. | Alert {{site.data.keyword.IBM_notm}} engineers to troubleshoot the issues further and return a status message with further troubleshooting information. |
 {: caption="{{site.data.keyword.IBM_notm}} monitoring actions to address certain scenarios." caption-side="top"}
-{: summary="Read this table from left to right. In the first column is the scenario. In the second column is the action that {{site.data.keyword.satelliteshort}} automatically takes to address the alert."}
 
 
 ## Viewing location, host, and cluster health
@@ -137,7 +136,6 @@ You can view the registration status of clusters that are enabled for use with {
 | `inactive` | {{site.data.keyword.satelliteshort}} Config components were manually removed from the cluster, or are installed but are no longer responding to {{site.data.keyword.satelliteshort}} Config. For example, network connectivity might be disconnected. Existing resources, if any, continue to run but do not receive updates. To resolve the issue, try debugging your [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-ts-locations-debug) or [cluster](/docs/openshift?topic=openshift-debug_clusters). |
 | `registered` | {{site.data.keyword.satelliteshort}} Config components are installed in the cluster, but no resources are currently watched. To set up watchkeeping, see [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources). |
 {: caption="Host health states." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the status of the {{site.data.keyword.satelliteshort}} Config registration. The second column describes what the status means."}
 
 
 
@@ -183,8 +181,7 @@ The total number of {{site.data.keyword.satelliteshort}} Link tunnel servers pre
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
-{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the ibm_satellite_link_location_tunnel_count metric" caption-side="top"}
+{: caption="Metadata for the location tunner numbers metric" caption-side="top"}
 
 #### Location latency
 {: #ibm_satellite_link_location_rtt_second}
@@ -197,8 +194,7 @@ The total round trip time of data in milliseconds for the location.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
-{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the ibm_satellite_link_location_rtt_second metric" caption-side="top"}
+{: caption="Metadata for the location latency metric" caption-side="top"}
 
 #### Location traffic to cloud
 {: #ibm_satellite_link_location_to_cloud_data_rate}
@@ -211,8 +207,7 @@ The total rate of data in bytes per second in the to-cloud direction for the loc
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
-{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the ibm_satellite_link_location_to_cloud_data_rate metric" caption-side="top"}
+{: caption="Metadata for the location traffic to cloud metric" caption-side="top"}
 
 #### Location traffic from cloud
 {: #ibm_satellite_link_location_from_cloud_data_rate}
@@ -225,8 +220,7 @@ The total rate of data in bytes per second in the from-cloud direction for the l
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
-{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the ibm_satellite_link_location_from_cloud_data_rate metric" caption-side="top"}
+{: caption="Metadata for the location traffic from cloud metric" caption-side="top"}
 
 #### Location traffic total
 {: #ibm_satellite_link_location_total_data_rate}
@@ -239,8 +233,7 @@ The total rate of data in bytes per second in to-cloud and from-cloud directions
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
-{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the ibm_satellite_link_location_total_data_rate metric" caption-side="top"}
+{: caption="Metadata for the location traffic total metric" caption-side="top"}
 
 #### Endpoint connection count
 {: #ibm_satellite_link_endpoint_connection_count}
@@ -253,8 +246,7 @@ The total number of connections present at the endpoint.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
-{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the ibm_satellite_link_endpoint_connection_count metric" caption-side="top"}
+{: caption="Metadata for the Endpoint connection count metric" caption-side="top"}
 
 #### Endpoint traffic to cloud
 {: #ibm_satellite_link_endpoint_to_cloud_data_rate}
@@ -267,8 +259,7 @@ The rate of data in bytes per second in the to-cloud direction for the endpoint.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
-{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the ibm_satellite_link_endpoint_to_cloud_data_rate metric" caption-side="top"}
+{: caption="Metadata for the Endpoint traffic to cloud metric" caption-side="top"}
 
 #### Endpoint traffic from cloud
 {: #ibm_satellite_link_endpoint_from_cloud_data_rate}
@@ -281,8 +272,7 @@ The rate of data in bytes per second in the from-cloud direction for the endpoin
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
-{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the ibm_satellite_link_endpoint_from_cloud_data_rate metric" caption-side="top"}
+{: caption="Metadata for the endpoint traffic from cloud metric" caption-side="top"}
 
 #### Endpoint traffic total
 {: #ibm_satellite_link_endpoint_total_data_rate}
@@ -295,8 +285,7 @@ The total rate of data in bytes per second in to-cloud and from-cloud directions
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
-{: summary="Read this table from left to right. In the first column is the metric metadata field name. In the second column is the value for the field."}
-{: caption="Metadata for the ibm_satellite_link_endpoint_total_data_rate metric" caption-side="top"}
+{: caption="Metadata for the endpoint traffic total metric" caption-side="top"}
 
 ### Attributes for segmentation
 {: #attributes}
@@ -319,7 +308,6 @@ The following global attributes are available for segmenting all the [available 
 | `Resource group` | `ibm_resource_group_name` | The resource group where the {{site.data.keyword.satelliteshort}} location was created |
 | `Scope` | `ibm_scope` | The account GUID associated with this metric |
 | `Service name` | `ibm_service_name` | The name of the service that generates this metric |
-{: summary="Read this table from left to right. In the first column is the attribute type. In the second column is the attribute name. In the third column is the attribute description."}
 {: caption="Global attributes for metric segmentation" caption-side="top"}
 
 #### Additional attributes
@@ -335,7 +323,6 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 | `Location ID` | `ibm_satellite_link_location_id` | The identifier of the location |
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance the metric is associated with |
 | `Service instance name` | `ibm_service_instance_name` | The user-provided name of the service instance, which might not be unique across regions in the account |
-{: summary="Read this table from left to right. In the first column is the attribute type. In the second column is the attribute name. In the third column is the attribute description."}
 {: caption="Additional attributes for metric segmentation" caption-side="top"}
 
 
@@ -345,7 +332,7 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
 {: note}
 
-To set up monitoring for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see  [Deploying a montioring agent in an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/monitoring?topic=monitoring-config_agent#config_agent_kube_os).
+To set up monitoring for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see  [Deploying a montoring agent in an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/monitoring?topic=monitoring-config_agent#config_agent_kube_os).
 
 
 

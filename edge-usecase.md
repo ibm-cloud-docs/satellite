@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-07"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, edge, use case, machine learning
 
 subcollection: satellite
 
@@ -76,4 +76,4 @@ As the AI developer, run model inferencing on your edge data by using the server
 2. Create a [Knative-compliant container image](https://knative.dev/docs/serving/samples/hello-world/helloworld-python/index.html){: external}.
 3. [Deploy the image](https://developers.redhat.com/blog/2020/04/30/serverless-applications-made-faster-and-simpler-with-openshift-serverless-ga){: external} to your {{site.data.keyword.redhat_openshift_notm}} Serverless processor that runs in your {{site.data.keyword.satelliteshort}} cluster. You can use the {{site.data.keyword.redhat_openshift_notm}} web console in the developer perspective, or use the `kn` command line tool for {{site.data.keyword.satelliteshort}} Serverless.
 
-Now, you have a managed {{site.data.keyword.satelliteshort}} location that runs on your edge environment and performs on demand model inferencing for your edge data through your AI-trained model and {{site.data.keyword.redhat_openshift_notm}} Serverless.
+Now, you have a managed {{site.data.keyword.satelliteshort}} location that runs on your edge environment and performs model inferencing on demand for your edge data through your AI-trained model and {{site.data.keyword.redhat_openshift_notm}} Serverless.

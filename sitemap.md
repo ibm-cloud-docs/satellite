@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1373,7 +1373,7 @@ subcollection: satellite
 
 [AWS EBS](/docs/satellite?topic=satellite-config-storage-ebs#config-storage-ebs)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-prereq)
+* [Prerequisites for using AWS EBS](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-prereq)
 
 * [Creating an AWS EBS storage configuration](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs)
 
@@ -1381,17 +1381,17 @@ subcollection: satellite
 
     * [Creating an AWS EBS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-cli)
 
-    * [Assigning your storage configuration to clusters or cluster groups from the CLI](/docs/satellite?topic=satellite-config-storage-ebs#ebs-config-assign)
+    * [Assigning your AWS EBS storage configuration to clusters or cluster groups from the CLI](/docs/satellite?topic=satellite-config-storage-ebs#ebs-config-assign)
 
 * [Deploying an app that uses AWS EBS storage](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-ebs-deploy)
 
 * [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-rm)
 
-* [Upgrading a storage configuration](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-upgrade-config)
+* [Upgrading an AWS EBS storage configuration](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-upgrade-config)
 
-* [Upgrading a storage assignment](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-upgrade-assignment)
+* [Upgrading an AWS EBS storage assignment](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-upgrade-assignment)
 
-* [Updating a storage assignment](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-update-assignment)
+* [Updating an AWS EBS storage assignment](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-update-assignment)
 
 * [Removing the AWS EBS storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm)
 
@@ -1401,9 +1401,9 @@ subcollection: satellite
 
 * [AWS EBS storage configuration CLI parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-params-cli)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-ebs-sc-reference)
+* [Storage class reference for AWS EBS](/docs/satellite?topic=satellite-config-storage-ebs#sat-ebs-sc-reference)
 
-* [Getting help and support](/docs/satellite?topic=satellite-config-storage-ebs#sat-ebs-support)
+* [Getting help and support for AWS EBS](/docs/satellite?topic=satellite-config-storage-ebs#sat-ebs-support)
 
 [AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#config-storage-efs)
 
@@ -1886,9 +1886,9 @@ subcollection: satellite
 
 [OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-odf-local#config-storage-odf-local)
 
-* [Prerequisites](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-prereq)
+* [Prerequisites for ODF](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-prereq)
 
-* [(Optional) Setting up an {{site.data.keyword.cos_full_notm}} backing store](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-cos)
+* [(Optional) Setting up an {{site.data.keyword.cos_full_notm}} backing store for ODF](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-cos)
 
 * [(Optional) Getting the device details for your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-devices)
 
@@ -1908,13 +1908,13 @@ subcollection: satellite
 
 * [OpenShift Data Foundation configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-params-cli)
 
-    * [Version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-49)
+    * [ODF version 4.9 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-49)
 
-    * [Version 4.8 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-48)
+    * [ODF version 4.8 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-48)
 
-    * [Version 4.7 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-47)
+    * [ODF version 4.7 parameters](/docs/satellite?topic=satellite-config-storage-odf-local#odf-params-47)
 
-* [Storage class reference](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-sc-ref)
+* [Storage class reference for ODF](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-sc-ref)
 
 [OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-config-storage-odf-remote#config-storage-odf-remote)
 
@@ -2074,7 +2074,7 @@ subcollection: satellite
 
     * [What access do {{site.data.keyword.IBM_notm}} SREs have to my data and workloads that run in my {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters?](/docs/satellite?topic=satellite-compliance#operational-access-workloads)
 
-    * [How can I monitor and manage {{site.data.keyword.IBM_notm}} access into my location? How can I know that there are no backdoor access points on the hosts?](/docs/satellite?topic=satellite-compliance#operational-access-monitor)
+    * [How can I monitor and manage {{site.data.keyword.IBM_notm}} access into my location?](/docs/satellite?topic=satellite-compliance#operational-access-monitor)
 
     * [What happens if {{site.data.keyword.satelliteshort}} Link becomes unavailable? Can {{site.data.keyword.IBM_notm}} still maintain my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-compliance#operational-access-availability)
 
@@ -2565,7 +2565,7 @@ subcollection: satellite
 
 * [R0048: etcd backup failure](/docs/satellite?topic=satellite-ts-locations-debug#R0048)
 
-* [R0049: {{site.data.keyword.satelliteshort}} Link IAM API key issue](/docs/satellite?topic=satellite-ts-locations-debug#R0049)
+* [R0049: {{site.data.keyword.satelliteshort}} Link IAM API key issue](/docs/satellite?topic=satellite-ts-locations-debug#r0049--link-iam-api-key-issue)
 
 * [R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues](/docs/satellite?topic=satellite-ts-locations-debug#R0050)
 

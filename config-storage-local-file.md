@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -532,7 +532,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 If you no longer plan on using local file storage in your cluster, you can unassign your cluster from the storage configuration. 
 {: shortdesc}
 
-Removing the storage configuration, uninstalls the local storage operator resources and the `sat-local-file-gold` storage class from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
+Note that if you remove the storage configuration, the local storage operator resources and the `sat-local-file-gold` storage class is then uninstalled from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again. 
 {: important}
 
 

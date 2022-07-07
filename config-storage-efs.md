@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -433,7 +433,7 @@ Removing your AWS EFS instance permanently removes all the data that is stored o
 If you no longer plan on using AWS EFS storage in your cluster, you can unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration, uninstalls the AWS EFS driver from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 

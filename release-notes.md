@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-28"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -29,7 +29,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 New and updated template parameter for the Azure File CSI driver template.
-:   The `subnetName` parameter is now required when creating a configuration. When creating a configuration the user must provide **one** of the subnet names under the Vnet. If the nodes are distributed across multiple subnets, you can manually add the subnet names after creation. For more information see the [Azure File CSI Driver documentation](/docs/satellite?topic=satellite-config-storage-azurefile-csi)
+:   The `subnetName` parameter is now required when you create a configuration. Additionally, you must provide the **one** of the subnet names under the `vnet`. If the nodes are distributed across multiple subnets, you can manually add the subnet names after you create the configuration. For more information, see the [Azure File CSI Driver documentation](/docs/satellite?topic=satellite-config-storage-azurefile-csi).
 
 
 ### 16 June 2022
@@ -219,7 +219,7 @@ CLI change log
 :   {{site.data.keyword.keymanagementservicefull_notm}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) and [About {{site.data.keyword.keymanagementserviceshort}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite).
 
 New troubleshooting issue for errors when you run the `oc debug` command 
-:   See [Why can't I log into my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug).
+:   See [Why can't I log in to my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug).
 
 ### 18 February 2022
 {: #satellite-feb1822}

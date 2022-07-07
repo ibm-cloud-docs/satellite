@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, 
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Azure Disk CSI driver
 {: #config-storage-azure-csi}
 
-The Azure Disk CSI driver implements the CSI specification for container orchestrators to manage the lifecycle of Azure Disk volumes.
+The Azure Disk CSI driver implements the CSI specification so that container orchestration tools can manage the lifecycle of Azure Disk volumes.
 {: shortdesc}
 
 For an overview of the available features of the Azure Disk CSI driver, see [Features](https://github.com/kubernetes-sigs/azuredisk-csi-driver#features){: external}.
@@ -32,7 +32,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 Set up [Azure Disk storage](https://docs.microsoft.com/en-us/azure/aks/azure-disk-csi){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
-To use the Azure Disk CSI driver storage template, complete the following tasks:
+To use the Azure Disk CSI driver storage template, complete the following tasks.
 
 1. Create an Azure location by using the [location template](/docs/satellite?topic=satellite-azure) or manually [adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach). 
     If you choose to manually assign hosts, you must [label your worker nodes](#azure-disk-label-nodes) before creating your storage configuration.
@@ -591,7 +591,7 @@ If you no longer need your Azure Disk configuration, you can remove your apps, P
 If you no longer plan on using Azure Disk storage in your cluster, you can use the CLI unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration uninstalls the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 

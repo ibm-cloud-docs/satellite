@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -102,7 +102,7 @@ Error type: Authorization
 
 Response code: `401`
 
-Verify that storage configuration and service cluster both muwt be on same {{site.data.keyword.satelliteshort}} location, if not create a configuration and then retry.
+Verify that storage configuration and service cluster both must be on same {{site.data.keyword.satelliteshort}} location, if not create a configuration and then retry.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-18"
+lastupdated: "2022-07-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -63,7 +63,7 @@ You can SSH into the host machine if you did not assign the host to a cluster, o
 ## First boot did not complete successfully
 {: #ts-hosts-login-first-boot}
 
-You receive output similiar to the following messages.
+You receive output similar to the following messages.
 
 ```sh
 export HOME=/root
@@ -78,7 +78,7 @@ The first boot did not complete successfully. Check the `/tmp/bootstrap/bootstra
 ## Host registration script fails
 {: #ts-hosts-login-host-script}
 
-You receive output similiar to the following messages. Note that the package name might be replaced with another package name.
+You receive output similar to the following messages. Note that the package name might be replaced with another package name.
 
 ```sh
 No package matching '\''container-selinux'\'' found available, installed or updated
@@ -91,7 +91,7 @@ For more information about these messages, see [Host registration script fails](
 ## Machine cannot be reached on the network
 {: #ts-hosts-login-cannot-reach}
 
-You receive output similiar to the following messages.
+You receive output similar to the following messages.
 
 ```sh
 curl: (6) Could not resolve host: <URL>.com; Unknown error
@@ -109,7 +109,7 @@ The machine cannot be reached on the network. Check that your machine meets the 
 ## Host is attempting to register with the location
 {: #ts-hosts-login-host-register}
 
-You receive output similiar to the following message.
+You receive output similar to the following message.
 
 ```sh
 kubectl --kubeconfig=/tmp/bootstrap/priveledgedcertdir/privledged-kubeconfig
