@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-08"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -51,7 +51,7 @@ To attach hosts to your location, you must download a host attachment script. Af
             ```
             {: pre}
 
-            Example `host attach` command for a RHEL 7 host.
+            Example `host attach` command for a RHEL host.
             ```sh
             ibmcloud sat host attach --location <location_name> [-hl "use=satloc"] --operating-system RHEL
             ```
@@ -67,7 +67,7 @@ To attach hosts to your location, you must download a host attachment script. Af
             {: screen}
      
 
-1. **Optional**: If your hosts are RHEL 7 hosts, you need to update the [required packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. If your hosts are running the latest Red Hat CoreOS images, you do not need to update the packages.
+1. **Optional**: If your hosts are RHEL hosts, you need to update the [required packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. If your hosts are running the latest Red Hat CoreOS images, you do not need to update the packages.
 
 1. Attach your hosts to your location by running the attachment script.
     * If your hosts are in another cloud provider, follow the provider-specific steps to run the script and attach your host. 
@@ -97,7 +97,7 @@ To attach RHEL hosts that reside in your on-premises data center to your locatio
     ```
     {: pre}
 
-5. Update your host to have the required RHEL 7 packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
+5. Update your host to have the required RHEL packages. For more information about how to install these package, see the [Red Hat documentation](https://access.redhat.com/solutions/253273){: external}.
 6. Run the script.
     ```sh
     sudo nohup bash /tmp/attach.sh &
@@ -130,7 +130,6 @@ To attach RHCOS hosts that reside in your on-premises data center to your locati
 
 If your host is not attaching to your location, you can log in to the host to debug it. For more information, see [Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos).
 {: tip}
-
 
 
 

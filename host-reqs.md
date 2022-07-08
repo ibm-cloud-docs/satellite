@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-08"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -55,7 +55,7 @@ To check your host setup, you can use the `satellite-host-check` script. For mor
 Hosts must have access to RHEL updates and the following packages. 
 {: shortdesc}
 
-These updates are required for hosts that are running RHEL 7. If your hosts are running Red Hat CoreOS images, you do not need to update the packages.
+These updates are required for hosts that are running RHEL. If your hosts are running Red Hat CoreOS images, you do not need to update the packages.
 {: note}
 
 ```sh
@@ -80,6 +80,8 @@ You might need to refresh your packages on the host machine. For example, in {{s
     {: pre}
 
 2. Enable the package repositories on your machine.
+
+   
     ```sh
     subscription-manager repos --enable rhel-server-rhscl-7-rpms
     subscription-manager repos --enable rhel-7-server-optional-rpms
