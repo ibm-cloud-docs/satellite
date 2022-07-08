@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-08"
 
 keywords: satellite, hybrid, multicloud, satellite infrastructure service
 
@@ -35,7 +35,7 @@ To use your hosts, create {{site.data.keyword.satelliteshort}} resources such as
 
 The following table outlines a sample selection of hosts in a {{site.data.keyword.satelliteshort}} Infrastructure Service location. To scale the type and number of {{site.data.keyword.satelliteshort}} Infrastructure Service hosts in your location, work with your {{site.data.keyword.IBM_notm}} contact.
 
-| Host size | vCPU | RAM (GB) | Primary storage (GB) | Secondary storage (GB) | Tertiary storage (GB) | Pool size |
+| Host size | vCPU | RAM (GB) | Primary storage (GB) | Auxiliary storage (GB) | Tertiary storage (GB) | Pool size |
 | --- | --- | --- | --- | --- | --- | --- |
 | Small | 4   | 32  | 25  | 100 | 0   | 5   |
 | Medium | 8   | 64  | 25  | 100 | 0   | 5   |

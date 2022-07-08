@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-08"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1185,7 +1185,7 @@ subcollection: satellite
 
 * [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources)
 
-    * [Enabling watchkeeper collection methods](/docs/satellite?topic=satellite-satcon-manage#satconfig-enable-watchkeeper)
+    * [Enabling Watch-keeper collection methods](/docs/satellite?topic=satellite-satcon-manage#satconfig-enable-watchkeeper)
 
     * [Review the resources from {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-review-resources)
 

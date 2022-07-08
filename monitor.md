@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-08"
 
 keywords: satellite, hybrid, multicloud
 
@@ -134,7 +134,7 @@ You can view the registration status of clusters that are enabled for use with {
 | --- | --- |
 | `active` | {{site.data.keyword.satelliteshort}} Config components for the location are installed in the cluster, and at least one resource is being watched. |
 | `inactive` | {{site.data.keyword.satelliteshort}} Config components were manually removed from the cluster, or are installed but are no longer responding to {{site.data.keyword.satelliteshort}} Config. For example, network connectivity might be disconnected. Existing resources, if any, continue to run but do not receive updates. To resolve the issue, try debugging your [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-ts-locations-debug) or [cluster](/docs/openshift?topic=openshift-debug_clusters). |
-| `registered` | {{site.data.keyword.satelliteshort}} Config components are installed in the cluster, but no resources are currently watched. To set up watchkeeping, see [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources). |
+| `registered` | {{site.data.keyword.satelliteshort}} Config components are installed in the cluster, but no resources are currently watched. To set up Watch-keeper, see [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources). |
 {: caption="Host health states." caption-side="top"}
 
 
@@ -181,7 +181,7 @@ The total number of {{site.data.keyword.satelliteshort}} Link tunnel servers pre
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
-{: caption="Metadata for the location tunner numbers metric" caption-side="top"}
+{: caption="Metadata for the location tunnel numbers metric" caption-side="top"}
 
 #### Location latency
 {: #ibm_satellite_link_location_rtt_second}
@@ -332,8 +332,7 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
 {: note}
 
-To set up monitoring for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see  [Deploying a montoring agent in an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/monitoring?topic=monitoring-config_agent#config_agent_kube_os).
-
+To set up monitoring for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see  [Deploying a monitoring agent in an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/monitoring?topic=monitoring-config_agent#config_agent_kube_os).
 
 
 

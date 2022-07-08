@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-07-08"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -26,14 +26,14 @@ You can use {{site.data.keyword.satelliteshort}} Config to review the Kubernetes
 
 Before you begin, make sure that you have the following permissions. For more information, see [Checking user permissions](/docs/openshift?topic=openshift-users#checking-perms).
 -  The **Administrator** platform role, **Reader** service role, or **Manager** service role in {{site.data.keyword.cloud_notm}} IAM for the **Resource** resource type in {{site.data.keyword.satellitelong_notm}}.
--  The appropriate permissions to enable the {{site.data.keyword.satelliteshort}} Config watchkeeping capability, such as one of the following options.
+-  The appropriate permissions to enable the {{site.data.keyword.satelliteshort}} Config Watch-keeper, such as one of the following options.
     * The [permissions](/docs/satellite?topic=satellite-satcon-create) to create a configuration version and subscribe clusters to the version.
     * The **Writer** service role in {{site.data.keyword.cloud_notm}} IAM to the **Kubernetes Service** clusters that you want to watch resources for.
 
-### Enabling watchkeeper collection methods
+### Enabling Watch-keeper collection methods
 {: #satconfig-enable-watchkeeper}
 
-Review the [watchkeeper collection methods](https://github.com/razee-io/WatchKeeper#collection-methods){: external} to decide how to set up watchkeeping for your resources. Common use cases include,
+Review the [Watch-keeper collection methods](https://github.com/razee-io/WatchKeeper#collection-methods){: external} to decide how to set up Watch-keeper for your resources. Common use cases include,
 
 #### Watch all the resources that my {{site.data.keyword.satelliteshort}} subscription creates
 {: #satconfig-enable-watchkeeper-all}
@@ -60,7 +60,7 @@ Review the [watchkeeper collection methods](https://github.com/razee-io/WatchKee
     ```
     {: pre}
             
-After you enable watchkeeping for a resource, wait about an hour for the resources to display.
+After you enable Watch-keeper for a resource, wait about an hour for the resources to display.
 
 ### Review the resources from {{site.data.keyword.satelliteshort}} Config
 {: #satconfig-review-resources}
