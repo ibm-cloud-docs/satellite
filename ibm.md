@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -26,7 +26,26 @@ Test out an {{site.data.keyword.satellitelong}} location with virtual instances 
 If your hosts are running Red Hat CoreOS (RHCOS), you must manually attach them to your location.
 {: note}
 
-## Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}}
+## Automating your {{site.data.keyword.cloud_notm}} location setup with a Schematics template
+{: #ibm-template}
+
+You can create your {{site.data.keyword.satelliteshort}} location by using hosts that you added from {{site.data.keyword.cloud_notm}} with a Schematics template.
+{: shortdesc}
+
+All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
+
+You can clone and modify these Terraform templates from the [Satellite Terraform GitHub repository](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external}. Or, you can [add {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}} manually](#ibm-host-attach).
+{: tip}
+
+
+1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
+2. In the **Setup** section, click **IBM VPC Quick Start**.
+3. You can edit the region, VSI, location details, and object storage for your location. When you are finished, click **Done editing**.
+4. Click **Create location**.Your location might take about 30 minutes to finish provisioning.
+
+Well done, your {{site.data.keyword.satelliteshort}} location is creating! You can review the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to see when your location is in a **Normal** state and ready to use.
+
+## Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}} manually
 {: #ibm-host-attach}
 
 You can create your {{site.data.keyword.satelliteshort}} location by using hosts that you added from {{site.data.keyword.cloud_notm}}.
