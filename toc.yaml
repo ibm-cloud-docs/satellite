@@ -71,6 +71,7 @@ toc:
               - host-update-workers.md
               - location-copy.md
               - config-http-proxy.md
+              - config-custom-ntp.md
               - host-remove.md
         - topicgroup:
             label: Deploying Kubernetes resources across clusters with Satellite Config
@@ -216,4 +217,3 @@ toc:
                     - ts-authentication-failure.md
                     - ts-node-register-failure.md
         - sitemap.md
-

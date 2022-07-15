@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -40,7 +40,7 @@ Allow the following hostnames, protocols, and ports for all {{site.data.keyword.
 * Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
 * Protocol and ports: Allow NTP protocol and provide UDP on port 123
 
-Note that allowing access to the NTP servers is optional.
+Note that allowing access to the NTP servers is optional. You can also define a custom NTP server for your RHCOS hosts. For more information, see the [Specifying a custom Network Time Protocol (NTP) server](/docs/satellite?topic=satellite-specify-custom-ntp).
 
 ## Allow hosts to communicate with {{site.data.keyword.iamshort}}
 {: #host-out-iam}
