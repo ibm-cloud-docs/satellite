@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-12"
+lastupdated: "2022-07-15"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -143,6 +143,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july22)
+
+    * [15 July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july1522)
+
+        * New information about using a custom Network Time Protocol (NTP) server
 
 * [June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june22)
 
@@ -1139,6 +1145,12 @@ subcollection: satellite
 * [Configuring your HTTP proxy](/docs/satellite?topic=satellite-config-http-proxy#http-proxy-config)
 
 * [Common mirror locations](/docs/satellite?topic=satellite-config-http-proxy#common-mirror-locations)
+
+[Specifying a custom Network Time Protocol (NTP) server](/docs/satellite?topic=satellite-config-custom-ntp#config-custom-ntp)
+
+* [Specifying a custom NTP server for an unattached host](/docs/satellite?topic=satellite-config-custom-ntp#custom-ntp-config)
+
+* [Specifying a custom NTP for an attached host](/docs/satellite?topic=satellite-config-custom-ntp#custom-ntp-attached-host)
 
 [Removing hosts and locations](/docs/satellite?topic=satellite-host-remove#host-remove)
 

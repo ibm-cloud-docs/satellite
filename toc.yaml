@@ -71,6 +71,7 @@ toc:
               - host-update-workers.md
               - location-copy.md
               - config-http-proxy.md
+              - config-custom-ntp.md
               - host-remove.md
         - topicgroup:
             label: Deploying Kubernetes resources across clusters with Satellite Config
@@ -80,6 +81,7 @@ toc:
               - satcon-create.md
               - satcon-manage.md
               - satcon-existing.md
+              - sat_toolchain_tutorial.md
         - topicgroup:
             label: Connecting Satellite locations with external services by using Link endpoints
             topics:
@@ -216,4 +218,3 @@ toc:
                     - ts-authentication-failure.md
                     - ts-node-register-failure.md
         - sitemap.md
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-15"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -20,6 +20,16 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
+
+## July 2022
+{: #satellite-july22}
+
+### 15 July 2022
+{: #satellite-july1522}
+{: release-note}
+
+New information about using a custom Network Time Protocol (NTP) server
+:   You can now define a custom NTP server for your RHCOS hosts. For more information, see the [Specifying a custom Network Time Protocol (NTP) server](/docs/satellite?topic=satellite-specify-custom-ntp).
 
 ## June 2022
 {: #satellite-june22}

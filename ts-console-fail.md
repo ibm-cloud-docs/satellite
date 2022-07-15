@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-07-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 {: #ts-console-fail}
 
 
-When you create an {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location, you cannot access the {{site.data.keyword.redhat_openshift_notm}} web console, or access to the console is intermittent.
+When you create a {{site.data.keyword.redhat_openshift_notm}} cluster in your {{site.data.keyword.satelliteshort}} location, you cannot access the {{site.data.keyword.redhat_openshift_notm}} web console, or access to the console is intermittent.
 {: tsSymptoms}
 
 You might see an error message similar to the following:
