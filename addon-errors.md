@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-22"
+lastupdated: "2022-07-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -24,7 +24,7 @@ Add-ons might not work for several reason.
 
 - The add-on is not supported for clusters in a {{site.data.keyword.satelliteshort}} location.
 - The add-on is in an unhealthy state.
-- The add-on settings are misconfigured, such as renaming or editing a configmap.
+- The add-on settings are misconfigured, such as renaming or editing a ConfigMap.
 - The add-on cannot be backed up in {{site.data.keyword.cos_full_notm}} due to conflicting service instance and bucket endpoints.
 
 Take the following steps to troubleshoot the add-on.

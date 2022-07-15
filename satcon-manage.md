@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-15"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -38,9 +38,9 @@ Review the [Watch-keeper collection methods](https://github.com/razee-io/WatchKe
 #### Watch all the resources that my {{site.data.keyword.satelliteshort}} subscription creates
 {: #satconfig-enable-watchkeeper-all}
 
-1. [Add a configmap](https://github.com/razee-io/WatchKeeper#watch-by-resource){: external} to the YAML file of your {{site.data.keyword.satelliteshort}} configuration version. 
-2. In the `metadata.namespace` field of the configmap, set the value to `razeedeploy`.
-3. In the `data` section of the configmap, add all the resources that you want {{site.data.keyword.satelliteshort}} Config to watch.
+1. [Add a ConfigMap](https://github.com/razee-io/WatchKeeper#watch-by-resource){: external} to the YAML file of your {{site.data.keyword.satelliteshort}} configuration version. 
+2. In the `metadata.namespace` field of the ConfigMap, set the value to `razeedeploy`.
+3. In the `data` section of the ConfigMap, add all the resources that you want {{site.data.keyword.satelliteshort}} Config to watch.
 4. Subscribe your clusters to this version from the [console](/docs/satellite?topic=satellite-satcon-create#create-satconfig-ui) or [CLI](/docs/satellite?topic=satellite-satcon-create#create-satconfig-cli).
 
 #### Watch a particular resource in my {{site.data.keyword.satelliteshort}} Config version
