@@ -73,7 +73,7 @@ To configure your hosts to use a custom NTP server before you attach them to a l
     
 4. Edit the script and add an entry to the `storage.files` array, where `BASE64_ENCODED_CHRONY_FILE_DATA` is the base 64 string from step 2.
 
-    ```sh
+    ```txt
     {
       "overwrite": true,
       "path": "/etc/chrony.conf",
@@ -83,7 +83,7 @@ To configure your hosts to use a custom NTP server before you attach them to a l
         "mode": 420
      }
      ```
-     {: pre}
+     {: codeblock}
      
 5. Save the script.
 6. Validate the script.
