@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-15"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1028,7 +1028,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 :    Required. Enter the ID or name of the location where the {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.redhat_openshift_notm}} cluster exists to which you want to assign the compute host. To retrieve the location ID or name, run `ibmcloud sat location ls`.  
 
 `--cluster CLUSTER`
-:    Required. Enter the ID or name of the cluster where you want to assign your compute host. If you want to assign your compute host to the {{site.data.keyword.satelliteshort}} control plane, use the location ID or name. To assign the compute host to an {{site.data.keyword.redhat_openshift_notm}} cluster, use the ID or name of the cluster. To retrieve the cluster ID or name, run `ibmcloud sat cluster ls`.  
+:    Required. Enter the ID or name of the cluster where you want to assign your compute host. If you want to assign your compute host to the {{site.data.keyword.satelliteshort}} control plane, use the location ID or name. To assign the compute host to a {{site.data.keyword.redhat_openshift_notm}} cluster, use the ID or name of the cluster. To retrieve the cluster ID or name, run `ibmcloud sat cluster ls`.  
 
 `--host HOST`
 :    Required. Enter the ID of the host that you want to assign to the {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.redhat_openshift_notm}} cluster. To retrieve the host ID, run `ibmcloud sat host ls --location <location_ID_or_name>`.  
@@ -1037,7 +1037,7 @@ ibmcloud sat host assign --location LOCATION --cluster CLUSTER --host HOST --zon
 :    Required. The name of the zone where you want to assign the compute host. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field.
 
 `--worker-pool WORKER_POOL`
-:    Optional. Enter the name or ID of the worker pool in your {{site.data.keyword.redhat_openshift_notm}} cluster to which you want to add your compute host. If you want to assign hosts to your {{site.data.keyword.satelliteshort}} control plane, this option is not required. When you assign hosts to an {{site.data.keyword.redhat_openshift_notm}} cluster, you can include this option to specify the worker pool. If no worker pool is specified, the host is assigned to the default worker pool of the cluster.  
+:    Optional. Enter the name or ID of the worker pool in your {{site.data.keyword.redhat_openshift_notm}} cluster to which you want to add your compute host. If you want to assign hosts to your {{site.data.keyword.satelliteshort}} control plane, this option is not required. When you assign hosts to a {{site.data.keyword.redhat_openshift_notm}} cluster, you can include this option to specify the worker pool. If no worker pool is specified, the host is assigned to the default worker pool of the cluster.  
 
 `--host-label LABEL`, `-hl LABEL`
 :    Optional. Enter any labels as a key-value pair that you want to use to identify the host that you want to assign to your {{site.data.keyword.satelliteshort}} control plane or {{site.data.keyword.redhat_openshift_notm}} cluster. The first host that has this label and is in an unassigned state it automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.  

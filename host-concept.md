@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-07-15"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -28,4 +28,4 @@ The following diagram presents the initial setup steps for hosts.
 
 3. **Bootstrap**: When you assign a host, the host is bootstrapped to become a worker node in a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) such as a managed {{site.data.keyword.cos_full_notm}} instance or your {{site.data.keyword.satelliteshort}} control plane. This bootstrap process consists of three phases, all of which must successfully complete. First, required images are downloaded to the host from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the imaging configuration. Finally, software packages for the {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service, such as {{site.data.keyword.redhat_openshift_notm}}, are set up on the host. After successfully bootstrapping, the host enters a **normal** health state with an **assigned** status. You can no longer log in to the underlying machine via SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 
-Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshort}} location control plane, {{site.data.keyword.openshiftlong_notm}} cluster, or as compute capacity for other [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). If you run an {{site.data.keyword.redhat_openshift_notm}} cluster, you can log in to the clusters and use Kubernetes or {{site.data.keyword.redhat_openshift_notm}} APIs to manage your containerized workloads, or use [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig) to manage your workloads across clusters.
+Now, your hosts serve as worker nodes for your {{site.data.keyword.satelliteshort}} location control plane, {{site.data.keyword.openshiftlong_notm}} cluster, or as compute capacity for other [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). If you run a {{site.data.keyword.redhat_openshift_notm}} cluster, you can log in to the clusters and use Kubernetes or {{site.data.keyword.redhat_openshift_notm}} APIs to manage your containerized workloads, or use [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig) to manage your workloads across clusters.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -58,7 +58,7 @@ Learn more about {{site.data.keyword.IBM_notm}} operational access to your {{sit
 
 Operations such as host attachment, host assignment, and major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane hosts are controlled by automation through the {{site.data.keyword.satellitelong_notm}} API server in {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.satelliteshort}} API server communicates with the control plane master, which also exists in {{site.data.keyword.cloud_notm}}, to make these changes in your location.
 
-Regular maintenance and automation tooling accesses the masters of {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters in your location through the default `openshift-api-<cluster_ID>` Link endpoint. This endpoint allows the {{site.data.keyword.openshiftlong_notm}} API to communicate with the master for the service cluster. For example, if you create an {{site.data.keyword.redhat_openshift_notm}} cluster to run applications in your location, all version updates for that cluster's master are automatically applied through the default `openshift-api-<cluster_ID>` Link endpoint for that cluster.
+Regular maintenance and automation tooling accesses the masters of {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters in your location through the default `openshift-api-<cluster_ID>` Link endpoint. This endpoint allows the {{site.data.keyword.openshiftlong_notm}} API to communicate with the master for the service cluster. For example, if you create a {{site.data.keyword.redhat_openshift_notm}} cluster to run applications in your location, all version updates for that cluster's master are automatically applied through the default `openshift-api-<cluster_ID>` Link endpoint for that cluster.
 
 Updates to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that are running on hosts in your location are initiated by the {{site.data.keyword.cloud_notm}} team for that service. When a change is ready to be rolled out to a service, the {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service team uses [{{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig) to upload a new version of the service to the subscription that the {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster is included in. To apply the service update through {{site.data.keyword.satelliteshort}} Config, the control plane automation for the {{site.data.keyword.satellitelong_notm}} API server, which exists in {{site.data.keyword.cloud_notm}}, deploys the update to the master of the {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster in your location through the default `openshift-api-<cluster_ID>` Link endpoint. The cluster master then applies the updates to the worker nodes in the cluster.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-07-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -27,7 +27,7 @@ While you can set up many possible solutions to enable secure connections betwee
 For example, you might use a minimal {{site.data.keyword.satelliteshort}} location deployment as an alternative to the [{{site.data.keyword.SecureGateway}} solution](/docs/SecureGateway?topic=SecureGateway-getting-started-with-sg). {{site.data.keyword.satelliteshort}} provides the same application-level transport through common ports as {{site.data.keyword.SecureGateway}}, with greater client visibility and audit control. The {{site.data.keyword.satelliteshort}} Link functionality improves upon the {{site.data.keyword.SecureGateway}} client experience with a highly available and secure-by-default communication between the cloud and on-premises networks, third-party clouds, or network edge.
 
 On-premises setup with a {{site.data.keyword.satelliteshort}} location
-:   A minimum deployment of {{site.data.keyword.satelliteshort}} includes using three RHEL 7 hosts to set up a {{site.data.keyword.satelliteshort}} location control plane. These hosts might be in your on-premises network or in other clouds. Then, you can attach more hosts to your location and deploy {{site.data.keyword.cloud_notm}} managed services to run on these hosts. For example, you can deploy an {{site.data.keyword.redhat_openshift_notm}} cluster to your on-premises hosts that are attached to your {{site.data.keyword.satelliteshort}} location. Then, you can deploy any apps that need secure access to {{site.data.keyword.cloud_notm}} to your {{site.data.keyword.redhat_openshift_notm}} cluster.
+:   A minimum deployment of {{site.data.keyword.satelliteshort}} includes using three RHEL 7 hosts to set up a {{site.data.keyword.satelliteshort}} location control plane. These hosts might be in your on-premises network or in other clouds. Then, you can attach more hosts to your location and deploy {{site.data.keyword.cloud_notm}} managed services to run on these hosts. For example, you can deploy a {{site.data.keyword.redhat_openshift_notm}} cluster to your on-premises hosts that are attached to your {{site.data.keyword.satelliteshort}} location. Then, you can deploy any apps that need secure access to {{site.data.keyword.cloud_notm}} to your {{site.data.keyword.redhat_openshift_notm}} cluster.
 
 Secure transport to {{site.data.keyword.cloud_notm}}
 :   Next, your on-premises client that runs on the location hosts can use [{{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-cloud-create#link-location) as Layer 4 application transport between the location and other services that run in {{site.data.keyword.cloud_notm}} or your own applications that run within {{site.data.keyword.cloud_notm}}. You can use {{site.data.keyword.satelliteshort}} Link to create _location endpoints_, which allow resources in {{site.data.keyword.cloud_notm}} to securely access a resource in your on-premises {{site.data.keyword.satelliteshort}} location, and _cloud endpoints_, which allow resources in your on-premises {{site.data.keyword.satelliteshort}} location to access a resource that runs anywhere outside of the {{site.data.keyword.satelliteshort}} location. To allow access to a resource, authorization must granted in the Link endpoint's access control list.

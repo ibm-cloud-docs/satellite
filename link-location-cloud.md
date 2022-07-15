@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-10"
+lastupdated: "2022-07-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -163,9 +163,9 @@ Review the following list of general use cases and example use cases for {{site.
 
 
 Connect resources within the same {{site.data.keyword.satelliteshort}} location?
-:   No. Link endpoints cannot be created between resources in the same location. Instead, resources can access each other directly. For example, an app that runs in an {{site.data.keyword.redhat_openshift_notm}} cluster in {{site.data.keyword.satelliteshort}} does not need to communicate through {{site.data.keyword.satelliteshort}} Link to access a database that exists in the same location, and can instead access that database directly through the location's private network.
+:   No. Link endpoints cannot be created between resources in the same location. Instead, resources can access each other directly. For example, an app that runs in a {{site.data.keyword.redhat_openshift_notm}} cluster in {{site.data.keyword.satelliteshort}} does not need to communicate through {{site.data.keyword.satelliteshort}} Link to access a database that exists in the same location, and can instead access that database directly through the location's private network.
 
-Expose apps or services that run in an {{site.data.keyword.redhat_openshift_notm}} cluster in {{site.data.keyword.satelliteshort}}?
+Expose apps or services that run in a {{site.data.keyword.redhat_openshift_notm}} cluster in {{site.data.keyword.satelliteshort}}?
 :   To see available options, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
 
 Bridge networks within the {{site.data.keyword.cloud_notm}} public network, such as VPC spanning?

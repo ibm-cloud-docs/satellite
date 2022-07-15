@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -332,7 +332,7 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
 {: note}
 
-To set up monitoring for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see  [Deploying a monitoring agent in an {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/monitoring?topic=monitoring-config_agent#config_agent_kube_os).
+To set up monitoring for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see  [Deploying a monitoring agent in a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/monitoring?topic=monitoring-config_agent#config_agent_kube_os).
 
 
 
