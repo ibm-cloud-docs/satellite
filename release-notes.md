@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-18"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -29,7 +29,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 New information about using a custom Network Time Protocol (NTP) server
-:   You can now define a custom NTP server for your RHCOS hosts. For more information, see the [Specifying a custom Network Time Protocol (NTP) server](/docs/satellite?topic=satellite-specify-custom-ntp).
+:   You can now define a custom NTP server for your RHCOS hosts. For more information, see the [Specifying a custom Network Time Protocol (NTP) server](/docs/satellite?topic=satellite-config-custom-ntp).
 
 ## June 2022
 {: #satellite-june22}
@@ -788,7 +788,7 @@ Logging and monitoring
 :   Added information about how to set up [logging and monitoring for {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health).
 
 Worker pool management
-:   Described how to manage [worker pools in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters#satcluster-worker-pools-sat), such as host labels for host auto assignment.
+:   Described how to manage [worker pools in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters), such as host labels for host auto assignment.
 
 ## January 2021
 {: #satellite-jan21}
