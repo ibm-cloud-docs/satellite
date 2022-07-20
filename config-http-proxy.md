@@ -36,7 +36,7 @@ New Red Hat CoreOS-enabled locations
 :   Before attaching your hosts to your location, [configure your HTTP proxy](#http-proxy-config).
 
 
-### What type of hosts can i use?
+## What type of hosts can i use?
 {: #consider-http-proxy-host}
 
 You can use RHEL or CoreOS hosts when you set up an HTTP proxy. You must edit each host that is attached to your location, including the hosts that make up the control plane.

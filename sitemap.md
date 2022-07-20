@@ -1140,7 +1140,7 @@ subcollection: satellite
 
 * [What type of location do I need to use HTTP proxy?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy)
 
-    * [What type of hosts can i use?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy-host)
+* [What type of hosts can i use?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy-host)
 
 * [What else do I need to know about HTTP proxy?](/docs/satellite?topic=satellite-config-http-proxy#additional-http-proxy)
 
