@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-19"
+lastupdated: "2022-07-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1139,6 +1139,8 @@ subcollection: satellite
 [Configuring an HTTP proxy for your {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-config-http-proxy#config-http-proxy)
 
 * [What type of location do I need to use HTTP proxy?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy)
+
+    * [What type of hosts can i use?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy-host)
 
 * [What else do I need to know about HTTP proxy?](/docs/satellite?topic=satellite-config-http-proxy#additional-http-proxy)
 

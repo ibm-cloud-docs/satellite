@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-20"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -35,11 +35,17 @@ Existing Red Hat CoreOS-enabled locations with attached hosts
 New Red Hat CoreOS-enabled locations
 :   Before attaching your hosts to your location, [configure your HTTP proxy](#http-proxy-config).
 
+
+### What type of hosts can i use?
+{: #consider-http-proxy-host}
+
+You can use RHEL or CoreOS hosts when you set up an HTTP proxy. You must edit each host that is attached to your location, including the hosts that make up the control plane.
+
+
 ## What else do I need to know about HTTP proxy?
 {: #additional-http-proxy}
 
 - You cannot configure an HTTP proxy for worker to master communications or for connecting to the package mirrors. 
-- You must edit each host that is attached to your location, including the hosts that make up the control plane. 
 - Your proxy must be set up with TCP tunneling. While specific steps might vary depending on your provider, follow these general steps to set up TCP tunneling.
     1. Set up your HTTP proxy to tunnel traffic for all three of your location public service endpoints. To find your endpoints, 
         
@@ -84,7 +90,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
         ```
         {: screen}
         
-        From this output, the first IP is `172.21.0.1`, which makes the full output for hosts associated with this specific cluster in this example `NO_PROXY=172.20.0.1,172.21.0.1,$REDHAT_PACKAGE_MIRROR_LOCATION` for RHEL hosts and `NO_PROXY=172.20.0.1,172.21.0.1,.REGION.satellite.appdomain.cloud` for RHCOS hosts. For example, `NO_PROXY=172.20.0.1,172.21.0.1,.eu-gb.satellite.appdomain.cloud` is correct for a London mirror location for RHCOS hosts. Note that the RHCOS value includes `.` before the region.
+        From this output, note that the first IP is `172.21.0.1`, which makes the full output for hosts associated with this specific cluster in this example `NO_PROXY=172.20.0.1,172.21.0.1,$REDHAT_PACKAGE_MIRROR_LOCATION` for RHEL hosts and `NO_PROXY=172.20.0.1,172.21.0.1,.REGION.satellite.appdomain.cloud` for RHCOS hosts. For example, `NO_PROXY=172.20.0.1,172.21.0.1,.eu-gb.satellite.appdomain.cloud` is correct for a London mirror location for RHCOS hosts. Note that the RHCOS value includes `.` before the region.
 
 3. Navigate to `/etc/systemd/system.conf.d` on your host. If that file does not exist, create it. Enter the `<VALUE>` for `NO_PROXY` from step 2.
     
