@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-07-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1140,6 +1140,8 @@ subcollection: satellite
 
 * [What type of location do I need to use HTTP proxy?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy)
 
+* [What type of hosts can i use?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy-host)
+
 * [What else do I need to know about HTTP proxy?](/docs/satellite?topic=satellite-config-http-proxy#additional-http-proxy)
 
 * [Configuring your HTTP proxy](/docs/satellite?topic=satellite-config-http-proxy#http-proxy-config)
@@ -1908,11 +1910,15 @@ subcollection: satellite
 
 * [Creating an OpenShift Data Foundation configuration in the command line](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-cli)
 
+    * [Optional: Adding additional worker nodes to your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-local#add-worker-nodes-odf-local)
+
 * [Assigning your ODF storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-odf-local#assign-storage-odf-local)
 
 * [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-deploy)
 
-    * [Scaling your ODF configuration by attaching raw disks](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-scale-odf-local-disk)
+* [Scaling your ODF configuration by attaching raw disks](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-scale-odf-local-disk)
+
+    * [Scaling your ODF configuration with `auto-discover-devices`](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-scale-odf-local-auto-discover)
 
 * [Upgrading your ODF version](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-upgrade)
 
@@ -1938,9 +1944,13 @@ subcollection: satellite
 
 * [Creating an OpenShift Data Foundation configuration in the command line](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-cli)
 
+    * [Optional: Adding additional worker nodes to your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-remote#add-worker-nodes-odf-remote)
+
 * [Assigning your ODF storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-odf-remote#assign-storage-odf-remote)
 
     * [Assigning a remote device storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-odf-remote#assign-storage-odf-remote-cli)
+
+* [Scaling up your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-scale-config)
 
 * [Upgrading your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-upgrade-config)
 
