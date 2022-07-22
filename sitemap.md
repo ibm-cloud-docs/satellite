@@ -146,7 +146,7 @@ subcollection: satellite
 
 * [July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july22)
 
-* [22 July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july1522)
+* [22 July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july2222)
 
     * New! Beta support for the VMware CSI driver template
 

@@ -25,7 +25,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-july22}
 
 ## 22 July 2022
-{: #satellite-july1522}
+{: #satellite-july2222}
 {: release-note}
 
 New! Beta support for the VMware CSI driver template
