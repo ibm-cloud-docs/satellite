@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-07-22"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,14 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## July 2022
 {: #satellite-july22}
+
+## 22 July 2022
+{: #satellite-july1522}
+{: release-note}
+
+New! Beta support for the VMware CSI driver template
+:   You can use the VMware CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [VMware CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-vmware-csi).
+
 
 ### 15 July 2022
 {: #satellite-july1522}
