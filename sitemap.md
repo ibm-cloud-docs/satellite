@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-20"
+lastupdated: "2022-07-22"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -145,6 +145,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july22)
+
+* [22 July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july2222)
+
+    * New! Beta support for the VMware CSI driver template
 
     * [15 July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july1522)
 
