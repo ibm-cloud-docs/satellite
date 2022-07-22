@@ -146,9 +146,9 @@ subcollection: satellite
 
 * [July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july22)
 
-* [22 July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july2222)
+    * [22 July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july2222)
 
-    * New! Beta support for the VMware CSI driver template
+        * New! Beta support for the VMware CSI driver template
 
     * [15 July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july1522)
 
@@ -1969,6 +1969,35 @@ subcollection: satellite
     * [OpenShift Data Foundation version 4.7 parameters](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-47-params)
 
 * [Storage class reference for OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-sc-ref)
+
+
+### VMware storage templates
+{: #sitemap_vmware_storage_templates}
+
+
+[VMware Block Container Storage Interface (CSI) Driver](/docs/satellite?topic=satellite-config-storage-vmware-csi#config-storage-vmware-csi)
+
+* [Creating the VMware configuration from the console](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-storage-vmware-create-config-ui)
+
+* [Creating the VMware configuration in the command line](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-storage-vmware-create-config-cli)
+
+    * [Assigning a VMWare storage configuration from the console](/docs/satellite?topic=satellite-config-storage-vmware-csi#assign-storage-vmware-csi-ui)
+
+    * [Assigning a VMWare storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-vmware-csi#assign-storage-vmware-csi-cli)
+
+* [Deploying an app that uses VMware](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-storage-vmware-deploy-app)
+
+* [Removing VMWare storage from your apps](/docs/satellite?topic=satellite-config-storage-vmware-csi#vmware-csi-rm-apps)
+
+* [Removing the VMware storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-vmware-csi#vmware-csi-template-rm)
+
+    * [Removing the VMWare storage configuration using the console](/docs/satellite?topic=satellite-config-storage-vmware-csi#vmware-csi-rm-ui)
+
+    * [Removing the VMWare storage configuration using the command line](/docs/satellite?topic=satellite-config-storage-vmware-csi#vmware-csi-rm-cli)
+
+* [Parameter reference for VMWare](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-storage-vmware-csi-params-cli)
+
+* [Getting help and support for VMWare](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-vmware-csi-support)
 
 [Storage class reference](/docs/satellite?topic=satellite-storage-class-ref#storage-class-ref)
 

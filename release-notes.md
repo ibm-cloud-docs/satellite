@@ -24,7 +24,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## July 2022
 {: #satellite-july22}
 
-## 22 July 2022
+### 22 July 2022
 {: #satellite-july2222}
 {: release-note}
 

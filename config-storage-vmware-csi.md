@@ -16,7 +16,7 @@ subcollection: satellite
 # VMware Block Container Storage Interface (CSI) Driver
 {: #config-storage-vmware-csi}
 
-The VMware Container Storage Interface (CSI) [Driver]*(https://github.com/kubernetes-sigs/ibm-vmware-csi-driver)*{: external} allows you to manage the lifecycle of your VMware Block Data volumes.
+The VMware Container Storage Interface (CSI) [Driver](https://github.com/kubernetes-sigs/ibm-vmware-csi-driver){: external} allows you to manage the lifecycle of your VMware Block Data volumes.
 
 The template is currently in beta. Do not use it for production workloads. 
 {: beta}
