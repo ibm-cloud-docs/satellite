@@ -133,7 +133,12 @@ toc:
                     - config-storage-local-block.md
                     - config-storage-local-file.md
                     - config-storage-odf-local.md
-                    - config-storage-odf-remote.md 
+                    - config-storage-odf-remote.md
+              - topicgroup: 
+                  label: VMware storage templates
+                  topics:
+                    - config-storage-vmware-csi.md 
+              - sat-storage-cos.md
               - storage-class-ref.md
         - sg-usecase.md
         - topicgroup:
