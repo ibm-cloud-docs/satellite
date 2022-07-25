@@ -83,8 +83,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 | 6 hosts | Up to 5 clusters  | 20 workers across 5 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
 | 9 hosts |  Up to 8 clusters | 40 workers across 8 clusters, or 140 workers across 3 clusters | 60 workers per cluster |
 | 12 hosts |  Up to 11 clusters | 60 workers across 11 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
-{: caption="Sizing guidance for example numbers of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
-{: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram}
 {: tab-title="4 vCPU, 16 GB RAM (RHEL)"}
@@ -96,8 +95,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 | 6 hosts | Up to 20 clusters | 200 workers across 20 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
 | 9 hosts  | Up to 26 clusters | 400 workers across 26 clusters, or 850 workers across 3 clusters | 300 workers per cluster |
 | 12 hosts  | Up to 36 clusters | 520 workers across 26 clusters, or 1150 workers across 4 clusters | 300 workers per cluster |
-{: caption="Sizing guidance for example numbers of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
-{: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: class="simple-tab-table"}
 {: #16cpu-64ram}
 {: tab-title="16 vCPU, 64 GB RAM (RHEL)"}
@@ -111,8 +109,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 | 6 hosts | Up to 3 clusters | 20 workers across 3 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
 | 9 hosts | Up to 5 clusters  | 40 workers across 5 clusters, or 140 workers across 3 clusters | 60 workers per cluster |
 | 12 hosts | Up to8 clusters | 60 workers across 8 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
-{: caption="Sizing guidance for example numbers of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
-{: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram-coreos}
 {: tab-title="4 vCPU, 16 GB RAM (CoreOS)"}
@@ -124,8 +121,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 | 6 hosts | Up to 9 clusters | 200 workers across 9 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
 | 9 hosts  | Up to 18 clusters | 400 workers across 18 clusters, or 850 workers across 3 clusters | 300 workers per cluster |
 | 12 hosts  | Up to 26 clusters | 520 workers across 26 clusters, or 1150 workers across 4 clusters | 300 workers per cluster |
-{: caption="Sizing guidance for example numbers of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
-{: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: class="simple-tab-table"}
 {: #16cpu-64ram-coreos}
 {: tab-title="16 vCPU, 64 GB RAM (CoreOS)"}
