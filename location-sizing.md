@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-25"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -84,7 +84,7 @@ The following tables provide examples of the number of hosts that the control pl
 {: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
 {: class="simple-tab-table"}
 {: #4cpu-16ram}
-{: tab-title="4 vCPU, 16GB RAM (RHEL)"}
+{: tab-title="4 vCPU, 16 GB RAM (RHEL)"}
 {: tab-group="loc-size"}
 
 | Number of RHEL control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
@@ -97,7 +97,7 @@ The following tables provide examples of the number of hosts that the control pl
 {: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
 {: class="simple-tab-table"}
 {: #16cpu-64ram}
-{: tab-title="16 vCPU, 64GB RAM (RHEL)"}
+{: tab-title="16 vCPU, 64 GB RAM (RHEL)"}
 {: tab-group="loc-size"}
 
 | Number of CoreOS control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
@@ -109,7 +109,7 @@ The following tables provide examples of the number of hosts that the control pl
 {: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
 {: class="simple-tab-table"}
 {: #4cpu-16ram-coreos}
-{: tab-title="8 vCPU, 16GB RAM (CoreOS)"}
+{: tab-title="4 vCPU, 16 GB RAM (CoreOS)"}
 {: tab-group="loc-size"}
 
 | Number of CoreOS control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
@@ -122,7 +122,7 @@ The following tables provide examples of the number of hosts that the control pl
 {: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
 {: class="simple-tab-table"}
 {: #16cpu-64ram-coreos}
-{: tab-title="16 vCPU, 64GB RAM (CoreOS)"}
+{: tab-title="16 vCPU, 64 GB RAM (CoreOS)"}
 {: tab-group="loc-size"}
 
 
