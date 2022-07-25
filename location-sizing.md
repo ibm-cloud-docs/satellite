@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-25"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -71,8 +71,11 @@ The following tables provide examples of the number of hosts that the control pl
 - The size of the hosts that run the control plane, **4 vCPU and 16GB RAM** or **16 vCPU and 64GB RAM**, affect the numbers of clusters and worker nodes that are possible in the location. Keep in mind that actual performance requirements depend on many factors, such as the underlying CPU performance and control plane usage by the applications that run in the location.
 - You can assign hosts to the control plane in groups of 3. The table presents examples up to 12 hosts as common configurations to give you an idea of how you might size the control plane for your host and application environment. Note that you can add more than 12 hosts to your control plane in groups of 3. For example you might create a control plane with 18 or 27 hosts.
 
- Note that while you can deploy a cluster to a location with only 3 control plane hosts, upgrading and other management operations might not work with bare minimum setups.
- {: note}
+While you can deploy a cluster to a location with only 3 control plane hosts, upgrading and other management operations might not work with bare minimum setups.
+{: note}
+
+### Location size for Red Hat Enterprise Linux (RHEL) hosts
+{: #control-plane-how-many-clusters-rhel}
 
 | Number of RHEL control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
@@ -80,11 +83,10 @@ The following tables provide examples of the number of hosts that the control pl
 | 6 hosts | Up to 5 clusters  | 20 workers across 5 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
 | 9 hosts |  Up to 8 clusters | 40 workers across 8 clusters, or 140 workers across 3 clusters | 60 workers per cluster |
 | 12 hosts |  Up to 11 clusters | 60 workers across 11 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
-{: caption="Sizing guidance for example numbers of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
-{: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram}
-{: tab-title="4 vCPU, 16GB RAM (RHEL)"}
+{: tab-title="4 vCPU, 16 GB RAM (RHEL)"}
 {: tab-group="loc-size"}
 
 | Number of RHEL control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
@@ -93,24 +95,25 @@ The following tables provide examples of the number of hosts that the control pl
 | 6 hosts | Up to 20 clusters | 200 workers across 20 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
 | 9 hosts  | Up to 26 clusters | 400 workers across 26 clusters, or 850 workers across 3 clusters | 300 workers per cluster |
 | 12 hosts  | Up to 36 clusters | 520 workers across 26 clusters, or 1150 workers across 4 clusters | 300 workers per cluster |
-{: caption="Sizing guidance for example numbers of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
-{: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: class="simple-tab-table"}
 {: #16cpu-64ram}
-{: tab-title="16 vCPU, 64GB RAM (RHEL)"}
+{: tab-title="16 vCPU, 64 GB RAM (RHEL)"}
 {: tab-group="loc-size"}
+
+### Location size for Red Hat CoreOS (RHCOS) hosts
+{: #control-plane-how-many-clusters-rhcos}
 
 | Number of CoreOS control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
 | 6 hosts | Up to 3 clusters | 20 workers across 3 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
 | 9 hosts | Up to 5 clusters  | 40 workers across 5 clusters, or 140 workers across 3 clusters | 60 workers per cluster |
 | 12 hosts | Up to8 clusters | 60 workers across 8 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
-{: caption="Sizing guidance for example numbers of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
-{: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram-coreos}
-{: tab-title="8 vCPU, 16GB RAM (CoreOS)"}
-{: tab-group="loc-size"}
+{: tab-title="4 vCPU, 16 GB RAM (CoreOS)"}
+{: tab-group="loc-sizerhcos"}
 
 | Number of CoreOS control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
@@ -118,11 +121,10 @@ The following tables provide examples of the number of hosts that the control pl
 | 6 hosts | Up to 9 clusters | 200 workers across 9 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
 | 9 hosts  | Up to 18 clusters | 400 workers across 18 clusters, or 850 workers across 3 clusters | 300 workers per cluster |
 | 12 hosts  | Up to 26 clusters | 520 workers across 26 clusters, or 1150 workers across 4 clusters | 300 workers per cluster |
-{: caption="Sizing guidance for example numbers of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
-{: summary="The rows are read from left to right. The first column describes the number of clusters that you want to run in the location. The second column describes the number of hosts that the location control plane must have to run the masters for those clusters."}
+{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: class="simple-tab-table"}
 {: #16cpu-64ram-coreos}
-{: tab-title="16 vCPU, 64GB RAM (CoreOS)"}
-{: tab-group="loc-size"}
+{: tab-title="16 vCPU, 64 GB RAM (CoreOS)"}
+{: tab-group="loc-sizerhcos"}
 
 

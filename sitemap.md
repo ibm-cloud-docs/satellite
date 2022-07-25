@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-07-25"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1078,6 +1078,10 @@ subcollection: satellite
 * [How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?](/docs/satellite?topic=satellite-location-sizing#control-plane-scale-up)
 
 * [How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters)
+
+    * [Location size for Red Hat Enterprise Linux (RHEL) hosts](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
+
+    * [Location size for Red Hat CoreOS (RHCOS) hosts](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos)
 
 
 ## Managing hosts and locations
