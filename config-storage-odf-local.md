@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-19"
+lastupdated: "2022-07-28"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -562,11 +562,12 @@ In the following example, 3 worker nodes are added to the configuration that was
 {: #sat-storage-scale-odf-local-auto-discover}
 {: cli}
 
-If you set the `auto-discover-devices` parameter to `true` in your ODF configuration, you can scale your configuration by increasing the `num-of-osd` parameter value in the following command: 
-    ```sh
-    ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --apply
-    ```
-    {: pre}
+If you set the `auto-discover-devices` parameter to `true` in your ODF configuration, you can scale your configuration by increasing the `num-of-osd` parameter value in the following command.
+
+```sh
+ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --apply
+```
+{: pre}
 
 
 ## Upgrading your ODF version

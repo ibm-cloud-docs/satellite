@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-19"
+lastupdated: "2022-07-28"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -267,9 +267,11 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 {: cli}
 
 To scale your ODF configuration by adding disks to your worker nodes, increase the `num-of-osd` parameter value. 
-    ```sh
-   ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --apply
-    ```
+
+```sh
+ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --apply
+```
+{: pre}
 
 ## Upgrading your ODF configuration
 {: #sat-storage-odf-remote-upgrade-config}
