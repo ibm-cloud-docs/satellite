@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-28"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -653,7 +653,7 @@ Use the console to remove a storage configuration.
         Example output
         
         ```sh
-        app    sat-local-block-gold
+        app    sat-local-file-gold
         ```
         {: screen}
 
@@ -681,7 +681,7 @@ Use the console to remove a storage configuration.
         ```
         {: pre}
 
-9. Delete the PVC. Because all {{site.data.keyword.IBM_notm}}-provided local block storage classes are specified with a `Retain` reclaim policy, the PV and PVC are not automatically deleted when you delete your app or deployment. 
+9. Delete the PVC. Because all {{site.data.keyword.IBM_notm}}-provided local file storage classes are specified with a `Retain` reclaim policy, the PV and PVC are not automatically deleted when you delete your app or deployment. 
 
     ```sh
     oc delete pvc <pvc-name>
@@ -748,7 +748,6 @@ Use the console to remove a storage configuration.
 | `devicepath` | Required | Enter the local storage device paths. If you specify more than one device path, be sure there are no spaces between each path. For example: `/dev/nvme2n1`,`/dev/nvme3n1`. For more information on how to retrieve this value, see [Getting the device details](#sat-storage-file-local-devices). Example: `/dev/sdc`. |
 | `fstype` | Required | Enter the file system type that you want to use on your local disks. The supported file system types are: `xfs`, `ext`, `ext3`, and `ext4`.  Example: `ext4`. |
 {: caption="Table 2. Local file storage parameter reference." caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameter is a required parameter. The third column is a brief description of the parameter."}
 
 
 
@@ -765,6 +764,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 
 
 ## Getting help and support for local file storage
-{: #sat-local-block-support}
+{: #sat-local-file-support}
 
 If you run into an issue with using the Local Storage Operator - File template, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}. 

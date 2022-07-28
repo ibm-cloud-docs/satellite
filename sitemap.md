@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-07-28"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1906,7 +1906,7 @@ subcollection: satellite
 
 * [Storage class reference for local file storage](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
 
-* [Getting help and support for local file storage](/docs/satellite?topic=satellite-config-storage-local-file#sat-local-block-support)
+* [Getting help and support for local file storage](/docs/satellite?topic=satellite-config-storage-local-file#sat-local-file-support)
 
 [OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-odf-local#config-storage-odf-local)
 
