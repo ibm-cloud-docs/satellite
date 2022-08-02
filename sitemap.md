@@ -1991,6 +1991,8 @@ subcollection: satellite
 
 * [Creating the VMware configuration in the command line](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-storage-vmware-create-config-cli)
 
+* [Assigning a VMWare storage configuration](/docs/satellite?topic=satellite-config-storage-vmware-csi#assign-storage-vmware-csi)
+
     * [Assigning a VMWare storage configuration from the console](/docs/satellite?topic=satellite-config-storage-vmware-csi#assign-storage-vmware-csi-ui)
 
     * [Assigning a VMWare storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-vmware-csi#assign-storage-vmware-csi-cli)
