@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-02"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -21,7 +21,15 @@ content-type: release-note
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
 
+## August 2022
+{: #satellite-aug22}
 
+### 2 August 2022
+{: #satellite-aug222}
+{: release-note}
+
+New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Toronto** (`tor`, `ca-tor`) region.
+:   To create a CoreOS-enabled location in the Toronto region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 
 ## July 2022
 {: #satellite-july22}

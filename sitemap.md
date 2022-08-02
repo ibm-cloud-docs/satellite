@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-28"
+lastupdated: "2022-08-02"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -143,6 +143,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
+
+    * [2 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug222)
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Toronto** (`tor`, `ca-tor`) region.
 
 * [July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july22)
 

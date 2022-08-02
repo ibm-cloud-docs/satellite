@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-02"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -27,6 +27,12 @@ To check your host setup, you can use the `satellite-host-check` script. For mor
 {: #host-out-cp-tor}
 
 
+
+Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in Red Hat CoreOS enabled locations.
+
+- Destination IP addresses: 169.55.168.210, 163.74.69.194, 163.75.72.2
+- Destination hostnames: `c114.ca-tor.satellite.cloud.ibm.com`, `c114-1.ca-tor.satellite.cloud.ibm.com`, `c114-2.ca-tor.satellite.cloud.ibm.com`, `c114-3.ca-tor.satellite.cloud.ibm.com`, `c114-e.ca-tor.satellite.cloud.ibm.com`
+ Protocol and ports: TCP 30000 - 32767
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in locations without Red Hat CoreOS enabled.
 
