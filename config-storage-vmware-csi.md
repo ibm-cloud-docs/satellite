@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-22"
+lastupdated: "2022-08-02"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # VMware Block Container Storage Interface (CSI) Driver
 {: #config-storage-vmware-csi}
 
-The VMware Container Storage Interface (CSI) [Driver](https://github.com/kubernetes-sigs/ibm-vmware-csi-driver){: external} allows you to manage the lifecycle of your VMware Block Data volumes.
+The VMware Container Storage Interface (CSI) Driver allows you to manage the lifecycle of your VMware Block Data volumes.
 
 The template is currently in beta. Do not use it for production workloads. 
 {: beta}
@@ -92,6 +92,9 @@ Create a storage configuration in the command line by using the VMware configura
     {: pre}
 
 1. [Assign your storage configuration to clusters](#assign-storage-vmware-csi)
+
+## Assigning a VMWare storage configuration
+{: #assign-storage-vmware-csi}
 
 ### Assigning a VMWare storage configuration from the console
 {: #assign-storage-vmware-csi-ui}
@@ -470,7 +473,7 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 ## Getting help and support for VMWare
 {: #sat-vmware-csi-support}
 
-If you run into an issue with using VMware you can submit a support request with [VMware Support](https://customerconnect.vmware.com/home){: external}.
+If you run into an issue with using VMware you can submit a support request with [VMware Support](https://www.vmware.com/support/contacts.html){: external}.
 
 
 

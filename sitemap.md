@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-07-28"
+lastupdated: "2022-08-02"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -143,6 +143,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
+
+    * [2 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug222)
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Toronto** (`tor`, `ca-tor`) region.
 
 * [July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july22)
 
@@ -1984,6 +1990,8 @@ subcollection: satellite
 * [Creating the VMware configuration from the console](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-storage-vmware-create-config-ui)
 
 * [Creating the VMware configuration in the command line](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-storage-vmware-create-config-cli)
+
+* [Assigning a VMWare storage configuration](/docs/satellite?topic=satellite-config-storage-vmware-csi#assign-storage-vmware-csi)
 
     * [Assigning a VMWare storage configuration from the console](/docs/satellite?topic=satellite-config-storage-vmware-csi#assign-storage-vmware-csi-ui)
 
