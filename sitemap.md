@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-03"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -145,6 +145,12 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
+
+    * [3 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug322)
+
+        * RHEL 8 is now supported.
+
+        * New! Check out the {{site.data.keyword.satelliteshort}} Config tutorial.
 
     * [2 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug222)
 
@@ -709,6 +715,39 @@ subcollection: satellite
         * New! {{site.data.keyword.satellitelong_notm}} is now available as a closed beta.
 
 
+## Deploying Kubernetes resources to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config
+{: #sitemap_deploying_kubernetes_resources_to_clusters_with__and_{{sitedatakeywordsatelliteshort}}_config}
+
+
+[Deploying Kubernetes resources to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-sat_toolchain_tutorial#sat_toolchain_tutorial)
+
+* [Objectives](/docs/satellite?topic=satellite-sat_toolchain_tutorial#sat_toolchain_objectives)
+
+* [Audience](/docs/satellite?topic=satellite-sat_toolchain_tutorial#sat_toolchain_audience)
+
+* [Prerequisites](/docs/satellite?topic=satellite-sat_toolchain_tutorial#toolchain-prereq)
+
+* [Getting started](/docs/satellite?topic=satellite-sat_toolchain_tutorial#welcome)
+
+* [Defining toolchain settings](/docs/satellite?topic=satellite-sat_toolchain_tutorial#toolchain_settings)
+
+* [Defining your source repository](/docs/satellite?topic=satellite-sat_toolchain_tutorial#source_repository)
+
+* [Setting up your delivery pipeline](/docs/satellite?topic=satellite-sat_toolchain_tutorial#pipeline_settings)
+
+* [Providing an API key](/docs/satellite?topic=satellite-sat_toolchain_tutorial#secrets)
+
+* [Setting up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-sat_toolchain_tutorial#satellite_config)
+
+* [Reviewing the summary](/docs/satellite?topic=satellite-sat_toolchain_tutorial#summary)
+
+* [Testing the toolchain](/docs/satellite?topic=satellite-sat_toolchain_tutorial#test_toolchain)
+
+* [Verifying that the sample app is running](/docs/satellite?topic=satellite-sat_toolchain_tutorial#verify_app)
+
+* [Deploying a new version of your app from a different branch](/docs/satellite?topic=satellite-sat_toolchain_tutorial#modify_trigger)
+
+
 ## Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands
 {: #sitemap_installing_the_cli_plug-in_for__commands}
 
@@ -1127,6 +1166,8 @@ subcollection: satellite
 * [Updating control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-cp-procedure)
 
 * [Resetting the host key](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
+
+* [Migrating your control plane from RHEL 7 to RHEL 8](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8)
 
 [Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
 

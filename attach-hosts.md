@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-08-03"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -38,7 +38,7 @@ To attach hosts to your location, you must download a host attachment script. Af
         2. From the **Hosts** tab, click **Attach host**.
         3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.redhat_openshift_notm}} cluster. By default, your hosts get a `cpu`, an `os`, and a `memory` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`. Note that the default value for `os` is `rhel`.
         4. Enter a file name for your script or use the name that is generated for you.
-        5. Select **RHEL 7** or **RHCOS** to download the host script for your host system.
+        5. Select **RHEL** or **RHCOS** to download the host script for your host system.
         6. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
         
     * **To get the host attachment script from the CLI**:

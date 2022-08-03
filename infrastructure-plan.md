@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-29"
+lastupdated: "2022-08-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -73,12 +73,15 @@ To check your host set up, you can use the satellite-host-check script. For more
 Choose your operating system for your hosts. You can choose Red Hat Enterprise Linux or Red Hat CoreOS. If you want to use Red Hat CoreOS for your managed services such as worker nodes, you must create and enable a new location to use it. See [Creating a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 
 Red Hat Enterprise Linux 7
-:    Select `RHEL7` to choose Red Hat Enterprise Linux 7 (RHEL 7. RHEL 7 is the default operating system supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or earlier. 
+:    Select `RHEL7` to choose Red Hat Enterprise Linux 7 (RHEL 7). RHEL 7 is the default operating system supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or earlier. Note that support for RHEL 7 hosts in your control plane ends on March 2nd, 2023. [Follow the steps](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8) to migrate your hosts to RHEL 8.
+
+Red Hat Enterprise Linux 8
+:    Select `RHEL8` to choose Red Hat Enterprise Linux 8 (RHEL 8). RHEL 8 is the default operating system supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.10 or later.
     
 Red Hat CoreOS
 :    Select `RHCOS` to choose Red Hat CoreOS (RHCOS). RHCOS is a minimal operating system for running containerized workloads securely and at scale. It is based on RHEL and includes automated, remote upgrade features. For more information about the key benefits of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.10/architecture/architecture-rhcos.html){: external}.
 
-Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), London (`eu-gb`), Tokyo (`jp-tok`), and Washington D.C. (`us-east`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
+Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), London (`eu-gb`), Tokyo (`jp-tok`), Toronto (`ca-tor`), and Washington D.C. (`us-east`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
 {: note}
 
 
