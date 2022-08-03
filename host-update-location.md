@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-08-03"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -33,7 +33,7 @@ Does updating the hosts impact the cluster masters that run in the {{site.data.k
 :    Yes. Because the cluster masters run in your {{site.data.keyword.satelliteshort}} location control plane, make sure that you have enough extra hosts in your control plane before you update any hosts. To attach extra hosts, see [Attaching capacity to your {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-attach-hosts).
 
 Do the hosts in my {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services have to run the same version as my {{site.data.keyword.satelliteshort}} location control plane?
-:    No, the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane do not have to run the same version as the hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that run in the location, like clusters. However, all hosts in the location must run a supported version.
+:    No, the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane do not have to run the same version as the hosts that are assigned to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that run in the location. However, all hosts in the location must run a supported version.
 :    To review supported {{site.data.keyword.redhat_openshift_notm}} versions that hosts can run, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-openshift_changelog) or run `ibmcloud ks versions` in the command line. 
 
 Is my {{site.data.keyword.satelliteshort}} location control plane subdomain still reachable when I update the hosts?
@@ -83,3 +83,76 @@ When you reset the host key, all existing hosts that are attached to your locati
 5. [Attach the host](/docs/satellite?topic=satellite-attach-hosts) back to your {{site.data.keyword.satelliteshort}} location. The host registration script now uses the new host key.
 6. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service.
 7. Repeat steps 3 - 6 for each host in your location so that each host uses the new key to communicate with the {{site.data.keyword.satelliteshort}} API server.
+
+
+## Migrating your control plane from RHEL 7 to RHEL 8
+{: #migrate-cp-rhel8}
+
+Support for RHEL 7 for Satellite control plane hosts is deprecated and reaches end-of-life on March 2nd, 2023. After that date, you cannot assign any RHEL 7 hosts to the control plane of a location. Existing RHEL 7 hosts cannot be updated and must be replaced with RHEL 8 hosts. 
+
+To replace your RHEL 7 control plane hosts, you must first add a RHEL 8 host to replace it. After you attach a RHEL 8 host to your location and assign it to the control plane, you can remove a RHEL 7 host in the same zone from the control plane. 
+
+1. Identify which hosts you want to replace and which zones they are located in by running the following command. Look for the `"os": "RHEL7"` label or a host without an `os` label in the output file.
+    ```sh
+    ibmcloud sat hosts --location LOCATION_ID --output json 
+    ```
+    {: pre}
+
+    The following example output displays the `"os": "RHEL7"` label.  This host is located in the `us-south-1` zone.
+
+    ```sh
+    [
+        {
+            "id": " LOCATION_ID",
+            "name": "LOCATION_NAME",
+            "labels": {
+                ...
+                "os": "RHEL7"
+                ...
+            "state": "assigned",
+            "assignment": {
+                "zone": "us-south-1",
+            },
+
+        },
+    ...
+    ]
+    ```
+    {: screen}
+2. Download the host attach script for the location.
+
+    ```sh
+    ibmcloud sat host attach --location LOCATION_ID
+    ```
+    {: pre}
+    
+3. Provision a RHEL 8 host for your Satellite location in the identified zone and run the host attach script on that host. This process varies, depending on your Satellite infrastructure. 
+
+4. Assign your RHEL 8 host to the location.
+
+    ```sh
+    ibmcloud sat host attach --location LOCATION_ID
+    ```
+    {: pre}
+    
+    You can verify that the host is provisioned by running `ibmcloud sat hosts --location LOCATION_ID`.
+
+5. After your RHEL 8 host is attached to the location, you can assign it to the location control plane by using the `host assign` command.
+    ```sh
+    ibmcloud sat host assign --host HOST_NAME --location LOCATION_ID --cluster infrastructure --zone ZONE
+    ```
+    {: pre}
+
+
+6. After you assign the RHEL 8 host to the control plane, you can remove a RHEL 7 host from the same zone that the RHEL 8 host was added to.
+
+    ```sh
+    ibmcloud sat host rm --location LOCATION_ID --host HOST_NAME
+    ```
+    {: pre}
+
+Repeat these steps until all of your RHEL 7 control plane hosts are replaced by RHEL 8 hosts and removed from the location. 
+
+If you have clusters running RHEL 7 hosts in your location, you might need to migrate your worker nodes. For more information, follow the [migration guide](/docs/openshift?topic=openshift-rhel_migrate) for your cluster version.
+{: tip}
+

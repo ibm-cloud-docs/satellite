@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-03"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -145,6 +145,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
+
+    * [3 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug322)
+
+        * RHEL 8 is now supported.
 
     * [2 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug222)
 
@@ -1127,6 +1131,8 @@ subcollection: satellite
 * [Updating control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-cp-procedure)
 
 * [Resetting the host key](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
+
+* [Migrating your control plane from RHEL 7 to RHEL 8](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8)
 
 [Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
 

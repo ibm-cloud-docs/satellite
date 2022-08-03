@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-03"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## August 2022
 {: #satellite-aug22}
+
+### 3 August 2022
+{: #satellite-aug322}
+{: release-note}
+
+RHEL 8 is now supported.
+:   You can now select `RHEL8` as your operating system. For more information, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 ### 2 August 2022
 {: #satellite-aug222}
