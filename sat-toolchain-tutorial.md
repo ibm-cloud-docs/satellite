@@ -2,14 +2,14 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-08-05"
 
 keywords: satellite, toolchain, satellite config, Kubernetes, cluster
 
 subcollection: satellite
 
 content-type: tutorial
-services: satellite, toolchain
+services: satellite, ContinuousDelivery
 account-plan: paid
 completion-time: 30m
 
@@ -22,7 +22,7 @@ completion-time: 30m
 # Deploying Kubernetes resources to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config
 {: #sat_toolchain_tutorial}
 {: toc-content-type="tutorial"}
-{: toc-services="satellite, toolchains"}
+{: toc-services="satellite, ContinuousDelivery"}
 {: toc-completion-time="30m"}
 
 Deploy Kubernetes resources, like deployments, from your GitHub or GitLab repository to multiple clusters with {{site.data.keyword.contdelivery_full}} and {{site.data.keyword.satelliteshort}} Config.
