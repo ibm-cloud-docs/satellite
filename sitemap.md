@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-08-05"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -145,6 +145,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
+
+    * [5 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug522)
+
+        * CLI change log
 
     * [3 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug322)
 
