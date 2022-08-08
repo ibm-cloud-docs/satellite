@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-05"
+lastupdated: "2022-08-08"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1128,9 +1128,9 @@ subcollection: satellite
 
 * [How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters)
 
-    * [Location size for Red Hat Enterprise Linux (RHEL) hosts](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
+    * [Location size for non-Red Hat CoreOS enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
 
-    * [Location size for Red Hat CoreOS (RHCOS) hosts](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos)
+    * [Location size for Red Hat CoreOS (RHCOS) enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos)
 
 
 ## Managing hosts and locations
