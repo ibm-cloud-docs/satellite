@@ -19,7 +19,7 @@ To create and roll out new versions of your applications, update your {{site.dat
 {: shortdesc}
   
   
-## Updating your {{site.data.keyword.satelliteshort}} Config
+## Updating your {{site.data.keyword.satelliteshort}} Config configuration
 {: #satcon-manage-update}
 
 To update your {{site.data.keyword.satelliteshort}} Config configuration, upload or create a new version, then create a subscription for the new version.

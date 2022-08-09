@@ -137,6 +137,8 @@ subcollection: satellite
 
 [Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services#managed-services)
 
+* [Setting up access for Satellite-enabled services](/docs/satellite?topic=satellite-managed-services#managed-services-iam)
+
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -1258,7 +1260,7 @@ subcollection: satellite
 
 [Managing your {{site.data.keyword.satelliteshort}} Config resources](/docs/satellite?topic=satellite-satcon-manage#satcon-manage)
 
-* [Updating your {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update)
+* [Updating your {{site.data.keyword.satelliteshort}} Config configuration](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update)
 
     * [Updating your {{site.data.keyword.satelliteshort}} Config from the console](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update-console)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-08-09"
 
 keywords: satellite, hybrid, multicloud, managed services, enabled service, satellite-enabled
 
@@ -27,6 +27,13 @@ Learn about what services are supported by {{site.data.keyword.satellitelong_not
 | {{site.data.keyword.keymanagementservicefull_notm}} | {{site.data.keyword.keymanagementservicefull_notm}} on {{site.data.keyword.satelliteshort}} is a dedicated service that allows users to more fully control their own encryption keys by deploying {{site.data.keyword.keymanagementserviceshort}} into a {{site.data.keyword.satelliteshort}} location where users control their own infrastructure.  See [About {{site.data.keyword.keymanagementserviceshort}} for {{site.data.keyword.satelliteshort}}](/docs/key-protect?topic=key-protect-satellite-about). |
 | {{site.data.keyword.messagehub_full}} | {{site.data.keyword.messagehub}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.cloud_notm}} and event stream distribution between your services and applications.  See [About {{site.data.keyword.satellitelong_notm}} for {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-satellite_about). |
 {: caption="Table 1. Supported managed services for Satellite" caption-side="bottom"}
+
+
+## Setting up access for Satellite-enabled services
+{: #managed-services-iam}
+
+For most Satellite-enabled services, you must set up service-to-service access through IAM, with **Satellite** as your target service and the managed service as the source service. For more information, see [Managing access overview](/docs/satellite?topic=satellite-iam) or consult the service documentation.
+
 
 
 
