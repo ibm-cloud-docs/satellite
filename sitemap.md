@@ -1224,8 +1224,8 @@ subcollection: satellite
 * [Removing locations with the CLI](/docs/satellite?topic=satellite-host-remove#location-remove-cli)
 
 
-## Deploying Kubernetes resources across clusters with Satellite Config
-{: #sitemap_deploying_kubernetes_resources_across_clusters_with_satellite_config}
+## Managing apps with Satellite Config
+{: #sitemap_managing_apps_with_satellite_config}
 
 
 [Understanding {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#cluster-config)
@@ -1248,7 +1248,7 @@ subcollection: satellite
 
     * [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-scoped-project)
 
-    * [Next steps for granting access](/docs/satellite?topic=satellite-setup-clusters-satconfig#next-steps-gran-access)
+* [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters)
 
 [Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-create#satcon-create)
 
@@ -1258,17 +1258,29 @@ subcollection: satellite
 
 [Managing your {{site.data.keyword.satelliteshort}} Config resources](/docs/satellite?topic=satellite-satcon-manage#satcon-manage)
 
-* [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources)
+* [Updating your {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update)
 
-    * [Enabling Watch-keeper collection methods](/docs/satellite?topic=satellite-satcon-manage#satconfig-enable-watchkeeper)
+    * [Updating your {{site.data.keyword.satelliteshort}} Config from the console](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update-console)
 
-    * [Review the resources from {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-review-resources)
+    * [Updating your {{site.data.keyword.satelliteshort}} Config with the CLI](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update-cli)
 
-[Using {{site.data.keyword.satelliteshort}} Config with existing clusters in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-satcon-existing#satcon-existing)
+* [Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-satcon-manage#remove-satconfig)
 
-* [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing#register-openshift-clusters)
+[Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-resources#satcon-resources)
 
-* [Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-satcon-existing#remove-satconfig)
+* [Enabling Watch-keeper collection methods](/docs/satellite?topic=satellite-satcon-resources#satconfig-enable-watchkeeper)
+
+    * [Watch all the resources that my {{site.data.keyword.satelliteshort}} subscription creates](/docs/satellite?topic=satellite-satcon-resources#satconfig-enable-watchkeeper-all)
+
+    * [Watch a particular resource in my {{site.data.keyword.satelliteshort}} Config version](/docs/satellite?topic=satellite-satcon-resources#satconfig-enable-watchkeeper-specific)
+
+    * [Watch a particular resource that I label in my cluster](/docs/satellite?topic=satellite-satcon-resources#satconfig-enable-watchkeeper-label)
+
+* [Review the resources from {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-resources#satconfig-review-resources)
+
+    * [Reviewing resources from the console](/docs/satellite?topic=satellite-satcon-resources#satconfig-review-resources-console)
+
+    * [Reviewing resources with the CLI](/docs/satellite?topic=satellite-satcon-resources#satconfig-review-resources-cli)
 
 
 ## Connecting Satellite locations with external services by using Link endpoints

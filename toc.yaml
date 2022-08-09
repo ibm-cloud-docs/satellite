@@ -78,13 +78,13 @@ toc:
               - config-custom-ntp.md
               - host-remove.md
         - topicgroup:
-            label: Deploying Kubernetes resources across clusters with Satellite Config
+            label: Managing apps with Satellite Config
             topics:
               - cluster-config.md
               - setup-clusters-satconfig.md
               - satcon-create.md
               - satcon-manage.md
-              - satcon-existing.md
+              - satcon-resources.md
         - topicgroup:
             label: Connecting Satellite locations with external services by using Link endpoints
             topics:
