@@ -161,3 +161,48 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
         {: pre}
         
         
+## Checking user permissions
+{: #checking-perms}
+
+Before you complete a task, you might want to check that you have the appropriate permissions in {{site.data.keyword.cloud}} Identity and Access Management (IAM).
+{: shortdesc}
+
+### Checking IAM platform and service access roles from the UI
+{: #checking-iam-ui}
+
+1. Log in to the [{{site.data.keyword.cloud_notm}} IAM console](https://cloud.ibm.com/iam){: external}.
+2. From the navigation menu, click the **Users** tab.
+3. In the table, click the user with the tag `self` for yourself or the user that you want to check.
+4. Click the **Access policies** tab.
+5. Review the **Resource attributes** column for a short description of the access. Click the number tag to view all the allowed actions for the role.
+6. To review what the roles and allowed actions permit, see [Platform access roles](/docs/satellite?topic=satellite-iam-platform-access) and [Service access roles](/docs/satellite?topic=satellite-iam-service-access). 
+7. To change or assign new access policies, see [Assigning {{site.data.keyword.satelliteshort}} access](#iam-assign-overview).
+
+
+### Checking IAM platform and service access roles from the CLI
+{: #checking-iam-cli}
+
+1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` flag.
+    ```sh
+    ibmcloud login -r [--sso]
+    ```
+    {: pre}
+
+2. Find the **User ID** of the user whose permissions you want to check.
+    ```sh
+    ibmcloud account users
+    ```
+    {: pre}
+
+3. Check the IAM access policies of the user.
+    ```sh
+    ibmcloud iam user-policies <user_id>
+    ```
+    {: pre}
+
+4. To review what the roles and allowed actions permit, see [Platform access roles](/docs/satellite?topic=satellite-iam-platform-access) and [Service access roles](/docs/satellite?topic=satellite-iam-service-access). 
+5. To change or assign new access policies, see [Assigning {{site.data.keyword.satelliteshort}} access](#iam-assign-overview).
+
+
+
+

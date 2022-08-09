@@ -2137,6 +2137,12 @@ subcollection: satellite
 
 * [Assigning access policy to access group with the CLI](/docs/satellite?topic=satellite-iam-assign-access#iam-assign-cli)
 
+* [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms)
+
+    * [Checking IAM platform and service access roles from the UI](/docs/satellite?topic=satellite-iam-assign-access#checking-iam-ui)
+
+    * [Checking IAM platform and service access roles from the CLI](/docs/satellite?topic=satellite-iam-assign-access#checking-iam-cli)
+
 [Platform access roles](/docs/satellite?topic=satellite-iam-platform-access#iam-platform-access)
 
 * [Location and host platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-location-host)
