@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-08"
+lastupdated: "2022-08-09"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2108,53 +2108,86 @@ subcollection: satellite
 {: #sitemap_enhancing_security}
 
 
-[Managing access](/docs/satellite?topic=satellite-iam#iam)
 
-* [Understanding {{site.data.keyword.satelliteshort}} resource types in IAM](/docs/satellite?topic=satellite-iam#iam-resource-types)
+### Managing access
+{: #sitemap_managing_access}
 
-    * [Location](/docs/satellite?topic=satellite-iam#iam-resource-loc)
 
-    * [Configuration, subscription, cluster, cluster group, and resource](/docs/satellite?topic=satellite-iam#iam-resource-config)
+[Managing access overview](/docs/satellite?topic=satellite-iam#iam)
 
-    * [Link](/docs/satellite?topic=satellite-iam#iam-resource-link)
+* [Locations and hosts](/docs/satellite?topic=satellite-iam#iam-resource-loc)
 
-    * [Other services](/docs/satellite?topic=satellite-iam#iam-resource-services)
+* [Configuration, subscription, cluster, cluster group, and resource](/docs/satellite?topic=satellite-iam#iam-resource-config)
 
-* [Assigning access with {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam#iam-assign)
+* [Link](/docs/satellite?topic=satellite-iam#iam-resource-link)
 
-    * [Overview of the process to set up access to {{site.data.keyword.satellitelong_notm}} in {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam#iam-assign-overview)
-
-    * [Assigning access policy to access group by using the console](/docs/satellite?topic=satellite-iam#iam-assign-ui)
-
-    * [Assigning access policy to access group with the CLI](/docs/satellite?topic=satellite-iam#iam-assign-cli)
-
-* [IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
-
-    * [Access policies](/docs/satellite?topic=satellite-iam#iam-roles-policies)
-
-    * [Platform access roles](/docs/satellite?topic=satellite-iam#iam-roles-platform)
-
-    * [Service access roles](/docs/satellite?topic=satellite-iam#iam-roles-service)
+* [Other services](/docs/satellite?topic=satellite-iam#iam-resource-services)
 
     * [Platform and service roles for {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/satellite?topic=satellite-iam#iam-roles-clusters)
 
 * [Common use cases and roles in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
 
-* [API keys in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam#sat-api-keys)
+[Assigning access with {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam-assign-access#iam-assign-access)
 
-    * [Container service API key](/docs/satellite?topic=satellite-iam#api-keys-containers)
+* [Access policies](/docs/satellite?topic=satellite-iam-assign-access#iam-roles-policies)
 
-    * [Template API key](/docs/satellite?topic=satellite-iam#api-keys-templates)
+* [Overview of the process to set up access to {{site.data.keyword.satellitelong_notm}} in {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam-assign-access#iam-assign-overview)
 
-* [Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam#permissions-other-clouds)
+* [Assigning access policy to access group by using the console](/docs/satellite?topic=satellite-iam-assign-access#iam-assign-ui)
 
-    * [Alibaba permissions](/docs/satellite?topic=satellite-iam#permissions-alibaba)
+* [Assigning access policy to access group with the CLI](/docs/satellite?topic=satellite-iam-assign-access#iam-assign-cli)
 
-    * [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws)
+[Platform access roles](/docs/satellite?topic=satellite-iam-platform-access#iam-platform-access)
 
-    * [Azure permissions](/docs/satellite?topic=satellite-iam#permissions-azure)
+* [Location and host platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-location-host)
 
-    * [Google Cloud Platform permissions](/docs/satellite?topic=satellite-iam#permissions-gcp)
+* [Link platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-link)
+
+* [Satellite Config platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-config)
+
+* [Subscription platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-subscription)
+
+* [Cluster platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-cluster)
+
+* [Cluster group platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-cluster-group)
+
+* [Resource platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-resource)
+
+[Service access roles](/docs/satellite?topic=satellite-iam-service-access#iam-service-access)
+
+* [Link service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-link)
+
+* [Satelle Config service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-config)
+
+* [Subscription service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-subscription)
+
+* [Cluster service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster)
+
+* [Cluster group service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster)
+
+* [Resources service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster)
+
+[API keys in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam-api-key#iam-api-key)
+
+* [{{site.data.keyword.satelliteshort}} API key](/docs/satellite?topic=satellite-iam-api-key#api-key-satellite)
+
+* [Container service API key](/docs/satellite?topic=satellite-iam-api-key#api-keys-containers)
+
+* [Infrastructure provider credentials](/docs/satellite?topic=satellite-iam-api-key#api-keys-templates)
+
+[Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam-common#iam-common)
+
+* [Alibaba permissions](/docs/satellite?topic=satellite-iam-common#permissions-alibaba)
+
+* [AWS permissions](/docs/satellite?topic=satellite-iam-common#permissions-aws)
+
+    * [Manually creating a {{site.data.keyword.satelliteshort}} location in AWS](/docs/satellite?topic=satellite-iam-common#permissions-aws-manual)
+
+    * [Automatically creating a {{site.data.keyword.satelliteshort}} location from a {{site.data.keyword.bpshort}} template in AWS](/docs/satellite?topic=satellite-iam-common#permissions-aws-auto)
+
+* [Azure permissions](/docs/satellite?topic=satellite-iam-common#permissions-azure)
+
+* [Google Cloud Platform permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp)
 
 [Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies](/docs/satellite?topic=satellite-service-architecture#service-architecture)
 

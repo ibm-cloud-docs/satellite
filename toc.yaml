@@ -147,7 +147,15 @@ toc:
         - topicgroup:
             label: Enhancing security
             topics:
-              - iam.md
+              - topicgroup: 
+                  label: Managing access
+                  topics:
+                    - iam.md 
+                    - iam-assign-access.md
+                    - iam-platform-access.md
+                    - iam-service-access.md
+                    - iam-api-key.md
+                    - iam-common.md
               - service-architecture.md
               - compliance.md
               - service-connection.md
