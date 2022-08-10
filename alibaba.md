@@ -26,7 +26,7 @@ You can create your {{site.data.keyword.satellitelong_notm}} location by using h
 Add your Alibaba Cloud hosts manually to {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
-All hosts that you want to add must meet the host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
+All hosts that you want to add must meet the host requirements, such as the RHEL 7 or 8 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations). Note that your location displays `Action required` until you add hosts and create the control plane.

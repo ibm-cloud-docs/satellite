@@ -26,24 +26,7 @@ Test out an {{site.data.keyword.satellitelong}} location with virtual instances 
 If your hosts are running Red Hat CoreOS (RHCOS), you must manually attach them to your location.
 {: note}
 
-## Automating your {{site.data.keyword.cloud_notm}} location setup with a Schematics template
-{: #ibm-template}
 
-You can create your {{site.data.keyword.satelliteshort}} location by using hosts that you added from {{site.data.keyword.cloud_notm}} with a Schematics template.
-{: shortdesc}
-
-All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
-
-You can clone and modify these Terraform templates from the [Satellite Terraform GitHub repository](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external}. Or, you can [add {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}} manually](#ibm-host-attach).
-{: tip}
-
-
-1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
-2. In the **Setup** section, click **IBM VPC Quick Start**.
-3. You can edit the region, VSI, location details, and object storage for your location. When you are finished, click **Done editing**.
-4. Click **Create location**.Your location might take about 30 minutes to finish provisioning.
-
-Well done, your {{site.data.keyword.satelliteshort}} location is creating! You can review the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to see when your location is in a **Normal** state and ready to use.
 
 ## Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}} manually
 {: #ibm-host-attach}
@@ -51,12 +34,12 @@ Well done, your {{site.data.keyword.satelliteshort}} location is creating! You c
 You can create your {{site.data.keyword.satelliteshort}} location by using hosts that you added from {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-All hosts that you want to add must meet the general host requirements, such as the RHEL 7 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
+All hosts that you want to add must meet the general host requirements, such as the RHEL 7 or 8 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 
-1. Follow the steps to create a [classic public virtual server](/docs/virtual-servers?topic=virtual-servers-ordering-vs-public) or a virtual server instance in a [VPC](/docs/vpc?topic=vpc-creating-virtual-servers). Make sure that you select a supported RHEL 7 operating system or a supported Red Hat CoreOS image, configure the machine with at least 4 CPU and 16 RAM, and add a boot disk with a size of at least 100 GB. 
+1. Follow the steps to create a [classic public virtual server](/docs/virtual-servers?topic=virtual-servers-ordering-vs-public) or a virtual server instance in a [VPC](/docs/vpc?topic=vpc-creating-virtual-servers). Make sure that you select a supported RHEL 7 or 8 operating system or a supported Red Hat CoreOS image, configure the machine with at least 4 CPU and 16 RAM, and add a boot disk with a size of at least 100 GB. 
 1. Wait for your virtual server instance to be provisioned.
 1. Get the registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location. Note that the token in the script is an API key, which should be treated and protected as sensitive information. Make a note of the location of the attach script. Also note that for RHEL-based hosts, the attach script is a Shell script and for CoreOS hosts, the attach script is a CoreOS ignition file.
     ```sh

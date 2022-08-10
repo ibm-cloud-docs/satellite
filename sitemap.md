@@ -1116,8 +1116,6 @@ subcollection: satellite
 
 [{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm#ibm)
 
-* [Automating your {{site.data.keyword.cloud_notm}} location setup with a Schematics template](/docs/satellite?topic=satellite-ibm#ibm-template)
-
 * [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}} manually](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
