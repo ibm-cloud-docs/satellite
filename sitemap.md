@@ -721,6 +721,12 @@ subcollection: satellite
         * New! {{site.data.keyword.satellitelong_notm}} is now available as a closed beta.
 
 
+## Tutorial library for Satellite
+{: #sitemap_tutorial-library-for-satellite}
+
+[Tutorial library for Satellite](https://cloud.ibm.com/docs?tab=tutorials&page=1&pageSize=20&tags=satellite){: external}
+
+
 ## Deploying Kubernetes resources to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config
 {: #sitemap_deploying_kubernetes_resources_to_clusters_with__and_{{sitedatakeywordsatelliteshort}}_config}
 

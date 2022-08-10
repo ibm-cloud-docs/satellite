@@ -27,6 +27,9 @@ toc:
   - navgroup:
       id: tutorial
       topics:
+        - link:
+            label: Tutorial library for Satellite
+            href: https://cloud.ibm.com/docs?tab=tutorials&page=1&pageSize=20&tags=satellite
         - sat-toolchain-tutorial.md
   - navgroup:
       id: howto
