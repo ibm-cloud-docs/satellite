@@ -84,7 +84,7 @@ Use the following tables to review the actions that are mapped to service access
 {: caption="Actions that you can take with service access roles." caption-side="bottom"}
 
 ## Resources service access roles
-{: #service-access-cluster}
+{: #service-access-cluster-roles}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
 |-----|---|---|-----|-----|-----|--------|----|

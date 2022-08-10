@@ -24,6 +24,16 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## August 2022
 {: #satellite-aug22}
 
+### 10 August 2022
+{: #satellite-aug522}
+{: release-note}
+
+Added information about verifying your permissions
+:   Before you start a task, check that you have the appropriate permissions. See [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
+
+New troubleshooting topic
+:   See [Why was my location deleted?](/docs/satellite?topic=satellite-ts-location-gone).
+
 ### 5 August 2022
 {: #satellite-aug522}
 {: release-note}

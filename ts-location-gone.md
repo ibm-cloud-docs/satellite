@@ -14,7 +14,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 # Why was my location deleted?
-{: #ts-location-delete}
+{: #ts-location-gone}
 
 
 Help! My location is gone.

@@ -148,6 +148,12 @@ subcollection: satellite
 
 * [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
 
+    * [10 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug522)
+
+        * Added information about verifying your permissions
+
+        * New troubleshooting topic
+
     * [5 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug522)
 
         * CLI change log
@@ -2189,7 +2195,7 @@ subcollection: satellite
 
 * [Cluster group service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster-grp)
 
-* [Resources service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster)
+* [Resources service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster-roles)
 
 [API keys in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam-api-key#iam-api-key)
 
@@ -2769,7 +2775,7 @@ subcollection: satellite
 
 * [Ask the location owner to update your permissions](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location-perms)
 
-[Why was my location deleted?](/docs/satellite?topic=satellite-ts-location-delete#ts-location-delete)
+[Why was my location deleted?](/docs/satellite?topic=satellite-ts-location-gone#ts-location-gone)
 
 
 ### Hosts

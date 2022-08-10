@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-08-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -42,5 +42,5 @@ For more information, see the [{{site.data.keyword.openshiftlong_notm}} document
 ## Infrastructure provider credentials
 {: #api-keys-templates}
 
-If you create a {{site.data.keyword.satelliteshort}} location from a template, such as a {{site.data.keyword.bplong_notm}} template for AWS, {{site.data.keyword.satelliteshort}} checks for permissions with an API key. The API key must have the [required permissions to create a location](#iam-roles-usecases), including to {{site.data.keyword.bplong_notm}}, which is used to automate the infrastructure creation from the template cloud provider.
+If you create a {{site.data.keyword.satelliteshort}} location from a template, such as a {{site.data.keyword.bplong_notm}} template for AWS, {{site.data.keyword.satelliteshort}} checks for permissions with an API key. The API key must have the [required permissions to create a location](/docs/satellite?topic=satellite-iam#iam-roles-usecases), including to {{site.data.keyword.bplong_notm}}, which is used to automate the infrastructure creation from the template cloud provider.
 {: shortdesc}
