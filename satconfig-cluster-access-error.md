@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-08-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,7 +25,7 @@ To use a cluster to use with {{site.data.keyword.satelliteshort}} Config, the pr
 To resolve this issue, follow these steps.
 {: tsResolve}
 
-1. Re-attach the cluster to {{site.data.keyword.satelliteshort}} Config. For more information, see [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing).
+1. Re-attach the cluster to {{site.data.keyword.satelliteshort}} Config. For more information, see [Registering existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters).
     1. Get a `kubectl` command to register your cluster with {{site.data.keyword.satelliteshort}} Config.
         ```sh
         ibmcloud sat cluster register

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-08-10"
 
 keywords: satellite, hybrid, multicloud, assign access, access for satellite
 
@@ -25,7 +25,7 @@ Policies enable access at different levels. Some options for {{site.data.keyword
 {: shortdesc}
 
 - Access across all {{site.data.keyword.satelliteshort}} service instances of all resource types in your account.
-- Access to specific resource types within {{site.data.keyword.satelliteshort}}. For more information about resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types).
+- Access to specific resource types within {{site.data.keyword.satelliteshort}}. For more information about resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](docs/satellite?topic=satellite-iam).
     - **Location** in the UI, **location** in the API and CLI. (When scoped, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location).)
     - **Link** in the UI, **link** in the API and CLI.
     - {{site.data.keyword.satelliteshort}} Config resource types:
@@ -56,7 +56,7 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
     - You can scope access to the account or particular resource groups. Keep in mind the following points.
         - Account-level access is not the same as access to all resource groups.
         - Not all {{site.data.keyword.satelliteshort}} resource types support scoping to resource groups. For example, you cannot scope {{site.data.keyword.satelliteshort}} Config resource types (configuration, subscription, cluster, or cluster group) to resource groups, only to the account.
-    - For help with scoping the role to the right {{site.data.keyword.satelliteshort}} resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types). You can scope access policies to the following resource types.
+    - For help with scoping the role to the right {{site.data.keyword.satelliteshort}} resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](docs/satellite?topic=satellite-iam). You can scope access policies to the following resource types.
         - Configuration
         - Cluster
         - Cluster group
@@ -69,9 +69,9 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
         - Link
         - Location (when scoped, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location))
     - For help with choosing the right platform and service roles, see the following reference information:
-        - [Platform access roles](#iam-roles-platform)
-        - [Service access roles](#iam-roles-service)
-        - [Common use cases and roles](#iam-roles-usecases)
+        - [Platform access roles](/docs/satellite?topic=satellite-iam-platform-access)
+        - [Service access roles](/docs/satellite?topic=satellite-iam-service-access)
+        - [Common use cases and roles](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
     - Consider creating a **Reader** service policy to {{site.data.keyword.satellitelong_notm}} (and not scoped to a particular resource type or resource) so that users can view the {{site.data.keyword.satelliteshort}} Config resources that run in {{site.data.keyword.satelliteshort}} clusters, such as pods or deployments.
 4. [Assign the access group](/docs/account?topic=account-groups#access_ag) with the appropriate scope for any other {{site.data.keyword.cloud_notm}} services that you plan to use in your {{site.data.keyword.satelliteshort}} location. Refer to each service documentation for the level of access that you need. Common services include:
     - {{site.data.keyword.openshiftlong_notm}} clusters: **Kubernetes Service** in the UI, **containers-kubernetes** in the API and CLI.
@@ -100,7 +100,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM console to assign an access policy 
 8. For the **Resource** string equals field, enter the name of your {{site.data.keyword.satelliteshort}} location, such as **Port-NewYork**. Keep in mind the following considerations for various {{site.data.keyword.satelliteshort}} resources.
     - **{{site.data.keyword.satelliteshort}} location**: If you leave the **Resource** field blank, the user gets access to all the locations, which is needed for the user to create a location. When scoped to a location, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location).
     - **{{site.data.keyword.satelliteshort}} Config**: You cannot scope a policy to individual `configuration` or `subscription` resources. Instead, leave the **Resource** field blank and control access to your {{site.data.keyword.satelliteshort}} Config resources at the `clustergroup` level.
-9. For **Platform access**, select the **Editor** role so that all users in your access group can add and remove hosts and endpoints from the {{site.data.keyword.satelliteshort}} location, but cannot create or delete locations. For other roles by resource type, see [IAM platform and service roles](#iam-roles).
+9. For **Platform access**, select the **Editor** role so that all users in your access group can add and remove hosts and endpoints from the {{site.data.keyword.satelliteshort}} location, but cannot create or delete locations. For other roles by resource type, see [IAM platform](/docs/satellite?topic=satellite-iam-platform-access) and [IAM service](/docs/satellite?topic=satellite-iam-service-access) roles.
 10. Click **Add+**.
 11. In the **Access summary** pane, review the access policy, and then click **Assign**.
 12. From the access group **Access policies** table, verify that the Editor policy is added to the access group.
@@ -140,9 +140,9 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
     | User  \n CLI option: N/A | You can assign the policy to an individual or group of users. Place this positional argument immediately following the command. For an individual user, enter the email address of the user. For an access group, enter the name of the access group of users. You can create an access group with the `ibmcloud iam access-group-create` command. To list available access groups, run `ibmcloud iam access-groups`. To add a user to an access group, run `ibmcloud iam access-group-user-add <access_group_name> <user_email>`. | 
     | {{site.data.keyword.cloud_notm}} service  \n CLI option: `--service-name` | Enter `satellite` to scope the access policy to {{site.data.keyword.satellitelong_notm}}. |
     | Resource group  \n CLI option: `--resource-group-name` | You can grant a policy for a resource group. If you do not specify a resource group, the policy applies to all service instances for all resource groups. To list available resource groups, run `ibmcloud resource groups`. |
-    | {{site.data.keyword.satelliteshort}} resource   \n CLI option: `--resource-type` | You can limit the policy to a type of resource within {{site.data.keyword.satellitelong_notm}}, such as all {{site.data.keyword.satelliteshort}} locations or {{site.data.keyword.satelliteshort}} configurations. To review resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](#iam-resource-types). Possible values include `location`, `link`, `configuration`, `cluster`, `clustergroup`, and `subscription`. If you scope an access policy to the `location` resource type, the users must target the regional endpoint to interact with the location. For more information, see the [troubleshooting topic](/docs/satellite?topic=satellite-ts-location-missing-location). |
+    | {{site.data.keyword.satelliteshort}} resource   \n CLI option: `--resource-type` | You can limit the policy to a type of resource within {{site.data.keyword.satellitelong_notm}}, such as all {{site.data.keyword.satelliteshort}} locations or {{site.data.keyword.satelliteshort}} configurations. To review resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](docs/satellite?topic=satellite-iam). Possible values include `location`, `link`, `configuration`, `cluster`, `clustergroup`, and `subscription`. If you scope an access policy to the `location` resource type, the users must target the regional endpoint to interact with the location. For more information, see the [troubleshooting topic](/docs/satellite?topic=satellite-ts-location-missing-location). |
     | Resource instance  \n CLI option: `--resource` | If you scope the policy to a resource type, you can further limit the policy to a particular instance of the resource. To list available instances, run [the CLI commands](/docs/satellite?topic=satellite-satellite-cli-reference) for that resource type, such as `ibmcloud sat location ls`.  To grant permissions to create a location, do not include the `--resource` option, which limits access to only a particular location. Note that you cannot scope a policy to individual `configuration` or `subscription` resources. Instead, control access to your {{site.data.keyword.satelliteshort}} Config resources at the `clustergroup` level. |
-    | Role  \n CLI option: `--role` | Choose the platform or service access that you want to assign. \n * Platform: Grants access to {{site.data.keyword.satelliteshort}} platform resources so that users can manage infrastructure resources such as locations, hosts, or link endpoints. For more information, see [Platform access roles](#iam-roles-platform). Possible values are `Administrator`, `Operator`, `Editor`, or `Viewer`. \n * Service: Grants access to services that run within {{site.data.keyword.satelliteshort}} resources so that users can work with {{site.data.keyword.satelliteshort}} Config subscriptions and Kubernetes resources. For more information, see [Service access roles](#iam-roles-service). Possible values are `Manager`, `Writer`, or `Reader`. |
+    | Role  \n CLI option: `--role` | Choose the platform or service access that you want to assign. \n * Platform: Grants access to {{site.data.keyword.satelliteshort}} platform resources so that users can manage infrastructure resources such as locations, hosts, or link endpoints. For more information, see [Platform access roles](/docs/satellite?topic=satellite-iam-platform-access). Possible values are `Administrator`, `Operator`, `Editor`, or `Viewer`. \n * Service: Grants access to services that run within {{site.data.keyword.satelliteshort}} resources so that users can work with {{site.data.keyword.satelliteshort}} Config subscriptions and Kubernetes resources. For more information, see [Service access roles](/docs/satellite?topic=satellite-iam-service-access). Possible values are `Manager`, `Writer`, or `Reader`. |
     {: caption="Table 1. Options to scope the access policy." caption-side="top"} 
 
 3. Verify that the user or access group has the assigned role.

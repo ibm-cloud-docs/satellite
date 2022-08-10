@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-08-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -72,7 +72,7 @@ Use the following tables to review the actions that are mapped to service access
 {: caption="Actions that you can take with service access roles." caption-side="bottom"}
 
 ## Cluster group service access roles
-{: #service-access-cluster}
+{: #service-access-cluster-grp}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
 |-----|---|---|-----|-----|-----|--------|----|

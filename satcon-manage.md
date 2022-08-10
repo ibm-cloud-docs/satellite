@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-08-10"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -33,7 +33,7 @@ Use the {{site.data.keyword.satelliteshort}} console to upload a new version fil
 1. From the actions menu of a configuration, click **Add version**.
     1. Enter a name and an optional description for your version.
     2. Upload a Kubernetes resource YAML file or use the editor to enter your Kubernetes resource definition directly. Make sure to specify the Kubernetes namespace where you want your resource to be deployed. If you do not specify a namespace, the resource is deployed to the `razeedeploy` namespace by default. 
-    3. **Optional**: To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} Config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources), such as adding a ConfigMap to your cluster. 
+    3. **Optional**: To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} Config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-satcon-resources), such as adding a ConfigMap to your cluster. 
     4. Click **Add** to add the Kubernetes resource definition as a version to your configuration.
 2. Create a  **Subscription** for your cluster group. The subscription defines which {{site.data.keyword.satelliteshort}} configuration to deploy the Kubernetes resources to your clusters.
     1. Select the configuration that you created to see the configuration details.
@@ -50,7 +50,7 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to upload 
 
 1. Create a **Version** by uploading a Kubernetes resource file to your configuration. Make sure to specify the Kubernetes namespace where you want your resource to be deployed. If you do not specify a namespace, the resource is deployed to the `razeedeploy` namespace by default. Review the command options by running `ibmcloud sat config version create`.
 
-    To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} Config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources), such as adding a ConfigMap to your cluster. 
+    To view the resources after they are created in the cluster through the {{site.data.keyword.satelliteshort}} Config dashboard, add the `razee/watch-resource=lite` label to the `metadata.labels` section of your YAML file or [choose another option to view your deployed resources](/docs/satellite?topic=satellite-satcon-resources), such as adding a ConfigMap to your cluster. 
     {: tip}
 
     ```sh

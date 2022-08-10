@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-08-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -18,11 +18,7 @@ subcollection: satellite
 To create and manage the underlying infrastructure in other cloud providers, you must have the appropriate permissions. Review some commonly required permissions. For more information, consult your cloud provider's documentation.
 {: shortdesc}
 
-## Alibaba permissions
-{: #permissions-alibaba}
 
-To allow users in Alibaba to do various actions for {{site.data.keyword.satelliteshort}}, you can grant the users access to the **AliyunECSFullAccess** security policy or create a custom security policy that allows access to only specific instances. For more information about the permissions of this role, see the [Alibaba documentation](https://www.alibabacloud.com/help/en/elastic-compute-service/latest/ram-overview){: external}.
-{: shortdesc}
 
 ## AWS permissions
 {: #permissions-aws}

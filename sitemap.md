@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-08-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2183,7 +2183,7 @@ subcollection: satellite
 
 * [Cluster service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster)
 
-* [Cluster group service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster)
+* [Cluster group service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster-grp)
 
 * [Resources service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster)
 
@@ -2196,8 +2196,6 @@ subcollection: satellite
 * [Infrastructure provider credentials](/docs/satellite?topic=satellite-iam-api-key#api-keys-templates)
 
 [Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam-common#iam-common)
-
-* [Alibaba permissions](/docs/satellite?topic=satellite-iam-common#permissions-alibaba)
 
 * [AWS permissions](/docs/satellite?topic=satellite-iam-common#permissions-aws)
 
