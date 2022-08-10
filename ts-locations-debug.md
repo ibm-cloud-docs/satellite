@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-08-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -68,14 +68,13 @@ Location message
 Steps to resolve
 :    Your {{site.data.keyword.satelliteshort}} location has no critical alerts, and the {{site.data.keyword.IBM_notm}} monitoring component in the location control plane is monitoring the health of your location. You might still see some warning messages for actions that you can take to improve the state of resources in your location, such as hosts.
 
-## R0002, R0018, R0020, R0023, R0029, R0037, R0039, R0042: Wait for location to be ready
+## R0002, R0018, R0020, R0029, R0037, R0039, R0042: Wait for location to be ready
 {: #R0002}
 
 Location message
 :    R0002: The {{site.data.keyword.satelliteshort}} location has issues that {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later.
 :    R0018: {{site.data.keyword.satelliteshort}} is attempting to recover. {: #R0018}
 :    R0020: Wait while {{site.data.keyword.satelliteshort}} completes a recovery action. {: #R0020}
-:    R0023: Wait while {{site.data.keyword.satelliteshort}} sets up the location control plane. {: #R0023}
 :    R0029: Successfully initiated recovery action. {: #R0029}
 :    R0037: The {{site.data.keyword.satelliteshort}} location has clusters that are in a failed state. {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later. {: #R0037}
 :    R0039: The {{site.data.keyword.satelliteshort}} location control plane is currently unhealthy. {{site.data.keyword.cloud_notm}} Support is working to resolve. Check back later. {: #R0039}
@@ -189,13 +188,22 @@ Location message
 Steps to resolve
 :    [Attach more hosts](/docs/satellite?topic=satellite-attach-hosts) to the location. If you attached hosts that are not showing up as available, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
 
-## R0024, R0025, R0038: Cluster issues
+## R0023, R0101: Wait for location to be ready
+{: #R0023}
+
+Location message
+:    R0023: Wait while {{site.data.keyword.satelliteshort}} sets up the location control plane.
+:    R0101: The {{site.data.keyword.satelliteshort}} location has clusters in the middle of an operation. Wait for them to finish and check back later.
+
+Steps to resolve
+:    Wait for the location control plane to finish setting up and check back later.
+
+## R0024, R0025: Cluster issues
 {: #R0024}
 
 Location message
 :    R0024: The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.redhat_openshift_notm}} clusters in warning health.
 :    R0025: The {{site.data.keyword.satelliteshort}} location has {{site.data.keyword.redhat_openshift_notm}} clusters in critical health. {: #R0025}
-:    R0038: The {{site.data.keyword.satelliteshort}} location has clusters in the middle of an operation. Wait for them to finish and check back later. {: #R0038}
 
 Steps to resolve
 :    1. Wait to see if another message is returned, such as a message about host capacity.
@@ -237,6 +245,16 @@ Location message
 
 Steps to resolve
 :    See [Why does the location subdomain not route traffic to control plane hosts?](/docs/satellite?topic=satellite-ts-location-subdomain).
+
+## R0038, R0101: Location has cluster operations in progress
+{: #R0038}
+
+Location message
+:   R0038: The {{site.data.keyword.satelliteshort}} location has clusters in the middle of an operation. Wait for them to finish and check back later.
+:    R0101: The {{site.data.keyword.satelliteshort}} location has clusters in the middle of an operation. Wait for them to finish and check back later.
+
+Steps to resolve
+:    Wait for the clusters to finish their operations and check back later.
 
 ## R0043: Layer 3 connectivity
 {: #R0043}
@@ -450,4 +468,3 @@ Location message
 
 Steps to resolve
 :   If you don't need to reuse this location name, delete this location and create a location with a unique name. If the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
-

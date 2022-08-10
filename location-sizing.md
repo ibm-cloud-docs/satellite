@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-25"
+lastupdated: "2022-08-08"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -74,10 +74,10 @@ The following tables provide examples of the number of hosts that the control pl
 While you can deploy a cluster to a location with only 3 control plane hosts, upgrading and other management operations might not work with bare minimum setups.
 {: note}
 
-### Location size for Red Hat Enterprise Linux (RHEL) hosts
+### Location size for non-Red Hat CoreOS enabled location
 {: #control-plane-how-many-clusters-rhel}
 
-| Number of RHEL control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
+| Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
 | 3 hosts | 1 cluster, for demonstration purposes. | Up to 20 workers | 20 workers per cluster |
 | 6 hosts | Up to 5 clusters  | 20 workers across 5 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
@@ -89,7 +89,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 {: tab-title="4 vCPU, 16 GB RAM (RHEL)"}
 {: tab-group="loc-size"}
 
-| Number of RHEL control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
+| Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
 | 3 hosts | 1 cluster, for demonstration purposes | Up to 100 workers | 100 workers per cluster |
 | 6 hosts | Up to 20 clusters | 200 workers across 20 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
@@ -101,10 +101,10 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 {: tab-title="16 vCPU, 64 GB RAM (RHEL)"}
 {: tab-group="loc-size"}
 
-### Location size for Red Hat CoreOS (RHCOS) hosts
+### Location size for Red Hat CoreOS (RHCOS) enabled location
 {: #control-plane-how-many-clusters-rhcos}
 
-| Number of CoreOS control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
+| Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
 | 6 hosts | Up to 3 clusters | 20 workers across 3 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
 | 9 hosts | Up to 5 clusters  | 40 workers across 5 clusters, or 140 workers across 3 clusters | 60 workers per cluster |
@@ -115,7 +115,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 {: tab-title="4 vCPU, 16 GB RAM (CoreOS)"}
 {: tab-group="loc-sizerhcos"}
 
-| Number of CoreOS control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
+| Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
 | 3 hosts | 1 cluster, for demonstration purposes | Up to 100 workers | 100 workers per cluster |
 | 6 hosts | Up to 9 clusters | 200 workers across 9 clusters, or 550 workers across 2 clusters | 300 workers per cluster |

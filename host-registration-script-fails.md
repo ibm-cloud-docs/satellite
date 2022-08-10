@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-02-18"
+lastupdated: "2022-08-10"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
 subcollection: satellite
 content-type: troubleshoot
@@ -27,15 +27,26 @@ Error: Nothing to do
 {: screen}
 
 
-Your machine does not meet the minimum requirements to become a {{site.data.keyword.satelliteshort}} host. In particular, you must have the following packages installed on your RHEL 7 machine.
+Your machine does not meet the minimum requirements to become a {{site.data.keyword.satelliteshort}} host. In particular, you must have the following packages installed on your RHEL 7 or 8 machine.
 {: tsCauses}
 
+For RHEL 7
 ```sh
 Repository 'rhel-server-rhscl-7-rpms' is enabled for this system.
 Repository 'rhel-7-server-optional-rpms' is enabled for this system.
 Repository 'rhel-7-server-rh-common-rpms' is enabled for this system.
 Repository 'rhel-7-server-supplementary-rpms' is enabled for this system.
 Repository 'rhel-7-server-extras-rpms' is enabled for this system.
+```
+{: screen}
+
+For RHEL 8
+```sh
+Repository 'rhel-server-rhscl-8-rpms' is enabled for this system.
+Repository 'rhel-8-server-optional-rpms' is enabled for this system.
+Repository 'rhel-8-server-rh-common-rpms' is enabled for this system.
+Repository 'rhel-8-server-supplementary-rpms' is enabled for this system.
+Repository 'rhel-8-server-extras-rpms' is enabled for this system.
 ```
 {: screen}
 
@@ -52,13 +63,13 @@ To resolve this issue, follow these steps.
         If you see an error such as `Network error, unable to connect to server. Please see /var/log/rhsm/rhsm.log for more information.`, check the security group and other network settings for your machine to make sure that you have connectivity to the internet.
         {: tip}
 
-    2. Enable the package repositories on your machine.
+    2. Enable the package repositories on your machine. For example, enable RHEL 8 package requirements.
         ```sh
-        subscription-manager repos --enable rhel-server-rhscl-7-rpms
-        subscription-manager repos --enable rhel-7-server-optional-rpms
-        subscription-manager repos --enable rhel-7-server-rh-common-rpms
-        subscription-manager repos --enable rhel-7-server-supplementary-rpms
-        subscription-manager repos --enable rhel-7-server-extras-rpms
+        subscription-manager repos --enable rhel-server-rhscl-8-rpms
+        subscription-manager repos --enable rhel-8-server-optional-rpms
+        subscription-manager repos --enable rhel-8-server-rh-common-rpms
+        subscription-manager repos --enable rhel-8-server-supplementary-rpms
+        subscription-manager repos --enable rhel-8-server-extras-rpms
         ```
         {: pre}
 

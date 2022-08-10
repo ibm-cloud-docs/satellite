@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-05"
+lastupdated: "2022-08-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -137,6 +137,8 @@ subcollection: satellite
 
 [Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services#managed-services)
 
+* [Setting up access for Satellite-enabled services](/docs/satellite?topic=satellite-managed-services#managed-services-iam)
+
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -145,6 +147,12 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
+
+    * [10 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug522)
+
+        * Added information about verifying your permissions
+
+        * New troubleshooting topic
 
     * [5 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug522)
 
@@ -719,6 +727,12 @@ subcollection: satellite
         * New! {{site.data.keyword.satellitelong_notm}} is now available as a closed beta.
 
 
+## Tutorial library for Satellite
+{: #sitemap_tutorial-library-for-satellite}
+
+[Tutorial library for Satellite](https://cloud.ibm.com/docs?tab=tutorials&page=1&pageSize=20&tags=satellite){: external}
+
+
 ## Deploying Kubernetes resources to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config
 {: #sitemap_deploying_kubernetes_resources_to_clusters_with__and_{{sitedatakeywordsatelliteshort}}_config}
 
@@ -1114,8 +1128,6 @@ subcollection: satellite
 
 [{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm#ibm)
 
-* [Automating your {{site.data.keyword.cloud_notm}} location setup with a Schematics template](/docs/satellite?topic=satellite-ibm#ibm-template)
-
 * [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}} manually](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
@@ -1128,9 +1140,9 @@ subcollection: satellite
 
 * [How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters)
 
-    * [Location size for Red Hat Enterprise Linux (RHEL) hosts](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
+    * [Location size for non-Red Hat CoreOS enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
 
-    * [Location size for Red Hat CoreOS (RHCOS) hosts](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos)
+    * [Location size for Red Hat CoreOS (RHCOS) enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos)
 
 
 ## Managing hosts and locations
@@ -1224,8 +1236,8 @@ subcollection: satellite
 * [Removing locations with the CLI](/docs/satellite?topic=satellite-host-remove#location-remove-cli)
 
 
-## Deploying Kubernetes resources across clusters with Satellite Config
-{: #sitemap_deploying_kubernetes_resources_across_clusters_with_satellite_config}
+## Managing apps with Satellite Config
+{: #sitemap_managing_apps_with_satellite_config}
 
 
 [Understanding {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#cluster-config)
@@ -1248,7 +1260,7 @@ subcollection: satellite
 
     * [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-scoped-project)
 
-    * [Next steps for granting access](/docs/satellite?topic=satellite-setup-clusters-satconfig#next-steps-gran-access)
+* [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters)
 
 [Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-create#satcon-create)
 
@@ -1258,17 +1270,29 @@ subcollection: satellite
 
 [Managing your {{site.data.keyword.satelliteshort}} Config resources](/docs/satellite?topic=satellite-satcon-manage#satcon-manage)
 
-* [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-resources)
+* [Updating your {{site.data.keyword.satelliteshort}} Config configuration](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update)
 
-    * [Enabling Watch-keeper collection methods](/docs/satellite?topic=satellite-satcon-manage#satconfig-enable-watchkeeper)
+    * [Updating your {{site.data.keyword.satelliteshort}} Config from the console](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update-console)
 
-    * [Review the resources from {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-manage#satconfig-review-resources)
+    * [Updating your {{site.data.keyword.satelliteshort}} Config with the CLI](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update-cli)
 
-[Using {{site.data.keyword.satelliteshort}} Config with existing clusters in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-satcon-existing#satcon-existing)
+* [Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-satcon-manage#remove-satconfig)
 
-* [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-existing#register-openshift-clusters)
+[Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-resources#satcon-resources)
 
-* [Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-satcon-existing#remove-satconfig)
+* [Enabling Watch-keeper collection methods](/docs/satellite?topic=satellite-satcon-resources#satconfig-enable-watchkeeper)
+
+    * [Watch all the resources that my {{site.data.keyword.satelliteshort}} subscription creates](/docs/satellite?topic=satellite-satcon-resources#satconfig-enable-watchkeeper-all)
+
+    * [Watch a particular resource in my {{site.data.keyword.satelliteshort}} Config version](/docs/satellite?topic=satellite-satcon-resources#satconfig-enable-watchkeeper-specific)
+
+    * [Watch a particular resource that I label in my cluster](/docs/satellite?topic=satellite-satcon-resources#satconfig-enable-watchkeeper-label)
+
+* [Review the resources from {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-resources#satconfig-review-resources)
+
+    * [Reviewing resources from the console](/docs/satellite?topic=satellite-satcon-resources#satconfig-review-resources-console)
+
+    * [Reviewing resources with the CLI](/docs/satellite?topic=satellite-satcon-resources#satconfig-review-resources-cli)
 
 
 ## Connecting Satellite locations with external services by using Link endpoints
@@ -2108,53 +2132,90 @@ subcollection: satellite
 {: #sitemap_enhancing_security}
 
 
-[Managing access](/docs/satellite?topic=satellite-iam#iam)
 
-* [Understanding {{site.data.keyword.satelliteshort}} resource types in IAM](/docs/satellite?topic=satellite-iam#iam-resource-types)
+### Managing access
+{: #sitemap_managing_access}
 
-    * [Location](/docs/satellite?topic=satellite-iam#iam-resource-loc)
 
-    * [Configuration, subscription, cluster, cluster group, and resource](/docs/satellite?topic=satellite-iam#iam-resource-config)
+[Managing access overview](/docs/satellite?topic=satellite-iam#iam)
 
-    * [Link](/docs/satellite?topic=satellite-iam#iam-resource-link)
+* [Locations and hosts](/docs/satellite?topic=satellite-iam#iam-resource-loc)
 
-    * [Other services](/docs/satellite?topic=satellite-iam#iam-resource-services)
+* [Configuration, subscription, cluster, cluster group, and resource](/docs/satellite?topic=satellite-iam#iam-resource-config)
 
-* [Assigning access with {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam#iam-assign)
+* [Link](/docs/satellite?topic=satellite-iam#iam-resource-link)
 
-    * [Overview of the process to set up access to {{site.data.keyword.satellitelong_notm}} in {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam#iam-assign-overview)
-
-    * [Assigning access policy to access group by using the console](/docs/satellite?topic=satellite-iam#iam-assign-ui)
-
-    * [Assigning access policy to access group with the CLI](/docs/satellite?topic=satellite-iam#iam-assign-cli)
-
-* [IAM platform and service roles](/docs/satellite?topic=satellite-iam#iam-roles)
-
-    * [Access policies](/docs/satellite?topic=satellite-iam#iam-roles-policies)
-
-    * [Platform access roles](/docs/satellite?topic=satellite-iam#iam-roles-platform)
-
-    * [Service access roles](/docs/satellite?topic=satellite-iam#iam-roles-service)
+* [Other services](/docs/satellite?topic=satellite-iam#iam-resource-services)
 
     * [Platform and service roles for {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/satellite?topic=satellite-iam#iam-roles-clusters)
 
 * [Common use cases and roles in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
 
-* [API keys in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam#sat-api-keys)
+[Assigning access with {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam-assign-access#iam-assign-access)
 
-    * [Container service API key](/docs/satellite?topic=satellite-iam#api-keys-containers)
+* [Access policies](/docs/satellite?topic=satellite-iam-assign-access#iam-roles-policies)
 
-    * [Template API key](/docs/satellite?topic=satellite-iam#api-keys-templates)
+* [Overview of the process to set up access to {{site.data.keyword.satellitelong_notm}} in {{site.data.keyword.cloud_notm}} IAM](/docs/satellite?topic=satellite-iam-assign-access#iam-assign-overview)
 
-* [Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam#permissions-other-clouds)
+* [Assigning access policy to access group by using the console](/docs/satellite?topic=satellite-iam-assign-access#iam-assign-ui)
 
-    * [Alibaba permissions](/docs/satellite?topic=satellite-iam#permissions-alibaba)
+* [Assigning access policy to access group with the CLI](/docs/satellite?topic=satellite-iam-assign-access#iam-assign-cli)
 
-    * [AWS permissions](/docs/satellite?topic=satellite-iam#permissions-aws)
+* [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms)
 
-    * [Azure permissions](/docs/satellite?topic=satellite-iam#permissions-azure)
+    * [Checking IAM platform and service access roles from the UI](/docs/satellite?topic=satellite-iam-assign-access#checking-iam-ui)
 
-    * [Google Cloud Platform permissions](/docs/satellite?topic=satellite-iam#permissions-gcp)
+    * [Checking IAM platform and service access roles from the CLI](/docs/satellite?topic=satellite-iam-assign-access#checking-iam-cli)
+
+[Platform access roles](/docs/satellite?topic=satellite-iam-platform-access#iam-platform-access)
+
+* [Location and host platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-location-host)
+
+* [Link platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-link)
+
+* [Satellite Config platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-config)
+
+* [Subscription platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-subscription)
+
+* [Cluster platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-cluster)
+
+* [Cluster group platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-cluster-group)
+
+* [Resource platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-resource)
+
+[Service access roles](/docs/satellite?topic=satellite-iam-service-access#iam-service-access)
+
+* [Link service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-link)
+
+* [Satelle Config service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-config)
+
+* [Subscription service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-subscription)
+
+* [Cluster service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster)
+
+* [Cluster group service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster-grp)
+
+* [Resources service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster-roles)
+
+[API keys in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam-api-key#iam-api-key)
+
+* [{{site.data.keyword.satelliteshort}} API key](/docs/satellite?topic=satellite-iam-api-key#api-key-satellite)
+
+* [Container service API key](/docs/satellite?topic=satellite-iam-api-key#api-keys-containers)
+
+* [Infrastructure provider credentials](/docs/satellite?topic=satellite-iam-api-key#api-keys-templates)
+
+[Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam-common#iam-common)
+
+* [AWS permissions](/docs/satellite?topic=satellite-iam-common#permissions-aws)
+
+    * [Manually creating a {{site.data.keyword.satelliteshort}} location in AWS](/docs/satellite?topic=satellite-iam-common#permissions-aws-manual)
+
+    * [Automatically creating a {{site.data.keyword.satelliteshort}} location from a {{site.data.keyword.bpshort}} template in AWS](/docs/satellite?topic=satellite-iam-common#permissions-aws-auto)
+
+* [Azure permissions](/docs/satellite?topic=satellite-iam-common#permissions-azure)
+
+* [Google Cloud Platform permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp)
 
 [Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies](/docs/satellite?topic=satellite-service-architecture#service-architecture)
 
@@ -2643,7 +2704,7 @@ subcollection: satellite
 
 * [R0001: Ready location](/docs/satellite?topic=satellite-ts-locations-debug#R0001)
 
-* [R0002, R0018, R0020, R0023, R0029, R0037, R0039, R0042: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0002)
+* [R0002, R0018, R0020, R0029, R0037, R0039, R0042: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0002)
 
 * [R0009: Unable to recover](/docs/satellite?topic=satellite-ts-locations-debug#R0009)
 
@@ -2659,13 +2720,17 @@ subcollection: satellite
 
 * [R0015, R0016: Host issues](/docs/satellite?topic=satellite-ts-locations-debug#R0015)
 
-* [R0024, R0025, R0038: Cluster issues](/docs/satellite?topic=satellite-ts-locations-debug#R0024)
+* [R0023, R0101: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0023)
+
+* [R0024, R0025: Cluster issues](/docs/satellite?topic=satellite-ts-locations-debug#R0024)
 
 * [R0026: Host disk space](/docs/satellite?topic=satellite-ts-locations-debug#R0026)
 
 * [R0033, R0034, R0035: Control plane capacity issues](/docs/satellite?topic=satellite-ts-locations-debug#R0033)
 
 * [R0036: Location subdomain traffic routing](/docs/satellite?topic=satellite-ts-locations-debug#R0036)
+
+* [R0038, R0101: Location has cluster operations in progress](/docs/satellite?topic=satellite-ts-locations-debug#R0038)
 
 * [R0043: Layer 3 connectivity](/docs/satellite?topic=satellite-ts-locations-debug#R0043)
 
@@ -2709,6 +2774,8 @@ subcollection: satellite
 * [Target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location-target)
 
 * [Ask the location owner to update your permissions](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location-perms)
+
+[Why was my location deleted?](/docs/satellite?topic=satellite-ts-location-gone#ts-location-gone)
 
 
 ### Hosts
