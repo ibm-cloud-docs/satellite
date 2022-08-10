@@ -2692,7 +2692,7 @@ subcollection: satellite
 
 * [R0001: Ready location](/docs/satellite?topic=satellite-ts-locations-debug#R0001)
 
-* [R0002, R0018, R0020, R0023, R0029, R0037, R0039, R0042: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0002)
+* [R0002, R0018, R0020, R0029, R0037, R0039, R0042: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0002)
 
 * [R0009: Unable to recover](/docs/satellite?topic=satellite-ts-locations-debug#R0009)
 
@@ -2708,13 +2708,17 @@ subcollection: satellite
 
 * [R0015, R0016: Host issues](/docs/satellite?topic=satellite-ts-locations-debug#R0015)
 
-* [R0024, R0025, R0038: Cluster issues](/docs/satellite?topic=satellite-ts-locations-debug#R0024)
+* [R0023, R0101: Wait for location to be ready](/docs/satellite?topic=satellite-ts-locations-debug#R0023)
+
+* [R0024, R0025: Cluster issues](/docs/satellite?topic=satellite-ts-locations-debug#R0024)
 
 * [R0026: Host disk space](/docs/satellite?topic=satellite-ts-locations-debug#R0026)
 
 * [R0033, R0034, R0035: Control plane capacity issues](/docs/satellite?topic=satellite-ts-locations-debug#R0033)
 
 * [R0036: Location subdomain traffic routing](/docs/satellite?topic=satellite-ts-locations-debug#R0036)
+
+* [R0038, R0101: Location has cluster operations in progress](/docs/satellite?topic=satellite-ts-locations-debug#R0038)
 
 * [R0043: Layer 3 connectivity](/docs/satellite?topic=satellite-ts-locations-debug#R0043)
 
