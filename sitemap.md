@@ -2769,6 +2769,8 @@ subcollection: satellite
 
 * [Ask the location owner to update your permissions](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location-perms)
 
+[Why was my location deleted?](/docs/satellite?topic=satellite-ts-location-delete#ts-location-delete)
+
 
 ### Hosts
 {: #sitemap_hosts}

@@ -203,6 +203,7 @@ toc:
                     - ts-dl-r0043.md
                     - ts-location-healthcheck.md
                     - ts-location-missing-location.md
+                    - ts-location-gone.md
               - topicgroup:
                   label: Hosts
                   topics:
