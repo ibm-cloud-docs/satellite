@@ -160,14 +160,14 @@ Create a storage configuration in the command line by using the Azure Disk templ
 1. Review the [template parameters](#sat-storage-azure-disk-params-cli).
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
-        Example command to create a config by using `azuredisk-csi-driver` version 1.18.0.
+    Example command to create a config by using `azuredisk-csi-driver` version 1.18.0.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.18.0  --param "tenantId=TENANTID" --param "subscriptionId=SUBSCRIPTIONID" --param "aadClientId=AADCLIENTID" --param "location=LOCATION" --param "aadClientSecret=AADCLIENTSECRET" --param "resourceGroup=RESOURCEGROUP" --param "vmType=VMTYPE" --param "securityGroupName=SECURITYGROUPNAME" --param "vnetName=VNETNAME"
     ```
     {: pre}
-    
-        Example command to create a config by using `azuredisk-csi-driver` version 1.4.0.
+
+    Example command to create a config by using `azuredisk-csi-driver` version 1.4.0.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.4.0  --param "tenantId=TENANTID" --param "subscriptionId=SUBSCRIPTIONID" --param "aadClientId=AADCLIENTID" --param "location=LOCATION" --param "aadClientSecret=AADCLIENTSECRET" --param "resourceGroup=RESOURCEGROUP" --param "vmType=VMTYPE" --param "securityGroupName=SECURITYGROUPNAME" --param "vnetName=VNETNAME"

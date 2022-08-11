@@ -92,14 +92,14 @@ Create a storage configuration in the command line by using the {{site.data.keyw
 
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
-        Example command to create a config by using `ibm-vpc-block-csi-driver` version 4.3.0.
+    Example command to create a config by using `ibm-vpc-block-csi-driver` version 4.3.0.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-vpc-block-csi-driver --template-version 4.3.0  --param "g2_token_exchange_endpoint_url=G2_TOKEN_EXCHANGE_ENDPOINT_URL" --param "g2_riaas_endpoint_url=G2_RIAAS_ENDPOINT_URL" --param "g2_resource_group_id=G2_RESOURCE_GROUP_ID" --param "g2_api_key=G2_API_KEY"
     ```
     {: pre}
 
-        Example command to create a config by using `ibm-vpc-block-csi-driver` version 4.2.2.
+    Example command to create a config by using `ibm-vpc-block-csi-driver` version 4.2.2.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-vpc-block-csi-driver --template-version 4.2.2  --param "g2_token_exchange_endpoint_url=G2_TOKEN_EXCHANGE_ENDPOINT_URL" --param "g2_riaas_endpoint_url=G2_RIAAS_ENDPOINT_URL" --param "g2_resource_group_id=G2_RESOURCE_GROUP_ID" --param "g2_api_key=G2_API_KEY"

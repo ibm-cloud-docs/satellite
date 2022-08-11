@@ -101,21 +101,21 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
 1. Review the [AWS EFS storage configuration parameters](#sat-storage-aws-efs-params-cli).
 1. Create an AWS EFS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
 
-        Example command to create a config by using `aws-efs-csi-driver` version 1.3.7.
+    Example command to create a config by using `aws-efs-csi-driver` version 1.3.7.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.7  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
     ```
     {: pre}
-    
-        Example command to create a config by using `aws-efs-csi-driver` version 1.3.1.
+
+    Example command to create a config by using `aws-efs-csi-driver` version 1.3.1.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.1  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
     ```
     {: pre}
-            
-        Example command to create a config by using `aws-efs-csi-driver` version 1.2.2.
+        
+    Example command to create a config by using `aws-efs-csi-driver` version 1.2.2.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.2.2  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"

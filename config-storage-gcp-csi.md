@@ -72,14 +72,14 @@ Create a storage configuration in the command line by using the Google Compute E
 
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
-        Example command to create a config by using `gcp-compute-persistent-disk-csi-driver` version 1.7.1.
+    Example command to create a config by using `gcp-compute-persistent-disk-csi-driver` version 1.7.1.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name gcp-compute-persistent-disk-csi-driver --template-version 1.7.1  --param "project_id=PROJECT_ID" --param "private_key_id=PRIVATE_KEY_ID" --param "private_key=PRIVATE_KEY" --param "client_email=CLIENT_EMAIL" --param "client_id=CLIENT_ID" --param "auth_uri=AUTH_URI" --param "token_uri=TOKEN_URI" --param "auth_provider_x509_cert_url=AUTH_PROVIDER_X509_CERT_URL" --param "client_x509_cert_url=CLIENT_X509_CERT_URL"
     ```
     {: pre}
-    
-        Example command to create a config by using `gcp-compute-persistent-disk-csi-driver` version 1.0.4.
+
+    Example command to create a config by using `gcp-compute-persistent-disk-csi-driver` version 1.0.4.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name gcp-compute-persistent-disk-csi-driver --template-version 1.0.4  --param "project_id=PROJECT_ID" --param "private_key_id=PRIVATE_KEY_ID" --param "private_key=PRIVATE_KEY" --param "client_email=CLIENT_EMAIL" --param "client_id=CLIENT_ID" --param "auth_uri=AUTH_URI" --param "token_uri=TOKEN_URI" --param "auth_provider_x509_cert_url=AUTH_PROVIDER_X509_CERT_URL" --param "client_x509_cert_url=CLIENT_X509_CERT_URL"

@@ -107,28 +107,28 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
 
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods. Don't specify the {{site.data.keyword.cos_short}} parameters if your existing configuration doesn't use {{site.data.keyword.cos_full_notm}}.
 
-        Example command to create a config by using `odf-remote` version 4.10.
+    Example command to create a config by using `odf-remote` version 4.10.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-remote --template-version 4.10  --param "osd-size=OSD-SIZE" --param "osd-storage-class=OSD-STORAGE-CLASS" [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"] [--param "kms-encryption=KMS-ENCRYPTION"] [--param "kms-instance-name=KMS-INSTANCE-NAME"] [--param "kms-instance-id=KMS-INSTANCE-ID"] [--param "kms-base-url=KMS-BASE-URL"] [--param "kms-token-url=KMS-TOKEN-URL"] [--param "kms-root-key=KMS-ROOT-KEY"] [--param "kms-api-key=KMS-API-KEY"]
     ```
     {: pre}
 
-        Example command to create a config by using `odf-remote` version 4.9.
+    Example command to create a config by using `odf-remote` version 4.9.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-remote --template-version 4.9  --param "osd-size=OSD-SIZE" --param "osd-storage-class=OSD-STORAGE-CLASS" [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"]
     ```
     {: pre}
 
-        Example command to create a config by using `odf-remote` version 4.8.
+    Example command to create a config by using `odf-remote` version 4.8.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-remote --template-version 4.8  --param "osd-size=OSD-SIZE" --param "osd-storage-class=OSD-STORAGE-CLASS" [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"]
     ```
     {: pre}
 
-        Example command to create a config by using `odf-remote` version 4.7.
+    Example command to create a config by using `odf-remote` version 4.7.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-remote --template-version 4.7  --param "mon-size=MON-SIZE" --param "mon-storage-class=MON-STORAGE-CLASS" --param "osd-size=OSD-SIZE" --param "osd-storage-class=OSD-STORAGE-CLASS" [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"]
