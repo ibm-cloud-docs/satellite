@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-08-11"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -85,10 +85,13 @@ Before you can deploy storage templates to clusters in your location, make sure 
     
 1. Review the [NetApp ONTAP-NAS storage configuration parameters](#sat-storage-netapp-params-cli-nas).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
-    ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name netapp-ontap-nas --template-version <template_version> --param "managementLIF=<managementLIF>" --param "dataLIF=<dataLIF>" --param "svm=<svm>" --param "export-policy=<export-policy>" --param "username=<username>" --param "password=<password>"
-    ```
-    {: pre}
+
+    Example command to create a config by using `netapp-ontap-nas` version 20.07.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 20.07  --param "managementLIF=MANAGEMENTLIF" --param "dataLIF=DATALIF" --param "svm=SVM" --param "username=USERNAME" --param "password=PASSWORD" [--param "exportPolicy=EXPORTPOLICY"] [--param "limitVolumeSize=LIMITVOLUMESIZE"] [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"] [--param "nfsMountOptions=NFSMOUNTOPTIONS"]
+```
+{: pre}
 
 1. Verify that your storage configuration is created.
     ```sh

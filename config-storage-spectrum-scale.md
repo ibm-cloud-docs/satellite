@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-08-11"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -147,10 +147,13 @@ In some environments, your worker node names might be different from your {{site
     
 1. Review the [template parameters](#sat-storage-spectrum-scale-params-cli).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
-    ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name ess --template-version <template_version> -p "scale-host-path=<scale-host-path>" -p "cluster-id=<cluseter-id>" -p "primary-fs=<primary-fs>" -p "gui-host=<gui-host>" -p "secret-name=<secret-name>" -p "gui-api-user=<gui-api-user>" -p "gui-api-password=<gui-api-password>" -p "k8-n1-ip=<k8-n1-ip>" -p "sc-n1-host=<sc-n1-host>" -p "k8-n2-ip=<k8-n2-ip>" -p "sc-n2-host=<sc-n2-host>" -p "k8-n3-ip=<k8-n3-ip>" -p "sc-n3-host=<sc-n3-host>" -p "storage-class-name=<storage-class-name>" -p "vol-backend-fs=<vol-backend-fs>" -p "vol-dir-base-path=<vol-dir-base>"
-    ```
-    {: pre}
+
+    Example command to create a config by using `ibm-spectrum-fusion` version 2.4.0.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-spectrum-fusion --template-version 2.4.0  --param "primary-cluster-id=PRIMARY-CLUSTER-ID" --param "primary-fs-name=PRIMARY-FS-NAME" --param "primary-gui-host=PRIMARY-GUI-HOST" --param "primary-secret-name=PRIMARY-SECRET-NAME" --param "primary-gui-api-user=PRIMARY-GUI-API-USER" --param "primary-gui-api-password=PRIMARY-GUI-API-PASSWORD" --param "owning-cluster-id=OWNING-CLUSTER-ID" --param "owning-gui-host=OWNING-GUI-HOST" --param "owning-secret-name=OWNING-SECRET-NAME" --param "owning-gui-api-user=OWNING-GUI-API-USER" --param "owning-gui-api-password=OWNING-GUI-API-PASSWORD" --param "k8-n1-host=K8-N1-HOST" --param "sc-n1-host=SC-N1-HOST" --param "k8-n2-host=K8-N2-HOST" --param "sc-n2-host=SC-N2-HOST" --param "k8-n3-host=K8-N3-HOST" --param "sc-n3-host=SC-N3-HOST" [--param "k8-n4-host=K8-N4-HOST"] [--param "sc-n4-host=SC-N4-HOST"] [--param "k8-n5-host=K8-N5-HOST"] [--param "sc-n5-host=SC-N5-HOST"] [--param "k8-n6-host=K8-N6-HOST"] [--param "sc-n6-host=SC-N6-HOST"] [--param "k8-n7-host=K8-N7-HOST"] [--param "sc-n7-host=SC-N7-HOST"] [--param "k8-n8-host=K8-N8-HOST"] [--param "sc-n8-host=SC-N8-HOST"]
+```
+{: pre}
 
 1. Verify that your storage configuration is created.
     ```sh
@@ -514,37 +517,15 @@ Do not install the {{site.data.keyword.IBM_notm}} Spectrum Scale management API 
 * If the Spectrum Scale file system mount path is the exact same on the owning and primary Spectrum Scale cluster, then only one Spectrum Scale GUI is required.
 * If the Spectrum Scale file system mount paths are different, then two GUIs are required. One of the GUIs must run on a node that has network connectivity to the worker nodes that managed by {{site.data.keyword.satelliteshort}}, but note that the GUI node itself, must not be managed by {{site.data.keyword.satelliteshort}}.
 
-### Spectrum Scale configuration parameter reference
+## Spectrum Scale parameter reference
 {: #sat-storage-spectrum-scale-params-cli}
 
-| Parameter | Required? | Description |
-| --- | --- | --- |
-| `scale-host-path` | Required | The mount path of the primary file system. You can retrieve this value by running the `mmlsfs` command from a worker node in the primary Spectrum Scale cluster. |
-| `cluster-id` | Required | The cluster ID of the primary {{site.data.keyword.IBM_notm}} Spectrum Scale cluster. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `primary-fs` | Required | The primary file system name. You can retrieve this value by running the `mmlsfs` command from a worker node in the primary Spectrum Scale cluster. |
-| `gui-host` | Required | Enter the FQDN or IP address that corresponds with the ID that is specified in `gui-api-user` parameter. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `secret-name` | Required | The name of the secret that contains the `username` and `password` to connect to the primary Spectrum Scale cluster GUI server. This parameter is user-specified. |
-| `gui-api-user` | Required | The username to connect to the primary Spectrum Scale cluster GUI. To retrieve this value, log in to the Spectrum Scale GUI node and run the `lsuser` command. The `gui-api-user` value is in the `CsiAdmin` group. |
-| `gui-api-password` | Required | The password to connect to the primary Spectrum Scale cluster GUI. This parameter is user-specified.|
-| `k8-n1-ip` | Required | The IP address of your worker node 1 running {{site.data.keyword.IBM_notm}} Spectrum Scale. You can retrieve this value by running the `oc get nodes` command. |
-| `sc-n1-host` | Required | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 1.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n2-ip` | Optional | The IP address of your worker node 2 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command. |
-| `sc-n2-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 2. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n3-ip` | Optional | The IP address of your worker node 3 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n3-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 3.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n4-ip` | Optional | The IP address of your worker node 3 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n4-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 4.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n5-ip` | Optional | The IP address of your worker node 4 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n5-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 5.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n6-ip` | Optional | The IP address of your worker node 5 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n6-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 6.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n7-ip` | Optional | The IP address of your worker node 6 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n7-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 7.  You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `k8-n8-ip` | Optional | The IP address of your worker node 7 running {{site.data.keyword.IBM_notm}} Spectrum Scale.  You can retrieve this value by running the `oc get nodes` command.|
-| `sc-n8-host` | Optional | the hostname of the {{site.data.keyword.IBM_notm}} Spectrum Scale Node 8. You can retrieve this value by running the `mmlscluster` command from a worker node in the primary Spectrum Scale cluster. |
-| `storage-class-name` | Optional | The name of the {{site.data.keyword.IBM_notm}} Spectrum Scale storage class.  |
-| `vol-backend-fs` | Optional | The name of the file system on which the fileset is created. |
-{: caption="Table 1. OpenShift Container storage parameter reference." caption-side="top"}
+Example command to create a config by using `ibm-spectrum-fusion` version 2.4.0.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-spectrum-fusion --template-version 2.4.0  --param "primary-cluster-id=PRIMARY-CLUSTER-ID" --param "primary-fs-name=PRIMARY-FS-NAME" --param "primary-gui-host=PRIMARY-GUI-HOST" --param "primary-secret-name=PRIMARY-SECRET-NAME" --param "primary-gui-api-user=PRIMARY-GUI-API-USER" --param "primary-gui-api-password=PRIMARY-GUI-API-PASSWORD" --param "owning-cluster-id=OWNING-CLUSTER-ID" --param "owning-gui-host=OWNING-GUI-HOST" --param "owning-secret-name=OWNING-SECRET-NAME" --param "owning-gui-api-user=OWNING-GUI-API-USER" --param "owning-gui-api-password=OWNING-GUI-API-PASSWORD" --param "k8-n1-host=K8-N1-HOST" --param "sc-n1-host=SC-N1-HOST" --param "k8-n2-host=K8-N2-HOST" --param "sc-n2-host=SC-N2-HOST" --param "k8-n3-host=K8-N3-HOST" --param "sc-n3-host=SC-N3-HOST" [--param "k8-n4-host=K8-N4-HOST"] [--param "sc-n4-host=SC-N4-HOST"] [--param "k8-n5-host=K8-N5-HOST"] [--param "sc-n5-host=SC-N5-HOST"] [--param "k8-n6-host=K8-N6-HOST"] [--param "sc-n6-host=SC-N6-HOST"] [--param "k8-n7-host=K8-N7-HOST"] [--param "sc-n7-host=SC-N7-HOST"] [--param "k8-n8-host=K8-N8-HOST"] [--param "sc-n8-host=SC-N8-HOST"]
+```
+{: pre}
 
 
 

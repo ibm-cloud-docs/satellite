@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-08-11"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -321,7 +321,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-block-silver-encrypted` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption enabled. | Delete |
 | `sat-netapp-block-bronze` | ONTAP-SAN | ext4 | User defined QoS limit. | Encryption disabled. | Delete |
 | `sat-netapp-block-bronze-encrypted` | ONTAP-SAN | ext4 | User-defined QoS limit. | Encryption enabled. | Delete |
-{: caption="Table 2. NetApp ONTAP-SAN storage class reference." caption-side="top"}
+
 
 ## Getting help and support for NetApp Trident
 {: #sat-san-2104-support}
