@@ -134,19 +134,19 @@ Create a storage configuration in the command line by using the Azure File templ
 1. Review the [template parameters](#sat-storage-azure-file-params-cli).
 1. Create a storage configuration. You can pass parameters by using the `-p "key=value"` format. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
-    Example command to create a config by using `azurefile-csi-driver` version 1.18.0.
+        Example command to create a config by using `azurefile-csi-driver` version 1.18.0.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name azurefile-csi-driver --template-version 1.18.0  --param "tenantId=TENANTID" --param "subscriptionId=SUBSCRIPTIONID" --param "aadClientId=AADCLIENTID" --param "location=LOCATION" --param "aadClientSecret=AADCLIENTSECRET" --param "resourceGroup=RESOURCEGROUP" --param "vmType=VMTYPE" --param "securityGroupName=SECURITYGROUPNAME" --param "vnetName=VNETNAME" --param "subnetName=SUBNETNAME"
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azurefile-csi-driver --template-version 1.18.0  --param "tenantId=TENANTID" --param "subscriptionId=SUBSCRIPTIONID" --param "aadClientId=AADCLIENTID" --param "location=LOCATION" --param "aadClientSecret=AADCLIENTSECRET" --param "resourceGroup=RESOURCEGROUP" --param "vmType=VMTYPE" --param "securityGroupName=SECURITYGROUPNAME" --param "vnetName=VNETNAME" --param "subnetName=SUBNETNAME"
+    ```
+    {: pre}
     
-    Example command to create a config by using `azurefile-csi-driver` version 1.9.0.
+        Example command to create a config by using `azurefile-csi-driver` version 1.9.0.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name azurefile-csi-driver --template-version 1.9.0  --param "tenantId=TENANTID" --param "subscriptionId=SUBSCRIPTIONID" --param "aadClientId=AADCLIENTID" --param "location=LOCATION" --param "aadClientSecret=AADCLIENTSECRET" --param "resourceGroup=RESOURCEGROUP" --param "vmType=VMTYPE" --param "securityGroupName=SECURITYGROUPNAME" --param "vnetName=VNETNAME" --param "subnetName=SUBNETNAME"
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azurefile-csi-driver --template-version 1.9.0  --param "tenantId=TENANTID" --param "subscriptionId=SUBSCRIPTIONID" --param "aadClientId=AADCLIENTID" --param "location=LOCATION" --param "aadClientSecret=AADCLIENTSECRET" --param "resourceGroup=RESOURCEGROUP" --param "vmType=VMTYPE" --param "securityGroupName=SECURITYGROUPNAME" --param "vnetName=VNETNAME" --param "subnetName=SUBNETNAME"
+    ```
+    {: pre}
 
 1. Verify that your storage configuration is created.
 

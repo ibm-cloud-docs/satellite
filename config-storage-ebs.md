@@ -105,26 +105,26 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 1. Review the [AWS EBS storage configuration parameters](#sat-storage-aws-ebs-params-cli).
 1. Create an AWS EBS storage configuration. Replace the variables with the parameters that you retrieved in the previous step. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
     
-    Example command to create a config by using `aws-ebs-csi-driver` version 1.5.1.
+        Example command to create a config by using `aws-ebs-csi-driver` version 1.5.1.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.5.1  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.5.1  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
+    ```
+    {: pre}
 
-    Example command to create a config by using `aws-ebs-csi-driver` version 1.1.0.
+        Example command to create a config by using `aws-ebs-csi-driver` version 1.1.0.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.1.0  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.1.0  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
+    ```
+    {: pre}
 
-    Example command to create a config by using `aws-ebs-csi-driver` version 0.9.14.
+        Example command to create a config by using `aws-ebs-csi-driver` version 0.9.14.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 0.9.14  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 0.9.14  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
+    ```
+    {: pre}
 
 1. Verify that your storage configuration is created.
     ```sh

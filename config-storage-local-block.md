@@ -193,33 +193,33 @@ You can use the [console](#sat-storage-local-block-ui) or [CLI](#sat-storage-loc
 
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
-    Example command to create a config by using `local-volume-block` version 4.10.
+        Example command to create a config by using `local-volume-block` version 4.10.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"]
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"]
+    ```
+    {: pre}
     
-    Example command to create a config by using `local-volume-block` version 4.9.
+        Example command to create a config by using `local-volume-block` version 4.9.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"]
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"]
+    ```
+    {: pre}
     
-    Example command to create a config by using `local-volume-block` version 4.8.
+        Example command to create a config by using `local-volume-block` version 4.8.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.8  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH"
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.8  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH"
+    ```
+    {: pre}
     
-    Example command to create a config by using `local-volume-block` version 4.7.
+        Example command to create a config by using `local-volume-block` version 4.7.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.7  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH"
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.7  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH"
+    ```
+    {: pre}
 
 1. Verify that your storage configuration is created.
 

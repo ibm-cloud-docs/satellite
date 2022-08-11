@@ -194,33 +194,33 @@ You can use the [console](#sat-storage-local-file-ui) or [CLI](#sat-storage-loca
 1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
-    Example command to create a config by using `local-volume-file` version 4.10.
+        Example command to create a config by using `local-volume-file` version 4.10.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"] [--param "fstype=FSTYPE"]
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"] [--param "fstype=FSTYPE"]
+    ```
+    {: pre}
     
-    Example command to create a config by using `local-volume-file` version 4.9.
+        Example command to create a config by using `local-volume-file` version 4.9.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"] [--param "fstype=FSTYPE"]
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"] [--param "fstype=FSTYPE"]
+    ```
+    {: pre}
     
-    Example command to create a config by using `local-volume-file` version 4.8.
+        Example command to create a config by using `local-volume-file` version 4.8.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.8  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH" [--param "fstype=FSTYPE"]
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.8  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH" [--param "fstype=FSTYPE"]
+    ```
+    {: pre}
     
-    Example command to create a config by using `local-volume-file` version 4.7.
+        Example command to create a config by using `local-volume-file` version 4.7.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.7  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH" [--param "fstype=FSTYPE"]
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.7  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH" [--param "fstype=FSTYPE"]
+    ```
+    {: pre}
 
 1. Verify that your storage configuration is created.
 

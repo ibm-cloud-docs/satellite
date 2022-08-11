@@ -79,12 +79,12 @@ Create a storage configuration in the command line by using the VMware configura
 
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
-    Example command to create a config by using `vsphere-csi-driver` version 2.5.1.
+        Example command to create a config by using `vsphere-csi-driver` version 2.5.1.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.5.1  --param "vcenter-username=VCENTER-USERNAME" --param "vcenter-password=VCENTER-PASSWORD" [--param "insecure-flag=INSECURE-FLAG"] --param "host=HOST" --param "datacenters=DATACENTERS" [--param "thumbprint=THUMBPRINT"]
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.5.1  --param "vcenter-username=VCENTER-USERNAME" --param "vcenter-password=VCENTER-PASSWORD" [--param "insecure-flag=INSECURE-FLAG"] --param "host=HOST" --param "datacenters=DATACENTERS" [--param "thumbprint=THUMBPRINT"]
+    ```
+    {: pre}
 
 1. Verify that your storage configuration is created.
 
