@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-14"
+lastupdated: "2022-08-11"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -101,8 +101,11 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 1. Review the [NetApp ONTAP-NAS storage configuration parameters](#sat-storage-netapp-params-cli-nas-2104).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+
+    Example command to create a config by using `netapp-ontap-nas` version 21.04.
+
     ```sh
-    ibmcloud sat storage config create --name <config> --location <location-id> --template-name 'netapp-ontap-nas' --template-version '21.04' -p 'managementLIF=<mgmt-LIF' -p 'dataLIF=<data-LIF>' -p 'svm=svm-nas' -p 'username=<username>' -p 'password=<password>' -p 'exportPolicy=<export-policy>'
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 21.04  --param "managementLIF=MANAGEMENTLIF" --param "dataLIF=DATALIF" --param "svm=SVM" --param "username=USERNAME" --param "password=PASSWORD" [--param "exportPolicy=EXPORTPOLICY"] [--param "limitVolumeSize=LIMITVOLUMESIZE"] [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"] [--param "nfsMountOptions=NFSMOUNTOPTIONS"]
     ```
     {: pre}
 
@@ -570,18 +573,21 @@ Use the console to remove a storage assignment and storage configuration.
 
 For more information about the NetApp ONTAP-NAS configuration parameters, see the [NetApp documentation](https://netapp-trident.readthedocs.io/en/stable-v21.04/docker/install/ndvp_ontap_config.html#configuration-file-options){: external}.
 
-| Parameter name | Required? | Description | Default value if not provided |
-| --- | --- | --- | --- |
-| `managementLIF` | Required | The IP address of the management LIF. Example: `10.0.0.1`. | N/A |
-| `dataLIF` | Required | The IP address of data LIF. Example: `10.0.0.2`. | N/A | 
-| `svm` | Required | The name of the storage virtual machine. Example: `svm-nfs`. | N/A | 
-| `export-policy` | Optional | Provide the name of an NFS export policy to use. Example: `remote-workers`. | `default` |
-| `username` | Required | The username to connect to the storage device. | N/A |
-| `password` | Required | The password to connect to the storage device. | N/A |
-| `limitVolumeSize` | Optional | Maximum volume size that can be requested per PVC. Example: `500Gi` | `default is 50Gi` |
-| `limitAggregateUsage` | Optional | Limit provisioning of volumes if parent volume usage exceeds this value. For example, if a volume is requested that causes parent volume usage to exceed this value, the volume provisioning fails. Example: `70%` | `default is 80%` |
-| `nfsMountOptions` | Optional | Specify the NFS mount version. Example: `nfsvers=4` | `""` |
-{: caption="Table 1. NetApp ONTAP-NAS storage parameter reference." caption-side="top"}
+## Version 21.04 parameter reference
+{: #netapp-ontap-nas-21.04}
+
+| Display name | Name | Description | Required? | Default |
+| --- | --- | --- | --- | --- |
+| Management LIF | `managementLIF` | The IP address of the Management LIF. | true | N/A | 
+| Data LIF | `dataLIF` | The IP address of the Data LIF. | true | N/A | 
+| SVM | `svm` | The name of the SVM. | true | N/A | 
+| User Name | `username` | The username to connect to the storage device. | true | N/A | 
+| User Password | `password` | The password to connect to the storage device. | true | N/A | 
+| Export Policy | `exportPolicy` | The NAS option for the NFS export policy. | false |`default` |
+| Limit Volume Size | `limitVolumeSize` | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | false |`50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is above this percentage. | false |`80%` |
+| NFS Mount Options | `nfsMountOptions` | The NFS mount options. | false |`nfsvers=4` |
+{: caption="netapp-ontap-nas version 21.04 parameter reference"}
 
 
 

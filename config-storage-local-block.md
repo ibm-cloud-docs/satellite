@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-08-11"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -193,19 +193,31 @@ You can use the [console](#sat-storage-local-block-ui) or [CLI](#sat-storage-loc
 
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
-    Example command to create a configuration with template versions 4.6-4.8.
+    Example command to create a config by using `local-volume-block` version 4.10.
 
     ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name local-volume-block --template-version <template-version> --param "label-key=storage" --param "label-value=local-block" --param "devicepath=<devicepath>"
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"]
     ```
     {: pre}
 
-    Example command to create a configuration with template version 4.9 and automatically discover local storage devices.
-
-    In version 4.9 of the Local Storage Operator - Block template you have the option to pass the `devicepath` parameter or the `auto-discover-devices` parameter. The `auto-discover-devices` parameter can automatically discover available storage devices on your worker nodes. If you don't pass this parameter, or if you pass `auto-discover-devices=false` you must specify the `device-path` parameter. 
+    Example command to create a config by using `local-volume-block` version 4.9.
 
     ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name local-volume-block --template-version <template-version> --param "label-key=storage" --param "label-value=local-block" --param "dauto-discover-devices=true"
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"]
+    ```
+    {: pre}
+
+    Example command to create a config by using `local-volume-block` version 4.8.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.8  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH"
+    ```
+    {: pre}
+
+    Example command to create a config by using `local-volume-block` version 4.7.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.7  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH"
     ```
     {: pre}
 
@@ -719,33 +731,47 @@ Use the console to remove a storage configuration.
 ## Local block storage configuration parameter reference
 {: #sat-storage-local-block-params-cli}
 
-### Local block storage version 4.9 parameters
-{: #block-49-params}
+## Version 4.10 parameter reference
+{: #local-volume-block-4.10}
 
-| Parameter | Required? | Description |
-| --- | --- | --- |
-| `--name` | Required | Enter a name for your storage configuration. |
-| `--template-name` | Required | Enter `local-volume-block`. |
-| `--template-version` | Required | Enter the version of the `local-volume-block` template that you want to use. The template version that you specify must match your OCP version. For example, if your OCP version is `4.5.X`, specify template version `4.5`. To get a list of storage templates and versions, run `ibmcloud sat storage template ls`. |
-| `label-key` | Required | Enter the node label key that you added to the worker nodes where you want to install the local storage drivers. The local storage drivers are installed only on the worker nodes that have the corresponding label. In the previous example, the label key is `storage`. |
-| `label-value` | Required | Enter the node label value that you added to the worker nodes where you want to install the local storage driver. The local storage drivers are installed only on the worker nodes that have the corresponding label. In the previous example, the label value is `local-block`. |
-| `devicepath` | Required | Enter the local storage device paths in the format `/dev/<device>`. The device path begins with `/dev` and includes the disk that you retrieved earlier. For example: `/dev/nvme2n1`. If you specify more than one device path, be sure to separate them with a comma and do not enter any additional spaces between each path. For example: `/dev/nvme2n1`,`/dev/nvme3n1`. For more information on how to retrieve this value, see [Getting the device details](#sat-storage-block-local-devices). |
-| `auto-discover-devices` | Optional | Set to `true` if you want to automatically discover available devices on your worker nodes. You must have unformatted disks available on your worker nodes to use this feature. If you don't pass this parameter, or if you pass `auto-discover-devices=false`, you must specify the `osd-device-path` parameter. | false | boolean |
-{: caption="Table 1. Local block storage parameter reference." caption-side="top"}
+| Display name | Name | Description | Required? | Default |
+| --- | --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Set to 'true' if you want to automatically discover and use the storage volumes on your worker nodes. | false |`false` |
+| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
+| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
+| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. Required when auto-discover-devices is set to false. | false | N/A | 
+{: caption="local-volume-block version 4.10 parameter reference"}
 
-### Local block storage versions 4.6-4.8 parameters
-{: #block-46-48-params}
+## Version 4.9 parameter reference
+{: #local-volume-block-4.9}
 
-| Parameter | Required? | Description |
-| --- | --- | --- |
-| `--name` | Required | Enter a name for your storage configuration. |
-| `--template-name` | Required | Enter `local-volume-block`. |
-| `--template-version` | Required | Enter the version of the `local-volume-block` template that you want to use. The template version that you specify must match your OCP version. For example, if your OCP version is `4.5.X`, specify template version `4.5`. To get a list of storage templates and versions, run `ibmcloud sat storage template ls`. |
-| `label-key` | Required | Enter the node label key that you added to the worker nodes where you want to install the local storage drivers. The local storage drivers are installed only on the worker nodes that have the corresponding label. In the previous example, the label key is `storage`. |
-| `label-value` | Required | Enter the node label value that you added to the worker nodes where you want to install the local storage driver. The local storage drivers are installed only on the worker nodes that have the corresponding label. In the previous example, the label value is `local-block`. |
-| `devicepath` | Required | Enter the local storage device paths in the format `/dev/<device>`. The device path begins with `/dev` and includes the disk that you retrieved earlier. For example: `/dev/nvme2n1`. If you specify more than one device path, be sure to separate them with a comma and do not enter any additional spaces between each path. For example: `/dev/nvme2n1`,`/dev/nvme3n1`. For more information on how to retrieve this value, see [Getting the device details](#sat-storage-block-local-devices). |
-{: caption="Table 2. Local block storage parameter reference." caption-side="top"}
+| Display name | Name | Description | Required? | Default |
+| --- | --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Set to 'true' if you want to automatically discover and use the storage volumes on your worker nodes. | false |`false` |
+| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
+| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
+| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. Required when auto-discover-devices is set to false. | false | N/A | 
+{: caption="local-volume-block version 4.9 parameter reference"}
 
+## Version 4.8 parameter reference
+{: #local-volume-block-4.8}
+
+| Display name | Name | Description | Required? | Default |
+| --- | --- | --- | --- | --- |
+| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
+| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
+| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. | true | N/A | 
+{: caption="local-volume-block version 4.8 parameter reference"}
+
+## Version 4.7 parameter reference
+{: #local-volume-block-4.7}
+
+| Display name | Name | Description | Required? | Default |
+| --- | --- | --- | --- | --- |
+| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
+| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
+| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. | true | N/A | 
+{: caption="local-volume-block version 4.7 parameter reference"}
 
 
 ## Storage class reference for local block storage

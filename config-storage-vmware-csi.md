@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-11"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -79,8 +79,10 @@ Create a storage configuration in the command line by using the VMware configura
 
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
+    Example command to create a config by using `vsphere-csi-driver` version 2.5.1.
+
     ```sh
-    ibmcloud sat storage config create --name vmware --template-name vsphere-csi-driver --template-version 2.5.0 -p "vcenter-username=<username>" -p 'vcenter-password=<password>' -p "insecure-flag=true/false" -p "host=<host address>" -p "datacenters=IBMCloud" --location <location>
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.5.1  --param "vcenter-username=VCENTER-USERNAME" --param "vcenter-password=VCENTER-PASSWORD" [--param "insecure-flag=INSECURE-FLAG"] --param "host=HOST" --param "datacenters=DATACENTERS" [--param "thumbprint=THUMBPRINT"]
     ```
     {: pre}
 
@@ -454,18 +456,18 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 ## Parameter reference for VMWare
 {: #sat-storage-vmware-csi-params-cli}
 
-| Parameter | Required? | Description | Default value if not provided |
-| --- | --- | --- | --- |
-| `cluster-id` | Required | The unique cluster identifier. This is the vcenter cluster ID. | N/A |
-| `vcenter-username` | Required | The vCenter Server username. You must specify the username along with the domain name. For example, user = `Administrator@vsphere.local`.| N/A |
-| `vcenter-password` | Required | Password for a vCenter Server user. | N/A |
-| `insecure-flag` | Required | Set this option to `true` if you want to use self-signed certificate for login or to `false` if you want to use secure connection. | N/A |
-| `vCenter host` | Required | The vCenter server IP address. | N/A |
-| `vCenter datacenters` | Required | List all datacenter paths where host VMs are present, separated by commas. Provide the name of the datacenter when it is located at the root. When it is placed in the folder, you need to specify the path as folder/datacenter-name. | IBMCloud | 
-| `Ca file path` | Optional | The path to a CA certificate in xxxx.pem format. | N/A | 
-| `thumbprint` | Optional | The certificate thumbprint. This parameter is ignored when using an unsecured setup or when you provide `ca-file` | N/A | 
-| `vcenter port` | Optional | vCenter server port. | 443 |
-{: caption="Table 1. Parameter reference for VMware storage" caption-side="top"}
+## Version 2.5.1 parameter reference
+{: #vsphere-csi-driver-2.5.1}
+
+| Display name | Name | Description | Required? | Default |
+| --- | --- | --- | --- | --- |
+| vCenter username | `vcenter-username` | The vCenter username. You must specify the username along with the domain name. For example: 'Administrator@vsphere.local'. | true | N/A | 
+| vCenter password | `vcenter-password` | The vCenter server user password. | true | N/A | 
+| Insecure connection | `insecure-flag` | Include the 'insecure-flag'. 'true' indicates that you want to include the flag, which uses self-signed certificate for login. 'false' indicates that you use a secure connection. If you select 'false', you must provide an SSL thumbprint. | false |`false` |
+| vCenter host | `host` | The vCenter server IP address. | true | N/A | 
+| vCenter data centers | `datacenters` | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | N/A | 
+| SSL certificate thumbprint | `thumbprint` | The SSL thumbprint to be used to establish a secure connection to VC.  | false | N/A | 
+{: caption="vsphere-csi-driver version 2.5.1 parameter reference"}
 
 
 

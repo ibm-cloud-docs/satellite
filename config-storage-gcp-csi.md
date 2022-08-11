@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-08-11"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -72,8 +72,17 @@ Create a storage configuration in the command line by using the Google Compute E
 
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
+    Example command to create a config by using `gcp-compute-persistent-disk-csi-driver` version 1.7.1.
+
     ```sh
-    ibmcloud sat storage config create --name <config_name> --template-name gcp-compute-persistent-disk-csi-driver --template-version 1.0.4 --location <location_name> -p "project_id=" -p "private_key_id= " -p "private_key=" -p "client_email=" -p "client_id=" -p "auth_uri=" -p "token_uri=" -p "auth_provider_x509_cert_url=" -p "client_x509_cert_url="
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name gcp-compute-persistent-disk-csi-driver --template-version 1.7.1  --param "project_id=PROJECT_ID" --param "private_key_id=PRIVATE_KEY_ID" --param "private_key=PRIVATE_KEY" --param "client_email=CLIENT_EMAIL" --param "client_id=CLIENT_ID" --param "auth_uri=AUTH_URI" --param "token_uri=TOKEN_URI" --param "auth_provider_x509_cert_url=AUTH_PROVIDER_X509_CERT_URL" --param "client_x509_cert_url=CLIENT_X509_CERT_URL"
+    ```
+    {: pre}
+
+    Example command to create a config by using `gcp-compute-persistent-disk-csi-driver` version 1.0.4.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name gcp-compute-persistent-disk-csi-driver --template-version 1.0.4  --param "project_id=PROJECT_ID" --param "private_key_id=PRIVATE_KEY_ID" --param "private_key=PRIVATE_KEY" --param "client_email=CLIENT_EMAIL" --param "client_id=CLIENT_ID" --param "auth_uri=AUTH_URI" --param "token_uri=TOKEN_URI" --param "auth_provider_x509_cert_url=AUTH_PROVIDER_X509_CERT_URL" --param "client_x509_cert_url=CLIENT_X509_CERT_URL"
     ```
     {: pre}
 
@@ -513,19 +522,37 @@ Use the console to remove a storage configuration.
 ## Parameter reference for Google Compute Engine
 {: #sat-storage-gcp-csi-params-cli}
 
-| Parameter | Required? | Description | Default value if not provided |
-| --- | --- | --- | --- |
-| `project_id` | Required | Google Cloud Provider Project ID. You can find your Project ID from the Google cloud dashboard. | N/A |
-| `private_key_id` | Required | Google Cloud Provider Private Key ID. This can be found in the JSON service account key file. | N/A |
-| `private_key` | Required | Private Key of the Service Account. You can find the service account key on the **Service Account section** of the project dashboard. | N/A |
-| `client_email` | Required | Client Email. The email of the service account can be found in the **IAM & Admin** section of the project dashboard. | N/A |
-| `client_id` | Required | Client ID. You can find the Client ID in the **APIs & Services** section of the project dashboard. | N/A |
-| `auth_uri` | Required | Auth URI for the Service Account. This can be found in the JSON service account key file. | N/A |
-| `token_uri` | Required | Token URI for the Service Account. This can be found in the JSON service account key file. | N/A |
-| `auth_provider_x509_cert_url` | Required | URL for the Auth Provider Certificate. This can be found in the JSON service account key file. | N/A |
-| `client_x509_cert_url` | Required | URL for the Client Certificate. This can be found in the JSON service account key file. | N/A |
-{: caption="Table 1. Parameter reference for Google compute engine persistent disk storage" caption-side="top"}
-{: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates required parameters. The third column is a brief description of the parameter."}
+## Version 1.7.1 parameter reference
+{: #gcp-compute-persistent-disk-csi-driver-1.7.1}
+
+| Display name | Name | Description | Required? | Default |
+| --- | --- | --- | --- | --- |
+| Google Cloud project ID | `project_id` | Google Cloud project ID. | true | N/A | 
+| Google Cloud private key ID | `private_key_id` | Google Cloud private key ID. | true | N/A | 
+| Private key of the service account | `private_key` | Private key of the service account. | true | N/A | 
+| Client email | `client_email` | Client email. | true | N/A | 
+| Client ID | `client_id` | Client ID. | true | N/A | 
+| Authorization URI | `auth_uri` | Authorization URI for the service account. | true | N/A | 
+| Token URI | `token_uri` | Token URI for the service account. | true | N/A | 
+| URL for the authorization provider certificate | `auth_provider_x509_cert_url` | URL for the authorization provider certificate. | true | N/A | 
+| URL for the client certificate | `client_x509_cert_url` | URL for the client certificate. | true | N/A | 
+{: caption="gcp-compute-persistent-disk-csi-driver version 1.7.1 parameter reference"}
+
+## Version 1.0.4 parameter reference
+{: #gcp-compute-persistent-disk-csi-driver-1.0.4}
+
+| Display name | Name | Description | Required? | Default |
+| --- | --- | --- | --- | --- |
+| Google Cloud project ID. | `project_id` | Google Cloud project ID. | true | N/A | 
+| Google Cloud private key ID | `private_key_id` | Google Cloud private key ID. | true | N/A | 
+| Private key of the service account. | `private_key` | Private key of the service account. | true | N/A | 
+| Client email | `client_email` | Client email. | true | N/A | 
+| Client ID | `client_id` | Client ID. | true | N/A | 
+| Authorization URI | `auth_uri` | Authorization URI for the service account. | true | N/A | 
+| Token URI | `token_uri` | Token URI for the service account. | true | N/A | 
+| URL for the authorization provider certificate | `auth_provider_x509_cert_url` | URL for the authorization provider certificate. | true | N/A | 
+| URL for the client certificate | `client_x509_cert_url` | URL for the client certificate. | true | N/A | 
+{: caption="gcp-compute-persistent-disk-csi-driver version 1.0.4 parameter reference"}
 
 ## Storage class reference for Compute Engine
 {: #sat-storage-gcp-ref}

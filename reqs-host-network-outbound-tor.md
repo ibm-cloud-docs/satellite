@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-02"
+lastupdated: "2022-08-11"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -25,8 +25,6 @@ To check your host setup, you can use the `satellite-host-check` script. For mor
 
 ## Allow control plane worker nodes to communicate with the control plane master
 {: #host-out-cp-tor}
-
-
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in Red Hat CoreOS enabled locations.
 

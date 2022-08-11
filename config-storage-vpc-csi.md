@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-08-11"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -92,8 +92,17 @@ Create a storage configuration in the command line by using the {{site.data.keyw
 
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
+    Example command to create a config by using `ibm-vpc-block-csi-driver` version 4.3.0.
+
     ```sh
-    ibmcloud sat storage config create --name vpc-template --template-name ibm-vpc-block-csi-driver --template-version 4.1.1 --param "g2_resource_group_id=<resource-group-for-your-IaaS>" --param "g2_riaas_endpoint_url=https://us-south.iaas.cloud.ibm.com" --param "g2_token_exchange_endpoint_url=https://iam.cloud.ibm.com" --param "g2_api_key=<api-key>" --location c5r9tuow07nq26ji7qqg
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-vpc-block-csi-driver --template-version 4.3.0  --param "g2_token_exchange_endpoint_url=G2_TOKEN_EXCHANGE_ENDPOINT_URL" --param "g2_riaas_endpoint_url=G2_RIAAS_ENDPOINT_URL" --param "g2_resource_group_id=G2_RESOURCE_GROUP_ID" --param "g2_api_key=G2_API_KEY"
+    ```
+    {: pre}
+
+    Example command to create a config by using `ibm-vpc-block-csi-driver` version 4.2.2.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-vpc-block-csi-driver --template-version 4.2.2  --param "g2_token_exchange_endpoint_url=G2_TOKEN_EXCHANGE_ENDPOINT_URL" --param "g2_riaas_endpoint_url=G2_RIAAS_ENDPOINT_URL" --param "g2_resource_group_id=G2_RESOURCE_GROUP_ID" --param "g2_api_key=G2_API_KEY"
     ```
     {: pre}
 
@@ -538,13 +547,27 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 ## Parameter reference for {{site.data.keyword.block_storage_is_short}}
 {: #sat-storage-vpc-csi-params-cli}
 
-| Parameter | Required? | Description | Default value if not provided |
-| --- | --- | --- | --- |
-| `g2_api_key` | Required | IAM api key. | N/A |
-| `g2_resource_group_id` | Required | Resource group ID. The list resource groups, run `ibmcloud resource groups`. | N/A |
-| `g2_riass_endpoint_url` | Required | PRIASS endpoint url. | N/A |
-| `g2_token_exchange_endpoint_url` | Required | IAM token exchange endpoint url. | N/A |
-{: caption="Table 1. Parameter reference for IBM VPC block storage" caption-side="top"}
+## Version 4.3.0 parameter reference
+{: #ibm-vpc-block-csi-driver-4.3.0}
+
+| Display name | Name | Description | Required? | Default |
+| --- | --- | --- | --- | --- |
+| g2_token_exchange_endpoint_url | `g2_token_exchange_endpoint_url` | IAM token exchange enpoint url. | true | N/A | 
+| g2_riaas_endpoint_url | `g2_riaas_endpoint_url` | RIAAS endpoint url. | true | N/A | 
+| g2_resource_group_id | `g2_resource_group_id` | Resource group ID. | true | N/A | 
+| g2_api_key | `g2_api_key` | IAM api key. | true | N/A | 
+{: caption="ibm-vpc-block-csi-driver version 4.3.0 parameter reference"}
+
+## Version 4.2.2 parameter reference
+{: #ibm-vpc-block-csi-driver-4.2.2}
+
+| Display name | Name | Description | Required? | Default |
+| --- | --- | --- | --- | --- |
+| g2_token_exchange_endpoint_url | `g2_token_exchange_endpoint_url` | IAM token exchange enpoint url. | true | N/A | 
+| g2_riaas_endpoint_url | `g2_riaas_endpoint_url` | RIAAS endpoint url. | true | N/A | 
+| g2_resource_group_id | `g2_resource_group_id` | Resource group ID. | true | N/A | 
+| g2_api_key | `g2_api_key` | IAM api key. | true | N/A | 
+{: caption="ibm-vpc-block-csi-driver version 4.2.2 parameter reference"}
 
 ## Storage class reference for {{site.data.keyword.block_storage_is_short}}
 {: #sat-storage-vpc-ref}
