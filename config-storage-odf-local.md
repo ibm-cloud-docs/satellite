@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-17"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # OpenShift Data Foundation using local disks
 {: #config-storage-odf-local}
 
-Set up OpenShift Data Foundation for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up OpenShift Data Foundation for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster. Be aware that charges occur when you use the OpenShift Data Foundation service. Use the Cost Estimator to generate a cost estimate based on your projected usage.
 {: shortdesc}
 
 OpenShift Data Foundation is available in only internal mode, which means that your apps run in the same cluster as your storage. External mode, or storage heavy configurations, where your storage is located in a separate cluster from your apps is not supported.
@@ -586,8 +586,6 @@ ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --a
 To upgrade the ODF version of your configuration, delete your existing assignment and create a new configuration with the newer version. When you create the new configuration, you can set the `odf-upgrade` parameter to `true` to upgrade the installed version of ODF when the new configuration is assigned.
 {: shortdesc}
 
-Deleting configurations and assignments might result in data loss.
-{: important}
 
 In the following example, the ODF configuration is updated to use template version 4.7,
 - `--name` - Enter a name for your new configuration.
@@ -731,6 +729,56 @@ Note that if you remove the storage configuration, the ODF operators is then uni
     ```
     {: pre}
 
+
+1. List your storage assignments and find the one that you used for your cluster.
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
+    ```
+    {: pre}
+
+1. Remove the assignment. After the assignment is removed, the ODF driver pods and storage classes are removed from all clusters that were part of the storage assignment.
+    ```sh
+    ibmcloud sat storage assignment rm --assignment <assignment_ID>
+    ```
+    {: pre}
+
+
+
+1. List the ODF and local storage classes.
+
+    ```sh
+    oc get sc
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    localblock                    kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
+    localfile                     kubernetes.io/no-provisioner            Delete          WaitForFirstConsumer   false                  42m
+    ocs-storagecluster-ceph-rbd   openshift-storage.rbd.csi.ceph.com      Delete          Immediate              true                   41m
+    ocs-storagecluster-ceph-rgw   openshift-storage.ceph.rook.io/bucket   Delete          Immediate              false                  41m
+    ocs-storagecluster-cephfs
+    ```
+    {: screen}
+
+1. Delete the storage classes.
+
+    ```sh
+    oc delete sc localblock localfile ocs-storagecluster-ceph-rbd ocs-storagecluster-ceph-rgw ocs-storagecluster-cephfs
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    storageclass.storage.k8s.io "localblock" deleted
+    storageclass.storage.k8s.io "localfile" deleted
+    storageclass.storage.k8s.io "ocs-storagecluster-ceph-rgw" deleted
+    storageclass.storage.k8s.io "ocs-storagecluster-cephfs" deleted
+    storageclass.storage.k8s.io "ocs-storagecluster-cephrbd" deleted
+    ```
+    {: screen}
 
 
 ## OpenShift Data Foundation configuration parameter reference
