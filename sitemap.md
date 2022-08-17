@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -847,8 +847,6 @@ subcollection: satellite
 * [Network gateways and interfaces](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-interface)
 
 * [Inbound connectivity for requirements {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound)
-
-* [Outbound connectivity for hosts in all locations](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound)
 
 
 ### Host outbound connectivity requirements
