@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-17"
+lastupdated: "2022-08-18"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -809,6 +809,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | KMS instance API key token URL | `kms-token-url` | API key token URL to generate token for KMS instance. | false | N/A | 
 | KMS root key | `kms-root-key` | KMS root key of your instance. | false | N/A | 
 | KMS IAM API key | `kms-api-key` | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A | 
+| Perform cleanup | `perform-cleanup` | Set to `true` if you want to perform a complete cleanup of ODF resources when the assignment is deleted. | `false` | 
 {: caption="odf-local version 4.10 parameter reference"}
 
 ## Version 4.9 parameter reference
