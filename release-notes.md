@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-08-18"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## August 2022
 {: #satellite-aug22}
+
+### 18 August 2022
+{: #satellite-aug1822}
+{: release-note}
+
+New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Sydney** (`syd`, `au-syd`) region.
+:   To create a CoreOS-enabled location in the Sydney region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 
 ### 10 August 2022
 {: #satellite-aug522}
@@ -288,7 +295,7 @@ CLI change log
 {: release-note}
 
 Host connectivity
-:   Updated the [outbound connectivity for hosts](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound) page to include hostnames as well as IP addresses.
+:   Updated the [outbound connectivity for hosts](/docs/satellite?topic=satellite-reqs-host-network-outbound) page to include hostnames as well as IP addresses.
 
 
 ### 10 February 2022
@@ -572,7 +579,7 @@ Review the release notes for 18 June 2021.
 {: shortdesc}
 
 IP addresses for Link tunnel server endpoints
-:   Updates the [required outbound connectivity for hosts](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound) to include IP addresses for Link tunnel server endpoints.
+:   Updates the [required outbound connectivity for hosts](/docs/satellite?topic=satellite-reqs-host-network-outbound) to include IP addresses for Link tunnel server endpoints.
 
 ### 9 June 2021
 {: #satellite-jun921}
@@ -909,7 +916,7 @@ Physical machine support
 :   Physical machine hosts are now supported for your {{site.data.keyword.satelliteshort}} location.
 
 Host network requirements
-:   Updated the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound) on hosts' primary networks.
+:   Updated the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-outbound) on hosts' primary networks.
 
 AWS and GCP host DNS
 :   When you use AWS and GCP hosts for your {{site.data.keyword.satelliteshort}} location, the requirement to manually configure DNS for the location control plane and for cluster load balancing is removed. The hosts' private IP addresses are automatically registered in DNS.
@@ -947,7 +954,7 @@ Review the release notes for 8 October 2020.
 {: shortdesc}
 
 Host network requirements
-:   Added the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound) on hosts' public networks.
+:   Added the required ports and subnets that must be allowed for [inbound](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound) and [outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-outbound) on hosts' public networks.
 
 ### 6 October 2020
 {: #satellite-oct0620}

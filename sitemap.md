@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-18"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -147,6 +147,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
+
+    * [18 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug1822)
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Sydney** (`syd`, `au-syd`) region.
 
     * [10 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug522)
 
@@ -847,8 +851,6 @@ subcollection: satellite
 * [Network gateways and interfaces](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-interface)
 
 * [Inbound connectivity for requirements {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound)
-
-* [Outbound connectivity for hosts in all locations](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound)
 
 
 ### Host outbound connectivity requirements

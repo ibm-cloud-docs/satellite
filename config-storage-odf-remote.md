@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-17"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # OpenShift Data Foundation for remote devices
 {: #config-storage-odf-remote}
 
-Set up OpenShift Data Foundation for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up OpenShift Data Foundation for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster. Be aware that charges occur when you use the OpenShift Data Foundation service. Use the Cost Estimator to generate a cost estimate based on your projected usage.
 {: shortdesc}
 
 OpenShift Data Foundation is available in only internal mode, which means that your apps run in the same cluster as your storage. External mode, or storage heavy configurations, where your storage is located in a separate cluster from your apps is not supported.
@@ -293,8 +293,6 @@ ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --a
 {: #sat-storage-odf-remote-upgrade-config}
 {: cli}
 
-Don't delete your storage configurations or assignments. Deleting configurations and assignments might result in data loss.
-{: important}
 
 To upgrade the ODF version of your configuration, complete the following steps:
 1. Get the details of your ODF configuration.
@@ -361,6 +359,19 @@ Use the command line to remove a storage assignment.
     oc delete ocscluster --all
     ```
     {: pre}
+
+1. List your storage assignments and find the one that you used for your cluster.
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
+    ```
+    {: pre}
+
+1. Remove the assignment. After the assignment is removed, the ODF driver pods and storage classes are removed from all clusters that were part of the storage assignment.
+    ```sh
+    ibmcloud sat storage assignment rm --assignment <assignment_ID>
+    ```
+    {: pre}
+
 
 
 
