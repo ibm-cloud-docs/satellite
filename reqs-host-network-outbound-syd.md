@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-18"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -28,6 +28,11 @@ To check your host setup, you can use the `satellite-host-check` script. For mor
 {: #host-out-cp-syd}
 
 
+Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in Red Hat CoreOS enabled locations.
+
+- Destination IP addresses: 168.1.27.26,130.198.65.146,135.90.87.90
+- Destination hostnames: `c114.au-syd.satellite.cloud.ibm.com`, `c114-1.au-syd.satellite.cloud.ibm.com`, `c114-2.au-syd.satellite.cloud.ibm.com`, `c114-3.au-syd.satellite.cloud.ibm.com`, `c114-e.au-syd.satellite.cloud.ibm.com`
+ Protocol and ports: TCP 30000 - 32767
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
 * Destination IP addresses:  130.198.65.82, 135.90.66.194, 168.1.58.90

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-17"
+lastupdated: "2022-08-18"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -147,6 +147,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
+
+    * [18 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug1822)
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Sydney** (`syd`, `au-syd`) region.
 
     * [10 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug522)
 
