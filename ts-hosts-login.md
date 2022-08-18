@@ -133,6 +133,6 @@ The host is attempting to register with the location.
     ```
     {: pre}
     
-4. Repeat the previous step to verify that your host can connect to each of the required outbound [hostnames for your region](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-outbound).
+4. Repeat the previous step to verify that your host can connect to each of the required outbound [hostnames for your region](/docs/satellite?topic=satellite-reqs-host-network-outbound).
 
 
