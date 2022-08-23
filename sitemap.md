@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-18"
+lastupdated: "2022-08-23"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -148,11 +148,15 @@ subcollection: satellite
 
 * [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
 
+    * [23 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug2322)
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Osaka** (`osa`, `jp-osa`) region.
+
     * [18 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug1822)
 
         * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Sydney** (`syd`, `au-syd`) region.
 
-    * [10 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug522)
+    * [10 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug1022)
 
         * Added information about verifying your permissions
 

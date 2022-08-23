@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-08-23"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -25,6 +25,14 @@ To check your host setup, you can use the `satellite-host-check` script. For mor
 
 ## Allow control plane worker nodes to communicate with the control plane master
 {: #host-out-cp-osa}
+
+Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in Red Hat CoreOS enabled locations.
+
+* Destination IP addresses: 163.68.96.42,163.69.71.122,163.73.68.138
+* Destination hostnames: `c111.jp-osa.satellite.cloud.ibm.com`, `c111-1.jp-osa.satellite.cloud.ibm.com`, `c111-2.jp-osa.satellite.cloud.ibm.com`, `c111-3.jp-osa.satellite.cloud.ibm.com`, `c111-e.jp-osa.satellite.cloud.ibm.com`
+* Protocol and ports: TCP 30000 - 32767
+
+Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in locations without Red Hat CoreOS enabled.
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
 * Destination IP addresses:  163.68.73.50, 163.69.65.242, 163.73.67.10  
