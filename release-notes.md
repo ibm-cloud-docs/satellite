@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-18"
+lastupdated: "2022-08-23"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## August 2022
 {: #satellite-aug22}
+
+### 23 August 2022
+{: #satellite-aug2322}
+{: release-note}
+
+New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Osaka** (`osa`, `jp-osa`) region.
+:   To create a CoreOS-enabled location in the Sydney region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 
 ### 18 August 2022
 {: #satellite-aug1822}
