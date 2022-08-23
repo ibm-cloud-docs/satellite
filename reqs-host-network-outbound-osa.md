@@ -23,7 +23,7 @@ To check your host setup, you can use the `satellite-host-check` script. For mor
 {: tip}
 
 
-## Allow control plane worker nodes to communicate with the control plane master
+## Allow control plane worker nodes to communicate with the control plane master 
 {: #host-out-cp-osa}
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in Red Hat CoreOS enabled locations.
