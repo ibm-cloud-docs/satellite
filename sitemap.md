@@ -156,7 +156,7 @@ subcollection: satellite
 
         * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Sydney** (`syd`, `au-syd`) region.
 
-    * [10 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug522)
+    * [10 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug1022)
 
         * Added information about verifying your permissions
 

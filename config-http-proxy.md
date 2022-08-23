@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-20"
+lastupdated: "2022-08-23"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -156,7 +156,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
     ```
     {: screen}
     
-The value for `REDHHAT_PACKAGE_MIRROR_LOCATION` depends on the location of the Red Hat package mirrors. The `REDHHAT_PACKAGE_MIRROR_LOCATION` can be a wild-card if multiple mirrors are used. For more information, see [How to apply a system wide proxy](https://access.redhat.com/articles/2133021){: external}.
+The value for `REDHHAT_PACKAGE_MIRROR_LOCATION` depends on the location of the Red Hat package mirrors. The `REDHHAT_PACKAGE_MIRROR_LOCATION` can be a wild-card if multiple mirrors are used. For more information, see [How to apply a system wide proxy](https://access.redhat.com/solutions/1351253){: external}.
 {: note}
 
 ## Common mirror locations

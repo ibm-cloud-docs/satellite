@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-08-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -391,7 +391,7 @@ Location message
 :    This error is reported because the IAM API key that is set for the region or resource group that the location is in does not have the required permissions in {{site.data.keyword.satelliteshort}} or {{site.data.keyword.containershort}}, usually because the permissions of the API key owner changed or the API owner left the account.
 
 Steps to resolve
-:    If you have a {{site.data.keyword.satelliteshort}} location and a Red Hat {{site.data.keyword.redhat_openshift_notm}} cluster in that location and you are the account owner or a user with Administrator permission for all {{site.data.keyword.satelliteshort}} components, you can resolve this issue by resetting the API key. Note that when you reset the API key, the old key is deleted. Be sure to check if other services are using this API key.
+:    If you have a {{site.data.keyword.satelliteshort}} location and a {{site.data.keyword.redhat_openshift_notm}} cluster in that location and you are the account owner or a user with Administrator permission for all {{site.data.keyword.satelliteshort}} components, you can resolve this issue by resetting the API key. Note that when you reset the API key, the old key is deleted. Be sure to check if other services are using this API key.
 :    1. Log in to {{site.data.keyword.cloud_notm}}: `ibmcloud login`.
      2. Target the region that the location is managed from: `ibmcloud target -r <region>`.
      3. Target the resource group that the location is in: `ibmcloud target -g <resource-group>`.

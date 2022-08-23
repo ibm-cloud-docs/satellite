@@ -39,7 +39,7 @@ New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} loca
 :   To create a CoreOS-enabled location in the Sydney region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 
 ### 10 August 2022
-{: #satellite-aug522}
+{: #satellite-aug1022}
 {: release-note}
 
 Added information about verifying your permissions
