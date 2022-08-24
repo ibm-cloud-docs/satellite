@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-08-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -76,7 +76,7 @@ Red Hat Enterprise Linux 7
 :    Select `RHEL7` to choose Red Hat Enterprise Linux 7 (RHEL 7). RHEL 7 is the default operating system supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or earlier. Note that support for RHEL 7 hosts in your control plane ends on March 2nd, 2023. [Follow the steps](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8) to migrate your hosts to RHEL 8.
 
 Red Hat Enterprise Linux 8
-:    Select `RHEL8` to choose Red Hat Enterprise Linux 8 (RHEL 8). RHEL 8 is the default operating system supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.10 or later.
+:    Select `RHEL8` to choose Red Hat Enterprise Linux 8 (RHEL 8). RHEL 8 is supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or later and on infrastructure hosts. RHEL 8 will become the default in the coming months.
     
 Red Hat CoreOS
 :    Select `RHCOS` to choose Red Hat CoreOS (RHCOS). RHCOS is a minimal operating system for running containerized workloads securely and at scale. It is based on RHEL and includes automated, remote upgrade features. For more information about the key benefits of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.10/architecture/architecture-rhcos.html){: external}.
