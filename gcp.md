@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-08-24"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -164,7 +164,7 @@ For more information, see [VPC firewall rules overview](https://cloud.google.com
 Retrieve the Google Cloud Platform (GCP) credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your GCP cloud on your behalf.
 {: shortdesc}
 
-1. [Create a service account and service account key](https://cloud.google.com/docs/authentication/getting-started#creating_a_service_account){: external} with at least the required [GCP permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp). As part of creating the service account, a JSON key file is downloaded to your local machine.
+1. [Create a service account and service account key](https://cloud.google.com/docs/authentication/client-libraries#creating_a_service_account){: external} with at least the required [GCP permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp). As part of creating the service account, a JSON key file is downloaded to your local machine.
 2. Open the JSON key file on your local machine, and verify that the format matches the following example. You can provide this JSON key file as your GCP credentials for actions such as creating a {{site.data.keyword.satelliteshort}} location.
     ```json
     {

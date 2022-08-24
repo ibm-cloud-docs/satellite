@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-08-24"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
