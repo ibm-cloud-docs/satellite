@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-08-24"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -16,10 +16,19 @@ subcollection: satellite
 # VMware Block Container Storage Interface (CSI) Driver
 {: #config-storage-vmware-csi}
 
-The VMware Container Storage Interface (CSI) Driver allows you to manage the lifecycle of your VMware Block Data volumes.
+The VMware Container Storage Interface (CSI) [Driver](https://github.com/kubernetes-sigs/vsphere-csi-driver/){: external} allows you to manage the lifecycle of your VMware Block Data volumes.
 
-The template is currently in beta. Do not use it for production workloads. 
-{: beta}
+## Prerequisites for using VMware block storage
+{: #prereq-vmware-csi}
+
+Before you can create a VMware block storage configuration, you must satisfy the following prerequisites. 
+
+1. Verify that you are running vSphere version 6.7U3 or later.
+1. Verify that your virtual machine hardware version is version 15 or later.
+1. Verify that master nodes can communicate with the vCenter management interface.
+1. Diable Swap on all nodes.
+1. Enable Disk UUID on all node virtual machines. 
+
  
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
@@ -476,7 +485,6 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 {: #sat-vmware-csi-support}
 
 If you run into an issue with using VMware you can submit a support request with [VMware Support](https://www.vmware.com/support/contacts.html){: external}.
-
 
 
 

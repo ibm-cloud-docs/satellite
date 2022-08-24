@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-08-24"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2103,6 +2103,8 @@ subcollection: satellite
 
 
 [VMware Block Container Storage Interface (CSI) Driver](/docs/satellite?topic=satellite-config-storage-vmware-csi#config-storage-vmware-csi)
+
+* [Prerequisites for using VMware block storage](/docs/satellite?topic=satellite-config-storage-vmware-csi#prereq-vmware-csi)
 
 * [Creating the VMware configuration from the console](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-storage-vmware-create-config-ui)
 
