@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-08-24"
 
 keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
@@ -42,11 +42,8 @@ Repository 'rhel-7-server-extras-rpms' is enabled for this system.
 
 For RHEL 8
 ```sh
-Repository 'rhel-server-rhscl-8-rpms' is enabled for this system.
-Repository 'rhel-8-server-optional-rpms' is enabled for this system.
-Repository 'rhel-8-server-rh-common-rpms' is enabled for this system.
-Repository 'rhel-8-server-supplementary-rpms' is enabled for this system.
-Repository 'rhel-8-server-extras-rpms' is enabled for this system.
+Repository 'rhel-8-for-x86_64-appstream-rpms' is enabled for this system.
+Repository 'rhel-8-for-x86_64-baseos-rpms' is enabled for this system.
 ```
 {: screen}
 
