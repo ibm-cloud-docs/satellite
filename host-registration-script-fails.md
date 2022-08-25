@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-24"
+lastupdated: "2022-08-25"
 
 keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
@@ -62,11 +62,9 @@ To resolve this issue, follow these steps.
 
     2. Enable the package repositories on your machine. For example, enable RHEL 8 package requirements.
         ```sh
-        subscription-manager repos --enable rhel-server-rhscl-8-rpms
-        subscription-manager repos --enable rhel-8-server-optional-rpms
-        subscription-manager repos --enable rhel-8-server-rh-common-rpms
-        subscription-manager repos --enable rhel-8-server-supplementary-rpms
-        subscription-manager repos --enable rhel-8-server-extras-rpms
+        subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
+        subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
+
         ```
         {: pre}
 

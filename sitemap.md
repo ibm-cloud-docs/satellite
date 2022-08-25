@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-24"
+lastupdated: "2022-08-25"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2865,8 +2865,6 @@ subcollection: satellite
 [Why does host assign fail with a `crio` error?](/docs/satellite?topic=satellite-host-assign-file-system#host-assign-file-system)
 
 [Why can't I reuse a host in a different {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-sat-host-reattach-fail#sat-host-reattach-fail)
-
-[Why can't I update my worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console?](/docs/satellite?topic=satellite-ts-hosts-update-roks-console#ts-hosts-update-roks-console)
 
 [Why can't my HTTP proxy connect to the Red Hat servers?](/docs/satellite?topic=satellite-ts-http-proxy#ts-http-proxy)
 
