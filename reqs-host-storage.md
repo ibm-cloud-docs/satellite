@@ -19,7 +19,7 @@ subcollection: satellite
 Review the following storage requirements for hosts assigned to the location control plane and hosts assigned to services. Note that depending on the services you want to use, the storage requirements for hosts assigned to those services vary. For specific service requirements, refer to the service documentation.
 {: shortdesc}
 
-Hosts can't have a device mounted to `/var/data`. `/tmp` and `/usr` must each have at least 1.5 GB available.
+Hosts must have a boot device with an `ext4` file system and enough space to boot the host and run the operating system. While a minimum of 10 GiB is required, 25 GiB is recommended. In addition, `/tmp` and `/usr` must each have at least 1.5 GB available. Hosts can't have a device mounted to `/var/data`. 
 {: note}
 
 
@@ -36,7 +36,6 @@ Additional storage for hosts assigned to services (like clusters)`*`
 :   Depending on the services that you want to use, you might need to add more storage before attaching hosts to your location. For service-specific storage requirements, refer to the service documentation. Note that if you plan to deploy additional services or operators to the clusters in your location, you must account for cluster storage plus any additional deployments that you want to use in your clusters. For example, OpenShift Data Foundation.
     - [{{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-managed-services)
     - [{{site.data.keyword.satelliteshort}} storage overview](/docs/satellite?topic=satellite-sat-storage-template-ov)
-
 
 
 
