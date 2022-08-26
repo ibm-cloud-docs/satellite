@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-08-26"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -141,18 +141,19 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
     
     After support processes the ticket, you will receive a notification that your location is updated. If a change is required, a new ticket must be opened stating the new parameters. To find your `LOCATIONID` by running `ibmcloud sat locations`.
 
-    For example
+    For example, use the following request as a template.
 
     ```sh
-    Title: Request for addition of HTTP_PROXY config to location c8idhiu1040dksv67fgg
+    Title: Request for addition of HTTP_PROXY config to location <LOCATION_
 
     Request Body:
-    We are requesting the following information HTTP_PROXY info be added to the locationID listed in the title of this ticket.
+    We are requesting the following HTTP_PROXY info be added to the locationID listed in the title of this ticket.
 
-    The HTTP_PROXY info is as follows:
+    Use the following HTTP_PROXY info (BE SURE to include the protocol (http:// or https://) and the port (`:PORT_NUMBER`) in the endpoint).
 
-    HTTP_PROXY: https://my-proxy-endpoint.com:2090
-    HTTPS_PROXY: https://my-proxy-endpoint.com:2090
+
+    HTTP_PROXY: https://my-proxy-endpoint.com:PORT_NUMBER
+    HTTPS_PROXY: https://my-proxy-endpoint.com:PORT_NUMBER
     ```
     {: screen}
     
