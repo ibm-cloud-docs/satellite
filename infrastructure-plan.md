@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-08-24"
+years: 2020, 2022
+lastupdated: "2022-08-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -42,7 +42,7 @@ Non-{{site.data.keyword.IBM_notm}} cloud provider
 :    You can use a cloud provider of your choice, such as [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba).
     
 {{site.data.keyword.cloud_notm}}
-:    You can use [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) for testing purposes.
+:    You can use [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) to host parts of your infrastructure, or for testing purposes.
 
 ### Plan for a multizone location
 {: #infra-plan-multizone}
@@ -76,12 +76,12 @@ Red Hat Enterprise Linux 7
 :    Select `RHEL7` to choose Red Hat Enterprise Linux 7 (RHEL 7). RHEL 7 is the default operating system supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or earlier. Note that support for RHEL 7 hosts in your control plane ends on March 2nd, 2023. [Follow the steps](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8) to migrate your hosts to RHEL 8.
 
 Red Hat Enterprise Linux 8
-:    Select `RHEL8` to choose Red Hat Enterprise Linux 8 (RHEL 8). RHEL 8 is supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or later and on infrastructure hosts. RHEL 8 will become the default in the coming months.
+:    Select `RHEL8` to choose Red Hat Enterprise Linux 8 (RHEL 8). RHEL 8 is supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or later and on infrastructure hosts. RHEL 8 is the recommended operating system and will become the default in the coming months.
     
 Red Hat CoreOS
 :    Select `RHCOS` to choose Red Hat CoreOS (RHCOS). RHCOS is a minimal operating system for running containerized workloads securely and at scale. It is based on RHEL and includes automated, remote upgrade features. For more information about the key benefits of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.10/architecture/architecture-rhcos.html){: external}.
 
-Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), London (`eu-gb`), Osaka (`jp-osa`), Tokyo (`jp-tok`), Toronto (`ca-tor`), Sydney (`au-syd`), and Washington D.C. (`us-east`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
+Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later.
 {: note}
 
 

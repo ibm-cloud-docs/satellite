@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-17"
+lastupdated: "2022-08-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -29,9 +29,8 @@ To check your host setup, you can use the `satellite-host-check` script. For mor
 In general, do not set any custom networking configurations on your hosts, such as network manager scripts, `dnsmasq` setups, custom IP table rules, or custom MTU settings like jumbo frames.
 {: shortdesc}
 
-- All {{site.data.keyword.satelliteshort}} hosts must have the same MTU values.
+All hosts must meet the following network requirements:
 - The `localhost` value must resolve to a valid local host IP address, typically `127.0.0.1`.
-- Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
 - You cannot use custom iptables to route traffic to the public or private network, because default {{site.data.keyword.satelliteshort}} and Calico policies override custom iptables.
 - The following IP address ranges are reserved, and must not be used in any of the networks that you want to use in {{site.data.keyword.satellitelong_notm}}, including the host networks.
 
@@ -50,6 +49,10 @@ In general, do not set any custom networking configurations on your hosts, such 
 - Host IP addresses must remain static and cannot change over time, such as due to a reboot or other potential infrastructure updates.
 - If you are provisioning your host on-prem, you must configure your host to use a public DNS server, such as `8.8.8.8`. You can use a private DNS server, but it must be able to resolve hostnames on the public Internet.
 
+Hosts assigned to a specific {{site.data.keyword.redhat_openshift_notm}} cluster or to the control plane must share some properties, which can be different across clusters.
+- All {{site.data.keyword.satelliteshort}} hosts must have the same MTU values.
+- Hosts must have TCP/UDP/ICMP Layer 3 connectivity for all ports across hosts. You cannot block certain ports that might block communication across hosts.
+
 ## Host network bandwidth
 {: #reqs-host-network-bandwidth}
 
@@ -59,22 +62,9 @@ In general, do not set any custom networking configurations on your hosts, such 
 ## Network gateways and interfaces
 {: #reqs-host-network-interface}
 
-- All {{site.data.keyword.satelliteshort}} hosts must use the same default gateway.
 - Host kernels must have IPv6 support enabled. Do not disable IPv6.
-- Hosts can have multiple IPv4 network interfaces. However, the `eth0`, `ens0`, or `bond0` network interface must serve as the default route. To find the default network interface for a host, SSH into the host and run the following command:
-    ```sh
-    ip route | grep default | awk '{print $5}'
-    ```
-    {: pre}
-
-    In this example output, `eth0` is the default network interface:
-    ```sh
-    default via 161.202.250.1 dev eth0 onlink
-    ```
-    {: screen}
-
-- All {{site.data.keyword.satelliteshort}} hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPv4 backend connectivity to the other hosts in the location on the network interface that serves as the default route (`eth0`, `ens0`, or `bond0`).
-
+- All {{site.data.keyword.satelliteshort}} hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPv4 backend connectivity to the other hosts in the same cluster in the location.
+- Hosts can use gateways to connect to the location control plane.
 
 ## Inbound connectivity for requirements {{site.data.keyword.satelliteshort}} hosts
 {: #reqs-host-network-firewall-inbound}
@@ -91,7 +81,3 @@ For example, if the primary network interface for a host is `eth0`, you must ope
 | Access the web console for a {{site.data.keyword.redhat_openshift_notm}} cluster through the {{site.data.keyword.redhat_openshift_notm}} router | Clients or authorized users | {{site.data.keyword.redhat_openshift_notm}} cluster hosts | TCP 443 |
 {: caption="Required inbound connectivity for hosts on the primary network interface" caption-side="top"}
 {: summary="The table shows the required inbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
-
-
-
-

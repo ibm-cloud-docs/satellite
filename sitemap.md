@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-25"
+lastupdated: "2022-08-31"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -147,6 +147,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
+
+    * [31 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug3122)
+
+        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Sao Paulo** (`sao`, `br-sao`) region.
 
     * [23 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug2322)
 
