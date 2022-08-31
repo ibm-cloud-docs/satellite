@@ -80,6 +80,7 @@ toc:
               - config-http-proxy.md
               - config-custom-ntp.md
               - host-remove.md
+              - multi-infra.md
         - topicgroup:
             label: Managing apps with Satellite Config
             topics:

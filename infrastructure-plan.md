@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2020, 2022
+years: 2020, 2022
 lastupdated: "2022-08-31"
 
 keywords: satellite, hybrid, multicloud
@@ -42,7 +42,7 @@ Non-{{site.data.keyword.IBM_notm}} cloud provider
 :    You can use a cloud provider of your choice, such as [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba).
     
 {{site.data.keyword.cloud_notm}}
-:    You can use [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) for testing purposes.
+:    You can use [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) to host parts of your infrastructure, or for testing purposes.
 
 ### Plan for a multizone location
 {: #infra-plan-multizone}
