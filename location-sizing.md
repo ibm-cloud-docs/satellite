@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-08"
+lastupdated: "2022-08-31"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -71,8 +71,10 @@ The following tables provide examples of the number of hosts that the control pl
 - The size of the hosts that run the control plane, **4 vCPU and 16GB RAM** or **16 vCPU and 64GB RAM**, affect the numbers of clusters and worker nodes that are possible in the location. Keep in mind that actual performance requirements depend on many factors, such as the underlying CPU performance and control plane usage by the applications that run in the location.
 - You can assign hosts to the control plane in groups of 3. The table presents examples up to 12 hosts as common configurations to give you an idea of how you might size the control plane for your host and application environment. Note that you can add more than 12 hosts to your control plane in groups of 3. For example you might create a control plane with 18 or 27 hosts.
 
-While you can deploy a cluster to a location with only 3 control plane hosts, upgrading and other management operations might not work with bare minimum setups.
+While you can deploy a cluster to a location with only 3 control plane hosts, upgrading and other management operations might not work with bare minimum setups. Note that for testing purposes or proof of concept, you can use 4 vCPU for Red Hat CoreOS enabled locations.
 {: note}
+
+
 
 ### Location size for non-Red Hat CoreOS enabled location
 {: #control-plane-how-many-clusters-rhel}
@@ -112,7 +114,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 {: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram-coreos}
-{: tab-title="4 vCPU, 16 GB RAM (CoreOS)"}
+{: tab-title="8 vCPU, 16 GB RAM (CoreOS)"}
 {: tab-group="loc-sizerhcos"}
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-24"
+lastupdated: "2022-08-31"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -34,7 +34,7 @@ To check your host setup, you can use the `satellite-host-check` script. For mor
 - Hosts must run Red Hat Enterprise Linux 7 or 8, or the latest Red Hat CoreOS on x86 architecture with the kernel that is distributed with that version. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack. Note that support for RHEL 7 hosts in your control plane ends on March 2nd, 2023. [Follow the steps](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8) to migrate your hosts to RHEL 8.
 - Hosts can be physical or virtual machines. However, if your hosts are cloned virtual machines, be sure that each one has a unique network identity. For more information, see [Why aren't my hosts attaching to my location?](/docs/satellite?topic=satellite-host-not-attaching).
 
-- Red Hat CoreOS hosts must have at least 8 vCPU and 16GB memory and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage).
+- Red Hat CoreOS hosts must have at least 8 vCPU and 16GB memory and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). Note that for testing purposes or proof of concept, you can use 4 vCPU. 
 - RHEL hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
 
 - RHEL hosts must have the `SELINUX=enforcing` policy set. You can verify that this policy is set by running `sestatus` and looking for `SELinux status: enabled` in the output.
