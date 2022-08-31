@@ -81,7 +81,7 @@ Red Hat Enterprise Linux 8
 Red Hat CoreOS
 :    Select `RHCOS` to choose Red Hat CoreOS (RHCOS). RHCOS is a minimal operating system for running containerized workloads securely and at scale. It is based on RHEL and includes automated, remote upgrade features. For more information about the key benefits of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.10/architecture/architecture-rhcos.html){: external}.
 
-Red Hat CoreOS is available only in the Dallas (`us-south`), Frankfurt (`eu-de`), London (`eu-gb`), Osaka (`jp-osa`), Tokyo (`jp-tok`), Toronto (`ca-tor`), Sydney (`au-syd`), and Washington D.C. (`us-east`) regions and for only {{site.data.keyword.redhat_openshift_notm}} version 4.9 and 4.10.
+Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later.
 {: note}
 
 

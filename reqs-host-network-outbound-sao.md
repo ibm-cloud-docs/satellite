@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-08-31"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -26,7 +26,14 @@ To check your host setup, you can use the `satellite-host-check` script. For mor
 ## Allow control plane worker nodes to communicate with the control plane master
 {: #host-out-cp-sao}
 
-Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
+Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in Red Hat CoreOS enabled locations.
+
+* Destination IP addresses: 169.57.165.138,163.107.73.50,163.109.72.194
+* Destination hostnames: `c113.br-sao.satellite.cloud.ibm.com`, `c113-1.br-sao.satellite.cloud.ibm.com`, `c113-2.br-sao.satellite.cloud.ibm.com`, `c113-3.br-sao.satellite.cloud.ibm.com`, `c113-e.br-sao.satellite.cloud.ibm.com`
+* Protocol and ports: TCP 30000 - 32767
+
+Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in locations without Red Hat CoreOS enabled.
+
 * Destination IP addresses:  163.107.67.18, 163.109.71.82, 169.57.144.42
 * Destination hostnames: `c105.br-sao.satellite.cloud.ibm.com`, `c105-1.br-sao.satellite.cloud.ibm.com`, `c105-2.br-sao.satellite.cloud.ibm.com`, `c105-3.br-sao.satellite.cloud.ibm.com`, `c105-e.br-sao.satellite.cloud.ibm.com`
 * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767

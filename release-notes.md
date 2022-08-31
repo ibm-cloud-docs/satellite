@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-08-31"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## August 2022
 {: #satellite-aug22}
+
+### 31 August 2022
+{: #satellite-aug3122}
+{: release-note}
+
+New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Sao Paulo** (`sao`, `br-sao`) region.
+:   To create a CoreOS-enabled location in the Sao Paulo region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 
 ### 23 August 2022
 {: #satellite-aug2322}
