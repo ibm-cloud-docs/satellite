@@ -36,7 +36,7 @@ New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} loca
 {: release-note}
 
 New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Osaka** (`osa`, `jp-osa`) region.
-:   To create a CoreOS-enabled location in the Sydney region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+:   To create a CoreOS-enabled location in the Osaka region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
 
 ### 18 August 2022
 {: #satellite-aug1822}
