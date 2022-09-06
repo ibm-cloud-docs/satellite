@@ -22,6 +22,7 @@ toc:
             - use-case.md
             - tenancy-model.md
             - edge-usecase.md
+      - location-host.md
       - managed-services.md
       - release-notes.md
   - navgroup:
@@ -36,8 +37,6 @@ toc:
       topics:
         - setup-cli.md
         - infrastructure-plan.md
-        - host-concept.md
-        - about-locations.md
         - topicgroup:
             label: Preparing your host infrastructure
             topics:

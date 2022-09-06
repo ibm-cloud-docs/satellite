@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-09-06"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -131,6 +131,17 @@ subcollection: satellite
     * [Step 3: Run model inferencing at the edge](/docs/satellite?topic=satellite-edge-usecase#edge-example-inferencing)
 
 
+## Understanding {{site.data.keyword.satelliteshort}} location and hosts
+{: #sitemap_understanding__location_and_hosts}
+
+
+[Understanding {{site.data.keyword.satelliteshort}} location and hosts](/docs/satellite?topic=satellite-location-host#location-host)
+
+* [{{site.data.keyword.satelliteshort}} location overview](/docs/satellite?topic=satellite-location-host#loc-overview)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what comes next?](/docs/satellite?topic=satellite-location-host#loc-host-whats-next)
+
+
 ## Supported Satellite-enabled IBM Cloud services
 {: #sitemap_supported_satellite-enabled_ibm_cloud_services}
 
@@ -145,6 +156,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [September 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep22)
+
+    * [6 September 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep622)
+
+        * New! Location overview information.
 
 * [August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug22)
 
@@ -816,24 +833,6 @@ subcollection: satellite
     * [{{site.data.keyword.IBM_notm}}-managed infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-sat-is)
 
 * [Providing {{site.data.keyword.satelliteshort}} with credentials to your cloud provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-credentials)
-
-
-## Understanding {{site.data.keyword.satelliteshort}} hosts
-{: #sitemap_understanding__hosts}
-
-
-[Understanding {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-host-concept#host-concept)
-
-
-## Understanding Satellite locations
-{: #sitemap_understanding_satellite_locations}
-
-
-[Understanding Satellite locations](/docs/satellite?topic=satellite-about-locations#about-locations)
-
-* [Satellite location control plane](/docs/satellite?topic=satellite-about-locations#loc-control-plane)
-
-* [I created a {{site.data.keyword.satelliteshort}} location, what comes next?](/docs/satellite?topic=satellite-about-locations#loc-whats-next)
 
 
 ## Preparing your host infrastructure
