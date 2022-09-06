@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-26"
+lastupdated: "2022-09-01"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -39,7 +39,7 @@ New Red Hat CoreOS-enabled locations
 ## What type of hosts can i use?
 {: #consider-http-proxy-host}
 
-You can use RHEL or CoreOS hosts when you set up an HTTP proxy. You must edit each host that is attached to your location, including the hosts that make up the control plane.
+You can use RHEL or Red Hat CoreOS hosts when you set up an HTTP proxy. You must edit each host that is attached to your location, including the hosts that make up the control plane.
 
 
 ## What else do I need to know about HTTP proxy?
@@ -91,6 +91,10 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
         {: screen}
         
         From this output, note that the first IP is `172.21.0.1`, which makes the full output for hosts associated with this specific cluster in this example `NO_PROXY=172.20.0.1,172.21.0.1,$REDHAT_PACKAGE_MIRROR_LOCATION` for RHEL hosts and `NO_PROXY=172.20.0.1,172.21.0.1,.REGION.satellite.appdomain.cloud` for RHCOS hosts. For example, `NO_PROXY=172.20.0.1,172.21.0.1,.eu-gb.satellite.appdomain.cloud` is correct for a London mirror location for RHCOS hosts. Note that the RHCOS value includes `.` before the region.
+        
+        Remember that any traffic to cluster services from the worker node must be included in `NO_PROXY`. For example, to use the image registry service to store images,  add `image-registry.openshift-image-registry.svc` to `NO_PROXY` for each worker node; this value doesn't need to be included for the control plane.
+
+
 
 3. Navigate to `/etc/systemd/system.conf.d` on your host. If that file does not exist, create it. Enter the `<VALUE>` for `NO_PROXY` from step 2.
     
@@ -144,12 +148,15 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
     For example, use the following request as a template.
 
     ```sh
-    Title: Request for addition of HTTP_PROXY config to location <LOCATION_
+    Title: Request for addition of HTTP_PROXY config to 
+           location <LOCATION_ID>
 
     Request Body:
-    We are requesting the following HTTP_PROXY info be added to the locationID listed in the title of this ticket.
+    We are requesting the following HTTP_PROXY info be added to 
+    the location_ID listed in the title of this ticket.
 
-    Use the following HTTP_PROXY info (BE SURE to include the protocol (http:// or https://) and the port (`:PORT_NUMBER`) in the endpoint).
+    Use the following HTTP_PROXY info 
+    BE SURE to include the protocol (http:// or https://) and the port (`:PORT_NUMBER`) in the endpoint.
 
 
     HTTP_PROXY: https://my-proxy-endpoint.com:PORT_NUMBER

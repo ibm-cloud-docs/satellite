@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-09-06"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -20,6 +20,16 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
+
+## September 2022
+{: #satellite-sep22}
+
+### 6 September 2022
+{: #satellite-sep622}
+{: release-note}
+
+New! Location overview information.
+:   Learn more about planning and creating a location with the new location overview information. See [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-location-host).
 
 ## August 2022
 {: #satellite-aug22}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-09-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -62,7 +62,7 @@ Hosts assigned to a specific {{site.data.keyword.redhat_openshift_notm}} cluster
 ## Network gateways and interfaces
 {: #reqs-host-network-interface}
 
-- Host kernels must have IPv6 support enabled. Do not disable IPv6.
+- {{site.data.keyword.satelliteshort}} does not support IPv6.
 - All {{site.data.keyword.satelliteshort}} hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPv4 backend connectivity to the other hosts in the same cluster in the location.
 - Hosts can use gateways to connect to the location control plane.
 
