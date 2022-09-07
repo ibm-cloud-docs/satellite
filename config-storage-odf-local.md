@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-18"
+lastupdated: "2022-09-06"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -210,7 +210,7 @@ When you create your ODF configuration, you must specify the device paths of the
     Example command to create a config by using `odf-local` version 4.10.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] [--param "osd-device-path=OSD-DEVICE-PATH"] [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"] [--param "kms-encryption=KMS-ENCRYPTION"] [--param "kms-instance-name=KMS-INSTANCE-NAME"] [--param "kms-instance-id=KMS-INSTANCE-ID"] [--param "kms-base-url=KMS-BASE-URL"] [--param "kms-token-url=KMS-TOKEN-URL"] [--param "kms-root-key=KMS-ROOT-KEY"] [--param "kms-api-key=KMS-API-KEY"]
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] [--param "osd-device-path=OSD-DEVICE-PATH"] [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"] [--param "kms-encryption=KMS-ENCRYPTION"] [--param "kms-instance-name=KMS-INSTANCE-NAME"] [--param "kms-instance-id=KMS-INSTANCE-ID"] [--param "kms-base-url=KMS-BASE-URL"] [--param "kms-token-url=KMS-TOKEN-URL"] [--param "kms-root-key=KMS-ROOT-KEY"] [--param "kms-api-key=KMS-API-KEY"] [--param "ignore-noobaa=IGNORE-NOOBAA"]
     ```
     {: pre}
 
@@ -809,7 +809,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | KMS instance API key token URL | `kms-token-url` | API key token URL to generate token for KMS instance. | false | N/A | 
 | KMS root key | `kms-root-key` | KMS root key of your instance. | false | N/A | 
 | KMS IAM API key | `kms-api-key` | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A | 
-| Perform cleanup | `perform-cleanup` | Set to `true` if you want to perform a complete cleanup of ODF resources when the assignment is deleted. | `false` | 
+| Ignore Noobaa | `ignore-noobaa` | Set to 'true' if you don't want to deploy MultiCloud Object Gateway (Noobaa) | false |`false` |
 {: caption="odf-local version 4.10 parameter reference"}
 
 ## Version 4.9 parameter reference

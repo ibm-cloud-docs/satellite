@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-17"
+lastupdated: "2022-09-06"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -110,7 +110,7 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
     Example command to create a config by using `odf-remote` version 4.10.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-remote --template-version 4.10  --param "osd-size=OSD-SIZE" --param "osd-storage-class=OSD-STORAGE-CLASS" [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"] [--param "kms-encryption=KMS-ENCRYPTION"] [--param "kms-instance-name=KMS-INSTANCE-NAME"] [--param "kms-instance-id=KMS-INSTANCE-ID"] [--param "kms-base-url=KMS-BASE-URL"] [--param "kms-token-url=KMS-TOKEN-URL"] [--param "kms-root-key=KMS-ROOT-KEY"] [--param "kms-api-key=KMS-API-KEY"]
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-remote --template-version 4.10  --param "osd-size=OSD-SIZE" --param "osd-storage-class=OSD-STORAGE-CLASS" [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"] [--param "kms-encryption=KMS-ENCRYPTION"] [--param "kms-instance-name=KMS-INSTANCE-NAME"] [--param "kms-instance-id=KMS-INSTANCE-ID"] [--param "kms-base-url=KMS-BASE-URL"] [--param "kms-token-url=KMS-TOKEN-URL"] [--param "kms-root-key=KMS-ROOT-KEY"] [--param "kms-api-key=KMS-API-KEY"] [--param "ignore-noobaa=IGNORE-NOOBAA"]
     ```
     {: pre}
 
@@ -403,6 +403,7 @@ Use the command line to remove a storage assignment.
 | KMS instance API key token URL | `kms-token-url` | API key token URL to generate token for KMS instance. | false | N/A | 
 | KMS root key | `kms-root-key` | KMS root key of your instance. | false | N/A | 
 | KMS IAM API key | `kms-api-key` | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A | 
+| Ignore Noobaa | `ignore-noobaa` | Set to 'true' if you don't want to deploy MultiCloud Object Gateway (Noobaa) | false |`false` |
 {: caption="odf-remote version 4.10 parameter reference"}
 
 ## Version 4.9 parameter reference

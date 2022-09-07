@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-09-07"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location
 
@@ -71,7 +71,7 @@ To add your own server as a host in your {{site.data.keyword.satelliteshort}} lo
 
 The reasons that you cannot install extra software on the hosts relate to [{{site.data.keyword.IBM_notm}} 's responsibilities](/docs/satellite?topic=satellite-responsibilities) to manage multiple aspects of the {{site.data.keyword.satelliteshort}} hosts for you, such as installation, access, and maintenance.
 
-**Installation**: The {{site.data.keyword.satelliteshort}} team tries to keep the host requirements to a minimal level so that many servers across infrastructure providers can meet the requirements to become {{site.data.keyword.satelliteshort}} hosts. By limiting the number of possible software packages, {{site.data.keyword.satelliteshort}} reduces instability and conflicts during installation tasks such as [bootstrapping](/docs/satellite?topic=satellite-host-concept) each host so that all hosts across {{site.data.keyword.satelliteshort}} locations have a consistent set of images and container platform software. This consistency also helps you develop applications and deploy {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that work across your environments.
+**Installation**: The {{site.data.keyword.satelliteshort}} team tries to keep the host requirements to a minimal level so that many servers across infrastructure providers can meet the requirements to become {{site.data.keyword.satelliteshort}} hosts. By limiting the number of possible software packages, {{site.data.keyword.satelliteshort}} reduces instability and conflicts during installation tasks such as [bootstrapping](/docs/satellite?topic=satellite-location-host) each host so that all hosts across {{site.data.keyword.satelliteshort}} locations have a consistent set of images and container platform software. This consistency also helps you develop applications and deploy {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that work across your environments.
 
 **Access**: For security purposes, {{site.data.keyword.satelliteshort}} restricts external access to hosts, including SSH. Many extra software packages require access to or from the host, so extra software packages are not allowed to be installed.
 

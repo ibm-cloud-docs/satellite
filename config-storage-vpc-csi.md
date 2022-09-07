@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-09-06"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -552,10 +552,10 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 
 | Display name | Name | Description | Required? | Default |
 | --- | --- | --- | --- | --- |
-| g2_token_exchange_endpoint_url | `g2_token_exchange_endpoint_url` | IAM token exchange enpoint url. | true | N/A | 
-| g2_riaas_endpoint_url | `g2_riaas_endpoint_url` | RIAAS endpoint url. | true | N/A | 
-| g2_resource_group_id | `g2_resource_group_id` | Resource group ID. | true | N/A | 
-| g2_api_key | `g2_api_key` | IAM api key. | true | N/A | 
+| IAM endpoint | `g2_token_exchange_endpoint_url` | The IAM endpoint. For example 'https://iam.cloud.ibm.com'. | true | N/A | 
+| VPC IaaS endpoint | `g2_riaas_endpoint_url` | The VPC regional endpoint of your VPC cluster in the format https://<region>.iaas.cloud.ibm.com. Example: https://eu-de.iaas.cloud.ibm.com. For more information, see https://cloud.ibm.com/docs/vpc?topic=vpc-service-endpoints-for-vpc | true | N/A | 
+| Resource group ID | `g2_resource_group_id` | The ID of the resource group where your VPC is located. To retrieve this value, run the 'ibmcloud is vpc VPC-ID' command and note the Resource group field. | true | N/A | 
+| IAM API key | `g2_api_key` | The IAM API key of account where your VPC is located. You can use your existing API key or you can create an API key by running the 'ibmcloud iam api-key-create NAME' command. | true | N/A | 
 {: caption="ibm-vpc-block-csi-driver version 4.3.0 parameter reference"}
 
 ## Version 4.2.2 parameter reference
