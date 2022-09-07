@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-06"
+lastupdated: "2022-09-07"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -39,21 +39,21 @@ New! Location overview information.
 {: release-note}
 
 New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Sao Paulo** (`sao`, `br-sao`) region.
-:   To create a CoreOS-enabled location in the Sao Paulo region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+:   To create a CoreOS-enabled location in the Sao Paulo region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 ### 23 August 2022
 {: #satellite-aug2322}
 {: release-note}
 
 New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Osaka** (`osa`, `jp-osa`) region.
-:   To create a CoreOS-enabled location in the Osaka region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+:   To create a CoreOS-enabled location in the Osaka region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 ### 18 August 2022
 {: #satellite-aug1822}
 {: release-note}
 
 New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Sydney** (`syd`, `au-syd`) region.
-:   To create a CoreOS-enabled location in the Sydney region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+:   To create a CoreOS-enabled location in the Sydney region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 ### 10 August 2022
 {: #satellite-aug1022}
@@ -87,7 +87,7 @@ New! Check out the {{site.data.keyword.satelliteshort}} Config tutorial.
 {: release-note}
 
 New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Toronto** (`tor`, `ca-tor`) region.
-:   To create a CoreOS-enabled location in the Toronto region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+:   To create a CoreOS-enabled location in the Toronto region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 ## July 2022
 {: #satellite-july22}
@@ -123,7 +123,7 @@ New and updated template parameter for the Azure File CSI driver template.
 {: release-note}
 
 New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Washington D.C.** (`wdc`, `us-east`) region.
-:   To create a CoreOS-enabled location in the Washington D.C. region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+:   To create a CoreOS-enabled location in the Washington D.C. region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 ### 15 June 2022
 {: #satellite-june1522}
@@ -133,7 +133,7 @@ CLI change log
 :   Updated the CLI plug-in change log page for the [release of version 1.0.420](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
-:   To create a CoreOS-enabled location in the London region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+:   To create a CoreOS-enabled location in the London region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 ### 14 June 2022
 {: #satellite-june1422}
@@ -174,7 +174,7 @@ CLI change log
 {: release-note}
 
 New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Tokyo** (`tok`, `jp-tok`) region.
-:   To create a CoreOS-enabled location in the Tokyo region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+:   To create a CoreOS-enabled location in the Tokyo region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 ### 13 May 2022
 {: #satellite-may1322}

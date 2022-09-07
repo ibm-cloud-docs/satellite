@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-09-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -37,7 +37,7 @@ You can set up {{site.data.keyword.satelliteshort}} locations with a {{site.data
 - [Azure](/docs/satellite?topic=satellite-azure#azure-template)
 - [GCP](/docs/satellite?topic=satellite-gcp#gcp-template)
 
-If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-about-locations).
+If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-location-host).
 {: note}
 
 What's next?
