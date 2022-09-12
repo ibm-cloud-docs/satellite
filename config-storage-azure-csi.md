@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-09-12"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -680,7 +680,7 @@ For help finding these parameters, see the [Azure CLI documentation](https://doc
 | Location | `location` | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the 'az vm show' command. For example 'useast' | true | N/A | 
 | Azure Active Directory Client Secret | `aadClientSecret` | Your Azure Active Directory Client Secret. | true | N/A | 
 | Resource Group | `resourceGroup` | The name of your Azure resource group. You can find your resource group in the Azure portal or by running the 'az group list' command. | true | N/A | 
-| Virtual Machnine Type | `vmType` | There are two types of virtual machine i.e. 'standard' and 'VMSS'. The standard VM are listed under virtual machines and the VMSSs' VMs are listed under virtual machine scale set as instances. | true | N/A | 
+| Virtual Machine Type | `vmType` | There are two types of virtual machine i.e. 'standard' and 'VMSS'. The standard VM are listed under virtual machines and the VMSSs' VMs are listed under virtual machine scale set as instances. | true | N/A | 
 | Network Security Group Name | `securityGroupName` | The security group name. You can find your security group name in the Azure portal by running the 'az network nsg list' command. | true | N/A | 
 | Virtual Network Name | `vnetName` | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the 'az network vnet list' command. | true | N/A | 
 {: caption="azuredisk-csi-driver version 1.18.0 parameter reference"}
@@ -696,7 +696,7 @@ For help finding these parameters, see the [Azure CLI documentation](https://doc
 | Location | `location` | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the 'az vm show' command. For example 'useast' | true | N/A | 
 | Azure Active Directory Client Secret | `aadClientSecret` | Your Azure Active Directory Client Secret. | true | N/A | 
 | Resource Group | `resourceGroup` | The name of your Azure resource group. You can find your resource group in the Azure portal or by running the 'az group list' command. | true | N/A | 
-| Virtual Machnine Type | `vmType` | There are two types of virtual machine i.e. 'standard' and 'VMSS'. The standard VM are listed under virtual machines and the VMSSs' VMs are listed under virtual machine scale set as instances. | true | N/A | 
+| Virtual Machine Type | `vmType` | There are two types of virtual machine i.e. 'standard' and 'VMSS'. The standard VM are listed under virtual machines and the VMSSs' VMs are listed under virtual machine scale set as instances. | true | N/A | 
 | Network Security Group Name | `securityGroupName` | The security group name. You can find your security group name in the Azure portal by running the 'az network nsg list' command. | true | N/A | 
 | Virtual Network Name | `vnetName` | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the 'az network vnet list' command. | true | N/A | 
 {: caption="azuredisk-csi-driver version 1.4.0 parameter reference"}

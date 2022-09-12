@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-09-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -41,34 +41,33 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 
 1. In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, you might SSH into the machine from a command line.
 
-2. Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test.
-    - **Dallas**
-
-      52.117.39.146, 169.48.134.66, 169.63.36.210
-
-    - **Frankfurt**
-
-      149.81.188.122, 158.177.88.18, 161.156.38.122
-
-    - **London**
-
-      158.175.120.210, 141.125.97.106, 158.176.139.66
-      
-    - **Sao Paulo**
+2. Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test
+    Dallas
+    :   52.117.39.146, 169.48.134.66, 169.63.36.210
     
-      163.107.67.18, 163.109.71.82, 169.57.144.42
-
-    - **Tokyo**
-
-      161.202.104.226, 128.168.67.106, 165.192.108.10
-
-    - **Toronto**
+    Frankfurt
+    :   149.81.188.122, 158.177.88.18, 161.156.38.122
     
-      163.74.65.138, 163.75.70.50, 169.53.160.154
+    London
+    :   158.175.120.210, 141.125.97.106, 158.176.139.66
+    
+    Osaka
+    :   163.68.73.50, 163.69.65.242, 163.73.67.10
+    
+    Sao Paulo
+    :   163.107.67.18, 163.109.71.82, 169.57.144.42
+    
+    Sydney
+    :   130.198.65.82, 135.90.66.194, 168.1.58.90
 
-    - **Washington, DC**
+    Tokyo
+    :   161.202.104.226, 128.168.67.106, 165.192.108.10
 
-      169.63.123.154, 169.63.110.114, 169.62.13.2, 169.60.123.162, 169.59.152.58, 52.117.93.26
+    Toronto
+    :   163.74.65.138, 163.75.70.50, 169.53.160.154
+    
+    Washington, DC
+    :   169.63.123.154, 169.63.110.114, 169.62.13.2, 169.60.123.162, 169.59.152.58, 52.117.93.26
 
 3. From your host, ping the IP addresses of the {{site.data.keyword.cloud_notm}} region.
     ```sh
