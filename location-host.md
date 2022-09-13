@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-06"
+lastupdated: "2022-09-13"
 
 keywords: satellite, hybrid, multicloud, location, host, location control plane
 
@@ -48,7 +48,7 @@ To set up a {{site.data.keyword.satelliteshort}} location, you must first create
     ![Satellite Location in a normal staten.](/images/5_location_normal_state.svg "Satellite Location in a normal staten"){: caption="Figure 6. Satellite Location in a normal state" caption-side="bottom"}
 
 6. After you set up your {{site.data.keyword.satelliteshort}} location control plane, you can assign hosts to [Satellite-enabled IBM Cloud service](/docs/satellite?topic=satellite-managed-services) such as clusters or databases.
-    ![Assigning hosts to your services.](/images/6_assign_hosts_to_services.svg "Assigning hosts to your Satellite-enabled services"){: caption="Figure 6. Satellite Location in a normal state" caption-side="bottom"}
+    ![Assigning hosts to your services.](/images/6_assign_hosts_to_services.svg "Assigning hosts to your Satellite-enabled services"){: caption="Figure 7. Assigning hosts to your Satellite-enabled services" caption-side="bottom"}
 
 
 ## I created a {{site.data.keyword.satelliteshort}} location, what comes next?
