@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1744,11 +1744,9 @@ subcollection: satellite
 
 * [Prerequisites for {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-csi-prereq)
 
-* [Creating the {{site.data.keyword.block_storage_is_short}} configuration](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc)
-
 * [Creating the {{site.data.keyword.block_storage_is_short}} configuration from the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-create-config-ui)
 
-    * [Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-create-config-cli)
+* [Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-create-config-cli)
 
     * [Assigning a {{site.data.keyword.block_storage_is_short}} storage configuration from the console](/docs/satellite?topic=satellite-config-storage-vpc-csi#assign-storage-vpc-csi-ui)
 
