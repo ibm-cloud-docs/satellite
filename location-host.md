@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-13"
+lastupdated: "2022-09-19"
 
 keywords: satellite, hybrid, multicloud, location, host, location control plane
 
@@ -32,23 +32,23 @@ To set up a {{site.data.keyword.satelliteshort}} location, you must first create
 
 1. [Plan your environment](/docs/satellite?topic=satellite-infrastructure-plan) for Satellite by choosing your infrastructure, thinking about the services that you want to use, and setting up the hosts that you want to use. Make sure your hosts meet the [minimum requirement](/docs/satellite?topic=satellite-host-reqs) and that you consider the [size of your location](/docs/satellite?topic=satellite-location-sizing).
 
-    ![Plan for your Satellite location.](/images/1_plan_location.svg "Planning for your Satellite location"){: caption="Figure 2. Planning for your Satellite location" caption-side="bottom"}
+    ![Plan for your Satellite location.](/images/1-plan-location.svg "Planning for your Satellite location"){: caption="Figure 2. Planning for your Satellite location" caption-side="bottom"}
     
 2. Create your location that runs on your host infrastructure. [Choose an installation method](/docs/satellite?topic=satellite-locations) for your location, based on what is available for your infrastructure provider.
 
-    ![Create your location.](/images/2_create_location.svg "Create your Satellite location"){: caption="Figure 3. Creating your Satellite location" caption-side="bottom"}
+    ![Create your location.](/images/2-create-location.svg "Create your Satellite location"){: caption="Figure 3. Creating your Satellite location" caption-side="bottom"}
 
 3. [Attach hosts to your location](/docs/satellite?topic=satellite-locations#location-create-manual) by running the installation scripts (RHEL) or ingestion scripts (RHCOS). If you are using a Schematics template, this step is done for you. After your hosts are attached, they are in an `unassigned` state.
-    ![Attach hosts to your location.](/images/3_attach_hosts_location.svg "Attach hosts to your location"){: caption="Figure 4. Attaching hosts to your location" caption-side="bottom"}
+    ![Attach hosts to your location.](/images/3-attach-hosts-location.svg "Attach hosts to your location"){: caption="Figure 4. Attaching hosts to your location" caption-side="bottom"}
      
 4. Select hosts to make up your [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane). The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} location control plane or a service. For example, a basic setup has 3 hosts that are assigned as worker nodes to the Satellite location control plane. For more information, see [sizing your location](/docs/satellite?topic=satellite-location-sizing). After you assign a host, it enters a `provisioning` status.
-    ![Create your location control plane.](/images/4_assign_hosts_location.svg "Create your location control plane"){: caption="Figure 5. Creating your location control plane" caption-side="bottom"}
+    ![Create your location control plane.](/images/4-assign-hosts-location.svg "Create your location control plane"){: caption="Figure 5. Creating your location control plane" caption-side="bottom"}
 
 5. Wait for the host to enter a `normal` state. When you assign a host to the control plane, the host is bootstrapped to become a worker node in your {{site.data.keyword.satelliteshort}} location control plan. This bootstrap process consists of three phases, all of which must complete. First, required images are downloaded to the host from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the configuration. Finally, software packages are set up on the host. After the host is successfully bootstrapped, it enters a `normal` health state with an `assigned` status. You can no longer log in to the underlying machine with SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
-    ![Satellite Location in a normal staten.](/images/5_location_normal_state.svg "Satellite Location in a normal staten"){: caption="Figure 6. Satellite Location in a normal state" caption-side="bottom"}
+    ![Satellite Location in a normal staten.](/images/5-location-normal-state.svg "Satellite Location in a normal staten"){: caption="Figure 6. Satellite Location in a normal state" caption-side="bottom"}
 
 6. After you set up your {{site.data.keyword.satelliteshort}} location control plane, you can assign hosts to [Satellite-enabled IBM Cloud service](/docs/satellite?topic=satellite-managed-services) such as clusters or databases.
-    ![Assigning hosts to your services.](/images/6_assign_hosts_to_services.svg "Assigning hosts to your Satellite-enabled services"){: caption="Figure 7. Assigning hosts to your Satellite-enabled services" caption-side="bottom"}
+    ![Assigning hosts to your services.](/images/6-assign-hosts-to-services.svg "Assigning hosts to your Satellite-enabled services"){: caption="Figure 7. Assigning hosts to your Satellite-enabled services" caption-side="bottom"}
 
 
 ## I created a {{site.data.keyword.satelliteshort}} location, what comes next?

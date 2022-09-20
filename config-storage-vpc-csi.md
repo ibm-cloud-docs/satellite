@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-20"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -33,14 +33,6 @@ Before you can deploy storage templates to clusters in your location, make sure 
 1. [Create an API key for access to your clusters](https://cloud.ibm.com/iam/apikeys){: external}
 
 
-
-
-## Creating the {{site.data.keyword.block_storage_is_short}} configuration
-{: #sat-storage-vpc}
-
-Create a storage configuration in the command line by using the {{site.data.keyword.block_storage_is_short}} configuration template.
-{: shortdesc}
-
 ## Creating the {{site.data.keyword.block_storage_is_short}} configuration from the console
 {: #sat-storage-vpc-create-config-ui}
 {: ui}
@@ -55,7 +47,7 @@ Create a storage configuration in the command line by using the {{site.data.keyw
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-### Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line
+## Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line
 {: #sat-storage-vpc-create-config-cli}
 {: cli}
 
@@ -105,6 +97,7 @@ Create a storage configuration in the command line by using the {{site.data.keyw
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-vpc-block-csi-driver --template-version 4.2.2  --param "g2_token_exchange_endpoint_url=G2_TOKEN_EXCHANGE_ENDPOINT_URL" --param "g2_riaas_endpoint_url=G2_RIAAS_ENDPOINT_URL" --param "g2_resource_group_id=G2_RESOURCE_GROUP_ID" --param "g2_api_key=G2_API_KEY"
     ```
     {: pre}
+
 
 1. Verify that your storage configuration is created.
 
@@ -552,8 +545,8 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 
 | Display name | Name | Description | Required? | Default |
 | --- | --- | --- | --- | --- |
-| IAM endpoint | `g2_token_exchange_endpoint_url` | The IAM endpoint. For example `https://iam.cloud.ibm.com`. | true | N/A | 
-| VPC IaaS endpoint | `g2_riaas_endpoint_url` | The VPC regional endpoint of your VPC cluster in the format https://<region>.iaas.cloud.ibm.com. Example: `https://eu-de.iaas.cloud.ibm.com`. For more information, see [Endpoints available](/docs/vpc?topic=vpc-service-endpoints-for-vpc) | true | N/A | 
+| IAM endpoint | `g2_token_exchange_endpoint_url` | The IAM endpoint. For example 'https://iam.cloud.ibm.com'. | true | N/A | 
+| VPC IaaS endpoint | `g2_riaas_endpoint_url` | The VPC regional endpoint of your VPC cluster in the format `https://<region>.iaas.cloud.ibm.com`. Example: https://eu-de.iaas.cloud.ibm.com. For more information, see https://cloud.ibm.com/docs/vpc?topic=vpc-service-endpoints-for-vpc | true | N/A | 
 | Resource group ID | `g2_resource_group_id` | The ID of the resource group where your VPC is located. To retrieve this value, run the 'ibmcloud is vpc VPC-ID' command and note the Resource group field. | true | N/A | 
 | IAM API key | `g2_api_key` | The IAM API key of account where your VPC is located. You can use your existing API key or you can create an API key by running the 'ibmcloud iam api-key-create NAME' command. | true | N/A | 
 {: caption="ibm-vpc-block-csi-driver version 4.3.0 parameter reference"}
