@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-21"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference, change log, satellite version
 
@@ -31,6 +31,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.452 | 21 Sep 2022  | Updates the help text in various languages. |
 | 1.0.446 | 12 Sep 2022  | Adds `--pod-network-interface-selection` option to location create flow. |
 | 1.0.433 | 5 Aug 2022  | Updates the help text in various languages. |
 | 1.0.426 | 6 Jul 2022  | 1. Adds the `ibmcloud sat key` commands, allowing you to view and manage your {{site.data.keyword.satelliteshort}} Config keys.  /n 2. Adds the `ibmcloud sat subscription identity set` command, which updates a Satellite subscription to use your identity to manage resources.  |
