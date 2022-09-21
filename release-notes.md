@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-12"
+lastupdated: "2022-09-21"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,12 +24,19 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## September 2022
 {: #satellite-sep22}
 
+### 21 September 2022
+{: #satellite-sep2122}
+{: release-note}
+
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.452](/docs/satellite?topic=satellite-satellite-cli-changelog).
+
 ### 12 September 2022
 {: #satellite-sep1222}
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.446](/docs/satellite?topic=satellite-satellite-cli-changelog)
+:   Updated the CLI plug-in change log page for the [release of version 1.0.446](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 6 September 2022
 {: #satellite-sep622}
@@ -77,7 +84,7 @@ New troubleshooting topic
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.433](/docs/satellite?topic=satellite-satellite-cli-changelog)
+:   Updated the CLI plug-in change log page for the [release of version 1.0.433](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ### 3 August 2022
 {: #satellite-aug322}
