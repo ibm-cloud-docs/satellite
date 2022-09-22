@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-27"
+lastupdated: "2022-09-22"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -89,6 +89,8 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 * [Amazon Elastic File System (EFS)](/docs/satellite?topic=satellite-config-storage-efs)
 * **Deprecated** [{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale)
 * [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi)
+* [Microsoft Azure Disk CSI Driver](/docs/satellite?topic=satellite-config-storage-azure-csi)
+* [Microsoft Azure File CSI Driver](/docs/satellite?topic=satellite-config-storage-azurefile-csi)
 * [NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp-trident)
 * [NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas)
 * [NetApp ONTAP-SAN](/docs/satellite?topic=satellite-config-storage-netapp)
@@ -96,7 +98,7 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 * [Red Hat Local Storage Operator - File](/docs/satellite?topic=satellite-config-storage-local-file)
 * [Red Hat OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-odf-local)
 * [Red Hat OpenShift Data Foundation using remote volumes](/docs/satellite?topic=satellite-config-storage-odf-remote)
-* [Google Compute Engine persistent disk CSI driver](/docs/satellite?topic=satellite-config-storage-gcp-csi) 
+* [Google Compute Engine persistent disk CSI driver](/docs/satellite?topic=satellite-config-storage-gcp-csi)
+* [VMware persistent disk CSI driver](/docs/satellite?topic=satellite-config-storage-vmware-csi)
 
 For a list of available storage templates and storage classes, review the [site map](/docs/satellite?topic=satellite-storage-class-ref#storage-class-ref).
-
