@@ -44,7 +44,7 @@ Allow the following addresses, hostnames, protocols, and ports for {{site.data.k
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
 * Destination IP addresses: N/A
-* Destination hostnames: `s3.us.cloud-object-storage.appdomain.cloud` and `*.s3.us.cloud-object-storage.appdomain.cloud`
+* Destination hostnames: `s3.us.cloud-object-storage.appdomain.cloud`, `*.s3.us.cloud-object-storage.appdomain.cloud`, `s3.us-south.cloud-object-storage.appdomain.cloud`, and `*.s3.us-south.cloud-object-storage.appdomain.cloud`
 * Protocol and ports: HTTPS 443
 
 ## Allow Link connectors to connect to the Link tunnel server endpoint
