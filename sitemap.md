@@ -159,6 +159,10 @@ subcollection: satellite
 
 * [September 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep22)
 
+    * [23 September 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep2322)
+
+        * Added support for remote workers
+
     * [21 September 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep2122)
 
         * CLI change log

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-21"
+lastupdated: "2022-09-23"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## September 2022
 {: #satellite-sep22}
+
+### 23 September 2022
+{: #satellite-sep2322}
+{: release-note}
+
+Added support for remote workers
+:   You can now assign workload hosts to a location from a single provider or from multiple providers. See [Setting up a {{site.data.keyword.satelliteshort}} location with remote workers](/docs/satellite?topic=satellite-sat-multi-infra).
 
 ### 21 September 2022
 {: #satellite-sep2122}
