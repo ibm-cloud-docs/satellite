@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-09-21"
+lastupdated: "2022-09-23"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1251,6 +1251,22 @@ subcollection: satellite
 * [Removing locations from the console](/docs/satellite?topic=satellite-host-remove#location-remove-console)
 
 * [Removing locations with the CLI](/docs/satellite?topic=satellite-host-remove#location-remove-cli)
+
+[Setting up a {{site.data.keyword.satelliteshort}} location with remote workers](/docs/satellite?topic=satellite-sat-multi-infra#sat-multi-infra)
+
+* [Infrastructure composition options and supported topologies](/docs/satellite?topic=satellite-sat-multi-infra#infra-topologies)
+
+    * [1. Compute hosts are located in a single edge or data center](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-third-party)
+
+    * [2. Compute hosts are located in {{site.data.keyword.cloud_notm}} and edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-ibmcloud)
+
+    * [3. Compute hosts are located in {{site.data.keyword.cloud_notm}} and multiple data centers or edge](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-ibmcloud-multiple)
+
+    * [4. Compute hosts are located in multiple edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-multiple)
+
+    * [5. Compute hosts, including {{site.data.keyword.satelliteshort}} control plane, are located in multiple edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-cp-multiple)
+
+* [Use case: Edge clusters with centralized management in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-sat-multi-infra#edge-cluster)
 
 
 ## Managing apps with Satellite Config
