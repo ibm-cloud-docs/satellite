@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-09-23"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -41,7 +41,7 @@ Allow the following addresses, hostnames, protocols, and ports for {{site.data.k
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
 * Destination IP addresses: N/A
-* Destination hostnames: `s3.us.cloud-object-storage.appdomain.cloud` and `*.s3.us.cloud-object-storage.appdomain.cloud`
+* Destination hostnames: `s3.us.cloud-object-storage.appdomain.cloud`, `*.s3.us.cloud-object-storage.appdomain.cloud`, `s3.us-east.cloud-object-storage.appdomain.cloud`, and `*.s3.us-east.cloud-object-storage.appdomain.cloud`
 * Protocol and ports: HTTPS 443
 
 ## Allow Link connectors to connect to the Link tunnel server endpoint
@@ -68,7 +68,7 @@ Allow the following addresses, hostnames, protocols, and ports for all {{site.da
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
 * [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} 
-* Destination hostnames: `api.us-east.link.satellite.cloud.ibm.com`, `config.us-east.satellite.cloud.ibm.com`, `us-east.containers.cloud.ibm.com` 
+* Destination hostnames: `api.us-east.link.satellite.cloud.ibm.com`, `config.us-east.satellite.cloud.ibm.com`, `us-east.containers.cloud.ibm.com`, `config.satellite.cloud.ibm.com`
 * Protocol and ports: HTTPS 443
 
 ## Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}

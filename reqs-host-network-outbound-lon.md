@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-09-23"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -69,7 +69,7 @@ Allow the following addresses, hostnames, protocols, and ports for all {{site.da
 {: #host-out-akamai-lon}
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
-* [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external}  |  - `api.eu-gb.link.satellite.cloud.ibm.com`, `config.eu-gb.satellite.cloud.ibm.com`, `eu-gb.containers.cloud.ibm.com` 
+* [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external}  |  - `api.eu-gb.link.satellite.cloud.ibm.com`, `config.eu-gb.satellite.cloud.ibm.com`, `eu-gb.containers.cloud.ibm.com`, `config.satellite.cloud.ibm.com`
 * Protocol and ports: HTTPS 443
 
 ## Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}

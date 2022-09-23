@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-09-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -32,7 +32,7 @@ Use the following tables to review the actions that are mapped to service access
 | Enable or disable a client (source) for one or more {{site.data.keyword.satelliteshort}} endpoints.	| `PATCH ​/v1​/locations​/{location_id}​/sources​/{source_id}​/endpoints` | | | | | | | ![Feature available.](images/icon-checkmark-filled.svg) |
 {: caption="Actions that you can take with service access roles." caption-side="bottom"}
 
-## Satelle Config service access roles
+## Satellite Config service access roles
 {: #service-access-config}
 
 | Action | API | CLI | None | Reader | Writer | Deployer | Manager |
