@@ -2264,7 +2264,7 @@ subcollection: satellite
 
 * [Link service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-link)
 
-* [Satelle Config service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-config)
+* [Satellite Config service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-config)
 
 * [Subscription service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-subscription)
 
