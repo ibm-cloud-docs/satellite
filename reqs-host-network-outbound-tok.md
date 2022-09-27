@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-23"
+lastupdated: "2022-09-27"
 
-keywords: satellite, hybrid, multicloud, hypershift, core os
+keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
 subcollection: satellite
 
@@ -53,7 +53,7 @@ You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.jp-tok.
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
 * Destination IP addresses: 161.202.150.66, 128.168.89.146, 165.192.71.226, 169.56.18.98, 128.168.68.42, 165.192.76.2, 161.202.235.106, 128.168.106.18, 165.192.111.170, 161.202.89.122, 128.168.151.170, 165.192.64.2 
-* Destination hostnames: `c-01-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-02-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-03-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-04-ws.jp-tok.link.satellite.cloud.ibm.com`
+* Destination hostnames: `c-01-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-02-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-03-ws.jp-tok.link.satellite.cloud.ibm.com`, `c-04-ws.jp-tok.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
 * Protocol and ports: HTTPS 443
 
 ## Allow hosts to be attached to a location and assigned to services in the location

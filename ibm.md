@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-09-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -143,13 +143,23 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
             subscription-manager refresh
             ```
             {: pre}
+            
+        1. Enable the package repositories on your machine.    
 
+            RHEL 7:
             ```sh
             subscription-manager repos --enable rhel-server-rhscl-7-rpms
             subscription-manager repos --enable rhel-7-server-optional-rpms
             subscription-manager repos --enable rhel-7-server-rh-common-rpms
             subscription-manager repos --enable rhel-7-server-supplementary-rpms
             subscription-manager repos --enable rhel-7-server-extras-rpms
+            ```
+            {: pre}
+    
+            RHEL 8:
+            ```sh
+            subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
+            subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
             ```
             {: pre}
 

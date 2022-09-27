@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-18"
+lastupdated: "2022-09-27"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, requirements, outbound, network, allowlist
 
 subcollection: satellite
 
@@ -30,7 +30,7 @@ To check your host setup, you can use the `satellite-host-check` script. For mor
 {: #host-out-ibm}
 
 Allow the following hostnames, protocols, and ports for all {{site.data.keyword.satelliteshort}} hosts.
-* Destination hostnames: `cloud.ibm.com`, `containers.cloud.ibm.com`
+* Destination hostnames: `cloud.ibm.com`, `containers.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
 * Protocol and ports: HTTPS Port 443
 
 ## Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers
