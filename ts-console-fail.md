@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-09-27"
 
 keywords: satellite, hybrid, multicloud
 
@@ -41,7 +41,7 @@ Worker nodes do not exist in each zone of the default worker pool
 :    If you use host auto assignment, [attach hosts](/docs/satellite?topic=satellite-attach-hosts) to your {{site.data.keyword.satelliteshort}} location in the zone where you do not have worker nodes so that hosts can be assigned to the default worker pool. If the hosts are not automatically assigned, you can also manually [assign {{site.data.keyword.satelliteshort}} hosts in that zone to your cluster](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
 
 Host private IP addresses are used for Ingress subdomain
-:    Connect to your hosts' private network to access to your cluster and open the {{site.data.keyword.redhat_openshift_notm}} web console. For example, you might connect to your on-premises local network, or use a VPN such as [WireGuard](/docs/openshift?topic=openshift-access_cluster#access_vpn_openshift) to connect to your cloud provider's private network. 
+:    Connect to your hosts' private network to access to your cluster and open the {{site.data.keyword.redhat_openshift_notm}} web console. For example, you might connect to your on-premises local network, or use a VPN such as [WireGuard](/docs/openshift?topic=openshift-cluster-access-wireguard) to connect to your cloud provider's private network. 
 
 Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's service URL and your location's DNS record to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access). Note that making your location and cluster subdomains available outside of your hosts' private network to your authorized cluster users is not recommended for production-level workloads.
 
