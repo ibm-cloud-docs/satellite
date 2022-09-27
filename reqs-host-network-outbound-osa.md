@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-23"
+lastupdated: "2022-09-27"
 
 keywords: satellite, hybrid, multicloud, hypershift, core os
 
@@ -55,7 +55,7 @@ You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.jp-osa.
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
 * Destination IP addresses: 163.68.78.34, 163.68.78.42, 163.68.78.234, 163.68.79.194, 163.69.70.106, 163.69.70.146, 163.69.70.194, 163.69.70.202, 163.73.69.82, 163.73.69.90, 163.73.70.50, 163.73.70.58
-* Destination hostnames: `c-01-ws.jp-osa.link.satellite.cloud.ibm.com`, `c-02-ws.jp-osa.link.satellite.cloud.ibm.com`, `c-03-ws.jp-osa.link.satellite.cloud.ibm.com`, `c-04-ws.jp-osa.link.satellite.cloud.ibm.com`
+* Destination hostnames: `c-01-ws.jp-osa.link.satellite.cloud.ibm.com`, `c-02-ws.jp-osa.link.satellite.cloud.ibm.com`, `c-03-ws.jp-osa.link.satellite.cloud.ibm.com`, `c-04-ws.jp-osa.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
 * Protocol and ports: HTTPS 443
 
 ## Allow hosts to be attached to a location and assigned to services in the location
