@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-09-27"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -25,7 +25,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 {: #sat-storage-gcp-csi-prereq}
 
 1. [Create a Compute Engine service account](https://cloud.google.com/compute/docs/access/service-accounts){: external}.
-1. [Create a JSON web key](https://cloud.google.com/iam/docs/service-accounts#key-types){: external}.
+1. [Create a JSON web key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating){: external}.
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 
 
