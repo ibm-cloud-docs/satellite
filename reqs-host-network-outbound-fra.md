@@ -4,7 +4,7 @@ copyright:
   years: 2022, 2022
 lastupdated: "2022-09-27"
 
-keywords: satellite, hybrid, multicloud, hypershift, core os, core os
+keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
 subcollection: satellite
 

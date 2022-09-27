@@ -4,7 +4,7 @@ copyright:
   years: 2022, 2022
 lastupdated: "2022-09-27"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, requirements, outbound, network, allowlist
 
 subcollection: satellite
 
