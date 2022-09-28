@@ -73,13 +73,14 @@ toc:
             topics:
               - attach-hosts.md
               - assigning-hosts.md
+              - multi-infra.md
               - host-update-location.md
               - host-update-workers.md
               - location-copy.md
+              - location-forward-logs.md
               - config-http-proxy.md
               - config-custom-ntp.md
               - host-remove.md
-              - multi-infra.md
         - topicgroup:
             label: Managing apps with Satellite Config
             topics:
