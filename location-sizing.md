@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-09-28"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -114,7 +114,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 {: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="top"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram-coreos}
-{: tab-title="8 vCPU, 16 GB RAM (CoreOS)"}
+{: tab-title="4 vCPU, 16 GB RAM (CoreOS)"}
 {: tab-group="loc-sizerhcos"}
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |

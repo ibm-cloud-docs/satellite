@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-23"
+lastupdated: "2022-09-28"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## September 2022
 {: #satellite-sep22}
+
+### 28 September 2022
+{: #satellite-sep2822}
+{: release-note}
+
+Setting up log forwarding
+:   You can now set up log forwarding for Kubernetes audit logs or for worker node `syslogs` files. See [Setting up log forwarding](/docs/satellite?topic=satellite-location-forward-logs).
 
 ### 23 September 2022
 {: #satellite-sep2322}
