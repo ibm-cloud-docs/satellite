@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-01"
+lastupdated: "2022-09-30"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -127,8 +127,9 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
     
 5. Reboot your host to pick up this change.
 6. [Attach or reattach](/docs/satellite?topic=satellite-attach-hosts) your host to the location.
-7. Repeat these steps for each host.
-8. [Create a ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with IBM Support with the following format.
+7. Assign the host back to the [control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or to [the service](/docs/satellite?topic=satellite-assigning-hosts) where it was previously assigned.
+8. Repeat these steps for each host.
+9. [Create a ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with IBM Support with the following format.
     
     ```sh
     Title: Request for addition of HTTP_PROXY config to location <LOCATIONID>
