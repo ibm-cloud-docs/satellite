@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-10-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -363,14 +363,6 @@ To create the control plane,
     ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satloc" --zone <zone>
     ```
     {: pre}
-    
-    Example for assigning a host that is enabled for Red Hat CoreOS.
-    
-    ```sh
-    ibmcloud sat host assign --location <location_name_or_ID> --cluster <location_ID> --host-label "use:satloc" --zone <zone>  --operating-system RHCOS
-
-    ```
-    {: pre}
 
     `--location <location_name_or_ID>`
     :   Enter the name or ID of your {{site.data.keyword.satelliteshort}} location. To retrieve the location name or ID, run `ibmcloud sat location ls`.
@@ -386,9 +378,6 @@ To create the control plane,
     
     `--zone <zone>`
     :   Enter the zone to assign the host in, which can correspond to a physically separate zone in your infrastructure provider. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the **Host Zones** field.
-    
-    `--operating-system <RHEL_or_RHCOS>`
-    :    The operating system for the hosts you want to assign to your location. The available options are `RHEL7`, `RHEL8`, and `RHCOS`.
 
 
 4. Repeat the previous step for the other hosts that you want to attach to your {{site.data.keyword.satelliteshort}} location control plane. For high availability, make sure that you assign hosts evenly across zones that correspond to physically separate zones in your infrastructure provider. For example, if your infrastructure provider has `us-east-1a`, `us-east-1b`, and `us-east-1c`, you can enter these names for your {{site.data.keyword.satelliteshort}} zones. Then, assign 2 hosts from `us-east-1a` in your infrastructure provider to `us-east-1a` in your {{site.data.keyword.satelliteshort}} control plane, 2 hosts from `us-east-1b`, and 2 hosts from `us-east-1c`, for a total of 6 hosts in the control plane.
