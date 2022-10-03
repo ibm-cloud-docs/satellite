@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-10-03"
 
 keywords: satellite, hybrid, multicloud, unassigned, unresponsive
 
@@ -44,7 +44,7 @@ To resolve this issue, remove the hosts from your location, download a new copy 
 2. Download a new copy of the host attach script for your location.
 
     ```sh
-    ibmcloud sat host attach --location LOCATION [--host-label "LABEL"]  [--operating-system SYSTEM] [-q] [--reset-key]
+    ibmcloud sat host attach --location LOCATION [--host-label "LABEL"]  [--operating-system (RHEL|RHCOS)] [-q] [--reset-key]
     ```
     {: pre}
 
