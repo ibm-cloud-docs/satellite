@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-10-06"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, platform access for satellite, satellite iam access, platform access roles for satellite
 
 subcollection: satellite
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Platform access roles
 {: #iam-platform-access}
 
-Click the tabs in the following table to review the actions that are mapped to platform access roles for different components of {{site.data.keyword.satelliteshort}}. Platform access roles enable users to perform tasks on service resources at the platform level, for example, assign user access for the service, create or delete instances, and bind instances to applications.
+Platform access roles enable users to perform tasks on service resources at the platform level. For example, you can assign user access for the service, create or delete instances, and bind instances to applications. Review the following tables for the actions that are mapped to platform access roles for different components of {{site.data.keyword.satelliteshort}}. 
 {: shortdesc}
 
 ## Location and host platform access roles
