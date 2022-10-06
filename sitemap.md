@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-06"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -554,8 +554,6 @@ subcollection: satellite
         * Review the release notes for 26 April 2021.
 
         * CLI change log
-
-        * Updated the CLI plug-in change log page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
     * [15 April 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1521)
 
