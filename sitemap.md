@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-06"
+lastupdated: "2022-10-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1230,7 +1230,7 @@ subcollection: satellite
 
 * [Migrating your control plane from RHEL 7 to RHEL 8](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8)
 
-[Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
+[Updating hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
 
 * [Checking if a version update is available for worker node hosts](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-check)
 
@@ -1238,17 +1238,19 @@ subcollection: satellite
 
     * [Checking if a version update is available from the {{site.data.keyword.cloud_notm}} console](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-check-console)
 
-* [Manually updating worker node hosts in the CLI](/docs/satellite?topic=satellite-host-update-workers#host-update-cli)
+* [Identifying worker node hosts](/docs/satellite?topic=satellite-host-update-workers#host-identify)
 
-    * [Determining if the worker node version update is a major, minor, or patch update](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-type)
+* [Apply version updates to worker node hosts without detaching them](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-inplace)
 
-    * [Applying minor and patch version updates to worker node hosts](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-minor)
+    * [Apply version updates to worker node hosts one at a time](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-individually)
 
-    * [Applying major version updates to worker node host](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-major)
+    * [Apply version updates to your worker node hosts with a ConfigMap](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-rolling)
+
+* [Applying version updates to worker nodes by replacing hosts](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-minor)
 
 * [Updating worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console](/docs/satellite?topic=satellite-host-update-workers#host-update-roks-console)
 
-* [Updating host metadata](/docs/satellite?topic=satellite-host-update-workers#host-update-metadata)
+* [Determining if the worker node version update is a major, minor, or patch update](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-type)
 
 [Copying a location](/docs/satellite?topic=satellite-location-copy#location-copy)
 
