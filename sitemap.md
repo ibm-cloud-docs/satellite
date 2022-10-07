@@ -159,6 +159,10 @@ subcollection: satellite
 
 * [October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct22)
 
+    * [7 October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct722)
+
+        * Subscription identity sync
+
     * [3 October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct322)
 
         * CLI change log
@@ -1314,12 +1318,6 @@ subcollection: satellite
     * [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-scoped-project)
 
 * [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters)
-
-[Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-create#satcon-create)
-
-* [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-satcon-create#create-satconfig-ui)
-
-* [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-satcon-create#create-satconfig-cli)
 
 [Managing your {{site.data.keyword.satelliteshort}} Config resources](/docs/satellite?topic=satellite-satcon-manage#satcon-manage)
 

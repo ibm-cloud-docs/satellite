@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-06"
+lastupdated: "2022-10-07"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## October 2022
 {: #satellite-oct22}
+
+### 7 October 2022
+{: #satellite-oct722}
+{: release-note}
+
+Subscription identity sync
+:   After you create a subscription, you might need to [sync subscription identity](/docs/satellite?topic=satellite-sat-sub-identity-sync) for your rollout to be successful.
 
 ### 3 October 2022
 {: #satellite-oct322}
