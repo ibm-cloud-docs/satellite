@@ -163,6 +163,8 @@ subcollection: satellite
 
         * Subscription identity sync
 
+        * Apply updates your worker nodes in place
+
     * [3 October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct322)
 
         * CLI change log

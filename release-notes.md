@@ -31,6 +31,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 Subscription identity sync
 :   After you create a subscription, you might need to [sync subscription identity](/docs/satellite?topic=satellite-sat-sub-identity-sync) for your rollout to be successful.
 
+Apply updates your worker nodes in place
+:   You can apply updates to your worker nodes without detaching them. You can update your worker nodes individually or perform rolling by using a ConfigMap to define update parameters for all worker nodes in a cluster. See [Apply version updates to worker node hosts without detaching them](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-inplace).
+
 ### 3 October 2022
 {: #satellite-oct322}
 {: release-note}
