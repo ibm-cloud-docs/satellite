@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-28"
+lastupdated: "2022-10-06"
 
 keywords: satellite, hybrid, multicloud, forwarding audit logs, location audit logs, kubernetes API audit logs
 
@@ -80,7 +80,11 @@ You can configure your worker node to forward `syslogs` to a remote server by ad
     authpriv.* action(type="omfwd" target="172.21.46.170" port="3000" protocol="tcp")
     ```
     {: codeblock}
+
 4. Save the file.
 5. Attach and assign the host to the location.
 
-For more information about `rsyslog` configuration, see the [`rsyslog` man page](https://man7.org/linux/man-pages/man5/rsyslog.conf.5.html).
+For more information about `rsyslog` configuration, see the [`rsyslog` man page](https://man7.org/linux/man-pages/man5/rsyslog.conf.5.html){: external}.
+
+
+

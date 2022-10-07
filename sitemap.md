@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -158,6 +158,12 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct22)
+
+    * [7 October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct722)
+
+        * Subscription identity sync
+
+        * Apply updates your worker nodes in place
 
     * [3 October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct322)
 
@@ -554,8 +560,6 @@ subcollection: satellite
         * Review the release notes for 26 April 2021.
 
         * CLI change log
-
-        * Updated the CLI plug-in change log page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
     * [15 April 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr1521)
 
@@ -1232,7 +1236,7 @@ subcollection: satellite
 
 * [Migrating your control plane from RHEL 7 to RHEL 8](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8)
 
-[Updating hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
+[Updating hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers#host-update-workers)
 
 * [Checking if a version update is available for worker node hosts](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-check)
 
@@ -1240,17 +1244,19 @@ subcollection: satellite
 
     * [Checking if a version update is available from the {{site.data.keyword.cloud_notm}} console](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-check-console)
 
-* [Manually updating worker node hosts in the CLI](/docs/satellite?topic=satellite-host-update-workers#host-update-cli)
+* [Identifying worker node hosts](/docs/satellite?topic=satellite-host-update-workers#host-identify)
 
-    * [Determining if the worker node version update is a major, minor, or patch update](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-type)
+* [Apply version updates to worker node hosts without detaching them](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-inplace)
 
-    * [Applying minor and patch version updates to worker node hosts](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-minor)
+    * [Apply version updates to worker node hosts one at a time](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-individually)
 
-    * [Applying major version updates to worker node host](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-major)
+    * [Apply version updates to your worker node hosts with a ConfigMap](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-rolling)
+
+* [Applying version updates to worker nodes by replacing hosts](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-minor)
 
 * [Updating worker node hosts in the {{site.data.keyword.openshiftlong_notm}} console](/docs/satellite?topic=satellite-host-update-workers#host-update-roks-console)
 
-* [Updating host metadata](/docs/satellite?topic=satellite-host-update-workers#host-update-metadata)
+* [Determining if the worker node version update is a major, minor, or patch update](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-type)
 
 [Copying a location](/docs/satellite?topic=satellite-location-copy#location-copy)
 
@@ -1314,12 +1320,6 @@ subcollection: satellite
     * [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-scoped-project)
 
 * [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters)
-
-[Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-create#satcon-create)
-
-* [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-satcon-create#create-satconfig-ui)
-
-* [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-satcon-create#create-satconfig-cli)
 
 [Managing your {{site.data.keyword.satelliteshort}} Config resources](/docs/satellite?topic=satellite-satcon-manage#satcon-manage)
 

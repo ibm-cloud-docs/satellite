@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-10-06"
 
-keywords: satellite, hybrid, multicloud, tenancy
+keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
 subcollection: satellite
 
@@ -23,7 +23,7 @@ As a hybrid or distributed cloud reseller, I want to set up {{site.data.keyword.
 
 In this model, you create an enterprise account and separate client accounts for each client. Within each client account, you create a {{site.data.keyword.satelliteshort}} location and deploy an {{site.data.keyword.openshiftshort}} cluster.
 
-![Concept overview of Satellite tenancy setup](/images/tenancy-01.svg){: caption="Figure 1. Enterprise account setup for resellers." caption-side="bottom"}
+![Concept overview of Satellite tenancy setup](/images/account_overview_graphic.svg){: caption="Figure 1. Enterprise account setup for resellers." caption-side="bottom"}
 
 ## Managing client locations and clusters
 {: #location-mgmt-tenancy}

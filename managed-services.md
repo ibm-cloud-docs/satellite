@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-10-06"
 
 keywords: satellite, hybrid, multicloud, managed services, enabled service, satellite-enabled
 
@@ -32,8 +32,17 @@ Learn about what services are supported by {{site.data.keyword.satellitelong_not
 ## Setting up access for Satellite-enabled services
 {: #managed-services-iam}
 
-For most Satellite-enabled services, you must set up service-to-service access through IAM, with **Satellite** as your target service and the managed service as the source service. For more information, see [Managing access overview](/docs/satellite?topic=satellite-iam) or consult the service documentation.
+For most Satellite-enabled services, you must set up service-to-service access through IAM, with **Satellite** as your target service and the managed service as the source service. 
 
+1. Open [Manage authorizations](https://cloud.ibm.com/iam/authorizations){: external} in the IBM Cloud console.
+2. Click **Create**.
+3. Select the account for the authorization.
+4. For **Source service**, select the service that you want to authorize. You can further scope the access by selecting **Resources based on selected attributes** and then adding attributes.
+5. For **Target service**, select `{{site.data.keyword.satelliteshort}}`. You can further scope the access by selecting **Resources based on selected attributes** and then adding attributes.
+6. Select your options as the **Service access**.
+7. Click **Authorize**. 
+
+For more information, see [Managing access overview](/docs/satellite?topic=satellite-iam) or consult the service documentation.
 
 
 

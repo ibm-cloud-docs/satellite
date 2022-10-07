@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-23"
+lastupdated: "2022-10-06"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, service access roles for satellite, access for satellite, service access for satellite
 
 subcollection: satellite
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Service access roles
 {: #iam-service-access}
 
-Use the following tables to review the actions that are mapped to service access roles for different components of {{site.data.keyword.satelliteshort}}. Service access roles enable users access to {{site.data.keyword.satelliteshort}} and the ability to call the {{site.data.keyword.satelliteshort}} APIs.
+Service access roles enable users access to {{site.data.keyword.satelliteshort}} and the ability to call the {{site.data.keyword.satelliteshort}} APIs. Use the following tables to review the actions that are mapped to service access roles for different components of {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
 {{site.data.keyword.satelliteshort}} Config uses a [custom IAM service access role](/docs/account?topic=account-custom-roles), **Deployer**, in addition to the standard **Reader**, **Writer**, and **Manager** roles. You can assign users the **Deployer** role so that they can deploy existing configurations to your clusters, but cannot add or edit the actual configurations for your apps.
