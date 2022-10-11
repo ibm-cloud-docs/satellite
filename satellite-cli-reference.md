@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-03"
+lastupdated: "2022-10-10"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1448,10 +1448,25 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
 :    Optional. The {{site.data.keyword.cloud_notm}} account ID with the instance of {{site.data.keyword.la_full_notm}} that you want to forward your {{site.data.keyword.satelliteshort}} logs to. This option is available only in select environments.
   
 `--pod-subnet SUBNET`
-:    Optional. Specify a custom subnet CIDR to provide private IP addresses for pods. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` flag. The value can be '/23' or larger. Subnets `172.18.0.0/16` and `172.19.0.0/16` cannot be used as they are reserved for internal use.
+:    Optional. Specify a custom subnet CIDR to provide private IP addresses for pods. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` flag. All pods that are deployed to a worker node are assigned a private IP address in the 172.16.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
+:    When you choose a subnet size, consider the size of the cluster that you plan to create and the number of worker nodes that you might add in the future. The subnet must have a CIDR of at least `/23`, which provides enough pod IPs for a maximum of four worker nodes in a cluster. For larger clusters, use `/22` to have enough pod IP addresses for eight worker nodes, `/21` to have enough pod IP addresses for 16 worker nodes, and so on.
+:    The subnet that you choose must be within one of the following ranges.
+     - `172.16.0.0 - 172.17.255.255`
+     - `172.21.0.0 - 172.31.255.255`
+     - `192.168.0.0 - 192.168.254.255`
+     - `198.18.0.0 - 198.19.255.255`
+
+:    Note that the pod and service subnets can't overlap. The service subnet is in the 172.20.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
 
 `--service-subnet SUBNET`
-:    Optional. Specify a custom subnet CIDR to provide private IP addresses for services. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` flag. The value can be '/24' or larger. Subnets `172.18.0.0/16` and `172.19.0.0/16` cannot be used as they are reserved for internal use.
+:   Optional. Specify a custom subnet CIDR to provide private IP addresses for services. This option can be used only if you also enable Red Hat CoreOS with the `--coreos-enabled` flag. All services that are deployed to the cluster are assigned a private IP address in the 172.20.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your services.
+:    The subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges.
+     - `172.16.0.0 - 172.17.255.255`
+     - `172.20.0.0 - 172.31.255.255`
+     - `192.168.0.0 - 192.168.254.255`
+     - `198.18.0.0 - 198.19.255.255`
+
+:    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.16.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
 
 `--pod-network-interface-selection METHOD`
 :    Optional. The method for selecting the node network interface for the internal pod network. The available methods are `can-reach` and `interface`. This option can be used only if you also enable Red Hat CoreOS with the `--operating-system` option. 
