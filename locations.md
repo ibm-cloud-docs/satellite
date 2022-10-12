@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-12"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, location, satellite location, create location
 
 subcollection: satellite
 
@@ -177,6 +177,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
          - `172.21.0.0 - 172.31.255.255`
          - `192.168.0.0 - 192.168.254.255`
          - `198.18.0.0 - 198.19.255.255`
+
     :    Note that the pod and service subnets can't overlap. The service subnet is in the 172.20.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
 
     `--service-subnet SUBNET`
@@ -186,6 +187,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
          - `172.20.0.0 - 172.31.255.255`
          - `192.168.0.0 - 192.168.254.255`
          - `198.18.0.0 - 198.19.255.255`
+ 
     :    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.16.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
 
     `--pod-network-interface-selection METHOD`
