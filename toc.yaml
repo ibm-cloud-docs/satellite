@@ -87,7 +87,7 @@ toc:
               - cluster-config.md
               - setup-clusters-satconfig.md
               - satcon-create.md
-                - sat-sub-identity-sync.md 
+              - sat-sub-identity-sync.md 
               - satcon-manage.md
               - satcon-resources.md
         - topicgroup:
