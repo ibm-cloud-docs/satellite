@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-07"
+lastupdated: "2022-10-17"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch, host, update, host update
 
@@ -285,7 +285,7 @@ You can roll out updates to all of your worker node hosts with a ConfigMap. Spec
 ## Applying version updates to worker nodes by replacing hosts
 {: #host-update-workers-minor}
 
-Hosts that are attached to a location do not update automatically. To apply a version update, you can first attach and assign new hosts to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) and then remove the old hosts. You can also apply [minor and patch version updates inplace](#host-update-workers-minor-inplace).
+Hosts that are attached to a location do not update automatically. To apply a version update, you can first attach and assign new hosts to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) and then remove the old hosts. You can also apply [minor and patch version updates inplace](#host-update-workers-inplace).
 {: shortdesc}
 
 
