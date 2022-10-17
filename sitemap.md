@@ -2710,17 +2710,17 @@ subcollection: satellite
     * [Disaster recovery](/docs/satellite?topic=satellite-responsibilities#disaster-recovery)
 
 
-## High availability and disaster recovery
-{: #sitemap_high_availability_and_disaster_recovery}
+## High availability and recovery
+{: #sitemap_high_availability_and_recovery}
 
 
-[High availability and disaster recovery](/docs/satellite?topic=satellite-ha#ha)
+[High availability and recovery](/docs/satellite?topic=satellite-ha#ha)
 
-* [About high availability and disaster recovery](/docs/satellite?topic=satellite-ha#ha-about)
+* [About high availability and recovery](/docs/satellite?topic=satellite-ha#ha-about)
 
 * [Understanding high availability in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha#ha-understand)
 
-    * [High availability of the {{site.data.keyword.satelliteshort}} control plane master](/docs/satellite?topic=satellite-ha#ha-control-plane-master)
+    * [High availability of the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-ha#ha-control-plane-master)
 
     * [High availability of the {{site.data.keyword.satelliteshort}} control plane worker nodes](/docs/satellite?topic=satellite-ha#ha-control-plane-worker)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-28"
+lastupdated: "2022-10-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -12,13 +12,13 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# High availability and disaster recovery
+# High availability and recovery
 {: #ha}
 
 Review what options you have to make your {{site.data.keyword.satellitelong}} location highly available.
 {: shortdesc}
 
-## About high availability and disaster recovery
+## About high availability and recovery
 {: #ha-about}
 
 High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms.
@@ -38,7 +38,7 @@ What level of availability does {{site.data.keyword.cloud_notm}} offer?
 Where is the service located?
 :    See [Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions).
 
-What am I responsible to configure disaster recovery options for?
+What am I responsible to configure backup and recovery options for?
 :    See [Your responsibilities](/docs/satellite?topic=satellite-responsibilities#disaster-recovery).
 
 ## Understanding high availability in {{site.data.keyword.satellitelong_notm}}
@@ -55,22 +55,22 @@ The following image shows potential points of failure in the {{site.data.keyword
 2. [{{site.data.keyword.satelliteshort}} control plane worker nodes](#ha-control-plane-worker)
 3. [{{site.data.keyword.cloud_notm}} services that run in your {{site.data.keyword.satelliteshort}} location](#ha-cloud-services)
 
-### High availability of the {{site.data.keyword.satelliteshort}} control plane master
+### High availability of the {{site.data.keyword.satelliteshort}} location control plane
 {: #ha-control-plane-master}
 
-When you create a {{site.data.keyword.satelliteshort}} location, you must choose an {{site.data.keyword.cloud_notm}} multizone metro that runs and manages the {{site.data.keyword.satelliteshort}} control plane master of your location. The control plane master is in an {{site.data.keyword.IBM_notm}} account and is managed by {{site.data.keyword.cloud_notm}}.
+When you create a {{site.data.keyword.satelliteshort}} location, you must choose an {{site.data.keyword.cloud_notm}} multizone metro that runs and manages the {{site.data.keyword.satelliteshort}} control plane of your location. The control plane is in an {{site.data.keyword.IBM_notm}} account and is managed by {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-{{site.data.keyword.IBM_notm}} provides high availability for your control plane master in the following ways.
+{{site.data.keyword.IBM_notm}} provides high availability for your {{site.data.keyword.satelliteshort}} location control plane in the following ways.
 
 Multiple instances
-:    By default, every {{site.data.keyword.satelliteshort}} control plane master is automatically set up with multiple instances to ensure availability and sufficient compute capacity to manage your location. {{site.data.keyword.IBM_notm}} monitors the availability and compute capacity for your {{site.data.keyword.satelliteshort}} control plane master and automatically scales the master instances if necessary.
+:    By default, every {{site.data.keyword.satelliteshort}} control plane is automatically set up with multiple instances to ensure availability and sufficient compute capacity to manage your location. {{site.data.keyword.IBM_notm}} monitors the availability and compute capacity for your {{site.data.keyword.satelliteshort}} control plane master and automatically scales the master instances if necessary.
 
 Spread across zones
-:    {{site.data.keyword.IBM_notm}} automatically spreads the control plane master instances across multiple zones within the same {{site.data.keyword.cloud_notm}} multizone metro. For example, if you choose to manage your location from the `wdc` metro in US East region, your control plane master instances are spread across the `us-east-1`, `us-east-2`, and `us-east-3` zones. This zonal spread ensures that your control plane master is available, even if one zone becomes unavailable.
+:    {{site.data.keyword.IBM_notm}} automatically spreads the control plane master instances across multiple zones within the same {{site.data.keyword.cloud_notm}} multizone metro. For example, if you choose to manage your location from the `wdc` metro in US East region, your {{site.data.keyword.satelliteshort}} location control plane master instances are spread across the `us-east-1`, `us-east-2`, and `us-east-3` zones. This zonal spread ensures that your control plane master is available, even if one zone becomes unavailable.
 
 Automatic backups to Object Storage
-:    All {{site.data.keyword.satelliteshort}} control plane data is backed up to an {{site.data.keyword.cos_full_notm}} service instance so that your location can be restored after a disaster. Access to this instance is protected by {{site.data.keyword.iamshort}} and all data is automatically encrypted during transit and at rest. Note that when you create a location, you also provide an {{site.data.keyword.cos_short}} service instance that you control for backup of the location control plane worker nodes. Control plane master data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own.
+:    All {{site.data.keyword.satelliteshort}} control plane data is backed up to an {{site.data.keyword.cos_full_notm}} service instance so that you can create a new location with this data after a disaster. Access to this instance is protected by {{site.data.keyword.iamshort}} and all data is automatically encrypted during transit and at rest. Note that when you create a location, you also provide an {{site.data.keyword.cos_short}} service instance that you control for backup of the location control plane worker nodes. Control plane master data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own.
 
 Because the {{site.data.keyword.satelliteshort}} control plane master is managed by {{site.data.keyword.IBM_notm}}, you cannot change the number of master instances or how high availability is configured. However, you must to ensure that your control plane worker nodes are configured for high availability. The control plan worker nodes can ensure that the workloads that run in your location have enough compute capacity, even if compute hosts become unavailable. The time to recover a location or cluster is dependent on the size of the location or cluster and the network latency between {{site.data.keyword.cloud_notm}} and your host infrastructure. 
 {: note}
@@ -95,15 +95,15 @@ Every {{site.data.keyword.cloud_notm}} service that you run in your {{site.data.
 ## Basic control plane worker setup
 {: #satellite-basic-setup}
 
-The following image shows a basic {{site.data.keyword.satelliteshort}} control plane worker node setup. This setup ensures that your {{site.data.keyword.satelliteshort}} control plane has sufficient compute capacity to run basic {{site.data.keyword.satelliteshort}} workloads and that your control plane continues to run, even if one compute host becomes unavailable.
+The following image shows a basic {{site.data.keyword.satelliteshort}} location control plane worker node setup. This setup ensures that your {{site.data.keyword.satelliteshort}} location control plane has sufficient compute capacity to run basic {{site.data.keyword.satelliteshort}} workloads and that your control plane continues to run, even if one compute host becomes unavailable.
 
 ![Default setup for the {{site.data.keyword.satelliteshort}} control plane.](images/satellite_ha_default-0111.svg "{{site.data.keyword.satelliteshort}} control plane"){: caption="Figure 2. {{site.data.keyword.satelliteshort}} control plane" caption-side="bottom"}
 
 Review the characteristics of the basic setup.
 
-- **Groups of 3 compute hosts**: In the basic setup, you must assign at least 3 compute hosts as worker nodes to the {{site.data.keyword.satelliteshort}} control plane, in separate zones. With 3 hosts, you make sure that your control plane continues to run, even if one compute host becomes unavailable. The minimum of 3 hosts for the location control plane is for demonstration purposes only. To continue to use the location for production workloads, [add more hosts to the location control plane](/docs/satellite?topic=satellite-attach-hosts) in multiples of 3, such as 6, 9, or 12 hosts. Note that while you can deploy a cluster to a location with only 3 control plane hosts, upgrading and other management operations may not work with bare minimums setups.
+- **Groups of 3 compute hosts**: In the basic setup, you must assign at least 3 compute hosts as worker nodes to the {{site.data.keyword.satelliteshort}} location control plane, in separate zones. With 3 hosts, you make sure that your control plane continues to run, even if one compute host becomes unavailable. The minimum of 3 hosts for the {{site.data.keyword.satelliteshort}} location control plane is for demonstration purposes only. To continue to use the location for production workloads, [add more hosts to the location control plane](/docs/satellite?topic=satellite-attach-hosts) in multiples of 3, such as 6, 9, or 12 hosts. Note that while you can deploy a cluster to a location with only 3 control plane hosts, upgrading and other management operations may not work with bare minimums setups.
 - **Host requirements**: All compute hosts must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs). Hosts can be in your own on-premises data center, in public cloud providers, or in edge computing environments. You can add compute hosts from different physical locations if you ensure that the requirements for the network speed and latency between the hosts are met. For more information about how to configure hosts that you want to add from your public cloud providers like AWS, Azure, or Google, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
-- **Separate physical hosts**: Every compute host must have a separate physical host. The host might be a bare metal machine or a virtual machine that does not share the hypervisor with another virtual machine that you plan to add to your control plane. With this setup, you ensure that the outage of one physical machine does not lead to all control plane worker nodes becoming unavailable.
+- **Separate physical hosts**: Every compute host must have a separate physical host. The host might be a bare metal machine or a virtual machine that does not share the hypervisor with another virtual machine that you plan to add to your control plane. With this setup, you ensure that the outage of one physical machine does not lead to all {{site.data.keyword.satelliteshort}} location control plane worker nodes becoming unavailable.
 
 To make your control plane worker nodes more highly available, see the [Highly available control plane worker setup](#satellite-ha-setup).
 
