@@ -32,6 +32,7 @@ toc:
             label: Tutorial library for Satellite
             href: https://cloud.ibm.com/docs?tab=tutorials&page=1&pageSize=20&tags=satellite
         - sat-toolchain-tutorial.md
+        - odf-tutorial.md
   - navgroup:
       id: howto
       topics:

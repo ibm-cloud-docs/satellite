@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-07"
+lastupdated: "2022-10-19"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -37,6 +37,8 @@ Before you can deploy storage templates to clusters in your location, make sure 
 {: #sat-storage-vpc-create-config-ui}
 {: ui}
 
+Note, there is currently an issue with autofill in some browsers. If you don't see the IAM API Key field on the **Secrets** tab, try clearing the search field or a different web browser. 
+
 1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
 1. Enter a name for your configuration.
@@ -45,7 +47,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
 1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
-1. Click **Complete** to assign your storage configuration.
+1. Click **Complete** to assign your storage configuration. 
 
 ## Creating the {{site.data.keyword.block_storage_is_short}} configuration in the command line
 {: #sat-storage-vpc-create-config-cli}
