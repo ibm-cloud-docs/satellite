@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-06"
+lastupdated: "2022-10-19"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -60,6 +60,19 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
     ibmcloud resource service-key-create cos-cred-rw Writer --instance-name noobaa-store --parameters '{"HMAC": true}'
     ```
     {: pre}
+
+## Creating an OpenShift Data Foundation configuration in the UI
+{: #sat-storage-odf-remote-ui}
+
+1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
+1. On the **Parameters** tab, enter the parameters for your configuration.
+1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
 
 
 ## Creating an OpenShift Data Foundation configuration in the command line
@@ -278,6 +291,116 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
         ```
         {: screen}
 
+
+## Deploying an app that uses OpenShift Data Foundation
+{: #sat-storage-odf-remote-deploy}
+
+You can use the ODF storage classes to create PVCs for the apps in your clusters.
+{: shortdesc}
+
+1. Create a YAML configuration file for your PVC. In order for the PVC to match the PV, you must use the same values for the storage class and the size of the storage.
+
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: ocs-pvc
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      storageClassName: sat-ocs-cephfs-gold
+      resources:
+        requests:
+          storage: 5Gi
+    ```
+    {: codeblock}
+
+1. Create the PVC in your cluster.
+
+    ```sh
+    oc apply -f pvc.yaml
+    ```
+    {: pre}
+
+1. Create a YAML configuration file for a pod that mounts the PVC that you created. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file.
+
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: app
+    spec:
+      containers:
+      - name: app
+        image: nginx
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
+        volumeMounts:
+        - name: persistent-storage
+          mountPath: /test
+      volumes:
+      - name: persistent-storage
+        persistentVolumeClaim:
+          claimName: ocs-pvc
+    ```
+    {: codeblock}
+
+1. Create the pod in your cluster.
+
+    ```sh
+    oc apply -f pod.yaml
+    ```
+    {: pre}
+
+1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+
+    ```sh
+    oc get pods
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    NAME                                READY   STATUS    RESTARTS   AGE
+    app                                 1/1     Running   0          2m58s
+    ```
+    {: screen}
+
+1. Verify that the app can write data.
+
+    1. Log in to your pod.
+    
+        ```sh
+        oc exec <app-pod-name> -it bash
+        ```
+        {: pre}
+
+    1. Display the contents of the `test.txt` file to confirm that your app can write data to your persistent storage.
+    
+        ```sh
+        cat /test/test.txt
+        ```
+        {: pre}
+
+        Example output
+        ```sh
+        Tue Mar 2 20:09:19 UTC 2021
+        Tue Mar 2 20:09:25 UTC 2021
+        Tue Mar 2 20:09:31 UTC 2021
+        Tue Mar 2 20:09:36 UTC 2021
+        Tue Mar 2 20:09:42 UTC 2021
+        Tue Mar 2 20:09:47 UTC 2021
+        ```
+        {: screen}
+
+    1. Exit the pod.
+    
+        ```sh
+        exit
+        ```
+        {: pre}
+
 ## Scaling up your ODF configuration
 {: #sat-storage-odf-remote-scale-config}
 {: cli}
@@ -397,9 +520,9 @@ Use the command line to remove a storage assignment.
 | IAM API key | `iam-api-key` | Your IAM API key. | true | N/A | 
 | Perform Cleanup | `perform-cleanup` | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. | false |`false` |
 | KMS encryption | `kms-encryption` | Set to 'true' if you want to enable storageclasss encryption. | false |`false` |
-| KMS instance name | `kms-instance-name` |  Your KMS instance name. | false | N/A | 
-| KMS instance id | `kms-instance-id` |  Your KMS instance id. | false | N/A | 
-| KMS instance Base URL | `kms-base-url` |  Your KMS instance public URL to connect to the instance. | false | N/A | 
+| KMS instance name | `kms-instance-name` | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | false | N/A | 
+| KMS instance id | `kms-instance-id` | Your KMS instance id. | false | N/A | 
+| KMS instance Base URL | `kms-base-url` | Your KMS instance public URL to connect to the instance. | false | N/A | 
 | KMS instance API key token URL | `kms-token-url` | API key token URL to generate token for KMS instance. | false | N/A | 
 | KMS root key | `kms-root-key` | KMS root key of your instance. | false | N/A | 
 | KMS IAM API key | `kms-api-key` | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A | 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-06"
+lastupdated: "2022-10-19"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -151,6 +151,18 @@ When you create your ODF configuration, you must specify the device paths of the
 
 1. Repeat the previous steps for each worker node that you want to use for your ODF configuration.
 
+## Creating an OpenShift Data Foundation configuration in the UI
+{: #sat-storage-odf-local-ui}
+
+1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
+1. On the **Parameters** tab, enter the parameters for your configuration.
+1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
 
 
 ## Creating an OpenShift Data Foundation configuration in the command line
@@ -419,7 +431,6 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
     local-pv-f798e570   100Gi      RWO            Delete           Bound    openshift-storage/ocs-deviceset-0-data-0-6fgp6   localblock              12m
     ```
     {: screen}
-
 
 
 
@@ -803,7 +814,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | IAM API key | `iam-api-key` | Your IAM API key. | true | N/A | 
 | Perform Cleanup | `perform-cleanup` | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. | false |`false` |
 | KMS encryption | `kms-encryption` | Set to 'true' if you want to enable storageclasss encryption. | false |`false` |
-| KMS instance name | `kms-instance-name` |  Your KMS instance name. | false | N/A | 
+| KMS instance name | `kms-instance-name` | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | false | N/A | 
 | KMS instance id | `kms-instance-id` |  Your KMS instance id. | false | N/A | 
 | KMS instance Base URL | `kms-base-url` |  Your KMS instance public URL to connect to the instance. | false | N/A | 
 | KMS instance API key token URL | `kms-token-url` | API key token URL to generate token for KMS instance. | false | N/A | 

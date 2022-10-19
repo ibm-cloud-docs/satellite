@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-17"
+lastupdated: "2022-10-19"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -819,6 +819,27 @@ subcollection: satellite
 * [Verifying that the sample app is running](/docs/satellite?topic=satellite-sat_toolchain_tutorial#verify_app)
 
 * [Deploying a new version of your app from a different branch](/docs/satellite?topic=satellite-sat_toolchain_tutorial#modify_trigger)
+
+
+## Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters
+{: #sitemap_deploying_openshift_data_foundation_with__on_{{sitedatakeywordsatelliteshort}}_clusters}
+
+
+[Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial)
+
+* [Objectives](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-objectives)
+
+* [Audience](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-audience)
+
+* [Prerequisites](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-prereqs)
+
+* [Deploying the {{site.data.keyword.block_storage_is_short}} CSI driver](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-deploying-vpc)
+
+* [Deploying OpenShift Data Foundation](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-deploying_odf)
+
+* [Verifying your deployment](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-verify)
+
+* [Next Steps](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-next-steps)
 
 
 ## Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands
@@ -2088,6 +2109,8 @@ subcollection: satellite
 
 * [(Optional) Getting the device details for your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-devices)
 
+* [Creating an OpenShift Data Foundation configuration in the UI](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-ui)
+
 * [Creating an OpenShift Data Foundation configuration in the command line](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-cli)
 
     * [Optional: Adding additional worker nodes to your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-local#add-worker-nodes-odf-local)
@@ -2124,6 +2147,8 @@ subcollection: satellite
 
     * [Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-cos)
 
+* [Creating an OpenShift Data Foundation configuration in the UI](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-ui)
+
 * [Creating an OpenShift Data Foundation configuration in the command line](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-cli)
 
     * [Optional: Adding additional worker nodes to your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-remote#add-worker-nodes-odf-remote)
@@ -2131,6 +2156,8 @@ subcollection: satellite
 * [Assigning your ODF storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-odf-remote#assign-storage-odf-remote)
 
     * [Assigning a remote device storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-odf-remote#assign-storage-odf-remote-cli)
+
+* [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-deploy)
 
 * [Scaling up your ODF configuration](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-scale-config)
 
