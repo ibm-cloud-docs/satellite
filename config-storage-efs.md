@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-10-19"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -531,8 +531,8 @@ Use the CLI to remove a storage configuration.
 
 | Display name | Name | Description | Required? | Default |
 | --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS access key ID. | true | N/A | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS secret access key. | true | N/A | 
+| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | N/A | 
+| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | N/A | 
 {: caption="aws-efs-csi-driver version 1.3.7 parameter reference"}
 
 ## Version 1.3.1 parameter reference
@@ -540,8 +540,8 @@ Use the CLI to remove a storage configuration.
 
 | Display name | Name | Description | Required? | Default |
 | --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS access key ID. | true | N/A | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS secret access key. | true | N/A | 
+| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | N/A | 
+| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | N/A | 
 {: caption="aws-efs-csi-driver version 1.3.1 parameter reference"}
         
 ## Version 1.2.2 parameter reference
@@ -549,8 +549,8 @@ Use the CLI to remove a storage configuration.
 
 | Display name | Name | Description | Required? | Default |
 | --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS access key ID. | true | N/A | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS secret access key. | true | N/A | 
+| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | N/A | 
+| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | N/A | 
 {: caption="aws-efs-csi-driver version 1.2.2 parameter reference"}
 
 

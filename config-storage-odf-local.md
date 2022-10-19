@@ -814,7 +814,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | IAM API key | `iam-api-key` | Your IAM API key. | true | N/A | 
 | Perform Cleanup | `perform-cleanup` | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. | false |`false` |
 | KMS encryption | `kms-encryption` | Set to 'true' if you want to enable storageclasss encryption. | false |`false` |
-| KMS instance name | `kms-instance-name` |  Your KMS instance name. | false | N/A | 
+| KMS instance name | `kms-instance-name` | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | false | N/A | 
 | KMS instance id | `kms-instance-id` |  Your KMS instance id. | false | N/A | 
 | KMS instance Base URL | `kms-base-url` |  Your KMS instance public URL to connect to the instance. | false | N/A | 
 | KMS instance API key token URL | `kms-token-url` | API key token URL to generate token for KMS instance. | false | N/A | 
