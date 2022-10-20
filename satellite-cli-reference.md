@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-10-10"
+lastupdated: "2022-10-20"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -558,9 +558,6 @@ ibmcloud sat config ls
 
 Rename a {{site.data.keyword.satelliteshort}} configuration.
 {: shortdesc}
-
-Clusters that are subscribed to the existing configuration name are not automatically updated. Before you rename your configuration, check which clusters are subscribed to your configuration with the `ibmcloud sat config get` command. After you rename the configuration, use the `ibmcloud sat subscription create` command to subscribe these clusters to your new configuration name.
-{: note}
 
 ```sh
 ibmcloud sat config rename --config CONFIG --name NEW_NAME [-q]
