@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-03"
+lastupdated: "2022-10-20"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -78,6 +78,9 @@ To attach hosts to your location, you must download a host attachment script. Af
         - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
     * If your hosts are in an on-premises data center, see [Attaching on-premises RHCOS hosts](#attach-rhcos-hosts) or [Attaching on-premises RHEL hosts](#attach-rhel-hosts).
 
+After you attach a host to your location, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You might see error messages if you try to SSH into a host that has been successfully attached to a location. To restore the ability to SSH into the machine, you can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system.
+{: note}
+
 ## Attaching on-premises RHEL hosts to your location
 {: #attach-rhel-hosts}
 
@@ -117,6 +120,9 @@ To attach RHEL hosts that reside in your on-premises data center to your locatio
 If your host is not attaching to your location, you can log in to the host to debug it. For more information, see [Logging in to a RHEL host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login).
 {: tip}
 
+After you attach a host to your location, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You might see error messages if you try to SSH into a host that has been successfully attached to a location. To restore the ability to SSH into the machine, you can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system.
+{: note}
+
 ## Attaching on-premises RHCOS hosts to your location
 {: #attach-rhcos-hosts}
 
@@ -131,5 +137,7 @@ To attach RHCOS hosts that reside in your on-premises data center to your locati
 If your host is not attaching to your location, you can log in to the host to debug it. For more information, see [Logging in to a RHCOS host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login-rhcos).
 {: tip}
 
+After you attach a host to your location, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You might see error messages if you try to SSH into a host that has been successfully attached to a location. To restore the ability to SSH into the machine, you can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system.
+{: note}
 
 

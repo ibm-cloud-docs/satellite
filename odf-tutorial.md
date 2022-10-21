@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-10-21"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -63,7 +63,7 @@ The template is currently in beta. Do not use it for production workloads.
     :   Enter `https://iam.cloud.ibm.com`
 
     VPC IaaS endpoint
-    :   The VPC regional endpoint of your VPC cluster in the format `https://region.iaas.cloud.ibm.com`. Example: https://eu-de.iaas.cloud.ibm.com. For more information, see https://ibm.biz/vpc-endpoints
+    :   The VPC regional endpoint of your VPC cluster in the format `https://region.iaas.cloud.ibm.com`. Example: `https://eu-de.iaas.cloud.ibm.com`. For more information, see https://ibm.biz/vpc-endpoints
 
     Resource Group ID
     :   The ID of the resource group where your VPC is located. To retrieve this value, run the `ibmcloud is vpc VPC-ID` command and note the Resource group field.
