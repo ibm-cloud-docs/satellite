@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-10-24"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane
 
@@ -22,7 +22,7 @@ A location in {{site.data.keyword.satellitelong}} is a representation of an envi
 To set up a Satellite location, you must first create the location, attach hosts to it, and then create the location control plane. 
 
 
-To use [Red Hat CoreOS (RHCOS)](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) for a managed service such as worker nodes, you must enable it in your location. You can only enable new locations for RHCOS; you cannot migrate an existing location. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations). Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later. Want to verify if your location is enabled for Red Hat CoreOS? See [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location).
+To use [Red Hat CoreOS (RHCOS)](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os) for a managed service such as worker nodes, you must enable it in your location. You can only enable new locations for RHCOS; you cannot migrate an existing location. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations). Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later. Red Hat CoreOS-enabled locations don't support services other than {{site.data.keyword.redhat_openshift_notm}}. If you plan to use {{site.data.keyword.satelliteshort}}-enabled services other than {{site.data.keyword.redhat_openshift_notm}}, do not use Red Hat CoreOS-enabled locations. Want to verify if your location is enabled for Red Hat CoreOS? See [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 {: note}
 
 ## Satellite location control plane

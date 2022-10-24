@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-06"
+lastupdated: "2022-10-24"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -81,7 +81,7 @@ Red Hat Enterprise Linux 8 (RHEL 8)
 Red Hat CoreOS (RHCOS)
 :    RHCOS is a minimal operating system for running containerized workloads securely and at scale. It is based on RHEL and includes automated, remote upgrade features. For more information about the key benefits of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.10/architecture/architecture-rhcos.html){: external}.
 
-Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later.
+Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later. Red Hat CoreOS-enabled locations don't support services other than {{site.data.keyword.redhat_openshift_notm}}. If you plan to use {{site.data.keyword.satelliteshort}}-enabled services other than {{site.data.keyword.redhat_openshift_notm}}, do not use Red Hat CoreOS-enabled locations.
 {: note}
 
 
