@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-13"
+lastupdated: "2022-10-25"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -54,7 +54,7 @@ You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.br-sao.
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
 * Destination IP addresses: 163.107.69.114, 163.109.70.234, 169.57.155.74 
-* Destination hostnames: `c-01-ws.br-sao.link.satellite.cloud.ibm.com`, `c-02-ws.br-sao.link.satellite.cloud.ibm.com`, `c-03-ws.br-sao.link.satellite.cloud.ibm.com`, `c-04-ws.br-sao.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+* Destination hostnames: `c-01-ws.br-sao.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
 * Protocol and ports: HTTPS 443
 
 ## Allow hosts to be attached to a location and assigned to services in the location
