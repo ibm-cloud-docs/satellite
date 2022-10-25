@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-31"
+lastupdated: "2022-10-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,7 +20,7 @@ Review the {{site.data.keyword.cloud}} regions that you can choose from to manag
 {: shortdesc}
 
 
-Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later.
+Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later. Red Hat CoreOS-enabled locations don't support services other than {{site.data.keyword.redhat_openshift_notm}}. If you plan to use {{site.data.keyword.satelliteshort}}-enabled services other than {{site.data.keyword.redhat_openshift_notm}}, do not use Red Hat CoreOS-enabled locations.
 {: important}
 
 

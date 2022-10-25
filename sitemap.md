@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-10-25"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -789,7 +789,7 @@ subcollection: satellite
 
 
 ## Deploying Kubernetes resources to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config
-{: #sitemap_deploying_kubernetes_resources_to_clusters_with__and_{{sitedatakeywordsatelliteshort}}_config}
+{: #sitemap_deploying_kubernetes_resources_to_clusters_with__and__config}
 
 
 [Deploying Kubernetes resources to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-sat_toolchain_tutorial#sat_toolchain_tutorial)
@@ -822,7 +822,7 @@ subcollection: satellite
 
 
 ## Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters
-{: #sitemap_deploying_openshift_data_foundation_with__on_{{sitedatakeywordsatelliteshort}}_clusters}
+{: #sitemap_deploying_openshift_data_foundation_with__on__clusters}
 
 
 [Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial)
