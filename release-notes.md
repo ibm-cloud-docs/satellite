@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-18"
+lastupdated: "2022-10-26"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,14 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## October 2022
 {: #satellite-oct22}
+
+
+### 26 October 2022
+{: #satellite-oct2622}
+{: release-note}
+
+Create {{site.data.keyword.satelliteshort}} storage configurations from the console
+:   You can now create and deploy {{site.data.keyword.satelliteshort}} storage configurations from the [location console](https://cloud.ibm.com/satellite/locations){: external}. For more information about storage templates, see [Understanding storage](/docs/satellite?topic=satellite-sat-storage-template-ov).
 
 ### 7 October 2022
 {: #satellite-oct722}
