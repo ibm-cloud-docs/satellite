@@ -257,7 +257,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 | --- | --- | --- |
 | `ibm-s3fs-cos` | Immediate | False |
 | `ibm-s3fs-cos-perf` | Immediate | False |
-{: caption="Table 14. Storage class reference for IBM Systems block storage" caption-side="top"}
+{: caption="Table 14. Storage class reference for IBM Systems storage" caption-side="top"}
 
 
 ## {{site.data.keyword.IBM_notm}} VPC block storage
@@ -292,4 +292,3 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for VMware stora
 | `sat-vsphere-vsan-block-metro` **Default** | XX | XX | XX GB - XX TB | XXX | Delete | WaitForFirstConsumer | 
 | `sat-vsphere-vsan-block`  | X | X | XX GB - XXX GB | XXX | Delete | Immediate | 
 {: caption="Table 16. Storage class reference for VMware storage" caption-side="top"}
-
