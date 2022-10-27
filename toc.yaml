@@ -188,6 +188,7 @@ toc:
         - sat-regions.md
         - responsibilities.md
         - ha.md
+        - disconnected-use.md
         - sat-notices.md
   - navgroup:
       id: help
