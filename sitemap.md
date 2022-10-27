@@ -1801,7 +1801,7 @@ subcollection: satellite
 
 * [Deploying an app that uses your {{site.data.keyword.cos_full_notm}} configuration](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-app)
 
-* [Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the console](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-rm-cli)
+* [Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the console](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-rm-ui)
 
 * [Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the command line](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-rm-cli)
 

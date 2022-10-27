@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, [{CURRENT_YEAR}]
-lastupdated: "[{LAST_UPDATED_DATE}]"
+  years: 2022, 2022
+lastupdated: "2022-10-27"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -311,7 +311,7 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
 
 
 ## Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the console
-{: #config-storage-cos-rm-cli}
+{: #config-storage-cos-rm-ui}
 {: ui}
 
 1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
