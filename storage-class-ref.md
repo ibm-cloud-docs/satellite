@@ -253,7 +253,10 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 ## {{site.data.keyword.IBM_notm}} Systems object storage
 {: #sat-storage-ibm-object-sc-ref}
 
-{[storage-class-ibm-object.md]}
+| Storage class name | Volume binding mode | Retain | 
+| --- | --- | --- |
+| `ibm-s3fs-cos` | Immediate | False |
+| `ibm-s3fs-cos-perf` | Immediate | False |
 {: caption="Table 14. Storage class reference for IBM Systems block storage" caption-side="top"}
 
 
