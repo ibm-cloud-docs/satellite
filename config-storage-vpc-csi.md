@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-24"
+lastupdated: "2022-10-27"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -297,7 +297,7 @@ You can use the `ibm-vpc-block-csi-driver` to create PVCs that you can use in yo
 1. Verify that the app can write to your block storage volume by logging in to your pod.
 
     ```sh
-    oc exec XXX
+    oc exec my-deployment
     ```
     {: pre}
 

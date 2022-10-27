@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-22"
+lastupdated: "2022-10-27"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -89,6 +89,7 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 * [Amazon Elastic File System (EFS)](/docs/satellite?topic=satellite-config-storage-efs)
 * **Deprecated** [{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale)
 * [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver](/docs/satellite?topic=satellite-config-storage-block-csi)
+* **Beta** [{{site.data.keyword.cos_full_notm}} object storage CSI driver](/docs/satellite?topic=satellite-config-storage-cos)
 * [Microsoft Azure Disk CSI Driver](/docs/satellite?topic=satellite-config-storage-azure-csi)
 * [Microsoft Azure File CSI Driver](/docs/satellite?topic=satellite-config-storage-azurefile-csi)
 * [NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp-trident)

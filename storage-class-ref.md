@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-24"
+lastupdated: "2022-10-27"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -244,7 +244,20 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 
 
 
+## {{site.data.keyword.IBM_notm}} Systems block storage
+{: #sat-storage-ibm-block-csi-sc-ref}
 
+
+{: caption="Table 14. Storage class reference for IBM Systems block storage" caption-side="top"}
+
+## {{site.data.keyword.IBM_notm}} Systems object storage
+{: #sat-storage-ibm-object-sc-ref}
+
+| Storage class name | Volume binding mode | Retain | 
+| --- | --- | --- |
+| `ibm-s3fs-cos` | Immediate | False |
+| `ibm-s3fs-cos-perf` | Immediate | False |
+{: caption="Table 14. Storage class reference for IBM Systems storage" caption-side="top"}
 
 
 ## {{site.data.keyword.IBM_notm}} VPC block storage
@@ -264,7 +277,18 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for IBM VPC bloc
 | `ibmc-vpc-block-metro-retain-5iops-tier` | 5 | 5 | 10 GB - 9600 GB | SSD | Retain | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-retain-custom`  | Custom | Custom | Based on IOPS | SSD | Retain | WaitForFirstConsumer |
 | `ibmc-vpc-block-metro-retain-general-purpose` | 3 | 3 | 10 GiB - 16 TB | SSD | Retain | WaitForFirstConsumer |
-{: caption="Table 14. Storage class reference for IBM VPC block storage" caption-side="top"}
+{: caption="Table 15. Storage class reference for IBM VPC block storage" caption-side="top"}
 
 
+## VMware Storage CSI Driver
+{: #sat-storage-vmware-csi-sc-ref}
 
+
+Review the {{site.data.keyword.satelliteshort}} storage classes for VMware storage. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
+{: shortdesc}
+
+ Storage class name | Default Read IOPS per GB | Default Write IOPS per GB | Size range (per disk) | Hard disk | Reclaim policy | Volume Binding Mode |
+| --- | --- | --- | --- | --- | --- | --- |
+| `sat-vsphere-vsan-block-metro` **Default** | XX | XX | XX GB - XX TB | XXX | Delete | WaitForFirstConsumer | 
+| `sat-vsphere-vsan-block`  | X | X | XX GB - XXX GB | XXX | Delete | Immediate | 
+{: caption="Table 16. Storage class reference for VMware storage" caption-side="top"}

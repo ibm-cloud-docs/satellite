@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-26"
+lastupdated: "2022-10-27"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -158,6 +158,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct22)
+
+    * [27 Octover 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct2722)
+
+        * New! Beta support for the {{site.data.keyword.cos_full_notm}} CSI driver template
 
     * [26 October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct2622)
 
@@ -1783,6 +1787,32 @@ subcollection: satellite
 
 * [Deploying an app that uses your {{site.data.keyword.IBM_notm}} block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
 
+[{{site.data.keyword.cos_full_notm}} CSI Driver](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos)
+
+* [Prerequisites](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-prereqs)
+
+* [Creating a {{site.data.keyword.cos_full_notm}} configuration from the console](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-create-ui)
+
+* [Creating a {{site.data.keyword.cos_full_notm}} configuration from the CLI](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-create-cli)
+
+* [Assigning a {{site.data.keyword.cos_full_notm}} configuration from the console](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-assign-ui)
+
+* [Assigning a {{site.data.keyword.cos_full_notm}} configuration from the CLI](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-assign-cli)
+
+* [Deploying an app that uses your {{site.data.keyword.cos_full_notm}} configuration](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-app)
+
+* [Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the console](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-rm-ui)
+
+* [Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the command line](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-rm-cli)
+
+* [Parameter reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-parameter-reference)
+
+* [Version 2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-cos#ibm-object-storage-plugin-2.2)
+
+* [Storage class reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-sc-ref)
+
+* [Getting help and support for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#sat-storage-cos-support)
+
 [Deprecated {{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale#config-storage-spectrum-scale)
 
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-prereq)
@@ -2246,7 +2276,13 @@ subcollection: satellite
 
 * [{{site.data.keyword.IBM_notm}} Spectrum Scale](/docs/satellite?topic=satellite-storage-class-ref#spec-scale-sc-ref)
 
+* [{{site.data.keyword.IBM_notm}} Systems block storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-block-csi-sc-ref)
+
+* [{{site.data.keyword.IBM_notm}} Systems object storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-object-sc-ref)
+
 * [{{site.data.keyword.IBM_notm}} VPC block storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-vpc-csi-sc-ref)
+
+* [VMware Storage CSI Driver](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-vmware-csi-sc-ref)
 
 
 ## Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions

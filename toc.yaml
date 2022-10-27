@@ -126,6 +126,7 @@ toc:
                   label: IBM storage templates
                   topics:
                     - config-storage-block-csi.md 
+                    - config-storage-cos.md
                     - config-storage-spectrum-scale.md
                     - config-storage-vpc-csi.md
               - topicgroup:
@@ -147,7 +148,6 @@ toc:
                   label: VMware storage templates
                   topics:
                     - config-storage-vmware-csi.md 
-              - sat-storage-cos.md
               - storage-class-ref.md
         - sg-usecase.md
         - topicgroup:
@@ -188,6 +188,7 @@ toc:
         - sat-regions.md
         - responsibilities.md
         - ha.md
+        - disconnected-use.md
         - sat-notices.md
   - navgroup:
       id: help
