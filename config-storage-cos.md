@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-27"
+lastupdated: "2022-11-01"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -383,14 +383,17 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 | Helm Chart Release Name | `helm-release-name` | Release name of the chart | false |`ibm-object-storage-plugin` |
 | Helm Chart Additional Parameters (Optional) | `parameters` | Helm Chart Additional Parameters (Optional) | false | N/A | 
 | COS plug-in License: Apache License Version 2.0 | `license` | COS plug-in License: Apache License Version 2.0 | false |`true` |
-| COS Endpoint | `cos-endpoint` | Enter COS Endpoint. For more info, refer https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-endpoints | true | N/A | 
-| COS storageclass | `cos-storageclass` | Enter COS storageclass. For more info, refer https://cloud.ibm.com/docs/cloud-object-storage/basics?topic=cloud-object-storage-classes | true | N/A | 
+| COS Endpoint | `cos-endpoint` | Enter COS Endpoint. For more info, see [Endpoints and storage locations](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints). | true | N/A | 
+| COS storageclass | `cos-storageclass` | Enter COS storage class. For more info, see [Using storage classes](/docs/cloud-object-storage/basics?topic=cloud-object-storage-classes). | true | N/A | 
 {: caption="ibm-object-storage-plugin version 2.2 parameter reference"}
 
 ## Storage class reference for {{site.data.keyword.cos_full_notm}}
 {: #config-storage-cos-sc-ref}
 
-{[storage-class-ibm-object.md]}
+| Storage class name | Volume binding mode | Retain | 
+| --- | --- | --- |
+| `ibm-s3fs-cos` | Immediate | False |
+| `ibm-s3fs-cos-perf` | Immediate | False |
 
 ## Getting help and support for {{site.data.keyword.cos_full_notm}}
 {: #sat-storage-cos-support}
