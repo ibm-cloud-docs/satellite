@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-11-01"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -111,7 +111,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     {: tip}
 
     1. Enter a name for your launch template.
-    2. In the **Amazon machine image (AMI)** section, make sure to select a supported Red Hat Enterprise Linux 7 or 8 operating system that you can find by entering the AMI ID `ami-030e754805234517e`. If you are creating an Red Hat CoreOS host, you must provide the image to AWS. For more information, see [Importing a VM as an image using](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html){: external}.
+    2. In the **Amazon machine image (AMI)** section, make sure to select a supported Red Hat Enterprise Linux 7 or 8 operating system that you can find by entering the AMI ID. You can match AMI IDs and the proper Red Hat Enterprise Linux version by refering to the [Red Hat Enterprise Linux AMI Available on Amazon Web Services documentation](https://access.redhat.com/solutions/15356){: external}. If you are creating an Red Hat CoreOS host, you must provide the image to AWS. For more information, see [Importing a VM as an image using](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html){: external}.
     3. From the **Instance type** section, select one of the [supported AWS instance types](#aws-instance-types).
     4. From the **Key pair (login)** section, select the `.pem` key that you want to use to log in to your machines later. If you do not have a `.pem` key, create one.
     5. In the **Network settings**, select **Virtual Private Cloud (VPC)** and an existing subnet and a security group that allows network traffic as defined in [Security group settings](#aws-reqs-secgroup). If you do not have a subnet or security group that you want to use, create one.
