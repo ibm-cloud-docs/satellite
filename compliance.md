@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-15"
+lastupdated: "2022-11-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -113,7 +113,7 @@ Let's Encrypt certificates are automatically generated for several {{site.data.k
 | Worker node connection to the API server | 10.240.128.09 | 3 years | You | [Update hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers). |
 | {{site.data.keyword.satelliteshort}} control plane master API endpoint | `http://c103-1.containers.cloud.ibm.com/` | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | Regenerated during automated rollouts for major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane master hosts. |
 | {{site.data.keyword.satelliteshort}} control plane master hosts | - | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | [Update control plane hosts](/docs/satellite?topic=satellite-host-update-location). |
-{: caption="Certificates for Satellite domains and hosts" caption-side="top"}
+{: caption="Certificates for Satellite domains and hosts" caption-side="bottom"}
 
 
 ## Platform compliance and certification

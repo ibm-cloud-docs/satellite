@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-14"
+lastupdated: "2022-11-03"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -35,7 +35,7 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 | ![Legend3](/images/sat_architecture_legend3.png "Satellite service architecture legend 3") | Integrates with Identity and Access Management to control {{site.data.keyword.satelliteshort}} location access and {{site.data.keyword.cos_full_notm}} to back up {{site.data.keyword.satelliteshort}} control plane data. In addition, you can connect to other {{site.data.keyword.cloud_notm}} services to enhance your location capabilities. |
 | ![Legend4](/images/sat_architecture_legend4.png "Satellite service architecture legend 4") | Securely connects the Satellite location to the {{site.data.keyword.cloud_notm}} region that the location is managed from. Incoming and outgoing network traffic on this connection is monitored and can be reviewed and analyzed by the location administrator. |
 | ![Legend5](/images/sat_architecture_legend5.png "Satellite service architecture legend 5") | Latency requirements between {{site.data.keyword.satelliteshort}} components such as the hosts that you use for the control plane and clusters, in milliseconds. As latency increases, you might see service interruptions. |
-{: caption="Legend and description for Satellite architecture image." caption-side="top"}
+{: caption="Legend and description for Satellite architecture image." caption-side="bottom"}
 
 ### Master and worker node components
 {: #architecture-master-worker}
@@ -51,7 +51,7 @@ Review a description of the main components of the {{site.data.keyword.satellite
 | {{site.data.keyword.secrets-manager_full_notm}} | With {{site.data.keyword.secrets-manager_full_notm}}, you can create secrets dynamically and lease them to applications while you control access from a single location. Built on open source HashiCorp Vault, {{site.data.keyword.secrets-manager_full_notm}} helps you get the data isolation of a dedicated environment with the benefits of a public cloud. For more information, see [Getting started with {{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started).|
 {: summary="Overview of the Satellite control plane master components"}
 {: class="simple-tab-table"}
-{: caption="Overview of Satellite control plane master components." caption-side="top"}
+{: caption="Overview of Satellite control plane master components." caption-side="bottom"}
 {: #master-components}
 {: tab-title="Master components"}
 {: tab-group="satellite-components"}
@@ -63,7 +63,7 @@ Review a description of the main components of the {{site.data.keyword.satellite
 |Cluster master|When you create a {{site.data.keyword.satelliteshort}} cluster in your location, the master of this cluster is deployed onto your {{site.data.keyword.satelliteshort}} control plane worker nodes to allow communication to {{site.data.keyword.cloud_notm}} and monitoring through {{site.data.keyword.IBM_notm}}. For more information, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters).|
 {: summary="Overview of the Satellite control plane worker node components"}
 {: class="simple-tab-table"}
-{: caption="Overview of Satellite control plane worker node components." caption-side="top"}
+{: caption="Overview of Satellite control plane worker node components." caption-side="bottom"}
 {: #worker-node-components}
 {: tab-title="Worker node components"}
 {: tab-group="satellite-components"}

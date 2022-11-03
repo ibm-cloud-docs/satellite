@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-23"
+lastupdated: "2022-11-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -48,7 +48,7 @@ Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location 
 | {{site.data.keyword.redhat_openshift_notm}} clusters are in an unhealthy state. | Resolve certain health issues with {{site.data.keyword.redhat_openshift_notm}} clusters. |
 | Default monitoring tools like Prometheus do not work. | Send alerts to your {{site.data.keyword.la_full_notm}} instance and return a status message with further troubleshooting information. |
 | Ingress subdomain registration fails. | Alert {{site.data.keyword.IBM_notm}} engineers to troubleshoot the issues further and return a status message with further troubleshooting information. |
-{: caption="{{site.data.keyword.IBM_notm}} monitoring actions to address certain scenarios." caption-side="top"}
+{: caption="{{site.data.keyword.IBM_notm}} monitoring actions to address certain scenarios." caption-side="bottom"}
 
 
 ## Viewing location, host, and cluster health
@@ -76,7 +76,7 @@ You can review the host health from the **Locations** table in the [{{site.data.
 | `normal` | The {{site.data.keyword.satelliteshort}} location is ready to use. |
 | `provisioning` | The control plane for the {{site.data.keyword.satelliteshort}} is provisioning. You cannot assign hosts to other {{site.data.keyword.satelliteshort}} resources, such as clusters, in the location until the control plane is ready.|
 | `resolving` | {{site.data.keyword.satelliteshort}} is trying to resolve issues for you, such as by assigning available hosts to the control plane to relieve capacity issues. For more information, see the status message. |
-{: caption="Location health states." caption-side="top"}
+{: caption="Location health states." caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column describes the health state of the location. The second column describes what the health state means."}
 
 ### Viewing host health
@@ -98,7 +98,7 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 | `unassigned` | The host is attached to the {{site.data.keyword.satelliteshort}} location and ready to be [assigned to a {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). If you tried to assign the host unsuccessfully, see [Cannot assign hosts to a cluster](/docs/satellite?topic=satellite-assign-fails).|
 | `unknown` | The health of the host is unknown. If the host is unassigned, try [assigning the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) to a {{site.data.keyword.satelliteshort}} resource, such as a cluster. If the host is assigned, try debugging the host by following the steps in [debugging the health of the host](/docs/satellite?topic=satellite-ts-hosts-debug). If the host still has issues, try removing, updating, and reattaching the host. |
 | `unresponsive` | The host did not check in with the {{site.data.keyword.satelliteshort}} location control plane within the past 5 minutes. The host cannot be assigned when it is unresponsive. Try [debugging the health of the host](/docs/satellite?topic=satellite-ts-hosts-debug), particularly the network connectivity. |
-{: caption="Host health states." caption-side="top"}
+{: caption="Host health states." caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column describes the health state of the host. The second column describes what the health state means."}
 
 ### Viewing cluster health
@@ -135,7 +135,7 @@ You can view the registration status of clusters that are enabled for use with {
 | `active` | {{site.data.keyword.satelliteshort}} Config components for the location are installed in the cluster, and at least one resource is being watched. |
 | `inactive` | {{site.data.keyword.satelliteshort}} Config components were manually removed from the cluster, or are installed but are no longer responding to {{site.data.keyword.satelliteshort}} Config. For example, network connectivity might be disconnected. Existing resources, if any, continue to run but do not receive updates. To resolve the issue, try debugging your [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-ts-locations-debug) or [cluster](/docs/openshift?topic=openshift-debug_clusters). |
 | `registered` | {{site.data.keyword.satelliteshort}} Config components are installed in the cluster, but no resources are currently watched. To set up Watch-keeper, see [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-resources). |
-{: caption="Host health states." caption-side="top"}
+{: caption="Host health states." caption-side="bottom"}
 
 
 
@@ -181,7 +181,7 @@ The total number of {{site.data.keyword.satelliteshort}} Link tunnel servers pre
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
-{: caption="Metadata for the location tunnel numbers metric" caption-side="top"}
+{: caption="Metadata for the location tunnel numbers metric" caption-side="bottom"}
 
 #### Location latency
 {: #ibm_satellite_link_location_rtt_second}
@@ -194,7 +194,7 @@ The total round trip time of data in milliseconds for the location.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
-{: caption="Metadata for the location latency metric" caption-side="top"}
+{: caption="Metadata for the location latency metric" caption-side="bottom"}
 
 #### Location traffic to cloud
 {: #ibm_satellite_link_location_to_cloud_data_rate}
@@ -207,7 +207,7 @@ The total rate of data in bytes per second in the to-cloud direction for the loc
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
-{: caption="Metadata for the location traffic to cloud metric" caption-side="top"}
+{: caption="Metadata for the location traffic to cloud metric" caption-side="bottom"}
 
 #### Location traffic from cloud
 {: #ibm_satellite_link_location_from_cloud_data_rate}
@@ -220,7 +220,7 @@ The total rate of data in bytes per second in the from-cloud direction for the l
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
-{: caption="Metadata for the location traffic from cloud metric" caption-side="top"}
+{: caption="Metadata for the location traffic from cloud metric" caption-side="bottom"}
 
 #### Location traffic total
 {: #ibm_satellite_link_location_total_data_rate}
@@ -233,7 +233,7 @@ The total rate of data in bytes per second in to-cloud and from-cloud directions
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID` |
-{: caption="Metadata for the location traffic total metric" caption-side="top"}
+{: caption="Metadata for the location traffic total metric" caption-side="bottom"}
 
 #### Endpoint connection count
 {: #ibm_satellite_link_endpoint_connection_count}
@@ -246,7 +246,7 @@ The total number of connections present at the endpoint.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
-{: caption="Metadata for the Endpoint connection count metric" caption-side="top"}
+{: caption="Metadata for the Endpoint connection count metric" caption-side="bottom"}
 
 #### Endpoint traffic to cloud
 {: #ibm_satellite_link_endpoint_to_cloud_data_rate}
@@ -259,7 +259,7 @@ The rate of data in bytes per second in the to-cloud direction for the endpoint.
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
-{: caption="Metadata for the Endpoint traffic to cloud metric" caption-side="top"}
+{: caption="Metadata for the Endpoint traffic to cloud metric" caption-side="bottom"}
 
 #### Endpoint traffic from cloud
 {: #ibm_satellite_link_endpoint_from_cloud_data_rate}
@@ -272,7 +272,7 @@ The rate of data in bytes per second in the from-cloud direction for the endpoin
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
-{: caption="Metadata for the endpoint traffic from cloud metric" caption-side="top"}
+{: caption="Metadata for the endpoint traffic from cloud metric" caption-side="bottom"}
 
 #### Endpoint traffic total
 {: #ibm_satellite_link_endpoint_total_data_rate}
@@ -285,7 +285,7 @@ The total rate of data in bytes per second in to-cloud and from-cloud directions
 | `Metric Type` | `gauge` |
 | `Value Type`  | `none` |
 | `Segment By` | `Service instance, Service instance name, Location ID, Endpoint ID, Endpoint Name` |
-{: caption="Metadata for the endpoint traffic total metric" caption-side="top"}
+{: caption="Metadata for the endpoint traffic total metric" caption-side="bottom"}
 
 ### Attributes for segmentation
 {: #attributes}
@@ -308,7 +308,7 @@ The following global attributes are available for segmenting all the [available 
 | `Resource group` | `ibm_resource_group_name` | The resource group where the {{site.data.keyword.satelliteshort}} location was created |
 | `Scope` | `ibm_scope` | The account GUID associated with this metric |
 | `Service name` | `ibm_service_name` | The name of the service that generates this metric |
-{: caption="Global attributes for metric segmentation" caption-side="top"}
+{: caption="Global attributes for metric segmentation" caption-side="bottom"}
 
 #### Additional attributes
 {: #additional-attributes}
@@ -323,7 +323,7 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 | `Location ID` | `ibm_satellite_link_location_id` | The identifier of the location |
 | `Service instance` | `ibm_service_instance` | The service instance segment identifies the instance the metric is associated with |
 | `Service instance name` | `ibm_service_instance_name` | The user-provided name of the service instance, which might not be unique across regions in the account |
-{: caption="Additional attributes for metric segmentation" caption-side="top"}
+{: caption="Additional attributes for metric segmentation" caption-side="bottom"}
 
 
 ## Setting up monitoring for clusters

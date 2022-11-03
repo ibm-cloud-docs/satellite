@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-09-07"
+lastupdated: "2022-11-03"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location
 
@@ -108,7 +108,7 @@ Get the benefits of a [managed {{site.data.keyword.redhat_openshift_notm}} servi
 | {{site.data.keyword.satelliteshort}} management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
 | OCP licensing fee | Red Hat charges a fee for Red Hat Enterprise Linux and OpenShift Container Platform per 2 vCPU hour. | This charge is not included in your {{site.data.keyword.cloud_notm}} bill. Instead, you cover this charge by [bringing your own license](#byo-ocp). |
 | Infrastructure | Varies by provider | The underlying infrastructure that you bring to {{site.data.keyword.satelliteshort}} is your own, so it has its own charges. Consult your infrastructure provider for more details, such as about the storage, compute, and networking of the hosts in a cloud or on-prem environment. |
-{: caption="{{site.data.keyword.redhat_openshift_notm}} cluster charges." caption-side="top"}
+{: caption="{{site.data.keyword.redhat_openshift_notm}} cluster charges." caption-side="bottom"}
 
 #### Other services
 {: #pricing-services-other}
@@ -126,7 +126,7 @@ When you create a location, you must create a {{site.data.keyword.satelliteshort
 | -------------- | ------------------------- | ---------------------- |
 | {{site.data.keyword.satelliteshort}} management fee | Per vCPU hour of the hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling like IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more.  |
 | Infrastructure | Varies by provider | The underlying infrastructure that you bring to {{site.data.keyword.satelliteshort}} is your own, so it has its own charges. Consult your infrastructure provider for more details, such as about the storage, compute, and networking of the hosts in a cloud or on-prem environment. |
-{: caption="{{site.data.keyword.satelliteshort}} location control plane charges." caption-side="top"}
+{: caption="{{site.data.keyword.satelliteshort}} location control plane charges." caption-side="bottom"}
 
 ## How do I bring my own OCP license?
 {: #byo-ocp}

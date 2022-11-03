@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-03"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -163,7 +163,7 @@ Review the following suggested [AWS EC2 instance types](https://aws.amazon.com/e
 | `m5d.xlarge` | 4 | 16 | At least 100 GB SSD attached | Up to 10 |
 | `m5d.2xlarge` | 8 | 32 | At least 100 GB SSD attached | Up to 10 |
 | `m5d.4xlarge` | 16 | 64 | At least 100 GB SSD attached | Up to 10 |
-{: caption="AWS instance types" caption-side="top"}
+{: caption="AWS instance types" caption-side="bottom"}
 
 
 ## Security group settings for AWS

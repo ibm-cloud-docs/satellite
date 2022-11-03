@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-11-03"
 
 keywords: satellite, hybrid, multicloud, alibaba, alibaba hosts, alibaba cloud
 
@@ -172,7 +172,7 @@ Example security group for Alibaba
 | Allow |	1 | Custom TCP | Destination `30000/32767` | Source `0.0.0.0/0` |
 | Allow |	1 | Custom TCP | Destination `443/443` | Source `0.0.0.0/0` |
 {: summary="The table rows are read from left to right. The first column contains the event for the action. The second column describes the action."}
-{: caption="Cluster add-on events" caption-side="top"}
+{: caption="Cluster add-on events" caption-side="bottom"}
 
 In addition to these inbound rules, you must allow all outbound connectivity to all ports and IP addresses.
 {: note}

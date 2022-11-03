@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-11-03"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -567,7 +567,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for Google compu
 | `sat-gce-block-silver-metro` | 6 | 6 | 10 GB - 64 GB | SSD | Delete | WaitForFirstConsumer |
 | `sat-gce-block-bronze`  | 0.75 | 1.5 | 10 GiB - 64 TiB | HDD | Delete | Immediate |
 | `sat-gce-block-bronze-metro` | 0.75 | 1.5 | 10 GiB - 64 TiB | HDD | Delete | WaitForFirstConsumer |
-{: caption="Table 2. Storage class reference for Google compute engine persistent disk storage" caption-side="top"}
+{: caption="Table 2. Storage class reference for Google compute engine persistent disk storage" caption-side="bottom"}
 
 
 ## Getting help and support for Google Compute Engine

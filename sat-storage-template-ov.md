@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-27"
+lastupdated: "2022-11-03"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -59,7 +59,7 @@ You can also quickly update the configuration parameters and apply them automati
 | Quickly and consistently install storage drivers across multiple clusters. | Yes| No |
 | Repeatable, site-specific or storage-specific configurations. | Yes | No |
 | Certified and tested with {{site.data.keyword.satelliteshort}}. | Yes| No |
-{: caption="Comparison of supported features between using {{site.data.keyword.satelliteshort}} storage templates and bringing your own storage drivers" caption-side="top"}
+{: caption="Comparison of supported features between using {{site.data.keyword.satelliteshort}} storage templates and bringing your own storage drivers" caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is a description of the feature. The second column is the feature support on Satellite. The third column is the feature support for bring your own drivers."}
 
 ## How do templates work?

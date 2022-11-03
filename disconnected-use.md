@@ -1,6 +1,6 @@
 copyright:
-  years: 2022, [{CURRENT_YEAR}]
-lastupdated: "[{LAST_UPDATED_DATE}]"
+  years: 2022, 2022
+lastupdated: "2022-11-03"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -77,7 +77,7 @@ The following tables explain the behavior and limitations of different component
 | Viewing status | View cluster status from the CLI and console. | You cannot view cluster status. | N/A |
 | Removing/adding nodes | Remove or add nodes from the CLI and console. | You cannot remove or add nodes. | N/A |
 | Autoscaling clusters | Autoscaling is managed by the Cluster Autoscaler Add-on. | You cannot autoscale clusters. | N/A |
-{: caption="Disconnected cluster management" caption-side="top"}
+{: caption="Disconnected cluster management" caption-side="bottom"}
 
 ### Apps disconnected usage
 {: #apps}
@@ -87,7 +87,7 @@ The following tables explain the behavior and limitations of different component
 | Deployment | You can deploy apps by using your preferred methods, such as `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can still deploy apps while disconnected by using the Kubernetes API. | Unlimited |
 | Removal | You can remove apps by using your preferred methods, such as `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can still remove apps while disconnected by using the Kubernetes API. | Unlimited |
 | Scaling | You can scale apps by using your preferred methods, such as `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can still scale apps while disconnected by using the Kubernetes API. | Unlimited |
-{: caption="Disconnected app management" caption-side="top"}
+{: caption="Disconnected app management" caption-side="bottom"}
 
 ### IBM Cloud Catalog disconnected usage
 {: #ibm-cloud-catelog}
@@ -95,7 +95,7 @@ The following tables explain the behavior and limitations of different component
 | Feature | Connected behavior | Disconnected behavior | Maximum disconnection tolerance |
 | -- | -- | -- | -- |
 | Managing resources from the IBM Cloud Catalog | Search for and deploy resources from the catalog. | You cannot search for and deploy resources from the catalog. | Zero |
-{: caption="Disconnected Cloud Catalog management" caption-side="top"}
+{: caption="Disconnected Cloud Catalog management" caption-side="bottom"}
 
 ### Identity and access management disconnected usage
 {: #identity-access}
@@ -103,7 +103,7 @@ The following tables explain the behavior and limitations of different component
 | Feature | Connected behavior | Disconnected behavior | Maximum disconnection tolerance |
 | -- | -- | -- | -- |
 | Authorization | -- | -- | -- |
-{: caption="Disconnected identity and access management" caption-side="top"}
+{: caption="Disconnected identity and access management" caption-side="bottom"}
 
 ### Secret management disconnected usage
 {: #secret-management}
@@ -111,7 +111,7 @@ The following tables explain the behavior and limitations of different component
 | Feature | Connected behavior | Disconnected behavior | Maximum disconnection tolerance |
 | -- | -- | -- | -- |
 | Secret and key management using Secret Manager  | You can use Secret Manager for your secrets. | Secrets Manager is not available | Zero |
-{: caption="Disconnected secret management" caption-side="top"}
+{: caption="Disconnected secret management" caption-side="bottom"}
 
 ### Logging and monitoring disconnected usage
 {: #log-monitor}
@@ -123,7 +123,7 @@ The following tables explain the behavior and limitations of different component
 | Application logging using other provider | You can use third-party logging tools. | No impact. | Unlimited |
 | System/Kubernetes logging using other provider | You can use third-party logging tools. | No impact. | Unlimited |
 | Alerting rules and paging for metrics | You can set up alerts in {{site.data.keyword.monitoringlong_notm}}. | Alerts are not triggered. | Zero |
-{: caption="Disconnected logging and monitoring" caption-side="top"}
+{: caption="Disconnected logging and monitoring" caption-side="bottom"}
 
 ### Config management disconnected usage
 {: #config-management}
@@ -132,7 +132,7 @@ The following tables explain the behavior and limitations of different component
 | -- | -- | -- | -- |
 | {{site.data.keyword.satelliteshort}} Config | You can create and manage configurations by using {{site.data.keyword.satelliteshort}} Config. | You cannot create and manage configurations by using {{site.data.keyword.satelliteshort}} Config. | Zero |
 | {{site.data.keyword.satelliteshort}} Storage Config | You can create and manage configurations by using {{site.data.keyword.satelliteshort}} Storage Config.  | You cannot create and manage configurations by using {{site.data.keyword.satelliteshort}} Storage Config. | Zero |
-{: caption="Disconnected config management" caption-side="top"}
+{: caption="Disconnected config management" caption-side="bottom"}
 
 ### Networking disconnected usage
 {: #networking}
@@ -140,5 +140,5 @@ The following tables explain the behavior and limitations of different component
 | Feature | Connected behavior | Disconnected behavior | Maximum disconnection tolerance |
 | -- | -- | -- | -- |
 | Deploying or updating policies {{site.data.keyword.satelliteshort}} Service Mesh | You can deploy or update policies by using the CLI and console. | You can use `kubectl` to deploy and update policies. | Unlimited |
-{: caption="Disconnected network and service mesh management" caption-side="top"}
+{: caption="Disconnected network and service mesh management" caption-side="bottom"}
 

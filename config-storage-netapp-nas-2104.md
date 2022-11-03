@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-11-03"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -619,7 +619,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-file-silver-encrypted` | ONTAP-NAS | NFS | User defined QoS limit. | Encryption enabled. | Delete |
 | `sat-netapp-file-bronze` | ONTAP-NAS | NFS | User-defined QoS limit. | Encryption disabled. | Delete |
 | `sat-netapp-file-bronze-encrypted` | ONTAP-NAS | NFS | User-defined QoS limit.| Encryption enabled. | Delete |
-{: caption="NetApp ONTAP-NAS storage class reference." caption-side="top"}
+{: caption="NetApp ONTAP-NAS storage class reference." caption-side="bottom"}
 
 
 ## Getting help and support for NetApp ONTAP-NAS

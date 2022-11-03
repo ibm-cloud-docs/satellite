@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-11-03"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -539,6 +539,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 | Storage class name | Type | Reclaim policy |
 | --- | --- | --- |
 | `ibm-spectrum-scale-csi-lt` | Light weight volumes | Delete  |
-{: caption="Table 1. IBM Spectrum Scale storage class reference." caption-side="top"}
+{: caption="Table 1. IBM Spectrum Scale storage class reference." caption-side="bottom"}
 
 

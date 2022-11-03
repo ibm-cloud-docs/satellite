@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-11-03"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -678,6 +678,6 @@ For help finding these parameters, see the [Azure CLI documentation](https://doc
 | `sat-azure-file-silver-metro` | Delete | WaitForFirstConsumer |
 | `sat-azure-file-bronze` | Delete | Immediate |
 | `sat-azure-file-bronze-metro` | Delete | WaitForFirstConsumer |
-{: caption="Table 2. Storage class reference for Azure File storage" caption-side="top"}
+{: caption="Table 2. Storage class reference for Azure File storage" caption-side="bottom"}
 
 

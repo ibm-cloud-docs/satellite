@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-11-03"
 
 keywords: satellite, satellite at events, satellite activity tracker, satconfig events, satlink events, events for satellite config, events for satellite link, events for satellite location, events for satellite host
 
@@ -53,7 +53,7 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 | `satellite.link-sources.delete` | A client (source) is removed from a {{site.data.keyword.satelliteshort}} endpoint. |
 | `satellite.link-sources.list` | A list of clients (sources) that are configured for a {{site.data.keyword.satelliteshort}} endpoint is retrieved. |
 | `satellite.link-sources.update` | A client (source) configuration is updated for a {{site.data.keyword.satelliteshort}} endpoint. |
-{: caption="Satellite Link actions that generate events." caption-side="top"}
+{: caption="Satellite Link actions that generate events." caption-side="bottom"}
 
 ## Events for the {{site.data.keyword.satelliteshort}} Config component
 {: #at_actions_config}
@@ -80,7 +80,7 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 | `satellite.config-subscription.setversion` | A {{site.data.keyword.satelliteshort}} subscription is set to a specific configuration version. |
 | `satellite.config-group.create` | A cluster group is created. |
 | `satellite.config-group.delete` | A cluster group is removed. |
-{: caption="Satellite Config actions that generate events." caption-side="top"}
+{: caption="Satellite Config actions that generate events." caption-side="bottom"}
 
 
 ## Events for {{site.data.keyword.satelliteshort}} storage
@@ -101,7 +101,7 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 | `satellite.storage-configuration.create` | A storage configuration is created. | 
 | `satellite.storage-configuration.delete` | A storage configuration is deleted. | 
 | `satellite.storage-configuration.update` | A storage configuration is updated. |
-{: caption="Satellite storage actions that generate events." caption-side="top"}
+{: caption="Satellite storage actions that generate events." caption-side="bottom"}
 
 
 ## Events for {{site.data.keyword.satelliteshort}} assignments
@@ -119,7 +119,7 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 | `satellite.subscription.delete` | An assignment is deleted. | 
 | `satellite.subscription.update` | An assignment is updated. | 
 | `satellite.available.classes.get` | A list of available storage classes for an assignment is retrieved. |
-{: caption="Assignment actions that generate events." caption-side="top"}
+{: caption="Assignment actions that generate events." caption-side="bottom"}
 
 
 

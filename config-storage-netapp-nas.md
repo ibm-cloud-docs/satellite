@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-11-03"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, 
 
@@ -542,7 +542,7 @@ For more information about the NetApp ONTAP-NAS configuration parameters, see th
 | `limitVolumeSize` | Optional | Maximum volume size that can be requested and qtree parent volume size. | `50Gi` |
 | `limitAggregateUsage` | Optional | Limit provisioning of volumes if the parent volume usage exceeds this value. For example, if a volume is requested that causes the parent volume usage to exceed this value, the volume provisioning fails.  | `80%` |
 | `nfsMountOptions` | Optional | Specify the NFS mount version. Example: `nfsvers=4` | `nfsvers=4` |
-{: caption="Table 1. NetApp ONTAP-NAS storage parameter reference." caption-side="top"}
+{: caption="Table 1. NetApp ONTAP-NAS storage parameter reference." caption-side="bottom"}
 
 
 ## Storage class reference for NetApp ONTAP-NAS
@@ -556,7 +556,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-file-gold` **Default** | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-silver` | ONTAP-NAS | File | Delete |
 | `sat-netapp-file-bronze` | ONTAP-NAS | File | Delete |
-{: caption="Table 2. NetApp ONTAP-NAS storage class reference." caption-side="top"}
+{: caption="Table 2. NetApp ONTAP-NAS storage class reference." caption-side="bottom"}
 
 
 ## Getting help and support for NetApp ONTAP-NAS

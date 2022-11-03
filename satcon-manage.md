@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-11-03"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -63,7 +63,7 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to upload 
     | `--name <version_name>` | Enter a name for your configuration version. | 
     | `--config <config_name_or_ID>` | Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier. |
     | `--read-config <file_path>` | Enter the relative file path to the Kubernetes resource file on your local machine. | 
-    {: caption="Understanding this command's components" caption-side="top"}
+    {: caption="Understanding this command's components" caption-side="bottom"}
 
     Example output
     
@@ -87,7 +87,7 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to upload 
     | `--config <config_name_or_ID>` | Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier. |
     | `--name <subscription_name>` | Enter a name for your {{site.data.keyword.satelliteshort}} subscription. |
     | `--version <version_name_or_ID>` | Enter the name or ID of the Kubernetes resource definition that you added as a version to your configuration. To list available versions, run `ibmcloud sat config get --config <config_name_or_ID>` | 
-    {: caption="Understanding this command's components" caption-side="top"}
+    {: caption="Understanding this command's components" caption-side="bottom"}
 
     Example output
     ```sh
