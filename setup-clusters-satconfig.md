@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-11-03"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -111,7 +111,7 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
     | `razee-viewer` | The name of the cluster role, such as `razee-viewer`. | 
     | `--verb=get,list,watch` | A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for a viewer or auditor, `get,list,watch`. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}. |
     | `--resource="*.*"` | A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, `"*.*"`. For other possible resources, run `kubectl api-resources -o wide`. |
-    {: caption="Understanding this command's components" caption-side="top"}
+    {: caption="Understanding this command's components" caption-side="bottom"}
 
 2. Create a cluster role binding that binds the {{site.data.keyword.satelliteshort}} Config service account to the cluster role that you previously created. Now, {{site.data.keyword.satelliteshort}} Config has the custom access to the cluster.
 
@@ -125,7 +125,7 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
     | `razee-viewer` | The name of the cluster role binding, such as `razee-viewer`. | 
     | `--clusterrole=razee-viewer` | The name of the cluster role that you previously created, such as `razee-viewer`. |
     | `--serviceaccount=razeedeploy:razee-viewer` | The name of one of the service accounts that the {{site.data.keyword.satelliteshort}} Config components are set up by default to use, either `razeedeploy:razee-viewer` or `razeedeploy:razee-editor`. |
-    {: caption="Understanding this command's components" caption-side="top"}
+    {: caption="Understanding this command's components" caption-side="bottom"}
 
 
 ### Custom access, scoped to a project
@@ -146,7 +146,7 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
     | `--namespace default` | The project (namespace) to scope the role to, such as `default`. |
     | `--verb=get,list,watch,create,update,patch,delete` | A comma-separated list of actions that the role authorizes. In this example, the action verbs are for roles typical for an editor, `get,list,watch,create,update,patch,delete`. For other possible verbs, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#determine-the-request-verb){: external}. |
     | `--resource="*.*"` | A comma-separated list of the Kubernetes resources that the role authorizes actions to. In this example, access is granted for all Kubernetes resources in all API groups, `"*.*"`. For other possible resources, run `kubectl api-resources -o wide`. | 
-    {: caption="Understanding this command's components" caption-side="top"}
+    {: caption="Understanding this command's components" caption-side="bottom"}
 
 2. Create a role binding that binds the {{site.data.keyword.satelliteshort}} Config service account to the cluster role that you previously created. Now, {{site.data.keyword.satelliteshort}} Config has the custom access to the cluster.
 
@@ -161,7 +161,7 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
     | `--namespace default` | The project (namespace) to scope the role binding to, such as `default`. The namespace must match the namespace that the role is in. |
     | `--role=razee-editor` | The name of the role that you previously created, such as `razee-editor`. |
     | `--serviceaccount=razeedeploy:razee-editor` | The name of one of the service accounts that the {{site.data.keyword.satelliteshort}} Config components are set up by default to use, either `razeedeploy:razee-viewer` or `razeedeploy:razee-editor`. | 
-    {: caption="Understanding this command's components" caption-side="top"}
+    {: caption="Understanding this command's components" caption-side="bottom"}
 
 ## Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config
 {: #register-openshift-clusters}

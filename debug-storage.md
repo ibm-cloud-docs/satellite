@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-11-02"
 
 keywords: satellite, hybrid, multicloud, storage error messages, error message
 
@@ -165,7 +165,7 @@ Response code: `404`
 ### ST0016 error message
 {: #st0016}
 
-Failed to update the tags for the volume with CRN `<VolumeCRN>`. BackendError: {{.BackendError}}
+Failed to update the tags for the volume with CRN `<VolumeCRN>`. `BackendError: {{.BackendError}}`
 {: shortdesc}
 
 Error type: Services
@@ -350,7 +350,7 @@ Response code: `500`
 ### ST0035 error message
 {: #st0035}
 
-{{.ErrorMessage}}. {{.IncidentID}}
+`{{.ErrorMessage}}. {{.IncidentID}}`
 {: shortdesc}
 
 Error type: Services
@@ -400,7 +400,7 @@ Response code: `404`
 ### ST0040 error message
 {: #st0040}
 
-Format error in template file. {{.TemplateError}}
+Format error in template file. `{{.TemplateError}}`
 {: shortdesc}
 
 Error type: Bad request
@@ -460,7 +460,7 @@ Response code: `400`
 ### ST0046 error message
 {: #st0046}
 
-This storage configuration is already up to date with the latest revision. No newer revision available for '{{.TemplateName}}' at version '{{.TemplateVersion}}'. Current revision: '{{.CurrentRevision}}' and latest revision.
+This storage configuration is already up to date with the latest revision. No newer revision available for `{{.TemplateName}}` at version `{{.TemplateVersion}}`. Current revision: `{{.CurrentRevision}}` and latest revision.
 
 Error type: Bad request
 
@@ -469,7 +469,7 @@ Response code: 406
 ### ST0047 error message
 {: #st0047}
 
-The {{.Param1}} value '{{.Param2}}' must contain only alphabets, numbers, underscore, and hyphen.
+The `{{.Param1}}` value `{{.Param2}}` must contain only alphabets, numbers, underscore, and hyphen.
 
 Error type: Bad request
 
@@ -488,7 +488,7 @@ Response code: `500`
 ### ST0049 error message
 {: #st0049}
 
-Configuration is created in '{{.ConfigLocation}}' location but the cluster is in '{{.ClusterLocation}}' location. Re-create the configuration in '{{.ClusterLocation}}' location and retry.
+Configuration is created in `{{.ConfigLocation}}` location but the cluster is in `{{.ClusterLocation}}` location. Re-create the configuration in `{{.ClusterLocation}}` location and retry.
 
 Error type: Bad request
 
@@ -506,7 +506,7 @@ Response code: `400`
 ### ST0051 error message
 {: #st0051}
 
-Failed to retrieve '{{.ObjectType}}'. BackendError: {{.BackendError}}.
+Failed to retrieve `{{.ObjectType}}`. `BackendError: {{.BackendError}}.`
 
 Error type: Services
 
@@ -515,7 +515,7 @@ Response code: `500`
 ### ST0052 error message
 {: #st0052}
 
-Unable to create or update storage configuration. Multiple storage classes defined with the name '{{.StorageClassName}}'.
+Unable to create or update storage configuration. Multiple storage classes defined with the name `{{.StorageClassName}}`.
 
 Error type: Bad request
 

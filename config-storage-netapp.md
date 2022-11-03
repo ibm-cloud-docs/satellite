@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-11-03"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -269,7 +269,7 @@ For more information about the NetApp Trident configuration parameters, see the 
 | `password` | Required | Enter your user password. | N/A |
 | `limitVolumeSize` | Optional | Maximum volume size that can be requested and qtree parent volume size. | `50Gi` |
 | `limitAggregateUsage` | Optional | Limit provisioning of volumes if the parent volume usage exceeds this value. For example, if a volume is requested that causes parent volume usage to exceed this value, the volume provisioning fails.  | `80%` |
-{: caption="Table 1. NetApp Trident storage parameter reference." caption-side="top"}
+{: caption="Table 1. NetApp Trident storage parameter reference." caption-side="bottom"}
 
 
 ## Storage class reference for NetApp Trident
@@ -283,7 +283,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 | `sat-netapp-block-gold` **Default** | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-silver` | ONTAP-SAN | Block | Delete |
 | `sat-netapp-block-bronze` | ONTAP-SAN | Block | Delete |
-{: caption="Table 2. NetApp ONTAP-SAN storage class reference." caption-side="top"}
+{: caption="Table 2. NetApp ONTAP-SAN storage class reference." caption-side="bottom"}
 
 ## Getting help and support for NetApp Trident
 {: #sat-netapp-san-support}

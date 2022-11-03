@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-11-03"
 
 keywords: satellite, hybrid, multicloud, assign access, access for satellite
 
@@ -143,7 +143,7 @@ Use the {{site.data.keyword.cloud_notm}} IAM CLI to grant an access policy to an
     | {{site.data.keyword.satelliteshort}} resource   \n CLI option: `--resource-type` | You can limit the policy to a type of resource within {{site.data.keyword.satellitelong_notm}}, such as all {{site.data.keyword.satelliteshort}} locations or {{site.data.keyword.satelliteshort}} configurations. To review resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](/docs/satellite?topic=satellite-iam). Possible values include `location`, `link`, `configuration`, `cluster`, `clustergroup`, and `subscription`. If you scope an access policy to the `location` resource type, the users must target the regional endpoint to interact with the location. For more information, see the [troubleshooting topic](/docs/satellite?topic=satellite-ts-location-missing-location). |
     | Resource instance  \n CLI option: `--resource` | If you scope the policy to a resource type, you can further limit the policy to a particular instance of the resource. To list available instances, run [the CLI commands](/docs/satellite?topic=satellite-satellite-cli-reference) for that resource type, such as `ibmcloud sat location ls`.  To grant permissions to create a location, do not include the `--resource` option, which limits access to only a particular location. Note that you cannot scope a policy to individual `configuration` or `subscription` resources. Instead, control access to your {{site.data.keyword.satelliteshort}} Config resources at the `clustergroup` level. |
     | Role  \n CLI option: `--role` | Choose the platform or service access that you want to assign. \n * Platform: Grants access to {{site.data.keyword.satelliteshort}} platform resources so that users can manage infrastructure resources such as locations, hosts, or link endpoints. For more information, see [Platform access roles](/docs/satellite?topic=satellite-iam-platform-access). Possible values are `Administrator`, `Operator`, `Editor`, or `Viewer`. \n * Service: Grants access to services that run within {{site.data.keyword.satelliteshort}} resources so that users can work with {{site.data.keyword.satelliteshort}} Config subscriptions and Kubernetes resources. For more information, see [Service access roles](/docs/satellite?topic=satellite-iam-service-access). Possible values are `Manager`, `Writer`, or `Reader`. |
-    {: caption="Table 1. Options to scope the access policy." caption-side="top"} 
+    {: caption="Table 1. Options to scope the access policy." caption-side="bottom"} 
 
 3. Verify that the user or access group has the assigned role.
     - For individual users

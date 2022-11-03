@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-11-03"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -783,7 +783,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local block 
 | Storage class name | Type | Reclaim policy |
 | --- | --- | --- |
 | `sat-local-block-gold` | Block | Retain |
-{: caption="Table 2. Local block storage class reference" caption-side="top"}
+{: caption="Table 2. Local block storage class reference" caption-side="bottom"}
 
 
 ## Getting help and support for local block storage

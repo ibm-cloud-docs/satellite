@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-11-03"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -87,7 +87,7 @@ To create the configuration:
     | `--name <config_name>` | Enter the name of the Satellite configuration. | 
     | `--data-location <location>` | Enter the location to store your {{site.data.keyword.satelliteshort}} configurations, for example `us-east`. {{site.data.keyword.satelliteshort}} configurations are Kubernetes resource definitions, like ConfigMaps, storage classes, or secrets that are deployed to the clusters in your location through subscriptions. If `--data-location` is not specified, your configurations are stored in `us-east` by default. These locations are {{site.data.keyword.cos_full_notm}} buckets that are owned by {{site.data.keyword.IBM_notm}} and are pre-provisioned for each region. For more information about how your data is stored, see [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security). For a list of locations, see [Supported locations](/docs/satellite?topic=satellite-sat-regions).  |
     | `-q` | Do not show the message of the day or update reminders. | 
-    {: caption="Understanding this command's components" caption-side="top"}
+    {: caption="Understanding this command's components" caption-side="bottom"}
 
     Example output
     ```sh
@@ -112,7 +112,7 @@ To create the configuration:
     | `--name <version_name>` | Enter a name for your configuration version. | 
     | `--config <config_name_or_ID>` | Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier. |
     | `--read-config <file_path>` | Enter the relative file path to the Kubernetes resource file on your local machine. | 
-    {: caption="Understanding this command's components" caption-side="top"}
+    {: caption="Understanding this command's components" caption-side="bottom"}
 
     Example output
     
@@ -136,7 +136,7 @@ To create the configuration:
     | `--config <config_name_or_ID>` | Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier. |
     | `--name <subscription_name>` | Enter a name for your {{site.data.keyword.satelliteshort}} subscription. |
     | `--version <version_name_or_ID>` | Enter the name or ID of the Kubernetes resource definition that you added as a version to your configuration. To list available versions, run `ibmcloud sat config get --config <config_name_or_ID>` | 
-    {: caption="Understanding this command's components" caption-side="top"}
+    {: caption="Understanding this command's components" caption-side="bottom"}
 
     Example output
     ```sh

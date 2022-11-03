@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-11-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -101,7 +101,7 @@ Example log
 |`Details.message`|The current error message for the location, including any troubleshooting steps or documentation links.|
 |`Details.errorDetails`|Other details for the current error, such as specific causes or issues with certain components. These details are used by {{site.data.keyword.IBM_notm}} site reliability engineers to manage alerts, but can help provide more details about the issue while you troubleshoot.|
 |`Details.messageID`|The error message's `R00XX` identifier.|
-{: caption="Pre-defined fields for R00XX error logs" caption-side="top"}
+{: caption="Pre-defined fields for R00XX error logs" caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
 
 ### Enablement of resource deployment logs
@@ -121,7 +121,7 @@ Example log
 |`logSourceCRN`|The CRN of the {{site.data.keyword.satelliteshort}} location. To identify the CRN for a location, look for the location's ID at the end of the CRN.|
 |`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to {{site.data.keyword.IBM_notm}} for monitoring and alerts.|
 |`message`|The status of whether resource deployment is currently enabled (`true` or `false`). If set to `false`, the current `R00XX`-level error messages for the location are listed.|
-{: caption="Pre-defined fields of logs for the status of deployment enablement" caption-side="top"}
+{: caption="Pre-defined fields of logs for the status of deployment enablement" caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
 
 ### Endpoint health status logs
@@ -144,7 +144,7 @@ Example log
 |`logSourceCRN`|The CRN of the {{site.data.keyword.satelliteshort}} location. To identify the CRN for a location, look for the location's ID at the end of the CRN.|
 |`saveServiceCopy`|Set to `true` so that a copy of the log record is sent to {{site.data.keyword.IBM_notm}} for monitoring and alerts.|
 |`message`|The status of whether your {{site.data.keyword.satelliteshort}} Link tunnel server endpoint is reachable, and the endpoint that was health checked.|
-{: caption="Pre-defined fields for endpoint health status logs" caption-side="top"}
+{: caption="Pre-defined fields for endpoint health status logs" caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the log field name. The second column is the description of the log field."}
 
 

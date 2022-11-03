@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-11-03"
 
 keywords: satellite, hybrid, multicloud, default link enpoints, default link
 
@@ -52,7 +52,7 @@ The following table describes the Link endpoints that are automatically created 
 | `satellite-sysdig-<location_ID>` | Allows metrics for your location to be sent to your {{site.data.keyword.mon_full}} instance. | Cloud | One per location |
 | `satellite-sysdigapi-<location_ID>` | Allows your location to communicate with the {{site.data.keyword.mon_full_notm}} API. | Cloud | One per location |
 | `satellite-sysdigPrometheus-<location-ID>` | Allows your location to communicate with the {{site.data.keyword.mon_full_notm}} API. | Cloud | One per location |
-{: caption="Default Link endpoints." caption-side="top"}
+{: caption="Default Link endpoints." caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the name of the default endpoint. The second column describes what the endpoint is for. The third column describes how many instances of the endpoint are created and for which component the endpoint is created."}
 
 These endpoints are used to manage and update your location and are enabled by default. If you disable any of these endpoints, your client services that are running on your location can be negatively impacted. To avoid issues, do not disable these endpoints.
@@ -81,7 +81,7 @@ The following table describes the Link endpoints that are automatically created 
 | `satellite-sysdig-<location_ID>` | Allows metrics for your {{site.data.keyword.satelliteshort}} location to be sent to your {{site.data.keyword.mon_full}} instance. | Cloud | One per location |
 | `satellite-sysdigapi-<location_ID>` | Allows your {{site.data.keyword.satelliteshort}} location to communicate with the {{site.data.keyword.mon_full_notm}} API. | Cloud | One per {{site.data.keyword.satelliteshort}} location |
 | `openshift-api-<cluster_ID>` | Allows the {{site.data.keyword.openshiftlong_notm}} API to communicate with the master for the service cluster. | Location | One per {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service in your location |
-{: caption="Default Link endpoints." caption-side="top"}
+{: caption="Default Link endpoints." caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the name of the default endpoint. The second column describes what the endpoint is for. The third column describes how many instances of the endpoint are created and for which component the endpoint is created."}
 
 These endpoints are used to manage and update your location and are enabled by default. If you disable any of these endpoints, your client services that are running on your {{site.data.keyword.satelliteshort}} location can be negatively impacted. To avoid issues, do not disable these endpoints.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-11-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -58,7 +58,7 @@ You can review the host health from the **Hosts** table in the [{{site.data.keyw
 | `unassigned` | The host is attached to the {{site.data.keyword.satelliteshort}} location and ready to be [assigned to a {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). If you tried to assign the host unsuccessfully, see [Cannot assign hosts to a cluster](/docs/satellite?topic=satellite-assign-fails).|
 | `unknown` | The health of the host is unknown. If the host is unassigned, try [assigning the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) to a {{site.data.keyword.satelliteshort}} resource, such as a cluster. If the host is assigned, try debugging the host by following the steps in [debugging the health of the host](/docs/satellite?topic=satellite-ts-hosts-debug). If the host still has issues, try removing, updating, and reattaching the host. |
 | `unresponsive` | The host did not check in with the {{site.data.keyword.satelliteshort}} location control plane within the past 5 minutes. The host cannot be assigned when it is unresponsive. Try [debugging the health of the host](/docs/satellite?topic=satellite-ts-hosts-debug), particularly the network connectivity. |
-{: caption="Host health states." caption-side="top"}
+{: caption="Host health states." caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column describes the health state of the host. The second column describes what the health state means."}
 
 

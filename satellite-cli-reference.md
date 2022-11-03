@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-03"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -42,7 +42,7 @@ The tables below list the `ibmcloud sat` command groups. For a complete list of 
 | [Storage commands](#sat-storage-commands)| View and manage Satellite storage resources. |
 | [Subscription commands](#sat-config-subscription-commands)| View and manage Satellite subscriptions to deploy Kubernetes configuration files to your clusters. |
 {: summary="The rows are read from left to right. The first column is the command group. The second column is a description of the command group."}
-{: caption="{{site.data.keyword.satelliteshort}} CLI command groups" caption-side="top"}
+{: caption="{{site.data.keyword.satelliteshort}} CLI command groups" caption-side="bottom"}
 
 ## Cluster commands
 {: #sat-cluster-commands}

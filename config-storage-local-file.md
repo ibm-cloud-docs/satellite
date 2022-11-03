@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-11"
+lastupdated: "2022-11-03"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -789,7 +789,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 | Storage class name | File system | Reclaim policy |
 | --- | --- | --- |
 | `sat-local-file-gold` | `ext4` or `xfs` | Retain |
-{: caption="Table 2. Local file storage class reference." caption-side="top"}
+{: caption="Table 2. Local file storage class reference." caption-side="bottom"}
 
 
 ## Getting help and support for local file storage

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-19"
+lastupdated: "2022-11-03"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -716,7 +716,7 @@ For help finding these parameters, see the [Azure CLI documentation](https://doc
 | `sat-azure-block-silver-metro` | 120 - 6000 | N/A | SSD | Delete | WaitForFirstConsumer |
 | `sat-azure-block-bronze`  | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | Immediate |
 | `sat-azure-block-bronze-metro` | 500 - 2000 | 32 GiB - 32 TiB | HDD | Delete | WaitForFirstConsumer |
-{: caption="Table 2. Storage class reference for Azure Disk storage" caption-side="top"}
+{: caption="Table 2. Storage class reference for Azure Disk storage" caption-side="bottom"}
 
 
 ## Getting help and support for Azure Disk storage
