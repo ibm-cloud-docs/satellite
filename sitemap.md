@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-10-27"
+lastupdated: "2022-11-03"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -156,6 +156,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [November 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov22)
+
+    * [3 November 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov0322)
+
+        * Disconnected usage
 
 * [October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct22)
 
@@ -2800,6 +2806,35 @@ subcollection: satellite
     * [Example for a high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
 
     * [Example for a high availability setup in a public cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
+
+
+## Disconnected use for Satellite components
+{: #sitemap_disconnected_use_for_satellite_components}
+
+
+[Disconnected use for Satellite components](/docs/satellite?topic=satellite-disconnected-use#disconnected-use)
+
+* [Understanding disconnected usage](/docs/satellite?topic=satellite-disconnected-use#understand-disconnected)
+
+* [Setting the disconnected usage time](/docs/satellite?topic=satellite-disconnected-use#disconnect-time)
+
+* [Disconnected usage by component](/docs/satellite?topic=satellite-disconnected-use#disconnect-usage-component)
+
+    * [Cluster management disconnected usage](/docs/satellite?topic=satellite-disconnected-use#cluster)
+
+    * [Apps disconnected usage](/docs/satellite?topic=satellite-disconnected-use#apps)
+
+    * [IBM Cloud Catalog disconnected usage](/docs/satellite?topic=satellite-disconnected-use#ibm-cloud-catelog)
+
+    * [Identity and access management disconnected usage](/docs/satellite?topic=satellite-disconnected-use#identity-access)
+
+    * [Secret management disconnected usage](/docs/satellite?topic=satellite-disconnected-use#secret-management)
+
+    * [Logging and monitoring disconnected usage](/docs/satellite?topic=satellite-disconnected-use#log-monitor)
+
+    * [Config management disconnected usage](/docs/satellite?topic=satellite-disconnected-use#config-management)
+
+    * [Networking disconnected usage](/docs/satellite?topic=satellite-disconnected-use#networking)
 
 
 ## {{site.data.keyword.satellitelong_notm}} notices

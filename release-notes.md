@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-27"
+lastupdated: "2022-11-03"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -20,6 +20,18 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
+
+## November 2022
+{: #satellite-nov22}
+
+
+### 3 November 2022
+{: #satellite-nov0322}
+{: release-note}
+
+Disconnected usage
+:   {{site.data.keyword.satelliteshort}} Locations and {{site.data.keyword.openshiftlong_notm}} can run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for 168 hours. For more information, see [Disconnected use for Satellite components](/docs/satellite?topic=satellite-disconnected-use).
+
 
 ## October 2022
 {: #satellite-oct22}
