@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-04"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -84,7 +84,7 @@ The template is currently in beta. Do not use it for production workloads.
     Example command to create a config by using `ibm-object-storage-plugin` version 2.2.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2  [--param "helm-release-name=HELM-RELEASE-NAME"] [--param "parameters=PARAMETERS"] [--param "license=LICENSE"] --param "cos-endpoint=COS-ENDPOINT" --param "cos-storageclass=COS-STORAGECLASS"
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2  [--param "helm-release-name=HELM-RELEASE-NAME"] [--param "parameters=PARAMETERS"] --param "license=LICENSE" --param "cos-endpoint=COS-ENDPOINT" --param "cos-storageclass=COS-STORAGECLASS"
     ```
     {: pre}
 
@@ -382,9 +382,9 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 | --- | --- | --- | --- | --- |
 | Helm Chart Release Name | `helm-release-name` | Release name of the chart | false |`ibm-object-storage-plugin` |
 | Helm Chart Additional Parameters (Optional) | `parameters` | Helm Chart Additional Parameters (Optional) | false | N/A | 
-| COS plug-in License: Apache License Version 2.0 | `license` | COS plug-in License: Apache License Version 2.0 | false |`true` |
-| COS Endpoint | `cos-endpoint` | Enter COS Endpoint. For more info, see [Endpoints and storage locations](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints). | true | N/A | 
-| COS storageclass | `cos-storageclass` | Enter COS storage class. For more info, see [Using storage classes](/docs/cloud-object-storage/basics?topic=cloud-object-storage-classes). | true | N/A | 
+| COS plug-in License: Apache License Version 2.0 | `license` | COS plug-in License: Apache License Version 2.0. Set to 'true' to accept the license and install the plugin | true | N/A | 
+| COS Endpoint | `cos-endpoint` | Enter COS Endpoint. For more information, refer to https://ibm.biz/cos-endpoints | true | N/A | 
+| COS storageclass | `cos-storageclass` | Enter COS storageclass. For more info, refer to https://ibm.biz/cos-storage-classes | true | N/A | 
 {: caption="ibm-object-storage-plugin version 2.2 parameter reference"}
 
 ## Storage class reference for {{site.data.keyword.cos_full_notm}}
