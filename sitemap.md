@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-04"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2981,8 +2981,6 @@ subcollection: satellite
 * [Target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location-target)
 
 * [Ask the location owner to update your permissions](/docs/satellite?topic=satellite-ts-location-missing-location#ts-location-missing-location-perms)
-
-[Why was my location deleted?](/docs/satellite?topic=satellite-ts-location-gone#ts-location-gone)
 
 
 ### Hosts
