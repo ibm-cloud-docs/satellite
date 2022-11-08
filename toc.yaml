@@ -33,6 +33,7 @@ toc:
             href: https://cloud.ibm.com/docs?tab=tutorials&page=1&pageSize=20&tags=satellite
         - sat-toolchain-tutorial.md
         - odf-tutorial.md
+        - assign-bare-metal.md
   - navgroup:
       id: howto
       topics:

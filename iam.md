@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-09"
+lastupdated: "2022-11-08"
 
 keywords: satellite, hybrid, multicloud, access, manage access
 
@@ -112,7 +112,7 @@ Resource type, IAM role, and scope of access policies
 :    You do not assign access policies for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}. Instead, access to clusters is assigned in {{site.data.keyword.cloud_notm}} IAM through {{site.data.keyword.openshiftlong_notm}} (**Kubernetes Service** in the console or `containers-kubernetes` in the API or CLI). For more information, see [Platform and service roles for {{site.data.keyword.redhat_openshift_notm}} clusters](#iam-roles-clusters).
 
 :    If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration. However, you might not be able to access the clusters if you do not have the appropriate roles to those clusters. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} configuration, you might be able to list all the Kubernetes resources that run in registered clusters through the {{site.data.keyword.satelliteshort}} Config API. However, without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.redhat_openshift_notm}} APIs to list Kubernetes resources. For more information, see the following topics.
-    - [Reference documentation](/docs/openshift?topic=openshift-access_reference) for user access permissions including [platform](/docs/openshift?topic=openshift-access_reference#iam_platform) and [service](/docs/openshift?topic=openshift-access_reference#service) roles.
+    - [Reference documentation](/docs/openshift?topic=openshift-access_reference) for user access permissions including [platform](/docs/openshift?topic=openshift-access_reference) and [service](/docs/openshift?topic=openshift-access_reference) roles.
     - [Assigning access to clusters](/docs/openshift?topic=openshift-users), such as setting up the API key for underlying infrastructure permissions and granting users access with {{site.data.keyword.cloud_notm}} IAM.
     - [Accessing clusters](/docs/openshift?topic=openshift-access_cluster) on the public or private service endpoints, or by using an {{site.data.keyword.cloud_notm}} IAM API key such as for automation purposes.
 
@@ -130,7 +130,7 @@ Other managed services
 If you create {{site.data.keyword.openshiftlong_notm}} clusters to use in your {{site.data.keyword.redhat_openshift_notm}} locations, you manage access to these clusters in IAM for the {{site.data.keyword.redhat_openshift_notm}} service, not for {{site.data.keyword.redhat_openshift_notm}}. Review the following information to manage IAM access to {{site.data.keyword.redhat_openshift_notm}} clusters.
 {: shortdesc}
 
-- [Reference documentation](/docs/openshift?topic=openshift-access_reference) for user access permissions including [platform](/docs/openshift?topic=openshift-access_reference#iam_platform) and [service](/docs/openshift?topic=openshift-access_reference#service) roles.
+- [Reference documentation](/docs/openshift?topic=openshift-access_reference) for user access permissions including [platform](/docs/openshift?topic=openshift-access_reference) and [service](/docs/openshift?topic=openshift-access_reference) roles.
 - [Assigning access to clusters](/docs/openshift?topic=openshift-users), such as setting up the API key for underlying infrastructure permissions and granting users access with {{site.data.keyword.cloud_notm}} IAM.
 - [Accessing clusters](/docs/openshift?topic=openshift-access_cluster) on the public or private service endpoints, or by using an {{site.data.keyword.cloud_notm}} IAM API key such as for automation purposes.
 
