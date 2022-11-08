@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-04"
+lastupdated: "2022-11-08"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -158,6 +158,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [November 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov22)
+
+    * [8 November 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov0822)
+
+        * {{site.data.keyword.baremetal_short_sing}} support
 
     * [3 November 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov0322)
 
@@ -854,6 +858,27 @@ subcollection: satellite
 * [Verifying your deployment](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-verify)
 
 * [Next Steps](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-next-steps)
+
+
+## Attaching a {{site.data.keyword.baremetal_short_sing}} to a {{site.data.keyword.satelliteshort}} location
+{: #sitemap_attaching_a__to_a__location}
+
+
+[Attaching a {{site.data.keyword.baremetal_short_sing}} to a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal)
+
+* [Prerequisites](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal-prereq)
+
+* [{{site.data.keyword.baremetal_short_sing}} requirements](/docs/satellite?topic=satellite-assign-bare-metal#setup-bare-metal)
+
+* [Booting up your {{site.data.keyword.baremetal_short_sing}}](/docs/satellite?topic=satellite-assign-bare-metal#boot-bare-metal)
+
+* [Setting up public networking](/docs/satellite?topic=satellite-assign-bare-metal#public-network-bare-metal)
+
+* [Configuring your ignition file](/docs/satellite?topic=satellite-assign-bare-metal#config-ignition)
+
+* [Attaching your bare metal host to the location](/docs/satellite?topic=satellite-assign-bare-metal#load-ignition-file-bare-metal)
+
+* [Assigning a {{site.data.keyword.baremetal_short_sing}} host to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal-cluster)
 
 
 ## Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands

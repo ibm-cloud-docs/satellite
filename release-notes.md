@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-08"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,6 +24,12 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## November 2022
 {: #satellite-nov22}
 
+### 8 November 2022
+{: #satellite-nov0822}
+{: release-note}
+
+{{site.data.keyword.baremetal_short_sing}} support
+:   You can now attach {{site.data.keyword.baremetal_short_sing}} hosts to your {{site.data.keyword.satelliteshort}} locations. For more information, see [Attaching a {{site.data.keyword.baremetal_short_sing}} to a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-assign-bare-metal).
 
 ### 3 November 2022
 {: #satellite-nov0322}
