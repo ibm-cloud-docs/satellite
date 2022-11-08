@@ -259,57 +259,57 @@ You must configure a separate ignition file for each bare metal host that you ar
 1. Save your ignition file. Your file must be flat and not contain any returns. The following example ignition file shows the additions made with the previous steps for `mybasemetalserver`.
 
     ```sh
-{
-  "ignition": {
-    "version": "3.1.0"
-  },
-  "storage": {
-    "files": [
-      {
-        "overwrite": true,
-        "path": "/etc/hostname",
-        "mode": 600,
-        "contents": {
-          "source": "data:text/plain;base64,ay1jY3BtYmhldzA0ZGp2ZXNvYmw4Zy1ibS0xCg=="
-        }
+    {
+      "ignition": {
+        "version": "3.1.0"
       },
-      {
-        "overwrite": true,
-        "path": "/etc/NetworkManager/system-connections/en01.nmconnection",
-        "mode": 256,
-        "contents": {
-          "source": "data:text/plain;base64,W2Nvbm5lY3Rpb25dCmlkPWVubzEKdHlwZT1ldGhlcm5ldAppbnRlcmZhY2UtbmFtZT1lbm8xCltpcHY0XQpuZXZlci1kZWZhdWx0PXRydWUKYWRkcmVzczE9IDEwLjE3MC4xNS42NS8yNiwxMC4xNzAuMTUuNjUKZG5zPTEwLjAuODAuMTE7MTAuMC44MC4xMjsKcm91dGUxPTEwLjAuMC4wLzgsMTAuMTcwLjE1LjY1CnJvdXRlMj0xNjEuMjYuMC4wLzE2LDEwLjE3MC4xNS42NQpyb3V0ZTM9MTY2LjguMC4wLzE0LDEwLjE3MC4xNS42NQpkbnMtc2VhcmNoPQptYXktZmFpbD1mYWxzZQptZXRob2Q9bWFudWFsCg=="
-        }
+      "storage": {
+        "files": [
+          {
+            "overwrite": true,
+            "path": "/etc/hostname",
+            "mode": 600,
+            "contents": {
+              "source": "data:text/plain;base64,ay1jY3BtYmhldzA0ZGp2ZXNvYmw4Zy1ibS0xCg=="
+            }
+          },
+          {
+            "overwrite": true,
+            "path": "/etc/NetworkManager/system-connections/en01.nmconnection",
+            "mode": 256,
+            "contents": {
+              "source": "data:text/plain;base64,W2Nvbm5lY3Rpb25dCmlkPWVubzEKdHlwZT1ldGhlcm5ldAppbnRlcmZhY2UtbmFtZT1lbm8xCltpcHY0XQpuZXZlci1kZWZhdWx0PXRydWUKYWRkcmVzczE9IDEwLjE3MC4xNS42NS8yNiwxMC4xNzAuMTUuNjUKZG5zPTEwLjAuODAuMTE7MTAuMC44MC4xMjsKcm91dGUxPTEwLjAuMC4wLzgsMTAuMTcwLjE1LjY1CnJvdXRlMj0xNjEuMjYuMC4wLzE2LDEwLjE3MC4xNS42NQpyb3V0ZTM9MTY2LjguMC4wLzE0LDEwLjE3MC4xNS42NQpkbnMtc2VhcmNoPQptYXktZmFpbD1mYWxzZQptZXRob2Q9bWFudWFsCg=="
+            }
+          },
+          {
+            "path": "/etc/NetworkManager/system-connections/en02.nmconnection",
+            "mode": 256,
+            "contents": {
+              "source": "data:text/plain;base64,W2Nvbm5lY3Rpb25dICAgICAgICAgICAgICAgICAgICAgICAgIAppZD1lbm8yCnR5cGU9ZXRoZXJuZXQKaW50ZXJmYWNlLW5hbWU9ZW5vMgpbaXB2NF0KYWRkcmVzczE9MTY5LjQ1LjIzNS4yMTQvMjgsMTY5LjQ1LjIzNS4yMDkKZG5zPTguOC44Ljg7NC40LjQuNDsKZG5zLXNlYXJjaD0KbWF5LWZhaWw9ZmFsc2UKbWV0aG9kPW1hbnVhbAo="
+            }
+          },
+          {
+            "overwrite": true,
+            "path": "/usr/local/bin/ibm-host-attach.sh",
+            "contents": {
+              "source": "data:text/plain;base64,<omitted>"
+            },
+            "mode": 493
+          }
+        ]
       },
-      {
-        "path": "/etc/NetworkManager/system-connections/en02.nmconnection",
-        "mode": 256,
-        "contents": {
-          "source": "data:text/plain;base64,W2Nvbm5lY3Rpb25dICAgICAgICAgICAgICAgICAgICAgICAgIAppZD1lbm8yCnR5cGU9ZXRoZXJuZXQKaW50ZXJmYWNlLW5hbWU9ZW5vMgpbaXB2NF0KYWRkcmVzczE9MTY5LjQ1LjIzNS4yMTQvMjgsMTY5LjQ1LjIzNS4yMDkKZG5zPTguOC44Ljg7NC40LjQuNDsKZG5zLXNlYXJjaD0KbWF5LWZhaWw9ZmFsc2UKbWV0aG9kPW1hbnVhbAo="
-        }
-      },
-      {
-        "overwrite": true,
-        "path": "/usr/local/bin/ibm-host-attach.sh",
-        "contents": {
-          "source": "data:text/plain;base64,<omitted>"
-        },
-        "mode": 493
+      "systemd": {
+        "units": [
+          {
+            "contents": "[Unit]\nDescription=IBM Host Attach Service\nWants=network-online.target\nAfter=network-online.target\n[Service]\nEnvironment=\"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"\nExecStart=/usr/local/bin/ibm-host-attach.sh\nRestart=on-failure\nRestartSec=5\n[Install]\nWantedBy=multi-user.target",
+            "enabled": true,
+            "name": "ibm-host-attach.service"
+          }
+        ]
       }
-    ]
-  },
-  "systemd": {
-    "units": [
-      {
-        "contents": "[Unit]\nDescription=IBM Host Attach Service\nWants=network-online.target\nAfter=network-online.target\n[Service]\nEnvironment=\"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"\nExecStart=/usr/local/bin/ibm-host-attach.sh\nRestart=on-failure\nRestartSec=5\n[Install]\nWantedBy=multi-user.target",
-        "enabled": true,
-        "name": "ibm-host-attach.service"
-      }
-    ]
-  }
-}
-    ...
-    "},"mode":493}]},"systemd":{"units":[{"contents":"[Unit]\nDescription=IBM Host Attach Service\nWants=network-online.target\nAfter=network-online.target\n[Service]\nEnvironment=\"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"\nExecStart=/usr/local/bin/ibm-host-attach.sh\nRestart=on-failure\nRestartSec=5\n[Install]\nWantedBy=multi-user.target","enabled":true,"name":"ibm-host-attach.service"}]}}
+    }
+        ...
+        "},"mode":493}]},"systemd":{"units":[{"contents":"[Unit]\nDescription=IBM Host Attach Service\nWants=network-online.target\nAfter=network-online.target\n[Service]\nEnvironment=\"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\"\nExecStart=/usr/local/bin/ibm-host-attach.sh\nRestart=on-failure\nRestartSec=5\n[Install]\nWantedBy=multi-user.target","enabled":true,"name":"ibm-host-attach.service"}]}}
     ```
     {: screen}
     
