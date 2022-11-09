@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-09"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -51,11 +51,11 @@ You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for
 
 2. Get your OAuth access tokens by running `oc get oauthaccesstokens`.
 
-3. For each OAuth client that you retrieved in step 1, set the `accessTokenMaxAgeSeconds` value by running `oc  edit oauthclients console` and adding the `accessTokenMaxAgeSeconds: 604800` as the first line. Note that you must repeat this step for all of your OAuth clients.
+3. For each OAuth client that you retrieved in step 1, set the `accessTokenMaxAgeSeconds` value by running `oc  edit oauthclients console` and adding the `accessTokenMaxAgeSeconds: 604800` as the first line. Note that you must repeat this step for all your OAuth clients.
 
 4. Optionally, run `oc get oauthclients console -o yaml` to check if the first line of the yaml file has been updated to `accessTokenMaxAgeSeconds: 604800`.
 
-5. Refresh your cluster by running `ibmcloud ks cluster master refresh --cluster CLUSTERID` for the changes to take effect.
+5. Refresh your cluster by running `{[icks]} cluster master refresh --cluster CLUSTERID` for the changes to take effect.
 
 6. Run the following command to verify that the `accessTokenMaxAgeSeconds` has been updated for your OAuth clients.
     ```sh

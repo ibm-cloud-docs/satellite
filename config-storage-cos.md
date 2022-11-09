@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-04"
+lastupdated: "2022-11-09"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -14,7 +14,7 @@ subcollection: satellite
 # {{site.data.keyword.cos_full_notm}} CSI Driver
 {: #config-storage-cos}
 
-Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+{[storage-config-prereq]}
 {: important}
 
 The template is currently in beta. Do not use it for production workloads.
@@ -24,10 +24,10 @@ The template is currently in beta. Do not use it for production workloads.
 {: #config-storage-cos-prereqs}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+1. [Set up {[SatConfig]}](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 1. [Create a {{site.data.keyword.cos_full_notm}} Secret](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials). 
 
-## Creating a {{site.data.keyword.cos_full_notm}} configuration from the console
+## Creating an {{site.data.keyword.cos_full_notm}} configuration from the console
 {: #config-storage-cos-create-ui}
 {: ui}
 
@@ -42,42 +42,42 @@ The template is currently in beta. Do not use it for production workloads.
 1. Click **Complete** to assign your storage configuration.
 
 
-## Creating a {{site.data.keyword.cos_full_notm}} configuration from the CLI
+## Creating a {{site.data.keyword.cos_short}} configuration from the CLI
 {: #config-storage-cos-create-cli}
 {: cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
     ```sh
-    ibmcloud login
+    {[ic]} login
     ```
     {: pre}
 
 1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
 
     ```sh
-    ibmcloud sat location ls
+    {[ic]} sat location ls
     ```
     {: pre}
 
 1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
 
     ```sh
-    ibmcloud target -r us-east
+    {[ic]} target -r us-east
     ```
     {: pre}
 
 1. If you use a resource group other than `default`, target it.
 
     ```sh
-    ibmcloud target -g <resource-group>
+    {[ic]} target -g <resource-group>
     ```
     {: pre}
     
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
 
     ```sh
-    ibmcloud sat storage template ls
+    {[icsat]} storage template ls
     ```
     {: pre}
     
@@ -89,11 +89,11 @@ The template is currently in beta. Do not use it for production workloads.
     {: pre}
 
 
-## Assigning a {{site.data.keyword.cos_full_notm}} configuration from the console
+## Assigning a {{site.data.keyword.cos_short}} configuration from the console
 {: #config-storage-cos-assign-ui}
 {: ui}
 
-1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
+1. Open the {[sat_console]} in your browser.
 1. Select the location where you want to create a storage configuration.
 1. Click the **Configurations** tab and click the storage configuration that you want to assign to a cluster group.
 1. On the **Configuration details** page, click **Create subscription**.
@@ -102,63 +102,63 @@ The template is currently in beta. Do not use it for production workloads.
 1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
 1. Click **Create** to create the subscription.
 1. Verify that your storage configuration is deployed to your cluster. 
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to the **Configurations** tab.
+    1. From the {[sat_console]}, navigate to the **Configurations** tab.
     1. Click the storage configuration that you created and review the **Subscriptions** tab.
     1. Click the **Subscription** that you created and review the **Rollout status** for your configuration.
 
 
-## Assigning a {{site.data.keyword.cos_full_notm}} configuration from the CLI
+## Assigning a {{site.data.keyword.cos_short}} configuration from the CLI
 {: #config-storage-cos-assign-cli}
 {: cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
-    ibmcloud sat storage config ls
+    {[icsat]} storage config ls
     ```
     {: pre}
 
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {[SatConfig]} or to create groups, see [Setting up clusters to use with {[SatConfig]}](/docs/satellite?topic=satellite-setup-clusters-satconfig).
     - Group
       ```sh
-      ibmcloud sat group ls
+      {[icsat]} group ls
       ```
       {: pre}
 
     - Cluster
       ```sh
-      ibmcloud oc cluster ls --provider satellite
+      {[icoc]} cluster ls --provider satellite
       ```
       {: pre}
 
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
+    - {[SatServ]} cluster
       ```sh
-      ibmcloud sat service ls --location <location>
+      {[icsat]} service ls --location <location>
       ```
       {: pre}
 
-1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
+1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `{[icsat]} storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
     - Group
       ```sh
-      ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
+      {[icsat]} storage assignment create --group <group> --config <config> --name <name>
       ```
       {: pre}
 
     - Cluster
       ```sh
-      ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
+      {[icsat]} storage assignment create --cluster <cluster> --config <config> --name <name>
       ```
       {: pre}
 
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
+    - {[SatServ]} cluster
       ```sh
-      ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
+      {[icsat]} storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
       ```
       {: pre}
 
 1. Verify that your assignment is created.
     ```sh
-    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
+    {[icsat]} storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
     ```
     {: pre}
 
@@ -329,14 +329,14 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 1. List your storage assignments and find the one that you used for your cluster.
 
     ```sh
-    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
+    {[icsat]} storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
     ```
     {: pre}
 
 1. Remove the assignment. After the assignment is removed, the driver pods and storage classes are removed from all clusters that were part of the storage assignment.
 
     ```sh
-    ibmcloud sat storage assignment rm --assignment <assignment_ID>
+    {[icsat]} storage assignment rm --assignment <assignment_ID>
     ```
     {: pre}
 
@@ -361,14 +361,14 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
     1. List the storage configurations.
     
         ```sh
-        ibmcloud sat storage config ls
+        {[icsat]} storage config ls
         ```
         {: pre}
 
     1. Remove the storage configuration.
     
         ```sh
-        ibmcloud sat storage config rm --config <config_name>
+        {[icsat]} storage config rm --config <config_name>
         ```
         {: pre}
 

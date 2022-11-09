@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-09"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch, host, update, host update
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Updating hosts that are assigned as worker nodes
 {: #host-update-workers}
 
-{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates. Note that service clusters, which are the underlying platform for all {{site.data.keyword.cloud_notm}} services are created by services such as {{site.data.keyword.codeengineshort}} or {{site.data.keyword.cos_full_notm}} and are maintained by {{site.data.keyword.IBM_notm}}.
+{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters. The version updates include {[ocp_long]}, the operating system, and security patches. You choose when to apply the host version updates. Note that service clusters, which are the underlying platform for all {{site.data.keyword.cloud_notm}} services are created by services such as {{site.data.keyword.codeengineshort}} or {{site.data.keyword.cos_full_notm}} and are maintained by {{site.data.keyword.IBM_notm}}.
 {: shortdesc}
 
 **What happens to my apps during an update?**
@@ -32,7 +32,7 @@ In addition, you can create a Kubernetes ConfigMap that specifies the maximum nu
 ## Checking if a version update is available for worker node hosts
 {: #host-update-workers-check}
 
-You can check if a version update is available for a host that is assigned as a worker node to a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) by using the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console.
+You can check if a version update is available for a host that is assigned as a worker node to a {[SatServlink]} by using the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console.
 {: shortdesc}
 
 To review the changes that are included in each version update, see the [Version change log for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_changelog).
@@ -42,19 +42,19 @@ To review the changes that are included in each version update, see the [Version
 
 1. Log in to {{site.data.keyword.cloud_notm}}. Include the `--sso` option if you have a federated account.
     ```sh
-    ibmcloud login [--sso]
+    {[ic]} login [--sso]
     ```
     {: pre}
 
 2. List the {{site.data.keyword.satelliteshort}} clusters in your account. 
     ```sh
-    ibmcloud ks cluster ls --provider satellite
+    {[icks]} cluster ls --provider satellite
     ```
     {: pre}
 
 3. List the worker nodes in the cluster that you want to update the version for. In the output, check for an asterisk `*` with a message that indicates a version update is available.
     ```sh
-    ibmcloud ks worker ls -c <cluster_name_or_ID>
+    {[icks]} worker ls -c <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -70,7 +70,7 @@ To review the changes that are included in each version update, see the [Version
 ### Checking if a version update is available from the {{site.data.keyword.cloud_notm}} console
 {: #host-update-workers-check-console}
 
-1. Log in to the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}.
+1. Log in to the {[sat_console]}.
 2. Click the location with the hosts that you want to update.
 3. Click the **Hosts** tab.
 4. From the host list, click the link to the **Cluster** for the host that you want to update. A new tab opens for the {{site.data.keyword.openshiftlong_notm}} cluster details.
@@ -87,7 +87,7 @@ Determine whether your hosts are part of the control plane, assigned to a manage
 1. List your location hosts and make note of their IDs. The worker node hosts do not have `infrastructure` listed in the `Cluster` column of the output.
 
    ```sh
-   ibmcloud sat host ls --location <location>
+   {[icsat]} host ls --location <location>
    ```
    {: pre}
    
@@ -105,10 +105,10 @@ Determine whether your hosts are part of the control plane, assigned to a manage
    ```
    {: screen}
 
-2. List your current hosts that are assigned as worker nodes to your {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service and make note of their IDs.
+2. List your current hosts that are assigned as worker nodes to your {[SatServ]} and make note of their IDs.
 
     ```sh
-    ibmcloud ks worker ls -c <cluster_name_or_ID>
+    {[icks]} worker ls -c <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -130,7 +130,7 @@ You can update your worker node hosts without detaching them from the location. 
 
 Before you begin
 
-- Verify that all of your worker nodes are in a healthy state.
+- Verify that all your worker nodes are in a healthy state.
 - If you are using persistent block storage volumes, you must detach these volumes from the node before you start your updates. Move the persistent volumes to a different worker node that does not require updates. Then, cordon and drain the workload from the worker node to update with the **`kubectl drain NODENAME`** command. If you cannot move the block storage volumes, use the [Applying version updates to worker nodes by replacing hosts](#host-update-workers-minor).
 
 Applying updates to worker nodes can cause downtime for your apps and services. Do not perform any actions on the host while the update process is running. A maximum of 20% of all your worker nodes can be unavailable during the update process.
@@ -141,10 +141,10 @@ Applying updates to worker nodes can cause downtime for your apps and services. 
 
 1. Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) extra hosts to the service cluster to handle the compute capacity while your existing hosts are updating.
 2. [Identify your worker node hosts](#host-identify). The worker node hosts do not have `infrastructure` listed in the `Cluster` column of the output, but instead have the name of the cluster.
-3. Update your worker nodes individually by running the **`ibmcloud ks worker update`** command.
+3. Update your worker nodes individually by running the **`{[icks]} worker update`** command.
 
     ```sh
-    ibmcloud ks worker update -c CLUSTER_NAME_OR_ID --worker WORKER_ID
+    {[icks]} worker update -c CLUSTER_NAME_OR_ID --worker WORKER_ID
     ```
     {: pre}
     
@@ -159,7 +159,7 @@ Applying updates to worker nodes can cause downtime for your apps and services. 
 ### Apply version updates to your worker node hosts with a ConfigMap
 {: #host-update-workers-rolling}
 
-You can roll out updates to all of your worker node hosts with a ConfigMap. Specify which nodes to update by using labels. You can also specify 
+You can roll out updates to all your worker node hosts with a ConfigMap. Specify which nodes to update by using labels. You can also specify 
 
 1. Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) extra hosts to the service cluster to handle the compute capacity while your existing hosts are updating.
 2. [Identify your worker node hosts](#host-identify). Your worker node hosts are not listed as `Infrastructure`.
@@ -259,7 +259,7 @@ You can roll out updates to all of your worker node hosts with a ConfigMap. Spec
 7. Update the worker nodes by listing them by ID.
 
     ```sh
-    ibmcloud ks worker update --cluster <cluster_name_or_ID> --worker <worker_node1_ID> --worker <worker_node2_ID>
+    {[icks]} worker update --cluster <cluster_name_or_ID> --worker <worker_node1_ID> --worker <worker_node2_ID>
     ```
     {: pre}
 
@@ -282,14 +282,14 @@ You can roll out updates to all of your worker node hosts with a ConfigMap. Spec
 ## Applying version updates to worker nodes by replacing hosts
 {: #host-update-workers-minor}
 
-Hosts that are attached to a location do not update automatically. To apply a version update, you can first attach and assign new hosts to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) and then remove the old hosts. You can also apply [minor and patch version updates inplace](#host-update-workers-inplace).
+Hosts that are attached to a location do not update automatically. To apply a version update, you can first attach and assign new hosts to your {[SatServlink]} and then remove the old hosts. You can also apply [minor and patch version updates inplace](#host-update-workers-inplace).
 {: shortdesc}
 
 
 1. List your current hosts and make note of their IDs. These are the hosts to remove after you attach updated hosts.
 
     ```sh
-    ibmcloud ks worker ls -c <cluster_name_or_ID>
+    {[icks]} worker ls -c <cluster_name_or_ID>
     ```
     {: pre}
 
@@ -302,7 +302,7 @@ Hosts that are attached to a location do not update automatically. To apply a ve
     {: screen}
 
 
-1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
+1. [Attach new hosts to your {[SatLoc]}](/docs/satellite?topic=satellite-attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
 2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). These hosts automatically receive the update when you assign them.
 3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](/docs/satellite?topic=satellite-host-remove).
 

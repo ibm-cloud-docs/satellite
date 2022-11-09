@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-11-09"
 
 keywords: satellite, toolchain, satellite config, Kubernetes, cluster
 
@@ -48,7 +48,7 @@ This tutorial is for administrators who are using {{site.data.keyword.contdelive
 
 Before you start this tutorial, make sure that you have the following resources in place.
 
-* An [{{site.data.keyword.cloud_notm}} account](https://{DomainName}/registration){: external}. Depending on your {{site.data.keyword.cloud_notm}} account type, access to certain resources might be limited. Depending on your account plan limits, certain capabilities that are required by some of the deployment strategies might not be available. For more information about {{site.data.keyword.cloud_notm}} accounts, see [Setting up your {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-account-getting-started) and [Upgrading your account](/docs/account?topic=account-upgrading-account).
+* An [{{site.data.keyword.cloud_notm}} account](https://{DomainName}/registration){: external}. Depending on your {{site.data.keyword.cloud_notm}} account type, access to certain resources might be limited. Depending on your account plan limits, certain capabilities that are required by some deployment strategies might not be available. For more information about {{site.data.keyword.cloud_notm}} accounts, see [Setting up your {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-account-getting-started) and [Upgrading your account](/docs/account?topic=account-upgrading-account).
 
 * A {{site.data.keyword.satelliteshort}} cluster or an {{site.data.keyword.redhat_openshift_full}} cluster on {{site.data.keyword.cloud_notm}} that is registered with your {{site.data.keyword.satelliteshort}} location.
 
@@ -208,7 +208,7 @@ After your toolchain is set up and the {{site.data.keyword.deliverypipeline}} su
 3. In the **Workloads** > **Pod** section, filter by the project or the cluster namespace, and verify that the pods are running.
 4. In the **Networking** > **Routes** section, filter by the project or the cluster namespace, and locate the app URL.
 5. Verify that the app is running by visiting the app URL with your browser.
-6. Optional: You can view your {{site.data.keyword.satelliteshort}} configuration [in the console](https://cloud.ibm.com/satellite/configuration), or by running the `ibmcloud sat config ls` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-ls).
+6. Optional: You can view your {{site.data.keyword.satelliteshort}} configuration [in the console](https://cloud.ibm.com/satellite/configuration), or by running the `{[icsat]} config ls` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-ls).
 
 ## Deploying a new version of your app from a different branch
 {: #modify_trigger}
@@ -226,7 +226,7 @@ If you have multiple branches in your repository representing multiple versions 
 7. Modify the value of this property to the branch name you want to deploy. For example, `v2`.
 8. Save the changes.
 9. Check your app to see if it is running the new version by visiting the app URL with your browser.
-10. Optional: View the new version of your configuration in the {{site.data.keyword.satelliteshort}} configurations [console](https://cloud.ibm.com/satellite/configuration) or by running running the `ibmcloud sat config get --config CONFIG` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-get).
+10. Optional: View the new version of your configuration in the {{site.data.keyword.satelliteshort}} configurations [console](https://cloud.ibm.com/satellite/configuration) or by running running the `{[icsat]} config get --config CONFIG` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-get).
 
 Now you can deploy Kubernetes resources to multiple clusters with a single toolchain.
 
