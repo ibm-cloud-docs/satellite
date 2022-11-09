@@ -1330,9 +1330,11 @@ subcollection: satellite
 
 * [What type of location do I need to use HTTP proxy?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy)
 
-* [What type of hosts can i use?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy-host)
+* [What type of hosts can I use?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy-host)
 
-* [What else do I need to know about HTTP proxy?](/docs/satellite?topic=satellite-config-http-proxy#additional-http-proxy)
+* [Setting up TCP tunneling](/docs/satellite?topic=satellite-config-http-proxy#setup-tcp-http-proxy)
+
+* [Requesting access to the allowlist](/docs/satellite?topic=satellite-config-http-proxy#access-http-proxy)
 
 * [Configuring your HTTP proxy](/docs/satellite?topic=satellite-config-http-proxy#http-proxy-config)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-30"
+lastupdated: "2022-11-09"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -36,32 +36,59 @@ New Red Hat CoreOS-enabled locations
 :   Before attaching your hosts to your location, [configure your HTTP proxy](#http-proxy-config).
 
 
-## What type of hosts can i use?
+
+## What type of hosts can I use?
 {: #consider-http-proxy-host}
 
 You can use RHEL or Red Hat CoreOS hosts when you set up an HTTP proxy. You must edit each host that is attached to your location, including the hosts that make up the control plane.
 
 
-## What else do I need to know about HTTP proxy?
-{: #additional-http-proxy}
 
-- You cannot configure an HTTP proxy for worker to master communications or for connecting to the package mirrors. 
-- Your proxy must be set up with TCP tunneling. While specific steps might vary depending on your provider, follow these general steps to set up TCP tunneling.
-    1. Set up your HTTP proxy to tunnel traffic for all three of your location public service endpoints. To find your endpoints, 
+## Setting up TCP tunneling
+{: #setup-tcp-http-proxy}
+
+Your proxy must be set up with TCP tunneling. While specific steps might vary depending on your provider, follow these general steps to set up TCP tunneling.
+
+1. Set up your HTTP proxy to tunnel traffic for all three of your location public service endpoints. To find your endpoints, 
         
-        ```sh
-        ibmcloud sat location get --location LOCATION_NAME
-        ```
-        {: pre}
+    ```sh
+    {[icsat]} location get --location LOCATION_NAME
+    ```
+    {: pre}
         
-        In the output, find the field **Public Service Endpoint URL**. From that field, you can derive the endpoints. For example, if the field value is `https://c131-e.us-south.satellite.cloud.ibm.com:31726`, then the endpoints are `https://c131-1.us-south.satellite.cloud.ibm.com:31726`, `https://c131-2.us-south.satellite.cloud.ibm.com:31726` and `https://c131-3.us-south.satellite.cloud.ibm.com:31726`.
+    In the output, find the field **Public Service Endpoint URL**. From that field, you can derive the endpoints. For example, if the field value is `https://c131-e.us-south.satellite.cloud.ibm.com:31726`, then the endpoints are `https://c131-1.us-south.satellite.cloud.ibm.com:31726`, `https://c131-2.us-south.satellite.cloud.ibm.com:31726` and `https://c131-3.us-south.satellite.cloud.ibm.com:31726`.
         
-    2. Make sure the listener port on the HTTP proxy is the same as on {{site.data.keyword.cloud_notm}}.
-    3. Update the `/etc/hosts` on all your {{site.data.keyword.satelliteshort}} hosts to include the location public service endpoints forward traffic to the proxy, rather than to {{site.data.keyword.cloud_notm}} endpoints.
+2. Make sure the listener port on the HTTP proxy is the same as on {{site.data.keyword.cloud_notm}}.
+3. Update the `/etc/hosts` on all your {{site.data.keyword.satelliteshort}} hosts to include the location public service endpoints forward traffic to the proxy, rather than to {{site.data.keyword.cloud_notm}} endpoints.
 
 Your configuration might vary by provider. Consider setting up your proxy outside of the {{site.data.keyword.satelliteshort}} environment to ensure that the configuration works for your infrastructure. Then, configure your proxy in the {{site.data.keyword.satelliteshort}} environment. For more information about setting up and configuring your HTTP proxy, see the blog [Proxying In Cluster Kube-APIServer Traffic in IBM Cloud Satellite](https://lisowski0925.medium.com/proxying-in-cluster-kube-apiserver-traffic-in-ibm-cloud-satellite-162ee07d6e0d){: external}.
 {: tip}
 
+## Requesting access to the allowlist
+{: #access-http-proxy}
+
+To gain access to the allowlist for HTTP proxy, [create a ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with IBM Support.
+
+For example, use the following request as a template.
+
+```txt
+Title: Request for addition of HTTP_PROXY config to 
+       location <LOCATION_ID>
+
+Request Body:
+We are requesting the following HTTP_PROXY info be added to 
+the location_ID listed in the title of this ticket.
+
+Use the following HTTP_PROXY info 
+BE SURE to include the protocol (http:// or https://) and the port (`:PORT_NUMBER`) in the endpoint.
+
+
+HTTP_PROXY: https://my-proxy-endpoint.com:PORT_NUMBER
+HTTPS_PROXY: https://my-proxy-endpoint.com:PORT_NUMBER
+```
+{: screen}
+    
+After support processes the ticket, you will receive a notification that your location is updated. If a change is required, a new ticket must be opened stating the new parameters. To find your `LOCATIONID` by running `{[icsat]} locations`.
 
 
 ## Configuring your HTTP proxy
@@ -75,7 +102,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
     - For {{site.data.keyword.redhat_openshift_notm}} hosts, the `NO_PROXY` for {{site.data.keyword.redhat_openshift_notm}} hosts must include the first IP of the service subnet that is used for the {{site.data.keyword.redhat_openshift_notm}} cluster. To find this IP, run the **`cluster get`** command.
         
         ```sh
-        ibmcloud ks cluster get --cluster <ClusterID>
+        {[icks]} cluster get --cluster <ClusterID>
         ```
         {: pre}
         
@@ -129,41 +156,6 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
 6. [Attach or reattach](/docs/satellite?topic=satellite-attach-hosts) your host to the location.
 7. Assign the host back to the [control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or to [the service](/docs/satellite?topic=satellite-assigning-hosts) where it was previously assigned.
 8. Repeat these steps for each host.
-9. [Create a ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} with IBM Support with the following format.
-    
-    ```sh
-    Title: Request for addition of HTTP_PROXY config to location <LOCATIONID>
-
-    Request Body:
-    We are requesting the following information HTTP_PROXY info be added to the locationID listed in the title of this ticket.
-
-    The HTTP_PROXY info is as follows:
-
-    HTTP_PROXY: <endpoint>
-    HTTPS_PROXY: <endpoint>
-    ```
-    {: screen}
-    
-    After support processes the ticket, you will receive a notification that your location is updated. If a change is required, a new ticket must be opened stating the new parameters. To find your `LOCATIONID` by running `ibmcloud sat locations`.
-
-    For example, use the following request as a template.
-
-    ```sh
-    Title: Request for addition of HTTP_PROXY config to 
-           location <LOCATION_ID>
-
-    Request Body:
-    We are requesting the following HTTP_PROXY info be added to 
-    the location_ID listed in the title of this ticket.
-
-    Use the following HTTP_PROXY info 
-    BE SURE to include the protocol (http:// or https://) and the port (`:PORT_NUMBER`) in the endpoint.
-
-
-    HTTP_PROXY: https://my-proxy-endpoint.com:PORT_NUMBER
-    HTTPS_PROXY: https://my-proxy-endpoint.com:PORT_NUMBER
-    ```
-    {: screen}
     
 The value for `REDHHAT_PACKAGE_MIRROR_LOCATION` depends on the location of the Red Hat package mirrors. The `REDHHAT_PACKAGE_MIRROR_LOCATION` can be a wild-card if multiple mirrors are used. For more information, see [How to apply a system wide proxy](https://access.redhat.com/solutions/1351253){: external}.
 {: note}
