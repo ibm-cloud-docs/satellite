@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-08"
+lastupdated: "2022-11-09"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1666,8 +1666,6 @@ subcollection: satellite
 * [Version 1.3.1 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.3.1)
 
 * [Version 1.2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.2.2)
-
-* [Storage class reference for AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#efs-sc-reference)
 
 * [Getting help and support for AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#sat-efs-support)
 
