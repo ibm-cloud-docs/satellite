@@ -1359,13 +1359,13 @@ subcollection: satellite
 {: #sitemap_managing_apps_with_satellite_config}
 
 
-[Understanding {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#cluster-config)
+[Understanding {[SatConfig]}](/docs/satellite?topic=satellite-cluster-config#cluster-config)
 
 * [How {{site.data.keyword.satelliteshort}} configurations work](/docs/satellite?topic=satellite-cluster-config#satcon-flow)
 
 * [Key concepts for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#satcon-terminology)
 
-[Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig)
+[Setting up clusters to use with {[SatConfig]}](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig)
 
 * [Prerequisites](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-prereq)
 
@@ -1379,7 +1379,7 @@ subcollection: satellite
 
     * [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-scoped-project)
 
-* [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters)
+* [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {[SatConfig]}](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters)
 
 [Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-create#satcon-create)
 
@@ -1835,6 +1835,8 @@ subcollection: satellite
 * [Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the command line](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-rm-cli)
 
 * [Parameter reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-parameter-reference)
+
+* [Version 2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-cos#ibm-object-storage-plugin-2.2)
 
 * [Storage class reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-sc-ref)
 
