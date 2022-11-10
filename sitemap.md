@@ -9,6 +9,7 @@ subcollection: satellite
 
 ---
 
+
 {{site.data.keyword.attribute-definition-list}}
 
 
@@ -132,7 +133,7 @@ subcollection: satellite
 
 
 ## Understanding {{site.data.keyword.satelliteshort}} location and hosts
-{: #sitemap_understanding_<!-snippet_satloc_start->_location<!-snippet_satloc_end->_and_hosts}
+{: #sitemap_understanding__location_and_hosts}
 
 
 [Understanding {{site.data.keyword.satelliteshort}} location and hosts](/docs/satellite?topic=satellite-location-host#location-host)
@@ -1663,6 +1664,12 @@ subcollection: satellite
 
 * [AWS EFS parameter reference](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-params-cli)
 
+* [Version 1.3.7 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.3.7)
+
+* [Version 1.3.1 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.3.1)
+
+* [Version 1.2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.2.2)
+
 * [Getting help and support for AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#sat-efs-support)
 
 
@@ -1831,6 +1838,8 @@ subcollection: satellite
 * [Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the command line](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-rm-cli)
 
 * [Parameter reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-parameter-reference)
+
+* [Version 2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-cos#ibm-object-storage-plugin-2.2)
 
 * [Storage class reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-sc-ref)
 

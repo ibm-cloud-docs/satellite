@@ -10,6 +10,7 @@ subcollection: satellite
 
 ---
 
+
 {{site.data.keyword.attribute-definition-list}}
 
 # Updating {{site.data.keyword.satelliteshort}} location control plane hosts 
