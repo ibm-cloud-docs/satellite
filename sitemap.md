@@ -31,7 +31,7 @@ subcollection: satellite
 
     * [Minimum requirements for hosts](/docs/satellite?topic=satellite-getting-started#gs-min-reqs)
 
-* [I created a {[SatLoc]}, what comes next?](/docs/satellite?topic=satellite-getting-started#whats-next)
+* [I created a {{site.data.keyword.satelliteshort}} location, what comes next?](/docs/satellite?topic=satellite-getting-started#whats-next)
 
 
 ## Understanding Satellite use cases
@@ -131,15 +131,15 @@ subcollection: satellite
     * [Step 3: Run model inferencing at the edge](/docs/satellite?topic=satellite-edge-usecase#edge-example-inferencing)
 
 
-## Understanding {[SatLoc]} and hosts
-{: #sitemap_understanding_{[satloc]}_and_hosts}
+## Understanding {{site.data.keyword.satelliteshort}} location and hosts
+{: #sitemap_understanding_<!-snippet_satloc_start->_location<!-snippet_satloc_end->_and_hosts}
 
 
-[Understanding {[SatLoc]} and hosts](/docs/satellite?topic=satellite-location-host#location-host)
+[Understanding {{site.data.keyword.satelliteshort}} location and hosts](/docs/satellite?topic=satellite-location-host#location-host)
 
-* [{[SatLoc]} overview](/docs/satellite?topic=satellite-location-host#loc-overview)
+* [{{site.data.keyword.satelliteshort}} location overview](/docs/satellite?topic=satellite-location-host#loc-overview)
 
-* [I created a {[SatLoc]}, what comes next?](/docs/satellite?topic=satellite-location-host#loc-host-whats-next)
+* [I created a {{site.data.keyword.satelliteshort}} location, what comes next?](/docs/satellite?topic=satellite-location-host#loc-host-whats-next)
 
 
 ## Supported Satellite-enabled IBM Cloud services
@@ -1286,7 +1286,7 @@ subcollection: satellite
 
 * [Use case: Edge clusters with centralized management in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-sat-multi-infra#edge-cluster)
 
-[Updating {[control_plane]} hosts](/docs/satellite?topic=satellite-host-update-location#host-update-location)
+[Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-location)
 
 * [Considerations before you update control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-considerations)
 
@@ -1361,7 +1361,7 @@ subcollection: satellite
 {: #sitemap_managing_apps_with_satellite_config}
 
 
-[Understanding {[SatConfig]}](/docs/satellite?topic=satellite-cluster-config#cluster-config)
+[Understanding {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#cluster-config)
 
 * [How {{site.data.keyword.satelliteshort}} configurations work](/docs/satellite?topic=satellite-cluster-config#satcon-flow)
 
@@ -1663,12 +1663,6 @@ subcollection: satellite
 
 * [AWS EFS parameter reference](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-params-cli)
 
-* [Version 1.3.7 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.3.7)
-
-* [Version 1.3.1 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.3.1)
-
-* [Version 1.2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.2.2)
-
 * [Getting help and support for AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#sat-efs-support)
 
 
@@ -1837,8 +1831,6 @@ subcollection: satellite
 * [Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the command line](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-rm-cli)
 
 * [Parameter reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-parameter-reference)
-
-* [Version 2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-cos#ibm-object-storage-plugin-2.2)
 
 * [Storage class reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-sc-ref)
 

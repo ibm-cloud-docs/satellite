@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-09"
+lastupdated: "2022-11-10"
 
 keywords: satellite, hybrid, multicloud, forwarding audit logs, location audit logs, kubernetes API audit logs
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Setting up log forwarding
+# Setting up log forwarding 
 {: #location-forward-logs}
 
 You can set up log forwarding for Kubernetes audit logs or for worker node `syslogs` for an {{site.data.keyword.satellitelong_notm}} location.
@@ -30,7 +30,7 @@ You must have a {{site.data.keyword.openshiftlong_notm}} cluster within the loca
 1. Assign additional hosts to your {{site.data.keyword.openshiftlong_notm}} cluster.
     
     ```sh
-    {[icsat]} host assign --location LOCATIONID --cluster CLUSTERID
+    ibmcloud sat host assign --location LOCATIONID --cluster CLUSTERID
     ```
     {: pre}
 

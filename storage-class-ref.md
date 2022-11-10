@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-09"
+lastupdated: "2022-11-10"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Storage class reference
+# Storage class reference 
 {: #storage-class-ref}
 
 Review the storage class reference for the storage provider that you want to use in your {{site.data.keyword.satelliteshort}} clusters.

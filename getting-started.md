@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-09"
+lastupdated: "2022-11-10"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -13,13 +13,13 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
   
-# Getting started with {{site.data.keyword.satellitelong_notm}}
+# Getting started with {{site.data.keyword.satellitelong_notm}} 
 {: #getting-started}
 
-{{site.data.keyword.satellitelong}} provides a distributed cloud architecture that brings the scalability and on demand flexibility of public cloud services to the applications and data that run in your secure private cloud. With {{site.data.keyword.satellitelong}}, you can use your own compute infrastructure that is in your on-premises data center, other cloud providers, or edge networks to create a {[SatLoc]}. Then, you can use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on your infrastructure, and consistently deploy, manage, and control your app workloads. From a single pane of glass, you can manage workloads that run across the infrastructure from your {{site.data.keyword.satelliteshort}} locations.
+{{site.data.keyword.satellitelong}} provides a distributed cloud architecture that brings the scalability and on demand flexibility of public cloud services to the applications and data that run in your secure private cloud. With {{site.data.keyword.satellitelong}}, you can use your own compute infrastructure that is in your on-premises data center, other cloud providers, or edge networks to create a {{site.data.keyword.satelliteshort}} location. Then, you can use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on your infrastructure, and consistently deploy, manage, and control your app workloads. From a single pane of glass, you can manage workloads that run across the infrastructure from your {{site.data.keyword.satelliteshort}} locations.
 {: shortdesc}
 
-Your {[SatLoc]} includes tools such as {[SatLink]} and {[SatConfig]} to provide additional capabilities for securing and auditing network connections in your location and consistently deploying, managing, and controlling your apps and policies across clusters in the location.
+Your {{site.data.keyword.satelliteshort}} location includes tools such as {{site.data.keyword.satelliteshort}} Link and {{site.data.keyword.satelliteshort}} Config to provide additional capabilities for securing and auditing network connections in your location and consistently deploying, managing, and controlling your apps and policies across clusters in the location.
 
 ![Deploy apps and run anywhere with IBM Cloud Satellite](https://www.youtube.com/embed/kI62_Xw2Qgg){: video output="iframe" data-script="#video-transcript-sat" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
 
@@ -30,12 +30,12 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 
 | Term | Description |
 | ------ | ------------------------- |
-| {[SatLoc]} | A {{site.data.keyword.satelliteshort}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud. Locations are made up of compute sources, called hosts, from separate zones of your backing infrastructure environment. To get started with {{site.data.keyword.satelliteshort}}, [consider your infrastructure](#gs-start-here) and then create a location. After your location is created, you can utilize {{site.data.keyword.cloud_notm}} services to run workloads in your own environment. See [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-location-host). |
+| {{site.data.keyword.satelliteshort}} location | A {{site.data.keyword.satelliteshort}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud. Locations are made up of compute sources, called hosts, from separate zones of your backing infrastructure environment. To get started with {{site.data.keyword.satelliteshort}}, [consider your infrastructure](#gs-start-here) and then create a location. After your location is created, you can utilize {{site.data.keyword.cloud_notm}} services to run workloads in your own environment. See [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-location-host). |
 | {{site.data.keyword.satelliteshort}} hosts | A {{site.data.keyword.satelliteshort}} host is a compute source that resides in your infrastructure provider or even locally. After you attach your hosts to a {{site.data.keyword.satelliteshort}} location, assign the hosts to the location control plane or to a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services to provide the computing power to run your service workloads. See [Attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts). |
 | {{site.data.keyword.satelliteshort}}-enabled service | An {{site.data.keyword.cloud_notm}} service that you can set up in a Satellite location, such as a {{site.data.keyword.redhat_openshift_notm}} cluster. The service is managed from the {{site.data.keyword.cloud_notm}} region that your location is managed from, but you provide the infrastructure hosts to run the service's resources in your location. See [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services). |
-| {[SatConfig]} | Based on the [Razee open source project](https://github.com/razee-io/Razee){: external}, {[SatConfig]} is a continuous delivery tool that you can use to consistently roll out versions of your apps across clusters in your {[SatLoc]}. See [Deploying {{site.data.keyword.redhat_openshift_notm}} resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-setup-clusters-satconfig). |
-| {[SatLink]} | {[SatLink]} securely connects your {[SatLoc]} to the {{site.data.keyword.cloud_notm}} region that your location is managed from. Communication to and from your location is proxied by the Link tunnel server, and network traffic on this connection can be monitored and audited. See [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud).|
-| {[SatStorage]} | {[SatStorage]} uses {[SatConfig]} to provide a convenient way to install various storage drivers in {{site.data.keyword.redhat_openshift_notm}} clusters across your {[SatLoc]}s, by using storage templates. The storage templates are provided and tested by the vendors. After you install {[SatStorage]}, your cluster users can use Kubernetes persistent volume claims (PVCs) to order and save their application data in persistent storage. See [Understanding {{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov). |
+| {{site.data.keyword.satelliteshort}} Config | Based on the [Razee open source project](https://github.com/razee-io/Razee){: external}, {{site.data.keyword.satelliteshort}} Config is a continuous delivery tool that you can use to consistently roll out versions of your apps across clusters in your {{site.data.keyword.satelliteshort}} location. See [Deploying {{site.data.keyword.redhat_openshift_notm}} resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-setup-clusters-satconfig). |
+| {{site.data.keyword.satelliteshort}} Link | {{site.data.keyword.satelliteshort}} Link securely connects your {{site.data.keyword.satelliteshort}} location to the {{site.data.keyword.cloud_notm}} region that your location is managed from. Communication to and from your location is proxied by the Link tunnel server, and network traffic on this connection can be monitored and audited. See [Connecting {{site.data.keyword.satelliteshort}} locations with external services using Link endpoints](/docs/satellite?topic=satellite-link-location-cloud).|
+| {{site.data.keyword.satelliteshort}} storage | {{site.data.keyword.satelliteshort}} storage uses {{site.data.keyword.satelliteshort}} Config to provide a convenient way to install various storage drivers in {{site.data.keyword.redhat_openshift_notm}} clusters across your {{site.data.keyword.satelliteshort}} locations, by using storage templates. The storage templates are provided and tested by the vendors. After you install {{site.data.keyword.satelliteshort}} storage, your cluster users can use Kubernetes persistent volume claims (PVCs) to order and save their application data in persistent storage. See [Understanding {{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov). |
 {: caption="Table 1. Satellite terminology" caption-side="bottom"}
 
 
@@ -55,7 +55,7 @@ I want to use a different cloud provider for my infrastructure.
 :    Choose from [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud]( /docs/satellite?topic=satellite-alibaba). Many of these providers include Terraform-based automation.
 
 I want {{site.data.keyword.IBM_notm}} to send me infrastructure that is already set up for {{site.data.keyword.satelliteshort}}. 
-:    With {[sat_is]}, you can order managed infrastructure from {{site.data.keyword.IBM_notm}} to create an on-premises location. For more information, see [Getting started with {[sat_is]}](/docs/satellite?topic=satellite-infrastructure-service).
+:    With {{site.data.keyword.satelliteshort}} Infrastructure Service, you can order managed infrastructure from {{site.data.keyword.IBM_notm}} to create an on-premises location. For more information, see [Getting started with {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
 
 
 ### Minimum requirements for hosts
@@ -72,17 +72,17 @@ In each of these cases, make sure your infrastructure meets the minimum requirem
 You can validate your host set up by running the `satellite-host-check` script.  For more information, see [Checking your host set up](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
-## I created a {[SatLoc]}, what comes next?
+## I created a {{site.data.keyword.satelliteshort}} location, what comes next?
 {: #whats-next}
 
-Now that your {[SatLoc]} is set up, you are ready to start using {{site.data.keyword.cloud_notm}} services.
+Now that your {{site.data.keyword.satelliteshort}} location is set up, you are ready to start using {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
 
-1. Add compute capacity to your location by [attaching more hosts to the location](/docs/satellite?topic=satellite-attach-hosts) so that you can run {[SatServlink]}.
-2. Create a {[SatServlink]}, such as a [{{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters). You assign the additional hosts that you previously attached as worker nodes to provide the compute power for the cluster. You can even [register existing {{site.data.keyword.redhat_openshift_notm}} clusters to your location](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters) to use as deployment targets.
-3. Start [deploying Kubernetes resources to these clusters](/docs/satellite?topic=satellite-satcon-create) with {[SatConfig]}.
+1. Add compute capacity to your location by [attaching more hosts to the location](/docs/satellite?topic=satellite-attach-hosts) so that you can run [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services).
+2. Create a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services), such as a [{{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters). You assign the additional hosts that you previously attached as worker nodes to provide the compute power for the cluster. You can even [register existing {{site.data.keyword.redhat_openshift_notm}} clusters to your location](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters) to use as deployment targets.
+3. Start [deploying Kubernetes resources to these clusters](/docs/satellite?topic=satellite-satcon-create) with {{site.data.keyword.satelliteshort}} Config.
 4. Create [{{site.data.keyword.satelliteshort}} cluster storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov).
-5. Learn more about the [{[SatLink]} component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
+5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
 

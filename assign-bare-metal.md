@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-09"
+lastupdated: "2022-11-10"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -18,7 +18,7 @@ completion-time: 2hr
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Attaching a {{site.data.keyword.baremetal_short_sing}} to a {{site.data.keyword.satelliteshort}} location
+# Attaching a {{site.data.keyword.baremetal_short_sing}} to a {{site.data.keyword.satelliteshort}} location 
 {: #assign-bare-metal}
 {: toc-content-type="tutorial"}
 {: toc-services="satellite"}
