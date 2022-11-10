@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-10"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Disconnected use for Satellite components
+# Disconnected use for Satellite components 
 {: #disconnected-use}
 
 Certain features of {{site.data.keyword.satellitelong}} can be used while disconnected temporarily. See the following table to understand the disconnected use for these components.
@@ -51,7 +51,7 @@ You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for
 
 2. Get your OAuth access tokens by running `oc get oauthaccesstokens`.
 
-3. For each OAuth client that you retrieved in step 1, set the `accessTokenMaxAgeSeconds` value by running `oc  edit oauthclients console` and adding the `accessTokenMaxAgeSeconds: 604800` as the first line. Note that you must repeat this step for all of your OAuth clients.
+3. For each OAuth client that you retrieved in step 1, set the `accessTokenMaxAgeSeconds` value by running `oc  edit oauthclients console` and adding the `accessTokenMaxAgeSeconds: 604800` as the first line. Note that you must repeat this step for all your OAuth clients.
 
 4. Optionally, run `oc get oauthclients console -o yaml` to check if the first line of the yaml file has been updated to `accessTokenMaxAgeSeconds: 604800`.
 

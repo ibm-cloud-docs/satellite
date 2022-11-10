@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-08"
+lastupdated: "2022-11-10"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -18,7 +18,7 @@ completion-time: 2hr
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Attaching a {{site.data.keyword.baremetal_short_sing}} to a {{site.data.keyword.satelliteshort}} location
+# Attaching a {{site.data.keyword.baremetal_short_sing}} to a {{site.data.keyword.satelliteshort}} location 
 {: #assign-bare-metal}
 {: toc-content-type="tutorial"}
 {: toc-services="satellite"}
@@ -40,7 +40,7 @@ The following steps use {{site.data.keyword.baremetal_long}} for Classic. Howeve
 - Attach hosts to your location and set up your [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
 - Find and record your bare metal host name. For this {{site.data.keyword.baremetal_short_sing}}, this information is found in the **Name** field on the **Overview** page for your specific {{site.data.keyword.baremetal_short}}.
 - Find your bare metal server network information. For this {{site.data.keyword.baremetal_short_sing}}, this information is found in the **Network details** section on the **Overview** page. Record the CIDR and gateway information for the public and private interfaces for your system.
-- Create or identify a {{site.data.keyword.cos_full_notm}} bucket to store your ignition file.
+- Create or identify an {{site.data.keyword.cos_full_notm}} bucket to store your ignition file.
 - Create or identify a cluster within the {{site.data.keyword.satelliteshort}} locatino that runs a supported operating system; for example, this tutorial uses a {{site.data.keyword.redhat_openshift_notm}} cluster that is running 4.11.
 
 In addition, for this specific {{site.data.keyword.baremetal_short_sing}} required the following prerequisites.
@@ -75,7 +75,7 @@ For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a bro
 1. From the [Device list in the console](https://cloud.ibm.com/gen1/infrastructure/devices){: external}, select your bare metal server.
 1. From the **Overview** page, note the networking values for your server. Find and verify the  CIDR and gateway information.
 1. Click **Remote management** and make note of the `User` and `Password` in the **Management details** section. You use this username and password in later steps.
-1. Click the **Actions** icon ![Actions icon](../icons/actions.svg "Actions icon") > **KVM Console** to open your {{site.data.keyword.baremetal_short_sing}} console. Your browser might display a warning of an insecure self-signed certificate. Add the certificate to your browser trust store as trusted CA certificate to continue.
+1. Click the **Actions** icon ![Actions icon](../icons/actions.svg "Actions icon") > **KVM Console** to open your {{site.data.keyword.baremetal_short_sing}} console. Your browser might display a warning of an insecure self-signed certificate. Add the certificate to your browser truststore as trusted CA certificate to continue.
 1. Log in to your server with the `User` and `Password` that you retreived earlier.
 1. On the **System** tab, in the **Remote console preview**, click **Settings**.
 1. Select **Java** to change the interface to use Java instead of HTML5.
@@ -313,7 +313,7 @@ You must configure a separate ignition file for each bare metal host that you ar
     ```
     {: screen}
     
-1. Upload your ignition file to the {{site.data.keyword.cos_full_notm}} bucket that you identified earlier. From your **Bucket** page in the console, click **Add object**. Drag and drop your ignition file in the bucket. 
+1. Upload your ignition file to the {{site.data.keyword.cos_full_notm}} bucket that you identified earlier. From your **Bucket** page in the console, click **Add object**. Drag your ignition file in the bucket. 
   
 ## Attaching your bare metal host to the location
 {: #load-ignition-file-bare-metal}
@@ -409,6 +409,6 @@ After your {{site.data.keyword.baremetal_short_sing}} is attached to your locati
 
 For more information, see [Manually assigning hosts to Satellite resources](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
 
-Now that your {{site.data.keyword.baremetal_short_sing}} is assigned to a worker pool, you can set up {{site.data.keyword.redhat_openshift_notm}} virtualization. For more information about how to set this virtualization up, see the blog [Running a Windows 2019 Server VM in IBM Cloud Satellite with Openshift Virtualization](https://lisowski0925.medium.com/running-a-windows-2019-server-vm-in-ibm-cloud-satellite-with-openshift-virtualization-234aa9a01def){: external}.
+Now that your {{site.data.keyword.baremetal_short_sing}} is assigned to a worker pool, you can set up {{site.data.keyword.redhat_openshift_notm}} virtualization. For more information about how to set this virtualization up, see the blog [Running a Windows 2019 Server VM in IBM Cloud Satellite with OpenShift Virtualization](https://lisowski0925.medium.com/running-a-windows-2019-server-vm-in-ibm-cloud-satellite-with-openshift-virtualization-234aa9a01def){: external}.
 
 

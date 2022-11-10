@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-19"
+lastupdated: "2022-11-10"
 
 keywords: satellite, hybrid, multicloud, location, host, location control plane
 
@@ -13,10 +13,10 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Understanding {{site.data.keyword.satelliteshort}} location and hosts
+# Understanding {{site.data.keyword.satelliteshort}} location and hosts 
 {: #location-host}
 
-A {{site.data.keyword.satellitelong}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud. Locations are made up of compute sources, called hosts, that resides in your infrastructure provider or even locally. After you attach your hosts to a {{site.data.keyword.satelliteshort}} location, assign the hosts to the location control plane or use them to power your service workloads.
+An {{site.data.keyword.satellitelong}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud. Locations are made up of compute sources, called hosts, that resides in your infrastructure provider or even locally. After you attach your hosts to a {{site.data.keyword.satelliteshort}} location, assign the hosts to the location control plane or use them to power your service workloads.
 {: shortdesc}
 
 Locations can be made of hosts of any size, including as small as a local desktop computer or as large as hundreds of computers in a central office. Because locations are made up of your infrastructure, you can create a {{site.data.keyword.satelliteshort}} location anywhere that your infrastructure is located. 
@@ -44,7 +44,7 @@ To set up a {{site.data.keyword.satelliteshort}} location, you must first create
 4. Select hosts to make up your [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane). The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} location control plane or a service. For example, a basic setup has 3 hosts that are assigned as worker nodes to the Satellite location control plane. For more information, see [sizing your location](/docs/satellite?topic=satellite-location-sizing). After you assign a host, it enters a `provisioning` status.
     ![Create your location control plane.](/images/4-assign-hosts-location.svg "Create your location control plane"){: caption="Figure 5. Creating your location control plane" caption-side="bottom"}
 
-5. Wait for the host to enter a `normal` state. When you assign a host to the control plane, the host is bootstrapped to become a worker node in your {{site.data.keyword.satelliteshort}} location control plan. This bootstrap process consists of three phases, all of which must complete. First, required images are downloaded to the host from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the configuration. Finally, software packages are set up on the host. After the host is successfully bootstrapped, it enters a `normal` health state with an `assigned` status. You can no longer log in to the underlying machine with SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
+5. Wait for the host to enter a `normal` state. When you assign a host to the control plane, the host is bootstrapped to become a worker node in your {{site.data.keyword.satelliteshort}} location control plan. This bootstrap process consists of three phases, and all phases must complete. First, required images are downloaded to the host from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the configuration. Finally, software packages are set up on the host. After the host is successfully bootstrapped, it enters a `normal` health state with an `assigned` status. You can no longer log in to the underlying machine with SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
     ![Satellite Location in a normal staten.](/images/5-location-normal-state.svg "Satellite Location in a normal staten"){: caption="Figure 6. Satellite Location in a normal state" caption-side="bottom"}
 
 6. After you set up your {{site.data.keyword.satelliteshort}} location control plane, you can assign hosts to [Satellite-enabled IBM Cloud service](/docs/satellite?topic=satellite-managed-services) such as clusters or databases.

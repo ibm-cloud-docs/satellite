@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-06"
+lastupdated: "2022-11-10"
 
 keywords: satellite, hybrid, multicloud, forwarding audit logs, location audit logs, kubernetes API audit logs
 
@@ -13,10 +13,10 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Setting up log forwarding
+# Setting up log forwarding 
 {: #location-forward-logs}
 
-You can set up log forwarding for Kubernetes audit logs or for worker node `syslogs` for a {{site.data.keyword.satellitelong_notm}} location.
+You can set up log forwarding for Kubernetes audit logs or for worker node `syslogs` for an {{site.data.keyword.satellitelong_notm}} location.
 {: shortdesc}
 
 ## Forwarding Kubernetes audit logs

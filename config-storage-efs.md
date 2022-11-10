@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-10"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# AWS EFS
+# AWS EFS 
 {: #config-storage-efs}
 
 Set up [Amazon Elastic File System (EFS)](https://docs.aws.amazon.com/efs/?id=docs_gateway){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
@@ -56,7 +56,8 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
 1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
 1. On the **Parameters** tab, enter the parameters for your configuration.
 1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
-1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. **Important** The AWS EFS template doesn't include any pre-defined storage classes. Instead, you must create a storage class when you create your configuration. On the **Storage classes** tab, click **Add storage class** to create a custom storage class for your configuration. Make sure to specify your EFS filesystem ID and review the storage class options.
+1. Click **Add** to add the storage class to your configuration, then click **Next**.
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
@@ -129,6 +130,20 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
     ibmcloud sat storage config get --config <config_name>
     ```
     {: pre}
+    
+1. **Important**: Add a custom storage class to your configuration. The AWS EFS template doesn't include any pre-defined storage classes. Instead, you must create a storage class when you create your configuration.
+    1. Review the custom storage class options by running the following command.
+        ```sh
+        ibmcloud sat storage template get --name aws-efs-csi-driver --version VERSION
+        ```
+        {: pre}
+
+    1. Add a storage class to your configuration by running the following command. Make sure to include your EFS Filesystem ID.
+
+        ```sh
+        ibmcloud sat storage config class add --config-name NAME --name SC-NAME --param "fileSystemId=FILE-SYSTEM-ID" --param "key=value" --param "key=value"
+        ```
+        {: pre}
 
 1. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to use. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EFS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location.
     ```sh
@@ -207,7 +222,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
           accessModes:
           - ReadWriteOnce
           persistentVolumeReclaimPolicy: Retain
-          storageClassName: sat-aws-file-gold
+          storageClassName: # Enter the name of the custom storage class that you created earlier
           csi:
           driver: efs.csi.aws.com
           volumeHandle: <aws_efs_fileshare_ID>
@@ -243,7 +258,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         spec:
           accessModes:
           - ReadWriteOnce
-          storageClassName: sat-aws-file-gold
+          storageClassName: # Enter the custom storage class that you created earlier.
           resources:
           requests:
             storage: 5Gi
@@ -554,21 +569,8 @@ Use the CLI to remove a storage configuration.
 {: caption="aws-efs-csi-driver version 1.2.2 parameter reference"}
 
 
-## Storage class reference for AWS EFS
-{: #efs-sc-reference}
-
-Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
-{: shortdesc}
-
-| Storage class name | File system | Reclaim policy |
-| --- | --- | --- |
-| `sat-aws-file-gold` **Default** | NFS | Delete |
-{: caption="Table 2. AWS EFS storage class reference." caption-side="bottom"}
-
-
 ## Getting help and support for AWS EFS
 {: #sat-efs-support}
 
 If you run into an issue with using AWS EFS, you can refer to the [AWS Knowledge Center](https://aws.amazon.com/premiumsupport/knowledge-center/){: external} and review some documentation for the most frequently asked questions for various AWS services. The [AWS Support Center](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fsupport%2Fhome%3Fstate%3DhashArgs%2523%252F%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fsupportcenter&forceMobileApp=0&code_challenge=u3nT-WHT9gSG_PS93w4dwD6R_PWLj1eOU9GLUMEOkzo&code_challenge_method=SHA-256){: external} is another resource available to AWS customers looking for more in-depth support options. 
-
 

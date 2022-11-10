@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-10"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Storage class reference
+# Storage class reference 
 {: #storage-class-ref}
 
 Review the storage class reference for the storage provider that you want to use in your {{site.data.keyword.satelliteshort}} clusters.
@@ -37,14 +37,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You
 ## AWS EFS
 {: #efs-ref}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EFS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command.
-{: shortdesc}
-
-| Storage class name | File system | Reclaim policy |
-| --- | --- | --- |
-| `sat-aws-file-gold` **Default** | NFS | Delete |
-{: caption="Table 2. AWS EFS storage class reference." caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the storage class name. The second column is the file system type. The third column is the reclaim policy."}
+The AWS EFS template doesn't include any pre-defined storage classes. Instead, you must create a storage class when you create your configuration.
 
 
 ## Azure Disk

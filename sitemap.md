@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-08"
+lastupdated: "2022-11-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -132,7 +132,7 @@ subcollection: satellite
 
 
 ## Understanding {{site.data.keyword.satelliteshort}} location and hosts
-{: #sitemap_understanding__location_and_hosts}
+{: #sitemap_understanding_<!-snippet_satloc_start->_location<!-snippet_satloc_end->_and_hosts}
 
 
 [Understanding {{site.data.keyword.satelliteshort}} location and hosts](/docs/satellite?topic=satellite-location-host#location-host)
@@ -1330,9 +1330,11 @@ subcollection: satellite
 
 * [What type of location do I need to use HTTP proxy?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy)
 
-* [What type of hosts can i use?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy-host)
+* [What type of hosts can I use?](/docs/satellite?topic=satellite-config-http-proxy#consider-http-proxy-host)
 
-* [What else do I need to know about HTTP proxy?](/docs/satellite?topic=satellite-config-http-proxy#additional-http-proxy)
+* [Setting up TCP tunneling](/docs/satellite?topic=satellite-config-http-proxy#setup-tcp-http-proxy)
+
+* [Requesting access to the allowlist](/docs/satellite?topic=satellite-config-http-proxy#access-http-proxy)
 
 * [Configuring your HTTP proxy](/docs/satellite?topic=satellite-config-http-proxy#http-proxy-config)
 
@@ -1661,14 +1663,6 @@ subcollection: satellite
 
 * [AWS EFS parameter reference](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-params-cli)
 
-* [Version 1.3.7 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.3.7)
-
-* [Version 1.3.1 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.3.1)
-
-* [Version 1.2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.2.2)
-
-* [Storage class reference for AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#efs-sc-reference)
-
 * [Getting help and support for AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#sat-efs-support)
 
 
@@ -1822,13 +1816,13 @@ subcollection: satellite
 
 * [Prerequisites](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-prereqs)
 
-* [Creating a {{site.data.keyword.cos_full_notm}} configuration from the console](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-create-ui)
+* [Creating an {{site.data.keyword.cos_full_notm}} configuration from the console](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-create-ui)
 
-* [Creating a {{site.data.keyword.cos_full_notm}} configuration from the CLI](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-create-cli)
+* [Creating a {{site.data.keyword.cos_short}} configuration from the CLI](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-create-cli)
 
-* [Assigning a {{site.data.keyword.cos_full_notm}} configuration from the console](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-assign-ui)
+* [Assigning a {{site.data.keyword.cos_short}} configuration from the console](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-assign-ui)
 
-* [Assigning a {{site.data.keyword.cos_full_notm}} configuration from the CLI](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-assign-cli)
+* [Assigning a {{site.data.keyword.cos_short}} configuration from the CLI](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-assign-cli)
 
 * [Deploying an app that uses your {{site.data.keyword.cos_full_notm}} configuration](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-app)
 
@@ -1837,8 +1831,6 @@ subcollection: satellite
 * [Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the command line](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-rm-cli)
 
 * [Parameter reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-parameter-reference)
-
-* [Version 2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-cos#ibm-object-storage-plugin-2.2)
 
 * [Storage class reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-sc-ref)
 

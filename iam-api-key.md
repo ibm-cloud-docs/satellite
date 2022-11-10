@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-11-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# API keys in {{site.data.keyword.cloud_notm}}
+# API keys in {{site.data.keyword.cloud_notm}} 
 {: #iam-api-key}
 
 {{site.data.keyword.satelliteshort}} uses [API keys](/docs/account?topic=account-manapikey) from {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) to authorize various requests.
@@ -22,7 +22,7 @@ subcollection: satellite
 ## {{site.data.keyword.satelliteshort}} API key
 {: #api-key-satellite}
 
-{{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM API key for you, that impersonates the permissions of the user that creates the location. The API key name is formatted as `satellite-<location_name>`.
+{{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM API key for you, that impersonates the permissions of the user that creates the location. The API key name is formatted as `satellite-<LOCATION_NAME>`.
 
 ## Container service API key
 {: #api-keys-containers}
@@ -42,5 +42,8 @@ For more information, see the [{{site.data.keyword.openshiftlong_notm}} document
 ## Infrastructure provider credentials
 {: #api-keys-templates}
 
-If you create a {{site.data.keyword.satelliteshort}} location from a template, such as a {{site.data.keyword.bplong_notm}} template for AWS, {{site.data.keyword.satelliteshort}} checks for permissions with an API key. The API key must have the [required permissions to create a location](/docs/satellite?topic=satellite-iam#iam-roles-usecases), including to {{site.data.keyword.bplong_notm}}, which is used to automate the infrastructure creation from the template cloud provider.
+If you create a {{site.data.keyword.satelliteshort}} location from a template, such as an {{site.data.keyword.bplong_notm}} template for AWS, {{site.data.keyword.satelliteshort}} checks for permissions with an API key. The API key must have the [required permissions to create a location](/docs/satellite?topic=satellite-iam#iam-roles-usecases), including to {{site.data.keyword.bplong_notm}}, which is used to automate the infrastructure creation from the template cloud provider.
 {: shortdesc}
+
+
+

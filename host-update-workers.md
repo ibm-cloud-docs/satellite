@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-01"
+lastupdated: "2022-11-10"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch, host, update, host update
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Updating hosts that are assigned as worker nodes
+# Updating hosts that are assigned as worker nodes 
 {: #host-update-workers}
 
 {{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates. Note that service clusters, which are the underlying platform for all {{site.data.keyword.cloud_notm}} services are created by services such as {{site.data.keyword.codeengineshort}} or {{site.data.keyword.cos_full_notm}} and are maintained by {{site.data.keyword.IBM_notm}}.
@@ -130,7 +130,7 @@ You can update your worker node hosts without detaching them from the location. 
 
 Before you begin
 
-- Verify that all of your worker nodes are in a healthy state.
+- Verify that all your worker nodes are in a healthy state.
 - If you are using persistent block storage volumes, you must detach these volumes from the node before you start your updates. Move the persistent volumes to a different worker node that does not require updates. Then, cordon and drain the workload from the worker node to update with the **`kubectl drain NODENAME`** command. If you cannot move the block storage volumes, use the [Applying version updates to worker nodes by replacing hosts](#host-update-workers-minor).
 
 Applying updates to worker nodes can cause downtime for your apps and services. Do not perform any actions on the host while the update process is running. A maximum of 20% of all your worker nodes can be unavailable during the update process.
@@ -159,7 +159,7 @@ Applying updates to worker nodes can cause downtime for your apps and services. 
 ### Apply version updates to your worker node hosts with a ConfigMap
 {: #host-update-workers-rolling}
 
-You can roll out updates to all of your worker node hosts with a ConfigMap. Specify which nodes to update by using labels. You can also specify 
+You can roll out updates to all your worker node hosts with a ConfigMap. Specify which nodes to update by using labels. You can also specify 
 
 1. Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) extra hosts to the service cluster to handle the compute capacity while your existing hosts are updating.
 2. [Identify your worker node hosts](#host-identify). Your worker node hosts are not listed as `Infrastructure`.

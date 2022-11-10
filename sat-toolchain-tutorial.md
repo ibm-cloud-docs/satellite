@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-08-10"
+lastupdated: "2022-11-10"
 
 keywords: satellite, toolchain, satellite config, Kubernetes, cluster
 
@@ -25,7 +25,7 @@ completion-time: 30m
 {: toc-services="satellite, ContinuousDelivery"}
 {: toc-completion-time="30m"}
 
-Deploy Kubernetes resources, like deployments, from your GitHub or GitLab repository to multiple clusters with {{site.data.keyword.contdelivery_full}} and {{site.data.keyword.satelliteshort}} Config.
+Deploy Kubernetes resources, like deployments, from your GitHub or GitLab repository to multiple clusters with {{site.data.keyword.contdelivery_full}} and {{site.data.keyword.satelliteshort}} Config. 
 {: shortdesc}
 
 ## Objectives
@@ -48,7 +48,7 @@ This tutorial is for administrators who are using {{site.data.keyword.contdelive
 
 Before you start this tutorial, make sure that you have the following resources in place.
 
-* An [{{site.data.keyword.cloud_notm}} account](https://{DomainName}/registration){: external}. Depending on your {{site.data.keyword.cloud_notm}} account type, access to certain resources might be limited. Depending on your account plan limits, certain capabilities that are required by some of the deployment strategies might not be available. For more information about {{site.data.keyword.cloud_notm}} accounts, see [Setting up your {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-account-getting-started) and [Upgrading your account](/docs/account?topic=account-upgrading-account).
+* An [{{site.data.keyword.cloud_notm}} account](https://{DomainName}/registration){: external}. Depending on your {{site.data.keyword.cloud_notm}} account type, access to certain resources might be limited. Depending on your account plan limits, certain capabilities that are required by some deployment strategies might not be available. For more information about {{site.data.keyword.cloud_notm}} accounts, see [Setting up your {{site.data.keyword.cloud_notm}} account](/docs/account?topic=account-account-getting-started) and [Upgrading your account](/docs/account?topic=account-upgrading-account).
 
 * A {{site.data.keyword.satelliteshort}} cluster or an {{site.data.keyword.redhat_openshift_full}} cluster on {{site.data.keyword.cloud_notm}} that is registered with your {{site.data.keyword.satelliteshort}} location.
 

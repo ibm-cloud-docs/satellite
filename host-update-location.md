@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-10-07"
+lastupdated: "2022-11-10"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Updating {{site.data.keyword.satelliteshort}} location control plane hosts
+# Updating {{site.data.keyword.satelliteshort}} location control plane hosts 
 {: #host-update-location}
 
 {{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates by detaching the hosts from your location, reloading the host machine in the infrastructure provider, and reattaching and reassigning the host to the {{site.data.keyword.satelliteshort}} location control plane.
@@ -92,7 +92,7 @@ Support for RHEL 7 for Satellite control plane hosts is deprecated and reaches e
 
 To replace your RHEL 7 control plane hosts, you must first add a RHEL 8 host to replace it. After you attach a RHEL 8 host to your location and assign it to the control plane, you can remove a RHEL 7 host in the same zone from the control plane. 
 
-Before migrating to RHEL 8, note that Red Hat CoreOS is now a supported OS in CoreOS-enabled locations. CoreOS is a minimal, secure OS with tight integration into the Red Hat Openshift ecosystem and is capable of doing in-place upgrades of major versions. Before you can use CoreOS hosts in your location, you must create a CoreOS-enabled location. If you already have a location that is CoreOS-enabled, consider adding CoreOS hosts instead. To create a CoreOS-enabled Satellite location, see [Understanding locations](/docs/satellite?topic=satellite-location-host).
+Before migrating to RHEL 8, note that Red Hat CoreOS is now a supported OS in CoreOS-enabled locations. CoreOS is a minimal, secure OS with tight integration into the {{site.data.keyword.redhat_openshift_notm}} ecosystem and is capable of doing in-place upgrades of major versions. Before you can use CoreOS hosts in your location, you must create a CoreOS-enabled location. If you already have a location that is CoreOS-enabled, consider adding CoreOS hosts instead. To create a CoreOS-enabled Satellite location, see [Understanding locations](/docs/satellite?topic=satellite-location-host).
 {: tip}
 
 1. Identify which hosts you want to replace and which zones they are located in by running the following command. Look for the `"os": "RHEL7"` label or a host without an `os` label in the output file.
@@ -147,7 +147,7 @@ Before migrating to RHEL 8, note that Red Hat CoreOS is now a supported OS in Co
     ```
     {: pre}
 
-Repeat these steps until all of your RHEL 7 control plane hosts are replaced by RHEL 8 hosts and removed from the location. 
+Repeat these steps until all your RHEL 7 control plane hosts are replaced by RHEL 8 hosts and removed from the location. 
 
 If you have clusters running RHEL 7 hosts in your location, you might need to migrate your worker nodes. For more information, follow the [migration guide](/docs/openshift?topic=openshift-rhel_migrate) for your cluster version.
 {: tip}

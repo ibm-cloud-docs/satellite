@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-04"
+lastupdated: "2022-11-10"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -11,7 +11,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.cos_full_notm}} CSI Driver
+# {{site.data.keyword.cos_full_notm}} CSI Driver 
 {: #config-storage-cos}
 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
@@ -27,7 +27,7 @@ The template is currently in beta. Do not use it for production workloads.
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 1. [Create a {{site.data.keyword.cos_full_notm}} Secret](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials). 
 
-## Creating a {{site.data.keyword.cos_full_notm}} configuration from the console
+## Creating an {{site.data.keyword.cos_full_notm}} configuration from the console
 {: #config-storage-cos-create-ui}
 {: ui}
 
@@ -42,7 +42,7 @@ The template is currently in beta. Do not use it for production workloads.
 1. Click **Complete** to assign your storage configuration.
 
 
-## Creating a {{site.data.keyword.cos_full_notm}} configuration from the CLI
+## Creating a {{site.data.keyword.cos_short}} configuration from the CLI
 {: #config-storage-cos-create-cli}
 {: cli}
 
@@ -89,7 +89,7 @@ The template is currently in beta. Do not use it for production workloads.
     {: pre}
 
 
-## Assigning a {{site.data.keyword.cos_full_notm}} configuration from the console
+## Assigning a {{site.data.keyword.cos_short}} configuration from the console
 {: #config-storage-cos-assign-ui}
 {: ui}
 
@@ -107,7 +107,7 @@ The template is currently in beta. Do not use it for production workloads.
     1. Click the **Subscription** that you created and review the **Rollout status** for your configuration.
 
 
-## Assigning a {{site.data.keyword.cos_full_notm}} configuration from the CLI
+## Assigning a {{site.data.keyword.cos_short}} configuration from the CLI
 {: #config-storage-cos-assign-cli}
 {: cli}
 
