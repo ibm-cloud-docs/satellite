@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-09"
+lastupdated: "2022-11-10"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Setting up clusters to use with {[SatConfig]}
+# Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config
 {: #setup-clusters-satconfig}
 
 By default, clusters that you create in a {{site.data.keyword.satelliteshort}} location have {{site.data.keyword.satelliteshort}} Config components automatically installed. However, you must grant the service accounts that {{site.data.keyword.satelliteshort}} Config uses the appropriate access to view and manage Kubernetes resources in each cluster. You can also optionally create cluster groups to deploy resources to several clusters at once.
@@ -31,7 +31,7 @@ You do not need to configure access if you already gave {{site.data.keyword.sate
 {: #setup-clusters-satconfig-prereq}
 
 *  If you have {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} (not your {{site.data.keyword.satelliteshort}} location), [register the clusters](#register-openshift-clusters).
-*  Make sure that you have the following permissions in {{site.data.keyword.cloud_notm}} IAM. {[check_perms]}
+*  Make sure that you have the following permissions in {{site.data.keyword.cloud_notm}} IAM. For more information, see [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
 
 ## Setting up cluster groups
 {: #setup-clusters-satconfig-groups}
@@ -49,7 +49,7 @@ For example, create a cluster group from the console.
 Create a cluster group with the CLI.
 
 ```sh
-{[icsat]} group create --name <cluster_group_name>
+ibmcloud sat group create --name <cluster_group_name>
 ```
 {: pre}
 
@@ -70,13 +70,13 @@ For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}
 
 Choose from the following options.
 
-- **Admin access when you create a {{site.data.keyword.satelliteshort}} cluster**: You can enable admin permissions when you create the cluster in the console or in the CLI by using the `--enable-admin-agent` option in the `{[icoc]} cluster create satellite` command. After creating the cluster, you must perform a one-time login by running `{[icks]} cluster config` in the command line.
-- **Admin access for clusters in the public cloud**: See [Registering existing clusters with {[SatConfig]}](#register-openshift-clusters).
+- **Admin access when you create a {{site.data.keyword.satelliteshort}} cluster**: You can enable admin permissions when you create the cluster in the console or in the CLI by using the `--enable-admin-agent` option in the `ibmcloud oc cluster create satellite` command. After creating the cluster, you must perform a one-time login by running `ibmcloud ks cluster config` in the command line.
+- **Admin access for clusters in the public cloud**: See [Registering existing clusters with {{site.data.keyword.satelliteshort}} Config](#register-openshift-clusters).
 - **Custom access, or access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access**: Complete the following steps.
 
 To customize access, or to add access for {{site.data.keyword.satelliteshort}} clusters that you did not opt in for admin access at cluster creation.
 
-1. {[target]}
+1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 
 2. For each cluster in the cluster group, grant {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources. Choose from the following options: cluster admin access, custom access that is cluster-wide, or custom access that is scoped to a project. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/reference/access-authn-authz/authorization/){: external}.
 
@@ -163,16 +163,16 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
     | `--serviceaccount=razeedeploy:razee-editor` | The name of one of the service accounts that the {{site.data.keyword.satelliteshort}} Config components are set up by default to use, either `razeedeploy:razee-viewer` or `razeedeploy:razee-editor`. | 
     {: caption="Understanding this command's components" caption-side="bottom"}
 
-## Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {[SatConfig]}
+## Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config
 {: #register-openshift-clusters}
 
-You can also register your non-{{site.data.keyword.satelliteshort}} clusters with {[SatConfig]}. Follow the steps to run the registration script in your {{site.data.keyword.openshiftlong_notm}} cluster to set up the {[SatConfig]} components and make the cluster visible in {{site.data.keyword.satelliteshort}}. 
+You can also register your non-{{site.data.keyword.satelliteshort}} clusters with {{site.data.keyword.satelliteshort}} Config. Follow the steps to run the registration script in your {{site.data.keyword.openshiftlong_notm}} cluster to set up the {{site.data.keyword.satelliteshort}} Config components and make the cluster visible in {{site.data.keyword.satelliteshort}}. 
 {: shortdesc}
 
 After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-create). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
 {: note}
 
-1. Find the cluster that you want to attach to your location. To list available clusters, run `{[icoc]} cluster ls` or go to the [{{site.data.keyword.redhat_openshift_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
+1. Find the cluster that you want to attach to your location. To list available clusters, run `ibmcloud oc cluster ls` or go to the [{{site.data.keyword.redhat_openshift_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
 2. From the {{site.data.keyword.satelliteshort}} [**Clusters**](https://cloud.ibm.com/satellite/clusters){: external} dashboard, click **Register cluster**.
 3. Enter the name of your cluster and click **Register cluster**. Registering a cluster creates an entry in the {{site.data.keyword.satelliteshort}} Config ConfigMap. However, your cluster cannot be subscribed to a {{site.data.keyword.satelliteshort}} configuration until you install the {{site.data.keyword.satelliteshort}} Config agent in your cluster.
 4. Copy the command that is displayed to you.
