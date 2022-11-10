@@ -2,13 +2,14 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-09"
+lastupdated: "2022-11-10"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
 subcollection: satellite
 
 ---
+
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -52,7 +53,7 @@ Your proxy must be set up with TCP tunneling. While specific steps might vary de
 1. Set up your HTTP proxy to tunnel traffic for all three of your location public service endpoints. To find your endpoints, 
         
     ```sh
-    {[icsat]} location get --location LOCATION_NAME
+    ibmcloud sat location get --location LOCATION_NAME
     ```
     {: pre}
         
@@ -88,7 +89,7 @@ HTTPS_PROXY: https://my-proxy-endpoint.com:PORT_NUMBER
 ```
 {: screen}
     
-After support processes the ticket, you will receive a notification that your location is updated. If a change is required, a new ticket must be opened stating the new parameters. To find your `LOCATIONID` by running `{[icsat]} locations`.
+After support processes the ticket, you will receive a notification that your location is updated. If a change is required, a new ticket must be opened stating the new parameters. To find your `LOCATIONID` by running `ibmcloud sat locations`.
 
 
 ## Configuring your HTTP proxy
@@ -102,7 +103,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
     - For {{site.data.keyword.redhat_openshift_notm}} hosts, the `NO_PROXY` for {{site.data.keyword.redhat_openshift_notm}} hosts must include the first IP of the service subnet that is used for the {{site.data.keyword.redhat_openshift_notm}} cluster. To find this IP, run the **`cluster get`** command.
         
         ```sh
-        {[icks]} cluster get --cluster <ClusterID>
+        ibmcloud ks cluster get --cluster <ClusterID>
         ```
         {: pre}
         
