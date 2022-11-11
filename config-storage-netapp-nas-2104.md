@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-11"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# NetApp ONTAP-NAS 21.04
+# NetApp ONTAP-NAS
 {: #config-storage-netapp-nas-2104}
 
 Set up [NetApp ONTAP-NAS storage](https://netapp-trident.readthedocs.io/en/stable-v21.04/){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
@@ -102,12 +102,23 @@ Before you can deploy storage templates to clusters in your location, make sure 
 1. Review the [NetApp ONTAP-NAS storage configuration parameters](#sat-storage-netapp-params-cli-nas-2104).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
-    Example command to create a config by using `netapp-ontap-nas` version 21.04.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 21.04  --param "managementLIF=MANAGEMENTLIF" --param "dataLIF=DATALIF" --param "svm=SVM" --param "username=USERNAME" --param "password=PASSWORD" [--param "exportPolicy=EXPORTPOLICY"] [--param "limitVolumeSize=LIMITVOLUMESIZE"] [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"] [--param "nfsMountOptions=NFSMOUNTOPTIONS"]
-    ```
-    {: pre}
+
+Example command to create a version 21.04 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 21.04  --param "managementLIF=MANAGEMENTLIF"   --param "dataLIF=DATALIF"   --param "svm=SVM"   --param "username=USERNAME"   --param "password=PASSWORD"   [--param "exportPolicy=EXPORTPOLICY"]   [--param "limitVolumeSize=LIMITVOLUMESIZE"]   [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"]   [--param "nfsMountOptions=NFSMOUNTOPTIONS"] 
+```
+{: pre}
+
+
+Example command to create a version 22.04 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 22.04  --param "managementLIF=MANAGEMENTLIF"   --param "dataLIF=DATALIF"   --param "svm=SVM"   --param "username=USERNAME"   --param "password=PASSWORD"   [--param "exportPolicy=EXPORTPOLICY"]   [--param "limitVolumeSize=LIMITVOLUMESIZE"]   [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"]   [--param "nfsMountOptions=NFSMOUNTOPTIONS"] 
+```
+{: pre}
+
 
 1. Verify that your storage configuration is created.
     ```sh
@@ -568,26 +579,43 @@ Use the console to remove a storage assignment and storage configuration.
 1. Enter the name of your storage configuration.
 1. Select **Delete**.
 
-## NetApp ONTAP-NAS storage configuration parameter reference
-{: #sat-storage-netapp-params-cli-nas-2104}
 
-For more information about the NetApp ONTAP-NAS configuration parameters, see the [NetApp documentation](https://netapp-trident.readthedocs.io/en/stable-v21.04/docker/install/ndvp_ontap_config.html#configuration-file-options){: external}.
+## Parameter reference
+{: #netapp-ontap-nas-parameter-reference}
 
-## Version 21.04 parameter reference
-{: #netapp-ontap-nas-21.04}
+### 21.04 parameter reference
+{: #21.04-parameter-reference}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | The IP address of the Management LIF. | true | N/A | 
-| Data LIF | `dataLIF` | The IP address of the Data LIF. | true | N/A | 
-| SVM | `svm` | The name of the SVM. | true | N/A | 
-| User Name | `username` | The username to connect to the storage device. | true | N/A | 
-| User Password | `password` | The password to connect to the storage device. | true | N/A | 
-| Export Policy | `exportPolicy` | The NAS option for the NFS export policy. | false |`default` |
-| Limit Volume Size | `limitVolumeSize` | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | false |`50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is above this percentage. | false |`80%` |
-| NFS Mount Options | `nfsMountOptions` | The NFS mount options. | false |`nfsvers=4` |
-{: caption="netapp-ontap-nas version 21.04 parameter reference"}
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Management LIF | `managementLIF` | The IP address of the Management LIF. | true | 
+| Data LIF | `dataLIF` | The IP address of the Data LIF. | true | 
+| SVM | `svm` | The name of the SVM. | true | 
+| User Name | `username` | The username to connect to the storage device. | true | 
+| User Password | `password` | The password to connect to the storage device. | true | 
+| Export Policy | `exportPolicy` | The NAS option for the NFS export policy. | false | 
+| Limit Volume Size | `limitVolumeSize` | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is above this percentage. | false | 
+| NFS Mount Options | `nfsMountOptions` | The NFS mount options. | false | 
+{: caption="Table 1. 21.04 parameter reference" caption-side="bottom"}
+
+
+### 22.04 parameter reference
+{: #22.04-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Management LIF | `managementLIF` | The IP address of the Management LIF. | true | 
+| Data LIF | `dataLIF` | The IP address of the Data LIF. | true | 
+| SVM | `svm` | The name of the SVM. | true | 
+| User Name | `username` | The username to connect to the storage device. | true | 
+| User Password | `password` | The password to connect to the storage device. | true | 
+| Export Policy | `exportPolicy` | The NAS option for the NFS export policy. | false | 
+| Limit Volume Size | `limitVolumeSize` | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is above this percentage. | false | 
+| NFS Mount Options | `nfsMountOptions` | The NFS mount options. | false | 
+{: caption="Table 2. 22.04 parameter reference" caption-side="bottom"}
+
 
 
 

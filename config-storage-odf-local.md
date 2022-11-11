@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-11"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -219,33 +219,39 @@ When you create your ODF configuration, you must specify the device paths of the
     Note that you must specify separate disks or separate partitions for each `mon-device-path` and `osd-device-path`. You must assign one disk or one partition for each OSD or MON storage device. For disks without partitions, specify separate disks. For partitioned disks, you can specify the same disk, but you must specify separate partitions.
     {: note}
     
-    Example command to create a config by using `odf-local` version 4.10.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] [--param "osd-device-path=OSD-DEVICE-PATH"] [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"] [--param "kms-encryption=KMS-ENCRYPTION"] [--param "kms-instance-name=KMS-INSTANCE-NAME"] [--param "kms-instance-id=KMS-INSTANCE-ID"] [--param "kms-base-url=KMS-BASE-URL"] [--param "kms-token-url=KMS-TOKEN-URL"] [--param "kms-root-key=KMS-ROOT-KEY"] [--param "kms-api-key=KMS-API-KEY"] [--param "ignore-noobaa=IGNORE-NOOBAA"]
-    ```
-    {: pre}
 
-    Example command to create a config by using `odf-local` version 4.9.
+Example command to create a version 4.7 configuration.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] [--param "osd-device-path=OSD-DEVICE-PATH"] [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"]
-    ```
-    {: pre}
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.7  --param "mon-device-path=MON-DEVICE-PATH"   --param "osd-device-path=OSD-DEVICE-PATH"   [--param "num-of-osd=NUM-OF-OSD"]   [--param "worker-nodes=WORKER-NODES"]   [--param "odf-upgrade=ODF-UPGRADE"]   [--param "billing-type=BILLING-TYPE"]   [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]   [--param "ibm-cos-location=IBM-COS-LOCATION"]   [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]   [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]   [--param "cluster-encryption=CLUSTER-ENCRYPTION"]   --param "iam-api-key=IAM-API-KEY"   [--param "perform-cleanup=PERFORM-CLEANUP"] 
+```
+{: pre}
 
-    Example command to create a config by using `odf-local` version 4.8.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.8  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] [--param "osd-device-path=OSD-DEVICE-PATH"] [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"]
-    ```
-    {: pre}
+Example command to create a version 4.8 configuration.
 
-    Example command to create a config by using `odf-local` version 4.7.
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.8  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   [--param "osd-device-path=OSD-DEVICE-PATH"]   [--param "num-of-osd=NUM-OF-OSD"]   [--param "worker-nodes=WORKER-NODES"]   [--param "odf-upgrade=ODF-UPGRADE"]   [--param "billing-type=BILLING-TYPE"]   [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]   [--param "ibm-cos-location=IBM-COS-LOCATION"]   [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]   [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]   [--param "cluster-encryption=CLUSTER-ENCRYPTION"]   --param "iam-api-key=IAM-API-KEY"   [--param "perform-cleanup=PERFORM-CLEANUP"] 
+```
+{: pre}
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.7  --param "mon-device-path=MON-DEVICE-PATH" --param "osd-device-path=OSD-DEVICE-PATH" [--param "num-of-osd=NUM-OF-OSD"] [--param "worker-nodes=WORKER-NODES"] [--param "odf-upgrade=ODF-UPGRADE"] [--param "billing-type=BILLING-TYPE"] [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"] [--param "ibm-cos-location=IBM-COS-LOCATION"] [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"] [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"] [--param "cluster-encryption=CLUSTER-ENCRYPTION"] --param "iam-api-key=IAM-API-KEY" [--param "perform-cleanup=PERFORM-CLEANUP"]
-    ```
-    {: pre}
+
+Example command to create a version 4.9 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   [--param "osd-device-path=OSD-DEVICE-PATH"]   [--param "num-of-osd=NUM-OF-OSD"]   [--param "worker-nodes=WORKER-NODES"]   [--param "odf-upgrade=ODF-UPGRADE"]   [--param "billing-type=BILLING-TYPE"]   [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]   [--param "ibm-cos-location=IBM-COS-LOCATION"]   [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]   [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]   [--param "cluster-encryption=CLUSTER-ENCRYPTION"]   --param "iam-api-key=IAM-API-KEY"   [--param "perform-cleanup=PERFORM-CLEANUP"] 
+```
+{: pre}
+
+
+Example command to create a version 4.10 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   [--param "osd-device-path=OSD-DEVICE-PATH"]   [--param "num-of-osd=NUM-OF-OSD"]   [--param "worker-nodes=WORKER-NODES"]   [--param "odf-upgrade=ODF-UPGRADE"]   [--param "billing-type=BILLING-TYPE"]   [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]   [--param "ibm-cos-location=IBM-COS-LOCATION"]   [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]   [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]   [--param "cluster-encryption=CLUSTER-ENCRYPTION"]   --param "iam-api-key=IAM-API-KEY"   [--param "perform-cleanup=PERFORM-CLEANUP"]   [--param "kms-encryption=KMS-ENCRYPTION"]   [--param "kms-instance-name=KMS-INSTANCE-NAME"]   [--param "kms-instance-id=KMS-INSTANCE-ID"]   [--param "kms-base-url=KMS-BASE-URL"]   [--param "kms-token-url=KMS-TOKEN-URL"]   [--param "kms-root-key=KMS-ROOT-KEY"]   [--param "kms-api-key=KMS-API-KEY"]   [--param "ignore-noobaa=IGNORE-NOOBAA"] 
+```
+{: pre}
+
     
 1. Verify that your configuration was created.
 
@@ -792,96 +798,101 @@ Note that if you remove the storage configuration, the ODF operators is then uni
     {: screen}
 
 
-## OpenShift Data Foundation configuration parameter reference
-{: #sat-storage-odf-local-params-cli}
 
-## Version 4.10 parameter reference
-{: #odf-local-4.10}
+## Parameter reference
+{: #odf-local-parameter-reference}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Automatically discover and use the storage volumes on your worker nodes. If set to `false` then you must explicitly provide the volumes IDs. | false |`true` |
-| OSD volume IDs | `osd-device-path` | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs ONLY if `auto-discover-devices` is set to `false` | false | N/A | 
-| Number of OSD volumes | `num-of-osd` | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is '1'. | false |`1` |
-| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | false | N/A | 
-| Upgrade | `odf-upgrade` | Set to 'true' if you want to upgrade the ODF version. | false |`false` |
-| Billing type | `billing-type` | The billing type you want to use. Choose from 'essentials' or 'advanced'. | false |`advanced` |
-| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | N/A | 
-| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your COS bucket. For example: 'us-east-standard'. | false | N/A | 
-| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID . | false | N/A | 
-| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | N/A | 
-| Encryption enabled | `cluster-encryption` | Set to 'true' if you want to enable cluster-wide encryption. | false |`false` |
-| IAM API key | `iam-api-key` | Your IAM API key. | true | N/A | 
-| Perform Cleanup | `perform-cleanup` | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion. | false |`false` |
-| KMS encryption | `kms-encryption` | Set to 'true' if you want to enable storageclasss encryption. | false |`false` |
-| KMS instance name | `kms-instance-name` | Your KMS instance name. The instance name must only include alphanumeric characters, '-', '_' or '.' and start and end with an alphanumeric character. | false | N/A | 
-| KMS instance id | `kms-instance-id` |  Your KMS instance id. | false | N/A | 
-| KMS instance Base URL | `kms-base-url` |  Your KMS instance public URL to connect to the instance. | false | N/A | 
-| KMS instance API key token URL | `kms-token-url` | API key token URL to generate token for KMS instance. | false | N/A | 
-| KMS root key | `kms-root-key` | KMS root key of your instance. | false | N/A | 
-| KMS IAM API key | `kms-api-key` | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A | 
-| Ignore Noobaa | `ignore-noobaa` | Set to 'true' if you don't want to deploy MultiCloud Object Gateway (Noobaa) | false |`false` |
-{: caption="odf-local version 4.10 parameter reference"}
+### 4.7 parameter reference
+{: #4.7-parameter-reference}
 
-## Version 4.9 parameter reference
-{: #odf-local-4.9}
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Monitor pod volume IDs | `mon-device-path` | The disk-by-id of the volumes on your worker nodes that you want to use for the monitor pods. You can find the disk-by-ids by logging into your worker node and running `ls -l /dev/disk/by-id/`. | true | 
+| OSD volume IDs | `osd-device-path` | The disk-by-id of the volumes you want to use for the OSD pods. You can find the disk-by-ids by logging into your worker node and running `ls -l /dev/disk/by-id/`. | true | 
+| Number of storage daemonsets | `num-of-osd` | The number storage daemonsets that you want to create. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of daemonsets (num-of-osd). The default value is `1`. | false | 
+| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
+| Upgrade | `odf-upgrade` | Set to `true` if you want to upgrade the ODF version. | false | 
+| Billing type | `billing-type` | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
+| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | 
+| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
+| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID. | false | 
+| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | 
+| Encryption enabled | `cluster-encryption` | Set to `true` if you want to enable cluster-wide encryption. | false | 
+| IAM API key | `iam-api-key` | Your IAM API key. | true | 
+| Perform Cleanup | `perform-cleanup` | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | false | 
+{: caption="Table 1. 4.7 parameter reference" caption-side="bottom"}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to 'true' if you want to automatically discover and use the storage volumes on your worker nodes. If set to `false` then you need to explicitly provide the OSD volume IDs | false |`false` |
-| OSD volume IDs | `osd-device-path` | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs if `auto-discover-devices` is set to `false` | false | N/A | 
-| Number of OSD volumes | `num-of-osd` | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is '1'. | false |`1` |
-| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | false | N/A | 
-| Upgrade | `odf-upgrade` | Set to 'true' if you want to upgrade the ODF version. | false |`false` |
-| Billing type | `billing-type` | The billing type you want to use. Choose from 'essentials' or 'advanced'. | false |`advanced` |
-| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | N/A | 
-| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your COS bucket. For example: 'us-east-standard'. | false | N/A | 
-| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID . | false | N/A | 
-| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | N/A | 
-| Encryption enabled | `cluster-encryption` | Set to 'true' if you want to enable cluster-wide encryption. | false |`false` |
-| IAM API key | `iam-api-key` | Your IAM API key. | true | N/A | 
-| Perform Cleanup | `perform-cleanup` | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion | false |`false` |
-{: caption="odf-local version 4.9 parameter reference"}
 
-## Version 4.8 parameter reference
-{: #odf-local-4.8}
+### 4.8 parameter reference
+{: #4.8-parameter-reference}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to 'true' if you want to automatically discover and use the storage volumes on your worker nodes. If set to `false` then you need to explicitly provide the OSD volume IDs | false |`false` |
-| OSD volume IDs | `osd-device-path` | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs if `auto-discover-devices` is set to `false` | false | N/A | 
-| Number of OSD volumes | `num-of-osd` | The number OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is '1'. | false |`1` |
-| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | false | N/A | 
-| Upgrade | `odf-upgrade` | Set to 'true' if you want to upgrade the ODF version. | false |`false` |
-| Billing type | `billing-type` | The billing type you want to use. Choose from 'essentials' or 'advanced'. | false |`advanced` |
-| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | N/A | 
-| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your COS bucket. For example: 'us-east-standard'. | false | N/A | 
-| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID . | false | N/A | 
-| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | N/A | 
-| Encryption enabled | `cluster-encryption` | Set to 'true' if you want to enable cluster-wide encryption. | false |`false` |
-| IAM API key | `iam-api-key` | Your IAM API key. | true | N/A | 
-| Perform Cleanup | `perform-cleanup` | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion | false |`false` |
-{: caption="odf-local version 4.8 parameter reference"}
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. If set to `false` then you need to explicitly provide the OSD volume IDs | false | 
+| OSD volume IDs | `osd-device-path` | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs if `auto-discover-devices` is set to `false` | false | 
+| Number of OSD volumes | `num-of-osd` | The number OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
+| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
+| Upgrade | `odf-upgrade` | Set to `true` if you want to upgrade the ODF version. | false | 
+| Billing type | `billing-type` | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
+| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | 
+| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your COS bucket. For example: `us-east-standard`. | false | 
+| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID . | false | 
+| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | 
+| Encryption enabled | `cluster-encryption` | Set to `true` if you want to enable cluster-wide encryption. | false | 
+| IAM API key | `iam-api-key` | Your IAM API key. | true | 
+| Perform Cleanup | `perform-cleanup` | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | false | 
+{: caption="Table 2. 4.8 parameter reference" caption-side="bottom"}
 
-## Version 4.7 parameter reference
-{: #odf-local-4.7}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Monitor pod volume IDs | `mon-device-path` | The disk-by-id of the volumes on your worker nodes that you want to use for the monitor pods. You can find the disk-by-ids by logging into your worker node and running 'ls -l /dev/disk/by-id/'. | true | N/A | 
-| OSD volume IDs | `osd-device-path` | The disk-by-id of the volumes you want to use for the OSD pods. You can find the disk-by-ids by logging into your worker node and running 'ls -l /dev/disk/by-id/'. | true | N/A | 
-| Number of storage daemonsets | `num-of-osd` | The number storage daemonsets that you want to create. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of daemonsets (num-of-osd). The default value is '1'. | false |`1` |
-| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running 'oc get nodes'. | false | N/A | 
-| Upgrade | `odf-upgrade` | Set to 'true' if you want to upgrade the ODF version. | false |`false` |
-| Billing type | `billing-type` | The billing type you want to use. Choose from 'essentials' or 'advanced'. | false |`advanced` |
-| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | N/A | 
-| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your bucket. For example 'us-east-standard'. | false | N/A | 
-| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID. | false | N/A | 
-| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | N/A | 
-| Encryption enabled | `cluster-encryption` | Set to 'true' if you want to enable cluster-wide encryption. | false |`false` |
-| IAM API key | `iam-api-key` | Your IAM API key. | true | N/A | 
-| Perform Cleanup | `perform-cleanup` | Set to 'true' if you want to perform complete cleanup of ODF on assignment deletion | false |`false` |
-{: caption="odf-local version 4.7 parameter reference"}
+### 4.9 parameter reference
+{: #4.9-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. If set to `false` then you need to explicitly provide the OSD volume IDs | false | 
+| OSD volume IDs | `osd-device-path` | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs if `auto-discover-devices` is set to `false` | false | 
+| Number of OSD volumes | `num-of-osd` | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
+| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
+| Upgrade | `odf-upgrade` | Set to `true` if you want to upgrade the ODF version. | false | 
+| Billing type | `billing-type` | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
+| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | 
+| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your COS bucket. For example: `us-east-standard`. | false | 
+| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID . | false | 
+| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | 
+| Encryption enabled | `cluster-encryption` | Set to `true` if you want to enable cluster-wide encryption. | false | 
+| IAM API key | `iam-api-key` | Your IAM API key. | true | 
+| Perform Cleanup | `perform-cleanup` | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | false | 
+{: caption="Table 3. 4.9 parameter reference" caption-side="bottom"}
+
+
+### 4.10 parameter reference
+{: #4.10-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Automatically discover and use the storage volumes on your worker nodes. If set to `false` then you must explicitly provide the volumes IDs. | false | 
+| OSD volume IDs | `osd-device-path` | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs ONLY if `auto-discover-devices` is set to `false` | false | 
+| Number of OSD volumes | `num-of-osd` | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
+| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
+| Upgrade | `odf-upgrade` | Set to `true` if you want to upgrade the ODF version. | false | 
+| Billing type | `billing-type` | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
+| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | 
+| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your COS bucket. For example: `us-east-standard`. | false | 
+| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID . | false | 
+| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | 
+| Encryption enabled | `cluster-encryption` | Set to `true` if you want to enable cluster-wide encryption. | false | 
+| IAM API key | `iam-api-key` | Your IAM API key. | true | 
+| Perform Cleanup | `perform-cleanup` | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | false | 
+| KMS encryption | `kms-encryption` | Set to `true` if you want to enable storageclasss encryption. | false | 
+| KMS instance name | `kms-instance-name` | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | 
+| KMS instance id | `kms-instance-id` |  Your KMS instance id. | false | 
+| KMS instance Base URL | `kms-base-url` |  Your KMS instance public URL to connect to the instance. | false | 
+| KMS instance API key token URL | `kms-token-url` | API key token URL to generate token for KMS instance. | false | 
+| KMS root key | `kms-root-key` | KMS root key of your instance. | false | 
+| KMS IAM API key | `kms-api-key` | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | 
+| Ignore Noobaa | `ignore-noobaa` | Set to `true` if you don`t want to deploy MultiCloud Object Gateway (Noobaa) | false | 
+{: caption="Table 4. 4.10 parameter reference" caption-side="bottom"}
+
 
 
 

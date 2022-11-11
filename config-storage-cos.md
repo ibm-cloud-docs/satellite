@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-11"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -81,12 +81,7 @@ The template is currently in beta. Do not use it for production workloads.
     ```
     {: pre}
     
-    Example command to create a config by using `ibm-object-storage-plugin` version 2.2.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2  [--param "helm-release-name=HELM-RELEASE-NAME"] [--param "parameters=PARAMETERS"] --param "license=LICENSE" --param "cos-endpoint=COS-ENDPOINT" --param "cos-storageclass=COS-STORAGECLASS"
-    ```
-    {: pre}
+{[ibm-object-storage-plugin-config-create.md ]}
 
 
 ## Assigning a {{site.data.keyword.cos_short}} configuration from the console
@@ -372,20 +367,22 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
         ```
         {: pre}
 
-## Parameter reference for {{site.data.keyword.cos_full_notm}}
-{: #config-storage-cos-parameter-reference}
 
-## Version 2.2 parameter reference
-{: #ibm-object-storage-plugin-2.2}
+## Parameter reference
+{: #ibm-object-storage-plugin-parameter-reference}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Helm Chart Release Name | `helm-release-name` | Release name of the chart | false |`ibm-object-storage-plugin` |
-| Helm Chart Additional Parameters (Optional) | `parameters` | Helm Chart Additional Parameters (Optional) | false | N/A | 
-| COS plug-in License: Apache License Version 2.0 | `license` | COS plug-in License: Apache License Version 2.0. Set to 'true' to accept the license and install the plugin | true | N/A | 
-| COS Endpoint | `cos-endpoint` | Enter COS Endpoint. For more information, refer to https://ibm.biz/cos-endpoints | true | N/A | 
-| COS storageclass | `cos-storageclass` | Enter COS storageclass. For more info, refer to https://ibm.biz/cos-storage-classes | true | N/A | 
-{: caption="ibm-object-storage-plugin version 2.2 parameter reference"}
+### 2.2 parameter reference
+{: #2.2-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Helm Chart Release Name | `helm-release-name` | Release name of the chart | false | 
+| Helm Chart Additional Parameters (Optional) | `parameters` | Helm Chart Additional Parameters (Optional) | false | 
+| COS plug-in License: Apache License Version 2.0 | `license` | COS plug-in License: Apache License Version 2.0. Set to `true` to accept the license and install the plugin | true | 
+| COS Endpoint | `cos-endpoint` | Enter COS Endpoint. For more information, refer to https://ibm.biz/cos-endpoints | true | 
+| COS storageclass | `cos-storageclass` | Enter COS storageclass. For more info, refer to https://ibm.biz/cos-storage-classes | true | 
+{: caption="Table 1. 2.2 parameter reference" caption-side="bottom"}
+
 
 ## Storage class reference for {{site.data.keyword.cos_full_notm}}
 {: #config-storage-cos-sc-ref}

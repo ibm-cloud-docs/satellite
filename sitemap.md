@@ -1622,13 +1622,13 @@ subcollection: satellite
 
     * [Removing the AWS EBS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-template-rm-cli)
 
-* [AWS EBS parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#sat-storage-aws-ebs-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-csi-driver-parameter-reference)
 
-* [Version 1.5.1 parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-csi-driver-1.5.1)
+    * [1.1.0 parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#1.1.0-parameter-reference)
 
-* [Version 1.1.0 parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-csi-driver-1.1.0)
+    * [1.5.1 parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#1.5.1-parameter-reference)
 
-* [Version 0.9.14 parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#aws-ebs-csi-driver-0.9.14)
+    * [1.12.0 parameter reference](/docs/satellite?topic=satellite-config-storage-ebs#1.12.0-parameter-reference)
 
 * [Storage class reference for AWS EBS](/docs/satellite?topic=satellite-config-storage-ebs#sat-ebs-sc-reference)
 
@@ -1662,13 +1662,13 @@ subcollection: satellite
 
     * [Removing the AWS EFS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-template-rm-cli)
 
-* [AWS EFS parameter reference](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-parameter-reference)
 
-* [Version 1.3.7 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.3.7)
+    * [1.3.1 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#1.3.1-parameter-reference)
 
-* [Version 1.3.1 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.3.1)
+    * [1.3.7 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#1.3.7-parameter-reference)
 
-* [Version 1.2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-csi-driver-1.2.2)
+    * [1.4.2 parameter reference](/docs/satellite?topic=satellite-config-storage-efs#1.4.2-parameter-reference)
 
 * [Getting help and support for AWS EFS](/docs/satellite?topic=satellite-config-storage-efs#sat-efs-support)
 
@@ -1711,11 +1711,13 @@ subcollection: satellite
 
     * [Removing the Azure Disk storage configuration from the cli](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-template-rm-cli)
 
-* [Parameter reference for Azure Disk storage](/docs/satellite?topic=satellite-config-storage-azure-csi#sat-storage-azure-disk-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#azuredisk-csi-driver-parameter-reference)
 
-* [Version 1.18.0 parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#azuredisk-csi-driver-1.18.0)
+    * [1.4.0 parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#1.4.0-parameter-reference)
 
-* [Version 1.4.0 parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#azuredisk-csi-driver-1.4.0)
+    * [1.18.0 parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#1.18.0-parameter-reference)
+
+    * [1.23.0 parameter reference](/docs/satellite?topic=satellite-config-storage-azure-csi#1.23.0-parameter-reference)
 
 * [Storage class reference for Azure Disk](/docs/satellite?topic=satellite-config-storage-azure-csi#azure-disk-sc-ref)
 
@@ -1753,11 +1755,13 @@ subcollection: satellite
 
     * [Removing the Azure File storage configuration from the cli](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-template-rm-cli)
 
-* [Parameter reference for Azure File](/docs/satellite?topic=satellite-config-storage-azurefile-csi#sat-storage-azure-file-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azurefile-csi-driver-parameter-reference)
 
-* [Version 1.18.0 parameter reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azurefile-csi-driver-1.18.0)
+    * [1.9.0 parameter reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#1.9.0-parameter-reference)
 
-* [Version 1.9.0 parameter reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azurefile-csi-driver-1.9.0)
+    * [1.18.0 parameter reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#1.18.0-parameter-reference)
+
+    * [1.22.0 parameter reference](/docs/satellite?topic=satellite-config-storage-azurefile-csi#1.22.0-parameter-reference)
 
 * [Storage class reference for Azure File](/docs/satellite?topic=satellite-config-storage-azurefile-csi#azure-file-sc-ref)
 
@@ -1792,11 +1796,13 @@ subcollection: satellite
 
     * [Removing the Google Compute Engine storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-template-rm-cli)
 
-* [Parameter reference for Google Compute Engine](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-csi-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-compute-persistent-disk-csi-driver-parameter-reference)
 
-* [Version 1.7.1 parameter reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-compute-persistent-disk-csi-driver-1.7.1)
+    * [1.0.4 parameter reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#1.0.4-parameter-reference)
 
-* [Version 1.0.4 parameter reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#gcp-compute-persistent-disk-csi-driver-1.0.4)
+    * [1.7.1 parameter reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#1.7.1-parameter-reference)
+
+    * [1.8.0 parameter reference](/docs/satellite?topic=satellite-config-storage-gcp-csi#1.8.0-parameter-reference)
 
 * [Storage class reference for Compute Engine](/docs/satellite?topic=satellite-config-storage-gcp-csi#sat-storage-gcp-ref)
 
@@ -1837,9 +1843,9 @@ subcollection: satellite
 
 * [Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the command line](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-rm-cli)
 
-* [Parameter reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-parameter-reference)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-cos#ibm-object-storage-plugin-parameter-reference)
 
-* [Version 2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-cos#ibm-object-storage-plugin-2.2)
+    * [2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-cos#2.2-parameter-reference)
 
 * [Storage class reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos-sc-ref)
 
@@ -1871,7 +1877,11 @@ subcollection: satellite
 
 * [Limitations for Spectrum Scale](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-limits)
 
-* [Spectrum Scale parameter reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#ibm-system-storage-block-csi-driver-parameter-reference)
+
+    * [1.4.0 parameter reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#1.4.0-parameter-reference)
+
+    * [1.5.0 parameter reference](/docs/satellite?topic=satellite-config-storage-spectrum-scale#1.5.0-parameter-reference)
 
 * [Storage class reference for spectrum scale](/docs/satellite?topic=satellite-config-storage-spectrum-scale#sat-storage-spectrum-scale-sc-ref)
 
@@ -1903,11 +1913,11 @@ subcollection: satellite
 
     * [Removing the {{site.data.keyword.block_storage_is_short}} storage configuration using the cli](/docs/satellite?topic=satellite-config-storage-vpc-csi#vpc-csi-rm-cli)
 
-* [Parameter reference for {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-csi-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-vpc-csi#ibm-vpc-block-csi-driver-parameter-reference)
 
-* [Version 4.3.0 parameter reference](/docs/satellite?topic=satellite-config-storage-vpc-csi#ibm-vpc-block-csi-driver-4.3.0)
+    * [4.3.0 parameter reference](/docs/satellite?topic=satellite-config-storage-vpc-csi#4.3.0-parameter-reference)
 
-* [Version 4.2.2 parameter reference](/docs/satellite?topic=satellite-config-storage-vpc-csi#ibm-vpc-block-csi-driver-4.2.2)
+    * [5.0 parameter reference](/docs/satellite?topic=satellite-config-storage-vpc-csi#5.0-parameter-reference)
 
 * [Storage class reference for {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-config-storage-vpc-csi#sat-storage-vpc-ref)
 
@@ -1944,7 +1954,7 @@ subcollection: satellite
 
 * [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp-trident#sat-trident-support)
 
-[NetApp ONTAP-NAS 21.04](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#config-storage-netapp-nas-2104)
+[NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#config-storage-netapp-nas-2104)
 
 * [Prerequisites for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-2104-pre)
 
@@ -1972,9 +1982,11 @@ subcollection: satellite
 
     * [Removing the NetApp ONTAP-NAS storage assignment and configuration from the console](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-nas-template-rm-ui-2104)
 
-* [NetApp ONTAP-NAS storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#sat-storage-netapp-params-cli-nas-2104)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-ontap-nas-parameter-reference)
 
-* [Version 21.04 parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-ontap-nas-21.04)
+    * [21.04 parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#21.04-parameter-reference)
+
+    * [22.04 parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#22.04-parameter-reference)
 
 * [Storage class reference for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas-2104#netapp-sc-reference-nas-2104)
 
@@ -2014,7 +2026,7 @@ subcollection: satellite
 
 * [Getting help and support for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-config-storage-netapp-nas#sat-nas-support)
 
-[NetApp ONTAP-SAN 21.04](/docs/satellite?topic=satellite-config-storage-netapp-2104#config-storage-netapp-2104)
+[NetApp ONTAP-SAN](/docs/satellite?topic=satellite-config-storage-netapp-2104#config-storage-netapp-2104)
 
 * [Prerequisites for NetApp ONTAP-SAN storage](/docs/satellite?topic=satellite-config-storage-netapp-2104#netapp-san-2104-pre)
 
@@ -2036,7 +2048,11 @@ subcollection: satellite
 
 * [Updating a NetApp storage assignment](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-san-2104-update-assignment)
 
-* [NetApp Trident storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-2104#sat-storage-netapp-params-cli-san-2104)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-2104#netapp-ontap-san-parameter-reference)
+
+    * [21.04 parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-2104#21.04-parameter-reference)
+
+    * [22.04 parameter reference](/docs/satellite?topic=satellite-config-storage-netapp-2104#22.04-parameter-reference)
 
 * [Storage class reference for NetApp Trident](/docs/satellite?topic=satellite-config-storage-netapp-2104#netapp-sc-reference-san-2104)
 
@@ -2105,15 +2121,17 @@ subcollection: satellite
 
     * [Removing the local block storage configuration from the command line](/docs/satellite?topic=satellite-config-storage-local-block#rm-local-block-temp-cli)
 
-* [Local block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#local-volume-block-parameter-reference)
 
-* [Version 4.10 parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#local-volume-block-4.10)
+    * [4.7 parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#4.7-parameter-reference)
 
-* [Version 4.9 parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#local-volume-block-4.9)
+    * [4.8 parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#4.8-parameter-reference)
 
-* [Version 4.8 parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#local-volume-block-4.8)
+    * [4.9 parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#4.9-parameter-reference)
 
-* [Version 4.7 parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#local-volume-block-4.7)
+    * [4.10 parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#4.10-parameter-reference)
+
+    * [4.11 parameter reference](/docs/satellite?topic=satellite-config-storage-local-block#4.11-parameter-reference)
 
 * [Storage class reference for local block storage](/docs/satellite?topic=satellite-config-storage-local-block#local-block-sc-ref)
 
@@ -2153,15 +2171,17 @@ subcollection: satellite
 
     * [Remove the local file storage configuration from the command line](/docs/satellite?topic=satellite-config-storage-local-file#rm-local-file-temp-cli)
 
-* [Local file storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#sat-storage-local-file-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#local-volume-file-parameter-reference)
 
-* [Version 4.10 parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#local-volume-file-4.10)
+    * [4.7 parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#4.7-parameter-reference)
 
-* [Version 4.9 parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#local-volume-file-4.9)
+    * [4.8 parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#4.8-parameter-reference)
 
-* [Version 4.8 parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#local-volume-file-4.8)
+    * [4.9 parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#4.9-parameter-reference)
 
-* [Version 4.7 parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#local-volume-file-4.7)
+    * [4.10 parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#4.10-parameter-reference)
+
+    * [4.11 parameter reference](/docs/satellite?topic=satellite-config-storage-local-file#4.11-parameter-reference)
 
 * [Storage class reference for local file storage](/docs/satellite?topic=satellite-config-storage-local-file#local-file-sc-reference)
 
@@ -2195,15 +2215,15 @@ subcollection: satellite
 
 * [Removing the ODF local storage configuration from your cluster](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-template-rm)
 
-* [OpenShift Data Foundation configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-parameter-reference)
 
-* [Version 4.10 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-4.10)
+    * [4.7 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#4.7-parameter-reference)
 
-* [Version 4.9 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-4.9)
+    * [4.8 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#4.8-parameter-reference)
 
-* [Version 4.8 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-4.8)
+    * [4.9 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#4.9-parameter-reference)
 
-* [Version 4.7 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-4.7)
+    * [4.10 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#4.10-parameter-reference)
 
 * [Storage class reference for ODF](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-sc-ref)
 
@@ -2231,15 +2251,15 @@ subcollection: satellite
 
     * [Removing the ODF remote storage assignment from the command line](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-template-rm-cli)
 
-* [OpenShift Data Foundation configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-parameter-reference)
 
-* [Version 4.10 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-4.10)
+    * [4.7 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#4.7-parameter-reference)
 
-* [Version 4.9 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-4.9)
+    * [4.8 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#4.8-parameter-reference)
 
-* [Version 4.8 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-4.8)
+    * [4.9 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#4.9-parameter-reference)
 
-* [Version 4.7 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#odf-remote-4.7)
+    * [4.10 parameter reference](/docs/satellite?topic=satellite-config-storage-odf-remote#4.10-parameter-reference)
 
 * [Storage class reference for OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-config-storage-odf-remote#sat-storage-odf-remote-sc-ref)
 
@@ -2271,10 +2291,6 @@ subcollection: satellite
     * [Removing the VMWare storage configuration using the console](/docs/satellite?topic=satellite-config-storage-vmware-csi#vmware-csi-rm-ui)
 
     * [Removing the VMWare storage configuration using the command line](/docs/satellite?topic=satellite-config-storage-vmware-csi#vmware-csi-rm-cli)
-
-* [Parameter reference for VMWare](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-storage-vmware-csi-params-cli)
-
-* [Version 2.5.1 parameter reference](/docs/satellite?topic=satellite-config-storage-vmware-csi#vsphere-csi-driver-2.5.1)
 
 * [Getting help and support for VMWare](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-vmware-csi-support)
 

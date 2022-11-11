@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-11"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -194,33 +194,47 @@ You can use the [console](#sat-storage-local-file-ui) or [CLI](#sat-storage-loca
 1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
-    Example command to create a config by using `local-volume-file` version 4.10.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"] [--param "fstype=FSTYPE"]
-    ```
-    {: pre}
 
-    Example command to create a config by using `local-volume-file` version 4.9.
+Example command to create a version 4.7 configuration.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"] [--param "fstype=FSTYPE"]
-    ```
-    {: pre}
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.7  --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   --param "devicepath=DEVICEPATH"   [--param "fstype=FSTYPE"] 
+```
+{: pre}
 
-    Example command to create a config by using `local-volume-file` version 4.8.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.8  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH" [--param "fstype=FSTYPE"]
-    ```
-    {: pre}
+Example command to create a version 4.8 configuration.
 
-    Example command to create a config by using `local-volume-file` version 4.7.
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.8  --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   --param "devicepath=DEVICEPATH"   [--param "fstype=FSTYPE"] 
+```
+{: pre}
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.7  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH" [--param "fstype=FSTYPE"]
-    ```
-    {: pre}
+
+Example command to create a version 4.9 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"]   [--param "fstype=FSTYPE"] 
+```
+{: pre}
+
+
+Example command to create a version 4.10 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"]   [--param "fstype=FSTYPE"] 
+```
+{: pre}
+
+
+Example command to create a version 4.11 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.11  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"]   [--param "fstype=FSTYPE"] 
+```
+{: pre}
+
 
 1. Verify that your storage configuration is created.
 
@@ -729,54 +743,72 @@ Use the console to remove a storage configuration.
     {: pre}
 
 
-## Local file storage configuration parameter reference
-{: #sat-storage-local-file-params-cli}
 
-## Version 4.10 parameter reference
-{: #local-volume-file-4.10}
+## Parameter reference
+{: #local-volume-file-parameter-reference}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to 'true' if you want to automatically discover and use the storage volumes on your worker nodes. | false |`false` |
-| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
-| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
-| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. Required when auto-discover-devices is set to false. | false | N/A | 
-| File System type | `fstype` | The file system type. Specify 'ext3', 'ext4', or 'xfs'. | false |`ext4` |
-{: caption="local-volume-file version 4.10 parameter reference"}
+### 4.7 parameter reference
+{: #4.7-parameter-reference}
 
-## Version 4.9 parameter reference
-{: #local-volume-file-4.9}
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. | true | 
+| File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
+{: caption="Table 1. 4.7 parameter reference" caption-side="bottom"}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to 'true' if you want to automatically discover and use the storage volumes on your worker nodes. | false |`false` |
-| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
-| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
-| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. Required when auto-discover-devices is set to false. | false | N/A | 
-| File System type | `fstype` | The file system type. Specify 'ext3', 'ext4', or 'xfs'. | false |`ext4` |
-{: caption="local-volume-file version 4.9 parameter reference"}
 
-## Version 4.8 parameter reference
-{: #local-volume-file-4.8}
+### 4.8 parameter reference
+{: #4.8-parameter-reference}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
-| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
-| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. | true | N/A | 
-| File System type | `fstype` | The file system type. Specify 'ext3', 'ext4', or 'xfs'. | false |`ext4` |
-{: caption="local-volume-file version 4.8 parameter reference"}
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. | true | 
+| File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
+{: caption="Table 2. 4.8 parameter reference" caption-side="bottom"}
 
-## Version 4.7 parameter reference
-{: #local-volume-file-4.7}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
-| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
-| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. | true | N/A | 
-| File System type | `fstype` | The file system type. Specify 'ext3', 'ext4', or 'xfs'. | false |`ext4` |
-{: caption="local-volume-file version 4.7 parameter reference"}
+### 4.9 parameter reference
+{: #4.9-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
+{: caption="Table 3. 4.9 parameter reference" caption-side="bottom"}
+
+
+### 4.10 parameter reference
+{: #4.10-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
+{: caption="Table 4. 4.10 parameter reference" caption-side="bottom"}
+
+
+### 4.11 parameter reference
+{: #4.11-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
+{: caption="Table 5. 4.11 parameter reference" caption-side="bottom"}
+
 
 
 

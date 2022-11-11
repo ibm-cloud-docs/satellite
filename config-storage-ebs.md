@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-11"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -105,26 +105,31 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 1. Review the [AWS EBS storage configuration parameters](#sat-storage-aws-ebs-params-cli).
 1. Create an AWS EBS storage configuration. Replace the variables with the parameters that you retrieved in the previous step. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
     
-    Example command to create a config by using `aws-ebs-csi-driver` version 1.5.1.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.5.1  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
-    ```
-    {: pre}
 
-    Example command to create a config by using `aws-ebs-csi-driver` version 1.1.0.
+Example command to create a version 1.1.0 configuration.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.1.0  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
-    ```
-    {: pre}
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.1.0  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+```
+{: pre}
 
-    Example command to create a config by using `aws-ebs-csi-driver` version 0.9.14.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 0.9.14  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
-    ```
-    {: pre}
+Example command to create a version 1.5.1 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.5.1  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+```
+{: pre}
+
+
+Example command to create a version 1.12.0 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.12.0  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+```
+{: pre}
+
 
 1. Verify that your storage configuration is created.
     ```sh
@@ -552,38 +557,41 @@ Use the CLI to remove the AWS EBS storage configuration.
         {: pre}
 
 
-## AWS EBS parameter reference
-{: #sat-storage-aws-ebs-params-cli}
 
-Review the AWS EBS storage configuration parameters.
-{: shortdesc}
 
-## Version 1.5.1 parameter reference
-{: #aws-ebs-csi-driver-1.5.1}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | N/A | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | N/A | 
-{: caption="aws-ebs-csi-driver version 1.5.1 parameter reference"}
+## Parameter reference
+{: #aws-ebs-csi-driver-parameter-reference}
 
-## Version 1.1.0 parameter reference
-{: #aws-ebs-csi-driver-1.1.0}
+### 1.1.0 parameter reference
+{: #1.1.0-parameter-reference}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | N/A | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | N/A | 
-{: caption="aws-ebs-csi-driver version 1.1.0 parameter reference"}
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+{: caption="Table 1. 1.1.0 parameter reference" caption-side="bottom"}
 
-## Version 0.9.14 parameter reference
-{: #aws-ebs-csi-driver-0.9.14}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | N/A | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | N/A | 
-{: caption="aws-ebs-csi-driver version 0.9.14 parameter reference"}
+### 1.5.1 parameter reference
+{: #1.5.1-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+{: caption="Table 2. 1.5.1 parameter reference" caption-side="bottom"}
+
+
+### 1.12.0 parameter reference
+{: #1.12.0-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+{: caption="Table 3. 1.12.0 parameter reference" caption-side="bottom"}
+
 
 
 

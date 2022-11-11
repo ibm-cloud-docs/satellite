@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-11"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -11,7 +11,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# NetApp ONTAP-SAN 21.04
+# NetApp ONTAP-SAN
 {: #config-storage-netapp-2104}
 
 Set up [NetApp ONTAP-SAN storage](https://netapp-trident.readthedocs.io/en/stable-v21.04/){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
@@ -110,10 +110,24 @@ You can use the [console](#sat-storage-netapp-ui-san-2104) or [CLI](#sat-storage
 1. Review the template parameters and retrieve the values from your NetApp cluster.
 1. Review the [NetApp Trident storage configuration parameters](#sat-storage-netapp-params-cli-san-2104).
 1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
-    ```sh
-    ibmcloud sat storage config create --name 'ontapsan-config' --location <location id> --template-name 'netapp-ontap-san' --template-version '21.04' -p 'managementLIF=10.0.0.1' -p 'dataLIF=10.0.0.2' -p 'svm=svm-san' -p 'username=admin' -p 'password=<admin password>'
-    ```
-    {: pre}
+
+
+
+Example command to create a version 21.04 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-san --template-version 21.04  --param "managementLIF=MANAGEMENTLIF"   --param "dataLIF=DATALIF"   --param "svm=SVM"   --param "username=USERNAME"   --param "password=PASSWORD"   [--param "limitVolumeSize=LIMITVOLUMESIZE"]   [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"] 
+```
+{: pre}
+
+
+Example command to create a version 22.04 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-san --template-version 22.04  --param "managementLIF=MANAGEMENTLIF"   --param "dataLIF=DATALIF"   --param "svm=SVM"   --param "username=USERNAME"   --param "password=PASSWORD"   [--param "limitVolumeSize=LIMITVOLUMESIZE"]   [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"] 
+```
+{: pre}
+
 
 1. Verify that your storage configuration is created.
     ```sh
@@ -278,21 +292,39 @@ You can use the `storage assignment update` command to rename your assignment or
     ```
     {: pre}
 
-## NetApp Trident storage configuration parameter reference
-{: #sat-storage-netapp-params-cli-san-2104}
 
-For more information about the NetApp Trident configuration parameters, see the [NetApp documentation](https://netapp-trident.readthedocs.io/en/stable-v21.04/docker/install/ndvp_ontap_config.html#configuration-file-options){: external}.
+## Parameter reference
+{: #netapp-ontap-san-parameter-reference}
 
-| Parameter name | Required? | Description | Default value if not provided |
+### 21.04 parameter reference
+{: #21.04-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
 | --- | --- | --- | --- |
-| `managementLIF` | Required | The IP address of the management LIF. Example: `10.0.0.1`. | N/A |
-| `dataLIF` | Required | The IP address of data LIF. Example: `10.0.0.2`. | N/A | 
-| `svm` | Required | The name of the storage virtual machine. Example: `svm-iscsi`. | N/A | 
-| `username` | Required | The username to connect to the storage device. | N/A |
-| `password` | Required | The password to connect to the storage device. | N/A |
-| `limitVolumeSize` | Optional | Maximum volume size that can be requested and qtree parent volume size. Example: `50Gi`| `(not enforced by default)` |
-| `limitAggregateUsage` | Optional | Limit provisioning of volumes if parent volume usage exceeds this value. For example, if a volume is requested that causes parent volume usage to exceed this value, the volume provisioning fails. Example: `80%`  | `(not enforced by default)` |
-{: caption="Table 1. NetApp Trident storage parameter reference." caption-side="bottom"}
+| Management LIF | `managementLIF` | The IP address of the Management LIF. | true | 
+| Data LIF | `dataLIF` | The IP address of the Data LIF. | true | 
+| SVM | `svm` | The name of the SVM. | true | 
+| User Name | `username` | The username to connect to the storage device. | true | 
+| User Password | `password` | The password to connect to the storage device. | true | 
+| Limit Volume Size | `limitVolumeSize` | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Provisioning fails if usage is above this percentage. | false | 
+{: caption="Table 1. 21.04 parameter reference" caption-side="bottom"}
+
+
+### 22.04 parameter reference
+{: #22.04-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Management LIF | `managementLIF` | The IP address of the Management LIF. | true | 
+| Data LIF | `dataLIF` | The IP address of the Data LIF. | true | 
+| SVM | `svm` | The name of the SVM. | true | 
+| User Name | `username` | The username to connect to the storage device. | true | 
+| User Password | `password` | The password to connect to the storage device. | true | 
+| Limit Volume Size | `limitVolumeSize` | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Provisioning fails if usage is above this percentage. | false | 
+{: caption="Table 2. 22.04 parameter reference" caption-side="bottom"}
+
 
 ## Storage class reference for NetApp Trident
 {: #netapp-sc-reference-san-2104}

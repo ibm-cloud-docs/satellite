@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-11"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -148,12 +148,23 @@ In some environments, your worker node names might be different from your {{site
 1. Review the [template parameters](#sat-storage-spectrum-scale-params-cli).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
-    Example command to create a config by using `ibm-spectrum-fusion` version 2.4.0.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-spectrum-fusion --template-version 2.4.0  --param "primary-cluster-id=PRIMARY-CLUSTER-ID" --param "primary-fs-name=PRIMARY-FS-NAME" --param "primary-gui-host=PRIMARY-GUI-HOST" --param "primary-secret-name=PRIMARY-SECRET-NAME" --param "primary-gui-api-user=PRIMARY-GUI-API-USER" --param "primary-gui-api-password=PRIMARY-GUI-API-PASSWORD" --param "owning-cluster-id=OWNING-CLUSTER-ID" --param "owning-gui-host=OWNING-GUI-HOST" --param "owning-secret-name=OWNING-SECRET-NAME" --param "owning-gui-api-user=OWNING-GUI-API-USER" --param "owning-gui-api-password=OWNING-GUI-API-PASSWORD" --param "k8-n1-host=K8-N1-HOST" --param "sc-n1-host=SC-N1-HOST" --param "k8-n2-host=K8-N2-HOST" --param "sc-n2-host=SC-N2-HOST" --param "k8-n3-host=K8-N3-HOST" --param "sc-n3-host=SC-N3-HOST" [--param "k8-n4-host=K8-N4-HOST"] [--param "sc-n4-host=SC-N4-HOST"] [--param "k8-n5-host=K8-N5-HOST"] [--param "sc-n5-host=SC-N5-HOST"] [--param "k8-n6-host=K8-N6-HOST"] [--param "sc-n6-host=SC-N6-HOST"] [--param "k8-n7-host=K8-N7-HOST"] [--param "sc-n7-host=SC-N7-HOST"] [--param "k8-n8-host=K8-N8-HOST"] [--param "sc-n8-host=SC-N8-HOST"]
-    ```
-    {: pre}
+
+Example command to create a version 1.4.0 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.4.0  [--param "namespace=NAMESPACE"] 
+```
+{: pre}
+
+
+Example command to create a version 1.5.0 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.5.0  [--param "namespace=NAMESPACE"] 
+```
+{: pre}
+
 
 1. Verify that your storage configuration is created.
     ```sh
@@ -517,15 +528,27 @@ Do not install the {{site.data.keyword.IBM_notm}} Spectrum Scale management API 
 * If the Spectrum Scale file system mount path is the exact same on the owning and primary Spectrum Scale cluster, then only one Spectrum Scale GUI is required.
 * If the Spectrum Scale file system mount paths are different, then two GUIs are required. One of the GUIs must run on a node that has network connectivity to the worker nodes that managed by {{site.data.keyword.satelliteshort}}, but note that the GUI node itself, must not be managed by {{site.data.keyword.satelliteshort}}.
 
-## Spectrum Scale parameter reference
-{: #sat-storage-spectrum-scale-params-cli}
 
-    Example command to create a config by using `ibm-spectrum-fusion` version 2.4.0.
+## Parameter reference
+{: #ibm-system-storage-block-csi-driver-parameter-reference}
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-spectrum-fusion --template-version 2.4.0  --param "primary-cluster-id=PRIMARY-CLUSTER-ID" --param "primary-fs-name=PRIMARY-FS-NAME" --param "primary-gui-host=PRIMARY-GUI-HOST" --param "primary-secret-name=PRIMARY-SECRET-NAME" --param "primary-gui-api-user=PRIMARY-GUI-API-USER" --param "primary-gui-api-password=PRIMARY-GUI-API-PASSWORD" --param "owning-cluster-id=OWNING-CLUSTER-ID" --param "owning-gui-host=OWNING-GUI-HOST" --param "owning-secret-name=OWNING-SECRET-NAME" --param "owning-gui-api-user=OWNING-GUI-API-USER" --param "owning-gui-api-password=OWNING-GUI-API-PASSWORD" --param "k8-n1-host=K8-N1-HOST" --param "sc-n1-host=SC-N1-HOST" --param "k8-n2-host=K8-N2-HOST" --param "sc-n2-host=SC-N2-HOST" --param "k8-n3-host=K8-N3-HOST" --param "sc-n3-host=SC-N3-HOST" [--param "k8-n4-host=K8-N4-HOST"] [--param "sc-n4-host=SC-N4-HOST"] [--param "k8-n5-host=K8-N5-HOST"] [--param "sc-n5-host=SC-N5-HOST"] [--param "k8-n6-host=K8-N6-HOST"] [--param "sc-n6-host=SC-N6-HOST"] [--param "k8-n7-host=K8-N7-HOST"] [--param "sc-n7-host=SC-N7-HOST"] [--param "k8-n8-host=K8-N8-HOST"] [--param "sc-n8-host=SC-N8-HOST"]
-    ```
-    {: pre}
+### 1.4.0 parameter reference
+{: #1.4.0-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Namespace | `namespace` | The namespace where you want to create the deployment. | false | 
+{: caption="Table 1. 1.4.0 parameter reference" caption-side="bottom"}
+
+
+### 1.5.0 parameter reference
+{: #1.5.0-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Namespace | `namespace` | The namespace where you want to create the deployment. | false | 
+{: caption="Table 2. 1.5.0 parameter reference" caption-side="bottom"}
+
 
 
 

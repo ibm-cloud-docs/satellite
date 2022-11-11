@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-11"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -160,19 +160,31 @@ Create a storage configuration in the command line by using the Azure Disk templ
 1. Review the [template parameters](#sat-storage-azure-disk-params-cli).
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
-    Example command to create a config by using `azuredisk-csi-driver` version 1.18.0.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.18.0  --param "tenantId=TENANTID" --param "subscriptionId=SUBSCRIPTIONID" --param "aadClientId=AADCLIENTID" --param "location=LOCATION" --param "aadClientSecret=AADCLIENTSECRET" --param "resourceGroup=RESOURCEGROUP" --param "vmType=VMTYPE" --param "securityGroupName=SECURITYGROUPNAME" --param "vnetName=VNETNAME"
-    ```
-    {: pre}
 
-    Example command to create a config by using `azuredisk-csi-driver` version 1.4.0.
+Example command to create a version 1.4.0 configuration.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.4.0  --param "tenantId=TENANTID" --param "subscriptionId=SUBSCRIPTIONID" --param "aadClientId=AADCLIENTID" --param "location=LOCATION" --param "aadClientSecret=AADCLIENTSECRET" --param "resourceGroup=RESOURCEGROUP" --param "vmType=VMTYPE" --param "securityGroupName=SECURITYGROUPNAME" --param "vnetName=VNETNAME"
-    ```
-    {: pre}
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.4.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
+```
+{: pre}
+
+
+Example command to create a version 1.18.0 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.18.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
+```
+{: pre}
+
+
+Example command to create a version 1.23.0 configuration.
+
+```sh
+ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.23.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
+```
+{: pre}
+
 
 1. Verify that your storage configuration is created.
 
@@ -663,43 +675,60 @@ Note that if you remove the storage configuration, the driver is then uninstalle
         {: pre}
 
 
-## Parameter reference for Azure Disk storage
-{: #sat-storage-azure-disk-params-cli}
 
-For help finding these parameters, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest){: external}
-{: tip}
+## Parameter reference
+{: #azuredisk-csi-driver-parameter-reference}
 
-## Version 1.18.0 parameter reference
-{: #azuredisk-csi-driver-1.18.0}
+### 1.4.0 parameter reference
+{: #1.4.0-parameter-reference}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Tenant ID | `tenantId` | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | N/A | 
-| Subscription ID | `subscriptionId` | Your Azure subscription ID. From the Azure portal, search for 'Subscription' to find a list of your subscriptions. You can also find this value by running the `az account subscription list` command. | true | N/A | 
-| Azure Active Directory Client ID | `aadClientId` | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | N/A | 
-| Location | `location` | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: 'useast'. | true | N/A | 
-| Azure Active Directory Client Secret | `aadClientSecret` | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | true | N/A | 
-| Resource Group | `resourceGroup` | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | N/A | 
-| Virtual Machine Type | `vmType` | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: 'standard' or 'VMSS'. | true | N/A | 
-| Network Security Group Name | `securityGroupName` | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | N/A | 
-| Virtual Network Name | `vnetName` | The name of the virtual network. You can find this value in the Azure portal or by running the `az network vnet list` command. | true | N/A | 
-{: caption="azuredisk-csi-driver version 1.18.0 parameter reference"}
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Tenant ID | `tenantId` | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | 
+| Subscription ID | `subscriptionId` | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find this value by running the `az account subscription list` command. | true | 
+| Azure Active Directory Client ID | `aadClientId` | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | 
+| Location | `location` | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: `useast`. | true | 
+| Azure Active Directory Client Secret | `aadClientSecret` | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | true | 
+| Resource Group | `resourceGroup` | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | 
+| Virtual Machine Type | `vmType` | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | 
+| Network Security Group Name | `securityGroupName` | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | 
+| Virtual Network Name | `vnetName` | The name of the virtual network. You can find this value in the Azure portal or by running the `az network vnet list` command. | true | 
+{: caption="Table 1. 1.4.0 parameter reference" caption-side="bottom"}
 
-## Version 1.4.0 parameter reference
-{: #azuredisk-csi-driver-1.4.0}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Tenant ID | `tenantId` | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | N/A | 
-| Subscription ID | `subscriptionId` | Your Azure subscription ID. From the Azure portal, search for 'Subscription' to find a list of your subscriptions. You can also find this value by running the `az account subscription list` command. | true | N/A | 
-| Azure Active Directory Client ID | `aadClientId` | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | N/A | 
-| Location | `location` | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: 'useast'. | true | N/A | 
-| Azure Active Directory Client Secret | `aadClientSecret` | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | true | N/A | 
-| Resource Group | `resourceGroup` | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | N/A | 
-| Virtual Machine Type | `vmType` | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: 'standard' or 'VMSS'. | true | N/A | 
-| Network Security Group Name | `securityGroupName` | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | N/A | 
-| Virtual Network Name | `vnetName` | The name of the virtual network. You can find this value in the Azure portal or by running the `az network vnet list` command. | true | N/A | 
-{: caption="azuredisk-csi-driver version 1.4.0 parameter reference"}
+### 1.18.0 parameter reference
+{: #1.18.0-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Tenant ID | `tenantId` | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | 
+| Subscription ID | `subscriptionId` | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find this value by running the `az account subscription list` command. | true | 
+| Azure Active Directory Client ID | `aadClientId` | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | 
+| Location | `location` | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: `useast`. | true | 
+| Azure Active Directory Client Secret | `aadClientSecret` | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | true | 
+| Resource Group | `resourceGroup` | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | 
+| Virtual Machine Type | `vmType` | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | 
+| Network Security Group Name | `securityGroupName` | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | 
+| Virtual Network Name | `vnetName` | The name of the virtual network. You can find this value in the Azure portal or by running the `az network vnet list` command. | true | 
+{: caption="Table 2. 1.18.0 parameter reference" caption-side="bottom"}
+
+
+### 1.23.0 parameter reference
+{: #1.23.0-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Tenant ID | `tenantId` | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | 
+| Subscription ID | `subscriptionId` | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find this value by running the `az account subscription list` command. | true | 
+| Azure Active Directory Client ID | `aadClientId` | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | 
+| Location | `location` | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: `useast`. | true | 
+| Azure Active Directory Client Secret | `aadClientSecret` | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | true | 
+| Resource Group | `resourceGroup` | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | 
+| Virtual Machine Type | `vmType` | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | 
+| Network Security Group Name | `securityGroupName` | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | 
+| Virtual Network Name | `vnetName` | The name of the virtual network. You can find this value in the Azure portal or by running the `az network vnet list` command. | true | 
+{: caption="Table 3. 1.23.0 parameter reference" caption-side="bottom"}
+
 
 
 
