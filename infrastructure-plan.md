@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-24"
+lastupdated: "2022-11-11"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -25,10 +25,12 @@ Don't have your own infrastructure or want a managed solution? [Check out {{site
 Your {{site.data.keyword.satelliteshort}} location starts with your infrastructure, such as a public cloud provider or on-prem. Your infrastructure provides the basis for the hosts and zones that you use to build out your {{site.data.keyword.satelliteshort}} location. For more details on the different responsibilities for your infrastructure and {{site.data.keyword.satelliteshort}} resources, see [Your responsibilities](/docs/satellite?topic=satellite-responsibilities).
 {: shortdesc}
 
-![Concept overview of planning your infrastructure](/images/satellite-infra-plan.png){: caption="Figure 1. Your {{site.data.keyword.satelliteshort}} location is built atop the zones and hosts in your infrastructure provider." caption-side="bottom"}
+![Concept overview of planning your infrastructure](/images/plan-sat-envirn.svg){: caption="Figure 1. Your Satellite location is built atop the zones and hosts in your infrastructure provider." caption-side="bottom"}
 
 ## Planning your infrastructure
 {: #infra-plan-infra}
+
+Before you create your location, choose your infrastructure provider, infrastructure zones, and your infrastructure hosts.
 
 ### Plan your infrastructure provider
 {: #infra-plan-provider}
@@ -117,7 +119,6 @@ For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf i
 {: shortdesc}
 
 The credentials that you provide are stored and encrypted in etcd of the {{site.data.keyword.satelliteshort}} location control plane master. For more information, see [Securing your data](/docs/satellite?topic=satellite-data-security).
-
 
 
 
