@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -104,28 +104,28 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
 
 
 
-Example command to create a version 1.3.1 configuration.
+    Example command to create a version 1.3.1 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.1  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
-```
-{: pre}
-
-
-Example command to create a version 1.3.7 configuration.
-
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.7  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.1  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ```
+    {: pre}
 
 
-Example command to create a version 1.4.2 configuration.
+    Example command to create a version 1.3.7 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.4.2  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.7  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ```
+    {: pre}
+
+
+    Example command to create a version 1.4.2 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.4.2  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ```
+    {: pre}
 
     
 

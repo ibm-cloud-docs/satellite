@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -88,20 +88,20 @@ Note, there is currently an issue with autofill in some browsers. If you don't s
 
 
 
-Example command to create a version 4.3.0 configuration.
+    Example command to create a version 4.3.0 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-vpc-block-csi-driver --template-version 4.3.0  --param "g2_token_exchange_endpoint_url=G2_TOKEN_EXCHANGE_ENDPOINT_URL"   --param "g2_riaas_endpoint_url=G2_RIAAS_ENDPOINT_URL"   --param "g2_resource_group_id=G2_RESOURCE_GROUP_ID"   --param "g2_api_key=G2_API_KEY" 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-vpc-block-csi-driver --template-version 4.3.0  --param "g2_token_exchange_endpoint_url=G2_TOKEN_EXCHANGE_ENDPOINT_URL"   --param "g2_riaas_endpoint_url=G2_RIAAS_ENDPOINT_URL"   --param "g2_resource_group_id=G2_RESOURCE_GROUP_ID"   --param "g2_api_key=G2_API_KEY" 
+    ```
+    {: pre}
 
 
-Example command to create a version 5.0 configuration.
+    Example command to create a version 5.0 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-vpc-block-csi-driver --template-version 5.0  --param "g2_token_exchange_endpoint_url=G2_TOKEN_EXCHANGE_ENDPOINT_URL"   --param "g2_riaas_endpoint_url=G2_RIAAS_ENDPOINT_URL"   --param "g2_resource_group_id=G2_RESOURCE_GROUP_ID"   --param "g2_api_key=G2_API_KEY" 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-vpc-block-csi-driver --template-version 5.0  --param "g2_token_exchange_endpoint_url=G2_TOKEN_EXCHANGE_ENDPOINT_URL"   --param "g2_riaas_endpoint_url=G2_RIAAS_ENDPOINT_URL"   --param "g2_resource_group_id=G2_RESOURCE_GROUP_ID"   --param "g2_api_key=G2_API_KEY" 
+    ```
+    {: pre}
 
 
 

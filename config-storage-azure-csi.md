@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -162,28 +162,28 @@ Create a storage configuration in the command line by using the Azure Disk templ
 
 
 
-Example command to create a version 1.4.0 configuration.
+    Example command to create a version 1.4.0 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.4.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
-```
-{: pre}
-
-
-Example command to create a version 1.18.0 configuration.
-
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.18.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.4.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
+    ```
+    {: pre}
 
 
-Example command to create a version 1.23.0 configuration.
+    Example command to create a version 1.18.0 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.23.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.18.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
+    ```
+    {: pre}
+
+
+    Example command to create a version 1.23.0 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.23.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
+    ```
+    {: pre}
 
 
 1. Verify that your storage configuration is created.

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -90,12 +90,12 @@ Create a storage configuration in the command line by using the VMware configura
 
 
 
-Example command to create a version 2.5.1 configuration.
+    Example command to create a version 2.5.1 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.5.1  --param "vcenter-username=VCENTER-USERNAME"   --param "vcenter-password=VCENTER-PASSWORD"   [--param "insecure-flag=INSECURE-FLAG"]   --param "host=HOST"   --param "datacenters=DATACENTERS"   [--param "thumbprint=THUMBPRINT"] 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.5.1  --param "vcenter-username=VCENTER-USERNAME"   --param "vcenter-password=VCENTER-PASSWORD"   [--param "insecure-flag=INSECURE-FLAG"]   --param "host=HOST"   --param "datacenters=DATACENTERS"   [--param "thumbprint=THUMBPRINT"] 
+    ```
+    {: pre}
 
 
 1. Verify that your storage configuration is created.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -107,28 +107,28 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
     
 
 
-Example command to create a version 1.1.0 configuration.
+    Example command to create a version 1.1.0 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.1.0  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
-```
-{: pre}
-
-
-Example command to create a version 1.5.1 configuration.
-
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.5.1  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.1.0  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ```
+    {: pre}
 
 
-Example command to create a version 1.12.0 configuration.
+    Example command to create a version 1.5.1 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.12.0  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.5.1  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ```
+    {: pre}
+
+
+    Example command to create a version 1.12.0 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.12.0  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ```
+    {: pre}
 
 
 1. Verify that your storage configuration is created.

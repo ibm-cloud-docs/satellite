@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -104,20 +104,20 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 
 
-Example command to create a version 21.04 configuration.
+    Example command to create a version 21.04 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 21.04  --param "managementLIF=MANAGEMENTLIF"   --param "dataLIF=DATALIF"   --param "svm=SVM"   --param "username=USERNAME"   --param "password=PASSWORD"   [--param "exportPolicy=EXPORTPOLICY"]   [--param "limitVolumeSize=LIMITVOLUMESIZE"]   [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"]   [--param "nfsMountOptions=NFSMOUNTOPTIONS"] 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 21.04  --param "managementLIF=MANAGEMENTLIF"   --param "dataLIF=DATALIF"   --param "svm=SVM"   --param "username=USERNAME"   --param "password=PASSWORD"   [--param "exportPolicy=EXPORTPOLICY"]   [--param "limitVolumeSize=LIMITVOLUMESIZE"]   [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"]   [--param "nfsMountOptions=NFSMOUNTOPTIONS"] 
+    ```
+    {: pre}
 
 
-Example command to create a version 22.04 configuration.
+    Example command to create a version 22.04 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 22.04  --param "managementLIF=MANAGEMENTLIF"   --param "dataLIF=DATALIF"   --param "svm=SVM"   --param "username=USERNAME"   --param "password=PASSWORD"   [--param "exportPolicy=EXPORTPOLICY"]   [--param "limitVolumeSize=LIMITVOLUMESIZE"]   [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"]   [--param "nfsMountOptions=NFSMOUNTOPTIONS"] 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 22.04  --param "managementLIF=MANAGEMENTLIF"   --param "dataLIF=DATALIF"   --param "svm=SVM"   --param "username=USERNAME"   --param "password=PASSWORD"   [--param "exportPolicy=EXPORTPOLICY"]   [--param "limitVolumeSize=LIMITVOLUMESIZE"]   [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"]   [--param "nfsMountOptions=NFSMOUNTOPTIONS"] 
+    ```
+    {: pre}
 
 
 1. Verify that your storage configuration is created.

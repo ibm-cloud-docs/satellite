@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -150,20 +150,20 @@ In some environments, your worker node names might be different from your {{site
 
 
 
-Example command to create a version 1.4.0 configuration.
+    Example command to create a version 1.4.0 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.4.0  [--param "namespace=NAMESPACE"] 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.4.0  [--param "namespace=NAMESPACE"] 
+    ```
+    {: pre}
 
 
-Example command to create a version 1.5.0 configuration.
+    Example command to create a version 1.5.0 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.5.0  [--param "namespace=NAMESPACE"] 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.5.0  [--param "namespace=NAMESPACE"] 
+    ```
+    {: pre}
 
 
 1. Verify that your storage configuration is created.

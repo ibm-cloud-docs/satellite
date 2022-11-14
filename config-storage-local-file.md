@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -196,44 +196,44 @@ You can use the [console](#sat-storage-local-file-ui) or [CLI](#sat-storage-loca
 
 
 
-Example command to create a version 4.7 configuration.
+    Example command to create a version 4.7 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.7  --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   --param "devicepath=DEVICEPATH"   [--param "fstype=FSTYPE"] 
-```
-{: pre}
-
-
-Example command to create a version 4.8 configuration.
-
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.8  --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   --param "devicepath=DEVICEPATH"   [--param "fstype=FSTYPE"] 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.7  --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   --param "devicepath=DEVICEPATH"   [--param "fstype=FSTYPE"] 
+    ```
+    {: pre}
 
 
-Example command to create a version 4.9 configuration.
+    Example command to create a version 4.8 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"]   [--param "fstype=FSTYPE"] 
-```
-{: pre}
-
-
-Example command to create a version 4.10 configuration.
-
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"]   [--param "fstype=FSTYPE"] 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.8  --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   --param "devicepath=DEVICEPATH"   [--param "fstype=FSTYPE"] 
+    ```
+    {: pre}
 
 
-Example command to create a version 4.11 configuration.
+    Example command to create a version 4.9 configuration.
 
-```sh
-ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.11  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"]   [--param "fstype=FSTYPE"] 
-```
-{: pre}
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"]   [--param "fstype=FSTYPE"] 
+    ```
+    {: pre}
+
+
+    Example command to create a version 4.10 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"]   [--param "fstype=FSTYPE"] 
+    ```
+    {: pre}
+
+
+    Example command to create a version 4.11 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-file --template-version 4.11  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"]   [--param "fstype=FSTYPE"] 
+    ```
+    {: pre}
 
 
 1. Verify that your storage configuration is created.
