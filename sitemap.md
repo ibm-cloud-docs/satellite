@@ -2324,8 +2324,6 @@ subcollection: satellite
 
 * [{{site.data.keyword.IBM_notm}} Spectrum Scale](/docs/satellite?topic=satellite-storage-class-ref#spec-scale-sc-ref)
 
-* [{{site.data.keyword.IBM_notm}} Systems block storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-block-csi-sc-ref)
-
 * [{{site.data.keyword.IBM_notm}} Systems object storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-object-sc-ref)
 
 * [{{site.data.keyword.IBM_notm}} VPC block storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-vpc-csi-sc-ref)

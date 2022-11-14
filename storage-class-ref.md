@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-14"
 
 keywords: satellite storage, satellite config, block, file, ocs
 
@@ -236,12 +236,6 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for {{site.data.
 {: summary="The rows are read from left to right. The first column is the parameter name. The second column indicates if the parameters is required. The third column is a brief description of the parameter."}
 
 
-
-## {{site.data.keyword.IBM_notm}} Systems block storage
-{: #sat-storage-ibm-block-csi-sc-ref}
-
-
-{: caption="Table 14. Storage class reference for IBM Systems block storage" caption-side="bottom"}
 
 ## {{site.data.keyword.IBM_notm}} Systems object storage
 {: #sat-storage-ibm-object-sc-ref}

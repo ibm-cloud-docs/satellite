@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-14"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -391,6 +391,7 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 | --- | --- | --- |
 | `ibm-s3fs-cos` | Immediate | False |
 | `ibm-s3fs-cos-perf` | Immediate | False |
+{: caption="Table 2. Cloud Object storage class reference" caption-side="bottom"}
 
 ## Getting help and support for {{site.data.keyword.cos_full_notm}}
 {: #sat-storage-cos-support}
