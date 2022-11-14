@@ -81,7 +81,15 @@ The template is currently in beta. Do not use it for production workloads.
     ```
     {: pre}
     
-{[ibm-object-storage-plugin-config-create.md ]}
+
+
+    Example command to create a version 2.2 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2  [--param "helm-release-name=HELM-RELEASE-NAME"]   [--param "parameters=PARAMETERS"]   --param "license=LICENSE"   --param "cos-endpoint=COS-ENDPOINT"   --param "cos-storageclass=COS-STORAGECLASS" 
+    ```
+    {: pre}
+
 
 
 ## Assigning a {{site.data.keyword.cos_short}} configuration from the console
