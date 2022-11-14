@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -66,7 +66,7 @@ Hosts assigned to a specific {{site.data.keyword.redhat_openshift_notm}} cluster
 - All {{site.data.keyword.satelliteshort}} hosts must have an IPv4 address that can access `containers.cloud.ibm.com` and must have full IPv4 backend connectivity to the other hosts in the same cluster in the location.
 - Hosts can use gateways to connect to the location control plane.
 
-## Inbound connectivity for requirements {{site.data.keyword.satelliteshort}} hosts
+## Inbound connectivity requirements for {{site.data.keyword.satelliteshort}} hosts
 {: #reqs-host-network-firewall-inbound}
 
 Hosts must have inbound connectivity on the primary network interface via the default gateway or firewall of the system.
@@ -81,3 +81,4 @@ For example, if the primary network interface for a host is `eth0`, you must ope
 | Access the web console for a {{site.data.keyword.redhat_openshift_notm}} cluster through the {{site.data.keyword.redhat_openshift_notm}} router | Clients or authorized users | {{site.data.keyword.redhat_openshift_notm}} cluster hosts | TCP 443 |
 {: caption="Required inbound connectivity for hosts on the primary network interface" caption-side="bottom"}
 {: summary="The table shows the required inbound connectivity for hosts on the primary network interface. Rows are to be read from the left to right. The description is in the first column. The source IP addresses are in the second column. The destination IP addresses are in the third column. The protocol and ports are in the fourth column."}
+

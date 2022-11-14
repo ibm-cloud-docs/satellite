@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-14"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -193,33 +193,47 @@ You can use the [console](#sat-storage-local-block-ui) or [CLI](#sat-storage-loc
 
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
-    Example command to create a config by using `local-volume-block` version 4.10.
+
+
+    Example command to create a version 4.7 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"]
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.7  --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   --param "devicepath=DEVICEPATH" 
     ```
     {: pre}
 
-    Example command to create a config by using `local-volume-block` version 4.9.
+
+    Example command to create a version 4.8 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"] --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" [--param "devicepath=DEVICEPATH"]
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.8  --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   --param "devicepath=DEVICEPATH" 
     ```
     {: pre}
 
-    Example command to create a config by using `local-volume-block` version 4.8.
+
+    Example command to create a version 4.9 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.8  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH"
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"] 
     ```
     {: pre}
 
-    Example command to create a config by using `local-volume-block` version 4.7.
+
+    Example command to create a version 4.10 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.7  --param "label-key=LABEL-KEY" --param "label-value=LABEL-VALUE" --param "devicepath=DEVICEPATH"
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"] 
     ```
     {: pre}
+
+
+    Example command to create a version 4.11 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.11  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"] 
+    ```
+    {: pre}
+
 
 1. Verify that your storage configuration is created.
 
@@ -728,50 +742,67 @@ Use the console to remove a storage configuration.
     {: pre}
 
 
-## Local block storage configuration parameter reference
-{: #sat-storage-local-block-params-cli}
 
-## Version 4.10 parameter reference
-{: #local-volume-block-4.10}
+## Parameter reference
+{: #local-volume-block-parameter-reference}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to 'true' if you want to automatically discover and use the storage volumes on your worker nodes. | false |`false` |
-| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
-| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
-| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. Required when auto-discover-devices is set to false. | false | N/A | 
-{: caption="local-volume-block version 4.10 parameter reference"}
+### 4.7 parameter reference
+{: #4.7-parameter-reference}
 
-## Version 4.9 parameter reference
-{: #local-volume-block-4.9}
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. | true | 
+{: caption="Table 1. 4.7 parameter reference" caption-side="bottom"}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to 'true' if you want to automatically discover and use the storage volumes on your worker nodes. | false |`false` |
-| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
-| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
-| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. Required when auto-discover-devices is set to false. | false | N/A | 
-{: caption="local-volume-block version 4.9 parameter reference"}
 
-## Version 4.8 parameter reference
-{: #local-volume-block-4.8}
+### 4.8 parameter reference
+{: #4.8-parameter-reference}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
-| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
-| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. | true | N/A | 
-{: caption="local-volume-block version 4.8 parameter reference"}
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. | true | 
+{: caption="Table 2. 4.8 parameter reference" caption-side="bottom"}
 
-## Version 4.7 parameter reference
-{: #local-volume-block-4.7}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| Node Label Key | `label-key` | The 'key' of the worker node 'key=value' label. | true | N/A | 
-| Node Label Key Value | `label-value` | The 'value' of the worker node 'key=value' label. | true | N/A | 
-| Device Path | `devicepath` | The local storage device path. Example: '/dev/sdc'. | true | N/A | 
-{: caption="local-volume-block version 4.7 parameter reference"}
+### 4.9 parameter reference
+{: #4.9-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+{: caption="Table 3. 4.9 parameter reference" caption-side="bottom"}
+
+
+### 4.10 parameter reference
+{: #4.10-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+{: caption="Table 4. 4.10 parameter reference" caption-side="bottom"}
+
+
+### 4.11 parameter reference
+{: #4.11-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+{: caption="Table 5. 4.11 parameter reference" caption-side="bottom"}
+
 
 
 ## Storage class reference for local block storage

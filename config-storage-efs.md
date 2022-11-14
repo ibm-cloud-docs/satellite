@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-14"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -102,26 +102,31 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
 1. Review the [AWS EFS storage configuration parameters](#sat-storage-aws-efs-params-cli).
 1. Create an AWS EFS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
 
-    Example command to create a config by using `aws-efs-csi-driver` version 1.3.7.
+
+
+    Example command to create a version 1.3.1 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.7  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.1  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
     ```
     {: pre}
 
-    Example command to create a config by using `aws-efs-csi-driver` version 1.3.1.
+
+    Example command to create a version 1.3.7 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.1  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.7  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
     ```
     {: pre}
-        
-    Example command to create a config by using `aws-efs-csi-driver` version 1.2.2.
+
+
+    Example command to create a version 1.4.2 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.2.2  --param "aws-access-key=AWS-ACCESS-KEY" --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY"
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.4.2  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
     ```
     {: pre}
+
     
 
 
@@ -538,35 +543,39 @@ Use the CLI to remove a storage configuration.
         {: pre}
 
 
-## AWS EFS parameter reference
-{: #sat-storage-aws-efs-params-cli}
 
-## Version 1.3.7 parameter reference
-{: #aws-efs-csi-driver-1.3.7}
+## Parameter reference
+{: #aws-efs-csi-driver-parameter-reference}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | N/A | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | N/A | 
-{: caption="aws-efs-csi-driver version 1.3.7 parameter reference"}
+### 1.3.1 parameter reference
+{: #1.3.1-parameter-reference}
 
-## Version 1.3.1 parameter reference
-{: #aws-efs-csi-driver-1.3.1}
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+{: caption="Table 1. 1.3.1 parameter reference" caption-side="bottom"}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | N/A | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | N/A | 
-{: caption="aws-efs-csi-driver version 1.3.1 parameter reference"}
-        
-## Version 1.2.2 parameter reference
-{: #aws-efs-csi-driver-1.2.2}
 
-| Display name | Name | Description | Required? | Default |
-| --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | N/A | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | N/A | 
-{: caption="aws-efs-csi-driver version 1.2.2 parameter reference"}
+### 1.3.7 parameter reference
+{: #1.3.7-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+{: caption="Table 2. 1.3.7 parameter reference" caption-side="bottom"}
+
+
+### 1.4.2 parameter reference
+{: #1.4.2-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+{: caption="Table 3. 1.4.2 parameter reference" caption-side="bottom"}
+
 
 
 ## Getting help and support for AWS EFS
