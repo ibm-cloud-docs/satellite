@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-02"
+lastupdated: "2022-11-15"
 
 keywords: satellite, hybrid, multicloud, storage error messages, error message
 
@@ -95,7 +95,7 @@ Response code: `404`
 ### ST0008 error message
 {: #st0008}
 
-User is not authorized to create service subscription on `<cluster-id>` cluster ID.
+User is not authorized to create service subscription on CLUSTER-ID cluster ID.
 {: shortdesc}
 
 Error type: Authorization
@@ -109,7 +109,7 @@ Verify that storage configuration and service cluster both must be on same {{sit
 ### ST0009 error message
 {: #st0009}
 
-`<cluster-id>` cluster is not a service {{site.data.keyword.satelliteshort}} cluster.
+CLUSTER-ID cluster is not a service {{site.data.keyword.satelliteshort}} cluster.
 {: shortdesc}
 
 Error type: Bad request
@@ -145,7 +145,7 @@ Response code: `400`
 ### ST0014 error message
 {: #st0014}
 
-The required input parameter `<parameter>` in the request body is  either missing or unsupported. The specified value is `<parameter>`. The expected value(s) is(are) `<value>`.
+The required input parameter PARAMETER in the request body is  either missing or unsupported. The specified value is PARAMETER. The expected value(s) is(are) VALUE.
 {: shortdesc}
 
 Error type: Bad request
@@ -155,7 +155,7 @@ Response code: `404`
 ### ST0015 error message
 {: #st0015}
 
-The required input parameter `<<parameter-name>` in the request body is missing.
+The required input parameter PARAMETER-NAME in the request body is missing.
 {: shortdesc}
 
 Error type: Bad request
@@ -165,7 +165,7 @@ Response code: `404`
 ### ST0016 error message
 {: #st0016}
 
-Failed to update the tags for the volume with CRN `<VolumeCRN>`. `BackendError: {{.BackendError}}`
+Failed to update the tags for the volume with CRN VOLUMECRN. `BackendError: BACKEND-ERROR`
 {: shortdesc}
 
 Error type: Services
@@ -196,7 +196,7 @@ Response code: `404`
 ### ST0019 error message
 {: #st0019}
 
-`<object-type>` not found with the identifier: `<identifier>>`.
+OBJECT-TYPE not found with the identifier: IDENTIFIER.
 {: shortdesc}
 
 Error type: Services
@@ -206,7 +206,7 @@ Response code: `404`
 ### ST0020 error message
 {: #st0020}
 
-The request parameter with name `<<parameter-name>` is not supported.
+The request parameter with name PARAMETER-NAME is not supported.
 {: shortdesc}
 
 Error type: Services
@@ -216,7 +216,7 @@ Response code: `404`
 ### ST0021 error message
 {: #st0021}
 
-`<object-type>` with the identifier `{{.ObjetIdentifier>` already exists.
+OBJECT-TYPE with the identifier OBJECT-IDENTIFIER already exists.
 {: shortdesc}
 
 Error type: Services
@@ -236,7 +236,7 @@ Response code: `500`
 ### ST0023 error message
 {: #st0023}
 
-Unable to update configuration with name `<ConfigurationName>`. `<number>` assignments depend on this configuration.  Remove them before you update this configuration or create a new configuration.
+Unable to update configuration with name CONFIGURATION-NAME. NUMBER assignments depend on this configuration.  Remove them before you update this configuration or create a new configuration.
 {: shortdesc}
 
 Error type: Services
@@ -246,7 +246,7 @@ Response code: `500`
 ### ST0024 error message
 {: #st0024}
 
-The given parameter value `<value>` does not match with regular expression `{{.RegEx>`.
+The given parameter value VALUE does not match with regular expression REG-EX.
 {: shortdesc}
 
 Error type: Services
@@ -256,7 +256,7 @@ Response code: `400`
 ### ST0025 error message
 {: #st0025}
 
-The length of given parameter value `<value>` is less than minimum allowed length `<minimum-length>`.
+The length of given parameter value VALUE is less than minimum allowed length MININUM-LENGTH.
 {: shortdesc}
 
 Error type: Services
@@ -266,7 +266,7 @@ Response code: `400`
 ### ST0026 error message
 {: #st0026}
 
-The length of given parameter value `<value>` is greater than maximum allowed length `<maximum-length`.
+The length of given parameter value VALUE is greater than maximum allowed length MAXIMUM-LENGTH.
 {: shortdesc}
 
 Error type: Services
@@ -276,7 +276,7 @@ Response code: `400`
 ### ST0027 error message
 {: #st0027}
 
-Unable to update `<object-type>` with the identifier: `<identifier>`. No `<object-type>` parameter found in the request body to update.
+Unable to update OBJECT-TYPE with the identifier: IDENTIFIER. No OBJECT-TYPE parameter found in the request body to update.
 {: shortdesc}
 
 Error type: Bad request
@@ -286,7 +286,7 @@ Response code: `404`
 ### ST0028 error message
 {: #st0028}
 
-Unable to add or update storage class as storage class template is not registered for `<template>` and `<version>`.
+Unable to add or update storage class as storage class template is not registered for TEMPLATE and VERSION.
 {: shortdesc}
 
 Error type: Services
@@ -296,7 +296,7 @@ Response code: `404`
 ### ST0030 error message
 {: #st0030}
 
-Cluster not found corresponding to the given cluster ID: `<cluster-id>`
+Cluster not found corresponding to the given cluster ID: CLUSTER-ID
 {: shortdesc}
 
 Error type: Bad request
@@ -308,7 +308,7 @@ Response code: `404`
 ### ST0031 error message
 {: #st0031}
 
-The required input query parameter `<<parameter-name>` is missing.
+The required input query parameter PARAMETER-NAME is missing.
 {: shortdesc}
 
 Error type: Bad request
@@ -318,7 +318,7 @@ Response code: `404`
 ### ST0032 error message
 {: #st0032}
 
-The `<parameter>` and `<parameter>` parameters are exclusive. Provide only one of these parameters.
+The PARAMETER and PARAMETER parameters are exclusive. Provide only one of these parameters.
 {: shortdesc}
 
 Error type: Bad request
@@ -338,7 +338,7 @@ Response code: `400`
 ### ST0034 error message
 {: #st0034}
 
-Failed to remove old temporary storage configuration with name: `<ObjectName>`.
+Failed to remove old temporary storage configuration with name: OBJECT-NAME.
 {: shortdesc}
 
 Error type: Services
@@ -350,7 +350,7 @@ Response code: `500`
 ### ST0035 error message
 {: #st0035}
 
-`{{.ErrorMessage}}. {{.IncidentID}}`
+`ERROR-MESSAGE. INCIDENT-ID`
 {: shortdesc}
 
 Error type: Services
@@ -370,7 +370,7 @@ Response code: `400`
 ### ST0037 error message
 {: #st0037}
 
-Failed to fetch `<object>` `<identifier>`. 
+Failed to fetch OBJECT IDENTIFIER. 
 {: shortdesc}
 
 Error type: Services
@@ -380,7 +380,7 @@ Response code: `500`
 ### ST0038 error message
 {: #st0038}
 
-{{site.data.keyword.satelliteshort}} Location `<location>` not found. To list all the {{site.data.keyword.satelliteshort}} locations that you have access to, run `ibmcloud sat locations`.
+{{site.data.keyword.satelliteshort}} Location LOCATION not found. To list all the {{site.data.keyword.satelliteshort}} locations that you have access to, run `ibmcloud sat locations`.
 {: shortdesc}
 
 Error type: Bad request
@@ -390,7 +390,7 @@ Response code: `404`
 ### ST0039 error message
 {: #st0039}
 
-{{site.data.keyword.cloud_notm}} {{site.data.keyword.satelliteshort}} is not available in this region. Choose a supported {{site.data.keyword.cloud_notm}} region with `ibmcloud target -r <region>` to manage your {{site.data.keyword.satelliteshort}} location from, and try again. For supported multizone regions, see `http://ibm.biz/satloc-mzr`.
+{{site.data.keyword.cloud_notm}} {{site.data.keyword.satelliteshort}} is not available in this region. Choose a supported {{site.data.keyword.cloud_notm}} region with `ibmcloud target -r REGION` to manage your {{site.data.keyword.satelliteshort}} location from, and try again. For supported multizone regions, see `http://ibm.biz/satloc-mzr`.
 {: shortdesc}
 
 Error type: {{site.data.keyword.satelliteshort}}
@@ -400,7 +400,7 @@ Response code: `404`
 ### ST0040 error message
 {: #st0040}
 
-Format error in template file. `{{.TemplateError}}`
+Format error in template file. TEMPLATE-ERROR
 {: shortdesc}
 
 Error type: Bad request
@@ -410,7 +410,7 @@ Response code: `400`
 ### ST0041 error message
 {: #st0041}
 
-Maximum allowed storage requests limit reached. Existing count:`<ExistingCount}}` allowed count:`{{.AllowedCount>`.
+Maximum allowed storage requests limit reached. Existing count:EXISTING-COUNT allowed count:ALLOWED-COUNT.
 {: shortdesc}
 
 Error type: Bad request
@@ -420,7 +420,7 @@ Response code: `400`
 ### ST0042 error message
 {: #st0042}
 
-A storage request for volume-type:`<volumeType>` already exists with ID `<requestID>`.
+A storage request for volume-type:`<volumeType>` already exists with ID REQUEST-ID.
 {: shortdesc}
 
 Error type: Bad request
@@ -460,7 +460,7 @@ Response code: `400`
 ### ST0046 error message
 {: #st0046}
 
-This storage configuration is already up to date with the latest revision. No newer revision available for `{{.TemplateName}}` at version `{{.TemplateVersion}}`. Current revision: `{{.CurrentRevision}}` and latest revision.
+This storage configuration is already up to date with the latest revision. No newer revision available for TEMPLATE-NAME at version TEMPLATE-VERSION. Current revision: CURRENT-VERSION and latest revision.
 
 Error type: Bad request
 
@@ -469,7 +469,7 @@ Response code: 406
 ### ST0047 error message
 {: #st0047}
 
-The `{{.Param1}}` value `{{.Param2}}` must contain only alphabets, numbers, underscore, and hyphen.
+The PARAMETER1 value PARAMETER2 must contain only alphabets, numbers, underscore, and hyphen.
 
 Error type: Bad request
 
@@ -488,7 +488,7 @@ Response code: `500`
 ### ST0049 error message
 {: #st0049}
 
-Configuration is created in `{{.ConfigLocation}}` location but the cluster is in `{{.ClusterLocation}}` location. Re-create the configuration in `{{.ClusterLocation}}` location and retry.
+Configuration is created in CONFIG-LOCATIOIN location but the cluster is in CLUSTER-LOCATION location. Re-create the configuration in CLUSTER-LOCATION location and retry.
 
 Error type: Bad request
 
@@ -506,7 +506,7 @@ Response code: `400`
 ### ST0051 error message
 {: #st0051}
 
-Failed to retrieve `{{.ObjectType}}`. `BackendError: {{.BackendError}}.`
+Failed to retrieve OBJECT-TYPE. `BackendError: BACKEND-ERROR`
 
 Error type: Services
 
@@ -515,7 +515,7 @@ Response code: `500`
 ### ST0052 error message
 {: #st0052}
 
-Unable to create or update storage configuration. Multiple storage classes defined with the name `{{.StorageClassName}}`.
+Unable to create or update storage configuration. Multiple storage classes defined with the name STORAGE-CLASS-NAME.
 
 Error type: Bad request
 
