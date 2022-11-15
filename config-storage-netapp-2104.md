@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -108,7 +108,7 @@ You can use the [console](#sat-storage-netapp-ui-san-2104) or [CLI](#sat-storage
     
 1. Verify that the `netapp-trident` [driver](/docs/satellite?topic=satellite-config-storage-netapp-trident) is deployed on your clusters.
 1. Review the template parameters and retrieve the values from your NetApp cluster.
-1. Review the [NetApp Trident storage configuration parameters](#sat-storage-netapp-params-cli-san-2104).
+1. Review the [NetApp Trident storage configuration parameters](#netapp-ontap-san-parameter-reference).
 1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 

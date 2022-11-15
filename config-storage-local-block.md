@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -182,7 +182,7 @@ You can use the [console](#sat-storage-local-block-ui) or [CLI](#sat-storage-loc
 {: #sat-storage-local-block-cli}
 {: cli}
 
-1. Review the [Local block storage configuration parameters](#sat-storage-local-block-params-cli).
+1. Review the [Local block storage configuration parameters](#local-volume-block-parameter-reference).
 
 1. List the available templates and versions and review the output. Make a note of the template and version that you want to use. Your storage template version and cluster version must match. 
 

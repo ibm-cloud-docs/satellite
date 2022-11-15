@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-08"
+lastupdated: "2022-11-15"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -144,9 +144,6 @@ New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} loca
 
 Added information about verifying your permissions
 :   Before you start a task, check that you have the appropriate permissions. See [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
-
-New troubleshooting topic
-:   See [Why was my location deleted?](/docs/satellite?topic=satellite-ts-location-gone).
 
 ### 5 August 2022
 {: #satellite-aug522}
@@ -816,7 +813,7 @@ Review the release notes for 23 March 2021.
 {: shortdesc}
 
 OpenShift Data Foundation using local disks
-:   Added steps for removing an ODF configuration and updated the [configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#sat-storage-odf-local-params-cli).
+:   Added steps for removing an ODF configuration and updated the [configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-parameter-reference).
 
 ### 12 March 2021
 {: #satellite-mar1221}

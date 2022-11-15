@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -190,7 +190,7 @@ You can use the [console](#sat-storage-local-file-ui) or [CLI](#sat-storage-loca
     ```
     {: pre}
     
-1. Review the [Local file storage configuration parameters](#sat-storage-local-file-params-cli).
+1. Review the [Local file storage configuration parameters](#local-volume-file-parameter-reference).
 1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 

@@ -228,8 +228,6 @@ subcollection: satellite
 
         * Added information about verifying your permissions
 
-        * New troubleshooting topic
-
     * [5 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug522)
 
         * CLI change log
@@ -2291,6 +2289,10 @@ subcollection: satellite
     * [Removing the VMWare storage configuration using the console](/docs/satellite?topic=satellite-config-storage-vmware-csi#vmware-csi-rm-ui)
 
     * [Removing the VMWare storage configuration using the command line](/docs/satellite?topic=satellite-config-storage-vmware-csi#vmware-csi-rm-cli)
+
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-vmware-csi#vsphere-csi-driver-parameter-reference)
+
+    * [2.5.1 parameter reference](/docs/satellite?topic=satellite-config-storage-vmware-csi#2.5.1-parameter-reference)
 
 * [Getting help and support for VMWare](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-vmware-csi-support)
 

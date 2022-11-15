@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -84,7 +84,7 @@ Create a storage configuration in the command line by using the VMware configura
     {: pre}
     
 
-1. Review the [template parameters](#sat-storage-vmware-csi-params-cli).
+1. Review the [template parameters](#vsphere-csi-driver-parameter-reference).
 
 1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
 
@@ -465,7 +465,23 @@ Removing the storage configuration uninstalls the driver from all assigned clust
         {: pre}
 
 
-{[vsphere-csi-driver-param-ref.md ]}
+
+## Parameter reference
+{: #vsphere-csi-driver-parameter-reference}
+
+### 2.5.1 parameter reference
+{: #2.5.1-parameter-reference}
+
+| Display name | CLI option | Description | Required? |
+| --- | --- | --- | --- |
+| vCenter username | `vcenter-username` | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | true | 
+| vCenter password | `vcenter-password` | The vCenter server user password. | true | 
+| Insecure connection | `insecure-flag` | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | false | 
+| vCenter host | `host` | The vCenter server IP address. | true | 
+| vCenter data centers | `datacenters` | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | 
+| SSL certificate thumbprint | `thumbprint` | The SSL thumbprint to be used to establish a secure connection to VC.  | false | 
+{: caption="Table 1. 2.5.1 parameter reference" caption-side="bottom"}
+
 
 
 
