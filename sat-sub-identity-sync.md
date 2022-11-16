@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-07"
+lastupdated: "2022-11-16"
 
 keywords: satellite, subscription, identity, satellite config, satellite configuration
 
@@ -27,7 +27,7 @@ In short, if a user creates a subscription to apply Kubernetes resources, the **
 
 The subscription identity is shown in the **Subscription details** page in the UI and is also retrievable through the CLI by using the `**ibmcloud sat subscription get`** command.
 
-Identity sync is triggered and happens automatically in most cases:
+Identity sync is triggered and usually happens automatically.
 
 - When a user creates a subscription, all the clusters in the subscription's groups automatically sync.
 - When a user modifies the membership of a cluster group and that user's identity is used by any subscriptions that are applied to the group, all the clusters in that group sync automatically.
@@ -36,7 +36,7 @@ Identity sync is triggered and happens automatically in most cases:
 Automatic identity sync can only be performed by the user or service ID being synced. If the user whose identity is used by the subscription makes a change, their identity syncs automatically to affected clusters. If a user different from the subscription identity makes a change, the subscription identity cannot sync automatically.
 {: note}
 
-As a result, in some cases the identities that are synced to each cluster might become incorrect:
+As a result, sometimes the identities that are synced to each cluster might become incorrect.
 
 - If a different user or service ID modifies the subscription's cluster groups, the subscription's identity cannot automatically sync to any new clusters.
 - If a different user changes the membership of the cluster groups, the subscription's identity cannot sync automatically to any new clusters.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-16"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -103,7 +103,7 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
     
 1. [Create an AWS access key ID and secret access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external} for your AWS login credentials. These credentials are needed to provision AWS EBS storage in your account. When you assign the storage configuration to your cluster, your AWS access key ID and secret access key are stored in a Kubernetes secret in your cluster.
 1. Review the [AWS EBS storage configuration parameters](#aws-ebs-csi-driver-parameter-reference).
-1. Create an AWS EBS storage configuration. Replace the variables with the parameters that you retrieved in the previous step. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
+1. Create an AWS EBS storage configuration. Replace the variables with the parameters that you retrieved in the previous step. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
     
 
 

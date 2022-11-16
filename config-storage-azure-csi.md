@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-16"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -158,7 +158,7 @@ Create a storage configuration in the command line by using the Azure Disk templ
     {: pre}
     
 1. Review the [template parameters](#azuredisk-csi-driver-parameter-reference).
-1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
+1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
 
 
 

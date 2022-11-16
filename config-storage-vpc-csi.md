@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-16"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -82,9 +82,9 @@ Note, there is currently an issue with autofill in some browsers. If you don't s
     {: pre}
     
 
-1. Review the [template parameters](#sat-storage-vpc-csi-params-cli).
+1. Review the [template parameters](#ibm-vpc-block-csi-driver-parameter-reference).
 
-1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
+1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
 
 
 

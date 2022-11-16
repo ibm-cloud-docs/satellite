@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-16"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Getting started with {{site.data.keyword.satellitelong_notm}} 
 {: #getting-started}
 
-{{site.data.keyword.satellitelong}} provides a distributed cloud architecture that brings the scalability and on demand flexibility of public cloud services to the applications and data that run in your secure private cloud. With {{site.data.keyword.satellitelong}}, you can use your own compute infrastructure that is in your on-premises data center, other cloud providers, or edge networks to create a {{site.data.keyword.satelliteshort}} location. Then, you can use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on your infrastructure, and consistently deploy, manage, and control your app workloads. From a single pane of glass, you can manage workloads that run across the infrastructure from your {{site.data.keyword.satelliteshort}} locations.
+{{site.data.keyword.satellitelong}} provides a distributed cloud architecture that brings the scalability and flexibility of public cloud services to the applications and data that run in your secure private cloud. With {{site.data.keyword.satellitelong}}, you can use your own compute infrastructure that is in your on-premises data center, other cloud providers, or edge networks to create a {{site.data.keyword.satelliteshort}} location. Then, you can use the capabilities of {{site.data.keyword.satelliteshort}} to run {{site.data.keyword.cloud_notm}} services on your infrastructure, and consistently deploy, manage, and control your app workloads. From a single pane of glass, you can manage workloads that run across the infrastructure from your {{site.data.keyword.satelliteshort}} locations.
 {: shortdesc}
 
 Your {{site.data.keyword.satelliteshort}} location includes tools such as {{site.data.keyword.satelliteshort}} Link and {{site.data.keyword.satelliteshort}} Config to provide additional capabilities for securing and auditing network connections in your location and consistently deploying, managing, and controlling your apps and policies across clusters in the location.
