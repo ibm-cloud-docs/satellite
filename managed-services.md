@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-04"
+lastupdated: "2022-11-16"
 
 keywords: satellite, hybrid, multicloud, managed services, enabled service, satellite-enabled
 
@@ -43,10 +43,5 @@ For most Satellite-enabled services, you must set up service-to-service access t
 7. Click **Authorize**. 
 
 For more information, see [Managing access overview](/docs/satellite?topic=satellite-iam) or consult the service documentation.
-
-
-
-
-
 
 
