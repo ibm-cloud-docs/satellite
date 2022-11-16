@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-16"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -43,11 +43,11 @@ subcollection: satellite
 
 * [Benefits of using {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#benefits)
 
-* [Common](/docs/satellite?topic=satellite-use-case#use-case-common)
+* [Common use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-common)
 
     * [Deploying {{site.data.keyword.redhat_openshift_notm}} environment as a managed service wherever it is needed](/docs/satellite?topic=satellite-use-case#use-case-common1)
 
-* [Finance](/docs/satellite?topic=satellite-use-case#use-case-finance)
+* [Finance use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-finance)
 
     * [Leveraging mainframe data for customers restricted from moving data to cloud](/docs/satellite?topic=satellite-use-case#use-case-finance1)
 
@@ -55,11 +55,11 @@ subcollection: satellite
 
     * [Extending {{site.data.keyword.cloud_notm}} security and compliance for customers maintaining cloud security](/docs/satellite?topic=satellite-use-case#use-case-finance3)
 
-* [Insurance](/docs/satellite?topic=satellite-use-case#use-case-insurance)
+* [Insurance use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-insurance)
 
     * [Analytics platform on-premises](/docs/satellite?topic=satellite-use-case#use-case-insurance1)
 
-* [Manufacturing](/docs/satellite?topic=satellite-use-case#use-case-manufacture)
+* [Manufacturing use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-manufacture)
 
     * [Internet of things (IoT) service platform](/docs/satellite?topic=satellite-use-case#use-case-manufacture1)
 
@@ -73,19 +73,19 @@ subcollection: satellite
 
     * [Deploying applications on-premises, only scaling out to cloud during peak times](/docs/satellite?topic=satellite-use-case#use-case-manufacture6)
 
-* [Distribution](/docs/satellite?topic=satellite-use-case#use-case-distribution)
+* [Distribution use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-distribution)
 
     * [Delivering and integrating store or warehouse digitization solutions for the distribution or retail sectors](/docs/satellite?topic=satellite-use-case#use-case-distribution1)
 
-* [Public sector or health](/docs/satellite?topic=satellite-use-case#use-case-health)
+* [Public sector or health use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-health)
 
     * [On-premises service platform](/docs/satellite?topic=satellite-use-case#use-case-health1)
 
-* [Communications](/docs/satellite?topic=satellite-use-case#use-case-communications)
+* [Communications use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-communications)
 
     * [Multi-access edge computing (MEC) platform support service](/docs/satellite?topic=satellite-use-case#use-case-communications1)
 
-* [Utilities](/docs/satellite?topic=satellite-use-case#use-case-utilities)
+* [Utilities use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-utilities)
 
     * [Expanding the use of smart meters with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-utilities1)
 
@@ -227,8 +227,6 @@ subcollection: satellite
     * [10 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug1022)
 
         * Added information about verifying your permissions
-
-        * New troubleshooting topic
 
     * [5 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug522)
 
@@ -2291,6 +2289,10 @@ subcollection: satellite
     * [Removing the VMWare storage configuration using the console](/docs/satellite?topic=satellite-config-storage-vmware-csi#vmware-csi-rm-ui)
 
     * [Removing the VMWare storage configuration using the command line](/docs/satellite?topic=satellite-config-storage-vmware-csi#vmware-csi-rm-cli)
+
+* [Parameter reference](/docs/satellite?topic=satellite-config-storage-vmware-csi#vsphere-csi-driver-parameter-reference)
+
+    * [2.5.1 parameter reference](/docs/satellite?topic=satellite-config-storage-vmware-csi#2.5.1-parameter-reference)
 
 * [Getting help and support for VMWare](/docs/satellite?topic=satellite-config-storage-vmware-csi#sat-vmware-csi-support)
 

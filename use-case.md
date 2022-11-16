@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-16"
 
-keywords: satellite, hybrid, multicloud, use case
+keywords: satellite, hybrid, multicloud, use case, scenarios, benefits
 
 subcollection: satellite
 
@@ -41,7 +41,7 @@ Review some key benefits for using {{site.data.keyword.satellitelong_notm}}.
 
 For more information about {{site.data.keyword.satelliteshort}}, how it works and the service benefits, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/cloud/satellite){: external}.
 
-## Common
+## Common use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-common}
 
 This use case is applicable to all industries.
@@ -59,7 +59,7 @@ Pain points:
 {{site.data.keyword.satelliteshort}} enables:
 :   Using remotely delivered IBM’s managed services eliminates the need to secure {{site.data.keyword.redhat_openshift_notm}} skills internally. You can deploy services wherever they are needed, on-premises or in remote locations.
 
-## Finance
+## Finance use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-finance}
 
 These use cases are applicable to the finance industry.
@@ -101,7 +101,7 @@ Pain points:
 {{site.data.keyword.satelliteshort}} enables: 
 :   Central management of {{site.data.keyword.redhat_openshift_notm}} services deployed at various locations, ensuring that the same security policies are applied.
 
-## Insurance
+## Insurance use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-insurance}
 
 This use case is applicable to the insurance industry.
@@ -119,7 +119,7 @@ Pain points
 {{site.data.keyword.satelliteshort}} enables:
 :   Sophisticated AI-driven knowledge search system at the customer site and data processing where the data resides, eliminating the need to move data to cloud. Data is processed where the data resides, eliminating the need to move data to cloud.
 
-## Manufacturing
+## Manufacturing use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-manufacture}
 
 These use cases are applicable to the manufacturing industry.
@@ -197,7 +197,7 @@ Pain points:
 {{site.data.keyword.satelliteshort}} enables: 
 :   It enables delivery of container platforms that support DevOps and can be distributed anywhere. Same applications can be instantly moved to cloud only during peak times, optimizing costs.
 
-## Distribution
+## Distribution use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-distribution}
 
 This use case is applicable to the distribution industry.
@@ -215,7 +215,7 @@ Pain points:
 {{site.data.keyword.satelliteshort}} enables: 
 :   It enables easy delivery of store digitization solution as well as integration with POS data and store computers. IBM Edge Application Manager and Watson Machine Learning can be run on {{site.data.keyword.satelliteshort}}, allowing analytics at the source of data. Additionally, it allows use and management of container-based applications for retail stores and warehouses.
 
-## Public sector or health 
+## Public sector or health use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-health}
 
 This use case is applicable to the public sector or health industry.
@@ -233,7 +233,7 @@ Pain points:
 {{site.data.keyword.satelliteshort}} enables: 
 :   Cloud platform services that were previously only available on cloud can be deployed and made available for use within the hospital environment.
 
-## Communications 
+## Communications use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-communications}
 
 This use case is applicable to the communications industry.
@@ -251,7 +251,7 @@ Pain points:
 {{site.data.keyword.satelliteshort}} enables: 
 :   Edge cloud can be deployed to where it is needed to deliver platforms for running innovative new services using AI. Managed services can remotely support the edge cloud platform.
 
-## Utilities
+## Utilities use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-utilities}
 
 This use case is applicable to the utilities industry.

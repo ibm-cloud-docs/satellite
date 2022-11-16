@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-26"
+lastupdated: "2022-11-16"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -78,7 +78,7 @@ Be sure to complete all prerequisite and installation steps before assigning hos
     ```
     {: pre}
     
-1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
+1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
     ```sh
     ibmcloud sat storage config create --name <config_name> --location <location> --template-name ibm-system-storage-block-csi-driver --template-version <template_version> -p "namespace=<namespace>" 
     ```

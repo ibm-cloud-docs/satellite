@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -48,7 +48,7 @@ You can use the [console](#sat-storage-aws-efs-ui) or [CLI](#sat-storage-aws-efs
 Use the console to create an AWS EFS storage configuration for your location.
 {: shortdesc}
 
-Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs) and review the [parameter reference](#sat-storage-aws-efs-params-cli).
+Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs) and review the [parameter reference](#aws-efs-csi-driver-parameter-reference).
 
 1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
@@ -99,7 +99,7 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
     ```
     {: pre}
     
-1. Review the [AWS EFS storage configuration parameters](#sat-storage-aws-efs-params-cli).
+1. Review the [AWS EFS storage configuration parameters](#aws-efs-csi-driver-parameter-reference).
 1. Create an AWS EFS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
 
 

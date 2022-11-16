@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 
@@ -145,7 +145,7 @@ In some environments, your worker node names might be different from your {{site
     ```
     {: pre}
     
-1. Review the [template parameters](#sat-storage-spectrum-scale-params-cli).
+1. Review the [template parameters](#ibm-system-storage-block-csi-driver-parameter-reference).
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 

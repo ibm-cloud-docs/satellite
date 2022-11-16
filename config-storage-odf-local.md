@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-15"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -153,6 +153,7 @@ When you create your ODF configuration, you must specify the device paths of the
 
 ## Creating an OpenShift Data Foundation configuration in the UI
 {: #sat-storage-odf-local-ui}
+{: ui}
 
 1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
@@ -212,7 +213,7 @@ When you create your ODF configuration, you must specify the device paths of the
     {: pre}
     
 
-1. Review the [Red Hat OpenShift container storage configuration parameters](#sat-storage-odf-local-params-cli).
+1. Review the [Red Hat OpenShift container storage configuration parameters](#odf-local-parameter-reference).
 
 1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values. If you are using a {{site.data.keyword.cos_short}} backing store, be sure to specify the regional public endpoint in the following format: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. Don't specify the {{site.data.keyword.cos_short}} parameters if your existing configuration doesn't use {{site.data.keyword.cos_full_notm}}.
 
@@ -890,7 +891,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | KMS instance API key token URL | `kms-token-url` | API key token URL to generate token for KMS instance. | false | 
 | KMS root key | `kms-root-key` | KMS root key of your instance. | false | 
 | KMS IAM API key | `kms-api-key` | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | 
-| Ignore Noobaa | `ignore-noobaa` | Set to `true` if you don`t want to deploy MultiCloud Object Gateway (Noobaa) | false | 
+| Ignore Noobaa | `ignore-noobaa` | Set to `true` if you don't want to deploy MultiCloud Object Gateway (Noobaa) | false | 
 {: caption="Table 4. 4.10 parameter reference" caption-side="bottom"}
 
 

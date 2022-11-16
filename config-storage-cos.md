@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-14"
+lastupdated: "2022-11-16"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -25,7 +25,7 @@ The template is currently in beta. Do not use it for production workloads.
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-1. [Create a {{site.data.keyword.cos_full_notm}} Secret](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials). 
+1. [Create an {{site.data.keyword.cos_full_notm}} Secret](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials). 
 
 ## Creating an {{site.data.keyword.cos_full_notm}} configuration from the console
 {: #config-storage-cos-create-ui}

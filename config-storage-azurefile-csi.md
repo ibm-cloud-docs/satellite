@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-11"
+lastupdated: "2022-11-16"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -78,7 +78,7 @@ If you manually assigned your Azure hosts to your location and did not use an au
 
 1. Repeat the previous steps for each worker node.
 
-1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/get-started/){: external} and retrieve the required parameters. For more information about the parameters, see the [parameter reference](#sat-storage-azure-file-params-cli).
+1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/get-started/){: external} and retrieve the required parameters. For more information about the parameters, see the [parameter reference](#azurefile-csi-driver-parameter-reference).
 
 
 ## Creating an Azure File configuration in the console
@@ -130,12 +130,8 @@ Create a storage configuration in the command line by using the Azure File templ
     ```
     {: pre}
     
-1. Review the [template parameters](#sat-storage-azure-file-params-cli).
-1. Create a storage configuration. You can pass parameters by using the `-p "key=value"` format. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
-
-{[azurefile-csi-driver-1.18.0-custom-parameter-config-create.md]}
-
-{[azurefile-csi-driver-1.9.0-custom-parameter-config-create.md]}
+1. Review the [template parameters](#azurefile-csi-driver-parameter-reference).
+1. Create a storage configuration. You can pass parameters by using the `-p "key=value"` format. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
 
 1. Verify that your storage configuration is created.
 

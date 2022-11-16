@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-16"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -2185,7 +2185,7 @@ ibmcloud sat storage config create --location LOCATION --name NAME --template-na
 :    Required. Enter the ID or name of the location where you want to create the storage configuration. To retrieve the location ID or name, run `ibmcloud sat location ls`.
 
 `--name NAME`
-:    Required. Enter a name for your storage configuration. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens or periods.
+:    Required. Enter a name for your storage configuration. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
 
 `--template-name TEMPLATE NAME`
 :    Required. Enter the name of your storage template.
