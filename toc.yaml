@@ -88,9 +88,9 @@ toc:
             topics:
               - cluster-config.md
               - setup-clusters-satconfig.md
-              - satcon-create.md
               - sat-sub-identity-sync.md 
               - satcon-manage.md
+              - remove-satconfig.md
               - satcon-resources.md
         - topicgroup:
             label: Connecting Satellite locations with external services by using Link endpoints
