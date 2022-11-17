@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1641,6 +1641,8 @@ subcollection: satellite
     * [Creating an AWS EFS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-ui)
 
     * [Creating an AWS EFS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-cli)
+
+* [Adding a custom AWS EFS storage class to your configuration](/docs/satellite?topic=satellite-config-storage-efs#aws-add-sc-efs)
 
     * [Assigning your AWS EFS storage configuration to clusters or cluster groups](/docs/satellite?topic=satellite-config-storage-efs#efs-config-assign)
 

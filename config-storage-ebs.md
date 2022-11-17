@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-17"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -50,7 +50,7 @@ You can use the [console](#sat-storage-aws-ebs-ui) or [CLI](#sat-storage-aws-ebs
 Use the console to create an AWS EBS storage configuration for your location.
 {: shortdesc}
 
-Before you begin, review and complete the [prerequisites](#aws-ebs-prereq) and review the [parameter reference](#aws-ebs-csi-driver-parameter-reference).
+Before you begin, review and complete the [prerequisites](#aws-ebs-prereq), review the [parameter reference](#aws-ebs-csi-driver-parameter-reference), and review the [storage classes](#sat-ebs-sc-reference) that are deployed when creating your configuration.
 
 1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
@@ -104,6 +104,7 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 1. [Create an AWS access key ID and secret access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external} for your AWS login credentials. These credentials are needed to provision AWS EBS storage in your account. When you assign the storage configuration to your cluster, your AWS access key ID and secret access key are stored in a Kubernetes secret in your cluster.
 1. Review the [AWS EBS storage configuration parameters](#aws-ebs-csi-driver-parameter-reference).
 1. Create an AWS EBS storage configuration. Replace the variables with the parameters that you retrieved in the previous step. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
+1. Review the [AWS EBS storage classes](#sat-ebs-sc-reference). The AWS EBS storage template does not support custom storage classes. 
     
 
 
@@ -136,7 +137,6 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
     ibmcloud sat storage config get --config <config-name>
     ```
     {: pre}
-
 
 
 ### Assigning your AWS EBS storage configuration to clusters or cluster groups from the CLI
@@ -492,13 +492,15 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 {: important}
 
 
-
 ### Removing the AWS EBS storage configuration from the console
 {: #aws-ebs-template-rm-ui}
 {: ui}
 
-Use the console to remove the AWS EBS storage configuration.
+Use the console to remove the AWS EBS storage configuration. 
 {: shortdesc}
+
+Note that you must delete your storage assignments before you can successfully delete your storage configuration. 
+{: important}
 
 1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
 1. Select **Actions** > **Delete**
@@ -511,6 +513,9 @@ Use the console to remove the AWS EBS storage configuration.
 
 Use the CLI to remove the AWS EBS storage configuration.
 {: shortdesc}
+
+Note that you must delete your storage assignments before you can successfully delete your storage configuration. 
+{: important}
 
 1. List your storage assignments and find the one that you used for your cluster.
     ```sh
@@ -606,6 +611,9 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You
 | `sat-aws-block-gold` **Default** | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 6.25 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external}
 | `sat-aws-block-silver` | gp3 | ext4 | `ebs.csi.aws.com` | N/A | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external} |
 | `sat-aws-block-bronze` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#hard-disk-drives){: external} |
+| `sat-aws-block-bronze-metro` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#hard-disk-drives){: external} |
+| `sat-aws-block-silver-metro` | gp3 | ext4 | `ebs.csi.aws.com` | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external} |
+| `sat-aws-block-gold-metro` | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 6.25 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external}
 {: caption="Table 2. AWS EBS storage class reference." caption-side="bottom"}
 {: summary="The rows are read from left to right. The first column is the storage class name. The second column is the volume type. The third column is the file system type. The fourth column is the provisioner. The fifth column is the default IOPs per GB. The size column is the supported size range. The seventh column is disk type. The eighth column is encryption support. The ninth column is the volume binding mode. The tenth column is the reclaim policy."}
 
