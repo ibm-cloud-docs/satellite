@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-17"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -12,11 +12,110 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Managing your {{site.data.keyword.satelliteshort}} Config resources
+# Managing your {{site.data.keyword.satelliteshort}} Config resources by using direct upload
 {: #satcon-manage}
 
 To create and roll out new versions of your applications, update your {{site.data.keyword.satelliteshort}} Config configurations and subscriptions. You can also use {{site.data.keyword.satelliteshort}} Config to review an inventory of all the resources that are managed by your configurations across clusters.
 {: shortdesc}
+
+## Creating {{site.data.keyword.satelliteshort}} configurations 
+{: #satcon-create}
+
+With {{site.data.keyword.satelliteshort}} Config, you create a configuration to specify what Kubernetes resources you want to deploy to a group of {{site.data.keyword.openshiftlong_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}. 
+{: shortdesc}
+
+Before you begin
+
+- Make sure that you have the [required permissions](/docs/satellite?topic=satellite-iam#iam-resource-config) and that [{{site.data.keyword.satelliteshort}} Config can access your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access). For more information, see [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
+- Review the [key concepts](/docs/satellite?topic=satellite-cluster-config#satcon-terminology) for {{site.data.keyword.satelliteshort}} Config.
+
+### Creating {{site.data.keyword.satelliteshort}} configurations from the console
+{: #create-satconfig-ui}
+{: ui}
+
+Use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/configuration){: external} to create a configuration. Click **Create Config (beta)**, select the **Direct upload** template, and follow the on screen instructions to upload your YAML configuration files.
+{: shortdesc}
+
+
+To deploy an example app, see [Deploying Kubernetes resources to clusters with Satellite Config](/docs/satellite?topic=satellite-begin-sat-config-tutorial).
+
+
+### Creating {{site.data.keyword.satelliteshort}} configurations from the CLI
+{: #create-satconfig-cli}
+{: cli}
+
+Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to create a configuration and upload the Kubernetes resource definition that you want to deploy to your clusters.
+{: shortdesc}
+
+To create the configuration:
+
+1. [Set up your clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig). This setup includes creating a cluster group and granting {{site.data.keyword.satelliteshort}} Config access to your clusters.
+2. Add clusters to your cluster group. The clusters can run in your location or in {{site.data.keyword.cloud_notm}}.
+    1. List the clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component and note their ID.
+        ```sh
+        ibmcloud sat cluster ls
+        ```
+        {: pre}
+
+    2. Add the cluster to your cluster group.    
+        ```sh
+        ibmcloud sat group attach --cluster <cluster_ID> --group <cluster_group_name>
+        ```
+        {: pre}
+
+    3. Verify that your cluster is successfully added to your cluster group.
+        ```sh
+        ibmcloud sat group get --group <cluster_group_name>
+        ```
+        {: pre}
+
+3. Create a **{{site.data.keyword.satelliteshort}} configuration**.
+    ```sh
+    ibmcloud sat config create --name <config_name> [--data-location <location>] [-q]
+    ```
+    {: pre}
+    
+    | Component | Description | 
+    |--------------------|------------------|
+    | `--name <config_name>` | Enter the name of the Satellite configuration. | 
+    | `--data-location <location>` | Enter the location to store your {{site.data.keyword.satelliteshort}} configurations, for example `us-east`. {{site.data.keyword.satelliteshort}} configurations are Kubernetes resource definitions, such as ConfigMaps, storage classes, or secrets that are deployed to the clusters in your location through subscriptions. If `--data-location` is not specified, your configurations are stored in `us-east` by default. These locations are {{site.data.keyword.cos_full_notm}} buckets that are owned by {{site.data.keyword.IBM_notm}} and are pre-provisioned for each region. For more information about how your data is stored, see [How is my information stored, backed up, and encrypted?](/docs/satellite?topic=satellite-data-security). For a list of locations, see [Supported locations](/docs/satellite?topic=satellite-sat-regions).  |
+    | `-q` | Do not show the message of the day or update reminders. | 
+    {: caption="Understanding this command's components" caption-side="bottom"}
+
+    Example output
+    ```sh
+    Creating configuration...
+    OK
+    Configuration <config_name> was successfully created with ID 116fffde-0835-467c-8987-67dd42e4e393.
+    ```
+    {: screen}
+
+
+5. Create a **Subscription** for your cluster group to the {{site.data.keyword.satelliteshort}} configuration. After you create the subscription, {{site.data.keyword.satelliteshort}} Config automatically downloads the Kubernetes resource file for the version that you specified and starts applying this file across all clusters that belong to the cluster group. This process takes a few minutes to complete. In addition, information about all Kubernetes resources that you create are sent back from your clusters to {{site.data.keyword.satelliteshort}} Config and can be reviewed in the {{site.data.keyword.satelliteshort}} [**Cluster resources**](https://cloud.ibm.com/satellite/resources){: external} dashboard. Review the command options by running `ibmcloud sat subscription create`.
+
+    ```sh
+    ibmcloud sat subscription create --group <cluster_group_name> --config <config_name_or_ID> --name <subscription_name> --version <version_name_or_ID>
+    ```
+    {: pre}
+
+    | Component | Description | 
+    |--------------------|------------------|
+    | `--group <cluster_group_name>` | Enter the name of the cluster group where you want to deploy your Kubernetes resources. | 
+    | `--config <config_name_or_ID>` | Enter the name or ID of the {{site.data.keyword.satelliteshort}} configuration that you created earlier. |
+    | `--name <subscription_name>` | Enter a name for your {{site.data.keyword.satelliteshort}} subscription. |
+    | `--version <version_name_or_ID>` | Enter the name or ID of the Kubernetes resource definition that you added as a version to your configuration. To list available versions, run `ibmcloud sat config get --config <config_name_or_ID>` | 
+    {: caption="Understanding this command's components" caption-side="bottom"}
+
+    Example output
+    ```sh
+    Creating subscription...
+    OK
+    Subscription <subscription_name> was successfully created with ID f6114bd5-f71e-4335-b034-ca45fa3cab81.
+    ```
+    {: screen}
+
+6. Follow step 5 in [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-setup-clusters-satconfig) to review the rollout status of your Kubernetes resources.
+
   
   
 ## Updating your {{site.data.keyword.satelliteshort}} Config configuration
@@ -26,6 +125,7 @@ To update your {{site.data.keyword.satelliteshort}} Config configuration, upload
 
 ### Updating your {{site.data.keyword.satelliteshort}} Config from the console
 {: #satcon-manage-update-console}
+{: ui}
 
 Use the {{site.data.keyword.satelliteshort}} console to upload a new version file and change your subscription to use it.
 {: shortdesc}
@@ -39,11 +139,12 @@ Use the {{site.data.keyword.satelliteshort}} console to upload a new version fil
     1. Select the configuration that you created to see the configuration details.
     2. Click **Create subscription**.
     3. Enter a name for your subscription and select the version name and the cluster group that you created earlier.
-    4. Click **Create** to create the subscription. After you create the subscription, {{site.data.keyword.satelliteshort}} Config automatically downloads the Kubernetes resource YAML file for the version that you specified and starts applying this YAML file across all clusters that belong to the cluster group. This process takes a few minutes to complete. In addition, information about all Kubernetes resources that you create are sent back from your clusters to {{site.data.keyword.satelliteshort}} Config and can be reviewed in the {{site.data.keyword.satelliteshort}} [**Cluster resources**](https://cloud.ibm.com/satellite/resources) dashboard.
+    4. Click **Create** to create the subscription. 
 3. Select your subscription to see the subscription details and the rollout status of your Kubernetes resource deployment. If errors occur during the deployment, such as YAML files with formatting errors or unsupported API version values, you can view the error message in the **Message** column of your subscription details.
 
-### Updating your {{site.data.keyword.satelliteshort}} Config with the CLI
+### (TO UPDATE WITH NEW COMMANDS:) Updating your {{site.data.keyword.satelliteshort}} Config with the CLI
 {: #satcon-manage-update-cli}
+{: cli}
 
 Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to upload a new version file and change your subscription to use it.
 {: shortdesc}
@@ -101,37 +202,3 @@ Use the CLI plug-in for {{site.data.keyword.satelliteshort}} commands to upload 
 
 
 
-## Removing {{site.data.keyword.satelliteshort}} Config from your cluster
-{: #remove-satconfig}
-
-If you do not want your cluster to be available to {{site.data.keyword.satelliteshort}} Config, you can remove the {{site.data.keyword.satelliteshort}} Config components from your cluster. 
-{: shortdesc}
-
-You can remove {{site.data.keyword.satelliteshort}} Config components only from {{site.data.keyword.openshiftlong_notm}} clusters that you manually registered. If you created a cluster on {{site.data.keyword.satelliteshort}}-provided infrastructure, {{site.data.keyword.satelliteshort}} Config components are automatically set up in the location control plane and cannot be removed. 
-{: note}
-
-Removing {{site.data.keyword.satelliteshort}} Config components automatically removes all cluster resources that you created by using {{site.data.keyword.satelliteshort}} configurations. Make sure to back up any data or redeploy any apps that you want to keep. 
-{: important}
-
-1. [Log in to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2. Remove all the {{site.data.keyword.satelliteshort}} Config components from your cluster by running a [{{site.data.keyword.satelliteshort}} Config removal job](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml){: external}. 
-    ```sh
-    oc apply -f https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml
-    ```
-    {: pre}
-
-3. Wait a few minutes for the {{site.data.keyword.satelliteshort}} Config components to be removed. 
-4. Verify that your {{site.data.keyword.satelliteshort}} Config components are removed. 
-    ```sh
-    oc get pods -n razeedeploy
-    ```
-    {: pre}
-
-    Example output
-    ```sh
-    No resources found.
-    ```
-    {: screen}
-
-5. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, find the cluster that you want to remove from {{site.data.keyword.satelliteshort}} Config. 
-6. From the actions menu, click **Unregister** and verify that your cluster is removed from the {{site.data.keyword.satelliteshort}} cluster dashboard. 

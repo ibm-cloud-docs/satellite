@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-17"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -136,26 +136,58 @@ Before you begin, review and complete the [prerequisites](#sat-storage-efs-prere
     ```
     {: pre}
     
-1. **Important**: Add a custom storage class to your configuration. The AWS EFS template doesn't include any pre-defined storage classes. Instead, you must create a storage class when you create your configuration.
-    1. Review the custom storage class options by running the following command.
-        ```sh
-        ibmcloud sat storage template get --name aws-efs-csi-driver --version VERSION
-        ```
-        {: pre}
+    
+## Adding a custom AWS EFS storage class to your configuration
+{: #aws-add-sc-efs}
+{: cli}
 
-    1. Add a storage class to your configuration by running the following command. Make sure to include your EFS Filesystem ID.
+After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#sat-storage-aws-efs), you can add a custom storage class by using the `ibmcloud sat config sc add` command.
 
-        ```sh
-        ibmcloud sat storage config class add --config-name NAME --name SC-NAME --param "fileSystemId=FILE-SYSTEM-ID" --param "key=value" --param "key=value"
-        ```
-        {: pre}
+You can't add storage classes to {{site.data.keyword.satelliteshort}} storage configurations after the configurations are assigned to clusters or cluster groups. Make sure to add storage classes before assigning your configuration.
+{: note}
 
-1. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to use. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EFS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location.
+1. List the storage class parameters for the template that you used to create your configuration and decide how you want to create your storage class.
     ```sh
-    ibmcloud sat group ls
+    ibmcloud sat storage template get --name aws-efs-csi-driver --version <version>
     ```
     {: pre}
 
+2. Create the storage class and pass in any custom parameters. Enter the name of the storage configuration you created earlier, the storage class name, and the custom parameters that you want to provide.
+    ```sh
+    ibmcloud sat storage config sc add --config-name <config-name> --name <storage-class-name> --param "key=value"
+    ```
+    {: pre}
+    
+    `basePath`
+    :   Specify the BasePath. Base path is a path on the file system under which access point root directory is created.
+    
+    `directoryPerms`
+    :   Specifydirectorypermissions. Default: `700`.
+    
+    `fileSystemId`
+    :   Required. Specify the EFS file system ID.
+    
+    `gidRangeEnd`
+    :   Specify the GID range end. `gidRangeEnd` is the ending range of the Posix Group ID. Default: `7000000`.
+       
+    `gidRangeStart`
+    :   Specify the GID range start. `gidRangeStart` is the starting range of the Posix Group ID to be applied onto the root directory of the access point. Default: `50000`.
+    
+    `is-default-class`
+    :   Specify `true` or `false` to make the created storage class the default class.
+
+    `name`
+    :   Required. The name of the storage class.
+    
+    
+    Example command to add a custom storage class to a configuration call `my-config`.
+    
+    ```sh
+    ibmcloud sat storage config sc add --config-name my-config --name my-sc --param "fileSystemID=<filesystemID>" --param "is-default-class=true"
+    ```
+    {: pre}
+    
+3. [Assign your storage configuration](#efs-config-assign).
 
 
 ### Assigning your AWS EFS storage configuration to clusters or cluster groups
@@ -491,6 +523,9 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 Use the console to remove a storage configuration.
 {: shortdesc}
 
+Note that you must delete your storage assignments before you can successfully delete your storage configuration. 
+{: important}
+
 1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
 1. Select **Actions** > **Delete**
 1. Enter the name of your storage configuration.
@@ -503,6 +538,9 @@ Use the console to remove a storage configuration.
 
 Use the CLI to remove a storage configuration.
 {: shortdesc}
+
+Note that you must delete your storage assignments before you can successfully delete your storage configuration. 
+{: important}
 
 1. List your storage assignments and find the one that you used for your cluster.
     ```sh

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1382,23 +1382,23 @@ subcollection: satellite
 
 * [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters)
 
-[Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-create#satcon-create)
-
-* [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-satcon-create#create-satconfig-ui)
-
-* [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-satcon-create#create-satconfig-cli)
-
 [Syncing subscription identity](/docs/satellite?topic=satellite-sat-sync-sub-identity#sat-sync-sub-identity)
 
-[Managing your {{site.data.keyword.satelliteshort}} Config resources](/docs/satellite?topic=satellite-satcon-manage#satcon-manage)
+[Managing your {{site.data.keyword.satelliteshort}} Config resources by using direct upload](/docs/satellite?topic=satellite-satcon-manage#satcon-manage)
+
+* [Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage#satcon-create)
+
+    * [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-satcon-manage#create-satconfig-ui)
+
+    * [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-satcon-manage#create-satconfig-cli)
 
 * [Updating your {{site.data.keyword.satelliteshort}} Config configuration](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update)
 
     * [Updating your {{site.data.keyword.satelliteshort}} Config from the console](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update-console)
 
-    * [Updating your {{site.data.keyword.satelliteshort}} Config with the CLI](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update-cli)
+    * [(TO UPDATE WITH NEW COMMANDS:) Updating your {{site.data.keyword.satelliteshort}} Config with the CLI](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update-cli)
 
-* [Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-satcon-manage#remove-satconfig)
+[Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-remove-satconfig#remove-satconfig)
 
 [Reviewing resources that are managed by {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-satcon-resources#satcon-resources)
 
@@ -1641,6 +1641,8 @@ subcollection: satellite
     * [Creating an AWS EFS storage configuration from the console](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-ui)
 
     * [Creating an AWS EFS storage configuration from the CLI](/docs/satellite?topic=satellite-config-storage-efs#sat-storage-aws-efs-cli)
+
+* [Adding a custom AWS EFS storage class to your configuration](/docs/satellite?topic=satellite-config-storage-efs#aws-add-sc-efs)
 
     * [Assigning your AWS EFS storage configuration to clusters or cluster groups](/docs/satellite?topic=satellite-config-storage-efs#efs-config-assign)
 
