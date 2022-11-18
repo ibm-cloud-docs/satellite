@@ -52,7 +52,7 @@ For your Satellite location and clusters to work with a proxy, the kubelet on th
 
 - Option 2: You can create a secondary proxy on a VSI in same network as your Satellite hosts that supports long lived TCP connections.
 
-- Option 3: You can open the firewall outbound to allow the TCP connections. For more information, see [Required outbound connectivity for hosts in all regions]{/docs/satellite?topic=satellite-reqs-host-network-outbound) and then find the specific outbound network requirements for your region.
+- Option 3: You can open the firewall outbound to allow the TCP connections. For more information, see [Required outbound connectivity for hosts in all regions](/docs/satellite?topic=satellite-reqs-host-network-outbound) and then find the specific outbound network requirements for your region.
 
 You cannot configure an HTTP proxy for worker to master communications or for connecting to the package mirrors.
 {: note}
