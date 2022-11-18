@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-18"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -43,14 +43,26 @@ New Red Hat CoreOS-enabled locations
 
 You can use RHEL or Red Hat CoreOS hosts when you set up an HTTP proxy. You must edit each host that is attached to your location, including the hosts that make up the control plane.
 
+## What else do I need to know about HTTP proxy?
+{: #additional-http-proxy}
 
+For your Satellite location and clusters to work with a proxy, the kubelet on the control plane infrastructure nodes that are deployed to a Satellite location must be able to communicate to the IBM Cloud control plane node API server. To enable this communication, you must meet one of the following requirements.
+
+- Option 1: The current proxy can support long lived TCP connections (TCP tunneling).
+
+- Option 2: You can create a secondary proxy on a VSI in same network as your Satellite hosts that supports long lived TCP connections.
+
+- Option 3: You can open the firewall outbound to allow the TCP connections. For more information, see [Required outbound connectivity for hosts in all regions](/docs/satellite?topic=satellite-reqs-host-network-outbound) and then find the specific outbound network requirements for your region.
+
+You cannot configure an HTTP proxy for worker to master communications or for connecting to the package mirrors.
+{: note}
 
 ## Setting up TCP tunneling
 {: #setup-tcp-http-proxy}
 
 Your proxy must be set up with TCP tunneling. While specific steps might vary depending on your provider, follow these general steps to set up TCP tunneling.
 
-1. Set up your HTTP proxy to tunnel traffic for all three of your location public service endpoints. To find your endpoints, 
+1. Set up your HTTP proxy to tunnel traffic for all four of your location public service endpoints. To find your endpoints, 
         
     ```sh
     ibmcloud sat location get --location LOCATION_NAME
@@ -81,7 +93,8 @@ We are requesting the following HTTP_PROXY info be added to
 the location_ID listed in the title of this ticket.
 
 Use the following HTTP_PROXY info 
-BE SURE to include the protocol (http:// or https://) and the port (`:PORT_NUMBER`) in the endpoint.
+BE SURE to include the protocol (http:// or https://) 
+AND the port (`:PORT_NUMBER`) in the endpoint.
 
 
 HTTP_PROXY: https://my-proxy-endpoint.com:PORT_NUMBER
