@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-11-18"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -110,7 +110,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 | --- | --- | --- | --- |
 | 6 hosts | Up to 3 clusters | 20 workers across 3 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
 | 9 hosts | Up to 5 clusters  | 40 workers across 5 clusters, or 140 workers across 3 clusters | 60 workers per cluster |
-| 12 hosts | Up to8 clusters | 60 workers across 8 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
+| 12 hosts | Up to 8 clusters | 60 workers across 8 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
 {: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram-coreos}
@@ -129,4 +129,8 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 {: tab-title="16 vCPU, 64 GB RAM (CoreOS)"}
 {: tab-group="loc-sizerhcos"}
 
-
+These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. The following examples can lead to increased sizing requirements for your location.
+- Large amount of dynamic pod workload, such as more storage required to hold all pod, service, or app metadata.
+- Large amount of config info (configmaps or secrets), which lead to increased memory or CPU of control plane holding or processing that information.
+- Aggregated `kube-apiserver` request workload and response sizes of data gathered. For example, if you cluster contains many ConfigMaps and an application queries for the full list of that data, it can lead to increased resource usage of the control plane.
+In such cases, the resources per control plane node need to increase to support these resource intensive clusters.
