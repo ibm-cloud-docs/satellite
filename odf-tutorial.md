@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-21"
+lastupdated: "2022-11-22"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -42,7 +42,7 @@ This tutorial is for location administrators who are using OpenShift Data Founda
 1. You must have at least one cluster in your location. If you don't have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters). Your cluster must meet the following requirements:
     * At least 3 worker nodes with at least 16CPUs and 64GB RAM per worker node
     * The hosts that you use as worker nodes must be IBM Cloud VPC Virtual Server Instances
-1. [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-satcon-create).
+1. [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-satcon-manage).
 
 
 ## Deploying the {{site.data.keyword.block_storage_is_short}} CSI driver
