@@ -88,8 +88,11 @@ toc:
             topics:
               - cluster-config.md
               - setup-clusters-satconfig.md
-              - sat-sub-identity-sync.md 
-              - satcon-manage.md
+              - sat-sub-identity-sync.md
+              - topicgroup:
+                  label: Creating and managing Satellite configurations
+                  topics:
+                    - satcon-manage.md
               - remove-satconfig.md
               - satcon-resources.md
         - topicgroup:

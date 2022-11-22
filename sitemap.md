@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-18"
+lastupdated: "2022-11-22"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1386,7 +1386,12 @@ subcollection: satellite
 
 [Syncing subscription identity](/docs/satellite?topic=satellite-sat-sync-sub-identity#sat-sync-sub-identity)
 
-[Managing your {{site.data.keyword.satelliteshort}} Config resources by using direct upload](/docs/satellite?topic=satellite-satcon-manage#satcon-manage)
+
+### Creating and managing Satellite configurations
+{: #sitemap_creating_and_managing_satellite_configurations}
+
+
+[Managing Direct Upload configurations](/docs/satellite?topic=satellite-satcon-manage#satcon-manage)
 
 * [Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage#satcon-create)
 
