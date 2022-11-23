@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-09-23"
+lastupdated: "2022-11-22"
 
-keywords: satellite, multicloud, location, locations, control plane
+keywords: satellite, multicloud, location, locations, control plane, remote workers
 
 subcollection: satellite
 
@@ -43,14 +43,14 @@ In this example, the compute resources are located in a data center or edge. IBM
 ### 2. Compute hosts are located in {{site.data.keyword.cloud_notm}} and edge or data centers
 {: #compute-hosts-ibmcloud}
 
-In this example, the compute resources are located in both {{site.data.keyword.cloud_notm}} and any one of the supported infrastructure providers or edge. The hosts that make up the control plane are from {{site.data.keyword.cloud_notm}}, but the hosts that make up the services are located in separate, customer-owned edge or infrastructure providers. 
+In this example, the compute resources are located in both {{site.data.keyword.cloud_notm}} and any one of the supported infrastructure providers or edge. The hosts that make up the control plane are from {{site.data.keyword.cloud_notm}}, but the hosts that make up the services are located in separate, customer-owned edge or infrastructure providers. Note that while you can use other {{site.data.keyword.cloud_notm}} virtual servers, such as {{site.data.keyword.vsi_is_short}} for test environments, the only supported {{site.data.keyword.cloud_notm}} infrastructure to use in {{site.data.keyword.satellitelong}} for production environments is {{site.data.keyword.baremetal_long}} for Classic that is running Red Hat CoreOS.
 
 ![Compute hosts located in IBM Cloud and an edge or data center.](images/topology-2.svg){: caption="Figure 2. Compute hosts from IBM Cloud and other edge or infrastructure provider" caption-side="bottom"}
 
 ### 3. Compute hosts are located in {{site.data.keyword.cloud_notm}} and multiple data centers or edge
 {: #compute-hosts-ibmcloud-multiple}
 
-In this example, the compute resources are located in both {{site.data.keyword.cloud_notm}} and in multiple data center or edge. The hosts that make up the control plane are from {{site.data.keyword.cloud_notm}}, but the hosts that make up the services are located multiple other customer-owned edge or infrastructure providers. 
+In this example, the compute resources are located in both {{site.data.keyword.cloud_notm}} and in multiple data center or edge. The hosts that make up the control plane are from {{site.data.keyword.cloud_notm}}, but the hosts that make up the services are located multiple other customer-owned edge or infrastructure providers. Note that while you can use other {{site.data.keyword.cloud_notm}} virtual servers, such as {{site.data.keyword.vsi_is_short}} for test environments, the only supported {{site.data.keyword.cloud_notm}} infrastructure to use in {{site.data.keyword.satellitelong}} for production environments is {{site.data.keyword.baremetal_long}} for Classic that is running Red Hat CoreOS.
 
 ![Compute resources in both IBM Cloud and multiple edge or data centers.](images/topology-3.svg){: caption="Figure 3. Compute hosts in both IBM Cloud and different edge or data centers" caption-side="bottom"}
 
