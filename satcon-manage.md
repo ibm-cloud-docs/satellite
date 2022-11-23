@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-23"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -36,8 +36,6 @@ Before you begin
 Use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/configuration){: external} to create a configuration. Click **Create Config**, select the **Direct upload** template, and follow the on screen instructions to upload your YAML configuration files.
 {: shortdesc}
 
-
-To deploy an example app, see [Deploying Kubernetes resources to clusters with Satellite Config](/docs/satellite?topic=satellite-begin-sat-config-tutorial).
 
 
 ### Creating {{site.data.keyword.satelliteshort}} configurations from the CLI
