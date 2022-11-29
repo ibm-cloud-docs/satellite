@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-11-29"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -17,8 +17,6 @@ subcollection: satellite
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-The template is currently in beta. Do not use it for production workloads.
-{: beta}
 
 ## Prerequisites
 {: #config-storage-cos-prereqs}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-11-29"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## November 2022
 {: #satellite-nov22}
+
+### 29 November 2022
+{: #satellite-nov2922}
+{: release-note}
+
+New! Support for the {{site.data.keyword.cos_full_notm}} CSI driver template
+:   The {{site.data.keyword.cos_full_notm}} CSI driver template can be used in production workloads to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.cos_full_notm}} CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-cos).
 
 ### 8 November 2022
 {: #satellite-nov0822}
