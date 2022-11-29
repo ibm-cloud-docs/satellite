@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-18"
+lastupdated: "2022-11-29"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -21,13 +21,13 @@ Because your {{site.data.keyword.satelliteshort}} location represents your own d
 
 1. Set up a highly available {{site.data.keyword.satelliteshort}} location control plane with enough compute capacity to manage the resources in your {{site.data.keyword.satelliteshort}} location.
     Minimum size
-    :    To get started, you must attach and assign hosts that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For testing purposes such as a proof of concept, you can have a minimum of 3 hosts assigned to the control plane, but for production purposes, you must have a minimum of 6 hosts. As you continue to use your location, [you might need to scale the {{site.data.keyword.satelliteshort}} location control plane](#control-plane-attach-capacity) in multiples of 3, such as 6, 9, or 12 hosts.
+    :   To get started, you must attach and assign hosts that meet the [minimum requirements](/docs/satellite?topic=satellite-host-reqs). For testing purposes such as a proof of concept, you can have a minimum of 3 hosts assigned to the control plane, but for production purposes, you must have a minimum of 6 hosts. As you continue to use your location, [you might need to scale the {{site.data.keyword.satelliteshort}} location control plane](#control-plane-attach-capacity) in multiples of 3, such as 6, 9, or 12 hosts.
     
     High availability
-    :    When you assign hosts to the {{site.data.keyword.satelliteshort}} location control plane, assign the hosts evenly across each of the 3 available zones of your {{site.data.keyword.cloud_notm}} multizone metro that you selected during location creation. To make the control plane highly available, make sure that the underlying hosts are in separate zones in your physical infrastructure environment. For example, you might assign 2 hosts each that run in 3 separate availability zones in your cloud provider, or that run in 3 separate physical systems in your own data center. You do not have to meet specific requirements for a "zone," but the separate zones must provide availability for system maintenance operations. For example, if 1 zone becomes unavailable due to a failure, or if 1 host becomes unavailable due to updating, the remaining 2 zones are still available to run control plane operations. A poor high availability setup is 2 hosts that are virtual machines on the same hypervisor, because servicing the underlying hardware such as to update the machine would make both hosts become unavailable. For more information, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
+    :   When you assign hosts to the {{site.data.keyword.satelliteshort}} location control plane, assign the hosts evenly across each of the 3 available zones of your {{site.data.keyword.cloud_notm}} multizone metro that you selected during location creation. To make the control plane highly available, make sure that the underlying hosts are in separate zones in your physical infrastructure environment. For example, you might assign 2 hosts each that run in 3 separate availability zones in your cloud provider, or that run in 3 separate physical systems in your own data center. You do not have to meet specific requirements for a "zone," but the separate zones must provide availability for system maintenance operations. For example, if 1 zone becomes unavailable due to a failure, or if 1 host becomes unavailable due to updating, the remaining 2 zones are still available to run control plane operations. A poor high availability setup is 2 hosts that are virtual machines on the same hypervisor, because servicing the underlying hardware such as to update the machine would make both hosts become unavailable. For more information, see [High availability for {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha).
     
     Compute capacity
-    :    {{site.data.keyword.satelliteshort}} monitors the available compute capacity of your location. When the location reaches 70% capacity, you see a warning status to notify you to attach more hosts to the location. If the location reaches 80% capacity, the status changes to **critical** and you see another warning that tells you to attach more hosts to the location.
+    :   {{site.data.keyword.satelliteshort}} monitors the available compute capacity of your location. When the location reaches 70% capacity, you see a warning status to notify you to attach more hosts to the location. If the location reaches 80% capacity, the status changes to **critical** and you see another warning that tells you to attach more hosts to the location.
     
 2. Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then {{site.data.keyword.IBM_notm}} can assign the hosts to your {{site.data.keyword.satelliteshort}} location control plane automatically when the location reaches the warning capacity threshold or an unhealthy host needs to be replaced.
 
@@ -37,6 +37,7 @@ Because your {{site.data.keyword.satelliteshort}} location represents your own d
     - What type of availability do I want my workload to have?
     - How many worker nodes (hosts) do I need to handle my workload?
     - How do I monitor resource usage and capacity in my cluster?
+
 
 ## How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?
 {: #control-plane-attach-capacity}
@@ -129,8 +130,10 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 {: tab-title="16 vCPU, 64 GB RAM (CoreOS)"}
 {: tab-group="loc-sizerhcos"}
 
+
 These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. The following examples can lead to increased sizing requirements for your location.
+
 - Large amount of dynamic pod workload, such as more storage required to hold all pod, service, or app metadata.
 - Large amount of config info (configmaps or secrets), which lead to increased memory or CPU of control plane holding or processing that information.
 - Aggregated `kube-apiserver` request workload and response sizes of data gathered. For example, if you cluster contains many ConfigMaps and an application queries for the full list of that data, it can lead to increased resource usage of the control plane.
-In such cases, the resources per control plane node need to increase to support these resource intensive clusters.
+- In such cases, the resources per control plane node need to increase to support these resource intensive clusters.

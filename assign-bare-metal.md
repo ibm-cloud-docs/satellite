@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-11-29"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -18,7 +18,7 @@ completion-time: 2hr
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Attaching a {{site.data.keyword.baremetal_short_sing}} to a {{site.data.keyword.satelliteshort}} location 
+# Setting up virtualization on {{site.data.keyword.cloud_notm}} Bare Metal Servers for Classic
 {: #assign-bare-metal}
 {: toc-content-type="tutorial"}
 {: toc-services="satellite"}
@@ -41,12 +41,14 @@ The following steps use {{site.data.keyword.baremetal_long}} for Classic. Howeve
 - Find and record your bare metal host name. For this {{site.data.keyword.baremetal_short_sing}}, this information is found in the **Name** field on the **Overview** page for your specific {{site.data.keyword.baremetal_short}}.
 - Find your bare metal server network information. For this {{site.data.keyword.baremetal_short_sing}}, this information is found in the **Network details** section on the **Overview** page. Record the CIDR and gateway information for the public and private interfaces for your system.
 - Create or identify an {{site.data.keyword.cos_full_notm}} bucket to store your ignition file.
-- Create or identify a cluster within the {{site.data.keyword.satelliteshort}} locatino that runs a supported operating system; for example, this tutorial uses a {{site.data.keyword.redhat_openshift_notm}} cluster that is running 4.11.
+- Create or identify a cluster within the {{site.data.keyword.satelliteshort}} location that runs a supported operating system; for example, this tutorial uses a {{site.data.keyword.redhat_openshift_notm}} cluster that is running 4.11.
 
-In addition, for this specific {{site.data.keyword.baremetal_short_sing}} required the following prerequisites.
+
+In addition, the {{site.data.keyword.baremetal_short}} used in this example required the following prerequisites.
 
 - If you plan to have multiple VLANs for your cluster, multiple subnets on the same VLAN, or are planning for a multizone classic cluster, [enable VRF in your account](/docs/account?topic=account-vrf-service-endpoint).
 - [Create two VLAN pairs](/docs/cli?topic=cli-manage-classic-vlans#sl_vlan_create) (public and private) in the same {{site.data.keyword.cloud_notm}} data center pod for each zone for your bare metal host.
+- Later in this tutorial, we deploy OpenShift Data Foundation for local disks](/docs/satellite?topic=satellite-config-storage-odf-local&interface=ui). This solution requires additional storage devices on the worker nodes. 
 
 ## {{site.data.keyword.baremetal_short_sing}} requirements
 {: #setup-bare-metal}
@@ -56,9 +58,10 @@ To set up virtualization, your {{site.data.keyword.baremetal_short_sing}} must m
 - Must support virtualization technology.
     - For Intel CPUs, support for virtualization is referred to as `Intel VT` or `VT-x`.
     - For AMD CPUs, support for virtualization is referred to as `AMD Virtualization` or `AMD-V`.
-- Must have a minimum of 2 cores, plus any additional cores that you need for your vCPU overhead. For more information, see [CPU overhead](https://docs.openshift.com/container-platform/4.11/virt/install/preparing-cluster-for-virt.html#CPU-overhead_preparing-cluster-for-virt}{: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
-- Must include enough memory for your workload needs. For example: `360 MiB + (1.002 * requested memory) + 146 MiB + 8 MiB * (number of vCPUs) + 16 MiB * (number of graphics devices)`. For more information, see [Memory overhead](https://docs.openshift.com/container-platform/4.11/virt/install/preparing-cluster-for-virt.html#memory-overhead_preparing-cluster-for-virt}{: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
+- Must have a minimum of minimum of 8 cores and 32 GB RAM, plus any additional cores that you need for your vCPU overhead. For more information, see [CPU overhead](https://docs.openshift.com/container-platform/4.11/virt/install/preparing-cluster-for-virt.html#CPU-overhead_preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
+- Must include enough memory for your workload needs. For example: `360 MiB + (1.002 * requested memory) + 146 MiB + 8 MiB * (number of vCPUs) + 16 MiB * (number of graphics devices)`. For more information, see [Memory overhead](https://docs.openshift.com/container-platform/4.11/virt/install/preparing-cluster-for-virt.html#memory-overhead_preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
 - Must not have an operating system installed. The Red Hat CoreOS operating system is installed later in this process.
+- If you want to use OpenShift Data Foundation as your storage solution, add 2 storage disks to each of your {{site.data.keyword.baremetal_short}} when you provision them.
 
 If your servers do not meet these requirements, follow the steps to [create a {{site.data.keyword.baremetal_short_sing}}](/docs/bare-metal?topic=bare-metal-ordering-baremetal-server). For a list of bare metal options, see [Available options for a bare metal server](/docs/bare-metal?topic=bare-metal-about-bm#options-for-bare-metal-servers).
 {: tip}
@@ -76,7 +79,7 @@ For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a bro
 1. From the **Overview** page, note the networking values for your server. Find and verify the  CIDR and gateway information.
 1. Click **Remote management** and make note of the `User` and `Password` in the **Management details** section. You use this username and password in later steps.
 1. Click the **Actions** icon ![Actions icon](../icons/actions.svg "Actions icon") > **KVM Console** to open your {{site.data.keyword.baremetal_short_sing}} console. Your browser might display a warning of an insecure self-signed certificate. Add the certificate to your browser truststore as trusted CA certificate to continue.
-1. Log in to your server with the `User` and `Password` that you retreived earlier.
+1. Log in to your server with the `User` and `Password` that you retrieved earlier.
 1. On the **System** tab, in the **Remote console preview**, click **Settings**.
 1. Select **Java** to change the interface to use Java instead of HTML5.
 1. Click the console preview to download a `launch.jnlp` file.
@@ -116,7 +119,7 @@ After RHCOS is booted into memory, the `core@localhost` prompt is available. Fol
 1. Click **Edit a Connection**. 
 1. For each wired connection that you want to activate, click **IPv4 Configuration > Manual**.
 1. Select **Show**.
-1. Enter your CIDR for **Addresses**. The CIDR is the IP address and the netmask for that subnet.
+1. Enter your CIDR for **Addresses**. The CIDR is the IP address and the subnet mask for that subnet.
 1. Enter your gateway for **Gateway**.
 1. Add DNS server information. For example, for this {{site.data.keyword.baremetal_short_sing}}, these values are `8.8.8.8` and `4.4.4.4` for public interfaces; and `10.0.80.11` and `10.0.80.12` for private interfaces.
 1. Repeat these steps for each of the wired connections that you want to activate.
@@ -135,7 +138,7 @@ You must configure a separate ignition file for each bare metal host that you ar
 
 1. [Download the host attach script for your location](/docs/satellite?topic=satellite-attach-hosts#host-attach-download){: external}. Make sure to specify `RHCOS` for the host operating system.
 1. Get the host name for your bare metal system; for example, `mybaremetalserver`.
-1. Convert your host name to `base64` by running the following commmand, substituting `<hostname>` with your bare metal server host name:
+1. Convert your host name to `base64` by running the following command, substituting `<hostname>` with your bare metal server host name:
     ```sh
     echo <hostname> | base64
     ```
@@ -225,7 +228,8 @@ You must configure a separate ignition file for each bare metal host that you ar
     method=manual' |base64
     ```
     {: pre}
-  
+    
+    
     Example command to base64 encode your public interface details.
     ```sh
     echo '[connection]
@@ -241,7 +245,7 @@ You must configure a separate ignition file for each bare metal host that you ar
     ```
     {: screen}
 
-1. Add these connection details to your ignition file.  Replace `<public_interface>` with your public interface name, for example `eno2`. Replace `<public_connection_details>` with the base64 encoded output from the previous step.
+1. Add these connection details to your ignition file. Replace `<public_interface>` with your public interface name, for example `eno2`. Replace `<public_connection_details>` with the base64 encoded output from the previous step.
 
     ```sh
       {"path": "/etc/NetworkManager/system-connections/<public_interface>.nmconnection","mode": 256,"contents": {"source": "data:text/plain;base64,<public_connection_details>"}}
@@ -317,6 +321,7 @@ You must configure a separate ignition file for each bare metal host that you ar
   
 ## Attaching your bare metal host to the location
 {: #load-ignition-file-bare-metal}
+{: step}
 
 
 Download the ignition file to your bare metal host, then run it to attach the bare metal host to your {{site.data.keyword.satelliteshort}} location.
@@ -407,8 +412,224 @@ After your {{site.data.keyword.baremetal_short_sing}} is attached to your locati
     ```
     {: pre}
 
-For more information, see [Manually assigning hosts to Satellite resources](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual).
+Repeat this tutorial to attach more {{site.data.keyword.baremetal_short}} to your location and cluster.
+{: tip}
 
-Now that your {{site.data.keyword.baremetal_short_sing}} is assigned to a worker pool, you can set up {{site.data.keyword.redhat_openshift_notm}} virtualization. For more information about how to set this virtualization up, see the blog [Running a Windows 2019 Server VM in IBM Cloud Satellite with OpenShift Virtualization](https://lisowski0925.medium.com/running-a-windows-2019-server-vm-in-ibm-cloud-satellite-with-openshift-virtualization-234aa9a01def){: external}.
+Now that your {{site.data.keyword.baremetal_short_sing}} is assigned to a worker pool, you can set up {{site.data.keyword.redhat_openshift_notm}} virtualization.
+
+
+## Setting up storage for your cluster
+{: #virt-cluster-storage}
+{: step}
+
+In this example scenario, you deploy OpenShift Data Foundation across 3 nodes in the cluster by automatically discovering the available storage disks on your {{site.data.keyword.baremetal_short}}.
+
+After you have attached at least 3 {{site.data.keyword.baremetal_short}} to your location and assigned them as worker nodes in your cluster, you can deploy OpenShift Data Foundation by using the `odf-local` {{site.data.keyword.satellite_short}} storage template.
+
+1. From the [{{site.data.keyword.satellite_short}} locations console](https://cloud.ibm.com/satellite/locations){: external}, click your location, then click **Storage > Create storage configuration**.
+1. Give your configuration a name.
+1. Select **OpenShift Data Foundation for local devices** and select version **4.10**
+1. For this example, leave the rest of the default settings and click **Next**.
+1. Wait for ODF to deploy, then verify the pods are ready by listing the pods in the `openshift-storage` namespace.
+    ```sh
+    oc get pods -n openshift-storage
+    ```
+    {: pre}
+    
+    Example output
+    ```sh
+    NAME                                                              READY   STATUS      RESTARTS   AGE
+    ocs-metrics-exporter-5b85d48d66-lwzfn                             1/1     Running     0          2d1h
+    ocs-operator-86498bf74c-qcgvh                                     1/1     Running     0          2d1h
+    odf-console-68bcd54c7c-5fvkq                                      1/1     Running     0          2d1h
+    rook-ceph-mgr-a-758845d77c-xjqkg                                  2/2     Running     0          2d1h
+    rook-ceph-mon-a-85d65d9f66-crrhb                                  2/2     Running     0          2d1h
+    rook-ceph-mon-b-74fd78856d-s2pdf                                  2/2     Running     0          2d1h
+    rook-ceph-mon-c-76f9b8b5f9-gqcm4                                  2/2     Running     0          2d1h
+    rook-ceph-operator-5d659cb494-ctkx6                               1/1     Running     0          2d1h
+    rook-ceph-osd-0-846cf86f79-z97mc                                  2/2     Running     0          2d1h
+    rook-ceph-osd-1-7f79ccf77d-8g4cn                                  2/2     Running     0          2d1h
+    rook-ceph-osd-2-549cc486b4-7wf5k                                  2/2     Running     0          2d1h
+    rook-ceph-osd-prepare-ocs-deviceset-0-data-0z6pn9-6fwqr           0/1     Completed   0          10d
+    rook-ceph-osd-prepare-ocs-deviceset-1-data-0kkxrw-cppk9           0/1     Completed   0          10d
+    rook-ceph-osd-prepare-ocs-deviceset-2-data-0pxktc-xm2rc           0/1     Completed   0          10d
+    rook-ceph-rgw-ocs-storagecluster-cephobjectstore-a-54c58859nc8j   2/2     Running     0          2d1h
+    ...
+    ...
+    ```
+    {: screen}
+    
+    
+## Installing the virtualization operator
+{: #virt-operator-install}
+{: step}
+
+Follow the steps to [Install {{site.data.keyword.redhat_openshift_short}} Virtualization using the CLI](https://docs.openshift.com/container-platform/4.11/virt/install/installing-virt-cli.html){: external}.
+
+## Downloading the `virtctl` CLI
+{: #virt-tools}
+{: step}
+
+Follow the steps to [download the `virtctl` CLI tool](https://docs.openshift.com/container-platform/4.11/virt/install/virt-enabling-virtctl.html){: external}.
+
+## Creating a data volume for your virtual machine
+{: #virt-vm-storage}
+{: step}
+
+After you deploy OpenShift Data Foundation, you can use the `sat-ocs-ceprbd-gold` storage class to create a data volume to use storage for your VM.
+
+1. Copy the following example data volume and save it to a file called `datavol.yaml`.
+    ```yaml
+    apiVersion: cdi.kubevirt.io/v1beta1
+    kind: DataVolume
+    metadata:
+      name: fedora-1
+      namespace: openshift-cnv
+    spec:
+      source:
+        registry:
+          pullMethod: node
+          url: docker://quay.io/containerdisks/fedora@sha256:29b80ef738f9b09c19efc245aac3921deab9acd542c886cf5295c94ab847dfb5
+      pvc:
+        accessModes:
+          - ReadWriteMany
+        resources:
+          requests:
+            storage: 10Gi
+        volumeMode: Block
+        storageClassName: sat-ocs-cephrbd-gold
+    ```
+    {: codeblock}
+    
+1. Create the data volume.
+    ```sh
+    oc apply -f datavol.yaml
+    ```
+    {: pre}
+    
+1. Verify the data volume and corresponding PVC were created.
+    ```sh
+    oc get dv,pvc -n openshift-cnv
+    ```
+    {: pre}
+    
+    Example output.
+    ```sh
+    NAME                                  PHASE       PROGRESS   RESTARTS   AGE
+    datavolume.cdi.kubevirt.io/fedora-1   Succeeded   100.0%                16h
+    NAME                             STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
+    persistentvolumeclaim/fedora-1   Bound    pvc-fd8b1a5b-cc32-42bd-95d0-4ccf2e40bca7   10Gi       RWX            sat-ocs-cephrbd-gold   16h
+    ```
+    {: screen}
+
+## Creating a virtual machine
+{: #virt-vm-create}
+{: step}
+
+1. Copy the following VirtualMachine configuration and save it to a file called `vm.yaml`. Note that you can also create virtual machines through the OpenShift web console.
+    ```sh
+    apiVersion: kubevirt.io/v1
+    kind: VirtualMachine
+    metadata:
+      labels:
+        app: fedora-1
+      name: fedora-1
+      namespace: openshift-cnv
+    spec:
+      running: false
+      template:
+        metadata:
+          labels:
+            kubevirt.io/domain: fedora-1
+        spec:
+          domain:
+            cpu:
+              cores: 1
+              sockets: 2
+              threads: 1
+            devices:
+              disks:
+              - disk:
+                  bus: virtio
+                name: rootdisk
+              - disk:
+                  bus: virtio
+                name: cloudinitdisk
+              interfaces:
+              - masquerade: {}
+                name: default
+              rng: {}
+            features:
+              smm:
+                enabled: true
+            firmware:
+              bootloader:
+                efi: {}
+            resources:
+              requests:
+                memory: 8Gi
+          evictionStrategy: LiveMigrate
+          networks:
+          - name: default
+            pod: {}
+          volumes:
+          - dataVolume:
+              name: fedora-1
+            name: rootdisk
+          - cloudInitNoCloud:
+              userData: |-
+                #cloud-config
+                user: cloud-user
+                password: 'fedora-1-password' 
+                chpasswd: { expire: False }
+            name: cloudinitdisk
+    ```
+    {: codeblock}
+
+1. Create the virtual machine in your cluster.
+    ```sh
+    oc apply -f vm.yaml
+    ```
+    {: pre}
+    
+1. Start the virtual machine.
+    ```sh
+    virtctl start fedora-1 -n openshift-cnv
+    ```
+    {: pre}
+    
+1. Verify the virtual machine is running.
+    ```sh
+    oc get vm -n openshift-cnv
+    ```
+    {: pre}
+    
+    Example output.
+    ```sh
+    NAME                                  AGE   STATUS    READY
+    virtualmachine.kubevirt.io/fedora-1   16h   Running   True
+    ```
+    {: screen}
+    
+    
+1. From the OpenShift web console, log in to your VM by using the username and password you specified in the VirtualMachine config. For example, `user: cloud-user` and `password: 'fedora-1-password'`.
+
+
+Congratulations! You just deployed a Fedora virtual machine on your {{site.data.keyword.satelliteshort}} cluster.
+
+For more information about accessing and managing VMs in your cluster, see [Additional resources](#sat-virt-additional).
+    
+
+
+## Additional resources
+{: #sat-virt-additional}
+
+- [Running a Windows 2019 Server VM in IBM Cloud Satellite with OpenShift Virtualization](https://lisowski0925.medium.com/running-a-windows-2019-server-vm-in-ibm-cloud-satellite-with-openshift-virtualization-234aa9a01def){: external}.
+- [Using the virtualization CLI tools](https://docs.openshift.com/container-platform/4.11/virt/virt-using-the-cli-tools.html){: external}
+- [Creating VMs](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-create-vms.html){: external}
+- [Creating a VM using the OpenShift Web Console](https://cloud.redhat.com/blog/creating-a-vm-using-the-openshift-web-console){: external}
+- [Editing VMs](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-edit-vms.html){: external}
+- [Deleting VMs](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-delete-vms.html){: external}
+- [Accessing VM consoles](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-accessing-vm-consoles.html){: external}
 
 

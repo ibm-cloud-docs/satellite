@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-23"
+lastupdated: "2022-11-29"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -859,11 +859,11 @@ subcollection: satellite
 * [Next Steps](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-next-steps)
 
 
-## Attaching a {{site.data.keyword.baremetal_short_sing}} to a {{site.data.keyword.satelliteshort}} location
-{: #sitemap_attaching_a__to_a__location}
+## Setting up virtualization on {{site.data.keyword.cloud_notm}} Bare Metal Servers for Classic
+{: #sitemap_setting_up_virtualization_on__bare_metal_servers_for_classic}
 
 
-[Attaching a {{site.data.keyword.baremetal_short_sing}} to a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal)
+[Setting up virtualization on {{site.data.keyword.cloud_notm}} Bare Metal Servers for Classic](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal)
 
 * [Prerequisites](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal-prereq)
 
@@ -878,6 +878,18 @@ subcollection: satellite
 * [Attaching your bare metal host to the location](/docs/satellite?topic=satellite-assign-bare-metal#load-ignition-file-bare-metal)
 
 * [Assigning a {{site.data.keyword.baremetal_short_sing}} host to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal-cluster)
+
+* [Setting up storage for your cluster](/docs/satellite?topic=satellite-assign-bare-metal#virt-cluster-storage)
+
+* [Installing the virtualization operator](/docs/satellite?topic=satellite-assign-bare-metal#virt-operator-install)
+
+* [Downloading the `virtctl` CLI](/docs/satellite?topic=satellite-assign-bare-metal#virt-tools)
+
+* [Creating a data volume for your virtual machine](/docs/satellite?topic=satellite-assign-bare-metal#virt-vm-storage)
+
+* [Creating a virtual machine](/docs/satellite?topic=satellite-assign-bare-metal#virt-vm-create)
+
+* [Additional resources](/docs/satellite?topic=satellite-assign-bare-metal#sat-virt-additional)
 
 
 ## Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands
