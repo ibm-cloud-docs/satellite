@@ -11,7 +11,7 @@ subcollection: satellite
 content-type: tutorial
 services: satellite
 account-plan: paid
-completion-time: 120m
+completion-time: 2hr
 
 ---
 
@@ -228,7 +228,8 @@ You must configure a separate ignition file for each bare metal host that you ar
     method=manual' |base64
     ```
     {: pre}
-  
+    
+    
     Example command to base64 encode your public interface details.
     ```sh
     echo '[connection]
