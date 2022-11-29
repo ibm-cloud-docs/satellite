@@ -17,6 +17,8 @@ subcollection: satellite
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
+The template is currently in beta. Do not use it for production workloads.
+{: beta}
 
 ## Prerequisites
 {: #config-storage-cos-prereqs}
