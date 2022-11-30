@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-29"
+lastupdated: "2022-11-30"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1380,6 +1380,11 @@ subcollection: satellite
 
 * [Key concepts for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#satcon-terminology)
 
+
+### Setting up clusters to use with Satellite Config
+{: #sitemap_setting_up_clusters_to_use_with_satellite_config}
+
+
 [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig)
 
 * [Prerequisites](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-prereq)
@@ -1395,6 +1400,10 @@ subcollection: satellite
     * [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-scoped-project)
 
 * [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters)
+
+[Setting up cluster groups](/docs/satellite?topic=satellite-setup-clusters-satconfig-groups#setup-clusters-satconfig-groups)
+
+[Registering clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-register-openshift-clusters#register-openshift-clusters)
 
 [Syncing subscription identity](/docs/satellite?topic=satellite-sat-sync-sub-identity#sat-sync-sub-identity)
 
