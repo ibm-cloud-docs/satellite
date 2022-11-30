@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-11-30"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -599,7 +599,7 @@ Use the command line to remove a storage assignment.
 | KMS instance API key token URL | `kms-token-url` | API key token URL to generate token for KMS instance. | false | 
 | KMS root key | `kms-root-key` | KMS root key of your instance. | false | 
 | KMS IAM API key | `kms-api-key` | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | 
-| Ignore Noobaa | `ignore-noobaa` | Set to `true` if you don't want to deploy MultiCloud Object Gateway (Noobaa) | false | 
+| Ignore Noobaa | `ignore-noobaa` | Set to `true` if you don`t want to deploy MultiCloud Object Gateway (Noobaa) | false | 
 {: caption="Table 4. 4.10 parameter reference" caption-side="bottom"}
 
 

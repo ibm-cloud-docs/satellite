@@ -84,55 +84,6 @@ The following image depicts the workflow for creating a {{site.data.keyword.sate
 You can create a {{site.data.keyword.satelliteshort}} storage configuration by using a template for the storage provider that you want to use. If your preferred storage provider does not have a template, you can [create your own configuration template](https://github.com/{{site.data.keyword.IBM_notm}}/ibm-satellite-storage){: external} or you can manually deploy storage drivers. The following list includes the storage templates are currently available to deploy to your {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
 
-| Template name | Template CLI name | Version | Revision | Supported status |
-| --- | --- | --- | --- | --- |
-| AWS EBS CSI Driver | `aws-ebs-csi-driver` | 1.1.0 | 4 | Supported |
-| AWS EBS CSI Driver | `aws-ebs-csi-driver` | 1.5.1 | 4 | Supported |
-| AWS EBS CSI Driver | `aws-ebs-csi-driver` | 1.12.0 (Default) | 1 | Supported |
-| AWS EFS CSI Driver | `aws-efs-csi-driver` | 1.3.1 | 4 | Supported |
-| AWS EFS CSI Driver | `aws-efs-csi-driver` | 1.3.7 | 4 | Supported |
-| AWS EFS CSI Driver | `aws-efs-csi-driver` | 1.4.2 (Default) | 1 | Supported |
-| Azure Disk CSI Driver | `azuredisk-csi-driver` | 1.4.0 | 5 | Supported |
-| Azure Disk CSI Driver | `azuredisk-csi-driver` | 1.18.0 | 5 | Supported |
-| Azure Disk CSI Driver | `azuredisk-csi-driver` | 1.23.0 (Default) | 1 | Supported |
-| Azure File CSI Driver | `azurefile-csi-driver` | 1.9.0 | 4 | Supported |
-| Azure File CSI Driver | `azurefile-csi-driver` | 1.18.0 | 4 | Supported |
-| Azure File CSI Driver | `azurefile-csi-driver` | 1.22.0 (Default) | 1 | Supported |
-| GCP Compute Persistent Disk CSI Driver | `gcp-compute-persistent-disk-csi-driver` | 1.0.4 | 3 | Supported |
-| GCP Compute Persistent Disk CSI Driver | `gcp-compute-persistent-disk-csi-driver` | 1.7.1 | 4 | Supported |
-| GCP Compute Persistent Disk CSI Driver | `gcp-compute-persistent-disk-csi-driver` | 1.8.0 (Default) | 1 | Supported |
-| [Beta] IBM Object Storage Plugin. | `ibm-object-storage-plugin` | 2.2 (Default) | 3 | Supported |
-| IBM System Storage Block CSI driver | `ibm-system-storage-block-csi-driver` | 1.4.0 | 2 | Supported |
-| IBM System Storage Block CSI driver | `ibm-system-storage-block-csi-driver` | 1.5.0 (Default) | 2 | Supported |
-| [Beta] IBM VPC Block CSI driver | `ibm-vpc-block-csi-driver` | 4.3.0 | 11 | Deprecated |
-| [Beta] IBM VPC Block CSI driver | `ibm-vpc-block-csi-driver` | 5.0 (Default) | 2 | Supported |
-| Local Storage Operator - Block | `local-volume-block` | 4.7 | 3 | Deprecated |
-| Local Storage Operator - Block | `local-volume-block` | 4.8 | 4 | Supported |
-| Local Storage Operator - Block | `local-volume-block` | 4.9 | 4 | Supported |
-| Local Storage Operator - Block | `local-volume-block` | 4.10 (Default) | 4 | Supported |
-| Local Storage Operator - Block | `local-volume-block` | 4.11 | 1 | Supported |
-| Local Storage Operator - File | `local-volume-file` | 4.7 | 3 | Deprecated |
-| Local Storage Operator - File | `local-volume-file` | 4.8 | 4 | Supported |
-| Local Storage Operator - File | `local-volume-file` | 4.9 | 4 | Supported |
-| Local Storage Operator - File | `local-volume-file` | 4.10 (Default) | 4 | Supported |
-| Local Storage Operator - File | `local-volume-file` | 4.11 | 1 | Supported |
-| NetApp Ontap-NAS Driver | `netapp-ontap-nas` | 21.04 | 11 | Supported |
-| NetApp Ontap-NAS Driver | `netapp-ontap-nas` | 22.04 (Default) | 9 | Supported |
-| NetApp Ontap-SAN Driver | `netapp-ontap-san` | 21.04 | 12 | Supported |
-| NetApp Ontap-SAN Driver | `netapp-ontap-san` | 22.04 (Default) | 9 | Supported |
-| NetApp Trident Operator | `netapp-trident` | 21.04 | 3 | Supported |
-| NetApp Trident Operator | `netapp-trident` | 22.04 (Default) | 2 | Supported |
-| OpenShift Data Foundation for local devices | `odf-local` | 4.7 | 15 | Supported |
-| OpenShift Data Foundation for local devices | `odf-local` | 4.8 | 15 | Supported |
-| OpenShift Data Foundation for local devices | `odf-local` | 4.9 | 15 | Supported |
-| OpenShift Data Foundation for local devices | `odf-local` | 4.10 (Default) | 9 | Supported |
-| OpenShift Data Foundation for remote storage | `odf-remote` | 4.7 | 15 | Supported |
-| OpenShift Data Foundation for remote storage | `odf-remote` | 4.8 | 15 | Supported |
-| OpenShift Data Foundation for remote storage | `odf-remote` | 4.9 | 15 | Supported |
-| OpenShift Data Foundation for remote storage | `odf-remote` | 4.10 (Default) | 9 | Supported |
-| VMware CSI Driver | `vsphere-csi-driver` | 2.5.1 (Default) | 5 | Supported |
-{: caption="Satellite storage templates" caption-side="bottom"}
-
 
 
 * [Amazon Elastic Block Storage (EBS)](/docs/satellite?topic=satellite-config-storage-ebs)
@@ -152,4 +103,4 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 * [Google Compute Engine persistent disk CSI driver](/docs/satellite?topic=satellite-config-storage-gcp-csi)
 * [VMware persistent disk CSI driver](/docs/satellite?topic=satellite-config-storage-vmware-csi)
 
-
+For a list of available storage templates and storage classes, review the [site map](/docs/satellite?topic=satellite-storage-class-ref#storage-class-ref).
