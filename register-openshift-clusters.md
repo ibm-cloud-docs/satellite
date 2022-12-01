@@ -1,6 +1,8 @@
+---
+
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-01"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -41,7 +43,7 @@ After you complete these steps, the cluster can be added to a cluster group in y
     oc get pods -n razeedeploy
     ```
     {: pre}
-
+    
     Example output 
     ```sh
     NAME                                                  READY     STATUS      RESTARTS   AGE
@@ -53,7 +55,7 @@ After you complete these steps, the cluster can be added to a cluster group in y
     watch-keeper-5d4dd9f56b-bt6jz                  1/1     Running     0          3m41s
     ```
     {: screen}
-
+    
 7. Verify your cluster's status on the {{site.data.keyword.satelliteshort}} [**Clusters**](https://cloud.ibm.com/satellite/clusters){: external} dashboard.
     
 8. Optional: Click on your cluster to view the Kubernetes resources that are deployed to the cluster.

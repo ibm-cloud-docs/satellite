@@ -1,6 +1,8 @@
+---
+
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-01"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -17,7 +19,7 @@ The cluster group specifies all clusters that you want to include in the deploym
 {: shortdesc}
 
 If you want to use the console to create {{site.data.keyword.satelliteshort}} configurations, you can create cluster groups as part of the configuration creation process. If you want to use the CLI to create {{site.data.keyword.satelliteshort}} configurations, you must create a cluster group first. Follow these steps to create a cluster group with the CLI:
-  
+
 1. List the clusters that are registered with the {{site.data.keyword.satelliteshort}} Config component and note their ID.
     ```sh
     ibmcloud sat cluster ls
