@@ -906,7 +906,7 @@ subcollection: satellite
 
 * [Installing the virtualization operator](/docs/satellite?topic=satellite-virtualization-location#virt-operator-install)
 
-* [Setting up the `virtctl` CLI](/docs/satellite?topic=satellite-virtualization-location#virt-tools)
+* [Setting up the virtctl CLI](/docs/satellite?topic=satellite-virtualization-location#virt-tools)
 
 * [Creating a data volume for your virtual machine](/docs/satellite?topic=satellite-virtualization-location#virt-vm-storage)
 

@@ -174,7 +174,7 @@ After you have attached at least 3 {{site.data.keyword.baremetal_short}} to your
 
 Follow the steps to [Install {{site.data.keyword.redhat_openshift_notm}} Virtualization using the CLI](https://docs.openshift.com/container-platform/4.11/virt/install/installing-virt-cli.html){: external}.
 
-## Setting up the `virtctl` CLI
+## Setting up the virtctl CLI
 {: #virt-tools}
 {: step}
 
