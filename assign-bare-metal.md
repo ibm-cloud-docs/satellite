@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-29"
+lastupdated: "2022-12-01"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -48,7 +48,7 @@ In addition, the {{site.data.keyword.baremetal_short}} used in this example requ
 
 - If you plan to have multiple VLANs for your cluster, multiple subnets on the same VLAN, or are planning for a multizone classic cluster, [enable VRF in your account](/docs/account?topic=account-vrf-service-endpoint).
 - [Create two VLAN pairs](/docs/cli?topic=cli-manage-classic-vlans#sl_vlan_create) (public and private) in the same {{site.data.keyword.cloud_notm}} data center pod for each zone for your bare metal host.
-- Later in this tutorial, we deploy OpenShift Data Foundation for local disks](/docs/satellite?topic=satellite-config-storage-odf-local&interface=ui). This solution requires additional storage devices on the worker nodes. 
+- Later in this tutorial, you deploy [OpenShift Data Foundation for local disks](/docs/satellite?topic=satellite-config-storage-odf-local&interface=ui). This solution requires additional storage devices on the worker nodes. 
 
 ## {{site.data.keyword.baremetal_short_sing}} requirements
 {: #setup-bare-metal}
@@ -78,7 +78,7 @@ For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a bro
 1. From the [Device list in the console](https://cloud.ibm.com/gen1/infrastructure/devices){: external}, select your bare metal server.
 1. From the **Overview** page, note the networking values for your server. Find and verify the  CIDR and gateway information.
 1. Click **Remote management** and make note of the `User` and `Password` in the **Management details** section. You use this username and password in later steps.
-1. Click the **Actions** icon ![Actions icon](../icons/actions.svg "Actions icon") > **KVM Console** to open your {{site.data.keyword.baremetal_short_sing}} console. Your browser might display a warning of an insecure self-signed certificate. Add the certificate to your browser truststore as trusted CA certificate to continue.
+1. Click the **Actions** icon ![Actions icon](../icons/action-menu-icon.svg "Actions icon") > **KVM Console** to open your {{site.data.keyword.baremetal_short_sing}} console. Your browser might display a warning of an insecure self-signed certificate. Add the certificate to your browser truststore as trusted CA certificate to continue.
 1. Log in to your server with the `User` and `Password` that you retrieved earlier.
 1. On the **System** tab, in the **Remote console preview**, click **Settings**.
 1. Select **Java** to change the interface to use Java instead of HTML5.
@@ -149,7 +149,7 @@ You must configure a separate ignition file for each bare metal host that you ar
     ```sh
       {"overwrite": true,"path": "/etc/hostname","mode": 600,"contents": {"source": "data:text/plain;base64,<hostname>"},},],}
     ```
-    {: pre}
+    {: codeblock}
     
     The first block of the ignition file with the host name `mybaremetalserver` is shown in the following example:
     
@@ -204,7 +204,7 @@ You must configure a separate ignition file for each bare metal host that you ar
     ```sh
       {"overwrite": true,"path": "/etc/NetworkManager/system-connections/<private_interface>.nmconnection","mode": 256,"contents": {"source": "data:text/plain;base64,<private_connection_details>"}}
     ```
-    {: pre}
+    {: codeblock}
     
     For example, to add the networking information from the previous step, enter the following code sample.
     
@@ -227,7 +227,7 @@ You must configure a separate ignition file for each bare metal host that you ar
     may-fail=false
     method=manual' |base64
     ```
-    {: pre}
+    {: codeblock}
     
     
     Example command to base64 encode your public interface details.
@@ -250,7 +250,7 @@ You must configure a separate ignition file for each bare metal host that you ar
     ```sh
       {"path": "/etc/NetworkManager/system-connections/<public_interface>.nmconnection","mode": 256,"contents": {"source": "data:text/plain;base64,<public_connection_details>"}}
     ```
-    {: pre}
+    {: codeblock}
     
     For example, to add the networking information from the previous step, enter the following code sample, immediately following the private interface code sample.
     
@@ -426,11 +426,11 @@ In this example scenario, you deploy OpenShift Data Foundation across 3 nodes in
 
 After you have attached at least 3 {{site.data.keyword.baremetal_short}} to your location and assigned them as worker nodes in your cluster, you can deploy OpenShift Data Foundation by using the `odf-local` {{site.data.keyword.satellite_short}} storage template.
 
-1. From the [{{site.data.keyword.satellite_short}} locations console](https://cloud.ibm.com/satellite/locations){: external}, click your location, then click **Storage > Create storage configuration**.
+1. From the [{{site.data.keyword.satelliteshort}} locations console](https://cloud.ibm.com/satellite/locations){: external}, click your location, then click **Storage > Create storage configuration**.
 1. Give your configuration a name.
 1. Select **OpenShift Data Foundation for local devices** and select version **4.10**
 1. For this example, leave the rest of the default settings and click **Next**.
-1. Wait for ODF to deploy, then verify the pods are ready by listing the pods in the `openshift-storage` namespace.
+1. Wait for ODF to deploy. Then, verify the pods are ready by listing the pods in the `openshift-storage` namespace.
     ```sh
     oc get pods -n openshift-storage
     ```
