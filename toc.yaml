@@ -34,6 +34,7 @@ toc:
         - sat-toolchain-tutorial.md
         - odf-tutorial.md
         - assign-bare-metal.md
+        - virtualization-location.md
   - navgroup:
       id: howto
       topics:

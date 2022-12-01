@@ -18,13 +18,13 @@ completion-time: 2hr
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Setting up virtualization on {{site.data.keyword.cloud_notm}} Bare Metal Servers for Classic
+# Attaching bare metal hosts to a location
 {: #assign-bare-metal}
 {: toc-content-type="tutorial"}
 {: toc-services="satellite"}
 {: toc-completion-time="2hr"}
 
-You can set up your {{site.data.keyword.baremetal_short}} to use {{site.data.keyword.redhat_openshift_notm}} virtualization in your {{site.data.keyword.satelliteshort}} location. By using virtualization, you can provision Windows or other virtual machines on your {{site.data.keyword.baremetal_short}} in a managed {{site.data.keyword.redhat_openshift_notm}} space. 
+You can attach bare metal hosts to your {{site.data.keyword.satelliteshort}} location. After your hosts are attached, you can [set up  {{site.data.keyword.redhat_openshift_notm}} virtualization](docs/satellite?topic=satellite-virtualization-location) in your {{site.data.keyword.satelliteshort}} location. By using virtualization, you can provision Windows or other virtual machines on your {{site.data.keyword.baremetal_short}} in a managed {{site.data.keyword.redhat_openshift_notm}} space. 
 {: shortdesc}
 
 Supported host operating systems
@@ -393,7 +393,7 @@ Download the ignition file to your bare metal host, then run it to attach the ba
 Congratulations! Your {{site.data.keyword.baremetal_short_sing}} is now attached to your location. 
  
 ## Assigning a {{site.data.keyword.baremetal_short_sing}} host to your {{site.data.keyword.redhat_openshift_notm}} cluster
-{: #assign-bare-metal-cluster}
+{: #assign-bare-metal-to-cluster}
 {: step}
 
 After your {{site.data.keyword.baremetal_short_sing}} is attached to your location, you can assign it to a {{site.data.keyword.redhat_openshift_notm}} cluster worker pool. 
@@ -415,221 +415,7 @@ After your {{site.data.keyword.baremetal_short_sing}} is attached to your locati
 Repeat this tutorial to attach more {{site.data.keyword.baremetal_short}} to your location and cluster.
 {: tip}
 
-Now that your {{site.data.keyword.baremetal_short_sing}} is assigned to a worker pool, you can set up {{site.data.keyword.redhat_openshift_notm}} virtualization.
+Now that your {{site.data.keyword.baremetal_short_sing}} is assigned to a worker pool, you can [set up {{site.data.keyword.redhat_openshift_notm}} virtualization](docs/satellite?topic=satellite-virtualization-location).
 
-
-## Setting up storage for your cluster
-{: #virt-cluster-storage}
-{: step}
-
-In this example scenario, you deploy OpenShift Data Foundation across 3 nodes in the cluster by automatically discovering the available storage disks on your {{site.data.keyword.baremetal_short}}.
-
-After you have attached at least 3 {{site.data.keyword.baremetal_short}} to your location and assigned them as worker nodes in your cluster, you can deploy OpenShift Data Foundation by using the `odf-local` {{site.data.keyword.satellite_short}} storage template.
-
-1. From the [{{site.data.keyword.satelliteshort}} locations console](https://cloud.ibm.com/satellite/locations){: external}, click your location, then click **Storage > Create storage configuration**.
-1. Give your configuration a name.
-1. Select **OpenShift Data Foundation for local devices** and select version **4.10**
-1. For this example, leave the rest of the default settings and click **Next**.
-1. Wait for ODF to deploy. Then, verify the pods are ready by listing the pods in the `openshift-storage` namespace.
-    ```sh
-    oc get pods -n openshift-storage
-    ```
-    {: pre}
-    
-    Example output
-    ```sh
-    NAME                                                              READY   STATUS      RESTARTS   AGE
-    ocs-metrics-exporter-5b85d48d66-lwzfn                             1/1     Running     0          2d1h
-    ocs-operator-86498bf74c-qcgvh                                     1/1     Running     0          2d1h
-    odf-console-68bcd54c7c-5fvkq                                      1/1     Running     0          2d1h
-    rook-ceph-mgr-a-758845d77c-xjqkg                                  2/2     Running     0          2d1h
-    rook-ceph-mon-a-85d65d9f66-crrhb                                  2/2     Running     0          2d1h
-    rook-ceph-mon-b-74fd78856d-s2pdf                                  2/2     Running     0          2d1h
-    rook-ceph-mon-c-76f9b8b5f9-gqcm4                                  2/2     Running     0          2d1h
-    rook-ceph-operator-5d659cb494-ctkx6                               1/1     Running     0          2d1h
-    rook-ceph-osd-0-846cf86f79-z97mc                                  2/2     Running     0          2d1h
-    rook-ceph-osd-1-7f79ccf77d-8g4cn                                  2/2     Running     0          2d1h
-    rook-ceph-osd-2-549cc486b4-7wf5k                                  2/2     Running     0          2d1h
-    rook-ceph-osd-prepare-ocs-deviceset-0-data-0z6pn9-6fwqr           0/1     Completed   0          10d
-    rook-ceph-osd-prepare-ocs-deviceset-1-data-0kkxrw-cppk9           0/1     Completed   0          10d
-    rook-ceph-osd-prepare-ocs-deviceset-2-data-0pxktc-xm2rc           0/1     Completed   0          10d
-    rook-ceph-rgw-ocs-storagecluster-cephobjectstore-a-54c58859nc8j   2/2     Running     0          2d1h
-    ...
-    ...
-    ```
-    {: screen}
-    
-    
-## Installing the virtualization operator
-{: #virt-operator-install}
-{: step}
-
-Follow the steps to [Install {{site.data.keyword.redhat_openshift_short}} Virtualization using the CLI](https://docs.openshift.com/container-platform/4.11/virt/install/installing-virt-cli.html){: external}.
-
-## Downloading the `virtctl` CLI
-{: #virt-tools}
-{: step}
-
-Follow the steps to [download the `virtctl` CLI tool](https://docs.openshift.com/container-platform/4.11/virt/install/virt-enabling-virtctl.html){: external}.
-
-## Creating a data volume for your virtual machine
-{: #virt-vm-storage}
-{: step}
-
-After you deploy OpenShift Data Foundation, you can use the `sat-ocs-ceprbd-gold` storage class to create a data volume to use storage for your VM.
-
-1. Copy the following example data volume and save it to a file called `datavol.yaml`.
-    ```yaml
-    apiVersion: cdi.kubevirt.io/v1beta1
-    kind: DataVolume
-    metadata:
-      name: fedora-1
-      namespace: openshift-cnv
-    spec:
-      source:
-        registry:
-          pullMethod: node
-          url: docker://quay.io/containerdisks/fedora@sha256:29b80ef738f9b09c19efc245aac3921deab9acd542c886cf5295c94ab847dfb5
-      pvc:
-        accessModes:
-          - ReadWriteMany
-        resources:
-          requests:
-            storage: 10Gi
-        volumeMode: Block
-        storageClassName: sat-ocs-cephrbd-gold
-    ```
-    {: codeblock}
-    
-1. Create the data volume.
-    ```sh
-    oc apply -f datavol.yaml
-    ```
-    {: pre}
-    
-1. Verify the data volume and corresponding PVC were created.
-    ```sh
-    oc get dv,pvc -n openshift-cnv
-    ```
-    {: pre}
-    
-    Example output.
-    ```sh
-    NAME                                  PHASE       PROGRESS   RESTARTS   AGE
-    datavolume.cdi.kubevirt.io/fedora-1   Succeeded   100.0%                16h
-    NAME                             STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
-    persistentvolumeclaim/fedora-1   Bound    pvc-fd8b1a5b-cc32-42bd-95d0-4ccf2e40bca7   10Gi       RWX            sat-ocs-cephrbd-gold   16h
-    ```
-    {: screen}
-
-## Creating a virtual machine
-{: #virt-vm-create}
-{: step}
-
-1. Copy the following VirtualMachine configuration and save it to a file called `vm.yaml`. Note that you can also create virtual machines through the OpenShift web console.
-    ```sh
-    apiVersion: kubevirt.io/v1
-    kind: VirtualMachine
-    metadata:
-      labels:
-        app: fedora-1
-      name: fedora-1
-      namespace: openshift-cnv
-    spec:
-      running: false
-      template:
-        metadata:
-          labels:
-            kubevirt.io/domain: fedora-1
-        spec:
-          domain:
-            cpu:
-              cores: 1
-              sockets: 2
-              threads: 1
-            devices:
-              disks:
-              - disk:
-                  bus: virtio
-                name: rootdisk
-              - disk:
-                  bus: virtio
-                name: cloudinitdisk
-              interfaces:
-              - masquerade: {}
-                name: default
-              rng: {}
-            features:
-              smm:
-                enabled: true
-            firmware:
-              bootloader:
-                efi: {}
-            resources:
-              requests:
-                memory: 8Gi
-          evictionStrategy: LiveMigrate
-          networks:
-          - name: default
-            pod: {}
-          volumes:
-          - dataVolume:
-              name: fedora-1
-            name: rootdisk
-          - cloudInitNoCloud:
-              userData: |-
-                #cloud-config
-                user: cloud-user
-                password: 'fedora-1-password' 
-                chpasswd: { expire: False }
-            name: cloudinitdisk
-    ```
-    {: codeblock}
-
-1. Create the virtual machine in your cluster.
-    ```sh
-    oc apply -f vm.yaml
-    ```
-    {: pre}
-    
-1. Start the virtual machine.
-    ```sh
-    virtctl start fedora-1 -n openshift-cnv
-    ```
-    {: pre}
-    
-1. Verify the virtual machine is running.
-    ```sh
-    oc get vm -n openshift-cnv
-    ```
-    {: pre}
-    
-    Example output.
-    ```sh
-    NAME                                  AGE   STATUS    READY
-    virtualmachine.kubevirt.io/fedora-1   16h   Running   True
-    ```
-    {: screen}
-    
-    
-1. From the OpenShift web console, log in to your VM by using the username and password you specified in the VirtualMachine config. For example, `user: cloud-user` and `password: 'fedora-1-password'`.
-
-
-Congratulations! You just deployed a Fedora virtual machine on your {{site.data.keyword.satelliteshort}} cluster.
-
-For more information about accessing and managing VMs in your cluster, see [Additional resources](#sat-virt-additional).
-    
-
-
-## Additional resources
-{: #sat-virt-additional}
-
-- [Running a Windows 2019 Server VM in IBM Cloud Satellite with OpenShift Virtualization](https://lisowski0925.medium.com/running-a-windows-2019-server-vm-in-ibm-cloud-satellite-with-openshift-virtualization-234aa9a01def){: external}.
-- [Using the virtualization CLI tools](https://docs.openshift.com/container-platform/4.11/virt/virt-using-the-cli-tools.html){: external}
-- [Creating VMs](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-create-vms.html){: external}
-- [Creating a VM using the OpenShift Web Console](https://cloud.redhat.com/blog/creating-a-vm-using-the-openshift-web-console){: external}
-- [Editing VMs](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-edit-vms.html){: external}
-- [Deleting VMs](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-delete-vms.html){: external}
-- [Accessing VM consoles](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-accessing-vm-consoles.html){: external}
 
 
