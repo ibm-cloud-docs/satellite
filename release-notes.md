@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-29"
+lastupdated: "2022-12-01"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -20,6 +20,19 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
+
+## December 2022
+{: #satellite-dec22}
+
+### 1 December 2022
+{: #satellite-dec0122}
+{: release-note}
+
+New! {{site.data.keyword.satelliteshort}} storage template feature comparison
+:   For more information, see the [comparison table](/docs/satellite?topic=satellite-storage-template-features).
+
+New! Virtualization on a {{site.data.keyword.satelliteshort}} location
+:   You can now set up virtualization on a {{site.data.keyword.satelliteshort}} location. For more information, see [Setting up virtualization on a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-virtualization-location) tutorial.
 
 ## November 2022
 {: #satellite-nov22}

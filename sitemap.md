@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-11-29"
+lastupdated: "2022-12-01"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -157,6 +157,14 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec22)
+
+    * [1 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0122)
+
+        * New! {{site.data.keyword.satelliteshort}} storage template feature comparison
+
+        * New! Virtualization on a {{site.data.keyword.satelliteshort}} location
 
 * [November 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov22)
 
@@ -859,11 +867,11 @@ subcollection: satellite
 * [Next Steps](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-next-steps)
 
 
-## Setting up virtualization on {{site.data.keyword.cloud_notm}} Bare Metal Servers for Classic
-{: #sitemap_setting_up_virtualization_on__bare_metal_servers_for_classic}
+## Attaching bare metal hosts to a location
+{: #sitemap_attaching_bare_metal_hosts_to_a_location}
 
 
-[Setting up virtualization on {{site.data.keyword.cloud_notm}} Bare Metal Servers for Classic](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal)
+[Attaching bare metal hosts to a location](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal)
 
 * [Prerequisites](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal-prereq)
 
@@ -877,19 +885,34 @@ subcollection: satellite
 
 * [Attaching your bare metal host to the location](/docs/satellite?topic=satellite-assign-bare-metal#load-ignition-file-bare-metal)
 
-* [Assigning a {{site.data.keyword.baremetal_short_sing}} host to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal-cluster)
+* [Assigning a {{site.data.keyword.baremetal_short_sing}} host to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/satellite?topic=satellite-assign-bare-metal#assign-bare-metal-to-cluster)
 
-* [Setting up storage for your cluster](/docs/satellite?topic=satellite-assign-bare-metal#virt-cluster-storage)
 
-* [Installing the virtualization operator](/docs/satellite?topic=satellite-assign-bare-metal#virt-operator-install)
+## Setting up virtualization on a {{site.data.keyword.satelliteshort}} location
+{: #sitemap_setting_up_virtualization_on_a__location}
 
-* [Downloading the `virtctl` CLI](/docs/satellite?topic=satellite-assign-bare-metal#virt-tools)
 
-* [Creating a data volume for your virtual machine](/docs/satellite?topic=satellite-assign-bare-metal#virt-vm-storage)
+[Setting up virtualization on a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-virtualization-location#virtualization-location)
 
-* [Creating a virtual machine](/docs/satellite?topic=satellite-assign-bare-metal#virt-vm-create)
+* [Prerequisites](/docs/satellite?topic=satellite-virtualization-location#virt-bare-metal-prereq)
 
-* [Additional resources](/docs/satellite?topic=satellite-assign-bare-metal#sat-virt-additional)
+* [{{site.data.keyword.baremetal_short_sing}} requirements for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-virtualization-location#virt-setup-bare-metal)
+
+* [Attaching bare metal servers to your location](/docs/satellite?topic=satellite-virtualization-location#assign-bm-loc-virt)
+
+* [Assigning a {{site.data.keyword.baremetal_short_sing}} host to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/satellite?topic=satellite-virtualization-location#assign-bare-metal-cluster-virt)
+
+* [Setting up storage for your cluster](/docs/satellite?topic=satellite-virtualization-location#virt-cluster-storage)
+
+* [Installing the virtualization operator](/docs/satellite?topic=satellite-virtualization-location#virt-operator-install)
+
+* [Setting up the `virtctl` CLI](/docs/satellite?topic=satellite-virtualization-location#virt-tools)
+
+* [Creating a data volume for your virtual machine](/docs/satellite?topic=satellite-virtualization-location#virt-vm-storage)
+
+* [Creating a virtual machine](/docs/satellite?topic=satellite-virtualization-location#virt-vm-create)
+
+* [Additional resources](/docs/satellite?topic=satellite-virtualization-location#sat-virt-additional)
 
 
 ## Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands
@@ -1380,6 +1403,11 @@ subcollection: satellite
 
 * [Key concepts for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#satcon-terminology)
 
+
+### Setting up clusters to use with Satellite Config
+{: #sitemap_setting_up_clusters_to_use_with_satellite_config}
+
+
 [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig)
 
 * [Prerequisites](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-prereq)
@@ -1395,6 +1423,10 @@ subcollection: satellite
     * [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-scoped-project)
 
 * [Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters)
+
+[Setting up cluster groups](/docs/satellite?topic=satellite-setup-clusters-satconfig-groups#setup-clusters-satconfig-groups)
+
+[Registering clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-register-openshift-clusters#register-openshift-clusters)
 
 [Syncing subscription identity](/docs/satellite?topic=satellite-sat-sync-sub-identity#sat-sync-sub-identity)
 

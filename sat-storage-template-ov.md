@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-01"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -131,7 +131,7 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | OpenShift Data Foundation for remote storage | `odf-remote` | 4.9 | 15 | Supported |
 | OpenShift Data Foundation for remote storage | `odf-remote` | 4.10 (Default) | 9 | Supported |
 | VMware CSI Driver | `vsphere-csi-driver` | 2.5.1 (Default) | 5 | Supported |
-{: caption="Satellite storage templates" caption-side="bottom"}
+{: caption="Storage template versions" caption-side="bottom"}
 
 
 

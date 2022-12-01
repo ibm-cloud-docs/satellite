@@ -34,6 +34,7 @@ toc:
         - sat-toolchain-tutorial.md
         - odf-tutorial.md
         - assign-bare-metal.md
+        - virtualization-location.md
   - navgroup:
       id: howto
       topics:
@@ -87,7 +88,13 @@ toc:
             label: Managing apps with Satellite Config
             topics:
               - cluster-config.md
-              - setup-clusters-satconfig.md
+              - topicgroup:
+                  label: Setting up clusters to use with Satellite Config
+                  topics:
+                  - setup-clusters-satconfig.md
+                  - setup-clusters-satconfig-access.md
+                  - setup-clusters-satconfig-groups.md
+                  - register-openshift-clusters.md
               - sat-sub-identity-sync.md
               - topicgroup:
                   label: Creating and managing Satellite configurations
@@ -112,6 +119,7 @@ toc:
             label: Setting up storage
             topics: 
               - sat-storage-template-ov.md
+              - sat-storage-features.md
               - topicgroup:
                   label: AWS storage templates
                   topics:
