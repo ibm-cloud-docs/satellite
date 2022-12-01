@@ -164,6 +164,8 @@ subcollection: satellite
 
         * New! {{site.data.keyword.satelliteshort}} storage template feature comparison
 
+        * New! Virtualization on a {{site.data.keyword.satelliteshort}} location
+
 * [November 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov22)
 
     * [8 November 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov0822)
