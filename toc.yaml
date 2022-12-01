@@ -119,7 +119,7 @@ toc:
             label: Setting up storage
             topics: 
               - sat-storage-template-ov.md
-              - sat-storage-features.md
+              - storage-template-features.md
               - topicgroup:
                   label: AWS storage templates
                   topics:

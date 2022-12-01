@@ -1638,6 +1638,8 @@ subcollection: satellite
 
 * [Which storage templates are available?](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-ov-providers)
 
+[Storage template feature overview](/docs/satellite?topic=satellite-storage-template-features#storage-template-features)
+
 
 ### AWS storage templates
 {: #sitemap_aws_storage_templates}
