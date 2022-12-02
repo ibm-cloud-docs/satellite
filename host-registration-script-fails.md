@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-08-25"
+lastupdated: "2022-12-02"
 
 keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
