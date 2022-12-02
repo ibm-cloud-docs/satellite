@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022,2022
-lastupdated: "2022-12-01"
+  years: 2022, 2022,2022
+lastupdated: "2022-12-02"
 keywords: satellite storage, features, overview
 subcollection: satellite
 
