@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-23"
+lastupdated: "2022-12-05"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 # Managing Direct Upload configurations
-{: #satcon-manage}
+{: #satcon-manage-direct-upload}
 
 To create and roll out new versions of your applications, update your {{site.data.keyword.satelliteshort}} Config configurations and subscriptions. You can also use {{site.data.keyword.satelliteshort}} Config to review an inventory of all the resources that are managed by your configurations across clusters.
 {: shortdesc}
@@ -33,8 +33,21 @@ Before you begin
 {: #create-satconfig-ui}
 {: ui}
 
-Use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/configuration){: external} to create a configuration. Click **Create Config**, select the **Direct upload** template, and follow the on screen instructions to upload your YAML configuration files.
-{: shortdesc}
+To create your custom configuration, use the {{site.data.keyword.satelliteshort}} UI and follow these steps.
+
+1. Log in to the [{{site.data.keyword.satelliteshort}} Config UI](https://cloud.ibm.com/satellite/configuration){: external} with your {{site.data.keyword.cloud_notm}} credentials. 
+
+1. Click **Create config**.
+
+1. On the **Browse templates** page, select the **Direct Upload** template. 
+
+1. On the **Configuration** page, specify your configuration name and data location.
+
+1. On the **Version** page, specify your version name and description. Then upload an existing file or use the YAML editor to paste in the file content.
+
+1. On the **Subscription** page, specify your subscription name, subscription version, and cluster group to deploy to.
+
+1. On the **Summary** page, confirm that the displayed information is corect and then click **Complete**.
 
 
 

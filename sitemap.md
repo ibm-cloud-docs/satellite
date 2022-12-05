@@ -817,11 +817,11 @@ subcollection: satellite
 [Tutorial library for Satellite](https://cloud.ibm.com/docs?tab=tutorials&page=1&pageSize=20&tags=satellite){: external}
 
 
-## Deploying Kubernetes resources to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config
-{: #sitemap_deploying_kubernetes_resources_to_clusters_with__and__config}
+## Deploying apps to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config
+{: #sitemap_deploying_apps_to_clusters_with__and__config}
 
 
-[Deploying Kubernetes resources to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-sat_toolchain_tutorial#sat_toolchain_tutorial)
+[Deploying apps to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-sat_toolchain_tutorial#sat_toolchain_tutorial)
 
 * [Objectives](/docs/satellite?topic=satellite-sat_toolchain_tutorial#sat_toolchain_objectives)
 
@@ -1439,19 +1439,19 @@ subcollection: satellite
 {: #sitemap_creating_and_managing_satellite_configurations}
 
 
-[Managing Direct Upload configurations](/docs/satellite?topic=satellite-satcon-manage#satcon-manage)
+[Managing Direct Upload configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload#satcon-manage-direct-upload)
 
-* [Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage#satcon-create)
+* [Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload#satcon-create)
 
-    * [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-satcon-manage#create-satconfig-ui)
+    * [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-satcon-manage-direct-upload#create-satconfig-ui)
 
-    * [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-satcon-manage#create-satconfig-cli)
+    * [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-satcon-manage-direct-upload#create-satconfig-cli)
 
-* [Updating your {{site.data.keyword.satelliteshort}} Config configuration](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update)
+* [Updating your {{site.data.keyword.satelliteshort}} Config configuration](/docs/satellite?topic=satellite-satcon-manage-direct-upload#satcon-manage-update)
 
-    * [Updating your {{site.data.keyword.satelliteshort}} Config from the console](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update-console)
+    * [Updating your {{site.data.keyword.satelliteshort}} Config from the console](/docs/satellite?topic=satellite-satcon-manage-direct-upload#satcon-manage-update-console)
 
-    * [(TO UPDATE WITH NEW COMMANDS:) Updating your {{site.data.keyword.satelliteshort}} Config with the CLI](/docs/satellite?topic=satellite-satcon-manage#satcon-manage-update-cli)
+    * [(TO UPDATE WITH NEW COMMANDS:) Updating your {{site.data.keyword.satelliteshort}} Config with the CLI](/docs/satellite?topic=satellite-satcon-manage-direct-upload#satcon-manage-update-cli)
 
 [Removing {{site.data.keyword.satelliteshort}} Config from your cluster](/docs/satellite?topic=satellite-remove-satconfig#remove-satconfig)
 

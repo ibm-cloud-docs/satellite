@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-12-05"
 
 keywords: satellite, toolchain, satellite config, Kubernetes, cluster
 
@@ -19,7 +19,7 @@ completion-time: 30m
 
 
 
-# Deploying Kubernetes resources to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config
+# Deploying apps to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config
 {: #sat_toolchain_tutorial}
 {: toc-content-type="tutorial"}
 {: toc-services="satellite, ContinuousDelivery"}
