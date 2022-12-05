@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-12-05"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location
 
@@ -170,7 +170,7 @@ See the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic
 
 {{site.data.keyword.cloud_notm}} is built by following many data, finance, health, insurance, privacy, security, technology, and other international compliance standards. For more information, see [{{site.data.keyword.cloud_notm}} compliance](/docs/overview?topic=overview-compliance).
 
-To view detailed system requirements, you can run a [software product compatibility report for {{site.data.keyword.satellitelong_notm}}](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/softwareReqsForProduct?deliverableId=4440E450C2C811E6A98AAE81A233E762){: external}.
+To view detailed system requirements, you can run a [software product compatibility report for {{site.data.keyword.satellitelong_notm}}]((https://www.ibm.com/software/reports/compatibility/clarity/softwareReqsForProduct.html){: external}.
 
 Note that compliance also might depend on the setup of the underlying infrastructure provider that you use for the {{site.data.keyword.satelliteshort}} location control plane and other resources.
 {: important}
