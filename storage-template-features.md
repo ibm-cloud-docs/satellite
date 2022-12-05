@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022,2022
-lastupdated: "2022-12-02"
+  years: 2022,2022,2022
+lastupdated: "2022-12-05"
 keywords: satellite storage, features, overview
 subcollection: satellite
 
@@ -32,7 +32,7 @@ subcollection: satellite
 | GCP Compute Persistent Disk CSI Driver | 1.0.4 | Google | True | True | True | Zonal | False |
 | GCP Compute Persistent Disk CSI Driver | 1.7.1 | Google | True | True | True | Zonal | False |
 | GCP Compute Persistent Disk CSI Driver | 1.8.0 | Google | True | True | True | Zonal | False |
-| [Beta] IBM Object Storage Plugin. | 2.2 | IBM | 
+| IBM Object Storage Plugin. | 2.2 | IBM | 
 | IBM System Storage Block CSI driver | 1.4.0 | IBM | False | False | True | Regional | True |
 | IBM System Storage Block CSI driver | 1.5.0 | IBM | False | False | True | Regional | True |
 | [Beta] IBM VPC Block CSI driver | 4.3.0 | IBM | 

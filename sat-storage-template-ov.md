@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -101,7 +101,7 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | GCP Compute Persistent Disk CSI Driver | `gcp-compute-persistent-disk-csi-driver` | 1.0.4 | 3 | Supported |
 | GCP Compute Persistent Disk CSI Driver | `gcp-compute-persistent-disk-csi-driver` | 1.7.1 | 4 | Supported |
 | GCP Compute Persistent Disk CSI Driver | `gcp-compute-persistent-disk-csi-driver` | 1.8.0 (Default) | 1 | Supported |
-| [Beta] IBM Object Storage Plugin. | `ibm-object-storage-plugin` | 2.2 (Default) | 3 | Supported |
+| IBM Object Storage Plugin. | `ibm-object-storage-plugin` | 2.2 (Default) | 3 | Supported |
 | IBM System Storage Block CSI driver | `ibm-system-storage-block-csi-driver` | 1.4.0 | 2 | Supported |
 | IBM System Storage Block CSI driver | `ibm-system-storage-block-csi-driver` | 1.5.0 (Default) | 2 | Supported |
 | [Beta] IBM VPC Block CSI driver | `ibm-vpc-block-csi-driver` | 4.3.0 | 11 | Deprecated |
@@ -116,10 +116,10 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | Local Storage Operator - File | `local-volume-file` | 4.9 | 4 | Supported |
 | Local Storage Operator - File | `local-volume-file` | 4.10 (Default) | 4 | Supported |
 | Local Storage Operator - File | `local-volume-file` | 4.11 | 1 | Supported |
-| NetApp Ontap-NAS Driver | `netapp-ontap-nas` | 21.04 | 11 | Supported |
-| NetApp Ontap-NAS Driver | `netapp-ontap-nas` | 22.04 (Default) | 9 | Supported |
-| NetApp Ontap-SAN Driver | `netapp-ontap-san` | 21.04 | 12 | Supported |
-| NetApp Ontap-SAN Driver | `netapp-ontap-san` | 22.04 (Default) | 9 | Supported |
+| NetApp Ontap-NAS Driver | `netapp-ontap-nas` | 21.04 | 12 | Supported |
+| NetApp Ontap-NAS Driver | `netapp-ontap-nas` | 22.04 (Default) | 10 | Supported |
+| NetApp Ontap-SAN Driver | `netapp-ontap-san` | 21.04 | 13 | Supported |
+| NetApp Ontap-SAN Driver | `netapp-ontap-san` | 22.04 (Default) | 10 | Supported |
 | NetApp Trident Operator | `netapp-trident` | 21.04 | 3 | Supported |
 | NetApp Trident Operator | `netapp-trident` | 22.04 (Default) | 2 | Supported |
 | OpenShift Data Foundation for local devices | `odf-local` | 4.7 | 15 | Supported |
