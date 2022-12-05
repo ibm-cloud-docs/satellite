@@ -851,7 +851,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | Display name | CLI option | Description | Required? |
 | --- | --- | --- | --- |
 | Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. If set to `false` then you need to explicitly provide the OSD volume IDs | false | 
-| OSD volume IDs | `osd-device-path` | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs if `auto-discover-devices` is set to `false' | false | 
+| OSD volume IDs | `osd-device-path` | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs if `auto-discover-devices` is set to `false` | false | 
 | Number of OSD volumes | `num-of-osd` | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
 | Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
 | Upgrade | `odf-upgrade` | Set to `true` if you want to upgrade the ODF version. | false | 
