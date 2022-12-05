@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -159,6 +159,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec22)
+
+    * [5 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0522)
+
+        * New! Production support for the {{site.data.keyword.cos_full_notm}} CSI driver template
 
     * [1 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0122)
 
