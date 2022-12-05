@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-12-05"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -779,7 +779,7 @@ Use the console to remove a storage configuration.
 | Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
 | Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
 | Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
 | File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
 {: caption="Table 3. 4.9 parameter reference" caption-side="bottom"}
 
@@ -792,7 +792,7 @@ Use the console to remove a storage configuration.
 | Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
 | Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
 | Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
 | File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
 {: caption="Table 4. 4.10 parameter reference" caption-side="bottom"}
 
@@ -805,7 +805,7 @@ Use the console to remove a storage configuration.
 | Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
 | Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
 | Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
 | File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
 {: caption="Table 5. 4.11 parameter reference" caption-side="bottom"}
 

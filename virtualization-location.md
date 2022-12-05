@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -62,7 +62,7 @@ If your servers do not meet these requirements, follow the steps to [create a {{
 {: #assign-bm-loc-virt}
 {: step}
 
-Follow these general steps to attach your bare metal servers to your location. These steps might vary, depending on your specific hardware. For a complete tutorial, see [Attaching {{site.data.keyword.cloud_notm}} Bare Metal Servers for Classic hosts](docs/satellite?topic=satellite-assign-bare-metal). 
+Follow these general steps to attach your bare metal servers to your location. These steps might vary, depending on your specific hardware. For a complete tutorial, see [Attaching {{site.data.keyword.cloud_notm}} Bare Metal Servers for Classic hosts](/docs/satellite?topic=satellite-assign-bare-metal). 
 
 1. [Download a Red Hat CoreOS ISO](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}. Find the corresponding ISO version that matches the {{site.data.keyword.redhat_openshift_notm}} version that you want to use. For example, if you want to use version 4.11, [download a version of RHCOS for 4.11](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/4.11/){: external}, such as `rhcos-4.11.9-x86_64-live.x86_64.iso`.
 2. Log in to your bare metal server.
@@ -78,7 +78,7 @@ Follow these general steps to attach your bare metal servers to your location. T
     {: pre}
     
 9. Edit your ignition file to include the bare metal host name and network information. For more information about adding these details, see [Configuring your ignition file](/docs/satellite?topic=satellite-assign-bare-metal#config-ignition). Note that you must edit the ignition file for each bare metal server that you want to attach to your location.
-10. Put your ignition file in a location that your bare metal server can reach. For example, you can upload it to a {{site.data.keyword.cos_full_notm}} bucket.
+10. Put your ignition file in a location that your bare metal server can reach. For example, you can upload it to an {{site.data.keyword.cos_full_notm}} bucket.
 11. Download the ignition script to your bare metal server.
 
     ```sh

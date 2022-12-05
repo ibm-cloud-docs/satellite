@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-01"
+lastupdated: "2022-12-05"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -24,7 +24,7 @@ completion-time: 2hr
 {: toc-services="satellite"}
 {: toc-completion-time="2hr"}
 
-You can attach bare metal hosts to your {{site.data.keyword.satelliteshort}} location. After your hosts are attached, you can [set up  {{site.data.keyword.redhat_openshift_notm}} virtualization](docs/satellite?topic=satellite-virtualization-location) in your {{site.data.keyword.satelliteshort}} location. By using virtualization, you can provision Windows or other virtual machines on your {{site.data.keyword.baremetal_short}} in a managed {{site.data.keyword.redhat_openshift_notm}} space. 
+You can attach bare metal hosts to your {{site.data.keyword.satelliteshort}} location. After your hosts are attached, you can [set up  {{site.data.keyword.redhat_openshift_notm}} virtualization](/docs/satellite?topic=satellite-virtualization-location) in your {{site.data.keyword.satelliteshort}} location. By using virtualization, you can provision Windows or other virtual machines on your {{site.data.keyword.baremetal_short}} in a managed {{site.data.keyword.redhat_openshift_notm}} space. 
 {: shortdesc}
 
 Supported host operating systems
@@ -70,7 +70,7 @@ If your servers do not meet these requirements, follow the steps to [create a {{
 {: #boot-bare-metal}
 {: step}
 
-For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a browser that supports Java for classic. You can use the Safari browser on your local system or [download a Java version](https://www.java.com/en/download/){: external} that supports `javaws`.
+For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a browser that supports Java for classic. You can use the Safari browser on your local system or [download a Java version](https://www.java.com/download/){: external} that supports `javaws`.
 {: note}
 
 1. [Download a Red Hat CoreOS ISO](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}. Find the corresponding ISO version that matches the {{site.data.keyword.redhat_openshift_notm}} version that you want to use. For example, if you want to use version 4.11, [download a version of RHCOS for 4.11](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/4.11/){: external} like `rhcos-4.11.9-x86_64-live.x86_64.iso`.
@@ -415,7 +415,7 @@ After your {{site.data.keyword.baremetal_short_sing}} is attached to your locati
 Repeat this tutorial to attach more {{site.data.keyword.baremetal_short}} to your location and cluster.
 {: tip}
 
-Now that your {{site.data.keyword.baremetal_short_sing}} is assigned to a worker pool, you can [set up {{site.data.keyword.redhat_openshift_notm}} virtualization](docs/satellite?topic=satellite-virtualization-location).
+Now that your {{site.data.keyword.baremetal_short_sing}} is assigned to a worker pool, you can [set up {{site.data.keyword.redhat_openshift_notm}} virtualization](/docs/satellite?topic=satellite-virtualization-location).
 
 
 

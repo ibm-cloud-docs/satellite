@@ -99,7 +99,7 @@ toc:
               - topicgroup:
                   label: Creating and managing Satellite configurations
                   topics:
-                    - satcon-manage.md
+                    - satcon-manage-direct-upload.md
               - remove-satconfig.md
               - satcon-resources.md
         - topicgroup:
