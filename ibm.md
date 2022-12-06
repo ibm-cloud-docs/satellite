@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-12-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -39,20 +39,20 @@ All hosts that you want to add must meet the general host requirements, such as 
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 
-1. Follow the steps to create a [classic public virtual server](/docs/virtual-servers?topic=virtual-servers-ordering-vs-public) or a virtual server instance in a [VPC](/docs/vpc?topic=vpc-creating-virtual-servers). Make sure that you select a supported RHEL 7 or 8 operating system or a supported Red Hat CoreOS image, configure the machine with at least 4 CPU and 16 RAM, and add a boot disk with a size of at least 100 GB. 
+1. Follow the steps to create a [classic public virtual server](/docs/virtual-servers?topic=virtual-servers-ordering-vs-public) or a virtual server instance in a [VPC](/docs/vpc?topic=vpc-creating-virtual-servers). Make sure that you select a supported RHEL 7 or 8 operating system or a supported Red Hat CoreOS (RHCOS) image, configure the machine with at least 4 CPU and 16 RAM, and add a boot disk with a size of at least 100 GB. 
 1. Wait for your virtual server instance to be provisioned.
-1. Get the registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location. Note that the token in the script is an API key, which should be treated and protected as sensitive information. Make a note of the location of the attach script. Also note that for RHEL-based hosts, the attach script is a Shell script and for CoreOS hosts, the attach script is a CoreOS ignition file.
+1. Get the registration script to attach hosts to your {{site.data.keyword.satellitelong_notm}} location. Note that the token in the script is an API key, which should be treated and protected as sensitive information. Make a note of the location of the attach script. Also note that for RHEL-based hosts, the attach script is a Shell script and for RHCOS hosts, the attach script is a RHCOS ignition file.
     ```sh
     ibmcloud sat host attach --location <location_name_or_ID>
     ```
     {: pre}
 
-    * **CoreOS hosts only**: 
+    * **Red Hat CoreOS hosts only**: 
         1. [Download the Red Hat CoreOS image](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external} that you want to use.
         1. You can use {{site.data.keyword.cos_full_notm}} to store your custom image. If you don't already have an instance, [create one](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service) and create at least one bucket.
         
-        1. [Upload the Red Hat CoreOS image](/docs/cloud-object-storage?topic=cloud-object-storage-upload) that you downloaded earlier to a bucket in your {{site.data.keyword.cos_short}} instance.
-            You can use the Minio command line client to copy your image from a directory on your local machine to your bucket. First, [create a set of HMAC service credentials](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials) and make a note of the `access_key_id` and `secret_access_key`. Then, install the [Minio client](/docs/cloud-object-storage?topic=cloud-object-storage-minio){: external} and configure it to use your credentials.
+        1. [Upload the RHCOS image](/docs/cloud-object-storage?topic=cloud-object-storage-upload) that you downloaded earlier to a bucket in your {{site.data.keyword.cos_short}} instance.
+            You can use the Minio command-line client to copy your image from a directory on your local machine to your bucket. First, [create a set of HMAC service credentials](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials) and make a note of the `access_key_id` and `secret_access_key`. Then, install the [Minio client](/docs/cloud-object-storage?topic=cloud-object-storage-minio){: external} and configure it to use your credentials.
             {: tip}
             
         1. [Grant access to {{site.data.keyword.cos_short}} to import images](/docs/vpc?topic=vpc-object-storage-prereq&interface=cli).
@@ -156,10 +156,20 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
             ```
             {: pre}
     
-            RHEL 8:
+            RHEL 8 classic:
             ```sh
             subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
             subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms
+            ```
+            {: pre}
+            
+            RHEL 8 VPC:
+            ```sh
+            subscription-manager release --set=8
+            subscription-manager repos --enable rhel-8-for-x86_64-baseos-rpms 
+            subscription-manager repos --enable rhel-8-for-x86_64-appstream-rpms
+            subscription-manager repos --disable='*eus*'
+            yum install container-selinux -y
             ```
             {: pre}
 
