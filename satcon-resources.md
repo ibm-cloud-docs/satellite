@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-22"
+lastupdated: "2022-12-06"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -31,13 +31,13 @@ Review the [Watch-keeper collection methods](https://github.com/razee-io/WatchKe
 1. [Add a ConfigMap](https://github.com/razee-io/WatchKeeper#watch-by-resource){: external} to the YAML file of your {{site.data.keyword.satelliteshort}} configuration version. 
 2. In the `metadata.namespace` field of the ConfigMap, set the value to `razeedeploy`.
 3. In the `data` section of the ConfigMap, add all the resources that you want {{site.data.keyword.satelliteshort}} Config to watch.
-4. Subscribe your clusters to this version from the [console](/docs/satellite?topic=satellite-satcon-manage#create-satconfig-ui) or [CLI](/docs/satellite?topic=satellite-satcon-manage#create-satconfig-cli).
+4. Subscribe your clusters to this version from the [console](/docs/satellite?topic=satellite-satcon-manage-direct-upload) or [CLI](/docs/satellite?topic=satellite-satcon-manage-direct-upload&interface=cli).
 
 ### Watch a particular resource in my {{site.data.keyword.satelliteshort}} Config version
 {: #satconfig-enable-watchkeeper-specific}
 
 1. In the `metadata.labels` field of the Kubernetes resource in your {{site.data.keyword.satelliteshort}} Config version, set the value to `razee/watch-resource=lite`.
-2. Subscribe your clusters to this version from the [console](/docs/satellite?topic=satellite-satcon-manage#create-satconfig-ui) or [CLI](/docs/satellite?topic=satellite-satcon-manage#create-satconfig-cli).
+2. Subscribe your clusters to this version from the [console](/docs/satellite?topic=satellite-satcon-manage-direct-upload) or [CLI](/docs/satellite?topic=satellite-satcon-manage-direct-upload&interface=cli).
 
 ### Watch a particular resource that I label in my cluster
 {: #satconfig-enable-watchkeeper-label}

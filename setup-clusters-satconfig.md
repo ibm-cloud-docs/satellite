@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-06"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -169,7 +169,7 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
 You can also register your non-{{site.data.keyword.satelliteshort}} clusters with {{site.data.keyword.satelliteshort}} Config. Follow the steps to run the registration script in your {{site.data.keyword.openshiftlong_notm}} cluster to set up the {{site.data.keyword.satelliteshort}} Config components and make the cluster visible in {{site.data.keyword.satelliteshort}}. 
 {: shortdesc}
 
-After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
+After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
 {: note}
 
 1. Find the cluster that you want to attach to your location. To list available clusters, run `ibmcloud oc cluster ls` or go to the [{{site.data.keyword.redhat_openshift_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
