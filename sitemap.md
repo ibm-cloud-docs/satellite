@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-06"
+lastupdated: "2022-12-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1708,8 +1708,6 @@ subcollection: satellite
 * [Upgrading an AWS EFS storage configuration](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-upgrade-config)
 
 * [Upgrading an AWS EFS storage assignment](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-upgrade-assignment)
-
-* [Updating an AWS EFS storage assignment](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-update-assignment)
 
 * [Removing AWS EFS storage from your apps](/docs/satellite?topic=satellite-config-storage-efs#aws-efs-rm)
 

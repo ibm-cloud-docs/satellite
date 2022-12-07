@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-06"
+lastupdated: "2022-12-07"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -410,7 +410,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
 
 ## Scaling up your ODF configuration
 {: #sat-storage-odf-remote-scale-config}
-{: cli}
+
 
 To scale your ODF configuration by adding disks to your worker nodes, increase the `num-of-osd` parameter value. 
 
@@ -421,7 +421,7 @@ ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --a
 
 ## Upgrading your ODF configuration
 {: #sat-storage-odf-remote-upgrade-config}
-{: cli}
+
 
 
 To upgrade the ODF version of your configuration, complete the following steps:
@@ -479,7 +479,7 @@ To upgrade the ODF version of your configuration, complete the following steps:
 
 ### Removing the ODF remote storage assignment from the command line
 {: #odf-remote-template-rm-cli}
-{: cli}
+
 
 Use the command line to remove a storage assignment.
 {: shortdesc}

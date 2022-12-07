@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-05"
+lastupdated: "2022-12-07"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -443,7 +443,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 ## Deploying an app that uses OpenShift Data Foundation
 {: #sat-storage-odf-local-deploy}
-{: cli}
+
 
 You can use the ODF storage classes to create PVCs for the apps in your clusters.
 {: shortdesc}
@@ -555,7 +555,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
 
 ## Scaling your ODF configuration by attaching raw disks
 {: #sat-storage-scale-odf-local-disk}
-{: cli}
+
 
 To scale your ODF configuration by adding disks to your worker nodes, increase the `num-of-osd` parameter value and specify the new worker node names with the `worker-nodes` parameter.
 
@@ -587,7 +587,7 @@ In the following example, 3 worker nodes are added to the configuration that was
 
 ### Scaling your ODF configuration with `auto-discover-devices`
 {: #sat-storage-scale-odf-local-auto-discover}
-{: cli}
+
 
 If you set the `auto-discover-devices` parameter to `true` in your ODF configuration, you can scale your configuration by increasing the `num-of-osd` parameter value in the following command.
 
@@ -599,7 +599,7 @@ ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --a
 
 ## Upgrading your ODF version
 {: #odf-local-upgrade}
-{: cli}
+
 
 To upgrade the ODF version of your configuration, delete your existing assignment and create a new configuration with the newer version. When you create the new configuration, you can set the `odf-upgrade` parameter to `true` to upgrade the installed version of ODF when the new configuration is assigned.
 {: shortdesc}
@@ -672,7 +672,7 @@ In the following example, the ODF configuration is updated to use template versi
 
 ## Removing OpenShift Data Foundation from your apps
 {: #odf-local-rm}
-{: cli}
+
 
 If you no longer need your OpenShift Data Foundation, you can remove your PVC, PV, and the ODF operator from your clusters.
 {: shortdesc}
@@ -733,7 +733,7 @@ If you no longer need your OpenShift Data Foundation, you can remove your PVC, P
 
 ## Removing the ODF local storage configuration from your cluster
 {: #odf-local-template-rm}
-{: cli}
+
 
 If you no longer plan to use OpenShift Data Foundation in your cluster, you can remove the assignment from your cluster from the storage configuration.
 {: shortdesc}

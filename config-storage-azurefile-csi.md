@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-12-07"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -266,7 +266,7 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 ## Deploying an app that uses your Azure File storage
 {: #storage-azure-file-csi-app-deploy}
-{: cli}
+
 
 You can use the Azure File driver to create PVCs that you can use in your cluster workloads.
 {: shortdesc}
@@ -399,7 +399,7 @@ You can use the Azure File driver to create PVCs that you can use in your cluste
 
 ## Upgrading an Azure File storage configuration
 {: #azure-file-upgrade-config}
-{: cli}
+
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -417,7 +417,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 
 ## Upgrading an Azure File storage assignment
 {: #azure-file-upgrade-assignment}
-{: cli}
+
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -441,7 +441,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 
 ## Updating an Azure File storage assignment
 {: #azure-file-update-assignment}
-{: cli}
+
 
 You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
 
