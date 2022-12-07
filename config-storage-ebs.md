@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-17"
+lastupdated: "2022-12-07"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -195,7 +195,7 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 
 ## Deploying an app that uses AWS EBS storage
 {: #sat-storage-ebs-deploy}
-{: cli}
+
 
 You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for the apps in your clusters.
 {: shortdesc}
@@ -351,7 +351,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
 
 ## Removing AWS EBS storage from your apps
 {: #aws-ebs-rm}
-{: cli}
+
 
 If you no longer need your AWS EBS instance, you can remove your PVC, PV, and the AWS EBS instance in your AWS account.
 {: shortdesc}
@@ -417,7 +417,7 @@ Removing your AWS EBS instance permanently removes all the data that is stored o
 
 ## Upgrading an AWS EBS storage configuration
 {: #aws-ebs-upgrade-config}
-{: cli}
+
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -435,7 +435,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 
 ## Upgrading an AWS EBS storage assignment
 {: #aws-ebs-upgrade-assignment}
-{: cli}
+
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -459,7 +459,7 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 
 ## Updating an AWS EBS storage assignment
 {: #aws-ebs-update-assignment}
-{: cli}
+
 
 You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
 

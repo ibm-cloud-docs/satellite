@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-17"
+lastupdated: "2022-12-07"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -236,7 +236,7 @@ You can't add storage classes to {{site.data.keyword.satelliteshort}} storage co
 
 ## Deploying an app that uses AWS EFS storage
 {: #sat-storage-efs-deploy}
-{: cli}
+
 
 You can use the `efs-csi-driver` to statically provision AWS EFS storage for the apps in your clusters.
 {: shortdesc}
@@ -396,7 +396,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
 
 ## Upgrading an AWS EFS storage configuration
 {: #aws-efs-upgrade-config}
-{: cli}
+
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
 
@@ -414,7 +414,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 
 ## Upgrading an AWS EFS storage assignment
 {: #aws-efs-upgrade-assignment}
-{: cli}
+
 
 You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
 
@@ -436,13 +436,11 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ```
     {: pre}
 
-## Updating an AWS EFS storage assignment
-{: #aws-efs-update-assignment}
-{: cli}
+
 
 ## Removing AWS EFS storage from your apps
 {: #aws-efs-rm}
-{: cli}
+
 
 If you no longer need your AWS EFS instance, you can remove your PVC, PV, and the AWS EFS instance in your AWS account.
 {: shortdesc}
