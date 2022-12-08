@@ -108,6 +108,7 @@ toc:
               - link-location-cloud.md
               - default-link-endpoints.md
               - link-cloud-create.md
+              - link-endpoint-secure.md
               - link-cloud-monitor.md
         - topicgroup:
             label: Logging and monitoring
@@ -244,6 +245,7 @@ toc:
                     - ts-degraded-ingress.md
                     - ts-sat-ocp-console.md
                     - ts-cluster-ocdebug.md
+                    - ts-link-endpoint-secure.md
               - topicgroup:
                   label: Storage
                   topics:

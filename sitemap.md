@@ -1546,6 +1546,8 @@ subcollection: satellite
 
 * [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-cloud-create#enable_disable_endpoint)
 
+[Accessing your {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoints](/docs/satellite?topic=satellite-link-endpoint-secure#link-endpoint-secure)
+
 [Auditing, logging, and monitoring {{site.data.keyword.satelliteshort}} Link endpoints](/docs/satellite?topic=satellite-link-cloud-monitor#link-cloud-monitor)
 
 * [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-cloud-monitor#link-audit)
@@ -3146,6 +3148,8 @@ subcollection: satellite
 [Why can't I access the {{site.data.keyword.redhat_openshift_notm}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console#ts-sat-ocp-console)
 
 [Why can't I log in to my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug#ts-cluster-ocdebug)
+
+[Why can't I connect to my {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoint?](/docs/satellite?topic=satellite-ts-link-endpoint-secure#ts-link-endpoint-secure)
 
 
 ### Storage
