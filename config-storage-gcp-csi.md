@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-12-08"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -201,7 +201,6 @@ Before you begin, review and complete the [prerequisites](#sat-storage-gcp-csi-p
 
 ## Deploying an app that uses Google Compute Engine persistent disk
 {: #sat-storage-gcp-deploy-app}
-{: cli}
 
 You can use the `gce-pd-csi-driver` to create PVCs that you can use in your cluster workloads.
 {: shortdesc}
@@ -375,9 +374,30 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 {: #gcp-update-assignment}
 {: cli}
 
+You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to update and the clusters or cluster groups included in the assignment.
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. Update the {{site.data.keyword.satelliteshort}} assignment. 
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
+    ```
+    {: pre}
+
+    Example command to update assignment name and assign different cluster groups.
+    
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT --name new-name --group group-1 --group group-2 --group group-3
+    ```
+    {: pre}
+
 ## Removing Compute Engine storage from your apps
 {: #gcp-rm-apps}
-{: cli}
+
 
 If you no longer need your Google Compute Engine configuration, you can remove your apps, PVCs, PVs, and assignment from your clusters.
 {: shortdesc}

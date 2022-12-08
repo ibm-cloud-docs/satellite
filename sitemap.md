@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-08"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1876,9 +1876,13 @@ subcollection: satellite
 
 * [Assigning your {{site.data.keyword.IBM_notm}} block storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi)
 
+    * [Assigning a block storage configuration in the console](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-ui)
+
     * [Assigning a block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-cli)
 
 * [Deploying an app that uses your {{site.data.keyword.IBM_notm}} block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
+
+* [{{site.data.keyword.IBM_notm}} block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-ibm-block-csi-params-cli)
 
 [{{site.data.keyword.cos_full_notm}} CSI Driver](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos)
 

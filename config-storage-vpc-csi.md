@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-30"
+lastupdated: "2022-12-08"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -215,7 +215,7 @@ Note, there is currently an issue with autofill in some browsers. If you don't s
 
 ## Deploying an app that uses {{site.data.keyword.block_storage_is_short}}
 {: #sat-storage-vpc-deploy-app}
-{: cli}
+
 
 You can use the `ibm-vpc-block-csi-driver` to create PVCs that you can use in your cluster workloads.
 {: shortdesc}

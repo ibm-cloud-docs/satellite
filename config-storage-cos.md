@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-05"
+lastupdated: "2022-12-08"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -191,7 +191,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 ## Deploying an app that uses your {{site.data.keyword.cos_full_notm}} configuration
 {: #config-storage-cos-app}
-{: cli} 
+
 
 You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your cluster workloads.
 {: shortdesc}
