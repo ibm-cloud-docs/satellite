@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-12-08"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -104,9 +104,29 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 
 
+### Assigning a block storage configuration in the console
+{: #assign-storage-block-csi-ui}
+{: ui}
+
+
+1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
+1. Select the location where you want to create a storage configuration.
+1. Click the **Configurations** tab and click the storage configuration that you want to assign to a cluster group.
+1. On the **Configuration details** page, click **Create subscription**.
+1. In the **Create a subscription** pane, enter a name for your subscription. When you create a subscription you assign your storage configuration to your clusters.
+1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
+1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
+1. Click **Create** to create the subscription.
+1. Verify that your storage configuration is deployed to your cluster. 
+    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to the **Configurations** tab.
+    1. Click the storage configuration that you created and review the **Subscriptions** tab.
+    1. Click the **Subscription** that you created and review the **Rollout status** for your configuration.
+
+
 
 ### Assigning a block storage configuration in the command line
 {: #assign-storage-block-csi-cli}
+{: cli}
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -331,6 +351,26 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
         exit
         ```
         {: pre}
+
+
+
+
+## {{site.data.keyword.IBM_notm}} block storage configuration parameter reference
+{: #sat-storage-ibm-block-csi-params-cli}
+
+
+| Parameter | Required? | Description | Default value if not provided |
+| --- | --- | --- | --- |
+| `namespace` | Optional | The namespace where you want to create the deployment. | `default` |
+| `sc-name` | Required | The name of the storage class name that is created. | N/A |
+| `space-efficiency` | Optional | The space efficiency of the volume that is created. | N/A |
+| `pool` | Required | The name of an existing pool on the storage system where you want to create the volume. | N/A |
+| `secret-name` | Required | The name of your existing Kubernetes secret. | N/A |
+| `secret-namespace` | Required | The namespace that your Kubernetes secret is in. Your secret can be in a separate namespace from your deployment. | N/A |
+| `fstype` | Optional | The file system type. | `ext4` |
+| `prefix` | Optional | The prefix name of the volume that is created. | N/A |
+| `VolumeExpansion` | Optional | Specify `true` to allow volume expansion or `false` to disallow volume expansion. | `false` |
+{: caption="Table 1. {{site.data.keyword.IBM_notm}} block storage parameter reference." caption-side="bottom"}
 
 
 

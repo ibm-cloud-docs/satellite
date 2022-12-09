@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-08"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1546,6 +1546,8 @@ subcollection: satellite
 
 * [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-cloud-create#enable_disable_endpoint)
 
+[Accessing your {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoints](/docs/satellite?topic=satellite-link-endpoint-secure#link-endpoint-secure)
+
 [Auditing, logging, and monitoring {{site.data.keyword.satelliteshort}} Link endpoints](/docs/satellite?topic=satellite-link-cloud-monitor#link-cloud-monitor)
 
 * [Auditing events for endpoint actions](/docs/satellite?topic=satellite-link-cloud-monitor#link-audit)
@@ -1876,9 +1878,13 @@ subcollection: satellite
 
 * [Assigning your {{site.data.keyword.IBM_notm}} block storage configuration to a cluster](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi)
 
+    * [Assigning a block storage configuration in the console](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-ui)
+
     * [Assigning a block storage configuration in the command line](/docs/satellite?topic=satellite-config-storage-block-csi#assign-storage-block-csi-cli)
 
 * [Deploying an app that uses your {{site.data.keyword.IBM_notm}} block storage](/docs/satellite?topic=satellite-config-storage-block-csi#storage-block-csi-app-deploy)
+
+* [{{site.data.keyword.IBM_notm}} block storage configuration parameter reference](/docs/satellite?topic=satellite-config-storage-block-csi#sat-storage-ibm-block-csi-params-cli)
 
 [{{site.data.keyword.cos_full_notm}} CSI Driver](/docs/satellite?topic=satellite-config-storage-cos#config-storage-cos)
 
@@ -3142,6 +3148,8 @@ subcollection: satellite
 [Why can't I access the {{site.data.keyword.redhat_openshift_notm}} web console?](/docs/satellite?topic=satellite-ts-sat-ocp-console#ts-sat-ocp-console)
 
 [Why can't I log in to my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug#ts-cluster-ocdebug)
+
+[Why can't I connect to my {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoint?](/docs/satellite?topic=satellite-ts-link-endpoint-secure#ts-link-endpoint-secure)
 
 
 ### Storage

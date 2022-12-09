@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-16"
+lastupdated: "2022-12-08"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -211,7 +211,6 @@ Create a storage configuration in the command line by using the VMware configura
 
 ## Deploying an app that uses VMware
 {: #sat-storage-vmware-deploy-app}
-{: cli}
 
 You can use the `vmware-csi-driver` to create PVCs that you can use in your cluster workloads.
 {: shortdesc}

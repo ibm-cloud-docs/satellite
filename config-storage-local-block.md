@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-05"
+lastupdated: "2022-12-08"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -362,7 +362,7 @@ After you [create a local block storage configuration](#config-storage-local-blo
 
 ## Deploying an app that uses your local block storage
 {: #deploy-app-local-block}
-{: cli}
+
 
 After you create a local block storage configuration and assign it to your clusters, you can then create an app that uses your local block storage.
 {: shortdesc}
@@ -547,6 +547,27 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
 ## Updating a local block storage assignment
 {: #sat-storage-local-block-update-assignment}
 {: cli}
+
+You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to update and the clusters or cluster groups included in the assignment.
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. Update the {{site.data.keyword.satelliteshort}} assignment. 
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
+    ```
+    {: pre}
+
+    Example command to update assignment name and assign different cluster groups.
+    
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT --name new-name --group group-1 --group group-2 --group group-3
+    ```
+    {: pre}
 
 ## Removing the local block storage configuration from your cluster
 {: #sat-storage-remove-local-block-config}
