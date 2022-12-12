@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-06"
+lastupdated: "2022-12-12"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -32,35 +32,6 @@ You do not need to configure access if you already gave {{site.data.keyword.sate
 
 *  If you have {{site.data.keyword.openshiftlong_notm}} clusters that run in {{site.data.keyword.cloud_notm}} (not your {{site.data.keyword.satelliteshort}} location), [register the clusters](#register-openshift-clusters).
 *  Make sure that you have the following permissions in {{site.data.keyword.cloud_notm}} IAM. For more information, see [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
-
-## Setting up cluster groups
-{: #setup-clusters-satconfig-groups}
-
-Create a cluster group. The cluster group specifies all clusters that you want to include into the deployment of your Kubernetes resources. The clusters can run in your {{site.data.keyword.satelliteshort}} location or in {{site.data.keyword.cloud_notm}}.
-{: shortdesc}
-
-For example, create a cluster group from the console.
-
-1. From the [{{site.data.keyword.satelliteshort}} cluster dashboard](https://cloud.ibm.com/satellite/clusters){: external}, switch to the **Cluster group** tab and click **Create cluster group**.
-2. Enter a name for your cluster group and click **Create**.
-3. Go to the **Clusters** tab and find the clusters that you want to add to your cluster group.
-4. From the actions menu, click **Add to group** and choose the name of the cluster group where you want to add the cluster.
-
-Create a cluster group with the CLI.
-
-```sh
-ibmcloud sat group create --name <cluster_group_name>
-```
-{: pre}
-
-Example output
-
-```sh
-Creating cluster group...
-OK
-Created cluster group 'mygroup' with ID '6492111d-3211-4ed2-8f2e-4b99907476a9'.
-```
-{: screen}
 
 ## Granting {{site.data.keyword.satelliteshort}} Config access to your clusters
 {: #setup-clusters-satconfig-access}
@@ -162,54 +133,5 @@ Create custom RBAC policies to grant {{site.data.keyword.satelliteshort}} Config
     | `--role=razee-editor` | The name of the role that you previously created, such as `razee-editor`. |
     | `--serviceaccount=razeedeploy:razee-editor` | The name of one of the service accounts that the {{site.data.keyword.satelliteshort}} Config components are set up by default to use, either `razeedeploy:razee-viewer` or `razeedeploy:razee-editor`. | 
     {: caption="Understanding this command's components" caption-side="bottom"}
-
-## Registering existing {{site.data.keyword.redhat_openshift_notm}} clusters with {{site.data.keyword.satelliteshort}} Config
-{: #register-openshift-clusters}
-
-You can also register your non-{{site.data.keyword.satelliteshort}} clusters with {{site.data.keyword.satelliteshort}} Config. Follow the steps to run the registration script in your {{site.data.keyword.openshiftlong_notm}} cluster to set up the {{site.data.keyword.satelliteshort}} Config components and make the cluster visible in {{site.data.keyword.satelliteshort}}. 
-{: shortdesc}
-
-After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
-{: note}
-
-1. Find the cluster that you want to attach to your location. To list available clusters, run `ibmcloud oc cluster ls` or go to the [{{site.data.keyword.redhat_openshift_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
-2. From the {{site.data.keyword.satelliteshort}} [**Clusters**](https://cloud.ibm.com/satellite/clusters){: external} dashboard, click **Register cluster**.
-3. Enter the name of your cluster and click **Register cluster**. Registering a cluster creates an entry in the {{site.data.keyword.satelliteshort}} Config ConfigMap. However, your cluster cannot be subscribed to a {{site.data.keyword.satelliteshort}} configuration until you install the {{site.data.keyword.satelliteshort}} Config agent in your cluster.
-4. Copy the command that is displayed to you.
-5. [Log in to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster) and run the command in your cluster. The command creates the `razeedeploy` project, custom resource definitions and RBAC policies on your cluster that are required to make your cluster visible to {{site.data.keyword.satelliteshort}} Config.
-
-    Example output
-    ```sh
-    namespace/razeedeploy created
-    serviceaccount/razeedeploy-sa created
-    clusterrole.rbac.authorization.k8s.io/razeedeploy-admin-cr created
-    clusterrolebinding.rbac.authorization.k8s.io/razeedeploy-rb created
-    job.batch/razeedeploy-job created
-    ```
-    {: screen}
-
-6. Verify that all pods in the `razeedeploy` project are in a **Running** state.
-
-    ```sh
-    oc get pods -n razeedeploy
-    ```
-    {: pre}
-
-    Example output 
-    ```sh
-    NAME                                                  READY     STATUS      RESTARTS   AGE
-    clustersubscription-c9cfb6f8b-7p5sw            1/1     Running     0          41m
-    encryptedresource-controller-5c68f9746-vhdsk   1/1     Running     0          41m
-    mustachetemplate-controller-5f9b554f69-f22v5   1/1     Running     0          41m
-    razeedeploy-job-2wbd7                          0/1     Completed   0          47m
-    remoteresource-controller-56bbfd6db6-mpngf     1/1     Running     0          41m
-    watch-keeper-5d4dd9f56b-bt6jz                  1/1     Running     0          3m41s
-    ```
-    {: screen}
-
-7. Verify that your cluster shows on the {{site.data.keyword.satelliteshort}} [**Clusters**](https://cloud.ibm.com/satellite/clusters){: external} dashboard.
-
-8. Optional: Click on your cluster to view the Kubernetes resources that are deployed to the cluster.
-  
 
 
