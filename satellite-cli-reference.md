@@ -41,6 +41,7 @@ The following tables list the `ibmcloud sat` command groups. For a complete list
 | [Service commands](#sat-service-commands)| View Satellite service clusters. |
 | [Storage commands](#sat-storage-commands)| View and manage Satellite storage resources. |
 | [Subscription commands](#sat-config-subscription-commands)| View and manage Satellite subscriptions to deploy Kubernetes configuration files to your clusters. |
+{: caption="Satellite commands." caption-side="bottom"}
 
 
 ## Cluster commands
