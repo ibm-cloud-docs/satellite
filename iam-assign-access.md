@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-12-13"
 
 keywords: satellite, hybrid, multicloud, assign access, access for satellite
 
@@ -182,7 +182,7 @@ Before you complete a task, you might want to check that you have the appropriat
 ### Checking IAM platform and service access roles from the CLI
 {: #checking-iam-cli}
 
-1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` flag.
+1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated ID, include the `--sso` option.
     ```sh
     ibmcloud login -r [--sso]
     ```
