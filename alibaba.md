@@ -165,13 +165,13 @@ The {{site.data.keyword.satelliteshort}} control plane manages the clusters and 
 As described in the [host networking requirements](/docs/satellite?topic=satellite-reqs-host-network), your Alibaba hosts must have access to connect to {{site.data.keyword.satellitelong_notm}}. If you use hosts in a virtual private cloud (VPC), you can create a security group similar to the following example. You can get the owner, group, user, and VPC IDs from your Alibaba provider resources.
 {: shortdesc}
 
-Example security group for Alibaba
+
 
 |Action|Priority|Protocol Type|Port Range|Authorization Object|
 |------|-----|------|-----|-----|
 | Allow |	1 | Custom TCP | Destination `30000/32767` | Source `0.0.0.0/0` |
 | Allow |	1 | Custom TCP | Destination `443/443` | Source `0.0.0.0/0` |
-
+{: caption="Example security group for Alibaba" caption-side="bottom"}
 
 In addition to these inbound rules, you must allow all outbound connectivity to all ports and IP addresses.
 {: note}
