@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-12-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -36,7 +36,6 @@ Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}
 | Europe | United Kingdom | London | `lon` | `eu-gb`|`eu-gb-1`  \n `eu-gb-2`  \n `eu-gb-3`|
 | South America | Brazil | Sao Paulo | `sao` | `br-sao` | `br-sao-1`  \n `br-sao-2`  \n `br-sao-3` |
 {: caption="Supported {{site.data.keyword.cloud_notm}} locations to manage your {{site.data.keyword.satelliteshort}} location." caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column is the geography. The second column is the country. The third column is the multizone metro. The fourth column is the region. The fifth column has the possible zones."}
 
 ## About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}
 {: #understand-supported-regions}

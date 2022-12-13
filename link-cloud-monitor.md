@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-03"
+lastupdated: "2022-12-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -79,7 +79,6 @@ Before you begin, install a packet capture tool, such as [`tcpdump`](https://www
     | `port <endpoint_port>` | The port that was assigned by {{site.data.keyword.satelliteshort}} Link to your endpoint. | 
     | `-n` | Include this option if you do not want the IP addresses and port numbers in the output to be converted to DNS host names. | 
     | `-w <filename>` | Include this option to print the output of the packet capture into a `.pcap` file. | 
-    {: summary="This table is read from left to right. The first column has the API component. The second column has the description of the component."}
     {: caption="Table 1. Understanding the API request" caption-side="bottom"}
 
 3. In the output, you can check the sources and destinations of packets that are sent through the endpoint.

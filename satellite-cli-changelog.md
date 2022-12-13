@@ -58,4 +58,4 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 | 1.0.197 | 18 Nov 2020 | Adds the `--endpoint` option to the [`ibmcloud oc cluster config` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config) to use the Link endpoint URL for the cluster context. |
 | 1.0.178 | 06 Oct 2020 |  1. Adds `http-tunnel` as a supported source or destination protocol in the `ibmcloud sat endpoint create` and `ibmcloud sat endpoint update` commands.  \n 1. Updates the Go version to 1.15.2.  \n 1. Updates the help text in various languages. |
 {: caption="Overview of version changes for version 1.0 of the CLI plug-in for Satellite commands" caption-side="bottom"}
-{: summary="The rows are read from left to right, with the CLI plug-in version in column one, the release date of the version in column two, and a brief description of the changes for the version in column three."}
+

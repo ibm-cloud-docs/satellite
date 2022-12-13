@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-10-24"
+lastupdated: "2022-12-13"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -43,7 +43,7 @@ Keep extra hosts available and unassigned in the location
 | --- | --- | --- | --- |
 | - Prepare requirements template & review client requirements.  \n - Prepare quote.  \n - Create client accounts, locations, and clusters, and API keys. | - Perform requirements assessment.  \n - Complete the requirements template.  \n - Review and approve quote.  \n - Review and confirm environment setup.  \n - Assign cluster operator and developer roles. | Verify cluster operator permissions | Verify cluster developer permissions |
 {: caption="Example responsibility matrix for resellers." caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column describes the reseller enterprise responsibilities. The second column describes the client cluster admin responsibilities. The third column describes the client cluster operator permissions. The fourth column describes the client cluster developer permissions."}
+
 
 ## Setting up your account
 {: #account-setup-tenancy}
