@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-12-13"
 
 keywords: satellite, hybrid, multicloud, satellite infrastructure service
 
@@ -92,7 +92,6 @@ In medium and larger installations, you must spread the hardware equipment acros
 | Close proximity | Copper | Racks must be adjacent |
 | In same data room | Fiber | 30 meters |
 | Different buildings | Fiber | Contact {{site.data.keyword.IBM_notm}} |
-{: summary="The table describes the distance between multiple racks. Rows are to be read from the left to right. The first column describes the placement of the racks. The second column is the type of cable that connects to the rack. The third column is the maximum distance that the racks can be apart."}
 {: caption="Distance between multiple racks."}
 
 ## Power and cooling
@@ -106,7 +105,6 @@ During the planning phase, you can customize your {{site.data.keyword.satellites
 | First rack | 17 kW  | 41,278.58  | 2,013 mm x 597 mm x 1,266 mm (79.3 in. x 23.5 in. x 49.8 in.) | 689.66 kg (1,520 lb)  |
 | Second rack | 9 kW  | 22,329.09  | 2,013 mm x 597 mm x 1,266 mm (79.3 in. x 23.5 in. x 49.8 in.)  | 471 kg (1,037.87 lb) |
 {: caption="Power and cooling guidance for different rack configurations." caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column describes the size of the configuration. The second column is the required power. The third column is the required cooling. The fourth column is the dimensions of the rack. The fifth column is the weight of the rack."}
 {: class="simple-tab-table"}
 {: #two-racks}
 {: tab-title="Two racks"}
@@ -118,7 +116,6 @@ During the planning phase, you can customize your {{site.data.keyword.satellites
 | Second rack | 9 kW  | 25,903.27  | 2,013 mm x 597 mm x 1,266 mm (79.3 in. x 23.5 in. x 49.8 in.)  | 462.66 kg (1,019.55 lb)  |
 | Third rack | 8 kW  | 18,852.2  | 2,013 mm x 597 mm x 1,266 mm (79.3 in. x 23.5 in. x 49.8 in.)  | 426 kg (938.66 lb)  |
 {: caption="Power and cooling guidance for different rack configurations." caption-side="bottom"}
-{: summary="The rows are read from left to right. The first column describes the size of the configuration. The second column is the required power. The third column is the required cooling. The fourth column is the dimensions of the rack. The fifth column is the weight of the rack."}
 {: class="simple-tab-table"}
 {: #three-rack}
 {: tab-title="Three racks"}

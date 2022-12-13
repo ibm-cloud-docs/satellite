@@ -26,7 +26,7 @@ To install the CLI, see [Setting up the CLI](/docs/satellite?topic=satellite-set
 ## `ibmcloud sat` commands
 {: #satellite-cli-map}
 
-The tables below list the `ibmcloud sat` command groups. For a complete list of all `ibmcloud sat` commands as they are structured in the CLI, see the [{{site.data.keyword.satelliteshort}} CLI map](/docs/satellite?topic=satellite-icsat_map).
+The following tables list the `ibmcloud sat` command groups. For a complete list of all `ibmcloud sat` commands as they are structured in the CLI, see the [{{site.data.keyword.satelliteshort}} CLI map](/docs/satellite?topic=satellite-icsat_map).
 {: shortdesc}
 
 | Command group | Description | 
@@ -41,8 +41,7 @@ The tables below list the `ibmcloud sat` command groups. For a complete list of 
 | [Service commands](#sat-service-commands)| View Satellite service clusters. |
 | [Storage commands](#sat-storage-commands)| View and manage Satellite storage resources. |
 | [Subscription commands](#sat-config-subscription-commands)| View and manage Satellite subscriptions to deploy Kubernetes configuration files to your clusters. |
-{: summary="The rows are read from left to right. The first column is the command group. The second column is a description of the command group."}
-{: caption="{{site.data.keyword.satelliteshort}} CLI command groups" caption-side="bottom"}
+
 
 ## Cluster commands
 {: #sat-cluster-commands}

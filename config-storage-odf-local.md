@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-13"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -559,7 +559,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
 
 To scale your ODF configuration by adding disks to your worker nodes, increase the `num-of-osd` parameter value and specify the new worker node names with the `worker-nodes` parameter.
 
-In the following example, 3 worker nodes are added to the configuration that was created previously in the steps above. You can scale your configuration by adding updating the command parameters as follows:
+In the following example, 3 worker nodes are added to the configuration that was created previously. You can scale your configuration by adding updating the command parameters as follows:
 - `--name` - Create a configuration with a new name.
 - `--template-name` - Use the same parameter value as in your existing configuration.
 - `--template-version` - Use the same parameter value as in your existing configuration.
