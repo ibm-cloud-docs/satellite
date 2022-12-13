@@ -595,7 +595,7 @@ Use the console to remove a storage assignment and storage configuration.
 | User Password | `password` | The password to connect to the storage device. | true | 
 | Export Policy | `exportPolicy` | The NAS option for the NFS export policy. | false | 
 | Limit Volume Size | `limitVolumeSize` | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | false | 
-| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is greater than this percentage. | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is above this percentage. | false | 
 | NFS Mount Options | `nfsMountOptions` | The NFS mount options. | false | 
 {: caption="Table 1. 21.04 parameter reference" caption-side="bottom"}
 
@@ -612,7 +612,7 @@ Use the console to remove a storage assignment and storage configuration.
 | User Password | `password` | The password to connect to the storage device. | true | 
 | Export Policy | `exportPolicy` | The NAS option for the NFS export policy. | false | 
 | Limit Volume Size | `limitVolumeSize` | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | false | 
-| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is greater than this percentage. | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is above this percentage. | false | 
 | NFS Mount Options | `nfsMountOptions` | The NFS mount options. | false | 
 {: caption="Table 2. 22.04 parameter reference" caption-side="bottom"}
 

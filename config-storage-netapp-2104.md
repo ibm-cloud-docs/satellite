@@ -307,7 +307,7 @@ You can use the `storage assignment update` command to rename your assignment or
 | User Name | `username` | The username to connect to the storage device. | true | 
 | User Password | `password` | The password to connect to the storage device. | true | 
 | Limit Volume Size | `limitVolumeSize` | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | false | 
-| Limit AggregateUsage | `limitAggregateUsage` | Provisioning fails if usage is greater than this percentage. | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Provisioning fails if usage is above this percentage. | false | 
 {: caption="Table 1. 21.04 parameter reference" caption-side="bottom"}
 
 
@@ -322,7 +322,7 @@ You can use the `storage assignment update` command to rename your assignment or
 | User Name | `username` | The username to connect to the storage device. | true | 
 | User Password | `password` | The password to connect to the storage device. | true | 
 | Limit Volume Size | `limitVolumeSize` | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | false | 
-| Limit AggregateUsage | `limitAggregateUsage` | Provisioning fails if usage is greater than this percentage. | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Provisioning fails if usage is above this percentage. | false | 
 {: caption="Table 2. 22.04 parameter reference" caption-side="bottom"}
 
 
