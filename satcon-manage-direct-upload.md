@@ -33,6 +33,8 @@ Before you begin
 {: #create-satconfig-ui}
 {: ui}
 
+To deploy an example app, see [Deploying Kubernetes resources to clusters with Satellite Config](/docs/satellite?topic=satellite-begin-sat-config-tutorial).
+
 To create your custom configuration, use the {{site.data.keyword.satelliteshort}} UI and follow these steps.
 
 1. Log in to the [{{site.data.keyword.satelliteshort}} Config UI](https://cloud.ibm.com/satellite/configuration){: external} with your {{site.data.keyword.cloud_notm}} credentials. 

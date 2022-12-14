@@ -32,6 +32,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 New! {{site.data.keyword.satelliteshort}} storage debugging guide
 :    For more information, see [Debugging storage](/docs/satellite?topic=satellite-storage-must-gather)
 
+New! GitOps configurations
+:   Create a configuration to deploy apps from GitHub or GitLab to your clusters. For more information, see [Managing GitOps configurations](/docs/satellite?topic=satellite-satcon-manage-gitops).
+
 CLI change log
 :   Updated the CLI plug-in change log page for the [release of version 1.0.480](/docs/satellite?topic=satellite-satellite-cli-changelog).
 

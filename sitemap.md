@@ -164,6 +164,8 @@ subcollection: satellite
 
         * New! {{site.data.keyword.satelliteshort}} storage debugging guide
 
+        * New! GitOps configurations
+
         * CLI change log
 
     * [5 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0522)
@@ -1434,12 +1436,30 @@ subcollection: satellite
 
 [Registering clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-register-openshift-clusters#register-openshift-clusters)
 
+[Verifying cluster status](/docs/satellite?topic=satellite-satconfig-verify-cluster-status#satconfig-verify-cluster-status)
+
 [Syncing subscription identity](/docs/satellite?topic=satellite-sat-sync-sub-identity#sat-sync-sub-identity)
 
 
 ### Creating and managing Satellite configurations
 {: #sitemap_creating_and_managing_satellite_configurations}
 
+
+[Managing GitOps configurations](/docs/satellite?topic=satellite-satcon-manage-gitops#satcon-manage-gitops)
+
+* [Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage-gitops#satcon-create-gitops)
+
+    * [Creating a secret for using a private repository](/docs/satellite?topic=satellite-satcon-manage-gitops#create-satconfig-private-secret)
+
+    * [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-satcon-manage-gitops#create-satconfig-ui-gitops)
+
+    * [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-satcon-manage-gitops#create-satconfig-cli-gitops)
+
+* [Updating your Satellite configuration](/docs/satellite?topic=satellite-satcon-manage-gitops#satcon-manage-update-gitops)
+
+    * [Updating your subscription from the console](/docs/satellite?topic=satellite-satcon-manage-gitops#satcon-manage-update-console-gitops)
+
+    * [Updating your {{site.data.keyword.satelliteshort}} Config with the CLI](/docs/satellite?topic=satellite-satcon-manage-gitops#satcon-manage-update-cli-gitops)
 
 [Managing Direct Upload configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload#satcon-manage-direct-upload)
 
