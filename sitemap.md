@@ -162,6 +162,8 @@ subcollection: satellite
 
     * [14 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec1422)
 
+        * New! {{site.data.keyword.satelliteshort}} storage debugging guide
+
         * CLI change log
 
     * [5 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0522)
@@ -3155,6 +3157,26 @@ subcollection: satellite
 ### Storage
 {: #sitemap_storage}
 
+
+[Debugging storage](/docs/satellite?topic=satellite-storage-must-gather#storage-must-gather)
+
+* [Log in to your cluster](/docs/satellite?topic=satellite-storage-must-gather#storage-log-in)
+
+* [Get your configuration details](/docs/satellite?topic=satellite-storage-must-gather#storage-config-details)
+
+* [Gather the `mustachetemplate-controller` pod logs](/docs/satellite?topic=satellite-storage-must-gather#storage-gather-controller-log)
+
+* [Get the storage driver pod logs](/docs/satellite?topic=satellite-storage-must-gather#storage-gather-driver-pods)
+
+* [Get the storage class details](/docs/satellite?topic=satellite-storage-must-gather#storage-gather-sc-details)
+
+* [Get the details of your persisent volume claims](/docs/satellite?topic=satellite-storage-must-gather#storage-gather-pvc-details)
+
+* [Get the pod logs for your app](/docs/satellite?topic=satellite-storage-must-gather#storage-get-pod-logs)
+
+* [Review the details](/docs/satellite?topic=satellite-storage-must-gather#storage-review-details)
+
+* [Contact Support](/docs/satellite?topic=satellite-storage-must-gather#contact-ibm-support)
 
 [Storage error messages](/docs/satellite?topic=satellite-debug-storage#debug-storage)
 

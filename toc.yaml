@@ -249,6 +249,7 @@ toc:
               - topicgroup:
                   label: Storage
                   topics:
+                    - storage-must-gather.md
                     - debug-storage.md
                     - storage-namespace-terminating.md
                     - ts-authentication-failure.md
