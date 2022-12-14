@@ -454,7 +454,7 @@ Create a {{site.data.keyword.satelliteshort}} configuration. After you create a 
 {: shortdesc}
 
 ```sh
-ibmcloud sat config create --data-location LOCATION  --name NAME [-q]
+ibmcloud sat config create (--data-location LOCATION | --provider PROVIDER) --name NAME [-q]
 ```
 {: pre}
 
@@ -469,8 +469,12 @@ ibmcloud sat config create --data-location LOCATION  --name NAME [-q]
 `--name NAME`
 :    Required. The name for your configuration.
 
-`--data-location DATA-LOCATION`
-:    Optional. The location to store the data associated with the {{site.data.keyword.satelliteshort}} configuration, such as the definitions of Kubernetes resources to be deployed to your clusters. For example: `tok`. For a list of {{site.data.keyword.satelliteshort}} locations, see [Supported IBM Cloud locations](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions).
+`--data-location LOCATION`
+:    The location to store the data associated with the {{site.data.keyword.satelliteshort}} configuration, such as the definitions of Kubernetes resources to be deployed to your clusters. For example: `tok`. For a list of {{site.data.keyword.satelliteshort}} locations, see [Supported IBM Cloud locations](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). This option is used when you create a Direct Upload configuration. You can specify either `--data-location LOCATION` or --provider PROVIDER`. You can not specify both. 
+
+`--provider PROVIDER`
+:   The remote GitOps provider for the Satellite configuration. This provider stores your Kubernetes resource definitions. This option is used when you create a GitOps configuration. You can specify either `--data-location LOCATION` or --provider PROVIDER`. You can not specify both. 
+
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
@@ -2611,7 +2615,7 @@ Create a subscription for {{site.data.keyword.openshiftlong_notm}} clusters to d
 {: shortdesc}
 
 ```sh
-ibmcloud sat subscription create --name NAME --group GROUP [--group GROUP] --config CONFIG  --version VERSION [-q]
+ibmcloud sat subscription create --name NAME --group GROUP [--group GROUP] --config CONFIG (--auth-required --gitref GITREF --gitref-type TYPE --path PATH --repository REPOSITORY | --version VERSION) [-q]
 ```
 {: pre}
 
@@ -2632,8 +2636,23 @@ ibmcloud sat subscription create --name NAME --group GROUP [--group GROUP] --con
 `--config CONFIG`
 :    Required. The name of the configuration where you added the Kubernetes resource definition as a version that you want to deploy to your clusters. To list available configurations, run `ibmcloud sat config ls`.
 
+`--auth-required` 
+:   Include this option to use authentication when connecting to the remote repository. This option is used only when you create a Subscription to a Configuration using the GitOps strategy.
+
+`--gitref GITREF` 
+:   The GitRef to use for the {{site.data.keyword.satelliteshort}} subscription. This option is used only when you create a Subscription to a Configuration using the GitOps strategy. This option is used only when you create a Subscription to a Configuration using the GitOps strategy.
+
+`--gitref-type TYPE`
+:   The type of GitRef to use for the {{site.data.keyword.satelliteshort}} subscription.This option is used only when you create a Subscription to a Configuration using the GitOps strategy.
+
+`--path PATH`
+:   The path to the repository files or release assets in the remote repository that you want to use for the {{site.data.keyword.satelliteshort}} subscription. This option is used only when you create a Subscription to a Configuration using the GitOps strategy.
+
+`--repository REPOSITORY`
+:   The remote repository to use for the {{site.data.keyword.satelliteshort}}  subscription. This option is used only when you create a Subscription to a Configuration using the GitOps strategy.
+
 `--version VERSION`
-:    Required. The name or ID of the version that you want to deploy to the clusters in your cluster group. To list versions in your configuration, run `ibmcloud sat config get --config <configuration_name_or_ID>`.
+:    The name or ID of the version that you want to deploy to the clusters in your cluster group. This option is used only when you create a Subscription to a Configuration using the Direct Upload strategy. To list versions in your configuration, run `ibmcloud sat config get --config <configuration_name_or_ID>`.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.

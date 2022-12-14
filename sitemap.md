@@ -160,6 +160,10 @@ subcollection: satellite
 
 * [December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec22)
 
+    * [14 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec1422)
+
+        * CLI change log
+
     * [5 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0522)
 
         * New! Production support for the {{site.data.keyword.cos_full_notm}} CSI driver template
