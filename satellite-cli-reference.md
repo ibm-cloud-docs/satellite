@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2022-12-13"
+lastupdated: "2022-12-14"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -454,7 +454,7 @@ Create a {{site.data.keyword.satelliteshort}} configuration. After you create a 
 {: shortdesc}
 
 ```sh
-ibmcloud sat config create --name NAME [-q]
+ibmcloud sat config create --data-location LOCATION  --name NAME [-q]
 ```
 {: pre}
 
@@ -2611,7 +2611,7 @@ Create a subscription for {{site.data.keyword.openshiftlong_notm}} clusters to d
 {: shortdesc}
 
 ```sh
-ibmcloud sat subscription create --name NAME --group GROUP [--group GROUP] --config CONFIG --version VERSION [-q]
+ibmcloud sat subscription create --name NAME --group GROUP [--group GROUP] --config CONFIG  --version VERSION [-q]
 ```
 {: pre}
 
