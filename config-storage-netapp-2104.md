@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-13"
+lastupdated: "2022-12-14"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -41,7 +41,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters). 
     - Your cluster must meet the requirements for ONTAP-SAN. For more information, see the [NetApp documentation](https://netapp-trident.readthedocs.io/en/stable-v21.04/support/requirements.html).
     - Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to the requirements for ONTAP-SAN.
-1. [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups).
+1. [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-setup-clusters-satconfig-groups).
 1. [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 
 
@@ -307,7 +307,7 @@ You can use the `storage assignment update` command to rename your assignment or
 | User Name | `username` | The username to connect to the storage device. | true | 
 | User Password | `password` | The password to connect to the storage device. | true | 
 | Limit Volume Size | `limitVolumeSize` | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | false | 
-| Limit AggregateUsage | `limitAggregateUsage` | Provisioning fails if usage is greater than this percentage. | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Provisioning fails if usage is above this percentage. | false | 
 {: caption="Table 1. 21.04 parameter reference" caption-side="bottom"}
 
 
@@ -322,7 +322,7 @@ You can use the `storage assignment update` command to rename your assignment or
 | User Name | `username` | The username to connect to the storage device. | true | 
 | User Password | `password` | The password to connect to the storage device. | true | 
 | Limit Volume Size | `limitVolumeSize` | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | false | 
-| Limit AggregateUsage | `limitAggregateUsage` | Provisioning fails if usage is greater than this percentage. | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Provisioning fails if usage is above this percentage. | false | 
 {: caption="Table 2. 22.04 parameter reference" caption-side="bottom"}
 
 

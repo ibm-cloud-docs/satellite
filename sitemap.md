@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-13"
+lastupdated: "2022-12-14"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -159,6 +159,14 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec22)
+
+    * [14 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec1422)
+
+        * New! {{site.data.keyword.satelliteshort}} storage debugging guide
+
+        * New! GitOps configurations
+
+        * CLI change log
 
     * [5 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0522)
 
@@ -1428,12 +1436,30 @@ subcollection: satellite
 
 [Registering clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-register-openshift-clusters#register-openshift-clusters)
 
+[Verifying cluster status](/docs/satellite?topic=satellite-satconfig-verify-cluster-status#satconfig-verify-cluster-status)
+
 [Syncing subscription identity](/docs/satellite?topic=satellite-sat-sync-sub-identity#sat-sync-sub-identity)
 
 
 ### Creating and managing Satellite configurations
 {: #sitemap_creating_and_managing_satellite_configurations}
 
+
+[Managing GitOps configurations](/docs/satellite?topic=satellite-satcon-manage-gitops#satcon-manage-gitops)
+
+* [Creating {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage-gitops#satcon-create-gitops)
+
+    * [Creating a secret for using a private repository](/docs/satellite?topic=satellite-satcon-manage-gitops#create-satconfig-private-secret)
+
+    * [Creating {{site.data.keyword.satelliteshort}} configurations from the console](/docs/satellite?topic=satellite-satcon-manage-gitops#create-satconfig-ui-gitops)
+
+    * [Creating {{site.data.keyword.satelliteshort}} configurations from the CLI](/docs/satellite?topic=satellite-satcon-manage-gitops#create-satconfig-cli-gitops)
+
+* [Updating your Satellite configuration](/docs/satellite?topic=satellite-satcon-manage-gitops#satcon-manage-update-gitops)
+
+    * [Updating your subscription from the console](/docs/satellite?topic=satellite-satcon-manage-gitops#satcon-manage-update-console-gitops)
+
+    * [Updating your {{site.data.keyword.satelliteshort}} Config with the CLI](/docs/satellite?topic=satellite-satcon-manage-gitops#satcon-manage-update-cli-gitops)
 
 [Managing Direct Upload configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload#satcon-manage-direct-upload)
 
@@ -3151,6 +3177,26 @@ subcollection: satellite
 ### Storage
 {: #sitemap_storage}
 
+
+[Debugging storage](/docs/satellite?topic=satellite-storage-must-gather#storage-must-gather)
+
+* [Log in to your cluster](/docs/satellite?topic=satellite-storage-must-gather#storage-log-in)
+
+* [Get your configuration details](/docs/satellite?topic=satellite-storage-must-gather#storage-config-details)
+
+* [Gather the `mustachetemplate-controller` pod logs](/docs/satellite?topic=satellite-storage-must-gather#storage-gather-controller-log)
+
+* [Get the storage driver pod logs](/docs/satellite?topic=satellite-storage-must-gather#storage-gather-driver-pods)
+
+* [Get the storage class details](/docs/satellite?topic=satellite-storage-must-gather#storage-gather-sc-details)
+
+* [Get the details of your persisent volume claims](/docs/satellite?topic=satellite-storage-must-gather#storage-gather-pvc-details)
+
+* [Get the pod logs for your app](/docs/satellite?topic=satellite-storage-must-gather#storage-get-pod-logs)
+
+* [Review the details](/docs/satellite?topic=satellite-storage-must-gather#storage-review-details)
+
+* [Contact Support](/docs/satellite?topic=satellite-storage-must-gather#contact-ibm-support)
 
 [Storage error messages](/docs/satellite?topic=satellite-debug-storage#debug-storage)
 

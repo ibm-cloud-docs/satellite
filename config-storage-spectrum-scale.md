@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-11-15"
+lastupdated: "2022-12-14"
 
 keywords: spectrum scale, satellite storage, satellite config, satellite configurations,
 

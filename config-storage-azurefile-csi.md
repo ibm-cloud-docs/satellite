@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-14"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 

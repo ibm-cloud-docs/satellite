@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-13"
+lastupdated: "2022-12-14"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -41,7 +41,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters). 
     - Your cluster must meet the requirements for ONTAP-NAS. For more information, see the [NetApp documentation](https://netapp-trident.readthedocs.io/en/stable-v21.04/support/requirements.html).
     - Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to the requirements for ONTAP-NAS.
-1. [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups).
+1. [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-setup-clusters-satconfig-groups).
 
 
 
@@ -595,7 +595,7 @@ Use the console to remove a storage assignment and storage configuration.
 | User Password | `password` | The password to connect to the storage device. | true | 
 | Export Policy | `exportPolicy` | The NAS option for the NFS export policy. | false | 
 | Limit Volume Size | `limitVolumeSize` | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | false | 
-| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is greater than this percentage. | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is above this percentage. | false | 
 | NFS Mount Options | `nfsMountOptions` | The NFS mount options. | false | 
 {: caption="Table 1. 21.04 parameter reference" caption-side="bottom"}
 
@@ -612,7 +612,7 @@ Use the console to remove a storage assignment and storage configuration.
 | User Password | `password` | The password to connect to the storage device. | true | 
 | Export Policy | `exportPolicy` | The NAS option for the NFS export policy. | false | 
 | Limit Volume Size | `limitVolumeSize` | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | false | 
-| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is greater than this percentage. | false | 
+| Limit AggregateUsage | `limitAggregateUsage` | Fail provisioning if usage is above this percentage. | false | 
 | NFS Mount Options | `nfsMountOptions` | The NFS mount options. | false | 
 {: caption="Table 2. 22.04 parameter reference" caption-side="bottom"}
 

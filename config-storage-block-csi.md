@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-08"
+lastupdated: "2022-12-14"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 

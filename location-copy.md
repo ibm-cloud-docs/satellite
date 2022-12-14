@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-06"
+lastupdated: "2022-12-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -65,7 +65,7 @@ To copy your {{site.data.keyword.satelliteshort}} location to a new location, yo
     - To create {{site.data.keyword.satelliteshort}} Link endpoints, see [cloud](/docs/satellite?topic=satellite-link-cloud-create#link-cloud) or [location](/docs/satellite?topic=satellite-link-cloud-create#link-location) endpoint instructions.
     - For clusters, see [Creating {{site.data.keyword.redhat_openshift_notm}} in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters). If you manually deployed Kubernetes configurations instead of using {{site.data.keyword.satelliteshort}} Config, also see [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster).
 
-8. Redeploy your apps to your cluster. Because {{site.data.keyword.satelliteshort}} Config works across {{site.data.keyword.satelliteshort}} locations, you can [add your new clusters to existing cluster groups](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-groups) that are already [subscribed to the configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload) that you want to deploy.
+8. Redeploy your apps to your cluster. Because {{site.data.keyword.satelliteshort}} Config works across {{site.data.keyword.satelliteshort}} locations, you can [add your new clusters to existing cluster groups](/docs/satellite?topic=satellite-setup-clusters-satconfig-groups) that are already [subscribed to the configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload) that you want to deploy.
 9. Similar to {{site.data.keyword.satelliteshort}} Config, if you used {{site.data.keyword.satelliteshort}} storage configurations, you can assign these configurations to your new clusters to install the storage drivers.
 
 When you are done and your new location is healthy, you can [remove the previous location](/docs/satellite?topic=satellite-host-remove#location-remove-console).
