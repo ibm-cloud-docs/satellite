@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-05"
+lastupdated: "2022-12-14"
 
 keywords: satellite, toolchain, satellite config, Kubernetes, cluster
 
@@ -52,7 +52,7 @@ Before you start this tutorial, make sure that you have the following resources 
 
 * A {{site.data.keyword.satelliteshort}} cluster or an {{site.data.keyword.redhat_openshift_full}} cluster on {{site.data.keyword.cloud_notm}} that is registered with your {{site.data.keyword.satelliteshort}} location.
 
-If you don't have a {{site.data.keyword.satelliteshort}} cluster, you can [register a {{site.data.keyword.redhat_openshift_notm}} cluster with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-setup-clusters-satconfig#register-openshift-clusters).
+If you don't have a {{site.data.keyword.satelliteshort}} cluster, you can [register a {{site.data.keyword.redhat_openshift_notm}} cluster with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-register-openshift-clusters).
 {: tip}
 
 * A [{{site.data.keyword.satelliteshort}} cluster group](/docs/satellite?topic=satellite-setup-clusters-satconfig) that contains the cluster that is required by the toolchain. The toolchain in this tutorial supports a {{site.data.keyword.satelliteshort}} cluster group that contains only {{site.data.keyword.redhat_openshift_notm}} clusters. 
