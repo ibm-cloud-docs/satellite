@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-05"
+lastupdated: "2022-12-14"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Managing Direct Upload configurations
 {: #satcon-manage-direct-upload}
 
-To create and roll out new versions of your applications, update your {{site.data.keyword.satelliteshort}} Config configurations and subscriptions. You can also use {{site.data.keyword.satelliteshort}} Config to review an inventory of all the resources that are managed by your configurations across clusters.
+Create a configuration to deploy your apps to clusters by uploading resources directly.
 {: shortdesc}
 
 ## Creating {{site.data.keyword.satelliteshort}} configurations 
