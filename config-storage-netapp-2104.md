@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-14"
+lastupdated: "2022-12-15"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -151,16 +151,16 @@ After you [create a {{site.data.keyword.satelliteshort}} storage configuration](
 
 1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
 1. Select the location where you want to create a storage configuration.
-1. Click the **Configurations** tab and click the storage configuration that you want to assign to a cluster group.
-1. On the **Configuration details** page, click **Create subscription**.
-1. In the **Create a subscription** pane, enter a name for your subscription. When you create a subscription you assign your storage configuration to your clusters.
+1. Click the **Locations** tab and click the storage configuration that you want to assign to a cluster group.
+1. On the **Configuration details** page, click **Create storage assignment**.
+1. In the **Create an assignment** pane, enter a name for your assignment. When you create a assignment you assign your storage configuration to your clusters.
 1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
 1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
-1. Click **Create** to create the subscription.
+1. Click **Create** to create the assignment.
 1. Verify that your storage configuration is deployed to your cluster. 
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to the **Configurations** tab.
-    1. Click the storage configuration that you created and review the **Subscriptions** tab.
-    1. Click the **Subscription** that you created and review the **Rollout status** for your configuration.
+    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to your Location and select **Storage**
+    1. Click the storage configuration that you created and review the **Assignments** tab.
+    1. Click the **Assignment** that you created and review the **Rollout status** for your configuration.
 
 
 ### Assigning a NetApp storage configuration in the command line
