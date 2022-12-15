@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-14"
+lastupdated: "2022-12-15"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -856,6 +856,23 @@ subcollection: satellite
 * [Verifying that the sample app is running](/docs/satellite?topic=satellite-sat_toolchain_tutorial#verify_app)
 
 * [Deploying a new version of your app from a different branch](/docs/satellite?topic=satellite-sat_toolchain_tutorial#modify_trigger)
+
+
+## Deploying apps to clusters with {{site.data.keyword.satelliteshort}} Config
+{: #sitemap_deploying_apps_to_clusters_with__config}
+
+
+[Deploying apps to clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial)
+
+* [Objectives](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-objectives)
+
+* [Audience](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-audience)
+
+* [Prerequisites](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-prereq)
+
+    * [Beginner tutorial: Deploying a hello world app](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-deploy-app-ui)
+
+    * [Advanced tutorial: Deploying an app and updating it with new versions](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-advanced-helloworld-ui)
 
 
 ## Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters
