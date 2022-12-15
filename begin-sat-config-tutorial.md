@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-14"
+lastupdated: "2022-12-15"
 
 keywords: satellite, satellite config, Kubernetes, cluster
 
@@ -16,7 +16,6 @@ completion-time: 30m
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Deploying apps to clusters with {{site.data.keyword.satelliteshort}} Config
@@ -56,7 +55,7 @@ Before you start this tutorial, make sure that you have the following resources 
 
 
 
-### Beginner tutorial: Deploying a hello world app
+## Beginner tutorial: Deploying a hello world app
 {: #begin-sat-config-tutorial-deploy-app-ui}
 {: ui}
 
@@ -68,7 +67,7 @@ Follow these steps if you are new to {{site.data.keyword.satelliteshort}} Config
 
 1. Select the **GitOps - Sample application** template and follow the prompts.
 
-### Advanced tutorial: Deploying an app and updating it with new versions
+## Advanced tutorial: Deploying an app and updating it with new versions
 {: #begin-sat-config-tutorial-advanced-helloworld-ui}
 {: ui}
 

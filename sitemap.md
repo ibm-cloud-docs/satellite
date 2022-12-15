@@ -870,9 +870,9 @@ subcollection: satellite
 
 * [Prerequisites](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-prereq)
 
-    * [Beginner tutorial: Deploying a hello world app](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-deploy-app-ui)
+* [Beginner tutorial: Deploying a hello world app](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-deploy-app-ui)
 
-    * [Advanced tutorial: Deploying an app and updating it with new versions](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-advanced-helloworld-ui)
+* [Advanced tutorial: Deploying an app and updating it with new versions](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-advanced-helloworld-ui)
 
 
 ## Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters
@@ -1428,7 +1428,9 @@ subcollection: satellite
 
 [Understanding {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#cluster-config)
 
-* [How {{site.data.keyword.satelliteshort}} configurations work](/docs/satellite?topic=satellite-cluster-config#satcon-flow)
+* [Understanding GitOps-based configurations](/docs/satellite?topic=satellite-cluster-config#satcon-understand-gitops)
+
+* [Understanding Direct Upload configurations](/docs/satellite?topic=satellite-cluster-config#satcon-understand-direct-upload)
 
 * [Key concepts for {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-cluster-config#satcon-terminology)
 
@@ -1437,17 +1439,15 @@ subcollection: satellite
 {: #sitemap_setting_up_clusters_to_use_with_satellite_config}
 
 
-[Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig)
+[Automatically granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig)
 
-* [Prerequisites](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-prereq)
+[Manually granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig-access#setup-clusters-satconfig-access)
 
-* [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access)
+* [Cluster admin access](/docs/satellite?topic=satellite-setup-clusters-satconfig-access#cluster-admin-access)
 
-    * [Cluster admin access](/docs/satellite?topic=satellite-setup-clusters-satconfig#cluster-admin-access)
+* [Custom access, cluster-wide](/docs/satellite?topic=satellite-setup-clusters-satconfig-access#custom-access-cluster-wide)
 
-    * [Custom access, cluster-wide](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-cluster-wide)
-
-    * [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-scoped-project)
+* [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig-access#custom-access-scoped-project)
 
 [Setting up cluster groups](/docs/satellite?topic=satellite-setup-clusters-satconfig-groups#setup-clusters-satconfig-groups)
 
