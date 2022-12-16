@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-14"
+lastupdated: "2022-12-16"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## December 2022
 {: #satellite-dec22}
+
+### 16 December 2022
+{: #satellite-dec1622}
+{: release-note}
+
+New! {{site.data.keyword.dl_full}}
+:    Use a secure {{site.data.keyword.dl_short}} connection for {{site.data.keyword.satelliteshort}} Link communications between your services running in a Location and {{site.data.keyword.cloud_notm}}. For more information, see [Connecting Locations with {{site.data.keyword.cloud_notm}} using {{site.data.keyword.dl_short}}](/docs/satellite?topic=satellite-direct-link-tutorial).
 
 ### 14 December 2022
 {: #satellite-dec1422}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-11-10"
+lastupdated: "2022-12-16"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -36,7 +36,10 @@ How do I set how long my location can run disconnected from {{site.data.keyword.
 {{site.data.keyword.satelliteshort}} Locations and {{site.data.keyword.openshiftlong_notm}} can run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for 168 hours.
 {: shortdesc}
 
-You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for all your OAuth clients.
+You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for all your OAuth clients. 
+
+The `accessTokenMaxAgeSeconds` value starts counting when the user was last authenticated, not when the Location is disconnected. Note that a user must have access to IAM to authenticate.
+{: important}
 
 1. Get your OAuth clients by running `oc get oauthclients`.
     
@@ -86,9 +89,9 @@ The following tables explain the behavior and limitations of different component
 
 | Feature | Connected behavior | Disconnected behavior | Maximum disconnection tolerance |
 | -- | -- | -- | -- |
-| Deployment | You can deploy apps by using your preferred methods, such as `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can still deploy apps while disconnected by using the Kubernetes API. | Unlimited |
-| Removal | You can remove apps by using your preferred methods, such as `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can still remove apps while disconnected by using the Kubernetes API. | Unlimited |
-| Scaling | You can scale apps by using your preferred methods, such as `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can still scale apps while disconnected by using the Kubernetes API. | Unlimited |
+| Deployment | You can deploy apps by using your preferred methods, such as `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can still deploy apps while disconnected by using the Kubernetes API. | Equal to the `accessTokenMaxAgeSeconds` from last authentication |
+| Removal | You can remove apps by using your preferred methods, such as `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can still remove apps while disconnected by using the Kubernetes API. | Equal to the `accessTokenMaxAgeSeconds` from last authentication |
+| Scaling | You can scale apps by using your preferred methods, such as `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can still scale apps while disconnected by using the Kubernetes API. | Equal to the `accessTokenMaxAgeSeconds` from last authentication |
 {: caption="Disconnected app management" caption-side="bottom"}
 
 ### IBM Cloud Catalog disconnected usage
@@ -104,7 +107,8 @@ The following tables explain the behavior and limitations of different component
 
 | Feature | Connected behavior | Disconnected behavior | Maximum disconnection tolerance |
 | -- | -- | -- | -- |
-| Authorization | -- | -- | -- |
+| Authorization | Define user access roles by using IAM | You can't manage user access | Equal to the `accessTokenMaxAgeSeconds` from last authentication |
+| Authentication | Authenticate to IBM Cloud by using IAM | You can't re-authenticate | Equal to the `accessTokenMaxAgeSeconds` from last authentication |
 {: caption="Disconnected identity and access management" caption-side="bottom"}
 
 ### Secret management disconnected usage
@@ -122,8 +126,8 @@ The following tables explain the behavior and limitations of different component
 | -- | -- | -- | -- |
 | Application, audit and access logging with {{site.data.keyword.cloudaccesstraillong_notm}} | -- | -- | -- |
 | Application monitoring with {{site.data.keyword.monitoringlong_notm}} | -- | -- | -- |
-| Application logging using other provider | You can use third-party logging tools. | No impact. | Unlimited |
-| System/Kubernetes logging using other provider | You can use third-party logging tools. | No impact. | Unlimited |
+| Application logging using other provider | You can use third-party logging tools. | No impact. | Equal to the `accessTokenMaxAgeSeconds` from last authentication |
+| System/Kubernetes logging using other provider | You can use third-party logging tools. | No impact. | Equal to the `accessTokenMaxAgeSeconds` from last authentication |
 | Alerting rules and paging for metrics | You can set up alerts in {{site.data.keyword.monitoringlong_notm}}. | Alerts are not triggered. | Zero |
 {: caption="Disconnected logging and monitoring" caption-side="bottom"}
 
@@ -141,6 +145,6 @@ The following tables explain the behavior and limitations of different component
 
 | Feature | Connected behavior | Disconnected behavior | Maximum disconnection tolerance |
 | -- | -- | -- | -- |
-| Deploying or updating policies {{site.data.keyword.satelliteshort}} Service Mesh | You can deploy or update policies by using the CLI and console. | You can use `kubectl` to deploy and update policies. | Unlimited |
+| Deploying or updating policies {{site.data.keyword.satelliteshort}} Service Mesh | You can deploy or update policies by using the CLI and console. | You can use `kubectl` to deploy and update policies. | Equal to the `accessTokenMaxAgeSeconds` from last authentication |
 {: caption="Disconnected network and service mesh management" caption-side="bottom"}
 

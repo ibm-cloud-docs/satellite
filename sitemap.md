@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-16"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -159,6 +159,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec22)
+
+    * [16 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec1622)
+
+        * New! {{site.data.keyword.dl_full}}
 
     * [14 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec1422)
 
@@ -873,6 +877,44 @@ subcollection: satellite
 * [Beginner tutorial: Deploying a hello world app](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-deploy-app-ui)
 
 * [Advanced tutorial: Deploying an app and updating it with new versions](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial-advanced-helloworld-ui)
+
+
+## Connecting Locations with {{site.data.keyword.cloud_notm}} using {{site.data.keyword.dl_short}}
+{: #sitemap_connecting_locations_with__using_}
+
+
+[Connecting Locations with {{site.data.keyword.cloud_notm}} using {{site.data.keyword.dl_short}}](/docs/satellite?topic=satellite-direct-link-tutorial#direct-link-tutorial)
+
+* [FAQ](/docs/satellite?topic=satellite-direct-link-tutorial#faq-direct-link)
+
+* [Target use case](/docs/satellite?topic=satellite-direct-link-tutorial#target-use-case)
+
+* [Overview](/docs/satellite?topic=satellite-direct-link-tutorial#dl-overview)
+
+* [Objectives](/docs/satellite?topic=satellite-direct-link-tutorial#dl-objectives)
+
+* [Prerequisites](/docs/satellite?topic=satellite-direct-link-tutorial#dl-prereq)
+
+* [Creating a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location](/docs/satellite?topic=satellite-direct-link-tutorial#dl-create-coreos-location)
+
+* [Creating a relay](/docs/satellite?topic=satellite-direct-link-tutorial#dl-create-coreos-relay)
+
+* [Provisioning Red Hat CoreOS hosts](/docs/satellite?topic=satellite-direct-link-tutorial#dl-provision-coreos-hosts)
+
+
+## Using {{site.data.keyword.containerlong_notm}} on classic to host the `dl-reverse-proxy`
+{: #sitemap_using__on_classic_to_host_the_dl-reverse-proxy}
+
+
+[Using {{site.data.keyword.containerlong_notm}} on classic to host the `dl-reverse-proxy`](/docs/satellite?topic=satellite-dl-iks-classic#dl-iks-classic)
+
+* [Create an {{site.data.keyword.containerlong_notm}} cluster](/docs/satellite?topic=satellite-dl-iks-classic#dl-cluster)
+
+* [Set up private Ingress ALBs in the cluster](/docs/satellite?topic=satellite-dl-iks-classic#dl-ingress)
+
+* [Deploy an NGINX reverse proxy](/docs/satellite?topic=satellite-dl-iks-classic#dl-reverse-proxy)
+
+* [Configure Link to use the reverse proxy](/docs/satellite?topic=satellite-dl-iks-classic#dl-config-satlink)
 
 
 ## Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters
