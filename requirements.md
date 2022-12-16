@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-06-10"
+lastupdated: "2022-12-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -90,7 +90,7 @@ Review the following application configuration requirements for {{site.data.keyw
 :    By default, {{site.data.keyword.satelliteshort}} Config is limited to what Kubernetes resources it can read and modify in your clusters. You must grant {{site.data.keyword.satelliteshort}} Config access in each cluster where you want to use {{site.data.keyword.satelliteshort}} Config to manage your Kubernetes resources.
 :    Choose from the following options.
      - Opt in to cluster admin access when you create the cluster in the [console](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console) or [CLI](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-cli) with the `--enable-admin-agent` option. Note that you must perform a one-time `oc login` in each cluster to synchronize the admin permissions.
-     - To opt in after creating a cluster or to scope the access, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access).
+     - To opt in after creating a cluster or to scope the access, see [Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig-access).
 
 {{site.data.keyword.satelliteshort}} Config and {{site.data.keyword.cloud_notm}} IAM
 :    You cannot scope access policies for {{site.data.keyword.satelliteshort}} Config resources (configuration, subscription, cluster, or cluster group) to an {{site.data.keyword.cloud_notm}} resource group. {{site.data.keyword.satelliteshort}} Config uses the open source Razee project, which authenticates users by using the organization. The organization supports only the account ID, not resource groups.

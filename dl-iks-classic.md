@@ -34,7 +34,7 @@ Follow these steps to set up the `dl-reverse-proxy` for {{site.data.keyword.dl_f
 Create an {{site.data.keyword.containerlong_notm}} cluster in your {{site.data.keyword.cloud_notm}} account, which serves as the connection between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} on the private network.
 {: shortdesc}
 
-1. Review the networking basics of [classic {{site.data.keyword.containerlong_notm}} clusters](/docs/containers?topic=containers-plan_clusters#plan_basics) or [{{site.data.keyword.containerlong_notm}} VPC clusters](/docs/containers?topic=containers-plan_clusters#plan_vpc_basics). In particular, ensure that you prepare the following:
+1. Review the networking basics of [clusters](/docs/containers?topic=containers-plan_cluster). In particular, ensure that you prepare the following:
     - VLAN management (classic clusters only): Manage and choose both a public and private VLAN for your cluster's network connectivity.
     - Subnet routing: Enable a Virtual Router Function (VRF) or VLAN spanning for your {{site.data.keyword.cloud_notm}} infrastructure account so your worker nodes can communicate with each other on the private network and communicate with private cloud service endpoints internally.
     - IP address schema: Ensure that no subnet conflicts exist between the cluster and your on-premises network.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-14"
+lastupdated: "2022-12-16"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite config gitops, satellite configuration gitops, satellite gitops
 
@@ -31,7 +31,7 @@ With {{site.data.keyword.satelliteshort}} Config, you create a configuration to 
 
 Before you begin
 
-- Make sure that you have the [required permissions](/docs/satellite?topic=satellite-iam#iam-resource-config) and that [{{site.data.keyword.satelliteshort}} Config can access your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig-access). For more information, see [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
+- Make sure that you have the [required permissions](/docs/satellite?topic=satellite-iam#iam-resource-config) and that [{{site.data.keyword.satelliteshort}} Config can access your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig-access). For more information, see [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
 - Review the [key concepts](/docs/satellite?topic=satellite-cluster-config#satcon-terminology) for {{site.data.keyword.satelliteshort}} Config.
 - If you want to use a private repository, you must [create a secret](#create-satconfig-private-secret) on the target cluster that contains a personal access token with at least read access to your private repository. 
 
