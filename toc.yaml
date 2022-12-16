@@ -33,6 +33,8 @@ toc:
             href: https://cloud.ibm.com/docs?tab=tutorials&page=1&pageSize=20&tags=satellite
         - sat-toolchain-tutorial.md
         - begin-sat-config-tutorial.md
+        - direct-link-tutorial.md
+        - dl-iks-classic.md
         - odf-tutorial.md
         - assign-bare-metal.md
         - virtualization-location.md
