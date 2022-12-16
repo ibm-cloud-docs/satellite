@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-14"
+lastupdated: "2022-12-16"
 
 keywords: satellite storage, satellite config, debug, troubleshoot, must gather
 
@@ -116,9 +116,8 @@ Note that the namespaces and pod names are template specific. Te verify these de
 1. Get the storage driver pod logs.
     ```sh
     oc get logs STORAGE-DRIVER-POD -n NAMESPACE
-    {: pre}
     ```
-
+    {: pre}
 
 ## Get the storage class details
 {: #storage-gather-sc-details}
