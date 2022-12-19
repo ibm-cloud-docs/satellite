@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-19"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -255,7 +255,7 @@ You can use the [console](#sat-storage-local-file-ui) or [CLI](#sat-storage-loca
 ## Assigning your local file storage configuration to a cluster
 {: #assign-storage-local-file}
 
-After you [create a local {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-local-file), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
+After you [create a local {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-local-file), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 
 ### Assigning a local file storage configuration in the console

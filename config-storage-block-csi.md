@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-19"
 
 keywords: block storage, satellite storage, satellite config, satellite configurations, 
 
@@ -99,7 +99,7 @@ Be sure to complete all prerequisite and installation steps before assigning hos
 ## Assigning your {{site.data.keyword.IBM_notm}} block storage configuration to a cluster
 {: #assign-storage-block-csi}
 
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-block-csi), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
+After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-block-csi), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 
 

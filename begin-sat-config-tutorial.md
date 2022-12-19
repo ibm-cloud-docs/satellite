@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-16"
+lastupdated: "2022-12-19"
 
 keywords: satellite, satellite config, Kubernetes, cluster
 
@@ -103,9 +103,13 @@ Before you begin, delete the subscription created previously in the [Beginner tu
   
     6. Click **Next**.
 
-7. On the **Summary** page, confirm that the displayed information is corect and then click **Complete**. 
+7. On the **Summary** page, confirm that the displayed information is correct and then click **Complete**. 
 
-8. Observe the hello world sample version 1.0 being deployed to the clusters. You can click the configuration name to see the rollout status. This sample creates a Hello world app in the `satellite-config-sample` namespace, which serves a simple web page with the current version of the app. Browse to the route of the app to see `Hello world 1.0!`. You can get the URL of the app from the OpenShift web console or by using the CLI command `oc get routes helloworld-route -n satellite-config-sample -o go-template --template='http://{{.spec.host}}{{.spec.path}}{{println}}'`.
+8. Observe the hello world sample version 1.0 being deployed to the clusters. You can click the configuration name to see the rollout status. This sample creates a Hello world app in the `satellite-config-sample` namespace, which serves a simple web page with the current version of the app. Browse to the route of the app to see `Hello world 1.0!`. You can get the URL of the app from the OpenShift web console or by using the following command.
+    ```sh
+    oc get routes helloworld-route -n satellite-config-sample -o go-template --template='http://{{.spec.host}}{{.spec.path}}{{println}}'`.
+    ```
+    {: pre}
 
 9. In GitHub, create a pull request from branch `config-sample-dev` to `config-sample-prod`.
   
