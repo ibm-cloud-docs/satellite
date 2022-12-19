@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-13"
+lastupdated: "2022-12-19"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -277,7 +277,7 @@ When you create your ODF configuration, you must specify the device paths of the
 {: #assign-storage-odf-local}
 {: cli}
 
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-odf-local), you can assign you configuration to your {{site.data.keyword.satelliteshort}} clusters.
+After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-odf-local), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
 
 1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
