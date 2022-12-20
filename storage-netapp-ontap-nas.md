@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-20"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 # NetApp ONTAP-NAS
-{: #config-storage-netapp-nas-2104}
+{: #storage-netapp-ontap-nas}
 
 Set up [NetApp ONTAP-NAS storage](https://netapp-trident.readthedocs.io/en/stable-v21.04/){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
@@ -31,7 +31,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 - You must have a dedicated Storage Virtual Machine (SVM) for Trident. Volumes created by Trident are created in this SVM.
 - You must have one or more aggregates assigned to the SVM. You can add aggregates with the `netapp1::> vserver modify -vs <svm_name> -aggr-list <aggregate(s)_to_be_added>` command.
 - You must configure permissions on the default export policy or create your own custom export policy.
-- You must have one or more dataLIFs for the SVM.
+- You must have one or more `dataLIFs` for the SVM.
 - You must have NFS services enabled on the SVM.
 - You must set up a snapshot policy on the SVM.
 
@@ -45,79 +45,257 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 
 
-## Creating a NetApp ONTAP-NAS storage configuration in the console
-{: #sat-storage-netapp-ui-nas-2104}
+
+
+
+## Creating a configuration
+{: #netapp-ontap-nas-config-create}
+
+Before you begin, review the [parameter reference](#netapp-ontap-nas-parameter-reference) for the template version that you want to use.
+{: important}
+
+### Creating and assigning a configuration in the console
+{: netapp-ontap-nas-config-create-console}
 {: ui}
 
-1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
 1. Enter a name for your configuration.
-1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
-1. On the **Parameters** tab, enter the parameters for your configuration.
-1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. Select the **Storage type**.
+1. Select the **Version** and click **Next**
+1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
+1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
 1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-## Creating a NetApp ONTAP-NAS storage configuration in the command line
-{: #sat-storage-netapp-cli-nas-2104}
+### Creating a configuration in the CLI
+{: #netapp-ontap-nas-config-create-cli}
 {: cli}
 
-1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
-
-    ```sh
-    ibmcloud login
-    ```
-    {: pre}
-
-1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-
-    ```sh
-    ibmcloud sat location ls
-    ```
-    {: pre}
-
-1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
-
-    ```sh
-    ibmcloud target -r us-east
-    ```
-    {: pre}
-
-1. If you use a resource group other than `default`, target it.
-
-    ```sh
-    ibmcloud target -g <resource-group>
-    ```
-    {: pre}
-    
-1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
-
-    ```sh
-    ibmcloud sat storage template ls
-    ```
-    {: pre}
-    
-
-1. Review the [NetApp ONTAP-NAS storage configuration parameters](#netapp-ontap-nas-parameter-reference).
-1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
-
+1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
     Example command to create a version 21.04 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 21.04  --param "managementLIF=MANAGEMENTLIF"   --param "dataLIF=DATALIF"   --param "svm=SVM"   --param "username=USERNAME"   --param "password=PASSWORD"   [--param "exportPolicy=EXPORTPOLICY"]   [--param "limitVolumeSize=LIMITVOLUMESIZE"]   [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"]   [--param "nfsMountOptions=NFSMOUNTOPTIONS"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 21.04 --param "managementLIF=MANAGEMENTLIF"  --param "dataLIF=DATALIF"  --param "svm=SVM"  --param "username=USERNAME"  --param "password=PASSWORD"  [--param "exportPolicy=EXPORTPOLICY"]  [--param "limitVolumeSize=LIMITVOLUMESIZE"]  [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"]  [--param "nfsMountOptions=NFSMOUNTOPTIONS"] 
     ```
     {: pre}
-
 
     Example command to create a version 22.04 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 22.04  --param "managementLIF=MANAGEMENTLIF"   --param "dataLIF=DATALIF"   --param "svm=SVM"   --param "username=USERNAME"   --param "password=PASSWORD"   [--param "exportPolicy=EXPORTPOLICY"]   [--param "limitVolumeSize=LIMITVOLUMESIZE"]   [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"]   [--param "nfsMountOptions=NFSMOUNTOPTIONS"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 22.04 --param "managementLIF=MANAGEMENTLIF"  --param "dataLIF=DATALIF"  --param "svm=SVM"  --param "username=USERNAME"  --param "password=PASSWORD"  [--param "exportPolicy=EXPORTPOLICY"]  [--param "limitVolumeSize=LIMITVOLUMESIZE"]  [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"]  [--param "nfsMountOptions=NFSMOUNTOPTIONS"] 
     ```
     {: pre}
+
+
+1. Customize the command based on the settings that you want to use.
+
+1. Run the command to create a configuration.
+
+1. Verify your configuration was created.
+    ```sh
+    ibmcloud sat storage config get --config CONFIG
+    ```
+    {: pre}
+
+
+
+## Assigning configurations to clusters
+{: #netapp-ontap-nas-assignment-create}
+
+After you create a storage configuration, you can assign that configuration to clusters, cluster groups, or service clusters to automatically deploy storage resources across clusters in your Location.
+
+If you haven't yet created a storage configuration, see [Creating a configuration](#netapp-ontap-nas-config-create).
+
+### Creating an assignment in the console
+{: #netapp-ontap-nas-assignment-create-console}
+{: ui}
+
+If you didn't assign your configuration to a cluster or service when you created it, you can create an assignment by completing the following steps.
+
+1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
+1. Select the location where you created your storage configuration.
+1. Click the **Locations** tab, then click **Storage**.
+1. Click the storage configuration that you want to assign to a cluster group.
+1. On the **Configuration details** page, click **Create storage assignment**.
+1. In the **Create an assignment** pane, enter a name for your assignment.
+1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
+1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same  location.
+1. Click **Create** to create the assignment.
+1. Verify that your storage configuration is deployed to your cluster. 
+    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to your Location and select **Storage**
+    1. Click the storage configuration that you created and review the **Assignments** tab.
+    1. Click the **Assignment** that you created and review the **Rollout status** for your configuration.
+
+
+### Creating an assignment in the CLI
+{: #netapp-ontap-nas-assignment-create-cli}
+{: ui}
+
+1. List your storage configurations and make a note of the storage configuration that you want to assign to your clusters.
+    ```sh
+    ibmcloud sat storage config ls
+    ```
+    {: pre}
+
+1. Get the ID of the cluster, cluster group, or service that you want to assign storage to. 
+
+    To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+    {: tip}
+    
+    List cluster groups.
+    
+    ```sh
+    ibmcloud sat group ls
+    ```
+    {: pre}
+
+    List clusters.
+    
+    ```sh
+    ibmcloud oc cluster ls --provider satellite
+    ```
+    {: pre}
+    
+    List services.
+    
+    ```sh
+    ibmcloud sat service ls --location <location>
+    ```
+    {: pre}
+
+1. Assign storage to the cluster or group that you retrieved in step 2. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
+
+    Assign a configuration to a cluster group.
+    ```sh
+    ibmcloud sat storage assignment create --group GROUP --config CONFIG --name NAME
+    ```
+    {: pre}
+
+    Assign a configuration to a cluster.
+    ```sh
+    ibmcloud sat storage assignment create --cluster CLUSTER --config CONFIG --name NAME
+    ```
+    {: pre}
+
+    Assign a configuration to a service cluster.
+    ```sh
+    ibmcloud sat storage assignment create --service-cluster-id CLUSTER --config CONFIG --name NAME
+    ```
+    {: pre}
+
+1. Verify that your assignment is created.
+    ```sh
+    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
+    ```
+    {: pre}
+
+
+### Creating an assignment in the API
+{: #netapp-ontap-nas-assignment-create-console}
+{: api}
+
+1. Copy one of the following example requests. 
+
+    Example request to assign a [configuration to a cluster](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite/createAssignmentByCluster){: external}.
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createAssignmentByCluster" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d "{ \"channelName\": \"CONFIGURATION-NAME\", \"cluster\": \"CLUSTER-ID\", \"controller\": \"LOCATION-ID\", \"name\": \"ASSIGNMENT-NAME\"}"
+    ```
+    {: pre}
+    
+    Example request to [assign configuration to a cluster group](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite/createAssignment){: external}.
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createAssignment" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d "{ \"channelName\": \"CONFIGURATION-NAME\", \"cluster\": \"string\", \"groups\": [ \"CLUSTER-GROUP\" ], \"name\": \"ASSIGNMENT-NAME\"}"
+    ```
+    {: pre}
+    
+1. Replace the variables with your details and run the request.
+
+1. Verify the assignment was created by listing your assignments.
+
+    ```sh
+    curl -X GET "https://containers.cloud.ibm.com/global/v2/storage/satellite/getAssignments" -H "accept: application/json" -H "Authorization: Bearer TOKEN"
+    ```
+    {: pre}
+    
+## Updating assignments
+{: #netapp-ontap-nas-assignment-update}
+
+Update your assignments to rollout your configurations to new or different clusters, cluster groups, or service.
+
+
+### Updating an assignment in the console
+{: #netapp-ontap-nas-assignment-update-console}
+{: ui}
+
+Updating assignments in the console is currently not available.
+{: note}
+
+However, you can use the [CLI](#netapp-ontap-nas-assignment-update-cli) or [API](#netapp-ontap-nas-assignment-update-api) to update your assignemnts.
+
+
+### Updating an assignment in the CLI
+{: #netapp-ontap-nas-assignment-update-cli}
+{: cli}
+
+You can use the `storage assignment update` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-upgrade) to rename your assignment or assign it to a new cluster or cluster group.
+
+
+1. List your assignments, make a note of the  assignment you want to update and the clusters or cluster groups included in the assignment.
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. Update the assignment.
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
+    ```
+    {: pre}
+
+    Example command to update assignment name and assign different cluster groups.
+    
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 22.04 --param "managementLIF=MANAGEMENTLIF"  --param "dataLIF=DATALIF"  --param "svm=SVM"  --param "username=USERNAME"  --param "password=PASSWORD"  [--param "exportPolicy=EXPORTPOLICY"]  [--param "limitVolumeSize=LIMITVOLUMESIZE"]  [--param "limitAggregateUsage=LIMITAGGREGATEUSAGE"]  [--param "nfsMountOptions=NFSMOUNTOPTIONS"] 
+    ```
+    {: pre}
+
+
+1. Customize the command based on the settings that you want to use.
+
+1. Run the command to create a configuration.
+
+1. Verify your configuration was created.
+    ```sh
+    ibmcloud sat storage config get --config CONFIG
+    ```
+    {: pre}
+
+### Creating a configuration in the API
+{: #netapp-ontap-nas-config-create-api}
+
+1. Copy one of the following example requests and replace the variables that you want to use.
+
+
+    Example request to create a version 21.04 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-ontap-nas\", \"storage-template-version\": \"21.04\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MANAGEMENTLIF\",\"user-secret-parameters\": { \"entry.name\": \"MANAGEMENTLIF\",  { \"entry.name\": \"DATALIF\",\"user-secret-parameters\": { \"entry.name\": \"DATALIF\",  { \"entry.name\": \"SVM\",\"user-secret-parameters\": { \"entry.name\": \"SVM\",  { \"entry.name\": \"USERNAME\",\"user-secret-parameters\": { \"entry.name\": \"USERNAME\",  { \"entry.name\": \"PASSWORD\",\"user-secret-parameters\": { \"entry.name\": \"PASSWORD\",  { \"entry.name\": \"EXPORTPOLICY\",\"user-secret-parameters\": { \"entry.name\": \"EXPORTPOLICY\",  { \"entry.name\": \"LIMITVOLUMESIZE\",\"user-secret-parameters\": { \"entry.name\": \"LIMITVOLUMESIZE\",  { \"entry.name\": \"LIMITAGGREGATEUSAGE\",\"user-secret-parameters\": { \"entry.name\": \"LIMITAGGREGATEUSAGE\",  { \"entry.name\": \"NFSMOUNTOPTIONS\",\"user-secret-parameters\": { \"entry.name\": \"NFSMOUNTOPTIONS\", 
+    ```
+    {: pre}
+
+    Example request to create a version 22.04 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-ontap-nas\", \"storage-template-version\": \"22.04\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MANAGEMENTLIF\",\"user-secret-parameters\": { \"entry.name\": \"MANAGEMENTLIF\",  { \"entry.name\": \"DATALIF\",\"user-secret-parameters\": { \"entry.name\": \"DATALIF\",  { \"entry.name\": \"SVM\",\"user-secret-parameters\": { \"entry.name\": \"SVM\",  { \"entry.name\": \"USERNAME\",\"user-secret-parameters\": { \"entry.name\": \"USERNAME\",  { \"entry.name\": \"PASSWORD\",\"user-secret-parameters\": { \"entry.name\": \"PASSWORD\",  { \"entry.name\": \"EXPORTPOLICY\",\"user-secret-parameters\": { \"entry.name\": \"EXPORTPOLICY\",  { \"entry.name\": \"LIMITVOLUMESIZE\",\"user-secret-parameters\": { \"entry.name\": \"LIMITVOLUMESIZE\",  { \"entry.name\": \"LIMITAGGREGATEUSAGE\",\"user-secret-parameters\": { \"entry.name\": \"LIMITAGGREGATEUSAGE\",  { \"entry.name\": \"NFSMOUNTOPTIONS\",\"user-secret-parameters\": { \"entry.name\": \"NFSMOUNTOPTIONS\", 
+    ```
+    {: pre}
+
+
+
 
 
 1. Verify that your storage configuration is created.
@@ -129,139 +307,6 @@ Before you can deploy storage templates to clusters in your location, make sure 
     
 
 
-## Assigning your NetApp ONTAP-NAS storage configuration to a cluster
-{: #assign-storage-netapp-nas-2104}
-
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-netapp-nas-2104), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
-
-
-### Assigning a NetApp ONTAP-NAS storage configuration in the console
-{: #assign-storage-netapp-ui-nas-2104}
-{: ui}
-
-1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
-1. Select the location where you want to create a storage configuration.
-1. Click the **Locations** tab and click the storage configuration that you want to assign to a cluster group.
-1. On the **Configuration details** page, click **Create storage assignment**.
-1. In the **Create an assignment** pane, enter a name for your assignment. When you create a assignment you assign your storage configuration to your clusters.
-1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
-1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
-1. Click **Create** to create the assignment.
-1. Verify that your storage configuration is deployed to your cluster. 
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to your Location and select **Storage**
-    1. Click the storage configuration that you created and review the **Assignments** tab.
-    1. Click the **Assignment** that you created and review the **Rollout status** for your configuration.
-
-
-
-### Assigning a NetApp ONTAP-NAS storage configuration in the command line
-{: #assign-storage-netapp-cli-nas-2104}
-{: cli}
-
-1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
-    ```sh
-    ibmcloud sat storage config ls
-    ```
-    {: pre}
-
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    - Group
-      ```sh
-      ibmcloud sat group ls
-      ```
-      {: pre}
-
-    - Cluster
-      ```sh
-      ibmcloud oc cluster ls --provider satellite
-      ```
-      {: pre}
-
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat service ls --location <location>
-      ```
-      {: pre}
-
-1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
-
-    - Group
-      ```sh
-      ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
-      ```
-      {: pre}
-
-    - Cluster
-      ```sh
-      ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-1. Verify that your assignment is created.
-    ```sh
-    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
-    ```
-    {: pre}
-
-1. Verify that the `trident-kubectl-nas` pod is deployed in the `trident` namespace.
-
-    ```sh
-    oc get pods -n trident | grep trident-kubectl-nas
-    ```
-    {: pre}
-
-    Example output
-
-    ```sh
-    trident-kubectl-nas                 1/1     Running   0          2m32s
-    ```
-    {: screen}
-
-1. Verify that the `sat-netapp` storage classes are deployed.
-
-    ```sh
-    oc get sc | grep netapp
-    ```
-    {: pre}
-
-1. Verify that all resources in the `trident` namespace are `Running` or `Ready`.
-
-    ```sh
-    oc get all -n trident
-    ```
-    {: pre}
-
-    Example output
-    ```sh
-    NAME                                    READY   STATUS    RESTARTS   AGE
-    pod/trident-csi-2nrt4                   2/2     Running   0          14m
-    pod/trident-csi-7f999bfb96-z4dr5        6/6     Running   0          14m
-    pod/trident-csi-cd5mx                   2/2     Running   0          14m
-    pod/trident-csi-zlwwn                   2/2     Running   0          14m
-    pod/trident-kubectl-nas                 1/1     Running   0          4m14s
-    pod/trident-operator-794f74cd4b-zpnt4   1/1     Running   0          14m
-
-    NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)              AGE
-    service/trident-csi   ClusterIP   172.21.106.252   <none>        34571/TCP,9220/TCP   14m
-
-    NAME                         DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR                                     AGE
-    daemonset.apps/trident-csi   3         3         3       3            3           kubernetes.io/arch=amd64,kubernetes.io/os=linux   14m
-
-    NAME                               READY   UP-TO-DATE   AVAILABLE   AGE
-    deployment.apps/trident-csi        1/1     1            1           14m
-    deployment.apps/trident-operator   1/1     1            1           14m
-
-    NAME                                          DESIRED   CURRENT   READY   AGE
-    replicaset.apps/trident-csi-7f999bfb96        1         1         1       14m
-    replicaset.apps/trident-operator-794f74cd4b   1         1         1       14m
-    ```
-    {: screen}
 
 
 ## Deploying an app that uses ONTAP-NAS storage
@@ -386,72 +431,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
         ```
         {: pre}
 
-## Upgrading a NetApp ONTAP-NAS storage configuration
-{: #netapp-nas-2104-upgrade-config}
-{: cli}
 
-You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage configurations, make a note of the {{site.data.keyword.satelliteshort}} configuration you want to upgrade.
-    ```sh
-    ibmcloud sat storage config ls
-    ```
-    {: pre}
-
-1. Upgrade the {{site.data.keyword.satelliteshort}} configuration. Note, only the configuration is updated. If you want to upgrade the assignments that use this configuration, you can specify the `--include-assignments` option or you can manually update each assignment using the `assignment update` command.
-    ```sh
-    ibmcloud sat storage config upgrade --config CONFIG [--include-assignments]
-    ```
-    {: pre}
-
-## Upgrading a NetApp ONTAP-NAS storage assignment
-{: #netapp-nas-2104-upgrade-assignment}
-{: cli}
-
-You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to upgrade.
-    ```sh
-    ibmcloud sat storage assignment ls
-    ```
-    {: pre}
-
-1. List the {{site.data.keyword.satelliteshort}} storage templates to see the latest available versions.
-    ```sh
-    ibmcloud sat storage template ls
-    ```
-    {: pre}
-
-1. Upgrade the {{site.data.keyword.satelliteshort}} assignment.
-    ```sh
-   ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT
-    ```
-    {: pre}
-
-## Updating a NetApp ONTAP-NAS storage assignment
-{: #netapp-nas-2104-update-assignment}
-{: cli}
-
-You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to update and the clusters or cluster groups included in the assignment.
-    ```sh
-    ibmcloud sat storage assignment ls
-    ```
-    {: pre}
-
-1. Update the {{site.data.keyword.satelliteshort}} assignment. 
-    ```sh
-    ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
-    ```
-    {: pre}
-
-    Example command to update assignment name and assign different cluster groups.
-    
-    ```sh
-    ibmcloud sat storage assignment update --assignment ASSIGNMENT --name new-name --group group-1 --group group-2 --group group-3
-    ```
-    {: pre}
 
 
 ## Removing NetApp ONTAP-NAS storage from your apps

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-19"
+lastupdated: "2022-12-20"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 # Azure Disk CSI driver
-{: #config-storage-azure-csi}
+{: #storage-azuredisk-csi-driver}
 
 The Azure Disk CSI driver for {{site.data.keyword.satellitelong}} implements the CSI specification so that container orchestration tools can manage the lifecycle of Azure Disk volumes.
 {: shortdesc}
@@ -75,248 +75,16 @@ If you manually assigned your Azure hosts to your location and did not use the t
     ```
     {: pre}
 
-1. Repeat the previous steps for each worker node.
-
-### Gathering your Azure Disk configuration parameters
-{: #azure-disk-config-file}
-
-Create a configuration file with your Azure Disk settings.
-{: shortdesc}
-
-1. List the Azure Disk storage template parameters.
-    ```sh
-    ibmcloud sat storage template get --name azuredisk-csi-driver --version <version>
-    ```
-    {: pre}
-    
-    Example output
-    ```sh
-    Name                Display Name                           Description                                Required   Type     Default   Mutable
-    aadClientId         Azure Active Directory Client ID       Azure Active Directory Client ID.          true       string   -         true
-    aadClientSecret     Azure Active Directory Client Secret   Azure Active Directory Client Secret.      true       string   -         true 
-    location            location                               Location where the machines are created.   true       string   -         true    
-    resourceGroup       Resource Group.                        Resource Group.                            true       string   -         true    
-    securityGroupName   Network Security Group Name            Network Security Group Name.               true       string   -         true    
-    subscriptionId      Subscription ID                        Subscription ID.                           true       string   -         true    
-    tenantId            Tenant ID                              Tenant ID.                                 true       string   -         true    
-    vmType              Virtual Machnine Type                  Virtual Machnine Type.                     true       string   -         true    
-    vnetName            Virtual Network Name                   Virtual Network Name.                      true       string   -         true   
-    ```
-    {: screen}
+1. Repeat the previous steps for each worker node
 
 
 1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/get-started/){: external} and retrieve the required parameters. For more information about the parameters, see [Cluster config](https://cloud-provider-azure.sigs.k8s.io/install/configs/#cluster-config).
 
-## Creating an Azure Disk configuration with the console
-{: #sat-storage-azure-csi-ui}
-{: ui}
-
-1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
-1. Select **Storage** > **Create storage configuration**
-1. Enter a name for your configuration.
-1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
-1. On the **Parameters** tab, enter the parameters for your configuration.
-1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
-1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
-1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
-1. Click **Complete** to assign your storage configuration.
-
-
-## Creating an Azure Disk configuration in the command line
-{: #sat-storage-azure-csi-cli}
-{: cli}
-
-Create a storage configuration in the command line by using the Azure Disk template.
-{: shortdesc}
-
-1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
-
-    ```sh
-    ibmcloud login
-    ```
-    {: pre}
-
-1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-
-    ```sh
-    ibmcloud sat location ls
-    ```
-    {: pre}
-
-1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
-
-    ```sh
-    ibmcloud target -r us-east
-    ```
-    {: pre}
-
-1. If you use a resource group other than `default`, target it.
-
-    ```sh
-    ibmcloud target -g <resource-group>
-    ```
-    {: pre}
-    
-1. Review the [template parameters](#azuredisk-csi-driver-parameter-reference).
-1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
+{[azure-disk-csi-driver-config-create.md]}
 
 
 
-    Example command to create a version 1.4.0 configuration.
 
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.4.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
-    ```
-    {: pre}
-
-
-    Example command to create a version 1.18.0 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.18.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
-    ```
-    {: pre}
-
-
-    Example command to create a version 1.23.0 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.23.0  --param "tenantId=TENANTID"   --param "subscriptionId=SUBSCRIPTIONID"   --param "aadClientId=AADCLIENTID"   --param "location=LOCATION"   --param "aadClientSecret=AADCLIENTSECRET"   --param "resourceGroup=RESOURCEGROUP"   --param "vmType=VMTYPE"   --param "securityGroupName=SECURITYGROUPNAME"   --param "vnetName=VNETNAME" 
-    ```
-    {: pre}
-
-
-1. Verify that your storage configuration is created.
-
-    ```sh
-    ibmcloud sat storage config get --config <config>
-    ```
-    {: pre}
-
-1. [Assign your storage configuration to clusters](#assign-storage-azure).
-
-
-
-## Assigning your Azure Disk storage configuration to a cluster
-{: #assign-storage-azure}
-
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-azure-csi), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
-{: shortdesc}
-
-
-### Assigning an Azure Disk storage configuration in the console
-{: #assign-storage-azure-csi-ui}
-{: ui}
-
-1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
-1. Select the location where you want to create a storage configuration.
-1. Click the **Locations** tab and click the storage configuration that you want to assign to a cluster group.
-1. On the **Configuration details** page, click **Create storage assignment**.
-1. In the **Create an assignment** pane, enter a name for your assignment. When you create a assignment you assign your storage configuration to your clusters.
-1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
-1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
-1. Click **Create** to create the assignment.
-1. Verify that your storage configuration is deployed to your cluster. 
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to your Location and select **Storage**
-    1. Click the storage configuration that you created and review the **Assignments** tab.
-    1. Click the **Assignment** that you created and review the **Rollout status** for your configuration.
-
-
-
-### Assigning an Azure Disk storage configuration in the command line
-{: #assign-storage-azure-csi-cli}
-{: cli}
-
-1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
-    ```sh
-    ibmcloud sat storage config ls
-    ```
-    {: pre}
-
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    - Group
-      ```sh
-      ibmcloud sat group ls
-      ```
-      {: pre}
-
-    - Cluster
-      ```sh
-      ibmcloud oc cluster ls --provider satellite
-      ```
-      {: pre}
-
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat service ls --location <location>
-      ```
-      {: pre}
-
-1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
-
-    - Group
-      ```sh
-      ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
-      ```
-      {: pre}
-
-    - Cluster
-      ```sh
-      ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-1. Verify that your assignment is created.
-    ```sh
-    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
-    ```
-    {: pre}
-
-1. Verify that the storage configuration resources are deployed.
-
-    ```sh
-    kubectl get pods -n kube-system | grep azure
-    ```
-    {: pre}
-
-    Example output
-    ```sh
-    csi-azuredisk-controller-849d854b96-6jbjg   5/5     Running   0          167m
-    csi-azuredisk-controller-849d854b96-lkplx   5/5     Running   0          167m
-    csi-azuredisk-node-7qwlj                    3/3     Running   6          167m
-    csi-azuredisk-node-8xm4c                    3/3     Running   6          167m
-    csi-azuredisk-node-snsdb                    3/3     Running   6          167m
-    ```
-    {: screen}
-
-1. List the Azure Disk storage classes.
-
-    ```sh
-    oc get sc | grep azure
-    ```
-    {: pre}
-
-    Example output
-
-    ```sh
-    sat-azure-block-bronze           disk.csi.azure.com   Delete          Immediate              true                   167m
-    sat-azure-block-bronze-metro     disk.csi.azure.com   Delete          WaitForFirstConsumer   true                   167m
-    sat-azure-block-gold             disk.csi.azure.com   Delete          Immediate              true                   167m
-    sat-azure-block-gold-metro       disk.csi.azure.com   Delete          WaitForFirstConsumer   true                   167m
-    sat-azure-block-platinum         disk.csi.azure.com   Delete          Immediate              true                   167m
-    sat-azure-block-platinum-metro   disk.csi.azure.com   Delete          WaitForFirstConsumer   true                   167m
-    sat-azure-block-silver           disk.csi.azure.com   Delete          Immediate              true                   167m
-    sat-azure-block-silver-metro     disk.csi.azure.com   Delete          WaitForFirstConsumer   true                   167m
-    ```
-    {: screen}
-
-1. [Deploy an app that uses your Azure Disk storage](#storage-azure-csi-app-deploy).
 
 
 
@@ -457,72 +225,7 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     ```
     {: pre}
 
-## Upgrading an Azure Disk storage configuration
-{: #azure-disk-upgrade-config}
 
-
-You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage configurations, make a note of the {{site.data.keyword.satelliteshort}} configuration you want to upgrade.
-    ```sh
-    ibmcloud sat storage config ls
-    ```
-    {: pre}
-
-1. Upgrade the {{site.data.keyword.satelliteshort}} configuration. Note, only the configuration is updated. If you want to upgrade the assignments that use this configuration, you can specify the `--include-assignments` option or you can manually update each assignment using the `assignment update` command.
-    ```sh
-    ibmcloud sat storage config upgrade --config CONFIG [--include-assignments]
-    ```
-    {: pre}
-
-## Upgrading an Azure Disk storage assignment
-{: #azure-disk-upgrade-assignment}
-
-
-You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to upgrade.
-    ```sh
-    ibmcloud sat storage assignment ls
-    ```
-    {: pre}
-
-1. List the {{site.data.keyword.satelliteshort}} storage templates to see the latest available versions.
-    ```sh
-    ibmcloud sat storage template ls
-    ```
-    {: pre}
-
-1. Upgrade the {{site.data.keyword.satelliteshort}} assignment.
-    ```sh
-   ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT
-    ```
-    {: pre}
-
-## Updating an Azure Disk storage assignment
-{: #azure-disk-update-assignment}
-
-
-You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to update and the clusters or cluster groups included in the assignment.
-    ```sh
-    ibmcloud sat storage assignment ls
-    ```
-    {: pre}
-
-1. Update the {{site.data.keyword.satelliteshort}} assignment. 
-    ```sh
-    ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
-    ```
-    {: pre}
-
-    Example command to update assignment name and assign different cluster groups.
-    
-    ```sh
-    ibmcloud sat storage assignment update --assignment ASSIGNMENT --name new-name --group group-1 --group group-2 --group group-3
-    ```
-    {: pre}
 
 ## Removing Azure Disk storage from your apps
 {: #azure-disk-rm}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-07"
+lastupdated: "2022-12-20"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 # AWS EFS 
-{: #config-storage-efs}
+{: #storage-aws-efs-csi-driver}
 
 Set up [Amazon Elastic File System (EFS)](https://docs.aws.amazon.com/efs/?id=docs_gateway){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
@@ -41,100 +41,102 @@ To use the AWS EFS storage template, complete the following tasks:
 You can use the [console](#sat-storage-aws-efs-ui) or [CLI](#sat-storage-aws-efs-cli) to create an AWS EFS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EFS storage for your apps. 
 {: shortdesc}
 
-### Creating an AWS EFS storage configuration from the console
-{: #sat-storage-aws-efs-ui}
+
+
+
+## Creating a configuration
+{: #aws-efs-csi-driver-config-create}
+
+Before you begin, review the [parameter reference](#aws-efs-csi-driver-parameter-reference) for the template version that you want to use.
+{: important}
+
+### Creating and assigning a configuration in the console
+{: aws-efs-csi-driver-config-create-console}
 {: ui}
 
-Use the console to create an AWS EFS storage configuration for your location.
-{: shortdesc}
-
-Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs) and review the [parameter reference](#aws-efs-csi-driver-parameter-reference).
-
-1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
 1. Enter a name for your configuration.
-1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
-1. On the **Parameters** tab, enter the parameters for your configuration.
-1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
-1. **Important** The AWS EFS template doesn't include any pre-defined storage classes. Instead, you must create a storage class when you create your configuration. On the **Storage classes** tab, click **Add storage class** to create a custom storage class for your configuration. Make sure to specify your EFS filesystem ID and review the storage class options.
-1. Click **Add** to add the storage class to your configuration, then click **Next**.
+1. Select the **Storage type**.
+1. Select the **Version** and click **Next**
+1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
+1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class. For AWS EFS configurations, you must add a storage class before continuing.
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-### Creating an AWS EFS storage configuration from the CLI
-{: #sat-storage-aws-efs-cli}
+### Creating a configuration in the CLI
+{: #aws-efs-csi-driver-config-create-cli}
 {: cli}
 
-
-Use the CLI to create an AWS EFS storage configuration for your location.
-{: shortdesc}
-
-Before you begin, review and complete the [prerequisites](#sat-storage-efs-prereqs).
-
-1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
-
-    ```sh
-    ibmcloud login
-    ```
-    {: pre}
-
-1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-
-    ```sh
-    ibmcloud sat location ls
-    ```
-    {: pre}
-
-1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
-
-    ```sh
-    ibmcloud target -r us-east
-    ```
-    {: pre}
-
-1. If you use a resource group other than `default`, target it.
-
-    ```sh
-    ibmcloud target -g <resource-group>
-    ```
-    {: pre}
-    
-1. Review the [AWS EFS storage configuration parameters](#aws-efs-csi-driver-parameter-reference).
-1. Create an AWS EFS storage configuration. Replace the variables with the parameters that you retrieved in the previous step.
-
+1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
     Example command to create a version 1.3.1 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.1  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.1 --param "aws-access-key=AWS-ACCESS-KEY"  --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
     ```
     {: pre}
-
 
     Example command to create a version 1.3.7 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.7  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.3.7 --param "aws-access-key=AWS-ACCESS-KEY"  --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
     ```
     {: pre}
-
 
     Example command to create a version 1.4.2 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.4.2  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-efs-csi-driver --template-version 1.4.2 --param "aws-access-key=AWS-ACCESS-KEY"  --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
     ```
     {: pre}
+
+
+1. Customize the command based on the settings that you want to use.
+
+1. Run the command to create a configuration.
+
+1. Verify your configuration was created.
+    ```sh
+    ibmcloud sat storage config get --config CONFIG
+    ```
+    {: pre}
+
+### Creating a configuration in the API
+{: #aws-efs-csi-driver-config-create-api}
+
+1. Copy one of the following example requests and replace the variables that you want to use.
+
+
+    Example request to create a version 1.3.1 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-efs-csi-driver\", \"storage-template-version\": \"1.3.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",  { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\", 
+    ```
+    {: pre}
+
+    Example request to create a version 1.3.7 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-efs-csi-driver\", \"storage-template-version\": \"1.3.7\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",  { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\", 
+    ```
+    {: pre}
+
+    Example request to create a version 1.4.2 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-efs-csi-driver\", \"storage-template-version\": \"1.4.2\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",  { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\", 
+    ```
+    {: pre}
+
+
+
 
     
 
 
-1. Verify that your storage configuration is created.
-    ```sh
-    ibmcloud sat storage config get --config <config_name>
-    ```
-    {: pre}
     
     
 ## Adding a custom AWS EFS storage class to your configuration
@@ -178,8 +180,7 @@ You can't add storage classes to {{site.data.keyword.satelliteshort}} storage co
 
     `name`
     :   Required. The name of the storage class.
-    
-    
+
     Example command to add a custom storage class to a configuration call `my-config`.
     
     ```sh
@@ -190,49 +191,7 @@ You can't add storage classes to {{site.data.keyword.satelliteshort}} storage co
 3. [Assign your storage configuration](#efs-config-assign).
 
 
-### Assigning your AWS EFS storage configuration to clusters or cluster groups
-{: #efs-config-assign}
-{: cli}
 
-1. Create a storage assignment for your cluster group. After you create the assignment, the AWS EFS driver is installed in all clusters that belong to the cluster group. Replace `<group_name>` with the name of your cluster group, `<config_name>` with the name of your storage configuration, and `<assignment_name>` with a name for your storage assignment. For more information, see the [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create) command.
-    ```sh
-    ibmcloud sat storage assignment create --group <group_name> --config <config_name> --name <assignment_name>
-    ```
-    {: pre}
-
-2. Verify that your assignment is created.
-    ```sh
-    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
-    ```
-    {: pre}
-
-3. Verify that the AWS EFS storage configuration resources are successfully deployed in your cluster.
-    1. [Access your cluster](/docs/openshift?topic=openshift-access_cluster).
-    2. List the AWS EFS driver pods in the `kube-system` namespace and verify that the status is `Running`.
-        ```sh
-        oc get pods -n kube-system | grep efs
-        ```
-        {: pre}
-
-        Example output
-        ```sh
-        efs-csi-node-gfm9x                      3/3     Running   0          7m48s
-        efs-csi-node-hz45b                      3/3     Running   0          7m48s
-        efs-csi-node-pv8m7                      3/3     Running   0          7m48s
-        ```
-        {: screen}
-
-    3. List the AWS EFS storage classes.
-        ```sh
-        oc get sc | grep aws-file
-        ```
-        {: pre}
-
-        Example output
-        ```sh         
-        sat-aws-file-gold     efs.csi.aws.com      Delete          Immediate              false                  8m27s
-        ```
-        {: screen}
 
 ## Deploying an app that uses AWS EFS storage
 {: #sat-storage-efs-deploy}
@@ -394,47 +353,6 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
 
 8. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you used and verify that the file system grows in size.   
 
-## Upgrading an AWS EFS storage configuration
-{: #aws-efs-upgrade-config}
-
-
-You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage configurations, make a note of the {{site.data.keyword.satelliteshort}} configuration you want to upgrade.
-    ```sh
-    ibmcloud sat storage config ls
-    ```
-    {: pre}
-
-1. Upgrade the {{site.data.keyword.satelliteshort}} configuration. Note, only the configuration is updated. If you want to upgrade the assignments that use this configuration, you can specify the `--include-assignments` option or you can manually update each assignment using the `assignment update` command.
-    ```sh
-    ibmcloud sat storage config upgrade --config CONFIG [--include-assignments]
-    ```
-    {: pre}
-
-## Upgrading an AWS EFS storage assignment
-{: #aws-efs-upgrade-assignment}
-
-
-You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to upgrade.
-    ```sh
-    ibmcloud sat storage assignment ls
-    ```
-    {: pre}
-
-1. List the {{site.data.keyword.satelliteshort}} storage templates to see the latest available versions.
-    ```sh
-    ibmcloud sat storage template ls
-    ```
-    {: pre}
-
-1. Upgrade the {{site.data.keyword.satelliteshort}} assignment.
-    ```sh
-   ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT
-    ```
-    {: pre}
 
 
 

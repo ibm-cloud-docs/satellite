@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-19"
+lastupdated: "2022-12-20"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -15,7 +15,7 @@ subcollection: satellite
 
 
 # OpenShift Data Foundation using local disks
-{: #config-storage-odf-local}
+{: #storage-odf-local}
 
 Set up OpenShift Data Foundation for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster. Be aware that charges occur when you use the OpenShift Data Foundation service. Use the Cost Estimator to generate a cost estimate based on your projected usage.
 {: shortdesc}
@@ -151,184 +151,288 @@ When you create your ODF configuration, you must specify the device paths of the
 
 1. Repeat the previous steps for each worker node that you want to use for your ODF configuration.
 
-## Creating an OpenShift Data Foundation configuration in the UI
-{: #sat-storage-odf-local-ui}
+
+    
+
+## Creating a configuration
+{: #odf-local-config-create}
+
+Before you begin, review the [parameter reference](#odf-local-parameter-reference) for the template version that you want to use.
+{: important}
+
+### Creating and assigning a configuration in the console
+{: odf-local-config-create-console}
 {: ui}
 
-1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
 1. Enter a name for your configuration.
-1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
-1. On the **Parameters** tab, enter the parameters for your configuration.
-1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. Select the **Storage type**.
+1. Select the **Version** and click **Next**
+1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
+1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
 1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-
-## Creating an OpenShift Data Foundation configuration in the command line
-{: #sat-storage-odf-local-cli}
+### Creating a configuration in the CLI
+{: #odf-local-config-create-cli}
 {: cli}
 
-1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
-
-    ```sh
-    ibmcloud login
-    ```
-    {: pre}
-
-1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-
-    ```sh
-    ibmcloud sat location ls
-    ```
-    {: pre}
-
-1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
-
-    ```sh
-    ibmcloud target -r us-east
-    ```
-    {: pre}
-
-1. If you use a resource group other than `default`, target it.
-
-    ```sh
-    ibmcloud target -g <resource-group>
-    ```
-    {: pre}
-    
-
-1. List the available templates and versions and review the output. Make a note of the template and version that you want to use. Your storage template version and cluster version must match. 
-
-    ```sh
-    ibmcloud sat storage template ls
-    ```
-    {: pre}
-    
-1. Get the template parameters for your cluster version.
-    ```sh
-    ibmcloud sat storage template get --name odf-local --version <version>
-    ```
-    {: pre}
-    
-
-1. Review the [Red Hat OpenShift container storage configuration parameters](#odf-local-parameter-reference).
-
-1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Be sure to include the `/dev/disk/by-id/` prefix for your `mon-device-path` and `osd-device-path` values. If you are using a {{site.data.keyword.cos_short}} backing store, be sure to specify the regional public endpoint in the following format: `https://s3.us-east.cloud-object-storage.appdomain.cloud`. Don't specify the {{site.data.keyword.cos_short}} parameters if your existing configuration doesn't use {{site.data.keyword.cos_full_notm}}.
-
-    Note that you must specify separate disks or separate partitions for each `mon-device-path` and `osd-device-path`. You must assign one disk or one partition for each OSD or MON storage device. For disks without partitions, specify separate disks. For partitioned disks, you can specify the same disk, but you must specify separate partitions.
-    {: note}
-    
+1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
     Example command to create a version 4.7 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.7  --param "mon-device-path=MON-DEVICE-PATH"   --param "osd-device-path=OSD-DEVICE-PATH"   [--param "num-of-osd=NUM-OF-OSD"]   [--param "worker-nodes=WORKER-NODES"]   [--param "odf-upgrade=ODF-UPGRADE"]   [--param "billing-type=BILLING-TYPE"]   [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]   [--param "ibm-cos-location=IBM-COS-LOCATION"]   [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]   [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]   [--param "cluster-encryption=CLUSTER-ENCRYPTION"]   --param "iam-api-key=IAM-API-KEY"   [--param "perform-cleanup=PERFORM-CLEANUP"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.7 --param "mon-device-path=MON-DEVICE-PATH"  --param "osd-device-path=OSD-DEVICE-PATH"  [--param "num-of-osd=NUM-OF-OSD"]  [--param "worker-nodes=WORKER-NODES"]  [--param "odf-upgrade=ODF-UPGRADE"]  [--param "billing-type=BILLING-TYPE"]  [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]  [--param "ibm-cos-location=IBM-COS-LOCATION"]  [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]  [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]  [--param "cluster-encryption=CLUSTER-ENCRYPTION"]  --param "iam-api-key=IAM-API-KEY"  [--param "perform-cleanup=PERFORM-CLEANUP"] 
     ```
     {: pre}
-
 
     Example command to create a version 4.8 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.8  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   [--param "osd-device-path=OSD-DEVICE-PATH"]   [--param "num-of-osd=NUM-OF-OSD"]   [--param "worker-nodes=WORKER-NODES"]   [--param "odf-upgrade=ODF-UPGRADE"]   [--param "billing-type=BILLING-TYPE"]   [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]   [--param "ibm-cos-location=IBM-COS-LOCATION"]   [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]   [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]   [--param "cluster-encryption=CLUSTER-ENCRYPTION"]   --param "iam-api-key=IAM-API-KEY"   [--param "perform-cleanup=PERFORM-CLEANUP"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.8 [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]  [--param "osd-device-path=OSD-DEVICE-PATH"]  [--param "num-of-osd=NUM-OF-OSD"]  [--param "worker-nodes=WORKER-NODES"]  [--param "odf-upgrade=ODF-UPGRADE"]  [--param "billing-type=BILLING-TYPE"]  [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]  [--param "ibm-cos-location=IBM-COS-LOCATION"]  [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]  [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]  [--param "cluster-encryption=CLUSTER-ENCRYPTION"]  --param "iam-api-key=IAM-API-KEY"  [--param "perform-cleanup=PERFORM-CLEANUP"] 
     ```
     {: pre}
-
 
     Example command to create a version 4.9 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   [--param "osd-device-path=OSD-DEVICE-PATH"]   [--param "num-of-osd=NUM-OF-OSD"]   [--param "worker-nodes=WORKER-NODES"]   [--param "odf-upgrade=ODF-UPGRADE"]   [--param "billing-type=BILLING-TYPE"]   [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]   [--param "ibm-cos-location=IBM-COS-LOCATION"]   [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]   [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]   [--param "cluster-encryption=CLUSTER-ENCRYPTION"]   --param "iam-api-key=IAM-API-KEY"   [--param "perform-cleanup=PERFORM-CLEANUP"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.9 [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]  [--param "osd-device-path=OSD-DEVICE-PATH"]  [--param "num-of-osd=NUM-OF-OSD"]  [--param "worker-nodes=WORKER-NODES"]  [--param "odf-upgrade=ODF-UPGRADE"]  [--param "billing-type=BILLING-TYPE"]  [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]  [--param "ibm-cos-location=IBM-COS-LOCATION"]  [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]  [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]  [--param "cluster-encryption=CLUSTER-ENCRYPTION"]  --param "iam-api-key=IAM-API-KEY"  [--param "perform-cleanup=PERFORM-CLEANUP"] 
     ```
     {: pre}
-
 
     Example command to create a version 4.10 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   [--param "osd-device-path=OSD-DEVICE-PATH"]   [--param "num-of-osd=NUM-OF-OSD"]   [--param "worker-nodes=WORKER-NODES"]   [--param "odf-upgrade=ODF-UPGRADE"]   [--param "billing-type=BILLING-TYPE"]   [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]   [--param "ibm-cos-location=IBM-COS-LOCATION"]   [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]   [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]   [--param "cluster-encryption=CLUSTER-ENCRYPTION"]   --param "iam-api-key=IAM-API-KEY"   [--param "perform-cleanup=PERFORM-CLEANUP"]   [--param "kms-encryption=KMS-ENCRYPTION"]   [--param "kms-instance-name=KMS-INSTANCE-NAME"]   [--param "kms-instance-id=KMS-INSTANCE-ID"]   [--param "kms-base-url=KMS-BASE-URL"]   [--param "kms-token-url=KMS-TOKEN-URL"]   [--param "kms-root-key=KMS-ROOT-KEY"]   [--param "kms-api-key=KMS-API-KEY"]   [--param "ignore-noobaa=IGNORE-NOOBAA"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.10 [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]  [--param "osd-device-path=OSD-DEVICE-PATH"]  [--param "num-of-osd=NUM-OF-OSD"]  [--param "worker-nodes=WORKER-NODES"]  [--param "odf-upgrade=ODF-UPGRADE"]  [--param "billing-type=BILLING-TYPE"]  [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]  [--param "ibm-cos-location=IBM-COS-LOCATION"]  [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]  [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]  [--param "cluster-encryption=CLUSTER-ENCRYPTION"]  --param "iam-api-key=IAM-API-KEY"  [--param "perform-cleanup=PERFORM-CLEANUP"]  [--param "kms-encryption=KMS-ENCRYPTION"]  [--param "kms-instance-name=KMS-INSTANCE-NAME"]  [--param "kms-instance-id=KMS-INSTANCE-ID"]  [--param "kms-base-url=KMS-BASE-URL"]  [--param "kms-token-url=KMS-TOKEN-URL"]  [--param "kms-root-key=KMS-ROOT-KEY"]  [--param "kms-api-key=KMS-API-KEY"]  [--param "ignore-noobaa=IGNORE-NOOBAA"] 
     ```
     {: pre}
 
-    
-1. Verify that your configuration was created.
 
+1. Customize the command based on the settings that you want to use.
+
+1. Run the command to create a configuration.
+
+1. Verify your configuration was created.
     ```sh
-    ibmcloud sat storage config get --config <config>
+    ibmcloud sat storage config get --config CONFIG
     ```
     {: pre}
 
-1. [Assign your storage configuration to clusters](#assign-storage-odf-local).
 
-### Optional: Adding additional worker nodes to your ODF configuration
-{: #add-worker-nodes-odf-local}
-{: cli}
 
-1. Add more worker nodes to your ODF configuration.
-    ```sh
-    ibmcloud sat storage config param set --config <config-name> -p "worker-nodes=<comma-seperated values of new worker-nodes followed by list of old worker-nodes>" --apply
-    ```
-    {: pre}
+## Assigning configurations to clusters
+{: #odf-local-assignment-create}
 
-## Assigning your ODF storage configuration to a cluster
-{: #assign-storage-odf-local}
-{: cli}
+After you create a storage configuration, you can assign that configuration to clusters, cluster groups, or service clusters to automatically deploy storage resources across clusters in your Location.
 
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-odf-local), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
+If you haven't yet created a storage configuration, see [Creating a configuration](#odf-local-config-create).
 
-1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
+### Creating an assignment in the console
+{: #odf-local-assignment-create-console}
+{: ui}
+
+If you didn't assign your configuration to a cluster or service when you created it, you can create an assignment by completing the following steps.
+
+1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
+1. Select the location where you created your storage configuration.
+1. Click the **Locations** tab, then click **Storage**.
+1. Click the storage configuration that you want to assign to a cluster group.
+1. On the **Configuration details** page, click **Create storage assignment**.
+1. In the **Create an assignment** pane, enter a name for your assignment.
+1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
+1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same  location.
+1. Click **Create** to create the assignment.
+1. Verify that your storage configuration is deployed to your cluster. 
+    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to your Location and select **Storage**
+    1. Click the storage configuration that you created and review the **Assignments** tab.
+    1. Click the **Assignment** that you created and review the **Rollout status** for your configuration.
+
+
+### Creating an assignment in the CLI
+{: #odf-local-assignment-create-cli}
+{: ui}
+
+1. List your storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
     ibmcloud sat storage config ls
     ```
     {: pre}
 
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    - Group
-      ```sh
-      ibmcloud sat group ls
-      ```
-      {: pre}
+1. Get the ID of the cluster, cluster group, or service that you want to assign storage to. 
 
-    - Cluster
-      ```sh
-      ibmcloud oc cluster ls --provider satellite
-      ```
-      {: pre}
+    To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+    {: tip}
+    
+    List cluster groups.
+    
+    ```sh
+    ibmcloud sat group ls
+    ```
+    {: pre}
 
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat service ls --location <location>
-      ```
-      {: pre}
+    List clusters.
+    
+    ```sh
+    ibmcloud oc cluster ls --provider satellite
+    ```
+    {: pre}
+    
+    List services.
+    
+    ```sh
+    ibmcloud sat service ls --location <location>
+    ```
+    {: pre}
 
-1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
+1. Assign storage to the cluster or group that you retrieved in step 2. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-    - Group
-      ```sh
-      ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
-      ```
-      {: pre}
+    Assign a configuration to a cluster group.
+    ```sh
+    ibmcloud sat storage assignment create --group GROUP --config CONFIG --name NAME
+    ```
+    {: pre}
 
-    - Cluster
-      ```sh
-      ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
-      ```
-      {: pre}
+    Assign a configuration to a cluster.
+    ```sh
+    ibmcloud sat storage assignment create --cluster CLUSTER --config CONFIG --name NAME
+    ```
+    {: pre}
 
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
-      ```
-      {: pre}
+    Assign a configuration to a service cluster.
+    ```sh
+    ibmcloud sat storage assignment create --service-cluster-id CLUSTER --config CONFIG --name NAME
+    ```
+    {: pre}
 
 1. Verify that your assignment is created.
     ```sh
     ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
     ```
     {: pre}
+
+
+### Creating an assignment in the API
+{: #odf-local-assignment-create-console}
+{: api}
+
+1. Copy one of the following example requests. 
+
+    Example request to assign a [configuration to a cluster](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite/createAssignmentByCluster){: external}.
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createAssignmentByCluster" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d "{ \"channelName\": \"CONFIGURATION-NAME\", \"cluster\": \"CLUSTER-ID\", \"controller\": \"LOCATION-ID\", \"name\": \"ASSIGNMENT-NAME\"}"
+    ```
+    {: pre}
+    
+    Example request to [assign configuration to a cluster group](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite/createAssignment){: external}.
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createAssignment" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d "{ \"channelName\": \"CONFIGURATION-NAME\", \"cluster\": \"string\", \"groups\": [ \"CLUSTER-GROUP\" ], \"name\": \"ASSIGNMENT-NAME\"}"
+    ```
+    {: pre}
+    
+1. Replace the variables with your details and run the request.
+
+1. Verify the assignment was created by listing your assignments.
+
+    ```sh
+    curl -X GET "https://containers.cloud.ibm.com/global/v2/storage/satellite/getAssignments" -H "accept: application/json" -H "Authorization: Bearer TOKEN"
+    ```
+    {: pre}
+    
+## Updating assignments
+{: #odf-local-assignment-update}
+
+Update your assignments to rollout your configurations to new or different clusters, cluster groups, or service.
+
+
+### Updating an assignment in the console
+{: #odf-local-assignment-update-console}
+{: ui}
+
+Updating assignments in the console is currently not available.
+{: note}
+
+However, you can use the [CLI](#odf-local-assignment-update-cli) or [API](#odf-local-assignment-update-api) to update your assignemnts.
+
+
+### Updating an assignment in the CLI
+{: #odf-local-assignment-update-cli}
+{: cli}
+
+You can use the `storage assignment update` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-upgrade) to rename your assignment or assign it to a new cluster or cluster group.
+
+
+1. List your assignments, make a note of the  assignment you want to update and the clusters or cluster groups included in the assignment.
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. Update the assignment.
+    ```sh
+    ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
+    ```
+    {: pre}
+
+    Example command to update assignment name and assign different cluster groups.
+    
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.10 [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]  [--param "osd-device-path=OSD-DEVICE-PATH"]  [--param "num-of-osd=NUM-OF-OSD"]  [--param "worker-nodes=WORKER-NODES"]  [--param "odf-upgrade=ODF-UPGRADE"]  [--param "billing-type=BILLING-TYPE"]  [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]  [--param "ibm-cos-location=IBM-COS-LOCATION"]  [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]  [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]  [--param "cluster-encryption=CLUSTER-ENCRYPTION"]  --param "iam-api-key=IAM-API-KEY"  [--param "perform-cleanup=PERFORM-CLEANUP"]  [--param "kms-encryption=KMS-ENCRYPTION"]  [--param "kms-instance-name=KMS-INSTANCE-NAME"]  [--param "kms-instance-id=KMS-INSTANCE-ID"]  [--param "kms-base-url=KMS-BASE-URL"]  [--param "kms-token-url=KMS-TOKEN-URL"]  [--param "kms-root-key=KMS-ROOT-KEY"]  [--param "kms-api-key=KMS-API-KEY"]  [--param "ignore-noobaa=IGNORE-NOOBAA"] 
+    ```
+    {: pre}
+
+
+1. Customize the command based on the settings that you want to use.
+
+1. Run the command to create a configuration.
+
+1. Verify your configuration was created.
+    ```sh
+    ibmcloud sat storage config get --config CONFIG
+    ```
+    {: pre}
+
+### Creating a configuration in the API
+{: #odf-local-config-create-api}
+
+1. Copy one of the following example requests and replace the variables that you want to use.
+
+
+    Example request to create a version 4.7 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-local\", \"storage-template-version\": \"4.7\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MON-DEVICE-PATH\",\"user-secret-parameters\": { \"entry.name\": \"MON-DEVICE-PATH\",  { \"entry.name\": \"OSD-DEVICE-PATH\",\"user-secret-parameters\": { \"entry.name\": \"OSD-DEVICE-PATH\",  { \"entry.name\": \"NUM-OF-OSD\",\"user-secret-parameters\": { \"entry.name\": \"NUM-OF-OSD\",  { \"entry.name\": \"WORKER-NODES\",\"user-secret-parameters\": { \"entry.name\": \"WORKER-NODES\",  { \"entry.name\": \"ODF-UPGRADE\",\"user-secret-parameters\": { \"entry.name\": \"ODF-UPGRADE\",  { \"entry.name\": \"BILLING-TYPE\",\"user-secret-parameters\": { \"entry.name\": \"BILLING-TYPE\",  { \"entry.name\": \"IBM-COS-ENDPOINT\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ENDPOINT\",  { \"entry.name\": \"IBM-COS-LOCATION\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-LOCATION\",  { \"entry.name\": \"IBM-COS-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ACCESS-KEY\",  { \"entry.name\": \"IBM-COS-SECRET-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-SECRET-KEY\",  { \"entry.name\": \"CLUSTER-ENCRYPTION\",\"user-secret-parameters\": { \"entry.name\": \"CLUSTER-ENCRYPTION\",  { \"entry.name\": \"IAM-API-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IAM-API-KEY\",  { \"entry.name\": \"PERFORM-CLEANUP\",\"user-secret-parameters\": { \"entry.name\": \"PERFORM-CLEANUP\", 
+    ```
+    {: pre}
+
+    Example request to create a version 4.8 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-local\", \"storage-template-version\": \"4.8\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",  { \"entry.name\": \"OSD-DEVICE-PATH\",\"user-secret-parameters\": { \"entry.name\": \"OSD-DEVICE-PATH\",  { \"entry.name\": \"NUM-OF-OSD\",\"user-secret-parameters\": { \"entry.name\": \"NUM-OF-OSD\",  { \"entry.name\": \"WORKER-NODES\",\"user-secret-parameters\": { \"entry.name\": \"WORKER-NODES\",  { \"entry.name\": \"ODF-UPGRADE\",\"user-secret-parameters\": { \"entry.name\": \"ODF-UPGRADE\",  { \"entry.name\": \"BILLING-TYPE\",\"user-secret-parameters\": { \"entry.name\": \"BILLING-TYPE\",  { \"entry.name\": \"IBM-COS-ENDPOINT\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ENDPOINT\",  { \"entry.name\": \"IBM-COS-LOCATION\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-LOCATION\",  { \"entry.name\": \"IBM-COS-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ACCESS-KEY\",  { \"entry.name\": \"IBM-COS-SECRET-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-SECRET-KEY\",  { \"entry.name\": \"CLUSTER-ENCRYPTION\",\"user-secret-parameters\": { \"entry.name\": \"CLUSTER-ENCRYPTION\",  { \"entry.name\": \"IAM-API-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IAM-API-KEY\",  { \"entry.name\": \"PERFORM-CLEANUP\",\"user-secret-parameters\": { \"entry.name\": \"PERFORM-CLEANUP\", 
+    ```
+    {: pre}
+
+    Example request to create a version 4.9 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-local\", \"storage-template-version\": \"4.9\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",  { \"entry.name\": \"OSD-DEVICE-PATH\",\"user-secret-parameters\": { \"entry.name\": \"OSD-DEVICE-PATH\",  { \"entry.name\": \"NUM-OF-OSD\",\"user-secret-parameters\": { \"entry.name\": \"NUM-OF-OSD\",  { \"entry.name\": \"WORKER-NODES\",\"user-secret-parameters\": { \"entry.name\": \"WORKER-NODES\",  { \"entry.name\": \"ODF-UPGRADE\",\"user-secret-parameters\": { \"entry.name\": \"ODF-UPGRADE\",  { \"entry.name\": \"BILLING-TYPE\",\"user-secret-parameters\": { \"entry.name\": \"BILLING-TYPE\",  { \"entry.name\": \"IBM-COS-ENDPOINT\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ENDPOINT\",  { \"entry.name\": \"IBM-COS-LOCATION\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-LOCATION\",  { \"entry.name\": \"IBM-COS-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ACCESS-KEY\",  { \"entry.name\": \"IBM-COS-SECRET-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-SECRET-KEY\",  { \"entry.name\": \"CLUSTER-ENCRYPTION\",\"user-secret-parameters\": { \"entry.name\": \"CLUSTER-ENCRYPTION\",  { \"entry.name\": \"IAM-API-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IAM-API-KEY\",  { \"entry.name\": \"PERFORM-CLEANUP\",\"user-secret-parameters\": { \"entry.name\": \"PERFORM-CLEANUP\", 
+    ```
+    {: pre}
+
+    Example request to create a version 4.10 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-local\", \"storage-template-version\": \"4.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",  { \"entry.name\": \"OSD-DEVICE-PATH\",\"user-secret-parameters\": { \"entry.name\": \"OSD-DEVICE-PATH\",  { \"entry.name\": \"NUM-OF-OSD\",\"user-secret-parameters\": { \"entry.name\": \"NUM-OF-OSD\",  { \"entry.name\": \"WORKER-NODES\",\"user-secret-parameters\": { \"entry.name\": \"WORKER-NODES\",  { \"entry.name\": \"ODF-UPGRADE\",\"user-secret-parameters\": { \"entry.name\": \"ODF-UPGRADE\",  { \"entry.name\": \"BILLING-TYPE\",\"user-secret-parameters\": { \"entry.name\": \"BILLING-TYPE\",  { \"entry.name\": \"IBM-COS-ENDPOINT\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ENDPOINT\",  { \"entry.name\": \"IBM-COS-LOCATION\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-LOCATION\",  { \"entry.name\": \"IBM-COS-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ACCESS-KEY\",  { \"entry.name\": \"IBM-COS-SECRET-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-SECRET-KEY\",  { \"entry.name\": \"CLUSTER-ENCRYPTION\",\"user-secret-parameters\": { \"entry.name\": \"CLUSTER-ENCRYPTION\",  { \"entry.name\": \"IAM-API-KEY\",\"user-secret-parameters\": { \"entry.name\": \"IAM-API-KEY\",  { \"entry.name\": \"PERFORM-CLEANUP\",\"user-secret-parameters\": { \"entry.name\": \"PERFORM-CLEANUP\",  { \"entry.name\": \"KMS-ENCRYPTION\",\"user-secret-parameters\": { \"entry.name\": \"KMS-ENCRYPTION\",  { \"entry.name\": \"KMS-INSTANCE-NAME\",\"user-secret-parameters\": { \"entry.name\": \"KMS-INSTANCE-NAME\",  { \"entry.name\": \"KMS-INSTANCE-ID\",\"user-secret-parameters\": { \"entry.name\": \"KMS-INSTANCE-ID\",  { \"entry.name\": \"KMS-BASE-URL\",\"user-secret-parameters\": { \"entry.name\": \"KMS-BASE-URL\",  { \"entry.name\": \"KMS-TOKEN-URL\",\"user-secret-parameters\": { \"entry.name\": \"KMS-TOKEN-URL\",  { \"entry.name\": \"KMS-ROOT-KEY\",\"user-secret-parameters\": { \"entry.name\": \"KMS-ROOT-KEY\",  { \"entry.name\": \"KMS-API-KEY\",\"user-secret-parameters\": { \"entry.name\": \"KMS-API-KEY\",  { \"entry.name\": \"IGNORE-NOOBAA\",\"user-secret-parameters\": { \"entry.name\": \"IGNORE-NOOBAA\", 
+    ```
+    {: pre}
+
+
+
+
+    
+
 
 1. Verify that the storage configuration resources are deployed. Note that this process might take up to 10 minutes to complete.
 

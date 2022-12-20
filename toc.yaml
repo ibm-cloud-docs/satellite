@@ -124,48 +124,45 @@ toc:
         - topicgroup:
             label: Setting up storage
             topics: 
-              - sat-storage-template-ov.md
+              - storage-template-ov.md
               - storage-template-features.md
               - topicgroup:
                   label: AWS storage templates
                   topics:
-                    - config-storage-ebs.md
-                    - config-storage-efs.md
+                    - storage-aws-ebs-csi-driver.md
+                    - storage-aws-efs-csi-driver.md
               - topicgroup:
                   label: Azure storage templates
                   topics:
-                    - config-storage-azure-csi.md
-                    - config-storage-azurefile-csi.md
+                    - storage-azuredisk-csi-driver.md
+                    - storage-azurefile-csi-driver.md
               - topicgroup:
                   label: Google storage templates
                   topics:
-                  - config-storage-gcp-csi.md
+                  - storage-storage-gcp-compute-persistent-disk-csi-driver.md.md
               - topicgroup:
                   label: IBM storage templates
                   topics:
-                    - config-storage-block-csi.md 
-                    - config-storage-cos.md
-                    - config-storage-spectrum-scale.md
-                    - config-storage-vpc-csi.md
+                    - storage-ibm-system-storage-block-csi-driver.md.md 
+                    - storage-ibm-object-storage-plugin.md
+                    - storage-ibm-vpc-block-csi-driver.md
               - topicgroup:
                   label: NetApp storage templates
                   topics:
                     - config-storage-netapp-trident.md
-                    - config-storage-netapp-nas-2104.md
-                    - config-storage-netapp-nas.md
-                    - config-storage-netapp-2104.md
-                    - config-storage-netapp.md
+                    - storage-netapp-ontap-nas.md
+                    - config-storage-netapp-ontap-san.md
               - topicgroup:
                   label: Red Hat storage templates
                   topics:
-                    - config-storage-local-block.md
-                    - config-storage-local-file.md
-                    - config-storage-odf-local.md
-                    - config-storage-odf-remote.md
+                    - storage-local-volume-block.md
+                    - storage-local-volume-file.md
+                    - storage-odf-local.md
+                    - storage-odf-remote.md
               - topicgroup: 
                   label: VMware storage templates
                   topics:
-                    - config-storage-vmware-csi.md 
+                    - storage-vsphere-csi-driver.md 
               - storage-class-ref.md
         - sg-usecase.md
         - topicgroup:
