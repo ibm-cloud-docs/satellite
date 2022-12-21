@@ -1738,7 +1738,7 @@ subcollection: satellite
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create-cli)
 
@@ -1772,7 +1772,7 @@ subcollection: satellite
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create-cli)
 
@@ -1813,7 +1813,7 @@ subcollection: satellite
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-cli)
 
@@ -1849,23 +1849,9 @@ subcollection: satellite
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-cli)
-
-* [Assigning configurations to clusters](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-assignment-create)
-
-    * [Creating an assignment in the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-assignment-create-console)
-
-    * [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-assignment-create-cli)
-
-    * [Creating an assignment in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-assignment-create-console)
-
-* [Updating assignments](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-assignment-update)
-
-    * [Updating an assignment in the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-assignment-update-console)
-
-    * [Updating an assignment in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-assignment-update-cli)
 
     * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-api)
 
@@ -1899,29 +1885,31 @@ subcollection: satellite
 {: #sitemap_ibm_storage_templates}
 
 
+[{{site.data.keyword.IBM_notm}} Systems Block Storage CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-ibm-system-storage-block-csi-driver)
+
+* [Prerequisites for using {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#sat-storage-block-csi-prereq)
+
+* [Creating a configuration](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create)
+
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create-console)
+
+    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create-cli)
+
+    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create-api)
+
+* [Deploying an app that uses {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-block-csi-app-deploy)
+
+* [Parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#sat-storage-ibm-block-csi-params-cli)
+
 [{{site.data.keyword.cos_full_notm}} CSI Driver](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin)
 
 * [Prerequisites](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-prereqs)
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-cli)
-
-* [Assigning configurations to clusters](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-assignment-create)
-
-    * [Creating an assignment in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-assignment-create-console)
-
-    * [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-assignment-create-cli)
-
-    * [Creating an assignment in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-assignment-create-console)
-
-* [Updating assignments](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-assignment-update)
-
-    * [Updating an assignment in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-assignment-update-console)
-
-    * [Updating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-assignment-update-cli)
 
     * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-api)
 
@@ -1945,23 +1933,9 @@ subcollection: satellite
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-cli)
-
-* [Assigning configurations to clusters](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-assignment-create)
-
-    * [Creating an assignment in the console](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-assignment-create-console)
-
-    * [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-assignment-create-cli)
-
-    * [Creating an assignment in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-assignment-create-console)
-
-* [Updating assignments](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-assignment-update)
-
-    * [Updating an assignment in the console](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-assignment-update-console)
-
-    * [Updating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-assignment-update-cli)
 
     * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-api)
 
@@ -1996,23 +1970,9 @@ subcollection: satellite
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create-cli)
-
-* [Assigning configurations to clusters](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-assignment-create)
-
-    * [Creating an assignment in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-assignment-create-console)
-
-    * [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-assignment-create-cli)
-
-    * [Creating an assignment in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-assignment-create-console)
-
-* [Updating assignments](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-assignment-update)
-
-    * [Updating an assignment in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-assignment-update-console)
-
-    * [Updating an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-assignment-update-cli)
 
     * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create-api)
 
@@ -2049,23 +2009,9 @@ subcollection: satellite
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-volume-block#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-cli)
-
-* [Assigning configurations to clusters](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-assignment-create)
-
-    * [Creating an assignment in the console](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-assignment-create-console)
-
-    * [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-assignment-create-cli)
-
-    * [Creating an assignment in the API](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-assignment-create-console)
-
-* [Updating assignments](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-assignment-update)
-
-    * [Updating an assignment in the console](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-assignment-update-console)
-
-    * [Updating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-assignment-update-cli)
 
     * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-api)
 
@@ -2103,23 +2049,9 @@ subcollection: satellite
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-volume-file#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create-cli)
-
-* [Assigning configurations to clusters](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-assignment-create)
-
-    * [Creating an assignment in the console](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-assignment-create-console)
-
-    * [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-assignment-create-cli)
-
-    * [Creating an assignment in the API](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-assignment-create-console)
-
-* [Updating assignments](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-assignment-update)
-
-    * [Updating an assignment in the console](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-assignment-update-console)
-
-    * [Updating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-assignment-update-cli)
 
     * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create-api)
 
@@ -2157,23 +2089,9 @@ subcollection: satellite
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-odf-local#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-cli)
-
-* [Assigning configurations to clusters](/docs/satellite?topic=satellite-storage-odf-local#odf-local-assignment-create)
-
-    * [Creating an assignment in the console](/docs/satellite?topic=satellite-storage-odf-local#odf-local-assignment-create-console)
-
-    * [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-local#odf-local-assignment-create-cli)
-
-    * [Creating an assignment in the API](/docs/satellite?topic=satellite-storage-odf-local#odf-local-assignment-create-console)
-
-* [Updating assignments](/docs/satellite?topic=satellite-storage-odf-local#odf-local-assignment-update)
-
-    * [Updating an assignment in the console](/docs/satellite?topic=satellite-storage-odf-local#odf-local-assignment-update-console)
-
-    * [Updating an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-local#odf-local-assignment-update-cli)
 
     * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-api)
 
@@ -2209,23 +2127,9 @@ subcollection: satellite
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-odf-remote#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-cli)
-
-* [Assigning configurations to clusters](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-assignment-create)
-
-    * [Creating an assignment in the console](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-assignment-create-console)
-
-    * [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-assignment-create-cli)
-
-    * [Creating an assignment in the API](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-assignment-create-console)
-
-* [Updating assignments](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-assignment-update)
-
-    * [Updating an assignment in the console](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-assignment-update-console)
-
-    * [Updating an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-assignment-update-cli)
 
     * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-api)
 
@@ -2262,23 +2166,9 @@ subcollection: satellite
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#creating-and-assigning-a-configuration-in-the-console)
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-console)
 
     * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-cli)
-
-* [Assigning configurations to clusters](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-assignment-create)
-
-    * [Creating an assignment in the console](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-assignment-create-console)
-
-    * [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-assignment-create-cli)
-
-    * [Creating an assignment in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-assignment-create-console)
-
-* [Updating assignments](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-assignment-update)
-
-    * [Updating an assignment in the console](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-assignment-update-console)
-
-    * [Updating an assignment in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-assignment-update-cli)
 
     * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-api)
 
