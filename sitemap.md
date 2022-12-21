@@ -1736,13 +1736,11 @@ subcollection: satellite
 
 * [Prerequisites for using AWS EBS](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-prereq)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create-api)
 
 * [Deploying an app that uses AWS EBS storage](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#sat-storage-ebs-deploy)
 
@@ -1770,13 +1768,11 @@ subcollection: satellite
 
 * [Prerequisites for using AWS EFS](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#sat-storage-efs-prereqs)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create-api)
 
 * [Adding a custom AWS EFS storage class to your configuration](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-add-sc-efs)
 
@@ -1811,13 +1807,11 @@ subcollection: satellite
 
     * [Optional: Labeling your worker nodes for Azure Disk](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azure-disk-label-nodes)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-api)
 
 * [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azure-csi-app-deploy)
 
@@ -1847,13 +1841,11 @@ subcollection: satellite
 
     * [Optional: Labeling your worker nodes when using Azure File](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azure-file-label-nodes)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-api)
 
 * [Deploying an app that uses your Azure File storage](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#storage-azure-file-csi-app-deploy)
 
@@ -1889,13 +1881,11 @@ subcollection: satellite
 
 * [Prerequisites for using {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#sat-storage-block-csi-prereq)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create-api)
 
 * [Deploying an app that uses {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-block-csi-app-deploy)
 
@@ -1905,13 +1895,11 @@ subcollection: satellite
 
 * [Prerequisites](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-prereqs)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-api)
 
 * [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#config-storage-cos-app)
 
@@ -1931,13 +1919,11 @@ subcollection: satellite
 
 * [Prerequisites for {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#sat-storage-vpc-csi-prereq)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-api)
 
 * [Deploying an app that uses {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#sat-storage-vpc-deploy-app)
 
@@ -1968,13 +1954,11 @@ subcollection: satellite
 
 * [Prerequisites for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-nas-2104-pre)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create-api)
 
 * [Deploying an app that uses ONTAP-NAS storage](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#sat-storage-netapp-nas-deploy-2104)
 
@@ -2007,13 +1991,11 @@ subcollection: satellite
 
     * [Labeling your worker nodes when using local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#sat-storage-block-local-labels)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-api)
 
 * [Deploying an app that uses local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#deploy-app-local-block)
 
@@ -2047,13 +2029,11 @@ subcollection: satellite
 
     * [Labeling your worker nodes when using local file storage](/docs/satellite?topic=satellite-storage-local-volume-file#sat-storage-file-local-labels)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create-api)
 
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-storage-local-volume-file#deploy-app-local-file)
 
@@ -2087,13 +2067,11 @@ subcollection: satellite
 
 * [(Optional) Getting the device details for your ODF configuration](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-devices)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-api)
 
 * [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-deploy)
 
@@ -2125,13 +2103,11 @@ subcollection: satellite
 
     * [Optional: Creating the {{site.data.keyword.cos_full_notm}} service instance](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-cos)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-api)
 
     * [Optional: Adding additional worker nodes to your ODF configuration](/docs/satellite?topic=satellite-storage-odf-remote#add-worker-nodes-odf-remote)
 
@@ -2164,13 +2140,11 @@ subcollection: satellite
 
 * [Prerequisites](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#prereq-vmware-csi)
 
-* [Creating a configuration](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-console)
 
-    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-cli)
 
-    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-cli)
-
-    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-api)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-api)
 
 * [Deploying an app that uses VMware](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#sat-storage-vmware-deploy-app)
 

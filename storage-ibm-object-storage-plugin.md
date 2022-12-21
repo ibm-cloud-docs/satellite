@@ -27,13 +27,11 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 
 
-## Creating a configuration
-{: #ibm-object-storage-plugin-config-create}
 
 Before you begin, review the [parameter reference](#ibm-object-storage-plugin-parameter-reference) for the template version that you want to use.
 {: important}
 
-### Creating and assigning a configuration in the console
+## Creating and assigning a configuration in the console
 {: #ibm-object-storage-plugin-config-create-console}
 {: ui}
 
@@ -48,10 +46,38 @@ Before you begin, review the [parameter reference](#ibm-object-storage-plugin-pa
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-### Creating a configuration in the CLI
+## Creating a configuration in the CLI
 {: #ibm-object-storage-plugin-config-create-cli}
 {: cli}
 
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+
+    ```sh
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
+    
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
@@ -73,7 +99,7 @@ Before you begin, review the [parameter reference](#ibm-object-storage-plugin-pa
     ```
     {: pre}
 
-### Creating a configuration in the API
+## Creating a configuration in the API
 {: #ibm-object-storage-plugin-config-create-api}
 
 1. Copy one of the following example requests and replace the variables that you want to use.
@@ -82,7 +108,7 @@ Before you begin, review the [parameter reference](#ibm-object-storage-plugin-pa
     Example request to create a version 2.2 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-object-storage-plugin\", \"storage-template-version\": \"2.2\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"HELM-RELEASE-NAME\", { \"entry.name\": \"PARAMETERS\", { \"entry.name\": \"LICENSE\", { \"entry.name\": \"COS-ENDPOINT\", { \"entry.name\": \"COS-STORAGECLASS\",\"user-secret-parameters\": { \"entry.name\": \"HELM-RELEASE-NAME\", { \"entry.name\": \"PARAMETERS\", { \"entry.name\": \"LICENSE\", { \"entry.name\": \"COS-ENDPOINT\", { \"entry.name\": \"COS-STORAGECLASS\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-object-storage-plugin\", \"storage-template-version\": \"2.2\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"HELM-RELEASE-NAME\", { \"entry.name\": \"PARAMETERS\", { \"entry.name\": \"LICENSE\", { \"entry.name\": \"COS-ENDPOINT\", { \"entry.name\": \"COS-STORAGECLASS\",\"user-secret-parameters\": { \"entry.name\": \"HELM-RELEASE-NAME\",{ \"entry.name\": \"PARAMETERS\",{ \"entry.name\": \"LICENSE\",{ \"entry.name\": \"COS-ENDPOINT\",{ \"entry.name\": \"COS-STORAGECLASS\",
     ```
     {: pre}
 
@@ -91,7 +117,9 @@ Before you begin, review the [parameter reference](#ibm-object-storage-plugin-pa
 
 
 
-{{site.data.content.managing-configurations-and-assignments}}
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
 ## Deploying an app that uses {{site.data.keyword.cos_full_notm}}
 {: #config-storage-cos-app}
@@ -285,13 +313,13 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 ### 2.2 parameter reference
 {: #2.2-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Helm Chart Release Name | `helm-release-name` | Release name of the chart | false | 
-| Helm Chart Additional Parameters (Optional) | `parameters` | Helm Chart Additional Parameters (Optional) | false | 
-| COS plug-in License: Apache License Version 2.0 | `license` | COS plug-in License: Apache License Version 2.0. Set to `true` to accept the license and install the plugin | true | 
-| COS Endpoint | `cos-endpoint` | Enter COS Endpoint. For more information, refer to https://ibm.biz/cos-endpoints | true | 
-| COS storageclass | `cos-storageclass` | Enter COS storageclass. For more info, refer to https://ibm.biz/cos-storage-classes | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Helm Chart Release Name | `helm-release-name` | Config | Release name of the chart | false | 
+| Helm Chart Additional Parameters (Optional) | `parameters` | Config | Helm Chart Additional Parameters (Optional) | false | 
+| COS plug-in License: Apache License Version 2.0 | `license` | Config | COS plug-in License: Apache License Version 2.0. Set to `true` to accept the license and install the plugin | true | 
+| COS Endpoint | `cos-endpoint` | Config | Enter COS Endpoint. For more information, refer to https://ibm.biz/cos-endpoints | true | 
+| COS storageclass | `cos-storageclass` | Config | Enter COS storageclass. For more info, refer to https://ibm.biz/cos-storage-classes | true | 
 {: caption="Table 1. 2.2 parameter reference" caption-side="bottom"}
 
 

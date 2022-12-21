@@ -137,13 +137,11 @@ After you have [retrieved the device paths for the disks that you want to use in
 
 
 
-## Creating a configuration
-{: #local-volume-file-config-create}
 
 Before you begin, review the [parameter reference](#local-volume-file-parameter-reference) for the template version that you want to use.
 {: important}
 
-### Creating and assigning a configuration in the console
+## Creating and assigning a configuration in the console
 {: #local-volume-file-config-create-console}
 {: ui}
 
@@ -158,10 +156,38 @@ Before you begin, review the [parameter reference](#local-volume-file-parameter-
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-### Creating a configuration in the CLI
+## Creating a configuration in the CLI
 {: #local-volume-file-config-create-cli}
 {: cli}
 
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+
+    ```sh
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
+    
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
@@ -211,7 +237,7 @@ Before you begin, review the [parameter reference](#local-volume-file-parameter-
     ```
     {: pre}
 
-### Creating a configuration in the API
+## Creating a configuration in the API
 {: #local-volume-file-config-create-api}
 
 1. Copy one of the following example requests and replace the variables that you want to use.
@@ -220,35 +246,35 @@ Before you begin, review the [parameter reference](#local-volume-file-parameter-
     Example request to create a version 4.7 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-file\", \"storage-template-version\": \"4.7\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\",\"user-secret-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-file\", \"storage-template-version\": \"4.7\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\",\"user-secret-parameters\": { \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",{ \"entry.name\": \"FSTYPE\",
     ```
     {: pre}
 
     Example request to create a version 4.8 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-file\", \"storage-template-version\": \"4.8\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\",\"user-secret-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-file\", \"storage-template-version\": \"4.8\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\",\"user-secret-parameters\": { \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",{ \"entry.name\": \"FSTYPE\",
     ```
     {: pre}
 
     Example request to create a version 4.9 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-file\", \"storage-template-version\": \"4.9\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-file\", \"storage-template-version\": \"4.9\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",{ \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",{ \"entry.name\": \"FSTYPE\",
     ```
     {: pre}
 
     Example request to create a version 4.10 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-file\", \"storage-template-version\": \"4.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-file\", \"storage-template-version\": \"4.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",{ \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",{ \"entry.name\": \"FSTYPE\",
     ```
     {: pre}
 
     Example request to create a version 4.11 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-file\", \"storage-template-version\": \"4.11\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-file\", \"storage-template-version\": \"4.11\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\", { \"entry.name\": \"FSTYPE\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",{ \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",{ \"entry.name\": \"FSTYPE\",
     ```
     {: pre}
 
@@ -256,7 +282,9 @@ Before you begin, review the [parameter reference](#local-volume-file-parameter-
 
 
 
-{{site.data.content.managing-configurations-and-assignments}}
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
 1. Verify that the storage configuration resources are deployed. Get a list of all the resources in the `local-storage` namespace.
 
@@ -635,63 +663,63 @@ Use the console to remove a storage configuration.
 ### 4.7 parameter reference
 {: #4.7-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. | true | 
-| File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. | true | 
+| File System type | `fstype` | Config | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
 {: caption="Table 1. 4.7 parameter reference" caption-side="bottom"}
 
 
 ### 4.8 parameter reference
 {: #4.8-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. | true | 
-| File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. | true | 
+| File System type | `fstype` | Config | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
 {: caption="Table 2. 4.8 parameter reference" caption-side="bottom"}
 
 
 ### 4.9 parameter reference
 {: #4.9-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
-| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
-| File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
+| File System type | `fstype` | Config | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
 {: caption="Table 3. 4.9 parameter reference" caption-side="bottom"}
 
 
 ### 4.10 parameter reference
 {: #4.10-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
-| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
-| File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
+| File System type | `fstype` | Config | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
 {: caption="Table 4. 4.10 parameter reference" caption-side="bottom"}
 
 
 ### 4.11 parameter reference
 {: #4.11-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
-| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
-| File System type | `fstype` | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
+| File System type | `fstype` | Config | The file system type. Specify `ext3`, `ext4`, or `xfs`. | false | 
 {: caption="Table 5. 4.11 parameter reference" caption-side="bottom"}
 
 

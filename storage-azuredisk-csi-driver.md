@@ -81,13 +81,11 @@ If you manually assigned your Azure hosts to your Location and did not use the S
 1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/get-started/){: external} and retrieve the required parameters. For more information about the parameters, see [Cluster config](https://cloud-provider-azure.sigs.k8s.io/install/configs/#cluster-config).
 
 
-## Creating a configuration
-{: #azuredisk-csi-driver-config-create}
 
 Before you begin, review the [parameter reference](#azuredisk-csi-driver-parameter-reference) for the template version that you want to use.
 {: important}
 
-### Creating and assigning a configuration in the console
+## Creating and assigning a configuration in the console
 {: #azuredisk-csi-driver-config-create-console}
 {: ui}
 
@@ -102,10 +100,38 @@ Before you begin, review the [parameter reference](#azuredisk-csi-driver-paramet
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-### Creating a configuration in the CLI
+## Creating a configuration in the CLI
 {: #azuredisk-csi-driver-config-create-cli}
 {: cli}
 
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+
+    ```sh
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
+    
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
@@ -141,7 +167,7 @@ Before you begin, review the [parameter reference](#azuredisk-csi-driver-paramet
     ```
     {: pre}
 
-### Creating a configuration in the API
+## Creating a configuration in the API
 {: #azuredisk-csi-driver-config-create-api}
 
 1. Copy one of the following example requests and replace the variables that you want to use.
@@ -150,21 +176,21 @@ Before you begin, review the [parameter reference](#azuredisk-csi-driver-paramet
     Example request to create a version 1.4.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azuredisk-csi-driver\", \"storage-template-version\": \"1.4.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azuredisk-csi-driver\", \"storage-template-version\": \"1.4.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",{ \"entry.name\": \"SUBSCRIPTIONID\",{ \"entry.name\": \"AADCLIENTID\",{ \"entry.name\": \"LOCATION\",{ \"entry.name\": \"AADCLIENTSECRET\",{ \"entry.name\": \"RESOURCEGROUP\",{ \"entry.name\": \"VMTYPE\",{ \"entry.name\": \"SECURITYGROUPNAME\",{ \"entry.name\": \"VNETNAME\",
     ```
     {: pre}
 
     Example request to create a version 1.18.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azuredisk-csi-driver\", \"storage-template-version\": \"1.18.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azuredisk-csi-driver\", \"storage-template-version\": \"1.18.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",{ \"entry.name\": \"SUBSCRIPTIONID\",{ \"entry.name\": \"AADCLIENTID\",{ \"entry.name\": \"LOCATION\",{ \"entry.name\": \"AADCLIENTSECRET\",{ \"entry.name\": \"RESOURCEGROUP\",{ \"entry.name\": \"VMTYPE\",{ \"entry.name\": \"SECURITYGROUPNAME\",{ \"entry.name\": \"VNETNAME\",
     ```
     {: pre}
 
     Example request to create a version 1.23.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azuredisk-csi-driver\", \"storage-template-version\": \"1.23.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azuredisk-csi-driver\", \"storage-template-version\": \"1.23.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",{ \"entry.name\": \"SUBSCRIPTIONID\",{ \"entry.name\": \"AADCLIENTID\",{ \"entry.name\": \"LOCATION\",{ \"entry.name\": \"AADCLIENTSECRET\",{ \"entry.name\": \"RESOURCEGROUP\",{ \"entry.name\": \"VMTYPE\",{ \"entry.name\": \"SECURITYGROUPNAME\",{ \"entry.name\": \"VNETNAME\",
     ```
     {: pre}
 
@@ -178,7 +204,9 @@ Before you begin, review the [parameter reference](#azuredisk-csi-driver-paramet
 
 
 
-{{site.data.content.managing-configurations-and-assignments}}
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
 ## Deploying an app that uses your Azure Disk storage
 {: #storage-azure-csi-app-deploy}
@@ -477,51 +505,51 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 ### 1.4.0 parameter reference
 {: #1.4.0-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Tenant ID | `tenantId` | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | 
-| Subscription ID | `subscriptionId` | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find this value by running the `az account subscription list` command. | true | 
-| Azure Active Directory Client ID | `aadClientId` | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | 
-| Location | `location` | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: `useast`. | true | 
-| Azure Active Directory Client Secret | `aadClientSecret` | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | true | 
-| Resource Group | `resourceGroup` | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | 
-| Virtual Machine Type | `vmType` | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | 
-| Network Security Group Name | `securityGroupName` | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | 
-| Virtual Network Name | `vnetName` | The name of the virtual network. You can find this value in the Azure portal or by running the `az network vnet list` command. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Tenant ID | `tenantId` | Secret | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | 
+| Subscription ID | `subscriptionId` | Secret | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find this value by running the `az account subscription list` command. | true | 
+| Azure Active Directory Client ID | `aadClientId` | Secret | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | 
+| Location | `location` | Config | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: `useast`. | true | 
+| Azure Active Directory Client Secret | `aadClientSecret` | Secret | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | true | 
+| Resource Group | `resourceGroup` | Config | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | 
+| Virtual Machine Type | `vmType` | Config | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | 
+| Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | 
+| Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find this value in the Azure portal or by running the `az network vnet list` command. | true | 
 {: caption="Table 1. 1.4.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.18.0 parameter reference
 {: #1.18.0-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Tenant ID | `tenantId` | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | 
-| Subscription ID | `subscriptionId` | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find this value by running the `az account subscription list` command. | true | 
-| Azure Active Directory Client ID | `aadClientId` | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | 
-| Location | `location` | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: `useast`. | true | 
-| Azure Active Directory Client Secret | `aadClientSecret` | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | true | 
-| Resource Group | `resourceGroup` | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | 
-| Virtual Machine Type | `vmType` | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | 
-| Network Security Group Name | `securityGroupName` | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | 
-| Virtual Network Name | `vnetName` | The name of the virtual network. You can find this value in the Azure portal or by running the `az network vnet list` command. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Tenant ID | `tenantId` | Secret | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | 
+| Subscription ID | `subscriptionId` | Secret | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find this value by running the `az account subscription list` command. | true | 
+| Azure Active Directory Client ID | `aadClientId` | Secret | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | 
+| Location | `location` | Config | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: `useast`. | true | 
+| Azure Active Directory Client Secret | `aadClientSecret` | Secret | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | true | 
+| Resource Group | `resourceGroup` | Config | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | 
+| Virtual Machine Type | `vmType` | Config | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | 
+| Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | 
+| Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find this value in the Azure portal or by running the `az network vnet list` command. | true | 
 {: caption="Table 2. 1.18.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.23.0 parameter reference
 {: #1.23.0-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Tenant ID | `tenantId` | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | 
-| Subscription ID | `subscriptionId` | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find this value by running the `az account subscription list` command. | true | 
-| Azure Active Directory Client ID | `aadClientId` | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | 
-| Location | `location` | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: `useast`. | true | 
-| Azure Active Directory Client Secret | `aadClientSecret` | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | true | 
-| Resource Group | `resourceGroup` | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | 
-| Virtual Machine Type | `vmType` | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | 
-| Network Security Group Name | `securityGroupName` | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | 
-| Virtual Network Name | `vnetName` | The name of the virtual network. You can find this value in the Azure portal or by running the `az network vnet list` command. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Tenant ID | `tenantId` | Secret | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | 
+| Subscription ID | `subscriptionId` | Secret | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find this value by running the `az account subscription list` command. | true | 
+| Azure Active Directory Client ID | `aadClientId` | Secret | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | 
+| Location | `location` | Config | The location of your Azure hosts. You can find the location of your virtual machines in the Azure portal or by running the `az vm list` command. Example location: `useast`. | true | 
+| Azure Active Directory Client Secret | `aadClientSecret` | Secret | Your Azure Active Directory Client Secret. You can find your client secret in the Azure portal under the `App registrations` menu. | true | 
+| Resource Group | `resourceGroup` | Config | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | 
+| Virtual Machine Type | `vmType` | Config | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | 
+| Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | 
+| Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find this value in the Azure portal or by running the `az network vnet list` command. | true | 
 {: caption="Table 3. 1.23.0 parameter reference" caption-side="bottom"}
 
 

@@ -37,13 +37,11 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 
 
-## Creating a configuration
-{: #vsphere-csi-driver-config-create}
 
 Before you begin, review the [parameter reference](#vsphere-csi-driver-parameter-reference) for the template version that you want to use.
 {: important}
 
-### Creating and assigning a configuration in the console
+## Creating and assigning a configuration in the console
 {: #vsphere-csi-driver-config-create-console}
 {: ui}
 
@@ -58,10 +56,38 @@ Before you begin, review the [parameter reference](#vsphere-csi-driver-parameter
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-### Creating a configuration in the CLI
+## Creating a configuration in the CLI
 {: #vsphere-csi-driver-config-create-cli}
 {: cli}
 
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+
+    ```sh
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
+    
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
@@ -83,7 +109,7 @@ Before you begin, review the [parameter reference](#vsphere-csi-driver-parameter
     ```
     {: pre}
 
-### Creating a configuration in the API
+## Creating a configuration in the API
 {: #vsphere-csi-driver-config-create-api}
 
 1. Copy one of the following example requests and replace the variables that you want to use.
@@ -92,7 +118,7 @@ Before you begin, review the [parameter reference](#vsphere-csi-driver-parameter
     Example request to create a version 2.5.1 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"vsphere-csi-driver\", \"storage-template-version\": \"2.5.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"VCENTER-USERNAME\", { \"entry.name\": \"VCENTER-PASSWORD\", { \"entry.name\": \"INSECURE-FLAG\", { \"entry.name\": \"HOST\", { \"entry.name\": \"DATACENTERS\", { \"entry.name\": \"THUMBPRINT\",\"user-secret-parameters\": { \"entry.name\": \"VCENTER-USERNAME\", { \"entry.name\": \"VCENTER-PASSWORD\", { \"entry.name\": \"INSECURE-FLAG\", { \"entry.name\": \"HOST\", { \"entry.name\": \"DATACENTERS\", { \"entry.name\": \"THUMBPRINT\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"vsphere-csi-driver\", \"storage-template-version\": \"2.5.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"VCENTER-USERNAME\", { \"entry.name\": \"VCENTER-PASSWORD\", { \"entry.name\": \"INSECURE-FLAG\", { \"entry.name\": \"HOST\", { \"entry.name\": \"DATACENTERS\", { \"entry.name\": \"THUMBPRINT\",\"user-secret-parameters\": { \"entry.name\": \"VCENTER-USERNAME\",{ \"entry.name\": \"VCENTER-PASSWORD\",{ \"entry.name\": \"INSECURE-FLAG\",{ \"entry.name\": \"HOST\",{ \"entry.name\": \"DATACENTERS\",{ \"entry.name\": \"THUMBPRINT\",
     ```
     {: pre}
 
@@ -100,7 +126,9 @@ Before you begin, review the [parameter reference](#vsphere-csi-driver-parameter
 
 
 
-{{site.data.content.managing-configurations-and-assignments}}
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
 
 ## Deploying an app that uses VMware
@@ -365,14 +393,14 @@ Removing the storage configuration removes the driver from all assigned clusters
 ### 2.5.1 parameter reference
 {: #2.5.1-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| vCenter username | `vcenter-username` | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | true | 
-| vCenter password | `vcenter-password` | The vCenter server user password. | true | 
-| Insecure connection | `insecure-flag` | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | false | 
-| vCenter host | `host` | The vCenter server IP address. | true | 
-| vCenter data centers | `datacenters` | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | 
-| SSL certificate thumbprint | `thumbprint` | The SSL thumbprint to be used to establish a secure connection to VC.  | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| vCenter username | `vcenter-username` | Secret | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | true | 
+| vCenter password | `vcenter-password` | Secret | The vCenter server user password. | true | 
+| Insecure connection | `insecure-flag` | Config | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | false | 
+| vCenter host | `host` | Config | The vCenter server IP address. | true | 
+| vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | 
+| SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC.  | false | 
 {: caption="Table 1. 2.5.1 parameter reference" caption-side="bottom"}
 
 

@@ -33,6 +33,39 @@ To use the AWS EBS storage template, complete the following tasks:
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters) that runs on compute hosts in Amazon Web Services (AWS). For more information about how to add hosts from AWS to your {{site.data.keyword.satelliteshort}} location so that you can assign them to a cluster, see [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach).
+
+1. [Create an AWS access key ID and secret access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external} for your AWS login credentials. These credentials are needed to provision AWS EBS storage in your account. When you assign the storage configuration to your cluster, your AWS access key ID and secret access key are stored in a Kubernetes secret in your cluster.
+1. Review the [AWS EBS storage configuration parameters](#aws-ebs-csi-driver-parameter-reference).
+1. Review the [AWS EBS storage classes](#sat-ebs-sc-reference). The AWS EBS storage template does not support custom storage classes. 
+
+
+
+
+
+
+
+Before you begin, review the [parameter reference](#aws-ebs-csi-driver-parameter-reference) for the template version that you want to use.
+{: important}
+
+## Creating and assigning a configuration in the console
+{: #aws-ebs-csi-driver-config-create-console}
+{: ui}
+
+1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type**.
+1. Select the **Version** and click **Next**
+1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
+1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
+
+## Creating a configuration in the CLI
+{: #aws-ebs-csi-driver-config-create-cli}
+{: cli}
+
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
     ```sh
@@ -61,40 +94,6 @@ To use the AWS EBS storage template, complete the following tasks:
     ```
     {: pre}
     
-1. [Create an AWS access key ID and secret access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external} for your AWS login credentials. These credentials are needed to provision AWS EBS storage in your account. When you assign the storage configuration to your cluster, your AWS access key ID and secret access key are stored in a Kubernetes secret in your cluster.
-1. Review the [AWS EBS storage configuration parameters](#aws-ebs-csi-driver-parameter-reference).
-1. Review the [AWS EBS storage classes](#sat-ebs-sc-reference). The AWS EBS storage template does not support custom storage classes. 
-
-
-
-
-
-
-## Creating a configuration
-{: #aws-ebs-csi-driver-config-create}
-
-Before you begin, review the [parameter reference](#aws-ebs-csi-driver-parameter-reference) for the template version that you want to use.
-{: important}
-
-### Creating and assigning a configuration in the console
-{: #aws-ebs-csi-driver-config-create-console}
-{: ui}
-
-1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
-1. Select **Storage** > **Create storage configuration**
-1. Enter a name for your configuration.
-1. Select the **Storage type**.
-1. Select the **Version** and click **Next**
-1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
-1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
-1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
-1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
-1. Click **Complete** to assign your storage configuration.
-
-### Creating a configuration in the CLI
-{: #aws-ebs-csi-driver-config-create-cli}
-{: cli}
-
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
@@ -130,7 +129,7 @@ Before you begin, review the [parameter reference](#aws-ebs-csi-driver-parameter
     ```
     {: pre}
 
-### Creating a configuration in the API
+## Creating a configuration in the API
 {: #aws-ebs-csi-driver-config-create-api}
 
 1. Copy one of the following example requests and replace the variables that you want to use.
@@ -139,21 +138,21 @@ Before you begin, review the [parameter reference](#aws-ebs-csi-driver-parameter
     Example request to create a version 1.1.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-ebs-csi-driver\", \"storage-template-version\": \"1.1.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-ebs-csi-driver\", \"storage-template-version\": \"1.1.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",{ \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",
     ```
     {: pre}
 
     Example request to create a version 1.5.1 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-ebs-csi-driver\", \"storage-template-version\": \"1.5.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-ebs-csi-driver\", \"storage-template-version\": \"1.5.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",{ \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",
     ```
     {: pre}
 
     Example request to create a version 1.12.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-ebs-csi-driver\", \"storage-template-version\": \"1.12.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-ebs-csi-driver\", \"storage-template-version\": \"1.12.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",{ \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",
     ```
     {: pre}
 
@@ -161,7 +160,9 @@ Before you begin, review the [parameter reference](#aws-ebs-csi-driver-parameter
 
 
 
-{{site.data.content.managing-configurations-and-assignments}}
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
 ## Deploying an app that uses AWS EBS storage
 {: #sat-storage-ebs-deploy}
@@ -475,30 +476,30 @@ Note that you must delete your storage assignments before you can successfully d
 ### 1.1.0 parameter reference
 {: #1.1.0-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | 
 {: caption="Table 1. 1.1.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.5.1 parameter reference
 {: #1.5.1-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | 
 {: caption="Table 2. 1.5.1 parameter reference" caption-side="bottom"}
 
 
 ### 1.12.0 parameter reference
 {: #1.12.0-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | 
 {: caption="Table 3. 1.12.0 parameter reference" caption-side="bottom"}
 
 

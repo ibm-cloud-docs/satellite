@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -12,12 +12,8 @@ content-type: conref
 
 ---
 
-## Managing storage configurations and assignments
-{: #managing-configurations-and-assignments}
 
-After you create a storage configuration, you can assign that configuration to clusters, cluster groups, or service clusters to automatically deploy storage resources.
-
-### Creating a storage assignment in the console
+## Creating a storage assignment in the console
 {: #assignment-create-console}
 {: ui}
 
@@ -38,7 +34,7 @@ If you didn't assign your configuration to a cluster or service when you created
     1. Click the **Assignment** that you created and review the **Rollout status** for your configuration.
 
 
-### Creating a storage assignment in the CLI
+## Creating a storage assignment in the CLI
 {: #assignment-create-cli}
 {: ui}
 
@@ -101,7 +97,7 @@ If you didn't assign your configuration to a cluster or service when you created
     {: pre}
 
 
-### Creating a storage assignment in the API
+## Creating a storage assignment in the API
 {: #assignment-create-console}
 {: api}
 
@@ -130,7 +126,7 @@ If you didn't assign your configuration to a cluster or service when you created
 
 
 
-### Updating a storage assignment in the CLI
+## Updating a storage assignment in the CLI
 {: #assignment-update-cli}
 {: cli}
 
@@ -157,7 +153,7 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
     {: pre}
     
     
-### Updating a storage assignment in the API
+## Updating a storage assignment in the API
 {: #assignment-update-api}
 {: api}
 

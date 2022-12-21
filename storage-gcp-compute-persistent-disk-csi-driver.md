@@ -32,13 +32,11 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 
 
-## Creating a configuration
-{: #gcp-compute-persistent-disk-csi-driver-config-create}
 
 Before you begin, review the [parameter reference](#gcp-compute-persistent-disk-csi-driver-parameter-reference) for the template version that you want to use.
 {: important}
 
-### Creating and assigning a configuration in the console
+## Creating and assigning a configuration in the console
 {: #gcp-compute-persistent-disk-csi-driver-config-create-console}
 {: ui}
 
@@ -53,10 +51,38 @@ Before you begin, review the [parameter reference](#gcp-compute-persistent-disk-
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-### Creating a configuration in the CLI
+## Creating a configuration in the CLI
 {: #gcp-compute-persistent-disk-csi-driver-config-create-cli}
 {: cli}
 
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+
+    ```sh
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
+    
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
@@ -92,7 +118,7 @@ Before you begin, review the [parameter reference](#gcp-compute-persistent-disk-
     ```
     {: pre}
 
-### Creating a configuration in the API
+## Creating a configuration in the API
 {: #gcp-compute-persistent-disk-csi-driver-config-create-api}
 
 1. Copy one of the following example requests and replace the variables that you want to use.
@@ -101,21 +127,21 @@ Before you begin, review the [parameter reference](#gcp-compute-persistent-disk-
     Example request to create a version 1.0.4 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.0.4\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"PROJECT_ID\", { \"entry.name\": \"PRIVATE_KEY_ID\", { \"entry.name\": \"PRIVATE_KEY\", { \"entry.name\": \"CLIENT_EMAIL\", { \"entry.name\": \"CLIENT_ID\", { \"entry.name\": \"AUTH_URI\", { \"entry.name\": \"TOKEN_URI\", { \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\", { \"entry.name\": \"CLIENT_X509_CERT_URL\",\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\", { \"entry.name\": \"PRIVATE_KEY_ID\", { \"entry.name\": \"PRIVATE_KEY\", { \"entry.name\": \"CLIENT_EMAIL\", { \"entry.name\": \"CLIENT_ID\", { \"entry.name\": \"AUTH_URI\", { \"entry.name\": \"TOKEN_URI\", { \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\", { \"entry.name\": \"CLIENT_X509_CERT_URL\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.0.4\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"PROJECT_ID\", { \"entry.name\": \"PRIVATE_KEY_ID\", { \"entry.name\": \"PRIVATE_KEY\", { \"entry.name\": \"CLIENT_EMAIL\", { \"entry.name\": \"CLIENT_ID\", { \"entry.name\": \"AUTH_URI\", { \"entry.name\": \"TOKEN_URI\", { \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\", { \"entry.name\": \"CLIENT_X509_CERT_URL\",\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\",{ \"entry.name\": \"PRIVATE_KEY_ID\",{ \"entry.name\": \"PRIVATE_KEY\",{ \"entry.name\": \"CLIENT_EMAIL\",{ \"entry.name\": \"CLIENT_ID\",{ \"entry.name\": \"AUTH_URI\",{ \"entry.name\": \"TOKEN_URI\",{ \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\",{ \"entry.name\": \"CLIENT_X509_CERT_URL\",
     ```
     {: pre}
 
     Example request to create a version 1.7.1 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.7.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"PROJECT_ID\", { \"entry.name\": \"PRIVATE_KEY_ID\", { \"entry.name\": \"PRIVATE_KEY\", { \"entry.name\": \"CLIENT_EMAIL\", { \"entry.name\": \"CLIENT_ID\", { \"entry.name\": \"AUTH_URI\", { \"entry.name\": \"TOKEN_URI\", { \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\", { \"entry.name\": \"CLIENT_X509_CERT_URL\",\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\", { \"entry.name\": \"PRIVATE_KEY_ID\", { \"entry.name\": \"PRIVATE_KEY\", { \"entry.name\": \"CLIENT_EMAIL\", { \"entry.name\": \"CLIENT_ID\", { \"entry.name\": \"AUTH_URI\", { \"entry.name\": \"TOKEN_URI\", { \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\", { \"entry.name\": \"CLIENT_X509_CERT_URL\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.7.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"PROJECT_ID\", { \"entry.name\": \"PRIVATE_KEY_ID\", { \"entry.name\": \"PRIVATE_KEY\", { \"entry.name\": \"CLIENT_EMAIL\", { \"entry.name\": \"CLIENT_ID\", { \"entry.name\": \"AUTH_URI\", { \"entry.name\": \"TOKEN_URI\", { \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\", { \"entry.name\": \"CLIENT_X509_CERT_URL\",\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\",{ \"entry.name\": \"PRIVATE_KEY_ID\",{ \"entry.name\": \"PRIVATE_KEY\",{ \"entry.name\": \"CLIENT_EMAIL\",{ \"entry.name\": \"CLIENT_ID\",{ \"entry.name\": \"AUTH_URI\",{ \"entry.name\": \"TOKEN_URI\",{ \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\",{ \"entry.name\": \"CLIENT_X509_CERT_URL\",
     ```
     {: pre}
 
     Example request to create a version 1.8.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.8.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"PROJECT_ID\", { \"entry.name\": \"PRIVATE_KEY_ID\", { \"entry.name\": \"PRIVATE_KEY\", { \"entry.name\": \"CLIENT_EMAIL\", { \"entry.name\": \"CLIENT_ID\", { \"entry.name\": \"AUTH_URI\", { \"entry.name\": \"TOKEN_URI\", { \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\", { \"entry.name\": \"CLIENT_X509_CERT_URL\",\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\", { \"entry.name\": \"PRIVATE_KEY_ID\", { \"entry.name\": \"PRIVATE_KEY\", { \"entry.name\": \"CLIENT_EMAIL\", { \"entry.name\": \"CLIENT_ID\", { \"entry.name\": \"AUTH_URI\", { \"entry.name\": \"TOKEN_URI\", { \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\", { \"entry.name\": \"CLIENT_X509_CERT_URL\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.8.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"PROJECT_ID\", { \"entry.name\": \"PRIVATE_KEY_ID\", { \"entry.name\": \"PRIVATE_KEY\", { \"entry.name\": \"CLIENT_EMAIL\", { \"entry.name\": \"CLIENT_ID\", { \"entry.name\": \"AUTH_URI\", { \"entry.name\": \"TOKEN_URI\", { \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\", { \"entry.name\": \"CLIENT_X509_CERT_URL\",\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\",{ \"entry.name\": \"PRIVATE_KEY_ID\",{ \"entry.name\": \"PRIVATE_KEY\",{ \"entry.name\": \"CLIENT_EMAIL\",{ \"entry.name\": \"CLIENT_ID\",{ \"entry.name\": \"AUTH_URI\",{ \"entry.name\": \"TOKEN_URI\",{ \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\",{ \"entry.name\": \"CLIENT_X509_CERT_URL\",
     ```
     {: pre}
 
@@ -254,7 +280,9 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
     ```
     {: pre}
 
-{{site.data.content.managing-configurations-and-assignments}}
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
 ## Removing Compute Engine storage from your apps
 {: #gcp-rm-apps}
@@ -414,51 +442,51 @@ Use the console to remove a storage configuration.
 ### 1.0.4 parameter reference
 {: #1.0.4-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Google Cloud project ID. | `project_id` | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | 
-| Google Cloud private key ID | `private_key_id` | Google Cloud private key ID. You can find this in the JSON service account key file. | true | 
-| Private key of the service account. | `private_key` | Private key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | 
-| Client email | `client_email` | Client email. The email of ther service account can be found in the IAM & Admin section of the project dashboard. | true | 
-| Client ID | `client_id` | Client ID. You can find the Client ID in the APIs & Services section of the project dashboard. | true | 
-| Authorization URI | `auth_uri` | Authorization URI for the service account. You can find this in the JSON service account key file. | true | 
-| Token URI | `token_uri` | Token URI for the service account. You can find this in the JSON service account key file. | true | 
-| URL for the authorization provider certificate | `auth_provider_x509_cert_url` | URL for the authorization provider certificate. You can find this in the JSON service account key file. | true | 
-| URL for the client certificate | `client_x509_cert_url` | URL for the client certificate. You can find this in the JSON service account key file. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Google Cloud project ID. | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | 
+| Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | true | 
+| Private key of the service account. | `private_key` | Secret | Private key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | 
+| Client email | `client_email` | Secret | Client email. The email of ther service account can be found in the IAM & Admin section of the project dashboard. | true | 
+| Client ID | `client_id` | Secret | Client ID. You can find the Client ID in the APIs & Services section of the project dashboard. | true | 
+| Authorization URI | `auth_uri` | Secret | Authorization URI for the service account. You can find this in the JSON service account key file. | true | 
+| Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | true | 
+| URL for the authorization provider certificate | `auth_provider_x509_cert_url` | Secret | URL for the authorization provider certificate. You can find this in the JSON service account key file. | true | 
+| URL for the client certificate | `client_x509_cert_url` | Secret | URL for the client certificate. You can find this in the JSON service account key file. | true | 
 {: caption="Table 1. 1.0.4 parameter reference" caption-side="bottom"}
 
 
 ### 1.7.1 parameter reference
 {: #1.7.1-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Google Cloud project ID | `project_id` | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | 
-| Google Cloud private key ID | `private_key_id` | Google Cloud private key ID. You can find this in the JSON service account key file. | true | 
-| Private key of the service account | `private_key` | Private key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | 
-| Client email | `client_email` | Client email. The email of ther service account can be found in the IAM & Admin section of the project dashboard. | true | 
-| Client ID | `client_id` | Client ID. You can find the Client ID in the APIs & Services section of the project dashboard. | true | 
-| Authorization URI | `auth_uri` | Authorization URI for the service account. You can find this in the JSON service account key file. | true | 
-| Token URI | `token_uri` | Token URI for the service account. You can find this in the JSON service account key file. | true | 
-| URL for the authorization provider certificate | `auth_provider_x509_cert_url` | URL for the authorization provider certificate. You can find this in the JSON service account key file. | true | 
-| URL for the client certificate | `client_x509_cert_url` | URL for the client certificate. You can find this in the JSON service account key file. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Google Cloud project ID | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | 
+| Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | true | 
+| Private key of the service account | `private_key` | Secret | Private key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | 
+| Client email | `client_email` | Secret | Client email. The email of ther service account can be found in the IAM & Admin section of the project dashboard. | true | 
+| Client ID | `client_id` | Secret | Client ID. You can find the Client ID in the APIs & Services section of the project dashboard. | true | 
+| Authorization URI | `auth_uri` | Secret | Authorization URI for the service account. You can find this in the JSON service account key file. | true | 
+| Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | true | 
+| URL for the authorization provider certificate | `auth_provider_x509_cert_url` | Secret | URL for the authorization provider certificate. You can find this in the JSON service account key file. | true | 
+| URL for the client certificate | `client_x509_cert_url` | Secret | URL for the client certificate. You can find this in the JSON service account key file. | true | 
 {: caption="Table 2. 1.7.1 parameter reference" caption-side="bottom"}
 
 
 ### 1.8.0 parameter reference
 {: #1.8.0-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Google Cloud project ID | `project_id` | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | 
-| Google Cloud private key ID | `private_key_id` | Google Cloud private key ID. You can find this in the JSON service account key file. | true | 
-| Private key of the service account | `private_key` | PrPrivate key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | 
-| Client email | `client_email` | Client email. The email of ther service account can be found in the IAM & Admin section of the project dashboard. | true | 
-| Client ID | `client_id` | Client ID. You can find the Client ID in the APIs & Services section of the project dashboard. | true | 
-| Authorization URI | `auth_uri` | Authorization URI for the service account. You can find this in the JSON service account key file. | true | 
-| Token URI | `token_uri` | Token URI for the service account. You can find this in the JSON service account key file. | true | 
-| URL for the authorization provider certificate | `auth_provider_x509_cert_url` | URL for the authorization provider certificate. You can find this in the JSON service account key file. | true | 
-| URL for the client certificate | `client_x509_cert_url` | URL for the client certificate. You can find this in the JSON service account key file. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Google Cloud project ID | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | 
+| Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | true | 
+| Private key of the service account | `private_key` | Secret | PrPrivate key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | 
+| Client email | `client_email` | Secret | Client email. The email of ther service account can be found in the IAM & Admin section of the project dashboard. | true | 
+| Client ID | `client_id` | Secret | Client ID. You can find the Client ID in the APIs & Services section of the project dashboard. | true | 
+| Authorization URI | `auth_uri` | Secret | Authorization URI for the service account. You can find this in the JSON service account key file. | true | 
+| Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | true | 
+| URL for the authorization provider certificate | `auth_provider_x509_cert_url` | Secret | URL for the authorization provider certificate. You can find this in the JSON service account key file. | true | 
+| URL for the client certificate | `client_x509_cert_url` | Secret | URL for the client certificate. You can find this in the JSON service account key file. | true | 
 {: caption="Table 3. 1.8.0 parameter reference" caption-side="bottom"}
 
 

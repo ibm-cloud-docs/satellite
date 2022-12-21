@@ -64,13 +64,11 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
 
 
 
-## Creating a configuration
-{: #odf-remote-config-create}
 
 Before you begin, review the [parameter reference](#odf-remote-parameter-reference) for the template version that you want to use.
 {: important}
 
-### Creating and assigning a configuration in the console
+## Creating and assigning a configuration in the console
 {: #odf-remote-config-create-console}
 {: ui}
 
@@ -85,10 +83,38 @@ Before you begin, review the [parameter reference](#odf-remote-parameter-referen
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-### Creating a configuration in the CLI
+## Creating a configuration in the CLI
 {: #odf-remote-config-create-cli}
 {: cli}
 
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+
+    ```sh
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
+    
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
@@ -131,7 +157,7 @@ Before you begin, review the [parameter reference](#odf-remote-parameter-referen
     ```
     {: pre}
 
-### Creating a configuration in the API
+## Creating a configuration in the API
 {: #odf-remote-config-create-api}
 
 1. Copy one of the following example requests and replace the variables that you want to use.
@@ -140,28 +166,28 @@ Before you begin, review the [parameter reference](#odf-remote-parameter-referen
     Example request to create a version 4.7 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-remote\", \"storage-template-version\": \"4.7\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MON-SIZE\", { \"entry.name\": \"MON-STORAGE-CLASS\", { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\",\"user-secret-parameters\": { \"entry.name\": \"MON-SIZE\", { \"entry.name\": \"MON-STORAGE-CLASS\", { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-remote\", \"storage-template-version\": \"4.7\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MON-SIZE\", { \"entry.name\": \"MON-STORAGE-CLASS\", { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\",\"user-secret-parameters\": { \"entry.name\": \"MON-SIZE\",{ \"entry.name\": \"MON-STORAGE-CLASS\",{ \"entry.name\": \"OSD-SIZE\",{ \"entry.name\": \"OSD-STORAGE-CLASS\",{ \"entry.name\": \"NUM-OF-OSD\",{ \"entry.name\": \"WORKER-NODES\",{ \"entry.name\": \"ODF-UPGRADE\",{ \"entry.name\": \"BILLING-TYPE\",{ \"entry.name\": \"IBM-COS-ENDPOINT\",{ \"entry.name\": \"IBM-COS-LOCATION\",{ \"entry.name\": \"IBM-COS-ACCESS-KEY\",{ \"entry.name\": \"IBM-COS-SECRET-KEY\",{ \"entry.name\": \"CLUSTER-ENCRYPTION\",{ \"entry.name\": \"IAM-API-KEY\",{ \"entry.name\": \"PERFORM-CLEANUP\",
     ```
     {: pre}
 
     Example request to create a version 4.8 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-remote\", \"storage-template-version\": \"4.8\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\",\"user-secret-parameters\": { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-remote\", \"storage-template-version\": \"4.8\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\",\"user-secret-parameters\": { \"entry.name\": \"OSD-SIZE\",{ \"entry.name\": \"OSD-STORAGE-CLASS\",{ \"entry.name\": \"NUM-OF-OSD\",{ \"entry.name\": \"WORKER-NODES\",{ \"entry.name\": \"ODF-UPGRADE\",{ \"entry.name\": \"BILLING-TYPE\",{ \"entry.name\": \"IBM-COS-ENDPOINT\",{ \"entry.name\": \"IBM-COS-LOCATION\",{ \"entry.name\": \"IBM-COS-ACCESS-KEY\",{ \"entry.name\": \"IBM-COS-SECRET-KEY\",{ \"entry.name\": \"CLUSTER-ENCRYPTION\",{ \"entry.name\": \"IAM-API-KEY\",{ \"entry.name\": \"PERFORM-CLEANUP\",
     ```
     {: pre}
 
     Example request to create a version 4.9 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-remote\", \"storage-template-version\": \"4.9\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\",\"user-secret-parameters\": { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-remote\", \"storage-template-version\": \"4.9\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\",\"user-secret-parameters\": { \"entry.name\": \"OSD-SIZE\",{ \"entry.name\": \"OSD-STORAGE-CLASS\",{ \"entry.name\": \"NUM-OF-OSD\",{ \"entry.name\": \"WORKER-NODES\",{ \"entry.name\": \"ODF-UPGRADE\",{ \"entry.name\": \"BILLING-TYPE\",{ \"entry.name\": \"IBM-COS-ENDPOINT\",{ \"entry.name\": \"IBM-COS-LOCATION\",{ \"entry.name\": \"IBM-COS-ACCESS-KEY\",{ \"entry.name\": \"IBM-COS-SECRET-KEY\",{ \"entry.name\": \"CLUSTER-ENCRYPTION\",{ \"entry.name\": \"IAM-API-KEY\",{ \"entry.name\": \"PERFORM-CLEANUP\",
     ```
     {: pre}
 
     Example request to create a version 4.10 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-remote\", \"storage-template-version\": \"4.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\", { \"entry.name\": \"KMS-ENCRYPTION\", { \"entry.name\": \"KMS-INSTANCE-NAME\", { \"entry.name\": \"KMS-INSTANCE-ID\", { \"entry.name\": \"KMS-BASE-URL\", { \"entry.name\": \"KMS-TOKEN-URL\", { \"entry.name\": \"KMS-ROOT-KEY\", { \"entry.name\": \"KMS-API-KEY\", { \"entry.name\": \"IGNORE-NOOBAA\",\"user-secret-parameters\": { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\", { \"entry.name\": \"KMS-ENCRYPTION\", { \"entry.name\": \"KMS-INSTANCE-NAME\", { \"entry.name\": \"KMS-INSTANCE-ID\", { \"entry.name\": \"KMS-BASE-URL\", { \"entry.name\": \"KMS-TOKEN-URL\", { \"entry.name\": \"KMS-ROOT-KEY\", { \"entry.name\": \"KMS-API-KEY\", { \"entry.name\": \"IGNORE-NOOBAA\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-remote\", \"storage-template-version\": \"4.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"OSD-SIZE\", { \"entry.name\": \"OSD-STORAGE-CLASS\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"IBM-COS-ACCESS-KEY\", { \"entry.name\": \"IBM-COS-SECRET-KEY\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"IAM-API-KEY\", { \"entry.name\": \"PERFORM-CLEANUP\", { \"entry.name\": \"KMS-ENCRYPTION\", { \"entry.name\": \"KMS-INSTANCE-NAME\", { \"entry.name\": \"KMS-INSTANCE-ID\", { \"entry.name\": \"KMS-BASE-URL\", { \"entry.name\": \"KMS-TOKEN-URL\", { \"entry.name\": \"KMS-ROOT-KEY\", { \"entry.name\": \"KMS-API-KEY\", { \"entry.name\": \"IGNORE-NOOBAA\",\"user-secret-parameters\": { \"entry.name\": \"OSD-SIZE\",{ \"entry.name\": \"OSD-STORAGE-CLASS\",{ \"entry.name\": \"NUM-OF-OSD\",{ \"entry.name\": \"WORKER-NODES\",{ \"entry.name\": \"ODF-UPGRADE\",{ \"entry.name\": \"BILLING-TYPE\",{ \"entry.name\": \"IBM-COS-ENDPOINT\",{ \"entry.name\": \"IBM-COS-LOCATION\",{ \"entry.name\": \"IBM-COS-ACCESS-KEY\",{ \"entry.name\": \"IBM-COS-SECRET-KEY\",{ \"entry.name\": \"CLUSTER-ENCRYPTION\",{ \"entry.name\": \"IAM-API-KEY\",{ \"entry.name\": \"PERFORM-CLEANUP\",{ \"entry.name\": \"KMS-ENCRYPTION\",{ \"entry.name\": \"KMS-INSTANCE-NAME\",{ \"entry.name\": \"KMS-INSTANCE-ID\",{ \"entry.name\": \"KMS-BASE-URL\",{ \"entry.name\": \"KMS-TOKEN-URL\",{ \"entry.name\": \"KMS-ROOT-KEY\",{ \"entry.name\": \"KMS-API-KEY\",{ \"entry.name\": \"IGNORE-NOOBAA\",
     ```
     {: pre}
 
@@ -169,7 +195,9 @@ Before you begin, review the [parameter reference](#odf-remote-parameter-referen
 
 
 
-{{site.data.content.managing-configurations-and-assignments}}
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
 ### Optional: Adding additional worker nodes to your ODF configuration
 {: #add-worker-nodes-odf-remote}
@@ -461,94 +489,94 @@ Use the command line to remove a storage assignment.
 ### 4.7 parameter reference
 {: #4.7-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Monitoring pod volume size | `mon-size` | The storage capacity available to the monitoring pods. The monitoring deployment consists of 3 monitoring pods that each mount a volume equal to the `mon-size`. The default size is `20Gi`. | true | 
-| Monitoring pod storage class | `mon-storage-class` | The storage class to use when dynamically provisioning volumes for the monitor pods. | true | 
-| OSD pod volume size | `osd-size` | The OSD storage size in Gi. The default value is `100Gi`. | true | 
-| OSD pod storage class | `osd-storage-class` | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
-| Number of OSD volumes | `num-of-osd` | The number OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
-| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
-| Upgrade | `odf-upgrade` | Set to `true` if you want to upgrade the ODF version. | false | 
-| Billing type | `billing-type` | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
-| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | 
-| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
-| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID . | false | 
-| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | 
-| Encryption enabled | `cluster-encryption` | Set to `true` if you want to enable cluster-wide encryption. | false | 
-| IAM API key | `iam-api-key` | Your IAM API key. | true | 
-| Perform Cleanup | `perform-cleanup` | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Monitoring pod volume size | `mon-size` | Config | The storage capacity available to the monitoring pods. The monitoring deployment consists of 3 monitoring pods that each mount a volume equal to the `mon-size`. The default size is `20Gi`. | true | 
+| Monitoring pod storage class | `mon-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the monitor pods. | true | 
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | 
+| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
+| Number of OSD volumes | `num-of-osd` | Config | The number OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
+| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
+| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | false | 
+| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
+| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | 
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
+| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | 
+| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | 
+| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | false | 
+| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
+| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | false | 
 {: caption="Table 1. 4.7 parameter reference" caption-side="bottom"}
 
 
 ### 4.8 parameter reference
 {: #4.8-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | The OSD storage size in Gi. The default value is `100Gi`. | true | 
-| OSD pod storage class | `osd-storage-class` | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
-| Number of OSD volumes | `num-of-osd` | The number OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
-| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
-| Upgrade | `odf-upgrade` | Set to `true` if you want to upgrade the ODF version. | false | 
-| Billing type | `billing-type` | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
-| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | 
-| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
-| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID . | false | 
-| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | 
-| Encryption enabled | `cluster-encryption` | Set to `true` if you want to enable cluster-wide encryption. | false | 
-| IAM API key | `iam-api-key` | Your IAM API key. | true | 
-| Perform Cleanup | `perform-cleanup` | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | 
+| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
+| Number of OSD volumes | `num-of-osd` | Config | The number OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
+| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
+| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | false | 
+| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
+| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | 
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
+| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | 
+| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | 
+| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | false | 
+| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
+| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | false | 
 {: caption="Table 2. 4.8 parameter reference" caption-side="bottom"}
 
 
 ### 4.9 parameter reference
 {: #4.9-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | The OSD storage size in Gi. The default value is `100Gi`. | true | 
-| OSD pod storage class | `osd-storage-class` | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
-| Number of OSD volumes | `num-of-osd` | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
-| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
-| Upgrade | `odf-upgrade` | Set to `true` if you want to upgrade the ODF version. | false | 
-| Billing type | `billing-type` | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
-| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | 
-| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
-| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID . | false | 
-| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | 
-| Encryption enabled | `cluster-encryption` | Set to `true` if you want to enable cluster-wide encryption. | false | 
-| IAM API key | `iam-api-key` | Your IAM API key. | true | 
-| Perform Cleanup | `perform-cleanup` | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | 
+| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
+| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
+| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
+| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | false | 
+| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
+| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | 
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
+| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | 
+| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | 
+| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | false | 
+| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
+| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | false | 
 {: caption="Table 3. 4.9 parameter reference" caption-side="bottom"}
 
 
 ### 4.10 parameter reference
 {: #4.10-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | The OSD storage size in Gi. The default value is `100Gi`. | true | 
-| OSD pod storage class | `osd-storage-class` | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
-| Number of OSD volumes | `num-of-osd` | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
-| Worker node names | `worker-nodes` | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
-| Upgrade | `odf-upgrade` | Set to `true` if you want to upgrade the ODF version. | false | 
-| Billing type | `billing-type` | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
-| IBM COS endpoint | `ibm-cos-endpoint` | The IBM COS regional public endpoint. | false | 
-| IBM COS location constraint | `ibm-cos-location` | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
-| Access key ID | `ibm-cos-access-key` | Your IBM COS HMAC access key ID . | false | 
-| Secret access key | `ibm-cos-secret-key` | Your IBM COS HMAC secret access key. | false | 
-| Encryption enabled | `cluster-encryption` | Set to `true` if you want to enable cluster-wide encryption. | false | 
-| IAM API key | `iam-api-key` | Your IAM API key. | true | 
-| Perform Cleanup | `perform-cleanup` | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | false | 
-| KMS encryption | `kms-encryption` | Set to `true` if you want to enable storageclasss encryption. | false | 
-| KMS instance name | `kms-instance-name` | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | 
-| KMS instance id | `kms-instance-id` | Your KMS instance id. | false | 
-| KMS instance Base URL | `kms-base-url` | Your KMS instance public URL to connect to the instance. | false | 
-| KMS instance API key token URL | `kms-token-url` | API key token URL to generate token for KMS instance. | false | 
-| KMS root key | `kms-root-key` | KMS root key of your instance. | false | 
-| KMS IAM API key | `kms-api-key` | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | 
-| Ignore Noobaa | `ignore-noobaa` | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | 
+| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
+| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | false | 
+| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
+| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | false | 
+| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | false | 
+| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | 
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
+| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | 
+| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | 
+| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | false | 
+| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
+| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | false | 
+| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storageclasss encryption. | false | 
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | 
+| KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | false | 
+| KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | false | 
+| KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | false | 
+| KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | 
+| KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | 
+| Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | false | 
 {: caption="Table 4. 4.10 parameter reference" caption-side="bottom"}
 
 

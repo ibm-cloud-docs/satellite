@@ -39,13 +39,11 @@ There is currently an issue with autocomplete in some browsers. If you don't see
 
 
 
-## Creating a configuration
-{: #ibm-vpc-block-csi-driver-config-create}
 
 Before you begin, review the [parameter reference](#ibm-vpc-block-csi-driver-parameter-reference) for the template version that you want to use.
 {: important}
 
-### Creating and assigning a configuration in the console
+## Creating and assigning a configuration in the console
 {: #ibm-vpc-block-csi-driver-config-create-console}
 {: ui}
 
@@ -60,10 +58,38 @@ Before you begin, review the [parameter reference](#ibm-vpc-block-csi-driver-par
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-### Creating a configuration in the CLI
+## Creating a configuration in the CLI
 {: #ibm-vpc-block-csi-driver-config-create-cli}
 {: cli}
 
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+
+    ```sh
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
+    
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
@@ -92,7 +118,7 @@ Before you begin, review the [parameter reference](#ibm-vpc-block-csi-driver-par
     ```
     {: pre}
 
-### Creating a configuration in the API
+## Creating a configuration in the API
 {: #ibm-vpc-block-csi-driver-config-create-api}
 
 1. Copy one of the following example requests and replace the variables that you want to use.
@@ -101,14 +127,14 @@ Before you begin, review the [parameter reference](#ibm-vpc-block-csi-driver-par
     Example request to create a version 4.3.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-vpc-block-csi-driver\", \"storage-template-version\": \"4.3.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\", { \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\", { \"entry.name\": \"G2_RESOURCE_GROUP_ID\", { \"entry.name\": \"G2_API_KEY\",\"user-secret-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\", { \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\", { \"entry.name\": \"G2_RESOURCE_GROUP_ID\", { \"entry.name\": \"G2_API_KEY\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-vpc-block-csi-driver\", \"storage-template-version\": \"4.3.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\", { \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\", { \"entry.name\": \"G2_RESOURCE_GROUP_ID\", { \"entry.name\": \"G2_API_KEY\",\"user-secret-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\",{ \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\",{ \"entry.name\": \"G2_RESOURCE_GROUP_ID\",{ \"entry.name\": \"G2_API_KEY\",
     ```
     {: pre}
 
     Example request to create a version 5.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-vpc-block-csi-driver\", \"storage-template-version\": \"5.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\", { \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\", { \"entry.name\": \"G2_RESOURCE_GROUP_ID\", { \"entry.name\": \"G2_API_KEY\",\"user-secret-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\", { \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\", { \"entry.name\": \"G2_RESOURCE_GROUP_ID\", { \"entry.name\": \"G2_API_KEY\", 
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-vpc-block-csi-driver\", \"storage-template-version\": \"5.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\", { \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\", { \"entry.name\": \"G2_RESOURCE_GROUP_ID\", { \"entry.name\": \"G2_API_KEY\",\"user-secret-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\",{ \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\",{ \"entry.name\": \"G2_RESOURCE_GROUP_ID\",{ \"entry.name\": \"G2_API_KEY\",
     ```
     {: pre}
 
@@ -116,7 +142,9 @@ Before you begin, review the [parameter reference](#ibm-vpc-block-csi-driver-par
 
 
 
-{{site.data.content.managing-configurations-and-assignments}}
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
 ## Deploying an app that uses {{site.data.keyword.block_storage_is_short}}
 {: #sat-storage-vpc-deploy-app}
@@ -390,24 +418,24 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 ### 4.3.0 parameter reference
 {: #4.3.0-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| IAM endpoint | `g2_token_exchange_endpoint_url` | The IAM endpoint. For example `https://iam.cloud.ibm.com`. | true | 
-| VPC IaaS endpoint | `g2_riaas_endpoint_url` | The VPC regional endpoint of your VPC cluster in the format `https://region.iaas.cloud.ibm.com`. Example: `https://eu-de.iaas.cloud.ibm.com`. For more information, see https://ibm.biz/vpc-endpoints | true | 
-| Resource group ID | `g2_resource_group_id` | The ID of the resource group where your VPC is located. To retrieve this value, run the `ibmcloud is vpc VPC-ID` command and note the Resource group field. | true | 
-| IAM API key | `g2_api_key` | The IAM API key of account where your VPC is located. You can use your existing API key or you can create an API key by running the `ibmcloud iam api-key-create NAME` command. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| IAM endpoint | `g2_token_exchange_endpoint_url` | Config | The IAM endpoint. For example `https://iam.cloud.ibm.com`. | true | 
+| VPC IaaS endpoint | `g2_riaas_endpoint_url` | Config | The VPC regional endpoint of your VPC cluster in the format `https://region.iaas.cloud.ibm.com`. Example: `https://eu-de.iaas.cloud.ibm.com`. For more information, see https://ibm.biz/vpc-endpoints | true | 
+| Resource group ID | `g2_resource_group_id` | Config | The ID of the resource group where your VPC is located. To retrieve this value, run the `ibmcloud is vpc VPC-ID` command and note the Resource group field. | true | 
+| IAM API key | `g2_api_key` | Secret | The IAM API key of account where your VPC is located. You can use your existing API key or you can create an API key by running the `ibmcloud iam api-key-create NAME` command. | true | 
 {: caption="Table 1. 4.3.0 parameter reference" caption-side="bottom"}
 
 
 ### 5.0 parameter reference
 {: #5.0-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| IAM endpoint | `g2_token_exchange_endpoint_url` | The IAM endpoint. For example `https://iam.cloud.ibm.com`. | true | 
-| VPC IaaS endpoint | `g2_riaas_endpoint_url` | The VPC regional endpoint of your VPC cluster in the format `https://region.iaas.cloud.ibm.com`. Example: `https://eu-de.iaas.cloud.ibm.com`. For more information, see https://ibm.biz/vpc-endpoints | true | 
-| Resource group ID | `g2_resource_group_id` | The ID of the resource group where your VPC is located. To retrieve this value, run the `ibmcloud is vpc VPC-ID` command and note the Resource group field. | true | 
-| IAM API key | `g2_api_key` | The IAM API key of account where your VPC is located. You can use your existing API key or you can create an API key by running the `ibmcloud iam api-key-create NAME` command. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| IAM endpoint | `g2_token_exchange_endpoint_url` | Config | The IAM endpoint. For example `https://iam.cloud.ibm.com`. | true | 
+| VPC IaaS endpoint | `g2_riaas_endpoint_url` | Config | The VPC regional endpoint of your VPC cluster in the format `https://region.iaas.cloud.ibm.com`. Example: `https://eu-de.iaas.cloud.ibm.com`. For more information, see https://ibm.biz/vpc-endpoints | true | 
+| Resource group ID | `g2_resource_group_id` | Config | The ID of the resource group where your VPC is located. To retrieve this value, run the `ibmcloud is vpc VPC-ID` command and note the Resource group field. | true | 
+| IAM API key | `g2_api_key` | Secret | The IAM API key of account where your VPC is located. You can use your existing API key or you can create an API key by running the `ibmcloud iam api-key-create NAME` command. | true | 
 {: caption="Table 2. 5.0 parameter reference" caption-side="bottom"}
 
 
