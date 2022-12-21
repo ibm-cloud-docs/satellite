@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -159,13 +159,6 @@ After you have [retrieved the device paths for the disks that you want to use in
     oc get nodes --show-labels | grep --color=always storage=local-block
     ```
     {: pre}
-
-
-## Creating a local block storage configuration
-{: #sat-storage-local-block}
-
-You can use the [console](#sat-storage-local-block-ui) or [CLI](#sat-storage-local-block-cli) to create a local block storage configuration in your location and assign the configuration to your clusters.
-{: shortdesc}
 
 
 
@@ -466,7 +459,7 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
 
 
 
-
+{{site.data.content.managing-configurations-and-assignments}}
 
 ## Deploying an app that uses local block storage
 {: #deploy-app-local-block}

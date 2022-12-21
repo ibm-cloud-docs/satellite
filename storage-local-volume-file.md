@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -429,6 +429,7 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
 
 
 
+{{site.data.content.managing-configurations-and-assignments}}
 
 1. Verify that the storage configuration resources are deployed. Get a list of all the resources in the `local-storage` namespace.
 

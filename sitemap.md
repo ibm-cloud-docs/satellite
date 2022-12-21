@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1770,8 +1770,6 @@ subcollection: satellite
 
 * [Prerequisites for using AWS EFS](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#sat-storage-efs-prereqs)
 
-* [Creating an AWS EFS storage configuration](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#sat-storage-aws-efs)
-
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create)
 
     * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#creating-and-assigning-a-configuration-in-the-console)
@@ -1812,6 +1810,14 @@ subcollection: satellite
 * [Prerequisites for using Azure Disk](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#sat-storage-azure-csi-prereq)
 
     * [Optional: Labeling your worker nodes for Azure Disk](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azure-disk-label-nodes)
+
+* [Creating a configuration](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create)
+
+    * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#creating-and-assigning-a-configuration-in-the-console)
+
+    * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-cli)
+
+    * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-api)
 
 * [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azure-csi-app-deploy)
 
@@ -1871,7 +1877,7 @@ subcollection: satellite
 
     * [Removing the Azure File storage configuration from the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azure-file-template-rm-ui)
 
-    * [Removing the Azure File storage configuration from the cli](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azure-file-template-rm-cli)
+    * [Removing the Azure File storage configuration from the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azure-file-template-rm-cli)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-parameter-reference)
 
@@ -2040,8 +2046,6 @@ subcollection: satellite
     * [Getting the device details for your local block storage configuration](/docs/satellite?topic=satellite-storage-local-volume-block#sat-storage-block-local-devices)
 
     * [Labeling your worker nodes when using local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#sat-storage-block-local-labels)
-
-* [Creating a local block storage configuration](/docs/satellite?topic=satellite-storage-local-volume-block#sat-storage-local-block)
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create)
 
@@ -2254,7 +2258,7 @@ subcollection: satellite
 
 [VMware Block Container Storage Interface (CSI) Driver](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#storage-vsphere-csi-driver)
 
-* [Prerequisites for using VMware block storage](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#prereq-vmware-csi)
+* [Prerequisites](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#prereq-vmware-csi)
 
 * [Creating a configuration](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -21,7 +21,7 @@ The Compute Engine persistent disk Container Storage Interface (CSI) [Driver](ht
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
-## Prerequisites for Compute Engine
+## Prerequisites
 {: #sat-storage-gcp-csi-prereq}
 
 1. [Create a Compute Engine service account](https://cloud.google.com/compute/docs/access/service-accounts){: external}.
@@ -296,27 +296,6 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
 
 
 
-1. Verify that your storage configuration is created.
-
-    ```sh
-    ibmcloud sat storage config get --config <CONFIG>
-    ```
-    {: pre}
-
-1. [Assign your storage configuration to clusters](#assign-storage-gcp-csi)
-
-### Creating the Google Compute Engine persistent disk storage configuration from the console
-{: #sat-storage-gcp-ui}
-{: ui}
-
-
-Use the console to create a Google Compute Engine persistent disk storage configuration for your location.
-{: shortdesc}
-
-Before you begin, review and complete the [prerequisites](#sat-storage-gcp-csi-prereq) and review the [parameter reference](#gcp-compute-persistent-disk-csi-driver-parameter-reference).
-
-{sat-storage-config-create-console.md}
-
 
 
 ## Deploying an app that uses Google Compute Engine persistent disk
@@ -448,7 +427,7 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
     ```
     {: pre}
 
-
+{{site.data.content.managing-configurations-and-assignments}}
 
 ## Removing Compute Engine storage from your apps
 {: #gcp-rm-apps}
@@ -464,56 +443,54 @@ If you no longer need your Google Compute Engine configuration, you can remove y
     ```
     {: pre}
 
-1. Remove any pods that mount the PVC.
-
-    1. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC.
+1. Remove any pods that mount the PVC. List all the pods that currently mount the PVC that you want to delete. If no pods are returned, you do not have any pods that currently use your PVC.
     
-        ```sh
-        oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
-        ```
-        {: pre}
+    ```sh
+    oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
+    ```
+    {: pre}
 
-        Example output
+    Example output
 
-        
-        ```sh
-        app    sat-gce-block-platinum
-        ```
-        {: screen}
-
-    1. Remove the pod that uses the PVC. If the pod is part of a deployment or statefulset, remove the deployment or statefulset.
     
-        ```sh
-        oc delete pod <pod_name>
-        ```
-        {: pre}
+    ```sh
+    app    sat-gce-block-platinum
+    ```
+    {: screen}
 
-        ```sh
-        oc delete deployment <deployment_name>
-        ```
-        {: pre} 
+1. Remove the pod that uses the PVC. If the pod is part of a deployment or statefulset, remove the deployment or statefulset.
 
-        ```sh
-        oc delete statefulset <statefulset_name>
-        ```
-        {: pre}
+    ```sh
+    oc delete pod <pod_name>
+    ```
+    {: pre}
 
-    1. Verify that the pod, deployment, or statefulset is removed.
-    
-        ```sh
-        oc get pods
-        ```
-        {: pre}
+    ```sh
+    oc delete deployment <deployment_name>
+    ```
+    {: pre} 
 
-        ```sh
-        oc get deployments
-        ```
-        {: pre}
+    ```sh
+    oc delete statefulset <statefulset_name>
+    ```
+    {: pre}
 
-        ```sh
-        oc get statefulset
-        ```
-        {: pre}
+1. Verify that the pod, deployment, or statefulset is removed.
+
+    ```sh
+    oc get pods
+    ```
+    {: pre}
+
+    ```sh
+    oc get deployments
+    ```
+    {: pre}
+
+    ```sh
+    oc get statefulset
+    ```
+    {: pre}
 
 1. Delete the PVC.
 

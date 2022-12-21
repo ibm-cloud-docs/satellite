@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -289,6 +289,7 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
 
 
 
+{{site.data.content.managing-configurations-and-assignments}}
 
 ## Deploying an app that uses {{site.data.keyword.block_storage_is_short}}
 {: #sat-storage-vpc-deploy-app}

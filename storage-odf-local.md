@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -544,6 +544,7 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
     {: screen}
 
 
+{{site.data.content.managing-configurations-and-assignments}}
 
 ## Deploying an app that uses OpenShift Data Foundation
 {: #sat-storage-odf-local-deploy}

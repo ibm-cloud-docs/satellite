@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -161,7 +161,7 @@ Before you begin, review the [parameter reference](#aws-ebs-csi-driver-parameter
 
 
 
-
+{{site.data.content.managing-configurations-and-assignments}}
 
 ## Deploying an app that uses AWS EBS storage
 {: #sat-storage-ebs-deploy}

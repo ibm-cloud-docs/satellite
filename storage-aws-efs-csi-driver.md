@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -33,13 +33,6 @@ To use the AWS EFS storage template, complete the following tasks:
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Amazon Web Services (AWS). For more information about how to add hosts from AWS to your {{site.data.keyword.satelliteshort}} location so that you can assign them to a cluster, see [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach).
 1. Manually provision an [AWS EFS file system](https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html){: external} in your AWS account. Make sure that the EFS device is in the same VPC and subnet that you used for your AWS hosts, and that your hosts and EFS device use the same security group.
-
-## Creating an AWS EFS storage configuration
-{: #sat-storage-aws-efs}
-
-
-You can use the [console](#sat-storage-aws-efs-ui) or [CLI](#sat-storage-aws-efs-cli) to create an AWS EFS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EFS storage for your apps. 
-{: shortdesc}
 
 
 
@@ -191,7 +184,7 @@ You can't add storage classes to {{site.data.keyword.satelliteshort}} storage co
 3. [Assign your storage configuration](#efs-config-assign).
 
 
-
+{{site.data.content.managing-configurations-and-assignments}}
 
 ## Deploying an app that uses AWS EFS storage
 {: #sat-storage-efs-deploy}

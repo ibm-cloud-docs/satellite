@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -18,7 +18,7 @@ subcollection: satellite
 
 The VMware Container Storage Interface (CSI) [Driver](https://github.com/kubernetes-sigs/vsphere-csi-driver/){: external} allows you to manage the lifecycle of your VMware Block Data volumes.
 
-## Prerequisites for using VMware block storage
+## Prerequisites
 {: #prereq-vmware-csi}
 
 Before you can create a VMware block storage configuration, you must satisfy the following prerequisites. 
@@ -26,7 +26,7 @@ Before you can create a VMware block storage configuration, you must satisfy the
 1. Verify that you are running vSphere version 6.7U3 or later.
 1. Verify that your virtual machine hardware version is version 15 or later.
 1. Verify that master nodes can communicate with the vCenter management interface.
-1. Diable Swap on all nodes.
+1. Disable Swap on all nodes.
 1. Enable Disk UUID on all node virtual machines. 
 
  
@@ -273,6 +273,8 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
 
 
 
+{{site.data.content.managing-configurations-and-assignments}}
+
 
 ## Deploying an app that uses VMware
 {: #sat-storage-vmware-deploy-app}
@@ -466,7 +468,7 @@ If you no longer need your VMware configuration, you can remove your apps, PVCs,
 If you no longer plan on using VMware in your cluster, you can use the CLI unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration uninstalls the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Removing the storage configuration removes the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 ### Removing the VMWare storage configuration using the console

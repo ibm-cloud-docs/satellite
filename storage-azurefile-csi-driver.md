@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -349,6 +349,8 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
 
 
 
+{{site.data.content.managing-configurations-and-assignments}}
+
 ## Deploying an app that uses your Azure File storage
 {: #storage-azure-file-csi-app-deploy}
 
@@ -579,7 +581,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 1. Enter the name of your storage configuration.
 1. Select **Delete**.
 
-### Removing the Azure File storage configuration from the cli
+### Removing the Azure File storage configuration from the CLI
 {: #azure-file-template-rm-cli}
 {: cli}
 

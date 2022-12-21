@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -264,7 +264,7 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
 
 
 
-
+{{site.data.content.managing-configurations-and-assignments}}
 
 ## Deploying an app that uses {{site.data.keyword.cos_full_notm}}
 {: #config-storage-cos-app}
@@ -386,6 +386,7 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
     exit
     ```
     {: pre}
+
 
 
 ## Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the console

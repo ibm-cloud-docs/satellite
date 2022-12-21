@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -342,13 +342,7 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
 
 
 
-1. Verify that your storage configuration is created.
-    ```sh
-    ibmcloud sat storage config get --config <config>
-    ```
-    {: pre}
-
-1. [Assign your storage configuration to clusters](#assign-storage-odf-remote).
+{{site.data.content.managing-configurations-and-assignments}}
 
 ### Optional: Adding additional worker nodes to your ODF configuration
 {: #add-worker-nodes-odf-remote}

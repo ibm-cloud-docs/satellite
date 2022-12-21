@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -307,6 +307,7 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
     
 
 
+{{site.data.content.managing-configurations-and-assignments}}
 
 
 ## Deploying an app that uses ONTAP-NAS storage

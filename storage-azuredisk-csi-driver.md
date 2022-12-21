@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-20"
+lastupdated: "2022-12-21"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -49,7 +49,7 @@ To use the Azure Disk CSI driver storage template, complete the following tasks.
 Complete the following steps to add the required labels to your worker nodes for the Azure Disk CSI driver template.
 {: shortdesc}
 
-If you manually assigned your Azure hosts to your location and did not use the template, you must [label your worker nodes](#azure-disk-label-nodes) before creating your storage configuration.
+If you manually assigned your Azure hosts to your Location and did not use the Schematics template in the console, you must [label your worker nodes](#azure-disk-label-nodes) before creating your storage configuration.
 {: important}
 
 
@@ -80,13 +80,105 @@ If you manually assigned your Azure hosts to your location and did not use the t
 
 1. [Sign in to your Azure account](https://azure.microsoft.com/en-us/get-started/){: external} and retrieve the required parameters. For more information about the parameters, see [Cluster config](https://cloud-provider-azure.sigs.k8s.io/install/configs/#cluster-config).
 
-{[azure-disk-csi-driver-config-create.md]}
+
+## Creating a configuration
+{: #azuredisk-csi-driver-config-create}
+
+Before you begin, review the [parameter reference](#azuredisk-csi-driver-parameter-reference) for the template version that you want to use.
+{: important}
+
+### Creating and assigning a configuration in the console
+{: azuredisk-csi-driver-config-create-console}
+{: ui}
+
+1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type**.
+1. Select the **Version** and click **Next**
+1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
+1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
+
+### Creating a configuration in the CLI
+{: #azuredisk-csi-driver-config-create-cli}
+{: cli}
+
+1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+
+
+    Example command to create a version 1.4.0 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.4.0 --param "tenantId=TENANTID"  --param "subscriptionId=SUBSCRIPTIONID"  --param "aadClientId=AADCLIENTID"  --param "location=LOCATION"  --param "aadClientSecret=AADCLIENTSECRET"  --param "resourceGroup=RESOURCEGROUP"  --param "vmType=VMTYPE"  --param "securityGroupName=SECURITYGROUPNAME"  --param "vnetName=VNETNAME" 
+    ```
+    {: pre}
+
+    Example command to create a version 1.18.0 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.18.0 --param "tenantId=TENANTID"  --param "subscriptionId=SUBSCRIPTIONID"  --param "aadClientId=AADCLIENTID"  --param "location=LOCATION"  --param "aadClientSecret=AADCLIENTSECRET"  --param "resourceGroup=RESOURCEGROUP"  --param "vmType=VMTYPE"  --param "securityGroupName=SECURITYGROUPNAME"  --param "vnetName=VNETNAME" 
+    ```
+    {: pre}
+
+    Example command to create a version 1.23.0 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name azuredisk-csi-driver --template-version 1.23.0 --param "tenantId=TENANTID"  --param "subscriptionId=SUBSCRIPTIONID"  --param "aadClientId=AADCLIENTID"  --param "location=LOCATION"  --param "aadClientSecret=AADCLIENTSECRET"  --param "resourceGroup=RESOURCEGROUP"  --param "vmType=VMTYPE"  --param "securityGroupName=SECURITYGROUPNAME"  --param "vnetName=VNETNAME" 
+    ```
+    {: pre}
+
+
+1. Customize the command based on the settings that you want to use.
+
+1. Run the command to create a configuration.
+
+1. Verify your configuration was created.
+    ```sh
+    ibmcloud sat storage config get --config CONFIG
+    ```
+    {: pre}
+
+### Creating a configuration in the API
+{: #azuredisk-csi-driver-config-create-api}
+
+1. Copy one of the following example requests and replace the variables that you want to use.
+
+
+    Example request to create a version 1.4.0 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azuredisk-csi-driver\", \"storage-template-version\": \"1.4.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",  { \"entry.name\": \"SUBSCRIPTIONID\",\"user-secret-parameters\": { \"entry.name\": \"SUBSCRIPTIONID\",  { \"entry.name\": \"AADCLIENTID\",\"user-secret-parameters\": { \"entry.name\": \"AADCLIENTID\",  { \"entry.name\": \"LOCATION\",\"user-secret-parameters\": { \"entry.name\": \"LOCATION\",  { \"entry.name\": \"AADCLIENTSECRET\",\"user-secret-parameters\": { \"entry.name\": \"AADCLIENTSECRET\",  { \"entry.name\": \"RESOURCEGROUP\",\"user-secret-parameters\": { \"entry.name\": \"RESOURCEGROUP\",  { \"entry.name\": \"VMTYPE\",\"user-secret-parameters\": { \"entry.name\": \"VMTYPE\",  { \"entry.name\": \"SECURITYGROUPNAME\",\"user-secret-parameters\": { \"entry.name\": \"SECURITYGROUPNAME\",  { \"entry.name\": \"VNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"VNETNAME\", 
+    ```
+    {: pre}
+
+    Example request to create a version 1.18.0 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azuredisk-csi-driver\", \"storage-template-version\": \"1.18.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",  { \"entry.name\": \"SUBSCRIPTIONID\",\"user-secret-parameters\": { \"entry.name\": \"SUBSCRIPTIONID\",  { \"entry.name\": \"AADCLIENTID\",\"user-secret-parameters\": { \"entry.name\": \"AADCLIENTID\",  { \"entry.name\": \"LOCATION\",\"user-secret-parameters\": { \"entry.name\": \"LOCATION\",  { \"entry.name\": \"AADCLIENTSECRET\",\"user-secret-parameters\": { \"entry.name\": \"AADCLIENTSECRET\",  { \"entry.name\": \"RESOURCEGROUP\",\"user-secret-parameters\": { \"entry.name\": \"RESOURCEGROUP\",  { \"entry.name\": \"VMTYPE\",\"user-secret-parameters\": { \"entry.name\": \"VMTYPE\",  { \"entry.name\": \"SECURITYGROUPNAME\",\"user-secret-parameters\": { \"entry.name\": \"SECURITYGROUPNAME\",  { \"entry.name\": \"VNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"VNETNAME\", 
+    ```
+    {: pre}
+
+    Example request to create a version 1.23.0 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azuredisk-csi-driver\", \"storage-template-version\": \"1.23.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",  { \"entry.name\": \"SUBSCRIPTIONID\",\"user-secret-parameters\": { \"entry.name\": \"SUBSCRIPTIONID\",  { \"entry.name\": \"AADCLIENTID\",\"user-secret-parameters\": { \"entry.name\": \"AADCLIENTID\",  { \"entry.name\": \"LOCATION\",\"user-secret-parameters\": { \"entry.name\": \"LOCATION\",  { \"entry.name\": \"AADCLIENTSECRET\",\"user-secret-parameters\": { \"entry.name\": \"AADCLIENTSECRET\",  { \"entry.name\": \"RESOURCEGROUP\",\"user-secret-parameters\": { \"entry.name\": \"RESOURCEGROUP\",  { \"entry.name\": \"VMTYPE\",\"user-secret-parameters\": { \"entry.name\": \"VMTYPE\",  { \"entry.name\": \"SECURITYGROUPNAME\",\"user-secret-parameters\": { \"entry.name\": \"SECURITYGROUPNAME\",  { \"entry.name\": \"VNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"VNETNAME\", 
+    ```
+    {: pre}
 
 
 
 
 
 
+
+
+
+
+
+{{site.data.content.managing-configurations-and-assignments}}
 
 ## Deploying an app that uses your Azure Disk storage
 {: #storage-azure-csi-app-deploy}
