@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-21"
+lastupdated: "2022-12-22"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -129,6 +129,9 @@ Before you begin, review the [parameter reference](#netapp-ontap-nas-parameter-r
 
 ## Creating a configuration in the API
 {: #netapp-ontap-nas-config-create-api}
+{: api}
+
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
 
 1. Copy one of the following example requests and replace the variables that you want to use.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-21"
+lastupdated: "2022-12-22"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -120,6 +120,9 @@ Before you begin, review the [parameter reference](#gcp-compute-persistent-disk-
 
 ## Creating a configuration in the API
 {: #gcp-compute-persistent-disk-csi-driver-config-create-api}
+{: api}
+
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
 
 1. Copy one of the following example requests and replace the variables that you want to use.
 

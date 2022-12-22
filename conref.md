@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-21"
+lastupdated: "2022-12-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -34,9 +34,11 @@ If you didn't assign your configuration to a cluster or service when you created
     1. Click the **Assignment** that you created and review the **Rollout status** for your configuration.
 
 
-## Creating a storage assignment in the CLI
+
+
+## Creating an assignment in the CLI
 {: #assignment-create-cli}
-{: ui}
+{: cli}
 
 1. List your storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
@@ -49,42 +51,42 @@ If you didn't assign your configuration to a cluster or service when you created
     To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
     {: tip}
     
-    List cluster groups.
+    Example command to list cluster groups.
     
     ```sh
     ibmcloud sat group ls
     ```
     {: pre}
 
-    List clusters.
+    Example command to list clusters.
     
     ```sh
     ibmcloud oc cluster ls --provider satellite
     ```
     {: pre}
     
-    List services.
+    Example command to list {{site.data.keyword.satelliteshort}} services.
     
     ```sh
     ibmcloud sat service ls --location <location>
     ```
     {: pre}
 
-1. Assign storage to the cluster or group that you retrieved in step 2. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
+1. Assign your storage configuration to the cluster, group, or service that you retrieved earlier. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-    Assign a configuration to a cluster group.
+    Example command to assign a configuration to a cluster group.
     ```sh
     ibmcloud sat storage assignment create --group GROUP --config CONFIG --name NAME
     ```
     {: pre}
 
-    Assign a configuration to a cluster.
+    Example command to assign a configuration to a cluster.
     ```sh
     ibmcloud sat storage assignment create --cluster CLUSTER --config CONFIG --name NAME
     ```
     {: pre}
 
-    Assign a configuration to a service cluster.
+    Example command to assign a configuration to a service cluster.
     ```sh
     ibmcloud sat storage assignment create --service-cluster-id CLUSTER --config CONFIG --name NAME
     ```
@@ -92,41 +94,29 @@ If you didn't assign your configuration to a cluster or service when you created
 
 1. Verify that your assignment is created.
     ```sh
-    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
-    ```
-    {: pre}
-
-
-## Creating a storage assignment in the API
-{: #assignment-create-console}
-{: api}
-
-1. Copy one of the following example requests. 
-
-    Example request to assign a [configuration to a cluster](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite/createAssignmentByCluster){: external}.
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createAssignmentByCluster" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d "{ \"channelName\": \"CONFIGURATION-NAME\", \"cluster\": \"CLUSTER-ID\", \"controller\": \"LOCATION-ID\", \"name\": \"ASSIGNMENT-NAME\"}"
+    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
     ```
     {: pre}
     
-    Example request to [assign configuration to a cluster group](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite/createAssignment){: external}.
+## Upgrading a configuration in the CLI
+{: #configuration-upgrade-cli}
+{: cli}
+
+You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to get the latest storage template revision within the same major version. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage configurations, make a note of the {{site.data.keyword.satelliteshort}} configuration you want to upgrade.
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createAssignment" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d "{ \"channelName\": \"CONFIGURATION-NAME\", \"cluster\": \"string\", \"groups\": [ \"CLUSTER-GROUP\" ], \"name\": \"ASSIGNMENT-NAME\"}"
+    ibmcloud sat storage config ls
+    ```
+    {: pre}
+
+1. Upgrade the {{site.data.keyword.satelliteshort}} configuration. Note, only the configuration is updated. If you want to upgrade the assignments that use this configuration, you can specify the `--include-assignments` option or you can manually update each assignment using the `assignment update` command.
+    ```sh
+    ibmcloud sat storage config upgrade --config CONFIG [--include-assignments]
     ```
     {: pre}
     
-1. Replace the variables with your details and run the request.
-
-1. Verify the assignment was created by listing your assignments.
-
-    ```sh
-    curl -X GET "https://containers.cloud.ibm.com/global/v2/storage/satellite/getAssignments" -H "accept: application/json" -H "Authorization: Bearer TOKEN"
-    ```
-    {: pre}
-
-
-
-## Updating a storage assignment in the CLI
+## Updating an assignment in the CLI
 {: #assignment-update-cli}
 {: cli}
 
@@ -153,11 +143,64 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
     {: pre}
     
     
+## Upgrading an assignment in the CLI
+{: #assignment-upgrade-cli}
+{: cli}
+
+You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
+
+1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to upgrade.
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. List the {{site.data.keyword.satelliteshort}} storage templates to see the latest available versions.
+    ```sh
+    ibmcloud sat storage template ls
+    ```
+    {: pre}
+
+1. Upgrade the {{site.data.keyword.satelliteshort}} assignment.
+    ```sh
+    ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT
+    ```
+    {: pre} 
+    
+
+
+## Creating a storage assignment in the API
+{: #assignment-create-api}
+{: api}
+
+1. Copy one of the following example requests. 
+
+    Example request to assign a [configuration to a cluster](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite/createAssignmentByCluster){: external}.
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createAssignmentByCluster" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d "{ \"channelName\": \"CONFIGURATION-NAME\", \"cluster\": \"CLUSTER-ID\", \"controller\": \"LOCATION-ID\", \"name\": \"ASSIGNMENT-NAME\"}"
+    ```
+    {: pre}
+    
+    Example request to [assign configuration to a cluster group](https://containers.cloud.ibm.com/global/swagger-global-api/#/satellite/createAssignment){: external}.
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createAssignment" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d "{ \"channelName\": \"CONFIGURATION-NAME\", \"cluster\": \"string\", \"groups\": [ \"CLUSTER-GROUP\" ], \"name\": \"ASSIGNMENT-NAME\"}"
+    ```
+    {: pre}
+    
+1. Replace the variables with your details and run the request.
+
+1. Verify the assignment was created by listing your assignments.
+
+    ```sh
+    curl -X GET "https://containers.cloud.ibm.com/global/v2/storage/satellite/getAssignments" -H "accept: application/json" -H "Authorization: Bearer TOKEN"
+    ```
+    {: pre}
+
 ## Updating a storage assignment in the API
 {: #assignment-update-api}
 {: api}
 
-You can use the `/v2/storage/satellite/updateAssignment`](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/updateAssignment){: external} API to update your assignments.
+You can use the `/v2/storage/satellite/updateAssignment`](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/updateAssignment){: external} API to update your assignments with new clusters or cluster groups.
 
 1. Copy the following example request and replace the variables for the cluster groups and assignments that you want to update.
     ```sh
