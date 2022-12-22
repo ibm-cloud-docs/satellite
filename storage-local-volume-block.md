@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-19"
+lastupdated: "2022-12-22"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 # Local Storage Operator - Block
-{: #config-storage-local-block}
+{: #storage-local-volume-block}
 
 Set up [Persistent storage using local volumes](https://docs.openshift.com/container-platform/4.6/storage/persistent_storage/persistent-storage-local.html#create-local-pvc_persistent-storage-local){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
@@ -28,34 +28,7 @@ Before you can create a local block storage configuration, you must identify the
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
-    ```sh
-    ibmcloud login
-    ```
-    {: pre}
-
-1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
-
-    ```sh
-    ibmcloud sat location ls
-    ```
-    {: pre}
-
-1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
-
-    ```sh
-    ibmcloud target -r us-east
-    ```
-    {: pre}
-
-1. If you use a resource group other than `default`, target it.
-
-    ```sh
-    ibmcloud target -g <resource-group>
-    ```
-    {: pre}
-    
 1. Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
 1. [Get the device details of your worker nodes](#sat-storage-block-local-devices).
 1. [Label the worker nodes](#sat-storage-block-local-labels) that have an available disk and that you want to use in your configuration. The local storage drivers are installed only on the labeled worker nodes.
@@ -110,7 +83,6 @@ When you create your local block storage configuration, you must specify which d
 
 
     ```sh
-
     NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     nvme0n1     259:3    0   100G  0 disk 
     |-nvme0n1p1 259:4    0     1M  0 part 
@@ -162,210 +134,165 @@ After you have [retrieved the device paths for the disks that you want to use in
     {: pre}
 
 
-## Creating a local block storage configuration
-{: #sat-storage-local-block}
 
-You can use the [console](#sat-storage-local-block-ui) or [CLI](#sat-storage-local-block-cli) to create a local block storage configuration in your location and assign the configuration to your clusters.
-{: shortdesc}
 
-### Creating a local block storage configuration from the console
-{: #sat-storage-local-block-ui}
+
+
+
+
+Before you begin, review the [parameter reference](#local-volume-block-parameter-reference) for the template version that you want to use.
+{: important}
+
+## Creating and assigning a configuration in the console
+{: #local-volume-block-config-create-console}
 {: ui}
 
-1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
 1. Enter a name for your configuration.
-1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
-1. On the **Parameters** tab, enter the parameters for your configuration.
-1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. Select the **Storage type**.
+1. Select the **Version** and click **Next**
+1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
+1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
 1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-
-## Creating a local block storage configuration in the command line
-{: #sat-storage-local-block-cli}
+## Creating a configuration in the CLI
+{: #local-volume-block-config-create-cli}
 {: cli}
 
-1. Review the [Local block storage configuration parameters](#local-volume-block-parameter-reference).
-
-1. List the available templates and versions and review the output. Make a note of the template and version that you want to use. Your storage template version and cluster version must match. 
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
     ```sh
-    ibmcloud sat storage template ls
+    ibmcloud login
     ```
     {: pre}
 
-1. Copy the following command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `--param "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
 
+    ```sh
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
+    
+1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
     Example command to create a version 4.7 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.7  --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   --param "devicepath=DEVICEPATH" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.7 --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  --param "devicepath=DEVICEPATH" 
     ```
     {: pre}
-
 
     Example command to create a version 4.8 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.8  --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   --param "devicepath=DEVICEPATH" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.8 --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  --param "devicepath=DEVICEPATH" 
     ```
     {: pre}
-
 
     Example command to create a version 4.9 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.9  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.9 [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"] 
     ```
     {: pre}
-
 
     Example command to create a version 4.10 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.10  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.10 [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"] 
     ```
     {: pre}
-
 
     Example command to create a version 4.11 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.11  [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]   --param "label-key=LABEL-KEY"   --param "label-value=LABEL-VALUE"   [--param "devicepath=DEVICEPATH"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.11 [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"] 
     ```
     {: pre}
 
 
-1. Verify that your storage configuration is created.
+1. Customize the command based on the settings that you want to use.
 
+1. Run the command to create a configuration.
+
+1. Verify your configuration was created.
     ```sh
-    ibmcloud sat storage config get --config <config>
+    ibmcloud sat storage config get --config CONFIG
     ```
     {: pre}
 
-1. [Assign your configuration to clusters](#assign-storage-local-block).
+## Creating a configuration in the API
+{: #local-volume-block-config-create-api}
+{: api}
+
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+
+1. Copy one of the following example requests and replace the variables that you want to use.
 
 
+    Example request to create a version 4.7 configuration.
 
-## Assigning your local block storage configuration to a cluster
-{: #assign-storage-local-block}
-
-After you [create a local block storage configuration](#config-storage-local-block), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
-
-
-
-
-
-
-### Assigning a local block storage configuration in the command line
-{: #assign-storage-local-block-cli}
-{: cli}
-
-1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
-    ibmcloud sat storage config ls
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.7\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": { \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",
     ```
     {: pre}
 
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    - Group
-      ```sh
-      ibmcloud sat group ls
-      ```
-      {: pre}
+    Example request to create a version 4.8 configuration.
 
-    - Cluster
-      ```sh
-      ibmcloud oc cluster ls --provider satellite
-      ```
-      {: pre}
-
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat service ls --location <location>
-      ```
-      {: pre}
-
-1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
-
-    - Group
-      ```sh
-      ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
-      ```
-      {: pre}
-
-    - Cluster
-      ```sh
-      ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-1. Verify that your assignment is created.
     ```sh
-    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.8\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": { \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",
     ```
     {: pre}
 
-1. List all the resources in the `local-storage` namespace and verify the driver pods are `Running`.
+    Example request to create a version 4.9 configuration.
 
     ```sh
-    oc get all -n local-storage
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.9\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",{ \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",
     ```
     {: pre}
 
-    Example output
+    Example request to create a version 4.10 configuration.
 
     ```sh
-    NAME                                         READY   STATUS    RESTARTS   AGE
-    pod/local-disk-local-diskmaker-qdrjs         1/1     Running   0          100s
-    pod/local-disk-local-provisioner-b6v4n       1/1     Running   0          100s
-    pod/local-storage-operator-96c444dfc-m25g7   1/1     Running   0          104s
-
-    NAME                             TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)     AGE
-    service/local-storage-operator   ClusterIP   172.21.92.28   <none>        60000/TCP   101s
-
-    NAME                                          DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
-    daemonset.apps/local-disk-local-diskmaker     1         1         1       1            1           <none>          101s
-    daemonset.apps/local-disk-local-provisioner   1         1         1       1            1           <none>          101s
-
-    NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE
-    deployment.apps/local-storage-operator   1/1     1            1           106s
-
-    NAME                                               DESIRED   CURRENT   READY   AGE
-    replicaset.apps/local-storage-operator-96c444dfc   1         1         1       106s
-
-    ```
-    {: screen}
-
-1. List the PVs and verify that the status is `Available`.
-
-    ```sh
-    oc get pv
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",{ \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",
     ```
     {: pre}
 
-    Example output
+    Example request to create a version 4.11 configuration.
 
     ```sh
-    NAME                CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS           REASON   AGE
-    local-pv-88842685   20Gi       RWO            Delete           Available           sat-local-block-gold            90s
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.11\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",{ \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",
     ```
-    {: screen}
-
-1. [Create a PVC that references your local PV, then deploy an app that uses your local storage](#deploy-app-local-block).
+    {: pre}
 
 
-## Deploying an app that uses your local block storage
+
+
+
+
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
+
+## Deploying an app that uses local block storage
 {: #deploy-app-local-block}
 
 
@@ -507,72 +434,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     ```
     {: pre}
 
-## Upgrading a local block storage configuration
-{: #sat-storage-local-block-upgrade-config}
-{: cli}
 
-You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage configurations, make a note of the {{site.data.keyword.satelliteshort}} configuration you want to upgrade.
-    ```sh
-    ibmcloud sat storage config ls
-    ```
-    {: pre}
-
-1. Upgrade the {{site.data.keyword.satelliteshort}} configuration. Note, only the configuration is updated. If you want to upgrade the assignments that use this configuration, you can specify the `--include-assignments` option or you can manually update each assignment using the `assignment update` command.
-    ```sh
-    ibmcloud sat storage config upgrade --config CONFIG [--include-assignments]
-    ```
-    {: pre}
-
-## Upgrading a local block storage assignment
-{: #sat-storage-local-block-upgrade-assignment}
-{: cli}
-
-You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to upgrade.
-    ```sh
-    ibmcloud sat storage assignment ls
-    ```
-    {: pre}
-
-1. List the {{site.data.keyword.satelliteshort}} storage templates to see the latest available versions.
-    ```sh
-    ibmcloud sat storage template ls
-    ```
-    {: pre}
-
-1. Upgrade the {{site.data.keyword.satelliteshort}} assignment.
-    ```sh
-   ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT
-    ```
-    {: pre}
-
-## Updating a local block storage assignment
-{: #sat-storage-local-block-update-assignment}
-{: cli}
-
-You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to update and the clusters or cluster groups included in the assignment.
-    ```sh
-    ibmcloud sat storage assignment ls
-    ```
-    {: pre}
-
-1. Update the {{site.data.keyword.satelliteshort}} assignment. 
-    ```sh
-    ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
-    ```
-    {: pre}
-
-    Example command to update assignment name and assign different cluster groups.
-    
-    ```sh
-    ibmcloud sat storage assignment update --assignment ASSIGNMENT --name new-name --group group-1 --group group-2 --group group-3
-    ```
-    {: pre}
 
 ## Removing the local block storage configuration from your cluster
 {: #sat-storage-remove-local-block-config}
@@ -775,58 +637,58 @@ Use the console to remove a storage configuration.
 ### 4.7 parameter reference
 {: #4.7-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. | true | 
 {: caption="Table 1. 4.7 parameter reference" caption-side="bottom"}
 
 
 ### 4.8 parameter reference
 {: #4.8-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. | true | 
 {: caption="Table 2. 4.8 parameter reference" caption-side="bottom"}
 
 
 ### 4.9 parameter reference
 {: #4.9-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
-| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
 {: caption="Table 3. 4.9 parameter reference" caption-side="bottom"}
 
 
 ### 4.10 parameter reference
 {: #4.10-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
-| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
 {: caption="Table 4. 4.10 parameter reference" caption-side="bottom"}
 
 
 ### 4.11 parameter reference
 {: #4.11-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
-| Node Label Key | `label-key` | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
 {: caption="Table 5. 4.11 parameter reference" caption-side="bottom"}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-22"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -12,36 +12,42 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 # {{site.data.keyword.cos_full_notm}} CSI Driver 
-{: #config-storage-cos}
+{: #storage-ibm-object-storage-plugin}
 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
 
 
 ## Prerequisites
-{: #config-storage-cos-prereqs}
+{: #storage-ibm-object-storage-plugin-prereqs}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 1. [Create an {{site.data.keyword.cos_full_notm}} Secret](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials). 
 
-## Creating an {{site.data.keyword.cos_full_notm}} configuration from the console
-{: #config-storage-cos-create-ui}
+
+
+
+Before you begin, review the [parameter reference](#ibm-object-storage-plugin-parameter-reference) for the template version that you want to use.
+{: important}
+
+## Creating and assigning a configuration in the console
+{: #ibm-object-storage-plugin-config-create-console}
 {: ui}
 
-1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
 1. Enter a name for your configuration.
-1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
-1. On the **Parameters** tab, enter the parameters for your configuration.
-1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. Select the **Storage type**.
+1. Select the **Version** and click **Next**
+1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
+1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
 1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-
-## Creating a {{site.data.keyword.cos_short}} configuration from the CLI
-{: #config-storage-cos-create-cli}
+## Creating a configuration in the CLI
+{: #ibm-object-storage-plugin-config-create-cli}
 {: cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
@@ -72,124 +78,53 @@ Before you can deploy storage templates to clusters in your location, make sure 
     ```
     {: pre}
     
-1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
-
-    ```sh
-    ibmcloud sat storage template ls
-    ```
-    {: pre}
-    
+1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
     Example command to create a version 2.2 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2  [--param "helm-release-name=HELM-RELEASE-NAME"]   [--param "parameters=PARAMETERS"]   --param "license=LICENSE"   --param "cos-endpoint=COS-ENDPOINT"   --param "cos-storageclass=COS-STORAGECLASS" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2 [--param "helm-release-name=HELM-RELEASE-NAME"]  [--param "parameters=PARAMETERS"]  --param "license=LICENSE"  --param "cos-endpoint=COS-ENDPOINT"  --param "cos-storageclass=COS-STORAGECLASS" 
+    ```
+    {: pre}
+
+
+1. Customize the command based on the settings that you want to use.
+
+1. Run the command to create a configuration.
+
+1. Verify your configuration was created.
+    ```sh
+    ibmcloud sat storage config get --config CONFIG
+    ```
+    {: pre}
+
+## Creating a configuration in the API
+{: #ibm-object-storage-plugin-config-create-api}
+{: api}
+
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+
+1. Copy one of the following example requests and replace the variables that you want to use.
+
+
+    Example request to create a version 2.2 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-object-storage-plugin\", \"storage-template-version\": \"2.2\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"HELM-RELEASE-NAME\", { \"entry.name\": \"PARAMETERS\", { \"entry.name\": \"LICENSE\", { \"entry.name\": \"COS-ENDPOINT\", { \"entry.name\": \"COS-STORAGECLASS\",\"user-secret-parameters\": { \"entry.name\": \"HELM-RELEASE-NAME\",{ \"entry.name\": \"PARAMETERS\",{ \"entry.name\": \"LICENSE\",{ \"entry.name\": \"COS-ENDPOINT\",{ \"entry.name\": \"COS-STORAGECLASS\",
     ```
     {: pre}
 
 
 
-## Assigning a {{site.data.keyword.cos_short}} configuration from the console
-{: #config-storage-cos-assign-ui}
-{: ui}
-
-1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
-1. Select the location where you want to create a storage configuration.
-1. Click the **Locations** tab and click the storage configuration that you want to assign to a cluster group.
-1. On the **Configuration details** page, click **Create storage assignment**.
-1. In the **Create an assignment** pane, enter a name for your assignment. When you create a assignment you assign your storage configuration to your clusters.
-1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
-1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
-1. Click **Create** to create the assignment.
-1. Verify that your storage configuration is deployed to your cluster. 
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to your Location and select **Storage**
-    1. Click the storage configuration that you created and review the **Assignments** tab.
-    1. Click the **Assignment** that you created and review the **Rollout status** for your configuration.
 
 
-## Assigning a {{site.data.keyword.cos_short}} configuration from the CLI
-{: #config-storage-cos-assign-cli}
-{: cli}
 
-1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
-    ```sh
-    ibmcloud sat storage config ls
-    ```
-    {: pre}
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    - Group
-      ```sh
-      ibmcloud sat group ls
-      ```
-      {: pre}
-
-    - Cluster
-      ```sh
-      ibmcloud oc cluster ls --provider satellite
-      ```
-      {: pre}
-
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat service ls --location <location>
-      ```
-      {: pre}
-
-1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
-
-    - Group
-      ```sh
-      ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
-      ```
-      {: pre}
-
-    - Cluster
-      ```sh
-      ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-1. Verify that your assignment is created.
-    ```sh
-    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
-    ```
-    {: pre}
-
-1. Verify that the storage configuration resources are deplpoyed.
-
-    ```sh
-    $ oc get pods -n ibm-object-s3fs -o wide | grep object
-
-    ibmcloud-object-storage-driver-njf57              1/1     Running   0          2m36s
-
-    ibmcloud-object-storage-driver-xxhxw              1/1     Running   0          2m36s
-
-    ibmcloud-object-storage-driver-zhqqs              1/1     Running   0          2m36s   
-
-    ibmcloud-object-storage-plugin-6f85bfd684-9pj5l   1/1     Running   0          2m36s   
-    ```
-    {: screen}
-
-1. List the storage classes.
-
-    ```sh
-    oc get storageclass | grep ibm-s3fs
-
-    ibmc-s3fs-cos        ibm.io/ibmc-s3fs   Delete          Immediate           false                  2m23s
-
-    ibmc-s3fs-cos-perf   ibm.io/ibmc-s3fs   Delete          Immediate           false                  2m23s
-    ```
-    {: codeblock}
-
-## Deploying an app that uses your {{site.data.keyword.cos_full_notm}} configuration
+## Deploying an app that uses {{site.data.keyword.cos_full_notm}}
 {: #config-storage-cos-app}
 
 
@@ -311,6 +246,7 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
     {: pre}
 
 
+
 ## Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the console
 {: #config-storage-cos-rm-ui}
 {: ui}
@@ -380,13 +316,13 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 ### 2.2 parameter reference
 {: #2.2-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| Helm Chart Release Name | `helm-release-name` | Release name of the chart | false | 
-| Helm Chart Additional Parameters (Optional) | `parameters` | Helm Chart Additional Parameters (Optional) | false | 
-| COS plug-in License: Apache License Version 2.0 | `license` | COS plug-in License: Apache License Version 2.0. Set to `true` to accept the license and install the plugin | true | 
-| COS Endpoint | `cos-endpoint` | Enter COS Endpoint. For more information, refer to https://ibm.biz/cos-endpoints | true | 
-| COS storageclass | `cos-storageclass` | Enter COS storageclass. For more info, refer to https://ibm.biz/cos-storage-classes | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Helm Chart Release Name | `helm-release-name` | Config | Release name of the chart | false | 
+| Helm Chart Additional Parameters (Optional) | `parameters` | Config | Helm Chart Additional Parameters (Optional) | false | 
+| COS plug-in License: Apache License Version 2.0 | `license` | Config | COS plug-in License: Apache License Version 2.0. Set to `true` to accept the license and install the plugin | true | 
+| COS Endpoint | `cos-endpoint` | Config | Enter COS Endpoint. For more information, refer to https://ibm.biz/cos-endpoints | true | 
+| COS storageclass | `cos-storageclass` | Config | Enter COS storageclass. For more info, refer to https://ibm.biz/cos-storage-classes | true | 
 {: caption="Table 1. 2.2 parameter reference" caption-side="bottom"}
 
 

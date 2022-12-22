@@ -2,9 +2,9 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-19"
+lastupdated: "2022-12-22"
 
-keywords: block storage, satellite storage, satellite config, satellite configurations, 
+keywords: satellite storage, satellite config, satellite configurations, 
 
 subcollection: satellite
 
@@ -12,12 +12,12 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.IBM_notm}} Systems block storage CSI driver
-{: #config-storage-block-csi}
+# {{site.data.keyword.IBM_notm}} Systems Block Storage CSI driver
+{: #storage-ibm-system-storage-block-csi-driver}
 
-The block storage CSI driver for {{site.data.keyword.satellitelong}} is based on an {{site.data.keyword.IBM_notm}} open-source project, and integrated into the {{site.data.keyword.IBM_notm}} Storage orchestration for containers. {{site.data.keyword.IBM_notm}} Storage orchestration for containers enables enterprises to implement a modern container-driven hybrid multicloud environment that can reduce IT costs and enhance business agility, while continuing to derive value from existing systems.
+The {{site.data.keyword.blockstorageshort}} CSI driver for {{site.data.keyword.satellitelong}} is based on an {{site.data.keyword.IBM_notm}} open-source project, and integrated into the {{site.data.keyword.IBM_notm}} Storage orchestration for containers. {{site.data.keyword.IBM_notm}} Storage orchestration for containers enables enterprises to implement a modern container-driven hybrid multicloud environment that can reduce IT costs and enhance business agility, while continuing to derive value from existing systems.
 
-For full release notes, compatibility, installation, and user information, see the [block storage CSI driver documentation](https://www.ibm.com/docs/en/stg-block-csi-driver){: external}.
+For full release notes, compatibility, installation, and user information, see the [{{site.data.keyword.blockstorageshort}} CSI driver documentation](https://www.ibm.com/docs/en/stg-block-csi-driver){: external}.
 
 Supported {{site.data.keyword.IBM_notm}} storage systems for Satellite include,
 
@@ -28,7 +28,7 @@ Supported {{site.data.keyword.IBM_notm}} storage systems for Satellite include,
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
 {: important}
   
-## Prerequisites for using block storage
+## Prerequisites for using {{site.data.keyword.blockstorageshort}}
 {: #sat-storage-block-csi-prereq}
 
 Be sure to complete all prerequisite and installation steps before assigning hosts to your location. Do not create a Kubernetes cluster.
@@ -40,8 +40,29 @@ Be sure to complete all prerequisite and installation steps before assigning hos
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 
 
-## Creating a block storage configuration in the command line
-{: #sat-storage-block-csi-cli}
+
+
+Before you begin, review the [parameter reference](#ibm-system-storage-block-csi-driver-parameter-reference) for the template version that you want to use.
+{: important}
+
+## Creating and assigning a configuration in the console
+{: #ibm-system-storage-block-csi-driver-config-create-console}
+{: ui}
+
+1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type**.
+1. Select the **Version** and click **Next**
+1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
+1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
+
+## Creating a configuration in the CLI
+{: #ibm-system-storage-block-csi-driver-config-create-cli}
+{: cli}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -71,127 +92,78 @@ Be sure to complete all prerequisite and installation steps before assigning hos
     ```
     {: pre}
     
-1. List the available templates and versions and review the output. Make a note of the template and version that you want to use.
+1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+
+
+    Example command to create a version 1.4.0 configuration.
 
     ```sh
-    ibmcloud sat storage template ls
-    ```
-    {: pre}
-    
-1. Copy the following the command and replace the variables with the parameters for your storage configuration. You can pass additional parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
-    ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name ibm-system-storage-block-csi-driver --template-version <template_version> -p "namespace=<namespace>" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.4.0 [--param "namespace=NAMESPACE"] 
     ```
     {: pre}
 
-1. Verify that your storage configuration is created.
+    Example command to create a version 1.5.0 configuration.
+
     ```sh
-    ibmcloud sat storage config get --config <config>
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.5.0 [--param "namespace=NAMESPACE"] 
     ```
     {: pre}
 
-1. [Assign your storage configuration to your clusters](#assign-storage-block-csi).
 
+1. Customize the command based on the settings that you want to use.
 
+1. Run the command to create a configuration.
 
-
-
-## Assigning your {{site.data.keyword.IBM_notm}} block storage configuration to a cluster
-{: #assign-storage-block-csi}
-
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#config-storage-block-csi), you can assign your configuration to your {{site.data.keyword.satelliteshort}} clusters.
-
-
-
-
-### Assigning a block storage configuration in the console
-{: #assign-storage-block-csi-ui}
-{: ui}
-
-
-1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
-1. Select the location where you want to create a storage configuration.
-1. Click the **Locations** tab and click the storage configuration that you want to assign to a cluster group.
-1. On the **Configuration details** page, click **Create storage assignment**.
-1. In the **Create an assignment** pane, enter a name for your assignment. When you create a assignment you assign your storage configuration to your clusters.
-1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
-1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
-1. Click **Create** to create the assignment.
-1. Verify that your storage configuration is deployed to your cluster. 
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to your Location and select **Storage**
-    1. Click the storage configuration that you created and review the **Assignments** tab.
-    1. Click the **Assignment** that you created and review the **Rollout status** for your configuration.
-
-
-
-### Assigning a block storage configuration in the command line
-{: #assign-storage-block-csi-cli}
-{: cli}
-
-1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
+1. Verify your configuration was created.
     ```sh
-    ibmcloud sat storage config ls
+    ibmcloud sat storage config get --config CONFIG
     ```
     {: pre}
 
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    - Group
-      ```sh
-      ibmcloud sat group ls
-      ```
-      {: pre}
+## Creating a configuration in the API
+{: #ibm-system-storage-block-csi-driver-config-create-api}
+{: api}
 
-    - Cluster
-      ```sh
-      ibmcloud oc cluster ls --provider satellite
-      ```
-      {: pre}
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
 
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat service ls --location <location>
-      ```
-      {: pre}
+1. Copy one of the following example requests and replace the variables that you want to use.
 
-1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-    - Group
-      ```sh
-      ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
-      ```
-      {: pre}
+    Example request to create a version 1.4.0 configuration.
 
-    - Cluster
-      ```sh
-      ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-1. Verify that your assignment is created.
     ```sh
-    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-system-storage-block-csi-driver\", \"storage-template-version\": \"1.4.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"NAMESPACE\",\"user-secret-parameters\": { \"entry.name\": \"NAMESPACE\",
     ```
     {: pre}
 
-1. Verify that the storage configuration resources are deployed.
+    Example request to create a version 1.5.0 configuration.
+
     ```sh
-    oc get all -A | grep block
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-system-storage-block-csi-driver\", \"storage-template-version\": \"1.5.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"NAMESPACE\",\"user-secret-parameters\": { \"entry.name\": \"NAMESPACE\",
     ```
     {: pre}
 
-## Deploying an app that uses your {{site.data.keyword.IBM_notm}} block storage
+
+
+
+
+
+
+
+
+
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
+
+
+## Deploying an app that uses {{site.data.keyword.blockstorageshort}}
 {: #storage-block-csi-app-deploy}
 
 You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you can use in your cluster workloads.
 {: shortdesc}
 
-1. Create a Kubernetes secret configuration file that contains your block storage credentials. For more information, see [Creating a Kubernetes secret](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-secret){: external}.
+1. Create a Kubernetes secret configuration file that contains your {{site.data.keyword.blockstorageshort}} credentials. For more information, see [Creating a Kubernetes secret](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-secret){: external}.
     ```yaml
     kind: Secret
     apiVersion: v1
@@ -213,7 +185,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
     ```
     {: pre}
 
-1. [Create a storage class that uses the block storage driver](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-storageclass){: external}.
+1. [Create a storage class that uses the {{site.data.keyword.blockstorageshort}} driver](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-storageclass){: external}.
     ```yaml
     kind: StorageClass
     apiVersion: storage.k8s.io/v1
@@ -355,7 +327,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 
 
 
-## {{site.data.keyword.IBM_notm}} block storage configuration parameter reference
+## Parameter reference
 {: #sat-storage-ibm-block-csi-params-cli}
 
 
@@ -370,7 +342,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 | `fstype` | Optional | The file system type. | `ext4` |
 | `prefix` | Optional | The prefix name of the volume that is created. | N/A |
 | `VolumeExpansion` | Optional | Specify `true` to allow volume expansion or `false` to disallow volume expansion. | `false` |
-{: caption="Table 1. {{site.data.keyword.IBM_notm}} block storage parameter reference." caption-side="bottom"}
+{: caption="Table 1. {{site.data.keyword.IBM_notm}} {{site.data.keyword.blockstorageshort}} parameter reference." caption-side="bottom"}
 
 
 

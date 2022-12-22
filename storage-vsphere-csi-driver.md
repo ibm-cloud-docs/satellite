@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-15"
+lastupdated: "2022-12-22"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -14,11 +14,11 @@ subcollection: satellite
 
 
 # VMware Block Container Storage Interface (CSI) Driver
-{: #config-storage-vmware-csi}
+{: #storage-vsphere-csi-driver}
 
 The VMware Container Storage Interface (CSI) [Driver](https://github.com/kubernetes-sigs/vsphere-csi-driver/){: external} allows you to manage the lifecycle of your VMware Block Data volumes.
 
-## Prerequisites for using VMware block storage
+## Prerequisites
 {: #prereq-vmware-csi}
 
 Before you can create a VMware block storage configuration, you must satisfy the following prerequisites. 
@@ -26,7 +26,7 @@ Before you can create a VMware block storage configuration, you must satisfy the
 1. Verify that you are running vSphere version 6.7U3 or later.
 1. Verify that your virtual machine hardware version is version 15 or later.
 1. Verify that master nodes can communicate with the vCenter management interface.
-1. Diable Swap on all nodes.
+1. Disable Swap on all nodes.
 1. Enable Disk UUID on all node virtual machines. 
 
  
@@ -34,26 +34,31 @@ Before you can deploy storage templates to clusters in your location, make sure 
 {: important}
 
 
-## Creating the VMware configuration from the console
-{: #sat-storage-vmware-create-config-ui}
+
+
+
+
+Before you begin, review the [parameter reference](#vsphere-csi-driver-parameter-reference) for the template version that you want to use.
+{: important}
+
+## Creating and assigning a configuration in the console
+{: #vsphere-csi-driver-config-create-console}
 {: ui}
 
-1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
 1. Enter a name for your configuration.
-1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
-1. On the **Parameters** tab, enter the parameters for your configuration.
-1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. Select the **Storage type**.
+1. Select the **Version** and click **Next**
+1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
+1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
 1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-## Creating the VMware configuration in the command line
-{: #sat-storage-vmware-create-config-cli}
+## Creating a configuration in the CLI
+{: #vsphere-csi-driver-config-create-cli}
 {: cli}
-
-Create a storage configuration in the command line by using the VMware configuration template.
-{: shortdesc}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -83,131 +88,51 @@ Create a storage configuration in the command line by using the VMware configura
     ```
     {: pre}
     
-
-1. Review the [template parameters](#vsphere-csi-driver-parameter-reference).
-
-1. Create storage configuration. You can pass parameters by using the `-p "key=value"` format. For more information, see the `ibmcloud sat storage config create --name` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create). Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
-
+1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
     Example command to create a version 2.5.1 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.5.1  --param "vcenter-username=VCENTER-USERNAME"   --param "vcenter-password=VCENTER-PASSWORD"   [--param "insecure-flag=INSECURE-FLAG"]   --param "host=HOST"   --param "datacenters=DATACENTERS"   [--param "thumbprint=THUMBPRINT"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name vsphere-csi-driver --template-version 2.5.1 --param "vcenter-username=VCENTER-USERNAME"  --param "vcenter-password=VCENTER-PASSWORD"  [--param "insecure-flag=INSECURE-FLAG"]  --param "host=HOST"  --param "datacenters=DATACENTERS"  [--param "thumbprint=THUMBPRINT"] 
     ```
     {: pre}
 
 
-1. Verify that your storage configuration is created.
+1. Customize the command based on the settings that you want to use.
 
+1. Run the command to create a configuration.
+
+1. Verify your configuration was created.
     ```sh
-    ibmcloud sat storage config get --config <CONFIG>
+    ibmcloud sat storage config get --config CONFIG
     ```
     {: pre}
 
-1. [Assign your storage configuration to clusters](#assign-storage-vmware-csi)
+## Creating a configuration in the API
+{: #vsphere-csi-driver-config-create-api}
+{: api}
 
-## Assigning a VMWare storage configuration
-{: #assign-storage-vmware-csi}
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
 
-### Assigning a VMWare storage configuration from the console
-{: #assign-storage-vmware-csi-ui}
-{: ui}
-
-1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
-1. Select the location where you want to create a storage configuration.
-1. Click the **Locations** tab and click the storage configuration that you want to assign to a cluster group.
-1. On the **Configuration details** page, click **Create storage assignment**.
-1. In the **Create an assignment** pane, enter a name for your assignment. When you create a assignment you assign your storage configuration to your clusters.
-1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
-1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
-1. Click **Create** to create the assignment.
-1. Verify that your storage configuration is deployed to your cluster. 
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to your Location and select **Storage**
-    1. Click the storage configuration that you created and review the **Assignments** tab.
-    1. Click the **Assignment** that you created and review the **Rollout status** for your configuration.
+1. Copy one of the following example requests and replace the variables that you want to use.
 
 
-### Assigning a VMWare storage configuration in the command line
-{: #assign-storage-vmware-csi-cli}
-{: cli}
+    Example request to create a version 2.5.1 configuration.
 
-1. List your {{site.data.keyword.satelliteshort}} storage configurations and make a note of the storage configuration that you want to assign to your clusters.
     ```sh
-    ibmcloud sat storage config ls
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"vsphere-csi-driver\", \"storage-template-version\": \"2.5.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"VCENTER-USERNAME\", { \"entry.name\": \"VCENTER-PASSWORD\", { \"entry.name\": \"INSECURE-FLAG\", { \"entry.name\": \"HOST\", { \"entry.name\": \"DATACENTERS\", { \"entry.name\": \"THUMBPRINT\",\"user-secret-parameters\": { \"entry.name\": \"VCENTER-USERNAME\",{ \"entry.name\": \"VCENTER-PASSWORD\",{ \"entry.name\": \"INSECURE-FLAG\",{ \"entry.name\": \"HOST\",{ \"entry.name\": \"DATACENTERS\",{ \"entry.name\": \"THUMBPRINT\",
     ```
     {: pre}
 
-1. Get the ID of the cluster or cluster group that you want to assign storage to. To make sure that your cluster is registered with {{site.data.keyword.satelliteshort}} Config or to create groups, see [Setting up clusters to use with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-    - Group
-      ```sh
-      ibmcloud sat group ls
-      ```
-      {: pre}
 
-    - Cluster
-      ```sh
-      ibmcloud oc cluster ls --provider satellite
-      ```
-      {: pre}
 
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat service ls --location <location>
-      ```
-      {: pre}
 
-1. Assign storage to the cluster or group that you retrieved in step 2. Replace `<group>` with the ID of your cluster group or `<cluster>` with the ID of your cluster. Replace `<config>` with the name of your storage config, and `<name>` with a name for your storage assignment. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
 
-    - Group
-      ```sh
-      ibmcloud sat storage assignment create --group <group> --config <config> --name <name>
-      ```
-      {: pre}
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
-    - Cluster
-      ```sh
-      ibmcloud sat storage assignment create --cluster <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-    - {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster
-      ```sh
-      ibmcloud sat storage assignment create --service-cluster-id <cluster> --config <config> --name <name>
-      ```
-      {: pre}
-
-1. Verify that your assignment is created.
-    ```sh
-    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER) | grep <storage-assignment-name>
-    ```
-    {: pre}
-
-1. Verify that the storage configuration resources are deployed. 
-
-    ```sh
-    kubectl get all -n vmware-system-csi
-    NAME                                         READY   STATUS    RESTARTS   AGE
-    pod/vsphere-csi-controller-b4665c8dc-29kqd   7/7     Running   0          5m47s
-    pod/vsphere-csi-controller-b4665c8dc-57cm8   7/7     Running   0          5m47s
-    pod/vsphere-csi-controller-b4665c8dc-lngc4   7/7     Running   0          5m47s
-    pod/vsphere-csi-node-dgqnq                   3/3     Running   0          40s
-    pod/vsphere-csi-node-kgbll                   3/3     Running   0          40s
-    pod/vsphere-csi-node-l7cxs                   3/3     Running   0          40s
-    ```
-    {: screen}
-
-1. List the storage classes.
-
-    ```sh
-    $ kubectl get sc
-    NAME                                     PROVISIONER              RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
-    sat-vsphere-vsan-block                   csi.vsphere.vmware.com   Delete          Immediate              false                  2m59s
-    sat-vsphere-vsan-block-metro (default)   csi.vsphere.vmware.com   Delete          WaitForFirstConsumer   false                  2m59s
-    ```
-    {: screen}
-
-1. [Deploy an app that uses your VMware](#sat-storage-vmware-deploy-app)
 
 ## Deploying an app that uses VMware
 {: #sat-storage-vmware-deploy-app}
@@ -401,7 +326,7 @@ If you no longer need your VMware configuration, you can remove your apps, PVCs,
 If you no longer plan on using VMware in your cluster, you can use the CLI unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Removing the storage configuration uninstalls the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
+Removing the storage configuration removes the driver from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
 {: important}
 
 ### Removing the VMWare storage configuration using the console
@@ -471,14 +396,14 @@ Removing the storage configuration uninstalls the driver from all assigned clust
 ### 2.5.1 parameter reference
 {: #2.5.1-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| vCenter username | `vcenter-username` | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | true | 
-| vCenter password | `vcenter-password` | The vCenter server user password. | true | 
-| Insecure connection | `insecure-flag` | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | false | 
-| vCenter host | `host` | The vCenter server IP address. | true | 
-| vCenter data centers | `datacenters` | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | 
-| SSL certificate thumbprint | `thumbprint` | The SSL thumbprint to be used to establish a secure connection to VC.  | false | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| vCenter username | `vcenter-username` | Secret | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | true | 
+| vCenter password | `vcenter-password` | Secret | The vCenter server user password. | true | 
+| Insecure connection | `insecure-flag` | Config | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | false | 
+| vCenter host | `host` | Config | The vCenter server IP address. | true | 
+| vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | 
+| SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC.  | false | 
 {: caption="Table 1. 2.5.1 parameter reference" caption-side="bottom"}
 
 

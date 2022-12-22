@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2022
-lastupdated: "2022-12-14"
+lastupdated: "2022-12-22"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -12,7 +12,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 # AWS EBS
-{: #config-storage-ebs}
+{: #storage-aws-ebs-csi-driver}
 
 Set up [Amazon Elastic Block Storage (EBS)](https://docs.aws.amazon.com/ebs/?id=docs_gateway){: external} for {{site.data.keyword.satellitelong}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
@@ -34,44 +34,37 @@ To use the AWS EBS storage template, complete the following tasks:
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters) that runs on compute hosts in Amazon Web Services (AWS). For more information about how to add hosts from AWS to your {{site.data.keyword.satelliteshort}} location so that you can assign them to a cluster, see [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach).
 
-
-## Creating an AWS EBS storage configuration
-{: #sat-storage-aws-ebs}
-
-You can use the [console](#sat-storage-aws-ebs-ui) or [CLI](#sat-storage-aws-ebs-cli) to create an AWS EBS storage configuration in your location and assign the configuration to your clusters to dynamically provision AWS EBS storage for your apps.
-{: shortdesc}
+1. [Create an AWS access key ID and secret access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external} for your AWS login credentials. These credentials are needed to provision AWS EBS storage in your account. When you assign the storage configuration to your cluster, your AWS access key ID and secret access key are stored in a Kubernetes secret in your cluster.
+1. Review the [AWS EBS storage configuration parameters](#aws-ebs-csi-driver-parameter-reference).
+1. Review the [AWS EBS storage classes](#sat-ebs-sc-reference). The AWS EBS storage template does not support custom storage classes. 
 
 
-### Creating an AWS EBS storage configuration from the console
-{: #sat-storage-aws-ebs-ui}
+
+
+
+
+
+Before you begin, review the [parameter reference](#aws-ebs-csi-driver-parameter-reference) for the template version that you want to use.
+{: important}
+
+## Creating and assigning a configuration in the console
+{: #aws-ebs-csi-driver-config-create-console}
 {: ui}
 
-
-Use the console to create an AWS EBS storage configuration for your location.
-{: shortdesc}
-
-Before you begin, review and complete the [prerequisites](#aws-ebs-prereq), review the [parameter reference](#aws-ebs-csi-driver-parameter-reference), and review the [storage classes](#sat-ebs-sc-reference) that are deployed when creating your configuration.
-
-1. From the {{site.data.keyword.satelliteshort}} locations dashboard, select the location where you want to create a storage configuration.
+1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
 1. Enter a name for your configuration.
-1. Select the **Storage type** that you want to use to create your configuration and the **Version**.
-1. On the **Parameters** tab, enter the parameters for your configuration.
-1. On the **Secrets** tab, enter the secrets, if required, for your configuration.
+1. Select the **Storage type**.
+1. Select the **Version** and click **Next**
+1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
+1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
 1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
 1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
 1. Click **Complete** to assign your storage configuration.
 
-
-### Creating an AWS EBS storage configuration from the CLI
-{: #sat-storage-aws-ebs-cli}
+## Creating a configuration in the CLI
+{: #aws-ebs-csi-driver-config-create-cli}
 {: cli}
-
-
-Use the command line to create an AWS EBS storage configuration for your location.
-{: shortdesc}
-
-Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -101,97 +94,78 @@ Before you begin, review and complete the [prerequisites](#aws-ebs-prereq).
     ```
     {: pre}
     
-1. [Create an AWS access key ID and secret access key](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html){: external} for your AWS login credentials. These credentials are needed to provision AWS EBS storage in your account. When you assign the storage configuration to your cluster, your AWS access key ID and secret access key are stored in a Kubernetes secret in your cluster.
-1. Review the [AWS EBS storage configuration parameters](#aws-ebs-csi-driver-parameter-reference).
-1. Create an AWS EBS storage configuration. Replace the variables with the parameters that you retrieved in the previous step. Note that Kubernetes resources can't contain capital letters or special characters. Enter a name for your config that uses only lowercase letters, numbers, hyphens, or periods.
-1. Review the [AWS EBS storage classes](#sat-ebs-sc-reference). The AWS EBS storage template does not support custom storage classes. 
-    
+1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
     Example command to create a version 1.1.0 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.1.0  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.1.0 --param "aws-access-key=AWS-ACCESS-KEY"  --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
     ```
     {: pre}
-
 
     Example command to create a version 1.5.1 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.5.1  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.5.1 --param "aws-access-key=AWS-ACCESS-KEY"  --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
     ```
     {: pre}
-
 
     Example command to create a version 1.12.0 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.12.0  --param "aws-access-key=AWS-ACCESS-KEY"   --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name aws-ebs-csi-driver --template-version 1.12.0 --param "aws-access-key=AWS-ACCESS-KEY"  --param "aws-secret-access-key=AWS-SECRET-ACCESS-KEY" 
     ```
     {: pre}
 
 
-1. Verify that your storage configuration is created.
+1. Customize the command based on the settings that you want to use.
+
+1. Run the command to create a configuration.
+
+1. Verify your configuration was created.
     ```sh
-    ibmcloud sat storage config get --config <config-name>
+    ibmcloud sat storage config get --config CONFIG
     ```
     {: pre}
 
+## Creating a configuration in the API
+{: #aws-ebs-csi-driver-config-create-api}
+{: api}
 
-### Assigning your AWS EBS storage configuration to clusters or cluster groups from the CLI
-{: #ebs-config-assign}
-{: cli}
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
 
-1. List your {{site.data.keyword.satelliteshort}} cluster groups and note the group that you want to use. The cluster group determines the {{site.data.keyword.satelliteshort}} clusters where you want to install the AWS EBS driver. If you do not have any cluster groups yet, or your cluster is not yet part of a cluster group, follow these [steps](/docs/satellite?topic=satellite-setup-clusters-satconfig-groups) to create a cluster group and add your clusters. Note that all clusters in a cluster group must belong to the same {{site.data.keyword.satelliteshort}} location.
+1. Copy one of the following example requests and replace the variables that you want to use.
+
+
+    Example request to create a version 1.1.0 configuration.
+
     ```sh
-    ibmcloud sat group ls
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-ebs-csi-driver\", \"storage-template-version\": \"1.1.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",{ \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",
     ```
     {: pre}
 
-2. Create a storage assignment for your cluster group. After you create the assignment, the AWS EBS driver is installed in all clusters that belong to the cluster group. Replace `<group>` with the name of your cluster group, `<config>` with the name of your storage configuration, and `<name>` with a name for your storage assignment. For more information, see the [`ibmcloud sat storage assignment create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create) command.
+    Example request to create a version 1.5.1 configuration.
+
     ```sh
-    ibmcloud sat storage assignment create --group <group_name> --config <config_name> --name <assignment_name>
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-ebs-csi-driver\", \"storage-template-version\": \"1.5.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",{ \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",
     ```
     {: pre}
 
-3. Verify that your assignment is created.
+    Example request to create a version 1.12.0 configuration.
+
     ```sh
-    ibmcloud sat storage assignment ls (--cluster CLUSTER | --config CONFIG | --location LOCATION | --service-cluster-id CLUSTER)
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"aws-ebs-csi-driver\", \"storage-template-version\": \"1.12.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\", { \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",\"user-secret-parameters\": { \"entry.name\": \"AWS-ACCESS-KEY\",{ \"entry.name\": \"AWS-SECRET-ACCESS-KEY\",
     ```
     {: pre}
 
-4. Verify that the AWS EBS storage configuration resources are successfully deployed in your cluster.
-    1. [Access your cluster](/docs/openshift?topic=openshift-access_cluster).
-    2. List the AWS EBS driver pods in the `kube-system` namespace and verify that the status is `Running`.
-        ```sh
-        oc get pods -n kube-system | grep ebs
-        ```
-        {: pre}
 
-        Example output
-        ```sh
-        ebs-csi-controller-7bb59dbcdd-8d866     6/6     Running   0          38s
-        ebs-csi-controller-7bb59dbcdd-cbgl5     6/6     Running   0          38s
-        ebs-csi-node-4hzf9                      3/3     Running   0          38s
-        ebs-csi-node-8rgcs                      3/3     Running   0          38s
-        ebs-csi-node-j2hc9                      3/3     Running   0          38s
-        ```
-        {: screen}
 
-    3. List the AWS EBS storage classes.
-        ```sh
-        oc get sc | grep aws-block
-        ```
-        {: pre}
 
-        Example output
-        ```sh     
-        sat-aws-block-bronze      ebs.csi.aws.com    Delete          WaitForFirstConsumer   true                   2d8h
-        sat-aws-block-gold        ebs.csi.aws.com    Delete          WaitForFirstConsumer   true                   2d8h
-        sat-aws-block-silver      ebs.csi.aws.com    Delete          WaitForFirstConsumer   true                   2d8h
-        ```
-        {: screen}
+
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
 ## Deploying an app that uses AWS EBS storage
 {: #sat-storage-ebs-deploy}
@@ -415,72 +389,6 @@ Removing your AWS EBS instance permanently removes all the data that is stored o
 
     2. From the [AWS EC2 dashboard](https://console.aws.amazon.com/ec2/v2/home){: external}, select **Elastic Block Store** > **Volumes** and verify that your AWS EBS instance is removed.
 
-## Upgrading an AWS EBS storage configuration
-{: #aws-ebs-upgrade-config}
-
-
-You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to use the latest storage template revision within the same major version. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage configurations, make a note of the {{site.data.keyword.satelliteshort}} configuration you want to upgrade.
-    ```sh
-    ibmcloud sat storage config ls
-    ```
-    {: pre}
-
-1. Upgrade the {{site.data.keyword.satelliteshort}} configuration. Note, only the configuration is updated. If you want to upgrade the assignments that use this configuration, you can specify the `--include-assignments` option or you can manually update each assignment using the `assignment update` command.
-    ```sh
-    ibmcloud sat storage config upgrade --config CONFIG [--include-assignments]
-    ```
-    {: pre}
-
-## Upgrading an AWS EBS storage assignment
-{: #aws-ebs-upgrade-assignment}
-
-
-You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to upgrade.
-    ```sh
-    ibmcloud sat storage assignment ls
-    ```
-    {: pre}
-
-1. List the {{site.data.keyword.satelliteshort}} storage templates to see the latest available versions.
-    ```sh
-    ibmcloud sat storage template ls
-    ```
-    {: pre}
-
-1. Upgrade the {{site.data.keyword.satelliteshort}} assignment.
-    ```sh
-   ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT
-    ```
-    {: pre}
-
-## Updating an AWS EBS storage assignment
-{: #aws-ebs-update-assignment}
-
-
-You can use the `storage assignment update` command to rename your assignment or assign it to a new cluster or cluster group. 
-
-1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to update and the clusters or cluster groups included in the assignment.
-    ```sh
-    ibmcloud sat storage assignment ls
-    ```
-    {: pre}
-
-1. Update the {{site.data.keyword.satelliteshort}} assignment. 
-    ```sh
-    ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
-    ```
-    {: pre}
-
-    Example command to update assignment name and assign different cluster groups.
-    
-    ```sh
-    ibmcloud sat storage assignment update --assignment ASSIGNMENT --name new-name --group group-1 --group group-2 --group group-3
-    ```
-    {: pre}
 
 ## Removing the AWS EBS storage configuration from your cluster
 {: #aws-ebs-template-rm}
@@ -571,30 +479,30 @@ Note that you must delete your storage assignments before you can successfully d
 ### 1.1.0 parameter reference
 {: #1.1.0-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | 
 {: caption="Table 1. 1.1.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.5.1 parameter reference
 {: #1.5.1-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | 
 {: caption="Table 2. 1.5.1 parameter reference" caption-side="bottom"}
 
 
 ### 1.12.0 parameter reference
 {: #1.12.0-parameter-reference}
 
-| Display name | CLI option | Description | Required? |
-| --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | AWS Access Key ID. | true | 
-| AWS Secret Access Key | `aws-secret-access-key` | AWS Secret Access key. | true | 
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | 
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | 
 {: caption="Table 3. 1.12.0 parameter reference" caption-side="bottom"}
 
 
