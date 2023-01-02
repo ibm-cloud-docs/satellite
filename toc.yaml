@@ -139,7 +139,7 @@ toc:
               - topicgroup:
                   label: Google storage templates
                   topics:
-                  - storage-storage-gcp-compute-persistent-disk-csi-driver.md
+                  - storage-gcp-compute-persistent-disk-csi-driver.md
               - topicgroup:
                   label: IBM storage templates
                   topics:
