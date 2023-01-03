@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-16"
+  years: 2020, 2023
+lastupdated: "2023-01-03"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -51,7 +51,7 @@ CLI change log
 {: release-note}
 
 New! Production support for the {{site.data.keyword.cos_full_notm}} CSI driver template
-:   You can use the {{site.data.keyword.cos_full_notm}} CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.cos_full_notm}} CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-cos).
+:   You can use the {{site.data.keyword.cos_full_notm}} CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.cos_full_notm}} CSI driver template documentation](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin).
 
 ### 1 December 2022
 {: #satellite-dec0122}
@@ -90,7 +90,7 @@ Disconnected usage
 {: release-note}
 
 New! Beta support for the {{site.data.keyword.cos_full_notm}} CSI driver template
-:   You can use the {{site.data.keyword.cos_full_notm}} CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.cos_full_notm}} CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-cos).
+:   You can use the {{site.data.keyword.cos_full_notm}} CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.cos_full_notm}} CSI driver template documentation](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin).
 
 
 ### 26 October 2022
@@ -98,7 +98,7 @@ New! Beta support for the {{site.data.keyword.cos_full_notm}} CSI driver templat
 {: release-note}
 
 Create {{site.data.keyword.satelliteshort}} storage configurations from the console
-:   You can now create and deploy {{site.data.keyword.satelliteshort}} storage configurations from the [location console](https://cloud.ibm.com/satellite/locations){: external}. For more information about storage templates, see [Understanding storage](/docs/satellite?topic=satellite-sat-storage-template-ov).
+:   You can now create and deploy {{site.data.keyword.satelliteshort}} storage configurations from the [location console](https://cloud.ibm.com/satellite/locations){: external}. For more information about storage templates, see [Understanding storage](/docs/satellite?topic=satellite-storage-template-ov).
 
 
 ### 7 October 2022
@@ -219,7 +219,7 @@ New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} loca
 {: release-note}
 
 New! Beta support for the VMware CSI driver template
-:   You can use the VMware CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [VMware CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-vmware-csi).
+:   You can use the VMware CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [VMware CSI driver template documentation](/docs/satellite?topic=satellite-storage-vsphere-csi-driver).
 
 
 ### 15 July 2022
@@ -237,7 +237,7 @@ New information about using a custom Network Time Protocol (NTP) server
 {: release-note}
 
 New and updated template parameter for the Azure File CSI driver template.
-:   The `subnetName` parameter is now required when you create a configuration. Additionally, you must provide the **one** of the subnet names under the `vnet`. If the nodes are distributed across multiple subnets, you can manually add the subnet names after you create the configuration. For more information, see the [Azure File CSI Driver documentation](/docs/satellite?topic=satellite-config-storage-azurefile-csi).
+:   The `subnetName` parameter is now required when you create a configuration. Additionally, you must provide the **one** of the subnet names under the `vnet`. If the nodes are distributed across multiple subnets, you can manually add the subnet names after you create the configuration. For more information, see the [Azure File CSI Driver documentation](/docs/satellite?topic=satellite-storage-azurefile-csi-driver).
 
 
 ### 16 June 2022
@@ -351,7 +351,7 @@ Set up an HTTP proxy for your hosts
 :   In allowlisted accounts that have locations enabled for Red Hat CoreOS, you can configure an HTTP proxy. For more information, see [Configuring an HTTP proxy for your Satellite hosts](/docs/satellite?topic=satellite-config-http-proxy).
 
 New and updated template parameters for the local block and local file storage templates.
-:   Automatic disk discovery is now available for the `local-volume-block` and `local-volume-file` template version 4.9. Enable this feature by setting the `auto-disk-discovery=true` parameter. For more information, see [Local block storage](/docs/satellite?topic=satellite-config-storage-local-block#sat-storage-local-block-cli) and [Local file storage](/docs/satellite?topic=satellite-config-storage-local-file).
+:   Automatic disk discovery is now available for the `local-volume-block` and `local-volume-file` template version 4.9. Enable this feature by setting the `auto-disk-discovery=true` parameter. For more information, see [Local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#sat-storage-local-block-cli) and [Local file storage](/docs/satellite?topic=satellite-storage-local-volume-file).
 
 
 
@@ -393,7 +393,7 @@ CLI change log
 {: release-note}
 
 New! Beta support for the {{site.data.keyword.block_storage_is_short}} CSI driver template
-:   You can use the {{site.data.keyword.block_storage_is_short}} CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.block_storage_is_short}} CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-vpc-csi).
+:   You can use the {{site.data.keyword.block_storage_is_short}} CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.block_storage_is_short}} CSI driver template documentation](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver).
 
 ### 3 March 2022
 {: #satellite-mar322}
@@ -401,7 +401,7 @@ New! Beta support for the {{site.data.keyword.block_storage_is_short}} CSI drive
 
 
 New! Beta support for the Google Compute Engine CSI driver template
-:   You can use the Google Compute Engine CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Google Compute Engine CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-gcp-csi).
+:   You can use the Google Compute Engine CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Google Compute Engine CSI driver template documentation](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver).
 
 
 ## February 2022
@@ -449,7 +449,7 @@ Host connectivity
 {: release-note}
 
 New! Beta support for the Azure File CSI driver template
-:   You can use the Azure File CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Azure File CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-azurefile-csi).
+:   You can use the Azure File CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Azure File CSI driver template documentation](/docs/satellite?topic=satellite-storage-azurefile-csi-driver).
 
 ## January 2022
 {: #satellite-jan22}
@@ -470,7 +470,7 @@ Review the release notes for January 2022.
 
 OpenShift Data Foundation
 :   New and updated template parameters for the OpenShift Data Foundation {{site.data.keyword.satelliteshort}} templates.
-    - Automatic disk discovery is now available for the `odf-local` template version 4.8. Enable this feature by setting the `auto-disk-discovery=true` parameter. For more information, see [ODF using local disks](/docs/satellite?topic=satellite-config-storage-odf-local).
+    - Automatic disk discovery is now available for the `odf-local` template version 4.8. Enable this feature by setting the `auto-disk-discovery=true` parameter. For more information, see [ODF using local disks](/docs/satellite?topic=satellite-storage-odf-local).
     - The `monDevicePaths` and `monSize` parameters are no longer required for the `odf-local` template version 4.8.
     - The `monStorageClassName` and `monSize` parameters are no longer required for the `odf-remote` template version 4.8.
 
@@ -552,7 +552,7 @@ Troubleshooting a `certificate expired` error for the {{site.data.keyword.redhat
 {: release-note}
 
 Azure Disk CSI driver template
-:   Previously, when you created a storage configuration by using the Azure Disk storage template, you passed your Azure configuration parameters as one base64 encoded string. Now, each of the Azure configuration parameters is exposed as a command-line option. For more information, see [Azure Disk CSI driver](/docs/satellite?topic=satellite-config-storage-azure-csi).
+:   Previously, when you created a storage configuration by using the Azure Disk storage template, you passed your Azure configuration parameters as one base64 encoded string. Now, each of the Azure configuration parameters is exposed as a command-line option. For more information, see [Azure Disk CSI driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver).
 
 ### 8 November 2021
 {: #satellite-nov821}
@@ -619,8 +619,8 @@ Review the release notes for 15 September 2021.
 OpenShift Data Foundation
 :   OpenShift Data Foundation is generally available for {{site.data.keyword.satelliteshort}} cluster. For more information see, the following links.
     - [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
-    - [Deploying OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-config-storage-odf-local).
-    - [Deploying OpenShift Data Foundation using remote, dynamically provisioned disks](/docs/satellite?topic=satellite-config-storage-odf-remote).
+    - [Deploying OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-storage-odf-local).
+    - [Deploying OpenShift Data Foundation using remote, dynamically provisioned disks](/docs/satellite?topic=satellite-storage-odf-remote).
 
 
 ## August 2021
@@ -673,7 +673,7 @@ Review the release notes for 16 July 2021.
 {: shortdesc}
 
 New! Beta support for the Azure Disk CSI driver template
-:   You can use the Azure Disk CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Azure Disk CSI driver template documentation](/docs/satellite?topic=satellite-config-storage-azure-csi).
+:   You can use the Azure Disk CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Azure Disk CSI driver template documentation](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver).
 
 ### 8 July 2021
 {: #satellite-jul821}
@@ -699,7 +699,7 @@ Review the release notes for 30 June 2021.
 {: shortdesc}
 
 New! General availability of the {{site.data.keyword.satelliteshort}} storage templates. 
-:   For more information about storage templates, see [Understanding storage templates](/docs/satellite?topic=satellite-sat-storage-template-ov).
+:   For more information about storage templates, see [Understanding storage templates](/docs/satellite?topic=satellite-storage-template-ov).
 
 New! {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services</strong>: Many {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} are now available to deploy to your {{site.data.keyword.satelliteshort}} location. 
 :   For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/deploy-managed-cloud-native-databases-anywhere-with-ibm-cloud-satellite){: external}.
@@ -829,7 +829,7 @@ Logging
 :   Expanded information for collecting and analyzing logs for your {{site.data.keyword.satelliteshort}} location, including the types of available logs, how to set up log alerts, and how to use logs to troubleshoot location and host errors.
 
 New! Storage template for remote OpenShift Data Foundation
-:   The {{site.data.keyword.satelliteshort}} storage template for [using OpenShift Container Storage with remote devices](/docs/satellite?topic=satellite-config-storage-odf-remote) is now available.
+:   The {{site.data.keyword.satelliteshort}} storage template for [using OpenShift Container Storage with remote devices](/docs/satellite?topic=satellite-storage-odf-remote) is now available.
 
 ## March 2021
 {: #satellite-mar21}
@@ -855,7 +855,7 @@ Review the release notes for 23 March 2021.
 {: shortdesc}
 
 OpenShift Data Foundation using local disks
-:   Added steps for removing an ODF configuration and updated the [configuration parameter reference](/docs/satellite?topic=satellite-config-storage-odf-local#odf-local-parameter-reference).
+:   Added steps for removing an ODF configuration and updated the [configuration parameter reference](/docs/satellite?topic=satellite-storage-odf-local#odf-local-parameter-reference).
 
 ### 12 March 2021
 {: #satellite-mar1221}

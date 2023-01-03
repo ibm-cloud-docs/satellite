@@ -37,7 +37,7 @@
       {
         "title": "Add storage",
         "description": "Plan and add highly available persistent storage for your Satellite clusters.",
-        "href": "/docs/satellite?topic=satellite-sat-storage-template-ov"
+        "href": "/docs/satellite?topic=satellite-storage-template-ov"
       }
     ],
 

@@ -139,7 +139,7 @@ toc:
               - topicgroup:
                   label: Google storage templates
                   topics:
-                  - storage-storage-gcp-compute-persistent-disk-csi-driver.md
+                  - storage-gcp-compute-persistent-disk-csi-driver.md
               - topicgroup:
                   label: IBM storage templates
                   topics:
@@ -149,9 +149,9 @@ toc:
               - topicgroup:
                   label: NetApp storage templates
                   topics:
-                    - config-storage-netapp-trident.md
+                    - storage-netapp-trident.md
                     - storage-netapp-ontap-nas.md
-                    - config-storage-netapp-ontap-san.md
+                    - storage-netapp-ontap-san.md
               - topicgroup:
                   label: Red Hat storage templates
                   topics:
