@@ -3148,3 +3148,4 @@ subcollection: satellite
 [Why am I getting an authentication failure when logging in to my Azure Disk or Azure File {{site.data.keyword.satelliteshort}} configuration?](/docs/satellite?topic=satellite-ts-authentication-failure#ts-authentication-failure)
 
 [Why are my nodes failing to register using Azure File or Azure Disk storage templates?](/docs/satellite?topic=satellite-ts-node-register-failure#ts-node-register-failure)
+

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-22"
+  years: 2020, 2023
+lastupdated: "2023-01-03"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -165,7 +165,7 @@ Before you begin, review the [parameter reference](#aws-efs-csi-driver-parameter
 {: #aws-add-sc-efs}
 {: cli}
 
-After you [create a {{site.data.keyword.satelliteshort}} storage configuration](#sat-storage-aws-efs), you can add a custom storage class by using the `ibmcloud sat config sc add` command.
+After you create a {{site.data.keyword.satelliteshort}} storage configuration, you can add a custom storage class by using the `ibmcloud sat config sc add` command.
 
 You can't add storage classes to {{site.data.keyword.satelliteshort}} storage configurations after the configurations are assigned to clusters or cluster groups. Make sure to add storage classes before assigning your configuration.
 {: note}
@@ -210,7 +210,7 @@ You can't add storage classes to {{site.data.keyword.satelliteshort}} storage co
     ```
     {: pre}
     
-3. [Assign your storage configuration](#efs-config-assign).
+3. Complete the following steps to assign your storage configuration to your clusters.
 
 
 {{site.data.content.assignment-create-console}}

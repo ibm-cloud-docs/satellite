@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-13"
+  years: 2020, 2023
+lastupdated: "2023-01-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -69,7 +69,7 @@ Hosts assigned to a specific {{site.data.keyword.redhat_openshift_notm}} cluster
 ## Inbound connectivity requirements for {{site.data.keyword.satelliteshort}} hosts
 {: #reqs-host-network-firewall-inbound}
 
-Hosts must have inbound connectivity on the primary network interface via the default gateway or firewall of the system.
+Hosts must have inbound connectivity on the primary network interface via the default gateway or firewall the system.
 {: shortdesc}
 
 For example, if the primary network interface for a host is `eth0`, you must open the following required IP addresses and ports on the default gateway or firewall on the `eth0` private network interface.
