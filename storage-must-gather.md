@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-16"
+  years: 2020, 2023
+lastupdated: "2023-01-03"
 
 keywords: satellite storage, satellite config, debug, troubleshoot, must gather
 
@@ -104,7 +104,7 @@ Complete the following steps to debug your Satellite storage configurations.
 ## Get the storage driver pod logs
 {: #storage-gather-driver-pods}
 
-Note that the namespaces and pod names are template specific. Te verify these details, refer to the [storage template](/docs/satellite?topic=satellite-sat-storage-template-ov#storage-template-ov-providers) page that you are using in your cluster. 
+Note that the namespaces and pod names are template specific. Te verify these details, refer to the [storage template](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers) page that you are using in your cluster. 
 {: tip}
 
 1. Get the storage driver pods from the namespace where they are deployed.

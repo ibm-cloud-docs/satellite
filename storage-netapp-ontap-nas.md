@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-22"
+  years: 2020, 2023
+lastupdated: "2023-01-03"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -18,7 +18,7 @@ subcollection: satellite
 Set up [NetApp ONTAP-NAS storage](https://netapp-trident.readthedocs.io/en/stable-v21.04/){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
-Before you can create storage configurations by using the NetApp NAS template, you must deploy the [NetApp ONTAP-NAS template](/docs/satellite?topic=satellite-config-storage-netapp-trident) which installs the required operator.
+Before you can create storage configurations by using the NetApp NAS template, you must deploy the [NetApp ONTAP-NAS template](/docs/satellite?topic=satellite-storage-netapp-trident) which installs the required operator.
 {: important}
 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
@@ -404,7 +404,7 @@ Use the CLI to remove a storage assignment and storage configuration.
     ```
     {: pre}
 
-6. **Next steps**: [Remove the NetApp Trident operator from your cluster](/docs/satellite?topic=satellite-config-storage-netapp-trident).
+6. **Next steps**: [Remove the NetApp Trident operator from your cluster](/docs/satellite?topic=satellite-storage-netapp-trident).
 
 ### Removing the NetApp ONTAP-NAS storage assignment and configuration from the console
 {: #netapp-nas-template-rm-ui-2104}

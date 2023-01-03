@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-05"
+  years: 2022, 2023
+lastupdated: "2023-01-03"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -48,7 +48,7 @@ In addition, the {{site.data.keyword.baremetal_short}} used in this example requ
 
 - If you plan to have multiple VLANs for your cluster, multiple subnets on the same VLAN, or are planning for a multizone classic cluster, [enable VRF in your account](/docs/account?topic=account-vrf-service-endpoint).
 - [Create two VLAN pairs](/docs/cli?topic=cli-manage-classic-vlans#sl_vlan_create) (public and private) in the same {{site.data.keyword.cloud_notm}} data center pod for each zone for your bare metal host.
-- Later in this tutorial, you deploy [OpenShift Data Foundation for local disks](/docs/satellite?topic=satellite-config-storage-odf-local&interface=ui). This solution requires additional storage devices on the worker nodes. 
+- Later in this tutorial, you deploy [OpenShift Data Foundation for local disks](/docs/satellite?topic=satellite-storage-odf-local&interface=ui). This solution requires additional storage devices on the worker nodes. 
 
 ## {{site.data.keyword.baremetal_short_sing}} requirements
 {: #setup-bare-metal}

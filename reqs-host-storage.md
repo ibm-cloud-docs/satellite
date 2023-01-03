@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-08-25"
+  years: 2020, 2023
+lastupdated: "2023-01-03"
 
 keywords: satellite, hybrid, multicloud
 
@@ -35,7 +35,7 @@ Bootstrap device (Container image storage)
 Additional storage for hosts assigned to services (like clusters)`*`
 :   Depending on the services that you want to use, you might need to add more storage before attaching hosts to your location. For service-specific storage requirements, refer to the service documentation. Note that if you plan to deploy additional services or operators to the clusters in your location, you must account for cluster storage plus any additional deployments that you want to use in your clusters. For example, OpenShift Data Foundation.
     - [{{site.data.keyword.satelliteshort}}-enabled services](/docs/satellite?topic=satellite-managed-services)
-    - [{{site.data.keyword.satelliteshort}} storage overview](/docs/satellite?topic=satellite-sat-storage-template-ov)
+    - [{{site.data.keyword.satelliteshort}} storage overview](/docs/satellite?topic=satellite-storage-template-ov)
 
 
 

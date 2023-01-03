@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2022
-lastupdated: "2022-12-22"
+  years: 2017, 2023
+lastupdated: "2023-01-03"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1872,6 +1872,38 @@ subcollection: satellite
 {: #sitemap_google_storage_templates}
 
 
+[Google Compute Engine persistent disk Container Storage Interface (CSI) Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#storage-gcp-compute-persistent-disk-csi-driver)
+
+* [Prerequisites](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#sat-storage-gcp-csi-prereq)
+
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-config-create-console)
+
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-config-create-cli)
+
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-config-create-api)
+
+* [Deploying an app that uses Google Compute Engine persistent disk](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#sat-storage-gcp-deploy-app)
+
+* [Removing Compute Engine storage from your apps](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-rm-apps)
+
+* [Removing the Compute Engine storage configuration from your cluster](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-template-rm)
+
+    * [Removing the Google Compute Engine storage configuration from the console](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-template-rm-ui)
+
+    * [Removing the Google Compute Engine storage configuration from the CLI](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-template-rm-cli)
+
+* [Parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-parameter-reference)
+
+    * [1.0.4 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#1.0.4-parameter-reference)
+
+    * [1.7.1 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#1.7.1-parameter-reference)
+
+    * [1.8.0 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#1.8.0-parameter-reference)
+
+* [Storage class reference for Compute Engine](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#sat-storage-gcp-ref)
+
+* [Getting help and support for Google Compute Engine](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#sat-gcp-csi-support)
+
 
 ### IBM storage templates
 {: #sitemap_ibm_storage_templates}
@@ -1950,6 +1982,16 @@ subcollection: satellite
 {: #sitemap_netapp_storage_templates}
 
 
+[NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident)
+
+* [Prerequisites for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-trident#sat-storage-netapp-trident-prereq)
+
+    * [Removing the NetApp Trident storage assignment and configuration from the console](/docs/satellite?topic=satellite-storage-netapp-trident#netapp-trident-template-rm-ui)
+
+    * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#netapp-trident-template-rm-cli)
+
+* [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-trident#sat-trident-support)
+
 [NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#storage-netapp-ontap-nas)
 
 * [Prerequisites for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-nas-2104-pre)
@@ -1977,6 +2019,26 @@ subcollection: satellite
 * [Storage class reference for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-sc-reference-nas-2104)
 
 * [Getting help and support for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#sat-nas-2104-support)
+
+[NetApp ONTAP-SAN](/docs/satellite?topic=satellite-storage-netapp-ontap-san#storage-netapp-ontap-san)
+
+* [Prerequisites for NetApp ONTAP-SAN storage](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-san-2104-pre)
+
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-config-create-console)
+
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-config-create-cli)
+
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-config-create-api)
+
+* [Parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-parameter-reference)
+
+    * [21.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#21.04-parameter-reference)
+
+    * [22.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#22.04-parameter-reference)
+
+* [Storage class reference for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-sc-reference-san-2104)
+
+* [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-ontap-san#sat-san-2104-support)
 
 
 ### Red Hat storage templates
