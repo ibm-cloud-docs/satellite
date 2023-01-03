@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-16"
+  years: 2020, 2023
+lastupdated: "2023-01-03"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -34,14 +34,14 @@ Follow these steps to set up the `dl-reverse-proxy` for {{site.data.keyword.dl_f
 Create an {{site.data.keyword.containerlong_notm}} cluster in your {{site.data.keyword.cloud_notm}} account, which serves as the connection between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} on the private network.
 {: shortdesc}
 
-1. Review the networking basics of [clusters](/docs/containers?topic=containers-plan_cluster). In particular, ensure that you prepare the following:
+1. Review the networking basics of [clusters](/docs/containers?topic=containers-plan_clusters). In particular, ensure that you prepare the following:
     - VLAN management (classic clusters only): Manage and choose both a public and private VLAN for your cluster's network connectivity.
     - Subnet routing: Enable a Virtual Router Function (VRF) or VLAN spanning for your {{site.data.keyword.cloud_notm}} infrastructure account so your worker nodes can communicate with each other on the private network and communicate with private cloud service endpoints internally.
     - IP address schema: Ensure that no subnet conflicts exist between the cluster and your on-premises network.
 
 1. Review the steps you need to take to [prepare to create a cluster](/docs/containers?topic=containers-clusters#cluster_prepare).
 
-1. Create a standard [classic cluster](/docs/containers?topic=containers-clusters#clusters_cli_steps) or [VPC cluster](/docs/containers?topic=containers-clusters#cluster_vpcg2_cli) in the CLI. Create the cluster with the following features.
+1. Create a standard [classic cluster](/docs/containers?topic=containers-cluster-create-classic&interface=cli) or [VPC cluster](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=cli) in the CLI. Create the cluster with the following features.
     - Classic clusters:
         - Zone: Any [multizone-capable zone](/docs/containers?topic=containers-regions-and-zones#zones-mz)
         - Worker node flavor: Any classic infrastructure flavor

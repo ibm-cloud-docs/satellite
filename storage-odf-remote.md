@@ -454,7 +454,7 @@ To upgrade the ODF version of your configuration, complete the following steps:
     ```
     {: pre}
 
-1. [Assign your configuration to your clusters](#assign-storage-odf-remote-cli).
+1. [Assign your configuration to your clusters](#assignment-create-cli).
 
 
 ### Removing the ODF remote storage assignment from the command line

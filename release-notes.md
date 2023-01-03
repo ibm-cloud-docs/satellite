@@ -375,7 +375,7 @@ New! Check your host setup before attaching hosts to your location.
 {: release-note}
 
 {{site.data.keyword.IBM_notm}} Spectrum Scale template
-:   The [{{site.data.keyword.IBM_notm}} Spectrum Scale driver](/docs/satellite?topic=satellite-config-storage-spectrum-scale) is now deprecated. Please reach out to scale@us.ibm.com for further compatibility details and options.
+:   The {{site.data.keyword.IBM_notm}} Spectrum Scale driver is now deprecated. Please reach out to `scale@us.ibm.com` for further compatibility details and options.
 
 ## March 2022
 {: #satellite-mar22}
@@ -764,7 +764,7 @@ Review the release notes for 19 May 2021.
 {: shortdesc}
 
 New! NetApp ONTAP-NAS storage driver template
-:   You can use the NetApp ONTAP-NAS storage driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [NetApp ONTAP-NAS storage driver documentation](/docs/satellite?topic=satellite-config-storage-netapp-nas).
+:   You can use the NetApp ONTAP-NAS storage driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [NetApp ONTAP-NAS storage driver documentation](/docs/satellite?topic=satellite-storage-netapp-ontap-nas).
 
 ### 12 May 2021
 {: #satellite-may1221}
@@ -774,7 +774,7 @@ Review the release notes for 12 May 2021.
 {: shortdesc}
 
 New! {{site.data.keyword.IBM_notm}} Systems block storage CSI driver template
-:   You can use the {{site.data.keyword.IBM_notm}} Systems block storage CSI driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver documentation](/docs/satellite?topic=satellite-config-storage-block-csi).
+:   You can use the {{site.data.keyword.IBM_notm}} Systems block storage CSI driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.IBM_notm}} Systems block storage CSI driver documentation](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver).
 
 ### 7 May 2021
 {: #satellite-may721}
