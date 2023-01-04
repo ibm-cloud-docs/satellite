@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-16"
+  years: 2020, 2023
+lastupdated: "2023-01-03"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -38,8 +38,8 @@ The features in this tutorial are available as closed technical preview that is 
 Is the cost of the relay compute resources included in the {{site.data.keyword.satelliteshort}} service costs?
 :   The {{site.data.keyword.cloud_notm}} resources used for the relay and {{site.data.keyword.satelliteshort}} are billed separately.
 
-Are there additional costs to access {{site.data.keyword.cloud_notm}} services over Direct Link?
-:   No, there are not additional costs for accessing services over Direct Link.
+Are there additional charges to access {{site.data.keyword.cloud_notm}} services over Direct Link?
+:   No, there are not additional charges for accessing services over Direct Link. For more information, see [Pricing for IBM Cloud Direct Link](/docs/dl?topic=dl-pricing-for-ibm-cloud-dl).
 
 Why do I need Direct Link?
 :   Normally, outbound traffic from your Location to {{site.data.keyword.cloud_notm}} services might flow over the public internet. When you use Direct Link, outbound traffic from your Location flows through the Direct Link, rather than using the public Internet.
@@ -51,19 +51,16 @@ Can I redirect all traffic to {{site.data.keyword.cloud_notm}} over Direct Link 
 :   Currently, not all services support Direct Link. So, depending on the services you use it might or might not be possible for all traffic to use Direct Link.
 
 What {{site.data.keyword.cloud_notm}} services can I access over Direct Link to avoid accessing them over Internet?
-:   When Direct Link is enabled, all {{site.data.keyword.satelliteshort}} enabled services are reachable over Direct Link.
+:   After following these instructions, {{site.data.keyword.satelliteshort}} and Openshift on {{site.data.keyword.satelliteshort}} will work across Direct Link. Additional services deployed into a {{site.data.keyword.satelliteshort}} location might have features that require public Internet access. It is recommended to consult the documentation for each service running in a location to verify their connectivity requirements.
 
 If I have two Locations that use Direct Link, can I use them for Direct Link to fail over from one Location to the other?
 :   This functionality is not yet available.
-
-I currently use IBM {{site.data.keyword.SecureGateway}} to access {{site.data.keyword.cloud_notm}} services. Can I decommission {{site.data.keyword.SecureGateway}} if I have {{site.data.keyword.satelliteshort}} over Direct Link?
-:   For this use case, instead of Direct Link, consider deploying a Link Agent. 
 
 How do I size Direct Link capacity for my Location?
 :   There are no additional sizing requirements for using Direct Link. So, you can size your Location like a normal Location, meaning based on the services you will use.  
 
 Can I have one-click deployment of everything needed to enable Direct Link to avoid manual errors?
-:   Currently, a one-click deployment for Direct Link is not available.
+:   Currently, a one-click deployment for Direct Link is not available. It might be available at a future time.
 
 ## Target use case
 {: #target-use-case}
