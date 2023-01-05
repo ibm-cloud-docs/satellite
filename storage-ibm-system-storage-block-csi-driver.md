@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-05"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -42,7 +42,7 @@ Be sure to complete all prerequisite and installation steps before assigning hos
 
 
 
-Before you begin, review the [parameter reference](#sat-storage-ibm-block-csi-params-cli) for the template version that you want to use.
+Before you begin, review the [parameter reference](#ibm-system-storage-block-csi-driver-parameter-reference) for the template version that you want to use.
 {: important}
 
 ## Creating and assigning a configuration in the console
@@ -327,22 +327,27 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 
 
 
+
 ## Parameter reference
-{: #sat-storage-ibm-block-csi-params-cli}
+{: #ibm-system-storage-block-csi-driver-parameter-reference}
+
+### 1.4.0 parameter reference
+{: #1.4.0-parameter-reference}
+
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | false | 
+{: caption="Table 1. 1.4.0 parameter reference" caption-side="bottom"}
 
 
-| Parameter | Required? | Description | Default value if not provided |
-| --- | --- | --- | --- |
-| `namespace` | Optional | The namespace where you want to create the deployment. | `default` |
-| `sc-name` | Required | The name of the storage class name that is created. | N/A |
-| `space-efficiency` | Optional | The space efficiency of the volume that is created. | N/A |
-| `pool` | Required | The name of an existing pool on the storage system where you want to create the volume. | N/A |
-| `secret-name` | Required | The name of your existing Kubernetes secret. | N/A |
-| `secret-namespace` | Required | The namespace that your Kubernetes secret is in. Your secret can be in a separate namespace from your deployment. | N/A |
-| `fstype` | Optional | The file system type. | `ext4` |
-| `prefix` | Optional | The prefix name of the volume that is created. | N/A |
-| `VolumeExpansion` | Optional | Specify `true` to allow volume expansion or `false` to disallow volume expansion. | `false` |
-{: caption="Table 1. {{site.data.keyword.IBM_notm}} {{site.data.keyword.blockstorageshort}} parameter reference." caption-side="bottom"}
+### 1.5.0 parameter reference
+{: #1.5.0-parameter-reference}
+
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | false | 
+{: caption="Table 2. 1.5.0 parameter reference" caption-side="bottom"}
+
 
 
 
