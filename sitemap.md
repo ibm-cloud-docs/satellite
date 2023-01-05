@@ -1921,7 +1921,11 @@ subcollection: satellite
 
 * [Deploying an app that uses {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-block-csi-app-deploy)
 
-* [Parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#sat-storage-ibm-block-csi-params-cli)
+* [Parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-parameter-reference)
+
+    * [1.4.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.4.0-parameter-reference)
+
+    * [1.5.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.5.0-parameter-reference)
 
 [{{site.data.keyword.cos_full_notm}} CSI Driver](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin)
 
