@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-05"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -42,7 +42,7 @@ Be sure to complete all prerequisite and installation steps before assigning hos
 
 
 
-Before you begin, review the [parameter reference](#sat-storage-ibm-block-csi-params-cli) for the template version that you want to use.
+Before you begin, review the [parameter reference](#ibm-system-storage-block-csi-driver-parameter-reference) for the template version that you want to use.
 {: important}
 
 ## Creating and assigning a configuration in the console
