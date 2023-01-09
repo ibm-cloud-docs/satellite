@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-22"
+  years: 2020, 2023
+lastupdated: "2023-01-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -11,6 +11,23 @@ subcollection: satellite
 content-type: conref
 
 ---
+
+
+
+## Can I estimate my costs?
+{: #cost-estimate}
+{: faq}
+
+When you create a resource such as a location or cluster, you can review a cost estimate in the **Summary** pane of the console. For other types of estimates, see [Estimating your costs](/docs/billing-usage?topic=billing-usage-cost#cost).
+
+Keep in mind that some charges are not reflected in the estimate, such as the costs for your underlying infrastructure.
+
+## Can I view and control my current usage?
+{: #usage}
+{: faq}
+ 
+
+See [View your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage) and [Set spending notifications](/docs/billing-usage?topic=billing-usage-spending) for general {{site.data.keyword.cloud_notm}} account guidance.
 
 
 ## Creating a storage assignment in the console

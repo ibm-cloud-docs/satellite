@@ -2736,6 +2736,17 @@ subcollection: satellite
     * [What about latency requirements?](/docs/satellite?topic=satellite-sat-regions#supported-regions-latency)
 
 
+## Pricing
+{: #sitemap_pricing}
+
+
+[Pricing](/docs/satellite?topic=satellite-sat-pricing#sat-pricing)
+
+* [{{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-sat-pricing#pricing-satloc)
+
+* [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-sat-pricing#pricing-services)
+
+
 ## Your responsibilities
 {: #sitemap_your_responsibilities}
 
@@ -2839,16 +2850,6 @@ subcollection: satellite
 * [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software)
 
 * [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing)
-
-    * [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-faqs#pricing-services)
-
-    * [{{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-faqs#pricing-satloc)
-
-* [How do I bring my own OCP license?](/docs/satellite?topic=satellite-faqs#byo-ocp)
-
-* [Can I estimate my costs?](/docs/satellite?topic=satellite-faqs#cost-estimate)
-
-* [Can I view and control my current usage?](/docs/satellite?topic=satellite-faqs#usage)
 
 * [What are the terms of the service level agreement?](/docs/satellite?topic=satellite-faqs#sla)
 
