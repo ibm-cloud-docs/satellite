@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-09"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -454,7 +454,7 @@ To upgrade the ODF version of your configuration, complete the following steps:
     ```
     {: pre}
 
-1. [Assign your configuration to your clusters](#assignment-create-cli).
+1. [Assign your configuration to your clusters](#storage-odf-remote-include-assignment-create-cli).
 
 
 ### Removing the ODF remote storage assignment from the command line
