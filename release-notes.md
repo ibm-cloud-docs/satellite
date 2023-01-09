@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-09"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -351,7 +351,7 @@ Set up an HTTP proxy for your hosts
 :   In allowlisted accounts that have locations enabled for Red Hat CoreOS, you can configure an HTTP proxy. For more information, see [Configuring an HTTP proxy for your Satellite hosts](/docs/satellite?topic=satellite-config-http-proxy).
 
 New and updated template parameters for the local block and local file storage templates.
-:   Automatic disk discovery is now available for the `local-volume-block` and `local-volume-file` template version 4.9. Enable this feature by setting the `auto-disk-discovery=true` parameter. For more information, see [Local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#sat-storage-local-block-cli) and [Local file storage](/docs/satellite?topic=satellite-storage-local-volume-file).
+:   Automatic disk discovery is now available for the `local-volume-block` and `local-volume-file` template version 4.9. Enable this feature by setting the `auto-disk-discovery=true` parameter. For more information, see [Local block storage](/docs/satellite?topic=satellite-storage-local-volume-block) and [Local file storage](/docs/satellite?topic=satellite-storage-local-volume-file).
 
 
 
@@ -784,7 +784,7 @@ Review the release notes for 7 May 2021.
 {: shortdesc}
 
 New! Spectrum Scale CSI driver template
-:   You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale Container Storage Interface (CSI) driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.IBM_notm}} Spectrum Scale driver documentation](/docs/satellite?topic=satellite-config-storage-spectrum-scale).
+:   You can use the {{site.data.keyword.IBM_notm}} Spectrum Scale Container Storage Interface (CSI) driver to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [{{site.data.keyword.IBM_notm}} Spectrum Scale driver documentation](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver).
 
 ## April 2021
 {: #satellite-apr21}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-22"
+  years: 2020, 2023
+lastupdated: "2023-01-09"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -41,7 +41,7 @@ To use the Azure Disk CSI driver storage template, complete the following tasks.
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
     
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure.
-1. [Create your configuration file](#azure-disk-config-file).
+1. [Create your configuration file](#azuredisk-csi-driver-config-create-console).
 
 ### Optional: Labeling your worker nodes for Azure Disk
 {: #azure-disk-label-nodes}
