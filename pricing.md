@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-01-10"
 
 keywords: satellite, hybrid, multicloud, pricing, service, billing, charges
 
@@ -18,8 +18,6 @@ subcollection: satellite
 
 {{site.data.keyword.satellitelong_notm}} provides a convenient way for you to consume {{site.data.keyword.cloud_notm}} services in any location that you want, with visibility across your locations.
 {: shortdesc}
-
-{{site.data.content.cost-estimate}}
 
 Flexible consumption
 :    No charges are incurred for hosts that are attached to a location, but not assigned to a resource. You can have as many hosts waiting in your location without being charged for future growth. As soon as you unassign a host from a resource, you are no longer charged for that host. Keep in mind that hosts might be automatically assigned to services, depending on your setup.
@@ -43,5 +41,7 @@ Review the following table for pricing details. For more information, see the de
 
 Each {{site.data.keyword.cloud_notm}} service instance that you create in your {{site.data.keyword.satelliteshort}} location incurs charges. For more information, see [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
 
-{{site.data.content-usage}}
+{{site.data.content.cost-estimate}}
+
+{{site.data.content.usage}}
 
