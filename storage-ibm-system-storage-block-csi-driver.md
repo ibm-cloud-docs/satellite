@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-05"
+lastupdated: "2023-01-10"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -98,14 +98,14 @@ Before you begin, review the [parameter reference](#ibm-system-storage-block-csi
     Example command to create a version 1.4.0 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.4.0 [--param "namespace=NAMESPACE"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.4.0 --param "namespace=NAMESPACE" 
     ```
     {: pre}
 
     Example command to create a version 1.5.0 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.5.0 [--param "namespace=NAMESPACE"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.5.0 --param "namespace=NAMESPACE" 
     ```
     {: pre}
 
@@ -132,14 +132,14 @@ Before you begin, review the [parameter reference](#ibm-system-storage-block-csi
     Example request to create a version 1.4.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-system-storage-block-csi-driver\", \"storage-template-version\": \"1.4.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"NAMESPACE\",\"user-secret-parameters\": { \"entry.name\": \"NAMESPACE\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-system-storage-block-csi-driver\", \"storage-template-version\": \"1.4.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"NAMESPACE\",\"user-secret-parameters\": 
     ```
     {: pre}
 
     Example request to create a version 1.5.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-system-storage-block-csi-driver\", \"storage-template-version\": \"1.5.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"NAMESPACE\",\"user-secret-parameters\": { \"entry.name\": \"NAMESPACE\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-system-storage-block-csi-driver\", \"storage-template-version\": \"1.5.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"NAMESPACE\",\"user-secret-parameters\": 
     ```
     {: pre}
 
@@ -336,7 +336,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 
 | Display name | CLI option | Type | Description | Required? |
 | --- | --- | --- | --- | --- |
-| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | false | 
+| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | 
 {: caption="Table 1. 1.4.0 parameter reference" caption-side="bottom"}
 
 
@@ -345,7 +345,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 
 | Display name | CLI option | Type | Description | Required? |
 | --- | --- | --- | --- | --- |
-| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | false | 
+| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | 
 {: caption="Table 2. 1.5.0 parameter reference" caption-side="bottom"}
 
 

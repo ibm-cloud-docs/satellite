@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-22"
+  years: 2022, 2023
+lastupdated: "2023-01-10"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -84,7 +84,7 @@ Before you begin, review the [parameter reference](#ibm-object-storage-plugin-pa
     Example command to create a version 2.2 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2 [--param "helm-release-name=HELM-RELEASE-NAME"]  [--param "parameters=PARAMETERS"]  --param "license=LICENSE"  --param "cos-endpoint=COS-ENDPOINT"  --param "cos-storageclass=COS-STORAGECLASS" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2 --param "helm-release-name=HELM-RELEASE-NAME"  [--param "parameters=PARAMETERS"]  --param "license=LICENSE"  --param "cos-endpoint=COS-ENDPOINT"  --param "cos-storageclass=COS-STORAGECLASS" 
     ```
     {: pre}
 
@@ -111,7 +111,7 @@ Before you begin, review the [parameter reference](#ibm-object-storage-plugin-pa
     Example request to create a version 2.2 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-object-storage-plugin\", \"storage-template-version\": \"2.2\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"HELM-RELEASE-NAME\", { \"entry.name\": \"PARAMETERS\", { \"entry.name\": \"LICENSE\", { \"entry.name\": \"COS-ENDPOINT\", { \"entry.name\": \"COS-STORAGECLASS\",\"user-secret-parameters\": { \"entry.name\": \"HELM-RELEASE-NAME\",{ \"entry.name\": \"PARAMETERS\",{ \"entry.name\": \"LICENSE\",{ \"entry.name\": \"COS-ENDPOINT\",{ \"entry.name\": \"COS-STORAGECLASS\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-object-storage-plugin\", \"storage-template-version\": \"2.2\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"HELM-RELEASE-NAME\", { \"entry.name\": \"PARAMETERS\", { \"entry.name\": \"LICENSE\", { \"entry.name\": \"COS-ENDPOINT\", { \"entry.name\": \"COS-STORAGECLASS\",\"user-secret-parameters\": 
     ```
     {: pre}
 
@@ -318,7 +318,7 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 
 | Display name | CLI option | Type | Description | Required? |
 | --- | --- | --- | --- | --- |
-| Helm Chart Release Name | `helm-release-name` | Config | Release name of the chart | false | 
+| Helm Chart Release Name | `helm-release-name` | Config | Release name of the chart | true | 
 | Helm Chart Additional Parameters (Optional) | `parameters` | Config | Helm Chart Additional Parameters (Optional) | false | 
 | COS plug-in License: Apache License Version 2.0 | `license` | Config | COS plug-in License: Apache License Version 2.0. Set to `true` to accept the license and install the plugin | true | 
 | COS Endpoint | `cos-endpoint` | Config | Enter COS Endpoint. For more information, refer to https://ibm.biz/cos-endpoints | true | 
