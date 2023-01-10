@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-22"
+  years: 2020, 2023
+lastupdated: "2023-01-10"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -44,7 +44,6 @@ To use the Azure File CSI driver storage template, complete the following tasks.
 
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure.
 
-1. [Create your configuration file](#sat-storage-azure-file-csi-cli).
 
 ### Optional: Labeling your worker nodes when using Azure File
 {: #azure-file-label-nodes}
@@ -179,21 +178,21 @@ Before you begin, review the [parameter reference](#azurefile-csi-driver-paramet
     Example request to create a version 1.9.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azurefile-csi-driver\", \"storage-template-version\": \"1.9.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\", { \"entry.name\": \"SUBNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",{ \"entry.name\": \"SUBSCRIPTIONID\",{ \"entry.name\": \"AADCLIENTID\",{ \"entry.name\": \"LOCATION\",{ \"entry.name\": \"AADCLIENTSECRET\",{ \"entry.name\": \"RESOURCEGROUP\",{ \"entry.name\": \"VMTYPE\",{ \"entry.name\": \"SECURITYGROUPNAME\",{ \"entry.name\": \"VNETNAME\",{ \"entry.name\": \"SUBNETNAME\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azurefile-csi-driver\", \"storage-template-version\": \"1.9.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LOCATION\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\", { \"entry.name\": \"SUBNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",{ \"entry.name\": \"SUBSCRIPTIONID\",{ \"entry.name\": \"AADCLIENTID\",{ \"entry.name\": \"AADCLIENTSECRET\",
     ```
     {: pre}
 
     Example request to create a version 1.18.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azurefile-csi-driver\", \"storage-template-version\": \"1.18.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\", { \"entry.name\": \"SUBNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",{ \"entry.name\": \"SUBSCRIPTIONID\",{ \"entry.name\": \"AADCLIENTID\",{ \"entry.name\": \"LOCATION\",{ \"entry.name\": \"AADCLIENTSECRET\",{ \"entry.name\": \"RESOURCEGROUP\",{ \"entry.name\": \"VMTYPE\",{ \"entry.name\": \"SECURITYGROUPNAME\",{ \"entry.name\": \"VNETNAME\",{ \"entry.name\": \"SUBNETNAME\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azurefile-csi-driver\", \"storage-template-version\": \"1.18.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LOCATION\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\", { \"entry.name\": \"SUBNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",{ \"entry.name\": \"SUBSCRIPTIONID\",{ \"entry.name\": \"AADCLIENTID\",{ \"entry.name\": \"AADCLIENTSECRET\",
     ```
     {: pre}
 
     Example request to create a version 1.22.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azurefile-csi-driver\", \"storage-template-version\": \"1.22.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"TENANTID\", { \"entry.name\": \"SUBSCRIPTIONID\", { \"entry.name\": \"AADCLIENTID\", { \"entry.name\": \"LOCATION\", { \"entry.name\": \"AADCLIENTSECRET\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\", { \"entry.name\": \"SUBNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",{ \"entry.name\": \"SUBSCRIPTIONID\",{ \"entry.name\": \"AADCLIENTID\",{ \"entry.name\": \"LOCATION\",{ \"entry.name\": \"AADCLIENTSECRET\",{ \"entry.name\": \"RESOURCEGROUP\",{ \"entry.name\": \"VMTYPE\",{ \"entry.name\": \"SECURITYGROUPNAME\",{ \"entry.name\": \"VNETNAME\",{ \"entry.name\": \"SUBNETNAME\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"azurefile-csi-driver\", \"storage-template-version\": \"1.22.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LOCATION\", { \"entry.name\": \"RESOURCEGROUP\", { \"entry.name\": \"VMTYPE\", { \"entry.name\": \"SECURITYGROUPNAME\", { \"entry.name\": \"VNETNAME\", { \"entry.name\": \"SUBNETNAME\",\"user-secret-parameters\": { \"entry.name\": \"TENANTID\",{ \"entry.name\": \"SUBSCRIPTIONID\",{ \"entry.name\": \"AADCLIENTID\",{ \"entry.name\": \"AADCLIENTSECRET\",
     ```
     {: pre}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-22"
+  years: 2020, 2023
+lastupdated: "2023-01-10"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -210,21 +210,21 @@ Before you begin, review the [parameter reference](#local-volume-block-parameter
     Example command to create a version 4.9 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.9 [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.9 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"] 
     ```
     {: pre}
 
     Example command to create a version 4.10 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.10 [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.10 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"] 
     ```
     {: pre}
 
     Example command to create a version 4.11 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.11 [--param "auto-discover-devices=AUTO-DISCOVER-DEVICES"]  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"] 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name local-volume-block --template-version 4.11 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  --param "label-key=LABEL-KEY"  --param "label-value=LABEL-VALUE"  [--param "devicepath=DEVICEPATH"] 
     ```
     {: pre}
 
@@ -251,35 +251,35 @@ Before you begin, review the [parameter reference](#local-volume-block-parameter
     Example request to create a version 4.7 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.7\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": { \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.7\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": 
     ```
     {: pre}
 
     Example request to create a version 4.8 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.8\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": { \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.8\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": 
     ```
     {: pre}
 
     Example request to create a version 4.9 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.9\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",{ \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.9\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": 
     ```
     {: pre}
 
     Example request to create a version 4.10 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",{ \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": 
     ```
     {: pre}
 
     Example request to create a version 4.11 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.11\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\",{ \"entry.name\": \"LABEL-KEY\",{ \"entry.name\": \"LABEL-VALUE\",{ \"entry.name\": \"DEVICEPATH\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"local-volume-block\", \"storage-template-version\": \"4.11\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"LABEL-KEY\", { \"entry.name\": \"LABEL-VALUE\", { \"entry.name\": \"DEVICEPATH\",\"user-secret-parameters\": 
     ```
     {: pre}
 
@@ -661,7 +661,7 @@ Use the console to remove a storage configuration.
 
 | Display name | CLI option | Type | Description | Required? |
 | --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | 
 | Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
 | Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
 | Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
@@ -673,7 +673,7 @@ Use the console to remove a storage configuration.
 
 | Display name | CLI option | Type | Description | Required? |
 | --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | 
 | Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
 | Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
 | Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
@@ -685,7 +685,7 @@ Use the console to remove a storage configuration.
 
 | Display name | CLI option | Type | Description | Required? |
 | --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | false | 
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | 
 | Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
 | Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
 | Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-01-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1972,8 +1972,6 @@ subcollection: satellite
     * [Removing the {{site.data.keyword.block_storage_is_short}} storage configuration using the cli](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#vpc-csi-rm-cli)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-parameter-reference)
-
-    * [4.3.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#4.3.0-parameter-reference)
 
     * [5.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#5.0-parameter-reference)
 
