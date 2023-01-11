@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-01-11"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location
 
@@ -86,7 +86,7 @@ The reasons that you cannot install extra software on the hosts relate to [{{sit
 
 {{site.data.content.cost-estimate}}
 
-{{site.data.content-usage}}
+{{site.data.content.usage}}
 
 ## What are the terms of the service level agreement?
 {: #sla}
