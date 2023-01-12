@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-16"
+  years: 2022, 2023
+lastupdated: "2023-01-12"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -28,7 +28,7 @@ Are there additional requirements for disconnected usage?
 :   Your location should still maintain network connection.
 
 How do I set how long my location can run disconnected from {{site.data.keyword.cloud_notm}}?
-:   Update and apply the `accessTokenMaxAgeSeconds.yaml` file to set the time. For more information, see [Setting the disconnected usage time](#disconnect-time). 
+:   Add the `accessTokenMaxAgeSeconds: 604800` parameter by using the `oc edit oauthclients` command. For more information, see [Setting the disconnected usage time](#disconnect-time). 
 
 ## Setting the disconnected usage time
 {: #disconnect-time}
@@ -36,7 +36,7 @@ How do I set how long my location can run disconnected from {{site.data.keyword.
 {{site.data.keyword.satelliteshort}} Locations and {{site.data.keyword.openshiftlong_notm}} can run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for 168 hours.
 {: shortdesc}
 
-You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for all your OAuth clients. 
+You can modify this setting by changing the `accessTokenMaxAgeSeconds` value for all your OAuth clients. The default value for `accessTokenMaxAgeSeconds` is 86400 seconds.
 
 The `accessTokenMaxAgeSeconds` value starts counting when the user was last authenticated, not when the Location is disconnected. Note that a user must have access to IAM to authenticate.
 {: important}
