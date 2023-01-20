@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-12"
+lastupdated: "2023-01-20"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -29,6 +29,18 @@ Are there additional requirements for disconnected usage?
 
 How do I set how long my location can run disconnected from {{site.data.keyword.cloud_notm}}?
 :   Add the `accessTokenMaxAgeSeconds: 604800` parameter by using the `oc edit oauthclients` command. For more information, see [Setting the disconnected usage time](#disconnect-time). 
+
+What happens when my token expires?
+:   After your token expires, you will lose the ability to work with the Location. When you run a command, you will get error messages such as `error: You must be logged in to the server (Unauthorized)`. To recover, you must reconnect the Location and log in again to retrieve a new token. Do not reload nodes before the Location is reconnected. Reloading nodes while the Location is disconnected prevents the Location from recovering. 
+
+Do I need to re-create the Location?
+:   No, you don't need to re-create the Location. You can reconnect the existing Location and reauthenticate to continue working with your Location.
+
+How do I reauthenticate? 
+:   Reconnect your Location first and then log in again with your credentials. 
+
+Do I have to recover etcd backup?
+:   No, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and reauthenticate.
 
 ## Setting the disconnected usage time
 {: #disconnect-time}
