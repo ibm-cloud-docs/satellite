@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-01-19"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -28,9 +28,6 @@ Use a secure {{site.data.keyword.dl_full}} connection for {{site.data.keyword.sa
 {: shortdesc}
 
 In this tutorial, you set up your {{site.data.keyword.satelliteshort}} Link to use a {{site.data.keyword.dl_short}} connection. The Link connector at your Location sends traffic over the {{site.data.keyword.dl_short}} connection to a Relay that you create in your  {{site.data.keyword.cloud_notm}} account. This Relay proxies the traffic to Link tunnel server's IP address in the {{site.data.keyword.cloud_notm}} private network.
-
-The features in this tutorial are available as closed technical preview that is subject to change without prior notice.
-{: preview}
 
 ## FAQ
 {: #faq-direct-link}
@@ -147,7 +144,7 @@ VPC clusters considerations for this scenario:
 - Worker node flavor: Any VPC infrastructure flavor
 - Version: 4.x.x
 - Worker pool: At least 2 worker nodes
-- Subnets: Include subnets in the `--pod-subnet` and `--service-subnet` options if the default ranges conflict with the Location’s subnet that you set up in your on-premises data center or in a different cloud provider.
+- Subnets: Include Ingress Load Balancer IP subnets if the default ranges conflict with the `--pod-subnet` and `--service-subnet` values of the {{site.data.keyword.redhat_openshift_notm}} cluster on Satellite or the network CIDR where the Satellite or {{site.data.keyword.redhat_openshift_notm}} hosts are deployed on-premise.
 - Cloud service endpoints: Do not specify the `--disable-public-service-endpoint` option if you want both public and private endpoints. 
 - Spread the default worker pool across zones to increase the availability of your classic or VPC cluster.
 - Ensure that at least 2 worker nodes exist in each zone, so that the private ALBs that you configure in subsequent steps are highly available and can properly receive version updates.
@@ -183,6 +180,12 @@ In the following example, we create a private-only VPC cluster and use the priva
         ibmcloud oc ingress secret get -c CLUSTER --name SECRET_NAME --namespace openshift-ingress
         ```
         {: pre}
+        
+    1. Create a namespace for the NGINX reverse proxy.
+        ```sh
+        kubectl create ns dl-reverse-proxy
+        ```
+        {: pre} 
   
     1. Copy the default TLS secret from `openshift-ingress` to the project where NGINX is going to deployed.
         ```sh
@@ -195,27 +198,27 @@ In the following example, we create a private-only VPC cluster and use the priva
     apiVersion: networking.k8s.io/v1
     kind: Ingress
     metadata:
-    name: dl-ingress-resource
-    annotations:
-      kubernetes.io/ingress.class: "public-iks-k8s-nginx"
-      nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
-      nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+      name: dl-ingress-resource
+      annotations:
+        kubernetes.io/ingress.class: "public-iks-k8s-nginx"
+        nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+        nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
     spec:
-    tls:
-    - hosts:
-      - VALUE_FROM_INGRESS_SUBDOMAIN
-      secretName: VALUE_FROM_INGRESS_SECRET
-    rules:
-    - host: VALUE_FROM_INGRESS_SUBDOMAIN
-      http:
-        paths:
-        - path: /
-          pathType: Prefix
-          backend:
-            service:
-              name: nginxsvc
-              port:
-                number: 80
+      tls:
+      - hosts:
+        - satellite-dl.VALUE_FROM_INGRESS_SUBDOMAIN
+        secretName: VALUE_FROM_INGRESS_SECRET
+      rules:
+      - host: satellite-dl.VALUE_FROM_INGRESS_SUBDOMAIN
+        http:
+          paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nginxsvc
+                port:
+                  number: 80
 
 
     ```
@@ -233,7 +236,7 @@ In the following example, we create a private-only VPC cluster and use the priva
     ```
     {: pre}   
   
-1. From the output, take a note of the Location endpoint. Replace `c-01 with d-01-ws` and remove the port. For example, `c-01.private.us-south.link.satellite.cloud.ibm.com:40934` becomes `d-01-ws.private.us-south.link.satellite.cloud.ibm.com`. This is be used as the value for `proxy_pass https` in the ConfigMap file.
+1. From the output, take a note of the Location endpoint. Replace `c-01`, `c-02`, or `c-03` with `d-01-ws`, `d-02-ws`, or `d-03-ws` and remove the port. For example, `c-01.private.us-south.link.satellite.cloud.ibm.com:40934` becomes `d-01-ws.private.us-south.link.satellite.cloud.ibm.com`. This value can be used as the value for `proxy_pass https` in the ConfigMap file.
 
 1. Copy the NGINX ConfigMap file content into your local directory. This configuration either applies ws-reverse proxy or https reverse proxy to the tunnel server {{site.data.keyword.dl_short}} endpoint. Replace `VALUE_FROM_INGRESS_SUBDOMAIN` and `VALUE_FOR_PROXY_PASS` with your own values.
     ```yaml
@@ -285,18 +288,18 @@ In the following example, we create a private-only VPC cluster and use the priva
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-    name: nginx
-    labels:
-      app: nginx
-    spec:
-    selector:
-      matchLabels:
+      name: nginx
+      labels:
         app: nginx
-    replicas: 2
-    template:
-      metadata:
-        labels:
+    spec:
+      selector:
+        matchLabels:
           app: nginx
+      replicas: 2
+      template:
+        metadata:
+          labels:
+            app: nginx
       spec:
         containers:
           - name: nginx
@@ -347,6 +350,62 @@ In the following example, we create a private-only VPC cluster and use the priva
     oc apply -f nginx-app.yaml -n dl-reverse-proxy
     ```
     {: pre}
+ 
+ 1. Double check that the NGINX is running. 
+    
+    1. Check pods.
+        ```sh
+        oc get pods
+        ```
+        {: pre}
+
+        ```sh
+        NAME                     READY   STATUS    RESTARTS   AGE
+        nginx-757fbc9f85-gv2p6   1/1     Running   0          53s
+        nginx-757fbc9f85-xvmrj   1/1     Running   0          53s
+        ```
+        {: screen}   
+        
+    1. Check logs.
+        ```sh
+        oc logs -f nginx-757fbc9f85-gv2p6
+        ```
+        {: pre}
+
+        ```sh
+        /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+        /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+        /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+        10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+        10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+        /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+        /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+        /docker-entrypoint.sh: Configuration complete; ready for start up
+        ```
+        {: screen} 
+
+    1. Check Ingress.
+        ```sh
+        oc get ingress
+        ```
+        {: pre}
+
+        ```sh    
+        NAME                  CLASS    HOSTS                                                                                                       ADDRESS                                                                                                     PORTS     AGE
+        dl-ingress-resource   <none>   mysatellite-dl.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud   router-default.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud   80, 443   19m
+        ```
+        {: screen} 
+
+    1. Connect to the reverse proxy URL.
+        ```sh
+        curl -k https://mysatellite-dl.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud
+        ```
+        {: pre}
+
+        ```sh   
+        {"status":"UP"}
+        ```
+        {: screen} 
     
   
 ## Provisioning Red Hat CoreOS hosts 
@@ -356,7 +415,7 @@ In the following example, we create a private-only VPC cluster and use the priva
 Now the relay is ready and incoming traffic to the relay can be proxied to the tunnel server internal Ingress. {{site.data.keyword.dl_short}} agent must be deployed on the hosts in order to have the connection to the tunnel server established internally through the {{site.data.keyword.dl_short}}.
 {: shortdesc}
 
-1. Download the Location attach script. Make sure you download the `.ign` file by selecting **Red Hat CoreOS** in the console when you download or using `ic sat host attach --location LOCATION --operating-system RHCOS` in the CLI.
+1. Download the Location attach script. Make sure you download the `.ign` file by selecting **Red Hat CoreOS** in the console when you download or using `ibmcloud sat host attach --location LOCATION --operating-system RHCOS` in the CLI.
 
 1. Get the user token on the account where you are creating your Location.
     ```sh
@@ -364,7 +423,7 @@ Now the relay is ready and incoming traffic to the relay can be proxied to the t
     ```
     {: pre}     
   
-1. Use the token in the following curl command.
+1. Use the token in the following curl command. Depending on your location or region, the URL is different. The following example command uses `us-south`. But if your location is in Frankfrut, replace `us-south` with `eu-de`.
     ```sh
     curl -X GET \
     'https://api.us-south.link.satellite.cloud.ibm.com/v1/linkagentdownloadurl/LOCATION-ID?linktunnelhostname=INGRESS-SUBDOMAIN' \
@@ -538,7 +597,7 @@ Now the relay is ready and incoming traffic to the relay can be proxied to the t
 
 1. Run the script.
     ```sh
-    node ign_tool.js attachHost-LOCTATION.ign '{"tunnel_host":"c-01-ws.us-south.link.satellite.cloud.ibm.com","location_id":"cdcnlr820p5snpe0bte0","auth_code":"70a65b5d6e94da10xxxx"}
+    node ign_tool.js attachHost-LOCTATION.ign '{"tunnel_host":"INGRESS-SUBDOMAIN","location_id":"cdcnlr820p5snpe0bte0","auth_code":"70a65b5d6e94da10xxxx"}
     ```
     {: pre} 
 

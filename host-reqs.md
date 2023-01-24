@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-02"
+  years: 2020, 2023
+lastupdated: "2023-01-24"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -27,13 +27,19 @@ Can't meet these host requirements? [Contact {{site.data.keyword.IBM_notm}} Supp
 To check your host setup, you can use the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
+If you plan on deploying {{site.data.keyword.redhat_openshift_notm}} clusters, make sure the operating system that you want to use for your hosts is supported for your location type and cluster version. For more information, see [{{site.data.keyword.redhat}} version information](/docs/openshift?topic=openshift-openshift_versions).
+{: tip}
+
 
 ## Computing characteristics
 {: #reqs-host-compute}
 
-- Hosts must run the latest Red Hat Enterprise Linux 7 or 8, currently 7.9 and 8.6; or the latest Red Hat CoreOS on x86 architecture with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported. Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`. Note that support for RHEL 7 hosts in your control plane ends on March 2nd, 2023. [Follow the steps](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8) to migrate your hosts to RHEL 8.
+- Hosts must run the latest Red Hat Enterprise Linux 7 or 8, or the latest Red Hat CoreOS on x86 architecture with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported.
+    - For RHEL 7, the latest is 7.9.
+    - For the latest RHEL 8 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL8){: external}.
+    - For the latest Red Hat CoreOS version information, see [Red Hat CoreOS mirrors](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}.
+- Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`. Note that support for RHEL 7 hosts in your control plane ends on March 2nd, 2023. [Follow the steps](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8) to migrate your hosts to RHEL 8.
 - Hosts can be physical or virtual machines. However, if your hosts are cloned virtual machines, be sure that each one has a unique network identity. For more information, see [Why aren't my hosts attaching to my location?](/docs/satellite?topic=satellite-host-not-attaching).
-
 - Red Hat CoreOS hosts must have at least 8 vCPU and 16GB memory and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). Note that for testing purposes or proof of concept, you can use 4 vCPU. 
 - RHEL hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
 
