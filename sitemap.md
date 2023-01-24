@@ -158,6 +158,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [January 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan23)
+
+    * [24 January 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan2423)
+
+        * CLI change log
+
 * [December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec22)
 
     * [16 December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec1622)
