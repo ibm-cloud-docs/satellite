@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-03"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1748,6 +1748,18 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create-api)
 
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#updating-a-storage-assignment-in-the-api)
+
 * [Deploying an app that uses AWS EBS storage](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#sat-storage-ebs-deploy)
 
 * [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-rm)
@@ -1781,6 +1793,18 @@ subcollection: satellite
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create-api)
 
 * [Adding a custom AWS EFS storage class to your configuration](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-add-sc-efs)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#updating-a-storage-assignment-in-the-api)
 
 * [Deploying an app that uses AWS EFS storage](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#sat-storage-efs-deploy)
 
@@ -1819,6 +1843,18 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-api)
 
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#updating-a-storage-assignment-in-the-api)
+
 * [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azure-csi-app-deploy)
 
 * [Removing Azure Disk storage from your apps](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azure-disk-rm)
@@ -1852,6 +1888,18 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-api)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#updating-a-storage-assignment-in-the-api)
 
 * [Deploying an app that uses your Azure File storage](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#storage-azure-file-csi-app-deploy)
 
@@ -1890,6 +1938,18 @@ subcollection: satellite
 
 * [Deploying an app that uses Google Compute Engine persistent disk](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#sat-storage-gcp-deploy-app)
 
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#updating-a-storage-assignment-in-the-api)
+
 * [Removing Compute Engine storage from your apps](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-rm-apps)
 
 * [Removing the Compute Engine storage configuration from your cluster](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-template-rm)
@@ -1925,6 +1985,18 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create-api)
 
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#updating-a-storage-assignment-in-the-api)
+
 * [Deploying an app that uses {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-block-csi-app-deploy)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-parameter-reference)
@@ -1942,6 +2014,18 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-api)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#updating-a-storage-assignment-in-the-api)
 
 * [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#config-storage-cos-app)
 
@@ -1966,6 +2050,18 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-api)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#updating-a-storage-assignment-in-the-api)
 
 * [Deploying an app that uses {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#sat-storage-vpc-deploy-app)
 
@@ -2010,6 +2106,18 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create-api)
 
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#updating-a-storage-assignment-in-the-api)
+
 * [Deploying an app that uses ONTAP-NAS storage](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#sat-storage-netapp-nas-deploy-2104)
 
 * [Removing NetApp ONTAP-NAS storage from your apps](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-nas-rm-2104)
@@ -2037,6 +2145,18 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-config-create-api)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-netapp-ontap-san#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-san#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-netapp-ontap-san#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-san#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-netapp-ontap-san#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-san#updating-a-storage-assignment-in-the-api)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-parameter-reference)
 
@@ -2066,6 +2186,18 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-api)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-local-volume-block#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-local-volume-block#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-local-volume-block#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-volume-block#updating-a-storage-assignment-in-the-api)
 
 * [Deploying an app that uses local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#deploy-app-local-block)
 
@@ -2105,6 +2237,18 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create-api)
 
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-local-volume-file#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-local-volume-file#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-local-volume-file#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-volume-file#updating-a-storage-assignment-in-the-api)
+
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-storage-local-volume-file#deploy-app-local-file)
 
 * [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-storage-local-volume-file#sat-storage-remove-local-file-config)
@@ -2143,6 +2287,18 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-api)
 
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-odf-local#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-local#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-odf-local#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-local#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-odf-local#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-odf-local#updating-a-storage-assignment-in-the-api)
+
 * [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-deploy)
 
 * [Scaling your ODF configuration by attaching raw disks](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-scale-odf-local-disk)
@@ -2178,6 +2334,18 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-api)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-odf-remote#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-odf-remote#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-odf-remote#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-odf-remote#updating-a-storage-assignment-in-the-api)
 
     * [Optional: Adding additional worker nodes to your ODF configuration](/docs/satellite?topic=satellite-storage-odf-remote#add-worker-nodes-odf-remote)
 
@@ -2215,6 +2383,18 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-api)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#can-i-estimate-my-costs?)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#creating-an-assignment-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#can-i-estimate-my-costs?)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#upgrading-a-configuration-in-the-cli)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#can-i-estimate-my-costs?)
+
+* [Updating a storage assignment in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#updating-a-storage-assignment-in-the-api)
 
 * [Deploying an app that uses VMware](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#sat-storage-vmware-deploy-app)
 
@@ -2750,6 +2930,14 @@ subcollection: satellite
 
 * [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-sat-pricing#pricing-services)
 
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-sat-pricing#can-i-estimate-my-costs?)
+
+* [Can I view and control my current usage?](/docs/satellite?topic=satellite-sat-pricing#can-i-view-and-control-my-current-usage?)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-sat-pricing#can-i-estimate-my-costs?)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-sat-pricing#creating-a-storage-assignment-in-the-console)
+
 
 ## Your responsibilities
 {: #sitemap_your_responsibilities}
@@ -2854,6 +3042,14 @@ subcollection: satellite
 * [Why can't I install extra software like vulnerability scanning tools on my host?](/docs/satellite?topic=satellite-faqs#host-software)
 
 * [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-faqs#can-i-estimate-my-costs?)
+
+* [Can I view and control my current usage?](/docs/satellite?topic=satellite-faqs#can-i-view-and-control-my-current-usage?)
+
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-faqs#can-i-estimate-my-costs?)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-faqs#creating-a-storage-assignment-in-the-console)
 
 * [What are the terms of the service level agreement?](/docs/satellite?topic=satellite-faqs#sla)
 
