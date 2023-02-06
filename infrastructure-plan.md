@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-11-22"
+  years: 2022, 2023
+lastupdated: "2023-02-06"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -70,7 +70,9 @@ In each of the three zones in your infrastructure provider, plan to create compa
 - Each host must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}.
 - To calculate how many hosts you need, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
 
-To check your host set up, you can use the satellite-host-check script. For more information, see Checking your host set up. {: tip}
+
+To check your host set up, you can use the `satellite-host-check` script. For more information, see [Checking your host set up](/docs/satellite?topic=satellite-host-network-check).
+{: tip}
 
 ## Planning your operating system
 {: #infras-plan-os}
@@ -86,7 +88,7 @@ Red Hat Enterprise Linux 8 (RHEL 8)
 Red Hat CoreOS (RHCOS)
 :    RHCOS is a minimal operating system for running containerized workloads securely and at scale. It is based on RHEL and includes automated, remote upgrade features. For more information about the key benefits of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.10/architecture/architecture-rhcos.html){: external}.
 
-Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later. Red Hat CoreOS-enabled locations don't support services other than {{site.data.keyword.redhat_openshift_notm}}. If you plan to use {{site.data.keyword.satelliteshort}}-enabled services other than {{site.data.keyword.redhat_openshift_notm}}, do not use Red Hat CoreOS-enabled locations.
+Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}} locations and for {{site.data.keyword.redhat_openshift_notm}} version 4.9 and later. Red Hat CoreOS-enabled locations don't support all services. For more information, see [Supported {{site.data.keyword.satelliteshort}}-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services).
 {: note}
 
 

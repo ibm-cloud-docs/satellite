@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-19"
+lastupdated: "2023-02-06"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -155,43 +155,44 @@ In the following example, we create a private-only VPC cluster and use the priva
 1. Create a private-only {{site.data.keyword.redhat_openshift_notm}} cluster on VPC. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui). 
 
 
-1. There are many ways to expose apps in {{site.data.keyword.redhat_openshift_notm}} cluster in a VPC. In this example, the app will be privately exposed with private endpoints only, which is the most common use case for {{site.data.keyword.dl_short}} customers. {{site.data.keyword.redhat_openshift_notm}} clusters that are privately exposed with private endpoints only come with default private name and certificate. They will be used in this example to expose the NGINX reverse proxy pods. You can use the default ones or bring your custom host name and certificate. For more details, see [Privately exposing apps in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-ingress-roks4&interface=ui#priv-se-priv-controller).
+  There are many ways to expose apps in {{site.data.keyword.redhat_openshift_notm}} cluster in a VPC. In this example, the app will be privately exposed with private endpoints only, which is the most common use case for {{site.data.keyword.dl_short}} customers. {{site.data.keyword.redhat_openshift_notm}} clusters that are privately exposed with private endpoints only come with default private name and certificate. They will be used in this example to expose the NGINX reverse proxy pods. You can use the default ones or bring your custom host name and certificate. For more details, see [Privately exposing apps in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-ingress-roks4&interface=ui#priv-se-priv-controller).
+  {: note}
     
-    1. Create a Secretes Manager instance and register it to the {{site.data.keyword.redhat_openshift_notm}} cluster that was created in the previous step. For more information, see [Creating a Secrets Manager service instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui).
+1. Create a Secretes Manager instance and register it to the {{site.data.keyword.redhat_openshift_notm}} cluster that was created in the previous step. For more information, see [Creating a Secrets Manager service instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui).
+
+1. Get the Ingress details from {{site.data.keyword.dl_short}}.
+    ```sh
+    ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID | grep Ingress
+    ```
+    {: pre}   
+
+    Example output:
+    ```sh
+    Ingress Subdomain:      mycluster-i000.us-south.containers.appdomain.cloud
+    Ingress Secret:         mycluster-i000
+    ```
+    {: screen}
+
+    In this scenario, if you do nslookup to the Ingress Subdomain, it resolves to IBM service private ip (`10.0.0.0/8`). Adding routes to make the Ingress IP address (`10.0.0.0/8`) reachable from customer on-prem is not covered in this document. You are responsible for facilitating routing between on-prem and the Realy Ingress on {{site.data.keyword.cloud_notm}}.
+    {: note}
+
+1. Get the secrete CRN.
+    ```sh
+    ibmcloud oc ingress secret get -c CLUSTER --name SECRET_NAME --namespace openshift-ingress
+    ```
+    {: pre}
     
-    1. Get the Ingress details from {{site.data.keyword.dl_short}}.
-        ```sh
-        ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID | grep Ingress
-        ```
-        {: pre}   
+1. Create a namespace for the NGINX reverse proxy.
+    ```sh
+    kubectl create ns dl-reverse-proxy
+    ```
+    {: pre} 
 
-        Example output:
-        ```sh
-        Ingress Subdomain:      mycluster-i000.us-south.containers.appdomain.cloud
-        Ingress Secret:         mycluster-i000
-        ```
-        {: screen}
-  
-        In this scenario, if you do nslookup to the Ingress Subdomain, it resolves to IBM service private ip (`10.0.0.0/8`). Adding routes to make the Ingress IP address (`10.0.0.0/8`) reachable from customer on-prem is not covered in this document. You are responsible for facilitating routing between on-prem and the Realy Ingress on {{site.data.keyword.cloud_notm}}.
-        {: note}
-
-    1. Get the secrete CRN.
-        ```sh
-        ibmcloud oc ingress secret get -c CLUSTER --name SECRET_NAME --namespace openshift-ingress
-        ```
-        {: pre}
-        
-    1. Create a namespace for the NGINX reverse proxy.
-        ```sh
-        kubectl create ns dl-reverse-proxy
-        ```
-        {: pre} 
-  
-    1. Copy the default TLS secret from `openshift-ingress` to the project where NGINX is going to deployed.
-        ```sh
-        ibmcloud oc ingress secret create --cluster CLUSTER_NAME_OR_ID --cert-crn CRN --name SECRET_NAME --namespace dl-reverse-proxy 
-        ```
-        {: pre}  
+1. Copy the default TLS secret from `openshift-ingress` to the project where NGINX is going to deployed.
+    ```sh
+    ibmcloud oc ingress secret create --cluster CLUSTER_NAME_OR_ID --cert-crn CRN --name SECRET_NAME --namespace dl-reverse-proxy 
+    ```
+    {: pre}  
   
 1. Copy the following Ingress resource file content into your local directory. Replace `VALUE_FROM_INGRESS_SUBDOMAIN` and `VALUE_FROM_INGRESS_SECRET` with your own values.
     ```yaml
@@ -351,61 +352,59 @@ In the following example, we create a private-only VPC cluster and use the priva
     ```
     {: pre}
  
- 1. Double check that the NGINX is running. 
-    
-    1. Check pods.
-        ```sh
-        oc get pods
-        ```
-        {: pre}
+1. Double check that the NGINX is running by listing pods.
+    ```sh
+    oc get pods
+    ```
+    {: pre}
 
-        ```sh
-        NAME                     READY   STATUS    RESTARTS   AGE
-        nginx-757fbc9f85-gv2p6   1/1     Running   0          53s
-        nginx-757fbc9f85-xvmrj   1/1     Running   0          53s
-        ```
-        {: screen}   
-        
-    1. Check logs.
-        ```sh
-        oc logs -f nginx-757fbc9f85-gv2p6
-        ```
-        {: pre}
+    ```sh
+    NAME                     READY   STATUS    RESTARTS   AGE
+    nginx-757fbc9f85-gv2p6   1/1     Running   0          53s
+    nginx-757fbc9f85-xvmrj   1/1     Running   0          53s
+    ```
+    {: screen}   
 
-        ```sh
-        /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
-        /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
-        /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
-        10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
-        10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
-        /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
-        /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
-        /docker-entrypoint.sh: Configuration complete; ready for start up
-        ```
-        {: screen} 
+1. Check logs.
+    ```sh
+    oc logs -f nginx-757fbc9f85-gv2p6
+    ```
+    {: pre}
 
-    1. Check Ingress.
-        ```sh
-        oc get ingress
-        ```
-        {: pre}
+    ```sh
+    /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+    /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+    /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+    10-listen-on-ipv6-by-default.sh: info: Getting the checksum of /etc/nginx/conf.d/default.conf
+    10-listen-on-ipv6-by-default.sh: info: Enabled listen on IPv6 in /etc/nginx/conf.d/default.conf
+    /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+    /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+    /docker-entrypoint.sh: Configuration complete; ready for start up
+    ```
+    {: screen} 
 
-        ```sh    
-        NAME                  CLASS    HOSTS                                                                                                       ADDRESS                                                                                                     PORTS     AGE
-        dl-ingress-resource   <none>   mysatellite-dl.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud   router-default.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud   80, 443   19m
-        ```
-        {: screen} 
+1. Check Ingress.
+    ```sh
+    oc get ingress
+    ```
+    {: pre}
 
-    1. Connect to the reverse proxy URL.
-        ```sh
-        curl -k https://mysatellite-dl.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud
-        ```
-        {: pre}
+    ```sh    
+    NAME                  CLASS    HOSTS                                                                                                       ADDRESS                                                                                                     PORTS     AGE
+    dl-ingress-resource   <none>   mysatellite-dl.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud   router-default.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud   80, 443   19m
+    ```
+    {: screen} 
 
-        ```sh   
-        {"status":"UP"}
-        ```
-        {: screen} 
+1. Connect to the reverse proxy URL.
+    ```sh
+    curl -k https://mysatellite-dl.myname-cluster10-22bfd3cd491bdeb5a0f661fb1e2b0c44-0000.us-south.containers.appdomain.cloud
+    ```
+    {: pre}
+
+    ```sh   
+    {"status":"UP"}
+    ```
+    {: screen} 
     
   
 ## Provisioning Red Hat CoreOS hosts 
@@ -597,7 +596,7 @@ Now the relay is ready and incoming traffic to the relay can be proxied to the t
 
 1. Run the script.
     ```sh
-    node ign_tool.js attachHost-LOCTATION.ign '{"tunnel_host":"INGRESS-SUBDOMAIN","location_id":"cdcnlr820p5snpe0bte0","auth_code":"70a65b5d6e94da10xxxx"}
+    node ign_tool.js attachHost-LOCATION.ign '{"tunnel_host":"INGRESS-SUBDOMAIN","location_id":"cdcnlr820p5snpe0bte0","auth_code":"70a65b5d6e94da10xxxx"}
     ```
     {: pre} 
 
