@@ -83,7 +83,6 @@ toc:
               - host-update-location.md
               - host-update-workers.md
               - location-copy.md
-              - location-forward-logs.md
               - config-http-proxy.md
               - config-custom-ntp.md
               - host-remove.md
