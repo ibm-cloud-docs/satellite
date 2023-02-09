@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-08"
+lastupdated: "2023-02-09"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1742,6 +1742,12 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-config-create-api)
 
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-assignment-create-api)
+
 * [Deploying an app that uses AWS EBS storage](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#sat-storage-ebs-deploy)
 
 * [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-rm)
@@ -1775,6 +1781,12 @@ subcollection: satellite
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-config-create-api)
 
 * [Adding a custom AWS EFS storage class to your configuration](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-add-sc-efs)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#storage-aws-efs-csi-driver-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#storage-aws-efs-csi-driver-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#storage-aws-efs-csi-driver-include-assignment-create-api)
 
 * [Deploying an app that uses AWS EFS storage](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#sat-storage-efs-deploy)
 
@@ -1813,6 +1825,12 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-config-create-api)
 
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-assignment-create-api)
+
 * [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azure-csi-app-deploy)
 
 * [Removing Azure Disk storage from your apps](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azure-disk-rm)
@@ -1846,6 +1864,12 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-config-create-api)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#storage-azurefile-csi-driver-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#storage-azurefile-csi-driver-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#storage-azurefile-csi-driver-include-assignment-create-api)
 
 * [Deploying an app that uses your Azure File storage](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#storage-azure-file-csi-app-deploy)
 
@@ -1884,6 +1908,12 @@ subcollection: satellite
 
 * [Deploying an app that uses Google Compute Engine persistent disk](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#sat-storage-gcp-deploy-app)
 
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-create-api)
+
 * [Removing Compute Engine storage from your apps](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-rm-apps)
 
 * [Removing the Compute Engine storage configuration from your cluster](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-template-rm)
@@ -1919,6 +1949,12 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-config-create-api)
 
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-ibm-system-storage-block-csi-driver-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-ibm-system-storage-block-csi-driver-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-ibm-system-storage-block-csi-driver-include-assignment-create-api)
+
 * [Deploying an app that uses {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-block-csi-app-deploy)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-parameter-reference)
@@ -1936,6 +1972,12 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-api)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-include-assignment-create-api)
 
 * [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#config-storage-cos-app)
 
@@ -1960,6 +2002,12 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-config-create-api)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#storage-ibm-vpc-block-csi-driver-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#storage-ibm-vpc-block-csi-driver-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#storage-ibm-vpc-block-csi-driver-include-assignment-create-api)
 
 * [Deploying an app that uses {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#sat-storage-vpc-deploy-app)
 
@@ -2004,6 +2052,12 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-config-create-api)
 
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#storage-netapp-ontap-nas-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#storage-netapp-ontap-nas-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#storage-netapp-ontap-nas-include-assignment-create-api)
+
 * [Deploying an app that uses ONTAP-NAS storage](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#sat-storage-netapp-nas-deploy-2104)
 
 * [Removing NetApp ONTAP-NAS storage from your apps](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-nas-rm-2104)
@@ -2031,6 +2085,12 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-config-create-api)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-san#storage-netapp-ontap-san-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-san#storage-netapp-ontap-san-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-san#storage-netapp-ontap-san-include-assignment-create-api)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-parameter-reference)
 
@@ -2060,6 +2120,12 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-config-create-api)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-assignment-create-api)
 
 * [Deploying an app that uses local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#deploy-app-local-block)
 
@@ -2099,6 +2165,12 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-config-create-api)
 
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-assignment-create-api)
+
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-storage-local-volume-file#deploy-app-local-file)
 
 * [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-storage-local-volume-file#sat-storage-remove-local-file-config)
@@ -2137,6 +2209,12 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-api)
 
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-assignment-create-api)
+
 * [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-deploy)
 
 * [Scaling your ODF configuration by attaching raw disks](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-scale-odf-local-disk)
@@ -2172,6 +2250,12 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-api)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-assignment-create-api)
 
     * [Optional: Adding additional worker nodes to your ODF configuration](/docs/satellite?topic=satellite-storage-odf-remote#add-worker-nodes-odf-remote)
 
@@ -2209,6 +2293,12 @@ subcollection: satellite
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-cli)
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-config-create-api)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#storage-vsphere-csi-driver-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#storage-vsphere-csi-driver-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#storage-vsphere-csi-driver-include-assignment-create-api)
 
 * [Deploying an app that uses VMware](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#sat-storage-vmware-deploy-app)
 
@@ -2647,57 +2737,6 @@ subcollection: satellite
 * [Version 1.0](/docs/satellite?topic=satellite-satellite-cli-changelog#10)
 
 
-## IBM Cloud Satellite Infrastructure Service
-{: #sitemap_ibm_cloud_satellite_infrastructure_service}
-
-
-[Getting started with {{site.data.keyword.satellitelong_notm}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service#infrastructure-service)
-
-* [Requesting a {{site.data.keyword.satelliteshort}} Infrastructure Service environment](/docs/satellite?topic=satellite-infrastructure-service#satis-getting-started)
-
-* [Stage 1: Planning your setup](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-plan)
-
-* [Stage 2: Installing your on-prem infrastructure](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-install)
-
-* [Stage 3: Transitioning to daily operations](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-ops)
-
-    * [Application workloads](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-ops-app)
-
-    * [Usage and capacity planning](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-ops-capacity)
-
-    * [Support requests](/docs/satellite?topic=satellite-infrastructure-service#satis-gs-ops-support)
-
-[Understanding {{site.data.keyword.satelliteshort}} Infrastructure Service components](/docs/satellite?topic=satellite-satis-infra-about#satis-infra-about)
-
-* [Compute resources](/docs/satellite?topic=satellite-satis-infra-about#satis-infra-compute)
-
-* [Required license for operating system and container platform](/docs/satellite?topic=satellite-satis-infra-about#satis-infra-license)
-
-* [Storage for persistent volumes](/docs/satellite?topic=satellite-satis-infra-about#satis-infra-storage)
-
-* [Networking](/docs/satellite?topic=satellite-satis-infra-about#satis-infra-network)
-
-    * [Required connections to your LAN](/docs/satellite?topic=satellite-satis-infra-about#satis-infra-network-lan)
-
-    * [IP addresses](/docs/satellite?topic=satellite-satis-infra-about#satis-infra-network-ip)
-
-    * [Distance between compute domains](/docs/satellite?topic=satellite-satis-infra-about#satis-infra-racks-distance)
-
-* [Power and cooling](/docs/satellite?topic=satellite-satis-infra-about#satis-infra-env)
-
-[Responsibilities with {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-satis-responsibilities#satis-responsibilities)
-
-* [Incident and operations management](/docs/satellite?topic=satellite-satis-responsibilities#satis-incident-and-ops)
-
-* [Change management](/docs/satellite?topic=satellite-satis-responsibilities#satis-change-management)
-
-* [Identity and access management](/docs/satellite?topic=satellite-satis-responsibilities#satis-iam-responsibilities)
-
-* [Security and regulation compliance](/docs/satellite?topic=satellite-satis-responsibilities#satis-security-compliance)
-
-* [Disaster recovery](/docs/satellite?topic=satellite-satis-responsibilities#satis-disaster-recovery)
-
-
 ## Limitations, default settings, and usage requirements
 {: #sitemap_limitations,_default_settings,_and_usage_requirements}
 
@@ -2744,7 +2783,9 @@ subcollection: satellite
 
 * [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-sat-pricing#pricing-services)
 
-* [Can I estimate my costs?](/docs/satellite?topic=satellite-sat-pricing#sat-pricing-include-cost-estimate)
+* [Can I estimate my costs?](/docs/satellite?topic=satellite-sat-pricing#pricing-include-cost-estimate)
+
+* [Can I view and control my current usage?](/docs/satellite?topic=satellite-sat-pricing#pricing-include-usage)
 
 
 ## Your responsibilities
@@ -2852,6 +2893,8 @@ subcollection: satellite
 * [What am I charged for when I use {{site.data.keyword.satellitelong_notm}}?](/docs/satellite?topic=satellite-faqs#pricing)
 
 * [Can I estimate my costs?](/docs/satellite?topic=satellite-faqs#faqs-include-cost-estimate)
+
+* [Can I view and control my current usage?](/docs/satellite?topic=satellite-faqs#faqs-include-usage)
 
 * [What are the terms of the service level agreement?](/docs/satellite?topic=satellite-faqs#sla)
 
