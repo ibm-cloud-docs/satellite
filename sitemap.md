@@ -220,10 +220,6 @@ subcollection: satellite
 
 * [September 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep22)
 
-    * [28 September 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep2822)
-
-        * Setting up log forwarding
-
     * [23 September 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep2322)
 
         * Added support for remote workers
