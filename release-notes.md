@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-02-10"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -131,12 +131,8 @@ CLI change log
 ## September 2022
 {: #satellite-sep22}
 
-### 28 September 2022
-{: #satellite-sep2822}
-{: release-note}
 
-Setting up log forwarding
-:   You can now set up log forwarding for Kubernetes audit logs or for worker node `syslogs` files. See [Setting up log forwarding](/docs/satellite?topic=satellite-location-forward-logs).
+
 
 ### 23 September 2022
 {: #satellite-sep2322}
@@ -910,7 +906,7 @@ Exposing apps in {{site.data.keyword.satelliteshort}} clusters
 :   Added an overview of the [options for exposing apps in Satellite clusters](/docs/openshift?topic=openshift-sat-expose-apps) and steps for setting up each option.
 
 {{site.data.keyword.satelliteshort}} Infrastructure Service
-:   [Order managed infrastructure from {{site.data.keyword.IBM_notm}}](/docs/satellite?topic=satellite-infrastructure-service) to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
+:   Order managed infrastructure from {{site.data.keyword.IBM_notm}} to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
   
 New! Template for fast provisioning on AWS
 :   [Automate your {{site.data.keyword.satelliteshort}} location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template), available for AWS infrastructure.

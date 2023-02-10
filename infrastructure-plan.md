@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-10"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -18,9 +18,6 @@ subcollection: satellite
 
 Plan how to set up your infrastructure environment to use with {{site.data.keyword.satellitelong}}. Your infrastructure environment can be an on-premises data center, in a public cloud provider, or on compatible edge devices anywhere.
 {: shortdesc}
-
-Don't have your own infrastructure or want a managed solution? [Check out {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
-{: tip}
 
 Your {{site.data.keyword.satelliteshort}} location starts with your infrastructure, such as a public cloud provider or on-prem. Your infrastructure provides the basis for the hosts and zones that you use to build out your {{site.data.keyword.satelliteshort}} location. For more details on the different responsibilities for your infrastructure and {{site.data.keyword.satelliteshort}} resources, see [Your responsibilities](/docs/satellite?topic=satellite-responsibilities).
 {: shortdesc}
@@ -38,7 +35,7 @@ Before you create your location, choose your infrastructure provider, infrastruc
 Choose the infrastructure provider that you want to use to create a {{site.data.keyword.satelliteshort}} location.
 
 On-premises
-:    You can use a data center with existing infrastructure, or order infrastructure from {{site.data.keyword.IBM_notm}} with [{{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service). You might not even have a data center, but rather an edge location that meets the minimum hardware requirements, such as three racks at one of your company's local sites.
+:    You can use a data center with existing infrastructure. You might not even have a data center, but rather an edge location that meets the minimum hardware requirements, such as three racks at one of your company's local sites.
     
 Supported bare metal servers
 :    You can use a supported bare metal server as a host attached to your [SatLoc]}, including {{site.data.keyword.baremetal_long}} for Classic. For more information, see [Bare Metal Server requirements](/docs/satellite?topic=satellite-assign-bare-metal#setup-bare-metal).
@@ -109,12 +106,6 @@ For on-prem infrastructure, you can manually setup a {{site.data.keyword.satelli
 {: #create-options-cloud}
 
 For cloud provider infrastructure, you can follow provider-specific guides. For more information, see [Creating a Satellite location](/docs/satellite?topic=satellite-locations).
-{: shortdesc}
-
-### {{site.data.keyword.IBM_notm}}-managed infrastructure
-{: #create-options-sat-is}
-
-{{site.data.keyword.IBM_notm}} can send infrastructure and set up a {{site.data.keyword.satelliteshort}} location for you. See [Getting started with {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
 {: shortdesc}
 
 ## Providing {{site.data.keyword.satelliteshort}} with credentials to your cloud provider
