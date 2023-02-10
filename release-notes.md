@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-09"
+lastupdated: "2023-02-10"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -906,7 +906,7 @@ Exposing apps in {{site.data.keyword.satelliteshort}} clusters
 :   Added an overview of the [options for exposing apps in Satellite clusters](/docs/openshift?topic=openshift-sat-expose-apps) and steps for setting up each option.
 
 {{site.data.keyword.satelliteshort}} Infrastructure Service
-:   [Order managed infrastructure from {{site.data.keyword.IBM_notm}}](/docs/satellite?topic=satellite-infrastructure-service) to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
+:   Order managed infrastructure from {{site.data.keyword.IBM_notm}} to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
   
 New! Template for fast provisioning on AWS
 :   [Automate your {{site.data.keyword.satelliteshort}} location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template), available for AWS infrastructure.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-10"
 
 keywords: satellite, hybrid, multicloud, location, satellite location, create location
 
@@ -50,10 +50,6 @@ The {{site.data.keyword.bpshort}} template helped with the initial creation, but
 
 You can create {{site.data.keyword.satelliteshort}} locations for each place that you like, such as your company's ports in the north and south of the country. A {{site.data.keyword.satelliteshort}} location represents a data center that you fill with your own infrastructure resources to run your own workloads and {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
-
-Don't have your own infrastructure or want a managed solution? [Check out {{site.data.keyword.satelliteshort}} Infrastructure Service](/docs/satellite?topic=satellite-infrastructure-service).
-{: tip}
-
 
 ### Manually creating locations from the console
 {: #location-create-console}

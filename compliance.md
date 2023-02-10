@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-02-10"
 
 keywords: satellite, hybrid, multicloud, satellite security, satellite compliance
 
@@ -130,7 +130,7 @@ See the [{{site.data.keyword.satelliteshort}} FAQ for compliance standards](/doc
 ### Which areas of security compliance am I responsible for?
 {: #compliance-responsibilities}
 
-For an overview of who is responsible for particular cloud resources when using {{site.data.keyword.satellitelong_notm}}, see the table in [Overview of shared responsibilities](/docs/satellite?topic=satellite-responsibilities#overview-by-resource). For a detailed description of areas in which responsibilities are shared between you and {{site.data.keyword.IBM_notm}} for security and compliance, see [Tasks for shared responsibilities: Security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance). If you use {{site.data.keyword.satelliteshort}} Infrastructure Service as your infrastructure provider, [review the {{site.data.keyword.satelliteshort}} Infrastructure Service responsibilities instead](/docs/satellite?topic=satellite-satis-responsibilities).
+For an overview of who is responsible for particular cloud resources when using {{site.data.keyword.satellitelong_notm}}, see the table in [Overview of shared responsibilities](/docs/satellite?topic=satellite-responsibilities#overview-by-resource). For a detailed description of areas in which responsibilities are shared between you and {{site.data.keyword.IBM_notm}} for security and compliance, see [Tasks for shared responsibilities: Security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance). 
 
 ### What are the security compliance responsibilities of {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services?
 {: #compliance-services}

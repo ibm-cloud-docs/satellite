@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-09"
+lastupdated: "2023-02-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1022,8 +1022,6 @@ subcollection: satellite
     * [On-premises infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-onprem)
 
     * [Cloud provider infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud)
-
-    * [{{site.data.keyword.IBM_notm}}-managed infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-sat-is)
 
 * [Providing {{site.data.keyword.satelliteshort}} with credentials to your cloud provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-credentials)
 
