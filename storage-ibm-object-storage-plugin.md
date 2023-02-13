@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-02-13"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -11,7 +11,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.cos_full_notm}} CSI Driver 
+# {{site.data.keyword.cos_full_notm}} Driver 
 {: #storage-ibm-object-storage-plugin}
 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
