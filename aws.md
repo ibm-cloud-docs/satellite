@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-02-14"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -55,13 +55,13 @@ The following resources are created by the template in your AWS cloud account.
 - 1 virtual private cloud (VPC).
 - 1 subnet for each of the 3 zones in the region.
 - 1 security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
-- 6 RHEL 7 EC2 instances spread evenly across zones, or the number of hosts that you specified.
+- 6 RHEL 8 EC2 instances, spread evenly across zones, or the number of hosts that you specified.
 
 The following resources are created by the template in your {{site.data.keyword.cloud_notm}} account.
 
 - 1 {{site.data.keyword.satelliteshort}} location.
 - 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
-- 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location, unassigned, and available to use for services like a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the number of hosts equals the number that you specified minus the 3 that are assigned to the control plane.
+- 3 {{site.data.keyword.satelliteshort}} hosts that represent the EC2 instances in AWS, attached to the location, unassigned, and available to use for services such as a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, If you added more than 6 hosts, the additional hosts are unassigned and available for use in the control plane or by services. 
 
 If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-location-host).
 {: note}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-14"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -38,13 +38,13 @@ On-premises
 :    You can use a data center with existing infrastructure. You might not even have a data center, but rather an edge location that meets the minimum hardware requirements, such as three racks at one of your company's local sites.
     
 Supported bare metal servers
-:    You can use a supported bare metal server as a host attached to your [SatLoc]}, including {{site.data.keyword.baremetal_long}} for Classic. For more information, see [Bare Metal Server requirements](/docs/satellite?topic=satellite-assign-bare-metal#setup-bare-metal).
+:    You can use a supported bare metal server as a host attached to your {{site.data.keyword.satelliteshort}} location, including {{site.data.keyword.baremetal_long}} for Classic. For more information, see [Bare Metal Server requirements](/docs/satellite?topic=satellite-assign-bare-metal#setup-bare-metal).
 
 Non-{{site.data.keyword.IBM_notm}} cloud provider
 :    You can use a cloud provider of your choice, such as [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba).
 
 {{site.data.keyword.cloud_notm}}
-:    You can use [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) for testing purposes. While you can use other {{site.data.keyword.cloud_notm}} virtual servers, such as {{site.data.keyword.vsi_is_short}} for test environments, the only supported {{site.data.keyword.cloud_notm}} infrastructure to use in {{site.data.keyword.satellitelong}} for production environments is {{site.data.keyword.baremetal_long}} for Classic that is running Red Hat CoreOS.
+:    You can use [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) for testing purposes. While you can use other {{site.data.keyword.cloud_notm}} virtual servers, such as {{site.data.keyword.vsi_is_short}} for test environments, the only supported {{site.data.keyword.cloud_notm}} infrastructure to use in {{site.data.keyword.satelliteshort}} for production environments is {{site.data.keyword.baremetal_long}} for Classic that is running Red Hat CoreOS.
 
 ### Plan for a multizone location
 {: #infra-plan-multizone}
