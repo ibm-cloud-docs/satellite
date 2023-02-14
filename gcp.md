@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-02-14"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -52,6 +52,20 @@ Note that the GCP VPC created by the Quick Start template does not have port 22 
     
 
 Well done, your {{site.data.keyword.satelliteshort}} location is creating! You can review the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to see when your location is in a **Normal** state and ready to use.
+
+The following resources are created by the template in the resource group of your GCP cloud subscription.
+
+- 1 virtual network that spans the region.
+- 1 network security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
+- 1 virtual machine running RHEL 8 for each host that you specified, spread evenly across the region. By default, 6 virtual machines are created.
+- 1 network interface for each virtual machine.
+- 1 disk for each virtual machine.
+
+The following resources are created by the template in your {{site.data.keyword.cloud_notm}} account.
+
+- 1 {{site.data.keyword.satelliteshort}} location.
+- 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in GCP, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
+- 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in GCP, attached to the location, unassigned, and available to use for services, such as a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the additional hosts are unassigned and available for use in the control plane or by services. 
 
 If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-location-host).
 {: note}

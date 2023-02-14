@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-02-14"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -55,7 +55,7 @@ The template creates a resource group of your Azure cloud subscription and then 
 
 - 1 virtual network that spans the region.
 - 1 network security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
-- 1 virtual machine running RHEL 7 for each host that you specified, spread evenly across the region. By default, 6 virtual machines are created.
+- 1 virtual machine running RHEL 8 for each host that you specified, spread evenly across the region. By default, 6 virtual machines are created.
 - 1 network interface for each virtual machine.
 - 1 disk for each virtual machine.
 
@@ -63,7 +63,7 @@ The template creates the following resources in your {{site.data.keyword.cloud_n
 
 - 1 {{site.data.keyword.satelliteshort}} location.
 - 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
-- 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location, unassigned, and available to use for services like a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the number of hosts equals the number that you specified minus the 3 that are assigned to the control plane.
+- 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location, unassigned, and available to use for services such as a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the additional hosts are unassigned and available for use in the control plane or by services. 
 
 If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-location-host).
 {: note}
