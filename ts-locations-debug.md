@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-03"
+  years: 2020, 2023
+lastupdated: "2023-02-15"
 
-keywords: satellite, hybrid, multicloud
+keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
 subcollection: satellite
 content-type: troubleshoot
@@ -121,7 +121,7 @@ Location message
 Steps to resolve
 :    Your location has no available hosts for {{site.data.keyword.satelliteshort}} to automatically assign to the location control plane, and might be reaching capacity limits. You can choose from the following options.
 
-- [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) more hosts to the location control plane. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
+- [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-setup-control-plane) more hosts to the location control plane. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
 - [Remove](/docs/satellite?topic=satellite-host-remove) and [reattach the host](/docs/satellite?topic=satellite-attach-hosts).
 
 ## R0011, R0040, R0041: Issues with the control plane hosts
@@ -146,7 +146,7 @@ Location message
 :    R0012: The location control plane does not have hosts in all 3 zones. Add available hosts to your location for the control plane.
 
 Steps to resolve
-:    If you just assigned hosts to the control plane, wait a while for the bootstrapping process to complete. Otherwise, [assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones for the location itself, to run control plane operations.
+:    If you just assigned hosts to the control plane, wait a while for the bootstrapping process to complete. Otherwise, [assign](/docs/satellite?topic=satellite-setup-control-plane) at least one host to each of the three zones for the location itself, to run control plane operations.
      - If you did assign at least 2 hosts in each of the 3 zones, check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.
      - If you did assign at least 2 hosts per zone, make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system and networking configuration.
      - If you did assign at least 2 hosts in each of the 3 zones but the bootstrapping process failed, [log in to debug the host machines](/docs/satellite?topic=satellite-ts-hosts-login).
@@ -159,7 +159,7 @@ Location message
 :    R0013: A zone in the location control plane is unavailable. Attach more hosts to the location and assign the hosts to the zone, or replace unhealthy hosts.
 
 Steps to resolve
-:    [Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least 2 hosts to each of the 3 zones for the location itself, to run control plane operations. If you did assign at least 2 hosts in each of the 3 zones, follow these steps.
+:    [Assign](/docs/satellite?topic=satellite-setup-control-plane) at least 2 hosts to each of the 3 zones for the location itself, to run control plane operations. If you did assign at least 2 hosts in each of the 3 zones, follow these steps.
 
 :    1. Check the CPU and memory size of the hosts. The hosts must have at least 4 vCPU and 16 memory.
      2. Make sure that the [hosts meet the minimum requirements](/docs/satellite?topic=satellite-host-reqs) to use in {{site.data.keyword.satelliteshort}}, such as operating system and networking configuration.
@@ -220,7 +220,7 @@ Steps to resolve
 :    1. List the hosts that are assigned to the control plane. by running `ibmcloud sat host ls --location <location_name_or_ID> | grep infrastructure`.
      2. Check the details of the hosts by running `ibmcloud sat host get --host <host_ID> --location <location_name_or_ID>`.
      3. In the infrastructure provider for the host, check the disk space of your host machine. Make sure that each host meets the [minimum requirements](/docs/satellite?topic=satellite-reqs-host-storage). [Remove](/docs/satellite?topic=satellite-host-remove) and [reattach the host](/docs/satellite?topic=satellite-attach-hosts).
-     4. If debugging and reattaching the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+     4. If debugging and reattaching the host do not resolve the issue, the location control plane needs more compute resources to continue running. [Assign more hosts to the location control plane](/docs/satellite?topic=satellite-setup-control-plane).
 
 ## R0033, R0034, R0035: Control plane capacity issues
 {: #R0033}
@@ -235,7 +235,7 @@ Steps to resolve
          - Across all hosts in a zone, at least 3 CPU total must be available.
          - Across all hosts in a zone, at least 4 GB memory total must be available.
      2. [Attach 3 more hosts to the location](/docs/satellite?topic=satellite-attach-hosts).
-     3. [Assign](/docs/satellite?topic=satellite-locations#setup-control-plane) at least one host to each of the three zones to add capacity for control plane operations. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
+     3. [Assign](/docs/satellite?topic=satellite-setup-control-plane) at least one host to each of the three zones to add capacity for control plane operations. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
 
 ## R0036: Location subdomain traffic routing
 {: #R0036}

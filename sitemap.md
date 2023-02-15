@@ -1330,9 +1330,9 @@ subcollection: satellite
 
 [Setting up the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane#setup-control-plane)
 
-    * [Setting up the control plane from the console](/docs/satellite?topic=satellite-setup-control-plane#control-plane-ui)
+* [Setting up the control plane from the console](/docs/satellite?topic=satellite-setup-control-plane#control-plane-ui)
 
-    * [Setting up the control plane from the CLI](/docs/satellite?topic=satellite-setup-control-plane#control-plane-cli)
+* [Setting up the control plane from the CLI](/docs/satellite?topic=satellite-setup-control-plane#control-plane-cli)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-setup-control-plane#location-control-plane-next)
 
@@ -1359,7 +1359,7 @@ subcollection: satellite
 
 * [Attaching on-premises RHEL hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts)
 
-* [Attaching on-premises RHCOS hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts)
+* [Attaching on-premises Red Hat CoreOS hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts)
 
 [Assigning hosts to worker pools](/docs/satellite?topic=satellite-assigning-hosts#assigning-hosts)
 

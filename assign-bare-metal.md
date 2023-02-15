@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-02-15"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -37,7 +37,7 @@ The following steps use {{site.data.keyword.baremetal_long}} for Classic. Howeve
 {: #assign-bare-metal-prereq}
 
 - Create a RHCOS-enabled location. To check whether your location is RHCOS-enabled, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location). If your location is not enabled, [create a new one with RHCOS](/docs/satellite?topic=satellite-locations).
-- Attach hosts to your location and set up your [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+- Attach hosts to your location and set up your [location control plane](/docs/satellite?topic=satellite-setup-control-plane).
 - Find and record your bare metal host name. For this {{site.data.keyword.baremetal_short_sing}}, this information is found in the **Name** field on the **Overview** page for your specific {{site.data.keyword.baremetal_short}}.
 - Find your bare metal server network information. For this {{site.data.keyword.baremetal_short_sing}}, this information is found in the **Network details** section on the **Overview** page. Record the CIDR and gateway information for the public and private interfaces for your system.
 - Create or identify an {{site.data.keyword.cos_full_notm}} bucket to store your ignition file.

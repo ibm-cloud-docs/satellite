@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-11-18"
+  years: 2022, 2023
+lastupdated: "2023-02-15"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -168,7 +168,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
     
 5. Reboot your host to pick up this change.
 6. [Attach or reattach](/docs/satellite?topic=satellite-attach-hosts) your host to the location.
-7. Assign the host back to the [control plane](/docs/satellite?topic=satellite-locations#setup-control-plane) or to [the service](/docs/satellite?topic=satellite-assigning-hosts) where it was previously assigned.
+7. Assign the host back to the [control plane](/docs/satellite?topic=satellite-setup-control-plane) or to [the service](/docs/satellite?topic=satellite-assigning-hosts) where it was previously assigned.
 8. Repeat these steps for each host.
     
 The value for `REDHHAT_PACKAGE_MIRROR_LOCATION` depends on the location of the Red Hat package mirrors. The `REDHHAT_PACKAGE_MIRROR_LOCATION` can be a wild-card if multiple mirrors are used. For more information, see [How to apply a system wide proxy](https://access.redhat.com/solutions/1351253){: external}.
