@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-02-16"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -23,6 +23,9 @@ To use AWS EBS storage for your apps, the {{site.data.keyword.satelliteshort}} h
 {: important}
 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+{: important}
+
+You cannot customize your storage classes because {{site.data.keyword.satelliteshort}} Config overwrites your changes. 
 {: important}
 
 ## Prerequisites for using AWS EBS
