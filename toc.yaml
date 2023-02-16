@@ -73,6 +73,7 @@ toc:
               - gcp.md
               - azure.md
               - ibm.md
+              - setup-control-plane.md
               - location-sizing.md
         - topicgroup:
             label: Managing hosts and locations

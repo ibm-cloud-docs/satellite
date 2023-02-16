@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-14"
+lastupdated: "2023-02-16"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1248,6 +1248,8 @@ subcollection: satellite
 
 [Creating a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#locations)
 
+* [Create location overview](/docs/satellite?topic=satellite-locations#satloc-prereq)
+
 * [Automating your location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template)
 
 * [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual)
@@ -1257,12 +1259,6 @@ subcollection: satellite
     * [Creating locations from the CLI](/docs/satellite?topic=satellite-locations#locations-create-cli)
 
     * [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location)
-
-* [Setting up the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane)
-
-    * [Setting up the control plane from the console](/docs/satellite?topic=satellite-locations#control-plane-ui)
-
-    * [Setting up the control plane from the CLI](/docs/satellite?topic=satellite-locations#control-plane-cli)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-locations#location-control-plane-next)
 
@@ -1332,6 +1328,14 @@ subcollection: satellite
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
 
+[Setting up the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane#setup-control-plane)
+
+* [Setting up the control plane from the console](/docs/satellite?topic=satellite-setup-control-plane#control-plane-ui)
+
+* [Setting up the control plane from the CLI](/docs/satellite?topic=satellite-setup-control-plane#control-plane-cli)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-setup-control-plane#location-control-plane-next)
+
 [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing#location-sizing)
 
 * [How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?](/docs/satellite?topic=satellite-location-sizing#control-plane-attach-capacity)
@@ -1355,7 +1359,7 @@ subcollection: satellite
 
 * [Attaching on-premises RHEL hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts)
 
-* [Attaching on-premises RHCOS hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts)
+* [Attaching on-premises Red Hat CoreOS hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts)
 
 [Assigning hosts to worker pools](/docs/satellite?topic=satellite-assigning-hosts#assigning-hosts)
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-11-22"
+  years: 2022, 2023
+lastupdated: "2023-02-15"
 
 keywords: satellite, multicloud, location, locations, control plane, remote workers
 
@@ -81,7 +81,7 @@ Follow these steps to set up your {{site.data.keyword.satelliteshort}} location.
 3. Provision the infrastructure hosts inside {{site.data.keyword.cloud_notm}} with the attach script. See [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}} manually](/docs/satellite?topic=satellite-ibm#ibm-host-attach).
 4. Provision the edge compute hosts for the {{site.data.keyword.satelliteshort}} clusters with the same attach script.
 5. Confirm all your hosts from all providers are available and unassigned in the {{site.data.keyword.satelliteshort}} location.
-6. Assign {{site.data.keyword.satelliteshort}} location control plane hosts. Use your hosts from {{site.data.keyword.cloud_notm}} according to [Setting up the Satellite location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+6. Assign {{site.data.keyword.satelliteshort}} location control plane hosts. Use your hosts from {{site.data.keyword.cloud_notm}} according to [Setting up the Satellite location control plane](/docs/satellite?topic=satellite-setup-control-plane).
 7. Confirm that the {{site.data.keyword.satelliteshort}} location control plane is in a healthy state.
 8. Create a new {{site.data.keyword.redhat_openshift_notm}} cluster on your {{site.data.keyword.satelliteshort}} location by using your remaining compute hosts on the edge. See [Creating {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-satellite-clusters).
 

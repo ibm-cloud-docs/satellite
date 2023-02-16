@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-05"
+  years: 2022, 2023
+lastupdated: "2023-02-15"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -35,7 +35,7 @@ Supported host operating systems
 {: #virt-bare-metal-prereq}
 
 - Create a RHCOS-enabled location. To check whether your location is RHCOS-enabled, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location). If your location is not enabled, [create a new one with RHCOS](/docs/satellite?topic=satellite-locations).
-- Attach hosts to your location and set up your [location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane).
+- Attach hosts to your location and set up your [location control plane](/docs/satellite?topic=satellite-setup-control-plane).
 - Find and record your bare metal host name. 
 - Find your bare metal server network information. Record the CIDR and gateway information for the public and private interfaces for your system.
 - If you want to use {{site.data.keyword.cos_full_notm}} to store your ignition file, create or identify a bucket.

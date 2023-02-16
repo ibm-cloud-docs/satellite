@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-13"
+  years: 2020, 2023
+lastupdated: "2023-02-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -48,7 +48,7 @@ Additionally, if you [set up your {{site.data.keyword.satelliteshort}} location 
 | {{site.data.keyword.redhat_openshift_notm}} clusters are in an unhealthy state. | Resolve certain health issues with {{site.data.keyword.redhat_openshift_notm}} clusters. |
 | Default monitoring tools like Prometheus do not work. | Send alerts to your {{site.data.keyword.la_full_notm}} instance and return a status message with further troubleshooting information. |
 | Ingress subdomain registration fails. | Alert {{site.data.keyword.IBM_notm}} engineers to troubleshoot the issues further and return a status message with further troubleshooting information. |
-{: caption="{{site.data.keyword.IBM_notm}} monitoring actions to address certain scenarios." caption-side="bottom"}
+{: caption="IBM monitoring actions to address certain scenarios." caption-side="bottom"}
 
 
 ## Viewing location, host, and cluster health
@@ -72,11 +72,11 @@ You can review the host health from the **Locations** table in the [{{site.data.
 | `completing` | {{site.data.keyword.satelliteshort}} is setting up the location control plane components on the hosts that you assigned to the control plane. Check back in a little while.|
 | `critical` | The {{site.data.keyword.satelliteshort}} location control plane needs your attention. Check the status and message for more information, and try [debugging your location control plane](/docs/satellite?topic=satellite-ts-locations-control-plane).|
 | `failed` | {{site.data.keyword.satelliteshort}} did not successfully resolve issues in your location. For more information, see the status message. |
-| `host required` | The {{site.data.keyword.satelliteshort}} location is created, but you must [assign hosts to the location control plane](/docs/satellite?topic=satellite-locations#setup-control-plane). Assign hosts in multiples of 3, such as 6, 9, or 12. |
+| `host required` | The {{site.data.keyword.satelliteshort}} location is created, but you must [assign hosts to the location control plane](/docs/satellite?topic=satellite-setup-control-plane). Assign hosts in multiples of 3, such as 6, 9, or 12. |
 | `normal` | The {{site.data.keyword.satelliteshort}} location is ready to use. |
 | `provisioning` | The control plane for the {{site.data.keyword.satelliteshort}} is provisioning. You cannot assign hosts to other {{site.data.keyword.satelliteshort}} resources, such as clusters, in the location until the control plane is ready.|
 | `resolving` | {{site.data.keyword.satelliteshort}} is trying to resolve issues for you, such as by assigning available hosts to the control plane to relieve capacity issues. For more information, see the status message. |
-{: caption="Location health states." caption-side="bottom"}
+{: caption="Location health states" caption-side="bottom"}
 
 
 ### Viewing host health
