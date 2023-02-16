@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-02-16"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -95,7 +95,7 @@ Follow the steps to create a {{site.data.keyword.satelliteshort}} storage config
 
     1. Get the `storagecluster` that you deployed and verify that the phase is `Ready`.
         ```sh
-        oc get storagecluster -n openshift-storage
+        oc get ocscluster -n openshift-storage
         ```
         {: pre}
 
