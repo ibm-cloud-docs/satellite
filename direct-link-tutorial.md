@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-02-17"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -24,7 +24,7 @@ completion-time: 2h
 {: toc-services="satellite, containers, dl"}
 {: toc-completion-time="2h"}
 
-Use a secure {{site.data.keyword.dl_full}} connection for {{site.data.keyword.satelliteshort}} Link communications between your services running in a {{site.data.keyword.satellitelong}} Location and {{site.data.keyword.cloud}}.
+Use a secure {{site.data.keyword.dl_full}} connection for {{site.data.keyword.satelliteshort}} Link communications between your services running in an {{site.data.keyword.satellitelong}} Location and {{site.data.keyword.cloud}}.
 {: shortdesc}
 
 In this tutorial, you set up your {{site.data.keyword.satelliteshort}} Link to use a {{site.data.keyword.dl_short}} connection. The Link connector at your Location sends traffic over the {{site.data.keyword.dl_short}} connection to a Relay that you create in your  {{site.data.keyword.cloud_notm}} account. This Relay proxies the traffic to Link tunnel server's IP address in the {{site.data.keyword.cloud_notm}} private network.
@@ -411,7 +411,7 @@ In the following example, we create a private-only VPC cluster and use the priva
 {: #dl-provision-coreos-hosts}
 {: step}
 
-Now the relay is ready and incoming traffic to the relay can be proxied to the tunnel server internal Ingress. {{site.data.keyword.dl_short}} agent must be deployed on the hosts in order to have the connection to the tunnel server established internally through the {{site.data.keyword.dl_short}}.
+Now the relay is ready and incoming traffic to the relay can be proxied to the tunnel server internal Ingress. {{site.data.keyword.dl_short}} agent must be deployed on the hosts to establish the connection to the tunnel server internally through the {{site.data.keyword.dl_short}}.
 {: shortdesc}
 
 1. Download the Location attach script. Make sure you download the `.ign` file by selecting **Red Hat CoreOS** in the console when you download or using `ibmcloud sat host attach --location LOCATION --operating-system RHCOS` in the CLI.

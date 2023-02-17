@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-02-17"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -676,7 +676,7 @@ Use the console to remove a storage configuration.
 | Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | 
 | Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
 | Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to false. | false | 
 {: caption="Table 4. 4.10 parameter reference" caption-side="bottom"}
 
 
@@ -688,7 +688,7 @@ Use the console to remove a storage configuration.
 | Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | 
 | Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
 | Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to false. | false | 
 {: caption="Table 5. 4.11 parameter reference" caption-side="bottom"}
 
 

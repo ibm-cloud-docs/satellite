@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-08"
+  years: 2022, 2023
+lastupdated: "2023-02-17"
 
 keywords: satellite, hybrid, multicloud, endpoint, link, endpoint secure
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 I can't connect to my {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoint. I was able to before, what changed?  
 {: tsSymptoms}
 
-By default, your {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoints are protected. In order to access them, you must configure a source list for your endpoint.
+By default, your {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoints are protected. To access your link endpoints, you must configure a source list for your endpoint.
 {: tsCauses}
 
 To configure a source list for your endpoint, follow these steps.
