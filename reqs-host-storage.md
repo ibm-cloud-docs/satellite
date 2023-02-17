@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-02-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,11 +20,8 @@ Review the following storage requirements for hosts assigned to the location con
 {: shortdesc}
 
 Hosts must have a boot device with an `ext4` file system and enough space to boot the host and run the operating system. While a minimum of 10 GiB is required, 25 GiB is recommended. In addition, `/tmp` and `/usr` must each have at least 1.5 GiB available. Hosts can't have a device mounted to `/var/data`. The `/boot` partition must be a minimum of 1 GiB in size.
-{: note}
-
 
 ![Host storage](/images/sat_architecture_host_storage.svg){: caption="Figure 1. Satellite host storage requirements" caption-side="bottom"}
-
 
 Boot device (Operating system)
 :   Hosts must have a boot device with an `ext4` file system and enough space to boot the host and run the operating system. While a minimum of 10 GiB is required, 25 GiB is recommended. 
