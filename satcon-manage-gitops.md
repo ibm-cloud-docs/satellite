@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-16"
+  years: 2022, 2023
+lastupdated: "2023-02-20"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite config gitops, satellite configuration gitops, satellite gitops
 
@@ -96,11 +96,11 @@ To create your custom configuration, use the {{site.data.keyword.satelliteshort}
     | Git ref type | Select the type of Git ref to use for this {{site.data.keyword.satelliteshort}} subscription. Valid values are `Branch`, `Tag`, `Commit`, and `Release`. |
     | Branch/Tag/Commit/Release name | Enter the Git ref to use for this {{site.data.keyword.satelliteshort}} subscription. |
     | Path | Enter the path to the files in the remote repository to use for this {{site.data.keyword.satelliteshort}} subscription. |
-    | Subscription name | Enter a name for your {{site.data.keyword.satelliteshort}} subscription. The branch/tag/commit/release name is prefilled as the subcription name by default. |
+    | Subscription name | Enter a name for your {{site.data.keyword.satelliteshort}} subscription. The branch/tag/commit/release name is auto filled as the subscription name by default. |
     | Cluster group | Enter the name of the cluster group where you want to deploy your Kubernetes resources. | 
     {: caption="Subscription screen fields" caption-side="bottom"}
 
-1. On the **Summary** page, confirm that the displayed information is corect and then click **Complete**.
+1. On the **Summary** page, confirm that the displayed information is corrfect and then click **Complete**.
 
 
 ### Creating {{site.data.keyword.satelliteshort}} configurations from the CLI 
@@ -168,12 +168,12 @@ To create the configuration:
 ## Updating your Satellite configuration
 {: #satcon-manage-update-gitops}
 
-To update your configuration, you can make updates on subsription level. The actions you need to take depends on what kind of updates you want to make.
+To update your configuration, you can make updates on subscription level. The actions you need to take depends on what kind of updates you want to make.
 
 - To deploy a new version of your application to the same cluster group, update the files in the GitHub or GitLab repository defined in your configuration and commit the changes. 
 - To change any properties of your source repository, you can edit the subscription and update the fields with new details.
-- To associate multiple repositories with the same configuration, add a new source repository, or add new Git ref details for the same source repository, you can create new subscriptions. Click **Create subscription** and fill in the details of your new subscription. If you want to create a new subscription that only has a few details changed, you can use the **Duplicate** option to prefill all the fields with properties of the existing subscription and modify the fields that you want to chagne.
-- To delete a subcription, use the **Remove** option.
+- To associate multiple repositories with the same configuration, add a new source repository, or add new Git ref details for the same source repository, you can create new subscriptions. Click **Create subscription** and fill in the details of your new subscription. If you want to create a new subscription that only has a few details changed, you can use the **Duplicate** option to auto fill all the fields with properties of the existing subscription and modify the fields that you want to change.
+- To delete a subscription, use the **Remove** option.
 
 ### Updating your subscription from the console
 {: #satcon-manage-update-console-gitops}

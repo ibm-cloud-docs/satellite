@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-16"
+  years: 2020, 2023
+lastupdated: "2023-02-20"
 
 keywords: satellite, hybrid, multicloud, use case, scenarios, benefits
 
@@ -152,7 +152,7 @@ Pain points:
 ### Establishing a service platform for point of sale (POS) or multi function printer (MFP) systems 
 {: #use-case-manufacture3}
 
-When providing platform-based management services and data services to store POS systems nationwide as well as MFPs in corporate offices, it can be difficult to integrate with these customer systems. Using {{site.data.keyword.satelliteshort}} enables platform services to be delivered to a site that meets customer requirements. 
+When providing platform-based management services and data services to store POS systems nationwide as well as MFP systems in corporate offices, it can be difficult to integrate with these customer systems. Using {{site.data.keyword.satelliteshort}} enables platform services to be delivered to a site that meets customer requirements. 
 {: shortdesc}
 
 Pain points:

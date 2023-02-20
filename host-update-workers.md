@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-10"
+  years: 2020, 2023
+lastupdated: "2023-02-20"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch, host, update, host update
 
@@ -18,16 +18,13 @@ subcollection: satellite
 {{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned as worker nodes to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services such as clusters. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates. Note that service clusters, which are the underlying platform for all {{site.data.keyword.cloud_notm}} services are created by services such as {{site.data.keyword.codeengineshort}} or {{site.data.keyword.cos_full_notm}} and are maintained by {{site.data.keyword.IBM_notm}}.
 {: shortdesc}
 
-**What happens to my apps during an update?**
+What happens to my apps during an update?
+:    If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
 
-If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
-
-**How can I control how many worker nodes go down at a time during an update or reload?**
-
-If you need all your worker nodes to be up and running, consider [attaching](/docs/satellite?topic=satellite-attach-hosts) and [assigning](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) additional hosts
+How can I control how many worker nodes go down at a time during an update or reload?
+:    If you need all your worker nodes to be up and running, consider [attaching](/docs/satellite?topic=satellite-attach-hosts) and [assigning](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) additional hosts
 to your service. You can add additional hosts to your location temporarily and then remove them when the update is complete.
-
-In addition, you can create a Kubernetes ConfigMap that specifies the maximum number of worker nodes that can be unavailable at a time, such as during an update. Worker nodes are identified by the worker node labels. You can use IBM-provided labels or custom labels that you added to the worker node.
+:    In addition, you can create a Kubernetes ConfigMap that specifies the maximum number of worker nodes that can be unavailable at a time, such as during an update. Worker nodes are identified by the worker node labels. You can use IBM-provided labels or custom labels that you added to the worker node.
 
 ## Checking if a version update is available for worker node hosts
 {: #host-update-workers-check}
@@ -282,7 +279,7 @@ You can roll out updates to all your worker node hosts with a ConfigMap. Specify
 ## Applying version updates to worker nodes by replacing hosts
 {: #host-update-workers-minor}
 
-Hosts that are attached to a location do not update automatically. To apply a version update, you can first attach and assign new hosts to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) and then remove the old hosts. You can also apply [minor and patch version updates inplace](#host-update-workers-inplace).
+Hosts that are attached to a location do not update automatically. To apply a version update, you can first attach and assign new hosts to your [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) and then remove the old hosts. You can also apply [minor and patch version updates in place](#host-update-workers-inplace).
 {: shortdesc}
 
 

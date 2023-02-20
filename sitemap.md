@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -200,7 +200,7 @@ subcollection: satellite
 
 * [October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct22)
 
-    * [27 Octover 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct2722)
+    * [27 October 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct2722)
 
         * New! Beta support for the {{site.data.keyword.cos_full_notm}} CSI driver template
 
@@ -979,7 +979,7 @@ subcollection: satellite
 
 * [Installing the virtualization operator](/docs/satellite?topic=satellite-virtualization-location#virt-operator-install)
 
-* [Setting up the virtctl CLI](/docs/satellite?topic=satellite-virtualization-location#virt-tools)
+* [Setting up the `virtctl` CLI](/docs/satellite?topic=satellite-virtualization-location#virt-tools)
 
 * [Creating a data volume for your virtual machine](/docs/satellite?topic=satellite-virtualization-location#virt-vm-storage)
 
@@ -3081,7 +3081,7 @@ subcollection: satellite
 
 * [Get the storage class details](/docs/satellite?topic=satellite-storage-must-gather#storage-gather-sc-details)
 
-* [Get the details of your persisent volume claims](/docs/satellite?topic=satellite-storage-must-gather#storage-gather-pvc-details)
+* [Get the details of your persistent volume claims](/docs/satellite?topic=satellite-storage-must-gather#storage-gather-pvc-details)
 
 * [Get the pod logs for your app](/docs/satellite?topic=satellite-storage-must-gather#storage-get-pod-logs)
 

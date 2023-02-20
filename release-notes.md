@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-02-20"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -95,7 +95,7 @@ Disconnected usage
 {: #satellite-oct22}
 
 
-### 27 Octover 2022
+### 27 October 2022
 {: #satellite-oct2722}
 {: release-note}
 
