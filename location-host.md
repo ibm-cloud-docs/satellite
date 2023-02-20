@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-02-20"
 
 keywords: satellite, hybrid, multicloud, location, host, location control plane
 
@@ -45,7 +45,7 @@ To set up a {{site.data.keyword.satelliteshort}} location, you must first create
     ![Create your location control plane.](/images/4-assign-hosts-location.svg "Create your location control plane"){: caption="Figure 5. Creating your location control plane" caption-side="bottom"}
 
 5. Wait for the host to enter a `normal` state. When you assign a host to the control plane, the host is bootstrapped to become a worker node in your {{site.data.keyword.satelliteshort}} location control plan. This bootstrap process consists of three phases, and all phases must complete. First, required images are downloaded to the host from {{site.data.keyword.registrylong_notm}}. Then, the host is rebooted to apply the configuration. Finally, software packages are set up on the host. After the host is successfully bootstrapped, it enters a `normal` health state with an `assigned` status. You can no longer log in to the underlying machine with SSH to troubleshoot any issues. Instead, see [Debugging host health](/docs/satellite?topic=satellite-ts-hosts-debug).
-    ![Satellite Location in a normal staten.](/images/5-location-normal-state.svg "Satellite Location in a normal staten"){: caption="Figure 6. Satellite Location in a normal state" caption-side="bottom"}
+    ![Satellite Location in a normal state.](/images/5-location-normal-state.svg "Satellite Location in a normal staten"){: caption="Figure 6. Satellite Location in a normal state" caption-side="bottom"}
 
 6. After you set up your {{site.data.keyword.satelliteshort}} location control plane, you can assign hosts to [Satellite-enabled IBM Cloud service](/docs/satellite?topic=satellite-managed-services) such as clusters or databases.
     ![Assigning hosts to your services.](/images/6-assign-hosts-to-services.svg "Assigning hosts to your Satellite-enabled services"){: caption="Figure 7. Assigning hosts to your Satellite-enabled services" caption-side="bottom"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-17"
+lastupdated: "2023-02-20"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -173,7 +173,7 @@ In the following example, we create a private-only VPC cluster and use the priva
     ```
     {: screen}
 
-    In this scenario, if you do nslookup to the Ingress Subdomain, it resolves to IBM service private ip (`10.0.0.0/8`). Adding routes to make the Ingress IP address (`10.0.0.0/8`) reachable from customer on-prem is not covered in this document. You are responsible for facilitating routing between on-prem and the Realy Ingress on {{site.data.keyword.cloud_notm}}.
+    In this scenario, if you run the **`nslookup`** command to the Ingress Subdomain, it resolves to IBM service private IP address (`10.0.0.0/8`). Adding routes to make the Ingress IP address (`10.0.0.0/8`) reachable from customer on-prem is not covered in this document. You are responsible for facilitating routing between on-prem and the Realy Ingress on {{site.data.keyword.cloud_notm}}.
     {: note}
 
 1. Get the secrete CRN.
@@ -422,7 +422,7 @@ Now the relay is ready and incoming traffic to the relay can be proxied to the t
     ```
     {: pre}     
   
-1. Use the token in the following curl command. Depending on your location or region, the URL is different. The following example command uses `us-south`. But if your location is in Frankfrut, replace `us-south` with `eu-de`.
+1. Use the token in the following curl command. Depending on your location or region, the URL is different. The following example command uses `us-south`. But if your location is in Frankfurt, replace `us-south` with `eu-de`.
     ```sh
     curl -X GET \
     'https://api.us-south.link.satellite.cloud.ibm.com/v1/linkagentdownloadurl/LOCATION-ID?linktunnelhostname=INGRESS-SUBDOMAIN' \

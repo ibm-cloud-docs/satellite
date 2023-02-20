@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-02-20"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -371,7 +371,7 @@ Download the ignition file to your bare metal host, then run it to attach the ba
     ```
     {: pre}
 
-    The following example shows the commmand to install on`/dev/sda` with an ignition file called `./ignition.ign`.
+    The following example shows the command to install on`/dev/sda` with an ignition file called `./ignition.ign`.
     
     ```sh
     sudo coreos-installer install /dev/sda --ignition-file ./ignition.ign

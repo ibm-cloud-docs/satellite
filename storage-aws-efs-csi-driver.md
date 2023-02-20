@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-02-20"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -186,7 +186,7 @@ You can't add storage classes to {{site.data.keyword.satelliteshort}} storage co
     :   Specify the BasePath. Base path is a path on the file system under which access point root directory is created.
     
     `directoryPerms`
-    :   Specifydirectorypermissions. Default: `700`.
+    :   Specify directory permissions. Default: `700`.
     
     `fileSystemId`
     :   Required. Specify the EFS file system ID.

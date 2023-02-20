@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-24"
+lastupdated: "2023-02-20"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference, change log, satellite version
 
@@ -34,8 +34,8 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 | 1.0.487 | 24 Jan 2023  | Adds `host-link-agent-endpoint` flag to host attach script. |
 | 1.0.480 | 14 Dec 2022  | Updates `ibmcloud sat config create` and `ibmcloud sat subscription create` commands to support new options for GitOps. |
 | 1.0.454 | 3 Oct 2022  | Adds the `--operating-system` option for the cluster create commands. |
-| 1.0.452 | 21 Sep 2022  | Updates the help text in various languages. |
-| 1.0.446 | 12 Sep 2022  | Adds `--pod-network-interface-selection` option to location create flow. |
+| 1.0.452 | 21 Sept 2022  | Updates the help text in various languages. |
+| 1.0.446 | 12 Sept 2022  | Adds `--pod-network-interface-selection` option to location create flow. |
 | 1.0.433 | 5 Aug 2022  | Updates the help text in various languages. |
 | 1.0.426 | 6 Jul 2022  | 1. Adds the `ibmcloud sat key` commands, allowing you to view and manage your {{site.data.keyword.satelliteshort}} Config keys.  /n 2. Adds the `ibmcloud sat subscription identity set` command, which updates a Satellite subscription to use your identity to manage resources.  |
 | 1.0.422 |  20 Jun 2022  | 1. Makes the `template-version` option optional for the `ibmcloud sat storage config create` command.  /n 2. Updates the output of the `ibmcloud sat storage template ls` and `ibmcloud sat storage template get` commands to specify if a version is deprecated or the current default template version.  |

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-15"
+  years: 2020, 2023
+lastupdated: "2023-02-20"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -45,7 +45,7 @@ Store your Kubernetes resource definitions in {{site.data.keyword.satelliteshort
 A Direct Upload configuration involves the follow high-level steps.  
 
 1. Create a {{site.data.keyword.satelliteshort}} configuration and create versions by uploading Kubernetes resource files. Each Kubernetes resource file that you upload represents a version within the configuration.
-2. Create a subcription to associate a version with one or more cluster groups. 
+2. Create a subscription to associate a version with one or more cluster groups. 
 3. The version of the Kubernetes resource file that is specified in the subscription is automatically deployed to the clusters that belong to the selected cluster group.  
 
 ## Key concepts for {{site.data.keyword.satelliteshort}} Config

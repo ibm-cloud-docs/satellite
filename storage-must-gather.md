@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-02-20"
 
 keywords: satellite storage, satellite config, debug, troubleshoot, must gather
 
@@ -128,7 +128,7 @@ Note that the namespaces and pod names are template specific. Te verify these de
     ```
     {: pre}
 
-## Get the details of your persisent volume claims
+## Get the details of your persistent volume claims
 {: #storage-gather-pvc-details}
 
 1. If you deployed apps that use storage, list your PVCs.

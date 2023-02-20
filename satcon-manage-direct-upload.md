@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-16"
+  years: 2020, 2023
+lastupdated: "2023-02-20"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -49,7 +49,7 @@ To create your custom configuration, use the {{site.data.keyword.satelliteshort}
 
 1. On the **Subscription** page, specify your subscription name, subscription version, and cluster group to deploy to.
 
-1. On the **Summary** page, confirm that the displayed information is corect and then click **Complete**.
+1. On the **Summary** page, confirm that the displayed information is correct and then click **Complete**.
 
 
 

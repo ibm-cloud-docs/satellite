@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-02-20"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -67,7 +67,7 @@ The template is currently in beta. Do not use it for production workloads.
 
     Resource Group ID
     :   The ID of the resource group where your VPC is located. To retrieve this value, run the `ibmcloud is vpc VPC-ID` command and note the Resource group field.
-1. On the **Secrets** tab, enter your IAM API Key and click **Next**. Note, there is currently an issue with autofill in some browsers. If you don't see the IAM API Key field on the **Secrets** tab, try clearing the search field or a different web browser. 
+1. On the **Secrets** tab, enter your IAM API Key and click **Next**. Note, there is currently an issue with auto fill in some browsers. If you don't see the IAM API Key field on the **Secrets** tab, try clearing the search field or by using a different web browser. 
 1. On the **Storage Classes** tab, review the storage classes that are deployed to your cluster. These storage classes are available later when you deploy OpenShift Data Foundation. 
 1. On the **Assign to service** tab, select your cluster and click **Complete**. 
 
