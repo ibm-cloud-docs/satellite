@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-02-22"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -74,7 +74,7 @@ Your proxy must be set up with TCP tunneling. While specific steps might vary de
 2. Make sure the listener port on the HTTP proxy is the same as on {{site.data.keyword.cloud_notm}}.
 3. Update the `/etc/hosts` on all your {{site.data.keyword.satelliteshort}} hosts to include the location public service endpoints forward traffic to the proxy, rather than to {{site.data.keyword.cloud_notm}} endpoints.
 
-Your configuration might vary by provider. Consider setting up your proxy outside of the {{site.data.keyword.satelliteshort}} environment to ensure that the configuration works for your infrastructure. Then, configure your proxy in the {{site.data.keyword.satelliteshort}} environment. For more information about setting up and configuring your HTTP proxy, see the blog [Proxying In Cluster Kube-APIServer Traffic in IBM Cloud Satellite](https://lisowski0925.medium.com/proxying-in-cluster-kube-apiserver-traffic-in-ibm-cloud-satellite-162ee07d6e0d){: external}.
+Your configuration might vary by provider. Consider setting up your proxy outside of the {{site.data.keyword.satelliteshort}} environment to ensure that the configuration works for your infrastructure. Then, configure your proxy in the {{site.data.keyword.satelliteshort}} environment. For more information about setting up and configuring your HTTP proxy, see the blog [`Proxying In Cluster Kube-APIServer Traffic in IBM Cloud Satellite`](https://lisowski0925.medium.com/proxying-in-cluster-kube-apiserver-traffic-in-ibm-cloud-satellite-162ee07d6e0d){: external}.
 {: tip}
 
 ## Requesting access to the allowlist

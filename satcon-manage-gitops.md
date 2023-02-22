@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-22"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite config gitops, satellite configuration gitops, satellite gitops
 
@@ -100,7 +100,7 @@ To create your custom configuration, use the {{site.data.keyword.satelliteshort}
     | Cluster group | Enter the name of the cluster group where you want to deploy your Kubernetes resources. | 
     {: caption="Subscription screen fields" caption-side="bottom"}
 
-1. On the **Summary** page, confirm that the displayed information is corrfect and then click **Complete**.
+1. On the **Summary** page, confirm that the displayed information is correct and then click **Complete**.
 
 
 ### Creating {{site.data.keyword.satelliteshort}} configurations from the CLI 
