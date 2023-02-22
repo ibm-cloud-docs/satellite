@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-22"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3033,7 +3033,7 @@ subcollection: satellite
 
 * [Endpoints to verify connectivity by {{site.data.keyword.cloud_notm}} multizone metro](/docs/satellite?topic=satellite-assign-fails#endpoints-to-verify)
 
-[Why does host assign fail with a `crio` error?](/docs/satellite?topic=satellite-host-assign-file-system#host-assign-file-system)
+[Why does host assign fail with a `CRI-O` error?](/docs/satellite?topic=satellite-host-assign-file-system#host-assign-file-system)
 
 [Why can't I reuse a host in a different {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-sat-host-reattach-fail#sat-host-reattach-fail)
 

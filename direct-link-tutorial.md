@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-02-22"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -173,7 +173,7 @@ In the following example, we create a private-only VPC cluster and use the priva
     ```
     {: screen}
 
-    In this scenario, if you run the **`nslookup`** command to the Ingress Subdomain, it resolves to IBM service private IP address (`10.0.0.0/8`). Adding routes to make the Ingress IP address (`10.0.0.0/8`) reachable from customer on-prem is not covered in this document. You are responsible for facilitating routing between on-prem and the Realy Ingress on {{site.data.keyword.cloud_notm}}.
+    In this scenario, if you run the **`nslookup`** command to the Ingress Subdomain, it resolves to IBM service private IP address (`10.0.0.0/8`). Adding routes to make the Ingress IP address (`10.0.0.0/8`) reachable from customer on-prem is not covered in this document. You are responsible for facilitating routing between on-prem and the Ingress relay on {{site.data.keyword.cloud_notm}}.
     {: note}
 
 1. Get the secrete CRN.
