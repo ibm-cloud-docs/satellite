@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-02-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -32,10 +32,12 @@ Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}
 | North America | Canada | Toronto | `tor`| `ca-tor`|`tor-1`  \n `tor-4`  \n `tor-5`|
 | North America | United States | Dallas | `dal`| `us-south`|`us-south-1`  \n `us-south-2`  \n `us-south-3`|
 | North America | United States | Washington DC | `wdc`| `us-east`|`us-east-1`  \n `us-east-2`  \n `us-east-3`|
-| Europe | Germany | Frankfurt | `fra` | `eu-de` | `eu-de-1`  \n `eu-de-2`  \n `eu-de-3`|
+| Europe | Germany | Frankfurt `†`   | `fra` | `eu-de` | `eu-de-1`  \n `eu-de-2`  \n `eu-de-3`|
 | Europe | United Kingdom | London | `lon` | `eu-gb`|`eu-gb-1`  \n `eu-gb-2`  \n `eu-gb-3`|
 | South America | Brazil | Sao Paulo | `sao` | `br-sao` | `br-sao-1`  \n `br-sao-2`  \n `br-sao-3` |
 {: caption="Supported {{site.data.keyword.cloud_notm}} locations to manage your {{site.data.keyword.satelliteshort}} location." caption-side="bottom"}
+
+`†` EU Cloud Certified Locations are managed from the Frankfurt region. To order these, ensure you choose `fra` as the value for the `--managed-from` option.
 
 ## About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}
 {: #understand-supported-regions}
@@ -63,6 +65,25 @@ You can choose any of the supported {{site.data.keyword.cloud_notm}} region to m
 {: #supported-regions-limitations}
 
 Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. Hosts can be in your own on-premises data center, public cloud providers, or edge computing devices if they meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}.
+
+### How can I deploy in an EU Cloud Certified Location?
+{: #eu-certified}
+
+EU Cloud Certified Locations are managed from the Frankfurt region. To order these, ensure you choose `fra` as the value for the `--managed-from` option.
+
+Example command:
+
+```sh
+ibmcloud sat location create --name LOCATION_NAME --coreos-enabled --managed-from fra
+```
+{: pre}
+
+or 
+
+```sh
+ibmcloud sat location create --name LOCATION_NAME --managed-from fra
+```
+{: pre}
 
 ### What about latency requirements?
 {: #supported-regions-latency}

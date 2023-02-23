@@ -2776,6 +2776,8 @@ subcollection: satellite
 
     * [Is there a limitation where my compute hosts can reside?](/docs/satellite?topic=satellite-sat-regions#supported-regions-limitations)
 
+    * [How can I deploy in an EU Cloud Certified Location?](/docs/satellite?topic=satellite-sat-regions#eu-certified)
+
     * [What about latency requirements?](/docs/satellite?topic=satellite-sat-regions#supported-regions-latency)
 
 
