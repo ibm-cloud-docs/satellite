@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-02-23"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -116,6 +116,13 @@ Before you begin, review the [parameter reference](#netapp-ontap-nas-parameter-r
     ```
     {: pre}
 
+    Example command to create a version 22.10 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-nas --template-version 22.10 --param "managementLIF=MANAGEMENTLIF"  --param "dataLIF=DATALIF"  --param "svm=SVM"  --param "username=USERNAME"  --param "password=PASSWORD"  --param "exportPolicy=EXPORTPOLICY"  --param "limitVolumeSize=LIMITVOLUMESIZE"  --param "limitAggregateUsage=LIMITAGGREGATEUSAGE"  --param "nfsMountOptions=NFSMOUNTOPTIONS" 
+    ```
+    {: pre}
+
 
 1. Customize the command based on the settings that you want to use.
 
@@ -147,6 +154,13 @@ Before you begin, review the [parameter reference](#netapp-ontap-nas-parameter-r
 
     ```sh
     curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-ontap-nas\", \"storage-template-version\": \"22.04\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MANAGEMENTLIF\", { \"entry.name\": \"DATALIF\", { \"entry.name\": \"SVM\", { \"entry.name\": \"EXPORTPOLICY\", { \"entry.name\": \"LIMITVOLUMESIZE\", { \"entry.name\": \"LIMITAGGREGATEUSAGE\", { \"entry.name\": \"NFSMOUNTOPTIONS\",\"user-secret-parameters\": { \"entry.name\": \"USERNAME\",{ \"entry.name\": \"PASSWORD\",
+    ```
+    {: pre}
+
+    Example request to create a version 22.10 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-ontap-nas\", \"storage-template-version\": \"22.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MANAGEMENTLIF\", { \"entry.name\": \"DATALIF\", { \"entry.name\": \"SVM\", { \"entry.name\": \"EXPORTPOLICY\", { \"entry.name\": \"LIMITVOLUMESIZE\", { \"entry.name\": \"LIMITAGGREGATEUSAGE\", { \"entry.name\": \"NFSMOUNTOPTIONS\",\"user-secret-parameters\": { \"entry.name\": \"USERNAME\",{ \"entry.name\": \"PASSWORD\",
     ```
     {: pre}
 
@@ -454,6 +468,23 @@ Use the console to remove a storage assignment and storage configuration.
 | Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is above this percentage. | true | 
 | NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | true | 
 {: caption="Table 2. 22.04 parameter reference" caption-side="bottom"}
+
+
+### 22.10 parameter reference
+{: #22.10-parameter-reference}
+
+| Display name | CLI option | Type | Description | Required? |
+| --- | --- | --- | --- | --- |
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | 
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | 
+| SVM | `svm` | Config | The name of the SVM. | true | 
+| User Name | `username` | Secret | The username to connect to the storage device. | true | 
+| User Password | `password` | Secret | The password to connect to the storage device. | true | 
+| Export Policy | `exportPolicy` | Config | The NAS option for the NFS export policy. | true | 
+| Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | true | 
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is above this percentage. | true | 
+| NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | true | 
+{: caption="Table 3. 22.10 parameter reference" caption-side="bottom"}
 
 
 

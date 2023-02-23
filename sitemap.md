@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-02-23"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2070,6 +2070,8 @@ subcollection: satellite
 
     * [22.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#22.04-parameter-reference)
 
+    * [22.10 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#22.10-parameter-reference)
+
 * [Storage class reference for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-sc-reference-nas-2104)
 
 * [Getting help and support for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#sat-nas-2104-support)
@@ -2095,6 +2097,8 @@ subcollection: satellite
     * [21.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#21.04-parameter-reference)
 
     * [22.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#22.04-parameter-reference)
+
+    * [22.10 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#22.10-parameter-reference)
 
 * [Storage class reference for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-sc-reference-san-2104)
 
@@ -2135,8 +2139,6 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-parameter-reference)
 
-    * [4.7 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#4.7-parameter-reference)
-
     * [4.8 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#4.8-parameter-reference)
 
     * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#4.9-parameter-reference)
@@ -2144,6 +2146,8 @@ subcollection: satellite
     * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#4.10-parameter-reference)
 
     * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#4.11-parameter-reference)
+
+    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#4.12-parameter-reference)
 
 * [Storage class reference for local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#local-block-sc-ref)
 
@@ -2179,8 +2183,6 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-parameter-reference)
 
-    * [4.7 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#4.7-parameter-reference)
-
     * [4.8 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#4.8-parameter-reference)
 
     * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#4.9-parameter-reference)
@@ -2188,6 +2190,8 @@ subcollection: satellite
     * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#4.10-parameter-reference)
 
     * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#4.11-parameter-reference)
+
+    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#4.12-parameter-reference)
 
 * [Storage class reference for local file storage](/docs/satellite?topic=satellite-storage-local-volume-file#local-file-sc-reference)
 
@@ -2235,6 +2239,8 @@ subcollection: satellite
 
     * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#4.10-parameter-reference)
 
+    * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#4.11-parameter-reference)
+
 * [Storage class reference for ODF](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-sc-ref)
 
 [OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote)
@@ -2274,6 +2280,8 @@ subcollection: satellite
     * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#4.9-parameter-reference)
 
     * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#4.10-parameter-reference)
+
+    * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#4.11-parameter-reference)
 
 * [Storage class reference for OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-sc-ref)
 
@@ -2767,6 +2775,8 @@ subcollection: satellite
     * [What {{site.data.keyword.cloud_notm}} multizone metro do I choose for my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-sat-regions#supported-regions-what-multizone-metro)
 
     * [Is there a limitation where my compute hosts can reside?](/docs/satellite?topic=satellite-sat-regions#supported-regions-limitations)
+
+    * [How can I deploy in an EU Cloud Certified Location?](/docs/satellite?topic=satellite-sat-regions#eu-certified)
 
     * [What about latency requirements?](/docs/satellite?topic=satellite-sat-regions#supported-regions-latency)
 
