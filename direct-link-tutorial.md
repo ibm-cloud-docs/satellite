@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-02-24"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -103,7 +103,8 @@ High level steps include:
 ## Prerequisites
 {: #dl-prereq}
 
-- {{site.data.keyword.dl_short}} is available between target {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} specific VPC or classic. Refer to appendix for sample steps performed to configure {{site.data.keyword.dl_short}} between AWS Location and {{site.data.keyword.cloud_notm}}.
+- You must have a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location. If you don't have one already, follow the instructions in [Creating a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location](#dl-create-coreos-location) to create it.
+- {{site.data.keyword.dl_short}} is available between target {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} specific VPC or classic clusters.
 - Ensure that your [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) connection can access the `10.X.X.X/8` IP address range. Review network design to avoid IP conflicts between two ends of {{site.data.keyword.dl_short}}.
 - [Install the {{site.data.keyword.cloud_notm}} CLI and plug-ins](/docs/containers?topic=containers-cs_cli_install#cs_cli_install) and [install the Kubernetes CLI (`kubectl`)](/docs/containers?topic=containers-cs_cli_install#kubectl).
 - Ensure that your {{site.data.keyword.cloud_notm}} account is Virtual Router Function (VRF) enabled to use service endpoints.
@@ -125,6 +126,9 @@ High level steps include:
 ## Creating a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location 
 {: #dl-create-coreos-location}
 {: step}  
+
+You can skip this step if you already have a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location.
+{: note}
 
 Log in to your {{site.data.keyword.cloud_notm}} account that has {{site.data.keyword.dl_short}} and create a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location. For more information, see [Creating a Satellite location](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 {: shortdesc}
