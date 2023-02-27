@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-09-27"
+  years: 2022, 2023
+lastupdated: "2023-02-27"
 
 keywords: satellite, hybrid, multicloud, requirements, outbound, network, allowlist
 
@@ -20,6 +20,8 @@ Review the following outbound connectivity requirements for hosts in all regions
 
 In addition to the following general outbound connectivity requirements, hosts must also meet the regional outbound connectivity requirements for the region your location is in.
 {: important}
+
+
 
 
 To check your host setup, you can use the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
