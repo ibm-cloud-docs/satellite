@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2022
-lastupdated: "2022-12-14"
+  years: 2019, 2023
+lastupdated: "2023-02-28"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -134,7 +134,7 @@ Get a `kubectl` command to run in your cluster to install the {{site.data.keywor
 {: shortdesc}
 
 ```sh
-ibmcloud sat cluster register --name NAME [--location LOCATION] [--silent] [-q]
+ibmcloud sat cluster register --name NAME [--silent] [-q]
 ```
 {: pre}
 
@@ -150,9 +150,6 @@ ibmcloud sat cluster register --name NAME [--location LOCATION] [--silent] [-q]
 
 `--name NAME`
 :    The name of the cluster that you want to register.
-
-`--location LOCATION`
-:    Optional. The name or ID of the Satellite location. 
 
 `--silent`
 :    Optional. Return only the registration command in the CLI output.
