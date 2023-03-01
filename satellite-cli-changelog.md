@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-03-01"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference, change log, satellite version
 
@@ -31,6 +31,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.498 | 1 Mar 2023  | Adds the `--host-link-agent-endpoint` option to the `host attach` command. |
 | 1.0.487 | 24 Jan 2023  | Adds `host-link-agent-endpoint` flag to host attach script. |
 | 1.0.480 | 14 Dec 2022  | Updates `ibmcloud sat config create` and `ibmcloud sat subscription create` commands to support new options for GitOps. |
 | 1.0.454 | 3 Oct 2022  | Adds the `--operating-system` option for the cluster create commands. |

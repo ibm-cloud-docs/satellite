@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-02-28"
+lastupdated: "2023-03-01"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1058,7 +1058,7 @@ Create and download a script that you run on all the compute hosts that you want
 {: shortdesc}
 
 ```sh
-ibmcloud sat host attach --location LOCATION [--host-label "LABEL"]  [--operating-system SYSTEM] [-q] [--reset-key]
+ibmcloud sat host attach --location LOCATION [--host-label "LABEL"] [--host-link-agent-endpoint ENDPOINT] [--operating-system SYSTEM] [-q] [--reset-key]
 ```
 {: pre}
 
@@ -1075,6 +1075,9 @@ ibmcloud sat host attach --location LOCATION [--host-label "LABEL"]  [--operatin
 
 `--host-label LABEL`, `-hl LABEL`
 :    Optional. Enter any labels as a key-value-pair that you want to add to your compute hosts. Labels can help find hosts more easily later.
+
+`--host-link-agent-endpoint ENDPOINT`
+:    Optional. The endpoint that the link agent uses to connect to the link tunnel server.
 
 `--operating-system`
 :    Optional. The operating system for the hosts you want to attach to your location. The available options are `RHEL` and `RHCOS`. For default locations without Red Hat CoreOS enabled, use `RHEL`. If no option is specified, the `RHEL` operating system is applied by default. 
