@@ -21,7 +21,7 @@ After you have attached your hosts to {{site.data.keyword.satellitelong_notm}}, 
 ## Using host auto assignment
 {: #host-autoassign-ov}
 
-By default, available hosts are automatically assigned to worker pools in {{site.data.keyword.satelliteshort}} resources, such as a cluster or a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). The worker pools use host labels to request compute capacity from available {{site.data.keyword.satelliteshort}} hosts with matching labels. You can disable and enable host auto assignment. Your host must be available before it can be assigned.
+Available hosts can be  automatically assigned to worker pools in {{site.data.keyword.satelliteshort}} resources, such as a cluster or a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) when you use host labels. Host labels are used by worker pools to request compute capacity from available {{site.data.keyword.satelliteshort}} hosts with matching labels. You can disable and enable host auto assignment. Your host must be available before it can be assigned.
 {: shortdesc}
 
 Host auto assignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. 
