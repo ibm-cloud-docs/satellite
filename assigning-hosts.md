@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-16"
+lastupdated: "2023-03-02"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -21,13 +21,10 @@ After you have attached your hosts to {{site.data.keyword.satellitelong_notm}}, 
 ## Using host auto assignment
 {: #host-autoassign-ov}
 
-By default, available hosts are automatically assigned to worker pools in {{site.data.keyword.satelliteshort}} resources, such as a cluster or a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). The worker pools use host labels to request compute capacity from available {{site.data.keyword.satelliteshort}} hosts with matching labels. You can disable and enable host auto assignment.
+By default, available hosts are automatically assigned to worker pools in {{site.data.keyword.satelliteshort}} resources, such as a cluster or a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services). The worker pools use host labels to request compute capacity from available {{site.data.keyword.satelliteshort}} hosts with matching labels. You can disable and enable host auto assignment. Your host must be available before it can be assigned.
 {: shortdesc}
 
-When you assign hosts, you are charged a {{site.data.keyword.satelliteshort}} management fee per host vCPU. [Learn more](/docs/satellite?topic=satellite-faqs#pricing).
-{: note}
-
-Host auto assignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. Your cluster must be available before it can be assigned.
+Host auto assignment is not available for the {{site.data.keyword.satelliteshort}} location control plane. 
 {: note}
 
 ### Host labels
@@ -47,7 +44,7 @@ Hosts can have more labels than worker pools
 Matching is exact
 :    Host labels must equal (`=`) each other exactly. Even if the host label is a number, no less than (`<`), greater than (`>`), or other operators are used for matching.
 
-#### Example scenario for host auto assignment
+### Example scenario for host auto assignment
 {: #host-autoassign-example-scenario}
 
 Say that you have a {{site.data.keyword.satelliteshort}} cluster with a `default` worker pool in `us-east-1a` and the following host labels.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-03-02"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -38,6 +38,8 @@ Keep extra hosts available and unassigned in the location
 
 ## Understanding responsibilities for your enterprise and your clients
 {: #responsibilities-tenancy}
+
+Create a responsibility matrix for your enterprise and your clients. The following example shows a responsibility matrix that you can adapt for your purposes. 
 
 | Your enterprise | Client cluster administrator | Client cluster operator | Client developer |
 | --- | --- | --- | --- |
@@ -161,7 +163,7 @@ Be sure to leave some hosts unassigned to use in services such as clusters.
 {: note}
 
 Before you begin
-- [Attach at least 6 hosts (or 3 hosts for demonstration purposes only) to your location](/docs/satellite?topic=satellite-attach-hosts) to use as worker nodes for your {{site.data.keyword.satelliteshort}} control plane. For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
+- [Attach the required number of hosts](/docs/satellite?topic=satellite-attach-hosts) to your location for your {{site.data.keyword.satelliteshort}} control plane. For more information about sizing requirements, see [sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing). For cloud provider-specific configurations, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
 - Verify that your location is in an **Action required** state.
 
 To attach hosts as worker nodes to the control plane,

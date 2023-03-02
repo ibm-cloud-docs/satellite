@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-03-02"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -72,13 +72,25 @@ The following tables provide examples of the number of hosts that the control pl
 - The size of the hosts that run the control plane, **4 vCPU and 16GB RAM** or **16 vCPU and 64GB RAM**, affect the numbers of clusters and worker nodes that are possible in the location. Keep in mind that actual performance requirements depend on many factors, such as the underlying CPU performance and control plane usage by the applications that run in the location.
 - You can assign hosts to the control plane in groups of 3. The table presents examples up to 12 hosts as common configurations to give you an idea of how you might size the control plane for your host and application environment. Note that you can add more than 12 hosts to your control plane in groups of 3. For example you might create a control plane with 18 or 27 hosts.
 
-While you can deploy a cluster to a location with only 3 control plane hosts, upgrading and other management operations might not work with bare minimum setups. Note that for testing purposes or proof of concept, you can use 4 vCPU for Red Hat CoreOS enabled locations.
-{: note}
+## What types of changes can increase my location sizing requirements? 
+{: #types-changes-sizing-increase}
 
+Your sizing requirements can increase depending on the amount of workload that is running in a cluster. The following examples can cause your sizing requirements for your location to increase.
+
+- Large amounts of a dynamic pod workload, such as more storage required to hold all pod, service, or app metadata.
+- Large amounts of configuration information, such as ConfigMaps and Secrets, which can lead to increased memory or CPU of control plane that is holding or processing that information.
+- Aggregated `kube-apiserver` request workload and response sizes of data gathered. For example, if your cluster contains many ConfigMaps and an application queries for the full list of that data, that request can cause the control plane to require more resources.
 
 
 ### Location size for non-Red Hat CoreOS enabled location
 {: #control-plane-how-many-clusters-rhel}
+
+The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a non-Red Hat CoreOS enabled location. These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
+
+While you can deploy a cluster to a location with only 3 control plane hosts, use this type of bare minimum setup for only testing and proof of concept purposes.
+{: note}
+
+
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
@@ -86,7 +98,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 | 6 hosts | Up to 5 clusters  | 20 workers across 5 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
 | 9 hosts |  Up to 8 clusters | 40 workers across 8 clusters, or 140 workers across 3 clusters | 60 workers per cluster |
 | 12 hosts |  Up to 11 clusters | 60 workers across 11 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
-{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="bottom"}
+{: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram}
 {: tab-title="4 vCPU, 16 GB RAM (RHEL)"}
@@ -98,7 +110,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 | 6 hosts | Up to 20 clusters | 200 workers across 20 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
 | 9 hosts  | Up to 26 clusters | 400 workers across 26 clusters, or 850 workers across 3 clusters | 300 workers per cluster |
 | 12 hosts  | Up to 36 clusters | 520 workers across 26 clusters, or 1150 workers across 4 clusters | 300 workers per cluster |
-{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="bottom"}
+{: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #16cpu-64ram}
 {: tab-title="16 vCPU, 64 GB RAM (RHEL)"}
@@ -107,12 +119,19 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 ### Location size for Red Hat CoreOS (RHCOS) enabled location
 {: #control-plane-how-many-clusters-rhcos}
 
+The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a Red Hat CoreOS enabled location. These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
+
+While you can deploy a cluster to a location that uses 3 hosts with 4 vCPU and 16 GB for Red Hat CoreOS enabled locations, use this type of bare minimum setup for only testing and proof of concept purposes.
+{: note}
+
+
+
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
 | 6 hosts | Up to 3 clusters | 20 workers across 3 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
 | 9 hosts | Up to 5 clusters  | 40 workers across 5 clusters, or 140 workers across 3 clusters | 60 workers per cluster |
 | 12 hosts | Up to 8 clusters | 60 workers across 8 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
-{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="bottom"}
+{: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram-coreos}
 {: tab-title="4 vCPU, 16 GB RAM (CoreOS)"}
@@ -124,16 +143,12 @@ While you can deploy a cluster to a location with only 3 control plane hosts, up
 | 6 hosts | Up to 9 clusters | 200 workers across 9 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
 | 9 hosts  | Up to 18 clusters | 400 workers across 18 clusters, or 850 workers across 3 clusters | 300 workers per cluster |
 | 12 hosts  | Up to 26 clusters | 520 workers across 26 clusters, or 1150 workers across 4 clusters | 300 workers per cluster |
-{: caption="Sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in the location." caption-side="bottom"}
+{: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #16cpu-64ram-coreos}
 {: tab-title="16 vCPU, 64 GB RAM (CoreOS)"}
 {: tab-group="loc-sizerhcos"}
 
 
-These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. The following examples can lead to increased sizing requirements for your location.
 
-- Large amount of dynamic pod workload, such as more storage required to hold all pod, service, or app metadata.
-- Large amount of config info (configmaps or secrets), which lead to increased memory or CPU of control plane holding or processing that information.
-- Aggregated `kube-apiserver` request workload and response sizes of data gathered. For example, if you cluster contains many ConfigMaps and an application queries for the full list of that data, it can lead to increased resource usage of the control plane.
-- In such cases, the resources per control plane node need to increase to support these resource intensive clusters.
+
