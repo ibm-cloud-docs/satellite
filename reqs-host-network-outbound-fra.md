@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-03-02"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -57,7 +57,7 @@ You can find these hostnames or IP addresses by running the `dig c-<XX>-ws.eu-de
 {: tip}
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
-* Destination IP addresses: 149.81.188.130, 149.81.188.138, 149.81.188.146, 149.81.188.154, 158.177.109.210, 158.177.169.162, 158.177.179.154, 158.177.75.210, 161.156.38.10, 161.156.38.18, 161.156.38.2, 161.156.38.26  
+* Destination IP addresses: 149.81.188.130, 158.177.75.210, 161.156.38.2  
 * Destination hostnames:  `c-01-ws.eu-de.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
 * Protocol and ports: HTTPS 443
 

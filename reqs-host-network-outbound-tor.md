@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-03"
+lastupdated: "2023-03-02"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -53,7 +53,7 @@ You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.ca-tor.
 {: tip}
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
-* Destination IP addresses: 158.85.124.194, 158.85.79.18, 158.85.86.234, 163.74.67.114, 163.74.70.82, 163.74.70.90, 163.74.70.98, 163.75.70.74, 163.75.70.82, 163.75.70.90, 163.75.70.98, 169.55.154.154 
+* Destination IP addresses: 163.74.67.114, 163.75.70.74, 158.85.79.18
 * Destination hostnames: `c-01-ws.ca-tor.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
 * Protocol and ports: HTTPS 443
 

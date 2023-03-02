@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-03-02"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1350,6 +1350,8 @@ subcollection: satellite
 
 * [How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters)
 
+* [What types of changes can increase my location sizing requirements?](/docs/satellite?topic=satellite-location-sizing#types-changes-sizing-increase)
+
     * [Location size for non-Red Hat CoreOS enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
 
     * [Location size for Red Hat CoreOS (RHCOS) enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos)
@@ -1372,6 +1374,8 @@ subcollection: satellite
 * [Using host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov)
 
     * [Host labels](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-about)
+
+    * [Example scenario for host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-example-scenario)
 
     * [Automatically assigning hosts](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign)
 

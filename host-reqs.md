@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-03-02"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -40,8 +40,8 @@ If you plan on deploying {{site.data.keyword.redhat_openshift_notm}} clusters, m
     - For the latest Red Hat CoreOS version information, see [Red Hat CoreOS mirrors](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}.
 - Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`. Note that support for RHEL 7 hosts in your control plane ends on March 2nd, 2023. [Follow the steps](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8) to migrate your hosts to RHEL 8.
 - Hosts can be physical or virtual machines. However, if your hosts are cloned virtual machines, be sure that each one has a unique network identity. For more information, see [Why aren't my hosts attaching to my location?](/docs/satellite?topic=satellite-host-not-attaching).
-- Red Hat CoreOS hosts must have at least 8 vCPU and 16GB memory and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). Note that for testing purposes or proof of concept, you can use 4 vCPU. 
-- RHEL hosts must have at least 4 vCPU, 16 GB memory, and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
+- Red Hat CoreOS hosts must meet [minimum sizing requirements](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos) and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
+- RHEL hosts must meet [minimum sizing requirements](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel) and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
 
 - RHEL hosts must have the `SELINUX=enforcing` policy set. You can verify that this policy is set by running `sestatus` and looking for `SELinux status: enabled` in the output.
 - If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
