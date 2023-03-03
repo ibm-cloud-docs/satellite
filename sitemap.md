@@ -1073,23 +1073,11 @@ subcollection: satellite
 
 * [Allow hosts to communicate with Red Hat Container Registry](/docs/satellite?topic=satellite-reqs-host-network-outbound#host-out-cr)
 
-[Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#reqs-host-network-outbound-dal)
+[Non Red Hat CoreOS hosts in Dallas (us-south): Requred outbound connectivity](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#reqs-host-network-outbound-dal)
 
-* [Allow control plane worker nodes to communicate with the control plane master](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-cp-dal)
+* [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#common-out-reqs-dal)
 
-* [Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-worker-dal)
-
-* [Allow Link connectors to connect to the Link tunnel server endpoint](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-link-dal)
-
-* [Allow hosts to be attached to a location and assigned to services in the location](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-services-dal)
-
-* [Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-akamai-dal)
-
-* [Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-cr-dal)
-
-* [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-mon-dal)
-
-* [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-la-dal)
+* [Network requirements for Dallas (us-south)](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-non-dal)
 
 [Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#reqs-host-network-outbound-fra)
 
@@ -1234,6 +1222,17 @@ subcollection: satellite
 * [Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-mon-wdc)
 
 * [Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-la-wdc)
+
+
+### Host outbound connectivity for Dallas
+{: #sitemap_host_outbound_connectivity_for_dallas}
+
+
+[Requred outbound connectivity for Red Hat CoreOS hosts in Dallas (`us-south`)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal#reqs-host-rhcos-outbound-dal)
+
+* [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal#common-out-reqs-rhcos-dal)
+
+* [Network requirements for Dallas (us-south)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal#host-out-rhcos-dal)
 
 [Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
 

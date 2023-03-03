@@ -62,6 +62,10 @@ toc:
                     - reqs-host-network-outbound-tok.md
                     - reqs-host-network-outbound-tor.md
                     - reqs-host-network-outbound-wdc.md
+              - topicgroup:
+                  label: Host outbound connectivity for Dallas
+                  topics:
+                    - reqs-host-rhcos-outbound-dal.md
               - host-latency-test.md
               - host-network-check.md
         - topicgroup:
