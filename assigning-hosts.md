@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-03"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -17,6 +17,10 @@ subcollection: satellite
 
 After you have attached your hosts to {{site.data.keyword.satellitelong_notm}}, you can assign them to the control plane or to worker pools.
 {: shortdesc}
+
+The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location).
+
+{: note}
 
 ## Using host auto assignment
 {: #host-autoassign-ov}
