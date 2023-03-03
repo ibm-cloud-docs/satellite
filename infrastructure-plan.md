@@ -77,7 +77,6 @@ To check your host set up, you can use the `satellite-host-check` script. For mo
 Choose your operating system for your hosts. You can choose Red Hat Enterprise Linux or Red Hat CoreOS. If you want to use Red Hat CoreOS for your managed services, you must create and enable a location to use RHCOS hosts. See [Creating a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations). 
 
 The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location).
-
 {: note}
 
 Red Hat Enterprise Linux 7 (RHEL 7)
