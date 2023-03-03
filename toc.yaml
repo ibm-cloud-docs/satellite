@@ -50,22 +50,50 @@ toc:
               - reqs-host-storage.md
               - reqs-host-network.md
               - topicgroup:
-                  label: Host outbound connectivity requirements
-                  topics:
-                    - reqs-host-network-outbound.md
-                    - reqs-host-network-outbound-dal.md
-                    - reqs-host-network-outbound-fra.md
-                    - reqs-host-network-outbound-lon.md
-                    - reqs-host-network-outbound-osa.md
-                    - reqs-host-network-outbound-sao.md
-                    - reqs-host-network-outbound-syd.md
-                    - reqs-host-network-outbound-tok.md
-                    - reqs-host-network-outbound-tor.md
-                    - reqs-host-network-outbound-wdc.md
-              - topicgroup:
                   label: Host outbound connectivity for Dallas
                   topics:
                     - reqs-host-rhcos-outbound-dal.md
+                    - reqs-host-network-outbound-dal.md
+              - topicgroup:
+                  label: Host outbound connectivity for Frankfurt
+                  topics:
+                    - reqs-host-rhcos-outbound-fra.md
+                    - reqs-host-network-outbound-fra.md
+              - topicgroup:
+                  label: Host outbound connectivity for London
+                  topics:
+                    - reqs-host-rhcos-outbound-lon.md
+                    - reqs-host-network-outbound-lon.md
+              - topicgroup:
+                  label: Host outbound connectivity for Osaka
+                  topics:
+                    - reqs-host-rhcos-outbound-osa.md
+                    - reqs-host-network-outbound-osa.md
+              - topicgroup:
+                  label: Host outbound connectivity for Sao Paulo
+                  topics:
+                    - reqs-host-rhcos-outbound-sao.md
+                    - reqs-host-network-outbound-sao.md
+              - topicgroup:
+                  label: Host outbound connectivity for Sydney
+                  topics:
+                    - reqs-host-rhcos-outbound-syd.md
+                    - reqs-host-network-outbound-syd.md
+              - topicgroup:
+                  label: Host outbound connectivity for Tokyo
+                  topics:
+                    - reqs-host-rhcos-outbound-tok.md
+                    - reqs-host-network-outbound-tok.md
+              - topicgroup:
+                  label: Host outbound connectivity for Toronto
+                  topics:
+                    - reqs-host-rhcos-outbound-tor.md
+                    - reqs-host-network-outbound-tor.md
+              - topicgroup:
+                  label: Host outbound connectivity for Washington D.C.
+                  topics:
+                    - reqs-host-rhcos-outbound-wdc.md
+                    - reqs-host-network-outbound-wdc.md
               - host-latency-test.md
               - host-network-check.md
         - topicgroup:

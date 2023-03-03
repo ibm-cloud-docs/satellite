@@ -48,6 +48,8 @@ Allow hosts to connect to the LaunchDarkly service
 Allow hosts to communicate with Red Hat Container Registry
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
+
+
 ## Network requirements for Dallas (us-south)
 {: #host-out-non-dal}
 
@@ -64,10 +66,11 @@ Allow control plane worker nodes to back up control plane etcd data to {{site.da
      * Protocol and ports: HTTPS 443
 
 Allow Link connectors to connect to the Link tunnel server endpoint
-:    You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.us-south.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no more DNS results are returned.
-     * Destination IP addresses: 169.48.139.210, 169.48.188.146, 169.59.239.66, 169.60.2.74, 169.61.140.18, 169.61.156.226, 169.61.31.178, 169.61.38.178, 169.62.221.10
+:    * Destination IP addresses: 169.48.139.210, 169.48.188.146, 169.59.239.66, 169.60.2.74, 169.61.140.18, 169.61.156.226, 169.61.31.178, 169.61.38.178, 169.62.221.10
      * Destination hostnames: `c-01-ws.us-south.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
+     
+:    You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.us-south.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no more DNS results are returned.
 
 Allow hosts to be attached to a location and assigned to services in the location
 :    * Destination IP addresses: 169.46.110.218, 169.47.70.10, 169.62.166.98 
@@ -84,14 +87,17 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
      * Destination hostnames: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`
      * Protocol and ports: HTTPS 443
 
-Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
+Optional: Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
 :    * Destination IP addresses and hostnames: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
      * Protocol and ports: HTTPS 443
 
+:    If you plan to use {{site.data.keyword.loganalysislong_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
+
 Optional: Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
-:    If you plan to use {{site.data.keyword.monitoringshort_notm}} or {{site.data.keyword.loganalysislong_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
-     * Destination IP addresses and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
+:    * Destination IP addresses and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
      * Protocol and ports: HTTPS 443 and 6443
+
+:    If you plan to use {{site.data.keyword.monitoringshort_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
 
 
 
