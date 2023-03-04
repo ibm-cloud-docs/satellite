@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-04"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Non Red Hat CoreOS hosts in Frankfurt (eu-de): Requred outbound connectivity
+# Non Red Hat CoreOS hosts in Frankfurt
 {: #reqs-host-network-outbound-fra}
 
 Review the following network requirements for outbound connectivity for non Red Hat CoreOS (RHCOS) hosts in the Frankfurt (eu-de) region.

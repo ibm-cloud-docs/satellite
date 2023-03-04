@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-04"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Non Red Hat CoreOS hosts in Dallas (us-south): Requred outbound connectivity
+# Non Red Hat CoreOS hosts in Dallas
 {: #reqs-host-network-outbound-dal}
 
 

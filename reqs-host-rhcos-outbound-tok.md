@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-04"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -12,7 +12,7 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Red Hat CoreOS hosts in Tokyo (`jp-tok`): Requred outbound connectivity
+# Red Hat CoreOS hosts in Tokyo
 {: #reqs-host-rhcos-outbound-tok}
 
 Review the following network requirements for outbound connectivity for Red Hat CoreOS (RHCOS) hosts in the Tokyo (`jp-tok`) region.
