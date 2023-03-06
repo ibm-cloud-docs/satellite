@@ -49,6 +49,7 @@ toc:
               - host-reqs.md
               - reqs-host-storage.md
               - reqs-host-network.md
+              - reqs-host-network-outbound.md
               - topicgroup:
                   label: Host outbound connectivity for Dallas
                   topics:

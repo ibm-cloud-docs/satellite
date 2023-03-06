@@ -1056,158 +1056,160 @@ subcollection: satellite
 
 * [Inbound connectivity requirements for {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound)
 
+[Required outbound connectivity for hosts overview](/docs/satellite?topic=satellite-reqs-host-network-outbound#reqs-host-network-outbound)
+
 
 ### Host outbound connectivity for Dallas
 {: #sitemap_host_outbound_connectivity_for_dallas}
 
 
-[Red Hat CoreOS hosts in Dallas](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal#reqs-host-rhcos-outbound-dal)
+[Dallas RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal#reqs-host-rhcos-outbound-dal)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal#common-out-reqs-rhcos-dal)
 
-* [Network requirements for Dallas (us-south)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal#host-out-rhcos-dal)
+* [Network requirements for Dallas (`us-south`)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal#host-out-rhcos-dal)
 
-[Non Red Hat CoreOS hosts in Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#reqs-host-network-outbound-dal)
+[Dallas RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#reqs-host-network-outbound-dal)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#common-out-reqs-dal)
 
-* [Network requirements for Dallas (us-south)](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-non-dal)
+* [Network requirements for Dallas (`us-south`)](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#host-out-non-dal)
 
 
 ### Host outbound connectivity for Frankfurt
 {: #sitemap_host_outbound_connectivity_for_frankfurt}
 
 
-[Red Hat CoreOS hosts in Frankfurt](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra#reqs-host-rhcos-outbound-fra)
+[Frankfurt RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra#reqs-host-rhcos-outbound-fra)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra#common-out-reqs-rhcos-fra)
 
 * [Network requirements for Frankfurt (`eu-de`)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra#host-out-rhcos-fra)
 
-[Non Red Hat CoreOS hosts in Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#reqs-host-network-outbound-fra)
+[Frankfurt RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#reqs-host-network-outbound-fra)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#common-out-reqs-fra)
 
-* [Network requirements for Frankfurt (eu-de)](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#host-out-non-fra)
+* [Network requirements for Frankfurt (`eu-de`)](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#host-out-non-fra)
 
 
 ### Host outbound connectivity for London
 {: #sitemap_host_outbound_connectivity_for_london}
 
 
-[Red Hat CoreOS hosts in London](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-lon#reqs-host-rhcos-outbound-lon)
+[London RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-lon#reqs-host-rhcos-outbound-lon)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-lon#common-out-reqs-rhcos-lon)
 
 * [Network requirements for London (`eu-gb`)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-lon#host-out-rhcos-lon)
 
-[Non Red Hat CoreOS hosts in London](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#reqs-host-network-outbound-lon)
+[London RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#reqs-host-network-outbound-lon)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#common-out-reqs-lon)
 
-* [Network requirements for London (eu-gb)](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-non-lon)
+* [Network requirements for London (`eu-gb`)](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#host-out-non-lon)
 
 
 ### Host outbound connectivity for Osaka
 {: #sitemap_host_outbound_connectivity_for_osaka}
 
 
-[Red Hat CoreOS hosts in Osaka](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa#reqs-host-rhcos-outbound-osa)
+[Osaka RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa#reqs-host-rhcos-outbound-osa)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa#common-out-reqs-rhcos-osa)
 
 * [Network requirements for Osaka (`jp-osa`)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa#host-out-rhcos-osa)
 
-[Non Red Hat CoreOS hosts in Osaka](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#reqs-host-network-outbound-osa)
+[Osaka RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#reqs-host-network-outbound-osa)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#common-out-reqs-osa)
 
-* [Network requirements for Osaka (jp-osa)](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-non-osa)
+* [Network requirements for Osaka (`jp-osa`)](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#host-out-non-osa)
 
 
 ### Host outbound connectivity for Sao Paulo
 {: #sitemap_host_outbound_connectivity_for_sao_paulo}
 
 
-[Red Hat CoreOS hosts in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao#reqs-host-rhcos-outbound-sao)
+[Sao Paulo RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao#reqs-host-rhcos-outbound-sao)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao#common-out-reqs-rhcos-sao)
 
 * [Network requirements for Sao Paulo (`br-sao`)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao#host-out-rhcos-sao)
 
-[Non Red Hat CoreOS hosts in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#reqs-host-network-outbound-sao)
+[Sao Paulo RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#reqs-host-network-outbound-sao)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#common-out-reqs-sao)
 
-* [Network requirements for Sao Paulo (br-sao)](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#host-out-non-sao)
+* [Network requirements for Sao Paulo (`br-sao`)](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#host-out-non-sao)
 
 
 ### Host outbound connectivity for Sydney
 {: #sitemap_host_outbound_connectivity_for_sydney}
 
 
-[Red Hat CoreOS hosts in Sydney](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd#reqs-host-rhcos-outbound-syd)
+[Sydney RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd#reqs-host-rhcos-outbound-syd)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd#common-out-reqs-rhcos-syd)
 
 * [Network requirements for Sydney (`au-syd`)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd#host-out-rhcos-syd)
 
-[Non Red Hat CoreOS hosts in Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#reqs-host-network-outbound-syd)
+[Sydney RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#reqs-host-network-outbound-syd)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#common-out-reqs-syd)
 
-* [Network requirements for Sydney (au-syd)](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#host-out-non-syd)
+* [Network requirements for Sydney (`au-syd`)](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#host-out-non-syd)
 
 
 ### Host outbound connectivity for Tokyo
 {: #sitemap_host_outbound_connectivity_for_tokyo}
 
 
-[Red Hat CoreOS hosts in Tokyo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tok#reqs-host-rhcos-outbound-tok)
+[Tokyo RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tok#reqs-host-rhcos-outbound-tok)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tok#common-out-reqs-rhcos-tok)
 
 * [Network requirements for Tokyo (`jp-tok`)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tok#host-out-rhcos-tok)
 
-[Non Red Hat CoreOS hosts in Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#reqs-host-network-outbound-tok)
+[Tokyo RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#reqs-host-network-outbound-tok)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#common-out-reqs-tok)
 
-* [Network requirements for Tokyo (jp-tok)](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-non-tok)
+* [Network requirements for Tokyo (`jp-tok`)](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#host-out-non-tok)
 
 
 ### Host outbound connectivity for Toronto
 {: #sitemap_host_outbound_connectivity_for_toronto}
 
 
-[Red Hat CoreOS hosts in Toronto](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tor#reqs-host-rhcos-outbound-tor)
+[Toronto RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tor#reqs-host-rhcos-outbound-tor)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tor#common-out-reqs-rhcos-tor)
 
 * [Network requirements for Toronto (`ca-tor`)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tor#host-out-rhcos-tor)
 
-[Non Red Hat CoreOS hosts in Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#reqs-host-network-outbound-tor)
+[Toronto RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#reqs-host-network-outbound-tor)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#common-out-reqs-tor)
 
-* [Network requirements for Toronto (ca-tor)](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#host-out-non-tor)
+* [Network requirements for Toronto (`ca-tor`)](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#host-out-non-tor)
 
 
 ### Host outbound connectivity for Washington D.C.
 {: #sitemap_host_outbound_connectivity_for_washington_dc}
 
 
-[Red Hat CoreOS hosts in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc#reqs-host-rhcos-outbound-wdc)
+[Washington D.C. RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc#reqs-host-rhcos-outbound-wdc)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc#common-out-reqs-rhcos-wdc)
 
 * [Network requirements for Washington D.C. (`us-east`)](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc#host-out-rhcos-wdc)
 
-[Non Red Hat CoreOS hosts in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#reqs-host-network-outbound-wdc)
+[Washington D.C. RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#reqs-host-network-outbound-wdc)
 
 * [Common outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#common-out-reqs-wdc)
 
-* [Network requirements for Washington D.C. (us-east)](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-non-wdc)
+* [Network requirements for Washington D.C. (`us-east`)](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#host-out-non-wdc)
 
 [Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
 

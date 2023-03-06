@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-03-06"
 
 keywords: satellite, hybrid, multicloud, requirements, outbound, network, allowlist
 
@@ -12,14 +12,13 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Required outbound connectivity for hosts in all regions
+# Required outbound connectivity for hosts overview
 {: #reqs-host-network-outbound}
 
-Review the following outbound connectivity requirements for hosts in all regions.
+The number and type of requirements depend on the type of hosts that you are adding. 
 {: shortdesc}
 
-In addition to the following general outbound connectivity requirements, hosts must also meet the regional outbound connectivity requirements for the region your location is in.
-{: important}
+The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 
 
 
@@ -27,45 +26,30 @@ In addition to the following general outbound connectivity requirements, hosts m
 To check your host setup, you can use the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
+Outbound connectivity requirements for Red Hat Enterprise Linux (RHEL) hosts
+:    [Dallas RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal)
+:    [Frankfurt RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra)
+:    [London RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon)
+:    [Osaka RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa)
+:    [Sao Paulo RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao)
+:    [Sydney RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd)
+:    [Tokyo RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok)
+:    [Toronto RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor)
+:    [Washington D.C. RHEL host requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc)
 
-## Allow hosts to connect to {{site.data.keyword.IBM_notm}}
-{: #host-out-ibm}
 
-Allow the following hostnames, protocols, and ports for all {{site.data.keyword.satelliteshort}} hosts.
-* Destination hostnames: `cloud.ibm.com`, `containers.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
-* Protocol and ports: HTTPS Port 443
 
-## Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers
-{: #host-out-ntp}
 
-Allow the following hostnames, protocols, and ports for all {{site.data.keyword.satelliteshort}} hosts.
-* Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
-* Protocol and ports: Allow NTP protocol and provide UDP on port 123
-
-Note that allowing access to the NTP servers is optional. You can also define a custom NTP server for your RHCOS hosts. For more information, see the [Specifying a custom Network Time Protocol (NTP) server](/docs/satellite?topic=satellite-config-custom-ntp).
-
-## Allow hosts to communicate with {{site.data.keyword.iamshort}}
-{: #host-out-iam}
-
-Allow the following hostnames, protocols, and ports for all {{site.data.keyword.satelliteshort}} hosts.
-
-Your firewall must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your firewall does not support Layer 7, you can allow all HTTPS network traffic on port 443.
-{: note}
-
-* Destination hostnames: `https://iam.bluemix.net`, `https://iam.cloud.ibm.com`
-* Protocol and ports: TCP 443
-
-## Allow hosts to connect to the LaunchDarkly service
-{: #host-out-ld}
-
-Allow the following hostnames, protocols, and ports for Control plane hosts.
-* Destination hostnames: `app.launchdarkly.com`,`clientstream.launchdarkly.com`
-* Protocol and ports: HTTPS 443
-
-## Allow hosts to communicate with Red Hat Container Registry
-{: #host-out-cr}
-
-See [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
+Outbound connectivity requirementsfor Red Hat CoreOS (RHCOS) hosts
+:    [Dallas RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal)
+:    [Frankfurt RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra)
+:    [London RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-lon)
+:    [Osaka RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa)
+:    [Sao Paulo RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao)
+:    [Sydney RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd)
+:    [Tokyo RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tok)
+:    [Toronto RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tor)
+:    [Washington D.C. RHCOS host requirements](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc)
 
 
 
