@@ -26,7 +26,7 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 
 
 
-![Satellite for IBM Cloud service architecture](/images/sat_architecture.svg "Satellite service architecture"){: caption="Figure 1. Satellite service architecture" caption-side="bottom"}
+![Satellite for IBM Cloud service architecture](/images/sat_architecture1.svg "Satellite service architecture"){: caption="Figure 1. Satellite service architecture" caption-side="bottom"}
 
 
 ### Master and worker node components
