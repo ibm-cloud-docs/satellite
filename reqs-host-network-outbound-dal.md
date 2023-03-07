@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-06"
+lastupdated: "2023-03-07"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -12,23 +12,19 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Dallas RHEL host requirements
+# Non-RHCOS enabled locations in Dallas
 {: #reqs-host-network-outbound-dal}
 
-
-Review the following network requirements for outbound connectivity for Red Hat Enterprise Linux (RHEL) hosts for non Red Hat CoreOS enabled locations in the Dallas (`us-south`) region. 
+The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) hosts for use with non Red Hat CoreOS enabled locations in the Dallas (`us-south`) region. 
 {: shortdesc}
 
-The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location).
+The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location). For more information about operating system support, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 
 To check your host setup, you can use the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
-## Common outbound connectivity requirements
-{: #common-out-reqs-dal}
-
-The following network requirements are common for non-RHCOS hosts in all regions. 
+Review the following outbound network requirements for RHEL hosts for use with non-RHCOS enabled locations in the Dallas (`us-south`) region.
 
 Allow hosts to connect to {{site.data.keyword.IBM_notm}}
 :    * Destination hostnames: `cloud.ibm.com`, `containers.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
@@ -50,12 +46,6 @@ Allow hosts to connect to the LaunchDarkly service
 Allow hosts to communicate with Red Hat Container Registry
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
-
-
-## Network requirements for Dallas (`us-south`)
-{: #host-out-non-dal}
-
-The following outbound network requirements are specific for non-RHCOS hosts in the Dallas (`us-south`) region.
 
 Allow control plane worker nodes to communicate with the control plane master
 :    * Destination IP addresses: 52.117.39.146, 169.48.134.66, 169.63.36.210

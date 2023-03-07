@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-06"
+lastupdated: "2023-03-07"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -12,23 +12,20 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Washington D.C. RHCOS host requirements
+# RHCOS enabled locations in Washington D.C.
 {: #reqs-host-rhcos-outbound-wdc}
 
-Review the following network requirements for outbound connectivity for Red Hat CoreOS (RHCOS) hosts for Red Hat CoreOS enabled locations in the Washington D.C. (`us-east`) region. 
+The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) and Red Hat CoreOS (RHCOS) hosts for use with Red Hat CoreOS enabled locations in the Washington D.C. (`us-east`) region. 
 {: shortdesc}
 
-The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location).
+The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location). For more information about operating system support, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 
 To check your host setup, you can use the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
 
-## Common outbound connectivity requirements
-{: #common-out-reqs-rhcos-wdc}
-
-The following network requirements are common for RHCOS hosts in all regions. 
+Review the following outbound network requirements for RHEL and RHCOS hosts for use with RHCOS enabled locations in the Washington D.C. (`us-east`) region.
 
 Optional: Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers
 :    * Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
@@ -39,10 +36,7 @@ Optional: Allow access to {{site.data.keyword.redhat_notm}} network time protoco
 Allow hosts to communicate with Red Hat Container Registry
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
-## Network requirements for Washington D.C. (`us-east`)
-{: #host-out-rhcos-wdc}
 
-The following outbound network requirements are specific for RHCOS hosts in the Washington D.C. (`us-east`) region.
 
 Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in locations without CoreOS enabled.
 :    * Destination IP addresses:  169.55.87.98, 169.63.138.34, 169.62.47.42 

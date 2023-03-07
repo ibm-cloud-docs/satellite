@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-06"
+lastupdated: "2023-03-07"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -12,22 +12,20 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Tokyo RHEL host requirements
+# Non-RHCOS enabled locations in Tokyo
 {: #reqs-host-network-outbound-tok}
 
-Review the following network requirements for outbound connectivity for Red Hat Enterprise Linux (RHEL) hosts for non Red Hat CoreOS enabled locations in the Tokyo (`jp-tok`) region. 
+
+The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) hosts for use with non Red Hat CoreOS enabled locations in the  Tokyo (`jp-tok`) region. 
 {: shortdesc}
 
-The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location).
+The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location). For more information about operating system support, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 
 To check your host setup, you can use the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
-## Common outbound connectivity requirements
-{: #common-out-reqs-tok}
-
-The following network requirements are common for non-RHCOS hosts in all regions. 
+Review the following outbound network requirements for RHEL hosts for use with non-RHCOS enabled locations in the Tokyo (`jp-tok`) region.
 
 Allow hosts to connect to {{site.data.keyword.IBM_notm}}
 :    * Destination hostnames: `cloud.ibm.com`, `containers.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
@@ -49,12 +47,6 @@ Allow hosts to connect to the LaunchDarkly service
 Allow hosts to communicate with Red Hat Container Registry
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
-
-
-## Network requirements for Tokyo (`jp-tok`)
-{: #host-out-non-tok}
-
-The following outbound network requirements are specific for non-RHCOS hosts in the Tokyo (`jp-tok`) region.
 
 Allow control plane worker nodes to communicate with the control plane master in locations without CoreOS enabled
 :    * Destination IP addresses: 161.202.104.226, 128.168.67.106, 165.192.108.10 
