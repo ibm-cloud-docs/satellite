@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-03"
+  years: 2020, 2023
+lastupdated: "2023-03-07"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -26,16 +26,8 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 
 
 
-![Satellite for IBM Cloud service architecture](/images/sat_architecture.png "Satellite service architecture"){: caption="Figure 1. Satellite service architecture" caption-side="bottom"}
+![Satellite for IBM Cloud service architecture](/images/sat_architecture.svg "Satellite service architecture"){: caption="Figure 1. Satellite service architecture" caption-side="bottom"}
 
-| Legend | Description |
-|-----------------|-----------------------|
-| ![Legend1](/images/sat_architecture_legend1.png "Satellite service architecture legend 1") | Manages the deployment of Kubernetes resources across {{site.data.keyword.satelliteshort}} clusters by creating {{site.data.keyword.satelliteshort}} configurations and subscribing your clusters to it. |
-| ![Legend2](/images/sat_architecture_legend2.png "Satellite service architecture legend 2") | Monitors the health and performance of your {{site.data.keyword.satelliteshort}} location, automatically resolves issues if possible, and informs the IBM Site Reliability Engineers (SREs) to allow further investigation. |
-| ![Legend3](/images/sat_architecture_legend3.png "Satellite service architecture legend 3") | Integrates with Identity and Access Management to control {{site.data.keyword.satelliteshort}} location access and {{site.data.keyword.cos_full_notm}} to back up {{site.data.keyword.satelliteshort}} control plane data. In addition, you can connect to other {{site.data.keyword.cloud_notm}} services to enhance your location capabilities. |
-| ![Legend4](/images/sat_architecture_legend4.png "Satellite service architecture legend 4") | Securely connects the Satellite location to the {{site.data.keyword.cloud_notm}} region that the location is managed from. Incoming and outgoing network traffic on this connection is monitored and can be reviewed and analyzed by the location administrator. |
-| ![Legend5](/images/sat_architecture_legend5.png "Satellite service architecture legend 5") | Latency requirements between {{site.data.keyword.satelliteshort}} components such as the hosts that you use for the control plane and clusters, in milliseconds. As latency increases, you might see service interruptions. |
-{: caption="Legend and description for Satellite architecture image." caption-side="bottom"}
 
 ### Master and worker node components
 {: #architecture-master-worker}
