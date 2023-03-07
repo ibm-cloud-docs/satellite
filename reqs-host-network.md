@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-03"
+lastupdated: "2023-03-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -19,7 +19,7 @@ Review the following requirements that relate to the network setup of host machi
 {: shortdesc}
 
 
-To check your host setup, you can use the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
+You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-27"
+lastupdated: "2023-03-07"
 
 keywords: satellite, hybrid, multicloud, requirements, outbound, network, allowlist
 
@@ -12,60 +12,44 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Required outbound connectivity for hosts in all regions
+# Required outbound connectivity for hosts overview
 {: #reqs-host-network-outbound}
 
-Review the following outbound connectivity requirements for hosts in all regions.
+The number and type of requirements depend on the type of hosts that you are adding. 
 {: shortdesc}
 
-In addition to the following general outbound connectivity requirements, hosts must also meet the regional outbound connectivity requirements for the region your location is in.
-{: important}
+The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location). For more information about operating system support, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 
 
 
-To check your host setup, you can use the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
+You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
+Outbound connectivity host requirements for Non-RHCOS locations
+:    [Non-RHCOS locations in Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal)
+:    [Non-RHCOS locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra)
+:    [Non-RHCOS locations in London](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon)
+:    [Non-RHCOS locations in Osaka](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa)
+:    [Non-RHCOS locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao)
+:    [Non-RHCOS locations in Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd)
+:    [Non-RHCOS locations in Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok)
+:    [Non-RHCOS locations in Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor)
+:    [Non-RHCOS locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc)
 
-## Allow hosts to connect to {{site.data.keyword.IBM_notm}}
-{: #host-out-ibm}
 
-Allow the following hostnames, protocols, and ports for all {{site.data.keyword.satelliteshort}} hosts.
-* Destination hostnames: `cloud.ibm.com`, `containers.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
-* Protocol and ports: HTTPS Port 443
 
-## Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers
-{: #host-out-ntp}
 
-Allow the following hostnames, protocols, and ports for all {{site.data.keyword.satelliteshort}} hosts.
-* Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
-* Protocol and ports: Allow NTP protocol and provide UDP on port 123
-
-Note that allowing access to the NTP servers is optional. You can also define a custom NTP server for your RHCOS hosts. For more information, see the [Specifying a custom Network Time Protocol (NTP) server](/docs/satellite?topic=satellite-config-custom-ntp).
-
-## Allow hosts to communicate with {{site.data.keyword.iamshort}}
-{: #host-out-iam}
-
-Allow the following hostnames, protocols, and ports for all {{site.data.keyword.satelliteshort}} hosts.
-
-Your firewall must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your firewall does not support Layer 7, you can allow all HTTPS network traffic on port 443.
-{: note}
-
-* Destination hostnames: `https://iam.bluemix.net`, `https://iam.cloud.ibm.com`
-* Protocol and ports: TCP 443
-
-## Allow hosts to connect to the LaunchDarkly service
-{: #host-out-ld}
-
-Allow the following hostnames, protocols, and ports for Control plane hosts.
-* Destination hostnames: `app.launchdarkly.com`,`clientstream.launchdarkly.com`
-* Protocol and ports: HTTPS 443
-
-## Allow hosts to communicate with Red Hat Container Registry
-{: #host-out-cr}
-
-See [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
+Outbound connectivity requirementsfor Red Hat CoreOS (RHCOS) locations
+:    [RHCOS enabled locations in Dallas](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal)
+:    [RHCOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra)
+:    [RHCOS enabled locations in London](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-lon)
+:    [RHCOS enabled locations in Osaka](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa)
+:    [RHCOS enabled locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao)
+:    [RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd)
+:    [RHCOS enabled locations in Tokyo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tok)
+:    [RHCOS enabled locations in Toronto](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tor)
+:    [RHCOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc)
 
 
 

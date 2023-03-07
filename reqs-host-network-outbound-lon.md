@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-07"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -12,86 +12,82 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# London
+# Non-RHCOS enabled locations in London
 {: #reqs-host-network-outbound-lon}
 
-Before you create region-specific firewall rules, make sure to create the [general firewall rules](/docs/satellite?topic=satellite-reqs-host-network-outbound) for hosts in any region.
+The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) hosts for use with non Red Hat CoreOS enabled locations in the London (`eu-gb`) region. 
 {: shortdesc}
 
+The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location). For more information about operating system support, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
-To check your host setup, you can use the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
+You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
+Review the following outbound network requirements for RHEL hosts for use with non-RHCOS enabled locations in the London (`eu-gb`) region.
 
-## Allow control plane worker nodes to communicate with the control plane master
-{: #host-out-cp-lon}
+Allow hosts to connect to {{site.data.keyword.IBM_notm}}
+:    * Destination hostnames: `cloud.ibm.com`, `containers.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS Port 443
+
+Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers
+:    * Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
+     * Protocol and ports: Allow NTP protocol and provide UDP on port 123
+
+Allow hosts to communicate with {{site.data.keyword.iamshort}}
+:    * Destination hostnames: `https://iam.bluemix.net`, `https://iam.cloud.ibm.com`
+     * Protocol and ports: TCP 443
+     
+:    Your firewall must be Layer 7 to allow the IAM domain name. IAM does not have specific IP addresses that you can allow. If your firewall does not support Layer 7, you can allow all HTTPS network traffic on port 443.
+
+Allow hosts to connect to the LaunchDarkly service
+:    * Destination hostnames: `app.launchdarkly.com`,`clientstream.launchdarkly.com`
+     * Protocol and ports: HTTPS 443
+
+Allow hosts to communicate with Red Hat Container Registry
+:    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
-Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in Red Hat CoreOS enabled locations.
-* Destination IP addresses: 158.175.113.26,141.125.85.26,158.176.90.58
-* Destination hostnames: `c116.eu-gb.satellite.cloud.ibm.com`, `c116-1.eu-gb.satellite.cloud.ibm.com`, `c116-2.eu-gb.satellite.cloud.ibm.com`, `c116-3.eu-gb.satellite.cloud.ibm.com`, `c116-e.eu-gb.satellite.cloud.ibm.com`
-* Protocol and ports: TCP 30000 - 32767
+Allow control plane worker nodes to communicate with the control plane master
+:    * Destination IP addresses: 158.175.120.210, 141.125.97.106, 158.176.139.66  
+     * Destination hostnames:  `c106.eu-gb.satellite.cloud.ibm.com`, `c106-1.eu-gb.satellite.cloud.ibm.com`, `c106-2.eu-gb.satellite.cloud.ibm.com`, `c106-3.eu-gb.satellite.cloud.ibm.com`, `c106-e.eu-gb.satellite.cloud.ibm.com` 
+     * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767
 
+Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}
+:    * Destination IP addresses: N/A
+     * Destination hostnames: `s3.eu.cloud-object-storage.appdomain.cloud` and `*.s3.eu.cloud-object-storage.appdomain.cloud`
+     * Protocol and ports: HTTPS 443
 
-Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts in locations without CoreOS enabled.
-* Destination IP addresses: 158.175.120.210, 141.125.97.106, 158.176.139.66  
-* Destination hostnames:  `c106.eu-gb.satellite.cloud.ibm.com`, `c106-1.eu-gb.satellite.cloud.ibm.com`, `c106-2.eu-gb.satellite.cloud.ibm.com`, `c106-3.eu-gb.satellite.cloud.ibm.com`, `c106-e.eu-gb.satellite.cloud.ibm.com` 
-* Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767
+Allow Link connectors to connect to the Link tunnel server endpoint
+:    * Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242
+     * Destination hostnames: `c-01-ws.eu-gb.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
+     
+:    You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.eu-gb.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
 
-## Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}
-{: #host-out-worker-lon}
+Allow hosts to be attached to a location and assigned to services in the location
+:    * Destination IP addresses: 159.122.224.242, 158.175.65.170, 158.176.95.146
+     * Destination hostnames: `origin.eu-gb.containers.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
+     
+Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API
+:    * [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external}  |  - `api.eu-gb.link.satellite.cloud.ibm.com`, `config.eu-gb.satellite.cloud.ibm.com`, `eu-gb.containers.cloud.ibm.com`, `config.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
 
-Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
-* Destination IP addresses: N/A
-* Destination hostnames: `s3.eu.cloud-object-storage.appdomain.cloud` and `*.s3.eu.cloud-object-storage.appdomain.cloud`
-* Protocol and ports: HTTPS 443
+Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
+:    * Destination IP addresses: N/A 
+     * Destination hostnames: `icr.io`, `registry.bluemix.net`, `uk.icr.io`, `registry.eu-gb.bluemix.net`
+     * Protocol and ports: HTTPS 443
 
-## Allow Link connectors to connect to the Link tunnel server endpoint
-{: #host-out-link-lon}
+Optional: Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
+:    * Destination IP addresses and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
+     * Protocol and ports: HTTPS 443 and 6443
+     
+:    If you plan to use {{site.data.keyword.monitoringshort_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
 
-You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.eu-gb.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no DNS results are returned.
-{: tip}
+Optional: Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
+:    * Destination IP addresses and hostnames: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
+     * Protocol and ports: HTTPS 443
 
-Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
-* Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242
-* Destination hostnames: `c-01-ws.eu-gb.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
-* Protocol and ports: HTTPS 443
-
-## Allow hosts to be attached to a location and assigned to services in the location
-{: #host-out-services-lon}
-
-Allow the following addresses, hostnames, protocols, and ports for all {{site.data.keyword.satelliteshort}} hosts.
-* Destination IP addresses: 159.122.224.242, 158.175.65.170, 158.176.95.146
-* Destination hostnames: `origin.eu-gb.containers.cloud.ibm.com`
-* Protocol and ports: HTTPS 443
-
-## Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API
-{: #host-out-akamai-lon}
-
-Allow the following addresses, hostnames, protocols, and ports for {{site.data.keyword.satelliteshort}} control plane hosts.
-* [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external}  |  - `api.eu-gb.link.satellite.cloud.ibm.com`, `config.eu-gb.satellite.cloud.ibm.com`, `eu-gb.containers.cloud.ibm.com`, `config.satellite.cloud.ibm.com`
-* Protocol and ports: HTTPS 443
-
-## Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
-{: #host-out-cr-lon}
-
-Allow the following addresses, hostnames, protocols, and ports for all {{site.data.keyword.satelliteshort}} hosts.
-* Destination IP addresses: N/A 
-* Destination hostnames: `icr.io`, `registry.bluemix.net`, `uk.icr.io`, `registry.eu-gb.bluemix.net`
-* Protocol and ports: HTTPS 443
-
-## Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
-{: #host-out-mon-lon}
-
-Allow the following addresses, hostnames, protocols, and ports for all {{site.data.keyword.satelliteshort}} hosts.
-* Destination IP addresses and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
-* Protocol and ports: HTTPS 443 and 6443
-
-## Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
-{: #host-out-la-lon}
-
-Allow the following addresses, hostnames, protocols, and ports for all {{site.data.keyword.satelliteshort}} hosts.
-* Destination IP addresses and hostnames: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
-* Protocol and ports: HTTPS 443
+:    If you plan to use {{site.data.keyword.loganalysislong_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
 
 
