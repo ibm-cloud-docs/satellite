@@ -23,7 +23,7 @@ The type of location that you create dictates the type of operating systems that
 
 
 
-To check your host setup, you can use the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
+You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
 Outbound connectivity host requirements for Non-RHCOS locations

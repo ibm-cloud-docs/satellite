@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-13"
+  years: 2020, 2023
+lastupdated: "2023-03-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,7 +21,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
 {: shortdesc}
 
 
-To check your host setup, you can use the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
+You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
 
