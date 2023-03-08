@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-08"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -80,17 +80,17 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
      * Destination hostnames: `icr.io`, `registry.bluemix.net`, `ca.icr.io`, `us.icr.io`, `registry.ng.bluemix.net`
      * Protocol and ports: HTTPS 443
 
-Optional: Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
-:    * Destination IP addresses and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
-     * Protocol and ports: HTTPS 443 and 6443
-     
-:    If you plan to use {{site.data.keyword.monitoringshort_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
-
 Optional: Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
 :    * Destination IP addresses and hostnames: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
      * Protocol and ports: HTTPS 443
 
 :    If you plan to use {{site.data.keyword.loganalysislong_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
+
+Optional: Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
+:    * Destination IP addresses and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
+     * Protocol and ports: HTTPS 443 and 6443
+
+:    If you plan to use {{site.data.keyword.monitoringshort_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
 
 
 

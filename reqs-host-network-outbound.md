@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-08"
 
 keywords: satellite, hybrid, multicloud, requirements, outbound, network, allowlist
 
@@ -40,7 +40,7 @@ Outbound connectivity host requirements for Non-RHCOS locations
 
 
 
-Outbound connectivity requirementsfor Red Hat CoreOS (RHCOS) locations
+Outbound connectivity requirements for Red Hat CoreOS (RHCOS) locations
 :    [RHCOS enabled locations in Dallas](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal)
 :    [RHCOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra)
 :    [RHCOS enabled locations in London](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-lon)
