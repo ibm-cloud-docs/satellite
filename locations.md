@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-03-09"
 
 keywords: satellite, hybrid, multicloud, location, satellite location, create location
 
@@ -37,6 +37,9 @@ Automate your setup with templates that use [{{site.data.keyword.bplong}}](/docs
 {: shortdesc}
 
 To create a location that is enabled for Red Hat CoreOS, you must create your location [manually](#location-create-manual).
+{: tip}
+
+Do not reuse the same name for multiple locations, even if you deleted another location with the same name. If you use the same name 5 times or more within 7 days, you might reach the Let's Encrypt [Duplicate Certificate rate limit](docs/openshift?topic=openshift-cs_rate_limit).
 {: note}
 
 For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf in a cloud provider, you must provide credentials to the cloud provider. The credentials that you provide are stored and encrypted in etcd of the {{site.data.keyword.satelliteshort}} location control plane master. For more information, see [Securing your data](/docs/satellite?topic=satellite-data-security).
@@ -60,6 +63,9 @@ The {{site.data.keyword.bpshort}} template helped with the initial creation, but
 
 You can create {{site.data.keyword.satelliteshort}} locations for each place that you like, such as your company's ports in the north and south of the country. A {{site.data.keyword.satelliteshort}} location represents a data center that you fill with your own infrastructure resources to run your own workloads and {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
+
+Do not reuse the same name for multiple locations, even if you deleted another location with the same name. If you use the same name 5 times or more within 7 days, you might reach the Let's Encrypt [Duplicate Certificate rate limit](docs/openshift?topic=openshift-cs_rate_limit).
+{: note}
 
 ### Manually creating locations from the console
 {: #location-create-console}
