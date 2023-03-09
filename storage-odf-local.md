@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-03-09"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -34,6 +34,7 @@ To use the ODF storage with the local storage operator and local storage devices
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters).
+    - Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage.
     - Your cluster must have a minimum of 3 worker nodes with at least 16CPUs and 64GB RAM per worker node.
     - **Version 4.8 and later**: Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to having one of the following local storage configurations.
         * One extra raw device per worker node in addition to the minimum host requirements. This disk must not be partitioned or have formatted file systems.
@@ -861,7 +862,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | 
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
 | Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | true | 
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storageclasss encryption. | true | 
+| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | true | 
 | KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | 
 | KMS instance id | `kms-instance-id` | Config |  Your KMS instance id. | false | 
 | KMS instance Base URL | `kms-base-url` | Config |  Your KMS instance public URL to connect to the instance. | false | 
@@ -890,7 +891,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | 
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
 | Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | true | 
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storageclasss encryption. | true | 
+| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | true | 
 | KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | 
 | KMS instance id | `kms-instance-id` | Config |  Your KMS instance id. | false | 
 | KMS instance Base URL | `kms-base-url` | Config |  Your KMS instance public URL to connect to the instance. | false | 

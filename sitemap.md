@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-03-09"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1874,6 +1874,8 @@ subcollection: satellite
     * [1.4.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.4.0-parameter-reference)
 
     * [1.5.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.5.0-parameter-reference)
+
+    * [1.10.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.10.0-parameter-reference)
 
 [{{site.data.keyword.cos_full_notm}} Driver](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin)
 

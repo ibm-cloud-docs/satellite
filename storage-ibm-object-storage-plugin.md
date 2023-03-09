@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-13"
+lastupdated: "2023-03-09"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -322,7 +322,7 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 | Helm Chart Additional Parameters (Optional) | `parameters` | Config | Helm Chart Additional Parameters (Optional) | false | 
 | COS plug-in License: Apache License Version 2.0 | `license` | Config | COS plug-in License: Apache License Version 2.0. Set to `true` to accept the license and install the plugin | true | 
 | COS Endpoint | `cos-endpoint` | Config | Enter COS Endpoint. For more information, refer to https://ibm.biz/cos-endpoints | true | 
-| COS storageclass | `cos-storageclass` | Config | Enter COS storageclass. For more info, refer to https://ibm.biz/cos-storage-classes | true | 
+| COS storage class | `cos-storageclass` | Config | Enter COS storage class. For more info, refer to https://ibm.biz/cos-storage-classes | true | 
 {: caption="Table 1. 2.2 parameter reference" caption-side="bottom"}
 
 
