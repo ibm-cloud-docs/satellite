@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-03-09"
 
 
 keywords: satellite storage, features, overview
@@ -39,6 +39,7 @@ subcollection: satellite
 | IBM Object Storage Plugin | 2.2 | IBM | 
 | IBM System Storage Block CSI driver | 1.4.0 | IBM | False | False | True | Regional | True |
 | IBM System Storage Block CSI driver | 1.5.0 | IBM | False | False | True | Regional | True |
+| IBM System Storage Block CSI driver | 1.10.0 | IBM | False | False | True | Regional | True |
 | [Beta] IBM VPC Block CSI driver | 5.0 | IBM | 
 | Local Storage Operator - Block | 4.8 | AWS,IBM | False | False | False | Zonal | False |
 | Local Storage Operator - Block | 4.9 | AWS,IBM | False | False | False | Zonal | False |

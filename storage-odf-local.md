@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-03-09"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -861,7 +861,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | 
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
 | Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | true | 
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storageclasss encryption. | true | 
+| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | true | 
 | KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | 
 | KMS instance id | `kms-instance-id` | Config |  Your KMS instance id. | false | 
 | KMS instance Base URL | `kms-base-url` | Config |  Your KMS instance public URL to connect to the instance. | false | 
@@ -890,7 +890,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | 
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
 | Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | true | 
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storageclasss encryption. | true | 
+| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | true | 
 | KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | 
 | KMS instance id | `kms-instance-id` | Config |  Your KMS instance id. | false | 
 | KMS instance Base URL | `kms-base-url` | Config |  Your KMS instance public URL to connect to the instance. | false | 

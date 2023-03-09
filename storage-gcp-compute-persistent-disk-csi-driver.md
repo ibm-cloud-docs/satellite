@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-09"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -450,7 +450,7 @@ Use the console to remove a storage configuration.
 | Google Cloud project ID. | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | 
 | Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | true | 
 | Private key of the service account. | `private_key` | Secret | Private key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | 
-| Client email | `client_email` | Secret | Client email. The email of ther service account can be found in the IAM & Admin section of the project dashboard. | true | 
+| Client email | `client_email` | Secret | The email of the service account can be found in the IAM & Admin section of the project dashboard. | true | 
 | Client ID | `client_id` | Secret | Client ID. You can find the Client ID in the APIs & Services section of the project dashboard. | true | 
 | Authorization URI | `auth_uri` | Secret | Authorization URI for the service account. You can find this in the JSON service account key file. | true | 
 | Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | true | 
@@ -467,7 +467,7 @@ Use the console to remove a storage configuration.
 | Google Cloud project ID | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | 
 | Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | true | 
 | Private key of the service account | `private_key` | Secret | Private key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | 
-| Client email | `client_email` | Secret | Client email. The email of ther service account can be found in the IAM & Admin section of the project dashboard. | true | 
+| Client email | `client_email` | Secret | The email of the service account can be found in the IAM & Admin section of the project dashboard. | true | 
 | Client ID | `client_id` | Secret | Client ID. You can find the Client ID in the APIs & Services section of the project dashboard. | true | 
 | Authorization URI | `auth_uri` | Secret | Authorization URI for the service account. You can find this in the JSON service account key file. | true | 
 | Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | true | 
@@ -484,7 +484,7 @@ Use the console to remove a storage configuration.
 | Google Cloud project ID | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | 
 | Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | true | 
 | Private key of the service account | `private_key` | Secret | PrPrivate key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | 
-| Client email | `client_email` | Secret | Client email. The email of ther service account can be found in the IAM & Admin section of the project dashboard. | true | 
+| Client email | `client_email` | Secret | The email of the service account can be found in the IAM & Admin section of the project dashboard. | true | 
 | Client ID | `client_id` | Secret | Client ID. You can find the Client ID in the APIs & Services section of the project dashboard. | true | 
 | Authorization URI | `auth_uri` | Secret | Authorization URI for the service account. You can find this in the JSON service account key file. | true | 
 | Token URI | `token_uri` | Secret | Token URI for the service account. You can find this in the JSON service account key file. | true | 
