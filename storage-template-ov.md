@@ -74,7 +74,7 @@ When you create a configuration by using a template, you specify a set of parame
 The following image depicts the workflow for creating a {{site.data.keyword.satelliteshort}} storage configuration by using a storage template.
 
 1. Select the storage template that you want to use for your configuration.
-2. Specify the storage provider specific parameters and create a {{site.data.keyword.satelliteshort}} storage configuration.
+2. Create a {{site.data.keyword.satelliteshort}} cluster. Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage.
 3. Assign your {{site.data.keyword.satelliteshort}} storage configuration to your clusters.
 4. {{site.data.keyword.satelliteshort}} deploys the storage drivers and any solution-specific resources for the provider that you selected to the clusters that you assigned the storage configuration to.
 
