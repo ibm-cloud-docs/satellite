@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2738,8 +2738,6 @@ subcollection: satellite
 
 
 [High availability and recovery](/docs/satellite?topic=satellite-ha#ha)
-
-* [About high availability and recovery](/docs/satellite?topic=satellite-ha#ha-about)
 
 * [Understanding high availability in {{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-ha#ha-understand)
 

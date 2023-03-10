@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-03-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -15,13 +15,7 @@ subcollection: satellite
 # High availability and recovery
 {: #ha}
 
-Review what options you have to make your {{site.data.keyword.satellitelong}} location highly available.
-{: shortdesc}
-
-## About high availability and recovery
-{: #ha-about}
-
-High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms.
+High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms. Review what options you have to make your {{site.data.keyword.satellitelong}} location highly available.
 {: shortdesc}
 
 What level of availability do I need?
@@ -44,12 +38,12 @@ What am I responsible to configure backup and recovery options for?
 ## Understanding high availability in {{site.data.keyword.satellitelong_notm}}
 {: #ha-understand}
 
-To understand your high availability options in {{site.data.keyword.satelliteshort}}, it is important to understand the components that make up your {{site.data.keyword.satelliteshort}} location and how you can eliminate points of failures.
+To understand your high availability options in {{site.data.keyword.satelliteshort}}, it is important to understand the components that make up your {{site.data.keyword.satelliteshort}} location and how you can ensure .
 {: shortdesc}
 
-The following image shows potential points of failure in the {{site.data.keyword.satelliteshort}} architecture.
+The following image shows specific areas to watch in the {{site.data.keyword.satelliteshort}} architecture so you can improve your high availability.
 
-![Points of failure in the {{site.data.keyword.satelliteshort}} architecture](/images/sat_architecture_ha.png "Points of failure in the {{site.data.keyword.satelliteshort}} architecture"){: caption="Figure 1. Potential points of failure" caption-side="bottom"}
+![Highly available {{site.data.keyword.satelliteshort}} architecture](/images/sat_architecture_ha.svg "Highly available Satellite architecture"){: caption="Figure 1. Highly available Satellite architecture" caption-side="bottom"}
 
 1. [{{site.data.keyword.satelliteshort}} control plane master](#ha-control-plane-master)
 2. [{{site.data.keyword.satelliteshort}} control plane worker nodes](#ha-control-plane-worker)
@@ -97,7 +91,7 @@ Every {{site.data.keyword.cloud_notm}} service that you run in your {{site.data.
 
 The following image shows a basic {{site.data.keyword.satelliteshort}} location control plane worker node setup. This setup ensures that your {{site.data.keyword.satelliteshort}} location control plane has sufficient compute capacity to run basic {{site.data.keyword.satelliteshort}} workloads and that your control plane continues to run, even if one compute host becomes unavailable.
 
-![Default setup for the {{site.data.keyword.satelliteshort}} control plane.](images/satellite_ha_default-0111.svg "{{site.data.keyword.satelliteshort}} control plane"){: caption="Figure 2. {{site.data.keyword.satelliteshort}} control plane" caption-side="bottom"}
+![Default setup for the {{site.data.keyword.satelliteshort}} control plane.](images/sat_ha_default.svg "{{site.data.keyword.satelliteshort}} control plane"){: caption="Figure 2. {{site.data.keyword.satelliteshort}} control plane" caption-side="bottom"}
 
 Review the characteristics of the basic setup.
 
@@ -132,7 +126,7 @@ Depending on where your hosts are, the options that are available to you to incr
 The following image shows a high availability setup of your control plane worker nodes within an on-premises data center. All compute hosts are on a separate rack to ensure that power, network, and storage devices are not shared. Because all compute hosts are located in the same data center, the requirements for networking speed and latency between the hosts are met.
 {: shortdesc}
 
-![High availability setup for an on-premises data center.](images/satellite_ha_onprem.svg "High availability setup in an on-premises data center."){: caption="Figure 3. High availability setup for an on-premises data center." caption-side="bottom"}
+![High availability setup for an on-premises data center.](images/sat_control_plane_ha_onprem.svg "High availability setup in an on-premises data center."){: caption="Figure 3. High availability setup for an on-premises data center." caption-side="bottom"}
 
 ### Example for a high availability setup in a public cloud provider
 {: #example-ha-cloudprovider}
@@ -141,5 +135,5 @@ The following image shows a highly available setup for compute hosts that are in
 {: shortdesc}
 
 
-![High availability setup with compute hosts that are in a public cloud provider.](/images/satellite_ha_aws.svg){: caption="Figure 4. High availability setup with compute hosts that are at a public cloud provider" caption-side="bottom"}
+![High availability setup with compute hosts that are in a public cloud provider.](/images/sat_control_plane_to_cloud_ha.svg){: caption="Figure 4. High availability setup with compute hosts that are at a public cloud provider" caption-side="bottom"}
     
