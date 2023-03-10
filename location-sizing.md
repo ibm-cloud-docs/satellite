@@ -94,7 +94,6 @@ While you can deploy a cluster to a location with only 3 control plane hosts, us
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
-| 3 hosts | 1 cluster, for demonstration purposes. | Up to 20 workers | 20 workers per cluster |
 | 6 hosts | Up to 5 clusters  | 20 workers across 5 clusters, or 80 workers across 2 clusters | 60 workers per cluster |
 | 9 hosts |  Up to 8 clusters | 40 workers across 8 clusters, or 140 workers across 3 clusters | 60 workers per cluster |
 | 12 hosts |  Up to 11 clusters | 60 workers across 11 clusters, or 200 workers across 4 clusters | 60 workers per cluster |
@@ -106,7 +105,6 @@ While you can deploy a cluster to a location with only 3 control plane hosts, us
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
-| 3 hosts | 1 cluster, for demonstration purposes | Up to 100 workers | 100 workers per cluster |
 | 6 hosts | Up to 20 clusters | 200 workers across 20 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
 | 9 hosts  | Up to 26 clusters | 400 workers across 26 clusters, or 850 workers across 3 clusters | 300 workers per cluster |
 | 12 hosts  | Up to 36 clusters | 520 workers across 26 clusters, or 1150 workers across 4 clusters | 300 workers per cluster |
