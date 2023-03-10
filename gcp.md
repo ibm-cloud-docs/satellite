@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-03-09"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -33,6 +33,9 @@ You can clone and modify these Terraform templates from the [Satellite Terraform
 
 Before you begin, make sure that you have the correct [{{site.data.keyword.cloud_notm}} permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations, including to {{site.data.keyword.satelliteshort}} and {{site.data.keyword.bpshort}}. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
 
+Do not reuse the same name for multiple locations, even if you deleted another location with the same name. If you use the same name 5 times or more within 7 days, you might reach the Let's Encrypt [Duplicate Certificate rate limit](docs/openshift?topic=openshift-cs_rate_limit).
+{: note}
+
 1. In your GCP cloud provider, [set up your account credentials](#infra-creds-gcp).
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
 1. In the **Get started** section, click **GCP Quick Start**.
@@ -47,9 +50,9 @@ Before you begin, make sure that you have the correct [{{site.data.keyword.cloud
     1. Wait for the {{site.data.keyword.bpshort}} action to finish and the workspace to enter an **Active** state.
 1. Optional: If you need to setup SSH access to your hosts in GCP, see [Choose your access method](https://cloud.google.com/compute/docs/instances/access-overview){: external} in the Google documentation. GCP recommends using the OS Login technology. You can also use the `gcloud` CLI or the built-in SSH client in the web UI to access your VMs.
 
-Note that the GCP VPC created by the Quick Start template does not have port 22 open externally for SSH. This means means you might need to add a firewall rule before using SSH. If you add a firewall rule to open port 22 externally, you must remove this firewall rule before using the **Destroy resources** option in {{site.data.keyword.bpshort}} to cleanup your location.
+The GCP VPC created by the Quick Start template does not have port 22 open externally for SSH and so you might need to add a firewall rule before you can use SSH. If you add a firewall rule to open port 22 externally, you must remove this firewall rule before you specify the **Destroy resources** option in {{site.data.keyword.bpshort}} to clean up your location.
 {: note}
-    
+     
 
 Well done, your {{site.data.keyword.satelliteshort}} location is creating! You can review the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to see when your location is in a **Normal** state and ready to use.
 
