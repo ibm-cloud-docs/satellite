@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-03-10"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -139,7 +139,6 @@ While you can deploy a cluster to a location that uses 3 hosts with 4 vCPU and 1
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
-| 3 hosts | 1 cluster, for demonstration purposes | Up to 100 workers | 100 workers per cluster |
 | 6 hosts | Up to 9 clusters | 200 workers across 9 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
 | 9 hosts  | Up to 18 clusters | 400 workers across 18 clusters, or 850 workers across 3 clusters | 300 workers per cluster |
 | 12 hosts  | Up to 26 clusters | 520 workers across 26 clusters, or 1150 workers across 4 clusters | 300 workers per cluster |
