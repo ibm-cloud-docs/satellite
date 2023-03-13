@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-17"
+  years: 2020, 2023
+lastupdated: "2023-03-13"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -26,9 +26,9 @@ Removing {{site.data.keyword.satelliteshort}} Config components automatically re
 {: important}
 
 1. [Log in to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-2. Remove all the {{site.data.keyword.satelliteshort}} Config components from your cluster by running a [{{site.data.keyword.satelliteshort}} Config removal job](https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml){: external}. 
+2. Remove all the {{site.data.keyword.satelliteshort}} Config components from your cluster by running a [{{site.data.keyword.satelliteshort}} Config removal job](https://config.satellite.cloud.ibm.com/api/cleanup/razeedeploy-job){: external}. 
     ```sh
-    oc apply -f https://raw.githubusercontent.com/IBM-Cloud/kube-samples/master/satellite/satconfig/satconfig_remove.yaml
+    oc apply -f https://config.satellite.cloud.ibm.com/api/cleanup/razeedeploy-job
     ```
     {: pre}
 
