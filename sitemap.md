@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-15"
+lastupdated: "2023-03-16"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2678,19 +2678,19 @@ subcollection: satellite
 * [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-requirements#reqs-services)
 
 
-## Supported {{site.data.keyword.cloud_notm}} locations
-{: #sitemap_supported__locations}
+## Supported {{site.data.keyword.cloud_notm}} regions
+{: #sitemap_supported__regions}
 
 
-[Supported {{site.data.keyword.cloud_notm}} locations](/docs/satellite?topic=satellite-sat-regions#sat-regions)
+[Supported {{site.data.keyword.cloud_notm}} regions](/docs/satellite?topic=satellite-sat-regions#sat-regions)
 
-* [About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions)
+* [{{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}} FAQs](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions)
 
     * [Why is my location managed by an {{site.data.keyword.cloud_notm}} region?](/docs/satellite?topic=satellite-sat-regions#supported-regions-why-location)
 
     * [What {{site.data.keyword.cloud_notm}} multizone metro do I choose for my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-sat-regions#supported-regions-what-multizone-metro)
 
-    * [Is there a limitation where my compute hosts can reside?](/docs/satellite?topic=satellite-sat-regions#supported-regions-limitations)
+    * [Can my hosts reside anywhere?](/docs/satellite?topic=satellite-sat-regions#supported-regions-limitations)
 
     * [How can I deploy in an EU Cloud Certified Location?](/docs/satellite?topic=satellite-sat-regions#eu-certified)
 
