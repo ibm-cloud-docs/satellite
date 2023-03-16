@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-03-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Supported {{site.data.keyword.cloud_notm}} locations
+# Supported {{site.data.keyword.cloud_notm}} regions
 {: #sat-regions}
 
 Review the {{site.data.keyword.cloud}} regions that you can choose from to manage your {{site.data.keyword.satelliteshort}} location. The hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location control plane must have a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round-trip time (RTT) to the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from. As latency increases, you might see impacts to performance, including {{site.data.keyword.satelliteshort}} Link throughput, {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service provisioning time, host failure recovery time, and in extreme cases, the availability of resources that run in the {{site.data.keyword.satelliteshort}} location control plane, such as {{site.data.keyword.redhat_openshift_notm}} cluster masters. For more information, see [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr).
@@ -35,11 +35,11 @@ Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}
 | Europe | Germany | Frankfurt `†`   | `fra` | `eu-de` | `eu-de-1`  \n `eu-de-2`  \n `eu-de-3`|
 | Europe | United Kingdom | London | `lon` | `eu-gb`|`eu-gb-1`  \n `eu-gb-2`  \n `eu-gb-3`|
 | South America | Brazil | Sao Paulo | `sao` | `br-sao` | `br-sao-1`  \n `br-sao-2`  \n `br-sao-3` |
-{: caption="Supported {{site.data.keyword.cloud_notm}} locations to manage your {{site.data.keyword.satelliteshort}} location." caption-side="bottom"}
+{: caption="Supported {{site.data.keyword.cloud_notm}} regions." caption-side="bottom"}
 
 `†` EU Cloud Certified Locations are managed from the Frankfurt region. To order these, ensure you choose `fra` as the value for the `--managed-from` option.
 
-## About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}
+## {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}} FAQs
 {: #understand-supported-regions}
 
 Review some frequently asked questions about why and how you choose an {{site.data.keyword.cloud_notm}} region to manage your {{site.data.keyword.satelliteshort}} location.
@@ -50,7 +50,7 @@ Review some frequently asked questions about why and how you choose an {{site.da
 
 Running {{site.data.keyword.cloud_notm}} services on your own infrastructure requires a secure connection to {{site.data.keyword.cloud_notm}}. The connection is controlled, monitored, and managed by {{site.data.keyword.IBM_notm}} to ensure that security and compliance standards for each of the services are met and to roll out updates to these services.
 
-Every {{site.data.keyword.satelliteshort}} location is set up with a control plane that establishes the secure connection back to {{site.data.keyword.cloud_notm}}. The control plane consists of a highly available control plane master that runs in the {{site.data.keyword.cloud_notm}} region that you choose and that is controlled and managed by {{site.data.keyword.IBM_notm}}. The control plane worker nodes run on your own compute hosts that you added to your {{site.data.keyword.satelliteshort}} location.
+Every {{site.data.keyword.satelliteshort}} location is set up with a control plane that establishes the secure connection back to {{site.data.keyword.cloud_notm}}. The control plane consists of a highly available control plane master that runs in the {{site.data.keyword.cloud_notm}} region that you choose. {{site.data.keyword.IBM_notm}} controls and manages this control plane master.  The control plane worker nodes run on your own compute hosts that you attached to your {{site.data.keyword.satelliteshort}} location.
 
 {{site.data.keyword.IBM_notm}} uses this connection to monitor your {{site.data.keyword.satelliteshort}} location, automatically detect and resolve capacity issues, monitor malicious activity, and roll out updates to the {{site.data.keyword.cloud_notm}} services that you run on your infrastructure.
 
@@ -61,7 +61,7 @@ For more information, see the [{{site.data.keyword.satelliteshort}} architecture
 
 You can choose any of the supported {{site.data.keyword.cloud_notm}} region to manage your {{site.data.keyword.satelliteshort}} location. The metro determines where the master of your {{site.data.keyword.satelliteshort}} control plane runs. For more information, see the [{{site.data.keyword.satelliteshort}} architecture](/docs/satellite?topic=satellite-service-architecture#architecture). To reduce latency between the {{site.data.keyword.cloud_notm}} region and your {{site.data.keyword.satelliteshort}} location, choose the region that is closest to where your physical compute infrastructure is.
 
-### Is there a limitation where my compute hosts can reside?
+### Can my hosts reside anywhere?
 {: #supported-regions-limitations}
 
 Because you bring your own compute host infrastructure to your {{site.data.keyword.satelliteshort}} location, you can choose to host this infrastructure anywhere you need it. Hosts can be in your own on-premises data center, public cloud providers, or edge computing devices if they meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}.
@@ -69,7 +69,7 @@ Because you bring your own compute host infrastructure to your {{site.data.keywo
 ### How can I deploy in an EU Cloud Certified Location?
 {: #eu-certified}
 
-EU Cloud Certified Locations are managed from the Frankfurt region. To order these, ensure you choose `fra` as the value for the `--managed-from` option.
+EU Cloud Certified Locations are managed from the Frankfurt region. To order these types of locations, ensure you choose `fra` as the value for the `--managed-from` option.
 
 Example command:
 
