@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-17"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -101,6 +101,7 @@ Before you begin, review the [parameter reference](#ibm-vpc-block-csi-driver-par
     {: pre}
 
 
+
 1. Customize the command based on the settings that you want to use.
 
 1. Run the command to create a configuration.
@@ -123,9 +124,12 @@ Before you begin, review the [parameter reference](#ibm-vpc-block-csi-driver-par
     Example request to create a version 5.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-vpc-block-csi-driver\", \"storage-template-version\": \"5.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\", { \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\", { \"entry.name\": \"G2_RESOURCE_GROUP_ID\",\"user-secret-parameters\": { \"entry.name\": \"G2_API_KEY\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-vpc-block-csi-driver\", \"storage-template-version\": \"5.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\", { \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\", { \"entry.name\": \"G2_RESOURCE_GROUP_ID\",\"user-secret-parameters\": { \"entry.name\": \"G2_API_KEY\",}
     ```
     {: pre}
+
+
+
 
 
 
