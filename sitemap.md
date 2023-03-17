@@ -2965,6 +2965,8 @@ subcollection: satellite
 
 [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown#ts-host-unassigned-unknown)
 
+[Why is my host attach script triggering a state change in terraform?](/docs/satellite?topic=satellite-ts-host-terraform#ts-host-terraform)
+
 
 ### Clusters
 {: #sitemap_clusters}

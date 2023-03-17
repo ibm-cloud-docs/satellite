@@ -264,6 +264,7 @@ toc:
                     - sat-host-reattach-fail.md
                     - ts-http-proxy.md
                     - ts-host-unassigned-unknown.md
+                    - ts-terraform.md
               - topicgroup:
                   label: Clusters
                   topics:
