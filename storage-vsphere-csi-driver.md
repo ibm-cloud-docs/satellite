@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-03-17"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -99,6 +99,7 @@ Before you begin, review the [parameter reference](#vsphere-csi-driver-parameter
     {: pre}
 
 
+
 1. Customize the command based on the settings that you want to use.
 
 1. Run the command to create a configuration.
@@ -121,9 +122,12 @@ Before you begin, review the [parameter reference](#vsphere-csi-driver-parameter
     Example request to create a version 2.5.1 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"vsphere-csi-driver\", \"storage-template-version\": \"2.5.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"INSECURE-FLAG\", { \"entry.name\": \"HOST\", { \"entry.name\": \"DATACENTERS\",\"user-secret-parameters\": { \"entry.name\": \"VCENTER-USERNAME\",{ \"entry.name\": \"VCENTER-PASSWORD\",{ \"entry.name\": \"THUMBPRINT\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"vsphere-csi-driver\", \"storage-template-version\": \"2.5.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"INSECURE-FLAG\", { \"entry.name\": \"HOST\", { \"entry.name\": \"DATACENTERS\",\"user-secret-parameters\": { \"entry.name\": \"VCENTER-USERNAME\",{ \"entry.name\": \"VCENTER-PASSWORD\",{ \"entry.name\": \"THUMBPRINT\",}
     ```
     {: pre}
+
+
+
 
 
 

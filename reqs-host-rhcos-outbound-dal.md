@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-08"
+lastupdated: "2023-03-17"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -23,6 +23,7 @@ The type of location that you create dictates the type of operating systems that
 
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
+
 
 
 Review the following outbound network requirements for RHEL and RHCOS hosts for use with RHCOS enabled locations in the Dallas (`us-south`) region.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-09"
+lastupdated: "2023-03-17"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -93,6 +93,7 @@ Before you begin, review the [parameter reference](#gcp-compute-persistent-disk-
     ```
     {: pre}
 
+
     Example command to create a version 1.7.1 configuration.
 
     ```sh
@@ -100,12 +101,14 @@ Before you begin, review the [parameter reference](#gcp-compute-persistent-disk-
     ```
     {: pre}
 
+
     Example command to create a version 1.8.0 configuration.
 
     ```sh
     ibmcloud sat storage config create --location LOCATION --name NAME --template-name gcp-compute-persistent-disk-csi-driver --template-version 1.8.0 --param "project_id=PROJECT_ID"  --param "private_key_id=PRIVATE_KEY_ID"  --param "private_key=PRIVATE_KEY"  --param "client_email=CLIENT_EMAIL"  --param "client_id=CLIENT_ID"  --param "auth_uri=AUTH_URI"  --param "token_uri=TOKEN_URI"  --param "auth_provider_x509_cert_url=AUTH_PROVIDER_X509_CERT_URL"  --param "client_x509_cert_url=CLIENT_X509_CERT_URL" 
     ```
     {: pre}
+
 
 
 1. Customize the command based on the settings that you want to use.
@@ -130,23 +133,28 @@ Before you begin, review the [parameter reference](#gcp-compute-persistent-disk-
     Example request to create a version 1.0.4 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.0.4\", \"update-assignments\": true, \"user-config-parameters\":\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\",{ \"entry.name\": \"PRIVATE_KEY_ID\",{ \"entry.name\": \"PRIVATE_KEY\",{ \"entry.name\": \"CLIENT_EMAIL\",{ \"entry.name\": \"CLIENT_ID\",{ \"entry.name\": \"AUTH_URI\",{ \"entry.name\": \"TOKEN_URI\",{ \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\",{ \"entry.name\": \"CLIENT_X509_CERT_URL\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.0.4\", \"update-assignments\": true, \"user-config-parameters\":\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\",{ \"entry.name\": \"PRIVATE_KEY_ID\",{ \"entry.name\": \"PRIVATE_KEY\",{ \"entry.name\": \"CLIENT_EMAIL\",{ \"entry.name\": \"CLIENT_ID\",{ \"entry.name\": \"AUTH_URI\",{ \"entry.name\": \"TOKEN_URI\",{ \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\",{ \"entry.name\": \"CLIENT_X509_CERT_URL\",}
     ```
     {: pre}
+
 
     Example request to create a version 1.7.1 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.7.1\", \"update-assignments\": true, \"user-config-parameters\":\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\",{ \"entry.name\": \"PRIVATE_KEY_ID\",{ \"entry.name\": \"PRIVATE_KEY\",{ \"entry.name\": \"CLIENT_EMAIL\",{ \"entry.name\": \"CLIENT_ID\",{ \"entry.name\": \"AUTH_URI\",{ \"entry.name\": \"TOKEN_URI\",{ \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\",{ \"entry.name\": \"CLIENT_X509_CERT_URL\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.7.1\", \"update-assignments\": true, \"user-config-parameters\":\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\",{ \"entry.name\": \"PRIVATE_KEY_ID\",{ \"entry.name\": \"PRIVATE_KEY\",{ \"entry.name\": \"CLIENT_EMAIL\",{ \"entry.name\": \"CLIENT_ID\",{ \"entry.name\": \"AUTH_URI\",{ \"entry.name\": \"TOKEN_URI\",{ \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\",{ \"entry.name\": \"CLIENT_X509_CERT_URL\",}
     ```
     {: pre}
+
 
     Example request to create a version 1.8.0 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.8.0\", \"update-assignments\": true, \"user-config-parameters\":\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\",{ \"entry.name\": \"PRIVATE_KEY_ID\",{ \"entry.name\": \"PRIVATE_KEY\",{ \"entry.name\": \"CLIENT_EMAIL\",{ \"entry.name\": \"CLIENT_ID\",{ \"entry.name\": \"AUTH_URI\",{ \"entry.name\": \"TOKEN_URI\",{ \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\",{ \"entry.name\": \"CLIENT_X509_CERT_URL\",
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"gcp-compute-persistent-disk-csi-driver\", \"storage-template-version\": \"1.8.0\", \"update-assignments\": true, \"user-config-parameters\":\"user-secret-parameters\": { \"entry.name\": \"PROJECT_ID\",{ \"entry.name\": \"PRIVATE_KEY_ID\",{ \"entry.name\": \"PRIVATE_KEY\",{ \"entry.name\": \"CLIENT_EMAIL\",{ \"entry.name\": \"CLIENT_ID\",{ \"entry.name\": \"AUTH_URI\",{ \"entry.name\": \"TOKEN_URI\",{ \"entry.name\": \"AUTH_PROVIDER_X509_CERT_URL\",{ \"entry.name\": \"CLIENT_X509_CERT_URL\",}
     ```
     {: pre}
+
+
+
 
 
 
