@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -159,6 +159,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [March 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar23)
+
+    * [20 March 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2023)
+
+        * New troubleshooting topic
 
     * [1 March 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar0123)
 
@@ -2965,7 +2969,7 @@ subcollection: satellite
 
 [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown#ts-host-unassigned-unknown)
 
-[Why is my host attach script triggering a state change in terraform?](/docs/satellite?topic=satellite-ts-host-terraform#ts-host-terraform)
+[Why is my host attach script triggering a state change in Terraform?](/docs/satellite?topic=satellite-ts-host-terraform#ts-host-terraform)
 
 
 ### Clusters
