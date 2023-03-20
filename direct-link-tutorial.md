@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-15"
+lastupdated: "2023-03-20"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -36,7 +36,7 @@ Is the cost of the relay compute resources included in the {{site.data.keyword.s
 :   The {{site.data.keyword.cloud_notm}} resources used for the relay and {{site.data.keyword.satelliteshort}} are billed separately.
 
 Are there additional charges to access {{site.data.keyword.cloud_notm}} services over Direct Link?
-:   No, there are not additional charges for accessing services over Direct Link. For more information, see [Pricing for IBM Cloud Direct Link](/docs/dl?topic=dl-pricing-for-ibm-cloud-dl).
+:   No, there are not additional charges for accessing services over Direct Link. 
 
 Why do I need Direct Link?
 :   Normally, outbound traffic from your Location to {{site.data.keyword.cloud_notm}} services might flow over the public internet. When you use Direct Link, outbound traffic from your Location flows through the Direct Link, rather than using the public Internet.
