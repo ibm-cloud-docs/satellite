@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-03-20"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## March 2023
 {: #satellite-mar23}
+
+### 20 March 2023
+{: #satellite-mar2023}
+{: release-note}
+
+New troubleshooting topic
+:   If you use Terraform to update your hosts, find out how to avoid reloading all of your unassigned hosts. For more information, see [Why is my host attach script triggering a state change in Terraform?](/docs/satellite?topic=satellite-ts-host-terraform).
 
 ### 1 March 2023
 {: #satellite-mar0123}
