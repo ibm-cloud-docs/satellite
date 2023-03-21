@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-03-21"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -133,7 +133,7 @@ subcollection: satellite
 
 
 ## Understanding {{site.data.keyword.satelliteshort}} location and hosts
-{: #sitemap_understanding__location_and_hosts}
+{: #sitemap_understanding_location_and_hosts}
 
 
 [Understanding {{site.data.keyword.satelliteshort}} location and hosts](/docs/satellite?topic=satellite-location-host#location-host)
@@ -842,7 +842,7 @@ subcollection: satellite
 
 
 ## Deploying apps to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config
-{: #sitemap_deploying_apps_to_clusters_with__and__config}
+{: #sitemap_deploying_apps_to_clusters_with_and_config}
 
 
 [Deploying apps to clusters with {{site.data.keyword.contdelivery_short}} and {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-sat_toolchain_tutorial#sat_toolchain_tutorial)
@@ -875,7 +875,7 @@ subcollection: satellite
 
 
 ## Deploying apps to clusters with {{site.data.keyword.satelliteshort}} Config
-{: #sitemap_deploying_apps_to_clusters_with__config}
+{: #sitemap_deploying_apps_to_clusters_with_config}
 
 
 [Deploying apps to clusters with {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-begin-sat-config-tutorial#begin-sat-config-tutorial)
@@ -892,7 +892,7 @@ subcollection: satellite
 
 
 ## Connecting Locations with {{site.data.keyword.cloud_notm}} using {{site.data.keyword.dl_short}}
-{: #sitemap_connecting_locations_with__using_}
+{: #sitemap_connecting_locations_with_using_}
 
 
 [Connecting Locations with {{site.data.keyword.cloud_notm}} using {{site.data.keyword.dl_short}}](/docs/satellite?topic=satellite-direct-link-tutorial#direct-link-tutorial)
@@ -915,7 +915,7 @@ subcollection: satellite
 
 
 ## Using {{site.data.keyword.containerlong_notm}} on classic to host the `dl-reverse-proxy`
-{: #sitemap_using__on_classic_to_host_the_dl-reverse-proxy}
+{: #sitemap_using_on_classic_to_host_the_dl-reverse-proxy}
 
 
 [Using {{site.data.keyword.containerlong_notm}} on classic to host the `dl-reverse-proxy`](/docs/satellite?topic=satellite-dl-iks-classic#dl-iks-classic)
@@ -930,7 +930,7 @@ subcollection: satellite
 
 
 ## Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters
-{: #sitemap_deploying_openshift_data_foundation_with__on__clusters}
+{: #sitemap_deploying_openshift_data_foundation_with_on_clusters}
 
 
 [Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial)
@@ -972,7 +972,7 @@ subcollection: satellite
 
 
 ## Setting up virtualization on a {{site.data.keyword.satelliteshort}} location
-{: #sitemap_setting_up_virtualization_on_a__location}
+{: #sitemap_setting_up_virtualization_on_a_location}
 
 
 [Setting up virtualization on a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-virtualization-location#virtualization-location)
@@ -999,7 +999,7 @@ subcollection: satellite
 
 
 ## Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands
-{: #sitemap_installing_the_cli_plug-in_for__commands}
+{: #sitemap_installing_the_cli_plug-in_for_commands}
 
 
 [Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-setup-cli#setup-cli)
@@ -1954,6 +1954,18 @@ subcollection: satellite
 
 * [Prerequisites for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-trident#sat-storage-netapp-trident-prereq)
 
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-netapp-trident#netapp-trident-config-create-console)
+
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#netapp-trident-config-create-cli)
+
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-netapp-trident#netapp-trident-config-create-api)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-assignment-create-api)
+
     * [Removing the NetApp Trident storage assignment and configuration from the console](/docs/satellite?topic=satellite-storage-netapp-trident#netapp-trident-template-rm-ui)
 
     * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#netapp-trident-template-rm-cli)
@@ -2280,7 +2292,7 @@ subcollection: satellite
 
 
 ## Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions
-{: #sitemap_setting_up__as_a_secure_gateway_for_on-prem_solutions}
+{: #sitemap_setting_up_as_a_secure_gateway_for_on-prem_solutions}
 
 
 [Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions](/docs/satellite?topic=satellite-sg-usecase#sg-usecase)
@@ -2664,7 +2676,7 @@ subcollection: satellite
 
 
 ## Limitations, default settings, and usage requirements
-{: #sitemap_limitations,_default_settings,_and_usage_requirements}
+{: #sitemap_limitations_default_settings_and_usage_requirements}
 
 
 [Limitations, default settings, and usage requirements](/docs/satellite?topic=satellite-requirements#requirements)
@@ -2683,7 +2695,7 @@ subcollection: satellite
 
 
 ## Supported {{site.data.keyword.cloud_notm}} regions
-{: #sitemap_supported__regions}
+{: #sitemap_supported_regions}
 
 
 [Supported {{site.data.keyword.cloud_notm}} regions](/docs/satellite?topic=satellite-sat-regions#sat-regions)
