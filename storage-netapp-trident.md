@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-20"
+  years: 2020, 2023
+lastupdated: "2023-03-21"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -31,6 +31,131 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 
 
+
+Before you begin, review the [parameter reference](#netapp-trident-parameter-reference) for the template version that you want to use.
+{: important}
+
+## Creating and assigning a configuration in the console
+{: #netapp-trident-config-create-console}
+{: ui}
+
+1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
+1. Select **Storage** > **Create storage configuration**
+1. Enter a name for your configuration.
+1. Select the **Storage type**.
+1. Select the **Version** and click **Next**
+1. If the **Storage type** that you selected accepts custom parameters, enter them on the **Parameters** tab.
+1. If the **Storage type** that you selected requires secrets, enter them on the **Secrets** tab.
+1. On the **Storage classes** tab, review the storage classes that are deployed by the configuration or create a custom storage class.
+1. On the **Assign to service** tab, select the service that you want to assign your configuration to.
+1. Click **Complete** to assign your storage configuration.
+
+## Creating a configuration in the CLI
+{: #netapp-trident-config-create-cli}
+{: cli}
+
+1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
+
+    ```sh
+    ibmcloud login
+    ```
+    {: pre}
+
+1. List your {{site.data.keyword.satelliteshort}} locations and note the `Managed from` column.
+
+    ```sh
+    ibmcloud sat location ls
+    ```
+    {: pre}
+
+1. Target the `Managed from` region of your {{site.data.keyword.satelliteshort}} location. For example, for `wdc` target `us-east`. For more information, see [{{site.data.keyword.satelliteshort}} regions](/docs/satellite?topic=satellite-sat-regions).
+
+    ```sh
+    ibmcloud target -r us-east
+    ```
+    {: pre}
+
+1. If you use a resource group other than `default`, target it.
+
+    ```sh
+    ibmcloud target -g <resource-group>
+    ```
+    {: pre}
+    
+1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+
+
+    Example command to create a version 21.04 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-trident --template-version 21.04
+    ```
+    {: pre}
+
+    Example command to create a version 22.04 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-trident --template-version 22.04
+    ```
+    {: pre}
+
+    Example command to create a version 22.10 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-trident --template-version 22.10
+    ```
+    {: pre}
+
+
+1. Customize the command based on the settings that you want to use.
+
+1. Run the command to create a configuration.
+
+1. Verify your configuration was created.
+    ```sh
+    ibmcloud sat storage config get --config CONFIG
+    ```
+    {: pre}
+
+## Creating a configuration in the API
+{: #netapp-trident-config-create-api}
+{: api}
+
+1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+
+1. Copy one of the following example requests and replace the variables that you want to use.
+
+
+    Example request to create a version 21.04 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-trident\", \"storage-template-version\": \"21.04\", \"update-assignments\": true}
+    ```
+    {: pre}
+
+    Example request to create a version 22.04 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-trident\", \"storage-template-version\": \"22.04\", \"update-assignments\": true}
+    ```
+    {: pre}
+
+    Example request to create a version 22.10 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-trident\", \"storage-template-version\": \"22.10\", \"update-assignments\": true}
+    ```
+    {: pre}
+
+
+
+
+
+
+
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
 
 ### Removing the NetApp Trident storage assignment and configuration from the console
