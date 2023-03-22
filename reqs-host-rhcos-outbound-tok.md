@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-08"
+lastupdated: "2023-03-22"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -27,13 +27,13 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 Review the following outbound network requirements for RHEL and RHCOS hosts for use with RHCOS enabled locations in the Tokyo (`jp-tok`) region.
 {: #host-out-rhcos-tok}
 
-Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers
+Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers.
 :    * Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
      * Protocol and ports: Allow NTP protocol and provide UDP on port 123
      
 :    If you don't want to use {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers, you can instead define a [custom NTP server for your RHCOS hosts](/docs/satellite?topic=satellite-config-custom-ntp).
 
-Allow hosts to communicate with Red Hat Container Registry
+Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
@@ -65,13 +65,13 @@ Optional: Allow hosts to communicate with {{site.data.keyword.monitoringlong_not
      
 :    If you plan to use {{site.data.keyword.monitoringshort_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
 
-Optional: Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}
+Optional: Allow hosts to communicate with {{site.data.keyword.loganalysislong_notm}}.
 :    * Destination IP addresses and hostnames: [{{site.data.keyword.loganalysislong_notm}} endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public)
      * Protocol and ports: HTTPS 443
 
-:    If you plan to use {{site.data.keyword.loganalysislong_notm}} in your {{site.data.keyword.openshiftshort}} {{site.data.keyword.satelliteshort}} clusters, then include these network options.
+:    If you plan to use {{site.data.keyword.loganalysislong_notm}} in your {{site.data.keyword.openshiftshort}}  {{site.data.keyword.satelliteshort}} clusters, then include these network options.
 
-Optional: Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}
+Optional: Allow hosts to communicate with {{site.data.keyword.monitoringlong_notm}}.
 :    * Destination IP addresses and hostnames: [{{site.data.keyword.monitoringshort_notm}} endpoints](/docs/monitoring?topic=monitoring-endpoints)
      * Protocol and ports: HTTPS 443 and 6443
 
