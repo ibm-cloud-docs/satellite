@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-23"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -22,6 +22,11 @@ The type of location that you create dictates the type of operating systems that
 
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
+
+You can [download a copy of these requirements](https://cloud.ibm.com/media/docs/downloads/satellite/non-rhcos-london.csv){: external}.
+{: tip}
+
+
 
 Review the following outbound network requirements for RHEL hosts for use with non-RHCOS enabled locations in the London (`eu-gb`) region.
 
@@ -52,7 +57,7 @@ Allow control plane worker nodes to communicate with the control plane master.
      * Destination hostnames:  `c106.eu-gb.satellite.cloud.ibm.com`, `c106-1.eu-gb.satellite.cloud.ibm.com`, `c106-2.eu-gb.satellite.cloud.ibm.com`, `c106-3.eu-gb.satellite.cloud.ibm.com`, `c106-e.eu-gb.satellite.cloud.ibm.com` 
      * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767
 
-Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}
+Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}.
 :    * Destination IP addresses: N/A
      * Destination hostnames: `s3.eu.cloud-object-storage.appdomain.cloud` and `*.s3.eu.cloud-object-storage.appdomain.cloud`
      * Protocol and ports: HTTPS 443

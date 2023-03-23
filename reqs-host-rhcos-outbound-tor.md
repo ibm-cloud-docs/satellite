@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-23"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -25,6 +25,10 @@ The type of location that you create dictates the type of operating systems that
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
+You can [download a copy of these requirements](https://cloud.ibm.com/media/docs/downloads/satellite/rhcos-toronto.csv){: external}.
+{: tip}
+
+
 
 Review the following outbound network requirements for RHEL and RHCOS hosts for use with RHCOS enabled locations in the Toronto (`ca-tor`) region.
 
@@ -38,22 +42,22 @@ Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
-Allow control plane worker nodes to communicate with the control plane master 
+Allow control plane worker nodes to communicate with the control plane master.
 :    * Destination IP addresses:  169.55.168.210, 163.74.69.194, 163.75.72.2
      * Destination hostnames: `c114.ca-tor.satellite.cloud.ibm.com`, `c114-1.ca-tor.satellite.cloud.ibm.com`, `c114-2.ca-tor.satellite.cloud.ibm.com`, `c114-3.ca-tor.satellite.cloud.ibm.com`, `c114-e.ca-tor.satellite.cloud.ibm.com`
      * Protocol and ports: TCP 30000 - 32767
 
-Allow hosts to be attached to a location and assigned to services in the location
+Allow hosts to be attached to a location and assigned to services in the location.
 :    * Destination IP addresses: 163.75.64.114, 163.74.65.18, 158.85.65.194
      * Destination hostnames: `origin.ca-tor.containers.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
-Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
+Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
 :    * Destination IP addresses: N/A
      * Destination hostnames: `icr.io`, `registry.bluemix.net`, `ca.icr.io`, `us.icr.io`, `registry.ng.bluemix.net`
      * Protocol and ports: HTTPS 443
      
-Allow Link connectors to connect to the Link tunnel server endpoint
+Allow Link connectors to connect to the Link tunnel server endpoint.
 :    * Destination IP addresses: 163.74.67.114, 163.75.70.74, 158.85.79.18
      * Destination hostnames: `c-01-ws.ca-tor.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443

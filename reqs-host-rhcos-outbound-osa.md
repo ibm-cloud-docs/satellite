@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-23"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -24,6 +24,10 @@ The type of location that you create dictates the type of operating systems that
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
+You can [download a copy of these requirements](https://cloud.ibm.com/media/docs/downloads/satellite/rhcos-osaka.csv){: external}.
+{: tip}
+
+
 
 Review the following outbound network requirements for RHEL and RHCOS hosts for use with RHCOS enabled locations in the Osaka (`jp-osa`) region.
 
@@ -37,22 +41,22 @@ Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
-Allow control plane worker nodes to communicate with the control plane master 
+Allow control plane worker nodes to communicate with the control plane master.
 :    * Destination IP addresses:  163.68.96.42,163.69.71.122,163.73.68.138 
-     * Destination hostnames: `c111.jp-osa.satellite.cloud.ibm.com`, `c111-1.jp-osa.satellite.cloud.ibm.com`, `111-2.jp-osa.satellite.cloud.ibm.com`, `c111-3.jp-osa.satellite.cloud.ibm.com`, `c111-e.jp-osa.satellite.cloud.ibm.com`
+     * Destination hostnames: `c111.jp-osa.satellite.cloud.ibm.com`, `c111-1.jp-osa.satellite.cloud.ibm.com`, `c111-2.jp-osa.satellite.cloud.ibm.com`, `c111-3.jp-osa.satellite.cloud.ibm.com`, `c111-e.jp-osa.satellite.cloud.ibm.com`
      * Protocol and ports: TCP 30000 - 32767
     
-Allow hosts to be attached to a location and assigned to services in the location
+Allow hosts to be attached to a location and assigned to services in the location.
 :    * Destination IPs: 165.192.69.69, 161.202.126.210, 128.168.71.117
      * Destination hostnames: `origin.jp-osa.containers.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
-Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
+Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
 :    * Destination IP addresses: N/A
      * Destination hostnames: `icr.io`, `registry.bluemix.net`, `jp2.icr.io`, `au.icr.io`, `registy.au-syd.bluemix.net`
      * Protocol and ports: HTTPS 443
      
-Allow Link connectors to connect to the Link tunnel server endpoint
+Allow Link connectors to connect to the Link tunnel server endpoint.
 :    * Destination IP addresses: 163.68.78.234, 163.69.70.106, 163.73.70.50
      * Destination hostnames: `c-01-ws.jp-osa.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443

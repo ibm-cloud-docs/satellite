@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-23"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -24,6 +24,11 @@ The type of location that you create dictates the type of operating systems that
 
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
+
+You can [download a copy of these requirements](https://cloud.ibm.com/media/docs/downloads/satellite/non-rhcos-osaka.csv){: external}.
+{: tip}
+
+
 
 The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) hosts for use with non Red Hat CoreOS enabled locations in the Osaka (`jp-osa`) region.
 

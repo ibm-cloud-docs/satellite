@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-23"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -25,6 +25,10 @@ The type of location that you create dictates the type of operating systems that
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
+You can [download a copy of these requirements](https://cloud.ibm.com/media/docs/downloads/satellite/rhcos-sydney.csv){: external}.
+{: tip}
+
+
 
 Review the following outbound network requirements for RHEL and RHCOS hosts for use with RHCOS enabled locations in the Sydney (`au-syd`) region.
 
@@ -38,22 +42,22 @@ Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
-Allow control plane worker nodes to communicate with the control plane master 
+Allow control plane worker nodes to communicate with the control plane master.
 :    * Destination IP addresses:  168.1.27.26,130.198.65.146,135.90.87.90
      * Destination hostnames: `c114.au-syd.satellite.cloud.ibm.com`, `c114-1.au-syd.satellite.cloud.ibm.com`, `c114-2.au-syd.satellite.cloud.ibm.com`, `c114-3.au-syd.satellite.cloud.ibm.com`, `c114-e.au-syd.satellite.cloud.ibm.com`
      * Protocol and ports: TCP 30000 - 32767
      
-Allow hosts to be attached to a location and assigned to services in the location
+Allow hosts to be attached to a location and assigned to services in the location.
 :    * Destination IP addresses: 130.198.66.26, 135.90.69.66, 168.1.8.195
      * Destination hostnames: `origin.au-syd.containers.cloud.ibm.com` 
      * Protocol and ports: HTTPS 443     
 
-Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
+Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
 :    * Destination IP addresses: N/A
      * Destination hostnames: `icr.io`, `registry.bluemix.net`, `au.icr.io`, `registry.au-syd.bluemix.net`
      * Protocol and ports: HTTPS 443
 
-Allow Link connectors to connect to the Link tunnel server endpoint
+Allow Link connectors to connect to the Link tunnel server endpoint.
 :    * Destination IP addresses: 130.198.75.74, 135.90.67.154, 168.1.201.194
      * Destination hostnames: `c-01-ws.au-syd.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
