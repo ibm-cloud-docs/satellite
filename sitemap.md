@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-21"
+lastupdated: "2023-03-23"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2163,8 +2163,6 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-odf-local#odf-local-parameter-reference)
 
-    * [4.7 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#4.7-parameter-reference)
-
     * [4.8 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#4.8-parameter-reference)
 
     * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#4.9-parameter-reference)
@@ -2204,8 +2202,6 @@ subcollection: satellite
     * [Removing the ODF remote storage assignment from the command line](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-template-rm-cli)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-parameter-reference)
-
-    * [4.7 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#4.7-parameter-reference)
 
     * [4.8 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#4.8-parameter-reference)
 
