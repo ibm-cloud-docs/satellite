@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-23"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -84,7 +84,7 @@ Before you begin, review the [parameter reference](#ibm-object-storage-plugin-pa
     Example command to create a version 2.2 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2 --param "helm-release-name=HELM-RELEASE-NAME"  [--param "parameters=PARAMETERS"]  --param "license=LICENSE"  --param "cos-endpoint=COS-ENDPOINT"  --param "cos-storageclass=COS-STORAGECLASS" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-object-storage-plugin --template-version 2.2 --param "helm-release-name=HELM-RELEASE-NAME"  [--param "parameters=PARAMETERS"]  --param "license=LICENSE"  [--param "s3provider=S3PROVIDER"]  --param "cos-storageclass=COS-STORAGECLASS"  [--param "cos-endpoint=COS-ENDPOINT"] 
     ```
     {: pre}
 
@@ -112,7 +112,7 @@ Before you begin, review the [parameter reference](#ibm-object-storage-plugin-pa
     Example request to create a version 2.2 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-object-storage-plugin\", \"storage-template-version\": \"2.2\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"HELM-RELEASE-NAME\", { \"entry.name\": \"PARAMETERS\", { \"entry.name\": \"LICENSE\", { \"entry.name\": \"COS-ENDPOINT\", { \"entry.name\": \"COS-STORAGECLASS\",\"user-secret-parameters\": }
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-object-storage-plugin\", \"storage-template-version\": \"2.2\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"HELM-RELEASE-NAME\", { \"entry.name\": \"PARAMETERS\", { \"entry.name\": \"LICENSE\", { \"entry.name\": \"S3PROVIDER\", { \"entry.name\": \"COS-STORAGECLASS\", { \"entry.name\": \"COS-ENDPOINT\",\"user-secret-parameters\": }
     ```
     {: pre}
 
@@ -325,8 +325,9 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 | Helm Chart Release Name | `helm-release-name` | Config | Release name of the chart | true | 
 | Helm Chart Additional Parameters (Optional) | `parameters` | Config | Helm Chart Additional Parameters (Optional) | false | 
 | COS plug-in License: Apache License Version 2.0 | `license` | Config | COS plug-in License: Apache License Version 2.0. Set to `true` to accept the license and install the plugin | true | 
-| COS Endpoint | `cos-endpoint` | Config | Enter COS Endpoint. For more information, refer to https://ibm.biz/cos-endpoints | true | 
+| Object storage service provider | `s3provider` | Config | Enter the object storage service provider. Supported providers are `IBM`, `AWS` and `Wasabi`. For other providers, you must explicitly provide the COS endpoint | false | 
 | COS storage class | `cos-storageclass` | Config | Enter COS storage class. For more info, refer to https://ibm.biz/cos-storage-classes | true | 
+| COS Endpoint | `cos-endpoint` | Config | COS Endpoint. Required when `s3provider` is not set. Precedence is given to `s3provider` when both are set. For more information, refer to https://ibm.biz/cos-endpoints | false | 
 {: caption="Table 1. 2.2 parameter reference" caption-side="bottom"}
 
 
