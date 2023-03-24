@@ -2808,6 +2808,322 @@ subcollection: satellite
 * [Creative Commons Attribution Share Alike 4.0 Generic](/docs/satellite?topic=satellite-sat-notices#cc-40-generic)
 
 
+## Version history
+{: #sitemap_version_history}
+
+
+
+### Storage template version history
+{: #sitemap_storage_template_version_history}
+
+
+[`aws-ebs-csi-driver` change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#cl-aws-ebs-csi-driver)
+
+* [Version 1.12.0](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#1.12.0-change-log)
+
+    * [Revision 2, released 16 January 2023](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.12.0-rev-2-change-log)
+
+* [Version 1.5.1](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#1.5.1-change-log)
+
+    * [Revision 5, released 16 January 2023](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.5.1-rev-5-change-log)
+
+* [Version 1.1.0](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#1.1.0-change-log)
+
+    * [Revision 5, released 16 January 2023](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.1.0-rev-5-change-log)
+
+[`aws-efs-csi-driver` change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#cl-aws-efs-csi-driver)
+
+* [Version 1.4.2](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#1.4.2-change-log)
+
+    * [Revision 1, released 07 November 2022](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-1.4.2-rev-1-change-log)
+
+* [Version 1.3.7](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#1.3.7-change-log)
+
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-1.3.7-rev-4-change-log)
+
+* [Version 1.3.1](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#1.3.1-change-log)
+
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-1.3.1-rev-4-change-log)
+
+[`azuredisk-csi-driver` change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#cl-azuredisk-csi-driver)
+
+* [Version 1.23.0](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#1.23.0-change-log)
+
+    * [Revision 1, released 26 October 2022](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#azuredisk-csi-driver-1.23.0-rev-1-change-log)
+
+* [Version 1.18.0](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#1.18.0-change-log)
+
+    * [Revision 5, released 29 July 2022](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#azuredisk-csi-driver-1.18.0-rev-5-change-log)
+
+* [Version 1.4.0](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#1.4.0-change-log)
+
+    * [Revision 5, released 29 July 2022](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#azuredisk-csi-driver-1.4.0-rev-5-change-log)
+
+[`azurefile-csi-driver` change log](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#cl-azurefile-csi-driver)
+
+* [Version 1.22.0](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#1.22.0-change-log)
+
+    * [Revision 1, released 26 October 2022](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#azurefile-csi-driver-1.22.0-rev-1-change-log)
+
+* [Version 1.18.0](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#1.18.0-change-log)
+
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#azurefile-csi-driver-1.18.0-rev-4-change-log)
+
+* [Version 1.9.0](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#1.9.0-change-log)
+
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#azurefile-csi-driver-1.9.0-rev-4-change-log)
+
+[`gcp-compute-persistent-disk-csi-driver` change log](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#cl-gcp-compute-persistent-disk-csi-driver)
+
+* [Version 1.8.0](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#1.8.0-change-log)
+
+    * [Revision 2, released 23 January 2023](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.8.0-rev-2-change-log)
+
+* [Version 1.7.1](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#1.7.1-change-log)
+
+    * [Revision 5, released 23 January 2023](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.7.1-rev-5-change-log)
+
+* [Version 1.0.4](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#1.0.4-change-log)
+
+    * [Revision 4, released 23 January 2023](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.0.4-rev-4-change-log)
+
+[`ibm-object-storage-plugin` change log](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#cl-ibm-object-storage-plugin)
+
+* [Version 2.2](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#2.2-change-log)
+
+    * [Revision 9, released 21 March 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-9-change-log)
+
+    * [Revision 8, released 06 March 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-8-change-log)
+
+    * [Revision 7, released 20 February 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-7-change-log)
+
+[`ibm-spectrum-fusion` change log](/docs/satellite?topic=satellite-cl-ibm-spectrum-fusion#cl-ibm-spectrum-fusion)
+
+* [Version 2.4.0](/docs/satellite?topic=satellite-cl-ibm-spectrum-fusion#2.4.0-change-log)
+
+    * [Revision 1, released 29 July 2022](/docs/satellite?topic=satellite-cl-ibm-spectrum-fusion#ibm-spectrum-fusion-2.4.0-rev-1-change-log)
+
+[`ibm-system-storage-block-csi-driver` change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#cl-ibm-system-storage-block-csi-driver)
+
+* [Version 1.5.0](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#1.5.0-change-log)
+
+    * [Revision 2, released 29 July 2022](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.5.0-rev-2-change-log)
+
+* [Version 1.4.0](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#1.4.0-change-log)
+
+    * [Revision 2, released 29 July 2022](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.4.0-rev-2-change-log)
+
+[`ibm-vpc-block-csi-driver` change log](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#cl-ibm-vpc-block-csi-driver)
+
+* [Version 5.0](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#5.0-change-log)
+
+    * [Revision 8, released 21 March 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-8-change-log)
+
+    * [Revision 7, released 06 March 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-7-change-log)
+
+[`local-volume-block` change log](/docs/satellite?topic=satellite-cl-local-volume-block#cl-local-volume-block)
+
+* [Version 4.12](/docs/satellite?topic=satellite-cl-local-volume-block#4.12-change-log)
+
+    * [Revision 1, released 23 January 2023](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.12-rev-1-change-log)
+
+* [Version 4.11](/docs/satellite?topic=satellite-cl-local-volume-block#4.11-change-log)
+
+    * [Revision 1, released 07 November 2022](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.11-rev-1-change-log)
+
+* [Version 4.10](/docs/satellite?topic=satellite-cl-local-volume-block#4.10-change-log)
+
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.10-rev-4-change-log)
+
+* [Version 4.9](/docs/satellite?topic=satellite-cl-local-volume-block#4.9-change-log)
+
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.9-rev-4-change-log)
+
+* [Version 4.8](/docs/satellite?topic=satellite-cl-local-volume-block#4.8-change-log)
+
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.8-rev-4-change-log)
+
+[`local-volume-file` change log](/docs/satellite?topic=satellite-cl-local-volume-file#cl-local-volume-file)
+
+* [Version 4.12](/docs/satellite?topic=satellite-cl-local-volume-file#4.12-change-log)
+
+    * [Revision 1, released 23 January 2023](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.12-rev-1-change-log)
+
+* [Version 4.11](/docs/satellite?topic=satellite-cl-local-volume-file#4.11-change-log)
+
+    * [Revision 1, released 07 November 2022](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.11-rev-1-change-log)
+
+* [Version 4.10](/docs/satellite?topic=satellite-cl-local-volume-file#4.10-change-log)
+
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.10-rev-4-change-log)
+
+* [Version 4.9](/docs/satellite?topic=satellite-cl-local-volume-file#4.9-change-log)
+
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.9-rev-4-change-log)
+
+* [Version 4.8](/docs/satellite?topic=satellite-cl-local-volume-file#4.8-change-log)
+
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.8-rev-4-change-log)
+
+[`netapp-ontap-nas` change log](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#cl-netapp-ontap-nas)
+
+* [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#22.10-change-log)
+
+    * [Revision 3, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-3-change-log)
+
+    * [Revision 2, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-2-change-log)
+
+    * [Revision 1, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-1-change-log)
+
+* [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#22.04-change-log)
+
+    * [Revision 16, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-16-change-log)
+
+    * [Revision 15, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-15-change-log)
+
+    * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-14-change-log)
+
+* [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#21.04-change-log)
+
+    * [Revision 18, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-18-change-log)
+
+    * [Revision 17, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-17-change-log)
+
+    * [Revision 16, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-16-change-log)
+
+[`netapp-ontap-san` change log](/docs/satellite?topic=satellite-cl-netapp-ontap-san#cl-netapp-ontap-san)
+
+* [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-san#22.10-change-log)
+
+    * [Revision 3, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-3-change-log)
+
+    * [Revision 2, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-2-change-log)
+
+    * [Revision 1, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-1-change-log)
+
+* [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-ontap-san#22.04-change-log)
+
+    * [Revision 16, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-16-change-log)
+
+    * [Revision 15, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-15-change-log)
+
+    * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-14-change-log)
+
+* [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-ontap-san#21.04-change-log)
+
+    * [Revision 19, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-19-change-log)
+
+    * [Revision 18, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-18-change-log)
+
+    * [Revision 17, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-17-change-log)
+
+[`netapp-trident` change log](/docs/satellite?topic=satellite-cl-netapp-trident#cl-netapp-trident)
+
+* [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-trident#22.10-change-log)
+
+    * [Revision 1, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-22.10-rev-1-change-log)
+
+* [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-trident#22.04-change-log)
+
+    * [Revision 3, released 23 January 2023](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-22.04-rev-3-change-log)
+
+* [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-trident#21.04-change-log)
+
+    * [Revision 4, released 23 January 2023](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-21.04-rev-4-change-log)
+
+[`odf-local` change log](/docs/satellite?topic=satellite-cl-odf-local#cl-odf-local)
+
+* [Version 4.11](/docs/satellite?topic=satellite-cl-odf-local#4.11-change-log)
+
+    * [Revision 4, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-4-change-log)
+
+    * [Revision 3, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-3-change-log)
+
+    * [Revision 2, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-2-change-log)
+
+* [Version 4.10](/docs/satellite?topic=satellite-cl-odf-local#4.10-change-log)
+
+    * [Revision 15, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-15-change-log)
+
+    * [Revision 14, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-14-change-log)
+
+    * [Revision 13, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-13-change-log)
+
+* [Version 4.9](/docs/satellite?topic=satellite-cl-odf-local#4.9-change-log)
+
+    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-21-change-log)
+
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-20-change-log)
+
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-19-change-log)
+
+* [Version 4.8](/docs/satellite?topic=satellite-cl-odf-local#4.8-change-log)
+
+    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.8-rev-21-change-log)
+
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.8-rev-20-change-log)
+
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.8-rev-19-change-log)
+
+* [Version 4.7](/docs/satellite?topic=satellite-cl-odf-local#4.7-change-log)
+
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.7-rev-20-change-log)
+
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.7-rev-19-change-log)
+
+[`odf-remote` change log](/docs/satellite?topic=satellite-cl-odf-remote#cl-odf-remote)
+
+* [Version 4.11](/docs/satellite?topic=satellite-cl-odf-remote#4.11-change-log)
+
+    * [Revision 4, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-4-change-log)
+
+    * [Revision 3, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-3-change-log)
+
+    * [Revision 2, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-2-change-log)
+
+* [Version 4.10](/docs/satellite?topic=satellite-cl-odf-remote#4.10-change-log)
+
+    * [Revision 15, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-15-change-log)
+
+    * [Revision 14, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-14-change-log)
+
+    * [Revision 13, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-13-change-log)
+
+* [Version 4.9](/docs/satellite?topic=satellite-cl-odf-remote#4.9-change-log)
+
+    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-21-change-log)
+
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-20-change-log)
+
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-19-change-log)
+
+* [Version 4.8](/docs/satellite?topic=satellite-cl-odf-remote#4.8-change-log)
+
+    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.8-rev-21-change-log)
+
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.8-rev-20-change-log)
+
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.8-rev-19-change-log)
+
+* [Version 4.7](/docs/satellite?topic=satellite-cl-odf-remote#4.7-change-log)
+
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.7-rev-20-change-log)
+
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.7-rev-19-change-log)
+
+[`ridge-csi-driver` change log](/docs/satellite?topic=satellite-cl-ridge-csi-driver#cl-ridge-csi-driver)
+
+* [Version 1.0.0](/docs/satellite?topic=satellite-cl-ridge-csi-driver#1.0.0-change-log)
+
+    * [Revision 1, released 11 October 2022](/docs/satellite?topic=satellite-cl-ridge-csi-driver#ridge-csi-driver-1.0.0-rev-1-change-log)
+
+[`vsphere-csi-driver` change log](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#cl-vsphere-csi-driver)
+
+* [Version 2.5.1](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#2.5.1-change-log)
+
+    * [Revision 6, released 20 February 2023](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.5.1-rev-6-change-log)
+
+
 ## FAQs
 {: #sitemap_faqs}
 
