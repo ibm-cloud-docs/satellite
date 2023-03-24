@@ -160,6 +160,10 @@ subcollection: satellite
 
 * [March 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar23)
 
+    * [24 March 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2423)
+
+        * Changes to the host network requirements in non-RHCOS locations.
+
     * [20 March 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2023)
 
         * New troubleshooting topic

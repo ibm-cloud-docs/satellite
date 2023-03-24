@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-03-24"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## March 2023
 {: #satellite-mar23}
+
+### 24 March 2023
+{: #satellite-mar2423}
+{: release-note}
+
+Changes to the host network requirements in non-RHCOS locations.
+:   For more information, see the outbound network requirements for the [region your Location is in](/docs/satellite?topic=satellite-reqs-host-network-outbound).
 
 ### 20 March 2023
 {: #satellite-mar2023}
