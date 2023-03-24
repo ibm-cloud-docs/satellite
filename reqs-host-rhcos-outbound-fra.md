@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-24"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -24,6 +24,10 @@ The type of location that you create dictates the type of operating systems that
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
+
+
+
+
 Review the following outbound network requirements for RHEL and RHCOS hosts for use with RHCOS enabled locations in the Frankfurt (`eu-de`) region.
 
 Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers.
@@ -36,22 +40,22 @@ Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
-Allow control plane worker nodes to communicate with the control plane master
+Allow control plane worker nodes to communicate with the control plane master.
 :    * Destination IP addresses: 149.81.69.106, 161.156.66.114, 169.50.13.50
      * Destination hostnames: `c124.eu-de.satellite.cloud.ibm.com`, `c124-1.eu-de.satellite.cloud.ibm.com`, `c124-2.eu-de.satellite.cloud.ibm.com`, `c124-3.eu-de.satellite.cloud.ibm.com`, `c124-e.eu-de.satellite.cloud.ibm.com`
      * Protocol and ports: TCP 30000 - 32767
      
-Allow hosts to be attached to a location and assigned to services in the location
+Allow hosts to be attached to a location and assigned to services in the location.
 :    * Destination IP addresses: 169.50.56.174, 161.156.65.42, 149.81.78.114 
      * Destination hostnames: `origin.eu-de.containers.cloud.ibm.com`
      * Protocol and ports: HTTPS 443     
      
-Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}
+Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
 :    * Destination IP addresses: N/A
      * Destination hostnames: `icr.io`, `registry.bluemix.net`, `de.icr.io`, `registry.eu-de.bluemix.net`
      * Protocol and ports: HTTPS 443
      
-Allow Link connectors to connect to the Link tunnel server endpoint
+Allow Link connectors to connect to the Link tunnel server endpoint.
 :    * Destination IP addresses: 149.81.188.130, 158.177.75.210, 161.156.38.2  
      * Destination hostnames:  `c-01-ws.eu-de.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443

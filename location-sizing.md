@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-10"
+lastupdated: "2023-03-24"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -38,8 +38,12 @@ Because your {{site.data.keyword.satelliteshort}} location represents your own d
     - How many worker nodes (hosts) do I need to handle my workload?
     - How do I monitor resource usage and capacity in my cluster?
 
+## FAQs about location sizing
+{: #location-sizing-faq}
 
-## How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?
+Review the following frequently asked questions for more information about sizing your location.
+
+### How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?
 {: #control-plane-attach-capacity}
 
 When you list locations, such as with the `ibmcloud sat location ls` command or in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, the location enters an `Action required` health state. You see warning messages similar to the following example.
@@ -55,14 +59,14 @@ The location control plane is running at max capacity and cannot support any mor
 
 After you determine the size of your location, [add hosts to the location control plane](/docs/satellite?topic=satellite-attach-hosts).
 
-## How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?
+### How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?
 {: #control-plane-scale-up}
 
 See [Highly available control plane worker setup](/docs/satellite?topic=satellite-ha#satellite-ha-setup). Make sure to attach hosts to the control plane location in each zone, in multiples of three. For example, you might have 6 hosts that are assigned to your control plane location that is managed from the {{site.data.keyword.cloud_notm}} `wdc` region, with 2 hosts each zone (`us-east-1`, `us-east-2`, and `us-east-3`).
 
 To scale up your control plane, you can follow the same steps to [Set up the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane).
 
-## How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?
+### How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?
 {: #control-plane-how-many-clusters}
 
 The number of clusters depends on the size of your clusters and the size of the hosts that you use for the {{site.data.keyword.satelliteshort}} location control plane. You must scale up the control plane hosts in multiples of 3, such as 6, 9, or 12.
@@ -72,7 +76,7 @@ The following tables provide examples of the number of hosts that the control pl
 - The size of the hosts that run the control plane, **4 vCPU and 16GB RAM** or **16 vCPU and 64GB RAM**, affect the numbers of clusters and worker nodes that are possible in the location. Keep in mind that actual performance requirements depend on many factors, such as the underlying CPU performance and control plane usage by the applications that run in the location.
 - You can assign hosts to the control plane in groups of 3. The table presents examples up to 12 hosts as common configurations to give you an idea of how you might size the control plane for your host and application environment. Note that you can add more than 12 hosts to your control plane in groups of 3. For example you might create a control plane with 18 or 27 hosts.
 
-## What types of changes can increase my location sizing requirements? 
+### What types of changes can increase my location sizing requirements? 
 {: #types-changes-sizing-increase}
 
 Your sizing requirements can increase depending on the amount of workload that is running in a cluster. The following examples can cause your sizing requirements for your location to increase.
@@ -82,7 +86,7 @@ Your sizing requirements can increase depending on the amount of workload that i
 - Aggregated `kube-apiserver` request workload and response sizes of data gathered. For example, if your cluster contains many ConfigMaps and an application queries for the full list of that data, that request can cause the control plane to require more resources.
 
 
-### Location size for non-Red Hat CoreOS enabled location
+## Location size for non-Red Hat CoreOS enabled location
 {: #control-plane-how-many-clusters-rhel}
 
 The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a non-Red Hat CoreOS enabled location. These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
@@ -100,7 +104,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, us
 {: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram}
-{: tab-title="4 vCPU, 16 GB RAM (RHEL)"}
+{: tab-title="4 vCPU, 16 GB RAM"}
 {: tab-group="loc-size"}
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
@@ -111,10 +115,10 @@ While you can deploy a cluster to a location with only 3 control plane hosts, us
 {: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #16cpu-64ram}
-{: tab-title="16 vCPU, 64 GB RAM (RHEL)"}
+{: tab-title="16 vCPU, 64 GB RAM"}
 {: tab-group="loc-size"}
 
-### Location size for Red Hat CoreOS (RHCOS) enabled location
+## Location size for Red Hat CoreOS (RHCOS) enabled location
 {: #control-plane-how-many-clusters-rhcos}
 
 The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a Red Hat CoreOS enabled location. These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
@@ -132,7 +136,7 @@ While you can deploy a cluster to a location that uses 3 hosts with 4 vCPU and 1
 {: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram-coreos}
-{: tab-title="4 vCPU, 16 GB RAM (CoreOS)"}
+{: tab-title="4 vCPU, 16 GB RAM"}
 {: tab-group="loc-sizerhcos"}
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
@@ -143,9 +147,22 @@ While you can deploy a cluster to a location that uses 3 hosts with 4 vCPU and 1
 {: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #16cpu-64ram-coreos}
-{: tab-title="16 vCPU, 64 GB RAM (CoreOS)"}
+{: tab-title="16 vCPU, 64 GB RAM"}
 {: tab-group="loc-sizerhcos"}
 
 
+## Location size for testing
+{: #control-plane-how-many-clusters-test}
+
+The following table shows sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run a {{site.data.keyword.satelliteshort}} location demonstration. This configuration is not intended for production use. 
+
+
+ 
+The following information can be used for both RHCOS and non-RHCOS enabled locations. The hosts must have at least 4 vCPU and 16 GB RAM.
+
+| Number of control plane hosts | Max clusters in location |  Max cluster size |
+| --- | --- | --- |
+| 3 hosts 4x16 | Up to 3 clusters | 20 workers per cluster |
+{: caption="Sizing guidance for demonstrations" caption-side="bottom"}
 
 

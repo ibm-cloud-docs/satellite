@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-22"
+lastupdated: "2023-03-24"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -24,6 +24,10 @@ The type of location that you create dictates the type of operating systems that
 
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
+
+
+
+
 
 The following network requirements are for outbound connectivity for Red Hat Enterprise Linux (RHEL) hosts for use with non Red Hat CoreOS enabled locations in the Osaka (`jp-osa`) region.
 
@@ -55,7 +59,14 @@ Allow control plane worker nodes to communicate with the control plane master.
 
 Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}.
 :    * Destination IP addresses: N/A
-     * Destination hostnames: `s3.ap.cloud-object-storage.appdomain.cloud` and `*.s3.ap.cloud-object-storage.appdomain.cloud`
+     * Destination hostnames: `s3.jp-osa.cloud-object-storage.appdomain.cloud` and `*.s3.jp-osa.cloud-object-storage.appdomain.cloud`
+     * Protocol and ports: HTTPS 443
+
+
+
+Allow continuous delivery of updates to platform components.
+:    * Destination IP addresses: N/A
+     * Destination hostnames: `s3.us.cloud-object-storage.appdomain.cloud` and `*.s3.us.cloud-object-storage.appdomain.cloud`
      * Protocol and ports: HTTPS 443
 
 Allow Link connectors to connect to the Link tunnel server endpoint.
