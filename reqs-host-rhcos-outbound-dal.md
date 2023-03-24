@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-24"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -25,8 +25,6 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 {: tip}
 
 
-You can [download a copy of these requirements](https://cloud.ibm.com/media/docs/downloads/satellite/rhcos-dallas.csv){: external}.
-{: tip}
 
 
 

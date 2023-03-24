@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-24"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -24,8 +24,7 @@ The type of location that you create dictates the type of operating systems that
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
 
-You can [download a copy of these requirements](https://cloud.ibm.com/media/docs/downloads/satellite/rhcos-tokyo.csv){: external}.
-{: tip}
+
 
 
 
