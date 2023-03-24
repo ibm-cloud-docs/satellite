@@ -1252,17 +1252,19 @@ subcollection: satellite
 
 [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing#location-sizing)
 
-* [How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?](/docs/satellite?topic=satellite-location-sizing#control-plane-attach-capacity)
+* [FAQs about location sizing](/docs/satellite?topic=satellite-location-sizing#location-sizing-faq)
 
-* [How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?](/docs/satellite?topic=satellite-location-sizing#control-plane-scale-up)
+    * [How do I know when to attach capacity to the {{site.data.keyword.satelliteshort}} location control plane?](/docs/satellite?topic=satellite-location-sizing#control-plane-attach-capacity)
 
-* [How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters)
+    * [How do I scale up my {{site.data.keyword.satelliteshort}} location control plane to be highly available?](/docs/satellite?topic=satellite-location-sizing#control-plane-scale-up)
 
-* [What types of changes can increase my location sizing requirements?](/docs/satellite?topic=satellite-location-sizing#types-changes-sizing-increase)
+    * [How many {{site.data.keyword.openshiftlong_notm}} clusters can I run before I need to attach capacity to the location control plane?](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters)
 
-    * [Location size for non-Red Hat CoreOS enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
+    * [What types of changes can increase my location sizing requirements?](/docs/satellite?topic=satellite-location-sizing#types-changes-sizing-increase)
 
-    * [Location size for Red Hat CoreOS (RHCOS) enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos)
+* [Location size for non-Red Hat CoreOS enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
+
+* [Location size for Red Hat CoreOS (RHCOS) enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos)
 
 * [Location size for testing](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-test)
 
