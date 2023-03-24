@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-24"
 
 
 keywords: satellite storage, change log, version history, vsphere csi driver
@@ -28,6 +28,6 @@ Review the version history for the `vsphere-csi-driver` {{site.data.keyword.sate
 {: #vsphere-csi-driver-2.5.1-rev-6-change-log}
 
 
-- Adds vmware-system-csi namespace resource explicitly
+- Adds the `vmware-system-csi` namespace resource explicitly.
 
 
