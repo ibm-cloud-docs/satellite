@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-24"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1263,6 +1263,8 @@ subcollection: satellite
     * [Location size for non-Red Hat CoreOS enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
 
     * [Location size for Red Hat CoreOS (RHCOS) enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos)
+
+* [Location size for testing](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-test)
 
 
 ## Managing hosts and locations

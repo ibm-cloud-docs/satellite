@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-10"
+lastupdated: "2023-03-24"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -100,7 +100,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, us
 {: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram}
-{: tab-title="4 vCPU, 16 GB RAM (RHEL)"}
+{: tab-title="4 vCPU, 16 GB RAM"}
 {: tab-group="loc-size"}
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
@@ -111,7 +111,7 @@ While you can deploy a cluster to a location with only 3 control plane hosts, us
 {: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #16cpu-64ram}
-{: tab-title="16 vCPU, 64 GB RAM (RHEL)"}
+{: tab-title="16 vCPU, 64 GB RAM"}
 {: tab-group="loc-size"}
 
 ### Location size for Red Hat CoreOS (RHCOS) enabled location
@@ -132,7 +132,7 @@ While you can deploy a cluster to a location that uses 3 hosts with 4 vCPU and 1
 {: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #4cpu-16ram-coreos}
-{: tab-title="4 vCPU, 16 GB RAM (CoreOS)"}
+{: tab-title="4 vCPU, 16 GB RAM"}
 {: tab-group="loc-sizerhcos"}
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
@@ -143,9 +143,22 @@ While you can deploy a cluster to a location that uses 3 hosts with 4 vCPU and 1
 {: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
 {: class="simple-tab-table"}
 {: #16cpu-64ram-coreos}
-{: tab-title="16 vCPU, 64 GB RAM (CoreOS)"}
+{: tab-title="16 vCPU, 64 GB RAM"}
 {: tab-group="loc-sizerhcos"}
 
 
+## Location size for testing
+{: #control-plane-how-many-clusters-test}
+
+The following table shows sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run a {{site.data.keyword.satelliteshort}} location demonstration. This configuration is not intended for production use. 
+
+
+ 
+The following information can be used for both RHCOS and non-RHCOS enabled locations. The hosts must have at least 4 vCPU and 16 GB RAM.
+
+| Number of control plane hosts | Max clusters in location |  Max cluster size |
+| --- | --- | --- |
+| 3 hosts 4x16 | Up to 3 clusters | 20 workers per cluster |
+{: caption="Sizing guidance for demonstrations" caption-side="bottom"}
 
 
