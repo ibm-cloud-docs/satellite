@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-27"
 
 
 keywords: satellite storage, change log, version history, ibm object storage plugin
@@ -51,7 +51,7 @@ Review the version history for the `ibm-object-storage-plugin` {{site.data.keywo
 - Sets the default values for CPU request and CPU limit to `100m` & `500m` respectively. 
 - Sets the default values for Memory request and Memory limit are updated to `128Mi & 500Mi` respectively. 
 - Adds an option to disable reading secret from cross namespace for PVC creation.
-- Adds support for automatically populating the object store endpoint in the storage classes based on 'storageclass' and 's3 provider' parameters.
+- Adds support for automatically populating the object store endpoint in the storage classes based on `storageclass` and `s3provider` parameters.
 - Adds support for Wasabi & AWS s3 provider on Satellite clusters.
 
 
