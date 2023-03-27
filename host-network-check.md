@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-04-11"
+  years: 2022, 2023
+lastupdated: "2023-03-27"
 
 keywords: satellite, networking, connectivity, hosts
 
@@ -72,7 +72,7 @@ After you create hosts that meet the [system requirements](/docs/satellite?topic
     
 1. Run the script and specify the region where you created your location.
     ```sh
-    ./sat-host-check --region $REGION
+    sudo ./sat-host-check --region $REGION
     ```
     {: pre}
     
