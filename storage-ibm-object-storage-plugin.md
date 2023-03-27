@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-27"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -154,7 +154,7 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
         - ReadWriteOnce
         resources:
             requests:
-                storage: 10gi
+                storage: 10Gi
         storageClassName: ibmc-s3fs-cos #The storage class that you want to use.
     ```
     {: codeblock}
