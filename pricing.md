@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-10"
+lastupdated: "2023-03-27"
 
 keywords: satellite, hybrid, multicloud, pricing, service, billing, charges
 
@@ -28,7 +28,7 @@ Application and networking capabilities at no additional charge
 ## {{site.data.keyword.satelliteshort}} locations
 {: #pricing-satloc}
 
-Review the following table for pricing details. For more information, see the detailed [Pricing model](https://www.ibm.com/cloud/satellite/pricing){: external}
+Review the following table for pricing details. For more information, see the detailed [Pricing model](https://cloud.ibm.com/satellite/overview){: external}
 
 | Type of charge | Locations created after 15 November 2022 | Locations created before 15 November 2022 | What the charge covers |
 | --- | --- | --- | --- |
