@@ -38,7 +38,7 @@ What am I responsible to configure backup and recovery options for?
 ## Understanding high availability in {{site.data.keyword.satellitelong_notm}}
 {: #ha-understand}
 
-To understand your high availability options in {{site.data.keyword.satelliteshort}}, it is important to understand the components that make up your {{site.data.keyword.satelliteshort}} location and how you can eliminate points of failures..
+To understand your high availability options in {{site.data.keyword.satelliteshort}}, it is important to understand the components that make up your {{site.data.keyword.satelliteshort}} location and how you can eliminate points of failure.
 {: shortdesc}
 
 The following image shows specific areas to watch in the {{site.data.keyword.satelliteshort}} architecture so you can improve your high availability.
