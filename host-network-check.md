@@ -79,7 +79,7 @@ After you create hosts that meet the [system requirements](/docs/satellite?topic
     Example command for `us-south`.
     
     ```sh
-    ./sat-host-check --region us-south
+    sudo ./sat-host-check --region us-south
     ```
     {: pre}
     
