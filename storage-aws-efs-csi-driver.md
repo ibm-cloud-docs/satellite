@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-27"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -200,10 +200,10 @@ You can't add storage classes to {{site.data.keyword.satelliteshort}} storage co
     :   Required. Specify the EFS file system ID.
     
     `gidRangeEnd`
-    :   Specify the GID range end. `gidRangeEnd` is the ending range of the Posix Group ID. Default: `7000000`.
+    :   Specify the GID range end. `gidRangeEnd` is the ending range of the POSIX Group ID. Default: `7000000`.
        
     `gidRangeStart`
-    :   Specify the GID range start. `gidRangeStart` is the starting range of the Posix Group ID to be applied onto the root directory of the access point. Default: `50000`.
+    :   Specify the GID range start. `gidRangeStart` is the starting range of the POSIX Group ID to be applied onto the root directory of the access point. Default: `50000`.
     
     `is-default-class`
     :   Specify `true` or `false` to make the created storage class the default class.

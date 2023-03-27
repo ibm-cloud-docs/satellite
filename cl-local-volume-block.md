@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-03-23"
+lastupdated: "2023-03-27"
 
 
 keywords: satellite storage, change log, version history, local volume block
@@ -50,7 +50,7 @@ Review the version history for the `local-volume-block` {{site.data.keyword.sate
 {: #local-volume-block-4.10-rev-4-change-log}
 
 
-- Added support for auto cleanup of resources while uninstalling the plugin
+- Added support for auto cleanup of resources while uninstalling the plug-in
 
 
 ## Version 4.9
@@ -61,7 +61,7 @@ Review the version history for the `local-volume-block` {{site.data.keyword.sate
 {: #local-volume-block-4.9-rev-4-change-log}
 
 
-- Added support for auto cleanup of resources while uninstalling the plugin
+- Added support for auto cleanup of resources while uninstalling the plug-in
 
 
 ## Version 4.8
@@ -72,6 +72,6 @@ Review the version history for the `local-volume-block` {{site.data.keyword.sate
 {: #local-volume-block-4.8-rev-4-change-log}
 
 
-- Added support for auto cleanup of resources while uninstalling the plugin
+- Added support for auto cleanup of resources while uninstalling the plug-in
 
 

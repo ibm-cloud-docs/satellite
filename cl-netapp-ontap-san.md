@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-03-24"
+lastupdated: "2023-03-27"
 
 
 keywords: satellite storage, change log, version history, netapp ontap san
@@ -66,7 +66,7 @@ Review the version history for the `netapp-ontap-san` {{site.data.keyword.satell
 {: #netapp-ontap-san-22.04-rev-15-change-log}
 
 
-- Resolves the following CVEs: [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external} [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external} [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external} [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external} [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-40897){: external} [ CVE-2022-41723](https://nvd.nist.gov/vuln/detail/ CVE-2022-41723){: external} [CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external} 
+- Resolves the following CVEs: [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external} [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external} [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external} [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external} [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-40897){: external} [ CVE-2022-41723](https://nvd.nist.gov/vuln/detail/CVE-2022-41723){: external} [CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external} 
 - Updates the UBI to version `8.7-1085`.
 - Updates Golang to version `1.19.6`.
 
@@ -96,7 +96,7 @@ Review the version history for the `netapp-ontap-san` {{site.data.keyword.satell
 {: #netapp-ontap-san-21.04-rev-18-change-log}
 
 
-- Resolves the following CVEs: [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external} [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external} [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external} [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external} [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-40897){: external} [ CVE-2022-41723](https://nvd.nist.gov/vuln/detail/ CVE-2022-41723){: external} [CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external} 
+- Resolves the following CVEs: [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external} [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external} [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external} [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external} [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-40897){: external} [ CVE-2022-41723](https://nvd.nist.gov/vuln/detail/CVE-2022-41723){: external} [CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external} 
 - Updates the UBI to version `8.7-1085`.
 - Updates Golang to version `1.19.6`.
 
