@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-03-28"
 
 keywords: satellite, hybrid, multicloud, default link enpoints, default link
 
@@ -23,7 +23,7 @@ Find information about default Link endpoints for {{site.data.keyword.cloud_notm
 Default endpoints are created for your location's control plane cluster and for any other {{site.data.keyword.satelliteshort}}-enabled services that you run in your location. These endpoints are accessible only from within the {{site.data.keyword.cloud_notm}} private network.
 {: shortdesc}
 
-The following table describes the Link endpoints that are automatically created in your CoreOS-enabled location.
+The following table describes the Link endpoints that are automatically created in your Red Hat CoreOS enabled location.
 
 | Name | Description | Type | Instances |
 | ---- | ----------- | ---- | --------- |

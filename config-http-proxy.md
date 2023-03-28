@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-22"
+lastupdated: "2023-03-28"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -30,10 +30,10 @@ Consider the following types of locations.
 Existing RHEL-based locations
 :   To set up a proxy, your location must be enabled for Red Hat CoreOS (RHCOS). If your existing location is not RHCOS-enabled, then you can't configure an HTTP proxy. Create a RHCOS-enabled location, then [configure your HTTP proxy](#http-proxy-config).
 
-Existing Red Hat CoreOS-enabled locations with attached hosts
+Existing Red Hat CoreOS enabled locations with attached hosts
 :   To set up an HTTP proxy, you must first [remove your hosts](/docs/satellite?topic=satellite-host-remove) from your location. After you remove your hosts, see [Configuring your HTTP proxy](#http-proxy-config). Note that you must also update the hosts that make up your location control plane. See [Updating Satellite location control plane hosts](/docs/satellite?topic=satellite-host-update-location).
 
-New Red Hat CoreOS-enabled locations
+New Red Hat CoreOS enabled locations
 :   Before attaching your hosts to your location, [configure your HTTP proxy](#http-proxy-config).
 
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-10"
+  years: 2020, 2023
+lastupdated: "2023-03-28"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -93,7 +93,7 @@ Support for RHEL 7 for Satellite control plane hosts is deprecated and reaches e
 
 To replace your RHEL 7 control plane hosts, you must first add a RHEL 8 host to replace it. After you attach a RHEL 8 host to your location and assign it to the control plane, you can remove a RHEL 7 host in the same zone from the control plane. 
 
-Before migrating to RHEL 8, note that Red Hat CoreOS is now a supported OS in CoreOS-enabled locations. CoreOS is a minimal, secure OS with tight integration into the {{site.data.keyword.redhat_openshift_notm}} ecosystem and is capable of doing in-place upgrades of major versions. Before you can use CoreOS hosts in your location, you must create a CoreOS-enabled location. If you already have a location that is CoreOS-enabled, consider adding CoreOS hosts instead. To create a CoreOS-enabled Satellite location, see [Understanding locations](/docs/satellite?topic=satellite-location-host).
+Before migrating to RHEL 8, note that Red Hat CoreOS (RHCOS) is now a supported OS in RHCOS enabled locations. RHCOS is a minimal, secure OS with tight integration into the {{site.data.keyword.redhat_openshift_notm}} ecosystem and is capable of doing in-place upgrades of major versions. Before you can use RHCOS hosts in your location, you must create a Red Hat CoreOS enabled location. If you already have a location that is RHCOS enabled, consider adding RHCOS hosts instead. To create a Red Hat CoreOS enabled Satellite location, see [Understanding locations](/docs/satellite?topic=satellite-location-host).
 {: tip}
 
 1. Identify which hosts you want to replace and which zones they are located in by running the following command. Look for the `"os": "RHEL7"` label or a host without an `os` label in the output file.
