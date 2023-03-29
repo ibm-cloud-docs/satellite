@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-29"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -30,7 +30,7 @@ Before you can create a VMware block storage configuration, you must satisfy the
 1. Enable Disk UUID on all node virtual machines. 
 
  
-Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.
 {: important}
 
 

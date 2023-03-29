@@ -14,7 +14,7 @@ subcollection: satellite
 # {{site.data.keyword.cos_full_notm}} Driver 
 {: #storage-ibm-object-storage-plugin}
 
-Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.
 {: important}
 
 

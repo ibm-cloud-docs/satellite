@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-03-29"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -22,7 +22,7 @@ For an overview of the available features of the Azure Disk CSI driver, see [Fea
 
 The Azure Disk CSI driver template for {{site.data.keyword.satelliteshort}} is currently available for cluster versions 4.7 and later.
 
-Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.
 {: important}
 
 You cannot customize your storage classes because {{site.data.keyword.satelliteshort}} Config overwrites your changes. 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-03-29"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -25,7 +25,7 @@ Supported {{site.data.keyword.IBM_notm}} storage systems for Satellite include,
 - {{site.data.keyword.IBM_notm}} FlashSystem A9000 and A9000R
 - {{site.data.keyword.IBM_notm}} DS8000 Family
 
-Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.
 {: important}
   
 ## Prerequisites for using {{site.data.keyword.blockstorageshort}}
