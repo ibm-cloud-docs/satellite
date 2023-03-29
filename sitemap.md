@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-03-29"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -258,15 +258,15 @@ subcollection: satellite
 
     * [31 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug3122)
 
-        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Sao Paulo** (`sao`, `br-sao`) region.
+        * New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} locations in the **Sao Paulo** (`sao`, `br-sao`) region.
 
     * [23 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug2322)
 
-        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Osaka** (`osa`, `jp-osa`) region.
+        * New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} locations in the **Osaka** (`osa`, `jp-osa`) region.
 
     * [18 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug1822)
 
-        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Sydney** (`syd`, `au-syd`) region.
+        * New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} locations in the **Sydney** (`syd`, `au-syd`) region.
 
     * [10 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug1022)
 
@@ -284,7 +284,7 @@ subcollection: satellite
 
     * [2 August 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-aug222)
 
-        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Toronto** (`tor`, `ca-tor`) region.
+        * New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} locations in the **Toronto** (`tor`, `ca-tor`) region.
 
 * [July 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july22)
 
@@ -304,13 +304,13 @@ subcollection: satellite
 
     * [16 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1622)
 
-        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Washington D.C.** (`wdc`, `us-east`) region.
+        * New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} locations in the **Washington D.C.** (`wdc`, `us-east`) region.
 
     * [15 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1522)
 
         * CLI change log
 
-        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
+        * New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
 
     * [14 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1422)
 
@@ -334,7 +334,7 @@ subcollection: satellite
 
     * [16 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1622)
 
-        * New! You can now create CoreOS-enabled {{site.data.keyword.satelliteshort}} locations in the **Tokyo** (`tok`, `jp-tok`) region.
+        * New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} locations in the **Tokyo** (`tok`, `jp-tok`) region.
 
     * [13 May 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1322)
 
@@ -1260,7 +1260,7 @@ subcollection: satellite
 
 [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing#location-sizing)
 
-* [Location size for non-Red Hat CoreOS enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
+* [Location size for non Red Hat CoreOS enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel)
 
 * [Location size for Red Hat CoreOS (RHCOS) enabled location](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos)
 
@@ -1898,6 +1898,8 @@ subcollection: satellite
 [{{site.data.keyword.cos_full_notm}} Driver](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin)
 
 * [Prerequisites](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-prereqs)
+
+* [Creating a secret in your cluster that contains your s3 provider credentials](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#config-storage-cos-secret)
 
 * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-console)
 

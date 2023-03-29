@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-03-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -57,7 +57,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
             
         1. [Grant access to {{site.data.keyword.cos_short}} to import images](/docs/vpc?topic=vpc-object-storage-prereq&interface=cli).
             
-        1. [Import your custom CoreOS image in VPC](/docs/account?topic=account-catalog-vsivpc-tutorial&interface=ui). You can create custom images in the [VPC console](https://cloud.ibm.com/vpc-ext/compute/images){: external}.
+        1. [Import your custom RHCOS image in VPC](/docs/account?topic=account-catalog-vsivpc-tutorial&interface=ui). You can create custom images in the [VPC console](https://cloud.ibm.com/vpc-ext/compute/images){: external}.
         
         1. Give your image a **Name**, select the **Resource group** where you want to create the image and select **Cloud Object Storage**
         
@@ -67,13 +67,13 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
         
         1. Select the **Encryption** that you want to use and click **Create custom image**
 
-        1. Create VPC Gen 2 instances by using your custom image and attach them to your CoreOS-enabled location. Note that the `ATTACH-SCRIPT-LOCATION` parameter is the location of the ignition file you retrieved earlier by running the `ibmcloud sat host attach` command. Make sure to include the `@` sign before the path to your ignition file.
+        1. Create VPC Gen 2 instances by using your custom image and attach them to your RHCOS enabled location. Note that the `ATTACH-SCRIPT-LOCATION` parameter is the location of the ignition file you retrieved earlier by running the `ibmcloud sat host attach` command. Make sure to include the `@` sign before the path to your ignition file.
             ```sh
             ibmcloud is instance-create INSTANCE-NAME VPC VPC-ZONE-NAME VPC-PROFILE-NAME VPC-SUBNET --image VPC-RHCOS-IMAGE-ID --user-data @ATTACH-SCRIPT-LOCATION --keys SSH-KEY-ID
             ```
             {: pre}
             
-            Example command to create VPC Gen 2 instances and attach hosts to a CoreOS-enabled location. For more information, about the `instance create` command, see the VPC Gen 2 [command line reference](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#instance-create).
+            Example command to create VPC Gen 2 instances and attach hosts to Red Hat CoreOS enabled location. For more information, about the `instance create` command, see the VPC Gen 2 [command line reference](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#instance-create).
             
             ```sh
             ibmcloud is instance-create instance-1 my-vpc us-south-1 bx2d-4x16 0111-11e11111-1c11-1111-11aa-ba1a1d1cd111 —-keys my-key --image r001-a1f111b1-11bc-1e1e-b11c-1d11c1111111 --user-data @/var/register-host_coreos.ign

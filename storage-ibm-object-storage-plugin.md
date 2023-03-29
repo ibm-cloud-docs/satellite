@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-03-29"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -14,7 +14,7 @@ subcollection: satellite
 # {{site.data.keyword.cos_full_notm}} Driver 
 {: #storage-ibm-object-storage-plugin}
 
-Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config.
+Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.
 {: important}
 
 
@@ -23,7 +23,32 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-1. [Create an {{site.data.keyword.cos_full_notm}} Secret](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials). 
+1. Create a set of service credentials in your s3 provider. 
+    * [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials). 
+    * [AWS service credential](https://docs.aws.amazon.com/cli/latest/reference/iam/create-service-specific-credential.html){: external} 
+    * [Wasabi access key](https://docs.wasabi.com/docs/creating-a-user-account-and-access-key#assigning-an-access-key){: external}.
+1. [Create a secret that contains your s3 credentials](#config-storage-cos-secret).
+
+## Creating a secret in your cluster that contains your s3 provider credentials
+{: #config-storage-cos-secret}
+
+Create the Kubernetes secret in your cluster that contains your service credentials.
+
+
+1. Run one of the following commands to create a secret in your cluster. When you create your secret, all values are automatically encoded to base64. In the following example, the secret name is `cos-write-access`.
+
+        Example `create secret` command for {{site.data.keyword.cos_full_notm}} that uses an API key.
+        ```sh
+        oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=<api_key> --from-literal=service-instance-id=<service_instance_guid>
+        ```
+        {: pre}
+
+    Example command to create a secret for your AWS or Wasabi credentials. 
+        ```sh
+        oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=<access_key_ID> --from-literal=secret-key=<secret_access_key>
+
+        ```
+        {: pre}
 
 
 

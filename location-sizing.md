@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-03-28"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -32,10 +32,10 @@ Plan to keep **at least 3 extra hosts** attached and unassigned to your location
 {: note}
 
 
-## Location size for non-Red Hat CoreOS enabled location
+## Location size for non Red Hat CoreOS enabled location
 {: #control-plane-how-many-clusters-rhel}
 
-The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a non-Red Hat CoreOS enabled location. These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
+The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a non Red Hat CoreOS enabled location. These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
 
 While you can deploy a cluster to a location with only 3 control plane hosts, use this type of bare minimum setup for only testing and proof of concept purposes.
 {: note}
