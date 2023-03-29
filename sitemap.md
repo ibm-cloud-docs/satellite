@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-03-29"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1898,6 +1898,8 @@ subcollection: satellite
 [{{site.data.keyword.cos_full_notm}} Driver](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin)
 
 * [Prerequisites](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-prereqs)
+
+* [Creating a secret in your cluster that contains your s3 provider credentials](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#config-storage-cos-secret)
 
 * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-config-create-console)
 
