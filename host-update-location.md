@@ -54,7 +54,9 @@ When you update control plane hosts, **do not assign or remove multiple hosts at
 1. [Remove the host that you want to update from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove).
 1. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
 1. [Attach the host](/docs/satellite?topic=satellite-attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-1. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.redhat_openshift_notm}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
+1. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane. 
+
+As part of the bootstrapping process, the latest images and {{site.data.keyword.redhat_openshift_notm}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
 
 
 ## Updating the Kubernetes API Server
