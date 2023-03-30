@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-03-30"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -37,18 +37,18 @@ Create the Kubernetes secret in your cluster that contains your service credenti
 
 1. Run one of the following commands to create a secret in your cluster. When you create your secret, all values are automatically encoded to base64. In the following example, the secret name is `cos-write-access`.
 
-        Example `create secret` command for {{site.data.keyword.cos_full_notm}} that uses an API key.
-        ```sh
-        oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=<api_key> --from-literal=service-instance-id=<service_instance_guid>
-        ```
-        {: pre}
+    Example `create secret` command for {{site.data.keyword.cos_full_notm}} that uses an API key.
+    ```sh
+    oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=<api_key> --from-literal=service-instance-id=<service_instance_guid>
+    ```
+    {: pre}
 
     Example command to create a secret for your AWS or Wasabi credentials. 
-        ```sh
-        oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=<access_key_ID> --from-literal=secret-key=<secret_access_key>
+    ```sh
+    oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=<access_key_ID> --from-literal=secret-key=<secret_access_key>
 
-        ```
-        {: pre}
+    ```
+    {: pre}
 
 
 
