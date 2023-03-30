@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-03-30"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Updating {{site.data.keyword.satelliteshort}} location control plane hosts 
 {: #host-update-location}
 
-{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates by detaching the hosts from your location, reloading the host machine in the infrastructure provider, and reattaching and reassigning the host to the {{site.data.keyword.satelliteshort}} location control plane.
+{{site.data.keyword.IBM_notm}} provides version updates for your hosts that are assigned to the {{site.data.keyword.satelliteshort}} location control plane. The version updates include OpenShift Container Platform, the operating system, and security patches. You choose when to apply the host version updates by detaching the hosts from your location, reloading the host machine in the infrastructure provider, and reattaching and reassigning the host to the {{site.data.keyword.satelliteshort}} location control plane. 
 {: shortdesc}
 
 
@@ -51,10 +51,17 @@ When you update control plane hosts, **do not assign or remove multiple hosts at
 {: important}
 
 1. Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) extra hosts to the {{site.data.keyword.satelliteshort}} location control plane to handle the compute capacity while your existing hosts are updating.
-2. [Remove the host that you want to update from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove).
-3. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
-4. [Attach the host](/docs/satellite?topic=satellite-attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
-5. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.redhat_openshift_notm}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
+1. [Remove the host that you want to update from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove).
+1. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
+1. [Attach the host](/docs/satellite?topic=satellite-attach-hosts) back to your {{site.data.keyword.satelliteshort}} location.
+1. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) back to your {{site.data.keyword.satelliteshort}} location control plane. As part of the bootstrapping process, the latest images and {{site.data.keyword.redhat_openshift_notm}} version that matches the cluster master is updated for your host and SSH access to the host is removed.
+
+
+## Updating the Kubernetes API Server
+{: #update-api-server}
+
+To update your Kubernetes API server, run the [`cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command. 
+
 
 ## Resetting the host key
 {: #host-key-reset}
@@ -152,3 +159,6 @@ Repeat these steps until all your RHEL 7 control plane hosts are replaced by RHE
 
 If you have clusters running RHEL 7 hosts in your location, you might need to migrate your worker nodes. For more information, follow the [migration guide](/docs/openshift?topic=openshift-rhel_migrate) for your cluster version.
 {: tip}
+
+
+

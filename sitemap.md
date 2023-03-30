@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-03-30"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1332,6 +1332,8 @@ subcollection: satellite
 * [Considerations before you update control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-considerations)
 
 * [Updating control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-cp-procedure)
+
+* [Updating the Kubernetes API Server](/docs/satellite?topic=satellite-host-update-location#update-api-server)
 
 * [Resetting the host key](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
 
