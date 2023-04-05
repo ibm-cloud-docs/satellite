@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-04-05"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -20,6 +20,18 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
+
+
+## April 2023
+{: #satellite-apr23}
+
+### 05 April 2023
+{: #satellite-apr0523}
+{: release-note}
+
+Storage template revisions
+:   New revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
+
 
 ## March 2023
 {: #satellite-mar23}
