@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-10"
+lastupdated: "2023-04-05"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -52,7 +52,7 @@ I'm planning to use my on-prem or edge infrastructure. 
 :    For on-prem infrastructure, you can [manually set up a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create-manual). 
 
 I want to use a different cloud provider for my infrastructure.
-:    Choose from [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud]( /docs/satellite?topic=satellite-alibaba). Many of these providers include Terraform-based automation.
+:    Choose from [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba). Many of these providers include Terraform-based automation.
 
 ### Minimum requirements for hosts
 {: #gs-min-reqs}
