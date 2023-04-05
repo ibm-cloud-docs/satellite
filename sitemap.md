@@ -2056,9 +2056,9 @@ subcollection: satellite
 
     * [22.10 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#22.10-parameter-reference)
 
-* [Storage class reference for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-sc-reference-san-2104)
+* [Storage class reference for NetApp ONTAP-SAN](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-sc-reference-san-2104)
 
-* [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-ontap-san#sat-san-2104-support)
+* [Getting help and support for NetApp ONTAP-SAN](/docs/satellite?topic=satellite-storage-netapp-ontap-san#sat-san-2104-support)
 
 
 ### Red Hat storage templates
