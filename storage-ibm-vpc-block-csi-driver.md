@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-05"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -42,6 +42,7 @@ There is currently an issue with autocomplete in some browsers. If you don't see
 
 Before you begin, review the [parameter reference](#ibm-vpc-block-csi-driver-parameter-reference) for the template version that you want to use.
 {: important}
+
 
 ## Creating and assigning a configuration in the console
 {: #ibm-vpc-block-csi-driver-config-create-console}

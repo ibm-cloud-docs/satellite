@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-17"
+lastupdated: "2023-04-05"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -142,6 +142,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 
 Before you begin, review the [parameter reference](#local-volume-block-parameter-reference) for the template version that you want to use.
 {: important}
+
 
 ## Creating and assigning a configuration in the console
 {: #local-volume-block-config-create-console}

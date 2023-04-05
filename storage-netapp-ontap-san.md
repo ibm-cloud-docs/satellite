@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-05"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -52,6 +52,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 
 Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-reference) for the template version that you want to use.
 {: important}
+
 
 ## Creating and assigning a configuration in the console
 {: #netapp-ontap-san-config-create-console}
@@ -236,7 +237,7 @@ Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-r
 {: caption="Table 3. 22.10 parameter reference" caption-side="bottom"}
 
 
-## Storage class reference for NetApp Trident
+## Storage class reference for NetApp ONTAP-SAN
 {: #netapp-sc-reference-san-2104}
 
 Before you deploy apps that use the `sat-netapp` storage classes, review the following notes.
@@ -266,7 +267,7 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 {: caption="netapp-ontap-san version 21.04 parameter reference"}
 
 
-## Getting help and support for NetApp Trident
+## Getting help and support for NetApp ONTAP-SAN
 {: #sat-san-2104-support}
 
 If you run into an issue with using NetApp Trident, you can visit the [NetApp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 

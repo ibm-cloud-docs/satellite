@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-08-10"
+  years: 2020, 2023
+lastupdated: "2023-04-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -50,7 +50,7 @@ The following example setup walks you through creating a minimal {{site.data.key
 As system administrator, you set up a {{site.data.keyword.satelliteshort}} location in your on-premises environment to run any applications that require access to {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-1. [Create a {{site.data.keyword.satelliteshort}} location](\/docs/satellite?topic=satellite-locations) in your on-premises infrastructure.
+1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations) in your on-premises infrastructure.
 2. [Create a managed {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters) in the {{site.data.keyword.satelliteshort}} location.
 3. [Access the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 4. [Deploy the apps](/docs/openshift?topic=openshift-deploy_app) that require communication to apps, servers, or services that run outside of the {{site.data.keyword.satelliteshort}} location, such as in {{site.data.keyword.cloud_notm}}.

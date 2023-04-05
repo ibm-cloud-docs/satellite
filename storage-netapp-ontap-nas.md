@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-05"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -52,6 +52,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 Before you begin, review the [parameter reference](#netapp-ontap-nas-parameter-reference) for the template version that you want to use.
 {: important}
+
 
 ## Creating and assigning a configuration in the console
 {: #netapp-ontap-nas-config-create-console}

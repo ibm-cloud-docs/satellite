@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-05"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -86,6 +86,7 @@ If you manually assigned your Azure hosts to your location and did not use an au
 
 Before you begin, review the [parameter reference](#azurefile-csi-driver-parameter-reference) for the template version that you want to use.
 {: important}
+
 
 ## Creating and assigning a configuration in the console
 {: #azurefile-csi-driver-config-create-console}
@@ -535,7 +536,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Resource Group | `resourceGroup` | Config | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | 
 | Virtual Machine Type | `vmType` | Config | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | 
 | Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | 
-| Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of yourvirtual network in the Azure portal or by running the `az network vnet list` command. | true | 
+| Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | true | 
 | Subnet Name | `subnetName` | Config | Name of one the of the subnets under the provided VNet | true | 
 {: caption="Table 2. 1.18.0 parameter reference" caption-side="bottom"}
 

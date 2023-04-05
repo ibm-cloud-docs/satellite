@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-05"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -49,6 +49,7 @@ To use the AWS EBS storage template, complete the following tasks:
 
 Before you begin, review the [parameter reference](#aws-ebs-csi-driver-parameter-reference) for the template version that you want to use.
 {: important}
+
 
 ## Creating and assigning a configuration in the console
 {: #aws-ebs-csi-driver-config-create-console}
