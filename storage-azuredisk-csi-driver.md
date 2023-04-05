@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-04-05"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -562,7 +562,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Resource Group | `resourceGroup` | Config | The name of your Azure resource group. You can find your resource group detail in the Azure portal or by running the `az group list` command. | true | 
 | Virtual Machine Type | `vmType` | Config | You can find your virtual machine type in the Azure portal or by running the `az vm list` command. Example types: `standard` or `VMSS`. | true | 
 | Network Security Group Name | `securityGroupName` | Config | The name of your security group. You can find your security group details in the Azure portal or by running the `az network nsg list` command. | true | 
-| Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name for your virtual network in the Azure portal or by running the `az network vnet list` command. | true | 
+| Virtual Network Name | `vnetName` | Config | The name of the virtual network. You can find the name of your virtual network in the Azure portal or by running the `az network vnet list` command. | true | 
 {: caption="Table 3. 1.23.0 parameter reference" caption-side="bottom"}
 
 

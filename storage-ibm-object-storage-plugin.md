@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-30"
+lastupdated: "2023-04-05"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -349,10 +349,10 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 | --- | --- | --- | --- | --- |
 | Helm Chart Release Name | `helm-release-name` | Config | Release name of the chart | true | 
 | Helm Chart Additional Parameters (Optional) | `parameters` | Config | Helm Chart Additional Parameters (Optional) | false | 
-| COS plug-in License: Apache License Version 2.0 | `license` | Config | COS plug-in License: Apache License Version 2.0. Set to `true` to accept the license and install the plugin | true | 
-| Object storage service provider | `s3provider` | Config | Enter the object storage service provider. Supported providers are `IBM`, `AWS` and `Wasabi`. For other providers, you must explicitly provide the COS endpoint | false | 
-| COS storage class | `cos-storageclass` | Config | Enter COS storage class. For more info, refer to https://ibm.biz/cos-storage-classes | true | 
-| COS Endpoint | `cos-endpoint` | Config | COS Endpoint. Required when `s3provider` is not set. Precedence is given to `s3provider` when both are set. For more information, refer to https://ibm.biz/cos-endpoints | false | 
+| Object Storage Plug-in License: Apache License Version 2.0 | `license` | Config | Object storage plug-in license: Apache license Version 2.0. Set to `true` to accept the license and install the plugin | true | 
+| Object Storage Service Provider | `s3provider` | Config | Enter Object storage service provider. Supported providers are `IBM`, `AWS` and `Wasabi`. For other providers, you must explicitly provide `Object Storage Service Endpoint` | false | 
+| Object Storage Region | `cos-storageclass` | Config | Enter Object storage region. For more info, refer to https://ibm.biz/cos-storage-classes | true | 
+| Object Storage Service Endpoint | `cos-endpoint` | Config | Object storage service endpoint. Required when `Object Storage Service Provider` is not set. Preference is given to `Object Storage Service Provider` when both are set. For more information, refer to https://ibm.biz/cos-endpoints | false | 
 {: caption="Table 1. 2.2 parameter reference" caption-side="bottom"}
 
 
