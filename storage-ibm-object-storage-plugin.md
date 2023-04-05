@@ -56,6 +56,7 @@ Create the Kubernetes secret in your cluster that contains your service credenti
 Before you begin, review the [parameter reference](#ibm-object-storage-plugin-parameter-reference) for the template version that you want to use.
 {: important}
 
+
 ## Creating and assigning a configuration in the console
 {: #ibm-object-storage-plugin-config-create-console}
 {: ui}

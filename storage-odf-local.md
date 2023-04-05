@@ -161,6 +161,7 @@ When you create your ODF configuration, you must specify the device paths of the
 Before you begin, review the [parameter reference](#odf-local-parameter-reference) for the template version that you want to use.
 {: important}
 
+
 ## Creating and assigning a configuration in the console
 {: #odf-local-config-create-console}
 {: ui}

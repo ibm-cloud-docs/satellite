@@ -87,6 +87,7 @@ If you manually assigned your Azure hosts to your Location and did not use the S
 Before you begin, review the [parameter reference](#azuredisk-csi-driver-parameter-reference) for the template version that you want to use.
 {: important}
 
+
 ## Creating and assigning a configuration in the console
 {: #azuredisk-csi-driver-config-create-console}
 {: ui}

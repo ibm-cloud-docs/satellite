@@ -32,8 +32,6 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 
 
-Before you begin, review the [parameter reference](#netapp-trident-parameter-reference) for the template version that you want to use.
-{: important}
 
 ## Creating and assigning a configuration in the console
 {: #netapp-trident-config-create-console}

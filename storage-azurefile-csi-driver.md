@@ -87,6 +87,7 @@ If you manually assigned your Azure hosts to your location and did not use an au
 Before you begin, review the [parameter reference](#azurefile-csi-driver-parameter-reference) for the template version that you want to use.
 {: important}
 
+
 ## Creating and assigning a configuration in the console
 {: #azurefile-csi-driver-config-create-console}
 {: ui}

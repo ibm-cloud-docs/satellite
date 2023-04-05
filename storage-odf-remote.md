@@ -72,6 +72,7 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
 Before you begin, review the [parameter reference](#odf-remote-parameter-reference) for the template version that you want to use.
 {: important}
 
+
 ## Creating and assigning a configuration in the console
 {: #odf-remote-config-create-console}
 {: ui}
