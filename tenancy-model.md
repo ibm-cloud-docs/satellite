@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-04-05"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -56,7 +56,7 @@ Before you can resell {{site.data.keyword.satelliteshort}}, set up an {{site.dat
 ### Creating an enterprise account
 {: #create-enterprise-tenancy}
 
-[Create an enterprise account](/docs/account?topic=account-enterprise-tutorial#users_create_resources) for your organization. This account serves as the parent account. After you create the enterprise account, you can [set up client accounts](#create-account-tenancy) for each customer.
+[Create an enterprise account](/docs/account?topic=account-enterprise-tutorial) for your organization. This account serves as the parent account. After you create the enterprise account, you can [set up client accounts](#create-account-tenancy) for each customer.
 
 ### Setting up client accounts
 {: #create-account-tenancy}
@@ -67,7 +67,7 @@ Complete the following steps to set up a client account with a resource group, l
 Want to automate this step? After you create an account, you can use the IBM terraform provider plug-in to provision {{site.data.keyword.cloud_notm}} service instances.
 {: tip}
 
-1. [Add a client account to your enterprise](/docs/account?topic=account-enterprise-add&interface=ui#create-accounts).
+1. [Add a client account to your enterprise](/docs/account?topic=account-enterprise-add#create-accounts).
 
 1. In the client account, [provision an {{site.data.keyword.loganalysisshort}} instance](/docs/log-analysis?topic=log-analysis-getting-started#getting-started-provision).
 
