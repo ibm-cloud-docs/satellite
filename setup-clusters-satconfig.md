@@ -32,7 +32,7 @@ You can give {{site.data.keyword.satelliteshort}} Config access to your cluster 
 
 To give {{site.data.keyword.satelliteshort}} Config access to manage Kubernetes resources from the console, select **Enable cluster admin access for Satellite Config** when you create the cluster. To set up access with the CLI, specify the `--enable-config-admin` option when you create the cluster.
 
-If you didn't give {{site.data.keyword.satelliteshort}} Config access at cluster creation time, follow the steps in [Manually granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig-access).
+If you didn't give {{site.data.keyword.satelliteshort}} Config access at cluster creation time, follow the steps in [Manually granting {{site.data.keyword.satelliteshort}} Config access to your clusters](#manual-setup-clusters-satconfig).
 
 
 ## Manually granting {{site.data.keyword.satelliteshort}} Config access to your clusters
