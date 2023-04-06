@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-06"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1419,15 +1419,17 @@ subcollection: satellite
 {: #sitemap_setting_up_clusters_to_use_with_satellite_config}
 
 
-[Automatically granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig)
+[Granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#setup-clusters-satconfig)
 
-[Manually granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig-access#setup-clusters-satconfig-access)
+* [Automatically granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#auto-setup-clusters-satconfig)
 
-* [Cluster admin access](/docs/satellite?topic=satellite-setup-clusters-satconfig-access#cluster-admin-access)
+* [Manually granting {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig#manual-setup-clusters-satconfig)
 
-* [Custom access, cluster-wide](/docs/satellite?topic=satellite-setup-clusters-satconfig-access#custom-access-cluster-wide)
+    * [Cluster admin access](/docs/satellite?topic=satellite-setup-clusters-satconfig#cluster-admin-access)
 
-* [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig-access#custom-access-scoped-project)
+    * [Custom access, cluster-wide](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-cluster-wide)
+
+    * [Custom access, scoped to a project](/docs/satellite?topic=satellite-setup-clusters-satconfig#custom-access-scoped-project)
 
 [Setting up cluster groups](/docs/satellite?topic=satellite-setup-clusters-satconfig-groups#setup-clusters-satconfig-groups)
 
