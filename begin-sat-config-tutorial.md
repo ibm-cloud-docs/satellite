@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-19"
+  years: 2022, 2023
+lastupdated: "2023-04-06"
 
 keywords: satellite, satellite config, Kubernetes, cluster
 
@@ -51,7 +51,7 @@ Before you start this tutorial, make sure that you have the following resources 
 
 * A {{site.data.keyword.satelliteshort}} cluster group that contains the clusters you want to deploy resources to.
 
-* Make sure that {{site.data.keyword.satelliteshort}} Config has admin access to your clusters. You can either enable admin access when creating the cluster or [grant {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig-access) after you create the cluster. 
+* Make sure that {{site.data.keyword.satelliteshort}} Config has admin access to your clusters. You can either enable admin access when creating the cluster or [grant {{site.data.keyword.satelliteshort}} Config access to your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig) after you create the cluster. 
 
 
 

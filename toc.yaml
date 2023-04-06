@@ -128,7 +128,6 @@ toc:
                   label: Setting up clusters to use with Satellite Config
                   topics:
                   - setup-clusters-satconfig.md
-                  - setup-clusters-satconfig-access.md
                   - setup-clusters-satconfig-groups.md
                   - register-openshift-clusters.md
               - satconfig-verify-cluster-status.md
