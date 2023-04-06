@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-16"
+  years: 2020, 2023
+lastupdated: "2023-04-06"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -20,7 +20,7 @@ With {{site.data.keyword.satelliteshort}} Config, you create a configuration to 
 
 Before you begin
 
-- Make sure that you have the [required permissions](/docs/satellite?topic=satellite-iam#iam-resource-config) and that [{{site.data.keyword.satelliteshort}} Config can access your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig-access). For more information, see [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
+- Make sure that you have the [required permissions](/docs/satellite?topic=satellite-iam#iam-resource-config) and that [{{site.data.keyword.satelliteshort}} Config can access your clusters](/docs/satellite?topic=satellite-setup-clusters-satconfig). For more information, see [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
 - Review the [key concepts](/docs/satellite?topic=satellite-cluster-config#satcon-terminology) for {{site.data.keyword.satelliteshort}} Config.
 
 ## Creating {{site.data.keyword.satelliteshort}} configurations from the console
