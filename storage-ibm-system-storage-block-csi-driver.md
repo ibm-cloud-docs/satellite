@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-13"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -357,27 +357,27 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 ### 1.4.0 parameter reference
 {: #1.4.0-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | 
+| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | `default` |
 {: caption="Table 1. 1.4.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.5.0 parameter reference
 {: #1.5.0-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | 
+| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | `default` |
 {: caption="Table 2. 1.5.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.10.0 parameter reference
 {: #1.10.0-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | 
+| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | `default` |
 {: caption="Table 3. 1.10.0 parameter reference" caption-side="bottom"}
 
 

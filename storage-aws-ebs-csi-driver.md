@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-13"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -491,30 +491,30 @@ Note that you must delete your storage assignments before you can successfully d
 ### 1.1.0 parameter reference
 {: #1.1.0-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | 
-| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | 
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
 {: caption="Table 1. 1.1.0 parameter reference" caption-side="bottom"}
 
 
 ### 1.5.1 parameter reference
 {: #1.5.1-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | 
-| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | 
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
 {: caption="Table 2. 1.5.1 parameter reference" caption-side="bottom"}
 
 
 ### 1.12.0 parameter reference
 {: #1.12.0-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | 
-| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | 
+| AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
+| AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
 {: caption="Table 3. 1.12.0 parameter reference" caption-side="bottom"}
 
 

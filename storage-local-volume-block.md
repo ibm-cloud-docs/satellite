@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-13"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -650,59 +650,59 @@ Use the console to remove a storage configuration.
 ### 4.8 parameter reference
 {: #4.8-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. | true | 
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | N/A |
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | N/A |
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. | true | N/A |
 {: caption="Table 1. 4.8 parameter reference" caption-side="bottom"}
 
 
 ### 4.9 parameter reference
 {: #4.9-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | 
-| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | 
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | `false` |
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | N/A |
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | N/A |
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
 {: caption="Table 2. 4.9 parameter reference" caption-side="bottom"}
 
 
 ### 4.10 parameter reference
 {: #4.10-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | 
-| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | `false` |
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | N/A |
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | N/A |
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | N/A |
 {: caption="Table 3. 4.10 parameter reference" caption-side="bottom"}
 
 
 ### 4.11 parameter reference
 {: #4.11-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | 
-| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | `false` |
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | N/A |
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | N/A |
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | N/A |
 {: caption="Table 4. 4.11 parameter reference" caption-side="bottom"}
 
 
 ### 4.12 parameter reference
 {: #4.12-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | 
-| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | 
-| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | 
-| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | 
+| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. | true | `false` |
+| Node Label Key | `label-key` | Config | The `key` of the worker node `key=value` label. | true | N/A |
+| Node Label Key Value | `label-value` | Config | The `value` of the worker node `key=value` label. | true | N/A |
+| Device Path | `devicepath` | Config | The local storage device path. Example: `/dev/sdc`. Required when auto-discover-devices is set to false. | false | N/A |
 {: caption="Table 5. 4.12 parameter reference" caption-side="bottom"}
 
 
