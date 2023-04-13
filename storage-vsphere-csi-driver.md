@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-13"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -401,14 +401,14 @@ Removing the storage configuration removes the driver from all assigned clusters
 ### 2.5.1 parameter reference
 {: #2.5.1-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| vCenter username | `vcenter-username` | Secret | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | true | 
-| vCenter password | `vcenter-password` | Secret | The vCenter server user password. | true | 
-| Insecure connection | `insecure-flag` | Config | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | true | 
-| vCenter host | `host` | Config | The vCenter server IP address. | true | 
-| vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | 
-| SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC.  | false | 
+| vCenter username | `vcenter-username` | Secret | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | true | N/A |
+| vCenter password | `vcenter-password` | Secret | The vCenter server user password. | true | N/A |
+| Insecure connection | `insecure-flag` | Config | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | true | `false` |
+| vCenter host | `host` | Config | The vCenter server IP address. | true | N/A |
+| vCenter data centers | `datacenters` | Config | List all data center paths where host VMs are present, separated by commas. Provide the name of the data center when it is located at the root. When it is placed in the folder, you need to specify the path as folder/data-center-name | true | N/A |
+| SSL certificate thumbprint | `thumbprint` | Secret | The SSL thumbprint to be used to establish a secure connection to VC.  | false | N/A |
 {: caption="Table 1. 2.5.1 parameter reference" caption-side="bottom"}
 
 

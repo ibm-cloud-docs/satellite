@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-13"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -523,129 +523,129 @@ Use the command line to remove a storage assignment.
 ### 4.8 parameter reference
 {: #4.8-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | 
-| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
-| Number of OSD volumes | `num-of-osd` | Config | The number OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | 
-| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
-| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | 
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | 
-| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | 
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
-| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | 
-| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | 
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | 
-| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | true | 
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | `100Gi` |
+| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
+| Number of OSD volumes | `num-of-osd` | Config | The number OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
+| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
+| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | `false` |
+| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | `advanced` |
+| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | N/A |
+| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | N/A |
+| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | N/A |
+| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | `false` |
+| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | N/A |
+| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | true | `false` |
 {: caption="Table 1. 4.8 parameter reference" caption-side="bottom"}
 
 
 ### 4.9 parameter reference
 {: #4.9-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | 
-| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
-| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | 
-| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
-| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | 
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | 
-| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | 
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
-| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | 
-| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | 
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | 
-| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | true | 
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | `100Gi` |
+| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
+| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
+| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
+| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | `false` |
+| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | `advanced` |
+| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | N/A |
+| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | N/A |
+| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | N/A |
+| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | `false` |
+| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | N/A |
+| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | true | `false` |
 {: caption="Table 2. 4.9 parameter reference" caption-side="bottom"}
 
 
 ### 4.10 parameter reference
 {: #4.10-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | 
-| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
-| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | 
-| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
-| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | 
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | 
-| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | 
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
-| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | 
-| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | 
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | 
-| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | true | 
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | true | 
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | 
-| KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | false | 
-| KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | false | 
-| KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | false | 
-| KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | 
-| KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | 
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | 
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | `100Gi` |
+| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
+| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
+| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
+| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | `false` |
+| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | `advanced` |
+| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | N/A |
+| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | N/A |
+| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | N/A |
+| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | `false` |
+| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | N/A |
+| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | true | `false` |
+| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | true | `false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | N/A |
+| KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | false | N/A |
+| KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | false | N/A |
+| KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | false | N/A |
+| KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | N/A |
+| KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A |
+| Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | `false` |
 {: caption="Table 3. 4.10 parameter reference" caption-side="bottom"}
 
 
 ### 4.11 parameter reference
 {: #4.11-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | 
-| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
-| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | 
-| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
-| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | 
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | 
-| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | 
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
-| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | 
-| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | 
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | 
-| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | true | 
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | true | 
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | 
-| KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | false | 
-| KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | false | 
-| KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | false | 
-| KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | 
-| KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | 
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | 
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | `100Gi` |
+| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
+| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
+| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
+| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | `false` |
+| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | `advanced` |
+| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | N/A |
+| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | N/A |
+| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | N/A |
+| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | `false` |
+| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | N/A |
+| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | true | `false` |
+| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | true | `false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | N/A |
+| KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | false | N/A |
+| KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | false | N/A |
+| KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | false | N/A |
+| KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | N/A |
+| KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A |
+| Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | `false` |
 {: caption="Table 4. 4.11 parameter reference" caption-side="bottom"}
 
 
 ### 4.12 parameter reference
 {: #4.12-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | 
-| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | 
-| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | 
-| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | 
-| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | 
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | 
-| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | 
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | 
-| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | 
-| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | 
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | 
-| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | 
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | true | 
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | true | 
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | 
-| KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | false | 
-| KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | false | 
-| KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | false | 
-| KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | 
-| KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | 
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | 
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | `100Gi` |
+| OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
+| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
+| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
+| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | `false` |
+| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | `advanced` |
+| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | N/A |
+| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your bucket. For example `us-east-standard`. | false | N/A |
+| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | N/A |
+| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | N/A |
+| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | `false` |
+| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | N/A |
+| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | true | `false` |
+| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | true | `false` |
+| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | N/A |
+| KMS instance id | `kms-instance-id` | Config | Your KMS instance id. | false | N/A |
+| KMS instance Base URL | `kms-base-url` | Config | Your KMS instance public URL to connect to the instance. | false | N/A |
+| KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | false | N/A |
+| KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | N/A |
+| KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A |
+| Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | `false` |
 {: caption="Table 5. 4.12 parameter reference" caption-side="bottom"}
 
 

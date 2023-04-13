@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-13"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -195,45 +195,45 @@ Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-r
 ### 21.04 parameter reference
 {: #21.04-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | 
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | 
-| SVM | `svm` | Config | The name of the SVM. | true | 
-| User Name | `username` | Secret | The username to connect to the storage device. | true | 
-| User Password | `password` | Secret | The password to connect to the storage device. | true | 
-| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | 
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is above this percentage. | true | 
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
+| SVM | `svm` | Config | The name of the SVM. | true | N/A |
+| User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
+| User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
+| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is above this percentage. | true | `80%` |
 {: caption="Table 1. 21.04 parameter reference" caption-side="bottom"}
 
 
 ### 22.04 parameter reference
 {: #22.04-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | 
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | 
-| SVM | `svm` | Config | The name of the SVM. | true | 
-| User Name | `username` | Secret | The username to connect to the storage device. | true | 
-| User Password | `password` | Secret | The password to connect to the storage device. | true | 
-| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | 
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is above this percentage. | true | 
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
+| SVM | `svm` | Config | The name of the SVM. | true | N/A |
+| User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
+| User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
+| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is above this percentage. | true | `80%` |
 {: caption="Table 2. 22.04 parameter reference" caption-side="bottom"}
 
 
 ### 22.10 parameter reference
 {: #22.10-parameter-reference}
 
-| Display name | CLI option | Type | Description | Required? |
+| Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | 
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | 
-| SVM | `svm` | Config | The name of the SVM. | true | 
-| User Name | `username` | Secret | The username to connect to the storage device. | true | 
-| User Password | `password` | Secret | The password to connect to the storage device. | true | 
-| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | 
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is above this percentage. | true | 
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
+| SVM | `svm` | Config | The name of the SVM. | true | N/A |
+| User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
+| User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
+| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is above this percentage. | true | `80%` |
 {: caption="Table 3. 22.10 parameter reference" caption-side="bottom"}
 
 
