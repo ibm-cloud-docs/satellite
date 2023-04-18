@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-18"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -450,7 +450,7 @@ Use the console to remove a storage assignment and storage configuration.
 {: #21.04-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
 | Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
 | SVM | `svm` | Config | The name of the SVM. | true | N/A |
@@ -467,7 +467,7 @@ Use the console to remove a storage assignment and storage configuration.
 {: #22.04-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
 | Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
 | SVM | `svm` | Config | The name of the SVM. | true | N/A |
@@ -484,7 +484,7 @@ Use the console to remove a storage assignment and storage configuration.
 {: #22.10-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
 | Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
 | SVM | `svm` | Config | The name of the SVM. | true | N/A |

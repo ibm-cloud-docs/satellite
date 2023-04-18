@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-01-31"
+lastupdated: "2023-04-18"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -44,6 +44,9 @@ Do I have to recover etcd backup?
 
 What happens if a location is disconnected for more than 7 days?
 :   After restoring connection, you might need to replace all hosts across the location with new infrastructure.
+
+How do I know when to reconnect a location?
+:   You can make a note or set a reminder to reconnect the location before the 7-day window expires. The timer starts when you request the token. 
 
 ## Setting the disconnected usage time
 {: #disconnect-time}

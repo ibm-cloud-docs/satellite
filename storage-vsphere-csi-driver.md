@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-18"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -28,6 +28,7 @@ Before you can create a VMware block storage configuration, you must satisfy the
 1. Verify that master nodes can communicate with the vCenter management interface.
 1. Disable Swap on all nodes.
 1. Enable Disk UUID on all node virtual machines. 
+1. Deploy vSAN in your vSphere environment. For more information, see the [vSAN documentation](https://docs.vmware.com/en/VMware-vSAN/index.html){: external}.
 
  
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.
@@ -402,7 +403,7 @@ Removing the storage configuration removes the driver from all assigned clusters
 {: #2.5.1-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | vCenter username | `vcenter-username` | Secret | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | true | N/A |
 | vCenter password | `vcenter-password` | Secret | The vCenter server user password. | true | N/A |
 | Insecure connection | `insecure-flag` | Config | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | true | `false` |

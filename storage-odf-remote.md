@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-18"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -524,7 +524,7 @@ Use the command line to remove a storage assignment.
 {: #4.8-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | `100Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
@@ -545,7 +545,7 @@ Use the command line to remove a storage assignment.
 {: #4.9-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | `100Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
@@ -566,7 +566,7 @@ Use the command line to remove a storage assignment.
 {: #4.10-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | `100Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
@@ -595,7 +595,7 @@ Use the command line to remove a storage assignment.
 {: #4.11-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | `100Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
@@ -624,7 +624,7 @@ Use the command line to remove a storage assignment.
 {: #4.12-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi. The default value is `100Gi`. | true | `100Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
