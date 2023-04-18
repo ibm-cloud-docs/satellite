@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-18"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -347,7 +347,7 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 {: #2.2-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Helm Chart Release Name | `helm-release-name` | Config | Release name of the chart | true | `ibm-object-storage-plugin` |
 | Helm Chart Additional Parameters (Optional) | `parameters` | Config | Helm Chart Additional Parameters (Optional) | false | N/A |
 | Object Storage Plug-in License: Apache License Version 2.0 | `license` | Config | Object storage plug-in license: Apache license Version 2.0. Set to `true` to accept the license and install the plugin | true | N/A |

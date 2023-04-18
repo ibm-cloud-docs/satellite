@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-18"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -520,7 +520,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 {: #1.4.0-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Tenant ID | `tenantId` | Secret | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | N/A |
 | Subscription ID | `subscriptionId` | Secret | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find your subscription ID by running the `az account subscription list` command. | true | N/A |
 | Azure Active Directory Client ID | `aadClientId` | Secret | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | N/A |
@@ -537,7 +537,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 {: #1.18.0-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Tenant ID | `tenantId` | Secret | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | N/A |
 | Subscription ID | `subscriptionId` | Secret | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find your subscription ID by running the `az account subscription list` command. | true | N/A |
 | Azure Active Directory Client ID | `aadClientId` | Secret | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | N/A |
@@ -554,7 +554,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 {: #1.23.0-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Tenant ID | `tenantId` | Secret | Tenant ID : The Azure tenant ID that you want to use for your configuration. You can find your tenant ID in the Azure portal or by running the `az account tenant list` command. | true | N/A |
 | Subscription ID | `subscriptionId` | Secret | Your Azure subscription ID. From the Azure portal, search for `Subscription` to find a list of your subscriptions. You can also find your subscription ID by running the `az account subscription list` command. | true | N/A |
 | Azure Active Directory Client ID | `aadClientId` | Secret | Your Azure Active Directory Client ID. You can find your Client ID in the Azure portal or by running the `az ad sp list --display-name appDisplayName` command. | true | N/A |

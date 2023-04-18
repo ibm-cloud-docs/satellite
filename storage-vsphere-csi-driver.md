@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-18"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -402,7 +402,7 @@ Removing the storage configuration removes the driver from all assigned clusters
 {: #2.5.1-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | vCenter username | `vcenter-username` | Secret | The vCenter username. You must specify the username along with the domain name. For example: `Administrator@vsphere.local`. | true | N/A |
 | vCenter password | `vcenter-password` | Secret | The vCenter server user password. | true | N/A |
 | Insecure connection | `insecure-flag` | Config | Include the `insecure-flag`. `true` indicates that you want to include the flag, which uses self-signed certificate for login. `false` indicates that you use a secure connection. If you select `false`, you must provide an SSL thumbprint. | true | `false` |

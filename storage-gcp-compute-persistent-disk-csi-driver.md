@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-18"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -455,7 +455,7 @@ Use the console to remove a storage configuration.
 {: #1.0.4-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Google Cloud project ID. | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | N/A |
 | Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | true | N/A |
 | Private key of the service account. | `private_key` | Secret | Private key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | N/A |
@@ -472,7 +472,7 @@ Use the console to remove a storage configuration.
 {: #1.7.1-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Google Cloud project ID | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | N/A |
 | Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | true | N/A |
 | Private key of the service account | `private_key` | Secret | Private key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | N/A |
@@ -489,7 +489,7 @@ Use the console to remove a storage configuration.
 {: #1.8.0-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Google Cloud project ID | `project_id` | Secret | Google Cloud project ID. You can find your Project ID from the Google Cloud dashboard. | true | N/A |
 | Google Cloud private key ID | `private_key_id` | Secret | Google Cloud private key ID. You can find this in the JSON service account key file. | true | N/A |
 | Private key of the service account | `private_key` | Secret | PrPrivate key of the service account. You can find the service account key on the Service Account section of the project dashboard. | true | N/A |

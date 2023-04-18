@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-18"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -196,7 +196,7 @@ Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-r
 {: #21.04-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
 | Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
 | SVM | `svm` | Config | The name of the SVM. | true | N/A |
@@ -211,7 +211,7 @@ Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-r
 {: #22.04-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
 | Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
 | SVM | `svm` | Config | The name of the SVM. | true | N/A |
@@ -226,7 +226,7 @@ Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-r
 {: #22.10-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
 | Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
 | SVM | `svm` | Config | The name of the SVM. | true | N/A |

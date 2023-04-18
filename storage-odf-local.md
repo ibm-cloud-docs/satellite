@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-18"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -800,7 +800,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 {: #4.8-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. If set to `false` then you need to explicitly provide the OSD volume IDs | true | `false` |
 | OSD volume IDs | `osd-device-path` | Config | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs if `auto-discover-devices` is set to `false` | false | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
@@ -821,7 +821,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 {: #4.9-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. If set to `false` then you need to explicitly provide the OSD volume IDs | true | `false` |
 | OSD volume IDs | `osd-device-path` | Config | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs if `auto-discover-devices` is set to `false` | false | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
@@ -842,7 +842,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 {: #4.10-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Automatic storage volume discovery | `auto-discover-devices` | Config | Automatically discover and use the storage volumes on your worker nodes. If set to `false` then you must explicitly provide the volumes IDs. | true | `true` |
 | OSD volume IDs | `osd-device-path` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
@@ -871,7 +871,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 {: #4.11-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Automatic storage volume discovery | `auto-discover-devices` | Config | Automatically discover and use the storage volumes on your worker nodes. If set to `false` then you must explicitly provide the volumes IDs. | true | `true` |
 | OSD volume IDs | `osd-device-path` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
@@ -900,7 +900,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 {: #4.12-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | Automatic storage volume discovery | `auto-discover-devices` | Config | Automatically discover and use the storage volumes on your worker nodes. If set to `false` then you must explicitly provide the volumes IDs. | true | `true` |
 | OSD volume IDs | `osd-device-path` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |

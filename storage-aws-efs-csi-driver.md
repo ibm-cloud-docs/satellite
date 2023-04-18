@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-13"
+lastupdated: "2023-04-18"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -538,7 +538,7 @@ Note that you must delete your storage assignments before you can successfully d
 {: #1.3.1-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
 {: caption="Table 1. 1.3.1 parameter reference" caption-side="bottom"}
@@ -548,7 +548,7 @@ Note that you must delete your storage assignments before you can successfully d
 {: #1.3.7-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
 {: caption="Table 2. 1.3.7 parameter reference" caption-side="bottom"}
@@ -558,7 +558,7 @@ Note that you must delete your storage assignments before you can successfully d
 {: #1.4.2-parameter-reference}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | --- | --- |
 | AWS Access Key ID | `aws-access-key` | Secret | AWS Access Key ID. | true | N/A |
 | AWS Secret Access Key | `aws-secret-access-key` | Secret | AWS Secret Access key. | true | N/A |
 {: caption="Table 3. 1.4.2 parameter reference" caption-side="bottom"}
