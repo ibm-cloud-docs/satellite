@@ -28,6 +28,7 @@ Before you can create a VMware block storage configuration, you must satisfy the
 1. Verify that master nodes can communicate with the vCenter management interface.
 1. Disable Swap on all nodes.
 1. Enable Disk UUID on all node virtual machines. 
+1. Deploy vSAN in your vSphere environment. For more information, see the [vSAN documentation](https://docs.vmware.com/en/VMware-vSAN/index.html){: external}.
 
  
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.
