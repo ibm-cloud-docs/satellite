@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-04-05"
+lastupdated: "2023-04-24"
 
 
 keywords: satellite storage, change log, version history, netapp ontap san
@@ -23,6 +23,14 @@ Review the version history for the `netapp-ontap-san` {{site.data.keyword.satell
 ## Version 22.10
 {: #22.10-change-log}
 
+
+### Revision 5, released 21 April 2023
+{: #netapp-ontap-san-22.10-rev-5-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} 
+- Updates the UBI to version `8.7-1107`.
+- Ignore aggregate usage limit if set to 0% 
 
 ### Revision 4, released 4 April 2023
 {: #netapp-ontap-san-22.10-rev-4-change-log}
@@ -61,6 +69,14 @@ Review the version history for the `netapp-ontap-san` {{site.data.keyword.satell
 {: #22.04-change-log}
 
 
+### Revision 18, released 21 April 2023
+{: #netapp-ontap-san-22.04-rev-18-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} 
+- Updates the UBI to version `8.7-1107`.
+- Ignore aggregate usage limit if set to 0% 
+
 ### Revision 17, released 4 April 2023
 {: #netapp-ontap-san-22.04-rev-17-change-log}
 
@@ -97,6 +113,14 @@ Review the version history for the `netapp-ontap-san` {{site.data.keyword.satell
 ## Version 21.04
 {: #21.04-change-log}
 
+
+### Revision 21, released 21 April 2023
+{: #netapp-ontap-san-21.04-rev-21-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} 
+- Updates the UBI to version `8.7-1107`.
+- Ignore aggregate usage limit if set to 0% 
 
 ### Revision 20, released 4 April 2023
 {: #netapp-ontap-san-21.04-rev-20-change-log}

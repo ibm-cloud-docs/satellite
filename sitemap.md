@@ -3001,6 +3001,8 @@ subcollection: satellite
 
 * [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#22.10-change-log)
 
+    * [Revision 5, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-5-change-log)
+
     * [Revision 4, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-4-change-log)
 
     * [Revision 3, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-3-change-log)
@@ -3011,6 +3013,8 @@ subcollection: satellite
 
 * [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#22.04-change-log)
 
+    * [Revision 18, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-18-change-log)
+
     * [Revision 17, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-17-change-log)
 
     * [Revision 16, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-16-change-log)
@@ -3020,6 +3024,8 @@ subcollection: satellite
     * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-14-change-log)
 
 * [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#21.04-change-log)
+
+    * [Revision 20, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-20-change-log)
 
     * [Revision 19, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-19-change-log)
 
@@ -3033,6 +3039,8 @@ subcollection: satellite
 
 * [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-san#22.10-change-log)
 
+    * [Revision 5, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-5-change-log)
+
     * [Revision 4, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-4-change-log)
 
     * [Revision 3, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-3-change-log)
@@ -3043,6 +3051,8 @@ subcollection: satellite
 
 * [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-ontap-san#22.04-change-log)
 
+    * [Revision 18, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-18-change-log)
+
     * [Revision 17, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-17-change-log)
 
     * [Revision 16, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-16-change-log)
@@ -3052,6 +3062,8 @@ subcollection: satellite
     * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-14-change-log)
 
 * [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-ontap-san#21.04-change-log)
+
+    * [Revision 21, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-21-change-log)
 
     * [Revision 20, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-20-change-log)
 
