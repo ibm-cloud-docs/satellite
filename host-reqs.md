@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-04-26"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -20,14 +20,11 @@ Review the following requirements that relate to the computing and system setup 
 
 You can add hosts from other cloud providers to your location. For more information, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
 
-Can't meet these host requirements? [Contact {{site.data.keyword.IBM_notm}} Support](/docs/get-support?topic=get-support-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
-{: note}
-
+- If you plan on deploying {{site.data.keyword.redhat_openshift_notm}} clusters, make sure the operating system that you want to use for your hosts is supported for your location type and cluster version. For more information, see [{{site.data.keyword.redhat_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
+- Make sure that you use an [official Red Hat certified hardware](https://catalog.redhat.com/hardware){: external}.
+- If you cannot meet these host requirements, [contact {{site.data.keyword.IBM_notm}} Support](/docs/get-support?topic=get-support-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
 
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
-{: tip}
-
-If you plan on deploying {{site.data.keyword.redhat_openshift_notm}} clusters, make sure the operating system that you want to use for your hosts is supported for your location type and cluster version. For more information, see [{{site.data.keyword.redhat_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
 
