@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-04-28"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -112,7 +112,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
 
 1. Choose a [mirror location](#common-mirror-locations) you want to use for a proxy. This mirror location is used when you set up your proxy.
 2. Find the value for `NO_PROXY`. 
-    - For control plane hosts, use `172.20.0.1` for RHCOS and `NO_PROXY=172.20.0.1,$<REDHHAT_PACKAGE_MIRROR_LOCATION>` for RHEL.
+    - For control plane hosts, use `172.20.0.1` for RHCOS and `NO_PROXY=172.20.0.1,$<REDHAT_PACKAGE_MIRROR_LOCATION>` for RHEL.
     - For {{site.data.keyword.redhat_openshift_notm}} hosts, the `NO_PROXY` for {{site.data.keyword.redhat_openshift_notm}} hosts must include the first IP of the service subnet that is used for the {{site.data.keyword.redhat_openshift_notm}} cluster. To find this IP, run the **`cluster get`** command.
         
         ```sh
@@ -171,7 +171,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
 7. Assign the host back to the [control plane](/docs/satellite?topic=satellite-setup-control-plane) or to [the service](/docs/satellite?topic=satellite-assigning-hosts) where it was previously assigned.
 8. Repeat these steps for each host.
     
-The value for `REDHHAT_PACKAGE_MIRROR_LOCATION` depends on the location of the Red Hat package mirrors. The `REDHHAT_PACKAGE_MIRROR_LOCATION` can be a wild-card if multiple mirrors are used. For more information, see [How to apply a system wide proxy](https://access.redhat.com/solutions/1351253){: external}.
+The value for `REDHAT_PACKAGE_MIRROR_LOCATION` depends on the location of the Red Hat package mirrors. The `REDHAT_PACKAGE_MIRROR_LOCATION` can be a wild-card if multiple mirrors are used. For more information, see [How to apply a system wide proxy](https://access.redhat.com/solutions/1351253){: external}.
 {: note}
 
 ## Common mirror locations

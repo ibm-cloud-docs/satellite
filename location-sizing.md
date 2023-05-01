@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-28"
+lastupdated: "2023-05-01"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -104,11 +104,24 @@ The following table shows sizing guidance for the number of hosts that the {{sit
 
 
  
-The following information can be used for both RHCOS and non-RHCOS enabled locations. The hosts must have at least 4 vCPU and 16 GB RAM.
+For a non-RHCOS enabled location, your hosts must have at least 4 vCPU and 16 GB RAM. For an RHCOS enabled location, your hosts must have at least 8 vCPU and 32 GB RAM. 
 
 | Number of control plane hosts | Max clusters in location |  Max cluster size |
 | --- | --- | --- |
 | 3 hosts 4x16 | Up to 3 clusters | 20 workers per cluster |
+{: class="simple-tab-table"}
+{: #demo-non-rhcos}
+{: tab-title="Non RHCDOS enabled location"}
+{: tab-group="loc-demo"}
+{: caption="Sizing guidance for demonstrations" caption-side="bottom"}
+
+| Number of control plane hosts | Max clusters in location |  Max cluster size |
+| --- | --- | --- |
+| 3 hosts 8x32 | Up to 3 clusters | 20 workers per cluster |
+{: class="simple-tab-table"}
+{: #demo-rhcos}
+{: tab-title="RHCDOS enabled location"}
+{: tab-group="loc-demo"}
 {: caption="Sizing guidance for demonstrations" caption-side="bottom"}
 
 
