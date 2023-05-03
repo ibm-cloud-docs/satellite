@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-02"
+lastupdated: "2023-05-03"
 
 keywords: satellite, hybrid, multicloud, RACI, responsibilities, shared responsibilities
 
