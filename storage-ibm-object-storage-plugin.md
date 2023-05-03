@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-18"
+lastupdated: "2023-05-03"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -11,11 +11,15 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.cos_full_notm}} Driver 
+# {{site.data.keyword.cos_full_notm}} Driver
 {: #storage-ibm-object-storage-plugin}
+
+You can use the {{site.data.keyword.cos_full_notm}} driver template to create and access data in multiple s3 storage providers such as IBM, AWS, Wasabi, Azure, and more. Review the following steps to deploy the {{site.data.keyword.cos_full_notm}} driver to your {{site.data.keyword.satelliteshort}} clusters.
+{: shortdesc}
 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.
 {: important}
+
 
 
 ## Prerequisites
@@ -23,13 +27,13 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
-1. Create a set of service credentials in your s3 provider. 
-    * [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials). 
-    * [AWS service credential](https://docs.aws.amazon.com/cli/latest/reference/iam/create-service-specific-credential.html){: external} 
+1. Create a set of service credentials in your object storage provider.
+    * [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials).
+    * [AWS service credential](https://docs.aws.amazon.com/cli/latest/reference/iam/create-service-specific-credential.html){: external}.
     * [Wasabi access key](https://docs.wasabi.com/docs/creating-a-user-account-and-access-key#assigning-an-access-key){: external}.
 1. [Create a secret that contains your s3 credentials](#config-storage-cos-secret).
 
-## Creating a secret in your cluster that contains your s3 provider credentials
+## Creating a secret in your cluster that contains your object storage credentials
 {: #config-storage-cos-secret}
 
 Create the Kubernetes secret in your cluster that contains your service credentials.
@@ -39,14 +43,13 @@ Create the Kubernetes secret in your cluster that contains your service credenti
 
     Example `create secret` command for {{site.data.keyword.cos_full_notm}} that uses an API key.
     ```sh
-    oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=<api_key> --from-literal=service-instance-id=<service_instance_guid>
+    oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=API-KEY --from-literal=service-instance-id=SERVICE-INSTANCE-ID
     ```
     {: pre}
 
-    Example command to create a secret for your AWS or Wasabi credentials. 
+    Example command to create a secret for your AWS or Wasabi credentials.
     ```sh
-    oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=<access_key_ID> --from-literal=secret-key=<secret_access_key>
-
+    oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=ACCESS-KEY-ID --from-literal=secret-key=SECRET-ACCESS-KEY
     ```
     {: pre}
 
@@ -163,18 +166,18 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
 
 1. Create a PVC that references your object storage configuration.
 
-    ```yaml 
+    ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata: 
-        name: pvc-cos #Enter a name for your PVC.
-        namespace: default
-        annotations: 
-        ibm.io/auto-create-bucket: "false"
-        ibm.io/auto-delete-bucket: "false" 
-        ibm.io/bucket: <BUCKET-NAME> #Enter the name of your object storage bucket.
-        ibm.io/secret-name: <SECRET-NAME> #Enter the name of the secret you created earlier.
-        ibm.io/secret-namespace: <default> #Enter the namespace where you want to create the PVC.
+      name: demo #Enter a name for your PVC.
+      namespace: default
+      annotations: 
+      ibm.io/auto-create-bucket: "false"
+      ibm.io/auto-delete-bucket: "false" 
+      ibm.io/bucket: BUCKET-NAME #Enter the name of your object storage bucket.
+      ibm.io/secret-name: SECRET-NAME #Enter the name of the secret you created earlier.
+      ibm.io/secret-namespace: NAMESPACE #Enter the namespace where you want to create the PVC.
     spec: 
         accessModes:
         - ReadWriteOnce
@@ -192,47 +195,45 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
     ```
     {: pre}
 
-1. Create a YAML configuration file for a pod that mounts the PVC that you create. 
+1. Create a YAML configuration file for a pod that mounts the PVC that you create.
 
     ```yaml
     apiVersion: v1
-    kind: List
+    kind: Pod
     metadata:
-      name: ibm-object-storage-plugin
-      namespace: kube-system
-      annotations:
-        revision: 1  
-    items:
-      - apiVersion: satstorage.ibm.com/v1
-        kind: SatStorageHelmChart
-        metadata:
-          name: ibm-object-storage-plugin
-          namespace: ibm-satellite-storage
-        spec:
-          helm-repo-url: "raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm"
-          helm-chart-name: "ibm-object-storage-plugin"
-          helm-chart-namespace: "ibm-object-s3fs"
-          helm-chart-version: "2.2.1"  
-          release-name: "{{{ helm-release-name }}}"
-          storage-template-revision: "1" 
-          params: 
-            - license={{{ license }}}
-            - cos.endpoint={{{ cos-endpoint }}}
-            - cos.storageClass={{{ cos-storageclass }}}
-            {{#parameters }}
-            - "{{{ item }}}"
-            {{/parameters }}
+    name: demo-pod
+    namespace: demo
+    spec:
+    securityContext:
+        runAsUser: 2000
+        fsGroup: 2000
+    volumes:
+    - name: demo-vol
+        persistentVolumeClaim:
+            claimName: demo
+    - name: hostpath-test
+        hostPath:
+            path: /var/mydata01
+            type: DirectoryOrCreate
+    containers:
+    - name: test
+        image: nginxs
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: demo-vol
+        mountPath: /mnt/cosvol
     ```
     {: codeblock}
+   
 
-1. Create the pod in your cluster. 
+1. Create the pod in your cluster.
 
     ```sh
     oc apply -f ibm-object-storage-plugin
     ```
     {: pre}
 
-1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state. 
+1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
 
     ```sh
     oc get pods
@@ -240,10 +241,10 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
     {: pre}
 
     ```sh
-        NAME                                READY   STATUS    RESTARTS   AGE
-        ibm-object-storage-plugin           1/1     Running   0          2m58s
-        ```
-        {: screen}
+    NAME                                READY   STATUS    RESTARTS   AGE
+    ibm-object-storage-plugin           1/1     Running   0          2m58s
+    ```
+    {: screen}
 
 1. Verify that the app can write to your block storage volume by logging in to your pod.
 
@@ -252,19 +253,17 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
     ```
     {: pre}
 
-1. View the contents of the `outfile` file to confirm that your app can write data to your persistent storage.
+1. Change directories and create a test file.
 
     ```sh
-    cat /
+    cd /mnt/cosvol/ && vi test.txt && ls
     ```
     {: pre}
 
     Example output
     
     ```sh
-    Fri Jul 16 07:49:39 EDT 2021
-    Fri Jul 16 07:49:39 EDT 2021
-    Fri Jul 16 07:49:39 EDT 2021
+    test.txt
     ```
     {: screen}
 
