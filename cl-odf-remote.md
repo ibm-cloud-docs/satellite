@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-04-05"
+lastupdated: "2023-05-09"
 
 
 keywords: satellite storage, change log, version history, odf remote
@@ -24,6 +24,15 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 {: #4.12-change-log}
 
 
+### Revision 2, released 04 May 2023
+{: #odf-remote-4.12-rev-2-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [ CVE-2023-24536](https://nvd.nist.gov/vuln/detail/ CVE-2023-24536){: external} [ CVE-2023-24537](https://nvd.nist.gov/vuln/detail/ CVE-2023-24537){: external} [ CVE-2023-24538](https://nvd.nist.gov/vuln/detail/ CVE-2023-24538){: external} 
+- Updates the UBI to version `8.7-1107`.
+- Updates Golang to version `1.19.8`.
+- LSO channel changed from stable-4.x to stable 
+
 ### Revision 1, released 04 April 2023
 {: #odf-remote-4.12-rev-1-change-log}
 
@@ -36,6 +45,15 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.11
 {: #4.11-change-log}
 
+
+### Revision 6, released 04 May 2023
+{: #odf-remote-4.11-rev-6-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [ CVE-2023-24536](https://nvd.nist.gov/vuln/detail/ CVE-2023-24536){: external} [ CVE-2023-24537](https://nvd.nist.gov/vuln/detail/ CVE-2023-24537){: external} [ CVE-2023-24538](https://nvd.nist.gov/vuln/detail/ CVE-2023-24538){: external} 
+- Updates the UBI to version `8.7-1107`.
+- Updates Golang to version `1.19.8`.
+- LSO channel changed from stable-4.x to stable 
 
 ### Revision 5, released 04 April 2023
 {: #odf-remote-4.11-rev-5-change-log}
@@ -75,6 +93,15 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 {: #4.10-change-log}
 
 
+### Revision 17, released 04 May 2023
+{: #odf-remote-4.10-rev-17-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [ CVE-2023-24536](https://nvd.nist.gov/vuln/detail/ CVE-2023-24536){: external} [ CVE-2023-24537](https://nvd.nist.gov/vuln/detail/ CVE-2023-24537){: external} [ CVE-2023-24538](https://nvd.nist.gov/vuln/detail/ CVE-2023-24538){: external} 
+- Updates the UBI to version `8.7-1107`.
+- Updates Golang to version `1.19.8`.
+- LSO channel changed from stable-4.x to stable 
+
 ### Revision 16, released 04 April 2023
 {: #odf-remote-4.10-rev-16-change-log}
 
@@ -112,6 +139,14 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.9
 {: #4.9-change-log}
 
+
+### Revision 23, released 04 May 2023
+{: #odf-remote-4.9-rev-23-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [ CVE-2023-24536](https://nvd.nist.gov/vuln/detail/ CVE-2023-24536){: external} [ CVE-2023-24537](https://nvd.nist.gov/vuln/detail/ CVE-2023-24537){: external} [ CVE-2023-24538](https://nvd.nist.gov/vuln/detail/ CVE-2023-24538){: external} 
+- Updates the UBI to version `8.7-1107`.
+- Updates Golang to version `1.19.8`.
 
 ### Revision 22, released 04 April 2023
 {: #odf-remote-4.9-rev-22-change-log}
