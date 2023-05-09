@@ -28,7 +28,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 {: #odf-local-4.12-rev-2-change-log}
 
 
-- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [ CVE-2023-24536](https://nvd.nist.gov/vuln/detail/ CVE-2023-24536){: external} [ CVE-2023-24537](https://nvd.nist.gov/vuln/detail/ CVE-2023-24537){: external} [ CVE-2023-24538](https://nvd.nist.gov/vuln/detail/ CVE-2023-24538){: external} 
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external} [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external} [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external} 
 - Updates the UBI to version `8.7-1107`.
 - Updates Golang to version `1.19.8`.
 - LSO channel changed from stable-4.x to stable 
@@ -50,7 +50,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 {: #odf-local-4.11-rev-6-change-log}
 
 
-- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [ CVE-2023-24536](https://nvd.nist.gov/vuln/detail/ CVE-2023-24536){: external} [ CVE-2023-24537](https://nvd.nist.gov/vuln/detail/ CVE-2023-24537){: external} [ CVE-2023-24538](https://nvd.nist.gov/vuln/detail/ CVE-2023-24538){: external} 
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external} [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external} [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external} 
 - Updates the UBI to version `8.7-1107`.
 - Updates Golang to version `1.19.8`.
 - LSO channel changed from stable-4.x to stable 
@@ -97,7 +97,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 {: #odf-local-4.10-rev-17-change-log}
 
 
-- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [ CVE-2023-24536](https://nvd.nist.gov/vuln/detail/ CVE-2023-24536){: external} [ CVE-2023-24537](https://nvd.nist.gov/vuln/detail/ CVE-2023-24537){: external} [ CVE-2023-24538](https://nvd.nist.gov/vuln/detail/ CVE-2023-24538){: external} 
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external} [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external} [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external} 
 - Updates the UBI to version `8.7-1107`.
 - Updates Golang to version `1.19.8`.
 - LSO channel changed from stable-4.x to stable 
@@ -144,7 +144,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 {: #odf-local-4.9-rev-23-change-log}
 
 
-- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [ CVE-2023-24536](https://nvd.nist.gov/vuln/detail/ CVE-2023-24536){: external} [ CVE-2023-24537](https://nvd.nist.gov/vuln/detail/ CVE-2023-24537){: external} [ CVE-2023-24538](https://nvd.nist.gov/vuln/detail/ CVE-2023-24538){: external} 
+- Resolves the following CVEs: [CVE-2023-0361](https://nvd.nist.gov/vuln/detail/CVE-2023-0361){: external} [CVE-2023-24536](https://nvd.nist.gov/vuln/detail/CVE-2023-24536){: external} [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external} [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external} 
 - Updates the UBI to version `8.7-1107`.
 - Updates Golang to version `1.19.8`.
 
