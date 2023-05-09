@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-05-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -52,7 +52,7 @@ You can review logs to troubleshoot issues.
 
 If your host is not assigned to a cluster, or if the assignment fails, you can SSH into the host machine and view logs. Otherwise, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host by using SSH for security purposes. For more information about viewing logs on your host machine, see [Logging in to a host machine to debug](/docs/satellite?topic=satellite-ts-hosts-login).
 
-If you are using {{site.data.keyword.bpshort}}, you can view job log details to find information about your deployment. For more information, see [Reviewing the {{site.data.keyword.bpshort}} job details](/docs/schematics?topic=schematics-wks-state&interface=ui#job-logs).
+If you are using {{site.data.keyword.bpshort}}, you can view job log details to find information about your deployment. For more information, see [Reviewing the {{site.data.keyword.bpshort}} job details](/docs/schematics?topic=schematics-wks-state).
 
 You can also view logs that are automatically generated for your {{site.data.keyword.satelliteshort}} location setup and collected in an {{site.data.keyword.la_full_notm}} instance. For more information, see [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health).
 
