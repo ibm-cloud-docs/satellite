@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-18"
+lastupdated: "2023-05-09"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -212,14 +212,6 @@ Before you begin, review the [parameter reference](#odf-local-parameter-referenc
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
-    Example command to create a version 4.8 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.8 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  [--param "osd-device-path=OSD-DEVICE-PATH"]  --param "num-of-osd=NUM-OF-OSD"  [--param "worker-nodes=WORKER-NODES"]  --param "odf-upgrade=ODF-UPGRADE"  --param "billing-type=BILLING-TYPE"  [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]  [--param "ibm-cos-location=IBM-COS-LOCATION"]  [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]  [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]  --param "cluster-encryption=CLUSTER-ENCRYPTION"  --param "iam-api-key=IAM-API-KEY"  --param "perform-cleanup=PERFORM-CLEANUP" 
-    ```
-    {: pre}
-
-
     Example command to create a version 4.9 configuration.
 
     ```sh
@@ -270,14 +262,6 @@ Before you begin, review the [parameter reference](#odf-local-parameter-referenc
 1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
 
 1. Copy one of the following example requests and replace the variables that you want to use.
-
-
-    Example request to create a version 4.8 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-local\", \"storage-template-version\": \"4.8\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"OSD-DEVICE-PATH\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"PERFORM-CLEANUP\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ACCESS-KEY\",{ \"entry.name\": \"IBM-COS-SECRET-KEY\",{ \"entry.name\": \"IAM-API-KEY\",}
-    ```
-    {: pre}
 
 
     Example request to create a version 4.9 configuration.
@@ -796,27 +780,6 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 ## Parameter reference
 {: #odf-local-parameter-reference}
 
-### 4.8 parameter reference
-{: #4.8-parameter-reference}
-
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. If set to `false` then you need to explicitly provide the OSD volume IDs | true | `false` |
-| OSD volume IDs | `osd-device-path` | Config | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs if `auto-discover-devices` is set to `false` | false | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
-| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
-| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | `false` |
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | `advanced` |
-| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | N/A |
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your COS bucket. For example: `us-east-standard`. | false | N/A |
-| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | N/A |
-| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | N/A |
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | `false` |
-| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | N/A |
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | true | `false` |
-{: caption="Table 1. 4.8 parameter reference" caption-side="bottom"}
-
-
 ### 4.9 parameter reference
 {: #4.9-parameter-reference}
 
@@ -835,7 +798,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | `false` |
 | IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | N/A |
 | Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion | true | `false` |
-{: caption="Table 2. 4.9 parameter reference" caption-side="bottom"}
+{: caption="Table 1. 4.9 parameter reference" caption-side="bottom"}
 
 
 ### 4.10 parameter reference
@@ -864,7 +827,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A |
 | Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | `false` |
-{: caption="Table 3. 4.10 parameter reference" caption-side="bottom"}
+{: caption="Table 2. 4.10 parameter reference" caption-side="bottom"}
 
 
 ### 4.11 parameter reference
@@ -893,7 +856,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A |
 | Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | `false` |
-{: caption="Table 4. 4.11 parameter reference" caption-side="bottom"}
+{: caption="Table 3. 4.11 parameter reference" caption-side="bottom"}
 
 
 ### 4.12 parameter reference
@@ -922,7 +885,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A |
 | Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | `false` |
-{: caption="Table 5. 4.12 parameter reference" caption-side="bottom"}
+{: caption="Table 4. 4.12 parameter reference" caption-side="bottom"}
 
 
 
