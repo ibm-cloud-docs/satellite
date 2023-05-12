@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-05-12"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -27,7 +27,7 @@ completion-time: 45m
 ## Objectives
 {: #odf-tutorial-objectives}
 
-In this tutorial, you use the {{site.data.keyword.satelliteshort}} storage console to deploy the {{site.data.keyword.block_storage_is_short}} driver to a cluster in your location. After deploying the {{site.data.keyword.block_storage_is_short}} driver you then deploy OpenShift Data Foundation. With the {{site.data.keyword.satelliteshort}} console, you can manage [storage templates](/docs/satellite?topic=satellite-storage-template-ov) and deploy storage resources across multiple {{site.data.keyword.satelliteshort}} clusters in your location. For more information about OpenShift Data Foundation, see [Understanding OpenShift Data Foundation(/docs/openshift?topic=openshift-ocs-storage-prep). 
+In this tutorial, you use the {{site.data.keyword.satelliteshort}} storage console to deploy the {{site.data.keyword.block_storage_is_short}} driver to a cluster in your location. After deploying the {{site.data.keyword.block_storage_is_short}} driver you then deploy OpenShift Data Foundation. With the {{site.data.keyword.satelliteshort}} console, you can manage [storage templates](/docs/satellite?topic=satellite-storage-template-ov) and deploy storage resources across multiple {{site.data.keyword.satelliteshort}} clusters in your location. For more information about OpenShift Data Foundation, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep). 
 
 
 ## Audience
