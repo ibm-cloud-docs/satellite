@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-05-15"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -29,8 +29,22 @@ If your hosts are running Red Hat CoreOS (RHCOS), you must manually attach them 
 Automate your Azure setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your Azure account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
 {: shortdesc}
 
-You can clone and modify these Terraform templates from the [Satellite Terraform GitHub repository](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external}. Or, you can [manually attach Azure hosts to a {{site.data.keyword.satelliteshort}} location](#azure-host-attach).
-{: tip}
+This {{site.data.keyword.bpshort}} template creates a resource group of your Azure cloud subscription and then creates the following resources in your Azure account.
+
+- 1 virtual network that spans the region.
+- 1 network security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
+- 1 virtual machine running RHEL 8 for each host that you specified, spread evenly across the region. By default, 6 virtual machines are created.
+- 1 network interface for each virtual machine.
+- 1 disk for each virtual machine.
+
+The following resources are created in your {{site.data.keyword.cloud_notm}} account.
+
+- 1 {{site.data.keyword.satelliteshort}} location.
+- 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
+- 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location, unassigned, and available to use for services such as a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the additional hosts are unassigned and available for use in the control plane or by services. 
+
+This template does not include the required storage resources for some integrations, such as OpenShift Data Foundation or other services. If you need OpenShift Data Foundation or similar services, review the required resources and manually create hosts in your Azure account. Then, [attach the hosts to your location](#azure-host-attach).
+{: important}
 
 Before you begin, make sure that you have the correct [{{site.data.keyword.cloud_notm}} permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations, including to {{site.data.keyword.satelliteshort}} and {{site.data.keyword.bpshort}}. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
 
@@ -52,21 +66,6 @@ Do not reuse the same name for multiple locations, even after the other location
     3. Wait for the {{site.data.keyword.bpshort}} action to finish and the workspace to enter an **Active** state.
 
 Well done, your {{site.data.keyword.satelliteshort}} location is creating! You can review the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to see when your location is in a **Normal** state and ready to use.
-
-
-The template creates a resource group of your Azure cloud subscription and then creates the following resources.
-
-- 1 virtual network that spans the region.
-- 1 network security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
-- 1 virtual machine running RHEL 8 for each host that you specified, spread evenly across the region. By default, 6 virtual machines are created.
-- 1 network interface for each virtual machine.
-- 1 disk for each virtual machine.
-
-The template creates the following resources in your {{site.data.keyword.cloud_notm}} account.
-
-- 1 {{site.data.keyword.satelliteshort}} location.
-- 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
-- 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location, unassigned, and available to use for services such as a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the additional hosts are unassigned and available for use in the control plane or by services. 
 
 If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-location-host).
 {: note}

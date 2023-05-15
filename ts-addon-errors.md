@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-07-15"
+  years: 2020, 2023
+lastupdated: "2023-05-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -15,6 +15,8 @@ content-type: troubleshoot
 
 # Why doesn't my cluster add-on work?
 {: #addon-errors}
+{: troubleshoot}
+{: support}
 
 When you try to use a cluster add-on in {{site.data.keyword.satellitelong}}, the cluster add-on does not work. For example, you installed the Kubernetes web terminal add-on but cannot open the add-on.
 {: tsSymptoms}
@@ -38,6 +40,6 @@ Take the following steps to troubleshoot the add-on.
     {: pre}
 
 3. If the add-on is in critical state, review the {{site.data.keyword.cos_full_notm}} instance and bucket that backs up the cluster data. The instance and endpoint must have matching endpoints, such as a **Global** instance with a **Cross Region** bucket (`us-geo` endpoint), or a **Regional** instance with a **Regional** bucket (`us-east` endpoint). If the endpoints do not match, you must re-create the {{site.data.keyword.satelliteshort}} location with matching {{site.data.keyword.cos_full_notm}} instance and bucket endpoints.
-4. For more information, [review the add-on state and statuses](/docs/containers?topic=containers-debug_addons).
+4. For more information, [review the add-on state and statuses](/docs/openshift?topic=openshift-debug_addons).
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-05-15"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -11,23 +11,29 @@ subcollection: satellite
 content-type: tutorial
 services: satellite, containers, vpc
 account-plan: paid
-completion-time: 45m
+completion-time: 90m
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters 
+# Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters with Azure worker nodes
 {: #odf-tutorial}
 {: toc-content-type="tutorial"}
-{: toc-services="satellite, containers, vpc"}
+{: toc-services="satellite, containers, vpc, azure"}
 {: toc-completion-time="45m"}
 
 ## Objectives
 {: #odf-tutorial-objectives}
 
-In this tutorial, you use the {{site.data.keyword.satelliteshort}} storage console to deploy the {{site.data.keyword.block_storage_is_short}} driver to a cluster in your location. After deploying the {{site.data.keyword.block_storage_is_short}} driver you then deploy OpenShift Data Foundation. With the {{site.data.keyword.satelliteshort}} console, you can manage [storage templates](/docs/satellite?topic=satellite-storage-template-ov) and deploy storage resources across multiple {{site.data.keyword.satelliteshort}} clusters in your location. For more information about OpenShift Data Foundation, see [Understanding OpenShift Data Foundation(/docs/openshift?topic=openshift-ocs-storage-prep). 
+In this tutorial, you complete the following tasks to set up OpenShift Data Foundation.
+
+- A {{site.data.keyword.satelliteshort}} Location that uses Azure hosts.
+- A {{site.data.keyword.satelliteshort}} cluster that uses your Azure hosts as worker nodes.
+- A {{site.data.keyword.satelliteshort}} storage configration that deploys the Azure Disk CSI driver to your cluster.
+- A {{site.data.keyword.satelliteshort}} storage configration that deploys OpenShift Data Foundation to your cluster.
+
 
 
 ## Audience
@@ -35,59 +41,58 @@ In this tutorial, you use the {{site.data.keyword.satelliteshort}} storage conso
 
 This tutorial is for location administrators who are using OpenShift Data Foundation and {{site.data.keyword.satelliteshort}} storage config for the first time.
 
-## Prerequisites
-{: #odf-tutorial-prereqs}
-
-1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. You must have at least one cluster in your location. If you don't have any clusters in your location, [create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters). Your cluster must meet the following requirements:
-    * At least 3 worker nodes with at least 16CPUs and 64GB RAM per worker node
-    * The hosts that you use as worker nodes must be IBM Cloud VPC Virtual Server Instances
-1. [Set up {{site.data.keyword.satelliteshort}} Config on your clusters](/docs/satellite?topic=satellite-satcon-manage-direct-upload).
-
-
-## Deploying the {{site.data.keyword.block_storage_is_short}} CSI driver
-{: #odf-tutorial-deploying-vpc}
+## Deploy the Azure location template
+{: #odf-tutorial-deploying-azure-location}
 {: step}
 
-Follow the steps to deploy the {{site.data.keyword.block_storage_is_short}} CSI driver by using the {{site.data.keyword.satelliteshort}} storage configuration console.
-{: shortdesc}
 
-The template is currently in beta. Do not use it for production workloads. 
-{: beta}
+1. [Verify you have the required permissions in your Azure account](/docs/satellite?topic=satellite-azure&interface=ui#infra-creds-azure).
+1. [Follow the steps to deploy an Azure location by using the {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-azure&interface=ui#azure-template). Make sure to deploy hosts across 3 zones and select a VM size that has at least 16CPUs and 64GB RAM.
 
-1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} click **Locations**, then click the location where you want to deploy OpenShift Data Foundation.
-1. Click **Storage > Create storage configuration** 
-1. On the **Basics** tab, enter a name for your configuration and select the **IBM VPC Block CSI driver**, leave the version as default, and click **Next**.
-1. On the **Parameters** tab, enter the required parameters. 
-    IAM Endpoint
-    :   Enter `https://iam.cloud.ibm.com`
 
-    VPC IaaS endpoint
-    :   The VPC regional endpoint of your VPC cluster in the format `https://region.iaas.cloud.ibm.com`. Example: `https://eu-de.iaas.cloud.ibm.com`. For more information, see https://ibm.biz/vpc-endpoints
-
-    Resource Group ID
-    :   The ID of the resource group where your VPC is located. To retrieve this value, run the `ibmcloud is vpc VPC-ID` command and note the Resource group field.
-1. On the **Secrets** tab, enter your IAM API Key and click **Next**. Note, there is currently an issue with auto fill in some browsers. If you don't see the IAM API Key field on the **Secrets** tab, try clearing the search field or by using a different web browser. 
-1. On the **Storage Classes** tab, review the storage classes that are deployed to your cluster. These storage classes are available later when you deploy OpenShift Data Foundation. 
-1. On the **Assign to service** tab, select your cluster and click **Complete**. 
-
-## Deploying OpenShift Data Foundation
-{: #odf-tutorial-deploying_odf}
+## Create a {{site.data.keyword.satelliteshort}} cluster that uses your Azure hosts
+{: #odf-tutorial-deploying-azure-cluster}
 {: step}
 
-Follow the steps to create a {{site.data.keyword.satelliteshort}} storage configuration that uses the OpenShift Data Foundation for remote storage template. When you deploy ODF for remote storage you must provide a storage driver and a storage class that are used for provisioning app storage. In this example, you use the {{site.data.keyword.block_storage_is_short}} block storage driver and the `sat-vpc-block-gold-metro` storage class that you deployed to your cluster in the previous step.
-{: shortdesc}
+After setting up your location, you have unassigned hosts that can be used to create a cluster.
+
+1. [Follow the steps to deploy a cluster to your location](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console). Make sure to select the **Enable admin access for {{site.data.keyword.satelliteshort}} config** option.
+1. Wait until your cluster finishes deploying then deploy the Azure Disk CSI driver.
+
+
+## Deploy the Azure Disk CSI driver
+{: #odf-tutorial-deploying-azure}
+{: step}
+
+
+1. [Follow the steps to create an assign an Azure Disk storage configuration](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#azuredisk-csi-driver-config-create-console) to your cluster.
+1. Wait until the configuration is successfully assigned, then list the storage classes in your cluster.
+    ```sh
+    oc get sc
+    ```
+    {: pre}
+
+1. Make sure the [Azure Disk storage classes](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#azure-disk-sc-ref) are deployed, then [deploy ODF](#odf-tutorial-deploying-odf).
+
+
+## Deploy OpenShift Data Foundation
+{: #odf-tutorial-deploying-odf}
+{: step}
+
+Follow the steps to create a {{site.data.keyword.satelliteshort}} storage configuration that uses the OpenShift Data Foundation for remote storage template. When you deploy ODF for remote storage you must provide a storage driver and a storage class that are used for provisioning app storage. In this example, you use the Azure Disk CSI driver and the `sat-azure-block-gold-metro` storage class that you deployed to your cluster in the previous step.
+
 
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} click **Locations**, then click the location where you want to deploy OpenShift Data Foundation.
-1. Click **Storage > Create storage configuration** 
+1. Click **Storage > Create storage configuration**.
 1. On the **Basics** tab, enter a name for your configuration and select the **OpenShift Data Foundation for remote storage**, select the version that matches your cluster version, and click **Next**.
-1. On the **Parameters** tab, enter `sat-vpc-block-gold-metro` as the **OSD pod storage class**, and leave the remaining fields as their default values.
+1. On the **Parameters** tab, enter `sat-azure-block-gold-metro` as the **OSD pod storage class**, and leave the remaining fields as their default values.
 1. On the **Secrets** tab, enter your IAM API Key and click **Next**.
 1. On the **Storage Classes** tab, review the storage classes that are deployed to your cluster. These storage classes are available for your apps.
-1. On the **Assign to service** tab, select your cluster and click **Complete**. 
+1. On the **Assign to service** tab, select your cluster and click **Complete**.
 
-## Verifying your deployment
+## Verify your deployment
 {: #odf-tutorial-verify}
+{: step}
 
 1. [Access your {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
 
@@ -156,11 +161,8 @@ Follow the steps to create a {{site.data.keyword.satelliteshort}} storage config
 
 ## Next Steps
 {: #odf-tutorial-next-steps}
+{: step}
 
-To deploy an example application, see [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-deploy). 
-
-    
-
-
+To deploy an example application, see [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-deploy).
 
 

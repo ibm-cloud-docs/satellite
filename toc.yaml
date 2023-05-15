@@ -295,7 +295,7 @@ toc:
                     - satconfig-cluster-access-error.md
                     - ts-console-fail.md
                     - ts-cluster-operations-blocked.md
-                    - addon-errors.md
+                    - ts-addon-errors.md
                     - ts-degraded-ingress.md
                     - ts-sat-ocp-console.md
                     - ts-cluster-ocdebug.md
