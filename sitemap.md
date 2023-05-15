@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-12"
+lastupdated: "2023-05-15"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -953,23 +953,25 @@ subcollection: satellite
 * [Configure Link to use the reverse proxy](/docs/satellite?topic=satellite-dl-iks-classic#dl-config-satlink)
 
 
-## Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters
-{: #sitemap_deploying_openshift_data_foundation_with_on_clusters}
+## Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters with Azure worker nodes
+{: #sitemap_deploying_openshift_data_foundation_on_clusters_with_azure_worker_nodes}
 
 
-[Deploying OpenShift Data Foundation with {{site.data.keyword.block_storage_is_short}} on {{site.data.keyword.satelliteshort}} clusters](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial)
+[Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters with Azure worker nodes](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial)
 
 * [Objectives](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-objectives)
 
 * [Audience](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-audience)
 
-* [Prerequisites](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-prereqs)
+* [Deploy the Azure location template](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-deploying-azure-location)
 
-* [Deploying the {{site.data.keyword.block_storage_is_short}} CSI driver](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-deploying-vpc)
+* [Create a {{site.data.keyword.satelliteshort}} cluster that uses your Azure hosts](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-deploying-azure-cluster)
 
-* [Deploying OpenShift Data Foundation](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-deploying_odf)
+* [Deploy the Azure Disk CSI driver](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-deploying-azure)
 
-* [Verifying your deployment](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-verify)
+* [Deploy OpenShift Data Foundation](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-deploying-odf)
+
+* [Verify your deployment](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-verify)
 
 * [Next Steps](/docs/satellite?topic=satellite-odf-tutorial#odf-tutorial-next-steps)
 
