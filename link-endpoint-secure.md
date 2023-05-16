@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-01"
+lastupdated: "2023-05-16"
 
 keywords: satellite, hybrid, multicloud, endpoint, link, endpoint secure
 
@@ -28,7 +28,7 @@ By default, your {{site.data.keyword.openshiftlong_notm}} API {{site.data.keywor
 5. Use the toggle to enable the source to connect to the destination resource. After you enable a source, network traffic to the destination through the endpoint is permitted only from clients that use an IP address in the range that you specified in the source. Network traffic from other clients that is sent to the destination resource through the endpoint is blocked.
 6. Repeat these steps for any sources that you want to grant access to the destination resource through the endpoint.
 
-You can find the {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoint by looking in the {{site.data.keyword.loganalysislong_notm}} logs for your {{site.data.keyword.satelliteshort}} location. For more information, see [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health).
+You can find the {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoint by looking in the {{site.data.keyword.loganalysislong_notm}} logs for your {{site.data.keyword.satelliteshort}} location. To open these logs, click **Open Dashboard** under **Logging for Link**. You can set up a filter in the monitoring instance to filter out the value you need. For example, search for `flowlog: rejected by` in the log and you will see an IP. Add a filter with a subnet matching that IP for your endpoint. This IP is logged when you use `oc` commands via link endpoint on the {{site.data.keyword.redhat_openshift_notm}} API. For more information, see [Logging for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-health).
 {: tip}
 
 
