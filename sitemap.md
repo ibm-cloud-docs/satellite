@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-15"
+lastupdated: "2023-05-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1052,6 +1052,8 @@ subcollection: satellite
     * [Plan your host systems](/docs/satellite?topic=satellite-infrastructure-plan#infra-plan-compatible)
 
 * [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os)
+
+    * [Deciding whether to enable Red Hat CoreOS support for your location](/docs/satellite?topic=satellite-infrastructure-plan#enable-coreos-loc)
 
 * [Deciding how to create your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#create-options)
 
