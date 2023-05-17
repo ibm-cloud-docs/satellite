@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-05-17"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,13 +24,21 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## May 2023
 {: #satellite-may23}
 
+### 17 May 2023
+{: #satellite-may1723}
+{: release-note}
+
+
+Storage template revisions
+:   Revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
+
 ### 04 May 2023
 {: #satellite-may0423}
 {: release-note}
 
 
 Storage template revisions
-:   New revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
+:   Revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
 
 
 ## April 2023
@@ -41,14 +49,14 @@ Storage template revisions
 {: release-note}
 
 Storage template revisions
-:   New revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
+:   Revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
 
 ### 05 April 2023
 {: #satellite-apr0523}
 {: release-note}
 
 Storage template revisions
-:   New revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
+:   Revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
 
 
 ## March 2023
