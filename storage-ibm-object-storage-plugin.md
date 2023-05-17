@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-03"
+lastupdated: "2023-05-17"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -347,12 +347,12 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
-| Helm Chart Release Name | `helm-release-name` | Config | Release name of the chart | true | `ibm-object-storage-plugin` |
-| Helm Chart Additional Parameters (Optional) | `parameters` | Config | Helm Chart Additional Parameters (Optional) | false | N/A |
-| Object Storage Plug-in License: Apache License Version 2.0 | `license` | Config | Object storage plug-in license: Apache license Version 2.0. Set to `true` to accept the license and install the plugin | true | N/A |
-| Object Storage Service Provider | `s3provider` | Config | Enter Object storage service provider. Supported providers are `IBM`, `AWS` and `Wasabi`. For other providers, you must explicitly provide `Object Storage Service Endpoint` | false | N/A |
-| Object Storage Region | `cos-storageclass` | Config | Enter Object storage region. For more info, refer to https://ibm.biz/cos-storage-classes | true | N/A |
-| Object Storage Service Endpoint | `cos-endpoint` | Config | Object storage service endpoint. Required when `Object Storage Service Provider` is not set. Preference is given to `Object Storage Service Provider` when both are set. For more information, refer to https://ibm.biz/cos-endpoints | false | N/A |
+| Release name | `helm-release-name` | Config | Helm chart release name. | true | `ibm-object-storage-plugin` |
+| Helm Chart additional parameters | `parameters` | Config | Helm Chart additional parameters. | false | N/A |
+| Object Storage plug-in license | `license` | Config | Object storage plug-in license: Apache license Version 2.0. Set to `true` to accept the license and install the plug-in. | true | N/A |
+| Object Storage provider | `s3provider` | Config | Available providers are `IBM`, `AWS` and `Wasabi`. For providers other than these, you must provide the `Object Storage service endpoint` parameter. | false | N/A |
+| Object Storage region | `cos-storageclass` | Config | Enter the region where your object storage is located. For IBM COS regions, see https://ibm.biz/cos-endpoints-list. For Wasabi, see https://ibm.biz/wasabi-endpoints. For AWS, see https://ibm.biz/aws-endpoints. | true | N/A |
+| Object Storage service endpoint | `cos-endpoint` | Config | Object Storage service endpoint. Required when using Object Storage providers other than IBM, AWS or Wasabi. Preference is given to `Object Storage provider` when both are set. | false | N/A |
 {: caption="Table 1. 2.2 parameter reference" caption-side="bottom"}
 
 

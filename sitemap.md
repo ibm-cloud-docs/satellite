@@ -160,6 +160,10 @@ subcollection: satellite
 
 * [May 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may23)
 
+    * [17 May 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1723)
+
+        * Storage template revisions
+
     * [04 May 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may0423)
 
         * Storage template revisions
@@ -1919,6 +1923,8 @@ subcollection: satellite
 
     * [1.10.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.10.0-parameter-reference)
 
+    * [1.11.1 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.11.1-parameter-reference)
+
 [{{site.data.keyword.cos_full_notm}} Driver](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin)
 
 * [Prerequisites](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-prereqs)
@@ -2946,6 +2952,14 @@ subcollection: satellite
     * [Revision 1, released 29 July 2022](/docs/satellite?topic=satellite-cl-ibm-spectrum-fusion#ibm-spectrum-fusion-2.4.0-rev-1-change-log)
 
 [`ibm-system-storage-block-csi-driver` change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#cl-ibm-system-storage-block-csi-driver)
+
+* [Version 1.11.1](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#1.11.1-change-log)
+
+    * [Revision 1, released 17 May 2023](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.11.1-rev-1-change-log)
+
+* [Version 1.10.0](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#1.10.0-change-log)
+
+    * [Revision 1, released 29 July 2022](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.10.0-rev-1-change-log)
 
 * [Version 1.5.0](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#1.5.0-change-log)
 

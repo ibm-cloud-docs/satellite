@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-18"
+lastupdated: "2023-05-17"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -120,6 +120,14 @@ Before you begin, review the [parameter reference](#ibm-system-storage-block-csi
     {: pre}
 
 
+    Example command to create a version 1.11.1 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-system-storage-block-csi-driver --template-version 1.11.1 --param "namespace=NAMESPACE" 
+    ```
+    {: pre}
+
+
 
 1. Customize the command based on the settings that you want to use.
 
@@ -160,6 +168,14 @@ Before you begin, review the [parameter reference](#ibm-system-storage-block-csi
 
     ```sh
     curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-system-storage-block-csi-driver\", \"storage-template-version\": \"1.10.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"NAMESPACE\",\"user-secret-parameters\": }
+    ```
+    {: pre}
+
+
+    Example request to create a version 1.11.1 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-system-storage-block-csi-driver\", \"storage-template-version\": \"1.11.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"NAMESPACE\",\"user-secret-parameters\": }
     ```
     {: pre}
 
@@ -379,6 +395,15 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 | --- | --- | --- | --- | --- | --- |
 | Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | `default` |
 {: caption="Table 3. 1.10.0 parameter reference" caption-side="bottom"}
+
+
+### 1.11.1 parameter reference
+{: #1.11.1-parameter-reference}
+
+| Display name | CLI option | Type | Description | Required? | Default value | 
+| --- | --- | --- | --- | --- | --- |
+| Namespace | `namespace` | Config | The namespace where you want to create the deployment. | true | `default` |
+{: caption="Table 4. 1.11.1 parameter reference" caption-side="bottom"}
 
 
 
