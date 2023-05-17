@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-05-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -166,7 +166,7 @@ After you set up {{site.data.keyword.mon_short}} with the pre-defined dashboard 
 ### Available metrics
 {: #available-metrics}
 
-Review the following metrics that are available for your {{site.data.keyword.satelliteshort}} location.
+The following metrics are available for your {{site.data.keyword.satelliteshort}} location control plane.
 {: shortdesc}
 
 
