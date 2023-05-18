@@ -235,27 +235,28 @@ toc:
         - topicgroup:
             label: Version history
             topics:
-            - topicgroup:
-                label: Storage template version history
-                topics:
-                  - cl-aws-ebs-csi-driver.md
-                  - cl-aws-efs-csi-driver.md
-                  - cl-azuredisk-csi-driver.md
-                  - cl-azurefile-csi-driver.md
-                  - cl-gcp-compute-persistent-disk-csi-driver.md
-                  - cl-ibm-object-storage-plugin.md
-                  - cl-ibm-spectrum-fusion.md
-                  - cl-ibm-system-storage-block-csi-driver.md
-                  - cl-ibm-vpc-block-csi-driver.md
-                  - cl-local-volume-block.md
-                  - cl-local-volume-file.md
-                  - cl-netapp-ontap-nas.md
-                  - cl-netapp-ontap-san.md
-                  - cl-netapp-trident.md
-                  - cl-odf-local.md
-                  - cl-odf-remote.md
-                  - cl-ridge-csi-driver.md
-                  - cl-vsphere-csi-driver.md
+              - cl-connector-agent-image.md
+              - topicgroup:
+                  label: Storage template version history
+                  topics:
+                    - cl-aws-ebs-csi-driver.md
+                    - cl-aws-efs-csi-driver.md
+                    - cl-azuredisk-csi-driver.md
+                    - cl-azurefile-csi-driver.md
+                    - cl-gcp-compute-persistent-disk-csi-driver.md
+                    - cl-ibm-object-storage-plugin.md
+                    - cl-ibm-spectrum-fusion.md
+                    - cl-ibm-system-storage-block-csi-driver.md
+                    - cl-ibm-vpc-block-csi-driver.md
+                    - cl-local-volume-block.md
+                    - cl-local-volume-file.md
+                    - cl-netapp-ontap-nas.md
+                    - cl-netapp-ontap-san.md
+                    - cl-netapp-trident.md
+                    - cl-odf-local.md
+                    - cl-odf-remote.md
+                    - cl-ridge-csi-driver.md
+                    - cl-vsphere-csi-driver.md
   - navgroup:
       id: help
       topics:
