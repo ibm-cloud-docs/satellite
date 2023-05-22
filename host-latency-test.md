@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-09-12"
+  years: 2020, 2023
+lastupdated: "2023-05-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -42,6 +42,7 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
 1. In your infrastructure provider, log in to a host machine that you want to add to a {{site.data.keyword.satelliteshort}} location. For example, you might SSH into the machine from a command line.
 
 2. Note the IP addresses for the {{site.data.keyword.cloud_notm}} region that you want to test
+
     Dallas
     :   52.117.39.146, 169.48.134.66, 169.63.36.210
     
