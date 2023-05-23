@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-05-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -69,14 +69,14 @@ Hosts assigned to a specific {{site.data.keyword.redhat_openshift_notm}} cluster
 ## Inbound connectivity requirements for {{site.data.keyword.satelliteshort}} hosts
 {: #reqs-host-network-firewall-inbound}
 
-Hosts must have inbound connectivity on the primary network interface via the default gateway or firewall the system.
+Hosts must have inbound connectivity on the primary network interface through the default gateway or firewall the system. Hosts that are assigned to the same service; for example, the same cluster, must be able to talk to each other and with the {{site.data.keyword.satelliteshort}} control plane.
 {: shortdesc}
 
 For example, if the primary network interface for a host is `eth0`, you must open the following required IP addresses and ports on the default gateway or firewall on the `eth0` private network interface.
 
 |Description|Source IP|Destination IP|Protocol and ports|
 | --- | --- | --- | --- |
-| Allow hosts that are assigned to services in your location to communicate with each other and with the {{site.data.keyword.satelliteshort}} control plane | All {{site.data.keyword.satelliteshort}} hosts | All {{site.data.keyword.satelliteshort}} hosts | All ports and protocols |
+| Allow hosts that are assigned to the same service in your location to communicate with each other and with the {{site.data.keyword.satelliteshort}} control plane | All {{site.data.keyword.satelliteshort}} hosts | All {{site.data.keyword.satelliteshort}} hosts | All ports and protocols |
 | Access the API to make changes in a {{site.data.keyword.redhat_openshift_notm}} cluster and access the {{site.data.keyword.redhat_openshift_notm}} web console or through the {{site.data.keyword.redhat_openshift_notm}} router | Clients or authorized users | Control plane hosts | TCP 30000 - 32767 |
 | Access the web console for a {{site.data.keyword.redhat_openshift_notm}} cluster through the {{site.data.keyword.redhat_openshift_notm}} router | Clients or authorized users | {{site.data.keyword.redhat_openshift_notm}} cluster hosts | TCP 443 |
 {: caption="Required inbound connectivity for hosts on the primary network interface" caption-side="bottom"}
