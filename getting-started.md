@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-11"
+lastupdated: "2023-05-23"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -26,7 +26,7 @@ Your {{site.data.keyword.satelliteshort}} location includes tools such as {{site
 ## What are {{site.data.keyword.satelliteshort}} locations, hosts, and so on?
 {: #sat-key-terms}
 
-Before you get started, become familiar with some key terms for {{site.data.keyword.satelliteshort}}. Afterward, you can test your knowledge and [take a quiz!](https://ibmcloud-quizzes.mybluemix.net/satellite/terms_quiz/quiz.php){: external}
+Before you get started, become familiar with some key terms for {{site.data.keyword.satelliteshort}}. Afterward, you can test your knowledge and [take a quiz!](https://ibm.biz/BdPUqR){: external}
 
 | Term | Description |
 | ------ | ------------------------- |
