@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-05-25"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -407,6 +407,19 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 
 
 
+
+
+
+## Getting help and support for {{site.data.keyword.blockstorageshort}}
+{: #sat-storage-block-csi-support}
+
+
+
+1. Review the FAQs in the [{{site.data.keyword.blockstorageshort}} docs](/docs/cloud-object-storage?topic=cloud-object-storage-faq){: external}.
+1. Review the [troubleshooting documentation](/docs/satellite?topic=satellite-storage-must-gather) to troubleshoot and resolve common issues.
+1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
+1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud`.
+1. If you run into an issue with {{site.data.keyword.blockstorageshort}} submit a support request with [{{site.data.keyword.cloud}} Support](https://www.ibm.com/cloud/support){: external}.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-18"
+lastupdated: "2023-05-25"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -527,5 +527,5 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 ## Getting help and support for NetApp ONTAP-NAS
 {: #sat-nas-2104-support}
 
-If you run into an issue with using NetApp Trident, you can visit the [NetApp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 
+If you run into an issue with NetApp Trident, you can visit the [NetApp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 
 

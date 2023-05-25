@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-18"
+lastupdated: "2023-05-25"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -573,5 +573,19 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | `sat-azure-file-bronze` | Delete | Immediate |
 | `sat-azure-file-bronze-metro` | Delete | WaitForFirstConsumer |
 {: caption="Table 2. Storage class reference for Azure File storage" caption-side="bottom"}
+
+
+## Getting help and support for Azure File storage
+{: #sat-azure-file-support}
+
+When you use Azure File, try the following resources before you open a support case. 
+{: shortdesc}
+
+1. Review the FAQs in the [Azure Knowledge Center](https://azure.microsoft.com/en-us/support/legal/faq){: external}.
+1. Review the [troubleshooting documentation](/docs/satellite?topic=satellite-storage-must-gather) to troubleshoot and resolve common issues.
+1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
+1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud` and `Azure-Disk`.
+1. Open an issue in the [Azure Service Portal](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/overview){: external}. 
+
 
 

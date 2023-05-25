@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-05-25"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1849,6 +1849,8 @@ subcollection: satellite
 
 * [Storage class reference for Azure File](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azure-file-sc-ref)
 
+* [Getting help and support for Azure File storage](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#sat-azure-file-support)
+
 
 ### Google storage templates
 {: #sitemap_google_storage_templates}
@@ -1924,6 +1926,8 @@ subcollection: satellite
     * [1.10.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.10.0-parameter-reference)
 
     * [1.11.1 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.11.1-parameter-reference)
+
+* [Getting help and support for {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#sat-storage-block-csi-support)
 
 [{{site.data.keyword.cos_full_notm}} Driver](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin)
 
@@ -3281,8 +3285,8 @@ subcollection: satellite
 * [What managed add-ons can I use with {{site.data.keyword.redhat_openshift_notm}} clusters in my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-faqs#faq-managed-addons)
 
 
-## Troubleshooting errors
-{: #sitemap_troubleshooting_errors}
+## Getting help
+{: #sitemap_getting_help}
 
 
 [Getting help](/docs/satellite?topic=satellite-get-help#get-help)
@@ -3300,6 +3304,11 @@ subcollection: satellite
 * [Contacting support](/docs/satellite?topic=satellite-get-help#help-support)
 
 * [Opting in to receive email notifications](/docs/satellite?topic=satellite-get-help#opt-in-email)
+
+
+## Troubleshooting errors
+{: #sitemap_troubleshooting_errors}
+
 
 [Location error messages](/docs/satellite?topic=satellite-ts-locations-debug#ts-locations-debug)
 

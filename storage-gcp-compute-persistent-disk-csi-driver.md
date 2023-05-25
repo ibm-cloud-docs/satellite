@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-18"
+lastupdated: "2023-05-25"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -524,4 +524,13 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for Google compu
 ## Getting help and support for Google Compute Engine
 {: #sat-gcp-csi-support}
 
-If you run into an issue with using Google Persistent disk storage, you can open an issue in the [Google Cloud Console](https://cloud.google.com/support-hub){: external}.
+When you use Google Compute Engine, try the following resources before you open a support case. 
+{: shortdesc}
+
+1. Review the FAQs in the [Google Cloud docs](https://cloud.google.com/storage/docs/faq){: external}.
+1. Review the [troubleshooting documentation](/docs/satellite?topic=satellite-storage-must-gather) to troubleshoot and resolve common issues.
+1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
+1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud` and `Google-Cloud`.
+1. Open an issue in the [Google Cloud Console](https://cloud.google.com/support-hub){: external}.
+
+
