@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-18"
+lastupdated: "2023-05-25"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -757,4 +757,12 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for local file s
 ## Getting help and support for local file storage
 {: #sat-local-file-support}
 
-If you run into an issue with using the Local Storage Operator - File template, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}. 
+
+1. Review the FAQs in the [submitRed Hat OpenShift docs](https://docs.openshift.com/container-platform/4.9/storage/persistent_storage/persistent-storage-local.html){: external}.
+1. Review the [troubleshooting documentation](/docs/satellite?topic=satellite-storage-must-gather) to troubleshoot and resolve common issues.
+1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
+1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with ibm-cloud, so that it's seen by the {{site.data.keyword.Bluemix_notm}} development teams.
+1. If you run into an issue with the Local File Storage Operator, you can open an issue in the [Red Hat Customer Portal](https://access.redhat.com/){: external}. 
+
+
+

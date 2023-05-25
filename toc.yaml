@@ -261,10 +261,10 @@ toc:
       id: help
       topics:
         - faqs.md
+        - get-help.md
         - topicgroup:
             label: Troubleshooting errors
             topics:
-              - get-help.md
               - ts-locations-debug.md
               - topicgroup:
                   label: Locations

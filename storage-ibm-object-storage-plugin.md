@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-05-25"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -368,6 +368,13 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 ## Getting help and support for {{site.data.keyword.cos_full_notm}}
 {: #sat-storage-cos-support}
 
-If you run into an issue with using {{site.data.keyword.block_storage_is_short}} you can submit a support request with [{{site.data.keyword.cloud}} Support](https://www.ibm.com/cloud/support){: external}.
+When you use {{site.data.keyword.cos_full_notm}}, try the following resources before you open a support case. 
+{: shortdesc}
+
+1. Review the FAQs in the [{{site.data.keyword.block_storage_is_short}} docs](/docs/cloud-object-storage?topic=cloud-object-storage-faq).
+1. Review the [troubleshooting documentation](/docs/satellite?topic=satellite-storage-must-gather) to troubleshoot and resolve common issues.
+1. Check the status of the {{site.data.keyword.Bluemix_notm}} platform and resources by going to the [Status page](https://cloud.ibm.com/status){: external}.
+1. Review [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud){: external} to see whether other users experienced the same problem. Tag any questions with `ibm-cloud` and `COS`.
+1. If you run into an issue with {{site.data.keyword.block_storage_is_short}}, submit a support request with [{{site.data.keyword.cloud}} Support](https://www.ibm.com/cloud/support){: external}.
 
 
