@@ -21,7 +21,7 @@ completion-time: 2h
 # Deploying OpenShift Data Foundation on {{site.data.keyword.satelliteshort}} clusters with Azure worker nodes
 {: #odf-tutorial}
 {: toc-content-type="tutorial"}
-{: toc-services="satellite, containers, vpc, azure"}
+{: toc-services="satellite, containers, vpc"}
 {: toc-completion-time="2h"}
 
 ## Objectives
