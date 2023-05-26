@@ -11,7 +11,7 @@ subcollection: satellite
 content-type: tutorial
 services: satellite, containers, vpc
 account-plan: paid
-completion-time: 90m
+completion-time: 2h
 
 ---
 
@@ -22,7 +22,7 @@ completion-time: 90m
 {: #odf-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-services="satellite, containers, vpc, azure"}
-{: toc-completion-time="90m"}
+{: toc-completion-time="2h"}
 
 ## Objectives
 {: #odf-tutorial-objectives}
