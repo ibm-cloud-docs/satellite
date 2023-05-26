@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-15"
+lastupdated: "2023-05-26"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -11,7 +11,7 @@ subcollection: satellite
 content-type: tutorial
 services: satellite, containers, vpc
 account-plan: paid
-completion-time: 90m
+completion-time: 2h
 
 ---
 
@@ -22,7 +22,7 @@ completion-time: 90m
 {: #odf-tutorial}
 {: toc-content-type="tutorial"}
 {: toc-services="satellite, containers, vpc, azure"}
-{: toc-completion-time="45m"}
+{: toc-completion-time="2h"}
 
 ## Objectives
 {: #odf-tutorial-objectives}
