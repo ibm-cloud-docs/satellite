@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-01"
+lastupdated: "2023-05-30"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -111,7 +111,7 @@ For a non-RHCOS enabled location, your hosts must have at least 4 vCPU and 16 GB
 | 3 hosts 4x16 | Up to 3 clusters | 20 workers per cluster |
 {: class="simple-tab-table"}
 {: #demo-non-rhcos}
-{: tab-title="Non RHCDOS enabled location"}
+{: tab-title="Non RHCOS enabled location"}
 {: tab-group="loc-demo"}
 {: caption="Sizing guidance for demonstrations" caption-side="bottom"}
 
@@ -120,7 +120,7 @@ For a non-RHCOS enabled location, your hosts must have at least 4 vCPU and 16 GB
 | 3 hosts 8x32 | Up to 3 clusters | 20 workers per cluster |
 {: class="simple-tab-table"}
 {: #demo-rhcos}
-{: tab-title="RHCDOS enabled location"}
+{: tab-title="RHCOS enabled location"}
 {: tab-group="loc-demo"}
 {: caption="Sizing guidance for demonstrations" caption-side="bottom"}
 
