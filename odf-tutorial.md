@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-26"
+lastupdated: "2023-06-02"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -31,8 +31,8 @@ In this tutorial, you complete the following tasks to set up OpenShift Data Foun
 
 - A {{site.data.keyword.satelliteshort}} Location that uses Azure hosts.
 - A {{site.data.keyword.satelliteshort}} cluster that uses your Azure hosts as worker nodes.
-- A {{site.data.keyword.satelliteshort}} storage configration that deploys the Azure Disk CSI driver to your cluster.
-- A {{site.data.keyword.satelliteshort}} storage configration that deploys OpenShift Data Foundation to your cluster.
+- A {{site.data.keyword.satelliteshort}} storage configuration that deploys the Azure Disk CSI driver to your cluster.
+- A {{site.data.keyword.satelliteshort}} storage configuration that deploys OpenShift Data Foundation to your cluster.
 
 
 
