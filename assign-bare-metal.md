@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-06-05"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -70,7 +70,7 @@ If your servers do not meet these requirements, follow the steps to [create a {{
 {: #boot-bare-metal}
 {: step}
 
-For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a browser that supports Java for classic. You can use the Safari browser on your local system or [download a Java version](https://www.java.com/download/){: external} that supports `javaws`.
+For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a browser that supports Java for classic. You can use the Safari browser on your local system or download a Java version that supports `javaws`.
 {: note}
 
 1. [Download a Red Hat CoreOS ISO](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}. Find the corresponding ISO version that matches the {{site.data.keyword.redhat_openshift_notm}} version that you want to use. For example, if you want to use version 4.11, [download a version of RHCOS for 4.11](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/4.11/){: external} like `rhcos-4.11.9-x86_64-live.x86_64.iso`.
