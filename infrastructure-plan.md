@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-06-02"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -92,7 +92,12 @@ Red Hat CoreOS (RHCOS)
 ### Deciding whether to enable Red Hat CoreOS support for your location
 {: #enable-coreos-loc}
 
-When you create a location, you can select whether to enable Red Hat CoreOS support. Enabling Red Hat CoreOS support comes with both pros and cons. A Red Hat CoreOS enabled location unlocks more features such as minimal outbound network requirements, HTTP proxy for outbound traffic, OpenShift virtualization, and single node cluster topology. But it has a higher infrastructure requirement. On the other hand, a non Red Hat CoreOS enabled location supports a smaller feature set but can run at a smaller footprint, allowing more clusters per same capacity. For more information, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
+When you create a location, you can select whether to enable Red Hat CoreOS support. Enabling Red Hat CoreOS support comes with both pros and cons. A Red Hat CoreOS enabled location unlocks more features such as minimal outbound network requirements, bring your own key (BYOK) or keep your own key (KYOK) support for encrypting cluster secrets, HTTP proxy for outbound traffic, OpenShift virtualization, and single node cluster topology. But it has a higher infrastructure requirement. On the other hand, a non Red Hat CoreOS enabled location supports a smaller feature set but can run at a smaller footprint, allowing more clusters per same capacity. For more information, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
+
+To verify if you location is enabled for Red Hat CoreOS, see [Is my location enabled for Red Hat CoreOS](/docs/satellite?topic=satellite-locations#verify-coreos-location).
+
+The bring your own key (BYOK) or keep your own key (KYOK) feature is supported in RHCOS enabled locations on {{site.data.keyword.openshiftshort}} 4.13 and later. It is supported on both RHEL and RHCOS hosts. You can encrypt only cluster secrets. This feature is not available during cluster or worker pool creation. You must run the `ibmcloud oc kms enable` command to enable it after the cluster or worker pool has been created. Note that this feature cannot be disabled after it is enabled.
+{: note}
 
 
 ## Deciding how to create your {{site.data.keyword.satelliteshort}} location
@@ -120,6 +125,7 @@ For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf i
 {: shortdesc}
 
 The credentials that you provide are stored and encrypted in etcd of the {{site.data.keyword.satelliteshort}} location control plane master. For more information, see [Securing your data](/docs/satellite?topic=satellite-data-security).
+
 
 
 

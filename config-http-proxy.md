@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-28"
+lastupdated: "2023-06-06"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -191,3 +191,10 @@ Amazon Web Service:
 :    wildcard: `aws.ce.redhat.com`
 :    `rhui3.REGION.aws.ce.redhat.com`
 :    `/etc/yum.repos.d/redhat-rhui.repo` under `mirrorlist`
+
+{{site.data.keyword.cloud_notm}}
+:    wildcard: `service.networklayer.com`
+:    dal10: `rhncapdal1001.service.networklayer.com`
+:    `/etc/yum.repos.d/redhat.repo` under `baseurl`
+
+

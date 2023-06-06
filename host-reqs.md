@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-26"
+lastupdated: "2023-06-02"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -20,8 +20,8 @@ Review the following requirements that relate to the computing and system setup 
 
 You can add hosts from other cloud providers to your location. For more information, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
 
-- If you plan on deploying {{site.data.keyword.redhat_openshift_notm}} clusters, make sure the operating system that you want to use for your hosts is supported for your location type and cluster version. For more information, see [{{site.data.keyword.redhat_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
-- Make sure that you use an [official Red Hat certified hardware](https://catalog.redhat.com/hardware){: external}.
+- If you plan on deploying {{site.data.keyword.redhat_openshift_notm}} clusters, make sure the operating system that you want to use for your hosts is supported for your location type and cluster version. For more information, see [{{site.data.keyword.redhat_openshift_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
+- Make sure that you use [official Red Hat certified hardware](https://catalog.redhat.com/hardware){: external}.
 - If you cannot meet these host requirements, [contact {{site.data.keyword.IBM_notm}} Support](/docs/get-support?topic=get-support-using-avatar) and include the following information: the host system configuration that you want, why you want the system configuration, and how many hosts you intend to create.
 
 You can verify your host setup with the `satellite-host-check` script. For more information, see [Checking your host setup](/docs/satellite?topic=satellite-host-network-check).
@@ -31,7 +31,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 ## Computing characteristics
 {: #reqs-host-compute}
 
-- Hosts must run the latest Red Hat Enterprise Linux 7 or 8, or the latest Red Hat CoreOS on x86 architecture with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or Power; and other kernel versions are not supported.
+- Hosts must run the latest Red Hat Enterprise Linux 7 or 8, or the latest Red Hat CoreOS on x86 architecture with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
     - For RHEL 7, the latest is 7.9.
     - For the latest RHEL 8 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL8){: external}.
     - For the latest Red Hat CoreOS version information, see [Red Hat CoreOS mirrors](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}.
@@ -40,8 +40,8 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 - Red Hat CoreOS hosts must meet [minimum sizing requirements](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos) and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
 - RHEL hosts must meet [minimum sizing requirements](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhel) and [sufficient storage capacity](/docs/satellite?topic=satellite-reqs-host-storage). 
 
-- RHEL hosts must have the `SELINUX=enforcing` policy set. You can verify that this policy is set by running `sestatus` and looking for `SELinux status: enabled` in the output.
-- If your host has GPU compute, make sure that you install the node feature discovery and NVIDIA GPU operators. For more information, see the prerequisite in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
+- RHEL hosts must have the `SELINUX=enforcing` policy set. You can verify that this policy is set by running the `sestatus` command and looking for `SELinux status: enabled` in the output.
+- If your host includes GPU compute, make sure that you install the Node Feature Discovery and NVIDIA GPU operators. For more information, see the prerequisite steps in [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app).
 - Hostnames can contain only lowercase alphanumeric characters, `-`, or `.`.
 - Hosts must have an ext4 filesystem for the boot disk.
 
