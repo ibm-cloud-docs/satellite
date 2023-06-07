@@ -34,7 +34,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 Be sure to complete all prerequisite and installation steps before assigning hosts to your location. Do not create a Kubernetes cluster.
 {: important}
 
-1. Review the [compatibility and requirements documentation](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=installation-compatibility-requirements){: external}.
+1. Review the [compatibility and requirements documentation](https://www.ibm.com/docs/en/stg-block-csi-driver){: external}.
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
@@ -202,7 +202,7 @@ Before you begin, review the [parameter reference](#ibm-system-storage-block-csi
 You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you can use in your cluster workloads.
 {: shortdesc}
 
-1. Create a Kubernetes secret configuration file that contains your {{site.data.keyword.blockstorageshort}} credentials. For more information, see [Creating a Kubernetes secret](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-secret){: external}.
+1. Create a Kubernetes secret configuration file that contains your {{site.data.keyword.blockstorageshort}} credentials.
     ```yaml
     kind: Secret
     apiVersion: v1
@@ -224,7 +224,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
     ```
     {: pre}
 
-1. [Create a storage class that uses the {{site.data.keyword.blockstorageshort}} driver](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-storageclass){: external}.
+1. Create a storage class that uses the {{site.data.keyword.blockstorageshort}} driver.
     ```yaml
     kind: StorageClass
     apiVersion: storage.k8s.io/v1
@@ -258,7 +258,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
     ```
     {: pre}
 
-1. [Create a PVC](https://www.ibm.com/docs/en/stg-block-csi-driver/1.4.0?topic=configuration-creating-persistentvolumeclaim-pvc){: external} that references the storage class that you created earlier.
+1. Create a PVC that references the storage class that you created earlier.
     ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1

@@ -2181,6 +2181,8 @@ subcollection: satellite
 
 [OpenShift Data Foundation using local disks](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local)
 
+* [Understanding which ODF storage template to use](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-compare-odf)
+
 * [Prerequisites for ODF](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-prereq)
 
 * [(Optional) Setting up an {{site.data.keyword.cos_full_notm}} backing store for ODF](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-cos)
@@ -2224,6 +2226,8 @@ subcollection: satellite
 * [Storage class reference for ODF](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-sc-ref)
 
 [OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote)
+
+* [Understanding which ODF storage template to use](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-compare-odf)
 
 * [Prerequisites for using ODF for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-prereq)
 

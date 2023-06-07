@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-09"
+lastupdated: "2023-06-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -11,6 +11,14 @@ subcollection: satellite
 content-type: conref
 
 ---
+
+## Understanding which ODF storage template to use
+{: #compare-odf}
+
+You have two options when deploying OpenShift Data Foundation to your {{site.data.keyword.satelliteshort}} clusters which are the `odf-local` and `odf-remote` storage templates.
+
+- [`odf-local`](https://cloud.ibm.com/docs/satellite?topic=satellite-storage-odf-local&interface=ui): Choose this template when you have local storage availabe to your worker nodes. If your storage volumes are visible when running `lsblk`, you can use these disks when deploying ODF if they are raw and unformatted.
+- [`odf-remote`](https://cloud.ibm.com/docs/satellite?topic=satellite-storage-odf-remote&interface=ui): Choose this template if you have a CSI driver installed in your cluster. For example, the `azuredisk-csi-driver` driver. You can use the CSI driver to dynamically provision storage volumes when deploying ODF.
 
 
 
