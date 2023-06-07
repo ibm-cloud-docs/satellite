@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -447,7 +447,7 @@ Use the console to remove a storage assignment and storage configuration.
 {: #netapp-ontap-nas-parameter-reference}
 
 ### 21.04 parameter reference
-{: #21.04-parameter-reference}
+{: #netapp-ontap-nas-21.04-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -464,7 +464,7 @@ Use the console to remove a storage assignment and storage configuration.
 
 
 ### 22.04 parameter reference
-{: #22.04-parameter-reference}
+{: #netapp-ontap-nas-22.04-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -481,7 +481,7 @@ Use the console to remove a storage assignment and storage configuration.
 
 
 ### 22.10 parameter reference
-{: #22.10-parameter-reference}
+{: #netapp-ontap-nas-22.10-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

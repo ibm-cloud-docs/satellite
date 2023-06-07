@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-05"
+lastupdated: "2023-06-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1718,11 +1718,11 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-parameter-reference)
 
-    * [1.1.0 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#1.1.0-parameter-reference)
+    * [1.1.0 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-1.1.0-parameters)
 
-    * [1.5.1 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#1.5.1-parameter-reference)
+    * [1.5.1 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-1.5.1-parameters)
 
-    * [1.12.0 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#1.12.0-parameter-reference)
+    * [1.12.0 parameter reference](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-csi-driver-1.12.0-parameters)
 
 * [Storage class reference for AWS EBS](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#sat-ebs-sc-reference)
 
@@ -1758,11 +1758,11 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-parameter-reference)
 
-    * [1.3.1 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#1.3.1-parameter-reference)
+    * [1.3.1 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-1.3.1-parameters)
 
-    * [1.3.7 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#1.3.7-parameter-reference)
+    * [1.3.7 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-1.3.7-parameters)
 
-    * [1.4.2 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#1.4.2-parameter-reference)
+    * [1.4.2 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-efs-csi-driver-1.4.2-parameters)
 
 * [Getting help and support for AWS EFS](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#sat-efs-support)
 
@@ -1801,11 +1801,11 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-parameter-reference)
 
-    * [1.4.0 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#1.4.0-parameter-reference)
+    * [1.4.0 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-1.4.0-parameters)
 
-    * [1.18.0 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#1.18.0-parameter-reference)
+    * [1.18.0 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-1.18.0-parameters)
 
-    * [1.23.0 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#1.23.0-parameter-reference)
+    * [1.23.0 parameter reference](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azuredisk-csi-driver-1.23.0-parameters)
 
 * [Storage class reference for Azure Disk](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#azure-disk-sc-ref)
 
@@ -1841,11 +1841,11 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-parameter-reference)
 
-    * [1.9.0 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#1.9.0-parameter-reference)
+    * [1.9.0 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-1.9.0-parameters)
 
-    * [1.18.0 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#1.18.0-parameter-reference)
+    * [1.18.0 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-1.18.0-parameters)
 
-    * [1.22.0 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#1.22.0-parameter-reference)
+    * [1.22.0 parameter reference](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azurefile-csi-driver-1.22.0-parameters)
 
 * [Storage class reference for Azure File](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#azure-file-sc-ref)
 
@@ -1884,11 +1884,11 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-parameter-reference)
 
-    * [1.0.4 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#1.0.4-parameter-reference)
+    * [1.0.4 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.0.4-parameters)
 
-    * [1.7.1 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#1.7.1-parameter-reference)
+    * [1.7.1 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.7.1-parameters)
 
-    * [1.8.0 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#1.8.0-parameter-reference)
+    * [1.8.0 parameter reference](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.8.0-parameters)
 
 * [Storage class reference for Compute Engine](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#sat-storage-gcp-ref)
 
@@ -1919,13 +1919,13 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-parameter-reference)
 
-    * [1.4.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.4.0-parameter-reference)
+    * [1.4.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.4.0-parameters)
 
-    * [1.5.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.5.0-parameter-reference)
+    * [1.5.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.5.0-parameters)
 
-    * [1.10.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.10.0-parameter-reference)
+    * [1.10.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.10.0-parameters)
 
-    * [1.11.1 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#1.11.1-parameter-reference)
+    * [1.11.1 parameter reference](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.11.1-parameters)
 
 * [Getting help and support for {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#sat-storage-block-csi-support)
 
@@ -1955,7 +1955,7 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-parameter-reference)
 
-    * [2.2 parameter reference](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#2.2-parameter-reference)
+    * [2.2 parameter reference](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-parameters)
 
 * [Storage class reference for {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#config-storage-cos-sc-ref)
 
@@ -1989,7 +1989,7 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-parameter-reference)
 
-    * [5.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#5.0-parameter-reference)
+    * [5.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-parameters)
 
 * [Storage class reference for {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#sat-storage-vpc-ref)
 
@@ -2048,11 +2048,11 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-parameter-reference)
 
-    * [21.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#21.04-parameter-reference)
+    * [21.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-21.04-parameters)
 
-    * [22.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#22.04-parameter-reference)
+    * [22.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-22.04-parameters)
 
-    * [22.10 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#22.10-parameter-reference)
+    * [22.10 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-ontap-nas-22.10-parameters)
 
 * [Storage class reference for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#netapp-sc-reference-nas-2104)
 
@@ -2076,11 +2076,11 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-parameter-reference)
 
-    * [21.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#21.04-parameter-reference)
+    * [21.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-21.04-parameters)
 
-    * [22.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#22.04-parameter-reference)
+    * [22.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-22.04-parameters)
 
-    * [22.10 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#22.10-parameter-reference)
+    * [22.10 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-22.10-parameters)
 
 * [Storage class reference for NetApp ONTAP-SAN](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-sc-reference-san-2104)
 
@@ -2121,15 +2121,15 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-parameter-reference)
 
-    * [4.8 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#4.8-parameter-reference)
+    * [4.8 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-4.8-parameters)
 
-    * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#4.9-parameter-reference)
+    * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-4.9-parameters)
 
-    * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#4.10-parameter-reference)
+    * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-4.10-parameters)
 
-    * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#4.11-parameter-reference)
+    * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-4.11-parameters)
 
-    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#4.12-parameter-reference)
+    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-4.12-parameters)
 
 * [Storage class reference for local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#local-block-sc-ref)
 
@@ -2165,15 +2165,15 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-parameter-reference)
 
-    * [4.8 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#4.8-parameter-reference)
+    * [4.8 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-4.8-parameters)
 
-    * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#4.9-parameter-reference)
+    * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-4.9-parameters)
 
-    * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#4.10-parameter-reference)
+    * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-4.10-parameters)
 
-    * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#4.11-parameter-reference)
+    * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-4.11-parameters)
 
-    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#4.12-parameter-reference)
+    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-4.12-parameters)
 
 * [Storage class reference for local file storage](/docs/satellite?topic=satellite-storage-local-volume-file#local-file-sc-reference)
 
@@ -2213,13 +2213,13 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-odf-local#odf-local-parameter-reference)
 
-    * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#4.9-parameter-reference)
+    * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#odf-local-4.9-parameters)
 
-    * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#4.10-parameter-reference)
+    * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#odf-local-4.10-parameters)
 
-    * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#4.11-parameter-reference)
+    * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#odf-local-4.11-parameters)
 
-    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#4.12-parameter-reference)
+    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#odf-local-4.12-parameters)
 
 * [Storage class reference for ODF](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-sc-ref)
 
@@ -2253,13 +2253,13 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-parameter-reference)
 
-    * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#4.9-parameter-reference)
+    * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-4.9-parameters)
 
-    * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#4.10-parameter-reference)
+    * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-4.10-parameters)
 
-    * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#4.11-parameter-reference)
+    * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-4.11-parameters)
 
-    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#4.12-parameter-reference)
+    * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-4.12-parameters)
 
 * [Storage class reference for OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-sc-ref)
 
@@ -2296,7 +2296,7 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-parameter-reference)
 
-    * [2.5.1 parameter reference](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#2.5.1-parameter-reference)
+    * [2.5.1 parameter reference](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#vsphere-csi-driver-2.5.1-parameters)
 
 * [Getting help and support for VMWare](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#sat-vmware-csi-support)
 

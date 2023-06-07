@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -535,7 +535,7 @@ Note that you must delete your storage assignments before you can successfully d
 {: #aws-efs-csi-driver-parameter-reference}
 
 ### 1.3.1 parameter reference
-{: #1.3.1-parameter-reference}
+{: #aws-efs-csi-driver-1.3.1-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -545,7 +545,7 @@ Note that you must delete your storage assignments before you can successfully d
 
 
 ### 1.3.7 parameter reference
-{: #1.3.7-parameter-reference}
+{: #aws-efs-csi-driver-1.3.7-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -555,7 +555,7 @@ Note that you must delete your storage assignments before you can successfully d
 
 
 ### 1.4.2 parameter reference
-{: #1.4.2-parameter-reference}
+{: #aws-efs-csi-driver-1.4.2-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

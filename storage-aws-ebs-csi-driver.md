@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -489,7 +489,7 @@ Note that you must delete your storage assignments before you can successfully d
 {: #aws-ebs-csi-driver-parameter-reference}
 
 ### 1.1.0 parameter reference
-{: #1.1.0-parameter-reference}
+{: #aws-ebs-csi-driver-1.1.0-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -499,7 +499,7 @@ Note that you must delete your storage assignments before you can successfully d
 
 
 ### 1.5.1 parameter reference
-{: #1.5.1-parameter-reference}
+{: #aws-ebs-csi-driver-1.5.1-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -509,7 +509,7 @@ Note that you must delete your storage assignments before you can successfully d
 
 
 ### 1.12.0 parameter reference
-{: #1.12.0-parameter-reference}
+{: #aws-ebs-csi-driver-1.12.0-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

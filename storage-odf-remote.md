@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-06-07"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -505,7 +505,7 @@ Use the command line to remove a storage assignment.
 {: #odf-remote-parameter-reference}
 
 ### 4.9 parameter reference
-{: #4.9-parameter-reference}
+{: #odf-remote-4.9-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -526,7 +526,7 @@ Use the command line to remove a storage assignment.
 
 
 ### 4.10 parameter reference
-{: #4.10-parameter-reference}
+{: #odf-remote-4.10-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -555,7 +555,7 @@ Use the command line to remove a storage assignment.
 
 
 ### 4.11 parameter reference
-{: #4.11-parameter-reference}
+{: #odf-remote-4.11-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -584,7 +584,7 @@ Use the command line to remove a storage assignment.
 
 
 ### 4.12 parameter reference
-{: #4.12-parameter-reference}
+{: #odf-remote-4.12-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

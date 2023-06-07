@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -371,7 +371,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 {: #ibm-system-storage-block-csi-driver-parameter-reference}
 
 ### 1.4.0 parameter reference
-{: #1.4.0-parameter-reference}
+{: #ibm-system-storage-block-csi-driver-1.4.0-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -380,7 +380,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 
 
 ### 1.5.0 parameter reference
-{: #1.5.0-parameter-reference}
+{: #ibm-system-storage-block-csi-driver-1.5.0-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -389,7 +389,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 
 
 ### 1.10.0 parameter reference
-{: #1.10.0-parameter-reference}
+{: #ibm-system-storage-block-csi-driver-1.10.0-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -398,7 +398,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
 
 
 ### 1.11.1 parameter reference
-{: #1.11.1-parameter-reference}
+{: #ibm-system-storage-block-csi-driver-1.11.1-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

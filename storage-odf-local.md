@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-06-07"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -781,7 +781,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 {: #odf-local-parameter-reference}
 
 ### 4.9 parameter reference
-{: #4.9-parameter-reference}
+{: #odf-local-4.9-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -802,7 +802,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 
 
 ### 4.10 parameter reference
-{: #4.10-parameter-reference}
+{: #odf-local-4.10-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -831,7 +831,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 
 
 ### 4.11 parameter reference
-{: #4.11-parameter-reference}
+{: #odf-local-4.11-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -860,7 +860,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 
 
 ### 4.12 parameter reference
-{: #4.12-parameter-reference}
+{: #odf-local-4.12-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
