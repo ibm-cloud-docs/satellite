@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -193,7 +193,7 @@ Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-r
 {: #netapp-ontap-san-parameter-reference}
 
 ### 21.04 parameter reference
-{: #21.04-parameter-reference}
+{: #netapp-ontap-san-21.04-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -208,7 +208,7 @@ Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-r
 
 
 ### 22.04 parameter reference
-{: #22.04-parameter-reference}
+{: #netapp-ontap-san-22.04-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -223,7 +223,7 @@ Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-r
 
 
 ### 22.10 parameter reference
-{: #22.10-parameter-reference}
+{: #netapp-ontap-san-22.10-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

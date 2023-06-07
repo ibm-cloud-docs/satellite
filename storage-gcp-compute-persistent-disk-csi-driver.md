@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -452,7 +452,7 @@ Use the console to remove a storage configuration.
 {: #gcp-compute-persistent-disk-csi-driver-parameter-reference}
 
 ### 1.0.4 parameter reference
-{: #1.0.4-parameter-reference}
+{: #gcp-compute-persistent-disk-csi-driver-1.0.4-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -469,7 +469,7 @@ Use the console to remove a storage configuration.
 
 
 ### 1.7.1 parameter reference
-{: #1.7.1-parameter-reference}
+{: #gcp-compute-persistent-disk-csi-driver-1.7.1-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -486,7 +486,7 @@ Use the console to remove a storage configuration.
 
 
 ### 1.8.0 parameter reference
-{: #1.8.0-parameter-reference}
+{: #gcp-compute-persistent-disk-csi-driver-1.8.0-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

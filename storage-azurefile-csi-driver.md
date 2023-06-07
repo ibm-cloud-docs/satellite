@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -506,7 +506,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 {: #azurefile-csi-driver-parameter-reference}
 
 ### 1.9.0 parameter reference
-{: #1.9.0-parameter-reference}
+{: #azurefile-csi-driver-1.9.0-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -524,7 +524,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 
 
 ### 1.18.0 parameter reference
-{: #1.18.0-parameter-reference}
+{: #azurefile-csi-driver-1.18.0-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -542,7 +542,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 
 
 ### 1.22.0 parameter reference
-{: #1.22.0-parameter-reference}
+{: #azurefile-csi-driver-1.22.0-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

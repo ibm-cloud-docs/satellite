@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-06-07"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -25,6 +25,8 @@ OpenShift Data Foundation is available in only internal mode, which means that y
 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.
 {: important}
+
+{{site.data.content.compare-odf}}
 
 ## Prerequisites for ODF
 {: #sat-storage-odf-local-prereq}
@@ -579,24 +581,7 @@ ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --a
 
 
 To upgrade the ODF version of your configuration, delete your existing assignment and create a new configuration with the newer version. When you create the new configuration, you can set the `odf-upgrade` parameter to `true` to upgrade the installed version of ODF when the new configuration is assigned.
-{: shortdesc}
 
-
-In the following example, the ODF configuration is updated to use template version 4.7,
-- `--name` - Enter a name for your new configuration.
-- `--template-name` - Use the same parameter value as in your existing configuration.
-- `--template-version` - Enter the template version that you want to use to upgrade your configuration.
-- `osd-device-path` - Use the same parameter value as in your existing configuration.
-- `mon-device-path` - **Version 4.7 only**: Use the same parameter value as in your existing configuration.
-- `num-of-osd` - Use the same parameter value as in your existing configuration.
-- `iam-api-key` - Use the same parameter value as in your existing configuration.
-- `worker-nodes` - Use the same parameter value as in your existing configuration.
-- `odf-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
-- `ibm-cos-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this parameter if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-- `ibm-cos-secret-access-key` - Optional: Use the same parameter value as in your existing configuration. Do not specify this parameter if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-- `ibm-cos-endpoint` - Optional: Use the same parameter value as in your existing configuration. Do not specify this parameter if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-- `ibm-cos-location` - Optional: Use the same parameter value as in your existing configuration. Do not specify this parameter if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration.
-- `auto-discover-devices` - **Optional: Version 4.8 only**: Set to `true` if you want to automatically discover available devices on your worker nodes.
 
 
 1. Get the details of your ODF configuration and save the configuration details.
@@ -611,27 +596,13 @@ In the following example, the ODF configuration is updated to use template versi
     ```
     {: pre}
 
-1. When you upgrade your ODF version, you must enter the same configuration details as in your existing ODF configuration. In addition, you must set the `template-version` value to the version you want to upgrade to and change the `odf-upgrade` parameter to `true`. Do not specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. Note that Kubernetes resources can't contain capital letters or special characters.
+1. When you upgrade your ODF version, you must enter the same configuration details as in your existing ODF configuration. In addition, you must set the `template-version` value to the version you want to upgrade to and change the `odf-upgrade` parameter to `true`.
 
-    Example storage config create command with `auto-discover-devices=true` on version 4.8 clusters.
+    Example storage config create command with `auto-discover-devices=true` on version 4.11 clusters.
     ```sh
-    ibmcloud sat storage config create --name odf-local-4.8 --template-name odf-local --template-version 4.8 --location odf-sat-stage-location  -p "auto-discover-devices=true" -p "iam-api-key=<api-key>"
+    ibmcloud sat storage config create --name odf-local --template-name odf-local --template-version 4.11 --location odf-sat-stage-location  -p "auto-discover-devices=true" -p "iam-api-key=<api-key>"
     ```
     {: pre}
-    
-
-    Example `storage config create` command for version 4.8 clusters.
-    ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "osd-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part2,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part2" -p "num-of-osd=1" -p "worker-nodes=<worker-node-name>,<worker-node-name>,<worker-node-name>" -p "odf-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
-    ```
-    {: pre}
-    
-    Example `storage config create` command for version 4.7 clusters.
-    ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-local --template-version <template_version> -p "osd-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part2,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part2,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part2" -p "mon-device-path=/dev/disk/by-id/scsi-3600605b00d87b43027b3bc310a64c6c9-part1,/dev/disk/by-id/scsi-3600605b00d87b43027b3bbf306bc28a7-part1,/dev/disk/by-id/scsi-3600062b206ba6f00276eb58065b5da94-part1" -p "num-of-osd=1" -p "worker-nodes=<worker-node-name>,<worker-node-name>,<worker-node-name>" -p "odf-upgrade=true" -p "ibm-cos-endpoint=<ibm-cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>"
-    ```
-    {: pre}
-
 
 1. Assign your configuration to your clusters.
     ```sh
@@ -781,7 +752,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 {: #odf-local-parameter-reference}
 
 ### 4.9 parameter reference
-{: #4.9-parameter-reference}
+{: #odf-local-4.9-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -802,7 +773,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 
 
 ### 4.10 parameter reference
-{: #4.10-parameter-reference}
+{: #odf-local-4.10-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -831,7 +802,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 
 
 ### 4.11 parameter reference
-{: #4.11-parameter-reference}
+{: #odf-local-4.11-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -860,7 +831,7 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 
 
 ### 4.12 parameter reference
-{: #4.12-parameter-reference}
+{: #odf-local-4.12-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -400,7 +400,7 @@ Removing the storage configuration removes the driver from all assigned clusters
 {: #vsphere-csi-driver-parameter-reference}
 
 ### 2.5.1 parameter reference
-{: #2.5.1-parameter-reference}
+{: #vsphere-csi-driver-2.5.1-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

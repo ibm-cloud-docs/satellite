@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-06-07"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -25,6 +25,8 @@ OpenShift Data Foundation is available in only internal mode, which means that y
 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.
 {: important}
+
+{{site.data.content.compare-odf}}
 
 ## Prerequisites for using ODF for remote devices
 {: #sat-storage-odf-remote-prereq}
@@ -419,55 +421,34 @@ ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --a
 
 
 
-To upgrade the ODF version of your configuration, complete the following steps:
 1. Get the details of your ODF configuration.
     ```sh
     ibmcloud sat storage config get <config-name>
     ```
-1. Create a new configuration. Make sure to change the `template-version` value to the version that you want to upgrade to and set the `odf-upgrade` parameter to `true`.
+    {: pre}
 
-    In the following example, the ODF configuration is updated to use template version 4.1. When you create the configuration, the following parameter changes are required.
-    - `name` - Enter a name for your new configuration.
-    - `template-name` - Use the same parameter value as in your existing configuration.
-    - `template-version` - Enter the template version that you want to use to upgrade your configuration.
-    - `mon-storage-class` - **Version 4.7 only**: Use the same parameter value as in your existing configuration.
-    - `iam-api-key` - Use the same parameter as in your existing configuration.
-    - `mon-size` - **Version 4.7 only**: Use the same parameter value as in your existing configuration.
-    - `osd-storage-class` - Use the same parameter value as in your existing configuration.
-    - `osd-size` - Use the same parameter value as in your existing configuration.
-    - `num-of-osd` - Use the same parameter value as in your existing configuration.
-    - `worker-nodes` - Use the same parameter value as in your existing configuration.
-    - `ibm-cos-endpoint` - Use the same parameter value as in your existing configuration.
-    - `ibm-cos-location` - Use the same parameter value as in your existing configuration.
-    - `ibm-cos-access-key` - Use the same parameter value as in your existing configuration.
-    - `ibm-cos-secret-key` - Use the same parameter value as in your existing configuration.
-    - `odf-upgrade` - Enter `true` to upgrade your `ocs-cluster` to the template version that you specified.
+1. Create a new configuration. Make sure to change the `template-version` value to the version that you want to upgrade to and set the `odf-upgrade` parameter to `true`.
 
 1. Get the details of your ODF configuration and save the configuration details.
     ```sh
-    ibmcloud sat storage config get --config <config>
+    ibmcloud sat storage config get --config CONFIG
     ```
     {: pre}
 
-1. Delete the existing assignment. 
+1. Delete the existing assignment.
     ```sh
-    ibmcloud sat storage assignment rm --assignment <assignment>
+    ibmcloud sat storage assignment rm --assignment ASSIGNMENT
     ```
     {: pre}
 
-1.  When you upgrade your ODF version, you must enter the same configuration details and set the `template-version` value to the version you want to upgrade to and set the `odf-upgrade` parameter to `true`. Don't specify the {{site.data.keyword.cos_short}} parameters when you create your configuration if you don't use an {{site.data.keyword.cos_full_notm}} service instance as your backing store in your existing configuration. Note that Kubernetes resources can't contain capital letters or special characters. 
+1.  When you upgrade your ODF version, you must enter the same configuration details and set the `template-version` value to the version you want to upgrade to and set the `odf-upgrade` parameter to `true`.
 
-    Example `storage config create` command for version 4.8 clusters.
+    Example `storage config create` command for version 4.11 clusters.
     ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-remote --template-version <template_version>  -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=<osd-size>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-name>,<worker-node-name>,<worker-node-name>" -p "ibm-cos-endpoint=<cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "iam-api-key=<iam-api-key>"
+    ibmcloud sat storage config create --name CONFIG --location LOCATION --template-name odf-remote --template-version 4.11  -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=OSD-SIZE" -p "num-of-osd=1" -p "worker-nodes=NODE-NAME,NODE-NAME,NODE-NAME" -p "ibm-cos-endpoint=COS-ENDPOINT" -p "ibm-cos-location=COS-LOCATION" -p "ibm-cos-access-key=ACCESS-KEY" -p "ibm-cos-secret-key=SECRET-KEY" -p "iam-api-key=API-KEY" -p "odf-upgrade=true"
     ```
     {: pre}
 
-    Example `storage config create` command for version 4.7 clusters.
-    ```sh
-    ibmcloud sat storage config create --name <config_name> --location <location> --template-name odf-remote --template-version <template_version>  -p "mon-storage-class=vpc-custom-10iops-tier" -p "mon-size=<mon-size>" -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=<osd-size>" -p "num-of-osd=1" -p "worker-nodes=<worker-node-name>,<worker-node-name>,<worker-node-name>" -p "ibm-cos-endpoint=<cos-endpoint>" -p "ibm-cos-location=<ibm-cos-location>" -p "ibm-cos-access-key=<ibm-cos-access-key>" -p "ibm-cos-secret-key=<ibm-cos-secret-key>" -p "iam-api-key=<iam-api-key>"
-    ```
-    {: pre}
 
 1. [Assign your configuration to your clusters](#storage-odf-remote-include-assignment-create-cli).
 
@@ -505,7 +486,7 @@ Use the command line to remove a storage assignment.
 {: #odf-remote-parameter-reference}
 
 ### 4.9 parameter reference
-{: #4.9-parameter-reference}
+{: #odf-remote-4.9-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -526,7 +507,7 @@ Use the command line to remove a storage assignment.
 
 
 ### 4.10 parameter reference
-{: #4.10-parameter-reference}
+{: #odf-remote-4.10-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -555,7 +536,7 @@ Use the command line to remove a storage assignment.
 
 
 ### 4.11 parameter reference
-{: #4.11-parameter-reference}
+{: #odf-remote-4.11-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -584,7 +565,7 @@ Use the command line to remove a storage assignment.
 
 
 ### 4.12 parameter reference
-{: #4.12-parameter-reference}
+{: #odf-remote-4.12-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

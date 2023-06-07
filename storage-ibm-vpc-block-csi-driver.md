@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -410,7 +410,7 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 {: #ibm-vpc-block-csi-driver-parameter-reference}
 
 ### 5.0 parameter reference
-{: #5.0-parameter-reference}
+{: #ibm-vpc-block-csi-driver-5.0-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

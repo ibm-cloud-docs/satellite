@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-02"
+lastupdated: "2023-06-07"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -677,7 +677,7 @@ Use the console to remove a storage configuration.
 {: #local-volume-file-parameter-reference}
 
 ### 4.8 parameter reference
-{: #4.8-parameter-reference}
+{: #local-volume-file-4.8-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -689,7 +689,7 @@ Use the console to remove a storage configuration.
 
 
 ### 4.9 parameter reference
-{: #4.9-parameter-reference}
+{: #local-volume-file-4.9-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -702,7 +702,7 @@ Use the console to remove a storage configuration.
 
 
 ### 4.10 parameter reference
-{: #4.10-parameter-reference}
+{: #local-volume-file-4.10-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -715,7 +715,7 @@ Use the console to remove a storage configuration.
 
 
 ### 4.11 parameter reference
-{: #4.11-parameter-reference}
+{: #local-volume-file-4.11-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
@@ -728,7 +728,7 @@ Use the console to remove a storage configuration.
 
 
 ### 4.12 parameter reference
-{: #4.12-parameter-reference}
+{: #local-volume-file-4.12-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |

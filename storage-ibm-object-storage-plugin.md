@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-25"
+lastupdated: "2023-06-07"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -343,7 +343,7 @@ If you no longer need your {{site.data.keyword.cos_full_notm}} configuration, yo
 {: #ibm-object-storage-plugin-parameter-reference}
 
 ### 2.2 parameter reference
-{: #2.2-parameter-reference}
+{: #ibm-object-storage-plugin-2.2-parameters}
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
