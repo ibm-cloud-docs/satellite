@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-15"
+lastupdated: "2023-06-08"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -103,7 +103,7 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
     2. Optional: Add host labels that are used later to [automatically assign](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) hosts to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services in the location. Labels must be provided as key-value pairs, and must match the request from the service. By default, your hosts get a `cpu`, `os`, and `memory` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`.
     3. Enter a file name for your script or use the name that is generated for you.
     4. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
-3. **RHEL only** Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
+3. **RHEL 7 only** Open the registration script. After the `API_URL` line, add a section to pull the required RHEL packages with the subscription manager.
     ```sh
     # Grow the base volume group first
     echo -e "r\ne\ny\nw\ny\ny\n" | gdisk /dev/sda
