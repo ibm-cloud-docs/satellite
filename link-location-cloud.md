@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-03"
+lastupdated: "2023-06-08"
 
 keywords: satellite, hybrid, multicloud, link endpoints, link, location endpoint, cloud endpoint
 
@@ -36,7 +36,7 @@ Cloud endpoint
 Location endpoint
 :   Destination resource runs in the {{site.data.keyword.satelliteshort}} location. A location endpoint allows you to securely connect to a server, service, or app that runs in your {{site.data.keyword.satelliteshort}} location from a client that is connected to the {{site.data.keyword.cloud_notm}} private network.
 
-Two {{site.data.keyword.satelliteshort}} Link components, the tunnel server and the connector, proxy network traffic over a secure TLS connection between cloud services and resources in your {{site.data.keyword.satelliteshort}} location. This Link tunnel serves as a communication path over the internet that uses the TCP protocol and port 443, and encrypts payloads via TLS. Three tunnels are created between the tunnel server in {{site.data.keyword.cloud_notm}} and the connector in the location's control plane worker nodes. This redundancy supports the three availability zones of your location, and helps ensure communication in the case of a single zone failure. However, the three tunnels are orchestrated together so that the client that uses a Link endpoint sees a single connection. For more information about the {{site.data.keyword.satelliteshort}} Link components, see the [Satellite architecture](/docs/satellite?topic=satellite-service-architecture#architecture).
+The tunnel server and the connector proxy network traffic over a secure TLS connection between cloud services and resources in your {{site.data.keyword.satelliteshort}} location. This Link tunnel serves as a communication path over the internet that uses the TCP protocol and port 443, and encrypts payloads via TLS. Three tunnels are created between the tunnel server in {{site.data.keyword.cloud_notm}} and the connector in the location's control plane worker nodes. This redundancy supports the three availability zones of your location, and helps ensure communication in the case of a single zone failure. However, the three tunnels are orchestrated together so that the client that uses a Link endpoint sees a single connection. For more information about the {{site.data.keyword.satelliteshort}} Link components, see the [Satellite architecture](/docs/satellite?topic=satellite-service-architecture#architecture).
 
 ### Cloud endpoint
 {: #link-cloud-endpoint}
