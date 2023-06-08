@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-06"
+lastupdated: "2023-06-08"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -137,7 +137,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
 
 
 
-3. Navigate to `/etc/systemd/system.conf.d` on your host. If that file does not exist, create it. Enter the `<VALUE>` for `NO_PROXY` from step 2.
+3. Navigate to `/etc/systemd/system.conf.d` on your host. If that file does not exist, create it with the following command. Enter the `<VALUE>` for `NO_PROXY` from step 2.
     
     ```sh
     mkdir -p /etc/systemd/system.conf.d
@@ -149,7 +149,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
     ```
     {: pre}
     
-4. Navigate to the `/etc/environment` file on your host. Enter the `<VALUE>` for `NO_PROXY` from step 2. If that file does not exist, create it. 
+4. Create the `ibm-proxy.sh` file by running the following command. Enter the `<VALUE>` for `NO_PROXY` from step 2.
     
     ```sh
     mkdir -p /etc/profile.d
