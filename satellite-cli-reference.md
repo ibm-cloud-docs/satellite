@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-03-01"
+lastupdated: "2023-06-12"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -20,7 +20,7 @@ subcollection: satellite
 Refer to these commands when you want to automate the creation and management of your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
-To install the CLI, see [Setting up the CLI](/docs/satellite?topic=satellite-setup-cli). 	
+To install the CLI, see [Setting up the CLI](/docs/satellite?topic=satellite-install-ibmcloud-cli). 	
 {: tip}
 
 ## `ibmcloud sat` commands
