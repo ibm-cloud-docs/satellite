@@ -1109,6 +1109,8 @@ subcollection: satellite
 
 [Non-RHCOS enabled locations in Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#reqs-host-network-outbound-dal)
 
+[RHCOS enabled locations with reduced firewall in Dallas](/docs/satellite?topic=satellite-req-minimum-outbound-dal#req-minimum-outbound-dal)
+
 
 ### Host outbound connectivity for Frankfurt
 {: #sitemap_host_outbound_connectivity_for_frankfurt}
@@ -1117,6 +1119,8 @@ subcollection: satellite
 [RHCOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra#reqs-host-rhcos-outbound-fra)
 
 [Non-RHCOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#reqs-host-network-outbound-fra)
+
+[RHCOS enabled locations with reduced firewall in Frankfurt](/docs/satellite?topic=satellite-req-minimum-outbound-fra#req-minimum-outbound-fra)
 
 
 ### Host outbound connectivity for London
@@ -1127,6 +1131,8 @@ subcollection: satellite
 
 [Non-RHCOS enabled locations in London](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#reqs-host-network-outbound-lon)
 
+[RHCOS enabled locations with reduced firewall in London](/docs/satellite?topic=satellite-req-minimum-outbound-lon#req-minimum-outbound-lon)
+
 
 ### Host outbound connectivity for Osaka
 {: #sitemap_host_outbound_connectivity_for_osaka}
@@ -1135,6 +1141,8 @@ subcollection: satellite
 [RHCOS enabled locations in Osaka](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa#reqs-host-rhcos-outbound-osa)
 
 [Non-RHCOS enabled locations in Osaka](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#reqs-host-network-outbound-osa)
+
+[RHCOS enabled locations with reduced firewall in Osaka](/docs/satellite?topic=satellite-req-minimum-outbound-osa#req-minimum-outbound-osa)
 
 
 ### Host outbound connectivity for Sao Paulo
@@ -1145,6 +1153,8 @@ subcollection: satellite
 
 [Non-RHCOS enabled locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#reqs-host-network-outbound-sao)
 
+[RHCOS enabled locations with reduced firewall in Sao Paulo](/docs/satellite?topic=satellite-req-minimum-outbound-sao#req-minimum-outbound-sao)
+
 
 ### Host outbound connectivity for Sydney
 {: #sitemap_host_outbound_connectivity_for_sydney}
@@ -1153,6 +1163,8 @@ subcollection: satellite
 [RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd#reqs-host-rhcos-outbound-syd)
 
 [Non-RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#reqs-host-network-outbound-syd)
+
+[RHCOS enabled locations with reduced firewall in Sydney](/docs/satellite?topic=satellite-req-minimum-outbound-syd#req-minimum-outbound-syd)
 
 
 ### Host outbound connectivity for Tokyo
@@ -1163,6 +1175,8 @@ subcollection: satellite
 
 [Non-RHCOS enabled locations in Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#reqs-host-network-outbound-tok)
 
+[RHCOS enabled locations with reduced firewall in Tokyo](/docs/satellite?topic=satellite-req-minimum-outbound-tok#req-minimum-outbound-tok)
+
 
 ### Host outbound connectivity for Toronto
 {: #sitemap_host_outbound_connectivity_for_toronto}
@@ -1172,6 +1186,8 @@ subcollection: satellite
 
 [Non-RHCOS enabled locations in Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#reqs-host-network-outbound-tor)
 
+[RHCOS enabled locations with reduced firewall in Toronto](/docs/satellite?topic=satellite-req-minimum-outbound-tor#req-minimum-outbound-tor)
+
 
 ### Host outbound connectivity for Washington D.C.
 {: #sitemap_host_outbound_connectivity_for_washington_dc}
@@ -1180,6 +1196,8 @@ subcollection: satellite
 [RHCOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc#reqs-host-rhcos-outbound-wdc)
 
 [Non-RHCOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#reqs-host-network-outbound-wdc)
+
+[RHCOS enabled locations with reduced firewall in Washington D.C.](/docs/satellite?topic=satellite-req-minimum-outbound-wdc#req-minimum-outbound-wdc)
 
 [Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
 
@@ -1213,6 +1231,8 @@ subcollection: satellite
     * [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-locations#location-control-plane-next)
+
+[Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall#coreos-reduced-firewall)
 
 [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba#alibaba)
 
