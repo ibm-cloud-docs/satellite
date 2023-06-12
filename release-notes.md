@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-06-12"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -20,6 +20,17 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
+
+## June 2023
+{: #satellite-june23}
+
+### 12 June 2023
+{: #satellite-june1223}
+{: release-note}
+
+
+RHCOS enabled locations with reduced firewall
+:   You can now create {{site.data.keyword.satelliteshort}} locations with a reduced footprint. For more information, see [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall).
 
 ## May 2023
 {: #satellite-may23}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-12"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -157,6 +157,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june23)
+
+    * [12 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1223)
+
+        * RHCOS enabled locations with reduced firewall
 
 * [May 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may23)
 
