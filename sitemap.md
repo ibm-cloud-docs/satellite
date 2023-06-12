@@ -1034,17 +1034,9 @@ subcollection: satellite
 * [Additional resources](/docs/satellite?topic=satellite-virtualization-location#sat-virt-additional)
 
 
-## Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands
-{: #sitemap_installing_the_cli_plug-in_for_commands}
+## Installing the CLI
+{: #sitemap_installing_the_cli}
 
-
-[Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-setup-cli#setup-cli)
-
-* [Updating the CLI](/docs/satellite?topic=satellite-setup-cli#update-sat-cli)
-
-* [Uninstalling the CLI](/docs/satellite?topic=satellite-setup-cli#uninstall-sat-cli)
-
-* [CLI reference documentation](/docs/satellite?topic=satellite-setup-cli#cli-ref-docs)
 
 
 ## Planning your environment for {{site.data.keyword.satelliteshort}}

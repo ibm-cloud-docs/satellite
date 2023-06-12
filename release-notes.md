@@ -365,7 +365,7 @@ Getting started page redesign
 :   Updated the [Getting started with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started) page with terms, basic location information, and what you can do next.
 
 New! Think you know {{site.data.keyword.satelliteshort}}? Take a quiz!
-:   After you read about {{site.data.keyword.satelliteshort}} terms on the [Getting started with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#sat-key-terms) page, [take a quiz!](https://ibmcloud-quizzes.mybluemix.net/satellite/terms_quiz/quiz.php){: external} and find out how much you learned.
+:   After you read about {{site.data.keyword.satelliteshort}} terms on the [Getting started with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#sat-key-terms) page, [take a quiz!](https://quizzes.12dekrh4l1b4.us-south.codeengine.appdomain.cloud/satellite/terms_quiz/quiz.php){: external} and find out how much you learned.
 
 ## May 2022
 {: #satellite-may22}
