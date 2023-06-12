@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-16"
+lastupdated: "2023-06-12"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference, change log, satellite version
 
@@ -18,7 +18,7 @@ subcollection: satellite
 In the terminal, you are notified when updates to the `ibmcloud` CLI and plug-ins are available, which includes updates for {{site.data.keyword.satellitelong}}. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
 {: shortdesc}
 
-Refer to the following tables for a summary of changes for each version of the [plug-in for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-setup-cli), which uses the `ibmcloud sat` alias.
+Refer to the following tables for a summary of changes for each version of the [plug-in for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-install-ibmcloud-cli), which uses the `ibmcloud sat` alias.
 
 To see the CLI plug-in changes that pertain specifically to {{site.data.keyword.redhat_openshift_notm}} (`ibmcloud oc`) commands, see the [{{site.data.keyword.redhat_openshift_notm}} CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 {: tip}

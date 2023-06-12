@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-06-12"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -20,6 +20,17 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
+
+## June 2023
+{: #satellite-june23}
+
+### 12 June 2023
+{: #satellite-june1223}
+{: release-note}
+
+
+RHCOS enabled locations with reduced firewall
+:   You can now create {{site.data.keyword.satelliteshort}} locations with a reduced footprint. For more information, see [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall).
 
 ## May 2023
 {: #satellite-may23}
@@ -354,7 +365,7 @@ Getting started page redesign
 :   Updated the [Getting started with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started) page with terms, basic location information, and what you can do next.
 
 New! Think you know {{site.data.keyword.satelliteshort}}? Take a quiz!
-:   After you read about {{site.data.keyword.satelliteshort}} terms on the [Getting started with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#sat-key-terms) page, [take a quiz!](https://ibmcloud-quizzes.mybluemix.net/satellite/terms_quiz/quiz.php){: external} and find out how much you learned.
+:   After you read about {{site.data.keyword.satelliteshort}} terms on the [Getting started with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-getting-started#sat-key-terms) page, [take a quiz!](https://quizzes.12dekrh4l1b4.us-south.codeengine.appdomain.cloud/satellite/terms_quiz/quiz.php){: external} and find out how much you learned.
 
 ## May 2022
 {: #satellite-may22}

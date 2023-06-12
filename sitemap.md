@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-08"
+lastupdated: "2023-06-12"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -157,6 +157,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june23)
+
+    * [12 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1223)
+
+        * RHCOS enabled locations with reduced firewall
 
 * [May 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may23)
 
@@ -1028,17 +1034,49 @@ subcollection: satellite
 * [Additional resources](/docs/satellite?topic=satellite-virtualization-location#sat-virt-additional)
 
 
-## Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands
-{: #sitemap_installing_the_cli_plug-in_for_commands}
+## Installing the CLI
+{: #sitemap_installing_the_cli}
 
 
-[Installing the CLI plug-in for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-setup-cli#setup-cli)
+[Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-install-ibmcloud-cli#install-ibmcloud-cli)
 
-* [Updating the CLI](/docs/satellite?topic=satellite-setup-cli#update-sat-cli)
+* [Before you begin](/docs/satellite?topic=satellite-install-ibmcloud-cli#before-download-cli)
 
-* [Uninstalling the CLI](/docs/satellite?topic=satellite-setup-cli#uninstall-sat-cli)
+* [Installing with an installer](/docs/satellite?topic=satellite-install-ibmcloud-cli#ibmcloud-cli-installer)
 
-* [CLI reference documentation](/docs/satellite?topic=satellite-setup-cli#cli-ref-docs)
+* [Installing from the shell](/docs/satellite?topic=satellite-install-ibmcloud-cli#shell_install)
+
+* [Installing to a custom directory](/docs/satellite?topic=satellite-install-ibmcloud-cli#install-custom-dir)
+
+* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-install-ibmcloud-cli#update-ibmcloud-cli)
+
+[Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/satellite?topic=satellite-plug-ins#plug-ins)
+
+* [Before you begin](/docs/satellite?topic=satellite-plug-ins#cli-before-you-begin)
+
+* [Searching for a plug-in](/docs/satellite?topic=satellite-plug-ins#cli-search-plugin)
+
+* [Installing a plug-in from the {{site.data.keyword.cloud_notm}} CLI repository](/docs/satellite?topic=satellite-plug-ins#install-from-repo)
+
+    * [Installing a specific plug-in](/docs/satellite?topic=satellite-plug-ins#cli-install-plugin)
+
+    * [Installing all plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-install-all)
+
+    * [Installing multiple plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-install-multiple)
+
+* [Confirming installed plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-install-view)
+
+* [Updating installed plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-update-plugin)
+
+* [Related information](/docs/satellite?topic=satellite-plug-ins#cli-install-relinfo)
+
+[Installing the OpenShift CLI](/docs/satellite?topic=satellite-cli-install#cli-install)
+
+[Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
+
+* [Uninstalling on Windows](/docs/satellite?topic=satellite-uninstall-ibmcloud-cli#uninstall-cli-windows)
+
+* [Uninstalling on Linux and macOS](/docs/satellite?topic=satellite-uninstall-ibmcloud-cli#uninstall-cli-linux-macos)
 
 
 ## Planning your environment for {{site.data.keyword.satelliteshort}}
@@ -1103,6 +1141,8 @@ subcollection: satellite
 
 [Non-RHCOS enabled locations in Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal#reqs-host-network-outbound-dal)
 
+[RHCOS enabled locations with reduced firewall in Dallas](/docs/satellite?topic=satellite-req-minimum-outbound-dal#req-minimum-outbound-dal)
+
 
 ### Host outbound connectivity for Frankfurt
 {: #sitemap_host_outbound_connectivity_for_frankfurt}
@@ -1111,6 +1151,8 @@ subcollection: satellite
 [RHCOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra#reqs-host-rhcos-outbound-fra)
 
 [Non-RHCOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra#reqs-host-network-outbound-fra)
+
+[RHCOS enabled locations with reduced firewall in Frankfurt](/docs/satellite?topic=satellite-req-minimum-outbound-fra#req-minimum-outbound-fra)
 
 
 ### Host outbound connectivity for London
@@ -1121,6 +1163,8 @@ subcollection: satellite
 
 [Non-RHCOS enabled locations in London](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#reqs-host-network-outbound-lon)
 
+[RHCOS enabled locations with reduced firewall in London](/docs/satellite?topic=satellite-req-minimum-outbound-lon#req-minimum-outbound-lon)
+
 
 ### Host outbound connectivity for Osaka
 {: #sitemap_host_outbound_connectivity_for_osaka}
@@ -1129,6 +1173,8 @@ subcollection: satellite
 [RHCOS enabled locations in Osaka](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa#reqs-host-rhcos-outbound-osa)
 
 [Non-RHCOS enabled locations in Osaka](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa#reqs-host-network-outbound-osa)
+
+[RHCOS enabled locations with reduced firewall in Osaka](/docs/satellite?topic=satellite-req-minimum-outbound-osa#req-minimum-outbound-osa)
 
 
 ### Host outbound connectivity for Sao Paulo
@@ -1139,6 +1185,8 @@ subcollection: satellite
 
 [Non-RHCOS enabled locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao#reqs-host-network-outbound-sao)
 
+[RHCOS enabled locations with reduced firewall in Sao Paulo](/docs/satellite?topic=satellite-req-minimum-outbound-sao#req-minimum-outbound-sao)
+
 
 ### Host outbound connectivity for Sydney
 {: #sitemap_host_outbound_connectivity_for_sydney}
@@ -1147,6 +1195,8 @@ subcollection: satellite
 [RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd#reqs-host-rhcos-outbound-syd)
 
 [Non-RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd#reqs-host-network-outbound-syd)
+
+[RHCOS enabled locations with reduced firewall in Sydney](/docs/satellite?topic=satellite-req-minimum-outbound-syd#req-minimum-outbound-syd)
 
 
 ### Host outbound connectivity for Tokyo
@@ -1157,6 +1207,8 @@ subcollection: satellite
 
 [Non-RHCOS enabled locations in Tokyo](/docs/satellite?topic=satellite-reqs-host-network-outbound-tok#reqs-host-network-outbound-tok)
 
+[RHCOS enabled locations with reduced firewall in Tokyo](/docs/satellite?topic=satellite-req-minimum-outbound-tok#req-minimum-outbound-tok)
+
 
 ### Host outbound connectivity for Toronto
 {: #sitemap_host_outbound_connectivity_for_toronto}
@@ -1166,6 +1218,8 @@ subcollection: satellite
 
 [Non-RHCOS enabled locations in Toronto](/docs/satellite?topic=satellite-reqs-host-network-outbound-tor#reqs-host-network-outbound-tor)
 
+[RHCOS enabled locations with reduced firewall in Toronto](/docs/satellite?topic=satellite-req-minimum-outbound-tor#req-minimum-outbound-tor)
+
 
 ### Host outbound connectivity for Washington D.C.
 {: #sitemap_host_outbound_connectivity_for_washington_dc}
@@ -1174,6 +1228,8 @@ subcollection: satellite
 [RHCOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc#reqs-host-rhcos-outbound-wdc)
 
 [Non-RHCOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-network-outbound-wdc#reqs-host-network-outbound-wdc)
+
+[RHCOS enabled locations with reduced firewall in Washington D.C.](/docs/satellite?topic=satellite-req-minimum-outbound-wdc#req-minimum-outbound-wdc)
 
 [Host latency](/docs/satellite?topic=satellite-host-latency-test#host-latency-test)
 
@@ -1207,6 +1263,8 @@ subcollection: satellite
     * [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-locations#location-control-plane-next)
+
+[Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall#coreos-reduced-firewall)
 
 [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba#alibaba)
 

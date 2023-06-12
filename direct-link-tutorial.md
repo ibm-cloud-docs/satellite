@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-06-12"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -106,7 +106,7 @@ High level steps include:
 - You must have a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location. If you don't have one already, follow the instructions in [Creating a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location](#dl-create-coreos-location) to create it.
 - {{site.data.keyword.dl_short}} is available between target {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} specific VPC or classic clusters.
 - Ensure that your [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) connection can access the `10.X.X.X/8` IP address range. Review network design to avoid IP conflicts between two ends of {{site.data.keyword.dl_short}}.
-- [Install the {{site.data.keyword.cloud_notm}} CLI and plug-ins](/docs/containers?topic=containers-cs_cli_install#cs_cli_install) and [install the Kubernetes CLI (`kubectl`)](/docs/containers?topic=containers-cs_cli_install#kubectl).
+- [Install the {{site.data.keyword.cloud_notm}} CLI and plug-ins](/docs/containers?topic=containers-install-ibmcloud-cli) and [install the Kubernetes CLI (`kubectl`)](/docs/containers?topic=containers-cli-install).
 - Ensure that your {{site.data.keyword.cloud_notm}} account is Virtual Router Function (VRF) enabled to use service endpoints.
 - Ensure you have the following access policies. For more information, see [Checking user permissions](/docs/satellite?topic=satellite-iam-assign-access#checking-perms).
     - **Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role for {{site.data.keyword.containerlong_notm}}

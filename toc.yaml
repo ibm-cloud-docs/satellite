@@ -10,7 +10,6 @@ toc:
     version: 2
     console-page: /satellite
     product-page: https://www.ibm.com/cloud/satellite
- 
   entries: 
   - navgroup: 
       id: learn
@@ -41,7 +40,13 @@ toc:
   - navgroup:
       id: howto
       topics:
-        - setup-cli.md
+        - topicgroup:
+            label: Installing the CLI
+            topics:
+              - include: ../cli/reference/ibmcloud/download_cli.md
+              - include: ../cli/reference/ibmcloud/extend_cli.md
+              - include: ../openshift/cli-install.md
+              - include: ../cli/reference/ibmcloud/uninstall_cli.md
         - infrastructure-plan.md
         - topicgroup:
             label: Preparing your host infrastructure
@@ -55,52 +60,62 @@ toc:
                   topics:
                     - reqs-host-rhcos-outbound-dal.md
                     - reqs-host-network-outbound-dal.md
+                    - reqs-host-lal-outbound-dal.md
               - topicgroup:
                   label: Host outbound connectivity for Frankfurt
                   topics:
                     - reqs-host-rhcos-outbound-fra.md
                     - reqs-host-network-outbound-fra.md
+                    - reqs-host-lal-outbound-fra.md
               - topicgroup:
                   label: Host outbound connectivity for London
                   topics:
                     - reqs-host-rhcos-outbound-lon.md
                     - reqs-host-network-outbound-lon.md
+                    - reqs-host-lal-outbound-lon.md
               - topicgroup:
                   label: Host outbound connectivity for Osaka
                   topics:
                     - reqs-host-rhcos-outbound-osa.md
                     - reqs-host-network-outbound-osa.md
+                    - reqs-host-lal-outbound-osa.md
               - topicgroup:
                   label: Host outbound connectivity for Sao Paulo
                   topics:
                     - reqs-host-rhcos-outbound-sao.md
                     - reqs-host-network-outbound-sao.md
+                    - reqs-host-lal-outbound-sao.md
               - topicgroup:
                   label: Host outbound connectivity for Sydney
                   topics:
                     - reqs-host-rhcos-outbound-syd.md
                     - reqs-host-network-outbound-syd.md
+                    - reqs-host-lal-outbound-syd.md
               - topicgroup:
                   label: Host outbound connectivity for Tokyo
                   topics:
                     - reqs-host-rhcos-outbound-tok.md
                     - reqs-host-network-outbound-tok.md
+                    - reqs-host-lal-outbound-tok.md
               - topicgroup:
                   label: Host outbound connectivity for Toronto
                   topics:
                     - reqs-host-rhcos-outbound-tor.md
                     - reqs-host-network-outbound-tor.md
+                    - reqs-host-lal-outbound-tor.md
               - topicgroup:
                   label: Host outbound connectivity for Washington D.C.
                   topics:
                     - reqs-host-rhcos-outbound-wdc.md
                     - reqs-host-network-outbound-wdc.md
+                    - reqs-host-lal-outbound-wdc.md
               - host-latency-test.md
               - host-network-check.md
         - topicgroup:
             label: Creating locations
             topics:
               - locations.md
+              - coreos-reduced-firewall.md
               - alibaba.md
               - aws.md
               - gcp.md

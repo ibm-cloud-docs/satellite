@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-08"
+lastupdated: "2023-06-12"
 
 keywords: satellite, hybrid, multicloud, requirements, outbound, network, allowlist
 
@@ -54,6 +54,17 @@ Outbound connectivity requirements for Red Hat CoreOS (RHCOS) locations
 
 
 
+
+Outbound connectivity requirements for Red Hat CoreOS (RHCOS) locations with reduced firewall
+:    [RHCOS enabled locations with reduced firewall in Dallas](/docs/satellite?topic=satellite-req-minimum-outbound-dal)
+:    [RHCOS enabled locations with reduced firewall in Frankfurt](/docs/satellite?topic=satellite-req-minimum-outbound-fra)
+:    [RHCOS enabled locations with reduced firewall in London](/docs/satellite?topic=satellite-req-minimum-outbound-lon)
+:    [RHCOS enabled locations with reduced firewall in Osaka](/docs/satellite?topic=satellite-req-minimum-outbound-osa)
+:    [RHCOS enabled locations with reduced firewall in Sao Paulo](/docs/satellite?topic=satellite-req-minimum-outbound-sao)
+:    [RHCOS enabled locations with reduced firewall in Sydney](/docs/satellite?topic=satellite-req-minimum-outbound-syd)
+:    [RHCOS enabled locations with reduced firewall in Tokyo](/docs/satellite?topic=satellite-req-minimum-outbound-tok)
+:    [RHCOS enabled locations with reduced firewall in Toronto](/docs/satellite?topic=satellite-req-minimum-outbound-tor)
+:    [RHCOS enabled locations with reduced firewall in Washington D.C.](/docs/satellite?topic=satellite-req-minimum-outbound-wdc)
 
 
 
