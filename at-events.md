@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-29"
+lastupdated: "2023-06-13"
 
 keywords: satellite, satellite at events, satellite activity tracker, satconfig events, satlink events, events for satellite config, events for satellite link, events for satellite location, events for satellite host
 
@@ -90,6 +90,7 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 | --- | --- |
 | `satellite.storage-template.get` | A storage template is retrieved. |
 | `satellite.storage-template.list` | A list of storage templates is retrieved. | 
+| `satellite.storage-template.get-changelog` | A storage template's changelog is retrieved. |
 | `satellite.storage-configuration.get` | A storage configuration is retrieved. | 
 | `satellite.storage-configuration.list` | A list of storage configurations is retrieved. | 
 | `satellite.storage-configuration.get-desired` | A desired storage configuration is returned. |
@@ -101,7 +102,6 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 | `satellite.storage-configuration.create` | A storage configuration is created. | 
 | `satellite.storage-configuration.delete` | A storage configuration is deleted. | 
 | `satellite.storage-configuration.update` | A storage configuration is updated. |
-| `satellite.subscription.create-by-cluster`| An assignment is created for a given cluster. |
 | `satellite.storage-configuration.get-by-controller` | Lists storage configurations that are created for the given location. |
 | `satellite.storage-configuration.update-revision` | A storage configuration was updated to use the latest template revision. |
 {: caption="Satellite storage actions that generate events." caption-side="bottom"}
@@ -118,6 +118,7 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 | `satellite.subscription.get-by-config` | An assignment is retrieved by using the associated configuration. | 
 | `satellite.subscription.get-by-controller` | A list of assignments is retrieved by using a location. |
 | `satellite.subscription.get-by-clusterid` | A list of assignments is retrieved by using the cluster ID. | 
+| `satellite.subscription.create-by-cluster`| An assignment is created for a given cluster. |
 | `satellite.subscription.create` | An assignment is created. | 
 | `satellite.subscription.delete` | An assignment is deleted. | 
 | `satellite.subscription.update` | An assignment is updated. | 
