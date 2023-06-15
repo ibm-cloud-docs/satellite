@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-13"
+lastupdated: "2023-06-15"
 
 keywords: satellite, satellite at events, satellite activity tracker, satconfig events, satlink events, events for satellite config, events for satellite link, events for satellite location, events for satellite host
 
@@ -90,7 +90,7 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 | --- | --- |
 | `satellite.storage-template.get` | A storage template is retrieved. |
 | `satellite.storage-template.list` | A list of storage templates is retrieved. | 
-| `satellite.storage-template.get-changelog` | A storage template's changelog is retrieved. |
+| `satellite.storage-template.get-changelog` | A storage template's change log is retrieved. |
 | `satellite.storage-configuration.get` | A storage configuration is retrieved. | 
 | `satellite.storage-configuration.list` | A list of storage configurations is retrieved. | 
 | `satellite.storage-configuration.get-desired` | A desired storage configuration is returned. |
