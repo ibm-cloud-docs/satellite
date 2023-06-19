@@ -1328,7 +1328,9 @@ subcollection: satellite
 
 [{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm#ibm)
 
-* [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}} manually](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
+* [Manually adding {{site.data.keyword.cloud_notm}} RHEL hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
+
+* [Manually adding {{site.data.keyword.cloud_notm}} RHCOS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach-rhcos)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
 
