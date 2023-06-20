@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-11-08"
+  years: 2020, 2023
+lastupdated: "2023-06-20"
 
 keywords: satellite, hybrid, multicloud, access, manage access
 
@@ -142,8 +142,8 @@ Wondering which access roles to assign to your {{site.data.keyword.satelliteshor
 
 | Use case | Example roles and scope |
 | --- | --- |
-| Creating a location | The user and the [API key that is set for the region and resource group](/docs/openshift?topic=openshift-access-creds#api_key_about) require the following permissions. **Administrator** platform role for all {{site.data.keyword.satelliteshort}} locations. The custom **{{site.data.keyword.satelliteshort}} Link Administrator** service role for {{site.data.keyword.satelliteshort}} Link. **Manager** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. To use automated templates such as to add hosts from AWS or Azure, the **Administrator** platform role for {{site.data.keyword.bplong_notm}} and **Administrator** platform role for Kubernetes Service. For additional permissions to set up the location control plane, see [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
-| Creating a cluster in a location | See [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
+| Creating a location | The user and the [API key that is set for the region and resource group](/docs/satellite?topic=satellite-iam-api-key) require the following permissions. **Administrator** platform role for all {{site.data.keyword.satelliteshort}} locations. The custom **{{site.data.keyword.satelliteshort}} Link Administrator** service role for {{site.data.keyword.satelliteshort}} Link. **Manager** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. To use automated templates such as to add hosts from AWS or Azure, the **Administrator** platform role for {{site.data.keyword.bplong_notm}} and **Administrator** platform role for Kubernetes Service. For additional permissions to set up the location control plane, see [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
+| Creating a cluster in a location | See [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). |
 | Location auditor | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location and link endpoints. **Reader** service role for the configuration resources in the location. **Reader** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. |
 | App developers | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location. **Writer** or **Deployer** service access role for the configuration resources. **Editor** platform role and **Writer** service role to {{site.data.keyword.redhat_openshift_notm}} clusters or particular projects in a cluster.|
 | Billing | **Viewer** platform role for all the {{site.data.keyword.satelliteshort}} locations in the account. |

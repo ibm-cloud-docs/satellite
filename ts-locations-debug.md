@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-06-20"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -36,7 +36,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     ```
     {: screen}
 
-2. Get the details for your location, and review the **Message**. From the console, you can click the location and hover over the tooltip in the title with the location name and health.
+2. Find the details for your location, and review the **Message**. From the console, you can click the location and hover over the tooltip in the title with the location name and health.
     ```sh
     ibmcloud sat location get --location <location_name_or_ID>
     ```
@@ -55,7 +55,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     ```
     {: screen}
 
-3. Get more details about the error message and affected components by [setting up {{site.data.keyword.la_short}} to review {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-get-help#review-logs).
+3. Find more details about the error message and affected components by [setting up {{site.data.keyword.la_short}} to review {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-get-help#review-logs).
 
 4. Review the following common location messages for steps to resolve the issue.
 
@@ -391,14 +391,15 @@ Location message
 :    This error is reported because the IAM API key that is set for the region or resource group that the location is in does not have the required permissions in {{site.data.keyword.satelliteshort}} or {{site.data.keyword.containershort}}, usually because the permissions of the API key owner changed or the API owner left the account.
 
 Steps to resolve
-:    If you have a {{site.data.keyword.satelliteshort}} location and a {{site.data.keyword.redhat_openshift_notm}} cluster in that location and you are the account owner or a user with Administrator permission for all {{site.data.keyword.satelliteshort}} components, you can resolve this issue by resetting the API key. Note that when you reset the API key, the old key is deleted. Be sure to check if other services are using this API key.
+:    If you have a {{site.data.keyword.redhat_openshift_notm}} cluster in a {{site.data.keyword.satelliteshort}} location and you are the account owner or a user with Administrator permission for all {{site.data.keyword.satelliteshort}} components, you can resolve this issue by resetting the API key. Note that when you reset the API key, the old key is deleted. Be sure to check if other services are using this API key.
 :    1. Log in to {{site.data.keyword.cloud_notm}}: `ibmcloud login`.
      2. Target the region that the location is managed from: `ibmcloud target -r <region>`.
      3. Target the resource group that the location is in: `ibmcloud target -g <resource-group>`.
      4. Reset the IAM API key for that region or resource group: `ibmcloud ks api-key reset --region <region>`.
      5. Review that the API key was set: `ibmcloud ks api-key info --cluster <roks_cluster_in_location>`.
+     6. [Open a support case](/docs/satellite?topic=satellite-get-help) and ask that the location that contains the cluster to be refreshed. Include your location ID, which you can find by running the `ibmcloud sat location ls` command.
 
-If you only have a location without any clusters, then you cannot reset the API key. Instead, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can get your location ID by running the `ibmcloud sat location ls` command.
+:    If your location does not have any clusters, then you cannot reset the API key yourself. Instead, [open a support case](/docs/satellite?topic=satellite-get-help) and ask for your location to be refreshed. Include your location ID, which you can find by running the `ibmcloud sat location ls` command.
 
 
 ## R0050, R0051: {{site.data.keyword.satelliteshort}} Link connector issues
@@ -456,7 +457,7 @@ Steps to resolve
     {: pre}
 
 1. If the output from the previous step indicates a failure, check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs). 
-1. If you have met all the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can get your location ID by running the `ibmcloud sat location ls` command.
+1. If you have met all the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can find your location ID by running the `ibmcloud sat location ls` command.
 
 For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0057` error logs](/docs/satellite?topic=satellite-health#logs-error).
 
@@ -468,3 +469,47 @@ Location message
 
 Steps to resolve
 :   If you don't need to reuse this location name, delete this location and create a location with a unique name. If the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
+
+## R0059: Outbound traffic to IBM Cloud Container Registry is failing.
+{: #R0059}
+
+Location message
+:   Outbound traffic to IBM Cloud Container Registry is failing. To ensure that all host requirements are met, see the [Host system requirements](/docs/satellite?topic=satellite-host-reqs). More information is available in the IBM Cloud Platform Logs. If the issue persists, contact IBM Cloud Support and include your Satellite location ID.
+
+Steps to resolve
+:    Check the health status and ensure that the host system requirements are met.
+
+1. Run the following command to check the health status. 
+
+    ```sh
+    curl https://iam.cloud.ibm.com/healthz 
+    ```
+    {: pre}
+
+1. If the output from the previous step indicates a failure, check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs). 
+1. If you have met all the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can find your location ID by running the `ibmcloud sat location ls` command.
+
+For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0059` error logs](/docs/satellite?topic=satellite-health#logs-error).
+
+## R0060: Outbound traffic to LaunchDarkly is failing.
+{: #R0060}
+
+Location message
+:   Outbound traffic to LaunchDarkly is failing. To ensure that all host requirements are met, see the [Host system requirements](/docs/satellite?topic=satellite-host-reqs).. More information is available in the IBM Cloud Platform Logs. If the issue persists, contact IBM Cloud Support and include your Satellite location ID.
+
+Steps to resolve
+:    Check the health status and ensure that the host system requirements are met.
+
+1. Run the following command to check the health status. 
+
+    ```sh
+    curl https://iam.cloud.ibm.com/healthz 
+    ```
+    {: pre}
+
+1. If the output from the previous step indicates a failure, check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs). 
+1. If you have met all the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can find your location ID by running the `ibmcloud sat location ls` command.
+
+For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0060` error logs](/docs/satellite?topic=satellite-health#logs-error).
+
+
