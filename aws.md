@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-24"
+lastupdated: "2023-06-20"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -278,7 +278,7 @@ Retrieve the Amazon Web Services (AWS) credentials that {{site.data.keyword.sate
 {: shortdesc}
 
 1. Verify that you have the required [permissions in your AWS account](/docs/satellite?topic=satellite-iam-common#permissions-aws) to create a {{site.data.keyword.satelliteshort}} location from a template.
-2. [Create a separate IAM user that is scoped to EC2 access](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html)){: external}.
+2. [Create a separate IAM user that is scoped to EC2 access](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html){: external}.
 3. [Retrieve the access key ID and secret access key credentials for the IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html#access-keys-and-secret-access-keys){: external}.
 4. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. The `client_id` is the ID of the access key and the `client_secret` is the secret access key that you created for the IAM user in AWS.
     ```json

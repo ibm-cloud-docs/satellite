@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-06-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1328,7 +1328,9 @@ subcollection: satellite
 
 [{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm#ibm)
 
-* [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}} manually](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
+* [Manually adding {{site.data.keyword.cloud_notm}} RHEL hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
+
+* [Manually adding {{site.data.keyword.cloud_notm}} RHCOS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach-rhcos)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
 
@@ -3429,6 +3431,10 @@ subcollection: satellite
 * [R0057: Outbound traffic to IAM is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0057)
 
 * [R0058: DNS registration is failing](/docs/satellite?topic=satellite-ts-locations-debug#R0058)
+
+* [R0059: Outbound traffic to IBM Cloud Container Registry is failing.](/docs/satellite?topic=satellite-ts-locations-debug#R0059)
+
+* [R0060: Outbound traffic to LaunchDarkly is failing.](/docs/satellite?topic=satellite-ts-locations-debug#R0060)
 
 
 ### Locations

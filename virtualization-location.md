@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-06-19"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -323,9 +323,9 @@ After you deploy OpenShift Data Foundation, you can use the `sat-ocs-ceprbd-gold
 1. From the OpenShift web console, log in to your VM by using the username and password you specified in the VirtualMachine config. For example, `user: cloud-user` and `password: 'fedora-1-password'`.
 
 
-Congratulations! You just deployed a Fedora virtual machine on your {{site.data.keyword.satelliteshort}} cluster.
+Congratulations! You just deployed a Fedora virtual machine on your {{site.data.keyword.satelliteshort}} cluster. 
 
-For more information about accessing and managing VMs in your cluster, see [Additional resources](#sat-virt-additional).
+You can find more information about what to do next in the [OpenShift Virtualization Hands-on Lab](https://github.com/rdoxenham/openshift-virt-labs){: external}.
     
 
 ## Additional resources
@@ -338,5 +338,6 @@ For more information about accessing and managing VMs in your cluster, see [Addi
 - [Editing VMs](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-edit-vms.html){: external}
 - [Deleting VMs](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-delete-vms.html){: external}
 - [Accessing VM consoles](https://docs.openshift.com/container-platform/4.11/virt/virtual_machines/virt-accessing-vm-consoles.html){: external}
+- [OpenShift Virtualization Hands-on Lab](https://github.com/rdoxenham/openshift-virt-labs){: external}
 
 
