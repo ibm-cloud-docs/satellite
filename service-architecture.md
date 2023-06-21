@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-07"
+lastupdated: "2023-06-21"
 
 keywords: satellite architecture, satellite components, satellite workload isolation, satellite tenant isolation, satellite dependencies
 
@@ -25,8 +25,11 @@ The following image shows the main components in {{site.data.keyword.satellitelo
 {: shortdesc}
 
 
-
-![Satellite for IBM Cloud service architecture](/images/sat_architecture1.svg "Satellite service architecture"){: caption="Figure 1. Satellite service architecture" caption-side="bottom"}
+![Satellite for IBM Cloud service architecture](/images/sat_architecture.svg "Satellite service architecture"){: caption="Figure 1. Satellite service architecture" caption-side="bottom"}
+ 
+  
+While communication from your location to some {{site.data.keyword.satelliteshort}} services is routed fully through the Link tunnel server, other services might require outbound connectivity from your hosts. For more information, see the [host network requirements](/docs/satellite?topic=satellite-reqs-host-network ) and [host outbound connectivity requirements](/docs/satellite?topic=satellite-reqs-host-network-outbound).
+{: note}
 
 
 ### Master and worker node components
