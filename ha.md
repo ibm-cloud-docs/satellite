@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-06-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -43,7 +43,7 @@ To understand your high availability options in {{site.data.keyword.satellitesho
 
 The following image shows specific areas to watch in the {{site.data.keyword.satelliteshort}} architecture so you can improve your high availability.
 
-![Highly available {{site.data.keyword.satelliteshort}} architecture](/images/sat_architecture_ha.svg "Highly available Satellite architecture"){: caption="Figure 1. Highly available Satellite architecture" caption-side="bottom"}
+![Highly available {{site.data.keyword.satelliteshort}} architecture](/images/sat_architecture_ha1.svg "Highly available Satellite architecture"){: caption="Figure 1. Highly available Satellite architecture" caption-side="bottom"}
 
 1. [{{site.data.keyword.satelliteshort}} control plane master](#ha-control-plane-master)
 2. [{{site.data.keyword.satelliteshort}} control plane worker nodes](#ha-control-plane-worker)

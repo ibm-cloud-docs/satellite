@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-12"
+lastupdated: "2023-06-21"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -1242,6 +1242,6 @@ Review the release notes for 21 August 2020.
 {: shortdesc}
 
 New! {{site.data.keyword.satellitelong_notm}} is now available as a closed beta.
-:   For more information about the service and how it works, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/cloud/satellite){: external}. To register for the beta, go [here](https://cloud.ibm.com/satellite/overview){: external}.
+:   For more information about the service and how it works, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/product/satellite){: external}. To register for the beta, go [here](https://cloud.ibm.com/satellite/overview){: external}.
 
 
