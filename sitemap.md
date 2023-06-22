@@ -344,11 +344,11 @@ subcollection: satellite
 
     * [14 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1422)
 
-        * Satellite for resellers
+        * {{site.data.keyword.satelliteshort}} for resellers
 
     * [9 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june922)
 
-        * Satellite use cases
+        * {{site.data.keyword.satelliteshort}} use cases
 
     * [1 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june122)
 

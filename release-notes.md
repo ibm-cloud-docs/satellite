@@ -24,6 +24,9 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## June 2023
 {: #satellite-june23}
 
+
+
+
 ### 22 June 2023
 {: #satellite-june2223}
 {: release-note}
@@ -175,7 +178,7 @@ New! Virtualization on a {{site.data.keyword.satelliteshort}} location
 {: release-note}
 
 Disconnected usage
-:   {{site.data.keyword.satelliteshort}} Locations and {{site.data.keyword.openshiftlong_notm}} can run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for 168 hours. For more information, see [Disconnected use for Satellite components](/docs/satellite?topic=satellite-disconnected-use).
+:   {{site.data.keyword.satelliteshort}} Locations and {{site.data.keyword.openshiftlong_notm}} can run disconnected from the parent `managed-from` region in {{site.data.keyword.cloud_notm}} for 168 hours. For more information, see [Disconnected use for {{site.data.keyword.satelliteshort}} components](/docs/satellite?topic=satellite-disconnected-use).
 
 
 ## October 2022
@@ -354,15 +357,15 @@ New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshor
 {: #satellite-june1422}
 {: release-note}
  
-Satellite for resellers
+{{site.data.keyword.satelliteshort}} for resellers
 :   Learn how to set up an enterprise account and resell {{site.data.keyword.satelliteshort}} infrastructure and services to your clients. For more information, see the [{{site.data.keyword.satelliteshort}} [reseller use case](/docs/satellite?topic=satellite-tenancy-model).
 
 ### 9 June 2022
 {: #satellite-june922}
 {: release-note}
 
-Satellite use cases
-:   See [Satellite use cases](/docs/satellite?topic=satellite-use-case) for the benefits of using Satellite and some common use cases.
+{{site.data.keyword.satelliteshort}} use cases
+:   See [{{site.data.keyword.satelliteshort}} use cases](/docs/satellite?topic=satellite-use-case) for the benefits of using {{site.data.keyword.satelliteshort}} and some common use cases.
 
 ### 1 June 2022
 {: #satellite-june122}
@@ -441,7 +444,7 @@ New! Osaka location
 {: release-note}
 
 Set up an HTTP proxy for your hosts
-:   In allowlisted accounts that have locations enabled for Red Hat CoreOS, you can configure an HTTP proxy. For more information, see [Configuring an HTTP proxy for your Satellite hosts](/docs/satellite?topic=satellite-config-http-proxy).
+:   In allowlisted accounts that have locations enabled for Red Hat CoreOS, you can configure an HTTP proxy. For more information, see [Configuring an HTTP proxy for your {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-config-http-proxy).
 
 New and updated template parameters for the local block and local file storage templates.
 :   Automatic disk discovery is now available for the `local-volume-block` and `local-volume-file` template version 4.9. Enable this feature by setting the `auto-disk-discovery=true` parameter. For more information, see [Local block storage](/docs/satellite?topic=satellite-storage-local-volume-block) and [Local file storage](/docs/satellite?topic=satellite-storage-local-volume-file).
@@ -990,7 +993,7 @@ Cloud provider guides
 :   Added instructions to set up {{site.data.keyword.satelliteshort}} locations that use infrastructure from [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), and [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm).
 
 Exposing apps in {{site.data.keyword.satelliteshort}} clusters
-:   Added an overview of the [options for exposing apps in Satellite clusters](/docs/openshift?topic=openshift-sat-expose-apps) and steps for setting up each option.
+:   Added an overview of the [options for exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps) and steps for setting up each option.
 
 {{site.data.keyword.satelliteshort}} Infrastructure Service
 :   Order managed infrastructure from {{site.data.keyword.IBM_notm}} to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
@@ -1060,7 +1063,7 @@ Link endpoints
 :   Added information about [default Link endpoints](/docs/satellite?topic=satellite-default-link-endpoints) that are automatically created for {{site.data.keyword.cloud_notm}} access to your {{site.data.keyword.satelliteshort}} location.
 
 Securing service connections
-:   Added a topic to explain all points of access to your {{site.data.keyword.satelliteshort}} location. For more information, see [Securing your connection to Satellite](/docs/satellite?topic=satellite-service-connection).
+:   Added a topic to explain all points of access to your {{site.data.keyword.satelliteshort}} location. For more information, see [Securing your connection to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-service-connection).
 
 ### 8 February 2021
 {: #satellite-feb0821}
