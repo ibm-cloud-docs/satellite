@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-21"
+lastupdated: "2023-06-22"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -159,6 +159,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june23)
+
+    * [22 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2223)
+
+        * Storage template revisions
 
     * [12 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1223)
 
@@ -3041,6 +3045,8 @@ subcollection: satellite
 
 * [Version 5.0](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#5.0-change-log)
 
+    * [Revision 11, released 19 June 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-11-change-log)
+
     * [Revision 10, released 04 May 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-10-change-log)
 
     * [Revision 9, released 04 April 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-9-change-log)
@@ -3097,6 +3103,8 @@ subcollection: satellite
 
 * [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#22.10-change-log)
 
+    * [Revision 6, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-6-change-log)
+
     * [Revision 5, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-5-change-log)
 
     * [Revision 4, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-4-change-log)
@@ -3109,6 +3117,8 @@ subcollection: satellite
 
 * [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#22.04-change-log)
 
+    * [Revision 19, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-19-change-log)
+
     * [Revision 18, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-18-change-log)
 
     * [Revision 17, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-17-change-log)
@@ -3120,6 +3130,8 @@ subcollection: satellite
     * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-14-change-log)
 
 * [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#21.04-change-log)
+
+    * [Revision 21, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-21-change-log)
 
     * [Revision 20, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-20-change-log)
 
@@ -3135,6 +3147,8 @@ subcollection: satellite
 
 * [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-san#22.10-change-log)
 
+    * [Revision 6, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-6-change-log)
+
     * [Revision 5, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-5-change-log)
 
     * [Revision 4, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-4-change-log)
@@ -3147,6 +3161,8 @@ subcollection: satellite
 
 * [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-ontap-san#22.04-change-log)
 
+    * [Revision 19, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-19-change-log)
+
     * [Revision 18, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-18-change-log)
 
     * [Revision 17, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-17-change-log)
@@ -3158,6 +3174,8 @@ subcollection: satellite
     * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-14-change-log)
 
 * [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-ontap-san#21.04-change-log)
+
+    * [Revision 22, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-22-change-log)
 
     * [Revision 21, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-21-change-log)
 
@@ -3187,11 +3205,15 @@ subcollection: satellite
 
 * [Version 4.12](/docs/satellite?topic=satellite-cl-odf-local#4.12-change-log)
 
+    * [Revision 3, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-3-change-log)
+
     * [Revision 2, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-2-change-log)
 
     * [Revision 1, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-1-change-log)
 
 * [Version 4.11](/docs/satellite?topic=satellite-cl-odf-local#4.11-change-log)
+
+    * [Revision 7, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-7-change-log)
 
     * [Revision 6, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-6-change-log)
 
@@ -3205,6 +3227,8 @@ subcollection: satellite
 
 * [Version 4.10](/docs/satellite?topic=satellite-cl-odf-local#4.10-change-log)
 
+    * [Revision 18, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-18-change-log)
+
     * [Revision 17, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-17-change-log)
 
     * [Revision 16, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-16-change-log)
@@ -3216,6 +3240,8 @@ subcollection: satellite
     * [Revision 13, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-13-change-log)
 
 * [Version 4.9](/docs/satellite?topic=satellite-cl-odf-local#4.9-change-log)
+
+    * [Revision 24, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-24-change-log)
 
     * [Revision 23, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-23-change-log)
 
@@ -3247,11 +3273,15 @@ subcollection: satellite
 
 * [Version 4.12](/docs/satellite?topic=satellite-cl-odf-remote#4.12-change-log)
 
+    * [Revision 3, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-3-change-log)
+
     * [Revision 2, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-2-change-log)
 
     * [Revision 1, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-1-change-log)
 
 * [Version 4.11](/docs/satellite?topic=satellite-cl-odf-remote#4.11-change-log)
+
+    * [Revision 7, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-7-change-log)
 
     * [Revision 6, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-6-change-log)
 
@@ -3265,6 +3295,8 @@ subcollection: satellite
 
 * [Version 4.10](/docs/satellite?topic=satellite-cl-odf-remote#4.10-change-log)
 
+    * [Revision 18, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-18-change-log)
+
     * [Revision 17, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-17-change-log)
 
     * [Revision 16, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-16-change-log)
@@ -3276,6 +3308,8 @@ subcollection: satellite
     * [Revision 13, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-13-change-log)
 
 * [Version 4.9](/docs/satellite?topic=satellite-cl-odf-remote#4.9-change-log)
+
+    * [Revision 24, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-24-change-log)
 
     * [Revision 23, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-23-change-log)
 

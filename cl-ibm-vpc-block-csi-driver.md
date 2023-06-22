@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-05-09"
+lastupdated: "2023-06-22"
 
 
 keywords: satellite storage, change log, version history, ibm vpc block csi driver
@@ -23,6 +23,15 @@ Review the version history for the `ibm-vpc-block-csi-driver` {{site.data.keywor
 ## Version 5.0
 {: #5.0-change-log}
 
+
+### Revision 11, released 19 June 2023
+{: #ibm-vpc-block-csi-driver-5.0-rev-11-change-log}
+
+
+- Resolves the following CVEs: [CVE-2022-43552](https://nvd.nist.gov/vuln/detail/CVE-2022-43552){: external} [CVE-2022-3204](https://nvd.nist.gov/vuln/detail/CVE-2022-3204){: external} [CVE-2023-27535](https://nvd.nist.gov/vuln/detail/CVE-2023-27535){: external} [CVE-2022-36227](https://nvd.nist.gov/vuln/detail/CVE-2022-36227){: external} [CVE-2022-35252](https://nvd.nist.gov/vuln/detail/CVE-2022-35252){: external} [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external} [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external} [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external} [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external} [CVE-2023-29400](https://nvd.nist.gov/vuln/detail/CVE-2023-29400){: external} [CVE-2023-24540](https://nvd.nist.gov/vuln/detail/CVE-2023-24540){: external} [CVE-2023-24539](https://nvd.nist.gov/vuln/detail/CVE-2023-24539){: external} 
+- Updates the UBI to version `8.8-860`.
+- Updates Golang to version `1.19.10`.
+- Token exchange URL is determined based on cluster provider. In case of satellite cluster provider, always use provided token exchange URL, if not provided use public IAM endpoint. 
 
 ### Revision 10, released 04 May 2023
 {: #ibm-vpc-block-csi-driver-5.0-rev-10-change-log}

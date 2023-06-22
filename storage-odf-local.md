@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-06-22"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -758,9 +758,9 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | --- | --- | --- | --- | --- | --- |
 | Automatic storage volume discovery | `auto-discover-devices` | Config | Set to `true` if you want to automatically discover and use the storage volumes on your worker nodes. If set to `false` then you need to explicitly provide the OSD volume IDs | true | `false` |
 | OSD volume IDs | `osd-device-path` | Config | The local paths on your worker nodes to the volumes you want to use for the OSD pods. Please provide the disk IDs if `auto-discover-devices` is set to `false` | false | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
-| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
-| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | `false` |
+| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | true | `1` |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
+| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | true | `false` |
 | Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | `advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | N/A |
 | IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your COS bucket. For example: `us-east-standard`. | false | N/A |
@@ -779,9 +779,9 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | --- | --- | --- | --- | --- | --- |
 | Automatic storage volume discovery | `auto-discover-devices` | Config | Automatically discover and use the storage volumes on your worker nodes. If set to `false` then you must explicitly provide the volumes IDs. | true | `true` |
 | OSD volume IDs | `osd-device-path` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
-| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
-| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | `false` |
+| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | true | `1` |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
+| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | true | `false` |
 | Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | `advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | N/A |
 | IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your COS bucket. For example: `us-east-standard`. | false | N/A |
@@ -808,9 +808,9 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | --- | --- | --- | --- | --- | --- |
 | Automatic storage volume discovery | `auto-discover-devices` | Config | Automatically discover and use the storage volumes on your worker nodes. If set to `false` then you must explicitly provide the volumes IDs. | true | `true` |
 | OSD volume IDs | `osd-device-path` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
-| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
-| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | `false` |
+| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | true | `1` |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
+| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | true | `false` |
 | Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | `advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | N/A |
 | IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your COS bucket. For example: `us-east-standard`. | false | N/A |
@@ -837,9 +837,9 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | --- | --- | --- | --- | --- | --- |
 | Automatic storage volume discovery | `auto-discover-devices` | Config | Automatically discover and use the storage volumes on your worker nodes. If set to `false` then you must explicitly provide the volumes IDs. | true | `true` |
 | OSD volume IDs | `osd-device-path` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of OSD volumes that you want to provision. The total storage available to your apps is equal to the volume size (osd-size) multiplied by the number of volumes (num-of-osd). The default value is `1`. | true | `1` |
-| Worker node names | `worker-nodes` | Config | The node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
-| Upgrade | `odf-upgrade` | Config | Set to `true` if you want to upgrade the ODF version. | true | `false` |
+| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | true | `1` |
+| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
+| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | true | `false` |
 | Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | `advanced` |
 | IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | N/A |
 | IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your COS bucket. For example: `us-east-standard`. | false | N/A |
