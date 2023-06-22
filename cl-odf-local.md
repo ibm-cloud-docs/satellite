@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-05-09"
+lastupdated: "2023-06-22"
 
 
 keywords: satellite storage, change log, version history, odf local
@@ -23,6 +23,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.12
 {: #4.12-change-log}
 
+
+### Revision 3, released 19 June 2023
+{: #odf-local-4.12-rev-3-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-27535](https://nvd.nist.gov/vuln/detail/CVE-2023-27535){: external} [CVE-2022-36227](https://nvd.nist.gov/vuln/detail/CVE-2022-36227){: external} [CVE-2022-3204](https://nvd.nist.gov/vuln/detail/CVE-2022-3204){: external} [CVE-2022-35252](https://nvd.nist.gov/vuln/detail/CVE-2022-35252){: external} [CVE-2022-43552](https://nvd.nist.gov/vuln/detail/CVE-2022-43552){: external} [CVE-2023-29400](https://nvd.nist.gov/vuln/detail/CVE-2023-29400){: external} [CVE-2023-24540](https://nvd.nist.gov/vuln/detail/CVE-2023-24540){: external} [CVE-2023-24539](https://nvd.nist.gov/vuln/detail/CVE-2023-24539){: external} 
+- Updates the UBI to version `8.8-860`.
+- Updates Golang to version `1.19.9`.
 
 ### Revision 2, released 04 May 2023
 {: #odf-local-4.12-rev-2-change-log}
@@ -45,6 +53,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.11
 {: #4.11-change-log}
 
+
+### Revision 7, released 19 June 2023
+{: #odf-local-4.11-rev-7-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-27535](https://nvd.nist.gov/vuln/detail/CVE-2023-27535){: external} [CVE-2022-36227](https://nvd.nist.gov/vuln/detail/CVE-2022-36227){: external} [CVE-2022-3204](https://nvd.nist.gov/vuln/detail/CVE-2022-3204){: external} [CVE-2022-35252](https://nvd.nist.gov/vuln/detail/CVE-2022-35252){: external} [CVE-2022-43552](https://nvd.nist.gov/vuln/detail/CVE-2022-43552){: external} [CVE-2023-29400](https://nvd.nist.gov/vuln/detail/CVE-2023-29400){: external} [CVE-2023-24540](https://nvd.nist.gov/vuln/detail/CVE-2023-24540){: external} [CVE-2023-24539](https://nvd.nist.gov/vuln/detail/CVE-2023-24539){: external} 
+- Updates the UBI to version `8.8-860`.
+- Updates Golang to version `1.19.9`.
 
 ### Revision 6, released 04 May 2023
 {: #odf-local-4.11-rev-6-change-log}
@@ -93,6 +109,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 {: #4.10-change-log}
 
 
+### Revision 18, released 19 June 2023
+{: #odf-local-4.10-rev-18-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-27535](https://nvd.nist.gov/vuln/detail/CVE-2023-27535){: external} [CVE-2022-36227](https://nvd.nist.gov/vuln/detail/CVE-2022-36227){: external} [CVE-2022-3204](https://nvd.nist.gov/vuln/detail/CVE-2022-3204){: external} [CVE-2022-35252](https://nvd.nist.gov/vuln/detail/CVE-2022-35252){: external} [CVE-2022-43552](https://nvd.nist.gov/vuln/detail/CVE-2022-43552){: external} [CVE-2023-29400](https://nvd.nist.gov/vuln/detail/CVE-2023-29400){: external} [CVE-2023-24540](https://nvd.nist.gov/vuln/detail/CVE-2023-24540){: external} [CVE-2023-24539](https://nvd.nist.gov/vuln/detail/CVE-2023-24539){: external} 
+- Updates the UBI to version `8.8-860`.
+- Updates Golang to version `1.19.9`.
+
 ### Revision 17, released 04 May 2023
 {: #odf-local-4.10-rev-17-change-log}
 
@@ -139,6 +163,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.9
 {: #4.9-change-log}
 
+
+### Revision 24, released 19 June 2023
+{: #odf-local-4.9-rev-24-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-27535](https://nvd.nist.gov/vuln/detail/CVE-2023-27535){: external} [CVE-2022-36227](https://nvd.nist.gov/vuln/detail/CVE-2022-36227){: external} [CVE-2022-3204](https://nvd.nist.gov/vuln/detail/CVE-2022-3204){: external} [CVE-2022-35252](https://nvd.nist.gov/vuln/detail/CVE-2022-35252){: external} [CVE-2022-43552](https://nvd.nist.gov/vuln/detail/CVE-2022-43552){: external} [CVE-2023-29400](https://nvd.nist.gov/vuln/detail/CVE-2023-29400){: external} [CVE-2023-24540](https://nvd.nist.gov/vuln/detail/CVE-2023-24540){: external} [CVE-2023-24539](https://nvd.nist.gov/vuln/detail/CVE-2023-24539){: external} 
+- Updates the UBI to version `8.8-860`.
+- Updates Golang to version `1.19.9`.
 
 ### Revision 23, released 04 May 2023
 {: #odf-local-4.9-rev-23-change-log}
