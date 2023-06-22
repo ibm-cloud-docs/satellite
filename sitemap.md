@@ -160,6 +160,10 @@ subcollection: satellite
 
 * [June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june23)
 
+    * [22 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2223)
+
+        * Storage template revisions
+
     * [12 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1223)
 
         * RHCOS enabled locations with reduced firewall
