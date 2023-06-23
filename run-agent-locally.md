@@ -64,7 +64,7 @@ There are several ways to pass agent configuration environment variable informat
 {: step}
 
 1. Log in to {{site.data.keyword.registrylong}} with either the `ibmcloud cr region-set icr.io` command or log in to the repository directly from Docker with your API key: `docker login -u iamapikey -p <your apikey> icr.io`.
-1. Pull the latest version of the published image `icr.io/ibm/satellite-connector/satellite-connector-agent:latest`. You can find the list of published versions from [IBM Satellite Connector Agent Release History](/docs/satellite?topic=satellite-cl-connector-agent-image&interface=ui)
+1. Pull the latest version (or a specific version) of the published image `icr.io/ibm/satellite-connector/satellite-connector-agent:latest`. You can find the list of published versions from [IBM Satellite Connector Agent Release History](/docs/satellite?topic=satellite-cl-connector-agent-image&interface=ui)
 
 ## Running the agent image
 {: #run-agent-image}
