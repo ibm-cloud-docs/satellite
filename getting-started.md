@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-06-26"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -31,7 +31,6 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 | Term | Description |
 | ------ | ------------------------- |
 | {{site.data.keyword.satelliteshort}} location | A {{site.data.keyword.satelliteshort}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud.   |
-| {{site.data.keyword.satelliteshort}} Connector | A {{site.data.keyword.satelliteshort}} Connector is a deployment model that enables only the secure communications from {{site.data.keyword.cloud_notm}} to on-prem resources via a light weight container deployed by the client on their own Docker hosts. This option brings all the security and auditability of {{site.data.keyword.satelliteshort}} communication, but with much lower resources required. |
 | {{site.data.keyword.satelliteshort}} hosts | A {{site.data.keyword.satelliteshort}} host is a compute source that resides in your infrastructure provider or even locally. After you attach your hosts to a {{site.data.keyword.satelliteshort}} location, assign the hosts to the location control plane or to a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services to provide the computing power to run your service workloads. See [Attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts). |
 | {{site.data.keyword.satelliteshort}}-enabled service | An {{site.data.keyword.cloud_notm}} service that you can set up in a Satellite location, such as a {{site.data.keyword.redhat_openshift_notm}} cluster. The service is managed from the {{site.data.keyword.cloud_notm}} region that your location is managed from, but you provide the infrastructure hosts to run the service's resources in your location. See [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services). |
 | {{site.data.keyword.satelliteshort}} Config | Based on the [Razee open source project](https://github.com/razee-io/Razee){: external}, {{site.data.keyword.satelliteshort}} Config is a continuous delivery tool that you can use to consistently roll out versions of your apps across clusters in your {{site.data.keyword.satelliteshort}} location. See [Deploying {{site.data.keyword.redhat_openshift_notm}} resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-setup-clusters-satconfig). |

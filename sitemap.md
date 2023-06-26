@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-23"
+lastupdated: "2023-06-26"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -143,21 +143,6 @@ subcollection: satellite
 * [I created a {{site.data.keyword.satelliteshort}} location, what comes next?](/docs/satellite?topic=satellite-location-host#loc-host-whats-next)
 
 
-## Understanding {{site.data.keyword.satelliteshort}} Connector
-{: #sitemap_understanding_connector}
-
-
-[Understanding {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-understand-connectors#understand-connectors)
-
-* [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors#min-requirements)
-
-* [{{site.data.keyword.satelliteshort}} Connector and Secure Gateway](/docs/satellite?topic=satellite-understand-connectors#replace-secure-gateway)
-
-* [{{site.data.keyword.satelliteshort}} Connector FAQ](/docs/satellite?topic=satellite-understand-connectors#connector-faq)
-
-* [Next steps](/docs/satellite?topic=satellite-understand-connectors#connector-understand-next-steps)
-
-
 ## Supported Satellite-enabled IBM Cloud services
 {: #sitemap_supported_satellite-enabled_ibm_cloud_services}
 
@@ -174,14 +159,6 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june23)
-
-    * [23 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2323)
-
-        * New! {{site.data.keyword.satelliteshort}} Connector
-
-        * Setting up Connector as a Secure Gateway replacement
-
-        * Understanding your responsibilites with {{site.data.keyword.satelliteshort}} Connector
 
     * [22 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2223)
 
@@ -1097,7 +1074,13 @@ subcollection: satellite
 
 * [Related information](/docs/satellite?topic=satellite-plug-ins#cli-install-relinfo)
 
-[Installing the OpenShift CLI](/docs/satellite?topic=satellite-cli-install#cli-install)
+[Installing the CLI](/docs/satellite?topic=satellite-cli-install#cli-install)
+
+* [Understanding the CLI tools](/docs/satellite?topic=satellite-cli-install#cli-understand)
+
+* [Run the installation command](/docs/satellite?topic=satellite-cli-install#run-the-installation-command)
+
+* [Install the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/satellite?topic=satellite-cli-install#install-kubectl-cli)
 
 [Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
 
@@ -1505,43 +1488,6 @@ subcollection: satellite
 * [Removing locations from the console](/docs/satellite?topic=satellite-host-remove#location-remove-console)
 
 * [Removing locations with the CLI](/docs/satellite?topic=satellite-host-remove#location-remove-cli)
-
-
-## Creating connectors
-{: #sitemap_creating_connectors}
-
-
-[Creating a Connector](/docs/satellite?topic=satellite-create-connector#create-connector)
-
-* [Next steps](/docs/satellite?topic=satellite-create-connector#connector-next-steps)
-
-[Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#run-agent-locally)
-
-* [Reviewing the agent image parameters](/docs/satellite?topic=satellite-run-agent-locally#review-parameters)
-
-* [Creating the local configuration files](/docs/satellite?topic=satellite-run-agent-locally#create-config-file)
-
-* [Pulling the agent image](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image)
-
-* [Running the agent image](/docs/satellite?topic=satellite-run-agent-locally#run-agent-image)
-
-* [Next steps](/docs/satellite?topic=satellite-run-agent-locally#agent-next-steps)
-
-[Running your Connector agent as a service in Docker Swarm Mode for high availability](/docs/satellite?topic=satellite-run-agent-swarm#run-agent-swarm)
-
-[{{site.data.keyword.satelliteshort}} Connector end-to-end example](/docs/satellite?topic=satellite-end-to-end#end-to-end)
-
-* [Creating a Docker container](/docs/satellite?topic=satellite-end-to-end#create-container)
-
-* [Creating your Link endpoint](/docs/satellite?topic=satellite-end-to-end#create-link-endpoint)
-
-* [Adding TLS support](/docs/satellite?topic=satellite-end-to-end#add-tls)
-
-[Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints#connector-create-endpoints)
-
-* [Creating endpoints from the console](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-endpoint-console)
-
-* [Creating an access control list rule for your endpoint](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-rule-console)
 
 
 ## Managing apps with Satellite Config
@@ -3591,27 +3537,6 @@ subcollection: satellite
 [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown#ts-host-unassigned-unknown)
 
 [Why is my host attach script triggering a state change in Terraform?](/docs/satellite?topic=satellite-ts-host-terraform#ts-host-terraform)
-
-
-### Connectors
-{: #sitemap_connectors}
-
-
-[Debugging Connectors](/docs/satellite?topic=satellite-debug-connector#debug-connector)
-
-* [Tunnel cannot be established - Agent does not show up on list of Active Agents](/docs/satellite?topic=satellite-debug-connector#agent-not-listed)
-
-* [Tunnel is established - Agent container is listed in the Active Agents tab on the console](/docs/satellite?topic=satellite-debug-connector#agent-listed)
-
-[Why can't I reach my endpoint from {{site.data.keyword.cloud_notm}}?](/docs/satellite?topic=satellite-ts-connector-cannot-reach#ts-connector-cannot-reach)
-
-[Why is my agent not showing up in the list of Active Agents?](/docs/satellite?topic=satellite-ts-connector-not-in-list#ts-connector-not-in-list)
-
-[Why isn't my API key working?](/docs/satellite?topic=satellite-ts-connector-api#ts-connector-api)
-
-[Why can't I see Connector logs?](/docs/satellite?topic=satellite-ts-connector-delete-apikey#ts-connector-delete-apikey)
-
-[Why is my Connector Agent unable to establish the tunnel with {{site.data.keyword.cloud_notm}}?](/docs/satellite?topic=satellite-ts-connector-tunnel#ts-connector-tunnel)
 
 
 ### Clusters

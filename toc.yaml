@@ -22,7 +22,6 @@ toc:
             - tenancy-model.md
             - edge-usecase.md
       - location-host.md
-      - understand-connectors.md
       - managed-services.md
       - release-notes.md
   - navgroup:
@@ -136,14 +135,6 @@ toc:
               - config-http-proxy.md
               - config-custom-ntp.md
               - host-remove.md
-        - topicgroup:
-            label: Creating connectors
-            topics:
-              - create-connector.md
-              - run-agent-locally.md
-              - run-agent-swarm.md
-              - end-to-end.md
-              - connector-create-endpoints.md
         - topicgroup:
             label: Managing apps with Satellite Config
             topics:
@@ -313,15 +304,6 @@ toc:
                     - ts-http-proxy.md
                     - ts-host-unassigned-unknown.md
                     - ts-terraform.md
-              - topicgroup:
-                  label: Connectors
-                  topics:
-                    - debug-connector.md
-                    - ts-connector-cannot-reach.md
-                    - ts-connector-not-in-list.md
-                    - ts-connector-api.md
-                    - ts-connector-delete-apikey.md
-                    - ts-connector-tunnel.md
               - topicgroup:
                   label: Clusters
                   topics:
