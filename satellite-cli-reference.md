@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-12"
+lastupdated: "2023-06-22"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1730,6 +1730,10 @@ ibmcloud sat location rm --location LOCATION [-f] [-q]
 ibmcloud sat location rm --location mylocation
 ```
 {: pre}
+
+
+
+
 
 ## Resource commands
 {: #sat-resource-commands}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-06-26"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -159,6 +159,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june23)
+
+    * [26 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2623)
+
+        * CLI change log
 
     * [22 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2223)
 
@@ -344,11 +348,11 @@ subcollection: satellite
 
     * [14 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1422)
 
-        * Satellite for resellers
+        * {{site.data.keyword.satelliteshort}} for resellers
 
     * [9 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june922)
 
-        * Satellite use cases
+        * {{site.data.keyword.satelliteshort}} use cases
 
     * [1 June 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june122)
 
@@ -1074,7 +1078,13 @@ subcollection: satellite
 
 * [Related information](/docs/satellite?topic=satellite-plug-ins#cli-install-relinfo)
 
-[Installing the OpenShift CLI](/docs/satellite?topic=satellite-cli-install#cli-install)
+[Installing the CLI](/docs/satellite?topic=satellite-cli-install#cli-install)
+
+* [Understanding the CLI tools](/docs/satellite?topic=satellite-cli-install#cli-understand)
+
+* [Run the installation command](/docs/satellite?topic=satellite-cli-install#cli-install-include-step1-install-idt)
+
+* [Install the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/satellite?topic=satellite-cli-install#install-kubectl-cli)
 
 [Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
 
