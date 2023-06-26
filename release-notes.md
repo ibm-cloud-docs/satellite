@@ -27,6 +27,14 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 
 
+### 26 June 2023
+{: #satellite-june2623}
+{: release-note}
+
+CLI change log
+:   Updated the CLI plug-in change log page for the [release of version 1.0.528](/docs/satellite?topic=satellite-satellite-cli-changelog).
+
+
 ### 22 June 2023
 {: #satellite-june2223}
 {: release-note}

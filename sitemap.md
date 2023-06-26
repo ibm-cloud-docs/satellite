@@ -160,6 +160,10 @@ subcollection: satellite
 
 * [June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june23)
 
+    * [26 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2623)
+
+        * CLI change log
+
     * [22 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2223)
 
         * Storage template revisions
@@ -1078,7 +1082,7 @@ subcollection: satellite
 
 * [Understanding the CLI tools](/docs/satellite?topic=satellite-cli-install#cli-understand)
 
-* [Run the installation command](/docs/satellite?topic=satellite-cli-install#run-the-installation-command)
+* [Run the installation command](/docs/satellite?topic=satellite-cli-install#cli-install-include-step1-install-idt)
 
 * [Install the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/satellite?topic=satellite-cli-install#install-kubectl-cli)
 
