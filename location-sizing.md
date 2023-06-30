@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-05-30"
+lastupdated: "2023-06-30"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -37,9 +37,6 @@ Plan to keep **at least 3 extra hosts** attached and unassigned to your location
 
 The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a non Red Hat CoreOS enabled location. These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
 
-While you can deploy a cluster to a location with only 3 control plane hosts, use this type of bare minimum setup for only testing and proof of concept purposes.
-{: note}
-
 
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
@@ -68,9 +65,6 @@ While you can deploy a cluster to a location with only 3 control plane hosts, us
 {: #control-plane-how-many-clusters-rhcos}
 
 The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a Red Hat CoreOS enabled location. These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
-
-While you can deploy a cluster to a location that uses 3 hosts with 4 vCPU and 16 GB for Red Hat CoreOS enabled locations, use this type of bare minimum setup for only testing and proof of concept purposes.
-{: note}
 
 
 
@@ -108,7 +102,7 @@ For a non-RHCOS enabled location, your hosts must have at least 4 vCPU and 16 GB
 
 | Number of control plane hosts | Max clusters in location |  Max cluster size |
 | --- | --- | --- |
-| 3 hosts 4x16 | Up to 3 clusters | 20 workers per cluster |
+| 3 hosts 4x16 | 1 cluster | 20 workers per cluster |
 {: class="simple-tab-table"}
 {: #demo-non-rhcos}
 {: tab-title="Non RHCOS enabled location"}
@@ -117,7 +111,7 @@ For a non-RHCOS enabled location, your hosts must have at least 4 vCPU and 16 GB
 
 | Number of control plane hosts | Max clusters in location |  Max cluster size |
 | --- | --- | --- |
-| 3 hosts 8x32 | Up to 3 clusters | 20 workers per cluster |
+| 3 hosts 8x32 | 1 cluster | 20 workers per cluster |
 {: class="simple-tab-table"}
 {: #demo-rhcos}
 {: tab-title="RHCOS enabled location"}
