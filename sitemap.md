@@ -1046,45 +1046,17 @@ subcollection: satellite
 {: #sitemap_installing_the_cli}
 
 
-[Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-install-ibmcloud-cli#install-ibmcloud-cli)
-
-* [Before you begin](/docs/satellite?topic=satellite-install-ibmcloud-cli#before-download-cli)
-
-* [Installing with an installer](/docs/satellite?topic=satellite-install-ibmcloud-cli#ibmcloud-cli-installer)
-
-* [Installing from the shell](/docs/satellite?topic=satellite-install-ibmcloud-cli#shell_install)
-
-* [Installing to a custom directory](/docs/satellite?topic=satellite-install-ibmcloud-cli#install-custom-dir)
-
-* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-install-ibmcloud-cli#update-ibmcloud-cli)
-
-[Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/satellite?topic=satellite-plug-ins#plug-ins)
-
-* [Before you begin](/docs/satellite?topic=satellite-plug-ins#cli-before-you-begin)
-
-* [Searching for a plug-in](/docs/satellite?topic=satellite-plug-ins#cli-search-plugin)
-
-* [Installing a plug-in from the {{site.data.keyword.cloud_notm}} CLI repository](/docs/satellite?topic=satellite-plug-ins#install-from-repo)
-
-    * [Installing a specific plug-in](/docs/satellite?topic=satellite-plug-ins#cli-install-plugin)
-
-    * [Installing all plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-install-all)
-
-    * [Installing multiple plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-install-multiple)
-
-* [Confirming installed plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-install-view)
-
-* [Updating installed plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-update-plugin)
-
-* [Related information](/docs/satellite?topic=satellite-plug-ins#cli-install-relinfo)
-
 [Installing the CLI](/docs/satellite?topic=satellite-cli-install#cli-install)
 
 * [Understanding the CLI tools](/docs/satellite?topic=satellite-cli-install#cli-understand)
 
 * [Run the installation command](/docs/satellite?topic=satellite-cli-install#cli-install-include-step1-install-idt)
 
-* [Install the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/satellite?topic=satellite-cli-install#install-kubectl-cli)
+[Updating the CLI](/docs/satellite?topic=satellite-cli-update#cli-update)
+
+* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-update#cli-update-include-update-ibmcloud-cli)
+
+* [Updating installed plug-ins](/docs/satellite?topic=satellite-cli-update#cli-update-include-cli-update-plugin)
 
 [Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
 

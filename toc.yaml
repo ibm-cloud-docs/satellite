@@ -43,9 +43,8 @@ toc:
         - topicgroup:
             label: Installing the CLI
             topics:
-              - include: ../cli/reference/ibmcloud/download_cli.md
-              - include: ../cli/reference/ibmcloud/extend_cli.md
-              - include: ../openshift/cli-install.md
+              - cli-install.md
+              - include: ../openshift/cli-update.md
               - include: ../cli/reference/ibmcloud/uninstall_cli.md
         - infrastructure-plan.md
         - topicgroup:
