@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-06-22"
+lastupdated: "2023-07-05"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -37,6 +37,7 @@ The following tables list the `ibmcloud sat` command groups. For a complete list
 | [Endpoint commands](#sat-endpoint-commands)| Create, view, and manage Satellite endpoints. |
 | [Host commands](#sat-host-commands)| View and modify Satellite host settings. |
 | [Location commands](#sat-location-commands)| Create, view, and modify Satellite locations. |
+| [Connector commands](#sat-connector-commands)| Create, view, and modify Satellite connectors. |
 | [Resource commands](#sat-resource-commands)| Search and view Kubernetes resources that are managed by Satellite. |
 | [Service commands](#sat-service-commands)| View Satellite service clusters. |
 | [Storage commands](#sat-storage-commands)| View and manage Satellite storage resources. |
@@ -1728,6 +1729,138 @@ ibmcloud sat location rm --location LOCATION [-f] [-q]
 
 ```sh
 ibmcloud sat location rm --location mylocation
+```
+{: pre}
+
+
+
+
+## Connector commands
+{: #sat-connector-commands}
+
+Use these commands to create and manage {{site.data.keyword.satelliteshort}} Connectors.
+{: shortdesc}
+
+
+This `connector` commands are an experimental feature that are available for evaluation and testing purposes and might change without notice.
+{: experimental}
+
+
+### `ibmcloud sat connector create`
+{: #connector-create}
+
+Create a {{site.data.keyword.satelliteshort}} Connector. 
+{: shortdesc}
+
+```sh
+ibmcloud sat connector create --name NAME --region REGION --resource-group GROUP [-q]
+```
+{: pre}
+
+#### Command options
+{: #connector-create-command-options}
+
+`--name NAME`
+:    Required. Enter a name for your Connector. 
+
+`--region REGION`
+:    Required. Enter the IBM Cloud region to manage your Satellite Connector. 
+
+`--resource-group GROUP`
+:    Required. Enter the ID of the resource group. 
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #connector-create-example}
+
+```sh
+ibmcloud sat connector create --name myconnector --region us-south --resource-group myadmins
+```
+{: pre}
+
+### `ibmcloud sat connector get`
+{: #connector-get}
+
+View the details of a {{site.data.keyword.satelliteshort}} Connector.
+{: shortdesc}
+
+```sh
+ibmcloud sat connector get --connector-id ID [-q]
+```
+{: pre}
+
+#### Command options
+{: #connector-get-command-options}
+
+`--connector-id ID`
+:    Required. Enter the ID for your Connector to view. 
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #connector-get-example}
+
+```sh
+ibmcloud sat connector get --connector-id myconnector01
+```
+{: pre}
+
+### `ibmcloud sat connector ls`
+{: #connector-ls}
+
+List all {{site.data.keyword.satelliteshort}} Connectors in your IBM Cloud account with or without region.
+{: shortdesc}
+
+```sh
+ibmcloud sat connector ls [-q] [--region REGION]
+```
+{: pre}
+
+#### Command options
+{: #connector-ls-command-options}
+
+`--region REGION`
+:    Optional. Enter the region to list Connectors for. 
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #connector-ls-example}
+
+```sh
+ibmcloud sat connector ls --region us-south
+```
+{: pre}
+
+### `ibmcloud sat connector rm`
+{: #connector-rm}
+
+Delete a {{site.data.keyword.satelliteshort}} Connector. 
+{: shortdesc}
+
+```sh
+ibmcloud sat connector rm --connector-id ID [-q]
+```
+{: pre}
+
+#### Command options
+{: #connector-rm-command-options}
+
+`--connector-id ID`
+:    Required. Enter the ID of the Connector to delete. 
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #connector-rm-example}
+
+```sh
+ibmcloud sat connector rm --connector-id myconnector
 ```
 {: pre}
 

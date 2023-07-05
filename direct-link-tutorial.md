@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-12"
+lastupdated: "2023-07-05"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -121,7 +121,7 @@ High level steps include:
     - **Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM platform access role for {{site.data.keyword.cloudcerts_long_notm}}
     - **Viewer** {{site.data.keyword.cloud_notm}} IAM platform access role for the resource group that you plan to use with {{site.data.keyword.satelliteshort}}
     - **Manager** {{site.data.keyword.cloud_notm}} IAM service access role for {{site.data.keyword.bplong_notm}}
- 
+- Specifically provision a Kubernetes cluster and deploy NGINX reverse proxy in it to forward to the {{site.data.keyword.dl_short}} endpoints. 
   
 ## Creating a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location 
 {: #dl-create-coreos-location}
