@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-06-30"
+lastupdated: "2023-07-05"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -143,6 +143,25 @@ subcollection: satellite
 * [I created a {{site.data.keyword.satelliteshort}} location, what comes next?](/docs/satellite?topic=satellite-location-host#loc-host-whats-next)
 
 
+## Understanding Satellite Connector
+{: #sitemap_understanding_satellite_connector}
+
+
+[{{site.data.keyword.satelliteshort}} Connector overview](/docs/satellite?topic=satellite-understand-connectors#understand-connectors)
+
+* [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors#min-requirements)
+
+* [Next steps](/docs/satellite?topic=satellite-understand-connectors#connector-understand-next-steps)
+
+[{{site.data.keyword.satelliteshort}} Connector and Secure Gateway](/docs/satellite?topic=satellite-connector-and-secure-gateway#connector-and-secure-gateway)
+
+* [Terminology mapping](/docs/satellite?topic=satellite-connector-and-secure-gateway#secure-gateway-connector-terms)
+
+* [Capabilities](/docs/satellite?topic=satellite-connector-and-secure-gateway#capability-comparison)
+
+[{{site.data.keyword.satelliteshort}} Connector FAQ](/docs/satellite?topic=satellite-connector-faq#connector-faq)
+
+
 ## Supported Satellite-enabled IBM Cloud services
 {: #sitemap_supported_satellite-enabled_ibm_cloud_services}
 
@@ -157,6 +176,16 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [July 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july23)
+
+    * [5 July 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july0523)
+
+        * New! {{site.data.keyword.satelliteshort}} Connector
+
+        * Setting up Connector as a Secure Gateway replacement
+
+        * Understanding your responsibilities with {{site.data.keyword.satelliteshort}} Connector
 
 * [June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june23)
 
@@ -1046,45 +1075,17 @@ subcollection: satellite
 {: #sitemap_installing_the_cli}
 
 
-[Installing the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-install-ibmcloud-cli#install-ibmcloud-cli)
-
-* [Before you begin](/docs/satellite?topic=satellite-install-ibmcloud-cli#before-download-cli)
-
-* [Installing with an installer](/docs/satellite?topic=satellite-install-ibmcloud-cli#ibmcloud-cli-installer)
-
-* [Installing from the shell](/docs/satellite?topic=satellite-install-ibmcloud-cli#shell_install)
-
-* [Installing to a custom directory](/docs/satellite?topic=satellite-install-ibmcloud-cli#install-custom-dir)
-
-* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-install-ibmcloud-cli#update-ibmcloud-cli)
-
-[Extending {{site.data.keyword.cloud_notm}} CLI with plug-ins](/docs/satellite?topic=satellite-plug-ins#plug-ins)
-
-* [Before you begin](/docs/satellite?topic=satellite-plug-ins#cli-before-you-begin)
-
-* [Searching for a plug-in](/docs/satellite?topic=satellite-plug-ins#cli-search-plugin)
-
-* [Installing a plug-in from the {{site.data.keyword.cloud_notm}} CLI repository](/docs/satellite?topic=satellite-plug-ins#install-from-repo)
-
-    * [Installing a specific plug-in](/docs/satellite?topic=satellite-plug-ins#cli-install-plugin)
-
-    * [Installing all plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-install-all)
-
-    * [Installing multiple plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-install-multiple)
-
-* [Confirming installed plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-install-view)
-
-* [Updating installed plug-ins](/docs/satellite?topic=satellite-plug-ins#cli-update-plugin)
-
-* [Related information](/docs/satellite?topic=satellite-plug-ins#cli-install-relinfo)
-
 [Installing the CLI](/docs/satellite?topic=satellite-cli-install#cli-install)
 
 * [Understanding the CLI tools](/docs/satellite?topic=satellite-cli-install#cli-understand)
 
 * [Run the installation command](/docs/satellite?topic=satellite-cli-install#cli-install-include-step1-install-idt)
 
-* [Install the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/satellite?topic=satellite-cli-install#install-kubectl-cli)
+[Updating the CLI](/docs/satellite?topic=satellite-cli-update#cli-update)
+
+* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-update#cli-update-include-update-ibmcloud-cli)
+
+* [Updating installed plug-ins](/docs/satellite?topic=satellite-cli-update#cli-update-include-cli-update-plugin)
 
 [Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
 
@@ -1492,6 +1493,43 @@ subcollection: satellite
 * [Removing locations from the console](/docs/satellite?topic=satellite-host-remove#location-remove-console)
 
 * [Removing locations with the CLI](/docs/satellite?topic=satellite-host-remove#location-remove-cli)
+
+
+## Creating connectors
+{: #sitemap_creating_connectors}
+
+
+[Creating a Connector](/docs/satellite?topic=satellite-create-connector#create-connector)
+
+* [Next steps](/docs/satellite?topic=satellite-create-connector#connector-next-steps)
+
+[Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#run-agent-locally)
+
+* [Reviewing the agent image parameters](/docs/satellite?topic=satellite-run-agent-locally#review-parameters)
+
+* [Creating the local configuration files](/docs/satellite?topic=satellite-run-agent-locally#create-config-file)
+
+* [Pulling the agent image](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image)
+
+* [Running the agent image](/docs/satellite?topic=satellite-run-agent-locally#run-agent-image)
+
+* [Next steps](/docs/satellite?topic=satellite-run-agent-locally#agent-next-steps)
+
+[Running your Connector agent as a service in Docker Swarm Mode for high availability](/docs/satellite?topic=satellite-run-agent-swarm#run-agent-swarm)
+
+[{{site.data.keyword.satelliteshort}} Connector end-to-end example](/docs/satellite?topic=satellite-end-to-end#end-to-end)
+
+* [Creating a Docker container](/docs/satellite?topic=satellite-end-to-end#create-container)
+
+* [Creating your Link endpoint](/docs/satellite?topic=satellite-end-to-end#create-link-endpoint)
+
+* [Adding TLS support](/docs/satellite?topic=satellite-end-to-end#add-tls)
+
+[Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints#connector-create-endpoints)
+
+* [Creating endpoints from the console](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-endpoint-console)
+
+* [Creating an access control list rule for your endpoint](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-rule-console)
 
 
 ## Managing apps with Satellite Config
@@ -2726,6 +2764,16 @@ subcollection: satellite
 
     * [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm)
 
+* [Connector commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-connector-commands)
+
+    * [`ibmcloud sat connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create)
+
+    * [`ibmcloud sat connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get)
+
+    * [`ibmcloud sat connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls)
+
+    * [`ibmcloud sat connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm)
+
 * [Resource commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-resource-commands)
 
     * [`ibmcloud sat resource get`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get)
@@ -2937,6 +2985,12 @@ subcollection: satellite
 ## Version history
 {: #sitemap_version_history}
 
+
+[Connector agent image change log](/docs/satellite?topic=satellite-cl-connector-agent-image#cl-connector-agent-image)
+
+* [Version 1.1](/docs/satellite?topic=satellite-cl-connector-agent-image#1.1-change-log)
+
+    * [Version 1.1.0, released 20 June 2023](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.0-change-log)
 
 
 ### Storage template version history
@@ -3541,6 +3595,27 @@ subcollection: satellite
 [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown#ts-host-unassigned-unknown)
 
 [Why is my host attach script triggering a state change in Terraform?](/docs/satellite?topic=satellite-ts-host-terraform#ts-host-terraform)
+
+
+### Connectors
+{: #sitemap_connectors}
+
+
+[Debugging Connectors](/docs/satellite?topic=satellite-debug-connector#debug-connector)
+
+* [Tunnel cannot be established - Agent does not show up on list of Active Agents](/docs/satellite?topic=satellite-debug-connector#agent-not-listed)
+
+* [Tunnel is established - Agent container is listed in the Active Agents tab on the console](/docs/satellite?topic=satellite-debug-connector#agent-listed)
+
+[Why can't I reach my endpoint from {{site.data.keyword.cloud_notm}}?](/docs/satellite?topic=satellite-ts-connector-cannot-reach#ts-connector-cannot-reach)
+
+[Why is my agent not showing up in the list of Active Agents?](/docs/satellite?topic=satellite-ts-connector-not-in-list#ts-connector-not-in-list)
+
+[Why isn't my API key working?](/docs/satellite?topic=satellite-ts-connector-api#ts-connector-api)
+
+[Why can't I see Connector logs?](/docs/satellite?topic=satellite-ts-connector-delete-apikey#ts-connector-delete-apikey)
+
+[Why is my Connector Agent unable to establish the tunnel with {{site.data.keyword.cloud_notm}}?](/docs/satellite?topic=satellite-ts-connector-tunnel#ts-connector-tunnel)
 
 
 ### Clusters

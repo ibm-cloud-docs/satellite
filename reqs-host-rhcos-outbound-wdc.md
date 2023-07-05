@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-02"
+lastupdated: "2023-07-05"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -59,7 +59,7 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
      * Destination hostnames: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`
      * Protocol and ports: HTTPS 443
 
-Allow Link connectors to connect to the Link tunnel server endpoint.
+Allow Link connectors to connect to the Link tunnel server endpoint. {: #link-connector-wdc}
 :    * Destination IP addresses: 169.47.156.154, 169.63.148.250, 169.62.1.34
      * Destination hostnames: `c-01-ws.us-east.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
