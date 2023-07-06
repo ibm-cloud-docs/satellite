@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-07-06"
 
 keywords: satellite, connector
 
@@ -79,7 +79,7 @@ There are several ways to pass agent configuration environment variable informat
 
 1. Pull the latest version of the published image. You can find the list of published versions from [IBM Satellite Connector Agent Release History](/docs/satellite?topic=satellite-cl-connector-agent-image).
     ```sh
-    icr.io/ibm/satellite-connector/satellite-connector-agent:latest
+    docker pull icr.io/ibm/satellite-connector/satellite-connector-agent:latest
     ```
     {: pre}
 
