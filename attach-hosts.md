@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-07-07"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -128,8 +128,8 @@ After you attach a host to your location, {{site.data.keyword.satelliteshort}} d
 
 To attach Red Hat CoreOS (RHCOS) hosts that reside in your on-premises data center to your location, follow these general steps to run the host attachment script.
 
-1. [Download the host script](#attach-hosts) for your location. Note that for RHCOS hosts, the attachment script is a CoreOS ignition (`.ign`) file.
-2. Boot your RHCOS host and include the file path to the ignition script as the `--user-data`. For example: `--user-data @/tmp/attach_hypershift.ign`.
+1. [Download the host script](#attach-hosts) for your location. Note that for RHCOS hosts, the attachment script is a Red Hat CoreOS ignition (`.ign`) file.
+2. Boot your RHCOS host and include the file path to the ignition script as the `--user-data`. This command varies, depending on the type of host that you are adding. For example, if your hosts are Amazon Web Services (AWS) cloud hosts, then you add `--user-data file:///tmp/attach_hypershift.ign` to your [launch template](https://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html){: external}. Consult your provider documentation for more information about how to boot your host and include a file path to the ignition script.
 3. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. This process might take a few minutes to complete. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.redhat_openshift_notm}} cluster.
 4. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
 
