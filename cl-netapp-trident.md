@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-03-23"
+lastupdated: "2023-07-07"
 
 
 keywords: satellite storage, change log, version history, netapp trident
@@ -30,7 +30,7 @@ Review the version history for the `netapp-trident` {{site.data.keyword.satellit
 
 - Resolves the following CVEs: [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external} 
 - Updates the UBI to version `8.7-1049.1675784874`.
-- Updates Golang to version `1.18.9`.
+- Updates Go to version `1.18.9`.
 - Initial release.
 
 

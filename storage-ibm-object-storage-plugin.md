@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-07-10"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -38,20 +38,29 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 Create the Kubernetes secret in your cluster that contains your service credentials.
 
+1. Follow the steps based on your object storage provider to create a secret in your cluster. When you create your secret, all values are automatically encoded to base64. In the following example, the secret name is `cos-write-access`.
 
-1. Run one of the following commands to create a secret in your cluster. When you create your secret, all values are automatically encoded to base64. In the following example, the secret name is `cos-write-access`.
+    - {{site.data.keyword.cos_full_notm}}
+    
+        1. Fnd your service instance ID.
+            ```sh
+            ibmcloud resource service-instance <service_name> | grep GUID
+            ```
+            {: pre}
 
-    Example `create secret` command for {{site.data.keyword.cos_full_notm}} that uses an API key.
-    ```sh
-    oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=API-KEY --from-literal=service-instance-id=SERVICE-INSTANCE-ID
-    ```
-    {: pre}
+        1. Create the secret in your cluster.
 
-    Example command to create a secret for your AWS or Wasabi credentials.
-    ```sh
-    oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=ACCESS-KEY-ID --from-literal=secret-key=SECRET-ACCESS-KEY
-    ```
-    {: pre}
+            ```sh
+            oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=API-KEY --from-literal=service-instance-id=SERVICE-INSTANCE-ID
+            ```
+            {: pre}
+
+    - AWS or Wasabi
+
+        ```sh
+        oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=ACCESS-KEY-ID --from-literal=secret-key=SECRET-ACCESS-KEY
+        ```
+        {: pre}
 
 
 
@@ -201,27 +210,23 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
     apiVersion: v1
     kind: Pod
     metadata:
-    name: demo-pod
-    namespace: demo
+      name: demo-pod
+      namespace: default
     spec:
-    securityContext:
+      securityContext:
         runAsUser: 2000
         fsGroup: 2000
-    volumes:
-    - name: demo-vol
+      volumes:
+      - name: demo-vol
         persistentVolumeClaim:
             claimName: demo
-    - name: hostpath-test
-        hostPath:
-            path: /var/mydata01
-            type: DirectoryOrCreate
-    containers:
-    - name: test
-        image: nginxs
+      containers:
+      - name: test
+        image: nginxinc/nginx-unprivileged
         imagePullPolicy: Always
         volumeMounts:
         - name: demo-vol
-        mountPath: /mnt/cosvol
+          mountPath: /mnt/cosvol
     ```
     {: codeblock}
    
@@ -229,7 +234,7 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
 1. Create the pod in your cluster.
 
     ```sh
-    oc apply -f ibm-object-storage-plugin
+    oc apply -f demo-pod.yaml
     ```
     {: pre}
 
@@ -242,37 +247,17 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
 
     ```sh
     NAME                                READY   STATUS    RESTARTS   AGE
-    ibm-object-storage-plugin           1/1     Running   0          2m58s
+    demo-pod                            1/1     Running   0          2m58s
     ```
     {: screen}
 
 1. Verify that the app can write to your block storage volume by logging in to your pod.
 
-    ```sh
-    oc exec ibm-object-storage-plugin
-    ```
-    {: pre}
+   ```sh
+   oc exec demo-pod -- bash -c "touch /mnt/cosvol/test.txt && ls /mnt/cosvol" test.txt
+   ```
+   {: pre}
 
-1. Change directories and create a test file.
-
-    ```sh
-    cd /mnt/cosvol/ && vi test.txt && ls
-    ```
-    {: pre}
-
-    Example output
-    
-    ```sh
-    test.txt
-    ```
-    {: screen}
-
-1. Exit the pod.
-
-    ```sh
-    exit
-    ```
-    {: pre}
 
 
 
