@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-07-13"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1746,14 +1746,14 @@ This `connector` commands are an experimental feature that are available for eva
 {: experimental}
 
 
-### `ibmcloud sat connector create`
+### `ibmcloud sat experimental connector create`
 {: #connector-create}
 
 Create a {{site.data.keyword.satelliteshort}} Connector. 
 {: shortdesc}
 
 ```sh
-ibmcloud sat connector create --name NAME --region REGION --resource-group GROUP [-q]
+ibmcloud sat experimental connector create --name NAME --region REGION --resource-group GROUP [-q]
 ```
 {: pre}
 
@@ -1776,18 +1776,18 @@ ibmcloud sat connector create --name NAME --region REGION --resource-group GROUP
 {: #connector-create-example}
 
 ```sh
-ibmcloud sat connector create --name myconnector --region us-south --resource-group myadmins
+ibmcloud sat experimental connector create --name myconnector --region us-south --resource-group myadmins
 ```
 {: pre}
 
-### `ibmcloud sat connector get`
+### `ibmcloud sat experimental connector get`
 {: #connector-get}
 
 View the details of a {{site.data.keyword.satelliteshort}} Connector.
 {: shortdesc}
 
 ```sh
-ibmcloud sat connector get --connector-id ID [-q]
+ibmcloud sat experimental connector get --connector-id ID [-q]
 ```
 {: pre}
 
@@ -1804,18 +1804,18 @@ ibmcloud sat connector get --connector-id ID [-q]
 {: #connector-get-example}
 
 ```sh
-ibmcloud sat connector get --connector-id myconnector01
+ibmcloud sat experimental connector get --connector-id myconnector01
 ```
 {: pre}
 
-### `ibmcloud sat connector ls`
+### `ibmcloud sat experimental connector ls`
 {: #connector-ls}
 
 List all {{site.data.keyword.satelliteshort}} Connectors in your IBM Cloud account with or without region.
 {: shortdesc}
 
 ```sh
-ibmcloud sat connector ls [-q] [--region REGION]
+ibmcloud sat experimental connector ls [-q] [--region REGION]
 ```
 {: pre}
 
@@ -1832,18 +1832,18 @@ ibmcloud sat connector ls [-q] [--region REGION]
 {: #connector-ls-example}
 
 ```sh
-ibmcloud sat connector ls --region us-south
+ibmcloud sat experimental connector ls --region us-south
 ```
 {: pre}
 
-### `ibmcloud sat connector rm`
+### `ibmcloud sat experimental connector rm`
 {: #connector-rm}
 
 Delete a {{site.data.keyword.satelliteshort}} Connector. 
 {: shortdesc}
 
 ```sh
-ibmcloud sat connector rm --connector-id ID [-q]
+ibmcloud sat experimental connector rm --connector-id ID [-q]
 ```
 {: pre}
 
@@ -1860,7 +1860,7 @@ ibmcloud sat connector rm --connector-id ID [-q]
 {: #connector-rm-example}
 
 ```sh
-ibmcloud sat connector rm --connector-id myconnector
+ibmcloud sat experimental connector rm --connector-id myconnector
 ```
 {: pre}
 
