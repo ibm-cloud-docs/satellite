@@ -37,6 +37,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 {: #netapp-trident-config-create-console}
 {: ui}
 
+
 1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
 1. Enter a name for your configuration.
@@ -51,6 +52,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 ## Creating a configuration in the CLI
 {: #netapp-trident-config-create-cli}
 {: cli}
+
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
