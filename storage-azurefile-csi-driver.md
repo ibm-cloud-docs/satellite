@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-07-17"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -43,7 +43,7 @@ To use the Azure File CSI driver storage template, complete the following tasks.
     If you choose to manually assign hosts, you must [label your worker nodes](#azure-file-label-nodes) before creating your storage configuration.
     {: important}
     
-1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+
 
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure. Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage.
 

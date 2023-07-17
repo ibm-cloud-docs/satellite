@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-07-17"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -37,7 +37,7 @@ Be sure to complete all prerequisite and installation steps before assigning hos
 1. Review the [compatibility and requirements documentation](https://www.ibm.com/docs/en/stg-block-csi-driver){: external}.
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+
 
 
 

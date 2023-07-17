@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-07-17"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -30,7 +30,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 To use the AWS EFS storage template, complete the following tasks:
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Amazon Web Services (AWS). Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage. For more information about how to add hosts from AWS to your {{site.data.keyword.satelliteshort}} location so that you can assign them to a cluster, see [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach).
 1. Manually provision an [AWS EFS file system](https://docs.aws.amazon.com/efs/latest/ug/gs-step-two-create-efs-resources.html){: external} in your AWS account. Make sure that the EFS device is in the same VPC and subnet that you used for your AWS hosts, and that your hosts and EFS device use the same security group.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-07-17"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -29,7 +29,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 {: #sat-storage-vpc-csi-prereq}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+
 1. [Create an API key for access to your clusters](https://cloud.ibm.com/iam/apikeys){: external}
 
 There is currently an issue with autocomplete in some browsers. If you don't see the IAM API Key field on the **Secrets** tab, try clearing the search field or a different web browser. 

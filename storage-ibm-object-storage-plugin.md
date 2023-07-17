@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-07-10"
+lastupdated: "2023-07-17"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -26,7 +26,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 {: #storage-ibm-object-storage-plugin-prereqs}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+
 1. Create a set of service credentials in your object storage provider.
     * [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials).
     * [AWS service credential](https://docs.aws.amazon.com/cli/latest/reference/iam/create-service-specific-credential.html){: external}.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-07-17"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -26,7 +26,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 1. [Create a Compute Engine service account](https://cloud.google.com/compute/docs/access/service-accounts){: external}.
 1. [Create a JSON web key](https://cloud.google.com/iam/docs/keys-create-delete#creating){: external}.
-1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+
 
 
 
@@ -161,6 +161,9 @@ Before you begin, review the [parameter reference](#gcp-compute-persistent-disk-
 
 
 
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
 
 
 ## Deploying an app that uses Google Compute Engine persistent disk
@@ -292,9 +295,6 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
     ```
     {: pre}
 
-{{site.data.content.assignment-create-console}}
-{{site.data.content.assignment-create-cli}}
-{{site.data.content.assignment-create-api}}
 
 ## Removing Compute Engine storage from your apps
 {: #gcp-rm-apps}
