@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-07-17"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -27,7 +27,7 @@ When you create a local block storage configuration, you specify the local block
 Before you can create a local block storage configuration, you must identify the worker nodes in your clusters that have the required available disks. Then, label these worker nodes so that the local storage drivers are installed on only these worker nodes.
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+
 
 1. Ensure that the worker nodes in your cluster that you want to use in your storage configuration have at least one available local disk in addition to the disks required by {{site.data.keyword.satelliteshort}}. The extra disks must be unformatted. 
 1. [Get the device details of your worker nodes](#sat-storage-block-local-devices).
@@ -140,13 +140,14 @@ After you have [retrieved the device paths for the disks that you want to use in
 
 
 
-Before you begin, review the [parameter reference](#local-volume-block-parameter-reference) for the template version that you want to use.
-{: important}
-
 
 ## Creating and assigning a configuration in the console
 {: #local-volume-block-config-create-console}
 {: ui}
+
+
+1. Review the [parameter reference](#local-volume-block-parameter-reference).
+
 
 1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
@@ -162,6 +163,10 @@ Before you begin, review the [parameter reference](#local-volume-block-parameter
 ## Creating a configuration in the CLI
 {: #local-volume-block-config-create-cli}
 {: cli}
+
+
+1. Review the [parameter reference](#local-volume-block-parameter-reference) for the template version that you want to use.
+
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -250,6 +255,9 @@ Before you begin, review the [parameter reference](#local-volume-block-parameter
 {: api}
 
 1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+
+1. Review the [parameter reference](#local-volume-block-parameter-reference) for the template version that you want to use.
+
 
 1. Copy one of the following example requests and replace the variables that you want to use.
 

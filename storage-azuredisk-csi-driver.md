@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-07-17"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -40,7 +40,7 @@ To use the Azure Disk CSI driver storage template, complete the following tasks.
     If you choose to manually assign hosts, you must [label your worker nodes](#azure-disk-label-nodes) before creating your storage configuration.
     {: important}
     
-1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+
     
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure. Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage.
 1. [Create your configuration file](#azuredisk-csi-driver-config-create-console).
@@ -84,13 +84,14 @@ If you manually assigned your Azure hosts to your Location and did not use the S
 
 
 
-Before you begin, review the [parameter reference](#azuredisk-csi-driver-parameter-reference) for the template version that you want to use.
-{: important}
-
 
 ## Creating and assigning a configuration in the console
 {: #azuredisk-csi-driver-config-create-console}
 {: ui}
+
+
+1. Review the [parameter reference](#azuredisk-csi-driver-parameter-reference).
+
 
 1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
@@ -106,6 +107,10 @@ Before you begin, review the [parameter reference](#azuredisk-csi-driver-paramet
 ## Creating a configuration in the CLI
 {: #azuredisk-csi-driver-config-create-cli}
 {: cli}
+
+
+1. Review the [parameter reference](#azuredisk-csi-driver-parameter-reference) for the template version that you want to use.
+
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -178,6 +183,9 @@ Before you begin, review the [parameter reference](#azuredisk-csi-driver-paramet
 {: api}
 
 1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+
+1. Review the [parameter reference](#azuredisk-csi-driver-parameter-reference) for the template version that you want to use.
+
 
 1. Copy one of the following example requests and replace the variables that you want to use.
 

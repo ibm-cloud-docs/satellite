@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-13"
+lastupdated: "2023-07-18"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1081,6 +1081,10 @@ subcollection: satellite
 
 * [Run the installation command](/docs/satellite?topic=satellite-cli-install#cli-install-include-step1-install-idt)
 
+* [Verify the installation](/docs/satellite?topic=satellite-cli-install#cli-install-include-step2-verify-idt)
+
+* [Install CLI plug-ins and tools](/docs/satellite?topic=satellite-cli-install#cli-install-include-step3-install-idt-manually)
+
 [Updating the CLI](/docs/satellite?topic=satellite-cli-update#cli-update)
 
 * [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-update#cli-update-include-update-ibmcloud-cli)
@@ -1978,13 +1982,13 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-config-create-api)
 
-* [Deploying an app that uses Google Compute Engine persistent disk](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#sat-storage-gcp-deploy-app)
-
 * [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-create-console)
 
 * [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-create-cli)
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-create-api)
+
+* [Deploying an app that uses Google Compute Engine persistent disk](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#sat-storage-gcp-deploy-app)
 
 * [Removing Compute Engine storage from your apps](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#gcp-rm-apps)
 

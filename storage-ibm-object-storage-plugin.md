@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-07-10"
+lastupdated: "2023-07-17"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -26,7 +26,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
 {: #storage-ibm-object-storage-plugin-prereqs}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+
 1. Create a set of service credentials in your object storage provider.
     * [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials).
     * [AWS service credential](https://docs.aws.amazon.com/cli/latest/reference/iam/create-service-specific-credential.html){: external}.
@@ -65,13 +65,14 @@ Create the Kubernetes secret in your cluster that contains your service credenti
 
 
 
-Before you begin, review the [parameter reference](#ibm-object-storage-plugin-parameter-reference) for the template version that you want to use.
-{: important}
-
 
 ## Creating and assigning a configuration in the console
 {: #ibm-object-storage-plugin-config-create-console}
 {: ui}
+
+
+1. Review the [parameter reference](#ibm-object-storage-plugin-parameter-reference).
+
 
 1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
@@ -87,6 +88,10 @@ Before you begin, review the [parameter reference](#ibm-object-storage-plugin-pa
 ## Creating a configuration in the CLI
 {: #ibm-object-storage-plugin-config-create-cli}
 {: cli}
+
+
+1. Review the [parameter reference](#ibm-object-storage-plugin-parameter-reference) for the template version that you want to use.
+
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -143,6 +148,9 @@ Before you begin, review the [parameter reference](#ibm-object-storage-plugin-pa
 {: api}
 
 1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+
+1. Review the [parameter reference](#ibm-object-storage-plugin-parameter-reference) for the template version that you want to use.
+
 
 1. Copy one of the following example requests and replace the variables that you want to use.
 

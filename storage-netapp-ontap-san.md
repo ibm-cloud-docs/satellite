@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-07"
+lastupdated: "2023-07-17"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -37,7 +37,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 1. You must have iSCSI services enabled on the SVM.
 1. You must set up a snapshot policy on the SVM.
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters).
     - Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage.
     - Your cluster must meet the requirements for ONTAP-SAN. For more information, see the [NetApp documentation](https://netapp-trident.readthedocs.io/en/stable-v21.04/support/requirements.html).
@@ -50,13 +50,14 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 
 
 
-Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-reference) for the template version that you want to use.
-{: important}
-
 
 ## Creating and assigning a configuration in the console
 {: #netapp-ontap-san-config-create-console}
 {: ui}
+
+
+1. Review the [parameter reference](#netapp-ontap-san-parameter-reference).
+
 
 1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
@@ -72,6 +73,10 @@ Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-r
 ## Creating a configuration in the CLI
 {: #netapp-ontap-san-config-create-cli}
 {: cli}
+
+
+1. Review the [parameter reference](#netapp-ontap-san-parameter-reference) for the template version that you want to use.
+
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
 
@@ -144,6 +149,9 @@ Before you begin, review the [parameter reference](#netapp-ontap-san-parameter-r
 {: api}
 
 1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
+
+1. Review the [parameter reference](#netapp-ontap-san-parameter-reference) for the template version that you want to use.
+
 
 1. Copy one of the following example requests and replace the variables that you want to use.
 
