@@ -1,1 +1,4 @@
-https://www.java.com/download/
+https://config.satellite.cloud.ibm.com/
+https://test.cloud.ibm.com/conapi
+https://cloud.ibm.com/conapi
+https://config.satellite.test.cloud.ibm.com/
