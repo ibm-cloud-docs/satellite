@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-07-20"
 
 keywords: satellite, connector
 
@@ -49,24 +49,62 @@ To run the {{site.data.keyword.satelliteshort}} Connector agent image, your comp
 - Container platform must be on x86 architecture.
 - The Connector agent image is for amd64 architecture and only runs on amd64 hardware or hardware that can emulate amd64. If you are on a Mac with Apple Silicon (arm64), the image will work if Rosetta is installed. If Rosetta is not installed on your Mac, you can install it via the `softwareupdate --install-rosetta` command.
 
-Your environment must also meet the following network connectivity requirements. 
-- The {{site.data.keyword.satelliteshort}} Connector agent that runs in your environment needs public outbound connectivity to {{site.data.keyword.cloud_notm}}. This can be direct public access or via a proxy. There is no requirement for public inbound access. See the [FAQ](#connector-faq) for more information about using a proxy. The list of endpoints, including URLs and IP Addresses, that must be outbound accessible depends on the region you are using. To see the list of endpoints for your region, choose the relevant page from the following list and review the **Allow Link connectors to connect to the Link tunnel server endpoint** section.
-    - [RHCOS enabled locations in Dallas](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal#link-connector-dal) 
-    - [RHCOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra#link-connector-fra) 
-    - [RHCOS enabled locations in London](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-lon#link-connector-lon) 
-    - [RHCOS enabled locations in Osaka](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa#link-connector-osa) 
-    - [RHCOS enabled locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao#link-connector-sao) 
-    - [RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd#link-connector-syd) 
-    - [RHCOS enabled locations in Tokyo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tok#link-connector-tok) 
-    - [RHCOS enabled locations in Toronto](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-tor#link-connector-tor) 
-    - [RHCOS enabled locations in Washington D.C.](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-wdc#link-connector-wdc) 
-- To pull the {{site.data.keyword.satelliteshort}} Connector agent image, you must allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
+## Network requirements
+{: #network-requirements}
+
+Your environment must meet the following network connectivity requirements. 
+
+The {{site.data.keyword.satelliteshort}} Connector agent that runs in your environment needs public outbound connectivity to {{site.data.keyword.cloud_notm}}. This can be direct public access or via a proxy. There is no requirement for public inbound access. See the [FAQ](#connector-faq) for more information about using a proxy. The list of endpoints, including URLs and IP Addresses, that must be outbound accessible depends on the region you are using. See the entry for your region in the following list.
+
+Dallas
+:    * Destination IP addresses: 169.48.139.210, 169.48.188.146, 169.59.239.66, 169.60.2.74, 169.61.140.18, 169.61.156.226, 169.61.31.178, 169.61.38.178, 169.62.221.10
+     * Destination hostnames: `c-01-ws.us-south.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
+
+Frankfurt
+:    * Destination IP addresses: 149.81.188.130, 158.177.75.210, 161.156.38.2  
+     * Destination hostnames:  `c-01-ws.eu-de.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
+
+London
+:    * Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242
+     * Destination hostnames: `c-01-ws.eu-gb.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
+     
+Osaka
+:    * Destination IP addresses: 163.68.78.234, 163.69.70.106, 163.73.70.50
+     * Destination hostnames: `c-01-ws.jp-osa.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
+
+Sao Paulo
+:    * Destination IP addresses: 163.107.69.114, 163.109.70.234, 169.57.155.74 
+     * Destination hostnames: `c-01-ws.br-sao.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
+
+Sydney
+:    * Destination IP addresses: 130.198.75.74, 135.90.67.154, 168.1.201.194
+     * Destination hostnames: `c-01-ws.au-syd.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
+     
+Tokyo
+:    * Destination IP addresses: 161.202.150.66, 128.168.89.146, 165.192.71.226
+     * Destination hostnames: `c-01-ws.jp-tok.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
+
+Toronto
+:    * Destination IP addresses: 163.74.67.114, 163.75.70.74, 158.85.79.18
+     * Destination hostnames: `c-01-ws.ca-tor.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
+
+Washington D.C.
+:    * Destination IP addresses: 169.47.156.154, 169.63.148.250, 169.62.1.34
+     * Destination hostnames: `c-01-ws.us-east.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+     * Protocol and ports: HTTPS 443
+
+To pull the {{site.data.keyword.satelliteshort}} Connector agent image, you must allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
     - Destination IP addresses: N/A 
     - Destination hostnames: `icr.io` 
     - Protocol and ports: HTTPS 443 
-
-
-
 
 ## Next steps
 {: #connector-understand-next-steps}

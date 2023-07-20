@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-07-18"
+lastupdated: "2023-07-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -150,6 +150,8 @@ subcollection: satellite
 [{{site.data.keyword.satelliteshort}} Connector overview](/docs/satellite?topic=satellite-understand-connectors#understand-connectors)
 
 * [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors#min-requirements)
+
+* [Network requirements](/docs/satellite?topic=satellite-understand-connectors#network-requirements)
 
 * [Next steps](/docs/satellite?topic=satellite-understand-connectors#connector-understand-next-steps)
 
@@ -1148,6 +1150,8 @@ subcollection: satellite
 * [Network gateways and interfaces](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-interface)
 
 * [Inbound connectivity requirements for {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-reqs-host-network#reqs-host-network-firewall-inbound)
+
+* [Outbound connectivity requirements for {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-reqs-host-network#reqs-connector-outbound)
 
 [Required outbound connectivity for hosts overview](/docs/satellite?topic=satellite-reqs-host-network-outbound#reqs-host-network-outbound)
 
