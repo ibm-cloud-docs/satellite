@@ -52,7 +52,10 @@ To run the {{site.data.keyword.satelliteshort}} Connector agent image, your comp
 ## Network requirements
 {: #network-requirements}
 
-Your environment must meet the following network connectivity requirements. 
+To pull the {{site.data.keyword.satelliteshort}} Connector agent image, you must allow the following connection so that hosts can communicate with {{site.data.keyword.registrylong_notm}}.
+    - Destination IP addresses: N/A 
+    - Destination hostnames: `icr.io` 
+    - Protocol and ports: HTTPS 443 
 
 The {{site.data.keyword.satelliteshort}} Connector agent that runs in your environment needs public outbound connectivity to {{site.data.keyword.cloud_notm}}. This can be direct public access or via a proxy. There is no requirement for public inbound access. See the [FAQ](/docs/satellite?topic=satellite-connector-faq) for more information about using a proxy. The list of endpoints, including URLs and IP Addresses, that must be outbound accessible depends on the region you are using. See the entry for your region in the following list.
 
@@ -100,11 +103,6 @@ Washington D.C.
 :    * Destination IP addresses: 169.47.156.154, 169.63.148.250, 169.62.1.34
      * Destination hostnames: `c-01-ws.us-east.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
-
-To pull the {{site.data.keyword.satelliteshort}} Connector agent image, you must allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
-    - Destination IP addresses: N/A 
-    - Destination hostnames: `icr.io` 
-    - Protocol and ports: HTTPS 443 
 
 ## Next steps
 {: #connector-understand-next-steps}
