@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-21"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -455,7 +455,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     ```
     {: pre}
 
-
+{{site.data.content.configuration-upgrade-cli}}
 
 ## Removing the local block storage configuration from your cluster
 {: #sat-storage-remove-local-block-config}

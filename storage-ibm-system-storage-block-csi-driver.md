@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-21"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -372,6 +372,7 @@ You can use the `ibm-system-storage-block-csi-driver` to create PVCs that you ca
         {: pre}
 
 
+{{site.data.content.configuration-upgrade-cli}}
 
 
 

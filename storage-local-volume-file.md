@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-21"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -426,27 +426,27 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     metadata:
       name: app
     spec:
-      affinity:
+      affinity: null
       nodeAffinity:
         requiredDuringSchedulingIgnoredDuringExecution:
           nodeSelectorTerms:
-          - matchExpressions:
-            - key: storage # Enter the 'key' of the worker node label created earlier.
-              operator: In
-              values:
-              - local-file # Enter the 'value' of the worker label that you created earlier.
+            - matchExpressions:
+                - key: storage
+                  operator: In
+                  values:
+                    - local-file
       volumes:
         - name: local-pvc
           persistentVolumeClaim:
-            claimName: local-pvc 
+            claimName: local-pvc
       containers:
-        - name: local-disks 
+        - name: local-disks
           image: nginx
           ports:
             - containerPort: 80
-              name: "http-server"
+              name: http-server
           volumeMounts:
-            - mountPath: <mount-path-to-local-disk> # Example /dev/xvdc
+            - mountPath: <mount-path-to-local-disk>
               name: local-pvc
     ```
     {: codeblock}
@@ -486,7 +486,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     ```
     {: pre}
 
-
+{{site.data.content.configuration-upgrade-cli}}
 
 
 ## Removing the local file storage configuration from your cluster

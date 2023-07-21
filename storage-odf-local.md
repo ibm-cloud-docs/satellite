@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-21"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -38,7 +38,7 @@ To use the ODF storage with the local storage operator and local storage devices
     - **Manager** and **Editor** for Kubernetes service.
     - **Satellite Link Administrator** and **Reader** for the {{site.data.keyword.satelliteshort}} service.
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters).
+1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
     - Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage.
     - Your cluster must have a minimum of 3 worker nodes with at least 16CPUs and 64GB RAM per worker node.
     - Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to having one of the following local storage configurations.
@@ -538,7 +538,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
         ```
         {: pre}
 
-
+{{site.data.content.configuration-upgrade-cli}}
 
 ## Scaling your ODF configuration by attaching raw disks
 {: #sat-storage-scale-odf-local-disk}
@@ -584,29 +584,7 @@ ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --a
 {: pre}
 
 
-## Upgrading your ODF version
-{: #odf-local-upgrade}
 
-
-To upgrade the ODF version of your configuration, delete your existing assignment and create a new configuration with the newer version. When you create the new configuration, you can set the `odf-upgrade` parameter to `true` to upgrade the installed version of ODF when the new configuration is assigned.
-
-
-
-1. Get the details of your ODF configuration and save the configuration details.
-    ```sh
-    ibmcloud sat storage config get --config <config>
-    ```
-    {: pre}
-
-1. Delete the existing assignment. 
-    ```sh
-    ibmcloud sat storage assignment rm --assignment <assignment>
-    ```
-    {: pre}
-
-1. When you upgrade your ODF version, you must enter the same configuration details as in your existing ODF configuration. In addition, you must set the `template-version` value to the version you want to upgrade to and change the `odf-upgrade` parameter to `true`.
-
-    Example storage config create command with `auto-discover-devices=true` on version 4.11 clusters.
     ```sh
     ibmcloud sat storage config create --name odf-local --template-name odf-local --template-version 4.11 --location odf-sat-stage-location  -p "auto-discover-devices=true" -p "iam-api-key=<api-key>"
     ```

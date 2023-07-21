@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-21"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -341,6 +341,9 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     3. From the [AWS EC2 dashboard](https://console.aws.amazon.com/ec2/v2/home){: external}, select **Elastic Block Store** > **Volumes**.
     4. Find your AWS EBS volume by using the ID that you retrieved earlier.
 
+
+
+{{site.data.content.configuration-upgrade-cli}}
 
 
 ## Removing AWS EBS storage from your apps

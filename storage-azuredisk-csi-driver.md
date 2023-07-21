@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-21"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -42,7 +42,7 @@ To use the Azure Disk CSI driver storage template, complete the following tasks.
     
 
     
-1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters) that runs on compute hosts in Azure. Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage.
+1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters) that runs on compute hosts in Azure. Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage.
 1. [Create your configuration file](#azuredisk-csi-driver-config-create-console).
 
 ### Optional: Labeling your worker nodes for Azure Disk
@@ -367,7 +367,7 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     ```
     {: pre}
 
-
+{{site.data.content.configuration-upgrade-cli}}
 
 ## Removing Azure Disk storage from your apps
 {: #azure-disk-rm}

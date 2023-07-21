@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-21"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -36,7 +36,7 @@ Before you can deploy storage templates to clusters in your location, make sure 
     - **Manager** and **Editor** for Kubernetes service.
     - **Satellite Link Administrator** and **Reader** for the {{site.data.keyword.satelliteshort}} service.
 1. Before you can create a storage configuration, follow the steps to set up a [{{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=openshift-satellite-clusters).
+1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
     - Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage.
 1. Your cluster must have a minimum of 3 worker nodes with at least 16CPUs and 64GB RAM per worker node.
 1. Your cluster must have a remote block storage provisioner available. For example, you can deploy the [AWS EBS](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) {{site.data.keyword.satelliteshort}} storage template to install the EBS block drivers that you can then use to provision AWS EBS volumes for ODF.
@@ -413,6 +413,9 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
         ```
         {: pre}
 
+
+{{site.data.content.configuration-upgrade-cli}}
+
 ## Scaling up your ODF configuration
 {: #sat-storage-odf-remote-scale-config}
 
@@ -424,41 +427,8 @@ ibmcloud sat storage config param set --config <config-name> -p num-of-osd=2 --a
 ```
 {: pre}
 
-## Upgrading your ODF configuration
-{: #sat-storage-odf-remote-upgrade-config}
 
 
-
-1. Get the details of your ODF configuration.
-    ```sh
-    ibmcloud sat storage config get <config-name>
-    ```
-    {: pre}
-
-1. Create a new configuration. Make sure to change the `template-version` value to the version that you want to upgrade to and set the `odf-upgrade` parameter to `true`.
-
-1. Get the details of your ODF configuration and save the configuration details.
-    ```sh
-    ibmcloud sat storage config get --config CONFIG
-    ```
-    {: pre}
-
-1. Delete the existing assignment.
-    ```sh
-    ibmcloud sat storage assignment rm --assignment ASSIGNMENT
-    ```
-    {: pre}
-
-1.  When you upgrade your ODF version, you must enter the same configuration details and set the `template-version` value to the version you want to upgrade to and set the `odf-upgrade` parameter to `true`.
-
-    Example `storage config create` command for version 4.11 clusters.
-    ```sh
-    ibmcloud sat storage config create --name CONFIG --location LOCATION --template-name odf-remote --template-version 4.11  -p "osd-storage-class=vpc-custom-10iops-tier" -p "osd-size=OSD-SIZE" -p "num-of-osd=1" -p "worker-nodes=NODE-NAME,NODE-NAME,NODE-NAME" -p "ibm-cos-endpoint=COS-ENDPOINT" -p "ibm-cos-location=COS-LOCATION" -p "ibm-cos-access-key=ACCESS-KEY" -p "ibm-cos-secret-key=SECRET-KEY" -p "iam-api-key=API-KEY" -p "odf-upgrade=true"
-    ```
-    {: pre}
-
-
-1. [Assign your configuration to your clusters](#storage-odf-remote-include-assignment-create-cli).
 
 
 ### Removing the ODF remote storage assignment from the command line
