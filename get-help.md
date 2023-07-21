@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-07-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -93,4 +93,4 @@ You can also view logs that are automatically generated for your {{site.data.key
 ## Opting in to receive email notifications
 {: #opt-in-email}
 
-You can opt in to receive email notifications about {{site.data.keyword.cloud_notm}} platform-related items across your account and resource-related items for incidents, maintenance, security bulletins, and resource activity updates. Email notifications are not turned on by default. To understand how to set up these email notifications, see [Setting email preferences for notifications](/docs/satellite?topic=account-email-prefs).
+You can opt in to receive email notifications about {{site.data.keyword.cloud_notm}} platform-related items across your account and resource-related items for incidents, maintenance, security bulletins, and resource activity updates. Email notifications are not turned on by default. To understand how to set up these email notifications, see [Setting email preferences for notifications](/docs/account?topic=account-email-prefs).

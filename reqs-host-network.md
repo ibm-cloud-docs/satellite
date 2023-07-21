@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-23"
+lastupdated: "2023-07-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -80,5 +80,11 @@ For example, if the primary network interface for a host is `eth0`, you must ope
 | Access the API to make changes in a {{site.data.keyword.redhat_openshift_notm}} cluster and access the {{site.data.keyword.redhat_openshift_notm}} web console or through the {{site.data.keyword.redhat_openshift_notm}} router | Clients or authorized users | Control plane hosts | TCP 30000 - 32767 |
 | Access the web console for a {{site.data.keyword.redhat_openshift_notm}} cluster through the {{site.data.keyword.redhat_openshift_notm}} router | Clients or authorized users | {{site.data.keyword.redhat_openshift_notm}} cluster hosts | TCP 443 |
 {: caption="Required inbound connectivity for hosts on the primary network interface" caption-side="bottom"}
+
+## Outbound connectivity requirements for {{site.data.keyword.satelliteshort}} Connector
+{: #reqs-connector-outbound}
+
+For {{site.data.keyword.satelliteshort}} Connector outbound connectivity requirements, see [Network requirements](/docs/satellite?topic=satellite-understand-connectors#network-requirements).
+{: shortdesc}
 
 

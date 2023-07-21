@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-07-17"
+lastupdated: "2023-07-21"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -266,7 +266,7 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
    ```
    {: pre}
 
-
+{{site.data.content.configuration-upgrade-cli}}
 
 
 ## Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the console
