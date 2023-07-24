@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-07-24"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -36,7 +36,7 @@ New! {{site.data.keyword.satelliteshort}} Connector
 :   {{site.data.keyword.satelliteshort}} Connector is a deployment model which enables secure communications from IBM Cloud to on-prem resources via a light weight container deployed on your container platform hosts. This option brings all the security and auditability of {{site.data.keyword.satelliteshort}} communication, but with much fewer resources required. For more information, see [Understanding {{site.data.keyword.satelliteshort}} Connectors](/docs/satellite?topic=satellite-understand-connectors).
 
 Setting up Connector as a Secure Gateway replacement
-:   Coming from Secure Gateway? {{site.data.keyword.satelliteshort}} Connector replaces Secure Gateway to provide connection between IBM Cloud and your on-prem data center. For more information, see [{{site.data.keyword.satelliteshort}} Connector and Security Gateway](/docs/satellite?topic=satellite-understand-connectors#replace-secure-gateway).
+:   Coming from Secure Gateway? {{site.data.keyword.satelliteshort}} Connector replaces Secure Gateway to provide connection between IBM Cloud and your on-prem data center. For more information, see [{{site.data.keyword.satelliteshort}} Connector and Security Gateway](/docs/satellite?topic=satellite-connector-and-secure-gateway).
 
 Understanding your responsibilities with {{site.data.keyword.satelliteshort}} Connector
 :   For more information, review the [Overview of shared responsibilities](/docs/satellite?topic=satellite-responsibilities#overview-by-resource) for {{site.data.keyword.satelliteshort}} Connector, the {{site.data.keyword.satelliteshort}} Connector agent image, and the {{site.data.keyword.satelliteshort}} Connector container platform.

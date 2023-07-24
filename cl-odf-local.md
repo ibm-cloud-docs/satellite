@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-07-07"
+lastupdated: "2023-07-24"
 
 
 keywords: satellite storage, change log, version history, odf local
