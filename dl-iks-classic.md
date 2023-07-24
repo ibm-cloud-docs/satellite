@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-01-30"
+lastupdated: "2023-07-24"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -76,7 +76,7 @@ Create an {{site.data.keyword.containerlong_notm}} cluster in your {{site.data.k
 {: #dl-ingress}
 {: step}
 
-Set up the private Ingress application load balancers (ALBs) for the {{site.data.keyword.containerlong_notm}} cluster, which expose the service for an NGINX reverse proxy on the private network. For more information, you can review the [considerations for exposing an app in your cluster to the private network only](/docs/containers?topic=containers-cs_network_planning#private_access) and specific guidance for [privately exposing apps with Ingress ALBs](/docs/containers?topic=containers-managed-ingress-setup#ingress-custom-domain-private).
+Set up the private Ingress application load balancers (ALBs) for the {{site.data.keyword.containerlong_notm}} cluster, which expose the service for an NGINX reverse proxy on the private network. For more information, you can review the [considerations for exposing an app in your cluster to the private network only](/docs/containers?topic=containers-cs_network_planning#private_access) and specific guidance for [privately exposing apps with Ingress ALBs](/docs/containers?topic=containers-comm-ingress-annotations).
 {: shortdesc}
 
 1. Verify that at least one ALB with a **Type** of `private` exists in each zone.
@@ -100,7 +100,7 @@ Set up the private Ingress application load balancers (ALBs) for the {{site.data
 4. Set up a custom domain for the private ALBs that the NGINX reverse proxy is accessible through, and optionally set up TLS for the domain.
     1. Create a custom domain through your DNS service provider. Your custom domain must be 130 characters or fewer to meet Ingress requirements.
     2. Map your custom domain to the private ALBs by adding their IP addresses as A records (classic clusters) or their VPC hostname as a CNAME (VPC clusters). To find the ALB IP addresses (classic) or hostname (VPC), run `ibmcloud ks ingress alb ls -c <cluster_name_or_ID>`. Note that in VPC clusters, a hostname is assigned to the ALBs because the `10.X.X.X` IP addresses are not static and might change over time.
-    3. To use TLS termination, create a secret in the `dl-reverse-proxy` namespace that contains a TLS certificate for your custom domain. For example, if a TLS certificate is stored in {{site.data.keyword.cloudcerts_long_notm}} that you want to use, you can import its associated secret into your cluster by running the following command. For more information, see [Custom domains with Ingress](/docs/containers?topic=containers-managed-ingress-setup#ingress-custom-domain).
+    3. To use TLS termination, create a secret in the `dl-reverse-proxy` namespace that contains a TLS certificate for your custom domain. For example, if a TLS certificate is stored in {{site.data.keyword.cloudcerts_long_notm}} that you want to use, you can import its associated secret into your cluster by running the following command. For more information, see [Custom domains with Ingress](/docs/containers?topic=containers-ingress-domains).
         ```sh
         ibmcloud ks ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace dl-reverse-proxy
         ```

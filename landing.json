@@ -5,7 +5,7 @@
     "introduction": "Explore the capabilities of IBM Cloud Satellite and discover the tools to manage your locations, hosts, and app workloads. ",
     "section_devtools": {
       "api": "https://containers.cloud.ibm.com/global/swagger-global-api/", 
-      "cli": "/docs/satellite?topic=satellite-setup-cli", 
+      "cli": "/docs/satellite?topic=satellite-cli-install", 
       "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/satellite_cluster"
     },
     "section_recommended": [

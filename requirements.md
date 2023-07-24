@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-24"
+lastupdated: "2023-07-24"
 
 keywords: satellite, hybrid, multicloud
 
@@ -55,7 +55,7 @@ For cloud provider-specific configurations, see the following topics.
 ## Clusters
 {: #reqs-clusters}
 
-See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-openshift_limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation. The limitations include information related to the following components.
+See [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits) in the {{site.data.keyword.openshiftlong_notm}} documentation. The limitations include information related to the following components.
 {: shortdesc}
 
 - {{site.data.keyword.openshiftlong_notm}} clusters that you create in your {{site.data.keyword.satelliteshort}} location.
