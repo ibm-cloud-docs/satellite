@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-06"
+lastupdated: "2023-07-25"
 
 keywords: satellite, connector
 
@@ -88,7 +88,9 @@ There are several ways to pass agent configuration environment variable informat
 {: #run-agent-image}
 {: step}  
 
-1. To run the container, mount your `env-files` directory to the container's `/agent-env-files` directory by using the `-v` option. You can use the latest version or a specific version of the published image. Published images are built for the `amd64` platform and run only on host machines that support `amd64` images. 
+Make sure your computing environment meets the [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors&interface=ui#min-requirements) for running the agent image. Then follow these steps.
+
+1. Mount your `env-files` directory to the container's `/agent-env-files` directory by using the `-v` option. You can use the latest version or a specific version of the published image.  
     ```sh
     docker run -d --env-file ~/agent/env-files/env.txt -v ~/agent/env-files:/agent-env-files icr.io/ibm/satellite-connector/satellite-connector-agent:latest
     ```
