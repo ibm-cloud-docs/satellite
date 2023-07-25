@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-17"
+lastupdated: "2023-07-25"
 
 
 keywords: satellite storage, features, overview
@@ -41,6 +41,7 @@ subcollection: satellite
 | IBM System Storage Block CSI driver | 1.5.0 | IBM | False | False | True | Regional | True |
 | IBM System Storage Block CSI driver | 1.10.0 | IBM | False | False | True | Regional | True |
 | IBM System Storage Block CSI driver | 1.11.1 | IBM | False | False | True | Regional | True |
+| IBM System Storage Block CSI driver | 1.11.2 | IBM | False | False | True | Regional | True |
 | [Beta] IBM VPC Block CSI driver | 5.0 | IBM | 
 | Local Storage Operator - Block | 4.8 | AWS,IBM | False | False | False | Zonal | False |
 | Local Storage Operator - Block | 4.9 | AWS,IBM | False | False | False | Zonal | False |
@@ -62,10 +63,12 @@ subcollection: satellite
 | OpenShift Data Foundation for local devices | 4.10 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.11 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.12 | OpenShift Container Platform | True | True | False | Regional | True |
+| OpenShift Data Foundation for local devices | 4.13 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.9 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.10 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.11 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.12 | OpenShift Container Platform | True | True | False | Regional | True |
+| OpenShift Data Foundation for remote storage | 4.13 | OpenShift Container Platform | True | True | False | Regional | True |
 | VMware CSI Driver | 2.5.1 | VMware,IBM | False | False | True | Zonal | False |
 {: caption="Storage template feature comparison" caption-side="bottom"}
 
