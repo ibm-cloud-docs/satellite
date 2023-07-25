@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-25"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -214,8 +214,8 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
       - ReadWriteOnce
       storageClassName: sat-aws-block-bronze
       resources:
-      requests:
-        storage: 125Gi
+        requests:
+          storage: 125Gi
     ```
     {: codeblock}
 
@@ -238,7 +238,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     ```
     {: screen}
 
-5. Create a YAML configuration file for your pod that mounts the PVC that you created. When you create this pod, the AWS EBS driver starts to fulfill your storage request by dynamically creating an AWS EBS instance in your AWS account. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file on your AWS EBS volume mount path.
+5. Create a pod that mounts the PVC that you created. When you create this pod, the AWS EBS driver starts to fulfill your storage request by dynamically creating an AWS EBS instance in your AWS account. The following example creates an `nginx` pod that writes the current date and time to a `test.txt` file on your AWS EBS volume mount path.
     ```yaml
     apiVersion: v1
     kind: Pod
@@ -247,16 +247,16 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     spec:
       containers:
       - name: app
-      image: nginx
-      command: ["/bin/sh"]
-      args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
-      volumeMounts:
-      - name: persistent-storage
-        mountPath: /test
+        image: nginx
+        command: ["/bin/sh"]
+        args: ["-c", "while true; do echo $(date -u) >> /test/test.txt; sleep 5; done"]
+        volumeMounts:
+          - name: persistent-storage
+            mountPath: /test
       volumes:
       - name: persistent-storage
-      persistentVolumeClaim:
-        claimName: sat-aws-block-bronze
+        persistentVolumeClaim:
+            claimName: sat-aws-block-bronze
     ```
     {: codeblock}
 
