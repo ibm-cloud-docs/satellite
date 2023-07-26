@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-07-07"
+lastupdated: "2023-07-25"
 
 
 keywords: satellite storage, change log, version history, netapp ontap nas
@@ -23,6 +23,13 @@ Review the version history for the `netapp-ontap-nas` {{site.data.keyword.satell
 ## Version 22.10
 {: #22.10-change-log}
 
+
+### Revision 7, released 24 July 2023
+{: #netapp-ontap-nas-22.10-rev-7-change-log}
+
+
+- Resolves the following CVEs: [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external} [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external} [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external} [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external} 
+- Updates the UBI to version `8.8-1014`.
 
 ### Revision 6, released 19 June 2023
 {: #netapp-ontap-nas-22.10-rev-6-change-log}
@@ -76,6 +83,13 @@ Review the version history for the `netapp-ontap-nas` {{site.data.keyword.satell
 {: #22.04-change-log}
 
 
+### Revision 20, released 24 July 2023
+{: #netapp-ontap-nas-22.04-rev-20-change-log}
+
+
+- Resolves the following CVEs: [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external} [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external} [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external} [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external} 
+- Updates the UBI to version `8.8-1014`.
+
 ### Revision 19, released 19 June 2023
 {: #netapp-ontap-nas-22.04-rev-19-change-log}
 
@@ -127,6 +141,13 @@ Review the version history for the `netapp-ontap-nas` {{site.data.keyword.satell
 ## Version 21.04
 {: #21.04-change-log}
 
+
+### Revision 22, released 24 July 2023
+{: #netapp-ontap-nas-21.04-rev-22-change-log}
+
+
+- Resolves the following CVEs: [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external} [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external} [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external} [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external} 
+- Updates the UBI to version `8.8-1014`.
 
 ### Revision 21, released 19 June 2023
 {: #netapp-ontap-nas-21.04-rev-21-change-log}

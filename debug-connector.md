@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-07-26"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -47,7 +47,7 @@ After 2 minutes, if the agent is still not displaying, follow these debugging st
     {: pre} 
 
   
-1. Check the log on the agent container. If there are no errors in the {{site.data.keyword.la_full_notm}} Dashboard, this means there is an issue that is occuring before the agent communcates with the tunnel servers. You can get more information by looking at the log file on the agent container. The command varies by container platform. If you are using Docker, you can use the following command:
+1. Check the log on the agent container. If there are no errors in the {{site.data.keyword.la_full_notm}} Dashboard, this means there is an issue that is occurring before the agent communicates with the tunnel servers. You can get more information by looking at the log file on the agent container. The command varies by container platform. If you are using Docker, you can use the following command:
     ```sh
     docker logs <container id>
     ```

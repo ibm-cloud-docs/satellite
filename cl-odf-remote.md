@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-07-24"
+lastupdated: "2023-07-25"
 
 
 keywords: satellite storage, change log, version history, odf remote
@@ -19,6 +19,19 @@ subcollection: satellite
 
 Review the version history for the `odf-remote` {{site.data.keyword.satelliteshort}} storage template.
 {: shortdesc}
+
+## Version 4.13
+{: #4.13-change-log}
+
+
+### Revision 1, released 24 July 2023
+{: #odf-remote-4.13-rev-1-change-log}
+
+
+- Updates the UBI to version `8.8-860`.
+- Updates Go to version `1.20.5`.
+- ODF 4.13 initial release
+
 
 ## Version 4.12
 {: #4.12-change-log}
