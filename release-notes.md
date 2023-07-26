@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-07-26"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -25,6 +25,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## July 2023
 {: #satellite-july23}
+
+## 24 July 2023
+{: #satellite-july2423}
+{: release-note}
+
+Storage template revisions
+:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or by running the `{{icsat}} storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
 
 
 
