@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-26"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -42,7 +42,7 @@ Create the Kubernetes secret in your cluster that contains your service credenti
 
     - {{site.data.keyword.cos_full_notm}}
     
-        1. Fnd your service instance ID.
+        1. Find your service instance ID.
             ```sh
             ibmcloud resource service-instance <service_name> | grep GUID
             ```
