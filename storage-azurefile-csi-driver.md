@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-28"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -269,45 +269,45 @@ You can use the Azure File driver to create PVCs that you can use in your cluste
 1. Create a YAML configuration file for a stateful set that mounts the PVC that you created. This example deployment creates one app pod that writes the date.
 
     ```yaml
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-        labels:
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          labels:
             app: nginx
-    name: DEPLOYMENT-NAME
-    spec:
-        replicas: 1
-        selector:
+          name: DEPLOYMENT-NAME
+        spec:
+          replicas: 1
+          selector:
             matchLabels:
-                app: nginx
-        template:
-            metadata:
-                labels:
-                    app: nginx
-                name: DEPLOYMENT-NAME
-            spec:
-                nodeSelector:
-                    "kubernetes.io/os": linux
-                containers:
-                - name: deployment-azurefile
-                    image: mcr.microsoft.com/oss/nginx/nginx:1.19.5
-                    command:
-                        - "/bin/bash"
-                        - "-c"
-                        - set -euo pipefail; while true; do echo $(date) >> /mnt/azurefile/outfile; sleep 1; done
-                    volumeMounts:
-                        - name: azurefile
-                            mountPath: "/mnt/azurefile"
-                            readOnly: false
-                volumes:
-                    - name: azurefile
-                    persistentVolumeClaim:
-                    claimName: PVC-NAME #The name of the PVC you created earlier.
-        strategy:
+              app: nginx
+          strategy:
+            type: RollingUpdate
             rollingUpdate:
-            maxSurge: 0
-            maxUnavailable: 1
-        type: RollingUpdate
+              maxSurge: 0
+              maxUnavailable: 1
+          template:
+            metadata:
+              labels:
+                app: nginx
+            spec:
+              nodeSelector:
+                kubernetes.io/os: linux
+              containers:
+              - name: deployment-azurefile
+                image: nginx
+                command:
+                - /bin/bash
+                - -c
+                - set -euo pipefail; while true; do echo $(date) >>
+                    /mnt/azurefile/outfile; sleep 1; done
+                volumeMounts:
+                - name: azurefile
+                  mountPath: /mnt/azurefile
+                  readOnly: false
+              volumes:
+              - name: azurefile
+                persistentVolumeClaim:
+                  claimName: PVC-NAME
     ```
     {: codeblock}
 
