@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-28"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -186,30 +186,29 @@ You can use the `ibm-vpc-block-csi-driver` to create PVCs that you can use in yo
         apiVersion: apps/v1
         kind: Deployment
         metadata:
-            name: my-deployment
-            labels:
-            app: my-app
-        spec:
+        name: my-deployment
+        labels: null
+        app: my-app
+        spec: null
         replicas: 1
         selector:
-            matchLabels:
-            app: my-app
+        matchLabels: null
+        app: my-app
         template:
-            metadata:
-            labels:
-                app: my-app
-            spec:
-            containers:
-            - image: ngnix # Your containerized app image.
-                name: my-container
-                volumeMounts:
-                - name: my-volume
-                mountPath: /mount-path
-            volumes:
-            - name: my-volume
-                persistentVolumeClaim:
-                claimName: my-pvc
-
+        metadata: null
+        labels:
+            app: my-app
+        spec: null
+        containers: null
+        name: my-container
+        image: ngnix
+        volumeMounts:
+            name: my-volume
+            mountPath: /mount-path
+        volumes:
+            name: my-volume
+            persistentVolumeClaim: null
+            claimName: my-pvc
     ```
     {: codeblock}
 

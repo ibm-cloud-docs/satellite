@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-07-28"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -187,14 +187,14 @@ You can use the `vmware-csi-driver` to create PVCs that you can use in your clus
         name: web-server
         spec:
         containers:
-        - name: web-server
+        - name: #web-server
             image: nginx
             command:
                 - "/bin/sh"
                 - "-c"
                 - while true; do echo $(date) >> /mnt/vmwaredisk/outfile; sleep 1; done
             volumeMounts:
-            - mountPath: /mnt/vmwaredisk
+             mountPath:  /mnt/vmwaredisk
                 name: mypvc
         volumes:
         - name: mypvc
