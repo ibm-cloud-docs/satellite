@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-19"
+lastupdated: "2023-08-01"
 
 keywords: satellite, hybrid, multicloud
 
@@ -198,7 +198,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     ```
     {: pre}
             
-    Example command to create VPC Gen 2 instances and attach hosts to Red Hat CoreOS enabled location. For more information, about the `instance create` command, see the VPC Gen 2 [command line reference](/docs/vpc?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#instance-create).
+    Example command to create VPC Gen 2 instances and attach hosts to Red Hat CoreOS enabled location. For more information, about the `instance create` command, see the VPC Gen 2 [command line reference](/docs/vpc?topic=vpc-vpc-reference#instance-create).
             
     ```sh
     ibmcloud is instance-create instance-1 my-vpc us-south-1 bx2d-4x16 0111-11e11111-1c11-1111-11aa-ba1a1d1cd111 —-keys my-key --image r001-a1f111b1-11bc-1e1e-b11c-1d11c1111111 --user-data @/var/register-host_coreos.ign

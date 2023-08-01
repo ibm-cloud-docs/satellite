@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-08-01"
 
 keywords: satellite, connector
 
@@ -71,7 +71,7 @@ In this example, use a simple Nginx container.
 {: step}
 
 1. Create a Location link endpoint in your {{site.data.keyword.satelliteshort}} Connector on {{site.data.keyword.cloud_notm}}.
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://test.cloud.ibm.com/satellite/connectors){: external}, select your connector.
+    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/connectors){: external}, select your connector.
     1. From the User Endpoints tab, click **Create endpoint**.
     1. In the **Endpoint name** field, enter `MyNginx`.
     1. In the **Destination FQDN or IP** field, enter the IP address of the Nginx container, for example, `172.17.0.3`. To find the Nginx IP address, run `docker inspect <nginx container id> | grep IPAddress`. 
