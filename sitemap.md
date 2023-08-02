@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-01"
+lastupdated: "2023-08-02"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2497,6 +2497,19 @@ subcollection: satellite
 * [{{site.data.keyword.IBM_notm}} VPC block storage](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-ibm-vpc-csi-sc-ref)
 
 * [VMware Storage CSI Driver](/docs/satellite?topic=satellite-storage-class-ref#sat-storage-vmware-csi-sc-ref)
+
+
+## Setting up Terraform for {{site.data.keyword.satelliteshort}}
+{: #sitemap_setting_up_terraform_for_}
+
+
+[Setting up Terraform for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-terraform#terraform)
+
+* [Installing Terraform and configuring resources for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-terraform#install-terraform)
+
+* [Creating a {{site.data.keyword.satelliteshort}} location by using Terraform](/docs/satellite?topic=satellite-terraform#terraform-location-create)
+
+* [What's next?](/docs/satellite?topic=satellite-terraform#terraform-setup-next)
 
 
 ## Setting up {{site.data.keyword.satelliteshort}} as a Secure Gateway for on-prem solutions

@@ -224,6 +224,7 @@ toc:
                   topics:
                     - storage-vsphere-csi-driver.md 
               - storage-class-ref.md
+        - terraform.md
         - sg-usecase.md
         - topicgroup:
             label: Enhancing security
