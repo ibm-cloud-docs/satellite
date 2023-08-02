@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-21"
+lastupdated: "2023-08-02"
 
 keywords: satellite, CoreOS, RHCOS, firewall 
 
@@ -22,6 +22,8 @@ Configure a Red Hat CoreOS enabled Location to connect to a single network desti
 To connect to a single network destination, use a host link agent. A host link agent is a binary image of link client that runs as `systemd` on your hosts. The agent connects to the tunnel server and rewrites your hosts DNS so that all Location bootstrap traffic is redirected to use the Link established by the agent to reach IBM back-end services. As a result, all outbound traffic from the Location connects to a single destination, which is the Tunnel server public endpoint on port 443. Therefore, you do not need to allow all the outbound IP addresses that are mentioned in [Required outbound connectivity for hosts in all regions](/docs/satellite?topic=satellite-reqs-host-network-outbound).
 
 Follow these steps to set up a Red Hat CoreOS enabled Location with reduced firewall footprint.
+
+1. Make sure that the control plane operating system is Red Hat CoreOS.
 
 1. Create a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location. For more information, see [Creating a Satellite location](/docs/satellite?topic=satellite-locations).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-04-05"
+lastupdated: "2023-08-02"
 
 keywords: satellite, hybrid, multicloud
 
@@ -17,6 +17,8 @@ subcollection: satellite
 
 Deploy {{site.data.keyword.satellitelong_notm}} as a secure solution for connecting resources in a protected on-premises environment to cloud resources.
 {: shortdesc}
+
+You can also use {{site.data.keyword.satelliteshort}} Connector as a light weight alternative to the solution discussed here. For more information, see [{{site.data.keyword.satelliteshort}} Connector overview](/docs/satellite?topic=satellite-understand-connectors). 
 
 ## {{site.data.keyword.satelliteshort}} as a Layer 4 connection solution
 {: #sg-alt}
