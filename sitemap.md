@@ -2507,6 +2507,8 @@ subcollection: satellite
 
 * [Installing Terraform and configuring resources for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-terraform#install-terraform)
 
+* [Creating a {{site.data.keyword.satelliteshort}} location by using Terraform](/docs/satellite?topic=satellite-terraform#terraform-location-create)
+
 * [What's next?](/docs/satellite?topic=satellite-terraform#terraform-setup-next)
 
 

@@ -31,6 +31,11 @@ Before you can create an authorization by using Terraform, make sure that you ha
 - Create a Terraform configuration file that is named `main.tf`. In this file, you define resources by using HashiCorp Configuration Language. For more information, see the [Terraform documentation](https://www.terraform.io/docs/language/index.html){: external}.
 - To create and manage the underlying infrastructure in other cloud providers, you must have the appropriate permissions. Review [common permissions in other cloud providers](/docs/satellite?topic=satellite-iam-common).
 
+## Creating a {{site.data.keyword.satelliteshort}} location by using Terraform
+{: #terraform-location-create}
+
+{{site.data.keyword.satelliteshort}} provides Terraform templates for creating a {{site.data.keyword.satelliteshort}} location in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. 
+
 You can clone and modify these Terraform templates from the [Satellite Terraform GitHub repository](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external}. 
 
 For more information about creating a Satellite location by using Terraform, see [`ibm_satellite_location`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/satellite_location){: external}.
