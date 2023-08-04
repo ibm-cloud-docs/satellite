@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-02"
+lastupdated: "2023-08-04"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2919,6 +2919,8 @@ subcollection: satellite
 * [Clusters](/docs/satellite?topic=satellite-requirements#reqs-clusters)
 
 * [Link and endpoints](/docs/satellite?topic=satellite-requirements#reqs-link)
+
+* [Connector](/docs/satellite?topic=satellite-requirements#reqs-connector)
 
 * [Config](/docs/satellite?topic=satellite-requirements#reqs-config)
 
