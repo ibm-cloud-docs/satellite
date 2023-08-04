@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-11"
+lastupdated: "2023-08-04"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -36,4 +36,7 @@ How many Connectors are supported per account per region?
 
 How many endpoints are supported per Connector?
 :   You can have a maximum of 25 endpoints per Connector.
+
+How many instances of Connector agent can I run?
+:   As a best practice, run no more than 6 agents per Connector.
 

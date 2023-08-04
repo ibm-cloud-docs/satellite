@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-08-04"
 
 keywords: satellite, hybrid, multicloud
 
@@ -74,6 +74,13 @@ Cloud and location endpoints
      - `cloud` endpoints: 1000 total. For example, you might create up to 650 TLS endpoints and 350 HTTP endpoints through which clients in your location can connect to resources outside of the location network.
      - `location` endpoints: 25 total. For example, you might create up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location.
 
+## Connector
+{: #reqs-connector}
+
+Review the following requirements and limitations for {{site.data.keyword.satelliteshort}} Connector.
+
+- [Satellite Connector overview](/docs/satellite?topic=satellite-understand-connectors)
+- [Satellite Connector FAQ](/docs/satellite?topic=satellite-connector-faq)
 
 ## Config
 {: #reqs-config}
