@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-25"
+lastupdated: "2023-08-04"
 
 keywords: satellite, connector
 
@@ -47,7 +47,7 @@ There are several ways to pass agent configuration environment variable informat
 
     ```sh
     SATELLITE_CONNECTOR_ID=<Your Satellite Connector ID>
-    SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/apikey
+    SATELLITE_CONNECTOR_IAM_APIKEY=~/agent/env-files/apikey
     SATELLITE_CONNECTOR_REGION=<Your Satellite Connector Region>
     SATELLITE_CONNECTOR_TAGS=sample tag
     ```
