@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-01"
+lastupdated: "2023-08-04"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -26,7 +26,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## July 2023
 {: #satellite-july23}
 
-## 24 July 2023
+### 24 July 2023
 {: #satellite-july2423}
 {: release-note}
 

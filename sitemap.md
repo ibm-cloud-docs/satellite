@@ -181,9 +181,9 @@ subcollection: satellite
 
 * [July 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july23)
 
-* [24 July 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july2423)
+    * [24 July 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july2423)
 
-    * Storage template revisions
+        * Storage template revisions
 
     * [5 July 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july0523)
 
