@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-20"
+lastupdated: "2023-08-10"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -429,7 +429,7 @@ Location message
 :    Pods have been stuck in a terminating state on the location control plane node for over an hour.
 
 Steps to resolve
-:    Pods that remain in a terminating state for an hour or more indicate that the location control plane is not healthy. Follow the steps to replace the location control plane hosts.
+:    Pods that remain in a terminating state for an hour or more indicate that the location control plane is not healthy. Restart the location control plane hosts and see if the problem is resolved. If the problem still exists, follow the steps to replace the location control plane hosts.
 
 When you update or replace control plane hosts, **do not assign or remove multiple hosts at the same time** as doing so may break the control plane. You must wait for a host assignment or removal to complete before assigning or removing another host.  \n To avoid possible service disruptions, make sure you attach and assign additional hosts to the control plane before removing any hosts.
 {: important}
