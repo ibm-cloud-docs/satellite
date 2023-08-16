@@ -136,6 +136,7 @@ toc:
               - multi-infra.md
               - host-update-location.md
               - host-update-workers.md
+              - sat-storage-odf-update.md
               - location-copy.md
               - config-http-proxy.md
               - config-custom-ntp.md
