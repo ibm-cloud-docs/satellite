@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-07-07"
+lastupdated: "2023-08-17"
 
 
 keywords: satellite storage, change log, version history, ibm vpc block csi driver
@@ -23,6 +23,14 @@ Review the version history for the `ibm-vpc-block-csi-driver` {{site.data.keywor
 ## Version 5.0
 {: #5.0-change-log}
 
+
+### Revision 12, released 01 August 2023
+{: #ibm-vpc-block-csi-driver-5.0-rev-12-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-24329](https://nvd.nist.gov/vuln/detail/CVE-2023-24329){: external} [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external} [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external} [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external} [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external} [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external} [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external} [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external} 
+- Updates the UBI to version `8.8-1014`.
+- Updates Go to version `1.19.10`.
 
 ### Revision 11, released 19 June 2023
 {: #ibm-vpc-block-csi-driver-5.0-rev-11-change-log}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-25"
+lastupdated: "2023-08-17"
 
 
 keywords: satellite storage, features, overview
@@ -70,5 +70,6 @@ subcollection: satellite
 | OpenShift Data Foundation for remote storage | 4.12 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.13 | OpenShift Container Platform | True | True | False | Regional | True |
 | VMware CSI Driver | 2.5.1 | VMware,IBM | False | False | True | Zonal | False |
+| VMware CSI Driver | 2.7.0 | VMware,IBM | False | False | True | Zonal | False |
 {: caption="Storage template feature comparison" caption-side="bottom"}
 
