@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-07-25"
+lastupdated: "2023-08-17"
 
 
 keywords: satellite storage, change log, version history, odf local
@@ -24,6 +24,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 {: #4.13-change-log}
 
 
+### Revision 2, released 03 August 2023
+{: #odf-local-4.13-rev-2-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external} [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external} [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external} [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external} [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external} [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external} [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external} [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external} [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external} 
+- Updates the UBI to version `8.8-1014`.
+- Updates Go to version `1.20.6`.
+
 ### Revision 1, released 24 July 2023
 {: #odf-local-4.13-rev-1-change-log}
 
@@ -36,6 +44,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.12
 {: #4.12-change-log}
 
+
+### Revision 4, released 03 August 2023
+{: #odf-local-4.12-rev-4-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external} [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external} [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external} [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external} [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external} [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external} [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external} [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external} [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external} 
+- Updates the UBI to version `8.8-1014`.
+- Updates Go to version `1.20.6`.
 
 ### Revision 3, released 19 June 2023
 {: #odf-local-4.12-rev-3-change-log}
@@ -66,6 +82,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.11
 {: #4.11-change-log}
 
+
+### Revision 8, released 03 August 2023
+{: #odf-local-4.11-rev-8-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external} [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external} [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external} [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external} [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external} [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external} [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external} [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external} [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external} 
+- Updates the UBI to version `8.8-1014`.
+- Updates Go to version `1.20.6`.
 
 ### Revision 7, released 19 June 2023
 {: #odf-local-4.11-rev-7-change-log}
@@ -122,6 +146,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 {: #4.10-change-log}
 
 
+### Revision 19, released 03 August 2023
+{: #odf-local-4.10-rev-19-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external} [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external} [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external} [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external} [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external} [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external} [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external} [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external} [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external} 
+- Updates the UBI to version `8.8-1014`.
+- Updates Go to version `1.20.6`.
+
 ### Revision 18, released 19 June 2023
 {: #odf-local-4.10-rev-18-change-log}
 
@@ -176,6 +208,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.9
 {: #4.9-change-log}
 
+
+### Revision 25, released 03 August 2023
+{: #odf-local-4.9-rev-25-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external} [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external} [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external} [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external} [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external} [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external} [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external} [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external} [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external} 
+- Updates the UBI to version `8.8-1014`.
+- Updates Go to version `1.20.6`.
 
 ### Revision 24, released 19 June 2023
 {: #odf-local-4.9-rev-24-change-log}
