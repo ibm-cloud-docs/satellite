@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-08-17"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -30,8 +30,8 @@ Before you get started, become familiar with some key terms for {{site.data.keyw
 
 | Term | Description |
 | ------ | ------------------------- |
-| {{site.data.keyword.satelliteshort}} location | A {{site.data.keyword.satelliteshort}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud. Locations can be made up of communications endpoints such as a Docker container, or of compute resources called hosts, which are used to form separate availability zones out of a given x86 infrastructure. |
-| {{site.data.keyword.satelliteshort}} Connector | A {{site.data.keyword.satelliteshort}} Connector is a deployment model that enables only the secure communications from {{site.data.keyword.cloud_notm}} to on-prem resources with a light weight container, deployed on the client's container platform hosts, such as Docker hosts. This option brings all the security and auditability of {{site.data.keyword.satelliteshort}} communication, but with much less resources required. |
+| {{site.data.keyword.satelliteshort}} location | A {{site.data.keyword.satelliteshort}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud. Locations can be made up of communications endpoints such as a Docker container, or of compute resources called hosts, which are used to form separate availability zones out of a given x86 infrastructure. See [Understanding {{site.data.keyword.satelliteshort}} location and hosts](/docs/satellite?topic=satellite-location-host). |
+| {{site.data.keyword.satelliteshort}} Connector | A {{site.data.keyword.satelliteshort}} Connector is a deployment model that enables only the secure communications from {{site.data.keyword.cloud_notm}} to on-prem resources with a light weight container, deployed on the client's container platform hosts, such as Docker hosts. This option brings all the security and auditability of {{site.data.keyword.satelliteshort}} communication, but with much less resources required. See [{{site.data.keyword.satelliteshort}} Connector overview](/docs/satellite?topic=satellite-understand-connectors). |
 | {{site.data.keyword.satelliteshort}} hosts | A {{site.data.keyword.satelliteshort}} host is a compute source that resides in your infrastructure provider or even locally. After you attach your hosts to a {{site.data.keyword.satelliteshort}} location, assign the hosts to the location control plane or to a {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services to provide the computing power to run your service workloads. See [Attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts). |
 | {{site.data.keyword.satelliteshort}}-enabled service | An {{site.data.keyword.cloud_notm}} service that you can set up in a Satellite location, such as a {{site.data.keyword.redhat_openshift_notm}} cluster. The service is managed from the {{site.data.keyword.cloud_notm}} region that your location is managed from, but you provide the infrastructure hosts to run the service's resources in your location. See [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services). |
 | {{site.data.keyword.satelliteshort}} Config | Based on the [Razee open source project](https://github.com/razee-io/Razee){: external}, {{site.data.keyword.satelliteshort}} Config is a continuous delivery tool that you can use to consistently roll out versions of your apps across clusters in your {{site.data.keyword.satelliteshort}} location. See [Deploying {{site.data.keyword.redhat_openshift_notm}} resources across clusters with {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-setup-clusters-satconfig). |
@@ -54,6 +54,9 @@ I'm planning to use my on-prem or edge infrastructure. 
 
 I want to use a different cloud provider for my infrastructure.
 :    Choose from [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba). Many of these providers include Terraform-based automation.
+
+I want to create a {{site.data.keyword.satelliteshort}} Connector.
+:    With connectors, you can create a secure connection between a specific remote location and {{site.data.keyword.cloud_notm}}. To create one, see [Creating a Connector](/docs/satellite?topic=satellite-create-connector). You can also learn more [about connectors](/docs/satellite?topic=satellite-understand-connectors). 
 
 ### Minimum requirements for hosts
 {: #gs-min-reqs}
