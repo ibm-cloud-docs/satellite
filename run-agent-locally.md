@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-04"
+lastupdated: "2023-08-23"
 
 keywords: satellite, connector
 
@@ -112,7 +112,7 @@ Make sure your computing environment meets the [Minimum requirements](/docs/sate
     {: pre}
   
     Example output:
-    ```
+    ```sh
     icr.io/ibm/satellite-connector/satellite-connector-agent    latest    5f4e42c8d53e   ibm         1 day ago       124 MB   -
     icr.io/ibm/satellite-connector/satellite-connector-agent    v1.0.5    6eadd91be5c0   ibm         1 week ago      124 MB   -
     icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.0    5f4e42c8d53e   ibm         1 day ago       124 MB   -

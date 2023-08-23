@@ -3663,6 +3663,8 @@ subcollection: satellite
 
 * [R0060: Outbound traffic to LaunchDarkly is failing.](/docs/satellite?topic=satellite-ts-locations-debug#R0060)
 
+* [R0061: A Satellite cluster API server is unreachable from IBM Cloud.](/docs/satellite?topic=satellite-ts-locations-debug#R0061)
+
 
 ### Locations
 {: #sitemap_locations}
