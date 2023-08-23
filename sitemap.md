@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-08-23"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3662,6 +3662,8 @@ subcollection: satellite
 * [R0059: Outbound traffic to IBM Cloud Container Registry is failing.](/docs/satellite?topic=satellite-ts-locations-debug#R0059)
 
 * [R0060: Outbound traffic to LaunchDarkly is failing.](/docs/satellite?topic=satellite-ts-locations-debug#R0060)
+
+* [R0061: A Satellite cluster API server is unreachable from IBM Cloud.](/docs/satellite?topic=satellite-ts-locations-debug#R0061)
 
 
 ### Locations

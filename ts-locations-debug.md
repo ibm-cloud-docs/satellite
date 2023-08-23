@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-10"
+lastupdated: "2023-08-23"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -495,7 +495,7 @@ For additional information about the affected components, [set up {{site.data.ke
 {: #R0060}
 
 Location message
-:   Outbound traffic to LaunchDarkly is failing. To ensure that all host requirements are met, see the [Host system requirements](/docs/satellite?topic=satellite-host-reqs).. More information is available in the IBM Cloud Platform Logs. If the issue persists, contact IBM Cloud Support and include your Satellite location ID.
+:   Outbound traffic to LaunchDarkly is failing. To ensure that all host requirements are met, see the [Host system requirements](/docs/satellite?topic=satellite-host-reqs). More information is available in the IBM Cloud Platform Logs. If the issue persists, contact IBM Cloud Support and include your Satellite location ID.
 
 Steps to resolve
 :    Check the health status and ensure that the host system requirements are met.
@@ -512,4 +512,17 @@ Steps to resolve
 
 For additional information about the affected components, [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0060` error logs](/docs/satellite?topic=satellite-health#logs-error).
 
+## R0061: A Satellite cluster API server is unreachable from IBM Cloud.
+{: #R0061}
 
+Location message
+:   A Satellite cluster API server is unreachable from IBM Cloud. For more information, see the IBM Cloud Platform Logs. If the issue persists, contact IBM Cloud Support and include your Satellite location ID.
+
+Steps to resolve
+:    Take the following steps to resolve this issue.
+
+1. Check the IBM Cloud platform logs for more details. For more information, see [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0061` error logs](/docs/satellite?topic=satellite-health#logs-error).
+
+1. Check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs), specifically for outbound connectivity to connect to IBM and Link connectors. 
+1. If you have met all the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can find your location ID by running the `ibmcloud sat location ls` command.
+ 

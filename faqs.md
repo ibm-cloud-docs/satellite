@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-21"
+lastupdated: "2023-08-23"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location
 
@@ -30,7 +30,7 @@ With {{site.data.keyword.satellitelong_notm}}, you can create a hybrid environme
 
 Your {{site.data.keyword.satelliteshort}} location includes tools such as {{site.data.keyword.satelliteshort}} Link and {{site.data.keyword.satelliteshort}} Config to provide additional capabilities for securing and auditing network connections in your location and consistently deploying, managing, and controlling your apps and policies across clusters in the location.
 
-For more information, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/product/satellite){: external}.
+For more information, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/products/satellite){: external}.
 
 ## Where is Satellite available?
 {: #satellite-locations}
