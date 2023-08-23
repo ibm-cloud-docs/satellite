@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-08-23"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -34,10 +34,10 @@ Follow these steps to set up the `dl-reverse-proxy` for {{site.data.keyword.dl_f
 Create an {{site.data.keyword.containerlong_notm}} cluster in your {{site.data.keyword.cloud_notm}} account, which serves as the connection between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}} on the private network.
 {: shortdesc}
 
-1. Review the networking basics of [clusters](/docs/containers?topic=containers-plan_clusters). In particular, ensure that you prepare the following:
-    - VLAN management (classic clusters only): Manage and choose both a public and private VLAN for your cluster's network connectivity.
-    - Subnet routing: Enable a Virtual Router Function (VRF) or VLAN spanning for your {{site.data.keyword.cloud_notm}} infrastructure account so your worker nodes can communicate with each other on the private network and communicate with private cloud service endpoints internally.
-    - IP address schema: Ensure that no subnet conflicts exist between the cluster and your on-premises network.
+1. Review the networking basics of clusters. In particular, ensure that you prepare the following:
+    - [VLAN management (classic clusters only)](/docs/containers?topic=containers-cs_network_cluster): Manage and choose both a public and private VLAN for your cluster's network connectivity.
+    - [Subnet routing](/docs/containers?topic=containers-subnets): Enable a Virtual Router Function (VRF) or VLAN spanning for your {{site.data.keyword.cloud_notm}} infrastructure account so your worker nodes can communicate with each other on the private network and communicate with private cloud service endpoints internally.
+    - [IP address schema](/docs/containers?topic=containers-subnets#finding_subnets_account): Ensure that no subnet conflicts exist between the cluster and your on-premises network.
 
 1. Review the steps you need to take to [prepare to create a cluster](/docs/containers?topic=containers-clusters#cluster_prepare).
 
@@ -58,7 +58,7 @@ Create an {{site.data.keyword.containerlong_notm}} cluster in your {{site.data.k
         - Subnets: Include subnets in the `--pod-subnet` and `--service-subnet` options if the default ranges conflict with the {{site.data.keyword.satelliteshort}} location’s subnet that you set up in your on-premises data center or in a different cloud provider
         - Cloud service endpoints: Do _not_ specify the `--disable-public-service-endpoint` option to ensure that both public and private endpoints are created
 
-1. Spread the default worker pool across zones to increase the availability of your [classic](/docs/containers?topic=containers-add_workers#add_zone) or [VPC](/docs/containers?topic=containers-add_workers#vpc_add_zone) cluster. Ensure that at least 2 worker nodes exist in each zone, so that the private ALBs that you configure in subsequent steps are highly available and can properly receive version updates.
+1. Spread the default worker pool across zones to increase the availability of your [classic](/docs/containers?topic=containers-add-workers-classic#add_zone) or [VPC](/docs/containers?topic=containers-add-workers-vpc#vpc_add_zone) cluster. Ensure that at least 2 worker nodes exist in each zone, so that the private ALBs that you configure in subsequent steps are highly available and can properly receive version updates.
 
 1. Set the {{site.data.keyword.containerlong_notm}} cluster as the context for this session.
     ```sh

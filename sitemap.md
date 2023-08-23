@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-08-23"
 
 keywords: satellite, sitemap
 subcollection: satellite

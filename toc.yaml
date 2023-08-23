@@ -9,7 +9,7 @@ toc:
     label: Satellite
     version: 2
     console-page: /satellite
-    product-page: https://www.ibm.com/cloud/satellite
+    product-page: https://www.ibm.com/products/satellite
   entries: 
   - navgroup: 
       id: learn
