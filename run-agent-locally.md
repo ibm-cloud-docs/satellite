@@ -50,7 +50,7 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
 
     ```sh
     SATELLITE_CONNECTOR_ID=<Your Satellite Connector ID>
-    SATELLITE_CONNECTOR_IAM_APIKEY=~/agent/env-files/apikey
+    SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/apikey
     SATELLITE_CONNECTOR_REGION=<Your Satellite Connector Region>
     SATELLITE_CONNECTOR_TAGS=sample tag
     ```
