@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-23"
+lastupdated: "2023-08-24"
 
 keywords: satellite, connector
 
@@ -40,6 +40,9 @@ Configuration information is provided to the agent through the following environ
 {: step}
 
 There are several ways to pass agent configuration environment variable information to the container. This example uses files. However, you can use the `docker run --env` command to specify the values. Be aware that if you use `--env` with your API key, the API key is exposed to the container environment and is visible on the output of `docker inspect` command.  You can secure your API key in a file and then use the file name in the environment variable. If you choose to use the file name, you must make sure that the file path that you specify in the environment variable is mounted to a file path in the container, as shown in the following example. The file names shown in the following steps are examples and can be tailored for your environment.
+
+To create a Connector, you need **Administrator** Platform role for {{site.data.keyword.satelliteshort}} in IAM. To connect an Agent to an existing Connector, you need **Viewer** Platform role or **Reader** Service role for {{site.data.keyword.satelliteshort}} in IAM.
+{: note}
   
 1. Create a directory for the configuration files, in this example `~/agent/env-files`.
 1. Create a file in the `~/agent/env-files` directory called `apikey` with a single line value of your IBM Cloud API Key that can access the {{site.data.keyword.satelliteshort}} Connector.
@@ -47,7 +50,7 @@ There are several ways to pass agent configuration environment variable informat
 
     ```sh
     SATELLITE_CONNECTOR_ID=<Your Satellite Connector ID>
-    SATELLITE_CONNECTOR_IAM_APIKEY=~/agent/env-files/apikey
+    SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/apikey
     SATELLITE_CONNECTOR_REGION=<Your Satellite Connector Region>
     SATELLITE_CONNECTOR_TAGS=sample tag
     ```
@@ -91,6 +94,10 @@ There are several ways to pass agent configuration environment variable informat
 Make sure your computing environment meets the [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors&interface=ui#min-requirements) for running the agent image. Then follow these steps.
 
 1. Mount your `env-files` directory to the container's `/agent-env-files` directory by using the `-v` option. You can use the latest version or a specific version of the published image.  
+    
+    If an environment variable is using a path to a file, that path must be a file path inside the container. To retrieve the file path, use the `-v` option on the `docker run` command. The `-v` option is specified by the local environment variable directory path, followed by the mounted path in the container and separated by `:`. For example, `-v ~/agent/env-files:/agent-env-files`, where `~/agent/env-files` is your local path and `/agent-env-files` is a path in your container. 
+    {: tip}
+    
     ```sh
     docker run -d --env-file ~/agent/env-files/env.txt -v ~/agent/env-files:/agent-env-files icr.io/ibm/satellite-connector/satellite-connector-agent:latest
     ```
@@ -118,10 +125,6 @@ Make sure your computing environment meets the [Minimum requirements](/docs/sate
     icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.0    5f4e42c8d53e   ibm         1 day ago       124 MB   -
     ```
     {: screen}
-
-  
-    If an environment variable is using a path to a file, that path must be a file path inside the container. To retrieve the file path, use the `-v` option on the `docker run` command. The `-v` option is specified by the local environment variable directory path, followed by the mounted path in the container and separated by `:`. For example, `-v ~/agent/env-files:/agent-env-files`, where `~/agent/env-files` is your local path and `/agent-env-files` is a path in your container. 
-    {: tip}
 
 
 1. You can verify the tunnel gets established to your Connector by looking at the logs of the container.
