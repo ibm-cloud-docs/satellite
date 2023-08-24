@@ -94,6 +94,10 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
 Make sure your computing environment meets the [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors&interface=ui#min-requirements) for running the agent image. Then follow these steps.
 
 1. Mount your `env-files` directory to the container's `/agent-env-files` directory by using the `-v` option. You can use the latest version or a specific version of the published image.  
+    
+    If an environment variable is using a path to a file, that path must be a file path inside the container. To retrieve the file path, use the `-v` option on the `docker run` command. The `-v` option is specified by the local environment variable directory path, followed by the mounted path in the container and separated by `:`. For example, `-v ~/agent/env-files:/agent-env-files`, where `~/agent/env-files` is your local path and `/agent-env-files` is a path in your container. 
+    {: tip}
+    
     ```sh
     docker run -d --env-file ~/agent/env-files/env.txt -v ~/agent/env-files:/agent-env-files icr.io/ibm/satellite-connector/satellite-connector-agent:latest
     ```
@@ -121,10 +125,6 @@ Make sure your computing environment meets the [Minimum requirements](/docs/sate
     icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.0    5f4e42c8d53e   ibm         1 day ago       124 MB   -
     ```
     {: screen}
-
-  
-    If an environment variable is using a path to a file, that path must be a file path inside the container. To retrieve the file path, use the `-v` option on the `docker run` command. The `-v` option is specified by the local environment variable directory path, followed by the mounted path in the container and separated by `:`. For example, `-v ~/agent/env-files:/agent-env-files`, where `~/agent/env-files` is your local path and `/agent-env-files` is a path in your container. 
-    {: tip}
 
 
 1. You can verify the tunnel gets established to your Connector by looking at the logs of the container.
