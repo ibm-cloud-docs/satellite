@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-23"
+lastupdated: "2023-08-24"
 
 keywords: satellite, connector
 
@@ -40,6 +40,9 @@ Configuration information is provided to the agent through the following environ
 {: step}
 
 There are several ways to pass agent configuration environment variable information to the container. This example uses files. However, you can use the `docker run --env` command to specify the values. Be aware that if you use `--env` with your API key, the API key is exposed to the container environment and is visible on the output of `docker inspect` command.  You can secure your API key in a file and then use the file name in the environment variable. If you choose to use the file name, you must make sure that the file path that you specify in the environment variable is mounted to a file path in the container, as shown in the following example. The file names shown in the following steps are examples and can be tailored for your environment.
+
+To create a Connector, you need **Administrator** Platform role for {{site.data.keyword.satelliteshort}} in IAM. To connect an Agent to an existing Connector, you need **Viewer** Platform role or **Reader** Service role for {{site.data.keyword.satelliteshort}} in IAM.
+{: note}
   
 1. Create a directory for the configuration files, in this example `~/agent/env-files`.
 1. Create a file in the `~/agent/env-files` directory called `apikey` with a single line value of your IBM Cloud API Key that can access the {{site.data.keyword.satelliteshort}} Connector.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-04"
+lastupdated: "2023-08-24"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -26,7 +26,7 @@ I created an ACL for my Connector, why doesn't it take effect?
 :   Make sure you apply the ACL to the endpoint you want to use it against. 
   
 What IAM permissions do I need for Connectors?
-:   To create a Connector, you need {{site.data.keyword.satelliteshort}} Admin access. To connect an Agent to an existing Connector, you need {{site.data.keyword.satelliteshort}} Viewer or Reader access.
+:   To create a Connector, you need **Administrator** Platform role for {{site.data.keyword.satelliteshort}}. To connect an Agent to an existing Connector, you need **Viewer** Platform role or **Reader** Service role for {{site.data.keyword.satelliteshort}}.
   
 When does support for Secure Gateway end?
 :   Secure Gateway runs on Cloud Foundry and will be deprecated when Cloud foundry reaches end of support. For more information, see [Deprecation of IBM Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
