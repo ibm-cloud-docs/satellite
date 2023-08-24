@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-23"
+lastupdated: "2023-08-24"
 
 keywords: satellite, hybrid, multicloud, location, satellite location, create location
 
@@ -15,7 +15,7 @@ subcollection: satellite
 # Creating a {{site.data.keyword.satelliteshort}} location
 {: #locations}
 
-The first step to getting started with {{site.data.keyword.satelliteshort}} is to create a {{site.data.keyword.satelliteshort}} location. A {{site.data.keyword.satelliteshort}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud. Locations can be made up of communications endpoints such as a Docker container, or of compute resources called hosts, which are used to form separate availability zones out of a given x86 infrastructure. 
+The first step to getting started with {{site.data.keyword.satelliteshort}} is to create a {{site.data.keyword.satelliteshort}} location. A {{site.data.keyword.satelliteshort}} location is a representation of an environment in your infrastructure provider, such as an on-prem data center or cloud. Locations are made up of compute sources, called hosts, from separate zones of your backing infrastructure environment. 
 {: shortdesc}
 
 The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location).
