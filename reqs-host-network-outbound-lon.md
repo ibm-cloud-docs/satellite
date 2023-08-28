@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-08-28"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -84,7 +84,8 @@ Allow hosts to be attached to a location and assigned to services in the locatio
      * Protocol and ports: HTTPS 443
      
 Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API.
-:    * [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external}      * Destination hostnames: `api.eu-gb.link.satellite.cloud.ibm.com`, `config.eu-gb.satellite.cloud.ibm.com`, `eu-gb.containers.cloud.ibm.com`, `config.satellite.cloud.ibm.com`
+:    * [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external}      
+     * Destination hostnames: `api.eu-gb.link.satellite.cloud.ibm.com`, `config.eu-gb.satellite.cloud.ibm.com`, `eu-gb.containers.cloud.ibm.com`, `config.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
