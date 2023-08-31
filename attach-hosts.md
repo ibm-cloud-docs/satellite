@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-07"
+lastupdated: "2023-08-31"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -30,7 +30,10 @@ Not sure how many hosts to attach to your location? See [Sizing your {{site.data
 ## Downloading the host attachment script for your location
 {: #host-attach-download}
 
-To attach hosts to your location, you must download a host attachment script. After you download the script, you can run it on your hosts to attach them to your location. You can get the attachment script from the console or by running the `sat host attach` [command](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach). Note that for CoreOS hosts, the attachment script is an ignition (`.ign`) file. For RHEL hosts, the attachment script is a Shell script.
+To attach hosts to your location, you must download a host attachment script. After you download the script, you can run it on your hosts to attach them to your location. You can get the attachment script from the console or by running the `sat host attach` [command](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach). 
+
+To attach a host with a Red Hat CoreOS (RHCOS) operating system, the attachment script is an ignition (`.ign`) file. To attach a host with a RHEL operating system, the attachment script is a Shell script.
+{: note}
 
 1. Download the host attachment script. 
     * **To get the host attachment script from the console**:
@@ -86,7 +89,7 @@ After you attach a host to your location, {{site.data.keyword.satelliteshort}} d
 
 To attach RHEL hosts that reside in your on-premises data center to your location, follow these general steps to run the host attachment script.
 
-1. [Download the host script](#attach-hosts) for your location.
+1. [Download the host script](#attach-hosts) for your location. To attach a host with a RHEL operating system, the attachment script is a Shell script.
 2. Retrieve the public IP address of your host, or if your host has only a private network interface, the private IP address of your host.      
 3. Copy the script from your local machine to your host.
     ```sh
@@ -128,7 +131,7 @@ After you attach a host to your location, {{site.data.keyword.satelliteshort}} d
 
 To attach Red Hat CoreOS (RHCOS) hosts that reside in your on-premises data center to your location, follow these general steps to run the host attachment script.
 
-1. [Download the host script](#attach-hosts) for your location. Note that for RHCOS hosts, the attachment script is a Red Hat CoreOS ignition (`.ign`) file.
+1. [Download the host script](#attach-hosts) for your location. To attach a host with a Red Hat CoreOS (RHCOS) operating system, the attachment script is a Red Hat CoreOS ignition (`.ign`) file.
 2. Boot your RHCOS host and include the file path to the ignition script as the `--user-data`. This command varies, depending on the type of host that you are adding. For example, if your hosts are Amazon Web Services (AWS) cloud hosts, then you add `--user-data file:///tmp/attach_hypershift.ign` to your [launch template](https://docs.aws.amazon.com/cli/latest/reference/ec2/run-instances.html){: external}. Consult your provider documentation for more information about how to boot your host and include a file path to the ignition script.
 3. As you run the scripts on each machine, check that your hosts are shown in the **Hosts** tab of your location dashboard. This process might take a few minutes to complete. All hosts show a **Health** status of `Ready` when a heartbeat for the machine can be detected, and a **Status** of `Unassigned` as the hosts are not yet assigned to your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.redhat_openshift_notm}} cluster.
 4. Assign your hosts to the [{{site.data.keyword.satelliteshort}} control plane](/docs/satellite?topic=satellite-setup-control-plane) or a [{{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
