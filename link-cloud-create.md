@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-13"
+  years: 2020, 2023
+lastupdated: "2023-08-31"
 
 keywords: satellite, hybrid, multicloud
 
@@ -86,7 +86,7 @@ Use the CLI to create an endpoint so that sources in your {{site.data.keyword.sa
     | `--location <location_ID>` | Enter the ID of your {{site.data.keyword.satelliteshort}} location that you retrieved earlier. | 
     | `--name <endpoint_name>` | Enter a name for your {{site.data.keyword.satelliteshort}} endpoint. | 
     | `--dest-type cloud` | Enter `cloud` to indicate that the destination resource runs outside of the location. | 
-    | `--dest-hostname <FQDN_or_IP>` | Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, which must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}} such as a private cloud service endpoint. | 
+    | `--dest-hostname <FQDN_or_IP>` | Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to. For cloud endpoints, this value must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}} such as a private cloud service endpoint. | 
     | `--dest-port <port>` | Enter the port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol. | 
     | `--dest-protocol <destination-protocol>` | Optional: Enter the protocol of the destination resource. If you do not specify this option, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). | 
     | `--source-protocol <source-protocol>` | Enter the protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). | 
@@ -231,7 +231,7 @@ Use the console to create an endpoint so that sources that are connected to the 
 2. From the **Overview** tab, verify that your location has a **normal** status.
 3. From the **Link endpoints** tab, click **Create an endpoint**.
 4. Select **Satellite location** to create an endpoint for a service, server, or app in your {{site.data.keyword.satelliteshort}} location.
-5. Enter an endpoint name, the destination resource's fully qualified domain name (FQDN) or IP address, and the port that your destination resource listens on for incoming requests.
+5. Enter an endpoint name, the destination resource's fully qualified domain name (FQDN) or IP address, and the port that your destination resource listens on for incoming requests. The FQDN or IP address must resolve from and be reachable from the control plane hosts for {{site.data.keyword.satelliteshort}} locations or where the agent runs for {{site.data.keyword.satelliteshort}} Connector.
 6. Select the protocol that a source must use to connect to the destination FQDN or IP address. This protocol must match the port for your destination resource. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
     - If you selected the **TLS** or **HTTPS** protocols and want to require server-side authentication of the destination's certificate, select the **Verify destination certificate** checkbox.
     - If you selected the **TLS** or **HTTPS** protocols but the destination resource is still in development, you can click **Upload certificate** to add your self-signed certificate file. This `ssl.crt` file must contain the public, base-64 encoded certificate for your resource's host name and must not contain the private `ssl.key` certificate key. To create a self-signed certificate for testing purposes by using OpenSSL, see this [self-signed SSL certificate tutorial](https://www.akadia.com/services/ssh_test_certificate.html){: external}.
@@ -275,7 +275,7 @@ Use the CLI to create an endpoint so that sources that are connected to the {{si
     | `--location <location_ID>` | Enter the ID of your {{site.data.keyword.satelliteshort}} location that you retrieved earlier. | 
     | `--name <endpoint_name>` | Enter a name for your {{site.data.keyword.satelliteshort}} endpoint. | 
     | `--dest-type cloud` | Enter `cloud` to indicate that the destination resource runs outside of the location. | 
-    | `--dest-hostname <FQDN_or_IP>` | Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to, which must resolve to a public IP address or to a private IP address that is accessible within {{site.data.keyword.cloud_notm}} such as a private cloud service endpoint. | 
+    | `--dest-hostname <FQDN_or_IP>` | Enter the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to. For location endpoints, this value must resolve from and be reachable from the control plane hosts for {{site.data.keyword.satelliteshort}} locations or where the agent runs for {{site.data.keyword.satelliteshort}} Connector. | 
     | `--dest-port <port>` | Enter the port that destination resource listens on for incoming requests. Make sure that the port matches the destination protocol. | 
     | `--dest-protocol <destination-protocol>` | Optional: Enter the protocol of the destination resource. If you do not specify this option, the destination protocol is inherited from the source protocol. Supported protocols include `tcp` and `tls`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). | 
     | `--source-protocol <source-protocol>` | Enter the protocol that the source must use to connect to the destination resource. Supported protocols include `tcp`, `tls`, `http`, `https`, and `http-tunnel`. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). | 
