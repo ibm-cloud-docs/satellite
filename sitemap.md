@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-01"
+lastupdated: "2023-09-05"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1104,11 +1104,11 @@ subcollection: satellite
 * [Uninstalling on Linux and macOS](/docs/satellite?topic=satellite-uninstall-ibmcloud-cli#uninstall-cli-linux-macos)
 
 
-## Planning your environment for {{site.data.keyword.satelliteshort}}
-{: #sitemap_planning_your_environment_for_}
+## Planning your environment for {{site.data.keyword.satelliteshort}} locations
+{: #sitemap_planning_your_environment_for_locations}
 
 
-[Planning your environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan#infrastructure-plan)
+[Planning your environment for {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-infrastructure-plan#infrastructure-plan)
 
 * [Planning your infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#infra-plan-infra)
 
@@ -1121,12 +1121,6 @@ subcollection: satellite
 * [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os)
 
     * [Deciding whether to enable Red Hat CoreOS support for your location](/docs/satellite?topic=satellite-infrastructure-plan#enable-coreos-loc)
-
-* [Deciding how to create your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-infrastructure-plan#create-options)
-
-    * [On-premises infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-onprem)
-
-    * [Cloud provider infrastructure](/docs/satellite?topic=satellite-infrastructure-plan#create-options-cloud)
 
 * [Providing {{site.data.keyword.satelliteshort}} with credentials to your cloud provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-credentials)
 
@@ -1275,91 +1269,38 @@ subcollection: satellite
 {: #sitemap_creating_locations}
 
 
-[Creating a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#locations)
+[Create a {{site.data.keyword.satelliteshort}} location overview](/docs/satellite?topic=satellite-locations#locations)
 
-* [Create location overview](/docs/satellite?topic=satellite-locations#satloc-prereq)
+* [Host operating system](/docs/satellite?topic=satellite-locations#create-host-os)
 
-* [Automating your location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template)
+* [Options for creating your [SatLoc]}](/docs/satellite?topic=satellite-locations#create-options)
 
-* [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual)
+* [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location)
 
-    * [Manually creating locations from the console](/docs/satellite?topic=satellite-locations#location-create-console)
 
-    * [Creating locations from the CLI](/docs/satellite?topic=satellite-locations#locations-create-cli)
+### Creating a location with a template
+{: #sitemap_creating_a_location_with_a_template}
 
-    * [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location)
 
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-locations#location-control-plane-next)
+[Automating your AWS location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-aws-create-auto#loc-aws-create-auto)
+
+* [Creating your location with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-aws-create-auto#create-auto-aws)
+
+* [What does this template create?](/docs/satellite?topic=satellite-loc-aws-create-auto#template-aws)
+
+* [AWS credentials](/docs/satellite?topic=satellite-loc-aws-create-auto#infra-creds-aws)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-aws-create-auto#awsauto-whats-next)
 
 [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall#coreos-reduced-firewall)
 
-[Alibaba Cloud](/docs/satellite?topic=satellite-alibaba#alibaba)
+[Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-loc-manual-create#loc-manual-create)
 
-* [Adding Alibaba hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-alibaba#alibaba-host-attach)
+* [Manually creating locations from the console](/docs/satellite?topic=satellite-loc-manual-create#location-create-console)
 
-    * [1. Download the host script](/docs/satellite?topic=satellite-alibaba#alibaba-host-script)
+* [Creating locations from the CLI](/docs/satellite?topic=satellite-loc-manual-create#locations-create-cli)
 
-    * [2. Set up your virtual machines](/docs/satellite?topic=satellite-alibaba#alibaba-host-vm)
-
-    * [3. Connect to your instance and install packages](/docs/satellite?topic=satellite-alibaba#alibaba-host-install-packages)
-
-    * [4. Upload and run the host attach script](/docs/satellite?topic=satellite-alibaba#alibaba-host-script-run)
-
-    * [5. Configure the control plane](/docs/satellite?topic=satellite-alibaba#alibaba-host-control-plane)
-
-* [Security group settings](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-secgroup)
-
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-alibaba#alibaba-whats-next)
-
-[Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws#aws)
-
-* [Automating your AWS location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-aws#aws-template)
-
-* [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach)
-
-* [Manually running AWS instances with the CLI](/docs/satellite?topic=satellite-aws#aws-hosts-cli)
-
-* [AWS instance types](/docs/satellite?topic=satellite-aws#aws-instance-types)
-
-* [Security group settings for AWS](/docs/satellite?topic=satellite-aws#aws-reqs-secgroup)
-
-* [AWS credentials](/docs/satellite?topic=satellite-aws#infra-creds-aws)
-
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-aws#aws-whats-next)
-
-[Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp#gcp)
-
-* [Automating your GCP location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-gcp#gcp-template)
-
-* [Manually adding hosts to {{site.data.keyword.satelliteshort}} in the GCP console](/docs/satellite?topic=satellite-gcp#gcp-host-attach)
-
-* [Manually ordering hosts with the `gcloud` CLI](/docs/satellite?topic=satellite-gcp#gcp-manual-cli)
-
-* [Network firewall settings](/docs/satellite?topic=satellite-gcp#gcp-reqs-firewall)
-
-* [Google Cloud Platform credentials](/docs/satellite?topic=satellite-gcp#infra-creds-gcp)
-
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-gcp#gcp-whats-next)
-
-[Microsoft Azure](/docs/satellite?topic=satellite-azure#azure)
-
-* [Automating your Azure location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-azure#azure-template)
-
-* [Adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach)
-
-* [Security group settings for Azure](/docs/satellite?topic=satellite-azure#azure-reqs-firewall)
-
-* [Microsoft Azure credentials](/docs/satellite?topic=satellite-azure#infra-creds-azure)
-
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-azure#azure-whats-next)
-
-[{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm#ibm)
-
-* [Manually adding {{site.data.keyword.cloud_notm}} RHEL hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
-
-* [Manually adding {{site.data.keyword.cloud_notm}} RHCOS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach-rhcos)
-
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-manual-create#manual-loc-whats-next)
 
 [Setting up the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane#setup-control-plane)
 
@@ -1390,8 +1331,8 @@ subcollection: satellite
     * [What types of changes can increase my location sizing requirements?](/docs/satellite?topic=satellite-location-sizing#types-changes-sizing-increase)
 
 
-## Managing hosts and locations
-{: #sitemap_managing_hosts_and_locations}
+## Attaching hosts to a location
+{: #sitemap_attaching_hosts_to_a_location}
 
 
 [Attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-hosts)
@@ -1401,6 +1342,69 @@ subcollection: satellite
 * [Attaching on-premises RHEL hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts)
 
 * [Attaching on-premises Red Hat CoreOS hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts)
+
+[Alibaba Cloud](/docs/satellite?topic=satellite-alibaba#alibaba)
+
+* [Adding Alibaba hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-alibaba#alibaba-host-attach)
+
+    * [1. Download the host script](/docs/satellite?topic=satellite-alibaba#alibaba-host-script)
+
+    * [2. Set up your virtual machines](/docs/satellite?topic=satellite-alibaba#alibaba-host-vm)
+
+    * [3. Connect to your instance and install packages](/docs/satellite?topic=satellite-alibaba#alibaba-host-install-packages)
+
+    * [4. Upload and run the host attach script](/docs/satellite?topic=satellite-alibaba#alibaba-host-script-run)
+
+    * [5. Configure the control plane](/docs/satellite?topic=satellite-alibaba#alibaba-host-control-plane)
+
+* [Security group settings](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-secgroup)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-alibaba#alibaba-whats-next)
+
+[Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws)
+
+* [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach)
+
+* [Manually running AWS instances with the CLI](/docs/satellite?topic=satellite-aws#aws-hosts-cli)
+
+* [AWS instance types](/docs/satellite?topic=satellite-aws#aws-instance-types)
+
+* [Security group settings for AWS](/docs/satellite?topic=satellite-aws#aws-reqs-secgroup)
+
+* [AWS credentials](/docs/satellite?topic=satellite-aws#infra-creds-aws)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-aws#aws-whats-next)
+
+[Google Cloud Platform (GCP) hosts](/docs/satellite?topic=satellite-gcp#gcp)
+
+* [Manually adding hosts to {{site.data.keyword.satelliteshort}} in the GCP console](/docs/satellite?topic=satellite-gcp#gcp-host-attach)
+
+* [Manually ordering hosts with the `gcloud` CLI](/docs/satellite?topic=satellite-gcp#gcp-manual-cli)
+
+* [Network firewall settings](/docs/satellite?topic=satellite-gcp#gcp-reqs-firewall)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-gcp#gcp-whats-next)
+
+[Microsoft Azure](/docs/satellite?topic=satellite-azure#azure)
+
+* [Adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach)
+
+* [Security group settings for Azure](/docs/satellite?topic=satellite-azure#azure-reqs-firewall)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-azure#aws-whats-next)
+
+[{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm#ibm)
+
+* [Manually adding {{site.data.keyword.cloud_notm}} RHEL hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
+
+* [Manually adding {{site.data.keyword.cloud_notm}} RHCOS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach-rhcos)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
+
+
+## Managing hosts and locations
+{: #sitemap_managing_hosts_and_locations}
+
 
 [Assigning hosts to worker pools](/docs/satellite?topic=satellite-assigning-hosts#assigning-hosts)
 

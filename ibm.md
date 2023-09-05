@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-01"
+lastupdated: "2023-09-05"
 
 keywords: satellite, hybrid, multicloud
 
@@ -25,8 +25,6 @@ Test out an {{site.data.keyword.satellitelong}} location with virtual instances 
 
 If your hosts are running Red Hat CoreOS (RHCOS), you must manually attach them to your location.
 {: note}
-
-
 
 ## Manually adding {{site.data.keyword.cloud_notm}} RHEL hosts to {{site.data.keyword.satelliteshort}}
 {: #ibm-host-attach}

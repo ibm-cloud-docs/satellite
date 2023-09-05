@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-02"
+lastupdated: "2023-09-05"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -13,21 +13,21 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Planning your environment for {{site.data.keyword.satelliteshort}}
+# Planning your environment for {{site.data.keyword.satelliteshort}} locations
 {: #infrastructure-plan}
 
 Plan how to set up your infrastructure environment to use with {{site.data.keyword.satellitelong}}. Your infrastructure environment can be an on-premises data center, in a public cloud provider, or on compatible edge devices anywhere.
 {: shortdesc}
 
-Your {{site.data.keyword.satelliteshort}} location starts with your infrastructure, such as a public cloud provider or on-prem. Your infrastructure provides the basis for the hosts and zones that you use to build out your {{site.data.keyword.satelliteshort}} location. For more details on the different responsibilities for your infrastructure and {{site.data.keyword.satelliteshort}} resources, see [Your responsibilities](/docs/satellite?topic=satellite-responsibilities).
-{: shortdesc}
-
-![Concept overview of planning your infrastructure](/images/plan-sat-envirn.svg){: caption="Figure 1. Your Satellite location is built atop the zones and hosts in your infrastructure provider." caption-side="bottom"}
-
 ## Planning your infrastructure
 {: #infra-plan-infra}
 
 Before you create your location, choose your infrastructure provider, infrastructure zones, and your infrastructure hosts.
+
+Your {{site.data.keyword.satelliteshort}} location starts with your infrastructure, such as a public cloud provider or on-prem. Your infrastructure provides the basis for the hosts and zones that you use to build out your {{site.data.keyword.satelliteshort}} location. For more information about the different responsibilities for your infrastructure and {{site.data.keyword.satelliteshort}} resources, see [Your responsibilities](/docs/satellite?topic=satellite-responsibilities).
+
+
+![Concept overview of planning your infrastructure](/images/plan-sat-envirn.svg){: caption="Figure 1. Your Satellite location is built atop the zones and hosts in your infrastructure provider." caption-side="bottom"}
 
 ### Plan your infrastructure provider
 {: #infra-plan-provider}
@@ -41,7 +41,7 @@ Supported bare metal servers
 :    You can use a supported bare metal server as a host attached to your {{site.data.keyword.satelliteshort}} location, including {{site.data.keyword.baremetal_long}} for Classic. For more information, see [Bare Metal Server requirements](/docs/satellite?topic=satellite-assign-bare-metal#setup-bare-metal).
 
 Non-{{site.data.keyword.IBM_notm}} cloud provider
-:    You can use a cloud provider of your choice, such as [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba).
+:    You can use a cloud provider of your choice, such as Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft Azure, or Alibaba Cloud.
 
 {{site.data.keyword.cloud_notm}}
 :    You can use [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) for testing purposes. While you can use other {{site.data.keyword.cloud_notm}} virtual servers, such as {{site.data.keyword.vsi_is_short}} for test environments, the only supported {{site.data.keyword.cloud_notm}} infrastructure to use in {{site.data.keyword.satelliteshort}} for production environments is {{site.data.keyword.baremetal_long}} for Classic that is running Red Hat CoreOS.
@@ -66,8 +66,8 @@ Latency between hosts in your location
 In each of the three zones in your infrastructure provider, plan to create compatible hosts to add to {{site.data.keyword.satelliteshort}}. The host instances in your infrastructure provider become the compute hosts to create your location control plane or to run the services in your {{site.data.keyword.satelliteshort}} location, similar to the worker nodes in a {{site.data.keyword.redhat_openshift_notm}} cluster.
 - Each host must meet the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for {{site.data.keyword.satelliteshort}}.
 - Your hosts must be running on [official Red Hat certified hardware](https://catalog.redhat.com/hardware){: external}.
-- To calculate how many hosts you need, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
 
+To calculate how many hosts you need, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
 
 To check your host set up, you can use the `satellite-host-check` script. For more information, see [Checking your host set up](/docs/satellite?topic=satellite-host-network-check).
 {: tip}
@@ -80,11 +80,11 @@ Choose your operating system for your hosts. You can choose Red Hat Enterprise L
 The type of location that you create dictates the type of operating systems that can run on your hosts. If your location is RHCOS enabled, then you can attach hosts that are running either RHEL and RHCOS. If your location isn't RHCOS enabled, then you can attach only hosts that are running RHEL. You can check whether your [location is RHCOS enabled](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 {: note}
 
-Red Hat Enterprise Linux 7 (RHEL 7)
-:    RHEL 7 is the default operating system supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or earlier. Note that support for RHEL 7 hosts in your control plane ends on March 2nd, 2023. [Follow the steps](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8) to migrate your hosts to RHEL 8.
-
 Red Hat Enterprise Linux 8 (RHEL 8)
-:    RHEL 8 is supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or later and on infrastructure hosts. RHEL 8 is the recommended operating system and will become the default in the coming months.
+:    RHEL 8 is default operating system that is supported for {{site.data.keyword.satelliteshort}} hosts running {{site.data.keyword.redhat_openshift_notm}} version 4.9 or later and on infrastructure hosts.
+
+Red Hat Enterprise Linux 7 (RHEL 7)
+:    RHEL 7 is the operating system that is supported for {{site.data.keyword.satelliteshort}} hosts running {{site.data.keyword.redhat_openshift_notm}} version 4.9 or earlier. Note that support for RHEL 7 hosts in your control plane ends on March 2nd, 2023. [Follow the steps](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8) to migrate your hosts to RHEL 8.
     
 Red Hat CoreOS (RHCOS)
 :    RHCOS is a minimal operating system for running containerized workloads securely and at scale. It is based on RHEL and includes automated, remote upgrade features. For more information about the key benefits of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.10/architecture/architecture-rhcos.html){: external}. RHCOS is supported for {{site.data.keyword.satelliteshort}} hosts on {{site.data.keyword.redhat_openshift_notm}} version 4.9 or later. Red Hat CoreOS hosts don't support all services. For more information, see [Supported Satellite-enabled IBM Cloud services](/docs/satellite?topic=satellite-managed-services). To attach RHCOS hosts, your location must be [enabled for RHCOS](/docs/satellite?topic=satellite-locations#verify-coreos-location).
@@ -98,25 +98,6 @@ To verify if you location is enabled for Red Hat CoreOS, see [Is my location ena
 
 The bring your own key (BYOK) or keep your own key (KYOK) feature is supported in RHCOS enabled locations on {{site.data.keyword.openshiftshort}} 4.13 and later. It is supported on both RHEL and RHCOS hosts. You can encrypt only cluster secrets. This feature is not available during cluster or worker pool creation. You must run the `ibmcloud oc kms enable` command to enable it after the cluster or worker pool has been created. Note that this feature cannot be disabled after it is enabled.
 {: note}
-
-
-## Deciding how to create your {{site.data.keyword.satelliteshort}} location
-{: #create-options}
-
-Depending on your infrastructure provider, you have different options to create a {{site.data.keyword.satelliteshort}} location.
-{: shortdesc}
-
-### On-premises infrastructure
-{: #create-options-onprem}
-
-For on-prem infrastructure, you can manually setup a {{site.data.keyword.satelliteshort}} location. For more information, see [Manually creating Satellite locations](/docs/satellite?topic=satellite-locations#location-create-manual).
-{: shortdesc}
-
-### Cloud provider infrastructure
-{: #create-options-cloud}
-
-For cloud provider infrastructure, you can follow provider-specific guides. For more information, see [Creating a Satellite location](/docs/satellite?topic=satellite-locations).
-{: shortdesc}
 
 ## Providing {{site.data.keyword.satelliteshort}} with credentials to your cloud provider
 {: #infra-credentials}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-05"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -23,56 +23,6 @@ Learn how you can set up an {{site.data.keyword.satellitelong}} location with vi
 If your hosts are running Red Hat CoreOS (RHCOS), you must manually attach them to your location.
 {: note}
 
-## Automating your Azure location setup with a {{site.data.keyword.bpshort}} template
-{: #azure-template}
-
-Automate your Azure setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your Azure account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
-{: shortdesc}
-
-This {{site.data.keyword.bpshort}} template creates a resource group of your Azure cloud subscription and then creates the following resources in your Azure account.
-
-- 1 virtual network that spans the region.
-- 1 network security group to meet the host networking requirements for {{site.data.keyword.satelliteshort}}.
-- 1 virtual machine running RHEL 8 for each host that you specified, spread evenly across the region. By default, 6 virtual machines are created.
-- 1 network interface for each virtual machine.
-- 1 disk for each virtual machine.
-
-The following resources are created in your {{site.data.keyword.cloud_notm}} account.
-
-- 1 {{site.data.keyword.satelliteshort}} location.
-- 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
-- 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location, unassigned, and available to use for services such as a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the additional hosts are unassigned and available for use in the control plane or by services. 
-
-This template does not include the required storage resources for some integrations, such as OpenShift Data Foundation or other services. If you need OpenShift Data Foundation or similar services, review the required resources and manually create hosts in your Azure account. Then, [attach the hosts to your location](#azure-host-attach).
-{: important}
-
-Before you begin, make sure that you have the correct [{{site.data.keyword.cloud_notm}} permissions](/docs/satellite?topic=satellite-iam#iam-roles-usecases) to create locations, including to {{site.data.keyword.satelliteshort}} and {{site.data.keyword.bpshort}}. To create the template and manage its resources, {{site.data.keyword.satelliteshort}} automatically creates an {{site.data.keyword.cloud_notm}} IAM [API key](/docs/account?topic=account-manapikey). You can optionally provide the value of an existing API key that has the correct permissions in the same account.
-
-Do not reuse the same name for multiple locations, even after the other location is deleted. If you use the same name 5 times or more within 7 days, you might reach the Let's Encrypt [Duplicate Certificate rate limit](/docs/openshift?topic=openshift-cs_rate_limit).
-{: note}
-
-1. In your Azure cloud provider, [set up your account credentials](#infra-creds-azure).
-2. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Create location**.
-3. In the **Setup** section, click **Azure**.
-4. In the **Azure credentials** section, enter the **Azure client ID (app ID)**, **Azure tenant ID**, and **Azure secret key (password)** values that you previously created for the service principal.
-5. Click **Fetch options from Azure**.
-6. Review the **Azure environment** details that are automatically populated. By default, enough VMs are created to provide hosts for 1 small location that can run about 2 demo clusters. To change the subscription, region, instance type, or number of VMs for the hosts, click the **Edit** pencil icon.
-7. Review the **Satellite location** details. If you edited the Azure environment details, you might want to click the **Edit** pencil icon to change details such as the description, API key, or {{site.data.keyword.cloud_notm}} multizone region that the location is managed from.
-8. In the **Summary** pane, review the cost estimate.
-9. Click **Create location**. Your location might take about 30 minutes to finish provisioning.
-10. Optional: To review the provisioning progress, review the logs in the {{site.data.keyword.bpshort}} workspace that is automatically created for you.
-    1. Click **Manage in Schematics**. If you see an error, navigate to the [{{site.data.keyword.bpshort}} workspaces console](https://cloud.ibm.com/schematics/workspaces){: external} and click the name of your workspace, such as `us.east.cartOrder...`.
-    2. From the **Activity** tab, find the current activity row and click **View log** to review the log details.
-    3. Wait for the {{site.data.keyword.bpshort}} action to finish and the workspace to enter an **Active** state.
-
-Well done, your {{site.data.keyword.satelliteshort}} location is creating! You can review the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to see when your location is in a **Normal** state and ready to use.
-
-If you are using this template for demonstration purposes, do not assign all your hosts to your control plane. Hosts that are assigned to the control plane cannot be used for other purposes, such as worker nodes for your cluster. For more information, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-location-host).
-{: note}
-
-What's next?
-
-The {{site.data.keyword.bpshort}} template helped with the initial creation, but you are in control for subsequent location management actions, such as [attaching more hosts](/docs/satellite?topic=satellite-attach-hosts), [creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters), or [scaling the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-location-sizing). If you [remove](/docs/satellite?topic=satellite-host-remove#location-remove-console) your {{site.data.keyword.satelliteshort}} location, make sure to [remove your workspace in {{site.data.keyword.bpshort}}](/docs/schematics?topic=schematics-sch-delete-wks), too.
 
 
 ## Adding Azure hosts to {{site.data.keyword.satelliteshort}}
@@ -84,7 +34,6 @@ You can create your {{site.data.keyword.satellitelong_notm}} location by using h
 
 If you want to use Red Hat CoreOS (RHCOS) hosts in your location, provide your RHCOS image file to your Azure account. For more information, see [Creating custom Linux images](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/imaging){: external}. To find RHCOS images, see the list of [available images](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/). Note that you must use at least version 4.9.
 {: important}
-
 
 
 All hosts that you want to add must meet the general host requirements, such as the RHEL 7 or 8 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
@@ -259,63 +208,10 @@ The following example is a security group that you might create for Azure.
 For more information, see [Network security groups](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview){: external} in Microsoft Azure documentation.
 
 
-## Microsoft Azure credentials
-{: #infra-creds-azure}
-
-Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your Azure cloud on your behalf.
-{: shortdesc}
-
-1. Verify that you have the required [permissions in your Azure account](/docs/satellite?topic=satellite-iam-common#permissions-azure) to create a {{site.data.keyword.satelliteshort}} location from a template.
-2. [Sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli){: external} from the command line.
-    ```sh
-    az login
-    ```
-    {: pre}
-
-3. List the available subscriptions in your account.
-    ```sh
-    az account list
-    ```
-    {: pre}
-
-4. Set the subscription to create your Azure resources in.
-    ```sh
-    az account set --subscription="<subscription_ID>"
-    ```
-    {: pre}
-
-5. Create a service principal identity with the Contributor role, scoped to your subscription. These credentials are used by {{site.data.keyword.satellitelong_notm}} to provision resources in your Azure account. For more information, see the [Azure documentation](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli){: external}.
-    ```sh
-    az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_ID>" -n"<service_principal_name>"
-    ```
-    {: pre}
-
-6. In the output, note the values of the `appID`, `password`, and `tenant` fields.
-    ```json
-    {
-    "appId": "<azure-client-id>",
-    "displayName": "<service_principal_name>",
-    "name": "http://<service_principal_name>",
-    "password": "<azure-secret-key>",
-    "tenant": "<tenant-id>"
-    }
-    ```
-    {: screen}
-
-7. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. 
-    ```json
-    {
-        "app_id":"string",
-        "tenant_id":"string",
-        "password": "string"
-    }
-    ```
-    {: screen}
-
 
 
 ## I created a {{site.data.keyword.satelliteshort}} location, what's next?
-{: #azure-whats-next}
+{: #aws-whats-next}
 
 Now that your {{site.data.keyword.satelliteshort}} location is set up, you are ready to start using {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
@@ -327,6 +223,9 @@ Now that your {{site.data.keyword.satelliteshort}} location is set up, you are r
 5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
 
 Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
+
+
+
 
 
 

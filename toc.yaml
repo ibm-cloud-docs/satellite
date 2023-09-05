@@ -120,18 +120,28 @@ toc:
             label: Creating locations
             topics:
               - locations.md
+              - topicgroup:
+                  label: Creating a location with a template
+                  topics:
+                  - loc-aws-create-auto.md
+                  - loc-azure-create-auto.md
+                  - loc-gcp-create-auto.md
               - coreos-reduced-firewall.md
+              - location-create-manual.md
+              - setup-control-plane.md
+              - location-sizing.md
+        - topicgroup:
+            label: Attaching hosts to a location
+            topics:
+              - attach-hosts.md
               - alibaba.md
               - aws.md
               - gcp.md
               - azure.md
               - ibm.md
-              - setup-control-plane.md
-              - location-sizing.md
         - topicgroup:
             label: Managing hosts and locations
             topics:
-              - attach-hosts.md
               - assigning-hosts.md
               - multi-infra.md
               - host-update-location.md
