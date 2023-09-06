@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-31"
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -12,77 +12,21 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Attaching hosts to your location
+# Attaching on-prem hosts to your location
 {: #attach-hosts}
 
 After you create the location in {{site.data.keyword.satellitelong}}, add compute capacity to your location so that you can set up {{site.data.keyword.redhat_openshift_notm}} clusters or interact with other [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services).
 {: shortdesc}
 
-To attach Red Hat CoreOS (RHCOS) hosts, your location must be enabled for Red Hat CoreOS. For more information, see [Creating a location](/docs/satellite?topic=satellite-locations). Note that you can still attach Red Hat Enterprise Linux hosts to a location that is enabled for Red Hat CoreOS.
+To attach Red Hat CoreOS (RHCOS) hosts, your location must be enabled for Red Hat CoreOS. For more information, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location). Note that you can still attach Red Hat Enterprise Linux hosts to a location that is enabled for Red Hat CoreOS.
 
-Before you begin, make sure that you have created host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in public cloud providers. For more information about how to configure hosts in public cloud providers to meet these minimum requirements, see [Cloud infrastructure providers](/docs/satellite?topic=satellite-infrastructure-plan).
+Before you begin, make sure that you create host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in public cloud providers.
 
 After you attach a host to your location, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host as root with SSH for security purposes. You might see error messages if you try to SSH as root into a host that is attached successfully to a location. To restore the ability to SSH into the machine, you can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system.
 
 Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
 {: tip}
 
-## Downloading the host attachment script for your location
-{: #host-attach-download}
-
-To attach hosts to your location, you must download a host attachment script. After you download the script, you can run it on your hosts to attach them to your location. You can get the attachment script from the console or by running the `sat host attach` [command](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach). 
-
-To attach a host with a Red Hat CoreOS (RHCOS) operating system, the attachment script is an ignition (`.ign`) file. To attach a host with a RHEL operating system, the attachment script is a Shell script.
-{: note}
-
-1. Download the host attachment script. 
-    * **To get the host attachment script from the console**:
-        1. Navigate to the [**Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to attach hosts.  
-        2. From the **Hosts** tab, click **Attach host**.
-        3. Optional: Enter any labels that you want to add to your hosts so that you can identify your hosts more easily later. Labels must be provided as key-value pairs. For example, you can use `use=satcp` or `use=satcluster` to show that you want to use these hosts for your {{site.data.keyword.satelliteshort}} control plane or a {{site.data.keyword.redhat_openshift_notm}} cluster. By default, your hosts get a `cpu`, an `os`, and a `memory` label, but you might want to add more to control the auto assignment, such as `env=prod` or `service=database`. Note that the default value for `os` is `rhel`.
-        4. Enter a file name for your script or use the name that is generated for you.
-        5. Select **RHEL** or **RHCOS** to download the host script for your host system.
-        6. Click **Download script** to generate the host script and download the script to your local machine. Note that the token in the script is an API key, which should be treated and protected as sensitive information.
-        
-    * **To get the host attachment script from the CLI**:
-        1. Generate a script to run on your machines to attach them to your location by using the `sat host attach` command and specify the host operating system by using the `--operating-system` command option. When you run the command to generate the script, you might also want to include labels to identify the purpose of the hosts, such as `use:satloc`. Your hosts are automatically assigned labels for the CPU and memory size if these values can be detected on the machine.
-
-            Example `host attach` command for a RHCOS host.
-            
-            ```sh
-            ibmcloud sat host attach --location <location_name> [-hl "use=satloc"] --operating-system RHCOS
-            ```
-            {: pre}
-
-            Example `host attach` command for a RHEL host.
-            ```sh
-            ibmcloud sat host attach --location <location_name> [-hl "use=satloc"] --operating-system RHEL
-            ```
-            {: pre}
-            
-            Example output
-            ```sh
-            Creating host registration script...
-            OK
-            The script to attach hosts to Satellite location 'mylocation' was downloaded to the following location:
-            <filepath_to_script>/register-host_mylocation_attach_hypershift.ign
-            ```
-            {: screen}
-     
-
-1. **Optional**: If your hosts are RHEL hosts, you need to update the [required packages](/docs/satellite?topic=satellite-host-reqs) on your hosts before you can run the script. If your hosts are running the latest Red Hat CoreOS images, you do not need to update the packages.
-
-1. Attach your hosts to your location by running the attachment script.
-    * If your hosts are in another cloud provider, follow the provider-specific steps to run the script and attach your host. 
-        - [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba)
-        - [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws)
-        - [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp)
-        - [Microsoft Azure](/docs/satellite?topic=satellite-azure)
-        - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm)
-    * If your hosts are in an on-premises data center, see [Attaching on-premises RHCOS hosts](#attach-rhcos-hosts) or [Attaching on-premises RHEL hosts](#attach-rhel-hosts).
-
-After you attach a host to your location, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host via SSH for security purposes. You might see error messages if you try to SSH into a host that has been successfully attached to a location. To restore the ability to SSH into the machine, you can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system.
-{: note}
 
 ## Attaching on-premises RHEL hosts to your location
 {: #attach-rhel-hosts}

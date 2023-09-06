@@ -120,6 +120,7 @@ toc:
             label: Creating locations
             topics:
               - locations.md
+              - multi-infra.md
               - topicgroup:
                   label: Creating a location with a template
                   topics:
@@ -133,17 +134,21 @@ toc:
         - topicgroup:
             label: Attaching hosts to a location
             topics:
-              - attach-hosts.md
+              - host-attach-download.md
+              - host-on-prem.md
               - alibaba.md
-              - aws.md
-              - gcp.md
-              - azure.md
-              - ibm.md
+              - host-aws.md
+              - host-gcp.md
+              - host-azure.md
+              - host-ibm.md
         - topicgroup:
             label: Managing hosts and locations
-            topics:
-              - assigning-hosts.md
-              - multi-infra.md
+            topics:              
+              - topicgroup:
+                  label: Assigning hosts to worker pools
+                  topics:
+                  - host-autoassign-ov.md
+                  - assigning-hosts.md
               - host-update-location.md
               - host-update-workers.md
               - sat-storage-odf-update.md

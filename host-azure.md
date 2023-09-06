@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -14,15 +14,20 @@ subcollection: satellite
 
 
 
-# Microsoft Azure
+# Attaching Microsoft Azure hosts
 {: #azure}
 
-Learn how you can set up an {{site.data.keyword.satellitelong}} location with virtual instances that you created in Microsoft Azure.
+Learn how to attach Microsoft Aure cloud hosts to {{site.data.keyword.satellitelong}}.
 {: shortdesc}
 
-If your hosts are running Red Hat CoreOS (RHCOS), you must manually attach them to your location.
-{: note}
+To attach Red Hat CoreOS (RHCOS) hosts, your location must be enabled for Red Hat CoreOS. For more information, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location). Note that you can still attach Red Hat Enterprise Linux hosts to a location that is enabled for Red Hat CoreOS.
 
+Before you begin, make sure that you create host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in public cloud providers.
+
+After you attach a host to your location, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host as root with SSH for security purposes. You might see error messages if you try to SSH as root into a host that is attached successfully to a location. To restore the ability to SSH into the machine, you can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system.
+
+Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
+{: tip}
 
 
 ## Adding Azure hosts to {{site.data.keyword.satelliteshort}}

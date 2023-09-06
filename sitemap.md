@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-06"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1277,6 +1277,22 @@ subcollection: satellite
 
 * [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location)
 
+[Setting up a {{site.data.keyword.satelliteshort}} location with remote workers](/docs/satellite?topic=satellite-sat-multi-infra#sat-multi-infra)
+
+* [Infrastructure composition options and supported topologies](/docs/satellite?topic=satellite-sat-multi-infra#infra-topologies)
+
+    * [1. Compute hosts are located in a single edge or data center](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-third-party)
+
+    * [2. Compute hosts are located in {{site.data.keyword.cloud_notm}} and edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-ibmcloud)
+
+    * [3. Compute hosts are located in {{site.data.keyword.cloud_notm}} and multiple data centers or edge](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-ibmcloud-multiple)
+
+    * [4. Compute hosts are located in multiple edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-multiple)
+
+    * [5. Compute hosts, including {{site.data.keyword.satelliteshort}} control plane, are located in multiple edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-cp-multiple)
+
+* [Use case: Edge clusters with centralized management in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-sat-multi-infra#edge-cluster)
+
 
 ### Creating a location with a template
 {: #sitemap_creating_a_location_with_a_template}
@@ -1291,6 +1307,26 @@ subcollection: satellite
 * [AWS credentials](/docs/satellite?topic=satellite-loc-aws-create-auto#infra-creds-aws)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-aws-create-auto#awsauto-whats-next)
+
+[Automating your Azure location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-azure-create-auto#loc-azure-create-auto)
+
+* [Creating your location with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-azure-create-auto#create-auto-azure)
+
+* [What does this template create?](/docs/satellite?topic=satellite-loc-azure-create-auto#template-aws)
+
+* [Microsoft Azure credentials](/docs/satellite?topic=satellite-loc-azure-create-auto#infra-creds-azure)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-azure-create-auto#azureauto-whats-next)
+
+[Automating your GCP location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-gcp-template#gcp-template)
+
+* [Creating your location with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-gcp-template#create-auto-gcp)
+
+* [What does this template create?](/docs/satellite?topic=satellite-gcp-template#template-gcp)
+
+* [Google Cloud Platform credentials](/docs/satellite?topic=satellite-gcp-template#infra-creds-gcp)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-gcp-template#gcpauto-whats-next)
 
 [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall#coreos-reduced-firewall)
 
@@ -1335,9 +1371,13 @@ subcollection: satellite
 {: #sitemap_attaching_hosts_to_a_location}
 
 
-[Attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-hosts)
+[Downloading the host attachment script for your location](/docs/satellite?topic=satellite-host-attach-download#host-attach-download)
 
-* [Downloading the host attachment script for your location](/docs/satellite?topic=satellite-attach-hosts#host-attach-download)
+* [Download the host attachment script from the console](/docs/satellite?topic=satellite-host-attach-download#host-download-console)
+
+* [Download the host attachment script from the CLI](/docs/satellite?topic=satellite-host-attach-download#host-download-cli)
+
+[Attaching on-prem hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-hosts)
 
 * [Attaching on-premises RHEL hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhel-hosts)
 
@@ -1361,11 +1401,11 @@ subcollection: satellite
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-alibaba#alibaba-whats-next)
 
-[Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws)
+[Attaching AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws)
 
 * [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach)
 
-* [Manually running AWS instances with the CLI](/docs/satellite?topic=satellite-aws#aws-hosts-cli)
+* [Manually attaching AWS instances with the CLI](/docs/satellite?topic=satellite-aws#aws-hosts-cli)
 
 * [AWS instance types](/docs/satellite?topic=satellite-aws#aws-instance-types)
 
@@ -1385,7 +1425,7 @@ subcollection: satellite
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-gcp#gcp-whats-next)
 
-[Microsoft Azure](/docs/satellite?topic=satellite-azure#azure)
+[Attaching Microsoft Azure hosts](/docs/satellite?topic=satellite-azure#azure)
 
 * [Adding Azure hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-azure#azure-host-attach)
 
@@ -1393,7 +1433,7 @@ subcollection: satellite
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-azure#aws-whats-next)
 
-[{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm#ibm)
+[Attaching {{site.data.keyword.cloud_notm}} hosts for tests](/docs/satellite?topic=satellite-ibm#ibm)
 
 * [Manually adding {{site.data.keyword.cloud_notm}} RHEL hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach)
 
@@ -1406,41 +1446,28 @@ subcollection: satellite
 {: #sitemap_managing_hosts_and_locations}
 
 
-[Assigning hosts to worker pools](/docs/satellite?topic=satellite-assigning-hosts#assigning-hosts)
 
-* [Using host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov)
+### Assigning hosts to worker pools
+{: #sitemap_assigning_hosts_to_worker_pools}
 
-    * [Host labels](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-about)
 
-    * [Example scenario for host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-example-scenario)
+[Assigning hosts with host label auto assignment](/docs/satellite?topic=satellite-host-autoassign-ov#host-autoassign-ov)
 
-    * [Automatically assigning hosts](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign)
+* [Host labels](/docs/satellite?topic=satellite-host-autoassign-ov#host-autoassign-about)
 
-    * [Disabling host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-disable)
+* [Example scenario for host auto assignment](/docs/satellite?topic=satellite-host-autoassign-ov#host-autoassign-example-scenario)
 
-    * [Re-enabling host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-enable)
+* [Automatically assigning hosts](/docs/satellite?topic=satellite-host-autoassign-ov#host-autoassign)
 
-* [Manually assigning hosts to {{site.data.keyword.satelliteshort}} resources](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual)
+* [Disabling host auto assignment](/docs/satellite?topic=satellite-host-autoassign-ov#host-autoassign-disable)
 
-    * [Assigning hosts from the console](/docs/satellite?topic=satellite-assigning-hosts#host-assign-ui)
+* [Re-enabling host auto assignment](/docs/satellite?topic=satellite-host-autoassign-ov#host-autoassign-enable)
 
-    * [Assigning hosts from the CLI](/docs/satellite?topic=satellite-assigning-hosts#host-assign-cli)
+[Manually assigning hosts to worker pools](/docs/satellite?topic=satellite-assigning-hosts#assigning-hosts)
 
-[Setting up a {{site.data.keyword.satelliteshort}} location with remote workers](/docs/satellite?topic=satellite-sat-multi-infra#sat-multi-infra)
+* [Assigning hosts from the console](/docs/satellite?topic=satellite-assigning-hosts#host-assign-ui)
 
-* [Infrastructure composition options and supported topologies](/docs/satellite?topic=satellite-sat-multi-infra#infra-topologies)
-
-    * [1. Compute hosts are located in a single edge or data center](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-third-party)
-
-    * [2. Compute hosts are located in {{site.data.keyword.cloud_notm}} and edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-ibmcloud)
-
-    * [3. Compute hosts are located in {{site.data.keyword.cloud_notm}} and multiple data centers or edge](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-ibmcloud-multiple)
-
-    * [4. Compute hosts are located in multiple edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-multiple)
-
-    * [5. Compute hosts, including {{site.data.keyword.satelliteshort}} control plane, are located in multiple edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-cp-multiple)
-
-* [Use case: Edge clusters with centralized management in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-sat-multi-infra#edge-cluster)
+* [Assigning hosts from the CLI](/docs/satellite?topic=satellite-assigning-hosts#host-assign-cli)
 
 [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-location)
 

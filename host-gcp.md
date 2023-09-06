@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -19,8 +19,14 @@ subcollection: satellite
 Learn how attach Google Cloud Platform (GCP) virtual instances to your {{site.data.keyword.satellitelong_notm}} location.
 {: shortdesc}
 
-If your hosts are running Red Hat CoreOS (RHCOS), you must manually attach them to your location.
-{: note}
+To attach Red Hat CoreOS (RHCOS) hosts, your location must be enabled for Red Hat CoreOS. For more information, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location). Note that you can still attach Red Hat Enterprise Linux hosts to a location that is enabled for Red Hat CoreOS.
+
+Before you begin, make sure that you create host machines that meet the [minimum hardware requirements](/docs/satellite?topic=satellite-host-reqs) in your on-prem data center, in {{site.data.keyword.cloud_notm}}, or in public cloud providers.
+
+After you attach a host to your location, {{site.data.keyword.satelliteshort}} disables the ability to log in to the host as root with SSH for security purposes. You might see error messages if you try to SSH as root into a host that is attached successfully to a location. To restore the ability to SSH into the machine, you can [remove the host](/docs/satellite?topic=satellite-host-remove) and reload the operating system.
+
+Not sure how many hosts to attach to your location? See [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
+{: tip}
 
 
 ## Manually adding hosts to {{site.data.keyword.satelliteshort}} in the GCP console
@@ -29,13 +35,8 @@ If your hosts are running Red Hat CoreOS (RHCOS), you must manually attach them 
 You can create your {{site.data.keyword.satelliteshort}} location by using hosts that you added from Google Cloud Platform (GCP).
 {: shortdesc}
 
-
 If you want to use Red Hat CoreOS (RHCOS) hosts in your location, provide your RHCOS image file to your Google account. For more information, see [Creating custom images](https://cloud.google.com/compute/docs/images/create-custom){: external}. To find RHCOS images, see the list of [available images](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/). Note that you must use at least version 4.9.
 {: important}
-
-
-All hosts that you want to add must meet the general host requirements, such as the RHEL 7 or 8 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
-{: note}
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 
