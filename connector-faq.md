@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-24"
+lastupdated: "2023-09-06"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -27,9 +27,6 @@ I created an ACL for my Connector, why doesn't it take effect?
   
 What IAM permissions do I need for Connectors?
 :   To create a Connector, you need **Administrator** Platform role for {{site.data.keyword.satelliteshort}}. To connect an Agent to an existing Connector, you need **Viewer** Platform role or **Reader** Service role for {{site.data.keyword.satelliteshort}}.
-  
-When does support for Secure Gateway end?
-:   Secure Gateway runs on Cloud Foundry and will be deprecated when Cloud foundry reaches end of support. For more information, see [Deprecation of IBM Cloud Foundry](/docs/cloud-foundry-public?topic=cloud-foundry-public-deprecation).
 
 How many Connectors are supported per account per region?
 :   You can have a maximum of 25 Connectors per account per region.

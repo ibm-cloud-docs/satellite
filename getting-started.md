@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-24"
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -50,7 +50,7 @@ I want to try out {{site.data.keyword.satelliteshort}}.
 :    You can try out {{site.data.keyword.satelliteshort}} with our [{{site.data.keyword.satelliteshort}} guided tour](https://framer.com/share/External-Satellite-Demo--4QmxdNMF6smthRhzQgzt/ddN6j0Nrt?fullscreen=1&highlights=0#ddN6j0Nrt){: external}. You can also create a Satellite location by using [{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm). Note that this set up is not intended for use with production systems.
 
 I'm planning to use my on-prem or edge infrastructure. 
-:    For on-prem infrastructure, you can [manually set up a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#location-create-manual). 
+:    For on-prem infrastructure, you can [manually set up a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-loc-manual-create). 
 
 I want to use a different cloud provider for my infrastructure.
 :    Choose from [Amazon Web Services (AWS)](/docs/satellite?topic=satellite-aws), [Google Cloud Platform (GCP)](/docs/satellite?topic=satellite-gcp), [Microsoft Azure](/docs/satellite?topic=satellite-azure), or [Alibaba Cloud](/docs/satellite?topic=satellite-alibaba). Many of these providers include Terraform-based automation.

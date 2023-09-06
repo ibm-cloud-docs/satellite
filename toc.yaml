@@ -120,20 +120,35 @@ toc:
             label: Creating locations
             topics:
               - locations.md
+              - multi-infra.md
+              - topicgroup:
+                  label: Creating a location with a template
+                  topics:
+                  - loc-aws-create-auto.md
+                  - loc-azure-create-auto.md
+                  - loc-gcp-create-auto.md
               - coreos-reduced-firewall.md
-              - alibaba.md
-              - aws.md
-              - gcp.md
-              - azure.md
-              - ibm.md
+              - location-create-manual.md
               - setup-control-plane.md
               - location-sizing.md
         - topicgroup:
-            label: Managing hosts and locations
+            label: Attaching hosts to a location
             topics:
-              - attach-hosts.md
-              - assigning-hosts.md
-              - multi-infra.md
+              - host-attach-download.md
+              - host-on-prem.md
+              - alibaba.md
+              - host-aws.md
+              - host-gcp.md
+              - host-azure.md
+              - host-ibm.md
+        - topicgroup:
+            label: Managing hosts and locations
+            topics:              
+              - topicgroup:
+                  label: Assigning hosts to worker pools
+                  topics:
+                  - host-autoassign-ov.md
+                  - assigning-hosts.md
               - host-update-location.md
               - host-update-workers.md
               - sat-storage-odf-update.md
@@ -148,6 +163,7 @@ toc:
               - run-agent-locally.md
               - run-agent-swarm.md
               - end-to-end.md
+              - connector-proxy.md
               - connector-create-endpoints.md
         - topicgroup:
             label: Managing apps with Satellite Config
@@ -310,12 +326,12 @@ toc:
                     - ts-hosts-debug.md
                     - ts-hosts-login.md
                     - ts-hosts-login-rhcos.md
-                    - ssh-login-denied.md
-                    - host-not-attaching.md
-                    - host-registration-script-fails.md
-                    - assign-fails.md
-                    - host-assign-file-system.md
-                    - sat-host-reattach-fail.md
+                    - ts-ssh-login-denied.md
+                    - ts-host-not-attaching.md
+                    - ts-host-registration-script-fails.md
+                    - ts-assign-fails.md
+                    - ts-host-assign-file-system.md
+                    - ts-sat-host-reattach-fail.md
                     - ts-http-proxy.md
                     - ts-host-unassigned-unknown.md
                     - ts-terraform.md
@@ -332,7 +348,7 @@ toc:
                   label: Clusters
                   topics:
                     - ts-clusters-debug.md
-                    - satconfig-cluster-access-error.md
+                    - ts-satconfig-cluster-access-error.md
                     - ts-console-fail.md
                     - ts-cluster-operations-blocked.md
                     - ts-addon-errors.md
@@ -345,7 +361,7 @@ toc:
                   topics:
                     - storage-must-gather.md
                     - debug-storage.md
-                    - storage-namespace-terminating.md
+                    - ts-storage-namespace-terminating.md
                     - ts-authentication-failure.md
                     - ts-node-register-failure.md
         - sitemap.md

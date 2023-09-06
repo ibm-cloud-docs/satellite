@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-05"
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -136,7 +136,7 @@ Complete the following steps to configure your ignition file. The ignition file 
 You must configure a separate ignition file for each bare metal host that you are attaching to the location.
 {: note}
 
-1. [Download the host attach script for your location](/docs/satellite?topic=satellite-attach-hosts#host-attach-download){: external}. Make sure to specify `RHCOS` for the host operating system.
+1. [Download the host attach script for your location](/docs/satellite?topic=satellite-host-attach-download){: external}. Make sure to specify `RHCOS` for the host operating system.
 1. Get the host name for your bare metal system; for example, `mybaremetalserver`.
 1. Convert your host name to `base64` by running the following command, substituting `<hostname>` with your bare metal server host name:
     ```sh

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022
-lastupdated: "2022-02-22"
+  years: 2023
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, multicloud
 
