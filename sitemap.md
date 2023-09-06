@@ -1590,6 +1590,8 @@ subcollection: satellite
 
 * [Adding TLS support](/docs/satellite?topic=satellite-end-to-end#add-tls)
 
+[Configuring a proxy for your {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-config-connector-proxy#config-connector-proxy)
+
 [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints#connector-create-endpoints)
 
 * [Creating endpoints from the console](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-endpoint-console)

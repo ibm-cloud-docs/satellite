@@ -163,6 +163,7 @@ toc:
               - run-agent-locally.md
               - run-agent-swarm.md
               - end-to-end.md
+              - connector-proxy.md
               - connector-create-endpoints.md
         - topicgroup:
             label: Managing apps with Satellite Config
