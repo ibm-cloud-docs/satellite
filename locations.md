@@ -46,7 +46,7 @@ My infrastructure is a cloud provider.
 
 :    - [AWS](/docs/satellite?topic=satellite-loc-aws-create-auto)
      - [Azure](/docs/satellite?topic=satellite-loc-azure-create-auto)
-     - [GCP](/docs/satellite?topic=satellite-loc-gcp-template)
+     - [GCP](/docs/satellite?topic=satellite-loc-gcp-create-auto)
 
 My infrastructure is on prem or edge.
 :    You can create your locations [manually with the CLI or from the console](/docs/satellite?topic=satellite-loc-manual-create).  
