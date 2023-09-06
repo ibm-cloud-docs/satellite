@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, multicloud, location, satellite location, create location
 
@@ -35,7 +35,7 @@ Choose your operating system for your hosts. You can choose Red Hat Enterprise L
 For more information, see [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 
-## Options for creating your [SatLoc]}
+## Options for creating your {{site.data.keyword.satelliteshort}} location
 {: #create-options}
 
 Your locations is made up of compute sources, called hosts, from separate zones of your backing infrastructure environment. Depending on your infrastructure provider, you have different options to create a {{site.data.keyword.satelliteshort}} location.
@@ -46,7 +46,7 @@ My infrastructure is a cloud provider.
 
 :    - [AWS](/docs/satellite?topic=satellite-loc-aws-create-auto)
      - [Azure](/docs/satellite?topic=satellite-loc-azure-create-auto)
-     - [GCP](/docs/satellite?topic=satellite-loc-gcp-create-auto)
+     - [GCP](/docs/satellite?topic=satellite-loc-gcp-template)
 
 My infrastructure is on prem or edge.
 :    You can create your locations [manually with the CLI or from the console](/docs/satellite?topic=satellite-loc-manual-create).  
@@ -96,7 +96,7 @@ Konnectivity Server Port:       32157
 ```
 {: screen}
 
-To create a Red Hat CoreOS-enabled location, see [Manually creating {{site.data.keyword.satelliteshort}} locations](#location-create-manual).
+To create a Red Hat CoreOS-enabled location, see [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-loc-manual-create).
 
 
 

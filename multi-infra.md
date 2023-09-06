@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-09-06"
 
 keywords: satellite, multicloud, location, locations, control plane, remote workers
 
@@ -76,7 +76,7 @@ This use case shows how to build a centralized management plane for your {{site.
 
 Follow these steps to set up your {{site.data.keyword.satelliteshort}} location.
 
-1. Create a {{site.data.keyword.satelliteshort}} location manually. See [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-locations#location-create-manual).
+1. Create a {{site.data.keyword.satelliteshort}} location manually. See [Manually creating {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-loc-manual-create).
 2. Download the host attach script.
 3. Provision the infrastructure hosts inside {{site.data.keyword.cloud_notm}} with the attach script. See [Adding {{site.data.keyword.cloud_notm}} hosts to {{site.data.keyword.satelliteshort}} manually](/docs/satellite?topic=satellite-ibm#ibm-host-attach).
 4. Provision the edge compute hosts for the {{site.data.keyword.satelliteshort}} clusters with the same attach script.

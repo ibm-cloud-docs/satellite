@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-03-22"
+  years: 2020, 2023
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, multicloud
 
@@ -94,7 +94,7 @@ Otherwise, remove the host, reload the operating system, and attach the host bac
         ```
         {: pre}
 
-    7. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) to your {{site.data.keyword.satelliteshort}} resource, such as a cluster.
+    7. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts) to your {{site.data.keyword.satelliteshort}} resource, such as a cluster.
     8. Check that the host is **assigned** to your cluster. The process might take an hour to complete. From the console, click your location, and then click the **Hosts** tab. From the CLI, run the following command.
         ```sh
         ibmcloud sat host ls --location <location_name_or_ID>

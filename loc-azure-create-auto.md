@@ -18,7 +18,7 @@ subcollection: satellite
 Automate your Azure setup with templates that use [{{site.data.keyword.bplong}}](/docs/schematics?topic=schematics-getting-started) to create a {{site.data.keyword.satelliteshort}} location, provision hosts in your Azure account, and set up the {{site.data.keyword.satelliteshort}} location control plane for you. 
 {: shortdesc}
 
-You can clone and modify these Terraform templates from the [Satellite Terraform GitHub repository](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external}. Or, you can manually attach Azure hosts to a {{site.data.keyword.satelliteshort}} location. 
+You can clone and modify these Terraform templates from the [Satellite Terraform GitHub repository](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external}. Or, you can [manually attach Azure hosts](/docs/satellite?topic=satellite-azure) to a {{site.data.keyword.satelliteshort}} location. 
 {: tip}
 
 For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf in a cloud provider, you must provide [credentials](#infra-creds-azure) to the cloud provider. The credentials that you provide are stored and encrypted in etcd of the {{site.data.keyword.satelliteshort}} location control plane master. For more information, see [Securing your data](/docs/satellite?topic=satellite-data-security).
@@ -67,7 +67,7 @@ The following resources are created in your {{site.data.keyword.cloud_notm}} acc
 - 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location and assigned to the {{site.data.keyword.satelliteshort}} location control plane.
 - 3 {{site.data.keyword.satelliteshort}} hosts that represent the virtual machines in Azure, attached to the location, unassigned, and available to use for services such as a {{site.data.keyword.redhat_openshift_notm}} cluster. If you added more than 6 hosts, the additional hosts are unassigned and available for use in the control plane or by services. 
 
-This template does not include the required storage resources for some integrations, such as OpenShift Data Foundation or other services. If you need OpenShift Data Foundation or similar services, review the required resources and manually create hosts in your Azure account. Then, [attach the hosts to your location](#azure-host-attach).
+This template does not include the required storage resources for some integrations, such as OpenShift Data Foundation or other services. If you need OpenShift Data Foundation or similar services, review the required resources and manually create hosts in your Azure account. Then, [attach the hosts to your location](/docs/satellite?topic=satellite-azure).
 {: important}
 
 

@@ -34,7 +34,7 @@ To attach a host with a Red Hat CoreOS (RHCOS) operating system, the attachment 
 {: #host-download-cli}
 
 
-Generate the host attachment script to from the CLI with the **`sat host attach`** command. You can specify the host operating system by using the `--operating-system` command option. When you run the **`sat host attach`** command to generate the script, you can include labels that identify the purpose of the hosts, such as `use:satloc`. Your hosts are automatically assigned labels for the CPU and memory size if these values can be detected on the host machine. For more information about labels, see [Using host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
+Generate the host attachment script to from the CLI with the **`sat host attach`** command. You can specify the host operating system by using the `--operating-system` command option. When you run the **`sat host attach`** command to generate the script, you can include labels that identify the purpose of the hosts, such as `use:satloc`. Your hosts are automatically assigned labels for the CPU and memory size if these values can be detected on the host machine. For more information about labels, see [Using host auto assignment](/docs/satellite?topic=satellite-host-autoassign-ov).
 
 The following example `host attach` command downloads a script for an RHCOS host.
             

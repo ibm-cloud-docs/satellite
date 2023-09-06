@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, multicloud, location, host, location control plane
 
@@ -38,7 +38,7 @@ To set up a {{site.data.keyword.satelliteshort}} location, you must first create
 
     ![Create your location.](/images/2-create-location.svg "Create your Satellite location"){: caption="Figure 3. Creating your Satellite location" caption-side="bottom"}
 
-3. [Attach hosts to your location](/docs/satellite?topic=satellite-locations#location-create-manual) by running the installation scripts (RHEL) or ingestion scripts (RHCOS). If you are using a Schematics template, this step is done for you. After your hosts are attached, they are in an `unassigned` state.
+3. [Attach hosts to your location](/docs/satellite?topic=satellite-loc-manual-create) by running the installation scripts (RHEL) or ingestion scripts (RHCOS). If you are using a Schematics template, this step is done for you. After your hosts are attached, they are in an `unassigned` state.
     ![Attach hosts to your location.](/images/3-attach-hosts-location.svg "Attach hosts to your location"){: caption="Figure 4. Attaching hosts to your location" caption-side="bottom"}
      
 4. Select hosts to make up your [location control plane](/docs/satellite?topic=satellite-setup-control-plane). The hosts in your {{site.data.keyword.satelliteshort}} location do not run any workloads until you assign them as compute capacity to the {{site.data.keyword.satelliteshort}} location control plane or a service. For example, a basic setup has 3 hosts that are assigned as worker nodes to the Satellite location control plane. For more information, see [sizing your location](/docs/satellite?topic=satellite-location-sizing). After you assign a host, it enters a `provisioning` status.

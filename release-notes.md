@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-04"
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -842,7 +842,7 @@ Review the release notes for 24 June 2021.
 {: shortdesc}
 
 Azure template
-:   Automate the setup of a {{site.data.keyword.satelliteshort}} location in Microsoft Azure cloud infrastructure by using a [{{site.data.keyword.bpshort}}](/docs/satellite?topic=satellite-azure#azure-template).
+:   Automate the setup of a {{site.data.keyword.satelliteshort}} location in Microsoft Azure cloud infrastructure by using a [{{site.data.keyword.bpshort}}](/docs/satellite?topic=satellite-loc-azure-create-auto).
 
 CLI change log
 :   Updated the CLI plug-in change log page for the [release of version 1.0.295](/docs/satellite?topic=satellite-satellite-cli-changelog).
@@ -946,7 +946,7 @@ Use case
 :   Added an example use case for using [{{site.data.keyword.satelliteshort}} edge environments for AI, IoT, and machine learning](/docs/satellite?topic=satellite-edge-usecase).
 
 :   {{site.data.keyword.cos_short}} buckets
-When you create a location from the console, you can now [enter the name of an existing {{site.data.keyword.cos_full_notm}} bucket](/docs/satellite?topic=satellite-locations#location-create-console) that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data.
+When you create a location from the console, you can now enter the name of an existing {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data.
 
 ### 9 April 2021
 {: #satellite-apr921}
@@ -1033,7 +1033,7 @@ Exposing apps in {{site.data.keyword.satelliteshort}} clusters
 :   Order managed infrastructure from {{site.data.keyword.IBM_notm}} to create a {{site.data.keyword.satelliteshort}} location for you in your on-premises data center.
   
 New! Template for fast provisioning on AWS
-:   [Automate your {{site.data.keyword.satelliteshort}} location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-locations#satloc-template), available for AWS infrastructure.
+:   [Automate your {{site.data.keyword.satelliteshort}} location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-aws-create-auto), available for AWS infrastructure.
 
 ## February 2021
 {: #satellite-feb21}
@@ -1110,7 +1110,7 @@ CLI change log
 :   Updated the CLI plug-in change log page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 Host auto assignment
-:   Added information about how [{{site.data.keyword.satelliteshort}} can automatically assign hosts](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov) to worker pools in clusters or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that use host labels to request compute capacity.
+:   Added information about how [{{site.data.keyword.satelliteshort}} can automatically assign hosts](/docs/satellite?topic=satellite-host-autoassign-ov) to worker pools in clusters or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that use host labels to request compute capacity.
 
 Logging and monitoring
 :   Added information about how to set up [logging and monitoring for {{site.data.keyword.satelliteshort}} health](/docs/satellite?topic=satellite-health).

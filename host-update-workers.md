@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-09"
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch, host, update, host update
 
@@ -22,7 +22,7 @@ What happens to my apps during an update?
 :    If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
 
 How can I control how many worker nodes go down at a time during an update or reload?
-:    If you need all your worker nodes to be up and running, consider [attaching](/docs/satellite?topic=satellite-attach-hosts) and [assigning](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) additional hosts
+:    If you need all your worker nodes to be up and running, consider [attaching](/docs/satellite?topic=satellite-attach-hosts) and [assigning](/docs/satellite?topic=satellite-assigning-hosts) additional hosts
 to your service. You can add additional hosts to your location temporarily and then remove them when the update is complete.
 :    In addition, you can create a Kubernetes ConfigMap that specifies the maximum number of worker nodes that can be unavailable at a time, such as during an update. Worker nodes are identified by the worker node labels. You can use IBM-provided labels or custom labels that you added to the worker node.
 
@@ -136,7 +136,7 @@ Applying updates to worker nodes can cause downtime for your apps and services. 
 ### Apply version updates to worker node hosts one at a time
 {: #host-update-workers-individually}
 
-1. Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) extra hosts to the service cluster to handle the compute capacity while your existing hosts are updating.
+1. Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts) extra hosts to the service cluster to handle the compute capacity while your existing hosts are updating.
 2. [Identify your worker node hosts](#host-identify). The worker node hosts do not have `infrastructure` listed in the `Cluster` column of the output, but instead have the name of the cluster.
 3. Update your worker nodes individually by running the **`ibmcloud ks worker update`** command.
 
@@ -158,7 +158,7 @@ Applying updates to worker nodes can cause downtime for your apps and services. 
 
 You can roll out updates to all your worker node hosts with a ConfigMap. Specify which nodes to update by using labels. You can also specify 
 
-1. Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual) extra hosts to the service cluster to handle the compute capacity while your existing hosts are updating.
+1. Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts) extra hosts to the service cluster to handle the compute capacity while your existing hosts are updating.
 2. [Identify your worker node hosts](#host-identify). Your worker node hosts are not listed as `Infrastructure`.
 3. View the labels of a worker node. You can find the worker node labels in the **Labels** section of your CLI output. Every label consists of a `NodeSelectorKey` and a `NodeSelectorValue`. You can use the labels to specify which worker nodes to update.
     ```sh
@@ -300,7 +300,7 @@ Hosts that are attached to a location do not update automatically. To apply a ve
 
 
 1. [Attach new hosts to your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-attach-hosts). The number of hosts you attach must match the number of hosts that you want to update.   
-2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts#host-assign-manual). These hosts automatically receive the update when you assign them.
+2. [Assign the newly attached hosts to your {{site.data.keyword.satelliteshort}} resource](/docs/satellite?topic=satellite-assigning-hosts). These hosts automatically receive the update when you assign them.
 3. After the new hosts are successfully assigned to your {{site.data.keyword.satelliteshort}} resource, [remove and delete the old hosts that you previously noted](/docs/satellite?topic=satellite-host-remove).
 
 

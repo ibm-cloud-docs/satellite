@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-05"
+lastupdated: "2023-09-06"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -199,7 +199,7 @@ To create a {{site.data.keyword.satelliteshort}} location from the CLI,
     1. [Attach compute hosts to your location](/docs/satellite?topic=satellite-attach-hosts).
     2. Assign these hosts as worker nodes to the [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane).
 
-Want to verify if your location is enabled for Red Hat CoreOS? See [Is my location enabled for Red Hat CoreOS?](#verify-coreos-location).
+Want to verify if your location is enabled for Red Hat CoreOS? See [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 
 ## I created a {{site.data.keyword.satelliteshort}} location, what's next?
 {: #manual-loc-whats-next}

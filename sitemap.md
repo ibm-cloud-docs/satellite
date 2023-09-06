@@ -699,7 +699,7 @@ subcollection: satellite
 
         * Use case
 
-        * When you create a location from the console, you can now [enter the name of an existing {{site.data.keyword.cos_full_notm}} bucket](/docs/satellite?topic=satellite-locations#location-create-console) that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data.
+        * When you create a location from the console, you can now enter the name of an existing {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data.
 
     * [9 April 2021](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr921)
 
@@ -1122,8 +1122,6 @@ subcollection: satellite
 
     * [Deciding whether to enable Red Hat CoreOS support for your location](/docs/satellite?topic=satellite-infrastructure-plan#enable-coreos-loc)
 
-* [Providing {{site.data.keyword.satelliteshort}} with credentials to your cloud provider](/docs/satellite?topic=satellite-infrastructure-plan#infra-credentials)
-
 
 ## Preparing your host infrastructure
 {: #sitemap_preparing_your_host_infrastructure}
@@ -1273,7 +1271,7 @@ subcollection: satellite
 
 * [Host operating system](/docs/satellite?topic=satellite-locations#create-host-os)
 
-* [Options for creating your [SatLoc]}](/docs/satellite?topic=satellite-locations#create-options)
+* [Options for creating your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations#create-options)
 
 * [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location)
 
@@ -1318,15 +1316,15 @@ subcollection: satellite
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-azure-create-auto#azureauto-whats-next)
 
-[Automating your GCP location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-gcp-template#gcp-template)
+[Automating your GCP location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-gcp-create-auto#loc-gcp-create-auto)
 
-* [Creating your location with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-gcp-template#create-auto-gcp)
+* [Creating your location with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-gcp-create-auto#create-auto-gcp)
 
-* [What does this template create?](/docs/satellite?topic=satellite-gcp-template#template-gcp)
+* [What does this template create?](/docs/satellite?topic=satellite-loc-gcp-create-auto#template-gcp)
 
-* [Google Cloud Platform credentials](/docs/satellite?topic=satellite-gcp-template#infra-creds-gcp)
+* [Google Cloud Platform credentials](/docs/satellite?topic=satellite-loc-gcp-create-auto#infra-creds-gcp)
 
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-gcp-template#gcpauto-whats-next)
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-gcp-create-auto#gcpauto-whats-next)
 
 [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall#coreos-reduced-firewall)
 
@@ -1415,7 +1413,7 @@ subcollection: satellite
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-aws#aws-whats-next)
 
-[Google Cloud Platform (GCP) hosts](/docs/satellite?topic=satellite-gcp#gcp)
+[Attaching Google Cloud Platform (GCP) hosts](/docs/satellite?topic=satellite-gcp#gcp)
 
 * [Manually adding hosts to {{site.data.keyword.satelliteshort}} in the GCP console](/docs/satellite?topic=satellite-gcp#gcp-host-attach)
 

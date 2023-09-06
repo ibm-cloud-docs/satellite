@@ -325,12 +325,12 @@ toc:
                     - ts-hosts-debug.md
                     - ts-hosts-login.md
                     - ts-hosts-login-rhcos.md
-                    - ssh-login-denied.md
-                    - host-not-attaching.md
-                    - host-registration-script-fails.md
-                    - assign-fails.md
-                    - host-assign-file-system.md
-                    - sat-host-reattach-fail.md
+                    - ts-ssh-login-denied.md
+                    - ts-host-not-attaching.md
+                    - ts-host-registration-script-fails.md
+                    - ts-assign-fails.md
+                    - ts-host-assign-file-system.md
+                    - ts-sat-host-reattach-fail.md
                     - ts-http-proxy.md
                     - ts-host-unassigned-unknown.md
                     - ts-terraform.md
@@ -347,7 +347,7 @@ toc:
                   label: Clusters
                   topics:
                     - ts-clusters-debug.md
-                    - satconfig-cluster-access-error.md
+                    - ts-satconfig-cluster-access-error.md
                     - ts-console-fail.md
                     - ts-cluster-operations-blocked.md
                     - ts-addon-errors.md
@@ -360,7 +360,7 @@ toc:
                   topics:
                     - storage-must-gather.md
                     - debug-storage.md
-                    - storage-namespace-terminating.md
+                    - ts-storage-namespace-terminating.md
                     - ts-authentication-failure.md
                     - ts-node-register-failure.md
         - sitemap.md

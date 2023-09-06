@@ -120,7 +120,7 @@ Before you begin, make sure that you create a {{site.data.keyword.satelliteshort
 The following actions disable host auto assignment for a worker pool. Later, you can [reenable host auto assignment](#host-autoassign-enable).
 {: shortdesc}
 
-- [Manually assign hosts to a worker pool](#host-assign-manual).
+- [Manually assign hosts to a worker pool](/docs/satellite?topic=satellite-assigning-hosts).
 - [Delete an individual worker node from a worker pool](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm).
 
 ## Re-enabling host auto assignment
