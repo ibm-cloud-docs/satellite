@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-25"
+lastupdated: "2023-09-08"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -27,6 +27,9 @@ Before you can deploy storage templates to clusters in your location, make sure 
 {: important}
 
 {{site.data.content.compare-odf}}
+
+The ODF cluster add-on is not supported on {{site.data.keyword.satelliteshort}} clusters. You must use either the `odf-local` or `odf-remote` storage template to deploy ODF on {{site.data.keyword.satelliteshort}}.
+{: note}
 
 ## Prerequisites for ODF
 {: #sat-storage-odf-local-prereq}
