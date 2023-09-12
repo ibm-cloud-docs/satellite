@@ -151,7 +151,6 @@ toc:
                   - assigning-hosts.md
               - host-update-location.md
               - host-update-workers.md
-              - sat-storage-odf-update.md
               - location-copy.md
               - config-http-proxy.md
               - config-custom-ntp.md
@@ -236,6 +235,7 @@ toc:
                     - storage-local-volume-file.md
                     - storage-odf-local.md
                     - storage-odf-remote.md
+                    - sat-storage-odf-update.md
               - topicgroup: 
                   label: VMware storage templates
                   topics:

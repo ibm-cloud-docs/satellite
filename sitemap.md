@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-08"
+lastupdated: "2023-09-12"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1501,30 +1501,6 @@ subcollection: satellite
 
 * [Determining if the worker node version update is a major, minor, or patch update](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-type)
 
-[Update OpenShift Data Foundation in your Satellite cluster](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-storage-odf-update)
-
-* [Prerequisites](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-storage-odf-update-prereq)
-
-* [Update the cluster master](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-storage-update-cluster-master)
-
-* [Determine which ODF worker nodes you want to update](/docs/satellite?topic=satellite-sat-storage-odf-update#determine-worker-nodes-sat)
-
-* [Scale down OpenShift Data Foundation](/docs/satellite?topic=satellite-sat-storage-odf-update#scale-down-odf-sat)
-
-* [Cordon and drain the worker node](/docs/satellite?topic=satellite-sat-storage-odf-update#cordon-drain-worker-node-sat)
-
-* [Assign a new host as a worker node](/docs/satellite?topic=satellite-sat-storage-odf-update#assign-worker-node-sat)
-
-* [Optional: Update your configuration to add the new storage nodes](/docs/satellite?topic=satellite-sat-storage-odf-update#add-storage-node-sat)
-
-* [Clean up the resources from the old node](/docs/satellite?topic=satellite-sat-storage-odf-update#cleanup-os-storage-sat)
-
-* [Edit your old storage assignment](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-storage-config-edit)
-
-* [Create a new storage configuration](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-odf-new-config)
-
-* [Create a new assignment](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-odf-new-assignment)
-
 [Copying a location](/docs/satellite?topic=satellite-location-copy#location-copy)
 
 [Configuring an HTTP proxy for your {{site.data.keyword.satelliteshort}} hosts](/docs/satellite?topic=satellite-config-http-proxy#config-http-proxy)
@@ -2477,6 +2453,30 @@ subcollection: satellite
     * [4.13 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-4.13-parameters)
 
 * [Storage class reference for OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-sc-ref)
+
+[Update OpenShift Data Foundation in your Satellite cluster](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-storage-odf-update)
+
+* [Prerequisites](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-storage-odf-update-prereq)
+
+* [Update the cluster master](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-storage-update-cluster-master)
+
+* [Determine which ODF worker nodes you want to update](/docs/satellite?topic=satellite-sat-storage-odf-update#determine-worker-nodes-sat)
+
+* [Scale down OpenShift Data Foundation](/docs/satellite?topic=satellite-sat-storage-odf-update#scale-down-odf-sat)
+
+* [Cordon and drain the worker node](/docs/satellite?topic=satellite-sat-storage-odf-update#cordon-drain-worker-node-sat)
+
+* [Assign a new host as a worker node](/docs/satellite?topic=satellite-sat-storage-odf-update#assign-worker-node-sat)
+
+* [Optional: Update your configuration to add the new storage nodes](/docs/satellite?topic=satellite-sat-storage-odf-update#add-storage-node-sat)
+
+* [Clean up the resources from the old node](/docs/satellite?topic=satellite-sat-storage-odf-update#cleanup-os-storage-sat)
+
+* [Edit your old storage assignment](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-storage-config-edit)
+
+* [Create a new storage configuration](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-odf-new-config)
+
+* [Create a new assignment](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-odf-new-assignment)
 
 
 ### VMware storage templates
