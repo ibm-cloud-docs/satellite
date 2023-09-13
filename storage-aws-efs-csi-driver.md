@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-13"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -396,6 +396,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
 
 
 {{site.data.content.configuration-upgrade-cli}}
+{{site.data.content.configuration-upgrade-console}}
 
 ## Removing AWS EFS storage from your apps
 {: #aws-efs-rm}

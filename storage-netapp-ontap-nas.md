@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-13"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -323,6 +323,7 @@ You can use the `trident-kubectl-nas` driver to deploy apps that use your NetApp
         {: pre}
 
 {{site.data.content.configuration-upgrade-cli}}
+{{site.data.content.configuration-upgrade-console}}
 
 
 ## Removing NetApp ONTAP-NAS storage from your apps

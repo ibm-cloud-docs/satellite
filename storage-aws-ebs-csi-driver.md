@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-25"
+lastupdated: "2023-09-13"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -344,6 +344,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
 
 
 {{site.data.content.configuration-upgrade-cli}}
+{{site.data.content.configuration-upgrade-console}}
 
 
 ## Removing AWS EBS storage from your apps

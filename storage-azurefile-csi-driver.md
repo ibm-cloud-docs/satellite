@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-28"
+lastupdated: "2023-09-13"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -363,6 +363,7 @@ You can use the Azure File driver to create PVCs that you can use in your cluste
 
 
 {{site.data.content.configuration-upgrade-cli}}
+{{site.data.content.configuration-upgrade-console}}
 
 ## Removing Azure file storage from your apps
 {: #azure-file-rm}

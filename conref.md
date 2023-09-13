@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-09-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -191,6 +191,19 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT
     ```
     {: pre} 
+
+## Updating storage configurations and assignments in the console
+{: #configuration-upgrade-console}
+{: ui}
+
+You can use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to upgrade your configuration and assignment to the latest storage template revisions.
+
+1. From the **Locations** page in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select your location.
+
+1. Click the **Storage** tab to view your configurations.
+
+1. You can apply the latest template revision to your configurations and assignments by clicking the information **Information** (i) icon.
+
     
 
 

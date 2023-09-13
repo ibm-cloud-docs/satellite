@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-13"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -305,6 +305,7 @@ You can use the `gce-pd-csi-driver` to create PVCs that you can use in your clus
 
 
 {{site.data.content.configuration-upgrade-cli}}
+{{site.data.content.configuration-upgrade-console}}
 
 ## Removing Compute Engine storage from your apps
 {: #gcp-rm-apps}

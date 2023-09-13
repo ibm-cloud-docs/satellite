@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-17"
+lastupdated: "2023-09-13"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -273,6 +273,7 @@ You can use the `vmware-csi-driver` to create PVCs that you can use in your clus
     {: pre}
 
 {{site.data.content.configuration-upgrade-cli}}
+{{site.data.content.configuration-upgrade-console}}
 
 ## Removing VMWare storage from your apps
 {: #vmware-csi-rm-apps}

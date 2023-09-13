@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-09-13"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -215,6 +215,7 @@ Use the CLI to remove a storage assignment and storage configuration.
     {: pre}
 
 {{site.data.content.configuration-upgrade-cli}}
+{{site.data.content.configuration-upgrade-console}}
 
 ## Getting help and support for NetApp Trident
 {: #sat-trident-support}
