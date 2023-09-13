@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-13"
+  years: 2020, 2023
+lastupdated: "2023-09-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -177,4 +177,6 @@ To enable a logging instance in your {{site.data.keyword.satelliteshort}} cluste
 
 3. Click on **Logging sources** and navigate to the **{{site.data.keyword.redhat_openshift_notm}}** tab.
 
-4. Follow the instructions in the **{{site.data.keyword.redhat_openshift_notm}}** tab to install the logging agent. 
+4. Follow the instructions in the **{{site.data.keyword.redhat_openshift_notm}}** tab to install the logging agent. Step 5 **Install the OpenShift DaemonSet** mentions YAML files for **Public Endpoint** and **Private Endpoint**. You can manually edit those YAML files (`agent-resources-openshift.yaml` and `agent-resources-openshift-private.yaml`) to use the `satellite-logdna` link endpoint address so that you don't need to open up new firewall rules.
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-09-13"
 
 keywords: satellite, hybrid, multicloud
 
@@ -332,8 +332,5 @@ The following additional attributes that are specific to {{site.data.keyword.sat
 You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable monitoring for {{site.data.keyword.satelliteshort}} clusters. You must manually deploy monitoring agents to your cluster to forward metrics to {{site.data.keyword.mon_short}}.
 {: note}
 
-To set up monitoring for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see  [Deploying a monitoring agent in a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/monitoring?topic=monitoring-agent_openshift).
-
-
-
+To set up monitoring for {{site.data.keyword.redhat_openshift_notm}} clusters that run in your {{site.data.keyword.satelliteshort}} location, see  [Deploying a monitoring agent in a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/monitoring?topic=monitoring-agent_openshift). When you specify address for the `COLLECTOR_ENDPOINT`, you can use the `satellite-sysdig` link endpoint address so that you don't need to open up new firewall rules. 
 
