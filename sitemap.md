@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-13"
+lastupdated: "2023-09-14"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1438,6 +1438,8 @@ subcollection: satellite
 * [Manually adding {{site.data.keyword.cloud_notm}} RHCOS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach-rhcos)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
+
+[IBM Storage Fusion HCI](/docs/satellite?topic=satellite-host-storage-fusion#host-storage-fusion)
 
 
 ## Managing hosts and locations
@@ -3633,6 +3635,8 @@ subcollection: satellite
 * [What {{site.data.keyword.cloud_notm}} services can I use with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-faqs#supported-services)
 
 * [What managed add-ons can I use with {{site.data.keyword.redhat_openshift_notm}} clusters in my {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-faqs#faq-managed-addons)
+
+* [Does IBM have an infrastructure on-premises compute storage option if I don't already have my own?](/docs/satellite?topic=satellite-faqs#faq-fusion-hci)
 
 
 ## Getting help
