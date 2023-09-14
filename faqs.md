@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-23"
+lastupdated: "2023-09-14"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location
 
@@ -128,3 +128,14 @@ Keep in mind that each service might:
 {: #faq-managed-addons}
 
 See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-managed-addons#addons-satellite).
+
+## Does IBM have an infrastructure on-premises compute storage option if I don't already have my own?
+{: #faq-fusion-hci}
+
+Yes, [IBM Storage Fusion HCI](/docs/satellite?topic=satellite-host-storage-fusion) is a purpose-built, hyper-converged architecture that supports managed service deployments with {{site.data.keyword.satellitelong_notm}}. It's designed to deploy bare metal {{site.data.keyword.redhat_openshift_notm}} container management and deployment software alongside IBM Storage Fusion software.
+
+
+
+
+
+

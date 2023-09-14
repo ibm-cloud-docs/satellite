@@ -141,6 +141,7 @@ toc:
               - host-gcp.md
               - host-azure.md
               - host-ibm.md
+              - host-storage-fusion.md
         - topicgroup:
             label: Managing hosts and locations
             topics:              
