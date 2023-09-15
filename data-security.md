@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-07-07"
+  years: 2020, 2023
+lastupdated: "2023-09-15"
 
 keywords: satellite, hybrid, multicloud, securing your data, secure data, information
 
@@ -66,7 +66,7 @@ Review the following image to see how your personal and sensitive information is
 
 (1) All personal and sensitive information
 :   Review the location, access, backup and encryption details for personal and sensitive information.
-    - **Location**: All data is stored in a {{site.data.keyword.satelliteshort}} persistent storage instance in the location's {{site.data.keyword.satelliteshort}} control plane master.
+    - **Location**: All data is stored in a {{site.data.keyword.satelliteshort}} persistent storage instance in the location's {{site.data.keyword.satelliteshort}} management plane.
     - **Access and data management**: The persistent storage instance is owned and managed by the {{site.data.keyword.satelliteshort}} control plane service team. You cannot access the data in the persistent storage instance.
     - **Backup**: See 2 and 3 to see how data is backed up.
     - **Encryption**: Data is encrypted at rest with a customer root key from an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.keymanagementservicelong_notm}} service instance.
@@ -80,7 +80,7 @@ Review the following image to see how your personal and sensitive information is
     
 (3) All {{site.data.keyword.satelliteshort}} control plane and cluster data
 :   Review the location, access, backup and encryption details for control plane and cluster data.
-    - **Location**: Cluster data such as etcd data is backed up from the {{site.data.keyword.satelliteshort}} persistent storage instance to a customer-owned {{site.data.keyword.cos_full_notm}} instance. Control plane data such as location data is sent to the {{site.data.keyword.cos_full_notm}}. You must have an existing {{site.data.keyword.cos_full_notm}} instance when you create the location. You can specify an existing bucket in the {{site.data.keyword.cos_full_notm}} instance that you want {{site.data.keyword.satelliteshort}} to use. Otherwise, a new bucket is automatically created in your {{site.data.keyword.cos_short}} instance on your behalf. Control plane master data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own.
+    - **Location**: Cluster data such as etcd data is backed up from the {{site.data.keyword.satelliteshort}} persistent storage instance to a customer-owned {{site.data.keyword.cos_full_notm}} instance. Control plane data such as location data is sent to the {{site.data.keyword.cos_full_notm}}. You must have an existing {{site.data.keyword.cos_full_notm}} instance when you create the location. You can specify an existing bucket in the {{site.data.keyword.cos_full_notm}} instance that you want {{site.data.keyword.satelliteshort}} to use. Otherwise, a new bucket is automatically created in your {{site.data.keyword.cos_short}} instance on your behalf. management plane data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own.
     - **Access and data management**: Access to the customer-owned {{site.data.keyword.cos_full_notm}} service instance is controlled by IAM.
     - **etcd Backup**: Every 8 hours
     - **Location control plane Backup**: Every hour

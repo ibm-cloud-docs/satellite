@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-09-15"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -54,12 +54,12 @@ Allow hosts to connect to the LaunchDarkly service.
 Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
-Allow control plane worker nodes to communicate with the control plane master.
+Allow control plane nodes to communicate with the management plane.
 :    * Destination IP addresses:  130.198.65.82, 135.90.66.194, 168.1.58.90
      * Destination hostnames: `c106.au-syd.satellite.cloud.ibm.com`, `c106-1.au-syd.satellite.cloud.ibm.com`, `c106-2.au-syd.satellite.cloud.ibm.com`, `c106-3.au-syd.satellite.cloud.ibm.com`, `c106-e.au-syd.satellite.cloud.ibm.com` 
      * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767
 
-Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}.
+Allow control plane nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}.
 :    * Destination IP addresses: N/A
      * Destination hostnames: `s3.au-syd.cloud-object-storage.appdomain.cloud` and `*.s3.au-syd.cloud-object-storage.appdomain.cloud`
      * Protocol and ports: HTTPS 443
@@ -71,7 +71,7 @@ Allow continuous delivery of updates to platform components.
      * Destination hostnames: `s3.us.cloud-object-storage.appdomain.cloud` and `*.s3.us.cloud-object-storage.appdomain.cloud`
      * Protocol and ports: HTTPS 443
 
-Allow Link connectors to connect to the Link tunnel server endpoint.
+Allow Link tunnel clients to connect to the Link tunnel server endpoint.
 :    * Destination IP addresses: 130.198.75.74, 135.90.67.154, 168.1.201.194
      * Destination hostnames: `c-01-ws.au-syd.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443

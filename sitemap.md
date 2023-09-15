@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-14"
+lastupdated: "2023-09-15"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3079,7 +3079,7 @@ subcollection: satellite
 
     * [High availability of the {{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-ha#ha-control-plane-master)
 
-    * [High availability of the {{site.data.keyword.satelliteshort}} control plane worker nodes](/docs/satellite?topic=satellite-ha#ha-control-plane-worker)
+    * [High availability of the {{site.data.keyword.satelliteshort}} control plane nodes](/docs/satellite?topic=satellite-ha#ha-control-plane-worker)
 
     * [High availability of {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-ha#ha-cloud-services)
 

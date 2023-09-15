@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-09-15"
 
 keywords: satellite, satellite at events, satellite activity tracker, satconfig events, satlink events, events for satellite config, events for satellite link, events for satellite location, events for satellite host
 
@@ -34,8 +34,8 @@ See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift
 
 | Action             | Description      |
 |--------------------|------------------|
-| `satellite.link.create` | A {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.satelliteshort}} Link connector are created. |
-| `satellite.link.delete` | A {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.satelliteshort}} Link connector are removed. |
+| `satellite.link.create` | A {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.satelliteshort}} Link tunnel client are created. |
+| `satellite.link.delete` | A {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.satelliteshort}} Link tunnel client are removed. |
 | `satellite.link.get` | Details for a {{site.data.keyword.satelliteshort}} location are retrieved. |
 | `satellite.link-endpoint-certs.delete` | A TLS certificate for a {{site.data.keyword.satelliteshort}} endpoint is removed.|
 | `satellite.link-endpoint-certs.get` | A list of TLS certificates that are used for a {{site.data.keyword.satelliteshort}} endpoint is retrieved. |

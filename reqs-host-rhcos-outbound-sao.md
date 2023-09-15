@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-09-15"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -43,7 +43,7 @@ Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
-Allow control plane worker nodes to communicate with the control plane master.
+Allow control plane nodes to communicate with the management plane.
 :    * Destination IP addresses:  169.57.165.138,163.107.73.50,163.109.72.194
      * Destination hostnames: `c113.br-sao.satellite.cloud.ibm.com`, `c113-1.br-sao.satellite.cloud.ibm.com`, `c113-2.br-sao.satellite.cloud.ibm.com`, `c113-3.br-sao.satellite.cloud.ibm.com`, `c113-e.br-sao.satellite.cloud.ibm.com`
      * Protocol and ports: TCP 30000 - 32767
@@ -58,7 +58,7 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
      * Destination hostnames: `icr.io`, `registry.bluemix.net`, `br.icr.io`, `us.icr.io`, `registry.ng.bluemix.net`
      * Protocol and ports: HTTPS 443
      
-Allow Link connectors to connect to the Link tunnel server endpoint. {: #link-connector-sao}
+Allow Link tunnel clients to connect to the Link tunnel server endpoint. {: #link-connector-sao}
 :    * Destination IP addresses: 163.107.69.114, 163.109.70.234, 169.57.155.74 
      * Destination hostnames: `c-01-ws.br-sao.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-06-02"
+lastupdated: "2023-09-15"
 
 keywords: satellite, hybrid, multicloud, satellite security, satellite compliance
 
@@ -57,7 +57,7 @@ Learn more about {{site.data.keyword.IBM_notm}} operational access to your {{sit
 ### What automated access does {{site.data.keyword.IBM_notm}} have to my location?
 {: #operational-access-automated}
 
-Operations such as host attachment, host assignment, and major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane hosts are controlled by automation through the {{site.data.keyword.satellitelong_notm}} API server in {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.satelliteshort}} API server communicates with the control plane master, which also exists in {{site.data.keyword.cloud_notm}}, to make these changes in your location.
+Operations such as host attachment, host assignment, and major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane hosts are controlled by automation through the {{site.data.keyword.satellitelong_notm}} API server in {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.satelliteshort}} API server communicates with the management plane, which also exists in {{site.data.keyword.cloud_notm}}, to make these changes in your location.
 
 Regular maintenance and automation tooling accesses the masters of {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters in your location through the default `openshift-api-<cluster_ID>` Link endpoint. This endpoint allows the {{site.data.keyword.openshiftlong_notm}} API to communicate with the master for the service cluster. For example, if you create a {{site.data.keyword.redhat_openshift_notm}} cluster to run applications in your location, all version updates for that cluster's master are automatically applied through the default `openshift-api-<cluster_ID>` Link endpoint for that cluster.
 
@@ -66,9 +66,9 @@ Updates to {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.clou
 ### What access do {{site.data.keyword.IBM_notm}} SREs have to my location control plane, including the masters of {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters?
 {: #operational-access-control-plane}
 
-The default `satellite-healthcheck-<location_ID>` Link endpoint allows the {{site.data.keyword.satelliteshort}} control plane master to check the health of your location's control plane cluster, and alerts {{site.data.keyword.IBM_notm}} Site Reliability Engineers (SREs) when manual intervention is required.
+The default `satellite-healthcheck-<location_ID>` Link endpoint allows the {{site.data.keyword.satelliteshort}} management plane to check the health of your location's control plane cluster, and alerts {{site.data.keyword.IBM_notm}} Site Reliability Engineers (SREs) when manual intervention is required.
 
-* To manually resolve issues with your {{site.data.keyword.satelliteshort}} location infrastructure management, such as host assignment or attachment, {{site.data.keyword.IBM_notm}} SREs use tooling to access the {{site.data.keyword.satellitelong_notm}} API server. The {{site.data.keyword.satelliteshort}} API server communicates with the {{site.data.keyword.satelliteshort}} control plane master in {{site.data.keyword.cloud_notm}}.
+* To manually resolve issues with your {{site.data.keyword.satelliteshort}} location infrastructure management, such as host assignment or attachment, {{site.data.keyword.IBM_notm}} SREs use tooling to access the {{site.data.keyword.satellitelong_notm}} API server. The {{site.data.keyword.satelliteshort}} API server communicates with the {{site.data.keyword.satelliteshort}} management plane in {{site.data.keyword.cloud_notm}}.
 * To manually resolve issues with masters of {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters in your location, such as if the master fails to correctly deploy, {{site.data.keyword.IBM_notm}} SREs use tooling to access the default `openshift-api-<cluster_ID>` Link endpoint for the master of the service cluster.
 
 Note that tooling is controlled through the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
@@ -108,12 +108,12 @@ Let's Encrypt certificates are automatically generated for several {{site.data.k
 | Component | Example domain | Certificate expiry | Who regenerates | How to regenerate |
 |---|---|---|---|---|
 | Default {{site.data.keyword.openshiftlong_notm}} API endpoint (`openshift-api-<cluster_ID>`) for each {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service cluster | `c-04.private.us-east.link.satellite.cloud.ibm.com` | 19800 hours (~2.26 years) | You | Regenerated during a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) or [cluster master update](/docs/containers?topic=containers-update#master). |
-| Default endpoints for {{site.data.keyword.cloud_notm}} services (IAM, {{site.data.keyword.cos_short}}, {{site.data.keyword.mon_short}}, {{site.data.keyword.la_short}}) | `m65f0b26d6c5f695647f5-6b64a6ccc9c596bf59a86625d8fa2202-c000.us-east.satellite.appdomain.cloud` | 90 days | {{site.data.keyword.IBM_notm}} | The Link tunnel server regenerates the certificate, and the Link Connector automatically reboots to reflect the rotated certificate. |
+| Default endpoints for {{site.data.keyword.cloud_notm}} services (IAM, {{site.data.keyword.cos_short}}, {{site.data.keyword.mon_short}}, {{site.data.keyword.la_short}}) | `m65f0b26d6c5f695647f5-6b64a6ccc9c596bf59a86625d8fa2202-c000.us-east.satellite.appdomain.cloud` | 90 days | {{site.data.keyword.IBM_notm}} | The Link tunnel server regenerates the certificate, and the Link tunnel client automatically reboots to reflect the rotated certificate. |
 | `c000`, `c001`, `c002`, and `c003` subdomains for each location zone | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-c000.us-south.satellite.appdomain.cloud` | 19800 hours (~2.26 years) | You | Regenerated during a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) or [cluster master update](/docs/containers?topic=containers-update#master). |
 | `ce00` Ingress subdomains | `s7033baaa45e1ae1a1060-d603ff82e51c94176a53d44566df9d79-ce00.us-south.satellite.appdomain.cloud` | 90 days | {{site.data.keyword.IBM_notm}} | [Setting up Ingress](/docs/openshift?topic=openshift-ingress-roks4). |
 | Worker node connection to the API server | 10.240.128.09 | 3 years | You | [Update hosts that are assigned as worker nodes](/docs/satellite?topic=satellite-host-update-workers). |
-| {{site.data.keyword.satelliteshort}} control plane master API endpoint | `http://c103-1.containers.cloud.ibm.com/` | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | Regenerated during automated rollouts for major and minor version updates for the {{site.data.keyword.satelliteshort}} location control plane master hosts. |
-| {{site.data.keyword.satelliteshort}} control plane master hosts | - | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | [Update control plane hosts](/docs/satellite?topic=satellite-host-update-location). |
+| {{site.data.keyword.satelliteshort}} management plane API endpoint | `http://c103-1.containers.cloud.ibm.com/` | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | Regenerated during automated rollouts for major and minor version updates for the {{site.data.keyword.satelliteshort}} location management plane hosts. |
+| {{site.data.keyword.satelliteshort}} management plane hosts | - | 19800 hours (~2.26 years) | {{site.data.keyword.IBM_notm}} | [Update control plane hosts](/docs/satellite?topic=satellite-host-update-location). |
 {: caption="Certificates for Satellite domains and hosts" caption-side="bottom"}
 
 

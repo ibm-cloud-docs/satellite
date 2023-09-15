@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-02"
+lastupdated: "2023-09-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -36,7 +36,7 @@ Secure transport to {{site.data.keyword.cloud_notm}}
 
 When you evaluate whether the minimal {{site.data.keyword.satelliteshort}} location deployment is the best solution for your environment, keep the following considerations in mind.
 - Location endpoints, or endpoints that expose resources that run in your {{site.data.keyword.satelliteshort}} location, are accessible only from within the {{site.data.keyword.cloud_notm}} private network or from resources that are connected to the {{site.data.keyword.cloud_notm}} private network.
-- Although you can create endpoints for publicly accessible resources, the endpoints that are created are not publicly accessible, and can only be resolved by the {{site.data.keyword.satelliteshort}} Link components in {{site.data.keyword.cloud_notm}} (the Link tunnel server) or in your location (the Link connector).
+- Although you can create endpoints for publicly accessible resources, the endpoints that are created are not publicly accessible, and can only be resolved by the {{site.data.keyword.satelliteshort}} Link components in {{site.data.keyword.cloud_notm}} (the Link tunnel server) or in your location (the Link tunnel client).
 - For more information about {{site.data.keyword.satelliteshort}} Link, including an architectural overview and FAQs, review [Understanding Link endpoints and {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-link-location-cloud).
 
 

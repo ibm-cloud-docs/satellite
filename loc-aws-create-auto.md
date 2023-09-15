@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-09-15"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -21,7 +21,7 @@ Automate your AWS setup with templates that use [{{site.data.keyword.bplong}}](/
 You can clone and modify these Terraform templates from the [Satellite Terraform GitHub repository](https://github.com/terraform-ibm-modules/terraform-ibm-satellite/tree/main/examples){: external}. Or, you can [manually attach AWS hosts to a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-aws).
 {: tip}
 
-For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf in a cloud provider, you must provide [credentials](#infra-creds-aws) to the cloud provider. The credentials that you provide are stored and encrypted in etcd of the {{site.data.keyword.satelliteshort}} location control plane master. For more information, see [Securing your data](/docs/satellite?topic=satellite-data-security).
+For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf in a cloud provider, you must provide [credentials](#infra-creds-aws) to the cloud provider. The credentials that you provide are stored and encrypted in etcd of the {{site.data.keyword.satelliteshort}} location management plane. For more information, see [Securing your data](/docs/satellite?topic=satellite-data-security).
 
 ## Creating your location with a {{site.data.keyword.bpshort}} template
 {: #create-auto-aws}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-06"
+lastupdated: "2023-09-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -57,11 +57,11 @@ The following table describes the Link endpoints that are automatically created 
 
 | Name | Description | Type | Instances |
 | ---- | ----------- | ---- | --------- |
-| `satellite-healthcheck-<location_ID>` | Allows the {{site.data.keyword.satelliteshort}} control plane master to check the health of your location's control plane cluster. | Location | One per location |
+| `satellite-healthcheck-<location_ID>` | Allows the {{site.data.keyword.satelliteshort}} management plane to check the health of your location's control plane cluster. | Location | One per location |
 | `satellite-containersApi` | Allows your {{site.data.keyword.satelliteshort}} location to communicate with the {{site.data.keyword.cloud_notm}} containers API. | Cloud | One per location |
-| `satellite-cosCrossRegion-<location_ID>` | Allows the control plane data of your {{site.data.keyword.satelliteshort}} location to be backed up to your {{site.data.keyword.cos_full}} instance. Control plane master data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own. | Cloud | One per location |
-| `satellite-cosRegional-<location_ID>` | Allows the control plane data of your {{site.data.keyword.satelliteshort}} location to be backed up to your {{site.data.keyword.cos_full}} instance. Control plane master data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own. | Cloud | One per location |
-| `satellite-cosResConf-<location_ID>` | Allows the control plane data of your {{site.data.keyword.satelliteshort}} location to be backed up to your {{site.data.keyword.cos_full}} instance. Control plane master data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own. | Cloud | One per location |
+| `satellite-cosCrossRegion-<location_ID>` | Allows the control plane data of your {{site.data.keyword.satelliteshort}} location to be backed up to your {{site.data.keyword.cos_full}} instance. management plane data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own. | Cloud | One per location |
+| `satellite-cosRegional-<location_ID>` | Allows the control plane data of your {{site.data.keyword.satelliteshort}} location to be backed up to your {{site.data.keyword.cos_full}} instance. management plane data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own. | Cloud | One per location |
+| `satellite-cosResConf-<location_ID>` | Allows the control plane data of your {{site.data.keyword.satelliteshort}} location to be backed up to your {{site.data.keyword.cos_full}} instance. management plane data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own. | Cloud | One per location |
 | `satellite-iam-<location_ID>` | Allows requests to your {{site.data.keyword.satelliteshort}} location in {{site.data.keyword.cloud_notm}} to be authenticated and user actions to be authorized by Identity and Access Management (IAM). | Cloud | One per {{site.data.keyword.satelliteshort}} location |
 | `satellite-kpRegional-<location_ID>` | Allows apps and services in the location to communicate with the {{site.data.keyword.keymanagementservicelong_notm}} service API | Cloud | One per location |
 | `satellite-logdna-<location_ID>` | Allows logs for your {{site.data.keyword.satelliteshort}} location to be sent to your {{site.data.keyword.la_full}} instance. | Cloud | One per location |

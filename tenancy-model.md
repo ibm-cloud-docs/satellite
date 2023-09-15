@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-09-15"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -133,7 +133,7 @@ Before you begin:
 
 1. In the **Object Storage** section, you can click **Edit** to optionally enter the exact name of an existing {{site.data.keyword.cos_full_notm}} bucket that you want to use to back up {{site.data.keyword.satelliteshort}} location control plane data. Otherwise, a new bucket is automatically created in an {{site.data.keyword.cos_short}} instance in your account.
 
-1. In the **Summary** panel, review your order details, and then click **Create location**. When you create the location, a location control plane master is deployed to one of the zones that are located in the {{site.data.keyword.cloud_notm}} region that you selected.
+1. In the **Summary** panel, review your order details, and then click **Create location**. When you create the location, a location management plane is deployed to one of the zones that are located in the {{site.data.keyword.cloud_notm}} region that you selected.
 
 1. Continue with [attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts) and then finish the setup of your [{{site.data.keyword.satelliteshort}} location control plane](/docs/satellite?topic=satellite-setup-control-plane). Note that the token in the attach script is an API key, which must be treated and protected as sensitive information. 
 

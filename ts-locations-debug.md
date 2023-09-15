@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-23"
+lastupdated: "2023-09-15"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -386,7 +386,7 @@ To determine where your problem exists,
 {: #R0049}
 
 Location message
-:    The Link connector is experiencing authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.
+:    The Link tunnel client is experiencing authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.
 
 :    This error is reported because the IAM API key that is set for the region or resource group that the location is in does not have the required permissions in {{site.data.keyword.satelliteshort}} or {{site.data.keyword.containershort}}, usually because the permissions of the API key owner changed or the API owner left the account.
 
@@ -406,8 +406,8 @@ Steps to resolve
 {: #R0050}
 
 Location message
-:    The Link connector is experiencing token authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID. 
-:    The Link connector cannot retrieve the location ID. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID. {: #R0051}
+:    The Link tunnel client is experiencing token authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID. 
+:    The Link tunnel client cannot retrieve the location ID. Contact {{site.data.keyword.cloud_notm}} Support and include your Satellite location ID. {: #R0051}
 
 Steps to resolve
 :    [Open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID.
@@ -523,6 +523,6 @@ Steps to resolve
 
 1. Check the IBM Cloud platform logs for more details. For more information, see [set up {{site.data.keyword.la_short}}](/docs/satellite?topic=satellite-get-help#review-logs) and review the [`R0061` error logs](/docs/satellite?topic=satellite-health#logs-error).
 
-1. Check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs), specifically for outbound connectivity to connect to IBM and Link connectors. 
+1. Check that your hosts meet all [system requirements](/docs/satellite?topic=satellite-host-reqs), specifically for outbound connectivity to connect to IBM and Link tunnel clients. 
 1. If you have met all the system requirements and the issue persists, [open a support case](/docs/satellite?topic=satellite-get-help) and include your {{site.data.keyword.satelliteshort}} location ID. You can find your location ID by running the `ibmcloud sat location ls` command.
  
