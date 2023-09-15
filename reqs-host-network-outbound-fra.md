@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-09-15"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -56,12 +56,12 @@ Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
-Allow control plane worker nodes to communicate with the control plane master.
+Allow control plane nodes to communicate with the management plane.
 :    * Destination IP addresses: 149.81.188.122, 158.177.88.18, 161.156.38.122  
      * Destination hostnames:  `c116.eu-de.satellite.cloud.ibm.com`, `c116-1.eu-de.satellite.cloud.ibm.com`, `c116-2.eu-de.satellite.cloud.ibm.com`, `c116-3.eu-de.satellite.cloud.ibm.com`, `c116-e.eu-de.satellite.cloud.ibm.com`
      * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767
 
-Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}.
+Allow control plane nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}.
 :    * Destination IP addresses: N/A
      * Destination hostnames: `s3.eu-de.cloud-object-storage.appdomain.cloud` and `*.s3.eu-de.cloud-object-storage.appdomain.cloud`
      * Protocol and ports: HTTPS 443
@@ -73,7 +73,7 @@ Allow continuous delivery of updates to platform components.
 :    * Destination hostnames: `s3.us.cloud-object-storage.appdomain.cloud` and `*.s3.us.cloud-object-storage.appdomain.cloud`
      * Protocol and ports: HTTPS 443
 
-Allow Link connectors to connect to the Link tunnel server endpoint.
+Allow Link tunnel clients to connect to the Link tunnel server endpoint.
 :    * Destination IP addresses: 149.81.188.130, 158.177.75.210, 161.156.38.2  
      * Destination hostnames:  `c-01-ws.eu-de.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443

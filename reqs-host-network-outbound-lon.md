@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-08-28"
+lastupdated: "2023-09-15"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -54,12 +54,12 @@ Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
-Allow control plane worker nodes to communicate with the control plane master.
+Allow control plane nodes to communicate with the management plane.
 :    * Destination IP addresses: 158.175.120.210, 141.125.97.106, 158.176.139.66  
      * Destination hostnames:  `c106.eu-gb.satellite.cloud.ibm.com`, `c106-1.eu-gb.satellite.cloud.ibm.com`, `c106-2.eu-gb.satellite.cloud.ibm.com`, `c106-3.eu-gb.satellite.cloud.ibm.com`, `c106-e.eu-gb.satellite.cloud.ibm.com` 
      * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767
 
-Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}.
+Allow control plane nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}.
 :    * Destination IP addresses: N/A
      * Destination hostnames: `s3.eu-gb.cloud-object-storage.appdomain.cloud` and `*.s3.eu-gb.cloud-object-storage.appdomain.cloud`
      * Protocol and ports: HTTPS 443
@@ -71,7 +71,7 @@ Allow continuous delivery of updates to platform components.
      * Destination hostnames: `s3.us.cloud-object-storage.appdomain.cloud` and `*.s3.us.cloud-object-storage.appdomain.cloud`
      * Protocol and ports: HTTPS 443
 
-Allow Link connectors to connect to the Link tunnel server endpoint.
+Allow Link tunnel clients to connect to the Link tunnel server endpoint.
 :    * Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242
      * Destination hostnames: `c-01-ws.eu-gb.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443

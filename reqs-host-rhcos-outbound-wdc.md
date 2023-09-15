@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-09-15"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -44,7 +44,7 @@ Allow hosts to communicate with Red Hat Container Registry.
 
 
 
-Allow control plane worker nodes to communicate with the control plane master.
+Allow control plane nodes to communicate with the management plane.
 :    * Destination IP addresses:  169.55.87.98, 169.63.138.34, 169.62.47.42 
      * Destination hostnames:  `c121.us-east.satellite.cloud.ibm.com`, `c121-1.us-east.satellite.cloud.ibm.com`, `c121-2.us-east.satellite.cloud.ibm.com`, `c121-3.us-east.satellite.cloud.ibm.com`, `c121-e.us-east.satellite.cloud.ibm.com` 
      * Protocol and ports: TCP 30000 - 32767
@@ -59,7 +59,7 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
      * Destination hostnames: `icr.io`, `us.icr.io`, `registry.bluemix.net`, `registry.ng.bluemix.net`
      * Protocol and ports: HTTPS 443
 
-Allow Link connectors to connect to the Link tunnel server endpoint. {: #link-connector-wdc}
+Allow Link tunnel clients to connect to the Link tunnel server endpoint. {: #link-connector-wdc}
 :    * Destination IP addresses: 169.47.156.154, 169.63.148.250, 169.62.1.34
      * Destination hostnames: `c-01-ws.us-east.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443

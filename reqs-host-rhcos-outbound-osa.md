@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-09-15"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -43,7 +43,7 @@ Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
-Allow control plane worker nodes to communicate with the control plane master.
+Allow control plane nodes to communicate with the management plane.
 :    * Destination IP addresses:  163.68.96.42,163.69.71.122,163.73.68.138 
      * Destination hostnames: `c111.jp-osa.satellite.cloud.ibm.com`, `c111-1.jp-osa.satellite.cloud.ibm.com`, `c111-2.jp-osa.satellite.cloud.ibm.com`, `c111-3.jp-osa.satellite.cloud.ibm.com`, `c111-e.jp-osa.satellite.cloud.ibm.com`
      * Protocol and ports: TCP 30000 - 32767
@@ -58,7 +58,7 @@ Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
      * Destination hostnames: `icr.io`, `registry.bluemix.net`, `jp2.icr.io`, `au.icr.io`, `registy.au-syd.bluemix.net`
      * Protocol and ports: HTTPS 443
      
-Allow Link connectors to connect to the Link tunnel server endpoint. {: #link-connector-osa}
+Allow Link tunnel clients to connect to the Link tunnel server endpoint. {: #link-connector-osa}
 :    * Destination IP addresses: 163.68.78.234, 163.69.70.106, 163.73.70.50
      * Destination hostnames: `c-01-ws.jp-osa.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443

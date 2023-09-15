@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-03-16"
+lastupdated: "2023-09-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -50,7 +50,7 @@ Review some frequently asked questions about why and how you choose an {{site.da
 
 Running {{site.data.keyword.cloud_notm}} services on your own infrastructure requires a secure connection to {{site.data.keyword.cloud_notm}}. The connection is controlled, monitored, and managed by {{site.data.keyword.IBM_notm}} to ensure that security and compliance standards for each of the services are met and to roll out updates to these services.
 
-Every {{site.data.keyword.satelliteshort}} location is set up with a control plane that establishes the secure connection back to {{site.data.keyword.cloud_notm}}. The control plane consists of a highly available control plane master that runs in the {{site.data.keyword.cloud_notm}} region that you choose. {{site.data.keyword.IBM_notm}} controls and manages this control plane master.  The control plane worker nodes run on your own compute hosts that you attached to your {{site.data.keyword.satelliteshort}} location.
+Every {{site.data.keyword.satelliteshort}} location is set up with a control plane that establishes the secure connection back to {{site.data.keyword.cloud_notm}}. The control plane consists of a highly available management plane that runs in the {{site.data.keyword.cloud_notm}} region that you choose. {{site.data.keyword.IBM_notm}} controls and manages this management plane.  The control plane nodes run on your own compute hosts that you attached to your {{site.data.keyword.satelliteshort}} location.
 
 {{site.data.keyword.IBM_notm}} uses this connection to monitor your {{site.data.keyword.satelliteshort}} location, automatically detect and resolve capacity issues, monitor malicious activity, and roll out updates to the {{site.data.keyword.cloud_notm}} services that you run on your infrastructure.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-09-15"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -55,12 +55,12 @@ Allow hosts to communicate with Red Hat Container Registry.
 :    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
-Allow control plane worker nodes to communicate with the control plane master.
+Allow control plane nodes to communicate with the management plane.
 :    * Destination IP addresses:  169.63.123.154, 169.63.110.114, 169.62.13.2, 169.60.123.162, 169.59.152.58, 52.117.93.26  
      * Destination hostnames:  `c107.us-east.satellite.cloud.ibm.com`, `c107-1.us-east.satellite.cloud.ibm.com`, `c107-2.us-east.satellite.cloud.ibm.com`, `c107-3.us-east.satellite.cloud.ibm.com`, `c107-e.us-east.satellite.cloud.ibm.com`, `c117.us-east.satellite.cloud.ibm.com`, `c117-1.us-east.satellite.cloud.ibm.com`, `c117-2.us-east.satellite.cloud.ibm.com`, `c117-3.us-east.satellite.cloud.ibm.com`, `c117-e.us-east.satellite.cloud.ibm.com` 
      * Protocol and ports: TCP 30000 - 32767 and UDP 30000 - 32767
 
-Allow control plane worker nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}.
+Allow control plane nodes to back up control plane etcd data to {{site.data.keyword.cos_full_notm}}.
 :    * Destination IP addresses: N/A
      * Destination hostnames: `s3.us-east.cloud-object-storage.appdomain.cloud` and `*.s3.us-east.cloud-object-storage.appdomain.cloud`
      * Protocol and ports: HTTPS 443
@@ -72,7 +72,7 @@ Allow continuous delivery of updates to platform components.
      * Destination hostnames: `s3.us.cloud-object-storage.appdomain.cloud` and `*.s3.us.cloud-object-storage.appdomain.cloud`
      * Protocol and ports: HTTPS 443
 
-Allow Link connectors to connect to the Link tunnel server endpoint.
+Allow Link tunnel clients to connect to the Link tunnel server endpoint.
 :    * Destination IP addresses: 169.47.156.154, 169.63.148.250, 169.62.1.34
      * Destination hostnames: `c-01-ws.us-east.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443

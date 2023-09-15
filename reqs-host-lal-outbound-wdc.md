@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-06-12"
+lastupdated: "2023-09-15"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -26,7 +26,7 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 The following outbound network requirements are for hosts in the Washington D.C. (`us-east`) region.
 
 
-Allow Link connectors to connect to the Link tunnel server endpoint
+Allow Link tunnel clients to connect to the Link tunnel server endpoint
 :    * Destination IP addresses: 169.47.156.154, 169.63.148.250, 169.62.1.34
      * Destination hostnames: `c-01-ws.us-east.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443

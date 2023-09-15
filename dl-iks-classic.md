@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-08-23"
+lastupdated: "2023-09-15"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -287,7 +287,7 @@ The reverse proxy is now configured to terminate incoming connections to your cu
 {: #dl-config-satlink}
 {: step}
 
-Configure the Link connector in your {{site.data.keyword.satelliteshort}} location to send traffic over the {{site.data.keyword.dl_short}} connection to the reverse proxy.
+Configure the Link tunnel client in your {{site.data.keyword.satelliteshort}} location to send traffic over the {{site.data.keyword.dl_short}} connection to the reverse proxy.
 {: shortdesc}
 
 1. To ensure that the {{site.data.keyword.satelliteshort}} Link configuration change was successful, verify that the location's **State** is `normal`.

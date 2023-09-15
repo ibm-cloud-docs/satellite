@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-15"
+lastupdated: "2023-09-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -43,7 +43,7 @@ When you create a [{{site.data.keyword.satelliteshort}} location](/docs/satellit
     ```
     {: screen}
 
-3. Check the health of the control plane location subdomains by curling each hostname endpoint. If the endpoint returns a `200` response for each host, the control plane worker node is healthy and serving Kubernetes traffic. If not, continue to the next step.
+3. Check the health of the control plane location subdomains by curling each hostname endpoint. If the endpoint returns a `200` response for each host, the control plane node is healthy and serving Kubernetes traffic. If not, continue to the next step.
     ```sh
     curl -v http://<hostname>:30000
     ```
