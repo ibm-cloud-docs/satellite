@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-09-18"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -21,7 +21,15 @@ content-type: release-note
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
 
+## September 2023
+{: #satellite-sep23}
 
+### 18 September 2023
+{: #satellite-sep1823}
+{: release-note}
+
+CLI version `1.0.566` is available.
+:   For more information, see the [CLI change log](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ## July 2023
 {: #satellite-july23}
