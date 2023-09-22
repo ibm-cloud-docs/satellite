@@ -79,6 +79,12 @@ toc:
                     - reqs-host-network-outbound-lon.md
                     - reqs-host-lal-outbound-lon.md
               - topicgroup:
+                  label: Host outbound connectivity for Madrid
+                  topics:
+                    - reqs-host-rhcos-outbound-mad.md
+                    - reqs-host-network-outbound-mad.md
+                    - reqs-host-lal-outbound-mad.md
+              - topicgroup:
                   label: Host outbound connectivity for Osaka
                   topics:
                     - reqs-host-rhcos-outbound-osa.md

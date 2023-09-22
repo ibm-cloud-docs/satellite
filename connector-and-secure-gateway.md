@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-09-21"
 
 keywords: satellite, connector, secure gateway
 
@@ -36,6 +36,7 @@ See the following table to compare terminology between Secure Gateway and Satell
 | Secure Gateway Endpoint | {{site.data.keyword.satelliteshort}} Connector API Endpoint | This term in Secure gateway refers to the API endpoint. |
 | Secure Gateway Dashboard | {{site.data.keyword.satelliteshort}} Connector Endpoints page in cloud.ibm.com |  |
 {: caption="Secure Gateway and {{site.data.keyword.satelliteshort}} Connector terminology." caption-side="bottom"}
+{: #connector-sg-comp-table}
 
 ## Capabilities
 {: #capability-comparison}
@@ -56,4 +57,4 @@ The following table highlights how capabilities are provided in Secure Gateway a
 | Authentication | Mutual authentication is supported. | Provided by the target and can be configured with mutual authentication on the {{site.data.keyword.satelliteshort}} Connector parts. |  |  
 | Load balancing and high availability | Can connect multiple instances of the Secure Gateway Service client to your gateway to automatically use built-in connection load balancing and connection fail-over if a client instance goes down. | Requires you to manually create more Docker containers. Must have 3 to ensure high availability.  |
 {: caption="Secure Gateway and {{site.data.keyword.satelliteshort}} Connector key differences." caption-side="bottom"}
-
+{: #connector-capabilities-table}

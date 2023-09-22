@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-09-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -33,6 +33,7 @@ Red Hat CoreOS is available in all supported {{site.data.keyword.satelliteshort}
 | North America | United States | Dallas | `dal`| `us-south`|`us-south-1`  \n `us-south-2`  \n `us-south-3`|
 | North America | United States | Washington DC | `wdc`| `us-east`|`us-east-1`  \n `us-east-2`  \n `us-east-3`|
 | Europe | Germany | Frankfurt `†`   | `fra` | `eu-de` | `eu-de-1`  \n `eu-de-2`  \n `eu-de-3`|
+| Europe | Spain | Madrid | `mad` | `eu-es`|`eu-es-1`  \n `eu-es-2`  \n `eu-es-3`|
 | Europe | United Kingdom | London | `lon` | `eu-gb`|`eu-gb-1`  \n `eu-gb-2`  \n `eu-gb-3`|
 | South America | Brazil | Sao Paulo | `sao` | `br-sao` | `br-sao-1`  \n `br-sao-2`  \n `br-sao-3` |
 {: caption="Supported {{site.data.keyword.cloud_notm}} regions." caption-side="bottom"}

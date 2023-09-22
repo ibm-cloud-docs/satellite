@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-08-17"
+lastupdated: "2023-09-21"
 
 
 keywords: satellite storage, change log, version history, odf remote
@@ -23,6 +23,14 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.13
 {: #4.13-change-log}
 
+
+### Revision 3, released 19 September 2023
+{: #odf-remote-4.13-rev-3-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484){: external} [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469){: external} [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536){: external} [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321){: external} [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969){: external} [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/CVE-2023-32681){: external} [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602){: external} [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603){: external} 
+- Updates the UBI to version `8.8-1037`.
+- Updates Go to version `1.20.7`.
 
 ### Revision 2, released 03 August 2023
 {: #odf-remote-4.13-rev-2-change-log}
@@ -44,6 +52,14 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.12
 {: #4.12-change-log}
 
+
+### Revision 5, released 19 September 2023
+{: #odf-remote-4.12-rev-5-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484){: external} [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469){: external} [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536){: external} [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321){: external} [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969){: external} [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/CVE-2023-32681){: external} [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602){: external} [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603){: external} 
+- Updates the UBI to version `8.8-1037`.
+- Updates Go to version `1.20.7`.
 
 ### Revision 4, released 03 August 2023
 {: #odf-remote-4.12-rev-4-change-log}
@@ -82,6 +98,14 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.11
 {: #4.11-change-log}
 
+
+### Revision 9, released 19 September 2023
+{: #odf-remote-4.11-rev-9-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484){: external} [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469){: external} [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536){: external} [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321){: external} [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969){: external} [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/CVE-2023-32681){: external} [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602){: external} [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603){: external} 
+- Updates the UBI to version `8.8-1037`.
+- Updates Go to version `1.20.7`.
 
 ### Revision 8, released 03 August 2023
 {: #odf-remote-4.11-rev-8-change-log}
@@ -146,6 +170,14 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 {: #4.10-change-log}
 
 
+### Revision 20, released 19 September 2023
+{: #odf-remote-4.10-rev-20-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484){: external} [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469){: external} [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536){: external} [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321){: external} [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969){: external} [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/CVE-2023-32681){: external} [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602){: external} [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603){: external} 
+- Updates the UBI to version `8.8-1037`.
+- Updates Go to version `1.20.7`.
+
 ### Revision 19, released 03 August 2023
 {: #odf-remote-4.10-rev-19-change-log}
 
@@ -208,6 +240,14 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.9
 {: #4.9-change-log}
 
+
+### Revision 26, released 19 September 2023
+{: #odf-remote-4.9-rev-26-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484){: external} [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469){: external} [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536){: external} [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321){: external} [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969){: external} [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/CVE-2023-32681){: external} [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602){: external} [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603){: external} 
+- Updates the UBI to version `8.8-1037`.
+- Updates Go to version `1.20.7`.
 
 ### Revision 25, released 03 August 2023
 {: #odf-remote-4.9-rev-25-change-log}
