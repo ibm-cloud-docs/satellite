@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-12"
+lastupdated: "2023-09-22"
 
 keywords: satellite, hybrid, multicloud, requirements, outbound, network, allowlist
 
@@ -30,6 +30,7 @@ Outbound connectivity host requirements for Non-RHCOS locations
 :    [Non-RHCOS locations in Dallas](/docs/satellite?topic=satellite-reqs-host-network-outbound-dal)
 :    [Non-RHCOS locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-network-outbound-fra)
 :    [Non-RHCOS locations in London](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon)
+:    [Non-RHCOS locations in Madrid](/docs/satellite?topic=satellite-reqs-host-network-outbound-mad)
 :    [Non-RHCOS locations in Osaka](/docs/satellite?topic=satellite-reqs-host-network-outbound-osa)
 :    [Non-RHCOS locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-network-outbound-sao)
 :    [Non-RHCOS locations in Sydney](/docs/satellite?topic=satellite-reqs-host-network-outbound-syd)
@@ -44,6 +45,7 @@ Outbound connectivity requirements for Red Hat CoreOS (RHCOS) locations
 :    [RHCOS enabled locations in Dallas](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-dal)
 :    [RHCOS enabled locations in Frankfurt](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-fra)
 :    [RHCOS enabled locations in London](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-lon)
+:    [RHCOS enabled locations in Madrid](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-mad)
 :    [RHCOS enabled locations in Osaka](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-osa)
 :    [RHCOS enabled locations in Sao Paulo](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-sao)
 :    [RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd)
@@ -59,6 +61,7 @@ Outbound connectivity requirements for Red Hat CoreOS (RHCOS) locations with red
 :    [RHCOS enabled locations with reduced firewall in Dallas](/docs/satellite?topic=satellite-req-minimum-outbound-dal)
 :    [RHCOS enabled locations with reduced firewall in Frankfurt](/docs/satellite?topic=satellite-req-minimum-outbound-fra)
 :    [RHCOS enabled locations with reduced firewall in London](/docs/satellite?topic=satellite-req-minimum-outbound-lon)
+:    [RHCOS enabled locations with reduced firewall in Madrid](/docs/satellite?topic=satellite-req-minimum-outbound-mad)
 :    [RHCOS enabled locations with reduced firewall in Osaka](/docs/satellite?topic=satellite-req-minimum-outbound-osa)
 :    [RHCOS enabled locations with reduced firewall in Sao Paulo](/docs/satellite?topic=satellite-req-minimum-outbound-sao)
 :    [RHCOS enabled locations with reduced firewall in Sydney](/docs/satellite?topic=satellite-req-minimum-outbound-syd)

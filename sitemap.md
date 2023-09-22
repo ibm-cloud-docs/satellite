@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-21"
+lastupdated: "2023-09-22"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1189,6 +1189,17 @@ subcollection: satellite
 [Non-RHCOS enabled locations in London](/docs/satellite?topic=satellite-reqs-host-network-outbound-lon#reqs-host-network-outbound-lon)
 
 [RHCOS enabled locations with reduced firewall in London](/docs/satellite?topic=satellite-req-minimum-outbound-lon#req-minimum-outbound-lon)
+
+
+### Host outbound connectivity for Madrid
+{: #sitemap_host_outbound_connectivity_for_madrid}
+
+
+[RHCOS enabled locations in Madrid](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-mad#reqs-host-rhcos-outbound-mad)
+
+[Non-RHCOS enabled locations in Madrid](/docs/satellite?topic=satellite-reqs-host-network-outbound-mad#reqs-host-network-outbound-mad)
+
+[RHCOS enabled locations with reduced firewall in Madrid](/docs/satellite?topic=satellite-req-minimum-outbound-mad#req-minimum-outbound-mad)
 
 
 ### Host outbound connectivity for Osaka
