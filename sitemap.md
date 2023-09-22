@@ -181,6 +181,12 @@ subcollection: satellite
 
 * [September 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep23)
 
+    * [22 September 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep2223)
+
+        * New! You can now create {{site.data.keyword.satelliteshort}} locations in the Madrid (`mad`, `eu-es`) region.
+
+        * Storage template revisions
+
     * [18 September 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep1823)
 
         * CLI version `1.0.566` is available.

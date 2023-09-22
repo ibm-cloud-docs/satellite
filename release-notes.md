@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-09-22"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,12 +24,26 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## September 2023
 {: #satellite-sep23}
 
+
+### 22 September 2023
+{: #satellite-sep2223}
+{: release-note}
+
+New! You can now create {{site.data.keyword.satelliteshort}} locations in the Madrid (`mad`, `eu-es`) region.
+:   To create a {{site.data.keyword.satelliteshort}} location in the Madrid region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
+
+
+Storage template revisions
+:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or by running the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
+
+
 ### 18 September 2023
 {: #satellite-sep1823}
 {: release-note}
 
 CLI version `1.0.566` is available.
 :   For more information, see the [CLI change log](/docs/satellite?topic=satellite-satellite-cli-changelog).
+
 
 ## July 2023
 {: #satellite-july23}
