@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-22"
+lastupdated: "2023-09-24"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1404,24 +1404,6 @@ subcollection: satellite
 
 * [Attaching on-premises Red Hat CoreOS hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts)
 
-[Alibaba Cloud](/docs/satellite?topic=satellite-alibaba#alibaba)
-
-* [Adding Alibaba hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-alibaba#alibaba-host-attach)
-
-    * [1. Download the host script](/docs/satellite?topic=satellite-alibaba#alibaba-host-script)
-
-    * [2. Set up your virtual machines](/docs/satellite?topic=satellite-alibaba#alibaba-host-vm)
-
-    * [3. Connect to your instance and install packages](/docs/satellite?topic=satellite-alibaba#alibaba-host-install-packages)
-
-    * [4. Upload and run the host attach script](/docs/satellite?topic=satellite-alibaba#alibaba-host-script-run)
-
-    * [5. Configure the control plane](/docs/satellite?topic=satellite-alibaba#alibaba-host-control-plane)
-
-* [Security group settings](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-secgroup)
-
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-alibaba#alibaba-whats-next)
-
 [Attaching AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws)
 
 * [Adding AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws-host-attach)
@@ -1463,6 +1445,16 @@ subcollection: satellite
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
 
 [IBM Storage Fusion HCI](/docs/satellite?topic=satellite-host-storage-fusion#host-storage-fusion)
+
+[Bare metal](/docs/satellite?topic=satellite-host-baremetal#host-baremetal)
+
+* [{{site.data.keyword.baremetal_short_sing}} requirements](/docs/satellite?topic=satellite-host-baremetal#bare-metal-reqs)
+
+* [Attaching bare metal servers to your location](/docs/satellite?topic=satellite-host-baremetal#bare-metal-attach)
+
+[Alibaba Cloud](/docs/satellite?topic=satellite-alibaba#alibaba)
+
+* [Security group settings](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-secgroup)
 
 
 ## Managing hosts and locations
