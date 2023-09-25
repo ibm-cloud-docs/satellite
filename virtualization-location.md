@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-19"
+lastupdated: "2023-09-24"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -52,10 +52,10 @@ To set up virtualization, your {{site.data.keyword.baremetal_short_sing}} must m
     - For AMD CPUs, support for virtualization is referred to as `AMD Virtualization` or `AMD-V`.
 - Must have a minimum of minimum of 8 cores and 32 GB RAM, plus any additional cores that you need for your vCPU overhead. For more information, see [CPU overhead](https://docs.openshift.com/container-platform/4.11/virt/install/preparing-cluster-for-virt.html#CPU-overhead_preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
 - Must include enough memory for your workload needs. For example: `360 MiB + (1.002 * requested memory) + 146 MiB + 8 MiB * (number of vCPUs) + 16 MiB * (number of graphics devices)`. For more information, see [Memory overhead](https://docs.openshift.com/container-platform/4.11/virt/install/preparing-cluster-for-virt.html#memory-overhead_preparing-cluster-for-virt){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
-- Must run Red Hat CoreOS operating system, which is installed during when you attach it to the location.
+- Must not have an operating system installed. The Red Hat CoreOS operating system is installed later in this process.
+- If you want to use OpenShift Data Foundation as your storage solution, add 2 storage disks to each of your {{site.data.keyword.baremetal_short}} when you provision them.
 
-
-If your servers do not meet these requirements, follow the steps to [create a {{site.data.keyword.baremetal_short_sing}}](/docs/bare-metal?topic=bare-metal-ordering-baremetal-server). For a list of bare metal options, see [Available options for a bare metal server](/docs/bare-metal?topic=bare-metal-about-bm#options-for-bare-metal-servers).
+If your servers do not meet these requirements, you can [create a {{site.data.keyword.baremetal_short_sing}}](/docs/bare-metal?topic=bare-metal-ordering-baremetal-server). For a list of bare metal options, see [Available options for a bare metal server](/docs/bare-metal?topic=bare-metal-about-bm#options-for-bare-metal-servers).
 {: tip}
 
 ## Attaching bare metal servers to your location
@@ -70,7 +70,7 @@ Follow these general steps to attach your bare metal servers to your location. T
 4. Set up your boot order to boot the Red Hat CoreOS ISO file that you downloaded in step 1.
 5. Boot your system to install the ISO.
 6. After Red Hat CoreOS is booted into memory, set up network connections so you can provide the location ignition file and attach the server to your location.
-7. Download the ignition script for your Satellite location.
+7. Download the ignition script for your {{site.data.keyword.satelliteshort}} location.
     
     ```sh
     ibmcloud sat host attach --location <location_name> --operating-system RHCOS
@@ -99,6 +99,7 @@ Follow these general steps to attach your bare metal servers to your location. T
 13. After the installation completes, unplug your RHCOS ISO file and reboot from your hard disk. 
 14. Check your {{site.data.keyword.satelliteshort}} location to confirm that your bare metal server is attached.
 15. Repeat these steps for each bare metal host that you want to attach to your location.
+
 
 ## Assigning a {{site.data.keyword.baremetal_short_sing}} host to your {{site.data.keyword.redhat_openshift_notm}} cluster
 {: #assign-bare-metal-cluster-virt}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-22"
+lastupdated: "2023-09-25"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1333,7 +1333,7 @@ subcollection: satellite
 
 * [Creating your location with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-azure-create-auto#create-auto-azure)
 
-* [What does this template create?](/docs/satellite?topic=satellite-loc-azure-create-auto#template-aws)
+* [What does this template create?](/docs/satellite?topic=satellite-loc-azure-create-auto#template-azure)
 
 * [Microsoft Azure credentials](/docs/satellite?topic=satellite-loc-azure-create-auto#infra-creds-azure)
 
@@ -1404,23 +1404,7 @@ subcollection: satellite
 
 * [Attaching on-premises Red Hat CoreOS hosts to your location](/docs/satellite?topic=satellite-attach-hosts#attach-rhcos-hosts)
 
-[Alibaba Cloud](/docs/satellite?topic=satellite-alibaba#alibaba)
-
-* [Adding Alibaba hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-alibaba#alibaba-host-attach)
-
-    * [1. Download the host script](/docs/satellite?topic=satellite-alibaba#alibaba-host-script)
-
-    * [2. Set up your virtual machines](/docs/satellite?topic=satellite-alibaba#alibaba-host-vm)
-
-    * [3. Connect to your instance and install packages](/docs/satellite?topic=satellite-alibaba#alibaba-host-install-packages)
-
-    * [4. Upload and run the host attach script](/docs/satellite?topic=satellite-alibaba#alibaba-host-script-run)
-
-    * [5. Configure the control plane](/docs/satellite?topic=satellite-alibaba#alibaba-host-control-plane)
-
-* [Security group settings](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-secgroup)
-
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-alibaba#alibaba-whats-next)
+* [I added hosts to my location, what's next?](/docs/satellite?topic=satellite-attach-hosts#on-prem-whats-next-host)
 
 [Attaching AWS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-aws#aws)
 
@@ -1432,9 +1416,7 @@ subcollection: satellite
 
 * [Security group settings for AWS](/docs/satellite?topic=satellite-aws#aws-reqs-secgroup)
 
-* [AWS credentials](/docs/satellite?topic=satellite-aws#infra-creds-aws)
-
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-aws#aws-whats-next)
+* [I added hosts to my location, what's next?](/docs/satellite?topic=satellite-aws#aws-whats-next-host)
 
 [Attaching Google Cloud Platform (GCP) hosts](/docs/satellite?topic=satellite-gcp#gcp)
 
@@ -1444,7 +1426,7 @@ subcollection: satellite
 
 * [Network firewall settings](/docs/satellite?topic=satellite-gcp#gcp-reqs-firewall)
 
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-gcp#gcp-whats-next)
+* [I added hosts to my location, what's next?](/docs/satellite?topic=satellite-gcp#gcp-whats-next-host)
 
 [Attaching Microsoft Azure hosts](/docs/satellite?topic=satellite-azure#azure)
 
@@ -1452,7 +1434,7 @@ subcollection: satellite
 
 * [Security group settings for Azure](/docs/satellite?topic=satellite-azure#azure-reqs-firewall)
 
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-azure#aws-whats-next)
+* [I added hosts to my location, what's next?](/docs/satellite?topic=satellite-azure#azure-whats-next-host)
 
 [Attaching {{site.data.keyword.cloud_notm}} hosts for tests](/docs/satellite?topic=satellite-ibm#ibm)
 
@@ -1460,9 +1442,25 @@ subcollection: satellite
 
 * [Manually adding {{site.data.keyword.cloud_notm}} RHCOS hosts to {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-ibm#ibm-host-attach-rhcos)
 
-* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next)
+* [I added hosts to my location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next-host)
 
-[IBM Storage Fusion HCI](/docs/satellite?topic=satellite-host-storage-fusion#host-storage-fusion)
+[Attaching IBM Storage Fusion HCI hosts](/docs/satellite?topic=satellite-host-storage-fusion#host-storage-fusion)
+
+* [I added hosts to my location, what's next?](/docs/satellite?topic=satellite-host-storage-fusion#fusion-whats-next-host)
+
+[Attaching Bare metal hosts](/docs/satellite?topic=satellite-host-baremetal#host-baremetal)
+
+* [{{site.data.keyword.baremetal_short_sing}} requirements](/docs/satellite?topic=satellite-host-baremetal#bare-metal-reqs)
+
+* [Attaching bare metal servers to your location](/docs/satellite?topic=satellite-host-baremetal#bare-metal-attach)
+
+* [I added hosts to my location, what's next?](/docs/satellite?topic=satellite-host-baremetal#bare-metal-whats-next-host)
+
+[Attaching Alibaba Cloud hosts](/docs/satellite?topic=satellite-alibaba#alibaba)
+
+* [Security group settings](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-secgroup)
+
+* [I added hosts to my location, what's next?](/docs/satellite?topic=satellite-alibaba#alibaba-whats-next-host)
 
 
 ## Managing hosts and locations

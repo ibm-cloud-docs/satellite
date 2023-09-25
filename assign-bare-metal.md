@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-09-24"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -53,7 +53,7 @@ In addition, the {{site.data.keyword.baremetal_short}} used in this example requ
 ## {{site.data.keyword.baremetal_short_sing}} requirements
 {: #setup-bare-metal}
 
-To set up virtualization, your {{site.data.keyword.baremetal_short_sing}} must meet the following requirements. 
+To attach a bare metal host, your {{site.data.keyword.baremetal_short_sing}} must meet the following requirements. 
 
 - Must support virtualization technology.
     - For Intel CPUs, support for virtualization is referred to as `Intel VT` or `VT-x`.
@@ -63,8 +63,9 @@ To set up virtualization, your {{site.data.keyword.baremetal_short_sing}} must m
 - Must not have an operating system installed. The Red Hat CoreOS operating system is installed later in this process.
 - If you want to use OpenShift Data Foundation as your storage solution, add 2 storage disks to each of your {{site.data.keyword.baremetal_short}} when you provision them.
 
-If your servers do not meet these requirements, follow the steps to [create a {{site.data.keyword.baremetal_short_sing}}](/docs/bare-metal?topic=bare-metal-ordering-baremetal-server). For a list of bare metal options, see [Available options for a bare metal server](/docs/bare-metal?topic=bare-metal-about-bm#options-for-bare-metal-servers).
+If your servers do not meet these requirements, you can [create a {{site.data.keyword.baremetal_short_sing}}](/docs/bare-metal?topic=bare-metal-ordering-baremetal-server). For a list of bare metal options, see [Available options for a bare metal server](/docs/bare-metal?topic=bare-metal-about-bm#options-for-bare-metal-servers).
 {: tip}
+
 
 ## Booting up your {{site.data.keyword.baremetal_short_sing}}
 {: #boot-bare-metal}

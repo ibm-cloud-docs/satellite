@@ -142,12 +142,13 @@ toc:
             topics:
               - host-attach-download.md
               - host-on-prem.md
-              - alibaba.md
               - host-aws.md
               - host-gcp.md
               - host-azure.md
               - host-ibm.md
               - host-storage-fusion.md
+              - host-baremetal.md
+              - host-alibaba.md
         - topicgroup:
             label: Managing hosts and locations
             topics:              
