@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-09-25"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -51,7 +51,7 @@ If you are using this template for demonstration purposes, do not assign all you
 {: note}
 
 ## What does this template create?
-{: #template-aws}
+{: #template-azure}
 
 This {{site.data.keyword.bpshort}} template creates a resource group of your Azure cloud subscription and then creates the following resources in your Azure account.
 

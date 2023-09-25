@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-24"
+lastupdated: "2023-09-25"
 
 keywords: satellite, hybrid, multicloud, alibaba, alibaba hosts, alibaba cloud
 
@@ -65,6 +65,7 @@ To add hosts from Alibaba cloud, follow these general steps.
         journalctl -f -u ibm-host-attach
         ```
         {: pre} 
+        
 5. Assign your hosts to either the [control plane](/docs/satellite?topic=satellite-setup-control-plane) or a [worker pool](/docs/satellite?topic=satellite-assigning-hosts).
 
 ## Security group settings
@@ -84,6 +85,20 @@ In addition to these inbound rules, you must allow all outbound connectivity to 
 {: note}
 
 For more information, see [Security groups](https://www.alibabacloud.com/help/en/elastic-compute-service/latest/security-security-groups){: external} in the Alibaba documentation.
+
+## I added hosts to my location, what's next?
+{: #alibaba-whats-next-host}
+
+Now that you added hosts to your location, you can assign them to your location control plane or to your {{site.data.keyword.cloud_notm}} services.
+{: shortdesc}
+
+1. Assign [hosts to the location control plane](/docs/satellite?topic=satellite-setup-control-plane) or [to your {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-assigning-hosts).
+2. Create a [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services), such as a [{{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-satellite-clusters). You can even [register existing {{site.data.keyword.redhat_openshift_notm}} clusters to your location](/docs/satellite?topic=satellite-register-openshift-clusters) to use as deployment targets.
+3. [Manage your applications](/docs/satellite?topic=satellite-cluster-config) with {{site.data.keyword.satelliteshort}} Config.
+4. Create [{{site.data.keyword.satelliteshort}} cluster storage templates](/docs/satellite?topic=satellite-storage-template-ov).
+5. Learn more about the [{{site.data.keyword.satelliteshort}} Link component](/docs/satellite?topic=satellite-link-location-cloud) and how you can use endpoints to manage the network traffic between your location and {{site.data.keyword.cloud_notm}}.
+
+Need help? Check out [Getting support](/docs/satellite?topic=satellite-get-help) where you can find information about cloud status, issues, and logging; contacting support; and setting your email notification preferences for {{site.data.keyword.cloud_notm}} platform-related items.
 
 
 
