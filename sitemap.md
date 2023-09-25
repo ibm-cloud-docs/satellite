@@ -1444,11 +1444,11 @@ subcollection: satellite
 
 * [I added hosts to my location, what's next?](/docs/satellite?topic=satellite-ibm#ibm-whats-next-host)
 
-[IBM Storage Fusion HCI](/docs/satellite?topic=satellite-host-storage-fusion#host-storage-fusion)
+[Attaching IBM Storage Fusion HCI hosts](/docs/satellite?topic=satellite-host-storage-fusion#host-storage-fusion)
 
 * [I added hosts to my location, what's next?](/docs/satellite?topic=satellite-host-storage-fusion#fusion-whats-next-host)
 
-[Bare metal](/docs/satellite?topic=satellite-host-baremetal#host-baremetal)
+[Attaching Bare metal hosts](/docs/satellite?topic=satellite-host-baremetal#host-baremetal)
 
 * [{{site.data.keyword.baremetal_short_sing}} requirements](/docs/satellite?topic=satellite-host-baremetal#bare-metal-reqs)
 
@@ -1456,7 +1456,7 @@ subcollection: satellite
 
 * [I added hosts to my location, what's next?](/docs/satellite?topic=satellite-host-baremetal#bare-metal-whats-next-host)
 
-[Alibaba Cloud](/docs/satellite?topic=satellite-alibaba#alibaba)
+[Attaching Alibaba Cloud hosts](/docs/satellite?topic=satellite-alibaba#alibaba)
 
 * [Security group settings](/docs/satellite?topic=satellite-alibaba#alibaba-reqs-secgroup)
 

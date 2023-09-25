@@ -14,7 +14,7 @@ subcollection: satellite
 
 
 
-# Alibaba Cloud
+# Attaching Alibaba Cloud hosts
 {: #alibaba}
 
 You can add hosts from Alibaba Cloud to {{site.data.keyword.satelliteshort}}.

@@ -13,7 +13,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# IBM Storage Fusion HCI
+# Attaching IBM Storage Fusion HCI hosts
 {: #host-storage-fusion}
 
 IBM Storage Fusion is a container-native data platform for {{site.data.keyword.redhat_openshift_full}} with enterprise-grade data storage and protection services. It offers an agile way to manage, recover and access your mission-critical data as needed.
