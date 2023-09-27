@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-13"
+lastupdated: "2023-09-27"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -27,6 +27,9 @@ Before you can deploy storage templates to clusters in your location, make sure 
 
 You cannot customize your storage classes because {{site.data.keyword.satelliteshort}} Config overwrites your changes. 
 {: important}
+
+You cannot scope {{site.data.keyword.satelliteshort}} storage service to resource groups. However, if you are scoping other resources such as location and cluster to resource groups, you need to add {{site.data.keyword.satelliteshort}} reader and link administrator role for all resources in the account.
+{: note}
 
 ## Prerequisites for using Azure Disk
 {: #sat-storage-azure-csi-prereq}

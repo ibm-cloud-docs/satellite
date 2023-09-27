@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-09-27"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -47,7 +47,7 @@ This tutorial is for location administrators who are using OpenShift Data Founda
 
 
 1. [Verify you have the required permissions in your Azure account](/docs/satellite?topic=satellite-loc-azure-create-auto#infra-creds-azure).
-1. [Follow the steps to deploy an Azure location by using the {{site.data.keyword.bpshort}} template](docs/satellite?topic=satellite-loc-azure-create-auto). Make sure to deploy hosts across 3 zones and select a VM size that has at least 16CPUs and 64GB RAM.
+1. [Follow the steps to deploy an Azure location by using the {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-azure-create-auto). Make sure to deploy hosts across 3 zones and select a VM size that has at least 16CPUs and 64GB RAM.
 
 
 ## Create a {{site.data.keyword.satelliteshort}} cluster that uses your Azure hosts

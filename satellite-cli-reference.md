@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-07-24"
+lastupdated: "2023-09-27"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1237,7 +1237,7 @@ ibmcloud sat host rm --location aaaaaaaa1111a1aaaa11a --host myhost1
 ### `ibmcloud sat host update`
 {: #host-update}
 
-Update information about your compute host, such as the zones and host labels that are used for [host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov). You can update only available hosts, not hosts that are assigned to a resource such as a cluster.
+Update information about your compute host, such as the zones and host labels that are used for [host auto assignment](/docs/satellite?topic=satellite-host-autoassign-ov). You can update only available hosts, not hosts that are assigned to a resource such as a cluster.
 {: shortdesc}
 
 You can't change the zone of a host while it is assigned to the control plane or to a service. If you want to change a host's zone, you must first [unassign the host from the control plane or service](/docs/satellite?topic=satellite-host-remove). Then, reassign the host to a different zone. You don't need to delete the host from the location.
@@ -1999,7 +1999,7 @@ Use these commands to view the {{site.data.keyword.satelliteshort}}-enabled {{si
 ### `ibmcloud sat service ls`
 {: #cli-service-ls}
 
-List all {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters in your location to review details such as requested host resources. For more information about how {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters request resources, see [Using host auto assignment](/docs/satellite?topic=satellite-assigning-hosts#host-autoassign-ov).
+List all {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters in your location to review details such as requested host resources. For more information about how {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service clusters request resources, see [Using host auto assignment](/docs/satellite?topic=satellite-host-autoassign-ov).
 {: shortdesc}
 
 ```sh

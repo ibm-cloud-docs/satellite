@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-13"
+lastupdated: "2023-09-27"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -24,6 +24,9 @@ The template is currently in beta. Do not use it for production workloads.
 
 Before you can deploy storage templates to clusters in your location, make sure you set up {{site.data.keyword.satelliteshort}} Config by selecting the **Enable cluster admin access for Satellite Config** option in the console or including the `--enable-config-admin` option when you create your cluster.
 {: important}
+
+You cannot scope {{site.data.keyword.satelliteshort}} storage service to resource groups. However, if you are scoping other resources such as location and cluster to resource groups, you need to add {{site.data.keyword.satelliteshort}} reader and link administrator role for all resources in the account.
+{: note}
 
 ## Prerequisites for {{site.data.keyword.block_storage_is_short}}
 {: #sat-storage-vpc-csi-prereq}

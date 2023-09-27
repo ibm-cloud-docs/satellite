@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-21"
+lastupdated: "2023-09-27"
 
 
 keywords: satellite storage, features, overview
@@ -71,3 +71,5 @@ subcollection: satellite
 | VMware CSI Driver | 2.7.0 | VMware,IBM | False | False | True | Zonal | False |
 {: caption="Storage template feature comparison" caption-side="bottom"}
 
+You cannot scope {{site.data.keyword.satelliteshort}} storage service to resource groups. However, if you are scoping other resources such as location and cluster to resource groups, you need to add {{site.data.keyword.satelliteshort}} reader and link administrator role for all resources in the account.
+{: note}
