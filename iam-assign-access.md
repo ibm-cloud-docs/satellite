@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-12-13"
+  years: 2020, 2023
+lastupdated: "2023-09-27"
 
 keywords: satellite, hybrid, multicloud, assign access, access for satellite
 
@@ -55,7 +55,7 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
     - To scope access to the service, use **{{site.data.keyword.satellitelong_notm}}** in the UI or **satellite** in the API or CLI.
     - You can scope access to the account or particular resource groups. Keep in mind the following points.
         - Account-level access is not the same as access to all resource groups.
-        - Not all {{site.data.keyword.satelliteshort}} resource types support scoping to resource groups. For example, you cannot scope {{site.data.keyword.satelliteshort}} Config resource types (configuration, subscription, cluster, or cluster group) to resource groups, only to the account.
+        - Not all {{site.data.keyword.satelliteshort}} resource types support scoping to resource groups. For example, you cannot scope {{site.data.keyword.satelliteshort}} Config resource types (configuration, subscription, cluster, or cluster group) or {{site.data.keyword.satelliteshort}} storage service to resource groups, only to the account.
     - For help with scoping the role to the right {{site.data.keyword.satelliteshort}} resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](/docs/satellite?topic=satellite-iam). You can scope access policies to the following resource types.
         - Configuration
         - Cluster
