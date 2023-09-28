@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-21"
+lastupdated: "2023-09-28"
 
 keywords: satellite, connector, secure gateway
 
@@ -53,7 +53,7 @@ The following table highlights how capabilities are provided in Secure Gateway a
 | Client access | Secure Gateway Client supports Windows, Linux, Mac, Node.js module, and container. | {{site.data.keyword.satelliteshort}} Connector supports container. |  |  
 | Clients per instance | Limited to 4 client connections for high availability | Recommended limit of 3 for high availability. However, you can create up to 9 clients. Note that running with 9 clients can causes issues, specifically when you delete and create a new client. If you do not allow time for the client that you deleted to be completely removed, your new client can fail. |  |  
 | Client requirements | See [Requirements to run the Client](/docs/SecureGateway?topic=SecureGateway-client-requirements). | 1. **Host type:** Most container hosts can run the client container image, including the Docker Community Edition. \n 2. **Ports:** Port 443 only | |  
-| Encryption (TLS support) | TLS version supported is 1.2. Protocols supported are UDP, TCP, HTTP, and HTTPS. | No UDP support.  |  |  
+| Encryption (TLS support) | TLS version supported is 1.2. Protocols supported are UDP, TCP, HTTP, and HTTPS. | TCP, TLS, HTTP, HTTPS, and HTTP Tunnel. No UDP support.  |  |  
 | Authentication | Mutual authentication is supported. | Provided by the target and can be configured with mutual authentication on the {{site.data.keyword.satelliteshort}} Connector parts. |  |  
 | Load balancing and high availability | Can connect multiple instances of the Secure Gateway Service client to your gateway to automatically use built-in connection load balancing and connection fail-over if a client instance goes down. | Requires you to manually create more Docker containers. Must have 3 to ensure high availability.  |
 {: caption="Secure Gateway and {{site.data.keyword.satelliteshort}} Connector key differences." caption-side="bottom"}
