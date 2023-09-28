@@ -3035,3 +3035,5 @@ None
 
 For commands to manage {{site.data.keyword.redhat_openshift_notm}} clusters in your {{site.data.keyword.satelliteshort}} locations, such as `ibmcloud oc cluster create satellite`, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#sat_commands).
 {: shortdesc}
+
+  
