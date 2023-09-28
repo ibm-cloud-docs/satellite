@@ -32,7 +32,7 @@ You can set up ACL rules to restrict access to your endpoints. When you create y
 Make sure you apply the ACL to the endpoint you want to use it against. 
   
 ## What IAM permissions do I need for Connectors?
-{: conector-faq-permissions}
+{: #conector-faq-permissions}
 
 To create a Connector, you need **Administrator** Platform role for {{site.data.keyword.satelliteshort}}. To connect an Agent to an existing Connector, you need **Viewer** Platform role or **Reader** Service role for {{site.data.keyword.satelliteshort}}.
 

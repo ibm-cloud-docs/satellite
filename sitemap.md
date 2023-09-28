@@ -169,7 +169,7 @@ subcollection: satellite
 
 * [I created an ACL for my Connector, why doesn't it take effect?](/docs/satellite?topic=satellite-connector-faq#connector-faq-acl-implementation)
 
-* [What IAM permissions do I need for Connectors?](/docs/satellite?topic=satellite-connector-faq#what-iam-permissions-do-i-need-for-connectors)
+* [What IAM permissions do I need for Connectors?](/docs/satellite?topic=satellite-connector-faq#conector-faq-permissions)
 
 * [How many Connectors are supported per account per region?](/docs/satellite?topic=satellite-connector-faq#connector-faq-con-per-region)
 
