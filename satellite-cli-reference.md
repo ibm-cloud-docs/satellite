@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-09-28"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -635,7 +635,7 @@ ibmcloud sat config rm --config myapp_prod
 ### `ibmcloud sat config version create`
 {: #cli-config-configuration-version-create}
 
-Add a Kubernetes resource definition as a version to your {{site.data.keyword.satelliteshort}} configuration. You can later use the [`ibmcloud sat subscription create`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-subscription-create) command to specify the clusters where you want to deploy the version.
+Add a Kubernetes resource definition as a version to your {{site.data.keyword.satelliteshort}} configuration. You can later use the [`ibmcloud sat subscription create`](#cli-config-subscription-create) command to specify the clusters where you want to deploy the version.
 {: shortdesc}
 
 ```sh
@@ -3035,3 +3035,6 @@ None
 
 For commands to manage {{site.data.keyword.redhat_openshift_notm}} clusters in your {{site.data.keyword.satelliteshort}} locations, such as `ibmcloud oc cluster create satellite`, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#sat_commands).
 {: shortdesc}
+
+  
+  

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-09-28"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -162,6 +162,20 @@ subcollection: satellite
 * [Capabilities](/docs/satellite?topic=satellite-connector-and-secure-gateway#capability-comparison)
 
 [{{site.data.keyword.satelliteshort}} Connector FAQ](/docs/satellite?topic=satellite-connector-faq#connector-faq)
+
+* [Does {{site.data.keyword.satelliteshort}} Connector support Cloud Endpoints?](/docs/satellite?topic=satellite-connector-faq#connector-faq-endpoints)
+
+* [How can I restrict access to my endpoints?](/docs/satellite?topic=satellite-connector-faq#connector-faq-restrict)
+
+* [I created an ACL for my Connector, why doesn't it take effect?](/docs/satellite?topic=satellite-connector-faq#connector-faq-acl-implementation)
+
+* [What IAM permissions do I need for Connectors?](/docs/satellite?topic=satellite-connector-faq#conector-faq-permissions)
+
+* [How many Connectors are supported per account per region?](/docs/satellite?topic=satellite-connector-faq#connector-faq-con-per-region)
+
+* [How many endpoints are supported per Connector?](/docs/satellite?topic=satellite-connector-faq#connector-faq-endpoints-per-conn)
+
+* [How many instances of Connector agent can I run?](/docs/satellite?topic=satellite-connector-faq#connector-faq-instance-limits)
 
 
 ## Supported Satellite-enabled IBM Cloud services
