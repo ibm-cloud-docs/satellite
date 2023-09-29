@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-09-29"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -26,12 +26,12 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 The following outbound network requirements are specific for hosts in the Sydney (`au-syd`) region.
 
 
-Allow Link tunnel clients to connect to the Link tunnel server endpoint
+Allow Link tunnel clients to connect to the Link tunnel server endpoint.
 :    * Destination IP addresses: 130.198.75.74, 135.90.67.154, 168.1.201.194
      * Destination hostnames: `c-01-ws.au-syd.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
   
-Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers
+Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers.
 :    * Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
      * Protocol and ports: Allow NTP protocol and provide UDP on port 123
      
@@ -43,6 +43,6 @@ Optional:  Allow hosts to connect to HPCS for encrypting cluster secrets.
 
 :    If you have a preconfigured set of instances, you can find the assigned port to your instance in the overview page and allowlist just that port on the domain.
   
-For access to services such as {{site.data.keyword.loganalysislong_notm}} or {{site.data.keyword.monitoringlong_notm}}, you must add additional outbound access. For more information, see [RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd).
+For access to services such as {{site.data.keyword.loganalysislong_notm}} or {{site.data.keyword.monitoringlong_notm}}, you must add the outbound access for them. For more information, see [RHCOS enabled locations in Sydney](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-syd).
 
 

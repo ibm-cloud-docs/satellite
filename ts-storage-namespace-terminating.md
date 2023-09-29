@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-09-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,7 +21,7 @@ When you remove a storage configuration from a cluster, the resources such as op
 {: tsSymptoms}
 
 
-There are [finalizers](https://kubernetes.io/blog/2021/05/14/using-finalizers-to-control-deletion/){: external} that are preventing the remaining resources in the namespace and the namespace itself from being deleted.
+[Finalizers](https://kubernetes.io/blog/2021/05/14/using-finalizers-to-control-deletion/){: external} are preventing the remaining resources in the namespace and the namespace itself from being deleted.
 {: tsCauses}
 
 
@@ -71,7 +71,7 @@ Do not delete or patch the resource finalizers in the `kube-system` namespace.
     ```
     {: screen}
 
-2. Run the `oc get` command to get the resources that are pending removal. In the example output, the `tridentbackends.trident.netapp.io has 1 resource instances`. Repeat this step for each resource that has remaining instances listed in the `message` section of the namespace YAML that you retrieved earlier.
+2. Run the `oc get` command to get the resources that are pending removal. In the example output, the `tridentbackends.trident.netapp.io` resource lists 1 resource instance. Repeat this step for each resource that lists instances in the `message` section of the namespace YAML that you retrieved earlier.
     ```sh
     oc get <resource> -n <namespace>
     ```
@@ -94,7 +94,7 @@ Do not delete or patch the resource finalizers in the `kube-system` namespace.
     ```
     {: screen}
 
-3. For each resource that has remaining instances, run the following `kubectl patch` command to remove the finalizers and delete the resource. After all the resources that have remaining instances have been patched, the namespace is removed.
+3. For each resource that lists instances, run the following `kubectl patch` command to remove the finalizers and delete the resource. After all the resources are patched, the namespace is removed.
     ```sh
     kubectl -n <namespace> patch <resource>/<instance> -p '{"metadata":{"finalizers":[]}}' --type=merge
     ```
@@ -106,7 +106,7 @@ Do not delete or patch the resource finalizers in the `kube-system` namespace.
     ```
     {: pre}
 
-4. After you have removed the finalizers on all the remaining resources, run the `oc get ns` command to verify that namespace has been removed.
+4. After you remove the finalizers on the remaining resources, run the `oc get ns` command to verify that the namespace is removed.
     ```sh
     oc get ns
     ```

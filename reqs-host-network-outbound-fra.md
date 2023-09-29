@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-09-29"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -40,7 +40,7 @@ Allow hosts to connect to {{site.data.keyword.IBM_notm}}.
 
 Allow access to {{site.data.keyword.redhat_notm}} network time protocol (NTP) servers.
 :    * Destination hostnames: `0.rhel.pool.ntp.org`, `1.rhel.pool.ntp.org`, `2.rhel.pool.ntp.org`, `3.rhel.pool.ntp.org`
-     * Protocol and ports: Allow NTP protocol and provide UDP on port 123
+     * Protocol and ports: Allow NTP protocol and provide UDP on port 123.
 
 Allow hosts to communicate with {{site.data.keyword.iamshort}}.
 :    * Destination hostnames: `https://iam.bluemix.net`, `https://iam.cloud.ibm.com`
@@ -53,7 +53,7 @@ Allow hosts to connect to the LaunchDarkly service.
      * Protocol and ports: HTTPS 443
 
 Allow hosts to communicate with Red Hat Container Registry.
-:    Allow your hosts to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
+:    Allow your host machines to access the required sites for OpenShift Container Platform. For more information, see [Configuring your firewall](https://docs.openshift.com/container-platform/4.8/installing/install_config/configuring-firewall.html){: external}.
 
 
 Allow control plane nodes to communicate with the management plane.

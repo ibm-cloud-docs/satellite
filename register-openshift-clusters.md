@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-23"
+lastupdated: "2023-09-29"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -15,21 +15,21 @@ subcollection: satellite
 # Registering clusters with {{site.data.keyword.satelliteshort}} Config
 {: #register-openshift-clusters}
 
-Clusters you create in your Satellite Location are automatically registered with {{site.data.keyword.satelliteshort}} Config. You can also manually register other clusters in the public cloud or your existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config. Follow the steps to run the registration script in your cluster to set up the {{site.data.keyword.satelliteshort}} Config components and make the cluster visible in {{site.data.keyword.satelliteshort}}. 
+Clusters that you create in your Satellite Location are automatically registered with {{site.data.keyword.satelliteshort}} Config. You can also manually register other clusters in the public cloud or your existing {{site.data.keyword.openshiftlong_notm}} clusters with {{site.data.keyword.satelliteshort}} Config. Follow the steps to run the registration script in your cluster to set up the {{site.data.keyword.satelliteshort}} Config components and make the cluster visible in {{site.data.keyword.satelliteshort}}. 
 {: shortdesc}
 
 After you complete these steps, the cluster can be added to a cluster group in your location and [subscribed to {{site.data.keyword.satelliteshort}} configurations](/docs/satellite?topic=satellite-satcon-manage-direct-upload). However, you must still use {{site.data.keyword.openshiftlong_notm}} to manage the worker nodes for these clusters.
 {: note}
 
-1. Find the cluster in the public cloud that you want to attach to {{site.data.keyword.satelliteshort}} Config. To list available clusters, run `ibmcloud oc cluster ls` or go to the [{{site.data.keyword.redhat_openshift_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
+1. Find the cluster in the public cloud that you want to attach to {{site.data.keyword.satelliteshort}} Config. To list available clusters, run the `ibmcloud oc cluster ls` command or go to the [{{site.data.keyword.redhat_openshift_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
 
-    Do not manually register clusters created in a Satellite Location. These clusters are automatically registered with {{site.data.keyword.satelliteshort}} Config. Registering them again manually might cause issues in your Location or cluster. 
+    Do not manually register clusters that you created in a Satellite Location. These clusters are automatically registered with {{site.data.keyword.satelliteshort}} Config. Registering them again manually might cause issues in your Location or cluster. 
     {: note}
 
 2. From the {{site.data.keyword.satelliteshort}} [**Clusters**](https://cloud.ibm.com/satellite/clusters){: external} dashboard, click **Register cluster**.
 3. Enter the name of your cluster and click **Register cluster**. Registering a cluster creates an entry in the {{site.data.keyword.satelliteshort}} Config ConfigMap. However, your cluster cannot be subscribed to a {{site.data.keyword.satelliteshort}} configuration until you install the {{site.data.keyword.satelliteshort}} Config agent in your cluster.
 4. Copy the command that is displayed to you.
-5. [Log in to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster) and run the command in your cluster. The command creates the `razeedeploy` project, custom resource definitions and RBAC policies on your cluster that are required to make your cluster visible to {{site.data.keyword.satelliteshort}} Config.
+5. [Log in to your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster) and run the command in your cluster. The command creates the `razeedeploy` project, custom resource definitions, and RBAC policies on your cluster that are required to make your cluster visible to {{site.data.keyword.satelliteshort}} Config.
 
     Example output
     ```sh
@@ -41,7 +41,7 @@ After you complete these steps, the cluster can be added to a cluster group in y
     ```
     {: screen}
 
-6. Verify that all pods in the `razeedeploy` project are in a **Running** state.
+6. Verify that all pods in the `razeedeploy` project are in a `Running` state.
 
     ```sh
     oc get pods -n razeedeploy
@@ -62,4 +62,4 @@ After you complete these steps, the cluster can be added to a cluster group in y
     
 7. Verify your cluster's status on the {{site.data.keyword.satelliteshort}} [**Clusters**](https://cloud.ibm.com/satellite/clusters){: external} dashboard.
     
-8. Optional: Click on your cluster to view the Kubernetes resources that are deployed to the cluster.
+8. Optional: Select your cluster to view the Kubernetes resources that are deployed to the cluster.
