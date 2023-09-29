@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-02-20"
+lastupdated: "2023-09-29"
 
 keywords: satellite, hybrid, multicloud, use case, scenarios, benefits
 
@@ -15,14 +15,14 @@ subcollection: satellite
 # {{site.data.keyword.satelliteshort}} use cases
 {: #use-case}
 
-The {{site.data.keyword.satellitelong_notm}} uses cases outlined here are hypotheses designed to help explore the solution’s applicability for areas within various industries. These hypotheses are based on the following cross-industry capabilities of {{site.data.keyword.satelliteshort}}.
+These {{site.data.keyword.satellitelong_notm}} uses cases are hypotheses that are designed to explore the solution’s applicability for areas within various industries. These hypotheses are based on the following cross-industry capabilities of {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
 - Use {{site.data.keyword.cloud_notm}} services wherever they are needed.
     - Scenarios where data must be processed close to the source, such as IoT, data lakes, and analytics (to meet latency requirements).
     - Scenarios where restrictions are placed on cross-border data movement (countries without public cloud data centers). 
 - Use {{site.data.keyword.cloud_notm}} services to assist operations on-premises or at remote locations.
-    - Remotely delivered {{site.data.keyword.cloud_notm}} managed services is especially useful in supporting frequent upgrades and function modifications that require Kubernetes and {{site.data.keyword.redhat_openshift_notm}} skills. 
+    - Remotely delivered {{site.data.keyword.cloud_notm}} managed services are especially useful in supporting frequent upgrades and function modifications that require Kubernetes and {{site.data.keyword.redhat_openshift_notm}} skills. 
 
 ## Benefits of using {{site.data.keyword.satelliteshort}}
 {: #benefits}
@@ -47,17 +47,17 @@ For more information about {{site.data.keyword.satelliteshort}}, how it works an
 This use case is applicable to all industries.
 {: shortdesc}
 
-### Deploying {{site.data.keyword.redhat_openshift_notm}} environment as a managed service wherever it is needed
+### Deploy {{site.data.keyword.redhat_openshift_notm}} environment as a managed service wherever it is needed
 {: #use-case-common1}
 
 Frequent version upgrades and function modifications that require Kubernetes and {{site.data.keyword.redhat_openshift_notm}} skills are performed remotely through {{site.data.keyword.cloud_notm}} managed services. The same services can be deployed wherever they are needed to process data close to its source to reduce latency.
 {: shortdesc}
 
 Pain points:
-:   It is hard to secure and maintain skills for running {{site.data.keyword.redhat_openshift_notm}} internally. There are limitations with where the services can be used as data must be loaded to cloud to use managed services.
+:   It is hard to secure and maintain skills for running {{site.data.keyword.redhat_openshift_notm}} internally. There are limitations with where the services can be used as data must be loaded to the cloud to use managed services.
 
 {{site.data.keyword.satelliteshort}} enables:
-:   Using remotely delivered IBM’s managed services eliminates the need to secure {{site.data.keyword.redhat_openshift_notm}} skills internally. You can deploy services wherever they are needed, on-premises or in remote locations.
+:   Remotely delivered IBM’s managed services eliminates the need to secure {{site.data.keyword.redhat_openshift_notm}} skills internally. You can deploy services wherever they are needed, on-premises or in remote locations.
 
 ## Finance use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-finance}
@@ -65,7 +65,7 @@ Pain points:
 These use cases are applicable to the finance industry.
 {: shortdesc}
 
-### Leveraging mainframe data for customers restricted from moving data to cloud
+### Leverage mainframe data for customers who are restricted from moving data to the cloud
 {: #use-case-finance1}
 
 The on-premises platform is delivered remotely by {{site.data.keyword.cloud_notm}} as a managed service. {{site.data.keyword.cpd_short}} is run on this platform for analyzing and leveraging the mainframe data as is, on-premises. 
@@ -77,7 +77,7 @@ Pain points:
 {{site.data.keyword.satelliteshort}} enables:
 :   Analytics platform that was previously only available on cloud to be deployed on-premises at a customer site to bring mainframe data to life.
 
-### Providing a unified environment for developing, verifying, and running containers for customer on third-party clouds
+### Provide a unified environment for developing, verifying, and running containers for customers on third-party clouds
 {: #use-case-finance2}
 
 {{site.data.keyword.cloud_notm}} Managed Services that are required for developing, testing, and running containers are deployed on third-party clouds for a unified container platform. {{site.data.keyword.redhat_openshift_notm}} and container application versions can be managed from one single location. 
@@ -87,12 +87,12 @@ Pain points:
 :   It is hard to operate {{site.data.keyword.redhat_openshift_notm}} across locations and environments. Middleware and application versions and releases are inconsistent across environments. 
 
 {{site.data.keyword.satelliteshort}} enables: 
-:   Central management of {{site.data.keyword.redhat_openshift_notm}} services that are deployed at various locations, ensuring that the services are run using consistent versions and releases.
+:   Central management of {{site.data.keyword.redhat_openshift_notm}} services that are deployed at various locations, ensuring that the services are run with consistent versions and releases.
 
-### Extending {{site.data.keyword.cloud_notm}} security and compliance for customers maintaining cloud security
+### Extend {{site.data.keyword.cloud_notm}} security and compliance for maintaining cloud security
 {: #use-case-finance3}
 
-The security and compliance delivered by {{site.data.keyword.cloud_notm}} for Financial Services is extended to on-premises environments and third-party clouds to run multiple {{site.data.keyword.redhat_openshift_notm}} clusters securely. Adherence to security policies is automatically scanned and reported. 
+The security and compliance that is delivered by {{site.data.keyword.cloud_notm}} for Financial Services is extended to on-premises environments and third-party clouds to run multiple {{site.data.keyword.redhat_openshift_notm}} clusters securely. Adherence to security policies is automatically scanned and reported. 
 {: shortdesc}
 
 Pain points:
@@ -110,14 +110,14 @@ This use case is applicable to the insurance industry.
 ### Analytics platform on-premises
 {: #use-case-insurance1}
 
-Streamline and enhance functions related to AI-driven analytics as well as data storage and updates through local data processing enabled by {{site.data.keyword.satelliteshort}}. These functions include knowledge searches on insurance sales terminals, customer data management, AI optical character recognition (OCR), product recommendations, quote creation, and maintenance efficiency improvement.
+Streamline and enhance functions that are related to AI-driven analytics as well as data storage and updates through local data processing that is enabled by {{site.data.keyword.satelliteshort}}. These functions include knowledge searches on insurance sales terminals, customer data management, AI optical character recognition (OCR), product recommendations, quote creation, and maintenance efficiency improvement.
 {: shortdesc}
 
 Pain points
 :   Staff use terminals at the insurance sales offices to deliver timely and suitable advice and to provide the right services to help address customer issues. They need a more sophisticated search system with appropriate up-to-date information to be able to discover relevant answers from the diverse range of content.
 
 {{site.data.keyword.satelliteshort}} enables:
-:   Sophisticated AI-driven knowledge search system at the customer site and data processing where the data resides, eliminating the need to move data to cloud. Data is processed where the data resides, eliminating the need to move data to cloud.
+:   Sophisticated AI-driven knowledge search system at the customer site and data processing where the data resides, eliminating the need to move data to the cloud. Data is processed where the data resides, eliminating the need to move data to the cloud.
 
 ## Manufacturing use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-manufacture}
@@ -125,7 +125,7 @@ Pain points
 These use cases are applicable to the manufacturing industry.
 {: shortdesc}
 
-### Internet of things (IoT) service platform 
+### Internet of Things (IoT) service platform 
 {: #use-case-manufacture1}
 
 An IoT service platform can be delivered on cloud or on-premises to meet the user’s (manufacturing plants) requirements. The IoT service platform can be distributed, managed, and controlled remotely for users (manufacturing plants) that are restricted from connecting to and using cloud. 
@@ -137,65 +137,65 @@ Pain points:
 {{site.data.keyword.satelliteshort}} enables:
 :   IoT service platform that was previously only available on cloud to be deployed within the customer’s plant, benefiting from use of cloud-like services.
 
-### Enabling the digital transformation of on-premises legacy systems at steel mills and other manufacturing plants 
+### Enable the digital transformation of on-premises legacy systems at steel mills and other manufacturing plants 
 {: #use-case-manufacture2}
 
-Use of {{site.data.keyword.satelliteshort}} enables legacy host systems at each site to run on digital transformation service platforms built on containers through integration, with the added benefit of driving digital transformation at the isolated sites that have so far missed out on the advantages of cloud and container technology.
+{{site.data.keyword.satelliteshort}} enables legacy host systems at each site to run on digital transformation service platforms, built on containers through integration. Additionally, {{site.data.keyword.satelliteshort}} drives digital transformation at the isolated sites that cannot take advantage of cloud and container technology.
 {: shortdesc}
 
 Pain points:
-:   Systems with strict on-premises requirements, such as z/HOST and sensitive data, prevent the move to cloud. Many applications cannot tolerate network latency. Lack of container skills in on-premises environment hampers digital transformation of site applications. 
+:   Systems with strict on-premises requirements, such as z/HOST and sensitive data, prevent the move to the cloud. Many applications cannot tolerate network latency. Lack of container skills in an on-premises environment hampers digital transformation of site applications. 
 
 {{site.data.keyword.satelliteshort}} enables:
-:   Digital transformation service platform built on containers that was previously only available on cloud can now be deployed within the plant. It also enabled the delivery of cloud-like quality control, such as image analysis, and data lake related services at the plant.
+:   A digital transformation service platform built on containers that was previously only available on cloud can now be deployed within the plant. It also enabled the delivery of cloud-like quality control, such as image analysis, and data lake related services at the plant.
 
-### Establishing a service platform for point of sale (POS) or multi function printer (MFP) systems 
+### Establish a service platform for point of sale (POS) or multi function printer (MFP) systems 
 {: #use-case-manufacture3}
 
-When providing platform-based management services and data services to store POS systems nationwide as well as MFP systems in corporate offices, it can be difficult to integrate with these customer systems. Using {{site.data.keyword.satelliteshort}} enables platform services to be delivered to a site that meets customer requirements. 
+When you provide platform-based management services and data services to store POS systems nationwide as well as MFP systems in corporate offices, it can be difficult to integrate with these customer systems. Using {{site.data.keyword.satelliteshort}} enables platform services to be delivered to a site that meets customer requirements. 
 {: shortdesc}
 
 Pain points:
-:   It is hard to build a service platform that can provide a function for collecting the latest data and other added value to deliver services leveraging data from POS and MFP equipment. Customers have unique requirements for their system environments, preventing cost effective rollout of the same services.
+:   It is hard to build a service platform that can provide a function for collecting the latest data and other added value to deliver services that leverage data from POS and MFP equipment. Customers have unique requirements for their system environments, preventing cost effective rollout of the same services.
 
 {{site.data.keyword.satelliteshort}} enables: 
-:   It enables delivery of services to both cloud and on-premises environments according to customer requirements, making it easier to integrate with customer servers. Similar experience regardless of environment enables customers to distribute and manage applications using the latest microservices anytime.
+:   It enables delivery of services to both cloud and on-premises environments according to customer requirements, making it easier to integrate with customer servers. A similar experience regardless of environment enables customers to distribute and manage applications that use the latest microservices anytime.
  
-### Accelerating the establishment of new global sites and plants 
+### Accelerate the establishment of new global sites and plants 
 {: #use-case-manufacture4}
 
-When establishing a new global site, production line management systems and Supply Chain Management (SCM) systems used in existing plants can be distributed from cloud, thereby only needing servers at the new site. This has the benefit of accelerating system build and operations, while addressing the skill gap and security concerns.
+When companies establish a new global site, production line management systems and Supply Chain Management (SCM) systems that are used in existing plants can be distributed from cloud. Because servers are needed only at the new site, you can accelerate the system build and operations, and address skill gaps and security concerns.
 {: shortdesc}
 
 Pain points:
-:   When establishing new global sites, a significant amount of time is spent on building server environments for each site, deploying applications and developing an operations structure. Lack of skills due to inability to secure staff in the new region delays going live. The common application cannot be moved to cloud due to latency and security issues. 
+:   With new global sites, a significant time is spent to build server environments for each site, deploying applications and developing an operations structure. Lack of skills due to inability to secure staff in the new region can delay go-live dates. The common application cannot be moved to the cloud due to latency and security issues. 
 
 {{site.data.keyword.satelliteshort}} enables: 
-:   It helps eliminate issues including skill shortage and acceleration of deployment and go-live when delivering applications to various global sites. Applications can be deployed and run on-premises, addressing security and latency concerns. With unified management, the same applications can be easily rolled out and operated.
+:   It helps eliminate issues, including skill shortage and acceleration of deployment and go-live when you deliver applications to various global sites. Applications can be deployed and run on-premises, addressing security and latency concerns. With unified management, the same applications can be easily rolled out and operated.
 
-### Using cloud for cost and speed when starting new services during development phase and move on-premises once established 
+### Contain cost and speed for new services during development phase and move on-premises once established 
 {: #use-case-manufacture5}
 
-Using {{site.data.keyword.satelliteshort}} enables applications to be deployed in accordance with which phase the server or application is in. For example, platform applications can be easily deployed on-premises, following a growth in business or in response to heightened security risks. 
+{{site.data.keyword.satelliteshort}} enables applications to be deployed in accordance with the phase that the server or application is in. For example, platform applications can be easily deployed on-premises, following a growth in business or in response to heightened security risks. 
 {: shortdesc}
 
 Pain points:
-:   Many businesses want to start small on cloud and move to on-premises after the business has grown to a certain scale. They do not want to be locked into a single vendor, as cloud applications cannot be moved on-premises. They need the flexibility to deploy to distributed environments including on-premises in response to the scale of business. 
+:   Many businesses want to start small on cloud and move to on-premises after the business grows to a certain scale. They do not want to be locked into a single vendor, as cloud applications cannot be moved on-premises. They need the flexibility to deploy to distributed environments, including on-premises in response to the scale of business. 
 
 {{site.data.keyword.satelliteshort}} enables: 
-: Applications initially developed and delivered on cloud can be moved as-is on-premises. This enables distributed deployment in accordance with the scale of business and acceleration in business speed and mitigation of various risks.
+: Applications that are initially developed and delivered on cloud can be moved as-is on-premises so that distributed deployment in accordance with the scale of business and acceleration in business speed and mitigation of various risks.
 
-### Deploying applications on-premises, only scaling out to cloud during peak times
+### Deploy applications on-premises, scale out to the cloud only during peak times
 {: #use-case-manufacture6}
 
-Using {{site.data.keyword.satelliteshort}} enables applications to be deployed anywhere, on-premises or on cloud. This capability can be used to scale-out (autoscale) to cloud during peak times such as new product releases to optimize cost.
+{{site.data.keyword.satelliteshort}} enables applications to be deployed anywhere, on-premises or on cloud. This capability can be used to scale-out (autoscale) to the cloud during peak times such as new product releases to optimize cost.
 {: shortdesc}
 
 Pain points:
-:   Clients prefer to run on-premises from cost reduction perspective and only distribute resources to cloud during peak times. The application deployment experience is inconsistent between cloud and on-premises. Clients also want to use scalable containers on-premises.
+:   Clients prefer to run on-premises from cost reduction perspective and distribute resources to the cloud only during peak times. The application deployment experience is inconsistent between cloud and on-premises. Clients also want to use scalable containers on-premises.
 
 {{site.data.keyword.satelliteshort}} enables: 
-:   It enables delivery of container platforms that support DevOps and can be distributed anywhere. Same applications can be instantly moved to cloud only during peak times, optimizing costs.
+:   It enables delivery of container platforms that support DevOps and can be distributed anywhere. Same applications can be instantly moved to the cloud only during peak times, optimizing costs.
 
 ## Distribution use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-distribution}
@@ -203,17 +203,17 @@ Pain points:
 This use case is applicable to the distribution industry.
 {: shortdesc}
 
-### Delivering and integrating store or warehouse digitization solutions for the distribution or retail sectors
+### Deliver and integrate store or warehouse digitization solutions for the distribution or retail sectors
 {: #use-case-distribution1}
 
-Use {{site.data.keyword.satelliteshort}} to deliver digitization solutions and integrate with store systems such as store computers and POS, warehouse systems. Leverage AI where applicable. 
+{{site.data.keyword.satelliteshort}} delivers digitization solutions and integrate with store systems such as store computers and POS, warehouse systems. Leverage AI where applicable. 
 {: shortdesc}
 
 Pain points:
 :  It is difficult to deliver and integrate store digitization solution. It is also hard to collect and leverage edge data. Data transfer and privacy concerns hamper the use of AI. 
 
 {{site.data.keyword.satelliteshort}} enables: 
-:   It enables easy delivery of store digitization solution as well as integration with POS data and store computers. IBM Edge Application Manager and Watson Machine Learning can be run on {{site.data.keyword.satelliteshort}}, allowing analytics at the source of data. Additionally, it allows use and management of container-based applications for retail stores and warehouses.
+:   It enables easy delivery of store digitization solution as well as integration with POS data and store computers. IBM Edge Application Manager and Watson Machine Learning can be run on {{site.data.keyword.satelliteshort}}, allowing analytics at the source of data. Additionally, it allows the use and management of container-based applications for retail stores and warehouses.
 
 ## Public sector or health use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-health}
@@ -224,11 +224,11 @@ This use case is applicable to the public sector or health industry.
 ### On-premises service platform
 {: #use-case-health1}
 
-For hospitals that cannot readily connect to or use cloud, {{site.data.keyword.redhat_openshift_notm}} and {{site.data.keyword.cloud_notm}} services such as IBM Watson are deployed as managed services within the customer site. These services then become available to use within the hospital environment, while the platform is distributed, managed and controlled remotely. 
+For hospitals that cannot readily connect to or use cloud, {{site.data.keyword.redhat_openshift_notm}} and {{site.data.keyword.cloud_notm}} services such as IBM Watson are deployed as managed services within the customer site. These services then become available to use within the hospital environment, while the platform is distributed, managed, and controlled remotely. 
 {: shortdesc}
 
 Pain points:
-:   It is difficult to use cloud services as hospital medical and patient records cannot be taken offsite from a security standpoint. It is also a challenge to meet data processing needs that will emerge with increased use of wireless technology and local 5G in medical equipment.
+:   It is difficult to use cloud services as hospital medical and patient records cannot be taken offsite from a security standpoint. It is also a challenge to meet data processing needs that emerges with increased use of wireless technology and local 5G in medical equipment.
 
 {{site.data.keyword.satelliteshort}} enables: 
 :   Cloud platform services that were previously only available on cloud can be deployed and made available for use within the hospital environment.
@@ -246,10 +246,10 @@ Configure edge cloud distributed nationwide and use a single control point to re
 {: shortdesc}
 
 Pain points:
-:   With the widespread adoption of 5G, increased edge cloud needs can be expected in the near future, where data must be processed close to users and devices. 
+:   With the widespread adoption of 5G, increased edge cloud needs can be expected, where data must be processed close to users and devices. 
 
 {{site.data.keyword.satelliteshort}} enables: 
-:   Edge cloud can be deployed to where it is needed to deliver platforms for running innovative new services using AI. Managed services can remotely support the edge cloud platform.
+:   Edge cloud can be deployed to where it is needed to deliver platforms for running innovative new services that use AI. Managed services can remotely support the edge cloud platform.
 
 ## Utilities use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-utilities}
@@ -257,14 +257,14 @@ Pain points:
 This use case is applicable to the utilities industry.
 {: shortdesc}
 
-### Expanding the use of smart meters with {{site.data.keyword.satelliteshort}}
+### Expand the use of smart meters with {{site.data.keyword.satelliteshort}}
 {: #use-case-utilities1}
 
-Deploy customer applications and {{site.data.keyword.cloud_notm}} analytics services as managed services on the edge server that manages smart meters to not only manage electricity supply and demand but also deliver services tailored to specific regions and households. 
+Deploy customer applications and {{site.data.keyword.cloud_notm}} analytics services as managed services on the edge server that manages smart meters to not only manage electricity supply and demand, but also deliver services that are tailored to specific regions and households. 
 {: shortdesc}
 
 Pain points:
-:   With the deregulation of the electricity industry, power companies must focus on providing added value and not simply supplying power. Power companies want to effectively use data collected from smart meters and use the data as a basis for delivering a diverse range of services.
+:   With the deregulation of the electricity industry, power companies must focus on providing added value and not simply supplying power. Power companies want to effectively use data that is collected from smart meters and use the data as a basis for delivering a diverse range of services.
 
 {{site.data.keyword.satelliteshort}} enables: 
 :   The various data collected from smart meters can be used in real time by applications. Use of management-free {{site.data.keyword.cloud_notm}} services enables easier data processing. Applications distributed across multiple sites can be centrally managed.

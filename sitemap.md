@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-09-28"
+lastupdated: "2023-09-29"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -45,15 +45,15 @@ subcollection: satellite
 
 * [Common use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-common)
 
-    * [Deploying {{site.data.keyword.redhat_openshift_notm}} environment as a managed service wherever it is needed](/docs/satellite?topic=satellite-use-case#use-case-common1)
+    * [Deploy {{site.data.keyword.redhat_openshift_notm}} environment as a managed service wherever it is needed](/docs/satellite?topic=satellite-use-case#use-case-common1)
 
 * [Finance use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-finance)
 
-    * [Leveraging mainframe data for customers restricted from moving data to cloud](/docs/satellite?topic=satellite-use-case#use-case-finance1)
+    * [Leverage mainframe data for customers who are restricted from moving data to the cloud](/docs/satellite?topic=satellite-use-case#use-case-finance1)
 
-    * [Providing a unified environment for developing, verifying, and running containers for customer on third-party clouds](/docs/satellite?topic=satellite-use-case#use-case-finance2)
+    * [Provide a unified environment for developing, verifying, and running containers for customers on third-party clouds](/docs/satellite?topic=satellite-use-case#use-case-finance2)
 
-    * [Extending {{site.data.keyword.cloud_notm}} security and compliance for customers maintaining cloud security](/docs/satellite?topic=satellite-use-case#use-case-finance3)
+    * [Extend {{site.data.keyword.cloud_notm}} security and compliance for maintaining cloud security](/docs/satellite?topic=satellite-use-case#use-case-finance3)
 
 * [Insurance use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-insurance)
 
@@ -61,21 +61,21 @@ subcollection: satellite
 
 * [Manufacturing use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-manufacture)
 
-    * [Internet of things (IoT) service platform](/docs/satellite?topic=satellite-use-case#use-case-manufacture1)
+    * [Internet of Things (IoT) service platform](/docs/satellite?topic=satellite-use-case#use-case-manufacture1)
 
-    * [Enabling the digital transformation of on-premises legacy systems at steel mills and other manufacturing plants](/docs/satellite?topic=satellite-use-case#use-case-manufacture2)
+    * [Enable the digital transformation of on-premises legacy systems at steel mills and other manufacturing plants](/docs/satellite?topic=satellite-use-case#use-case-manufacture2)
 
-    * [Establishing a service platform for point of sale (POS) or multi function printer (MFP) systems](/docs/satellite?topic=satellite-use-case#use-case-manufacture3)
+    * [Establish a service platform for point of sale (POS) or multi function printer (MFP) systems](/docs/satellite?topic=satellite-use-case#use-case-manufacture3)
 
-    * [Accelerating the establishment of new global sites and plants](/docs/satellite?topic=satellite-use-case#use-case-manufacture4)
+    * [Accelerate the establishment of new global sites and plants](/docs/satellite?topic=satellite-use-case#use-case-manufacture4)
 
-    * [Using cloud for cost and speed when starting new services during development phase and move on-premises once established](/docs/satellite?topic=satellite-use-case#use-case-manufacture5)
+    * [Contain cost and speed for new services during development phase and move on-premises once established](/docs/satellite?topic=satellite-use-case#use-case-manufacture5)
 
-    * [Deploying applications on-premises, only scaling out to cloud during peak times](/docs/satellite?topic=satellite-use-case#use-case-manufacture6)
+    * [Deploy applications on-premises, scale out to the cloud only during peak times](/docs/satellite?topic=satellite-use-case#use-case-manufacture6)
 
 * [Distribution use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-distribution)
 
-    * [Delivering and integrating store or warehouse digitization solutions for the distribution or retail sectors](/docs/satellite?topic=satellite-use-case#use-case-distribution1)
+    * [Deliver and integrate store or warehouse digitization solutions for the distribution or retail sectors](/docs/satellite?topic=satellite-use-case#use-case-distribution1)
 
 * [Public sector or health use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-health)
 
@@ -87,7 +87,7 @@ subcollection: satellite
 
 * [Utilities use cases for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-utilities)
 
-    * [Expanding the use of smart meters with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-utilities1)
+    * [Expand the use of smart meters with {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-use-case#use-case-utilities1)
 
 [{{site.data.keyword.satelliteshort}} for resellers](/docs/satellite?topic=satellite-tenancy-model#tenancy-model)
 
@@ -2794,13 +2794,13 @@ subcollection: satellite
 
 [Securing your data](/docs/satellite?topic=satellite-data-security#data-security)
 
-* [What information is stored with {{site.data.keyword.IBM_notm}} when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
+* [What information is stored with {{site.data.keyword.IBM_notm}} with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-sensitive-data)
 
     * [Stored information when you create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-data-security#sat-sensitive-data-default)
 
     * [Stored information from resources that you create in {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-data-security#sat-sensitive-data-user-added)
 
-* [How is my information stored, backed up, and encrypted when using {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
+* [How is my information stored, backed up, and encrypted with {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-data-security#sat-data-encryption)
 
 * [Where can I find information about the data that my managed services store?](/docs/satellite?topic=satellite-data-security#managed-services-data)
 
@@ -3135,21 +3135,21 @@ subcollection: satellite
 
 * [Disconnected usage by component](/docs/satellite?topic=satellite-disconnected-use#disconnect-usage-component)
 
-    * [Cluster management disconnected usage](/docs/satellite?topic=satellite-disconnected-use#cluster)
+    * [Cluster management](/docs/satellite?topic=satellite-disconnected-use#cluster)
 
-    * [Apps disconnected usage](/docs/satellite?topic=satellite-disconnected-use#apps)
+    * [Apps](/docs/satellite?topic=satellite-disconnected-use#apps)
 
-    * [IBM Cloud Catalog disconnected usage](/docs/satellite?topic=satellite-disconnected-use#ibm-cloud-catelog)
+    * [IBM Cloud Catalo](/docs/satellite?topic=satellite-disconnected-use#ibm-cloud-catalog)
 
-    * [Identity and access management disconnected usage](/docs/satellite?topic=satellite-disconnected-use#identity-access)
+    * [Identity and access management](/docs/satellite?topic=satellite-disconnected-use#identity-access)
 
-    * [Secret management disconnected usage](/docs/satellite?topic=satellite-disconnected-use#secret-management)
+    * [Secret management](/docs/satellite?topic=satellite-disconnected-use#secret-management)
 
-    * [Logging and monitoring disconnected usage](/docs/satellite?topic=satellite-disconnected-use#log-monitor)
+    * [Logging and monitoring](/docs/satellite?topic=satellite-disconnected-use#log-monitor)
 
-    * [Config management disconnected usage](/docs/satellite?topic=satellite-disconnected-use#config-management)
+    * [Config management](/docs/satellite?topic=satellite-disconnected-use#config-management)
 
-    * [Networking disconnected usage](/docs/satellite?topic=satellite-disconnected-use#networking)
+    * [Networking](/docs/satellite?topic=satellite-disconnected-use#networking)
 
 
 ## {{site.data.keyword.satellitelong_notm}} notices
@@ -3812,7 +3812,7 @@ subcollection: satellite
 
 [Why does the location subdomain not route traffic to control plane hosts?](/docs/satellite?topic=satellite-ts-location-subdomain#ts-location-subdomain)
 
-[Why do I get an R0043 error after setting up {{site.data.keyword.dl_short}}?](/docs/satellite?topic=satellite-ts-dl-r0043#ts-dl-r0043)
+[Why do I get an R0043 error after I set up {{site.data.keyword.dl_short}}?](/docs/satellite?topic=satellite-ts-dl-r0043#ts-dl-r0043)
 
 [Why is {{site.data.keyword.cloud_notm}} unable to check my location's health?](/docs/satellite?topic=satellite-ts-location-healthcheck#ts-location-healthcheck)
 

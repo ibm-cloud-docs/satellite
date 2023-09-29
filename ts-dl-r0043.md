@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-05-26"
+  years: 2022, 2023
+lastupdated: "2023-09-29"
 
 keywords: satellite, hybrid, multicloud
 
@@ -13,11 +13,11 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do I get an R0043 error after setting up {{site.data.keyword.dl_short}}?
+# Why do I get an R0043 error after I set up {{site.data.keyword.dl_short}}?
 {: #ts-dl-r0043}
 
 
-After you set up {{site.data.keyword.dl_short}}, you see a message similar to one of the following messages.
+After you set up {{site.data.keyword.dl_short}}, you see a message similar to one of the following examples.
 {: tsSymptoms}
 
 ```sh
@@ -33,10 +33,10 @@ Oct 7 12:02:09 satellite-link-tunnel-74b648978b-jw4mr satellite-link-tunnel-cont
 Your host doesn't meet the requirements or it needs to be rebooted.
 {: tsCauses}
 
-Follow these steps to resolve your issue
+Follow these steps to resolve your issue.
 {: tsResolve}
 
-1. Verify that your host meets the requirements. For more information see [Host network requirements](/docs/satellite?topic=satellite-reqs-host-network).
+1. Verify that your host meets the requirements. For more information, see [Host network requirements](/docs/satellite?topic=satellite-reqs-host-network).
 
 2. If your host meets the requirements, perform an `nslookup` on your location subdomain to retrieve the IP address of the host that is registered with this subdomain.  
  

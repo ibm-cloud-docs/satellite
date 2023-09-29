@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-15"
+lastupdated: "2023-09-29"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -34,7 +34,7 @@ Existing Red Hat CoreOS enabled locations with attached hosts
 :   To set up an HTTP proxy, you must first [remove your hosts](/docs/satellite?topic=satellite-host-remove) from your location. After you remove your hosts, see [Configuring your HTTP proxy](#http-proxy-config). Note that you must also update the hosts that make up your location control plane. See [Updating Satellite location control plane hosts](/docs/satellite?topic=satellite-host-update-location).
 
 New Red Hat CoreOS enabled locations
-:   Before attaching your hosts to your location, [configure your HTTP proxy](#http-proxy-config).
+:   Before you attach your hosts to your location, [configure your HTTP proxy](#http-proxy-config).
 
 
 
@@ -71,7 +71,7 @@ Your proxy must be set up with TCP tunneling. While specific steps might vary de
         
     In the output, find the field **Public Service Endpoint URL**. From that field, you can derive the endpoints. For example, if the field value is `https://c131-e.us-south.satellite.cloud.ibm.com:31726`, then the endpoints are `https://c131-1.us-south.satellite.cloud.ibm.com:31726`, `https://c131-2.us-south.satellite.cloud.ibm.com:31726` and `https://c131-3.us-south.satellite.cloud.ibm.com:31726`.
         
-2. Make sure the listener port on the HTTP proxy is the same as on {{site.data.keyword.cloud_notm}}.
+2. Make sure that the listener port on the HTTP proxy is the same as on {{site.data.keyword.cloud_notm}}.
 3. Update the `/etc/hosts` on all your {{site.data.keyword.satelliteshort}} hosts to include the location public service endpoints forward traffic to the proxy, rather than to {{site.data.keyword.cloud_notm}} endpoints.
 
 Your configuration might vary by provider. Consider setting up your proxy outside of the {{site.data.keyword.satelliteshort}} environment to ensure that the configuration works for your infrastructure. Then, configure your proxy in the {{site.data.keyword.satelliteshort}} environment. For more information about setting up and configuring your HTTP proxy, see the blog [`Proxying In Cluster Kube-APIServer Traffic in IBM Cloud Satellite`](https://lisowski0925.medium.com/proxying-in-cluster-kube-apiserver-traffic-in-ibm-cloud-satellite-162ee07d6e0d){: external}.
@@ -108,9 +108,9 @@ After support processes the ticket, you will receive a notification that your lo
 ## Configuring your HTTP proxy
 {: #http-proxy-config}
 
-To configure an HTTP proxy, you must edit each of your hosts, including the hosts in the control plane. If your hosts are already attached to a location, including those hosts that make up the control plane, you must [remove them from the location](/docs/satellite?topic=satellite-host-remove) before you can edit them. After you configure the proxy, [reattach your hosts to the location](/docs/satellite?topic=satellite-attach-hosts). For information about updating your control plane hosts, see [Updating Satellite location control plane hosts](/docs/satellite?topic=satellite-host-update-location).
+To configure an HTTP proxy, you must edit each of your hosts, including the hosts in the control plane. If your hosts are already attached to a location, including those hosts that make up the control plane, you must [remove them from the location](/docs/satellite?topic=satellite-host-remove) before you can edit them. After you configure the proxy, [reattach your hosts to the location](/docs/satellite?topic=satellite-attach-hosts). For more information about updating your control plane hosts, see [Updating Satellite location control plane hosts](/docs/satellite?topic=satellite-host-update-location).
 
-1. Choose a [mirror location](#common-mirror-locations) you want to use for a proxy. This mirror location is used when you set up your proxy.
+1. Choose a [mirror location](#common-mirror-locations) that you want to use for a proxy. This mirror location is used when you set up your proxy.
 2. Find the value for `NO_PROXY`. 
     - For control plane hosts, use `172.20.0.1` for RHCOS and `NO_PROXY=172.20.0.1,$<REDHAT_PACKAGE_MIRROR_LOCATION>` for RHEL.
     - For {{site.data.keyword.redhat_openshift_notm}} hosts, the `NO_PROXY` for {{site.data.keyword.redhat_openshift_notm}} hosts must include the first IP of the service subnet that is used for the {{site.data.keyword.redhat_openshift_notm}} cluster. To find this IP, run the **`cluster get`** command.
@@ -131,9 +131,9 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
         ```
         {: screen}
         
-        From this output, note that the first IP is `172.21.0.1`, which makes the full output for hosts associated with this specific cluster in this example `NO_PROXY=172.20.0.1,172.21.0.1,$REDHAT_PACKAGE_MIRROR_LOCATION` for RHEL hosts and `NO_PROXY=172.20.0.1,172.21.0.1,.REGION.satellite.appdomain.cloud` for RHCOS hosts. For example, `NO_PROXY=172.20.0.1,172.21.0.1,.eu-gb.satellite.appdomain.cloud` is correct for a London mirror location for RHCOS hosts. Note that the RHCOS value includes `.` before the region.
+        From this output, note that the first IP is `172.21.0.1`, which makes the full output for hosts that are associated with this specific cluster in this example `NO_PROXY=172.20.0.1,172.21.0.1,$REDHAT_PACKAGE_MIRROR_LOCATION` for RHEL hosts and `NO_PROXY=172.20.0.1,172.21.0.1,.REGION.satellite.appdomain.cloud` for RHCOS hosts. For example, `NO_PROXY=172.20.0.1,172.21.0.1,.eu-gb.satellite.appdomain.cloud` is correct for a London mirror location for RHCOS hosts. Note that the RHCOS value includes `.` before the region.
         
-        Remember that any traffic to cluster services from the worker node must be included in `NO_PROXY`. For example, to use the image registry service to store images,  add `image-registry.openshift-image-registry.svc` to `NO_PROXY` for each worker node; this value doesn't need to be included for the control plane.
+        Any traffic to cluster services from the worker node must be included in `NO_PROXY`. For example, to use the image registry service to store images,  add `image-registry.openshift-image-registry.svc` to `NO_PROXY` for each worker node; this value doesn't need to be included for the control plane.
 
 
 
@@ -179,7 +179,7 @@ The value for `REDHAT_PACKAGE_MIRROR_LOCATION` depends on the location of the Re
 
 The following list provides some common mirror locations. 
 
-Azure: 
+Azure 
 :    separately defining: `rhui-1.microsoft.com`, `rhui-2.microsoft.com`, `rhui-3.microsoft.com`
 :    `/etc/yum.repos.d/rh-cloud.repo` under `baseurl`
 
@@ -187,7 +187,7 @@ Google Cloud Provider
 :    `cds.rhel.updates.googlecloud.com`
 :    `/etc/yum.repos.d/rh-cloud.repo` under `mirrorlist`
 
-Amazon Web Service:
+Amazon Web Service
 :    wildcard: `aws.ce.redhat.com`
 :    `rhui3.REGION.aws.ce.redhat.com`
 :    `/etc/yum.repos.d/redhat-rhui.repo` under `mirrorlist`
