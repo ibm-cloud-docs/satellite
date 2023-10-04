@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-10-04"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -316,11 +316,15 @@ subcollection: satellite
     {: pre}
 
 1. Verify that ODF has been upgraded in your cluster. 
+
     ```sh
     oc get storagecluster -n openshift-storage
     NAME                 AGE   PHASE   EXTERNAL   CREATED AT             VERSION
     ocs-storagecluster   43h   Ready              2023-06-21T09:22:00Z   4.11.0
+    ```
+    {: screen}
 
+    ```sh
     oc get csv -n openshift-storage
     NAME                              DISPLAY                       VERSION   REPLACES                          PHASE
     mcg-operator.v4.11.8              NooBaa Operator               4.11.8    mcg-operator.v4.11.7              Succeeded
