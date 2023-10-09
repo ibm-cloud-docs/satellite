@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-02"
+lastupdated: "2023-10-05"
 
 keywords: satellite, CoreOS, RHCOS, firewall 
 
@@ -23,8 +23,6 @@ To connect to a single network destination, use a host link agent. A host link a
 
 Follow these steps to set up a Red Hat CoreOS enabled Location with reduced firewall footprint.
 
-1. Make sure that the control plane operating system is Red Hat CoreOS.
-
 1. Create a Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} Location. For more information, see [Creating a Satellite location](/docs/satellite?topic=satellite-locations).
 
 1. Get the `healthcheck` Location endpoint by running the `ibmcloud sat endpoint ls --location LOCATION_NAME` command. 
@@ -42,7 +40,7 @@ Follow these steps to set up a Red Hat CoreOS enabled Location with reduced fire
     ```
     {: screen}
   
-    From the output, take a note of the Location endpoint. For example, `c-01.private.us-south.link.satellite.cloud.ibm.com:32877`. Replace `private` with `ws` and remove the port. For example, `c-01.private.us-south.link.satellite.cloud.ibm.com:32877` becomes `c-01-ws.us-south.link.satellite.cloud.ibm.com`. This value is used as the value for `ENDPOINT_TO_POINT_TO` in the **`sat host attach`** command in the next step.
+    From the output, take a note of the Location endpoint. For example, `c-01.private.us-south.link.satellite.cloud.ibm.com:32877`. Replace `.private` with `-ws` and remove the port. For example, `c-01.private.us-south.link.satellite.cloud.ibm.com:32877` becomes `c-01-ws.us-south.link.satellite.cloud.ibm.com`. This value is used as the value for `ENDPOINT_TO_POINT_TO` in the **`sat host attach`** command in the next step.
 
 1. Download the host attachment script for your Location by using the `ibmcloud sat host attach --location LOCATION_NAME --operating-system RHCOS --host-link-agent-endpoint ENDPOINT_TO_POINT_TO` command in the CLI.       
 
