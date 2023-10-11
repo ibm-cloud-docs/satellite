@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-18"
+lastupdated: "2023-10-11"
 
 keywords: satellite cli changelog, satellite commands, satellite cli, satellite reference, change log, satellite version
 
@@ -31,8 +31,10 @@ To see the CLI plug-in changes that pertain specifically to {{site.data.keyword.
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+
 |Version|Release date|Changes|
 |-------|------------|-------|
+| 1.0.573 | 10 October 2023 | Makes various `logging` commands unsupported. Updates the help text in various languages. |
 | 1.0.566 | 18 September 2023 | Updates the phrasing of various help text strings. Updates the help text in various languages. |
 | 1.0.540 | 19 July 2023 | Updates the help text in various languages. |
 | 1.0.528 | 26 June 2023 | - Removes unnecessary translations.  \n - Updates to `ibmcloud sat cluster register` command better recognize response headers. \n - Adds Satellite connector CLI commands. |

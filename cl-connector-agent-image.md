@@ -3,7 +3,7 @@
 copyright:
   years: 2023, 2023
 
-lastupdated: "2023-07-05"
+lastupdated: "2023-10-11"
 
 
 keywords: satellite, connector, agent, image, change log, version history
@@ -27,11 +27,16 @@ Only `n-2` versions of the Connector agent image are supported. Make sure to kee
 ## Version 1.1
 {: #1.1-change-log}
 
+### Version 1.1.1, released 10 Oct 2023
+{: #connector-agent-1.1.1-change-log}
+
+- Fixes security vulnerabilities.
+- Changes `SATELLITE_CONNECTOR_REGION` environment variable from `required` to `optional`.
+
 ### Version 1.1.0, released 20 June 2023
 {: #connector-agent-1.1.0-change-log}
 
 - Releases image to general public.
 - Updates description label with updated document link.
-
 
 

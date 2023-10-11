@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-22"
+lastupdated: "2023-10-11"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -20,6 +20,20 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
+
+## October 2023
+{: #satellite-oct23}
+
+### 10 October 2023
+{: #satellite-oct1023}
+{: release-note}
+
+Connector agent image version `1.1.1`.
+:   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image). For more information about running the image, see [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
+
+
+CLI version `1.0.573` is available.
+:   For more information, see the [CLI change log](/docs/satellite?topic=satellite-satellite-cli-changelog).
 
 ## September 2023
 {: #satellite-sep23}

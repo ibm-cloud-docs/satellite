@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-08-24"
+lastupdated: "2023-10-11"
 
 keywords: satellite, connector
 
@@ -31,7 +31,7 @@ Configuration information is provided to the agent through the following environ
 | -------------------- | ----------- |
 | SATELLITE_CONNECTOR_ID |  **Required:** Identifier of the Satellite Connector that the agent is to bind to. |
 | SATELLITE_CONNECTOR_IAM_APIKEY | **Required:** Your IAM API key. For security purposes, consider storing your IAM API key in a file and then providing the file for this value. |
-| SATELLITE_CONNECTOR_REGION | **Required:** The managed from region of the {{site.data.keyword.satelliteshort}} Connector. This value must be the short name of the region such as `us-east`. You can find the mapping from the multizone metro name that is shown in the UI to the region name in [Supported IBM Cloud regions](/docs/satellite?topic=satellite-sat-regions). |
+| SATELLITE_CONNECTOR_REGION | **Optional:** The managed from region of the {{site.data.keyword.satelliteshort}} Connector. This value must be the short name of the region such as `us-east`. You can find the mapping from the multizone metro name that is shown in the UI to the region name in [Supported IBM Cloud regions](/docs/satellite?topic=satellite-sat-regions). |
 | SATELLITE_CONNECTOR_TAGS | **Optional:** A user defined string that can be used to identify the instance of the Docker container. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
 {: caption="Table 1. Environment variables for configuration" caption-side="bottom"}
   
@@ -93,25 +93,7 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
 
 Make sure your computing environment meets the [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors&interface=ui#min-requirements) for running the agent image. Then follow these steps.
 
-1. Mount your `env-files` directory to the container's `/agent-env-files` directory by using the `-v` option. You can use the latest version or a specific version of the published image.  
-    
-    If an environment variable is using a path to a file, that path must be a file path inside the container. To retrieve the file path, use the `-v` option on the `docker run` command. The `-v` option is specified by the local environment variable directory path, followed by the mounted path in the container and separated by `:`. For example, `-v ~/agent/env-files:/agent-env-files`, where `~/agent/env-files` is your local path and `/agent-env-files` is a path in your container. 
-    {: tip}
-    
-    ```sh
-    docker run -d --env-file ~/agent/env-files/env.txt -v ~/agent/env-files:/agent-env-files icr.io/ibm/satellite-connector/satellite-connector-agent:latest
-    ```
-    {: pre}   
-
-  
-    For example, to use the version 1.0.3 of the published image, run the following command.
-
-    ```sh
-    docker run -d --env-file ~/agent/env-files/env.txt -v ~/agent/env-files:/agent-env-files icr.io/ibm/satellite-connector/satellite-connector-agent:v1.1.0
-    ```
-    {: pre}    
-  
-    To view available versions, you can run the following command.
+1. To view available versions of agent image, run the following command.
 
     ```sh
     ibmcloud cr images --include-ibm|grep connector
@@ -125,6 +107,24 @@ Make sure your computing environment meets the [Minimum requirements](/docs/sate
     icr.io/ibm/satellite-connector/satellite-connector-agent    v1.1.0    5f4e42c8d53e   ibm         1 day ago       124 MB   -
     ```
     {: screen}
+
+1. Mount your `env-files` directory to the container's `/agent-env-files` directory by using the `-v` option. You can use the latest version or a specific version of the published image.  
+    
+    If an environment variable is using a path to a file, that path must be a file path inside the container. To retrieve the file path, use the `-v` option on the `docker run` command. The `-v` option is specified by the local environment variable directory path, followed by the mounted path in the container and separated by `:`. For example, `-v ~/agent/env-files:/agent-env-files`, where `~/agent/env-files` is your local path and `/agent-env-files` is a path in your container. 
+    {: tip}
+    
+    ```sh
+    docker run -d --env-file ~/agent/env-files/env.txt -v ~/agent/env-files:/agent-env-files icr.io/ibm/satellite-connector/satellite-connector-agent:latest
+    ```
+    {: pre}   
+
+  
+    Example command using version 1.0.3 of the image, run the following command.
+
+    ```sh
+    docker run -d --env-file ~/agent/env-files/env.txt -v ~/agent/env-files:/agent-env-files icr.io/ibm/satellite-connector/satellite-connector-agent:v1.1.0
+    ```
+    {: pre}
 
 
 1. You can verify the tunnel gets established to your Connector by looking at the logs of the container.
