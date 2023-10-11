@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-09"
+lastupdated: "2023-10-11"
 
 keywords: satellite, connector
 
@@ -31,7 +31,7 @@ Configuration information is provided to the agent through the following environ
 | -------------------- | ----------- |
 | SATELLITE_CONNECTOR_ID |  **Required:** Identifier of the Satellite Connector that the agent is to bind to. |
 | SATELLITE_CONNECTOR_IAM_APIKEY | **Required:** Your IAM API key. For security purposes, consider storing your IAM API key in a file and then providing the file for this value. |
-| SATELLITE_CONNECTOR_REGION | **Required:** The managed from region of the {{site.data.keyword.satelliteshort}} Connector. This value must be the short name of the region such as `us-east`. You can find the mapping from the multizone metro name that is shown in the UI to the region name in [Supported IBM Cloud regions](/docs/satellite?topic=satellite-sat-regions). |
+| SATELLITE_CONNECTOR_REGION | **Optional:** The managed from region of the {{site.data.keyword.satelliteshort}} Connector. This value must be the short name of the region such as `us-east`. You can find the mapping from the multizone metro name that is shown in the UI to the region name in [Supported IBM Cloud regions](/docs/satellite?topic=satellite-sat-regions). |
 | SATELLITE_CONNECTOR_TAGS | **Optional:** A user defined string that can be used to identify the instance of the Docker container. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
 {: caption="Table 1. Environment variables for configuration" caption-side="bottom"}
   
