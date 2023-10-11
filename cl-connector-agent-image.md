@@ -31,6 +31,7 @@ Only `n-2` versions of the Connector agent image are supported. Make sure to kee
 {: #connector-agent-1.1.1-change-log}
 
 - Fixes security vulnerabilities.
+- Changes `SATELLITE_CONNECTOR_REGION` environment variable from `required` to `optional`.
 
 ### Version 1.1.0, released 20 June 2023
 {: #connector-agent-1.1.0-change-log}
