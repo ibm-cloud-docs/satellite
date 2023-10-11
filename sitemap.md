@@ -197,6 +197,8 @@ subcollection: satellite
 
     * [10 October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct1023)
 
+        * Connector agent image version `1.1.1`.
+
         * CLI version `1.0.573` is available.
 
 * [September 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep23)
@@ -1122,12 +1124,6 @@ subcollection: satellite
 * [Verify the installation](/docs/satellite?topic=satellite-cli-install#cli-install-include-step2-verify-idt)
 
 * [Install CLI plug-ins and tools](/docs/satellite?topic=satellite-cli-install#cli-install-include-step3-install-idt-manually)
-
-[Updating the CLI](/docs/satellite?topic=satellite-cli-update#cli-update)
-
-* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-update#cli-update-include-update-ibmcloud-cli)
-
-* [Updating installed plug-ins](/docs/satellite?topic=satellite-cli-update#cli-update-include-cli-update-plugin)
 
 [Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
 
