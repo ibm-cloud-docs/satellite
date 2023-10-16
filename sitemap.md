@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-11"
+lastupdated: "2023-10-16"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1124,6 +1124,12 @@ subcollection: satellite
 * [Verify the installation](/docs/satellite?topic=satellite-cli-install#cli-install-include-step2-verify-idt)
 
 * [Install CLI plug-ins and tools](/docs/satellite?topic=satellite-cli-install#cli-install-include-step3-install-idt-manually)
+
+[Updating the CLI](/docs/satellite?topic=satellite-cli-update#cli-update)
+
+* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-cli-update#cli-update-include-update-ibmcloud-cli)
+
+* [Updating installed plug-ins](/docs/satellite?topic=satellite-cli-update#cli-update-include-cli-update-plugin)
 
 [Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/satellite?topic=satellite-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
 

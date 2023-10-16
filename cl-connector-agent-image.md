@@ -3,7 +3,7 @@
 copyright:
   years: 2023, 2023
 
-lastupdated: "2023-10-11"
+lastupdated: "2023-10-16"
 
 
 keywords: satellite, connector, agent, image, change log, version history
@@ -20,7 +20,7 @@ subcollection: satellite
 Review the version history for the {{site.data.keyword.satelliteshort}} Connector agent image.
 {: shortdesc}
 
-Only `n-2` versions of the Connector agent image are supported. Make sure to keep your agent image updated within the supported version range.
+Only the most recent version of the Connector agent image (identified by the version as well as the latest tags) is supported and has the latest security fixes. It is your responsibility to make sure to keep your agent image updated to the most recent version available. 
 {: important}
 
 
