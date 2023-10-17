@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-16"
+lastupdated: "2023-10-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2535,7 +2535,7 @@ subcollection: satellite
 
 * [Assign a new host as a worker node](/docs/satellite?topic=satellite-sat-storage-odf-update#assign-worker-node-sat)
 
-* [Optional: Update your configuration to add the new storage nodes](/docs/satellite?topic=satellite-sat-storage-odf-update#add-storage-node-sat)
+* [Update your configuration to add the new storage nodes](/docs/satellite?topic=satellite-sat-storage-odf-update#add-storage-node-sat)
 
 * [Clean up the resources from the old node](/docs/satellite?topic=satellite-sat-storage-odf-update#cleanup-os-storage-sat)
 

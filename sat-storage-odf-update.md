@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-04"
+lastupdated: "2023-10-17"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -153,15 +153,15 @@ subcollection: satellite
     {: screen}
 
 
-## Optional: Update your configuration to add the new storage nodes
+## Update your configuration to add the new storage nodes
 {: #add-storage-node-sat}
 {: step}
 
 [Major]{: tag-red} [Minor]{: tag-blue}
 
-1. If you are deploying ODF on a subset of worker nodes, update your satellite configuration to add the new `worker node name(s)` from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}.
+1. If you are deploying ODF on a subset of worker nodes, update your satellite configuration to add the new `worker node name(s)` from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. 
 
-1. Wait for the OpenShift Data Foundation pods to deploy to the new worker. Verify that he OSD persistent volumes are created and that all pods are in a `Running` state.
+1. Wait for the OpenShift Data Foundation pods to deploy to the new worker. Verify that the OSD persistent volumes are created and that all pods are in a `Running` state.
     ```sh
     oc get pv
     oc get ocscluster
@@ -223,28 +223,10 @@ subcollection: satellite
 
 [Major]{: tag-red} [Minor]{: tag-blue}
 
-1. Navigate to the `openshift-storage` project.
-    ```sh
-    oc project openshift-storage
-    ```
-    {: pre}
-
-1. Identify the Persistent Volume (PV) associated with the Persistent Volume Claim (PVC) from the old node from your local storage.
-    ```sh
-    oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
-    ```
-    {: pre}
-
-    If there is a PV in Released state, delete it:
-
-    ```sh
-    oc delete pv <persistent_volume>
-    ```
-    {: pre}
 
 1. Remove the failed OSD from the cluster. You can specify multiple failed OSDs if required.
     ```sh
-    oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> [-p FORCE_OSD_REMOVAL=true] | oc create -f OSD-ID,OSD-ID, OSD-ID
+    oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> -p FORCE_OSD_REMOVAL=true | oc create -f
     ```
     {: pre}
 
@@ -270,6 +252,25 @@ subcollection: satellite
     ```
     {: screen}
 
+1. Navigate to the `openshift-storage` project.
+    ```sh
+    oc project openshift-storage
+    ```
+    {: pre}
+
+1. Identify the Persistent Volume (PV) associated with the Persistent Volume Claim (PVC) from the old node in your local storage.
+    ```sh
+    oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
+    ```
+    {: pre}
+
+    If there is a PV in a `Released` state, delete it:
+
+    ```sh
+    oc delete pv <persistent_volume>
+    ```
+    {: pre}
+
 1. Repeat the steps above for each worker node you are updating. 
 
 
@@ -278,6 +279,8 @@ subcollection: satellite
 {: step}
 
 [Major]{: tag-red}
+
+The following steps will upgrade ODF to the next version.
 
 1. Update your storage configuration to set the `perform-cleanup` parameter to `false` from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. If this parameter is not set to `false` ODf will be removed.
 
@@ -301,13 +304,18 @@ subcollection: satellite
 
 1. Create a new storage configuration that contains all the same information as the old configuration with the `upgrade` parameter set to `true`.
 
+    [ODF for Remote Devices](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-console) 
+    [ODF for Local Disks](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-console)
+
 ## Create a new assignment
 {: #sat-odf-new-assignment}
 {: step}
 
 [Major]{: tag-red}
 
-1. Create a new storage assignment.
+1. Create a new storage assignment. 
+    [ODF for Remote Devices](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-assignment-create-console) 
+    [ODF for Local Disks](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-assignment-create-console)
 
 1. Verify your storage assignment was created.
     ```sh
