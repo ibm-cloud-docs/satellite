@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-10-18"
 
 
 keywords: satellite storage, features, overview
@@ -41,16 +41,18 @@ subcollection: satellite
 | IBM System Storage Block CSI driver | 1.11.1 | IBM | False | False | True | Regional | True |
 | IBM System Storage Block CSI driver | 1.11.2 | IBM | False | False | True | Regional | True |
 | [Beta] IBM VPC Block CSI driver | 5.0 | IBM | 
-| Local Storage Operator - Block | 4.8 | AWS,IBM | False | False | False | Zonal | False |
+| [Beta] Local Storage File and/or Block | 1.0.0 | AWS, IBM | False | False | False | Zonal | False |
+| Local Storage Operator | 1.0.0 | AWS, IBM |  |  |  |  |  |
 | Local Storage Operator - Block | 4.9 | AWS,IBM | False | False | False | Zonal | False |
 | Local Storage Operator - Block | 4.10 | AWS,IBM | False | False | False | Zonal | False |
 | Local Storage Operator - Block | 4.11 | AWS,IBM | False | False | False | Zonal | False |
 | Local Storage Operator - Block | 4.12 | AWS,IBM | False | False | False | Zonal | False |
-| Local Storage Operator - File | 4.8 | AWS,IBM | False | False | False | Zonal | False |
+| Local Storage Operator - Block | 4.13 | AWS,IBM | False | False | False | Zonal | False |
 | Local Storage Operator - File | 4.9 | AWS,IBM | False | False | False | Zonal | False |
 | Local Storage Operator - File | 4.10 | AWS,IBM | False | False | False | Zonal | False |
 | Local Storage Operator - File | 4.11 | AWS,IBM | False | False | False | Zonal | False |
 | Local Storage Operator - File | 4.12 | AWS,IBM | False | False | False | Zonal | False |
+| Local Storage Operator - File | 4.13 | AWS,IBM | False | False | False | Zonal | False |
 | NetApp Ontap-NAS Driver | 21.04 | AWS,Azure,IBM | True | True | True | Zonal | True |
 | NetApp Ontap-NAS Driver | 22.04 | AWS,Azure,IBM | True | True | True | Zonal | True |
 | NetApp Ontap-NAS Driver | 22.10 | AWS,Azure,IBM | True | True | True | Zonal | True |
@@ -71,5 +73,3 @@ subcollection: satellite
 | VMware CSI Driver | 2.7.0 | VMware,IBM | False | False | True | Zonal | False |
 {: caption="Storage template feature comparison" caption-side="bottom"}
 
-You cannot scope {{site.data.keyword.satelliteshort}} storage service to resource groups. However, if you are scoping other resources such as location and cluster to resource groups, you need to add {{site.data.keyword.satelliteshort}} reader and link administrator role for all resources in the account.
-{: note}
