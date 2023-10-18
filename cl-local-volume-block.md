@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-03-27"
+lastupdated: "2023-10-18"
 
 
 keywords: satellite storage, change log, version history, local volume block
@@ -19,6 +19,17 @@ subcollection: satellite
 
 Review the version history for the `local-volume-block` {{site.data.keyword.satelliteshort}} storage template.
 {: shortdesc}
+
+## Version 4.13
+{: #4.13-change-log}
+
+
+### Revision 1, released 18 October 2023
+{: #local-volume-block-4.13-rev-1-change-log}
+
+
+- Initial release
+
 
 ## Version 4.12
 {: #4.12-change-log}

@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-09-21"
+lastupdated: "2023-10-18"
 
 
 keywords: satellite storage, change log, version history, vsphere csi driver
@@ -23,6 +23,12 @@ Review the version history for the `vsphere-csi-driver` {{site.data.keyword.sate
 ## Version 2.7.0
 {: #2.7.0-change-log}
 
+
+### Revision 2, released 18 October 2023
+{: #vsphere-csi-driver-2.7.0-rev-2-change-log}
+
+
+- Added Pod Security Admission(PSA) labels to 'vmware-system-csi' & 'vmware-system-vdo' namespaces 
 
 ### Revision 1, released 31 July 2023
 {: #vsphere-csi-driver-2.7.0-rev-1-change-log}

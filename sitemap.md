@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-10-18"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2367,8 +2367,6 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-parameter-reference)
 
-    * [4.8 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-4.8-parameters)
-
     * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-4.9-parameters)
 
     * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-4.10-parameters)
@@ -2376,6 +2374,8 @@ subcollection: satellite
     * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-4.11-parameters)
 
     * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-4.12-parameters)
+
+    * [4.13 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-block#local-volume-block-4.13-parameters)
 
 * [Storage class reference for local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#local-block-sc-ref)
 
@@ -2415,8 +2415,6 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-parameter-reference)
 
-    * [4.8 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-4.8-parameters)
-
     * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-4.9-parameters)
 
     * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-4.10-parameters)
@@ -2424,6 +2422,8 @@ subcollection: satellite
     * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-4.11-parameters)
 
     * [4.12 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-4.12-parameters)
+
+    * [4.13 parameter reference](/docs/satellite?topic=satellite-storage-local-volume-file#local-volume-file-4.13-parameters)
 
 * [Storage class reference for local file storage](/docs/satellite?topic=satellite-storage-local-volume-file#local-file-sc-reference)
 
@@ -3260,6 +3260,8 @@ subcollection: satellite
 
 * [Version 2.2](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#2.2-change-log)
 
+    * [Revision 15, released 18 October 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-15-change-log)
+
     * [Revision 14, released 19 September 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-14-change-log)
 
     * [Revision 11, released 04 May 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-11-change-log)
@@ -3320,6 +3322,10 @@ subcollection: satellite
 
 [`local-volume-block` change log](/docs/satellite?topic=satellite-cl-local-volume-block#cl-local-volume-block)
 
+* [Version 4.13](/docs/satellite?topic=satellite-cl-local-volume-block#4.13-change-log)
+
+    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.13-rev-1-change-log)
+
 * [Version 4.12](/docs/satellite?topic=satellite-cl-local-volume-block#4.12-change-log)
 
     * [Revision 1, released 23 January 2023](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.12-rev-1-change-log)
@@ -3341,6 +3347,10 @@ subcollection: satellite
     * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.8-rev-4-change-log)
 
 [`local-volume-file` change log](/docs/satellite?topic=satellite-cl-local-volume-file#cl-local-volume-file)
+
+* [Version 4.13](/docs/satellite?topic=satellite-cl-local-volume-file#4.13-change-log)
+
+    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.13-rev-1-change-log)
 
 * [Version 4.12](/docs/satellite?topic=satellite-cl-local-volume-file#4.12-change-log)
 
@@ -3366,6 +3376,8 @@ subcollection: satellite
 
 * [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#22.10-change-log)
 
+    * [Revision 9, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-9-change-log)
+
     * [Revision 8, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-8-change-log)
 
     * [Revision 7, released 24 July 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-7-change-log)
@@ -3384,6 +3396,8 @@ subcollection: satellite
 
 * [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#22.04-change-log)
 
+    * [Revision 22, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-22-change-log)
+
     * [Revision 21, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-21-change-log)
 
     * [Revision 20, released 24 July 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-20-change-log)
@@ -3401,6 +3415,8 @@ subcollection: satellite
     * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-14-change-log)
 
 * [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#21.04-change-log)
+
+    * [Revision 24, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-24-change-log)
 
     * [Revision 23, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-23-change-log)
 
@@ -3422,6 +3438,8 @@ subcollection: satellite
 
 * [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-san#22.10-change-log)
 
+    * [Revision 9, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-9-change-log)
+
     * [Revision 8, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-8-change-log)
 
     * [Revision 7, released 24 July 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-7-change-log)
@@ -3440,6 +3458,8 @@ subcollection: satellite
 
 * [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-ontap-san#22.04-change-log)
 
+    * [Revision 22, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-22-change-log)
+
     * [Revision 21, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-21-change-log)
 
     * [Revision 20, released 24 July 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-20-change-log)
@@ -3457,6 +3477,8 @@ subcollection: satellite
     * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-14-change-log)
 
 * [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-ontap-san#21.04-change-log)
+
+    * [Revision 25, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-25-change-log)
 
     * [Revision 24, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-24-change-log)
 
@@ -3681,6 +3703,8 @@ subcollection: satellite
 [`vsphere-csi-driver` change log](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#cl-vsphere-csi-driver)
 
 * [Version 2.7.0](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#2.7.0-change-log)
+
+    * [Revision 2, released 18 October 2023](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.7.0-rev-2-change-log)
 
     * [Revision 1, released 31 July 2023](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.7.0-rev-1-change-log)
 
