@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-11"
+lastupdated: "2023-10-19"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -428,7 +428,7 @@ New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshor
 {: release-note}
  
 {{site.data.keyword.satelliteshort}} for resellers
-:   Learn how to set up an enterprise account and resell {{site.data.keyword.satelliteshort}} infrastructure and services to your clients. For more information, see the [{{site.data.keyword.satelliteshort}} [reseller use case](/docs/satellite?topic=satellite-tenancy-model).
+:   Learn how to set up an enterprise account and resell {{site.data.keyword.satelliteshort}} infrastructure and services to your clients. For more information, see the [{{site.data.keyword.satelliteshort}} reseller use case](/docs/satellite?topic=satellite-tenancy-model).
 
 ### 9 June 2022
 {: #satellite-june922}
