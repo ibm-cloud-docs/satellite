@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-21"
+lastupdated: "2023-10-20"
 
 keywords: satellite, hybrid, multicloud, edge, use case, machine learning
 
@@ -48,7 +48,7 @@ As an AI model developer, you prepare your edge data with machine learning and A
 {: shortdesc}
 
 1. Upload the training data to [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
-2. Use [{{site.data.keyword.DSX}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/data-science.html){: external} and [{{site.data.keyword.pm_short}}](https://dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/ml-overview.html){: external} to pull the training data from {{site.data.keyword.cos_full_notm}}, analyze the data, and train a model with TensorFlow, Keras, SciKit-Learn, or another popular machine learning algorithm. 
+2. Use [Watson Studio](dataplatform.cloud.ibm.com/docs/content/wsj/analyze-data/data-science.html){: external} and {{site.data.keyword.pm_short}} to pull the training data from {{site.data.keyword.cos_full_notm}}, analyze the data, and train a model with TensorFlow, Keras, SciKit-Learn, or another popular machine learning algorithm. 
 
 The trained model is saved back to {{site.data.keyword.cos_full_notm}}, so that the data does not take up storage space in your edge environment.
 

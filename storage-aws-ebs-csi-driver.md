@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-10-20"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -423,24 +423,14 @@ Removing your AWS EBS instance permanently removes all the data that is stored o
 If you no longer plan on using AWS EBS storage in your cluster, you can unassign your cluster from the storage configuration.
 {: shortdesc}
 
-Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs and data are not removed. However, you might not be able to access your data until you re-install the driver in your cluster again.
-{: important}
-
-
-### Removing the AWS EBS storage configuration from the console
-{: #aws-ebs-template-rm-ui}
-{: ui}
-
-Use the console to remove the AWS EBS storage configuration. 
-{: shortdesc}
-
 Note that you must delete your storage assignments before you can successfully delete your storage configuration. 
 {: important}
 
-1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
-1. Select **Actions** > **Delete**
-1. Enter the name of your storage configuration.
-1. Select **Delete**.
+Note that if you remove the storage configuration, the driver is then uninstalled from all assigned clusters. Your PVCs, PVs, and data are not removed. However, you might not be able to access your data until you reinstall the driver in your cluster again.
+{: important}
+
+
+{{site.data.content.configuration-remove-console}}
 
 ### Removing the AWS EBS storage configuration from the CLI
 {: #aws-ebs-template-rm-cli}

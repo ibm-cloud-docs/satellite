@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-19"
+lastupdated: "2023-10-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -195,9 +195,17 @@ subcollection: satellite
 
 * [October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct23)
 
+    * [20 October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct2023)
+
+        * [New]{: tag-green} {{site.data.keyword.satelliteshort}} storage template for local storage
+
+        * [New]{: tag-green} Debugging guide for OpenShift Data Foundation
+
+        * [Change log]{: tag-purple} Storage template revisions are available.
+
     * [10 October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct1023)
 
-        * Connector agent image version `1.1.1`.
+        * [Change log]{: tag-purple} Connector agent image version `1.1.1`.
 
         * CLI version `1.0.573` is available.
 
@@ -1916,7 +1924,7 @@ subcollection: satellite
 
 * [Removing the AWS EBS storage configuration from your cluster](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-template-rm)
 
-    * [Removing the AWS EBS storage configuration from the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-template-rm-ui)
+* [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-configuration-remove-console)
 
     * [Removing the AWS EBS storage configuration from the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-template-rm-cli)
 
@@ -2333,6 +2341,50 @@ subcollection: satellite
 {: #sitemap_red_hat_storage_templates}
 
 
+[Local Storage Operator](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator)
+
+* [Prerequisites](/docs/satellite?topic=satellite-storage-local-storage-operator#sat-storage-local-prereqs)
+
+    * [Getting the device details for your local storage configuration](/docs/satellite?topic=satellite-storage-local-storage-operator#sat-storage-local-devices)
+
+    * [Labeling your worker nodes](/docs/satellite?topic=satellite-storage-local-storage-operator#sat-storage-local-labels)
+
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-config-create-console)
+
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-config-create-cli)
+
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-config-create-api)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-assignment-create-api)
+
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-config-create-console)
+
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-config-create-cli)
+
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-config-create-api)
+
+* [Deploying an app that uses local storage](/docs/satellite?topic=satellite-storage-local-storage-operator#deploy-app-local)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-configuration-upgrade-cli)
+
+* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-configuration-upgrade-console)
+
+* [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-configuration-remove-console)
+
+* [Removing the local block storage configuration from the command line](/docs/satellite?topic=satellite-storage-local-storage-operator#rm-local-temp-cli)
+
+* [Parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-parameter-reference)
+
+    * [1.0.0 parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-1.0.0-parameters)
+
+* [Parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-parameter-reference)
+
+    * [1.0.0 parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-1.0.0-parameters)
+
 [Local Storage Operator - Block](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block)
 
 * [Prerequisites for using local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#sat-storage-local-prereqs)
@@ -2465,8 +2517,6 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-odf-local#odf-local-parameter-reference)
 
-    * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#odf-local-4.9-parameters)
-
     * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#odf-local-4.10-parameters)
 
     * [4.11 parameter reference](/docs/satellite?topic=satellite-storage-odf-local#odf-local-4.11-parameters)
@@ -2508,8 +2558,6 @@ subcollection: satellite
     * [Removing the ODF remote storage assignment from the command line](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-template-rm-cli)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-parameter-reference)
-
-    * [4.9 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-4.9-parameters)
 
     * [4.10 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-4.10-parameters)
 
@@ -3320,6 +3368,18 @@ subcollection: satellite
 
     * [Revision 7, released 06 March 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-7-change-log)
 
+[`local-storage-operator` change log](/docs/satellite?topic=satellite-cl-local-storage-operator#cl-local-storage-operator)
+
+* [Version 1.0.0](/docs/satellite?topic=satellite-cl-local-storage-operator#1.0.0-change-log)
+
+    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-local-storage-operator#local-storage-operator-1.0.0-rev-1-change-log)
+
+[`local-storage` change log](/docs/satellite?topic=satellite-cl-local-storage#cl-local-storage)
+
+* [Version 1.0.0](/docs/satellite?topic=satellite-cl-local-storage#1.0.0-change-log)
+
+    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-local-storage#local-storage-1.0.0-rev-1-change-log)
+
 [`local-volume-block` change log](/docs/satellite?topic=satellite-cl-local-volume-block#cl-local-volume-block)
 
 * [Version 4.13](/docs/satellite?topic=satellite-cl-local-volume-block#4.13-change-log)
@@ -3514,6 +3574,8 @@ subcollection: satellite
 
 * [Version 4.13](/docs/satellite?topic=satellite-cl-odf-local#4.13-change-log)
 
+    * [Revision 4, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-4-change-log)
+
     * [Revision 3, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-3-change-log)
 
     * [Revision 2, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-2-change-log)
@@ -3521,6 +3583,8 @@ subcollection: satellite
     * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-1-change-log)
 
 * [Version 4.12](/docs/satellite?topic=satellite-cl-odf-local#4.12-change-log)
+
+    * [Revision 6, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-6-change-log)
 
     * [Revision 5, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-5-change-log)
 
@@ -3533,6 +3597,8 @@ subcollection: satellite
     * [Revision 1, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-1-change-log)
 
 * [Version 4.11](/docs/satellite?topic=satellite-cl-odf-local#4.11-change-log)
+
+    * [Revision 10, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-10-change-log)
 
     * [Revision 9, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-9-change-log)
 
@@ -3551,6 +3617,8 @@ subcollection: satellite
     * [Revision 2, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-2-change-log)
 
 * [Version 4.10](/docs/satellite?topic=satellite-cl-odf-local#4.10-change-log)
+
+    * [Revision 21, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-21-change-log)
 
     * [Revision 20, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-20-change-log)
 
@@ -3606,6 +3674,8 @@ subcollection: satellite
 
 * [Version 4.13](/docs/satellite?topic=satellite-cl-odf-remote#4.13-change-log)
 
+    * [Revision 4, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-4-change-log)
+
     * [Revision 3, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-3-change-log)
 
     * [Revision 2, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-2-change-log)
@@ -3613,6 +3683,8 @@ subcollection: satellite
     * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-1-change-log)
 
 * [Version 4.12](/docs/satellite?topic=satellite-cl-odf-remote#4.12-change-log)
+
+    * [Revision 6, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-6-change-log)
 
     * [Revision 5, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-5-change-log)
 
@@ -3625,6 +3697,8 @@ subcollection: satellite
     * [Revision 1, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-1-change-log)
 
 * [Version 4.11](/docs/satellite?topic=satellite-cl-odf-remote#4.11-change-log)
+
+    * [Revision 10, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-10-change-log)
 
     * [Revision 9, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-9-change-log)
 
@@ -3643,6 +3717,8 @@ subcollection: satellite
     * [Revision 2, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-2-change-log)
 
 * [Version 4.10](/docs/satellite?topic=satellite-cl-odf-remote#4.10-change-log)
+
+    * [Revision 21, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-21-change-log)
 
     * [Revision 20, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-20-change-log)
 

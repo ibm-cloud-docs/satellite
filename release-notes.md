@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-19"
+lastupdated: "2023-10-20"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,11 +24,24 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## October 2023
 {: #satellite-oct23}
 
+### 20 October 2023
+{: #satellite-oct2023}
+{: release-note}
+
+[New]{: tag-green} {{site.data.keyword.satelliteshort}} storage template for local storage
+:   A new {{site.data.keyword.satelliteshort}} storage template is available for deploying local storage. This new template provides both local block and local file storage functionality. For more information, see the [Local Storage Operator](/docs/satellite?topic=satellite-storage-local-storage-operator) deployment guide.
+
+[New]{: tag-green} Debugging guide for OpenShift Data Foundation
+:   For more information, see [Debugging OpenShift Data Foundation](/docs/satellite?topic=satellite-sat-storage-odf-debug).
+
+[Change log]{: tag-purple} Storage template revisions are available.
+:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or run the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
+
 ### 10 October 2023
 {: #satellite-oct1023}
 {: release-note}
 
-Connector agent image version `1.1.1`.
+[Change log]{: tag-purple} Connector agent image version `1.1.1`.
 :   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image). For more information about running the image, see [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
 
 
