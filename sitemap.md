@@ -195,9 +195,17 @@ subcollection: satellite
 
 * [October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct23)
 
+    * [20 October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct2023)
+
+        * [New]{: tag-green} {{site.data.keyword.satelliteshort}} storage template for local storage
+
+        * [New]{: tag-green} Debugging guide for OpenShift Data Foundation
+
+        * [Change log]{: tag-purple} Storage template revisions are available.
+
     * [10 October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct1023)
 
-        * Connector agent image version `1.1.1`.
+        * [Change log]{: tag-purple} Connector agent image version `1.1.1`.
 
         * CLI version `1.0.573` is available.
 
@@ -1916,7 +1924,7 @@ subcollection: satellite
 
 * [Removing the AWS EBS storage configuration from your cluster](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-template-rm)
 
-    * [Removing the AWS EBS storage configuration from the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-template-rm-ui)
+* [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-configuration-remove-console)
 
     * [Removing the AWS EBS storage configuration from the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#aws-ebs-template-rm-cli)
 
@@ -2332,6 +2340,50 @@ subcollection: satellite
 ### Red Hat storage templates
 {: #sitemap_red_hat_storage_templates}
 
+
+[Local Storage Operator](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator)
+
+* [Prerequisites](/docs/satellite?topic=satellite-storage-local-storage-operator#sat-storage-local-prereqs)
+
+    * [Getting the device details for your local storage configuration](/docs/satellite?topic=satellite-storage-local-storage-operator#sat-storage-local-devices)
+
+    * [Labeling your worker nodes](/docs/satellite?topic=satellite-storage-local-storage-operator#sat-storage-local-labels)
+
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-config-create-console)
+
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-config-create-cli)
+
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-config-create-api)
+
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-assignment-create-console)
+
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-assignment-create-cli)
+
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-assignment-create-api)
+
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-config-create-console)
+
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-config-create-cli)
+
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-config-create-api)
+
+* [Deploying an app that uses local storage](/docs/satellite?topic=satellite-storage-local-storage-operator#deploy-app-local)
+
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-configuration-upgrade-cli)
+
+* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-configuration-upgrade-console)
+
+* [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-configuration-remove-console)
+
+* [Removing the local block storage configuration from the command line](/docs/satellite?topic=satellite-storage-local-storage-operator#rm-local-temp-cli)
+
+* [Parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-parameter-reference)
+
+    * [1.0.0 parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-1.0.0-parameters)
+
+* [Parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-parameter-reference)
+
+    * [1.0.0 parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-1.0.0-parameters)
 
 [Local Storage Operator - Block](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block)
 
@@ -3315,6 +3367,18 @@ subcollection: satellite
     * [Revision 8, released 21 March 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-8-change-log)
 
     * [Revision 7, released 06 March 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-7-change-log)
+
+[`local-storage-operator` change log](/docs/satellite?topic=satellite-cl-local-storage-operator#cl-local-storage-operator)
+
+* [Version 1.0.0](/docs/satellite?topic=satellite-cl-local-storage-operator#1.0.0-change-log)
+
+    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-local-storage-operator#local-storage-operator-1.0.0-rev-1-change-log)
+
+[`local-storage` change log](/docs/satellite?topic=satellite-cl-local-storage#cl-local-storage)
+
+* [Version 1.0.0](/docs/satellite?topic=satellite-cl-local-storage#1.0.0-change-log)
+
+    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-local-storage#local-storage-1.0.0-rev-1-change-log)
 
 [`local-volume-block` change log](/docs/satellite?topic=satellite-cl-local-volume-block#cl-local-volume-block)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-10-20"
 
 keywords: satellite, hybrid, multicloud
 
@@ -258,3 +258,14 @@ You can use the `/v2/storage/satellite/updateAssignment`](https://containers.clo
     {: pre}
     
     
+## Removing a storage configuration from the console
+{: #configuration-remove-console}
+{: ui}
+
+
+
+1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
+1. Select **Actions** > **Delete**.
+1. Enter the name of your storage configuration.
+1. Select **Delete**.
+
