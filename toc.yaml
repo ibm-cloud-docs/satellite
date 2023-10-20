@@ -244,6 +244,7 @@ toc:
                     - storage-odf-local.md
                     - storage-odf-remote.md
                     - sat-storage-odf-update.md
+                    - sat-storage-odf-debug.md
               - topicgroup: 
                   label: VMware storage templates
                   topics:
