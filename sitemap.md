@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-25"
+lastupdated: "2023-10-26"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -194,6 +194,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct23)
+
+    * [25 October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct2523)
+
+        * [New]{: tag-green} Troubleshooting documentation for Connector agents.
 
     * [20 October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct2023)
 
@@ -3995,6 +3999,8 @@ subcollection: satellite
 [Why can't I see Connector logs?](/docs/satellite?topic=satellite-ts-connector-delete-apikey#ts-connector-delete-apikey)
 
 [Why is my Connector Agent unable to establish the tunnel with {{site.data.keyword.cloud_notm}}?](/docs/satellite?topic=satellite-ts-connector-tunnel#ts-connector-tunnel)
+
+[Why do I see a `rejected by Sources` error in my agent container logs?](/docs/satellite?topic=satellite-ts-connector-endpoints-acls#ts-connector-endpoints-acls)
 
 
 ### Clusters

@@ -356,6 +356,7 @@ toc:
                     - ts-connector-api.md
                     - ts-connector-delete-apikey.md
                     - ts-connector-tunnel.md
+                    - ts-connector-endpoint-acls.md
               - topicgroup:
                   label: Clusters
                   topics:

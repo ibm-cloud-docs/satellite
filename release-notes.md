@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-20"
+lastupdated: "2023-10-26"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -23,6 +23,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 ## October 2023
 {: #satellite-oct23}
+
+### 25 October 2023
+{: #satellite-oct2523}
+{: release-note}
+
+[New]{: tag-green} Troubleshooting documentation for Connector agents.
+:   For more information, see [Why do I see a `rejected by Sources` error in my agent container logs?](/docs/satellite?topic=satellite-ts-connector-endpoints-acls).
 
 ### 20 October 2023
 {: #satellite-oct2023}
