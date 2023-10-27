@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-29"
+lastupdated: "2023-10-27"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -80,8 +80,8 @@ Allow Link tunnel clients to connect to the Link tunnel server endpoint.
 :    You can find the hostnames or IP addresses by running the `dig c-<XX>-ws.us-south.link.satellite.cloud.ibm.com +short` command. Replace `<XX>` with `01`, `02`, and so on, until no more DNS results are returned.
 
 Allow hosts to be attached to a location and assigned to services in the location.
-:    * Destination IP addresses: 169.46.110.218, 169.47.70.10, 169.62.166.98 
-     * Destination hostnames: `origin.us-south.containers.cloud.ibm.com`
+:    * Destination IP addresses: 169.46.110.218, 169.47.70.10, 169.62.166.98, 104.94.220.130, 104.94.221.130, 104.94.222.138, 104.94.223.138, 104.96.176.130, 104.96.177.130, 104.96.178.132, 104.96.179.132, 104.96.180.129, 104.96.181.129
+     * Destination hostnames: `origin.us-south.containers.cloud.ibm.com` and `bootstrap.us-south.containers.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API.

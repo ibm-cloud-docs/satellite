@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-29"
+lastupdated: "2023-10-27"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 
@@ -80,8 +80,8 @@ Allow Link tunnel clients to connect to the Link tunnel server endpoint.
 
 
 Allow hosts to be attached to a location and assigned to services in the location.
-:    * Destination IP addresses: 130.198.66.26, 135.90.69.66, 168.1.8.195
-     * Destination hostnames: `origin.au-syd.containers.cloud.ibm.com` 
+:    * Destination IP addresses: 130.198.66.26, 135.90.69.66, 168.1.8.195, 104.94.220.125, 104.94.221.125, 104.94.222.133, 104.94.223.133, 104.96.176.125, 104.96.177.125, 104.96.178.127, 104.96.179.127, 104.96.180.124, 104.96.181.124
+     * Destination hostnames: `origin.au-syd.containers.cloud.ibm.com` and `bootstrap.au-syd.containers.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 Allow Akamai proxied load balancers for {{site.data.keyword.satelliteshort}} Config and Link API.
