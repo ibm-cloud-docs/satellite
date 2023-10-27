@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-10-27"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos
 
@@ -50,8 +50,8 @@ Allow control plane nodes to communicate with the management plane.
      * Protocol and ports: TCP 30000 - 32767
 
 Allow hosts to be attached to a location and assigned to services in the location.
-:    * Destination IP addresses: 163.75.64.114, 163.74.65.18, 158.85.65.194
-     * Destination hostnames: `origin.ca-tor.containers.cloud.ibm.com`
+:    * Destination IP addresses: 163.75.64.114, 163.74.65.18, 158.85.65.194, 104.94.220.132, 104.94.221.132, 104.94.222.140, 104.94.223.140, 104.96.176.132, 104.96.177.132, 104.96.178.134, 104.96.179.134, 104.96.180.131, 104.96.181.131
+     * Destination hostnames: `origin.ca-tor.containers.cloud.ibm.com` and `bootstrap.ca-tor.containers.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
 
 Allow hosts to communicate with {{site.data.keyword.registrylong_notm}}.
