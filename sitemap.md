@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-10-27"
+lastupdated: "2023-10-31"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3228,6 +3228,8 @@ subcollection: satellite
 [Connector agent image change log](/docs/satellite?topic=satellite-cl-connector-agent-image#cl-connector-agent-image)
 
 * [Version 1.1](/docs/satellite?topic=satellite-cl-connector-agent-image#1.1-change-log)
+
+    * [Version 1.1.2, released 27 Oct 2023](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.2-change-log)
 
     * [Version 1.1.1, released 10 Oct 2023](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.1-change-log)
 
