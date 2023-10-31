@@ -195,6 +195,10 @@ subcollection: satellite
 
 * [October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct23)
 
+    * [27 October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct2723)
+
+        * [Change log]{: tag-purple} Connector agent image version `1.1.2`.
+
     * [25 October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct2523)
 
         * [New]{: tag-green} Troubleshooting documentation for Connector agents.
