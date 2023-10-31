@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-11"
+lastupdated: "2023-10-31"
 
 keywords: satellite, connector
 
@@ -53,6 +53,16 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
     SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/apikey
     SATELLITE_CONNECTOR_REGION=<Your Satellite Connector Region>
     SATELLITE_CONNECTOR_TAGS=sample tag
+    ```
+    {: codeblock}
+    
+For example:
+    
+    ```sh
+    SATELLITE_CONNECTOR_ID=U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA
+    SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/apikey
+    SATELLITE_CONNECTOR_REGION=eu-de
+    SATELLITE_CONNECTOR_TAGS=test
     ```
     {: codeblock}
   
@@ -119,7 +129,7 @@ Make sure your computing environment meets the [Minimum requirements](/docs/sate
     {: pre}   
 
   
-    Example command using version 1.0.3 of the image, run the following command.
+    Example command using version 1.1.0 of the image, run the following command.
 
     ```sh
     docker run -d --env-file ~/agent/env-files/env.txt -v ~/agent/env-files:/agent-env-files icr.io/ibm/satellite-connector/satellite-connector-agent:v1.1.0
