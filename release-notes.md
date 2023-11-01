@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-31"
+lastupdated: "2023-11-01"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -20,6 +20,17 @@ content-type: release-note
 
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
+
+
+## November 2023
+{: #satellite-nov23}
+
+### 01 November 2023
+{: #satellite-nov0123}
+{: release-note}
+
+[Change log]{: tag-purple} Storage template revisions are available.
+:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console or with the [`ibmcloud sat storage config upgrade`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade) command.
 
 ## October 2023
 {: #satellite-oct23}

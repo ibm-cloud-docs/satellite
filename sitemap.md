@@ -193,6 +193,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [November 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov23)
+
+    * [01 November 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov0123)
+
+        * [Change log]{: tag-purple} Storage template revisions are available.
+
 * [October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct23)
 
     * [27 October 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-oct2723)
