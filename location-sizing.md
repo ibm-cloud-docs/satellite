@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-06-30"
+lastupdated: "2023-11-01"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -127,7 +127,7 @@ Review the following frequently asked questions for more information about sizin
 ### How do I know what size and number of hosts to attach to my cluster?
 {: #cluster-size-number}
 
-To decide on the size and number of hosts to attach to your clusters, consider the workloads that you want to run in the location. Review the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-strategy#sizing) for guidance about the following considerations.
+To decide on the size and number of hosts to attach to your clusters, consider the workloads that you want to run in the location. Review the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-strategy) for guidance about the following considerations.
 - How many resources does my app require?
 - What else besides my app might use resources in the cluster?
 - What type of availability do I want my workload to have?

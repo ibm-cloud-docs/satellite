@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-10-18"
+lastupdated: "2023-11-01"
 
 
 keywords: satellite storage, change log, version history, netapp ontap san
@@ -23,6 +23,13 @@ Review the version history for the `netapp-ontap-san` {{site.data.keyword.satell
 ## Version 22.10
 {: #22.10-change-log}
 
+
+### Revision 10, released 30 October 2023
+{: #netapp-ontap-san-22.10-rev-10-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external} 
+- Updates the UBI to version `8.8-1072.1697626218`.
 
 ### Revision 9, released 18 October 2023
 {: #netapp-ontap-san-22.10-rev-9-change-log}
@@ -97,6 +104,13 @@ Review the version history for the `netapp-ontap-san` {{site.data.keyword.satell
 {: #22.04-change-log}
 
 
+### Revision 23, released 30 October 2023
+{: #netapp-ontap-san-22.04-rev-23-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external} 
+- Updates the UBI to version `8.8-1072.1697626218`.
+
 ### Revision 22, released 18 October 2023
 {: #netapp-ontap-san-22.04-rev-22-change-log}
 
@@ -169,6 +183,13 @@ Review the version history for the `netapp-ontap-san` {{site.data.keyword.satell
 ## Version 21.04
 {: #21.04-change-log}
 
+
+### Revision 26, released 30 October 2023
+{: #netapp-ontap-san-21.04-rev-26-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external} 
+- Updates the UBI to version `8.8-1072.1697626218`.
 
 ### Revision 25, released 18 October 2023
 {: #netapp-ontap-san-21.04-rev-25-change-log}
