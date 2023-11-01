@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-10-19"
+lastupdated: "2023-11-01"
 
 
 keywords: satellite storage, change log, version history, odf local
@@ -23,6 +23,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.13
 {: #4.13-change-log}
 
+
+### Revision 5, released 30 October 2023
+{: #odf-local-4.13-rev-5-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external} 
+- Updates the UBI to version `8.8-1072.1697626218`.
+- Updates Go to version `1.20.7`.
 
 ### Revision 4, released 19 October 2023
 {: #odf-local-4.13-rev-4-change-log}
@@ -60,6 +68,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.12
 {: #4.12-change-log}
 
+
+### Revision 7, released 30 October 2023
+{: #odf-local-4.12-rev-7-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external} 
+- Updates the UBI to version `8.8-1072.1697626218`.
+- Updates Go to version `1.20.7`.
 
 ### Revision 6, released 19 October 2023
 {: #odf-local-4.12-rev-6-change-log}
@@ -114,6 +130,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.11
 {: #4.11-change-log}
 
+
+### Revision 11, released 30 October 2023
+{: #odf-local-4.11-rev-11-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external} 
+- Updates the UBI to version `8.8-1072.1697626218`.
+- Updates Go to version `1.20.7`.
 
 ### Revision 10, released 19 October 2023
 {: #odf-local-4.11-rev-10-change-log}
@@ -193,6 +217,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.10
 {: #4.10-change-log}
 
+
+### Revision 22, released 30 October 2023
+{: #odf-local-4.10-rev-22-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external} 
+- Updates the UBI to version `8.8-1072.1697626218`.
+- Updates Go to version `1.20.7`.
 
 ### Revision 21, released 19 October 2023
 {: #odf-local-4.10-rev-21-change-log}
