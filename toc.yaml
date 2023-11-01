@@ -240,6 +240,7 @@ toc:
                   label: Red Hat storage templates
                   topics:
                     - storage-local-storage-operator.md
+                    - storage-local-storage.md
                     - storage-local-volume-block.md
                     - storage-local-volume-file.md
                     - storage-odf-local.md
