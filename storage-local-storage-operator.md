@@ -36,9 +36,6 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 {: ui}
 
 
-1. Review the [parameter reference](#local-storage-operator-parameter-reference).
-
-
 1. [From the Locations console](https://cloud.ibm.com/satellite/locations){: external}, select the location where you want to create a storage configuration.
 1. Select **Storage** > **Create storage configuration**
 1. Enter a name for your configuration.
@@ -53,9 +50,6 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 ## Creating a configuration in the CLI
 {: #local-storage-operator-config-create-cli}
 {: cli}
-
-
-1. Review the [parameter reference](#local-storage-operator-parameter-reference) for the template version that you want to use.
 
 
 1. Log in to the {{site.data.keyword.cloud_notm}} CLI.
@@ -112,8 +106,6 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 {: api}
 
 1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
-
-1. Review the [parameter reference](#local-storage-operator-parameter-reference) for the template version that you want to use.
 
 
 1. Copy one of the following example requests and replace the variables that you want to use.
