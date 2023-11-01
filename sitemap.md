@@ -2357,12 +2357,6 @@ subcollection: satellite
 
 [Local Storage Operator](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator)
 
-* [Prerequisites](/docs/satellite?topic=satellite-storage-local-storage-operator#sat-storage-local-prereqs)
-
-    * [Getting the device details for your local storage configuration](/docs/satellite?topic=satellite-storage-local-storage-operator#sat-storage-local-devices)
-
-    * [Labeling your worker nodes](/docs/satellite?topic=satellite-storage-local-storage-operator#sat-storage-local-labels)
-
 * [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-config-create-console)
 
 * [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-config-create-cli)
@@ -2375,29 +2369,39 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-assignment-create-api)
 
-* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-config-create-console)
+[Local Storage - File and Block](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage)
 
-* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-config-create-cli)
+* [Prerequisites](/docs/satellite?topic=satellite-storage-local-storage#sat-storage-local-prereqs)
 
-* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-config-create-api)
+    * [Getting the device details for your local storage configuration](/docs/satellite?topic=satellite-storage-local-storage#sat-storage-local-devices)
 
-* [Deploying an app that uses local storage](/docs/satellite?topic=satellite-storage-local-storage-operator#deploy-app-local)
+    * [Labeling your worker nodes](/docs/satellite?topic=satellite-storage-local-storage#sat-storage-local-labels)
 
-* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-configuration-upgrade-cli)
+* [Creating and assigning a configuration in the console](/docs/satellite?topic=satellite-storage-local-storage#local-storage-config-create-console)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-configuration-upgrade-console)
+* [Creating a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage#local-storage-config-create-cli)
 
-* [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-configuration-remove-console)
+* [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-local-storage#local-storage-config-create-api)
 
-* [Removing the local block storage configuration from the command line](/docs/satellite?topic=satellite-storage-local-storage-operator#rm-local-temp-cli)
+* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-assignment-create-console)
 
-* [Parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-parameter-reference)
+* [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-assignment-create-cli)
 
-    * [1.0.0 parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-1.0.0-parameters)
+* [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-assignment-create-api)
 
-* [Parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-parameter-reference)
+* [Deploying an app that uses local storage](/docs/satellite?topic=satellite-storage-local-storage#deploy-app-local)
 
-    * [1.0.0 parameter reference](/docs/satellite?topic=satellite-storage-local-storage-operator#local-storage-operator-1.0.0-parameters)
+* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-upgrade-cli)
+
+* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-upgrade-console)
+
+* [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-remove-console)
+
+* [Removing local storage configuration from the command line](/docs/satellite?topic=satellite-storage-local-storage#rm-local-temp-cli)
+
+* [Parameter reference](/docs/satellite?topic=satellite-storage-local-storage#local-storage-parameter-reference)
+
+    * [1.0.0 parameter reference](/docs/satellite?topic=satellite-storage-local-storage#local-storage-1.0.0-parameters)
 
 [Local Storage Operator - Block](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block)
 
