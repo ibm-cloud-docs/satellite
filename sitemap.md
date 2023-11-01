@@ -2607,6 +2607,18 @@ subcollection: satellite
 
 * [Create a new assignment](/docs/satellite?topic=satellite-sat-storage-odf-update#sat-odf-new-assignment)
 
+[Debugging OpenShift Data Foundation](/docs/satellite?topic=satellite-sat-storage-odf-debug#sat-storage-odf-debug)
+
+* [Checking whether the pod that mounts your storage instance is successfully deployed](/docs/satellite?topic=satellite-sat-storage-odf-debug#sat-storage-odf-debug-include-debug_storage_ocs_deploy)
+
+* [Restarting your app pod](/docs/satellite?topic=satellite-sat-storage-odf-debug#sat-storage-odf-debug-include-debug_storage_ocs_restart)
+
+* [Verifying that the storage driver and plug-in pods show a status of **Running**](/docs/satellite?topic=satellite-sat-storage-odf-debug#sat-storage-odf-debug-include-debug_storage_ocs_driver_plugin)
+
+* [Debugging your ODF resources](/docs/satellite?topic=satellite-sat-storage-odf-debug#sat-storage-odf-debug-include-debug_storage_ocs_cluster)
+
+* [Change worker node name assigned to ODF](/docs/satellite?topic=satellite-sat-storage-odf-debug#sat-storage-odf-node-name)
+
 
 ### VMware storage templates
 {: #sitemap_vmware_storage_templates}
