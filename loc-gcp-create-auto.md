@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-11-03"
 
 keywords: satellite, hybrid, multicloud, gcp, google cloud platform
 
@@ -94,6 +94,7 @@ Retrieve the Google Cloud Platform (GCP) credentials that {{site.data.keyword.sa
     }
     ```
     {: screen}
+    
 
 ## I created a {{site.data.keyword.satelliteshort}} location, what's next?
 {: #gcpauto-whats-next}

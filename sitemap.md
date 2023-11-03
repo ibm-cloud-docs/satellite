@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-03"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1177,6 +1177,14 @@ subcollection: satellite
 * [Planning your operating system](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os)
 
     * [Deciding whether to enable Red Hat CoreOS support for your location](/docs/satellite?topic=satellite-infrastructure-plan#enable-coreos-loc)
+
+* [Infrastructure credentials](/docs/satellite?topic=satellite-infrastructure-plan#sat-infra-creds)
+
+    * [AWS credentials](/docs/satellite?topic=satellite-infrastructure-plan#sat-infra-creds-aws)
+
+    * [Azure credentials](/docs/satellite?topic=satellite-infrastructure-plan#sat-infra-creds-azure)
+
+    * [GCP credentials](/docs/satellite?topic=satellite-infrastructure-plan#sat-infra-creds-gcp)
 
 
 ## Preparing your host infrastructure

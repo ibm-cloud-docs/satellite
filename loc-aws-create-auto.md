@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-11-03"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -83,6 +83,7 @@ Retrieve the Amazon Web Services (AWS) credentials that {{site.data.keyword.sate
     }
     ```
     {: screen}
+    
     
 ## I created a {{site.data.keyword.satelliteshort}} location, what's next?
 {: #awsauto-whats-next}
