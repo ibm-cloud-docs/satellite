@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-11-03"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -99,6 +99,110 @@ To verify if you location is enabled for Red Hat CoreOS, see [Is my location ena
 The bring your own key (BYOK) or keep your own key (KYOK) feature is supported in RHCOS enabled locations on {{site.data.keyword.openshiftshort}} 4.13 and later. It is supported on both RHEL and RHCOS hosts. You can encrypt only cluster secrets. This feature is not available during cluster or worker pool creation. You must run the `ibmcloud oc kms enable` command to enable it after the cluster or worker pool has been created. Note that this feature cannot be disabled after it is enabled.
 {: note}
 
+
+
+## Infrastructure credentials
+{: #sat-infra-creds}
+
+For {{site.data.keyword.satellitelong_notm}} to perform actions on your behalf in a cloud provider, you must provide credentials to the cloud provider.
+
+### AWS credentials
+{: #sat-infra-creds-aws}
+
+Retrieve the Amazon Web Services (AWS) credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your AWS cloud on your behalf.
+{: shortdesc}
+
+1. Verify that you have the required [permissions in your AWS account](/docs/satellite?topic=satellite-iam-common#permissions-aws) to create a {{site.data.keyword.satelliteshort}} location from a template.
+2. [Create a separate IAM user that is scoped to EC2 access](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html){: external}.
+3. [Retrieve the access key ID and secret access key credentials for the IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html#access-keys-and-secret-access-keys){: external}.
+4. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. The `client_id` is the ID of the access key and the `client_secret` is the secret access key that you created for the IAM user in AWS.
+    ```json
+    {
+        "client_id":"string",
+        "client_secret": "string"
+    }
+    ```
+    {: screen}
+    
+
+### Azure credentials
+{: #sat-infra-creds-azure}
+
+Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your Azure cloud on your behalf.
+{: shortdesc}
+
+1. Verify that you have the required [permissions in your Azure account](/docs/satellite?topic=satellite-iam-common#permissions-azure) to create a {{site.data.keyword.satelliteshort}} location from a template.
+2. [Sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli){: external} from the command line.
+    ```sh
+    az login
+    ```
+    {: pre}
+
+3. List the available subscriptions in your account.
+    ```sh
+    az account list
+    ```
+    {: pre}
+
+4. Set the subscription to create your Azure resources in.
+    ```sh
+    az account set --subscription="<subscription_ID>"
+    ```
+    {: pre}
+
+5. Create a service principal identity with the Contributor role, scoped to your subscription. These credentials are used by {{site.data.keyword.satellitelong_notm}} to provision resources in your Azure account. For more information, see the [Azure documentation](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli){: external}.
+    ```sh
+    az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_ID>" -n"<service_principal_name>"
+    ```
+    {: pre}
+
+6. In the output, note the values of the `appID`, `password`, and `tenant` fields.
+    ```json
+    {
+    "appId": "<azure-client-id>",
+    "displayName": "<service_principal_name>",
+    "name": "http://<service_principal_name>",
+    "password": "<azure-secret-key>",
+    "tenant": "<tenant-id>"
+    }
+    ```
+    {: screen}
+
+7. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. 
+    ```json
+    {
+        "app_id":"string",
+        "tenant_id":"string",
+        "password": "string"
+    }
+    ```
+    {: screen}
+    
+
+### GCP credentials
+{: #sat-infra-creds-gcp}
+
+Retrieve the Google Cloud Platform (GCP) credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your GCP cloud on your behalf.
+{: shortdesc}
+
+1. [Create a service account and service account key](https://cloud.google.com/docs/authentication/client-libraries#creating_a_service_account){: external} with at least the required [GCP permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp). As part of creating the service account, a JSON key file is downloaded to your local machine.
+2. Open the JSON key file on your local machine, and verify that the format matches the following example. You can provide this JSON key file as your GCP credentials for actions such as creating a {{site.data.keyword.satelliteshort}} location.
+    ```json
+    {
+        "type":"string",
+        "project_id":"string",
+        "private_key_id": "string",
+        "private_key": "string",
+        "client_email": "string",
+        "client_id": "string",
+        "auth_uri": "string",
+        "token_uri": "string",
+        "auth_provider_x509_cert_url": "string",
+        "client_x509_cert_url": "string"
+    }
+    ```
+    {: screen}
+    
 
 
 

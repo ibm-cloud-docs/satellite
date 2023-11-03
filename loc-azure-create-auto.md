@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-11-03"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -123,6 +123,7 @@ Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort
     }
     ```
     {: screen}
+    
 
 
 
