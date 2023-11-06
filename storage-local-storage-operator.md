@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-06"
 
 keywords: satellite storage, local file storage, local block storage satellite config, satellite configurations,
 
@@ -106,7 +106,6 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 {: api}
 
 1. Generate an API key, then request a refresh token. For more information, see [Generating an IBM Cloud IAM token by using an API key](/docs/account?topic=account-iamtoken_from_apikey).
-
 
 1. Copy one of the following example requests and replace the variables that you want to use.
 
