@@ -1,7 +1,7 @@
 
 {
     "title": "Satellite",
-    "lastupdated": "2023-11-06",
+    "lastupdated": "2023-11-07",
     "introduction": "Explore the capabilities of IBM Cloud Satellite and discover the tools to manage your locations, hosts, and app workloads. ",
     "section_devtools": {
       "api": "https://containers.cloud.ibm.com/global/swagger-global-api/", 
@@ -44,7 +44,7 @@
     "section_learn": {
       "architecture": "https://www.ibm.com/cloud/architecture/architectures/kubernetes-infrastructure-with-ibm-cloud",
       "training": "https://www.ibm.com/training/search?query=Satellite",
-      "community": "https://community.ibm.com/community/user/publiccloud/home"
+      "community": "https://community.ibm.com/community/user/cloud/home"
     }
     
   }
