@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-10-03"
+  years: 2022, 2023
+lastupdated: "2023-11-10"
 
 keywords: satellite, hybrid, multicloud, unassigned, unresponsive
 
@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Why do my unassigned hosts have an `Unresponsive` status?
 {: #ts-host-unassigned-unknown}
 
-When you view the hosts in your location or run the `ibmcloud sat host ls` command, your `unassigned` show an `Unresponsive` status similar to the following.
+When you view the hosts in your location or run the `ibmcloud sat host ls` command, your `unassigned` show an `Unresponsive` status similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -31,7 +31,7 @@ The host attach script for your location expires one year from the creation date
 {: tsCauses}
 
 
-To resolve this issue, remove the hosts from your location, download a new copy of the host attach script for your location, then reattach the hosts. Repeat the following steps for all unresponsive and unassigned hosts in your location.
+To resolve this issue, remove the unassigned hosts from your location, download a new copy of the host attach script for your location, then reattach the hosts. Repeat the following steps for all unresponsive and unassigned hosts in your location.
 {: tsResolve}
 
 1. Remove the unresponsive hosts from your location.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-09-28"
+lastupdated: "2023-11-10"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1087,7 +1087,7 @@ ibmcloud sat host attach --location LOCATION [--host-label "LABEL"] [--host-link
 :    Optional. Do not show the message of the day or update reminders.
 
 `--reset-key`
-:    Optional. Reset the key that the control plane uses to communicate with all the hosts in the location. Then, run the script from this command to attach new hosts and all existing hosts back to the location. Until they are reattached, existing hosts have authentication errors and cannot be managed by the control plane, such as for updates.
+:    Optional. Reset the key that the control plane uses to attach and assign hosts in the location. For more information, see [Resetting the host key](/docs/satellite?topic=satellite-host-update-location#host-key-reset).
 
 
 #### Example

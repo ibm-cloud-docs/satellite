@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-09"
+lastupdated: "2023-11-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2819,10 +2819,6 @@ subcollection: satellite
 [Common permissions in other cloud providers](/docs/satellite?topic=satellite-iam-common#iam-common)
 
 * [AWS permissions](/docs/satellite?topic=satellite-iam-common#permissions-aws)
-
-    * [Manually creating a {{site.data.keyword.satelliteshort}} location in AWS](/docs/satellite?topic=satellite-iam-common#permissions-aws-manual)
-
-    * [Automatically creating a {{site.data.keyword.satelliteshort}} location from a {{site.data.keyword.bpshort}} template in AWS](/docs/satellite?topic=satellite-iam-common#permissions-aws-auto)
 
 * [Azure permissions](/docs/satellite?topic=satellite-iam-common#permissions-azure)
 
