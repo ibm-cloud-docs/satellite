@@ -2820,10 +2820,6 @@ subcollection: satellite
 
 * [AWS permissions](/docs/satellite?topic=satellite-iam-common#permissions-aws)
 
-    * [Manually creating a {{site.data.keyword.satelliteshort}} location in AWS](/docs/satellite?topic=satellite-iam-common#permissions-aws-manual)
-
-    * [Automatically creating a {{site.data.keyword.satelliteshort}} location from a {{site.data.keyword.bpshort}} template in AWS](/docs/satellite?topic=satellite-iam-common#permissions-aws-auto)
-
 * [Azure permissions](/docs/satellite?topic=satellite-iam-common#permissions-azure)
 
 * [Google Cloud Platform permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp)
