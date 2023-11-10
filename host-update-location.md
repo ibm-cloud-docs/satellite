@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-11-10"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -71,29 +71,17 @@ To update your Kubernetes API server, run the [`cluster master update`](/docs/op
 Reset the key that the control plane uses to communicate with all the hosts in the {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
-When you create a location, a key is generated that the {{site.data.keyword.satelliteshort}} API server uses to attach hosts to the location and assign hosts to the control plane or to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services). This generated key is an API key, which should be treated and protected as sensitive information. This key expires every 365 days. For more information about how to update the host key after the key expires, see [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown). As you use your location, you might want to reset the existing host key. For example, in the case of a potential security incident, you can reset the key when you request a host attachment script. All existing hosts that run the previous version of the script can no longer communicate with the API for your {{site.data.keyword.satelliteshort}} location, and you can remove and reattach the existing hosts by using the script with the new key.
+When you create a location, an API key is generated that the {{site.data.keyword.satelliteshort}} API server uses to attach hosts to the location and assign hosts to the control plane or to [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services). The generated API key must be treated and protected as sensitive information. This key expires every 365 days. When the key expires, your [unassigned hosts enter an `unresponsive` status](/docs/satellite?topic=satellite-ts-host-unassigned-unknown). To attach additional hosts, you must [download a new host attach script](/docs/satellite?topic=satellite-host-attach-download) from the location and use it to attach hosts. **Your existing, assigned hosts are not affected**. 
 
-When you reset the host key, all existing hosts that are attached to your location can no longer communicate with the {{site.data.keyword.satelliteshort}} API server. Until they are reattached, existing hosts have authentication errors and cannot be managed by the control plane, such as for updates.
+You can reset the existing host key before the key expires. To reset your host key for your {{site.data.keyword.satelliteshort}} location, run the `ibmcloud sat host attach` command with the `--reset-key` option.
+
+```sh
+ibmcloud sat host attach --location <location_name> --reset-key
+```
+{: pre}
+
+If you are using Terraform with your {{site.data.keyword.satelliteshort}} location and your host key is reset, either because it expired or you manually reset it, you are then prompted to replace all of your hosts, including hosts that are assigned. You can avoid this issue by updating yourdd Terraform script. For more information, see [Why is my host attach script triggering a state change in Terraform?](/docs/satellite?topic=satellite-ts-host-terraform).
 {: note}
-
-1. List all hosts that are attached to your location.
-    ```sh
-    ibmcloud sat host ls --location <location_name_or_ID>
-    ```
-    {: pre}
-
-2. Reset the host key for the {{site.data.keyword.satelliteshort}} location.
-    ```sh
-    ibmcloud sat host attach --location <location_name> --reset-key [-hl "<key>=<value>"]
-    ```
-    {: pre}
-
-3. [Remove one host from your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-host-remove).
-4. Follow the guidelines from your infrastructure provider to reload the operating system of your host.
-5. [Attach the host](/docs/satellite?topic=satellite-attach-hosts) back to your {{site.data.keyword.satelliteshort}} location. The host registration script now uses the new host key.
-6. [Assign the host](/docs/satellite?topic=satellite-assigning-hosts) back to your {{site.data.keyword.satelliteshort}} location control plane or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service.
-7. Repeat steps 3 - 6 for each host in your location so that each host uses the new key to communicate with the {{site.data.keyword.satelliteshort}} API server.
-
 
 ## Migrating your control plane from RHEL 7 to RHEL 8
 {: #migrate-cp-rhel8}
