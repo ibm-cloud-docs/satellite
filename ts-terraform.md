@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-03-20"
+lastupdated: "2023-11-13"
 
 keywords: satellite, hybrid, multicloud, troubleshoot terraform, update hosts
 
@@ -12,6 +12,7 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Why is my host attach script triggering a state change in Terraform?
