@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-11-10"
+lastupdated: "2023-11-14"
 
 keywords: satellite, hybrid, multicloud, unassigned, unresponsive
 
@@ -51,3 +51,5 @@ To resolve this issue, remove the unassigned hosts from your location, download 
 3. Reattach the hosts by running the attach script that you downloaded in the previous step. For more information, see [Attaching hosts to your location](/docs/satellite?topic=satellite-attach-hosts).
 
 
+When your host attach script expires, you cannot use it to attach hosts. For more information, see [Why is my host attach failing with error message `A0029` `Access denied to specified controller`](/docs/satellite?topic=satellite-ts-host-expired-token)?
+{: note}
