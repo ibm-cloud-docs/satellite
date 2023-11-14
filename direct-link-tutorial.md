@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-11-14"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -24,6 +24,12 @@ completion-time: 2h
 {: toc-services="satellite, containers, dl"}
 {: toc-completion-time="2h"}
 
+Supported location type
+:   Red Hat CoreOS (RHCOS)-enabled locations only
+
+Supported host operating systems
+:   Red Hat CoreOS (RHCOS)
+
 Use a secure {{site.data.keyword.dl_full}} connection for {{site.data.keyword.satelliteshort}} Link communications between your services running in an {{site.data.keyword.satellitelong}} Location and {{site.data.keyword.cloud}}.
 {: shortdesc}
 
@@ -43,6 +49,9 @@ Why do I need Direct Link?
 
 My organization disables Internet access by design. Can I create and maintain Locations and hosts attached to the Location with Direct Link?
 :   If you have Direct Link, you can use it for {{site.data.keyword.satelliteshort}} services. With Direct Link, you can create Locations and attach hosts without access to public Internet.
+
+Can I use RHEL hosts to set up my Direct Link?
+:   No. You must have both an RHCOS-enabled location and you must use RHCOS hosts in your location to use Direct Link.
 
 Can I redirect all traffic to {{site.data.keyword.cloud_notm}} over Direct Link instead of Internet?
 :   Currently, not all services support Direct Link. So, depending on the services you use it might or might not be possible for all traffic to use Direct Link.
