@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-11-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -66,7 +66,7 @@ Spread across zones
 Automatic backups to Object Storage
 :    All {{site.data.keyword.satelliteshort}} control plane data is backed up to an {{site.data.keyword.cos_full_notm}} service instance so that you can create a new location with this data after a disaster. Access to this instance is protected by {{site.data.keyword.iamshort}} and all data is automatically encrypted during transit and at rest. Note that when you create a location, you also provide an {{site.data.keyword.cos_short}} service instance that you control for backup of the location control plane nodes. management plane data is backed up by {{site.data.keyword.IBM_notm}} and stored in an {{site.data.keyword.IBM_notm}}-owned {{site.data.keyword.cos_short}} instance. {{site.data.keyword.satelliteshort}} cluster master data is backed up to the {{site.data.keyword.cos_short}} instance that you own.
 
-Because the {{site.data.keyword.satelliteshort}} management plane is managed by {{site.data.keyword.IBM_notm}}, you cannot change the number of master instances or how high availability is configured. However, you must to ensure that your control plane nodes are configured for high availability. The control plan worker nodes can ensure that the workloads that run in your location have enough compute capacity, even if compute hosts become unavailable. The time to recover a location or cluster is dependent on the size of the location or cluster and the network latency between {{site.data.keyword.cloud_notm}} and your host infrastructure. 
+Because the {{site.data.keyword.satelliteshort}} management plane is managed by {{site.data.keyword.IBM_notm}}, you cannot change the number of master instances or how high availability is configured. However,  you must configure your control plane nodes for high availability. The control plan worker nodes can ensure that the workloads that run in your location have enough compute capacity, even if compute hosts become unavailable. The time to recover a location or cluster is dependent on the size of the location or cluster and the network latency between {{site.data.keyword.cloud_notm}} and your host infrastructure. 
 {: note}
 
 ### High availability of the {{site.data.keyword.satelliteshort}} control plane nodes

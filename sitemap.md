@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-13"
+lastupdated: "2023-11-14"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -4038,6 +4038,8 @@ subcollection: satellite
 [Why can't I reuse a host in a different {{site.data.keyword.satelliteshort}} location?](/docs/satellite?topic=satellite-sat-host-reattach-fail#sat-host-reattach-fail)
 
 [Why can't my HTTP proxy connect to the Red Hat servers?](/docs/satellite?topic=satellite-ts-http-proxy#ts-http-proxy)
+
+[Why is my host attach failing with error message `A0029` `Access denied to specified controller`?](/docs/satellite?topic=satellite-ts-host-expired-token#ts-host-expired-token)
 
 [Why do my unassigned hosts have an `Unresponsive` status?](/docs/satellite?topic=satellite-ts-host-unassigned-unknown#ts-host-unassigned-unknown)
 

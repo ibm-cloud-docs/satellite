@@ -346,6 +346,7 @@ toc:
                     - ts-host-assign-file-system.md
                     - ts-sat-host-reattach-fail.md
                     - ts-http-proxy.md
+                    - ts-host-expired-token.md
                     - ts-host-unassigned-unknown.md
                     - ts-terraform.md
               - topicgroup:
