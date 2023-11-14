@@ -195,6 +195,10 @@ subcollection: satellite
 
 * [November 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov23)
 
+    * [14 November 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov1423)
+
+        * [New]{: tag-green} Troubleshooting documentation for attaching hosts.
+
     * [01 November 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov0123)
 
         * [Change log]{: tag-purple} Storage template revisions are available.
@@ -221,91 +225,91 @@ subcollection: satellite
 
         * [Change log]{: tag-purple} Connector agent image version `1.1.1`.
 
-        * CLI version `1.0.573` is available.
+        * [New]{: tag-green} CLI version `1.0.573` is available.
 
 * [September 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep23)
 
     * [22 September 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep2223)
 
-        * New! You can now create {{site.data.keyword.satelliteshort}} locations in the Madrid (`mad`, `eu-es`) region.
+        * [New]{: tag-green} You can now create {{site.data.keyword.satelliteshort}} locations in the Madrid (`mad`, `eu-es`) region.
 
-        * Storage template revisions
+        * [Change log]{: tag-purple} Storage template revisions
 
     * [18 September 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-sep1823)
 
-        * CLI version `1.0.566` is available.
+        * [Change log]{: tag-purple} CLI version `1.0.566` is available.
 
 * [July 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july23)
 
     * [24 July 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july2423)
 
-        * Storage template revisions
+        * [Change log]{: tag-purple} Storage template revisions
 
     * [5 July 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july0523)
 
-        * New! {{site.data.keyword.satelliteshort}} Connector
+        * [New]{: tag-green} {{site.data.keyword.satelliteshort}} Connector
 
-        * Setting up Connector as a Secure Gateway replacement
+        * [New]{: tag-green} Setting up Connector as a Secure Gateway replacement
 
-        * Understanding your responsibilities with {{site.data.keyword.satelliteshort}} Connector
+        * [New]{: tag-green} Understanding your responsibilities with {{site.data.keyword.satelliteshort}} Connector
 
 * [June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june23)
 
     * [26 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2623)
 
-        * CLI change log
+        * [Change log]{: tag-purple} CLI change log
 
     * [22 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2223)
 
-        * Storage template revisions
+        * [Change log]{: tag-purple} Storage template revisions
 
     * [12 June 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1223)
 
-        * RHCOS enabled locations with reduced firewall
+        * [New]{: tag-green} RHCOS enabled locations with reduced firewall
 
 * [May 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may23)
 
     * [17 May 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may1723)
 
-        * Storage template revisions
+        * [Change log]{: tag-purple} Storage template revisions
 
     * [04 May 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may0423)
 
-        * Storage template revisions
+        * [Change log]{: tag-purple} Storage template revisions
 
 * [April 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr23)
 
     * [25 April 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr2523)
 
-        * Storage template revisions
+        * [Change log]{: tag-purple} Storage template revisions
 
     * [05 April 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-apr0523)
 
-        * Storage template revisions
+        * [Change log]{: tag-purple} Storage template revisions
 
 * [March 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar23)
 
     * [27 March 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2723)
 
-        * New! You can download a `.csv` copy of your outbound network requirements.
+        * [New]{: tag-green} You can download a `.csv` copy of your outbound network requirements.
 
     * [24 March 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2423)
 
-        * Changes to the host network requirements in non-RHCOS locations.
+        * [Update]{: tag-teal} Changes to the host network requirements in non-RHCOS locations.
 
     * [20 March 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar2023)
 
-        * New troubleshooting topic
+        * [New]{: tag-green} Terraform troubleshooting topic
 
     * [1 March 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar0123)
 
-        * CLI change log
+        * [Change log]{: tag-purple} CLI change log
 
 * [January 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan23)
 
     * [24 January 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan2423)
 
-        * CLI change log
+        * [Change log]{: tag-purple} CLI change log
 
 * [December 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec22)
 
@@ -515,7 +519,7 @@ subcollection: satellite
 
     * [3 March 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar322)
 
-        * New! Beta support for the Google Compute Engine CSI driver template
+        * [New]{: tag-green} Beta support for the Google Compute Engine CSI driver template
 
 * [February 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb22)
 
@@ -529,7 +533,7 @@ subcollection: satellite
 
         * {{site.data.keyword.keymanagementservicefull_notm}} 
 
-        * New troubleshooting issue for errors when you run the `oc debug` command 
+        * [New]{: tag-green} Troubleshooting issue for errors when you run the `oc debug` command 
 
     * [18 February 2022](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1822)
 
