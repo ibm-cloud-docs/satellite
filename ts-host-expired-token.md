@@ -42,6 +42,6 @@ Your host attach script is older than one year and the `HOST_QUEUE_TOKEN` value 
 [Download a new copy](/docs/satellite?topic=satellite-host-attach-download) of your host attach script or ignition file from your location.
 {: tsResolve}
 
-When your host attach script expires, your unassigned hosts enter a ``Unresponsive` status. For more information, see [Why do my unassigned hosts have an `Unresponsive` status](/docs/satellite?topic=satellite-ts-host-unassigned-unknown)?
+When your host attach script expires, your unassigned hosts enter a `Unresponsive` status. For more information, see [Why do my unassigned hosts have an `Unresponsive` status](/docs/satellite?topic=satellite-ts-host-unassigned-unknown)?
 {: note}
 
