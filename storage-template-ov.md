@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-15"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -20,6 +20,25 @@ Before you can decide what type of storage is the right solution for your {{site
 Before you can use storage templates and configurations to manage your storage resources across locations and clusters, make sure you [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig) in your location.
 {: note}
 
+## What are {{site.data.keyword.satelliteshort}} storage templates?
+{: #storage-sat-templates}
+
+Satellite storage templates are the framework for a storage configuration. When you use a Satellite storage template to create a configuration, you include the details for your selected storage provider. Each template contains a set of parameters that is specific to the storage provider. These parameters include user credentials, device information, worker nodes, and more. After you use a template to create a storage configuration, you can reuse that configuration to assign storage across your Satellite clusters. Each template is will receive revision and version updates.
+
+Storage template
+:   Satellite storage templates are preset storage formats that enable you to create storage configurations that can be applied across clusters without the need to re-create the configuration for each cluster.
+
+Storage configuration
+:    A storage configuration contains the necessary information to provision your storage resources in your cluster.
+
+Storage assignment
+:    A storage assignment is a storage configuration applied to your cluster. 
+
+Revision
+:    A revision update resolves breaking issues and includes security patches. For example, updating from version `1.5` to `1.6`.
+
+Version
+:    A major update to the template version. For example, updating from version `1.0` to `2.0`. Version updates can add new template parameters, change storage resources, and are more disruptive than revision updates.
 
 ## What are my options for deploying storage to {{site.data.keyword.satelliteshort}}?
 {: #storage-sat-configure}
@@ -79,6 +98,11 @@ The following image depicts the workflow for creating a {{site.data.keyword.sate
 4. {{site.data.keyword.satelliteshort}} deploys the storage drivers and any solution-specific resources for the provider that you selected to the clusters that you assigned the storage configuration to.
 
 ![Concept overview of Satellite storage templates](/images/storage-template.svg){: caption="Figure 1. A conceptual overview of creating a storage configuration by using a template." caption-side="bottom"}
+
+### How do I manage templates?
+{: #storage-template-management}
+
+When you are using a storage template, you can use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} and the CLI to manage your storage configurations and assignments. Revision updates are granular and can be applied cluster-wide or to specific assignments and configurations. For more information, see the specific template documentation for your [storage provider](#storage-template-ov-providers). 
 
 
 ## Which storage templates are available?
