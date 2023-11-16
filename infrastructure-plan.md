@@ -99,7 +99,7 @@ The following table shows the features that are available only in Red Hat CoreOS
 | HTTP proxy for outbound traffic | RHEL or RHCOS hosts |
 | Bring your own key (BYOK) or keep your own key (KYOK) | RHEL or RHCOS hosts |
 | Single node cluster topology | RHEL or RHCOS hosts |
-| Direct link | RHEL or RHCOS hosts |
+| Direct link | RHCOS hosts only |
 | OpenShift virtualization | RHCOS hosts only | 
 {: caption="Supported host types for CoreOS location features" caption-side="bottom"}
 
