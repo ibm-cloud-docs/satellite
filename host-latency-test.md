@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-05-22"
+lastupdated: "2023-11-16"
 
 keywords: satellite, hybrid, multicloud
 
@@ -69,6 +69,9 @@ Each {{site.data.keyword.satelliteshort}} location is [managed from an {{site.da
     
     Washington, DC
     :   169.63.123.154, 169.63.110.114, 169.62.13.2, 169.60.123.162, 169.59.152.58, 52.117.93.26
+
+    Madrid
+    :   13.120.67.114, 13.121.67.98, 13.122.67.106
 
 3. From your host, ping the IP addresses of the {{site.data.keyword.cloud_notm}} region.
     ```sh
