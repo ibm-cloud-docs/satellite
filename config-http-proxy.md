@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-29"
+lastupdated: "2023-11-17"
 
 keywords: satellite, http proxy, http, proxy, mirror
 
@@ -41,18 +41,20 @@ New Red Hat CoreOS enabled locations
 ## What type of hosts can I use?
 {: #consider-http-proxy-host}
 
-You can use RHEL or Red Hat CoreOS hosts when you set up an HTTP proxy. You must edit each host that is attached to your location, including the hosts that make up the control plane.
+You can use RHEL or Red Hat CoreOS hosts when you set up an HTTP proxy. You must edit each host that is attached to your location, including the hosts that make up the control plane. Remember to include `http` or `https` in your `proxy.conf` file.
 
 ## What else do I need to know about HTTP proxy?
 {: #additional-http-proxy}
 
 For your Satellite location and clusters to work with a proxy, the kubelet on the control plane infrastructure nodes that are deployed to a Satellite location must be able to communicate to the IBM Cloud control plane node API server. To enable this communication, you must meet one of the following requirements.
 
-- Option 1: The current proxy can support long lived TCP connections (TCP tunneling).
+- Option 1: Use the reduced firewall attach script.
 
-- Option 2: You can create a secondary proxy on a VSI in same network as your Satellite hosts that supports long lived TCP connections.
+- Option 2: The current proxy can support long lived TCP connections (TCP tunneling).
 
-- Option 3: You can open the firewall outbound to allow the TCP connections. For more information, see [Required outbound connectivity for hosts in all regions](/docs/satellite?topic=satellite-reqs-host-network-outbound) and then find the specific outbound network requirements for your region.
+- Option 3: You can create a secondary proxy on a VSI in same network as your Satellite hosts that supports long lived TCP connections.
+
+- Option 4: You can open the firewall outbound to allow the TCP connections. For more information, see [Required outbound connectivity for hosts in all regions](/docs/satellite?topic=satellite-reqs-host-network-outbound) and then find the specific outbound network requirements for your region.
 
 You cannot configure an HTTP proxy for worker to master communications or for connecting to the package mirrors.
 {: note}
@@ -143,7 +145,7 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
     mkdir -p /etc/systemd/system.conf.d
     cat >"/etc/systemd/system.conf.d/proxy.conf" <<EOF
     [Manager]
-    DefaultEnvironment="HTTP_PROXY=xxxx" "HTTPS_PROXY=xxxx" "NO_PROXY=<VALUE>"
+    DefaultEnvironment="HTTP_PROXY=https://my-proxy-endpoint.com:PORT_NUMBER" "HTTPS_PROXY=https://my-proxy-endpoint.com:PORT_NUMBER" "NO_PROXY=<VALUE>"
     EOF
     chmod 0644 /etc/systemd/system.conf.d/proxy.conf
     ```
@@ -155,8 +157,8 @@ To configure an HTTP proxy, you must edit each of your hosts, including the host
     mkdir -p /etc/profile.d
     cat >"/etc/profile.d/ibm-proxy.sh" <<EOF
     #!/usr/bin/env bash
-    HTTP_PROXY="xxxx"
-    HTTPS_PROXY="xxxx"
+    HTTP_PROXY="https://my-proxy-endpoint.com:PORT_NUMBER"
+    HTTPS_PROXY="https://my-proxy-endpoint.com:PORT_NUMBER"
     NO_PROXY="<VALUE>"
     export HTTP_PROXY
     export HTTPS_PROXY
