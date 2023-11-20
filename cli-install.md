@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-11-20"
 
 keywords: satellite, install cli, install sat, set up satellite command line, satellite command line, satellite cli, sat commands
 
@@ -21,7 +21,7 @@ subcollection: satellite
 {: #cli-install}
 
 
-You can use the following tools to manage your {{site.data.keyword.satelliteshort}} locations and clusters. While you can install a subset of the tools, all of the following tools are recommended.
+You can use the following tools to manage your {{site.data.keyword.satelliteshort}} locations and clusters. While you can install a subset of the tools, the following tools are recommended.
 {: shortdesc}
 
 
@@ -30,7 +30,7 @@ You can use the following tools to manage your {{site.data.keyword.satelliteshor
 
 | CLI | Description |
 | --- | --- |
-| `ibmcloud` | You can use the `ibmcloud` CLI to login to your account, add users, manage your catalogs and more. |
+| `ibmcloud` | You can use the `ibmcloud` CLI for tasks such as to log in to your account, add users, and manage your catalog items. |
 | `ks` plug-in | You can use the `ks` plug-in to create and manage clusters and to manage your {{site.data.keyword.satelliteshort}} resources. |
 {: caption="Table 1: CLI tools" caption-side="bottom"}
 

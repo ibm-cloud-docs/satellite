@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-17"
+lastupdated: "2023-11-20"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -22,7 +22,7 @@ subcollection: satellite
 ## Prerequisites
 {: #sat-storage-odf-update-prereq}
 
-* You must have additional unassinged hosts available in your location. Make sure that you [attach](/docs/satellite?topic=satellite-attach-hosts) additional hosts before starting the update process.
+* You must have additional unassigned hosts available in your location. Make sure that you [attach](/docs/satellite?topic=satellite-attach-hosts) additional hosts before starting the update process.
 
 ## Update the cluster master
 {: #sat-storage-update-cluster-master}
@@ -282,7 +282,7 @@ subcollection: satellite
 
 The following steps will upgrade ODF to the next version.
 
-1. Update your storage configuration to set the `perform-cleanup` parameter to `false` from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. If this parameter is not set to `false` ODf will be removed.
+1. Update your storage configuration to set the `perform-cleanup` parameter to `false` from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}. If this parameter is not set to `false`, ODF is removed.
 
 1. List your storage assignments and find the one that you used for your cluster.
     ```sh
