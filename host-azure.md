@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-11-20"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -17,7 +17,7 @@ subcollection: satellite
 # Attaching Microsoft Azure hosts
 {: #azure}
 
-Learn how to attach Microsoft Aure cloud hosts to {{site.data.keyword.satellitelong}}.
+Learn how to attach Microsoft Azure cloud hosts to {{site.data.keyword.satellitelong}}.
 {: shortdesc}
 
 To attach Red Hat CoreOS (RHCOS) hosts, your location must be enabled for Red Hat CoreOS. For more information, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location). Note that you can still attach Red Hat Enterprise Linux hosts to a location that is enabled for Red Hat CoreOS.

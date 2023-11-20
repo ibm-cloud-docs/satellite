@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-29"
+lastupdated: "2023-11-20"
 
 keywords: satellite, hybrid, multicloud, securing your data, secure data, information
 
@@ -105,7 +105,7 @@ Where your {{site.data.keyword.satelliteshort}} information is stored depends on
 Review your options to remove your personal and sensitive information from {{site.data.keyword.satellitelong_notm}}.
 {: shortdesc}
 
-Removing personal and sensitive information is permanent and nonreversible. Make sure that you want to permanently remove your information before you proceed.
+Removing personal and sensitive information is permanent and cannot be undone. Make sure that you want to permanently remove your information before you proceed.
 {: important}
 
 [Deleting a location](/docs/satellite?topic=satellite-host-remove#location-remove-console) does not remove all information from {{site.data.keyword.satellitelong_notm}}. When you delete a location, location-specific information is removed from the etcd instance that is managed by {{site.data.keyword.IBM_notm}}. However, your information still exists in the following places.

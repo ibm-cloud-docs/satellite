@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-17"
+lastupdated: "2023-11-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3237,7 +3237,7 @@ subcollection: satellite
 
     * [Apps](/docs/satellite?topic=satellite-disconnected-use#apps)
 
-    * [IBM Cloud Catalo](/docs/satellite?topic=satellite-disconnected-use#ibm-cloud-catalog)
+    * [IBM Cloud Catalog](/docs/satellite?topic=satellite-disconnected-use#ibm-cloud-catalog)
 
     * [Identity and access management](/docs/satellite?topic=satellite-disconnected-use#identity-access)
 

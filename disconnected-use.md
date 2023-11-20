@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-10-24"
+lastupdated: "2023-11-20"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -109,7 +109,7 @@ The following tables explain the behavior and limitations of different component
 | Scaling | You can scale apps by using your preferred methods, such as the `kubectl` command line, the OpenShift Console, CI/CD pipelines, and Sat Config. | You can scale apps while disconnected by using the Kubernetes API. | Equal to the `accessTokenMaxAgeSeconds` value from last authentication |
 {: caption="Disconnected app management" caption-side="bottom"}
 
-### IBM Cloud Catalo
+### IBM Cloud Catalog
 {: #ibm-cloud-catalog}
 
 | Feature | Connected behavior | Disconnected behavior | Maximum disconnection tolerance |

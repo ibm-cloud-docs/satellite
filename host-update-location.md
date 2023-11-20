@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-10"
+lastupdated: "2023-11-20"
 
 keywords: satellite, hybrid, multicloud, os upgrade, operating system, security patch
 
@@ -80,7 +80,7 @@ ibmcloud sat host attach --location <location_name> --reset-key
 ```
 {: pre}
 
-If you are using Terraform with your {{site.data.keyword.satelliteshort}} location and your host key is reset, either because it expired or you manually reset it, you are then prompted to replace all of your hosts, including hosts that are assigned. You can avoid this issue by updating yourdd Terraform script. For more information, see [Why is my host attach script triggering a state change in Terraform?](/docs/satellite?topic=satellite-ts-host-terraform).
+If you are using Terraform with your {{site.data.keyword.satelliteshort}} location and your host key is reset, either because it expired or you manually reset it, you are then prompted to replace all your hosts, including hosts that are assigned. You can avoid this issue by updating your Terraform script. For more information, see [Why is my host attach script triggering a state change in Terraform?](/docs/satellite?topic=satellite-ts-host-terraform).
 {: note}
 
 ## Migrating your control plane from RHEL 7 to RHEL 8
