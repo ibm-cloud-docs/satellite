@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-11-03"
+lastupdated: "2023-11-16"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -92,7 +92,16 @@ Red Hat CoreOS (RHCOS)
 ### Deciding whether to enable Red Hat CoreOS support for your location
 {: #enable-coreos-loc}
 
-When you create a location, you can select whether to enable Red Hat CoreOS support. Enabling Red Hat CoreOS support comes with both pros and cons. A Red Hat CoreOS enabled location unlocks more features such as minimal outbound network requirements, bring your own key (BYOK) or keep your own key (KYOK) support for encrypting cluster secrets, HTTP proxy for outbound traffic, OpenShift virtualization, and single node cluster topology. But it has a higher infrastructure requirement. On the other hand, a non Red Hat CoreOS enabled location supports a smaller feature set but can run at a smaller footprint, allowing more clusters per same capacity. For more information, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
+When you create a location, you can select whether to enable Red Hat CoreOS support. Enabling Red Hat CoreOS support comes with both pros and cons. A Red Hat CoreOS enabled location unlocks more features, but it has a higher infrastructure requirement. On the other hand, a non Red Hat CoreOS enabled location supports a smaller feature set but can run at a smaller footprint, allowing more clusters per same capacity. For more information, see [Sizing your {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-location-sizing).
+The following table shows the features that are available only in Red Hat CoreOS-enabled locations. The table also shows the supported host types that can be used when setting up these features in your Red Hat CoreOS-enabled location.
+| Feature | Supported host types |
+| --- | --- | 
+| HTTP proxy for outbound traffic | RHEL or RHCOS hosts |
+| Bring your own key (BYOK) or keep your own key (KYOK) | RHEL or RHCOS hosts |
+| Single node cluster topology | RHEL or RHCOS hosts |
+| Direct link | RHCOS hosts only |
+| OpenShift virtualization | RHCOS hosts only | 
+{: caption="Supported host types for CoreOS location features" caption-side="bottom"}
 
 To verify if you location is enabled for Red Hat CoreOS, see [Is my location enabled for Red Hat CoreOS](/docs/satellite?topic=satellite-locations#verify-coreos-location).
 

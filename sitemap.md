@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-14"
+lastupdated: "2023-11-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1907,6 +1907,8 @@ subcollection: satellite
 
 [Understanding {{site.data.keyword.satelliteshort}} storage](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov)
 
+* [What are {{site.data.keyword.satelliteshort}} storage templates?](/docs/satellite?topic=satellite-storage-template-ov#storage-sat-templates)
+
 * [What are my options for deploying storage to {{site.data.keyword.satelliteshort}}?](/docs/satellite?topic=satellite-storage-template-ov#storage-sat-configure)
 
 * [Which deployment option should I use?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-services)
@@ -1914,6 +1916,8 @@ subcollection: satellite
 * [What are the benefits of using templates?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-benefits)
 
 * [How do templates work?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-flow)
+
+    * [How do I manage templates?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-management)
 
 * [Which storage templates are available?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers)
 

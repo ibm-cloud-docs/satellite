@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-29"
+lastupdated: "2023-11-16"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -74,7 +74,7 @@ If your servers do not meet these requirements, you can [create a {{site.data.ke
 For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a browser that supports Java for classic. You can use the Safari browser on your local system or download a Java version that supports the `javaws` command.
 {: note}
 
-1. [Download a Red Hat CoreOS ISO](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}. Find the corresponding ISO version that matches the {{site.data.keyword.redhat_openshift_notm}} version that you want to use. For example, if you want to use version 4.11, [download a version of RHCOS for 4.11](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/4.11/){: external} like `rhcos-4.11.9-x86_64-live.x86_64.iso`.
+1. [Download a Red Hat CoreOS ISO](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}. Find the corresponding ISO version that matches the {{site.data.keyword.redhat_openshift_notm}} version that you want to use. You can download any image that matches your minor version. For example, if you want to use version 4.11, [download a version of RHCOS for 4.11](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/4.11/){: external} like `rhcos-4.11.9-x86_64-live.x86_64.iso`.
 1. Log in to your VPN to access to your host network. For more information, see [VPN access on {{site.data.keyword.cloud_notm}}](https://www.ibm.com/cloud/vpn-access){: external}.
 1. From the [Device list in the console](https://cloud.ibm.com/gen1/infrastructure/devices){: external}, select your bare metal server.
 1. From the **Overview** page, note the networking values for your server. Find and verify the  CIDR and gateway information.
