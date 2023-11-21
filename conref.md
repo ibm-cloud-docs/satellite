@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-20"
+lastupdated: "2023-11-21"
 
 keywords: satellite, hybrid, multicloud
 
@@ -139,8 +139,16 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     {: pre}
 
 1. Upgrade the {{site.data.keyword.satelliteshort}} configuration. Note, only the configuration is updated. If you want to upgrade the assignments that use this configuration, you can specify the `--include-assignments` option or you can manually update each assignment using the `assignment update` command.
+
+    Example command to upgrade a configuration to the latest revision.
     ```sh
     ibmcloud sat storage config upgrade --config CONFIG [--include-assignments]
+    ```
+    {: pre}
+
+    Example command to upgrade a configuration and it's associated assignments to the latest revision.
+    ```sh
+    ibmcloud sat storage config upgrade --config CONFIG --include-assignments
     ```
     {: pre}
     
@@ -148,7 +156,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
 {: #assignment-update-cli}
 {: cli}
 
-You can use the `storage assignment update` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-upgrade) to rename your assignment or assign it to a new cluster or cluster group.
+Update an assignment to rename your assignment or assign it to new clusters or cluster groups.
 
 
 1. List your assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to update and the clusters or cluster groups included in the assignment.
@@ -158,6 +166,8 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
     {: pre}
 
 1. Update the assignment.
+
+    Example command to update an assignment.
     ```sh
     ibmcloud sat storage assignment update --assignment ASSIGNMENT [--group GROUP ...] [--name NAME]
     ```
@@ -170,12 +180,13 @@ You can use the `storage assignment update` [command](/docs/satellite?topic=sate
     ```
     {: pre}
     
+
     
 ## Upgrading an assignment in the CLI
 {: #assignment-upgrade-cli}
 {: cli}
 
-You can use the `storage assignment upgrade` command to upgrade an assignment to the latest version of the storage configuration it uses. 
+Upgrade an assignment to use the latest storage configuration. You can also enable autoupdates for your assignments to always pull the latest configuration.
 
 1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to upgrade.
     ```sh
@@ -190,10 +201,14 @@ You can use the `storage assignment upgrade` command to upgrade an assignment to
     {: pre}
 
 1. Upgrade the {{site.data.keyword.satelliteshort}} assignment.
+
+    Example command to upgrade an assignment.
     ```sh
     ibmcloud sat storage assignment upgrade --assignment ASSIGNMENT
     ```
-    {: pre} 
+    {: pre}
+
+    
 
 ## Updating storage configurations and assignments in the console
 {: #configuration-upgrade-console}
@@ -206,6 +221,8 @@ You can use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm
 1. Click the **Storage** tab to view your configurations.
 
 1. You can apply the latest template revision to your configurations and assignments by clicking the information **Information** (i) icon.
+
+
 
     
 
