@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-11-10"
+lastupdated: "2023-11-21"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -468,11 +468,10 @@ ibmcloud sat config create (--data-location LOCATION | --provider PROVIDER) --na
 :    Required. The name for your configuration.
 
 `--data-location LOCATION`
-:    The location to store the data associated with the {{site.data.keyword.satelliteshort}} configuration, such as the definitions of Kubernetes resources to be deployed to your clusters. For example: `tok`. For a list of {{site.data.keyword.satelliteshort}} locations, see [Supported IBM Cloud locations](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). This option is used when you create a Direct Upload configuration. You can specify either `--data-location LOCATION` or --provider PROVIDER`. You can not specify both. 
+:    The location to store the data associated with the {{site.data.keyword.satelliteshort}} configuration, such as the definitions of Kubernetes resources to be deployed to your clusters. For example: `tok`. For a list of {{site.data.keyword.satelliteshort}} locations, see [Supported IBM Cloud locations](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). This option is used when you create a Direct Upload configuration. You must specify either `--data-location LOCATION` or `--provider PROVIDER`. You can not specify both. Refer to the latest CLI for allowed values.
 
 `--provider PROVIDER`
-:   The remote GitOps provider for the Satellite configuration. This provider stores your Kubernetes resource definitions. This option is used when you create a GitOps configuration. You can specify either `--data-location LOCATION` or --provider PROVIDER`. You can not specify both. 
-
+:   The remote GitOps provider for the Satellite configuration. This provider stores your Kubernetes resource definitions. This option is used when you create a GitOps configuration. You must specify either `--data-location LOCATION` or `--provider PROVIDER`. You can not specify both. Refer to the latest CLI for allowed values.
 
 `-q`
 :    Optional. Do not show the message of the day or update reminders.
