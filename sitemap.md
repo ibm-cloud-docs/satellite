@@ -195,6 +195,10 @@ subcollection: satellite
 
 * [November 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov23)
 
+    * [27 November 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov2723)
+
+        * [Change log]{: tag-purple} Storage template revisions are available.
+
     * [14 November 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov1423)
 
         * [New]{: tag-green} Troubleshooting documentation for attaching hosts.
