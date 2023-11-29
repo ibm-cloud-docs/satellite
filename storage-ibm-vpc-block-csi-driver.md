@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-11-29"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -110,6 +110,14 @@ There is currently an issue with autocomplete in some browsers. If you don't see
     {: pre}
 
 
+    Example command to create a version 5.1 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name ibm-vpc-block-csi-driver --template-version 5.1 --param "g2_token_exchange_endpoint_url=G2_TOKEN_EXCHANGE_ENDPOINT_URL"  --param "g2_riaas_endpoint_url=G2_RIAAS_ENDPOINT_URL"  --param "g2_resource_group_id=G2_RESOURCE_GROUP_ID"  --param "g2_api_key=G2_API_KEY" 
+    ```
+    {: pre}
+
+
 
 1. Customize the command based on the settings that you want to use.
 
@@ -137,6 +145,14 @@ There is currently an issue with autocomplete in some browsers. If you don't see
 
     ```sh
     curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-vpc-block-csi-driver\", \"storage-template-version\": \"5.0\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\", { \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\", { \"entry.name\": \"G2_RESOURCE_GROUP_ID\",\"user-secret-parameters\": { \"entry.name\": \"G2_API_KEY\",}
+    ```
+    {: pre}
+
+
+    Example request to create a version 5.1 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"ibm-vpc-block-csi-driver\", \"storage-template-version\": \"5.1\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"G2_TOKEN_EXCHANGE_ENDPOINT_URL\", { \"entry.name\": \"G2_RIAAS_ENDPOINT_URL\", { \"entry.name\": \"G2_RESOURCE_GROUP_ID\",\"user-secret-parameters\": { \"entry.name\": \"G2_API_KEY\",}
     ```
     {: pre}
 
@@ -430,6 +446,18 @@ Note that if you remove the storage configuration, the driver is then uninstalle
 | Resource group ID | `g2_resource_group_id` | Config | The ID of the resource group where your VPC is located. You can find your resource group by running the `ibmcloud is vpc VPC-ID` command and note the Resource group field. | true | N/A |
 | IAM API key | `g2_api_key` | Secret | The IAM API key of account where your VPC is located. You can use your existing API key or you can create an API key by running the `ibmcloud iam api-key-create NAME` command. | true | N/A |
 {: caption="Table 1. 5.0 parameter reference" caption-side="bottom"}
+
+
+### 5.1 parameter reference
+{: #ibm-vpc-block-csi-driver-5.1-parameters}
+
+| Display name | CLI option | Type | Description | Required? | Default value | 
+| --- | --- | --- | --- | --- | --- |
+| IAM endpoint | `g2_token_exchange_endpoint_url` | Config | The IAM endpoint. For example `https://iam.cloud.ibm.com`. | true | N/A |
+| VPC IaaS endpoint | `g2_riaas_endpoint_url` | Config | The VPC regional endpoint of your VPC cluster in the format `https://region.iaas.cloud.ibm.com`. Example: `https://eu-de.iaas.cloud.ibm.com`. For more information, see https://ibm.biz/vpc-endpoints | true | N/A |
+| Resource group ID | `g2_resource_group_id` | Config | The ID of the resource group where your VPC is located. You can find your resource group by running the `ibmcloud is vpc VPC-ID` command and note the Resource group field. | true | N/A |
+| IAM API key | `g2_api_key` | Secret | The IAM API key of account where your VPC is located. You can use your existing API key or you can create an API key by running the `ibmcloud iam api-key-create NAME` command. | true | N/A |
+{: caption="Table 2. 5.1 parameter reference" caption-side="bottom"}
 
 
 ## Storage class reference for {{site.data.keyword.block_storage_is_short}}

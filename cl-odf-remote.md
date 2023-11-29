@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-29"
 
 
 keywords: satellite storage, change log, version history, odf remote
@@ -69,6 +69,14 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 {: #4.12-change-log}
 
 
+### Revision 8, released 27 November 2023
+{: #odf-remote-4.12-rev-8-change-log}
+
+
+- Resolves the following CVEs: [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external} [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external} [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external} 
+- Updates the UBI to version `8.9-1029`.
+- Updates Go to version `1.20.11`.
+
 ### Revision 7, released 30 October 2023
 {: #odf-remote-4.12-rev-7-change-log}
 
@@ -130,6 +138,14 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.11
 {: #4.11-change-log}
 
+
+### Revision 12, released 27 November 2023
+{: #odf-remote-4.11-rev-12-change-log}
+
+
+- Resolves the following CVEs: [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external} [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external} [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external} 
+- Updates the UBI to version `8.9-1029`.
+- Updates Go to version `1.20.11`.
 
 ### Revision 11, released 30 October 2023
 {: #odf-remote-4.11-rev-11-change-log}
@@ -217,6 +233,14 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.10
 {: #4.10-change-log}
 
+
+### Revision 23, released 27 November 2023
+{: #odf-remote-4.10-rev-23-change-log}
+
+
+- Resolves the following CVEs: [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external} [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external} [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external} 
+- Updates the UBI to version `8.9-1029`.
+- Updates Go to version `1.20.11`.
 
 ### Revision 22, released 30 October 2023
 {: #odf-remote-4.10-rev-22-change-log}

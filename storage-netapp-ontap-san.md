@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-11-29"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -112,14 +112,6 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
-    Example command to create a version 21.04 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-san --template-version 21.04 --param "managementLIF=MANAGEMENTLIF"  --param "dataLIF=DATALIF"  --param "svm=SVM"  --param "username=USERNAME"  --param "password=PASSWORD"  --param "limitVolumeSize=LIMITVOLUMESIZE"  --param "limitAggregateUsage=LIMITAGGREGATEUSAGE" 
-    ```
-    {: pre}
-
-
     Example command to create a version 22.04 configuration.
 
     ```sh
@@ -157,14 +149,6 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 
 
 1. Copy one of the following example requests and replace the variables that you want to use.
-
-
-    Example request to create a version 21.04 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-ontap-san\", \"storage-template-version\": \"21.04\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MANAGEMENTLIF\", { \"entry.name\": \"DATALIF\", { \"entry.name\": \"SVM\", { \"entry.name\": \"LIMITVOLUMESIZE\", { \"entry.name\": \"LIMITAGGREGATEUSAGE\",\"user-secret-parameters\": { \"entry.name\": \"USERNAME\",{ \"entry.name\": \"PASSWORD\",}
-    ```
-    {: pre}
 
 
     Example request to create a version 22.04 configuration.
@@ -206,21 +190,6 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 ## Parameter reference
 {: #netapp-ontap-san-parameter-reference}
 
-### 21.04 parameter reference
-{: #netapp-ontap-san-21.04-parameters}
-
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
-| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
-| SVM | `svm` | Config | The name of the SVM. | true | N/A |
-| User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
-| User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
-| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is above this percentage. | true | `80%` |
-{: caption="Table 1. 21.04 parameter reference" caption-side="bottom"}
-
-
 ### 22.04 parameter reference
 {: #netapp-ontap-san-22.04-parameters}
 
@@ -233,7 +202,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 | User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
 | Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
 | Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is above this percentage. | true | `80%` |
-{: caption="Table 2. 22.04 parameter reference" caption-side="bottom"}
+{: caption="Table 1. 22.04 parameter reference" caption-side="bottom"}
 
 
 ### 22.10 parameter reference
@@ -248,7 +217,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 | User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
 | Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
 | Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is above this percentage. | true | `80%` |
-{: caption="Table 3. 22.10 parameter reference" caption-side="bottom"}
+{: caption="Table 2. 22.10 parameter reference" caption-side="bottom"}
 
 
 ## Storage class reference for NetApp ONTAP-SAN
