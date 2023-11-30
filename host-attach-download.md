@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-11-30"
 
 keywords: satellite, hybrid, attaching hosts, hosts, attach hosts, attach hosts to location
 
@@ -17,7 +17,7 @@ subcollection: satellite
 
 To attach hosts to your location, you must download a host attachment script. After you download the script, you can run it on your hosts to attach them to your location. You can get the attachment script from the console or by running the `sat host attach` [command](/docs/satellite?topic=satellite-satellite-cli-reference#host-attach). 
 
-To attach a host with a Red Hat CoreOS (RHCOS) operating system, the attachment script is an ignition (`.ign`) file. To attach a host with a RHEL operating system, the attachment script is a Shell script.
+To attach a host with a Red Hat CoreOS (RHCOS) operating system, the attachment script is an ignition (`.ign`) file. To attach a host with a RHEL operating system, the attachment script is a Shell script. When you download the host attachment script for your location, it contains a unique token that expires after 1 year. Plan to regenerate this token by downloading a new host attachment script at least once per year.
 {: note}
 
 ## Download the host attachment script from the console

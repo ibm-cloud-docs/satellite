@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-11-30"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -173,18 +173,17 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 
 
 
-
-
-
-
-
 {{site.data.content.assignment-create-console}}
 {{site.data.content.assignment-create-cli}}
 {{site.data.content.assignment-create-api}}
-
-
-{{site.data.content.configuration-upgrade-cli}}
 {{site.data.content.configuration-upgrade-console}}
+{{site.data.content.assignment-upgrade-cli}}
+
+
+
+
+
+
 
 
 ## Parameter reference

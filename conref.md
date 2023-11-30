@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-21"
+lastupdated: "2023-11-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -269,17 +269,16 @@ You can use the `/v2/storage/satellite/updateAssignment`](https://containers.clo
 1. Run the request.
 
 1. Get the details of you assignment to verify the update.
-    ```sh
+    ```txt
     curl -X GET "https://containers.cloud.ibm.com/global/v2/storage/satellite/getAssignment?uuid=ASSIGNMENT-ID" -H "accept: application/json" -H "Authorization: Bearer TOKEN"
     ```
     {: pre}
-    
+
+
     
 ## Removing a storage configuration from the console
 {: #configuration-remove-console}
 {: ui}
-
-
 
 1. From the {{site.data.keyword.satelliteshort}} storage dashboard, select the storage configuration you want to delete.
 1. Select **Actions** > **Delete**.

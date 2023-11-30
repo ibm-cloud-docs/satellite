@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-06"
+lastupdated: "2023-11-30"
 
 keywords: satellite storage, local file storage, local block storage satellite config, satellite configurations,
 
@@ -126,6 +126,9 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 {{site.data.content.assignment-create-console}}
 {{site.data.content.assignment-create-cli}}
 {{site.data.content.assignment-create-api}}
+{{site.data.content.configuration-upgrade-console}}
+{{site.data.content.assignment-upgrade-cli}}
+
 
 
 

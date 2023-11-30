@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-11-30"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -166,6 +166,9 @@ There is currently an issue with autocomplete in some browsers. If you don't see
 {{site.data.content.assignment-create-console}}
 {{site.data.content.assignment-create-cli}}
 {{site.data.content.assignment-create-api}}
+{{site.data.content.configuration-upgrade-console}}
+{{site.data.content.assignment-upgrade-cli}}
+
 
 ## Deploying an app that uses {{site.data.keyword.block_storage_is_short}}
 {: #sat-storage-vpc-deploy-app}
@@ -281,9 +284,6 @@ You can use the `ibm-vpc-block-csi-driver` to create PVCs that you can use in yo
     exit
     ```
     {: pre}
-
-{{site.data.content.configuration-upgrade-cli}}
-{{site.data.content.configuration-upgrade-console}}
 
 ## Removing {{site.data.keyword.block_storage_is_short}} storage from your apps
 {: #vpc-csi-rm-apps}

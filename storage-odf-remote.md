@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-10-19"
+lastupdated: "2023-11-30"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -232,6 +232,9 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
 {{site.data.content.assignment-create-console}}
 {{site.data.content.assignment-create-cli}}
 {{site.data.content.assignment-create-api}}
+{{site.data.content.configuration-upgrade-console}}
+{{site.data.content.assignment-upgrade-cli}}
+
 
 ### Optional: Adding additional worker nodes to your ODF configuration
 {: #add-worker-nodes-odf-remote}

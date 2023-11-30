@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-14"
+lastupdated: "2023-11-30"
 
 keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
@@ -19,6 +19,8 @@ content-type: troubleshoot
 
 When you run the attach host script, your hosts are not attaching and you get a error message similar to the following example.
 {: tsSymptoms}
+
+
 
 ```sh
 Nov 07 18:19:56 tl2vdu ibm-host-attach.sh[5562]: + echo '{"incidentID":"a11babcd-202d-4c97-111a-1111abdcdf11","code":"A0029","description":"Access denied to specified controller.","type":"Authentication"}'
