@@ -168,6 +168,7 @@ There is currently an issue with autocomplete in some browsers. If you don't see
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-upgrade-api}}
 
 
 ## Deploying an app that uses {{site.data.keyword.block_storage_is_short}}

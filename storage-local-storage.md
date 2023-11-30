@@ -249,6 +249,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-upgrade-api}}
 
 
 

@@ -176,6 +176,7 @@ Create the Kubernetes secret in your cluster that contains your service credenti
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-upgrade-api}}
 
 
 ## Deploying an app that uses {{site.data.keyword.cos_full_notm}}

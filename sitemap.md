@@ -1950,11 +1950,11 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-assignment-upgrade-api)
 
 * [Deploying an app that uses AWS EBS storage](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#sat-storage-ebs-deploy)
-
-* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-configuration-upgrade-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-configuration-upgrade-console)
 
@@ -1996,7 +1996,9 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#storage-aws-efs-csi-driver-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#storage-aws-efs-csi-driver-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#storage-aws-efs-csi-driver-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#storage-aws-efs-csi-driver-include-assignment-upgrade-api)
 
 * [Adding a custom AWS EFS storage class to your configuration](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver#aws-add-sc-efs)
 
@@ -2045,11 +2047,11 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-assignment-upgrade-api)
 
 * [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azure-csi-app-deploy)
-
-* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-configuration-upgrade-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-configuration-upgrade-console)
 
@@ -2093,7 +2095,9 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#storage-azurefile-csi-driver-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#storage-azurefile-csi-driver-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#storage-azurefile-csi-driver-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#storage-azurefile-csi-driver-include-assignment-upgrade-api)
 
 * [Deploying an app that uses your Azure File storage](/docs/satellite?topic=satellite-storage-azurefile-csi-driver#storage-azure-file-csi-app-deploy)
 
@@ -2140,7 +2144,9 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#storage-gcp-compute-persistent-disk-csi-driver-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-upgrade-api)
 
 * [Deploying an app that uses Google Compute Engine persistent disk](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver#sat-storage-gcp-deploy-app)
 
@@ -2187,7 +2193,9 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-ibm-system-storage-block-csi-driver-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-ibm-system-storage-block-csi-driver-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-ibm-system-storage-block-csi-driver-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-ibm-system-storage-block-csi-driver-include-assignment-upgrade-api)
 
 * [Deploying an app that uses {{site.data.keyword.blockstorageshort}}](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver#storage-block-csi-app-deploy)
 
@@ -2221,7 +2229,9 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#storage-ibm-object-storage-plugin-include-assignment-upgrade-api)
 
 * [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin#config-storage-cos-app)
 
@@ -2255,7 +2265,9 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#storage-ibm-vpc-block-csi-driver-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#storage-ibm-vpc-block-csi-driver-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#storage-ibm-vpc-block-csi-driver-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#storage-ibm-vpc-block-csi-driver-include-assignment-upgrade-api)
 
 * [Deploying an app that uses {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver#sat-storage-vpc-deploy-app)
 
@@ -2300,13 +2312,13 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-assignment-upgrade-api)
 
     * [Removing the NetApp Trident storage assignment and configuration from the console](/docs/satellite?topic=satellite-storage-netapp-trident#netapp-trident-template-rm-ui)
 
     * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#netapp-trident-template-rm-cli)
-
-* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-configuration-upgrade-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-configuration-upgrade-console)
 
@@ -2330,7 +2342,9 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#storage-netapp-ontap-nas-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#storage-netapp-ontap-nas-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#storage-netapp-ontap-nas-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#storage-netapp-ontap-nas-include-assignment-upgrade-api)
 
 * [Deploying an app that uses ONTAP-NAS storage](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#sat-storage-netapp-nas-deploy-2104)
 
@@ -2368,7 +2382,9 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-san#storage-netapp-ontap-san-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-san#storage-netapp-ontap-san-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-san#storage-netapp-ontap-san-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-san#storage-netapp-ontap-san-include-assignment-upgrade-api)
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san#netapp-ontap-san-parameter-reference)
 
@@ -2401,7 +2417,9 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-local-storage-operator#storage-local-storage-operator-include-assignment-upgrade-api)
 
 [Local Storage - File and Block](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage)
 
@@ -2425,11 +2443,11 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-assignment-upgrade-api)
 
 * [Deploying an app that uses local storage](/docs/satellite?topic=satellite-storage-local-storage#deploy-app-local)
-
-* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-upgrade-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-upgrade-console)
 
@@ -2461,11 +2479,9 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-assignment-create-api)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-assignment-upgrade-cli)
 
 * [Deploying an app that uses local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#deploy-app-local-block)
-
-* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-configuration-upgrade-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-configuration-upgrade-console)
 
@@ -2513,11 +2529,11 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-assignment-upgrade-api)
 
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-storage-local-volume-file#deploy-app-local-file)
-
-* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-configuration-upgrade-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-configuration-upgrade-console)
 
@@ -2567,11 +2583,11 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-assignment-upgrade-api)
 
 * [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-deploy)
-
-* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-configuration-upgrade-cli)
 
 * [Scaling your ODF configuration by attaching raw disks](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-scale-odf-local-disk)
 
@@ -2615,13 +2631,13 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-assignment-upgrade-api)
 
     * [Optional: Adding additional worker nodes to your ODF configuration](/docs/satellite?topic=satellite-storage-odf-remote#add-worker-nodes-odf-remote)
 
 * [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-deploy)
-
-* [Upgrading a configuration in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-configuration-upgrade-cli)
 
 * [Scaling up your ODF configuration](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-scale-config)
 
@@ -2698,7 +2714,9 @@ subcollection: satellite
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#storage-vsphere-csi-driver-include-configuration-upgrade-console)
 
-* [Upgrading an assignment in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#storage-vsphere-csi-driver-include-assignment-upgrade-cli)
+* [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#storage-vsphere-csi-driver-include-assignment-upgrade-cli)
+
+* [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#storage-vsphere-csi-driver-include-assignment-upgrade-api)
 
 * [Deploying an app that uses VMware](/docs/satellite?topic=satellite-storage-vsphere-csi-driver#sat-storage-vmware-deploy-app)
 

@@ -126,8 +126,8 @@ If you didn't assign your configuration to a cluster or service when you created
     ```
     {: pre}
     
-## Upgrading a configuration in the CLI
-{: #configuration-upgrade-cli}
+## Manually upgrading configurations in the CLI
+{: #configuration-upgrade-manual-cli}
 {: cli}
 
 You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations to get the latest storage template revision within the same major version. 
@@ -152,7 +152,7 @@ You can upgrade your {{site.data.keyword.satelliteshort}} storage configurations
     ```
     {: pre}
     
-## Updating an assignment in the CLI
+## Manually updating assignments in the CLI
 {: #assignment-update-cli}
 {: cli}
 
@@ -182,11 +182,11 @@ Update an assignment to rename your assignment or assign it to new clusters or c
     
 
     
-## Upgrading an assignment in the CLI
+## Manually upgrading assignments in the CLI
 {: #assignment-upgrade-cli}
 {: cli}
 
-Upgrade an assignment to use the latest storage configuration. You can also enable autoupdates for your assignments to always pull the latest configuration.
+Upgrade an assignment to use the latest storage template revision.
 
 1. List your {{site.data.keyword.satelliteshort}} storage assignments, make a note of the {{site.data.keyword.satelliteshort}} assignment you want to upgrade.
     ```sh
@@ -208,7 +208,7 @@ Upgrade an assignment to use the latest storage configuration. You can also enab
     ```
     {: pre}
 
-    
+
 
 ## Updating storage configurations and assignments in the console
 {: #configuration-upgrade-console}
@@ -273,6 +273,28 @@ You can use the `/v2/storage/satellite/updateAssignment`](https://containers.clo
     curl -X GET "https://containers.cloud.ibm.com/global/v2/storage/satellite/getAssignment?uuid=ASSIGNMENT-ID" -H "accept: application/json" -H "Authorization: Bearer TOKEN"
     ```
     {: pre}
+
+
+## Upgrading a configuration and assignments in the API
+{: #assignment-upgrade-api}
+{: api}
+
+You can use the `/v2/storage/satellite/updateAssignment`](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/updateAssignment){: external} API to update your assignments with new clusters or cluster groups. Set `updateConfigVersion` to `true` to apply the revision update.
+
+1. Copy the following example request and replace the variables for the cluster groups and assignments that you want to update.
+    ```sh
+    curl -X PATCH "https://containers.cloud.ibm.com/global/v2/storage/satellite/updateAssignment" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d "{ \"groups\": [ \"CLUSTER-GROUPS\" ], \"name\": \"ASSIGNMENT-NAME\", \"updateConfigVersion\": true, \"uuid\": \"ASSIGNMENT-ID\"}"
+    ```
+    {: pre}
+    
+1. Run the request.
+
+1. Get the details of you assignment to verify the update.
+    ```txt
+    curl -X GET "https://containers.cloud.ibm.com/global/v2/storage/satellite/getAssignment?uuid=ASSIGNMENT-ID" -H "accept: application/json" -H "Authorization: Bearer TOKEN"
+    ```
+    {: pre}
+
 
 
     
