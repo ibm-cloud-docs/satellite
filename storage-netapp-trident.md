@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-11-30"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -88,13 +88,6 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
-    Example command to create a version 21.04 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-trident --template-version 21.04
-    ```
-    {: pre}
-
     Example command to create a version 22.04 configuration.
 
     ```sh
@@ -129,13 +122,6 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 1. Copy one of the following example requests and replace the variables that you want to use.
 
 
-    Example request to create a version 21.04 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-trident\", \"storage-template-version\": \"21.04\", \"update-assignments\": true}
-    ```
-    {: pre}
-
     Example request to create a version 22.04 configuration.
 
     ```sh
@@ -159,6 +145,9 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 {{site.data.content.assignment-create-console}}
 {{site.data.content.assignment-create-cli}}
 {{site.data.content.assignment-create-api}}
+{{site.data.content.configuration-upgrade-console}}
+{{site.data.content.assignment-upgrade-cli}}
+
 
 
 ### Removing the NetApp Trident storage assignment and configuration from the console

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-30"
 
 keywords: satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -247,6 +247,9 @@ After you have [retrieved the device paths for the disks that you want to use in
 {{site.data.content.assignment-create-console}}
 {{site.data.content.assignment-create-cli}}
 {{site.data.content.assignment-create-api}}
+{{site.data.content.configuration-upgrade-console}}
+{{site.data.content.assignment-upgrade-cli}}
+
 
 
 

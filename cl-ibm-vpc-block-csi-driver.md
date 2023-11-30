@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2023
 
-lastupdated: "2023-11-01"
+lastupdated: "2023-11-29"
 
 
 keywords: satellite storage, change log, version history, ibm vpc block csi driver
@@ -20,9 +20,37 @@ subcollection: satellite
 Review the version history for the `ibm-vpc-block-csi-driver` {{site.data.keyword.satelliteshort}} storage template.
 {: shortdesc}
 
+## Version 5.1
+{: #5.1-change-log}
+
+
+### Revision 1, released 27 November 2023
+{: #ibm-vpc-block-csi-driver-5.1-rev-1-change-log}
+
+
+- Updates the UBI to version `8.9-1029`.
+- Updates Go to version `1.20.10`.
+- Fix for snapshot size to reflect actual source volume size 
+- Retry fetching IAM token, if token exchange url is unreachable 
+- Initial release
+- Updated Kubernetes dependency to 1.26
+- Volumesnapshotclass supported by vpc block csi driver is made as default snapshotclass
+- Priorityclass added in deployment for controller and node pods
+- Removed preStop hook for csi-driver-registrar
+
+
 ## Version 5.0
 {: #5.0-change-log}
 
+
+### Revision 15, released 27 November 2023
+{: #ibm-vpc-block-csi-driver-5.0-rev-15-change-log}
+
+
+- Resolves the following CVEs: [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external} [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external} [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external} 
+- Updates the UBI to version `8.9-1029`.
+- Updates Go to version `1.20.11`.
+- security fix to use correct socket path as SElinux policy modules has been changed and CSI also recommending to use /var/lib/kubelet/plugins/.
 
 ### Revision 14, released 30 October 2023
 {: #ibm-vpc-block-csi-driver-5.0-rev-14-change-log}

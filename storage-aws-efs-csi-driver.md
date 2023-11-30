@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-11-30"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -178,6 +178,11 @@ To use the AWS EFS storage template, complete the following tasks:
 
     
 
+{{site.data.content.assignment-create-console}}
+{{site.data.content.assignment-create-cli}}
+{{site.data.content.assignment-create-api}}
+{{site.data.content.configuration-upgrade-console}}
+{{site.data.content.assignment-upgrade-cli}}
 
     
     
@@ -232,10 +237,6 @@ You can't add storage classes to {{site.data.keyword.satelliteshort}} storage co
     
 3. Complete the following steps to assign your storage configuration to your clusters.
 
-
-{{site.data.content.assignment-create-console}}
-{{site.data.content.assignment-create-cli}}
-{{site.data.content.assignment-create-api}}
 
 ## Deploying an app that uses AWS EFS storage
 {: #sat-storage-efs-deploy}
@@ -395,11 +396,7 @@ Before you begin, make sure that you [created an AWS EFS instance](https://docs.
         ```
         {: pre}
 
-8. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you used and verify that the file system grows in size.   
-
-
-{{site.data.content.configuration-upgrade-cli}}
-{{site.data.content.configuration-upgrade-console}}
+8. From the [AWS EFS console](https://console.aws.amazon.com/efs/home){: external}, find the file system that you used and verify that the file system grows in size.
 
 ## Removing AWS EFS storage from your apps
 {: #aws-efs-rm}

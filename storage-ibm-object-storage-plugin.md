@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-11-30"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -174,6 +174,9 @@ Create the Kubernetes secret in your cluster that contains your service credenti
 {{site.data.content.assignment-create-console}}
 {{site.data.content.assignment-create-cli}}
 {{site.data.content.assignment-create-api}}
+{{site.data.content.configuration-upgrade-console}}
+{{site.data.content.assignment-upgrade-cli}}
+
 
 ## Deploying an app that uses {{site.data.keyword.cos_full_notm}}
 {: #config-storage-cos-app}
@@ -266,9 +269,6 @@ You can use the `ibm-object-s3fs` driver to create PVCs that you can use in your
    oc exec demo-pod -- bash -c "touch /mnt/cosvol/test.txt && ls /mnt/cosvol" test.txt
    ```
    {: pre}
-
-{{site.data.content.configuration-upgrade-cli}}
-{{site.data.content.configuration-upgrade-console}}
 
 
 ## Removing the {{site.data.keyword.cos_full_notm}} storage configuration using the console
