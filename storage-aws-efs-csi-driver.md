@@ -183,6 +183,7 @@ To use the AWS EFS storage template, complete the following tasks:
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-upgrade-api}}
 
     
     

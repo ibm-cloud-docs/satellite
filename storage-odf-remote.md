@@ -234,6 +234,7 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-upgrade-api}}
 
 
 ### Optional: Adding additional worker nodes to your ODF configuration

@@ -178,6 +178,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-upgrade-api}}
 
 
 

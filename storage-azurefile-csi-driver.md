@@ -228,6 +228,7 @@ If you manually assigned your Azure hosts to your location and did not use an au
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-upgrade-api}}
 
 
 
