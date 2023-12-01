@@ -26,7 +26,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-dec23}
 
 ### 01 December 2023
-{: #satellite-dec01 23}
+{: #satellite-dec0123}
 {: release-note}
 
 [New]{: tag-green} Template for VMware location setup

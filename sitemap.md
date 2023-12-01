@@ -195,7 +195,7 @@ subcollection: satellite
 
 * [December 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec23)
 
-    * [01 December 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec01)
+    * [01 December 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0123)
 
         * [New]{: tag-green} Template for VMware location setup
 
