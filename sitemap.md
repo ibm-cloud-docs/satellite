@@ -1921,7 +1921,7 @@ subcollection: satellite
 
 * [How do templates work?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-flow)
 
-    * [How do I manage templates?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-management)
+* [How do I manage updates?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-updates)
 
 * [Which storage templates are available?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers)
 
@@ -1955,6 +1955,8 @@ subcollection: satellite
 * [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-assignment-upgrade-api)
 
 * [Deploying an app that uses AWS EBS storage](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#sat-storage-ebs-deploy)
+
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-configuration-upgrade-manual-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-configuration-upgrade-console)
 
@@ -2052,6 +2054,8 @@ subcollection: satellite
 * [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-assignment-upgrade-api)
 
 * [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azure-csi-app-deploy)
+
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-configuration-upgrade-manual-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-configuration-upgrade-console)
 
@@ -2320,6 +2324,8 @@ subcollection: satellite
 
     * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#netapp-trident-template-rm-cli)
 
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-configuration-upgrade-manual-cli)
+
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-configuration-upgrade-console)
 
 * [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-trident#sat-trident-support)
@@ -2449,6 +2455,8 @@ subcollection: satellite
 
 * [Deploying an app that uses local storage](/docs/satellite?topic=satellite-storage-local-storage#deploy-app-local)
 
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-upgrade-manual-cli)
+
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-upgrade-console)
 
 * [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-remove-console)
@@ -2482,6 +2490,8 @@ subcollection: satellite
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-assignment-upgrade-cli)
 
 * [Deploying an app that uses local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#deploy-app-local-block)
+
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-configuration-upgrade-manual-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-configuration-upgrade-console)
 
@@ -2534,6 +2544,8 @@ subcollection: satellite
 * [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-assignment-upgrade-api)
 
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-storage-local-volume-file#deploy-app-local-file)
+
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-configuration-upgrade-manual-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-configuration-upgrade-console)
 
@@ -2589,6 +2601,8 @@ subcollection: satellite
 
 * [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-deploy)
 
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-configuration-upgrade-manual-cli)
+
 * [Scaling your ODF configuration by attaching raw disks](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-scale-odf-local-disk)
 
     * [Scaling your ODF configuration with `auto-discover-devices`](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-scale-odf-local-auto-discover)
@@ -2638,6 +2652,8 @@ subcollection: satellite
     * [Optional: Adding additional worker nodes to your ODF configuration](/docs/satellite?topic=satellite-storage-odf-remote#add-worker-nodes-odf-remote)
 
 * [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-deploy)
+
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-configuration-upgrade-manual-cli)
 
 * [Scaling up your ODF configuration](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-scale-config)
 
