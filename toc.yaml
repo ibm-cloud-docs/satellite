@@ -133,6 +133,7 @@ toc:
                   - loc-aws-create-auto.md
                   - loc-azure-create-auto.md
                   - loc-gcp-create-auto.md
+                  - loc-vmware-create-auto.md
               - coreos-reduced-firewall.md
               - location-create-manual.md
               - setup-control-plane.md

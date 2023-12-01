@@ -193,6 +193,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [December 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec23)
+
+    * [01 December 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec01)
+
+        * [New]{: tag-green} Template for VMware location setup
+
 * [November 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov23)
 
     * [27 November 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov2723)
@@ -1194,6 +1200,8 @@ subcollection: satellite
 
     * [GCP credentials](/docs/satellite?topic=satellite-infrastructure-plan#sat-infra-creds-gcp)
 
+    * [VMWare credentials](/docs/satellite?topic=satellite-infrastructure-plan#infra-creds-vmware)
+
 
 ## Preparing your host infrastructure
 {: #sitemap_preparing_your_host_infrastructure}
@@ -1408,6 +1416,22 @@ subcollection: satellite
 * [Google Cloud Platform credentials](/docs/satellite?topic=satellite-loc-gcp-create-auto#infra-creds-gcp)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-gcp-create-auto#gcpauto-whats-next)
+
+[Automating your VMWware location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-vmware-create-auto#loc-vmware-create-auto)
+
+* [Before you begin](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-bybegin)
+
+    * [General information](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-general)
+
+    * [Networking information](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-network)
+
+* [Creating your location with an {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-vmware-create-auto#create-auto-vmware)
+
+* [What does this template create?](/docs/satellite?topic=satellite-loc-vmware-create-auto#template-vmware)
+
+* [VMware credentials](/docs/satellite?topic=satellite-loc-vmware-create-auto#infra-creds-vmware)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmwareauto-whats-next)
 
 [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall#coreos-reduced-firewall)
 
@@ -2901,6 +2925,8 @@ subcollection: satellite
 * [Azure permissions](/docs/satellite?topic=satellite-iam-common#permissions-azure)
 
 * [Google Cloud Platform permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp)
+
+* [VMware permissions](/docs/satellite?topic=satellite-iam-common#permissions-vmware)
 
 [Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies](/docs/satellite?topic=satellite-service-architecture#service-architecture)
 
