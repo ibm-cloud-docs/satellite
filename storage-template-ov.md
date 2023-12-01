@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-12-01"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -99,10 +99,19 @@ The following image depicts the workflow for creating a {{site.data.keyword.sate
 
 ![Concept overview of Satellite storage templates](/images/storage-template.svg){: caption="Figure 1. A conceptual overview of creating a storage configuration by using a template." caption-side="bottom"}
 
-### How do I manage templates?
-{: #storage-template-management}
+## How do I manage updates?
+{: #storage-template-updates}
 
-When you are using a storage template, you can use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} and the CLI to manage your storage configurations and assignments. Revision updates are granular and can be applied cluster-wide or to specific assignments and configurations. For more information, see the specific template documentation for your [storage provider](#storage-template-ov-providers). 
+{{site.data.keyword.satelliteshort}} storage template updates include `Version` updates and `Revisions`.
+
+Version
+:    A major update to the template version. For example, updating from version `1.0` to `2.0`. Version updates can add new template parameters, change storage resources, and are more disruptive than revision updates. Version updates may require you to reload or attach new hosts, redeploy services, 
+
+Revision
+:    A revision update resolves breaking issues and includes security patches. For example, updating from version `1.5` to `1.6`.
+
+
+When you are using a storage template, you can also use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} and the CLI to manage your storage configurations and assignments. Revision updates are granular and can be applied cluster-wide or to specific assignments and configurations. For more information, see the specific template documentation for your [storage provider](#storage-template-ov-providers). 
 
 
 ## Which storage templates are available?

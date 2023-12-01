@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-11-30"
+lastupdated: "2023-12-01"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -192,6 +192,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [December 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec23)
+
+    * [01 December 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0123)
+
+        * [New]{: tag-green} Template for VMware location setup
 
 * [November 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-nov23)
 
@@ -1194,6 +1200,8 @@ subcollection: satellite
 
     * [GCP credentials](/docs/satellite?topic=satellite-infrastructure-plan#sat-infra-creds-gcp)
 
+    * [VMWare credentials](/docs/satellite?topic=satellite-infrastructure-plan#infra-creds-vmware)
+
 
 ## Preparing your host infrastructure
 {: #sitemap_preparing_your_host_infrastructure}
@@ -1408,6 +1416,22 @@ subcollection: satellite
 * [Google Cloud Platform credentials](/docs/satellite?topic=satellite-loc-gcp-create-auto#infra-creds-gcp)
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-gcp-create-auto#gcpauto-whats-next)
+
+[Automating your VMWware location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-vmware-create-auto#loc-vmware-create-auto)
+
+* [Before you begin](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-bybegin)
+
+    * [General information](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-general)
+
+    * [Networking information](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-network)
+
+* [Creating your location with an {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-vmware-create-auto#create-auto-vmware)
+
+* [What does this template create?](/docs/satellite?topic=satellite-loc-vmware-create-auto#template-vmware)
+
+* [VMware credentials](/docs/satellite?topic=satellite-loc-vmware-create-auto#infra-creds-vmware)
+
+* [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmwareauto-whats-next)
 
 [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall#coreos-reduced-firewall)
 
@@ -1921,7 +1945,7 @@ subcollection: satellite
 
 * [How do templates work?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-flow)
 
-    * [How do I manage templates?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-management)
+* [How do I manage updates?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-updates)
 
 * [Which storage templates are available?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers)
 
@@ -1955,6 +1979,8 @@ subcollection: satellite
 * [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-assignment-upgrade-api)
 
 * [Deploying an app that uses AWS EBS storage](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#sat-storage-ebs-deploy)
+
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-configuration-upgrade-manual-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver#storage-aws-ebs-csi-driver-include-configuration-upgrade-console)
 
@@ -2052,6 +2078,8 @@ subcollection: satellite
 * [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-assignment-upgrade-api)
 
 * [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azure-csi-app-deploy)
+
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-configuration-upgrade-manual-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver#storage-azuredisk-csi-driver-include-configuration-upgrade-console)
 
@@ -2320,6 +2348,8 @@ subcollection: satellite
 
     * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#netapp-trident-template-rm-cli)
 
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-configuration-upgrade-manual-cli)
+
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident#storage-netapp-trident-include-configuration-upgrade-console)
 
 * [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-trident#sat-trident-support)
@@ -2449,6 +2479,8 @@ subcollection: satellite
 
 * [Deploying an app that uses local storage](/docs/satellite?topic=satellite-storage-local-storage#deploy-app-local)
 
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-upgrade-manual-cli)
+
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-upgrade-console)
 
 * [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-local-storage#storage-local-storage-include-configuration-remove-console)
@@ -2482,6 +2514,8 @@ subcollection: satellite
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-assignment-upgrade-cli)
 
 * [Deploying an app that uses local block storage](/docs/satellite?topic=satellite-storage-local-volume-block#deploy-app-local-block)
+
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-configuration-upgrade-manual-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-block#storage-local-volume-block-include-configuration-upgrade-console)
 
@@ -2534,6 +2568,8 @@ subcollection: satellite
 * [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-assignment-upgrade-api)
 
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-storage-local-volume-file#deploy-app-local-file)
+
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-configuration-upgrade-manual-cli)
 
 * [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file#storage-local-volume-file-include-configuration-upgrade-console)
 
@@ -2589,6 +2625,8 @@ subcollection: satellite
 
 * [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-odf-local-deploy)
 
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-configuration-upgrade-manual-cli)
+
 * [Scaling your ODF configuration by attaching raw disks](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-scale-odf-local-disk)
 
     * [Scaling your ODF configuration with `auto-discover-devices`](/docs/satellite?topic=satellite-storage-odf-local#sat-storage-scale-odf-local-auto-discover)
@@ -2638,6 +2676,8 @@ subcollection: satellite
     * [Optional: Adding additional worker nodes to your ODF configuration](/docs/satellite?topic=satellite-storage-odf-remote#add-worker-nodes-odf-remote)
 
 * [Deploying an app that uses OpenShift Data Foundation](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-deploy)
+
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-configuration-upgrade-manual-cli)
 
 * [Scaling up your ODF configuration](/docs/satellite?topic=satellite-storage-odf-remote#sat-storage-odf-remote-scale-config)
 
@@ -2885,6 +2925,8 @@ subcollection: satellite
 * [Azure permissions](/docs/satellite?topic=satellite-iam-common#permissions-azure)
 
 * [Google Cloud Platform permissions](/docs/satellite?topic=satellite-iam-common#permissions-gcp)
+
+* [VMware permissions](/docs/satellite?topic=satellite-iam-common#permissions-vmware)
 
 [Learning about {{site.data.keyword.satelliteshort}} architecture, workload isolation, and dependencies](/docs/satellite?topic=satellite-service-architecture#service-architecture)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-30"
+lastupdated: "2023-12-01"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -548,7 +548,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
         ```
         {: pre}
 
-{{site.data.content.configuration-upgrade-cli}}
+{{site.data.content.configuration-upgrade-manual-cli}}
 
 ## Scaling your ODF configuration by attaching raw disks
 {: #sat-storage-scale-odf-local-disk}

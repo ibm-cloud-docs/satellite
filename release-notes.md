@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-29"
+lastupdated: "2023-12-01"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -21,6 +21,16 @@ content-type: release-note
 Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
 {: shortdesc}
 
+
+## December 2023
+{: #satellite-dec23}
+
+### 01 December 2023
+{: #satellite-dec0123}
+{: release-note}
+
+[New]{: tag-green} Template for VMware location setup
+:   You can use {{site.data.keyword.bpshort}} to set up your VMware Virtual Cloud Director virtual machines as a {{site.data.keyword.satelliteshort}} location. For more information, see [Automating your VMWware location setup with a Schematics template](/docs/satellite?topic=satellite-loc-vmware-create-auto).
 
 ## November 2023
 {: #satellite-nov23}

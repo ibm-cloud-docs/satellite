@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2023
-lastupdated: "2023-11-21"
+lastupdated: "2023-12-01"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1475,7 +1475,7 @@ ibmcloud sat location create --managed-from REGION --name NAME [--cos-bucket COS
      - To choose an interface with a Regex string, specify `interface=<regex_string>`; for example, `interface=eth.*`
 
 `--provider INFRASTRUCTURE_PROVIDER`
-:    Optional. The name of the infrastructure provider to create the {{site.data.keyword.satelliteshort}} location in. Accepted values are `aws`, `azure`, `gcp`. If you include this option, you must also include the `--provider-credential` option.
+:    Optional. The name of the infrastructure provider to create the {{site.data.keyword.satelliteshort}} location in. Accepted values are `aws`, `azure`, `gcp`, and `vmware`. If you include this option, you must also include the `--provider-credential` option.
 
 `--provider-region PROVIDER_REGION`
 :    Optional. The name of the region in the infrastructure provider where you plan to create all the hosts for the {{site.data.keyword.satelliteshort}} location, such as `us-east-1` in AWS. Consult your infrastructure provider for the region name. If you include this option, you must also include the `--provider` option.

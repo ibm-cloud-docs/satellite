@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-30"
+lastupdated: "2023-12-01"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -424,7 +424,7 @@ You can use the ODF storage classes to create PVCs for the apps in your clusters
         {: pre}
 
 
-{{site.data.content.configuration-upgrade-cli}}
+{{site.data.content.configuration-upgrade-manual-cli}}
 
 ## Scaling up your ODF configuration
 {: #sat-storage-odf-remote-scale-config}
