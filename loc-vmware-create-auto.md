@@ -101,12 +101,14 @@ If you are using this template for demonstration purposes, do not assign all you
 ## VMware credentials
 {: #infra-creds-vmware}
 
-Retrieve the VMware credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your VMware Virtual Data Centers (VDC) on your behalf.
+Retrieve the VMWare credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your VMWare cloud on your behalf.
+{: shortdesc}
 
-1. Verify that you have the [required permissions](/docs/satellite?topic=satellite-iam-common#permissions-vmware).
+1. Verify that you have the required [permissions in your VMWare account](/docs/satellite?topic=satellite-iam-common#permissions-vmware) to create a {{site.data.keyword.satelliteshort}} location from a template.
 2. Identify or [create a user](https://docs.vmware.com/en/VMware-Cloud-Director/10.4/VMware-Cloud-Director-Tenant-Portal-Guide/GUID-1CACBB2E-FE35-4662-A08D-D2BCB174A43C.html){: external} with **Administrator** role.
 3. Find your [network information](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-network).
 4. Provide this information on the [VMware Cloud Director template](/docs/satellite?topic=satellite-loc-vmware-create-auto#create-auto-vmware).
+
     
 ## I created a {{site.data.keyword.satelliteshort}} location, what's next?
 {: #vmwareauto-whats-next}

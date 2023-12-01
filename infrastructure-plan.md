@@ -219,20 +219,16 @@ Retrieve the Google Cloud Platform (GCP) credentials that {{site.data.keyword.sa
 ### VMWare credentials
 {: #infra-creds-vmware}
 
+  
 Retrieve the VMWare credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your VMWare cloud on your behalf.
 {: shortdesc}
 
 1. Verify that you have the required [permissions in your VMWare account](/docs/satellite?topic=satellite-iam-common#permissions-vmware) to create a {{site.data.keyword.satelliteshort}} location from a template.
-2. Get your VMware username, password, and the URL or fully qualified domain name (FQDN) of your vCenter Server. For more information, see the [VMware configuration documentation](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vcenter.configuration.doc/GUID-223C2821-BD98-4C7A-936B-7DBE96291BA4.html){: external}.
-3. **Optional**: To provide the credentials during the creation of a {{site.data.keyword.satelliteshort}} location, format the credentials in a JSON file. 
-    ```json
-    {
-        "vcenter_url":"string",
-        "username":"string",
-        "password": "string"
-    }
-    ```
-    {: screen}
+2. Identify or [create a user](https://docs.vmware.com/en/VMware-Cloud-Director/10.4/VMware-Cloud-Director-Tenant-Portal-Guide/GUID-1CACBB2E-FE35-4662-A08D-D2BCB174A43C.html){: external} with **Administrator** role.
+3. Find your [network information](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-network).
+4. Provide this information on the [VMware Cloud Director template](/docs/satellite?topic=satellite-loc-vmware-create-auto#create-auto-vmware).
+
+
 
 
 
