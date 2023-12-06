@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-21"
+lastupdated: "2023-12-06"
 
 keywords: satellite, connector
 
@@ -17,10 +17,13 @@ subcollection: satellite
 
 {{site.data.keyword.satelliteshort}} Connector provides secure TLS tunneling between applications and services that need to communicate in hybrid and multi-cloud environments.
 {: shortdesc}
-  
-A {{site.data.keyword.satelliteshort}} Connector is a deployment model that enables only the secure communications from {{site.data.keyword.cloud_notm}} to on-prem resources with a light-weight container that is deployed on your container platform hosts, such as Docker hosts. This option brings all the security and auditability of {{site.data.keyword.satelliteshort}} communication, but with fewer resources required.
+
   
 {{site.data.keyword.satelliteshort}} Connector allows hybrid cloud connectivity for edge devices needing persistent connectivity. It enables advertising of trusted services that are capable of establishing secure end-point connectivity. With {{site.data.keyword.satelliteshort}} Connector, you can maintain data sovereignty with on-premises applications and services while connecting securely over a public network interface.
+
+![{{site.data.keyword.satelliteshort}} Connector](images/satellite-connector.svg "{{site.data.keyword.satelliteshort}} Connector"){: caption="Figure 1. {{site.data.keyword.satelliteshort}} Connector" caption-side="bottom"}
+  
+A {{site.data.keyword.satelliteshort}} Connector is a deployment model that enables only the secure communications from {{site.data.keyword.cloud_notm}} to on-prem resources with a light-weight container that is deployed on your container platform hosts, such as Docker hosts. This option brings all the security and auditability of {{site.data.keyword.satelliteshort}} communication, but with fewer resources required.
   
 Here are some key concepts for {{site.data.keyword.satelliteshort}} Connector.
   
