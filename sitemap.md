@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-01"
+lastupdated: "2023-12-06"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1417,7 +1417,7 @@ subcollection: satellite
 
 * [I created a {{site.data.keyword.satelliteshort}} location, what's next?](/docs/satellite?topic=satellite-loc-gcp-create-auto#gcpauto-whats-next)
 
-[Automating your VMWware location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-vmware-create-auto#loc-vmware-create-auto)
+[Automating your VMware location setup with a {{site.data.keyword.bpshort}} template](/docs/satellite?topic=satellite-loc-vmware-create-auto#loc-vmware-create-auto)
 
 * [Before you begin](/docs/satellite?topic=satellite-loc-vmware-create-auto#vmware-bybegin)
 
