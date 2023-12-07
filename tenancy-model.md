@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-10-10"
+lastupdated: "2023-12-07"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -236,7 +236,7 @@ After setting up the location and the control plane, create cluster and an API k
     If your location hosts have private network connectivity only, or if you use Amazon Web Services, Google Cloud Platform, or Microsoft Azure hosts, you must be connected to your hosts' private network, such as through VPN access, to connect to your cluster and access the {{site.data.keyword.redhat_openshift_notm}} web console. Alternatively, if your hosts have public network connectivity, you can test access to your cluster by changing your cluster's and location's DNS records to [use your hosts' public IP addresses](/docs/openshift?topic=openshift-access_cluster#sat_public_access).
     {: note}
 
-1. **Optional**: Set up an internal container image registry. For more information, see [Setting up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters#satcluster-internal-registry) in the {{site.data.keyword.openshiftlong_notm}} docs.
+1. **Optional**: Set up an internal container image registry. For more information, see [Setting up the internal container image registry](/docs/openshift?topic=openshift-satellite-clusters-registry) in the {{site.data.keyword.openshiftlong_notm}} docs.
 
 1. [Set up {{site.data.keyword.satelliteshort}} Config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 

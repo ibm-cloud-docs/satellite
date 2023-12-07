@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-06"
+lastupdated: "2023-12-07"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -121,7 +121,7 @@ The following actions disable host auto assignment for a worker pool. Later, you
 {: shortdesc}
 
 - [Manually assign hosts to a worker pool](/docs/satellite?topic=satellite-assigning-hosts).
-- [Delete an individual worker node from a worker pool](/docs/openshift?topic=openshift-satellite-clusters#satcluster-rm).
+- [Delete an individual worker node from a worker pool](/docs/openshift?topic=openshift-remove&interface=ui#satcluster-rm).
 
 ## Re-enabling host auto assignment
 {: #host-autoassign-enable}

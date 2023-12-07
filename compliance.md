@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-12-07"
 
 keywords: satellite, hybrid, multicloud, satellite security, satellite compliance
 
@@ -46,7 +46,7 @@ Review the following ways that you can secure access to your location.
 - [Manage access for {{site.data.keyword.satelliteshort}} by using {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM)](/docs/satellite?topic=satellite-iam)
 - Monitor user-initiated activities by [Setting up {{site.data.keyword.at_short}} for {{site.data.keyword.satelliteshort}} location events](/docs/satellite?topic=satellite-health#setup-at)
 - In the case of a potential security incident, [reset the key that the control plane uses to communicate with all the hosts in the Satellite location](/docs/satellite?topic=satellite-host-update-location#host-key-reset)
-- Protect sensitive data by [Encrypting the Kubernetes secrets by using a KMS provider](/docs/containers?topic=containers-encryption#keyprotect).
+- Protect sensitive data by [Encrypting the Kubernetes secrets by using a KMS provider](/docs/containers?topic=containers-encryption-setup).
 
 ## {{site.data.keyword.IBM_notm}} operational access
 {: #operational-access}
