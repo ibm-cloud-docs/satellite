@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-07"
+lastupdated: "2023-12-08"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1200,7 +1200,7 @@ subcollection: satellite
 
     * [GCP credentials](/docs/satellite?topic=satellite-infrastructure-plan#sat-infra-creds-gcp)
 
-    * [VMWare credentials](/docs/satellite?topic=satellite-infrastructure-plan#infra-creds-vmware)
+    * [VMWare credentials](/docs/satellite?topic=satellite-infrastructure-plan#sat-infra-creds-vmware)
 
 
 ## Preparing your host infrastructure

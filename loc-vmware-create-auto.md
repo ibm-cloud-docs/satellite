@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-12-06"
+lastupdated: "2023-12-08"
 
 keywords: satellite, hybrid, multicloud, vmware, vmware host, satellite location
 
@@ -38,7 +38,7 @@ To connect {{site.data.keyword.satelliteshort}} to your VMware Virtual Data Cent
 |--------|-----------------------------|--------------|
 | VCD user ID | The VMware Cloud Director username. | `admin` |
 | VCD password | The VMware Cloud Director password. | `<password>`|
-| VCD org name | The VMware organization name. |` 0ff080abcdef123456789abcd12345678` |
+| VCD org name | The VMware organization name. | `0ff080abcdef123456789abcd12345678` |
 | VCD URL | The VMware Cloud Director URL | `https://daldir01.vmware-solutions.cloud.ibm.com/api` |
 | VCD name | The VMware Cloud Director virtual data center name | `vmware-satellite` |
 {: caption="VMware values for {{site.data.keyword.satelliteshort}}" caption-side="bottom"}
