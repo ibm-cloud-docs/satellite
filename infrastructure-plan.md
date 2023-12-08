@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-12-01"
+lastupdated: "2023-12-08"
 
 keywords: satellite, hybrid, multicloud, plan infrastructure for satellite, satellite infrastructure, satellite supported os, satellite supported providers, satellite third party hosts
 
@@ -217,7 +217,7 @@ Retrieve the Google Cloud Platform (GCP) credentials that {{site.data.keyword.sa
 
 
 ### VMWare credentials
-{: #infra-creds-vmware}
+{: #sat-infra-creds-vmware}
 
   
 Retrieve the VMWare credentials that {{site.data.keyword.satelliteshort}} can use to create {{site.data.keyword.satelliteshort}} resources in your VMWare cloud on your behalf.
