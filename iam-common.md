@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-12-01"
+lastupdated: "2023-12-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -28,7 +28,7 @@ When you use an [{{site.data.keyword.bplong}} template](/docs/satellite?topic=sa
 ## Azure permissions
 {: #permissions-azure}
 
-When you use an [{{site.data.keyword.bplong}} template](/docs/satellite?topic=satellite-loc-azure-create-auto) to create your {{site.data.keyword.satelliteshort}} location, you must be assigned a role that can create virtual instances and networks in Microsoft Azure. For example, you can be assigned the [**Contributor** built-in role](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor){: external} in Azure. For more information about other built-in roles, see the [Azure documentation](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles){: external}.
+When you use an [{{site.data.keyword.bplong}} template](/docs/satellite?topic=satellite-loc-azure-create-auto) to create your {{site.data.keyword.satelliteshort}} location, you must be assigned a role that can create virtual instances and networks in Microsoft Azure. For example, you can be assigned the [**Contributor** built-in role](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#contributor){: external} in Azure. For more information about other built-in roles, see the [Azure documentation](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles){: external}.
 
 
 ## Google Cloud Platform permissions
