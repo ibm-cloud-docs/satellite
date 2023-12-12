@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-13"
+lastupdated: "2023-12-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -150,7 +150,7 @@ Metrics are available for the {{site.data.keyword.satelliteshort}} Link componen
 1. Create or choose an existing {{site.data.keyword.mon_short}} instance.
     - If you already have a {{site.data.keyword.mon_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.mon_short}} instance is configured to collect platform metrics, the metrics that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.mon_short}} instance.
     - Otherwise, to set up {{site.data.keyword.mon_short}} for your {{site.data.keyword.satelliteshort}} location:
-        1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog/services){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
+        1. [Provision an {{site.data.keyword.mon_full_notm}} instance](https://cloud.ibm.com/catalog){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
         2. [Enable the instance for platform-level metrics collection](/docs/monitoring?topic=monitoring-platform_metrics_enabling). Note that within one region, only one {{site.data.keyword.mon_short}} instance can be enabled for platform metrics collection.
 2. In the **Monitoring** dashboard, click **Open Dashboard** for your {{site.data.keyword.mon_short}} instance.
 3. In the {{site.data.keyword.mon_short}} dashboard, click **Dashboards** > **IBM** > **Satellite Link - Overview**. The pre-defined dashboard for {{site.data.keyword.satelliteshort}} Link metrics opens. Note that if you just created this {{site.data.keyword.mon_short}} instance, it might take up to two hours for the **{{site.data.keyword.IBM_notm}} ** dashboards to become available.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-13"
+lastupdated: "2023-12-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -33,7 +33,7 @@ Forward and view logs that are automatically generated for your {{site.data.keyw
 If you already have a {{site.data.keyword.la_short}} instance in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from, and the {{site.data.keyword.la_short}} instance is configured to collect platform logs, the logs that are generated for your {{site.data.keyword.satelliteshort}} location are automatically forwarded to this {{site.data.keyword.la_short}} instance. Otherwise, follow these steps to set up {{site.data.keyword.la_short}} for your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
 
-1. [Provision an {{site.data.keyword.la_full_notm}} instance](https://cloud.ibm.com/catalog/services){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
+1. [Provision an {{site.data.keyword.la_full_notm}} instance](https://cloud.ibm.com/catalog){: external} in the same {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from.
 2. [Enable the instance for platform-level log collection](/docs/log-analysis?topic=log-analysis-config_svc_logs). Note that within one region, only one {{site.data.keyword.la_short}} instance can be enabled for platform logs collection.
 
 ### Viewing logs for your {{site.data.keyword.satelliteshort}} location
@@ -171,7 +171,7 @@ You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or
 To enable a logging instance in your {{site.data.keyword.satelliteshort}} cluster, you must manually install the logging agent in the cluster. 
 {: shortdesc}
 
-1. [Create a new logging instance](https://cloud.ibm.com/catalog/services/ibm-log-analysis?callback=%2Fobserve%2Flogging%2Fcreate){: external} or locate an existing one that you want to install in your cluster. The logging instance must be in the same region where your cluster's {{site.data.keyword.satelliteshort}} location is managed from.
+1. [Create a new logging instance](https://cloud.ibm.com/catalog/ibm-log-analysis?callback=%2Fobserve%2Flogging%2Fcreate){: external} or locate an existing one that you want to install in your cluster. The logging instance must be in the same region where your cluster's {{site.data.keyword.satelliteshort}} location is managed from.
 
 2. From the [Logging](https://cloud.ibm.com/observe/logging){: external} page, click on the logging instance. 
 
