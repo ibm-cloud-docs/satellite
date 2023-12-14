@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-25"
+lastupdated: "2023-12-14"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,7 +20,7 @@ subcollection: satellite
 Test out an {{site.data.keyword.satellitelong}} location with virtual instances that you created in {{site.data.keyword.cloud_notm}}.
 {: shortdesc}
 
-**Testing only**: {{site.data.keyword.satelliteshort}} is an extension of {{site.data.keyword.cloud_notm}} into other infrastructure providers. As such, adding {{site.data.keyword.cloud_notm}} infrastructure hosts to {{site.data.keyword.satelliteshort}} is supported only for testing, demo, or proof of concept purposes. For production workloads in your {{site.data.keyword.satelliteshort}} location, use on-premises, edge, or other cloud provider hosts. You can also create {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud and add them to a {{site.data.keyword.satelliteshort}} Config cluster group to deploy the same app across your {{site.data.keyword.satelliteshort}} and {{site.data.keyword.cloud_notm}} clusters.
+**Testing only**: {{site.data.keyword.satelliteshort}} is an extension of {{site.data.keyword.cloud_notm}} into other infrastructure providers. As such, adding {{site.data.keyword.cloud_notm}} infrastructure hosts to {{site.data.keyword.satelliteshort}} is supported only for testing, demo, or proof of concept purposes. For production workloads in your {{site.data.keyword.satelliteshort}} location, use on-premises, edge, or other cloud provider hosts. You can also create {{site.data.keyword.openshiftlong_notm}} clusters in the public cloud and add them to a {{site.data.keyword.satelliteshort}} Config cluster group to deploy the same app across your {{site.data.keyword.satelliteshort}} and {{site.data.keyword.cloud_notm}} clusters. At this time, {{site.data.keyword.satelliteshort}} Location and {{site.data.keyword.satelliteshort}} Connector are not supported for deploying within {{site.data.keyword.cloud_notm}}.
 {: important}
 
 To attach Red Hat CoreOS (RHCOS) hosts, your location must be enabled for Red Hat CoreOS. For more information, see [Is my location enabled for Red Hat CoreOS?](/docs/satellite?topic=satellite-locations#verify-coreos-location). Note that you can still attach Red Hat Enterprise Linux hosts to a location that is enabled for Red Hat CoreOS.

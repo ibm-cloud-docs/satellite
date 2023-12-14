@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2023
-lastupdated: "2023-12-12"
+lastupdated: "2023-12-14"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -176,6 +176,8 @@ subcollection: satellite
 * [How many endpoints are supported per Connector?](/docs/satellite?topic=satellite-connector-faq#connector-faq-endpoints-per-conn)
 
 * [How many instances of Connector agent can I run?](/docs/satellite?topic=satellite-connector-faq#connector-faq-instance-limits)
+
+* [Can I deploy {{site.data.keyword.satelliteshort}} Connectors within {{site.data.keyword.cloud_notm}}?](/docs/satellite?topic=satellite-connector-faq#connector-ibm-cloud)
 
 
 ## Supported Satellite-enabled IBM Cloud services
