@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-09-28"
+lastupdated: "2023-12-14"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -51,3 +51,7 @@ You can have a maximum of 25 endpoints per Connector.
 
 As a best practice, run no more than 6 agents per Connector.
 
+## Can I deploy {{site.data.keyword.satelliteshort}} Connectors within {{site.data.keyword.cloud_notm}}?
+{: #connector-ibm-cloud}
+
+Same as {{site.data.keyword.satelliteshort}} Location, {{site.data.keyword.satelliteshort}} Connector is not supported for deploying within {{site.data.keyword.cloud_notm}} at this time.
