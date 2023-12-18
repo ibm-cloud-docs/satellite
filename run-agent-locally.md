@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-10-31"
+lastupdated: "2023-12-18"
 
 keywords: satellite, connector
 
@@ -56,7 +56,7 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
     ```
     {: codeblock}
     
-For example:
+    For example:
     
     ```sh
     SATELLITE_CONNECTOR_ID=U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA
