@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-12-12"
+lastupdated: "2023-12-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -171,7 +171,7 @@ You cannot currently use the {{site.data.keyword.openshiftlong_notm}} console or
 To enable a logging instance in your {{site.data.keyword.satelliteshort}} cluster, you must manually install the logging agent in the cluster. 
 {: shortdesc}
 
-1. [Create a new logging instance](https://cloud.ibm.com/catalog/ibm-log-analysis?callback=%2Fobserve%2Flogging%2Fcreate){: external} or locate an existing one that you want to install in your cluster. The logging instance must be in the same region where your cluster's {{site.data.keyword.satelliteshort}} location is managed from.
+1. [Create a new logging instance](https://cloud.ibm.com/catalog/services/ibm-log-analysis){: external} or locate an existing one that you want to install in your cluster. The logging instance must be in the same region where your cluster's {{site.data.keyword.satelliteshort}} location is managed from.
 
 2. From the [Logging](https://cloud.ibm.com/observe/logging){: external} page, click on the logging instance. 
 

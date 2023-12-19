@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-12-18"
+lastupdated: "2023-12-19"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -19,21 +19,16 @@ A Connector provides a secure connection between a specific remote location and 
 {: shortdesc}
 
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click **Connectors**.
-
 1. Click **Create connector**.
-
 1. For **Name**, enter a unique name for your Connector. The default value is `connector`.
-
 1. For **Tags**, enter one or more tags that can help you organize resources throughout your account by filtering by tags from your resource list. This field is optional. For more information, see [Working with tags](/docs/account?topic=account-tag).
-
 1. For **Resource group**, assign a resource group to your connector. The default value is `Default`.
-
 1. For **Description**, describe what this Connector is used for. This field is optional.
-
 1. For the **Managed from** menu, select the {{site.data.keyword.cloud_notm}} region that is closest to where your infrastructure resides to ensure low network latency.
-
 1. In the **Summary** panel, review your order details, and then click **Create connector**. 
 {: #create-connector-steps}
+
+
 
 {{site.data.keyword.satelliteshort}} Connector is not supported for deploying within {{site.data.keyword.cloud_notm}}.
 {: note}

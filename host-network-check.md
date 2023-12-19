@@ -2,11 +2,11 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-03-27"
+lastupdated: "2023-12-19"
 
-keywords: satellite, networking, connectivity, hosts
+keywords: satellite, networking, connectivity, host check, host setup
 
-subcollection: satellite, host check, setup
+subcollection: satellite
 
 ---
 

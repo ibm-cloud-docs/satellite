@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-07-05"
+lastupdated: "2023-12-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -21,6 +21,7 @@ After deploying a [Connector agent](/docs/satellite?topic=satellite-run-agent-lo
 
 ## Creating endpoints from the console
 {: #create-connector-endpoint-console}
+{: step}
 
 1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, click the Connector that you want to use create an endpoint.
 
@@ -31,7 +32,7 @@ After deploying a [Connector agent](/docs/satellite?topic=satellite-run-agent-lo
     1. Give your endpoint a name.
     1. Enter the fully qualified domain name or IP address of the destination resource that you want to connect to.
     1. Enter the port that your destination resource listens on for incoming requests.
-    1. Click **Next**
+    1. Click **Next**.
 
 1. On the **Protocol** page, select the protocol that a source must use to connect to the destination FQDN or IP address. This protocol must match the port for your destination resource. For more information, see [Endpoint protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols).
     - If you selected the **TLS** or **HTTPS** protocols and want to require server-side authentication of the destination's certificate, select the **Verify destination certificate** checkbox.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-04-06"
+lastupdated: "2023-12-19"
 
 keywords: satellite, satellite config, Kubernetes, cluster
 
@@ -71,7 +71,7 @@ Follow these steps if you are new to {{site.data.keyword.satelliteshort}} Config
 {: #begin-sat-config-tutorial-advanced-helloworld-ui}
 {: ui}
 
-Before you begin, delete the subscription created previously in the [Beginner tutorial](#begin-sat-config-tutorial-deploy-app-ui).
+Before you begin, delete the subscription created previously in the [Beginner tutorial](/docs/satellite?topic=satellite-begin-sat-config-tutorial&interface=ui#begin-sat-config-tutorial-deploy-app-ui).
 
 1. Log in to GitHub and fork `https://github.com/IBM/satellite-config-example` including all branches. Make sure the **Copy the main branch only** option is not selected when you create the fork.
 

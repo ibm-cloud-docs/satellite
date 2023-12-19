@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2023
-lastupdated: "2023-11-16"
+lastupdated: "2023-12-19"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -75,7 +75,7 @@ For this specific {{site.data.keyword.baremetal_short_sing}}, you must use a bro
 {: note}
 
 1. [Download a Red Hat CoreOS ISO](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}. Find the corresponding ISO version that matches the {{site.data.keyword.redhat_openshift_notm}} version that you want to use. You can download any image that matches your minor version. For example, if you want to use version 4.11, [download a version of RHCOS for 4.11](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/4.11/){: external} like `rhcos-4.11.9-x86_64-live.x86_64.iso`.
-1. Log in to your VPN to access to your host network. For more information, see [VPN access on {{site.data.keyword.cloud_notm}}](https://www.ibm.com/cloud/vpn-access){: external}.
+1. Log in to your VPN to access to your host network. For more information, see [VPN access on {{site.data.keyword.cloud_notm}}](https://www.ibm.com/products/vpn-access){: external}.
 1. From the [Device list in the console](https://cloud.ibm.com/gen1/infrastructure/devices){: external}, select your bare metal server.
 1. From the **Overview** page, note the networking values for your server. Find and verify the  CIDR and gateway information.
 1. Click **Remote management** and make note of the `User` and `Password` in the **Management details** section. You use this username and password in later steps.

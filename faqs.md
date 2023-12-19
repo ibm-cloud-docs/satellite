@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-15"
+lastupdated: "2023-12-19"
 
 keywords: satellite, hybrid, multicloud, faq, service, host, location
 
@@ -92,7 +92,7 @@ The reasons that you cannot install extra software on the hosts relate to [{{sit
 {: #sla}
 {: faq}
 
-See the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic=overview-slas) and the [{{site.data.keyword.satelliteshort}} additional service description](http://www.ibm.com/software/sla/sladb.nsf/sla/bm-8913-01){: external}.
+See the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic=overview-slas) and the [{{site.data.keyword.satelliteshort}} additional service description](https://www.ibm.com/support/customer/csol/terms/?id=i126-8913){: external}.
 
  
 {{site.data.keyword.satelliteshort}} Infrastructure Service is IBM-operated and as such, is covered in the {{site.data.keyword.satellitelong_notm}} cloud service terms with additional information outlined in the [{{site.data.keyword.cloud_notm}} Additional Services Description](http://www.ibm.com/support/customer/csol/terms/?id=i126-8979){: external}.

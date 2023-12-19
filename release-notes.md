@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-12-08"
+lastupdated: "2023-12-19"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -930,7 +930,7 @@ New! General availability of the {{site.data.keyword.satelliteshort}} storage te
 :   For more information about storage templates, see [Understanding storage templates](/docs/satellite?topic=satellite-storage-template-ov).
 
 New! {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services</strong>: Many {{site.data.keyword.IBM_notm}} {{site.data.keyword.databases-for}} are now available to deploy to your {{site.data.keyword.satelliteshort}} location. 
-:   For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/cloud/blog/announcements/deploy-managed-cloud-native-databases-anywhere-with-ibm-cloud-satellite){: external}.
+:   For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/blog/announcement/deploy-managed-cloud-native-databases-anywhere-with-ibm-cloud-satellite/){: external}.
 
 ### 24 June 2021
 {: #satellite-jun2421}

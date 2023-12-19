@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-29"
+lastupdated: "2023-12-19"
 
 keywords: satellite, hybrid, multicloud, use case, scenarios, benefits
 
@@ -39,7 +39,7 @@ Review some key benefits for using {{site.data.keyword.satellitelong_notm}}.
 |Centralize your monitoring and logging.|{{site.data.keyword.satellitelong_notm}} is integrated with {{site.data.keyword.mon_full_notm}}, {{site.data.keyword.la_full_notm}}, and {{site.data.keyword.at_full_notm}}. You can view the metrics and logs for the apps that run in your location, the {{site.data.keyword.cloud_notm}} services that you use, or the events that happen in your location from a single location. |
 {: caption="Reasons to use Satellite." caption-side="bottom"}
 
-For more information about {{site.data.keyword.satelliteshort}}, how it works and the service benefits, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/cloud/satellite){: external}.
+For more information about {{site.data.keyword.satelliteshort}}, how it works and the service benefits, see the [{{site.data.keyword.satelliteshort}} product page](https://www.ibm.com/products/satellite){: external}.
 
 ## Common use cases for {{site.data.keyword.satelliteshort}}
 {: #use-case-common}

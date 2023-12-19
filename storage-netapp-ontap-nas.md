@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-30"
+lastupdated: "2023-12-19"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -373,7 +373,7 @@ Before you remove your storage configuration, remove the app pods and PVCs that 
     ```
     {: pre}
 
-7. [Remove your NetApp ONTAP-NAS storage configuration from your cluster](#netapp-nas-template-rm-cli-2104)
+7. [Remove your NetApp ONTAP-NAS storage configuration from your cluster]/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=cli#netapp-nas-template-rm-cli-2104)
 
 
 
