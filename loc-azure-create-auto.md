@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-03"
+lastupdated: "2023-12-19"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -78,7 +78,7 @@ Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort
 {: shortdesc}
 
 1. Verify that you have the required [permissions in your Azure account](/docs/satellite?topic=satellite-iam-common#permissions-azure) to create a {{site.data.keyword.satelliteshort}} location from a template.
-2. [Sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli){: external} from the command line.
+2. [Sign in to your Azure account](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli){: external} from the command line.
     ```sh
     az login
     ```
@@ -96,7 +96,7 @@ Retrieve the Microsoft Azure credentials that {{site.data.keyword.satelliteshort
     ```
     {: pre}
 
-5. Create a service principal identity with the Contributor role, scoped to your subscription. These credentials are used by {{site.data.keyword.satellitelong_notm}} to provision resources in your Azure account. For more information, see the [Azure documentation](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli){: external}.
+5. Create a service principal identity with the Contributor role, scoped to your subscription. These credentials are used by {{site.data.keyword.satellitelong_notm}} to provision resources in your Azure account. For more information, see the [Azure documentation](https://learn.microsoft.com/en-us/cli/azure/azure-cli-sp-tutorial-1){: external}.
     ```sh
     az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription_ID>" -n"<service_principal_name>"
     ```

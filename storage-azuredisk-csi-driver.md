@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-12-01"
+lastupdated: "2023-12-19"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -34,7 +34,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 ## Prerequisites for using Azure Disk
 {: #sat-storage-azure-csi-prereq}
 
-Set up [Azure Disk storage](https://docs.microsoft.com/en-us/azure/aks/azure-disk-csi){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [Azure Disk storage](https://learn.microsoft.com/en-us/azure/aks/azure-disk-csi){: external} for {{site.data.keyword.satelliteshort}} clusters by creating a storage configuration in your location. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 To use the Azure Disk CSI driver storage template, complete the following tasks.
@@ -46,7 +46,7 @@ To use the Azure Disk CSI driver storage template, complete the following tasks.
 
     
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters) that runs on compute hosts in Azure. Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage.
-1. [Create your configuration file](#azuredisk-csi-driver-config-create-console).
+1. [Create your configuration file](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#azuredisk-csi-driver-config-create-console).
 
 ### Optional: Labeling your worker nodes for Azure Disk
 {: #azure-disk-label-nodes}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-11-20"
+lastupdated: "2023-12-19"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -304,8 +304,8 @@ The following steps will upgrade ODF to the next version.
 
 1. Create a new storage configuration that contains all the same information as the old configuration with the `upgrade` parameter set to `true`.
 
-    [ODF for Remote Devices](/docs/satellite?topic=satellite-storage-odf-remote#odf-remote-config-create-console) 
-    [ODF for Local Disks](/docs/satellite?topic=satellite-storage-odf-local#odf-local-config-create-console)
+    - [ODF for Remote Devices](/docs/satellite?topic=satellite-storage-odf-remote&interface=ui#odf-remote-config-create-console) 
+    - [ODF for Local Disks](/docs/satellite?topic=satellite-storage-odf-local&interface=ui#odf-local-config-create-console)
 
 ## Create a new assignment
 {: #sat-odf-new-assignment}
@@ -314,8 +314,8 @@ The following steps will upgrade ODF to the next version.
 [Major]{: tag-red}
 
 1. Create a new storage assignment. 
-    [ODF for Remote Devices](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote-include-assignment-create-console) 
-    [ODF for Local Disks](/docs/satellite?topic=satellite-storage-odf-local#storage-odf-local-include-assignment-create-console)
+    - [ODF for Remote Devices](/docs/satellite?topic=satellite-storage-odf-remote&interface=ui#storage-odf-remote-include-assignment-create-console) 
+    - [ODF for Local Disks](/docs/satellite?topic=satellite-storage-odf-local&interface=ui#storage-odf-local-include-assignment-create-console)
 
 1. Verify your storage assignment was created.
     ```sh

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-09-27"
+lastupdated: "2023-12-19"
 
 keywords: satellite, hybrid, multicloud, assign access, access for satellite
 
@@ -50,8 +50,8 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
 {: shortdesc}
 
 1. [Invite users to your account](/docs/account?topic=account-iamuserinv).
-2. [Create an access group](/docs/account?topic=account-groups#create_ag) to add users to.
-3. [Assign the access group](/docs/account?topic=account-groups#access_ag) with the appropriate scope for the {{site.data.keyword.satelliteshort}} resources and IAM platform and service roles for the actions you want to let users in your access group perform.
+2. [Create an access group](/docs/account?topic=account-groups&interface=ui#create_ag) to add users to.
+3. [Assign the access group](/docs/account?topic=account-groups&interface=ui#access_ag) with the appropriate scope for the {{site.data.keyword.satelliteshort}} resources and IAM platform and service roles for the actions you want to let users in your access group perform.
     - To scope access to the service, use **{{site.data.keyword.satellitelong_notm}}** in the UI or **satellite** in the API or CLI.
     - You can scope access to the account or particular resource groups. Keep in mind the following points.
         - Account-level access is not the same as access to all resource groups.
@@ -73,11 +73,11 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
         - [Service access roles](/docs/satellite?topic=satellite-iam-service-access)
         - [Common use cases and roles](/docs/satellite?topic=satellite-iam#iam-roles-usecases)
     - Consider creating a **Reader** service policy to {{site.data.keyword.satellitelong_notm}} (and not scoped to a particular resource type or resource) so that users can view the {{site.data.keyword.satelliteshort}} Config resources that run in {{site.data.keyword.satelliteshort}} clusters, such as pods or deployments.
-4. [Assign the access group](/docs/account?topic=account-groups#access_ag) with the appropriate scope for any other {{site.data.keyword.cloud_notm}} services that you plan to use in your {{site.data.keyword.satelliteshort}} location. Refer to each service documentation for the level of access that you need. Common services include:
+4. [Assign the access group](/docs/account?topic=account-groups&interface=ui#access_ag) with the appropriate scope for any other {{site.data.keyword.cloud_notm}} services that you plan to use in your {{site.data.keyword.satelliteshort}} location. Refer to each service documentation for the level of access that you need. Common services include:
     - {{site.data.keyword.openshiftlong_notm}} clusters: **Kubernetes Service** in the UI, **containers-kubernetes** in the API and CLI.
     - {{site.data.keyword.registrylong_notm}} for a private registry across clusters: **Container Registry** in the UI, **container-registry** in the API and CLI.
     - {{site.data.keyword.cos_full_notm}} for the backing storage for your location information: **Cloud Object Storage** in the UI, **cos** in the API and CLI.
-5. [Assign the access group](/docs/account?topic=account-groups#access_ag) with the **Viewer** platform access role to any resource groups that you plan to use with {{site.data.keyword.satelliteshort}}.
+5. [Assign the access group](/docs/account?topic=account-groups&interface=ui#access_ag) with the **Viewer** platform access role to any resource groups that you plan to use with {{site.data.keyword.satelliteshort}}.
 
 
 ## Assigning access policy to access group by using the console

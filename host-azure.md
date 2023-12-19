@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2023
-lastupdated: "2023-11-20"
+lastupdated: "2023-12-19"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -37,7 +37,7 @@ You can create your {{site.data.keyword.satellitelong_notm}} location by using h
 {: shortdesc}
 
 
-If you want to use Red Hat CoreOS (RHCOS) hosts in your location, provide your RHCOS image file to your Azure account. For more information, see [Creating custom Linux images](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/imaging){: external}. To find RHCOS images, see the list of [available images](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/). Note that you must use at least version 4.9.
+If you want to use Red Hat CoreOS (RHCOS) hosts in your location, provide your RHCOS image file to your Azure account. For more information, see [Creating custom Linux images](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/imaging){: external}. To find RHCOS images, see the list of [available images](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/). Note that you must use at least version 4.9.
 {: important}
 
 
@@ -46,7 +46,7 @@ All hosts that you want to add must meet the general host requirements, such as 
 
 Before you begin
 * [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
-* [Install the Azure command line interface (`az`)](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli){: external}.
+* [Install the Azure command line interface (`az`)](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli){: external}.
 * Make sure that you have user admin credentials to your Azure account.
 
 To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
@@ -83,26 +83,26 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
     ```
     {: codeblock}
 
-4. From your local command line, [sign in to your Azure account](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest){: external}.
+4. From your local command line, [sign in to your Azure account](https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest){: external}.
     ```sh
     az login
     ```
     {: pre}
 
 5. Create a network security group that meets the host networking requirements for {{site.data.keyword.satelliteshort}}.
-    1. Create a network security group in your resource group. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/network/nsg?view=azure-cli-latest#az_network_nsg_create){: external}.
+    1. Create a network security group in your resource group. For more information, see the [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/network/nsg?view=azure-cli-latest#az_network_nsg_create){: external}.
         ```sh
         az network nsg create --name <network_security_group_name> --resource-group <resource_group_name>
         ```
         {: pre}
 
-    2. Create a rule in the network security group to allow SSH into virtual machines. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az_network_nsg_rule_create){: external}.
+    2. Create a rule in the network security group to allow SSH into virtual machines. For more information, see the [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az_network_nsg_rule_create){: external}.
         ```sh
         az network nsg rule create --name ssh --nsg-name <network_security_group_name> --priority 1000 --resource-group <resource_group_name> --destination-port-ranges 22 --access Allow --protocol Tcp
         ```
         {: pre}
 
-    3. Create a rule in the network security group to meet the [minimum host networking requirements](/docs/satellite?topic=satellite-reqs-host-network). For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az_network_nsg_rule_create){: external}.
+    3. Create a rule in the network security group to meet the [minimum host networking requirements](/docs/satellite?topic=satellite-reqs-host-network). For more information, see the [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/network/nsg/rule?view=azure-cli-latest#az_network_nsg_rule_create){: external}.
         ```sh
         az network nsg rule create --name satellite --nsg-name <network_security_group_name> --priority 1010 --resource-group <resource_group_name> --destination-port-ranges 80 443 30000-32767 --access Allow
         ```
@@ -110,7 +110,7 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
 
     4. Optional: Verify that your network security group meets the host networking requirements, such as in the [example settings](#azure-reqs-firewall).
     
-6. Create virtual machines to serve as the hosts for your {{site.data.keyword.satelliteshort}} location resources, including the control plane and any {{site.data.keyword.redhat_openshift_notm}} clusters that you want to create. The following command creates 6 VMs at the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for compute, disks, and image. The VMs are created in the resource group and network security group that you previously created. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_create){: external}.
+6. Create virtual machines to serve as the hosts for your {{site.data.keyword.satelliteshort}} location resources, including the control plane and any {{site.data.keyword.redhat_openshift_notm}} clusters that you want to create. The following command creates 6 VMs at the [minimum host requirements](/docs/satellite?topic=satellite-host-reqs) for compute, disks, and image. The VMs are created in the resource group and network security group that you previously created. For more information, see the [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_create){: external}.
     
     - Create Red Hat Enterprise Linux hosts
         ```sh
@@ -129,7 +129,7 @@ To add hosts from Azure to your {{site.data.keyword.satelliteshort}} location,
 
 7. Wait for the instances to create. During the creation of your instance, the script runs automatically. This process takes a few minutes to complete.
 8. Monitor the progress of the registration script.
-    1.  Get the public IP address of one of your instances. For more information, see the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_list_ip_addresses){: external}.
+    1.  Get the public IP address of one of your instances. For more information, see the [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/vm?view=azure-cli-latest#az_vm_list_ip_addresses){: external}.
         ```sh
         az vm list-ip-addresses -g <resource_group> -n <vm_name>
         ```

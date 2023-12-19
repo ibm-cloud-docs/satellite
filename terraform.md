@@ -28,7 +28,7 @@ Before you can create an authorization by using Terraform, make sure that you ha
 
 - Make sure that you have the [required access](/docs/satellite?topic=satellite-iam) to create and work with {{site.data.keyword.satelliteshort}} resources.
 - Install the Terraform CLI and configure the {{site.data.keyword.cloud_notm}} Provider plug-in for Terraform. For more information, see the tutorial for [Getting started with Terraform on {{site.data.keyword.cloud}}](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started). The plug-in abstracts the {{site.data.keyword.cloud_notm}} APIs that are used to complete this task.
-- Create a Terraform configuration file that is named `main.tf`. In this file, you define resources by using HashiCorp Configuration Language. For more information, see the [Terraform documentation](https://www.terraform.io/docs/language/index.html){: external}.
+- Create a Terraform configuration file that is named `main.tf`. In this file, you define resources by using HashiCorp Configuration Language. For more information, see the [Terraform documentation](https://developer.hashicorp.com/terraform/language){: external}.
 - To create and manage the underlying infrastructure in other cloud providers, you must have the appropriate permissions. Review [common permissions in other cloud providers](/docs/satellite?topic=satellite-iam-common).
 
 ## Creating a {{site.data.keyword.satelliteshort}} location by using Terraform

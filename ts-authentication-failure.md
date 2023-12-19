@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-06-14"
+  years: 2022, 2023
+lastupdated: "2023-12-19"
 
 keywords: satellite, node, azure, file, disk
 
@@ -21,7 +21,7 @@ You are unable to access your storage configuration due to an `authentication er
 Verify that your `service principal` is configured correctly. 
 {: tsResolve}
 
-To view your `service principal` configuration, follow the steps in the [Azure CLI documentation](https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli#2-get-an-existing-service-principal){: external}. 
+To view your `service principal` configuration, follow the steps in the [Azure CLI documentation](https://learn.microsoft.com/en-us/cli/azure/azure-cli-sp-tutorial-1#2-get-an-existing-service-principal){: external}. 
 
 
 
