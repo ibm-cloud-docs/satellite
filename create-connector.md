@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2023
-lastupdated: "2023-12-14"
+lastupdated: "2023-12-18"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -33,6 +33,7 @@ A Connector provides a secure connection between a specific remote location and 
 1. For the **Managed from** menu, select the {{site.data.keyword.cloud_notm}} region that is closest to where your infrastructure resides to ensure low network latency.
 
 1. In the **Summary** panel, review your order details, and then click **Create connector**. 
+{: #create-connector-steps}
 
 {{site.data.keyword.satelliteshort}} Connector is not supported for deploying within {{site.data.keyword.cloud_notm}}.
 {: note}
