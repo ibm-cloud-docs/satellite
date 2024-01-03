@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2023
-lastupdated: "2023-02-14"
+  years: 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 

@@ -1,9 +1,10 @@
 ---
 
-copyright:
-  years: 2023, 2023
 
-lastupdated: "2023-10-31"
+copyright:
+  years: 2023, 2024
+
+lastupdated: "2024-01-03"
 
 
 keywords: satellite, connector, agent, image, change log, version history

@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-12-19"
+  years: 2020, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -95,7 +96,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 
 
 [New]{: tag-green} CLI version `1.0.573` is available.
-:   For more information, see the [CLI change log](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ## September 2023
 {: #satellite-sep23}
@@ -118,7 +119,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 [Change log]{: tag-purple} CLI version `1.0.566` is available.
-:   For more information, see the [CLI change log](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 ## July 2023
@@ -156,7 +157,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 [Change log]{: tag-purple} CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.528](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.528](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 ### 22 June 2023
@@ -241,7 +242,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 [Change log]{: tag-purple} CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.498](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.498](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ## January 2023
 {: #satellite-jan23}
@@ -251,7 +252,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 [Change log]{: tag-purple} CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.487](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.487](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ## December 2022
 {: #satellite-dec22}
@@ -275,7 +276,7 @@ New! GitOps configurations
 :   Create a configuration to deploy apps from GitHub or GitLab to your clusters. For more information, see [Managing GitOps configurations](/docs/satellite?topic=satellite-satcon-manage-gitops).
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.480](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.480](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 ### 5 December 2022
@@ -348,7 +349,7 @@ Apply updates your worker nodes in place
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.454](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.454](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ## September 2022
 {: #satellite-sep22}
@@ -368,14 +369,14 @@ Added support for remote workers
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.452](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.452](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 12 September 2022
 {: #satellite-sep1222}
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.446](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.446](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 6 September 2022
 {: #satellite-sep622}
@@ -420,7 +421,7 @@ Added information about verifying your permissions
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.433](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.433](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 3 August 2022
 {: #satellite-aug322}
@@ -480,7 +481,7 @@ New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshor
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.420](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.420](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 New! You can now create Red Hat CoreOS enabled {{site.data.keyword.satelliteshort}} locations in the **London** (`lon`, `eu-gb`) region.
 :   To create a Red Hat CoreOS enabled location in the London region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
@@ -517,7 +518,7 @@ New! Think you know {{site.data.keyword.satelliteshort}}? Take a quiz!
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.415](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.415](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 16 May 2022
 {: #satellite-may1622}
@@ -554,7 +555,7 @@ New! {{site.data.keyword.satelliteshort}} configuration and assignment update co
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.404](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.404](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 ### 26 April 2022
@@ -562,7 +563,7 @@ CLI change log
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.403](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.403](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 20 April 2022
 {: #satellite-apr2022}
@@ -613,7 +614,7 @@ New! Check your host setup before attaching hosts to your location.
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.384](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.384](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 ### 10 March 2022
@@ -648,7 +649,7 @@ Host outbound connectivity
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.374](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.374](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 {{site.data.keyword.keymanagementservicefull_notm}} 
@@ -662,7 +663,7 @@ CLI change log
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.372](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.372](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 16 February 2022
 {: #satellite-feb1622}
@@ -734,7 +735,7 @@ New! Sydney location
 {: release-note}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.353](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.353](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 ## November 2021
@@ -804,7 +805,7 @@ Review the release notes for 12 October 2021.
 {: shortdesc}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.327](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.327](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 ## September 2021
@@ -865,7 +866,7 @@ Review the release notes for 9 August 2021.
 {: shortdesc}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.312](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.312](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 3 August 2021
 {: #satellite-aug321}
@@ -943,7 +944,7 @@ Azure template
 :   Automate the setup of a {{site.data.keyword.satelliteshort}} location in Microsoft Azure cloud infrastructure by using a [{{site.data.keyword.bpshort}}](/docs/satellite?topic=satellite-loc-azure-create-auto).
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.295](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.295](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 18 June 2021
 {: #satellite-jun1821}
@@ -982,7 +983,7 @@ Review the release notes for 26 May 2021.
 {: shortdesc}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.258](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 19 May 2021
 {: #satellite-may1921}
@@ -1028,7 +1029,7 @@ Review the release notes for 26 April 2021.
 {: shortdesc}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.258](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.258](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 15 April 2021
 {: #satellite-apr1521}
@@ -1119,7 +1120,7 @@ New! General availability of {{site.data.keyword.satellitelong}}
 :   {{site.data.keyword.satellitelong_notm}} is now generally available. If you created locations during the closed beta, you must [re-create your locations](/docs/satellite?topic=satellite-location-copy) for the general availability release. For more information about what you are charged for when you use {{site.data.keyword.satellitelong_notm}}, see the [FAQs](/docs/satellite?topic=satellite-faqs#pricing).
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.233](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.233](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Cloud provider guides
 :   Added instructions to set up {{site.data.keyword.satelliteshort}} locations that use infrastructure from [AWS](/docs/satellite?topic=satellite-aws), [GCP](/docs/satellite?topic=satellite-gcp), [Azure](/docs/satellite?topic=satellite-azure), and [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm).
@@ -1150,7 +1151,7 @@ Auditing events
 :   Added a topic for [auditing {{site.data.keyword.satelliteshort}} events with {{site.data.keyword.cloudaccesstrailshort}}](/docs/satellite?topic=satellite-at_events).
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.223](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 23 February 2021
 {: #satellite-feb2321}
@@ -1205,7 +1206,7 @@ Review the release notes for 8 February 2021.
 {: shortdesc}
 
 CLI change log
-:   Updated the CLI plug-in change log page for the [release of version 1.0.223](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Updated the CLI plug-in change log page for the [release of version 1.0.223](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Host auto assignment
 :   Added information about how [{{site.data.keyword.satelliteshort}} can automatically assign hosts](/docs/satellite?topic=satellite-host-autoassign-ov) to worker pools in clusters or {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that use host labels to request compute capacity.
@@ -1338,7 +1339,7 @@ Review the release notes for 6 October 2020.
 {: shortdesc}
 
 CLI change log
-:   Added a CLI plug-in change log page for the [release of version 1.0.178](/docs/satellite?topic=satellite-satellite-cli-changelog).
+:   Added a CLI plug-in change log page for the [release of version 1.0.178](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Location subdomain troubleshooting
 :   Added steps for further troubleshooting when [the location subdomain does not route traffic to control plane hosts](/docs/satellite?topic=satellite-ts-location-subdomain).

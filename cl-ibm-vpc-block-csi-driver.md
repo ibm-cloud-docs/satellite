@@ -1,9 +1,10 @@
 ---
 
-copyright:
-  years: 2020, 2023
 
-lastupdated: "2023-11-29"
+copyright:
+  years: 2020, 2024
+
+lastupdated: "2024-01-03"
 
 
 keywords: satellite storage, change log, version history, ibm vpc block csi driver

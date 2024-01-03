@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-09-06"
+  years: 2020, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite, hybrid, multicloud, troubleshoot, host assign fail, crio error
 

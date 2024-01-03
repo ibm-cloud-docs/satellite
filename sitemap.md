@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2017, 2023
-lastupdated: "2023-12-19"
+  years: 2017, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3215,9 +3216,141 @@ subcollection: satellite
 
     * [{{site.data.keyword.openshiftlong_notm}} commands (`ibmcloud oc`)](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-create)
 
-[CLI change log for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-changelog#satellite-cli-changelog)
+[CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
-* [Version 1.0](/docs/satellite?topic=satellite-satellite-cli-changelog#10)
+* [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.579](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01579)
+
+* [Version 0.1.573](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01573)
+
+* [Version v1.0.566](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10566)
+
+* [Version v1.0.540](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10549)
+
+* [Version v1.0.528](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10528)
+
+* [Version v1.0.523](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10523)
+
+* [Version v1.0.516](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10516)
+
+* [Version v1.0.510](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10510)
+
+* [Version v1.0.498](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10498)
+
+* [Version 1.0.489](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10489)
+
+* [Version 1.0.487](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10487)
+
+* [Version 1.0.480](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10480)
+
+* [Version 1.0.471](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10471)
+
+* [Version 1.0.459](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10459)
+
+* [Version 1.0.454](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10454)
+
+* [Version 1.0.452](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10452)
+
+* [Version 1.0.446](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10446)
+
+* [Version 1.0.444](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10444)
+
+* [Version 1.0.439](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10439)
+
+* [Version 1.0.433](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10433)
+
+* [Version 1.0.431](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10431)
+
+* [Version 1.0.430](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10430)
+
+* [Version 1.0.426](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10426)
+
+* [Version 1.0.419](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10419)
+
+* [Version 1.0.415](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10415)
+
+* [Version 1.0.408](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10408)
+
+* [Version 1.0.404](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10404)
+
+* [Version 1.0.403](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10403)
+
+* [Version 1.0.394](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10394)
+
+* [Version 1.0.384](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10384)
+
+* [Version 1.0.374](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10374)
+
+* [Version 1.0.372](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10372)
+
+* [Version 1.0.353](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10353)
+
+* [Version 1.0.347](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10347)
+
+* [Version 1.0.344](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10344)
+
+* [Version 1.0.334](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10334)
+
+* [Version 1.0.331](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10331)
+
+* [Version 1.0.312](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10312)
+
+* [Version 1.0.300](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10300)
+
+* [Version 1.0.295](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10295)
+
+* [Version 1.0.275](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10275)
+
+* [Version 1.0.258](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10258)
+
+* [Version 1.0.233](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10233)
+
+* [Version 1.0.231](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10231)
+
+* [Version 1.0.223](/docs/satellite?topic=satellite-cs_cli_changelog#cli-102238)
+
+* [Version 1.0.208](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10208)
+
+* [Version 1.0.206](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10206)
+
+* [Version 1.0.197](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10197)
+
+* [Version 1.0.178](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10178)
+
+* [Version 1.0.171](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10171)
+
+* [Version 1.0.157](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10157)
+
+* [Version 1.0.143](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10143)
+
+* [Version 1.0.118](/docs/satellite?topic=satellite-cs_cli_changelog#cli-10118)
+
+* [Version 1.0.99](/docs/satellite?topic=satellite-cs_cli_changelog#cli-1099)
+
+* [Version 1.0.94](/docs/satellite?topic=satellite-cs_cli_changelog#cli-1094)
+
+* [Version 1.0.84](/docs/satellite?topic=satellite-cs_cli_changelog#cli-1084)
+
+* [Version 1.0.57](/docs/satellite?topic=satellite-cs_cli_changelog#cli-1057)
+
+* [Version 1.0.28](/docs/satellite?topic=satellite-cs_cli_changelog#cli-1028)
+
+* [Version 1.0.15](/docs/satellite?topic=satellite-cs_cli_changelog#cli-1015)
+
+* [Version 1.0.0](/docs/satellite?topic=satellite-cs_cli_changelog#cli-100)
+
+* [Deprecated versions](/docs/satellite?topic=satellite-cs_cli_changelog#deprecated)
+
+    * [Updating to version 1.0 of the plug-in](/docs/satellite?topic=satellite-cs_cli_changelog#changelog_beta)
+
+    * [Version 0.4](/docs/satellite?topic=satellite-cs_cli_changelog#04)
+
+    * [Version 0.3](/docs/satellite?topic=satellite-cs_cli_changelog#03)
+
+    * [Version 0.2](/docs/satellite?topic=satellite-cs_cli_changelog#02)
+
+    * [Version 0.1](/docs/satellite?topic=satellite-cs_cli_changelog#01)
 
 
 ## Limitations, default settings, and usage requirements

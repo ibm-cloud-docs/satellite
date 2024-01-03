@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-06-08"
+  years: 2022, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite, node, azure, file, disk
 

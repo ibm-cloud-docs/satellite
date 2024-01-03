@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-12-06"
+  years: 2022, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
