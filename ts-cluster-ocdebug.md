@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-05-31"
+  years: 2020, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite, hybrid, multicloud, troubleshoot
 

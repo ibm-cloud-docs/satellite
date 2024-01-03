@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2022, 2022
-lastupdated: "2022-04-18"
+  years: 2022, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite, troubleshoot, multicloud
 

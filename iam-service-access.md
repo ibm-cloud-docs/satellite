@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2020, 2022
-lastupdated: "2022-10-06"
+  years: 2020, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite, hybrid, multicloud, service access roles for satellite, access for satellite, service access for satellite
 

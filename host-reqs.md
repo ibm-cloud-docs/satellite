@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-06-02"
+  years: 2020, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 

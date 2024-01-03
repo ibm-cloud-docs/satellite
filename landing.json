@@ -1,7 +1,7 @@
 
 {
     "title": "Satellite",
-    "lastupdated": "2023-12-19",
+    "lastupdated": "2024-01-03",
     "introduction": "Explore the capabilities of IBM Cloud Satellite and discover the tools to manage your locations, hosts, and app workloads. ",
     "section_devtools": {
       "api": "https://containers.cloud.ibm.com/global/swagger-global-api/", 

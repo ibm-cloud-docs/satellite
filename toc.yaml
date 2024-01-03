@@ -282,7 +282,7 @@ toc:
             topics:
               - icsat-map.md
               - satellite-cli-reference.md
-              - satellite-cli-changelog.md
+              - include: ../openshift/cli-changelog.md
         - requirements.md
         - sat-regions.md
         - pricing.md

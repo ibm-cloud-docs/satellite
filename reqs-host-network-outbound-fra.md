@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2022, 2023
-lastupdated: "2023-10-27"
+  years: 2022, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall
 

@@ -1,8 +1,9 @@
 ---
 
+
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-09-15"
+  years: 2020, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite, hybrid, multicloud, link endpoints, link, location endpoint, cloud endpoint
 

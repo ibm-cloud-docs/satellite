@@ -1,8 +1,9 @@
 ---
 
+
 copyright: 
-  years: 2023, 2023
-lastupdated: "2023-11-20"
+  years: 2023, 2024
+lastupdated: "2024-01-03"
 
 keywords: satellite, install cli, install sat, set up satellite command line, satellite command line, satellite cli, sat commands
 
