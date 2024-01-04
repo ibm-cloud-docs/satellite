@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-04"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -432,7 +432,7 @@ Location message
 Steps to resolve
 :    Pods that remain in a terminating state for an hour or more indicate that the location control plane is not healthy. Restart the location control plane hosts and see if the problem is resolved. If the problem still exists, follow the steps to replace the location control plane hosts.
 
-When you update or replace control plane hosts, **do not assign or remove multiple hosts at the same time** as doing so may break the control plane. You must wait for a host assignment or removal to complete before assigning or removing another host.  \n To avoid possible service disruptions, make sure you attach and assign additional hosts to the control plane before removing any hosts.
+When you update or replace control plane hosts, **do not assign or remove multiple hosts at the same time** as doing so may break the control plane. You must wait for a host assignment or removal to complete before assigning or removing another host. To avoid possible service disruptions, make sure you attach and assign additional hosts to the control plane before removing any hosts.
 {: important}
 
 1. For each host you want to remove from the control plane, [attach an additional host](/docs/satellite?topic=satellite-attach-hosts).
