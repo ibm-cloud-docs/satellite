@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-04"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1744,6 +1744,7 @@ Use these commands to create and manage {{site.data.keyword.satelliteshort}} Con
 
 This `connector` commands are an experimental feature that are available for evaluation and testing purposes and might change without notice.
 {: experimental}
+
 
 
 ### `ibmcloud sat experimental connector create`
