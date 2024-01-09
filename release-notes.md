@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-09"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -30,7 +30,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-dec0123}
 {: release-note}
 
-[New]{: tag-green} Template for VMware location setup
+Template for VMware location setup
 :   You can use {{site.data.keyword.bpshort}} to set up your VMware Virtual Cloud Director virtual machines as a {{site.data.keyword.satelliteshort}} location. For more information, see [Automating your VMware location setup with a Schematics template](/docs/satellite?topic=satellite-loc-vmware-create-auto).
 
 ## November 2023
@@ -40,21 +40,21 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-nov2723}
 {: release-note}
 
-[Change log]{: tag-purple} Storage template revisions are available.
+Storage template revisions are available.
 :   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or run the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
 
 ### 14 November 2023
 {: #satellite-nov1423}
 {: release-note}
 
-[New]{: tag-green} Troubleshooting documentation for attaching hosts.
+Troubleshooting documentation for attaching hosts.
 :   For more information, see [Why is my host attach failing with error message `A0029` `Access denied to specified controller`](/docs/satellite?topic=satellite-ts-host-expired-token)?
 
 ### 01 November 2023
 {: #satellite-nov0123}
 {: release-note}
 
-[Change log]{: tag-purple} Storage template revisions are available.
+Storage template revisions are available.
 :   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console or with the [`ibmcloud sat storage config upgrade`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade) command.
 
 ## October 2023
@@ -64,38 +64,38 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-oct2723}
 {: release-note}
 
-[Change log]{: tag-purple} Connector agent image version `1.1.2`.
+Connector agent image version `1.1.2`.
 :   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image). For more information about running the image, see [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
 
 ### 25 October 2023
 {: #satellite-oct2523}
 {: release-note}
 
-[New]{: tag-green} Troubleshooting documentation for Connector agents.
+Troubleshooting documentation for Connector agents.
 :   For more information, see [Why do I see a `rejected by Sources` error in my agent container logs](/docs/satellite?topic=satellite-ts-connector-endpoints-acls)?
 
 ### 20 October 2023
 {: #satellite-oct2023}
 {: release-note}
 
-[New]{: tag-green} {{site.data.keyword.satelliteshort}} storage template for local storage
+{{site.data.keyword.satelliteshort}} storage template for local storage
 :   A new {{site.data.keyword.satelliteshort}} storage template is available for deploying local storage. This new template provides both local block and local file storage functionality. For more information, see the [Local Storage Operator](/docs/satellite?topic=satellite-storage-local-storage-operator) deployment guide.
 
-[New]{: tag-green} Debugging guide for OpenShift Data Foundation
+Debugging guide for OpenShift Data Foundation
 :   For more information, see [Debugging OpenShift Data Foundation](/docs/satellite?topic=satellite-sat-storage-odf-debug).
 
-[Change log]{: tag-purple} Storage template revisions are available.
+Storage template revisions are available.
 :   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or run the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
 
 ### 10 October 2023
 {: #satellite-oct1023}
 {: release-note}
 
-[Change log]{: tag-purple} Connector agent image version `1.1.1`.
+Connector agent image version `1.1.1`.
 :   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image). For more information about running the image, see [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
 
 
-[New]{: tag-green} CLI version `1.0.573` is available.
+CLI version `1.0.573` is available.
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ## September 2023
@@ -106,11 +106,11 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-sep2223}
 {: release-note}
 
-[New]{: tag-green} You can now create {{site.data.keyword.satelliteshort}} locations in the Madrid (`mad`, `eu-es`) region.
+You can now create {{site.data.keyword.satelliteshort}} locations in the Madrid (`mad`, `eu-es`) region.
 :   To create a {{site.data.keyword.satelliteshort}} location in the Madrid region, see [Understanding {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-infrastructure-plan#infras-plan-os).
 
 
-[Change log]{: tag-purple} Storage template revisions
+Storage template revisions
 :   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or by running the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
 
 
@@ -118,7 +118,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-sep1823}
 {: release-note}
 
-[Change log]{: tag-purple} CLI version `1.0.566` is available.
+CLI version `1.0.566` is available.
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
@@ -129,7 +129,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-july2423}
 {: release-note}
 
-[Change log]{: tag-purple} Storage template revisions
+Storage template revisions
 :   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or by running the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
 
 
@@ -138,13 +138,13 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-july0523}
 {: release-note}
 
-[New]{: tag-green} {{site.data.keyword.satelliteshort}} Connector
+{{site.data.keyword.satelliteshort}} Connector
 :   {{site.data.keyword.satelliteshort}} Connector is a deployment model which enables secure communications from IBM Cloud to on-prem resources via a light weight container deployed on your container platform hosts. This option brings all the security and auditability of {{site.data.keyword.satelliteshort}} communication, but with much fewer resources required. For more information, see [Understanding {{site.data.keyword.satelliteshort}} Connectors](/docs/satellite?topic=satellite-understand-connectors).
 
-[New]{: tag-green} Setting up Connector as a Secure Gateway replacement
+Setting up Connector as a Secure Gateway replacement
 :   Coming from Secure Gateway? {{site.data.keyword.satelliteshort}} Connector replaces Secure Gateway to provide connection between IBM Cloud and your on-prem data center. For more information, see [{{site.data.keyword.satelliteshort}} Connector and Security Gateway](/docs/satellite?topic=satellite-connector-and-secure-gateway).
 
-[New]{: tag-green} Understanding your responsibilities with {{site.data.keyword.satelliteshort}} Connector
+Understanding your responsibilities with {{site.data.keyword.satelliteshort}} Connector
 :   For more information, review the [Overview of shared responsibilities](/docs/satellite?topic=satellite-responsibilities#overview-by-resource) for {{site.data.keyword.satelliteshort}} Connector, the {{site.data.keyword.satelliteshort}} Connector agent image, and the {{site.data.keyword.satelliteshort}} Connector container platform.
 
 ## June 2023
@@ -156,7 +156,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-june2623}
 {: release-note}
 
-[Change log]{: tag-purple} CLI change log
+CLI change log
 :   Updated the CLI plug-in change log page for the [release of version 1.0.528](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
@@ -164,7 +164,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-june2223}
 {: release-note}
 
-[Change log]{: tag-purple} Storage template revisions
+Storage template revisions
 :   Revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
 
 ### 12 June 2023
@@ -172,7 +172,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 
-[New]{: tag-green} RHCOS enabled locations with reduced firewall
+RHCOS enabled locations with reduced firewall
 :   You can now create {{site.data.keyword.satelliteshort}} locations with a reduced footprint. For more information, see [Creating Red Hat CoreOS enabled Locations with reduced firewall footprint](/docs/satellite?topic=satellite-coreos-reduced-firewall).
 
 ## May 2023
@@ -183,7 +183,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 
-[Change log]{: tag-purple} Storage template revisions
+Storage template revisions
 :   Revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
 
 ### 04 May 2023
@@ -191,7 +191,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 
-[Change log]{: tag-purple} Storage template revisions
+Storage template revisions
 :   Revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
 
 
@@ -202,14 +202,14 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-apr2523}
 {: release-note}
 
-[Change log]{: tag-purple} Storage template revisions
+Storage template revisions
 :   Revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
 
 ### 05 April 2023
 {: #satellite-apr0523}
 {: release-note}
 
-[Change log]{: tag-purple} Storage template revisions
+Storage template revisions
 :   Revisions of the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history).
 
 
@@ -220,28 +220,28 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-mar2723}
 {: release-note}
 
-[New]{: tag-green} You can download a `.csv` copy of your outbound network requirements.
+You can download a `.csv` copy of your outbound network requirements.
 :   For more information, see the outbound network requirements for [your location region](/docs/satellite?topic=satellite-reqs-host-network-outbound).
 
 ### 24 March 2023
 {: #satellite-mar2423}
 {: release-note}
 
-[Update]{: tag-teal} Changes to the host network requirements in non-RHCOS locations.
+Changes to the host network requirements in non-RHCOS locations.
 :   For more information, see the outbound network requirements for the [region your Location is in](/docs/satellite?topic=satellite-reqs-host-network-outbound).
 
 ### 20 March 2023
 {: #satellite-mar2023}
 {: release-note}
 
-[New]{: tag-green} Terraform troubleshooting topic
+Terraform troubleshooting topic
 :   If you use Terraform to update your hosts, find out how to avoid reloading all your unassigned hosts. For more information, see [Why is my host attach script triggering a state change in Terraform](/docs/satellite?topic=satellite-ts-host-terraform)?
 
 ### 1 March 2023
 {: #satellite-mar0123}
 {: release-note}
 
-[Change log]{: tag-purple} CLI change log
+CLI change log
 :   Updated the CLI plug-in change log page for the [release of version 1.0.498](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ## January 2023
@@ -251,7 +251,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: #satellite-jan2423}
 {: release-note}
 
-[Change log]{: tag-purple} CLI change log
+CLI change log
 :   Updated the CLI plug-in change log page for the [release of version 1.0.487](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ## December 2022
@@ -629,7 +629,7 @@ New! Beta support for the {{site.data.keyword.block_storage_is_short}} CSI drive
 {: release-note}
 
 
-[New]{: tag-green} Beta support for the Google Compute Engine CSI driver template
+Beta support for the Google Compute Engine CSI driver template
 :   You can use the Google Compute Engine CSI driver template to create persistent storage for stateful apps that run in {{site.data.keyword.satelliteshort}} clusters. For more information, see the [Google Compute Engine CSI driver template documentation](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver).
 
 
@@ -655,7 +655,7 @@ CLI change log
 {{site.data.keyword.keymanagementservicefull_notm}} 
 :   {{site.data.keyword.keymanagementservicefull_notm}} is added as a supported managed service for {{site.data.keyword.satelliteshort}}. For more information, see [Supported {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-managed-services) and [About {{site.data.keyword.keymanagementserviceshort}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite).
 
-[New]{: tag-green} Troubleshooting issue for errors when you run the `oc debug` command 
+Troubleshooting issue for errors when you run the `oc debug` command 
 :   See [Why can't I log in to my worker nodes or debug them with `oc debug` command?](/docs/satellite?topic=satellite-ts-cluster-ocdebug).
 
 ### 18 February 2022
