@@ -325,6 +325,7 @@ toc:
         - topicgroup:
             label: Troubleshooting errors
             topics:
+              - include: ../get-support/ViewStatus.md
               - ts-locations-debug.md
               - topicgroup:
                   label: Locations

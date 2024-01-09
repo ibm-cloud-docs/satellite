@@ -1,9 +1,8 @@
 ---
 
-
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-09"
 
 
 keywords: satellite storage, features, overview
