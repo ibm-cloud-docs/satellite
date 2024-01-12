@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-12"
 
 keywords: satellite, connector
 
@@ -35,10 +35,10 @@ Agent {: #term-agent}
 :   Each connector needs an agent running on your location to establish the connection.
   
 Endpoint {: #term-endpoint}
-:   An endpoint allows you to securely connect to a server, service, or app that runs in your {{site.data.keyword.satelliteshort}} location from a client that is connected to the {{site.data.keyword.cloud_notm}} private network.
+:   An endpoint is the Connector term for the service being accessed across the Connector service. Endpoints are either the FQDNs or the IP addresses of the resources being made available across Satellite Connector. An endpoint is not limited to http(s) traffic, but can be any protocol that works across a TCP connection.
   
 Access control list {: #term-acl}
-:   Access control list (ACL) controls which clients can access location endpoint resources. You can create ACL rules and use them to control which clients can use the endpoint to connect to the destination resource that runs in your location.
+:   Because endpoints are exposed privately within IBM cloud to all of IBM cloud including other customers, an ACL allows for the IP or CIDR definitions of which resources in IBM cloud are allowed to use the endpoint.
 
 
 ## Minimum requirements
