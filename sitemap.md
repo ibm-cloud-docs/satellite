@@ -196,6 +196,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [January 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan24)
+
+    * [12 January 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan1224)
+
+        * Connector agent image version `1.1.3`.
+
 * [December 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec23)
 
     * [01 December 2023](/docs/satellite?topic=satellite-satellite-relnotes#satellite-dec0123)
