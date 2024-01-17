@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-16"
+lastupdated: "2024-01-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1662,9 +1662,13 @@ subcollection: satellite
 
 [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#run-agent-locally)
 
+* [Prerequisites](/docs/satellite?topic=satellite-run-agent-locally#agent-prepreqs)
+
 * [Reviewing the agent image parameters](/docs/satellite?topic=satellite-run-agent-locally#review-parameters)
 
-* [Creating the local configuration files](/docs/satellite?topic=satellite-run-agent-locally#create-config-file)
+* [Running the Connector agent on your container platform](/docs/satellite?topic=satellite-run-agent-locally#connector-agent-mac)
+
+    * [Creating the local configuration files](/docs/satellite?topic=satellite-run-agent-locally#create-config-file)
 
 * [Pulling the agent image](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image)
 
