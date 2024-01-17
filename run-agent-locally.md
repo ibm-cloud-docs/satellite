@@ -49,10 +49,10 @@ Configuration information is provided to the agent through the following environ
 | `PRETTY_LOG` | No | Specify `true` to show logs in a pretty format or `false` to show the logs in JSON format. |
 {: caption="Table 1. Environment variables for configuration" caption-side="bottom"}
 
-## Running the Connector agent on your container platform
+## Running the agent on your container platform
 {: #connector-agent-mac}
   
-### Creating the local configuration files
+### Step 1: Creating the local configuration files
 {: #create-config-file}
 
 There are several ways to pass agent configuration environment variable information to the container. The following example uses configuration files. However, you can also use the `docker run --env` command to specify the values.
@@ -95,7 +95,7 @@ The file names shown in the following steps are examples and can be tailored for
 
 1. Complete the steps in the following section to pull the agent image.
 
-### Pulling the agent image
+### Step 2: Pulling the agent image
 {: #pull-agent-image}
 
 1. Log in to {{site.data.keyword.registrylong}}. Or log in to the repository directly from Docker with your API key.
@@ -119,7 +119,7 @@ The file names shown in the following steps are examples and can be tailored for
 1. Complete the following steps to run the agent image.
 
 
-### Running the agent image
+### Step 3: Running the agent image
 {: #run-agent-image}
 
 1. To view available versions of agent image, run the following command.
@@ -182,10 +182,10 @@ The file names shown in the following steps are examples and can be tailored for
     {: screen}
 
 
-## Running a Connector agent on Windows
+## Running the agent on Windows
 {: #run-agent-windows}
 
-### Downloading the Connector agent files from the CLI
+### Step 1: Downloading the Connector agent files from the CLI
 {: #windows-agent-download}
 {: cli}
 
@@ -215,7 +215,7 @@ The file names shown in the following steps are examples and can be tailored for
 
 
 
-### Updating the `config.json` file
+### Step 2: Updating the `config.json` file
 {: #windows-agent-parameters}
 
 Configuration information is provided to the agent through the following environment variables in the `config.json` file that you extracted in the previous step. Review the following parameters for the agent image.
@@ -227,7 +227,7 @@ Configuration information is provided to the agent through the following environ
 1. Complete the steps in the following section to start the agent.
 
 
-### Starting the agent
+### Step 3: Starting the agent
 {: #windows-agent-run}
 
 
