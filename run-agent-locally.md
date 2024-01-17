@@ -31,22 +31,22 @@ To configure {{site.data.keyword.satelliteshort}} Connectors, you must have Admi
 - Make sure the user or Service ID that runs agent has the  **Viewer** Platform role or **Reader** Service role for {{site.data.keyword.satelliteshort}} in IAM.
 - [Create an API key](https://cloud.ibm.com/iam/apikeys) either by using your own login or your service ID. This API key is used by your Connector agent.
 - Make sure your computing environment meets the [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors&interface=ui#min-requirements) for running the agent image.
-- [Review the agent image parameters](#review-parameters).
+- [Review the agent parameters](#review-parameters).
 
 
-## Reviewing the agent image parameters
+## Reviewing the agent parameters
 {: #review-parameters}
 
 Configuration information is provided to the agent through the following environment variables. Any of these environment variables can either be set directly to a value or set to a path of a file that contains the value. The path value must be accessible from within the container and is therefore based on the mount point and not a local path on the host. See the following table for an example.
 
-| Environment variable | Description |
-| -------------------- | ----------- |
-| `SATELLITE_CONNECTOR_ID` |  **Required:** Identifier of the Satellite Connector that the agent is to bind to. |
-| `SATELLITE_CONNECTOR_IAM_APIKEY` | **Required:** Your IAM API key. For security purposes, consider storing your IAM API key in a file and then providing the file for this value. In Windows environments, you must escape the slash in the file path. For example, `C:\\path\\to\\apikey` instead of `C:\path\to\apikey`. |
-| `SATELLITE_CONNECTOR_REGION` | **Optional:** The managed from region of the {{site.data.keyword.satelliteshort}} Connector. This value must be the short name of the region such as `us-east`. You can find the mapping from the multizone metro name that is shown in the UI to the region name in [Supported IBM Cloud regions](/docs/satellite?topic=satellite-sat-regions). |
-| `SATELLITE_CONNECTOR_TAGS` | **Optional:** A user defined string that can be used to identify the instance of the Docker container. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
-| `LOG_LEVEL`: **Optional**: Specify `default` for basic logging or `info` for more detailed logs. Typically the `info` logging level is used in case of debugging. |
-| `PRETTY_LOG`: **Optional**: Specify `true` to show logs in a pretty format or `false` to show the logs in JSON format. |
+| Environment variable | Required | Description |
+| --- | --- | --- |
+| `SATELLITE_CONNECTOR_ID` | Yes | The ID of the Satellite Connector that the agent is bound to. You can find your Connector ID in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} or by running the `ibmcloud sat connector ls` command. |
+| `SATELLITE_CONNECTOR_IAM_APIKEY` | Yes |Your IAM API key. For security purposes, consider storing your IAM API key in a file and then providing the file for this value. **Note**: In Windows environments, you must escape the slash in the file path. For example, `C:\\path\\to\\apikey` instead of `C:\path\to\apikey`. |
+| `SATELLITE_CONNECTOR_REGION` | No | The managed from region of the {{site.data.keyword.satelliteshort}} Connector. This value must be the short name of the region such as `us-east`. You can find the mapping from the multizone metro name that is shown in the UI to the region name in [Supported IBM Cloud regions](/docs/satellite?topic=satellite-sat-regions). You can find your **Managed from** region in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} or by running the `ibmcloud sat connector ls` command. |
+| `SATELLITE_CONNECTOR_TAGS` | No | A user defined string that can be helpful to identify your agent. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
+| `LOG_LEVEL` | No | Specify `default` for basic logging or `info` for more detailed logs. Typically the `info` loggig level is used in case of debugging. |
+| `PRETTY_LOG` | No | Specify `true` to show logs in a pretty format or `false` to show the logs in JSON format. |
 {: caption="Table 1. Environment variables for configuration" caption-side="bottom"}
 
 ## Running the Connector agent on your container platform
@@ -55,7 +55,13 @@ Configuration information is provided to the agent through the following environ
 ### Creating the local configuration files
 {: #create-config-file}
 
-There are several ways to pass agent configuration environment variable information to the container. This example uses files. However, you can use the `docker run --env` command to specify the values. Be aware that if you use `--env` with your API key, the API key is exposed to the container environment and is visible on the output of `docker inspect` command.  You can secure your API key in a file and then use the file name in the environment variable. If you choose to use the file name, you must make sure that the file path that you specify in the environment variable is mounted to a file path in the container, as shown in the following example. The file names shown in the following steps are examples and can be tailored for your environment.
+There are several ways to pass agent configuration environment variable information to the container. The following example uses configuration files. However, you can also use the `docker run --env` command to specify the values.
+
+Be aware that if you use `--env` with your API key, the API key is exposed to the container environment and is visible on the output of `docker inspect` command.  You can secure your API key in a file and then use the file name in the environment variable. If you choose to use the file name, you must make sure that the file path that you specify in the environment variable is mounted to a file path in the container, as shown in the following example.
+{: note}
+
+The file names shown in the following steps are examples and can be tailored for your environment.
+{: tip}
 
 
 1. Create a directory for the configuration files, in this example `~/agent/env-files`.
@@ -70,7 +76,7 @@ There are several ways to pass agent configuration environment variable informat
     ```
     {: codeblock}
     
-    For example:
+    Example `env.txt` with populated parameters.
     
     ```sh
     SATELLITE_CONNECTOR_ID=U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA
@@ -80,14 +86,16 @@ There are several ways to pass agent configuration environment variable informat
     ```
     {: codeblock}
   
-1. At this point, your directory contains 2 files and looks similar to the following example:
+1. At this point, your directory contains 2 files and looks similar to the following example.
     ```sh
     env-files$ ls
     apikey  env.txt
     ```
     {: pre}
 
-## Pulling the agent image
+1. Complete the steps in the following section to pull the agent image.
+
+### Pulling the agent image
 {: #pull-agent-image}
 
 1. Log in to {{site.data.keyword.registrylong}}. Or log in to the repository directly from Docker with your API key.
@@ -108,8 +116,10 @@ There are several ways to pass agent configuration environment variable informat
     ```
     {: pre}
 
+1. Complete the following steps to run the agent image.
 
-## Running the agent image
+
+### Running the agent image
 {: #run-agent-image}
 
 1. To view available versions of agent image, run the following command.
@@ -171,6 +181,81 @@ There are several ways to pass agent configuration environment variable informat
     ```
     {: screen}
 
+
+## Running a Connector agent on Windows
+{: #run-agent-windows}
+
+### Downloading the Connector agent files from the CLI
+{: #windows-agent-download}
+{: cli}
+
+1. From the CLI, run the following command.
+
+    ```sh
+    ibmcloud sat experimental connector agent --platform windows
+    ```
+    {: pre}
+
+    Example output.
+    ```sh
+    Downloading agent setup tools for windows...
+    OK
+    Satellite connector agent for windows was successfully returned /var/folders/17/y8wr4y_x1tb4yf__g3wr6g8m0000gp/T/windows_satellite_connector_4097559421.zip
+    ```
+    {: screen}
+
+1. Run the following command in PowerShell to extract the `.zip` file contents.
+
+    ```sh
+    Expand-Archive -Path ‘C:\path\to\windows_satellite_connector_4097559421.zip’ -DestinationPath ‘C:\path\to\extract'
+    ```
+    {: pre}
+
+1. Complete the steps in the following section to update the configuration files that you extracted.
+
+
+
+### Updating the `config.json` file
+{: #windows-agent-parameters}
+
+Configuration information is provided to the agent through the following environment variables in the `config.json` file that you extracted in the previous step. Review the following parameters for the agent image.
+
+1. Update the `config.json` that you extracted earlier with the appropriate values [for each parameter](#review-parameters).
+
+1. Save the file.
+
+1. Complete the steps in the following section to start the agent.
+
+
+### Starting the agent
+{: #windows-agent-run}
+
+
+1. Start the agent by running the following command in Windows PowerShell.
+    ```txt
+    .\installWindowsService
+    ```
+    {: pre}
+    
+
+1. Verify the agent is running by run the `Get-Service` command in PowerShell.
+    ```txt
+    Get-Service 'Satellite Connector Service
+    ```
+    {: pre}
+
+1. View the agent logs by running the `Get-Content` command in PowerShell.
+    ```txt
+    Get-Content 'C:\path\to\extract\logs\{connector-agent-{{yyyy-mm-dd.n}}.log}'
+    ```
+    {: pre}
+
+
+1. **Optional**: Stop the agent by run the following command.
+    ```sh
+    .\uninstallWindowsService
+    ```
+    {: pre}
 
 
 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 keywords: satellite, hybrid, multicloud
 
@@ -51,6 +51,9 @@ For cloud provider-specific configurations, see the following topics.
 - [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) (for testing and demonstration purposes only)
 - [Microsoft Azure](/docs/satellite?topic=satellite-azure).
 
+Worker node hosts
+:   Worker nodes in {{site.data.keyword.openshiftlong_notm}} clusters on Classic or VPC infrastructure can't be repurposed for use in {{site.data.keyword.satelliteshort}} clusters.
+
 
 
 ## Clusters
@@ -74,6 +77,9 @@ Cloud and location endpoints
 :    Review the maximum number of each type of Link endpoint that you can create for one {{site.data.keyword.satelliteshort}} location.
      - `cloud` endpoints: 1000 total. For example, you might create up to 650 TLS endpoints and 350 HTTP endpoints through which clients in your location can connect to resources outside of the location network.
      - `location` endpoints: 25 total. For example, you might create up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location.
+
+Link endpoints
+:   You can't use Link endpoints in one Location to trigger builds or pipelines in other {{site.data.keyword.satelliteshort}} Locations.
 
 ## Connector
 {: #reqs-connector}

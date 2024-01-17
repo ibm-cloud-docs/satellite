@@ -1664,17 +1664,25 @@ subcollection: satellite
 
 * [Prerequisites](/docs/satellite?topic=satellite-run-agent-locally#agent-prepreqs)
 
-* [Reviewing the agent image parameters](/docs/satellite?topic=satellite-run-agent-locally#review-parameters)
+* [Reviewing the agent parameters](/docs/satellite?topic=satellite-run-agent-locally#review-parameters)
 
 * [Running the Connector agent on your container platform](/docs/satellite?topic=satellite-run-agent-locally#connector-agent-mac)
 
     * [Creating the local configuration files](/docs/satellite?topic=satellite-run-agent-locally#create-config-file)
 
-* [Pulling the agent image](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image)
+    * [Pulling the agent image](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image)
 
-* [Running the agent image](/docs/satellite?topic=satellite-run-agent-locally#run-agent-image)
+    * [Running the agent image](/docs/satellite?topic=satellite-run-agent-locally#run-agent-image)
 
-* [Next steps](/docs/satellite?topic=satellite-run-agent-locally#agent-next-steps)
+* [Running a Connector agent on Windows](/docs/satellite?topic=satellite-run-agent-locally#run-agent-windows)
+
+    * [Downloading the Connector agent files from the CLI](/docs/satellite?topic=satellite-run-agent-locally&interface=cli#windows-agent-download)
+
+    * [Updating the `config.json` file](/docs/satellite?topic=satellite-run-agent-locally&interface=cli#windows-agent-parameters)
+
+    * [Starting the agent](/docs/satellite?topic=satellite-run-agent-locally&interface=cli#windows-agent-run)
+
+* [Next steps](/docs/satellite?topic=satellite-run-agent-locally&interface=cli#agent-next-steps)
 
 [Running your Connector agent as a service in Docker Swarm Mode for high availability](/docs/satellite?topic=satellite-run-agent-swarm#run-agent-swarm)
 
