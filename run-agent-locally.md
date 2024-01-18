@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-01-18"
 
 keywords: satellite, connector
 
@@ -43,9 +43,9 @@ Configuration information is provided to the agent through the following environ
 | --- | --- | --- |
 | `SATELLITE_CONNECTOR_ID` | Yes | The ID of the Satellite Connector that the agent is bound to. You can find your Connector ID in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} or by running the `ibmcloud sat connector ls` command. |
 | `SATELLITE_CONNECTOR_IAM_APIKEY` | Yes |Your IAM API key. For security purposes, consider storing your IAM API key in a file and then providing the file for this value. **Note**: In Windows environments, you must escape the slash in the file path. For example, `C:\\path\\to\\apikey` instead of `C:\path\to\apikey`. |
-| `SATELLITE_CONNECTOR_REGION` | No | The managed from region of the {{site.data.keyword.satelliteshort}} Connector. This value must be the short name of the region such as `us-east`. You can find the mapping from the multizone metro name that is shown in the UI to the region name in [Supported IBM Cloud regions](/docs/satellite?topic=satellite-sat-regions). You can find your **Managed from** region in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} or by running the `ibmcloud sat connector ls` command. |
+| `SATELLITE_CONNECTOR_REGION` | No | The managed from region of the {{site.data.keyword.satelliteshort}} Connector. You can find the mapping from the multizone metro name that is shown in the UI to the region name in [Supported IBM Cloud regions](/docs/satellite?topic=satellite-sat-regions). You can find your **Managed from** region in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} or by running the `ibmcloud sat connector ls` command. |
 | `SATELLITE_CONNECTOR_TAGS` | No | A user defined string that can be helpful to identify your agent. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
-| `LOG_LEVEL` | No | Specify `default` for basic logging or `info` for more detailed logs. Typically the `info` loggig level is used in case of debugging. |
+| `LOG_LEVEL` | No | Set the level of logging detail you want to receive for your agent. You can specify one of `fatal`, `error`, `warn`, `debug`, `info`, or `trace`. The default level is `info`. Typically, the `debug` and `trace` levels are used only when debugging. |
 | `PRETTY_LOG` | No | Specify `true` to show logs in a pretty format or `false` to show the logs in JSON format. |
 {: caption="Table 1. Environment variables for configuration" caption-side="bottom"}
 
@@ -192,9 +192,9 @@ The file names shown in the following steps are examples and can be tailored for
 1. From the CLI, run the following command.
 
     ```sh
-    ibmcloud sat experimental connector agent --platform windows
+    ibmcloud sat experimental connector agent download --platform windows
     ```
-    {: pre}
+    {: codeblock}
 
     Example output.
     ```sh
@@ -202,14 +202,14 @@ The file names shown in the following steps are examples and can be tailored for
     OK
     Satellite connector agent for windows was successfully returned /var/folders/17/y8wr4y_x1tb4yf__g3wr6g8m0000gp/T/windows_satellite_connector_4097559421.zip
     ```
-    {: screen}
+    {: codeblock}
 
 1. Run the following command in PowerShell to extract the `.zip` file contents.
 
-    ```sh
-    Expand-Archive -Path ‘C:\path\to\windows_satellite_connector_4097559421.zip’ -DestinationPath ‘C:\path\to\extract'
+    ```txt
+    Expand-Archive -Path 'C:\path\to\windows_satellite_connector_4097559421.zip' -DestinationPath ‘C:\path\to\extract'
     ```
-    {: pre}
+    {: codeblock}
 
 1. Complete the steps in the following section to update the configuration files that you extracted.
 
@@ -235,27 +235,27 @@ Configuration information is provided to the agent through the following environ
     ```txt
     .\installWindowsService
     ```
-    {: pre}
+    {: codeblock}
     
 
 1. Verify the agent is running by run the `Get-Service` command in PowerShell.
     ```txt
-    Get-Service 'Satellite Connector Service
+    Get-Service 'Satellite Connector Service'
     ```
-    {: pre}
+    {: codeblock}
 
 1. View the agent logs by running the `Get-Content` command in PowerShell.
     ```txt
     Get-Content 'C:\path\to\extract\logs\{connector-agent-{{yyyy-mm-dd.n}}.log}'
     ```
-    {: pre}
+    {: codeblock}
 
 
 1. **Optional**: Stop the agent by run the following command.
-    ```sh
+    ```txt
     .\uninstallWindowsService
     ```
-    {: pre}
+    {: codeblock}
 
 
 
