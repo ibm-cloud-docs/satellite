@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-19"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -211,7 +211,7 @@ The following example is a security group that you might create for Azure.
 ```
 {: screen}
 
-For more information, see [Network security groups](https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview){: external} in Microsoft Azure documentation.
+For more information, see [Network security groups](https://learn.microsoft.com/azure/virtual-network/network-security-groups-overview){: external} in Microsoft Azure documentation.
 
 
 

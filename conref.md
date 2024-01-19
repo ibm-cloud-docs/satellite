@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -225,6 +225,20 @@ You can use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm
 
 
 
+## Updating storage configurations and assignments in the console
+{: #configuration-upgrade-console2}
+{: ui}
+
+You can use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to upgrade your configuration and assignment to the latest storage template revisions.
+
+1. From the **Locations** page in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select your location.
+
+1. Click the **Storage** tab to view your configurations.
+
+1. You can apply the latest template revision to your configurations and assignments by clicking the information **Information** (i) icon.
+
+
+
     
 
 
@@ -259,7 +273,7 @@ You can use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm
 {: #assignment-update-api}
 {: api}
 
-You can use the `/v2/storage/satellite/updateAssignment`](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/updateAssignment){: external} API to update your assignments with new clusters or cluster groups.
+You can use the [`/v2/storage/satellite/updateAssignment`](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/updateAssignment){: external} API to update your assignments with new clusters or cluster groups.
 
 1. Copy the following example request and replace the variables for the cluster groups and assignments that you want to update.
     ```sh
@@ -280,7 +294,7 @@ You can use the `/v2/storage/satellite/updateAssignment`](https://containers.clo
 {: #assignment-upgrade-api}
 {: api}
 
-You can use the `/v2/storage/satellite/updateAssignment`](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/updateAssignment){: external} API to update your assignments with new clusters or cluster groups. Set `updateConfigVersion` to `true` to apply the revision update.
+You can use the [`/v2/storage/satellite/updateAssignment`](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/updateAssignment){: external} API to update your assignments with new clusters or cluster groups. Set `updateConfigVersion` to `true` to apply the revision update.
 
 1. Copy the following example request and replace the variables for the cluster groups and assignments that you want to update.
     ```sh

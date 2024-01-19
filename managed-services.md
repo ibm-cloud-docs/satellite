@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 keywords: satellite, hybrid, multicloud, managed services, enabled service, satellite-enabled
 
@@ -27,6 +27,7 @@ Learn about what services are supported by {{site.data.keyword.satellitelong_not
 | {{site.data.keyword.cos_full_notm}} | {{site.data.keyword.cos_full_notm}} offers users the flexibility to run a managed {{site.data.keyword.cos_short}} service on client-owned on-premises infrastructure, edge locations or third-party public cloud infrastructure. See [About {{site.data.keyword.cos_short}} for {{site.data.keyword.satelliteshort}}](/docs/cloud-object-storage?topic=cloud-object-storage-about-cos-satellite). | No |
 | {{site.data.keyword.keymanagementservicefull_notm}} | {{site.data.keyword.keymanagementservicefull_notm}} on {{site.data.keyword.satelliteshort}} is a dedicated service that allows users to more fully control their own encryption keys by deploying {{site.data.keyword.keymanagementserviceshort}} into a {{site.data.keyword.satelliteshort}} location where users control their own infrastructure.  See [About {{site.data.keyword.keymanagementserviceshort}} for {{site.data.keyword.satelliteshort}}](/docs/key-protect?topic=key-protect-satellite-about). | No |
 | {{site.data.keyword.messagehub_full}} | {{site.data.keyword.messagehub}} is a high-throughput message bus built with Apache Kafka. It is optimized for event ingestion into {{site.data.keyword.cloud_notm}} and event stream distribution between your services and applications.  See [About {{site.data.keyword.satellitelong_notm}} for {{site.data.keyword.messagehub}}](/docs/EventStreams?topic=EventStreams-satellite_about). | No |
+| {{site.data.keyword.cloud_notm}} Paks | Cloud Paks provide AI-powered software designed to accelerate application modernization with pre-integrated data, automation and security capabilities. Our software delivers a comprehensive and unified hybrid cloud platform experience, enabling business and IT teams to build and modernize applications faster across any cloud or IT infrastructure. | Depends on the Cloud Pak |
 {: caption="Table 1. Supported managed services for Satellite" caption-side="bottom"}
 
 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-19"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -495,7 +495,7 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     {: pre}
 
 {{site.data.content.configuration-upgrade-manual-cli}}
-{{site.data.content.configuration-upgrade-console}}
+{{site.data.content.configuration-upgrade-console2}}
 
 ## Removing the local file storage configuration from your cluster
 {: #sat-storage-remove-local-file-config}

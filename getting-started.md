@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-17"
 
 keywords: satellite, hybrid, multicloud, getting started, {{site.data.keyword.satellitelong}}, hosts, host
 
@@ -48,7 +48,7 @@ To get started with {{site.data.keyword.satelliteshort}}, decide what type of in
 {: shortdesc}
 
 I want to try out {{site.data.keyword.satelliteshort}}.
-:    You can try out {{site.data.keyword.satelliteshort}} with our [{{site.data.keyword.satelliteshort}} guided tour](https://framer.com/share/External-Satellite-Demo--4QmxdNMF6smthRhzQgzt/ddN6j0Nrt?fullscreen=1&highlights=0#ddN6j0Nrt){: external}. You can also create a Satellite location by using [{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm). This setup is not intended for use with production systems.
+:    You can try out {{site.data.keyword.satelliteshort}} with our [{{site.data.keyword.satelliteshort}} guided tour](https://www.ibm.com/products/satellite#demo){: external}. You can also create a Satellite location by using [{{site.data.keyword.cloud_notm}} for tests](/docs/satellite?topic=satellite-ibm). This setup is not intended for use with production systems.
 
 I'm planning to use my on-prem or edge infrastructure. 
 :    For on-prem infrastructure, you can [manually set up a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-loc-manual-create). 

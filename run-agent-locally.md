@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-19"
 
 keywords: satellite, connector
 
@@ -16,35 +16,52 @@ subcollection: satellite
 # Running a Connector agent
 {: #run-agent-locally}
 
-After you create your Connector, follow the steps to create a Connector agent to complete your setup.   
+After you [create a {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-create-connector), complete the follow the steps to create an Agent and finalize your setup.   
 {: shortdesc}
 
 To configure {{site.data.keyword.satelliteshort}} Connectors, you must have Administrator access to the **Satellite** service in IAM access policies.
 {: note}
-  
-## Reviewing the agent image parameters
+
+## Prerequisites
+{: #agent-prepreqs}
+
+- [Create a {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-create-connector).
+- [Install the CLI](/docs/openshift?topic=openshift-cli-install&interface=cli).
+- **Optional**: [Create a Service ID](https://cloud.ibm.com/iam/serviceids). Service IDs are recommended over using individual user credentials.
+- Make sure the user or Service ID that runs agent has the  **Viewer** Platform role or **Reader** Service role for {{site.data.keyword.satelliteshort}} in IAM.
+- [Create an API key](https://cloud.ibm.com/iam/apikeys) either by using your own login or your service ID. This API key is used by your Connector agent.
+- Make sure your computing environment meets the [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors&interface=ui#min-requirements) for running the agent image.
+- [Review the agent parameters](#review-parameters).
+
+
+## Reviewing the agent parameters
 {: #review-parameters}
-{: step}  
-  
-Configuration information is provided to the agent through the following environment variables. Any of these environment variables can either be set directly to a value or set to a path of a file that contains the value. The files are mounted to the Docker container with the standard Docker mechanisms. The path value must be accessible from within the container and is therefore based on the mount point and not a local path on the host. See the following table for an example.
 
-| Environment variable | Description |
-| -------------------- | ----------- |
-| SATELLITE_CONNECTOR_ID |  **Required:** Identifier of the Satellite Connector that the agent is to bind to. |
-| SATELLITE_CONNECTOR_IAM_APIKEY | **Required:** Your IAM API key. For security purposes, consider storing your IAM API key in a file and then providing the file for this value. |
-| SATELLITE_CONNECTOR_REGION | **Optional:** The managed from region of the {{site.data.keyword.satelliteshort}} Connector. This value must be the short name of the region such as `us-east`. You can find the mapping from the multizone metro name that is shown in the UI to the region name in [Supported IBM Cloud regions](/docs/satellite?topic=satellite-sat-regions). |
-| SATELLITE_CONNECTOR_TAGS | **Optional:** A user defined string that can be used to identify the instance of the Docker container. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
+Configuration information is provided to the agent through the following environment variables. Any of these environment variables can either be set directly to a value or set to a path of a file that contains the value. The path value must be accessible from within the container and is therefore based on the mount point and not a local path on the host. See the following table for an example.
+
+| Environment variable | Required | Description |
+| --- | --- | --- |
+| `SATELLITE_CONNECTOR_ID` | Yes | The ID of the Satellite Connector that the agent is bound to. You can find your Connector ID in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} or by running the `ibmcloud sat connector ls` command. |
+| `SATELLITE_CONNECTOR_IAM_APIKEY` | Yes |Your IAM API key. For security purposes, consider storing your IAM API key in a file and then providing the file for this value. **Note**: In Windows environments, you must escape the slash in the file path. |
+| `SATELLITE_CONNECTOR_TAGS` | No | A user defined string that can be helpful to identify your agent. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
+| `LOG_LEVEL` | No | Set the level of logging detail you want to receive for your agent. You can specify one of `fatal`, `error`, `warn`, `debug`, `info`, or `trace`. The default level is `info`. Typically, the `debug` and `trace` levels are used only when debugging. |
 {: caption="Table 1. Environment variables for configuration" caption-side="bottom"}
+
+## Running the agent on your container platform
+{: #connector-agent-mac}
   
-## Creating the local configuration files
+### Step 1: Creating the local configuration files
 {: #create-config-file}
-{: step}
 
-There are several ways to pass agent configuration environment variable information to the container. This example uses files. However, you can use the `docker run --env` command to specify the values. Be aware that if you use `--env` with your API key, the API key is exposed to the container environment and is visible on the output of `docker inspect` command.  You can secure your API key in a file and then use the file name in the environment variable. If you choose to use the file name, you must make sure that the file path that you specify in the environment variable is mounted to a file path in the container, as shown in the following example. The file names shown in the following steps are examples and can be tailored for your environment.
+There are several ways to pass agent configuration environment variable information to the container. The following example uses configuration files. However, you can also use the `docker run --env` command to specify the values.
 
-To create a Connector, you need **Administrator** Platform role for {{site.data.keyword.satelliteshort}} in IAM. To connect an Agent to an existing Connector, you need **Viewer** Platform role or **Reader** Service role for {{site.data.keyword.satelliteshort}} in IAM.
+Be aware that if you use `--env` with your API key, the API key is exposed to the container environment and is visible on the output of `docker inspect` command.  You can secure your API key in a file and then use the file name in the environment variable. If you choose to use the file name, you must make sure that the file path that you specify in the environment variable is mounted to a file path in the container, as shown in the following example.
 {: note}
-  
+
+The file names shown in the following steps are examples and can be tailored for your environment.
+{: tip}
+
+
 1. Create a directory for the configuration files, in this example `~/agent/env-files`.
 1. Create a file in the `~/agent/env-files` directory called `apikey` with a single line value of your IBM Cloud API Key that can access the {{site.data.keyword.satelliteshort}} Connector.
 1. Create a file in the `~/agent/env-files` directory called `env.txt` with the following values. Modify the `SATELLITE_CONNECTOR_ID` variable with your {{site.data.keyword.satelliteshort}} Connector ID and the `SATELLITE_CONNECTOR_REGION` with the region of the {{site.data.keyword.satelliteshort}} Connector you created previously. 
@@ -57,7 +74,7 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
     ```
     {: codeblock}
     
-    For example:
+    Example `env.txt` with populated parameters.
     
     ```sh
     SATELLITE_CONNECTOR_ID=U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA
@@ -67,17 +84,17 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
     ```
     {: codeblock}
   
-1. At this point, your directory contains 2 files and looks similar to the following example:
+1. At this point, your directory contains 2 files and looks similar to the following example.
     ```sh
     env-files$ ls
     apikey  env.txt
     ```
     {: pre}
 
-## Pulling the agent image
-{: #pull-agent-image}
-{: step}
+1. Complete the steps in the following section to pull the agent image.
 
+### Step 2: Pulling the agent image
+{: #pull-agent-image}
 
 1. Log in to {{site.data.keyword.registrylong}}. Or log in to the repository directly from Docker with your API key.
 
@@ -97,12 +114,11 @@ To create a Connector, you need **Administrator** Platform role for {{site.data.
     ```
     {: pre}
 
+1. Complete the following steps to run the agent image.
 
-## Running the agent image
+
+### Step 3: Running the agent image
 {: #run-agent-image}
-{: step}  
-
-Make sure your computing environment meets the [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors&interface=ui#min-requirements) for running the agent image. Then follow these steps.
 
 1. To view available versions of agent image, run the following command.
 
@@ -162,6 +178,8 @@ Make sure your computing environment meets the [Minimum requirements](/docs/sate
     {"level":30,"time":"2023-06-20T16:12:22.307Z","pid":8,"hostname":"6b793f671c79","name":"connector_tunnel_base","msgid":"CTB27","msg":"Tunnel connected","connector_id":"U2F0ZWxsaXRlQ29ubmVjdG9yOiJjaThzdWd1ZDFwZ2RrZmUxa3UxZyI","cipher":{"name":"TLS_AES_256_GCM_SHA384","standardName":"TLS_AES_256_GCM_SHA384","version":"TLSv1.3"}}
     ```
     {: screen}
+
+
 
 
 ## Next steps

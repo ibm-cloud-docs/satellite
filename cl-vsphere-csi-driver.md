@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-19"
 
 
 keywords: satellite storage, change log, version history, vsphere csi driver
@@ -21,7 +21,7 @@ Review the version history for the `vsphere-csi-driver` {{site.data.keyword.sate
 {: shortdesc}
 
 ## Version 2.7.0
-{: #2.7.0-change-log}
+{: #vsphere-csi-driver-2.7.0-change-log}
 
 
 ### Revision 2, released 18 October 2023
@@ -38,7 +38,7 @@ Review the version history for the `vsphere-csi-driver` {{site.data.keyword.sate
 
 
 ## Version 2.5.1
-{: #2.5.1-change-log}
+{: #vsphere-csi-driver-2.5.1-change-log}
 
 
 ### Revision 6, released 20 February 2023

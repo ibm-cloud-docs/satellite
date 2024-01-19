@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-01-04"
+lastupdated: "2024-01-19"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1745,6 +1745,34 @@ Use these commands to create and manage {{site.data.keyword.satelliteshort}} Con
 This `connector` commands are an experimental feature that are available for evaluation and testing purposes and might change without notice.
 {: experimental}
 
+
+### `ibmcloud sat experimental connector agent`
+{: #connector-agent}
+
+Get a {{site.data.keyword.satelliteshort}} Connector agent for a specific platform. 
+{: shortdesc}
+
+```sh
+ibmcloud sat experimental connector agent --platform PLATFORM [-q]
+```
+{: pre}
+
+#### Command options
+{: #connector-agent-command-options}
+
+`--platform PLATFORM`
+:    Required. The platform for the Satellite Connector agent. Available options:  docker.
+
+`-q`
+:    Optional. Do not show the message of the day or update reminders.
+
+#### Example
+{: #connector-agent-example}
+
+```sh
+ibmcloud sat experimental connector agent --platform docker
+```
+{: pre}
 
 
 ### `ibmcloud sat experimental connector create`

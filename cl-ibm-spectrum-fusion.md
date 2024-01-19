@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-19"
 
 
 keywords: satellite storage, change log, version history, ibm spectrum fusion
@@ -21,7 +21,7 @@ Review the version history for the `ibm-spectrum-fusion` {{site.data.keyword.sat
 {: shortdesc}
 
 ## Version 2.4.0
-{: #2.4.0-change-log}
+{: #ibm-spectrum-fusion-2.4.0-change-log}
 
 
 ### Revision 1, released 29 July 2022

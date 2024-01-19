@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-19"
 
 
 keywords: satellite storage, change log, version history, local storage operator
@@ -21,7 +21,7 @@ Review the version history for the `local-storage-operator` {{site.data.keyword.
 {: shortdesc}
 
 ## Version 1.0.0
-{: #1.0.0-change-log}
+{: #local-storage-operator-1.0.0-change-log}
 
 
 ### Revision 1, released 18 October 2023

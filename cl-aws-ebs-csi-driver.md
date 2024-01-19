@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-19"
 
 
 keywords: satellite storage, change log, version history, aws ebs csi driver
@@ -21,7 +21,7 @@ Review the version history for the `aws-ebs-csi-driver` {{site.data.keyword.sate
 {: shortdesc}
 
 ## Version 1.12.0
-{: #1.12.0-change-log}
+{: #aws-ebs-csi-driver-1.12.0-change-log}
 
 
 ### Revision 2, released 16 January 2023
@@ -32,7 +32,7 @@ Review the version history for the `aws-ebs-csi-driver` {{site.data.keyword.sate
 
 
 ## Version 1.5.1
-{: #1.5.1-change-log}
+{: #aws-ebs-csi-driver-1.5.1-change-log}
 
 
 ### Revision 5, released 16 January 2023
@@ -43,7 +43,7 @@ Review the version history for the `aws-ebs-csi-driver` {{site.data.keyword.sate
 
 
 ## Version 1.1.0
-{: #1.1.0-change-log}
+{: #aws-ebs-csi-driver-1.1.0-change-log}
 
 
 ### Revision 5, released 16 January 2023

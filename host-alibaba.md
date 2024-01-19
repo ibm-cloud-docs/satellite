@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-19"
 
 keywords: satellite, hybrid, multicloud, alibaba, alibaba hosts, alibaba cloud
 
@@ -85,7 +85,7 @@ As described in the [host networking requirements](/docs/satellite?topic=satelli
 In addition to these inbound rules, you must allow all outbound connectivity to all ports and IP addresses.
 {: note}
 
-For more information, see [Security groups](https://www.alibabacloud.com/help/en/elastic-compute-service/latest/security-security-groups){: external} in the Alibaba documentation.
+For more information, see [Security groups](https://www.alibabacloud.com/help/ecs/user-guide/security-groups-1/){: external} in the Alibaba documentation.
 
 ## I added hosts to my location, what's next?
 {: #alibaba-whats-next-host}
