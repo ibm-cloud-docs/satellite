@@ -198,6 +198,10 @@ subcollection: satellite
 
 * [January 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan24)
 
+    * [19 January 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan1924)
+
+        * CLI version `1.0.589` is available.
+
     * [12 January 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan1224)
 
         * Connector agent image version `1.1.3`.
@@ -1674,15 +1678,7 @@ subcollection: satellite
 
     * [Step 3: Running the agent image](/docs/satellite?topic=satellite-run-agent-locally#run-agent-image)
 
-* [Running the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally#run-agent-windows)
-
-    * [Step 1: Downloading the Connector agent files from the CLI](/docs/satellite?topic=satellite-run-agent-locally&interface=cli#windows-agent-download)
-
-    * [Step 2: Updating the `config.json` file](/docs/satellite?topic=satellite-run-agent-locally&interface=cli#windows-agent-parameters)
-
-    * [Step 3: Starting the agent](/docs/satellite?topic=satellite-run-agent-locally&interface=cli#windows-agent-run)
-
-* [Next steps](/docs/satellite?topic=satellite-run-agent-locally&interface=cli#agent-next-steps)
+* [Next steps](/docs/satellite?topic=satellite-run-agent-locally#agent-next-steps)
 
 [Running your Connector agent as a service in Docker Swarm Mode for high availability](/docs/satellite?topic=satellite-run-agent-swarm#run-agent-swarm)
 
@@ -3157,6 +3153,8 @@ subcollection: satellite
     * [`ibmcloud sat location rm`](/docs/satellite?topic=satellite-satellite-cli-reference#location-rm)
 
 * [Connector commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-connector-commands)
+
+    * [`ibmcloud sat experimental connector agent`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-agent)
 
     * [`ibmcloud sat experimental connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create)
 
