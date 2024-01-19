@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-19"
 
 
 keywords: satellite storage, change log, version history, odf local
@@ -21,7 +21,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 {: shortdesc}
 
 ## Version 4.13
-{: #4.13-change-log}
+{: #odf-local-4.13-change-log}
 
 
 ### Revision 5, released 30 October 2023
@@ -66,7 +66,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 
 
 ## Version 4.12
-{: #4.12-change-log}
+{: #odf-local-4.12-change-log}
 
 
 ### Revision 8, released 27 November 2023
@@ -136,7 +136,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 
 
 ## Version 4.11
-{: #4.11-change-log}
+{: #odf-local-4.11-change-log}
 
 
 ### Revision 12, released 27 November 2023
@@ -231,7 +231,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 
 
 ## Version 4.10
-{: #4.10-change-log}
+{: #odf-local-4.10-change-log}
 
 
 ### Revision 23, released 27 November 2023
@@ -326,7 +326,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 
 
 ## Version 4.9
-{: #4.9-change-log}
+{: ##odf-local-4.9-change-log}
 
 
 ### Revision 26, released 19 September 2023
@@ -396,7 +396,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 
 
 ## Version 4.8
-{: #4.8-change-log}
+{: #odf-local-4.8-change-log}
 
 
 ### Revision 22, released 04 April 2023
@@ -434,7 +434,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 
 
 ## Version 4.7
-{: #4.7-change-log}
+{: #odf-local-4.7-change-log}
 
 
 ### Revision 20, released 06 March 2023

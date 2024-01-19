@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-19"
 
 
 keywords: satellite storage, change log, version history, ibm system storage block csi driver
@@ -21,7 +21,7 @@ Review the version history for the `ibm-system-storage-block-csi-driver` {{site.
 {: shortdesc}
 
 ## Version 1.11.2
-{: #1.11.2-change-log}
+{: #ibm-system-storage-block-csi-driver-1.11.2-change-log}
 
 
 ### Revision 1, released 24 July 2023
@@ -32,7 +32,7 @@ Review the version history for the `ibm-system-storage-block-csi-driver` {{site.
 
 
 ## Version 1.11.1
-{: #1.11.1-change-log}
+{: #ibm-system-storage-block-csi-driver-1.11.1-change-log}
 
 
 ### Revision 1, released 17 May 2023
@@ -43,7 +43,7 @@ Review the version history for the `ibm-system-storage-block-csi-driver` {{site.
 
 
 ## Version 1.10.0
-{: #1.10.0-change-log}
+{: #ibm-system-storage-block-csi-driver-1.10.0-change-log}
 
 
 ### Revision 1, released 29 July 2022
@@ -54,7 +54,7 @@ Review the version history for the `ibm-system-storage-block-csi-driver` {{site.
 
 
 ## Version 1.5.0
-{: #1.5.0-change-log}
+{: #ibm-system-storage-block-csi-driver-1.5.0-change-log}
 
 
 ### Revision 2, released 29 July 2022
@@ -65,7 +65,7 @@ Review the version history for the `ibm-system-storage-block-csi-driver` {{site.
 
 
 ## Version 1.4.0
-{: #1.4.0-change-log}
+{: #ibm-system-storage-block-csi-driver-1.4.0-change-log}
 
 
 ### Revision 2, released 29 July 2022

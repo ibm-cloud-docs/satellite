@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-19"
 
 
 keywords: satellite storage, change log, version history, azurefile csi driver
@@ -21,7 +21,7 @@ Review the version history for the `azurefile-csi-driver` {{site.data.keyword.sa
 {: shortdesc}
 
 ## Version 1.22.0
-{: #1.22.0-change-log}
+{: #azurefile-csi-driver-1.22.0-change-log}
 
 
 ### Revision 1, released 26 October 2022
@@ -32,7 +32,7 @@ Review the version history for the `azurefile-csi-driver` {{site.data.keyword.sa
 
 
 ## Version 1.18.0
-{: #1.18.0-change-log}
+{: #azurefile-csi-driver-1.18.0-change-log}
 
 
 ### Revision 4, released 29 July 2022
@@ -43,7 +43,7 @@ Review the version history for the `azurefile-csi-driver` {{site.data.keyword.sa
 
 
 ## Version 1.9.0
-{: #1.9.0-change-log}
+{: #azurefile-csi-driver-1.9.0-change-log}
 
 
 ### Revision 4, released 29 July 2022

@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-19"
 
 
 keywords: satellite storage, change log, version history, local volume file
@@ -21,7 +21,7 @@ Review the version history for the `local-volume-file` {{site.data.keyword.satel
 {: shortdesc}
 
 ## Version 4.13
-{: #4.13-change-log}
+{: #local-volume-file-4.13-change-log}
 
 
 ### Revision 1, released 18 October 2023
@@ -32,7 +32,7 @@ Review the version history for the `local-volume-file` {{site.data.keyword.satel
 
 
 ## Version 4.12
-{: #4.12-change-log}
+{: #local-volume-file-4.12-change-log}
 
 
 ### Revision 1, released 23 January 2023
@@ -43,7 +43,7 @@ Review the version history for the `local-volume-file` {{site.data.keyword.satel
 
 
 ## Version 4.11
-{: #4.11-change-log}
+{: #local-volume-file-4.11-change-log}
 
 
 ### Revision 1, released 07 November 2022
@@ -54,7 +54,7 @@ Review the version history for the `local-volume-file` {{site.data.keyword.satel
 
 
 ## Version 4.10
-{: #4.10-change-log}
+{: #local-volume-file-4.10-change-log}
 
 
 ### Revision 4, released 29 July 2022
@@ -65,7 +65,7 @@ Review the version history for the `local-volume-file` {{site.data.keyword.satel
 
 
 ## Version 4.9
-{: #4.9-change-log}
+{: #local-volume-file-4.9-change-log}
 
 
 ### Revision 4, released 29 July 2022
@@ -76,7 +76,7 @@ Review the version history for the `local-volume-file` {{site.data.keyword.satel
 
 
 ## Version 4.8
-{: #4.8-change-log}
+{: #local-volume-file-4.8-change-log}
 
 
 ### Revision 4, released 29 July 2022

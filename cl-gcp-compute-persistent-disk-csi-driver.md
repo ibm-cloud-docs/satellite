@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-19"
 
 
 keywords: satellite storage, change log, version history, gcp compute persistent disk csi driver
@@ -21,7 +21,7 @@ Review the version history for the `gcp-compute-persistent-disk-csi-driver` {{si
 {: shortdesc}
 
 ## Version 1.8.0
-{: #1.8.0-change-log}
+{: #gcp-compute-persistent-disk-csi-driver-1.8.0-change-log}
 
 
 ### Revision 2, released 23 January 2023
@@ -32,7 +32,7 @@ Review the version history for the `gcp-compute-persistent-disk-csi-driver` {{si
 
 
 ## Version 1.7.1
-{: #1.7.1-change-log}
+{: #gcp-compute-persistent-disk-csi-driver-1.7.1-change-log}
 
 
 ### Revision 5, released 23 January 2023
@@ -43,7 +43,7 @@ Review the version history for the `gcp-compute-persistent-disk-csi-driver` {{si
 
 
 ## Version 1.0.4
-{: #1.0.4-change-log}
+{: #gcp-compute-persistent-disk-csi-driver-1.0.4-change-log}
 
 
 ### Revision 4, released 23 January 2023

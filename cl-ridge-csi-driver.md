@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-19"
 
 
 keywords: satellite storage, change log, version history, ridge csi driver
@@ -21,7 +21,7 @@ Review the version history for the `ridge-csi-driver` {{site.data.keyword.satell
 {: shortdesc}
 
 ## Version 1.0.0
-{: #1.0.0-change-log}
+{: #ridge-csi-driver-1.0.0-change-log}
 
 
 ### Revision 1, released 11 October 2022

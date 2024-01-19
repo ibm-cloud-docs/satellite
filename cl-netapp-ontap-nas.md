@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-09"
+lastupdated: "2024-01-19"
 
 
 keywords: satellite storage, change log, version history, netapp ontap nas
@@ -21,7 +21,7 @@ Review the version history for the `netapp-ontap-nas` {{site.data.keyword.satell
 {: shortdesc}
 
 ## Version 22.10
-{: #22.10-change-log}
+{: #netapp-ontap-nas-22.10-change-log}
 
 
 ### Revision 11, released 27 November 2023
@@ -108,7 +108,7 @@ Review the version history for the `netapp-ontap-nas` {{site.data.keyword.satell
 
 
 ## Version 22.04
-{: #22.04-change-log}
+{: #netapp-ontap-nas-22.04-change-log}
 
 
 ### Revision 24, released 27 November 2023
@@ -195,7 +195,7 @@ Review the version history for the `netapp-ontap-nas` {{site.data.keyword.satell
 
 
 ## Version 21.04
-{: #21.04-change-log}
+{: #netapp-ontap-nas-21.04-change-log}
 
 
 ### Revision 25, released 30 October 2023

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-19"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -26,7 +26,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 
 
 ## Prerequisites for using local block storage
-{: #sat-storage-local-prereqs}
+{: #storage-local-volume-block-prereqs}
 
 Before you can create a local block storage configuration, you must identify the worker nodes in your clusters that have the required available disks. Then, label these worker nodes so that the local storage drivers are installed on only these worker nodes.
 
