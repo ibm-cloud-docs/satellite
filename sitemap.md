@@ -3981,7 +3981,7 @@ subcollection: satellite
 
     * [Revision 13, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-13-change-log)
 
-* [Version 4.9](/docs/satellite?topic=satellite-cl-odf-local##odf-local-4.9-change-log)
+* [Version 4.9](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-change-log)
 
     * [Revision 26, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-26-change-log)
 

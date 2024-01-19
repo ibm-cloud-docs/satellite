@@ -326,7 +326,7 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 
 
 ## Version 4.9
-{: ##odf-local-4.9-change-log}
+{: #odf-local-4.9-change-log}
 
 
 ### Revision 26, released 19 September 2023
