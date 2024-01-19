@@ -42,7 +42,7 @@
     ],
 
     "section_learn": {
-      "architecture": "https://www.ibm.com/cloud/architecture/architectures/kubernetes-infrastructure-with-ibm-cloud",
+      "architecture": "https://www.ibm.com/products/satellite",
       "training": "https://www.ibm.com/training/search?query=Satellite",
       "community": "https://community.ibm.com/community/user/cloud/home"
     }

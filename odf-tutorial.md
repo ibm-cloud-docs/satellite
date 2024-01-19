@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-19"
 
 keywords: satellite, hybrid, multicloud, odf, openshift data foundation
 
@@ -57,7 +57,7 @@ This tutorial is for location administrators who are using OpenShift Data Founda
 
 After setting up your location, you have unassigned hosts that can be used to create a cluster.
 
-1. [Follow the steps to deploy a cluster to your location](/docs/openshift?topic=openshift-satellite-clusters#satcluster-create-console). Make sure to select the **Enable admin access for {{site.data.keyword.satelliteshort}} config** option.
+1. [Follow the steps to deploy a cluster to your location](/docs/openshift?topic=openshift-satellite-clusters&interface=ui#satcluster-create-console). Make sure to select the **Enable admin access for {{site.data.keyword.satelliteshort}} config** option.
 1. Wait until your cluster finishes deploying then deploy the Azure Disk CSI driver.
 
 
