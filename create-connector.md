@@ -47,6 +47,9 @@ A Connector provides a secure connection between a specific remote location and 
 {: #create-connector-cli}
 {: cli}
 
+The {{site.data.keyword.satelliteshort}} Connector CLI commands are currently in the `ibmcloud sat experimental` command group, but are fully functional and availabe for use in production. The commands move out the experimental group and become `ibmcloud sat connector` on 13 March 2024.
+{: note}
+
 1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` option, or create an API key to log in.
 
     ```sh
