@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-01-22"
 
 keywords: satellite, connector
 
@@ -18,9 +18,6 @@ subcollection: satellite
 
 After you [create a {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-create-connector), complete the follow the steps to create an Agent and finalize your setup.   
 {: shortdesc}
-
-To configure {{site.data.keyword.satelliteshort}} Connectors, you must have Administrator access to the **Satellite** service in IAM access policies.
-{: note}
 
 ## Prerequisites
 {: #agent-prepreqs}
@@ -69,7 +66,6 @@ The file names shown in the following steps are examples and can be tailored for
     ```sh
     SATELLITE_CONNECTOR_ID=<Your Satellite Connector ID>
     SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/apikey
-    SATELLITE_CONNECTOR_REGION=<Your Satellite Connector Region>
     SATELLITE_CONNECTOR_TAGS=sample tag
     ```
     {: codeblock}
@@ -79,7 +75,6 @@ The file names shown in the following steps are examples and can be tailored for
     ```sh
     SATELLITE_CONNECTOR_ID=U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA
     SATELLITE_CONNECTOR_IAM_APIKEY=/agent-env-files/apikey
-    SATELLITE_CONNECTOR_REGION=eu-de
     SATELLITE_CONNECTOR_TAGS=test
     ```
     {: codeblock}

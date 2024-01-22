@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-01-22"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1662,7 +1662,13 @@ subcollection: satellite
 
 [Creating a Connector](/docs/satellite?topic=satellite-create-connector#create-connector)
 
-* [Next steps](/docs/satellite?topic=satellite-create-connector#connector-next-steps)
+* [Prerequisites](/docs/satellite?topic=satellite-create-connector#create-connector-prereqs)
+
+* [Creating a Connector in the console](/docs/satellite?topic=satellite-create-connector&interface=ui#create-connector-console)
+
+* [Creating a Connector in the CLI](/docs/satellite?topic=satellite-create-connector&interface=cli#create-connector-cli)
+
+* [Next steps](/docs/satellite?topic=satellite-create-connector&interface=cli#connector-next-steps)
 
 [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#run-agent-locally)
 
