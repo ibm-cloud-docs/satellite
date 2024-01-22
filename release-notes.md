@@ -25,13 +25,6 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 ## January 2024
 {: #satellite-jan24}
 
-### 23 January 2024
-{: #satellite-jan2324}
-{: release-note}
-
-New! Connector agent for Windows.
-:   You can now deploy the Connector agent in Windows environments. For more information, see [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
-
 
 ### 19 January 2024
 {: #satellite-jan1924}
