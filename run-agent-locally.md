@@ -175,6 +175,107 @@ The file names shown in the following steps are examples and can be tailored for
     {: screen}
 
 
+## Running the agent on Windows
+{: #run-agent-windows}
+
+### Step 1: Downloading the Connector agent files from the CLI
+{: #windows-agent-download}
+{: cli}
+
+1. From the CLI, run the following command.
+
+    ```sh
+    ibmcloud sat experimental connector agent download --platform windows
+    ```
+    {: codeblock}
+
+    Example output.
+    ```sh
+    Downloading agent setup tools for windows...
+    OK
+    Satellite connector agent for windows was successfully returned /var/folders/17/y8wr4y_x1tb4yf__g3wr6g8m0000gp/T/windows_satellite_connector_4097559421.zip
+    ```
+    {: codeblock}
+
+1. Run the following command in PowerShell to extract the `.zip` file contents.
+
+    ```txt
+    Expand-Archive -Path 'C:\path\to\windows_satellite_connector_4097559421.zip' -DestinationPath ‘C:\path\to\extract'
+    ```
+    {: codeblock}
+
+1. Complete the steps in the following section to update the configuration files that you extracted.
+
+
+
+### Step 2: Updating the `config.json` file
+{: #windows-agent-parameters}
+
+Configuration information is provided to the agent through the following environment variables in the `config.json` file that you extracted in the previous step. Review the following parameters for the agent image.
+
+1. Update the `config.json` that you extracted earlier with the appropriate values [for each parameter](#review-parameters).
+
+    You must escape the slash in the file path.
+    {: note}
+    
+    Example `config.json`.
+    ```txt
+    {
+    "SATELLITE_CONNECTOR_ID":"<Your Satellite Connector ID>",
+    "SATELLITE_CONNECTOR_IAM_APIKEY":"<Your API Key>",
+    "SATELLITE_CONNECTOR_TAGS":"sample tag",
+    "LOG_LEVEL": "info",
+    "PRETTY_LOG": true
+    }
+    ```
+    {: codeblock}
+
+    Example `config.json` with populated values.
+    ```txt
+    {
+    "SATELLITE_CONNECTOR_ID":"U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA",
+    "SATELLITE_CONNECTOR_IAM_APIKEY":"C:\\path\\to\\apikey",
+    "SATELLITE_CONNECTOR_TAGS":"sample tag",
+    "LOG_LEVEL": "info",
+    "PRETTY_LOG": true
+    }
+    ```
+    {: codeblock}
+
+1. Save the file.
+
+1. Complete the steps in the following section to start the agent.
+
+
+### Step 3: Starting the agent
+{: #windows-agent-run}
+
+
+1. Start the agent by running the following command in Windows PowerShell.
+    ```txt
+    .\installWindowsService
+    ```
+    {: codeblock}
+    
+
+1. Verify the agent is running by run the `Get-Service` command in PowerShell.
+    ```txt
+    Get-Service 'Satellite Connector Service'
+    ```
+    {: codeblock}
+
+1. View the agent logs by running the `Get-Content` command in PowerShell.
+    ```txt
+    Get-Content 'C:\path\to\extract\logs\{connector-agent-{{yyyy-mm-dd.n}}.log}'
+    ```
+    {: codeblock}
+
+
+1. **Optional**: Stop the agent by run the following command.
+    ```txt
+    .\uninstallWindowsService
+    ```
+    {: codeblock}
 
 
 ## Next steps
