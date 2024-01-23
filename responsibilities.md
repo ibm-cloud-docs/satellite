@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-23"
 
 keywords: satellite, hybrid, multicloud, RACI, responsibilities, shared responsibilities
 
@@ -38,7 +38,9 @@ Review the following sections for the specific responsibilities for you and for 
 | {{site.data.keyword.satelliteshort}} Link | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [You](#disaster-recovery) | 
 | {{site.data.keyword.satelliteshort}} Connector | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [Shared](#disaster-recovery) | 
 | {{site.data.keyword.satelliteshort}} Connector Agent Container Platform | You | You | You | You | You |
-| {{site.data.keyword.satelliteshort}} Connector Agent Image | [Shared](#incident-and-ops) | You | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | You | 
+| {{site.data.keyword.satelliteshort}} Connector Agent Image | [Shared](#incident-and-ops) | You | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | You |
+| {{site.data.keyword.satelliteshort}} Connector Agent for Windows platform | You | You | You | You | You |
+| {{site.data.keyword.satelliteshort}} Connector Agent for Windows application| [Shared](#incident-and-ops) | You | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | You | 
 | {{site.data.keyword.satelliteshort}} Storage | [Shared](#incident-and-ops) | [Shared](#change-management) | [You](#iam-responsibilities) | [Shared](#security-compliance) | [Shared](#disaster-recovery) |
 | {{site.data.keyword.satelliteshort}}-enabled services | [Shared](#incident-and-ops) | [Shared](#change-management) | [Shared](#iam-responsibilities) | [Shared](#security-compliance) | [Shared](#disaster-recovery) |
 | Operating System | You | [Shared](#change-management) | You | [Shared](#security-compliance) | You |
@@ -76,6 +78,7 @@ Incident and operations management includes tasks such as monitoring, event mana
 | [{{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service](/docs/satellite?topic=satellite-managed-services) | - Provide the ability to deploy a select group of {{site.data.keyword.cloud_notm}} services such as [{{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-satellite-clusters) to a {{site.data.keyword.satelliteshort}} location. \n - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. | - Use the provided tools to set up additional services as needed. \n - Provide enough hosts for the services to use as compute capacity, per the service documentation. \n - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
 | {{site.data.keyword.satelliteshort}} Connector | - Provide an interface to initiate operational activities, such as to create and delete connectors. \n - Automatically forward connector events to your {{site.data.keyword.cloud_notm}} Activity Tracker instance. | Use the provided tools to create a connector. |
 | {{site.data.keyword.satelliteshort}} Connector Agent Image | - Test and publish updates to the {{site.data.keyword.satelliteshort}} Connector Agent Image in the {{site.data.keyword.cloud_notm}} Container Registry. \n - Monitor and update the software inside the container image for CVE. | You are responsible for updating the {{site.data.keyword.satelliteshort}} Connector Agent Image to new versions published to the {{site.data.keyword.cloud_notm}} Container Registry. |
+| {{site.data.keyword.satelliteshort}} Connector Agent for Windows application | - Test and publish updates to the {{site.data.keyword.satelliteshort}} Connector Agent for Windows application (as a ZIP file) in the {{site.data.keyword.cloud_notm}}. \n - Monitor and update the software inside the ZIP file. | You are responsible for updating the {{site.data.keyword.satelliteshort}} Connector Agent for Windows application to new versions published to the {{site.data.keyword.cloud_notm}}, and retreived using the CLI. |
 {: caption="Table 2. Responsibilities for incident and operations" caption-side="bottom"}
 
 ### Change management
@@ -93,6 +96,7 @@ Change management includes tasks such as deployment, configuration, operating sy
 | {{site.data.keyword.satelliteshort}} Storage | - Provide an interface to initiate a change management operation, such as deleting storage configurations or removing a cluster from a storage configuration.  \n - Provide version updates for {{site.data.keyword.IBM_notm}}-provided storage templates.  | -  Use the tools to delete storage configurations and cluster assignments. Note that if you remove these configurations, the storage drivers are uninstalled in the assigned clusters. Your PVCs, PVs, and data are not deleted. However, you might not be able to access your data until storage drivers are re-installed and storage configurations are restored in your cluster.   \n -  Apply {{site.data.keyword.IBM_notm}}-provided storage template version updates to ensure compliance and support for installed storage drivers. |
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. For example, with {{site.data.keyword.openshiftlong_notm}} clusters, {{site.data.keyword.IBM_notm}} provides patch version updates for the masters automatically and for the worker nodes that you initiate. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
 | {{site.data.keyword.satelliteshort}} Connector | Provide an interface to initiate change management activities, such as to delete connectors. | Before you delete any connectors, save and back up all the endpoints you have created for the connector. |
+| {{site.data.keyword.satelliteshort}} Connector for Windows | Provide an interface for the {{site.data.keyword.satelliteshort}} Connector Agent for Windows application to connect to a {{site.data.keyword.satelliteshort}} Connector by leveraging {{site.data.keyword.IBM_notm}} IAM credentials. | Maintain and rotate the IAM credentials needed by the agent image. |
 {: caption="Table 3. Responsibilities for change management" caption-side="bottom"}
 
 ### Identity and access management
@@ -130,6 +134,7 @@ Security and regulation compliance includes tasks such as security controls impl
 | {{site.data.keyword.satelliteshort}}-enabled services | - Review each service's documentation for additional responsibilities that {{site.data.keyword.IBM_notm}} maintains. | - Review each service's documentation for additional responsibilities that you fulfill when you use these services. |
 | {{site.data.keyword.satelliteshort}} Connector | - Update the managed master components. \n - Provide the ability to control access to connectors through {{site.data.keyword.IBM_notm}} IAM. | You are responsible for keeping your container platform infrastructure secure and compliant. |
 | {{site.data.keyword.satelliteshort}} Connector Agent Image | - Test and publish updates to the {{site.data.keyword.satelliteshort}} Connector Agent Image in the {{site.data.keyword.IBM_notm}} Container Registry. \n - Monitor and update the software inside the container image for CVE. | You are responsible for updating the {{site.data.keyword.satelliteshort}} Connector Agent Image to new versions published to the {{site.data.keyword.IBM_notm}} Container Registry.  |
+| {{site.data.keyword.satelliteshort}} Connector Agent Image | - Test and publish updates to the {{site.data.keyword.satelliteshort}} Connector Agent Image in the {{site.data.keyword.IBM_notm}} Container Registry. \n - Monitor and update the software inside the container image for CVE. | You are responsible for updating the {{site.data.keyword.satelliteshort}} Connector agent for Windows to new versions that are published to the {{site.data.keyword.IBM_notm}}. |
 {: caption="Table 5. Responsibilities for security and regulation compliance." caption-side="bottom"}
 
 ### Disaster recovery
