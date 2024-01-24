@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-22"
+lastupdated: "2024-01-24"
 
 keywords: satellite, connector
 
@@ -174,13 +174,15 @@ The file names shown in the following steps are examples and can be tailored for
     ```
     {: screen}
 
+After setting up an agent, you can create Endpoints and ACLs to manage access to those endpoints. For more information, see [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints).
+
 
 ## Running the agent on Windows
 {: #run-agent-windows}
 
 ### Step 1: Downloading the Connector agent files from the CLI
 {: #windows-agent-download}
-{: cli}
+
 
 1. From the CLI, run the following command.
 
@@ -219,7 +221,7 @@ Configuration information is provided to the agent through the following environ
     {: note}
     
     Example `config.json`.
-    ```txt
+    ```json
     {
     "SATELLITE_CONNECTOR_ID":"<Your Satellite Connector ID>",
     "SATELLITE_CONNECTOR_IAM_APIKEY":"<Your API Key>",
@@ -231,7 +233,7 @@ Configuration information is provided to the agent through the following environ
     {: codeblock}
 
     Example `config.json` with populated values.
-    ```txt
+    ```json
     {
     "SATELLITE_CONNECTOR_ID":"U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA",
     "SATELLITE_CONNECTOR_IAM_APIKEY":"C:\\path\\to\\apikey",
@@ -251,9 +253,9 @@ Configuration information is provided to the agent through the following environ
 {: #windows-agent-run}
 
 
-1. Start the agent by running the following command in Windows PowerShell.
+1. Start the agent by running the `install` command in PowerShell.
     ```txt
-    .\installWindowsService
+    .\install
     ```
     {: codeblock}
     
@@ -271,11 +273,64 @@ Configuration information is provided to the agent through the following environ
     {: codeblock}
 
 
-1. **Optional**: Stop the agent by run the following command.
+1. **Optional**: Stop the agent by running the `uninstall` command in PowerShell.
     ```txt
-    .\uninstallWindowsService
+    .\uninstall
     ```
     {: codeblock}
+
+After setting up an agent, you can create Endpoints and ACLs to manage access to those endpoints. For more information, see [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints).
+
+
+## Updating the agent on Windows
+{: #update-agent-windows}
+
+You can use the `update` command to apply configuration changes to your agent. When you run the command, the agent is stopped, uninstalled, and reinstalled. Complete the following steps to update your agent.
+
+1. Modify the configuration parameters in the `config.json` file.
+
+    Example `config.json`.
+    ```json
+    {
+    "SATELLITE_CONNECTOR_ID":"<Your Satellite Connector ID>",
+    "SATELLITE_CONNECTOR_IAM_APIKEY":"<Your API Key>",
+    "SATELLITE_CONNECTOR_TAGS":"<tags>",
+    "LOG_LEVEL": "info",
+    "PRETTY_LOG": true
+    }
+    ```
+    {: codeblock}
+
+    Example `config.json` with populated values.
+    ```json
+    {
+    "SATELLITE_CONNECTOR_ID":"U2F0ZWxsaXRlQ29ubmVjdG9yOiJjanM4cnRzZjFsN2c0M3U4cmp1MBA",
+    "SATELLITE_CONNECTOR_IAM_APIKEY":"C:\\path\\to\\apikey",
+    "SATELLITE_CONNECTOR_TAGS":"sample tag",
+    "LOG_LEVEL": "info",
+    "PRETTY_LOG": true
+    }
+    ```
+    {: codeblock}
+
+1. Run the `update` command in PowerShell.
+    ```txt
+    .\update
+    ```
+    {: codeblock}
+
+1. Verify the agent is running by run the `Get-Service` command in PowerShell.
+    ```txt
+    Get-Service 'Satellite Connector Service'
+    ```
+    {: codeblock}
+
+1. View the agent logs by running the `Get-Content` command in PowerShell.
+    ```txt
+    Get-Content 'C:\path\to\extract\logs\{connector-agent-{{yyyy-mm-dd.n}}.log}'
+    ```
+    {: codeblock}
+
 
 
 ## Next steps
