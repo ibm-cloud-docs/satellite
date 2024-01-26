@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-19"
+lastupdated: "2024-01-26"
 
 
 keywords: satellite storage, change log, version history, netapp ontap nas
@@ -23,6 +23,12 @@ Review the version history for the `netapp-ontap-nas` {{site.data.keyword.satell
 ## Version 22.10
 {: #netapp-ontap-nas-22.10-change-log}
 
+
+### Revision 12, released 25 January 2024
+{: #netapp-ontap-nas-22.10-rev-12-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/CVE-2023-3446){: external} [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/CVE-2023-3817){: external} [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/CVE-2023-5678){: external} [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/CVE-2023-5981){: external} [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/CVE-2023-39615){: external} [CVE-2023-7104](https://nvd.nist.gov/vuln/detail/CVE-2023-7104){: external} 
 
 ### Revision 11, released 27 November 2023
 {: #netapp-ontap-nas-22.10-rev-11-change-log}
@@ -110,6 +116,12 @@ Review the version history for the `netapp-ontap-nas` {{site.data.keyword.satell
 ## Version 22.04
 {: #netapp-ontap-nas-22.04-change-log}
 
+
+### Revision 25, released 25 January 2024
+{: #netapp-ontap-nas-22.04-rev-25-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/CVE-2023-3446){: external} [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/CVE-2023-3817){: external} [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/CVE-2023-5678){: external} [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/CVE-2023-5981){: external} [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/CVE-2023-39615){: external} [CVE-2023-7104](https://nvd.nist.gov/vuln/detail/CVE-2023-7104){: external} 
 
 ### Revision 24, released 27 November 2023
 {: #netapp-ontap-nas-22.04-rev-24-change-log}

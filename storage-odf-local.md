@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-26"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -226,14 +226,6 @@ When you create your ODF configuration, you must specify the device paths of the
 1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
 
 
-    Example command to create a version 4.10 configuration.
-
-    ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.10 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  [--param "osd-device-path=OSD-DEVICE-PATH"]  --param "num-of-osd=NUM-OF-OSD"  [--param "worker-nodes=WORKER-NODES"]  --param "odf-upgrade=ODF-UPGRADE"  --param "billing-type=BILLING-TYPE"  [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]  [--param "ibm-cos-location=IBM-COS-LOCATION"]  [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]  [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]  --param "cluster-encryption=CLUSTER-ENCRYPTION"  --param "iam-api-key=IAM-API-KEY"  --param "perform-cleanup=PERFORM-CLEANUP"  --param "kms-encryption=KMS-ENCRYPTION"  [--param "kms-instance-name=KMS-INSTANCE-NAME"]  [--param "kms-instance-id=KMS-INSTANCE-ID"]  [--param "kms-base-url=KMS-BASE-URL"]  [--param "kms-token-url=KMS-TOKEN-URL"]  [--param "kms-root-key=KMS-ROOT-KEY"]  [--param "kms-api-key=KMS-API-KEY"]  --param "ignore-noobaa=IGNORE-NOOBAA" 
-    ```
-    {: pre}
-
-
     Example command to create a version 4.11 configuration.
 
     ```sh
@@ -253,7 +245,7 @@ When you create your ODF configuration, you must specify the device paths of the
     Example command to create a version 4.13 configuration.
 
     ```sh
-    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.13 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  [--param "osd-device-path=OSD-DEVICE-PATH"]  --param "num-of-osd=NUM-OF-OSD"  [--param "worker-nodes=WORKER-NODES"]  --param "odf-upgrade=ODF-UPGRADE"  --param "billing-type=BILLING-TYPE"  [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]  [--param "ibm-cos-location=IBM-COS-LOCATION"]  [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]  [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]  --param "cluster-encryption=CLUSTER-ENCRYPTION"  --param "iam-api-key=IAM-API-KEY"  --param "perform-cleanup=PERFORM-CLEANUP"  --param "kms-encryption=KMS-ENCRYPTION"  [--param "kms-instance-name=KMS-INSTANCE-NAME"]  [--param "kms-instance-id=KMS-INSTANCE-ID"]  [--param "kms-base-url=KMS-BASE-URL"]  [--param "kms-token-url=KMS-TOKEN-URL"]  [--param "kms-root-key=KMS-ROOT-KEY"]  [--param "kms-api-key=KMS-API-KEY"]  --param "ignore-noobaa=IGNORE-NOOBAA"  --param "encryption-intransit=ENCRYPTION-INTRANSIT" 
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name odf-local --template-version 4.13 --param "auto-discover-devices=AUTO-DISCOVER-DEVICES"  [--param "osd-device-path=OSD-DEVICE-PATH"]  --param "num-of-osd=NUM-OF-OSD"  [--param "worker-nodes=WORKER-NODES"]  --param "odf-upgrade=ODF-UPGRADE"  --param "billing-type=BILLING-TYPE"  [--param "ibm-cos-endpoint=IBM-COS-ENDPOINT"]  [--param "ibm-cos-location=IBM-COS-LOCATION"]  [--param "ibm-cos-access-key=IBM-COS-ACCESS-KEY"]  [--param "ibm-cos-secret-key=IBM-COS-SECRET-KEY"]  --param "cluster-encryption=CLUSTER-ENCRYPTION"  --param "iam-api-key=IAM-API-KEY"  --param "perform-cleanup=PERFORM-CLEANUP"  --param "kms-encryption=KMS-ENCRYPTION"  [--param "kms-instance-name=KMS-INSTANCE-NAME"]  [--param "kms-instance-id=KMS-INSTANCE-ID"]  [--param "kms-base-url=KMS-BASE-URL"]  [--param "kms-token-url=KMS-TOKEN-URL"]  [--param "kms-root-key=KMS-ROOT-KEY"]  [--param "kms-api-key=KMS-API-KEY"]  --param "ignore-noobaa=IGNORE-NOOBAA"  --param "disable-noobaa-LB=DISABLE-NOOBAA-LB"  --param "encryption-intransit=ENCRYPTION-INTRANSIT" 
     ```
     {: pre}
 
@@ -281,14 +273,6 @@ When you create your ODF configuration, you must specify the device paths of the
 1. Copy one of the following example requests and replace the variables that you want to use.
 
 
-    Example request to create a version 4.10 configuration.
-
-    ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-local\", \"storage-template-version\": \"4.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"OSD-DEVICE-PATH\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"PERFORM-CLEANUP\", { \"entry.name\": \"KMS-ENCRYPTION\", { \"entry.name\": \"KMS-INSTANCE-NAME\", { \"entry.name\": \"KMS-INSTANCE-ID\", { \"entry.name\": \"KMS-BASE-URL\", { \"entry.name\": \"KMS-TOKEN-URL\", { \"entry.name\": \"IGNORE-NOOBAA\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ACCESS-KEY\",{ \"entry.name\": \"IBM-COS-SECRET-KEY\",{ \"entry.name\": \"IAM-API-KEY\",{ \"entry.name\": \"KMS-ROOT-KEY\",{ \"entry.name\": \"KMS-API-KEY\",}
-    ```
-    {: pre}
-
-
     Example request to create a version 4.11 configuration.
 
     ```sh
@@ -308,7 +292,7 @@ When you create your ODF configuration, you must specify the device paths of the
     Example request to create a version 4.13 configuration.
 
     ```sh
-    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-local\", \"storage-template-version\": \"4.13\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"OSD-DEVICE-PATH\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"PERFORM-CLEANUP\", { \"entry.name\": \"KMS-ENCRYPTION\", { \"entry.name\": \"KMS-INSTANCE-NAME\", { \"entry.name\": \"KMS-INSTANCE-ID\", { \"entry.name\": \"KMS-BASE-URL\", { \"entry.name\": \"KMS-TOKEN-URL\", { \"entry.name\": \"IGNORE-NOOBAA\", { \"entry.name\": \"ENCRYPTION-INTRANSIT\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ACCESS-KEY\",{ \"entry.name\": \"IBM-COS-SECRET-KEY\",{ \"entry.name\": \"IAM-API-KEY\",{ \"entry.name\": \"KMS-ROOT-KEY\",{ \"entry.name\": \"KMS-API-KEY\",}
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"odf-local\", \"storage-template-version\": \"4.13\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"AUTO-DISCOVER-DEVICES\", { \"entry.name\": \"OSD-DEVICE-PATH\", { \"entry.name\": \"NUM-OF-OSD\", { \"entry.name\": \"WORKER-NODES\", { \"entry.name\": \"ODF-UPGRADE\", { \"entry.name\": \"BILLING-TYPE\", { \"entry.name\": \"IBM-COS-ENDPOINT\", { \"entry.name\": \"IBM-COS-LOCATION\", { \"entry.name\": \"CLUSTER-ENCRYPTION\", { \"entry.name\": \"PERFORM-CLEANUP\", { \"entry.name\": \"KMS-ENCRYPTION\", { \"entry.name\": \"KMS-INSTANCE-NAME\", { \"entry.name\": \"KMS-INSTANCE-ID\", { \"entry.name\": \"KMS-BASE-URL\", { \"entry.name\": \"KMS-TOKEN-URL\", { \"entry.name\": \"IGNORE-NOOBAA\", { \"entry.name\": \"DISABLE-NOOBAA-LB\", { \"entry.name\": \"ENCRYPTION-INTRANSIT\",\"user-secret-parameters\": { \"entry.name\": \"IBM-COS-ACCESS-KEY\",{ \"entry.name\": \"IBM-COS-SECRET-KEY\",{ \"entry.name\": \"IAM-API-KEY\",{ \"entry.name\": \"KMS-ROOT-KEY\",{ \"entry.name\": \"KMS-API-KEY\",}
     ```
     {: pre}
 
@@ -748,35 +732,6 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 ## Parameter reference
 {: #odf-local-parameter-reference}
 
-### 4.10 parameter reference
-{: #odf-local-4.10-parameters}
-
-| Display name | CLI option | Type | Description | Required? | Default value | 
-| --- | --- | --- | --- | --- | --- |
-| Automatic storage volume discovery | `auto-discover-devices` | Config | Automatically discover and use the storage volumes on your worker nodes. If set to `false` then you must explicitly provide the volumes IDs. | true | `true` |
-| OSD volume IDs | `osd-device-path` | Config | The local storage device path. Example: `/dev/sdc`. Required when `auto-discover-devices` is set to `false`. | false | N/A |
-| Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | true | `1` |
-| Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
-| Upgrade | `odf-upgrade` | Config | If you are upgrading an existing ODF installation, set to `true`. | true | `false` |
-| Billing type | `billing-type` | Config | The billing type you want to use. Choose from `essentials` or `advanced`. | true | `advanced` |
-| IBM COS endpoint | `ibm-cos-endpoint` | Config | The IBM COS regional public endpoint. | false | N/A |
-| IBM COS location constraint | `ibm-cos-location` | Config | The location constraint that you want to use when creating your COS bucket. For example: `us-east-standard`. | false | N/A |
-| Access key ID | `ibm-cos-access-key` | Secret | Your IBM COS HMAC access key ID . | false | N/A |
-| Secret access key | `ibm-cos-secret-key` | Secret | Your IBM COS HMAC secret access key. | false | N/A |
-| Encryption enabled | `cluster-encryption` | Config | Set to `true` if you want to enable cluster-wide encryption. | true | `false` |
-| IAM API key | `iam-api-key` | Secret | Your IAM API key. | true | N/A |
-| Perform Cleanup | `perform-cleanup` | Config | Set to `true` if you want to perform complete cleanup of ODF on assignment deletion. | true | `false` |
-| KMS encryption | `kms-encryption` | Config | Set to `true` if you want to enable storage class encryption. | true | `false` |
-| KMS instance name | `kms-instance-name` | Config | Your KMS instance name. The instance name must only include alphanumeric characters, `-`, `_` or `.` and start and end with an alphanumeric character. | false | N/A |
-| KMS instance id | `kms-instance-id` | Config |  Your KMS instance id. | false | N/A |
-| KMS instance Base URL | `kms-base-url` | Config |  Your KMS instance public URL to connect to the instance. | false | N/A |
-| KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | false | N/A |
-| KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | N/A |
-| KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | `false` |
-{: caption="Table 1. 4.10 parameter reference" caption-side="bottom"}
-
-
 ### 4.11 parameter reference
 {: #odf-local-4.11-parameters}
 
@@ -802,8 +757,8 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | false | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | `false` |
-{: caption="Table 2. 4.11 parameter reference" caption-side="bottom"}
+| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | true | `true` |
+{: caption="Table 1. 4.11 parameter reference" caption-side="bottom"}
 
 
 ### 4.12 parameter reference
@@ -831,8 +786,8 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | false | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | `false` |
-{: caption="Table 3. 4.12 parameter reference" caption-side="bottom"}
+| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | true | `true` |
+{: caption="Table 2. 4.12 parameter reference" caption-side="bottom"}
 
 
 ### 4.13 parameter reference
@@ -860,9 +815,10 @@ Note that if you remove the storage configuration, the ODF operators is then uni
 | KMS instance API key token URL | `kms-token-url` | Config | API key token URL to generate token for KMS instance. | false | N/A |
 | KMS root key | `kms-root-key` | Secret | KMS root key of your instance. | false | N/A |
 | KMS IAM API key | `kms-api-key` | Secret | IAM API key to access the KMS instance. The API key that you provide must have at least Viewer access to the KMS instance. | false | N/A |
-| Ignore Noobaa | `ignore-noobaa` | Config | Set to `true` if you do not want to deploy MultiCloud Object Gateway (Noobaa) | true | `false` |
+| Ignore Noobaa | `ignore-noobaa` | Config | Set to `false` if you want to deploy MultiCloud Object Gateway (Noobaa) | true | `true` |
+| Disable Noobaa LB | `disable-noobaa-LB` | Config | Set to `true` if you want to disable Noobaa public load balancer | true | `false` |
 | In-transit Encryption | `encryption-intransit` | Config | Set to `true` if you want to enable in-transit encryption | true | `false` |
-{: caption="Table 4. 4.13 parameter reference" caption-side="bottom"}
+{: caption="Table 3. 4.13 parameter reference" caption-side="bottom"}
 
 
 
