@@ -199,6 +199,12 @@ After setting up an agent, you can create Endpoints and ACLs to manage access to
     ```
     {: codeblock}
 
+1. **Optional**: Verify the `sha512sum` of the `.zip` by running the following command in PowerShell.
+    ```txt
+    Get-FileHash -Algorithm SHA512 -Path c:\windows_satellite_connector_1420916628.zip
+    ```
+    {: pre}
+
 1. Run the following command in PowerShell to extract the `.zip` file contents.
 
     ```txt
@@ -286,6 +292,9 @@ After setting up an agent, you can create Endpoints and ACLs to manage access to
 {: #update-agent-windows}
 
 You can use the `update` command to apply configuration changes to your agent. When you run the command, the agent is stopped, uninstalled, and reinstalled. Complete the following steps to update your agent.
+
+1. Before updating, review the changes in the [Connector Windows agent change log
+](/docs/satellite?topic=satellite-cl-connector-windows-agent).
 
 1. Modify the configuration parameters in the `config.json` file.
 
