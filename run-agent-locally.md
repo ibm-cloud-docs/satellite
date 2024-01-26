@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-24"
+lastupdated: "2024-01-26"
 
 keywords: satellite, connector
 
@@ -187,7 +187,7 @@ After setting up an agent, you can create Endpoints and ACLs to manage access to
 1. From the CLI, run the following command.
 
     ```sh
-    ibmcloud sat experimental connector agent download --platform windows
+    ibmcloud sat experimental connector agent --platform windows
     ```
     {: codeblock}
 
