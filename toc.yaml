@@ -294,6 +294,7 @@ toc:
             label: Version history
             topics:
               - cl-connector-agent-image.md
+              - cl-connector-windows-agent.md
               - topicgroup:
                   label: Storage template version history
                   topics:

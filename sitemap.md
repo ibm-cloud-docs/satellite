@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-26"
+lastupdated: "2024-01-29"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3543,6 +3543,12 @@ subcollection: satellite
     * [Version 1.1.1, released 10 Oct 2023](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.1-change-log)
 
     * [Version 1.1.0, released 20 June 2023](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.0-change-log)
+
+[Connector Windows agent change log](/docs/satellite?topic=satellite-cl-connector-windows-agent#cl-connector-windows-agent)
+
+* [Version 1.1](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1-change-log)
+
+    * [Version 1.1.0, released 30 Jan 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.0-change-log)
 
 
 ### Storage template version history

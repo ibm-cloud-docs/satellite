@@ -3,9 +3,9 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-26"
+lastupdated: "2024-01-29"
 
-keywords: satellite, connector
+keywords: satellite, connector, agent, windows
 
 subcollection: satellite
 
@@ -179,6 +179,9 @@ After setting up an agent, you can create Endpoints and ACLs to manage access to
 
 ## Running the agent on Windows
 {: #run-agent-windows}
+
+Connector agent for Windows supports Windows 10 and Windows Server 2016.
+{: note}
 
 ### Step 1: Downloading the Connector agent files from the CLI
 {: #windows-agent-download}
