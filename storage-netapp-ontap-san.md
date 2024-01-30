@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-30"
+  years: 2020, 2024
+lastupdated: "2024-01-30"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -201,7 +201,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 | User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
 | User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
 | Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is above this percentage. | true | `80%` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | true | `80%` |
 {: caption="Table 1. 22.04 parameter reference" caption-side="bottom"}
 
 
@@ -216,7 +216,7 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 | User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
 | User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
 | Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is above this percentage. | true | `80%` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | true | `80%` |
 {: caption="Table 2. 22.10 parameter reference" caption-side="bottom"}
 
 

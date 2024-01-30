@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-30"
 
 keywords: satellite, hybrid, multicloud, edge, use case, machine learning
 
@@ -29,7 +29,7 @@ Training a machine learning model
 :    Training your machine learning model typically involves significant compute resources for memory, GPU, and storage. Instead of installing and managing training model software onto your compute infrastructure, you can add the compute infrastructure to a {{site.data.keyword.satelliteshort}} location. Then, you can access {{site.data.keyword.cpd_full}}, which includes tools such as {{site.data.keyword.DSX_short}} and {{site.data.keyword.pm_full}} for data analysis and model training. By accessing these tools as cloud services, you simplify the installation and management of the software. You also can use these same cloud services across all your edge infrastructure, no matter the underlying infrastructure provider.
 
 Model inferencing
-:    Model inferencing is the task of using a trained model to make predictions, detect anomalies, and categorize data from your edge environment. Because of memory, storage, and latency requirements, model inferencing is most effectively run as near to your IoT sensors and other data sources as possible. You can create a {{site.data.keyword.satelliteshort}} location with managed {{site.data.keyword.redhat_openshift_notm}} clusters right where your data is located in your edge environments. Then, you can set up a serverless programming model such as Red Hat&trade; OpenShift&trade; Serverless&trade; to provide a simplified programming model with a REST interface to query your trained model to produce a prediction.
+:    Model inferencing is the task of using a trained model to make predictions, detect anomalies, and categorize data from your edge environment. Because of memory, storage, and latency requirements, model inferencing is most effectively run as near to your IoT sensors and other data sources as possible. You can create a {{site.data.keyword.satelliteshort}} location with managed {{site.data.keyword.redhat_openshift_notm}} clusters where your data is located in your edge environments. Then, you can set up a serverless programming model such as Red Hat&trade; OpenShift&trade; Serverless&trade; to provide a simplified programming model with a REST interface to query your trained model to produce a prediction.
 
 
 ## Setting up your edge solution with {{site.data.keyword.satelliteshort}}

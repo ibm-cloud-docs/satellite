@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-30"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -44,7 +44,7 @@ Before you begin,
     {: note}
 
 ## Assigning hosts from the CLI
-{: #host-assign-cli}
+{: #assigning-hosts-cli}
 
 1. List the hosts in your location and find the ones that are in an **unassigned** status.
     ```sh

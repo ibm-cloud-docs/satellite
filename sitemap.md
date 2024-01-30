@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-01-29"
+lastupdated: "2024-01-30"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1387,15 +1387,15 @@ subcollection: satellite
 
 * [Infrastructure composition options and supported topologies](/docs/satellite?topic=satellite-sat-multi-infra#infra-topologies)
 
-    * [1. Compute hosts are located in a single edge or data center](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-third-party)
+    * [Example 1: Compute hosts are located in a single edge or data center](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-third-party)
 
-    * [2. Compute hosts are located in {{site.data.keyword.cloud_notm}} and edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-ibmcloud)
+    * [Example 2: Compute hosts are located in {{site.data.keyword.cloud_notm}} and edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-ibmcloud)
 
-    * [3. Compute hosts are located in {{site.data.keyword.cloud_notm}} and multiple data centers or edge](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-ibmcloud-multiple)
+    * [Example 3: Compute hosts are located in {{site.data.keyword.cloud_notm}} and multiple data centers or edge](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-ibmcloud-multiple)
 
-    * [4. Compute hosts are located in multiple edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-multiple)
+    * [Example 4: Compute hosts are located in multiple edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-multiple)
 
-    * [5. Compute hosts, including {{site.data.keyword.satelliteshort}} control plane, are located in multiple edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-cp-multiple)
+    * [Example 5: Compute hosts, including {{site.data.keyword.satelliteshort}} control plane, are located in multiple edge or data centers](/docs/satellite?topic=satellite-sat-multi-infra#compute-hosts-cp-multiple)
 
 * [Use case: Edge clusters with centralized management in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-sat-multi-infra#edge-cluster)
 
@@ -1589,7 +1589,7 @@ subcollection: satellite
 
 * [Assigning hosts from the console](/docs/satellite?topic=satellite-assigning-hosts#host-assign-ui)
 
-* [Assigning hosts from the CLI](/docs/satellite?topic=satellite-assigning-hosts#host-assign-cli)
+* [Assigning hosts from the CLI](/docs/satellite?topic=satellite-assigning-hosts#assigning-hosts-cli)
 
 [Updating {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-update-location#host-update-location)
 

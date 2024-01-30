@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-30"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -456,7 +456,7 @@ Use the console to remove a storage assignment and storage configuration.
 | User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
 | Export Policy | `exportPolicy` | Config | The NAS option for the NFS export policy. | true | `default` |
 | Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | true | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is above this percentage. | true | `80%` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | true | `80%` |
 | NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | true | `nfsvers=4` |
 {: caption="Table 1. 22.04 parameter reference" caption-side="bottom"}
 
@@ -473,7 +473,7 @@ Use the console to remove a storage assignment and storage configuration.
 | User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
 | Export Policy | `exportPolicy` | Config | The NAS option for the NFS export policy. | true | `default` |
 | Limit Volume Size | `limitVolumeSize` | Config | Maximum requestable volume size (in Gibibytes) and qtree parent volume size | true | `50Gi` |
-| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is above this percentage. | true | `80%` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Fail provisioning if usage is greater than this percentage. | true | `80%` |
 | NFS Mount Options | `nfsMountOptions` | Config | The NFS mount options. | true | `nfsvers=4` |
 {: caption="Table 2. 22.10 parameter reference" caption-side="bottom"}
 

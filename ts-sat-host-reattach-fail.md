@@ -3,7 +3,7 @@
 
 copyright:
   years: 2021, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-30"
 
 keywords: satellite, host, location
 
@@ -33,25 +33,20 @@ If the host is not removed from the cluster before it is removed from the origin
 If the cluster master still recognizes the host, you must rename and reload the host before you can attach it to a new location.
 {: tsResolve}
 
-1. Follow your host infrastructure provider's instructions to rename the host. 
-
-    **For hosts provisioned through {{site.data.keyword.cloud_notm}}**:
+1. Follow your host infrastructure provider's instructions to rename the host. For hosts provisioned through {{site.data.keyword.cloud_notm}}, complete the following steps.
 
     1. Log in to the {{site.data.keyword.cloud_notm}} console and navigate to **Classic infrastructure**>**Device list**.
     2. In the **Devices** table, locate the host you want to rename. Click the **Action** menu and select **Rename**.
     3. Rename the host. 
 
-2. Follow your host infrastructure provider's instructions to reload the host.
-
-    **For hosts provisioned through {{site.data.keyword.cloud_notm}}**:
-
-    - **In the {{site.data.keyword.cloud_notm}} console**:
+2. Follow your host infrastructure provider's instructions to reload the host. For hosts provisioned through {{site.data.keyword.cloud_notm}}**, complete the following steps.
+    - In the {{site.data.keyword.cloud_notm}} console:
         1. Navigate to **Classic infrastructure**>**Device list**.
         2. In the **Devices** table, click on the host you want to reload. 
         3. From the **Actions** drop down menu, select **OS Reload**.
         4. Click **Reload**. Note that it may take several minutes for the reload process to complete.
 
-    - **In the CLI:**
+    - In the CLI:
         1. List your hosts and note the **ID** of the host you want to reload.
 
             ```sh

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -20,7 +20,7 @@ High availability (HA) is a core discipline in an IT infrastructure to keep your
 {: shortdesc}
 
 What level of availability do I need?
-:    You can achieve high availability on different levels in your backing infrastructure for the {{site.data.keyword.satelliteshort}} location, the {{site.data.keyword.satelliteshort}} location control plane, and within the different components of the clusters that you deploy to the location. The level of availability that is right for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the resources that you want to expend.
+:    You can achieve high availability on different levels in your backing infrastructure for the {{site.data.keyword.satelliteshort}} location, the {{site.data.keyword.satelliteshort}} location control plane, and within the different components of the clusters that you deploy to the location. The level of availability that is best for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your customers, and the resources that you want to expend.
 
 What level of availability does {{site.data.keyword.cloud_notm}} offer?
 :    For {{site.data.keyword.cloud_notm}}, see [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime).

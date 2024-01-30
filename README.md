@@ -1,7 +1,6 @@
 
 
-# Source files for {{site.data.keyword.satellitelong_notm}} documentation
-
+# [{{site.data.keyword.satellitelong_notm}} documentation](cloud.ibm.com/docs/satellite)
 
 
 
