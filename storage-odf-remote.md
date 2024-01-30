@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-26"
+lastupdated: "2024-01-30"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -463,7 +463,7 @@ Use the command line to remove a storage assignment.
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or above). The default value is `512Gi`. | true | `512Gi` |
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | true | `512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | true | `1` |
 | Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
@@ -492,7 +492,7 @@ Use the command line to remove a storage assignment.
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or above). The default value is `512Gi`. | true | `512Gi` |
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | true | `512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | true | `1` |
 | Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |
@@ -521,7 +521,7 @@ Use the command line to remove a storage assignment.
 
 | Display name | CLI option | Type | Description | Required? | Default value | 
 | --- | --- | --- | --- | --- | --- |
-| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or above). The default value is `512Gi`. | true | `512Gi` |
+| OSD pod volume size | `osd-size` | Config | The OSD storage size in Gi(Use 512Gi or more). The default value is `512Gi`. | true | `512Gi` |
 | OSD pod storage class | `osd-storage-class` | Config | The storage class to use when dynamically provisioning volumes for the OSD pods. | true | N/A |
 | Number of OSD volumes | `num-of-osd` | Config | The number of storage device replicas to create. The default value is `1`, which creates 1 device across 3 nodes. Increase by 1 for each additional set of 3 devices. For must use cases, leave the default value of `1`. | true | `1` |
 | Worker node names | `worker-nodes` | Config | A comma separated list of the worker node names where you want to deploy ODF. Leave this field blank to deploy ODF across all worker nodes in your cluster. The minimum number of worker nodes is 3. You can find your worker node names by running `oc get nodes`. | false | N/A |

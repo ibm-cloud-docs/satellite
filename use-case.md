@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-30"
 
 keywords: satellite, hybrid, multicloud, use case, scenarios, benefits
 
@@ -115,7 +115,7 @@ Streamline and enhance functions that are related to AI-driven analytics as well
 {: shortdesc}
 
 Pain points
-:   Staff use terminals at the insurance sales offices to deliver timely and suitable advice and to provide the right services to help address customer issues. They need a more sophisticated search system with appropriate up-to-date information to be able to discover relevant answers from the diverse range of content.
+:   Staff use terminals at the insurance sales offices to deliver timely and suitable advice and to help address customer issues. They need a more sophisticated search system with appropriate up-to-date information to be able to discover relevant answers from the diverse range of content.
 
 {{site.data.keyword.satelliteshort}} enables:
 :   Sophisticated AI-driven knowledge search system at the customer site and data processing where the data resides, eliminating the need to move data to the cloud. Data is processed where the data resides, eliminating the need to move data to the cloud.

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-30"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -272,7 +272,7 @@ subcollection: satellite
     ```
     {: pre}
 
-1. Repeat the steps above for each worker node you are updating. 
+1. Repeat the previous steps for each worker node you are updating. 
 
 
 ## Edit your old storage assignment

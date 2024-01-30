@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-30"
 
 keywords: satellite, hybrid, multicloud, assign access, access for satellite
 
@@ -57,7 +57,7 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
     - You can scope access to the account or particular resource groups. Keep in mind the following points.
         - Account-level access is not the same as access to all resource groups.
         - Not all {{site.data.keyword.satelliteshort}} resource types support scoping to resource groups. For example, you cannot scope {{site.data.keyword.satelliteshort}} Config resource types (configuration, subscription, cluster, or cluster group) or {{site.data.keyword.satelliteshort}} storage service to resource groups, only to the account.
-    - For help with scoping the role to the right {{site.data.keyword.satelliteshort}} resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](/docs/satellite?topic=satellite-iam). You can scope access policies to the following resource types.
+    - For help with scoping the role to the correct {{site.data.keyword.satelliteshort}} resource types, see [Understanding {{site.data.keyword.satelliteshort}} resource types for access](/docs/satellite?topic=satellite-iam). You can scope access policies to the following resource types.
         - Configuration
         - Cluster
         - Cluster group
@@ -69,7 +69,7 @@ As a general practice, you can invite users to your {{site.data.keyword.cloud_no
         - Cluster group
         - Link
         - Location (when scoped, users must [target the regional endpoint](/docs/satellite?topic=satellite-ts-location-missing-location))
-    - For help with choosing the right platform and service roles, see the following reference information:
+    - For help with choosing platform and service roles, see the following reference information:
         - [Platform access roles](/docs/satellite?topic=satellite-iam-platform-access)
         - [Service access roles](/docs/satellite?topic=satellite-iam-service-access)
         - [Common use cases and roles](/docs/satellite?topic=satellite-iam#iam-roles-usecases)

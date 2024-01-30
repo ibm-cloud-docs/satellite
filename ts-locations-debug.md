@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-04"
+lastupdated: "2024-01-30"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -389,7 +389,7 @@ To determine where your problem exists,
 Location message
 :    The Link tunnel client is experiencing authentication issues. Contact {{site.data.keyword.cloud_notm}} Support and include your {{site.data.keyword.satelliteshort}} location ID.
 
-:    This error is reported because the IAM API key that is set for the region or resource group that the location is in does not have the required permissions in {{site.data.keyword.satelliteshort}} or {{site.data.keyword.containershort}}, usually because the permissions of the API key owner changed or the API owner left the account.
+:    This error is reported because the IAM API key that is set for the region or resource group that the location is in does not have the required permissions in {{site.data.keyword.satelliteshort}} or {{site.data.keyword.containershort}}, usually because the permissions of the API key owner changed or the API owner is no longer in the account.
 
 Steps to resolve
 :    If you have a {{site.data.keyword.redhat_openshift_notm}} cluster in a {{site.data.keyword.satelliteshort}} location and you are the account owner or a user with Administrator permission for all {{site.data.keyword.satelliteshort}} components, you can resolve this issue by resetting the API key. Note that when you reset the API key, the old key is deleted. Be sure to check if other services are using this API key.

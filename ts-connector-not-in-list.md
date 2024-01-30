@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-01-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -28,7 +28,7 @@ This can be caused by several reasons. Check the following list to determine the
 
 - Make sure the Connector ID your agent is using matches the Connector ID you are connecting to.
 
-- Make sure the API Key is valid and has the right permissions to the Connector instance. 
+- Make sure the API Key is valid and has the correct permissions to the Connector instance. 
 
 - Check the logs of the agent to determine if there are any errors.
 
