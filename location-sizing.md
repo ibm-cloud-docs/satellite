@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-01"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -53,7 +53,7 @@ The following tables show sizing guidance for the number of hosts that the {{sit
 
 | Number of control plane hosts | Max clusters in location | Example of max worker nodes in location | Max cluster size |
 | --- | --- | --- | --- |
-| 6 hosts | Up to 20 clusters | 200 workers across 20 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
+| 6 hosts | Up to 17 clusters | 200 workers across 20 clusters, or 550 workers across 2 clusters | 300 workers per cluster |
 | 9 hosts  | Up to 26 clusters | 400 workers across 26 clusters, or 850 workers across 3 clusters | 300 workers per cluster |
 | 12 hosts  | Up to 36 clusters | 520 workers across 26 clusters, or 1150 workers across 4 clusters | 300 workers per cluster |
 {: caption="Sizing guidance for the {{site.data.keyword.satelliteshort}} location control plane" caption-side="bottom"}
