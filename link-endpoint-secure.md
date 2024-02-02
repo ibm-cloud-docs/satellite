@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-02"
 
 keywords: satellite, hybrid, multicloud, endpoint, link, endpoint secure
 
@@ -20,7 +20,7 @@ By default, your {{site.data.keyword.openshiftlong_notm}} API {{site.data.keywor
 {: shortdesc}
  
 1. From the [{{site.data.keyword.satelliteshort}} **Locations** dashboard](https://cloud.ibm.com/satellite/locations){: external}, click the name of your location.
-2. From the **User endpoints** tab, click the name of your endpoint.
+2. From the **User endpoints** tab, click **Link endpoints**, and then click your endpoint.
 3. In the **Access control list** section, click **Create rule**.
 4. Enter a rule name and IP addresses of the clients that will be allowed to connect to the endpoint, and click **Add**.
 

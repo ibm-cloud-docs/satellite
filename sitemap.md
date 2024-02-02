@@ -196,6 +196,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb24)
+
+    * [02 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb0224)
+
+        * Storage template revisions are available.
+
 * [January 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan24)
 
     * [23 January 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-jan2324)
@@ -1666,9 +1672,11 @@ subcollection: satellite
 
 [Creating a Connector](/docs/satellite?topic=satellite-create-connector#create-connector)
 
-* [Prerequisites](/docs/satellite?topic=satellite-create-connector#create-connector-prereqs)
+* [Prerequisites](/docs/satellite?topic=satellite-create-connector&interface=ui#create-connector-prereqs-ui)
 
 * [Creating a Connector in the console](/docs/satellite?topic=satellite-create-connector&interface=ui#create-connector-console)
+
+* [Prerequisites](/docs/satellite?topic=satellite-create-connector&interface=cli#create-connector-prereqs)
 
 * [Creating a Connector in the CLI](/docs/satellite?topic=satellite-create-connector&interface=cli#create-connector-cli)
 

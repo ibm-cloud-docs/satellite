@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-22"
+lastupdated: "2024-02-02"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -20,11 +20,11 @@ A Connector provides a secure connection between a specific remote location and 
 {: shortdesc}
 
 ## Prerequisites
-{: #create-connector-prereqs}
+{: #create-connector-prereqs-ui}
+{: ui}
 
 - To configure {{site.data.keyword.satelliteshort}} Connectors, you must have Administrator access to the **Satellite** service in IAM access policies.
 - Determine the region where you want to deploy the Connector. For a list of supported regions, see [Supported IBM Cloud regions](/docs/satellite?topic=satellite-sat-regions).
-- If you want to create a Connector from the CLI, you must [Install the CLI](/docs/openshift?topic=openshift-cli-install&interface=cli).
 
 
 ## Creating a Connector in the console
@@ -43,12 +43,11 @@ A Connector provides a secure connection between a specific remote location and 
 
 
 
-## Creating a Connector in the CLI
-{: #create-connector-cli}
+## Prerequisites
+{: #create-connector-prereqs}
 {: cli}
 
-The {{site.data.keyword.satelliteshort}} Connector CLI commands are currently in the `ibmcloud sat experimental` command group, but are fully functional and availabe for use in production. The commands move out the experimental group and become `ibmcloud sat connector` on 13 March 2024.
-{: note}
+1. [Install the CLI](/docs/openshift?topic=openshift-cli-install&interface=cli).
 
 1. Log in to your {{site.data.keyword.cloud_notm}} account. If you have a federated account, include the `--sso` option, or create an API key to log in.
 
@@ -63,6 +62,20 @@ The {{site.data.keyword.satelliteshort}} Connector CLI commands are currently in
 
     ```sh
     ibmcloud target -r REGION -g GROUP
+    ```
+    {: pre}
+
+
+## Creating a Connector in the CLI
+{: #create-connector-cli}
+{: cli}
+
+The {{site.data.keyword.satelliteshort}} Connector CLI commands are in the `ibmcloud sat experimental` command group, but are fully functional and availabe for use in production. The commands move out the experimental group and become `ibmcloud sat connector` on 05 March 2024.
+{: note}
+
+1. Review the command parameters by running the following command or reviewing the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create).
+    ```sh
+    ibmcloud sat experimental connector create --help
     ```
     {: pre}
 
