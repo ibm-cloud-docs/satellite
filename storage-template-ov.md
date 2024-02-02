@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-02-02"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -138,7 +138,7 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | 1.0.4 | 4 | Deprecated |
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | 1.7.1 | 5 | Supported |
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | 1.8.0 (Default) | 2 | Supported |
-| [IBM Object Storage Plugin](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin) | `ibm-object-storage-plugin` | 2.2 (Default) | 17 | Supported |
+| [IBM Object Storage Plugin](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin) | `ibm-object-storage-plugin` | 2.2 (Default) | 18 | Supported |
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | 1.10.0 | 1 | Deprecated |
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | 1.11.1 (Default) | 1 | Supported |
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | 1.11.2 | 1 | Supported |
@@ -163,11 +163,13 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | 22.04 | 3 | Supported |
 | [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | 22.10 (Default) | 1 | Supported |
 | [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | 4.11 | 13 | Supported |
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | 4.12 (Default) | 9 | Supported |
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | 4.13 | 6 | Supported |
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | 4.12 | 9 | Supported |
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | 4.13 (Default) | 6 | Supported |
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | 4.14 | 1 | Supported |
 | [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | 4.11 | 13 | Supported |
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | 4.12 (Default) | 9 | Supported |
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | 4.13 | 6 | Supported |
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | 4.12 | 9 | Supported |
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | 4.13 (Default) | 6 | Supported |
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | 4.14 | 1 | Supported |
 | [VMware CSI Driver](/docs/satellite?topic=satellite-storage-vsphere-csi-driver) | `vsphere-csi-driver` | 2.5.1 (Default) | 6 | Supported |
 | [VMware CSI Driver](/docs/satellite?topic=satellite-storage-vsphere-csi-driver) | `vsphere-csi-driver` | 2.7.0 | 2 | Supported |
 {: caption="Storage template versions" caption-side="bottom"}

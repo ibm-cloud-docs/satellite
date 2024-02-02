@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-26"
+lastupdated: "2024-02-02"
 
 
 keywords: satellite storage, change log, version history, odf local
@@ -19,6 +19,19 @@ subcollection: satellite
 
 Review the version history for the `odf-local` {{site.data.keyword.satelliteshort}} storage template.
 {: shortdesc}
+
+## Version 4.14
+{: #odf-local-4.14-change-log}
+
+
+### Revision 1, released 02 February 2024
+{: #odf-local-4.14-rev-1-change-log}
+
+
+- Updates the UBI to version `8.9-1029`.
+- Updates Go to version `1.20.11`.
+- Initial Release
+
 
 ## Version 4.13
 {: #odf-local-4.13-change-log}
