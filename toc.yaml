@@ -53,6 +53,7 @@ toc:
               - include: ../openshift/cli-update.md
               - include: ../cli/reference/ibmcloud/uninstall_cli.md
         - infrastructure-plan.md
+        - api-setup.md
         - topicgroup:
             label: Preparing your host infrastructure
             topics:
