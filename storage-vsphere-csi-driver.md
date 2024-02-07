@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2020, 2023
-lastupdated: "2023-11-30"
+  years: 2020, 2024
+lastupdated: "2024-02-07"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -96,7 +96,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
     ```
     {: pre}
     
-1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-create).
+1. Copy one of the following example command for the template version that you want to use. For more information about the command, see `ibmcloud sat storage config create` in the [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-create-cli).
 
 
     Example command to create a version 2.5.1 configuration.

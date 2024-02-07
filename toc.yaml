@@ -282,7 +282,7 @@ toc:
             label: CLI plug-in reference
             topics:
               - icsat-map.md
-              - satellite-cli-reference.md
+              - satellite-cli-reference-v2.md
               - include: ../openshift/cli-changelog.md
         - requirements.md
         - sat-regions.md

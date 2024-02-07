@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-02-07"
 
 keywords: satellite, hybrid, multicloud
 
@@ -101,7 +101,7 @@ If you didn't assign your configuration to a cluster or service when you created
     ```
     {: pre}
 
-1. Assign your storage configuration to the cluster, group, or service that you retrieved earlier. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-assign-create).
+1. Assign your storage configuration to the cluster, group, or service that you retrieved earlier. For more information, see the `ibmcloud sat storage assignment create` [command](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-create-cli).
 
     Example command to assign a configuration to a cluster group.
     ```sh

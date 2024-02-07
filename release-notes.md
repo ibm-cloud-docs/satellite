@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-02"
+lastupdated: "2024-02-07"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -30,7 +30,7 @@ Use the release notes to learn about the latest changes to the {{site.data.keywo
 {: release-note}
 
 Storage template revisions are available.
-:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or run the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
+:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or run the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
 
 ## January 2024
 {: #satellite-jan24}
@@ -76,7 +76,7 @@ Template for VMware location setup
 {: release-note}
 
 Storage template revisions are available.
-:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or run the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
+:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or run the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
 
 ### 14 November 2023
 {: #satellite-nov1423}
@@ -90,7 +90,7 @@ Troubleshooting documentation for attaching hosts.
 {: release-note}
 
 Storage template revisions are available.
-:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console or with the [`ibmcloud sat storage config upgrade`](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade) command.
+:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console or with the [`ibmcloud sat storage config upgrade`](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli) command.
 
 ## October 2023
 {: #satellite-oct23}
@@ -120,7 +120,7 @@ Debugging guide for OpenShift Data Foundation
 :   For more information, see [Debugging OpenShift Data Foundation](/docs/satellite?topic=satellite-sat-storage-odf-debug).
 
 Storage template revisions are available.
-:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or run the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
+:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or run the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
 
 ### 10 October 2023
 {: #satellite-oct1023}
@@ -146,7 +146,7 @@ You can now create {{site.data.keyword.satelliteshort}} locations in the Madrid 
 
 
 Storage template revisions
-:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or by running the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
+:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or by running the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
 
 
 ### 18 September 2023
@@ -165,7 +165,7 @@ CLI version `1.0.566` is available.
 {: release-note}
 
 Storage template revisions
-:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or by running the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#cli-storage-config-upgrade).
+:   Revisions for the {{site.data.keyword.satelliteshort}} storage templates are available. For more information, see the [Storage template version history](/docs/satellite?topic=satellite-sitemap#sitemap_storage_template_version_history). You can update your configurations and assignments to use the latest revisions in the console, or by running the `ibmcloud sat storage config upgrade` command. For more information, see [the command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
 
 
 
@@ -580,7 +580,7 @@ New location error message is added.
 {: release-note}
 
 New! {{site.data.keyword.satelliteshort}} configuration and assignment update commands
-:   You can now update and upgrade your {{site.data.keyword.satelliteshort}} storage configurations and assignments from the CLI. For more information, see the [{{site.data.keyword.satelliteshort}} storage commands](/docs/satellite?topic=satellite-satellite-cli-reference#sat-storage-commands).
+:   You can now update and upgrade your {{site.data.keyword.satelliteshort}} storage configurations and assignments from the CLI. For more information, see the [{{site.data.keyword.satelliteshort}} storage commands](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-create-cli).
 
 ## April 2022
 {: #satellite-apr22}
