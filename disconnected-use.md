@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-07"
 
 keywords: satellite, hybrid, multicloud, disconnected use, disconnected usage, disconnect
 
@@ -38,9 +38,9 @@ How do I reauthenticate?
 :   Reconnect your Location first and then log in again with your credentials. 
 
 Do I have to recover etcd backup?
-:   No, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and reauthenticate.
+:   If you are using RHCOS hosts, you don't need to recover etcd backup. The Location recovers automatically after you reconnect it and reauthenticate. However, locations that use RHEL might need to recover etcd.
 
-What happens if a location is disconnected for more than 7 days?
+What happens if a location stays disconnected for more than 7 days?
 :   After you restore your connection, you might need to replace all hosts across the location with new infrastructure.
 
 How do I know when to reconnect a location?
