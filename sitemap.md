@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-05"
+lastupdated: "2024-02-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1234,22 +1234,15 @@ subcollection: satellite
 
 * [About the API](/docs/satellite?topic=satellite-api_setup#api_about)
 
-* [Working with API keys](/docs/satellite?topic=satellite-api_setup#api_setup-include-work-with-apikeys)
+* [Working with API keys](/docs/satellite?topic=satellite-api_setup#api-setup-include-work-with-apikeys)
 
-    * [Required access for managing API keys](/docs/satellite?topic=satellite-api_setup#api_setup-include-API-key-access)
+    * [Required access for managing API keys](/docs/satellite?topic=satellite-api_setup#api-setup-include-API-key-access)
 
-* [Generating an IAM token](/docs/satellite?topic=satellite-api_setup#api_setup-include-iamtoken)
+* [Generating an IAM token](/docs/satellite?topic=satellite-api_setup#api-setup-include-iamtoken)
 
-* [Passing an {{site.data.keyword.Bluemix_notm}} IAM token to authenticate with a service's API](/docs/satellite?topic=satellite-api_setup#api_setup-include-token_auth)
+* [Passing an {{site.data.keyword.Bluemix_notm}} IAM token to authenticate with a service's API](/docs/satellite?topic=satellite-api_setup#api-setup-include-token_auth)
 
-
-## after getting a new access token...
-{: #sitemap_after_getting_a_new_access_token}
-
-
-[after getting a new access token...](/docs/satellite?topic=satellite-api_setup#after-getting-a-new-access-token)
-
-* [Passing an {{site.data.keyword.Bluemix_notm}} API key to authenticate with a service API](/docs/satellite?topic=satellite-api_setup#api_setup-include-apikey_auth)
+* [Passing an {{site.data.keyword.Bluemix_notm}} API key to authenticate with a service API](/docs/satellite?topic=satellite-api_setup#api-setup-include-apikey_auth)
 
 
 ## Preparing your host infrastructure
