@@ -3375,6 +3375,10 @@ subcollection: satellite
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
 
+* [Version v1.0.595](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01959)
+
+* [Version v1.0.589](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01589)
+
 * [Version v1.0.579](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01579)
 
 * [Version 0.1.573](/docs/satellite?topic=satellite-cs_cli_changelog#cli-01573)

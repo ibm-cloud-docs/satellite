@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-07"
+lastupdated: "2024-02-08"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -2167,7 +2167,3 @@ ibmcloud sat experimental connector rm --connector-id myconnector
 ```
 {: pre}
   
-
-
-
-
