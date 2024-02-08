@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-07"
 
 keywords: satellite config, satellite configurations, deploy kubernetes resources with satellite, satellite deploy apps, satellite subscription, satellite version
 
@@ -70,5 +70,5 @@ You can review resources in several areas in the console as follows.
 
 Review resources with the CLI.
 
-Use the **`ibmcloud sat resource ls`** [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-ls) and its options to list resources. To view the details of a particular resource, use the `ibmcloud sat resource get` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-resource-get).
+Use the **`ibmcloud sat resource ls`** [command](/docs/satellite?topic=satellite-satellite-cli-reference#resource-ls-cli) and its options to list resources. To view the details of a particular resource, use the `ibmcloud sat resource get` [command](/docs/satellite?topic=satellite-satellite-cli-reference#resource-get-cli).
 

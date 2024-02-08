@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-07"
 
 keywords: satellite, toolchain, satellite config, Kubernetes, cluster
 
@@ -209,7 +209,7 @@ After your toolchain is set up and the {{site.data.keyword.deliverypipeline}} su
 3. In the **Workloads** > **Pod** section, filter by the project or the cluster namespace, and verify that the pods are running.
 4. In the **Networking** > **Routes** section, filter by the project or the cluster namespace, and locate the app URL.
 5. Verify that the app is running by visiting the app URL with your browser.
-6. Optional: You can view your {{site.data.keyword.satelliteshort}} configuration [in the console](https://cloud.ibm.com/satellite/configuration), or by running the `ibmcloud sat config ls` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-ls).
+6. Optional: You can view your {{site.data.keyword.satelliteshort}} configuration [in the console](https://cloud.ibm.com/satellite/configuration), or by running the `ibmcloud sat config ls` [command](/docs/satellite?topic=satellite-satellite-cli-reference#config-ls-cli).
 
 ## Deploying a new version of your app from a different branch
 {: #modify_trigger}
@@ -227,7 +227,7 @@ If you have multiple branches in your repository representing multiple versions 
 7. Modify the value of this property to the branch name you want to deploy. For example, `v2`.
 8. Save the changes.
 9. Check your app to see if it is running the new version by visiting the app URL with your browser.
-10. Optional: View the new version of your configuration in the {{site.data.keyword.satelliteshort}} configurations [console](https://cloud.ibm.com/satellite/configuration) or by running running the `ibmcloud sat config get --config CONFIG` [command](/docs/satellite?topic=satellite-satellite-cli-reference#cli-config-configuration-get).
+10. Optional: View the new version of your configuration in the {{site.data.keyword.satelliteshort}} configurations [console](https://cloud.ibm.com/satellite/configuration) or by running running the `ibmcloud sat config get --config CONFIG` [command](/docs/satellite?topic=satellite-satellite-cli-reference#config-get-cli).
 
 Now you can deploy Kubernetes resources to multiple clusters with a single toolchain.
 
