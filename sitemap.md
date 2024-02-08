@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-07"
+lastupdated: "2024-02-08"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -197,6 +197,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb24)
+
+    * [08 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb0824)
+
+        * CLI version `1.0.595` is available.
 
     * [02 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb0224)
 
@@ -2944,35 +2948,9 @@ subcollection: satellite
 
     * [Checking IAM platform and service access roles from the CLI](/docs/satellite?topic=satellite-iam-assign-access#checking-iam-cli)
 
-[Platform access roles](/docs/satellite?topic=satellite-iam-platform-access#iam-platform-access)
+[IAM platform and service access roles](/docs/satellite?topic=satellite-iam-platform-access#iam-platform-access)
 
-* [Location and host platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-location-host)
-
-* [Link platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-link)
-
-* [Satellite Config platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-config)
-
-* [Subscription platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-subscription)
-
-* [Cluster platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-cluster)
-
-* [Cluster group platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-cluster-group)
-
-* [Resource platform access roles](/docs/satellite?topic=satellite-iam-platform-access#platform-resource)
-
-[Service access roles](/docs/satellite?topic=satellite-iam-service-access#iam-service-access)
-
-* [Link service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-link)
-
-* [Satellite Config service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-config)
-
-* [Subscription service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-subscription)
-
-* [Cluster service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster)
-
-* [Cluster group service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster-grp)
-
-* [Resources service access roles](/docs/satellite?topic=satellite-iam-service-access#service-access-cluster-roles)
+* [IBM Cloud Satellite](/docs/satellite?topic=satellite-iam-platform-access#iam-platform-access-include-satellite-roles)
 
 [API keys in {{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-iam-api-key#iam-api-key)
 
