@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-02-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -121,20 +121,20 @@ Depending on where your hosts are, the options that are available to you to incr
 
 
 
-### Example for a high availability setup in an on-premises data center
+### Example high availability setup in an on-premises data center
 {: #example-ha-onprem}
 
-The following image shows a high availability setup of your control plane nodes within an on-premises data center. All compute hosts are on a separate rack to ensure that power, network, and storage devices are not shared. Because all compute hosts are located in the same data center, the requirements for networking speed and latency between the hosts are met.
+The following image shows a high availability setup of your control plane nodes within an on-premises data center. All compute hosts are on a separate rack to ensure that power, network, and storage devices aren't shared. Because all compute hosts are located in the same data center, the requirements for networking speed and latency between the hosts are met.
 {: shortdesc}
 
 ![High availability setup for an on-premises data center.](images/sat_control_plane_ha_onprem.svg "High availability setup in an on-premises data center."){: caption="Figure 3. High availability setup for an on-premises data center." caption-side="bottom"}
 
-### Example for a high availability setup in a public cloud provider
+### Example high availability setup in a public cloud provider
 {: #example-ha-cloudprovider}
 
-The following image shows a highly available setup for compute hosts that are in a public cloud provider. All virtual machines are hosted on a separate physical machine that is dedicated to you only. To ensure further isolation and availability, all compute hosts are spread across multiple availability zones within the same metro. Because the availability zones belong to the same metro, the requirements for networking speed and latency between the hosts are met.
+The following image shows a highly available setup for compute hosts that are in a public cloud provider. All virtual machines are hosted on a separate physical machine that is dedicated to you only. To ensure further isolation and availability, spread your compute hosts across many availability zones within the same metro. Because the availability zones belong to the same metro, this setup meets the requirements for networking speed and latency between the hosts.
 {: shortdesc}
 
 
-![High availability setup with compute hosts that are in a public cloud provider.](/images/sat_control_plane_to_cloud_ha.svg){: caption="Figure 4. High availability setup with compute hosts that are at a public cloud provider" caption-side="bottom"}
-    
+![High-availability setup with compute hosts that are in a public cloud provider.](/images/sat_control_plane_to_cloud_ha.svg){: caption="Figure 4. High availability setup with compute hosts that are at a public cloud provider" caption-side="bottom"}
+
