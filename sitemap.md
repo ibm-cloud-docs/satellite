@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-08"
+lastupdated: "2024-02-09"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3612,9 +3612,9 @@ subcollection: satellite
 
 * [Highly available control plane worker setup](/docs/satellite?topic=satellite-ha#satellite-ha-setup)
 
-    * [Example for a high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
+    * [Example high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
 
-    * [Example for a high availability setup in a public cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
+    * [Example high availability setup in a public cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
 
 
 ## Disconnected use for Satellite components
