@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-07"
+lastupdated: "2024-02-12"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -148,7 +148,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
 {{site.data.content.assignment-upgrade-api}}
-
+{{site.data.content.assignment-autopatch-api}}
 
 
 ### Removing the NetApp Trident storage assignment and configuration from the console

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-02-07"
+lastupdated: "2024-02-12"
 
 keywords: satellite storage, satellite config, satellite configurations, cos, object storage, storage configuration, cloud object storage
 
@@ -178,7 +178,7 @@ Create the Kubernetes secret in your cluster that contains your service credenti
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
 {{site.data.content.assignment-upgrade-api}}
-
+{{site.data.content.assignment-autopatch-api}}
 
 ## Deploying an app that uses {{site.data.keyword.cos_full_notm}}
 {: #config-storage-cos-app}

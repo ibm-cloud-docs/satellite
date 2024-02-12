@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-07"
+lastupdated: "2024-02-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -211,6 +211,58 @@ Upgrade an assignment to use the latest storage template revision.
 
 
 
+## Enabling automatic patch updates for configurations and assignments in the CLI
+{: #assignment-autopatch-cli}
+{: cli}
+
+You can use the `sat storage assignment autopatch enable` CLI to enable automatic patch updates for your assignments. Enabling automatic patch updates applies the latest storage template revisions (patches) automatically. You must still apply major updates manually.
+
+1. List your {{site.data.keyword.satelliteshort}} storage configurations. Make a note of the configuration ID. 
+
+    ```sh
+    ibmcloud sat storage assignment ls
+    ```
+    {: pre}
+
+1. Run one of the following example commands to enable automatic patch updates for your configuration and its associated assignments. Enter the configuration ID that you retrieved in the previous step.
+
+    Example command to enable automatic patch updates for an assignment.
+
+    ```sh
+    ibmcloud sat storage assignment autopatch enable --config CONFIG  (--all | --assignment ASSIGNMENT-ID [--assignment ASSIGNMENT-ID])
+    ```
+    {: pre}
+
+    Example command to enable automatic patch updates for all storage assignments under a given configuration.
+
+    ```sh
+    ibmcloud sat storage assignment autopatch enable --config CONFIG --all
+    ```
+    {: pre}
+
+    Example command to disable automatic patch updates for all assignments under a specific configuration.
+
+    ```sh
+    ibmcloud sat storage assignment autopatch disable --config CONFIG --all
+    ```
+    {: pre}
+
+    Example command to disable automatic patch updates for an single assignment and a specific configuration.
+
+    ```sh
+    ibmcloud sat storage assignment autopatch disable --config CONFIG --assignment ASSIGNMENT-ID
+    ```
+    {: pre}
+
+    Example command to disable automatic patch updates for an multiple assignment and a specific configuration.
+
+    ```sh
+    ibmcloud sat storage assignment autopatch disable --config CONFIG --assignment ASSIGNMENT-ID --assignment ASSIGNMENT-ID
+    ```
+    {: pre}
+
+
+
 ## Updating storage configurations and assignments in the console
 {: #configuration-upgrade-console}
 {: ui}
@@ -225,6 +277,11 @@ You can use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm
 
 
 
+You can also enable automatic patch updates for you storage assignments. Enabling automatic patch updates ensures that your assignments always have the latest storage template revision applied to your clusters. Enabling automatic patch updates applies the latest storage template revisions (patches) automatically. You must still apply major updates manually.
+{: tip}
+
+
+
 ## Updating storage configurations and assignments in the console
 {: #configuration-upgrade-console2}
 {: ui}
@@ -236,6 +293,11 @@ You can use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm
 1. Click the **Storage** tab to view your configurations.
 
 1. You can apply the latest template revision to your configurations and assignments by clicking the information **Information** (i) icon.
+
+
+
+You can also enable automatic patch updates for you storage assignments. Enabling automatic patch updates ensures that your assignments always have the latest storage template revision applied to your clusters. Enabling automatic patch updates applies the latest storage template revisions (patches) automatically. You must still apply major updates manually.
+{: tip}
 
 
 
@@ -310,6 +372,28 @@ You can use the [`/v2/storage/satellite/updateAssignment`](https://containers.cl
     ```
     {: pre}
 
+
+
+
+## Enabling automatic patch updates for assignments in the API
+{: #assignment-autopatch-api}
+{: api}
+
+You can use the `/v2/storage/satellite/setAssignmentAutoupgrade` API to enable automatic patch updates for your assignments. Enabling automatic patch updates applies the latest storage template revisions (patches) automatically. You must still apply major updates manually.
+
+1. Copy the following example request and replace the variables for the cluster groups and assignments that you want to update.
+    ```txt
+    curl -X PATCH "https://containers.cloud.ibm.com/global/v2/storage/satellite/setAssignmentAutoupgrade" -H "accept: application/json" -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" -d { "config": "string", "controller": "string", "autopatch": boolean,"assignment" : { "all": boolean, "uuid": ["string", "string", ...], } }
+    ```
+    {: pre}
+    
+1. Run the request.
+
+1. Get the details of you assignment to verify the upgrade.
+    ```sh
+    curl -X GET "https://containers.cloud.ibm.com/global/v2/storage/satellite/getAssignment?uuid=ASSIGNMENT-ID" -H "accept: application/json" -H "Authorization: Bearer TOKEN"
+    ```
+    {: pre}
 
 
     
