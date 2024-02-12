@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-07"
+lastupdated: "2024-02-12"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, efs, file storage
 
@@ -185,7 +185,7 @@ To use the AWS EFS storage template, complete the following tasks:
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
 {{site.data.content.assignment-upgrade-api}}
-
+{{site.data.content.assignment-autopatch-api}}
     
     
 ## Adding a custom AWS EFS storage class to your configuration

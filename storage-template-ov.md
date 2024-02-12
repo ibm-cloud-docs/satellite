@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-02"
+lastupdated: "2024-02-12"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -103,16 +103,13 @@ The following image depicts the workflow for creating a {{site.data.keyword.sate
 ## How do I manage updates?
 {: #storage-template-updates}
 
-{{site.data.keyword.satelliteshort}} storage template updates include `Version` updates and `Revisions`.
+{{site.data.keyword.satelliteshort}} storage template updates include major version updates or patch updates, also called revisions.
 
 Version
 :    A major update to the template version. For example, updating from version `1.0` to `2.0`. Version updates can add new template parameters, change storage resources, and are more disruptive than revision updates. Version updates may require you to reload or attach new hosts, redeploy services, 
 
-Revision
-:    A revision update resolves breaking issues and includes security patches. For example, updating from version `1.5` to `1.6`.
-
-
-When you are using a storage template, you can also use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} and the CLI to manage your storage configurations and assignments. Revision updates are granular and can be applied cluster-wide or to specific assignments and configurations. For more information, see the specific template documentation for your [storage provider](#storage-template-ov-providers). 
+Patch (Revision)
+:    Patch updates, also called revisions, contain bug fixes and security vulnerability patches. You can apply patches manually to each of your storage configurations and assignments or you enable automatic patch updates to ensure you get the latest bug fixes and security updates. For more information about enabling automatic patches, see the `ibmcloud sat storage assignment autopatch` [command reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-autopatch-enable-cli).
 
 
 ## Which storage templates are available?
@@ -121,7 +118,7 @@ When you are using a storage template, you can also use the [{{site.data.keyword
 You can create a {{site.data.keyword.satelliteshort}} storage configuration by using a template for the storage provider that you want to use. If your preferred storage provider does not have a template, you can [create your own configuration template](https://github.com/{{site.data.keyword.IBM_notm}}/ibm-satellite-storage){: external} or you can manually deploy storage drivers. The following list includes the storage templates are currently available to deploy to your {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
 
-| Template name | Template CLI name | Version | Revision | Supported status |
+| Template name | Template CLI name | Version | Patch (Revision) | Supported status |
 | --- | --- | --- | --- | --- |
 | [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | 1.1.0 | 5 | Supported |
 | [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | 1.5.1 | 5 | Supported |

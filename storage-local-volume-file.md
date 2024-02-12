@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-07"
+lastupdated: "2024-02-12"
 
 keywords: file storage, satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -316,7 +316,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
 {{site.data.content.assignment-upgrade-api}}
-
+{{site.data.content.assignment-autopatch-api}}
 
 1. Verify that the storage configuration resources are deployed. Get a list of all the resources in the `local-storage` namespace.
 

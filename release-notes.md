@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-08"
+lastupdated: "2024-02-12"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -19,11 +19,18 @@ content-type: release-note
 # Release notes
 {: #satellite-relnotes}
 
-Use the release notes to learn about the latest changes to the {{site.data.keyword.satellitelong}} documentation that are grouped by month.
+Review the latest changes to the {{site.data.keyword.satellitelong}} documentation.
 {: shortdesc}
 
 ## February 2024
 {: #satellite-feb24}
+
+### 12 February 2024
+{: #satellite-feb1224}
+{: release-note}
+
+You can now enable automatic patch updates for your {{site.data.keyword.satelliteshort}} storage assignments and configurations.
+:   For more information, see [Storage overview](/docs/satellite?topic=satellite-storage-template-ov) and the `ibmcloud sat storage assignment autopatch` [command](/docs/satellite?topic=satellite-satellite-cli-reference#storage-assignment-autopatch-enable-cli) reference.
 
 ### 08 February 2024
 {: #satellite-feb0824}
