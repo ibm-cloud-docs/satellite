@@ -118,7 +118,7 @@ Patch (Revision)
 You can create a {{site.data.keyword.satelliteshort}} storage configuration by using a template for the storage provider that you want to use. If your preferred storage provider does not have a template, you can [create your own configuration template](https://github.com/{{site.data.keyword.IBM_notm}}/ibm-satellite-storage){: external} or you can manually deploy storage drivers. The following list includes the storage templates are currently available to deploy to your {{site.data.keyword.satelliteshort}} clusters.
 {: shortdesc}
 
-| Template name | Template CLI name | Version | Revision | Supported status |
+| Template name | Template CLI name | Version | Patch (Revision) | Supported status |
 | --- | --- | --- | --- | --- |
 | [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | 1.1.0 | 5 | Supported |
 | [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | 1.5.1 | 5 | Supported |
