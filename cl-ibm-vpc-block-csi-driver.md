@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-26"
+lastupdated: "2024-02-16"
 
 
 keywords: satellite storage, change log, version history, ibm vpc block csi driver
@@ -23,6 +23,21 @@ Review the version history for the `ibm-vpc-block-csi-driver` {{site.data.keywor
 ## Version 5.1
 {: #ibm-vpc-block-csi-driver-5.1-change-log}
 
+
+### Revision 3, released 16 February 2024
+{: #ibm-vpc-block-csi-driver-5.1-rev-3-change-log}
+
+
+- Resolves the following CVEs: [CVE-2022-48560](https://nvd.nist.gov/vuln/detail/CVE-2022-48560){: external} [CVE-2022-48564](https://nvd.nist.gov/vuln/detail/CVE-2022-48564){: external} [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/CVE-2023-39615){: external} [CVE-2023-43804](https://nvd.nist.gov/vuln/detail/CVE-2023-43804){: external} [CVE-2023-45803](https://nvd.nist.gov/vuln/detail/CVE-2023-45803){: external} [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/CVE-2023-5981){: external} 
+- Updates the UBI to version `8.9-1108`.
+- Updates Go to version `1.20.11`.
+- Updated Kubernetes dependency to 1.28 
+- Updated csi node driver registrar image to v2.9.3 
+- Updated livenessprobe image to v2.11.0 
+- Updated csi-snapshotter image to v6.3.3 
+- Updated csi-provisioner image to v3.6.3 
+- Updated csi-attacher image to v4.4.3 
+- Updated csi-resizer image to v1.9.3 
 
 ### Revision 2, released 25 January 2024
 {: #ibm-vpc-block-csi-driver-5.1-rev-2-change-log}

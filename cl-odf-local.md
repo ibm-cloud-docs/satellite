@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-02-02"
+lastupdated: "2024-02-16"
 
 
 keywords: satellite storage, change log, version history, odf local
@@ -24,6 +24,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 {: #odf-local-4.14-change-log}
 
 
+### Revision 2, released 16 February 2024
+{: #odf-local-4.14-rev-2-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external} [CVE-2023-7104](https://nvd.nist.gov/vuln/detail/CVE-2023-7104){: external} [CVE-2024-0553](https://nvd.nist.gov/vuln/detail/CVE-2024-0553){: external} [CVE-2021-35937](https://nvd.nist.gov/vuln/detail/CVE-2021-35937){: external} [CVE-2021-35938](https://nvd.nist.gov/vuln/detail/CVE-2021-35938){: external} [CVE-2021-35939](https://nvd.nist.gov/vuln/detail/CVE-2021-35939){: external} 
+- Updates Go to version `1.21.7`.
+- Replaced UBI image with scratch image 
+
 ### Revision 1, released 02 February 2024
 {: #odf-local-4.14-rev-1-change-log}
 
@@ -36,6 +44,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.13
 {: #odf-local-4.13-change-log}
 
+
+### Revision 7, released 16 February 2024
+{: #odf-local-4.13-rev-7-change-log}
+
+
+- Resolves the following CVEs: [CVE-2021-35937](https://nvd.nist.gov/vuln/detail/CVE-2021-35937){: external} [CVE-2021-35938](https://nvd.nist.gov/vuln/detail/CVE-2021-35938){: external} [CVE-2021-35939](https://nvd.nist.gov/vuln/detail/CVE-2021-35939){: external} [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external} [CVE-2024-0553](https://nvd.nist.gov/vuln/detail/CVE-2024-0553){: external} 
+- Updates Go to version `1.21.7`.
+- Replaced UBI image with scratch image 
 
 ### Revision 6, released 25 January 2024
 {: #odf-local-4.13-rev-6-change-log}
@@ -91,6 +107,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.12
 {: #odf-local-4.12-change-log}
 
+
+### Revision 10, released 16 February 2024
+{: #odf-local-4.12-rev-10-change-log}
+
+
+- Resolves the following CVEs: [CVE-2021-35937](https://nvd.nist.gov/vuln/detail/CVE-2021-35937){: external} [CVE-2021-35938](https://nvd.nist.gov/vuln/detail/CVE-2021-35938){: external} [CVE-2021-35939](https://nvd.nist.gov/vuln/detail/CVE-2021-35939){: external} [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external} [CVE-2024-0553](https://nvd.nist.gov/vuln/detail/CVE-2024-0553){: external} 
+- Updates Go to version `1.21.7`.
+- Replaced UBI image with scratch image 
 
 ### Revision 9, released 25 January 2024
 {: #odf-local-4.12-rev-9-change-log}
@@ -170,6 +194,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.11
 {: #odf-local-4.11-change-log}
 
+
+### Revision 14, released 16 February 2024
+{: #odf-local-4.11-rev-14-change-log}
+
+
+- Resolves the following CVEs: [CVE-2021-35937](https://nvd.nist.gov/vuln/detail/CVE-2021-35937){: external} [CVE-2021-35938](https://nvd.nist.gov/vuln/detail/CVE-2021-35938){: external} [CVE-2021-35939](https://nvd.nist.gov/vuln/detail/CVE-2021-35939){: external} [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external} [CVE-2024-0553](https://nvd.nist.gov/vuln/detail/CVE-2024-0553){: external} 
+- Updates Go to version `1.21.7`.
+- Replaced UBI image with scratch image 
 
 ### Revision 13, released 25 January 2024
 {: #odf-local-4.11-rev-13-change-log}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-13"
+lastupdated: "2024-02-16"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -197,6 +197,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb24)
+
+    * [16 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1624)
+
+        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
 
     * [12 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1224)
 
@@ -2397,8 +2401,6 @@ subcollection: satellite
 
 * [Parameter reference](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=cli#ibm-vpc-block-csi-driver-parameter-reference)
 
-    * [5.0 parameter reference](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=cli#ibm-vpc-block-csi-driver-5.0-parameters)
-
     * [5.1 parameter reference](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=cli#ibm-vpc-block-csi-driver-5.1-parameters)
 
 * [Storage class reference for {{site.data.keyword.block_storage_is_short}}](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=cli#sat-storage-vpc-ref)
@@ -3848,6 +3850,8 @@ subcollection: satellite
 
 * [Version 5.1](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-change-log)
 
+    * [Revision 3, released 16 February 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-3-change-log)
+
     * [Revision 2, released 25 January 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-2-change-log)
 
     * [Revision 1, released 27 November 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-1-change-log)
@@ -4106,9 +4110,13 @@ subcollection: satellite
 
 * [Version 4.14](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-change-log)
 
+    * [Revision 2, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-2-change-log)
+
     * [Revision 1, released 02 February 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-1-change-log)
 
 * [Version 4.13](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-change-log)
+
+    * [Revision 7, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-7-change-log)
 
     * [Revision 6, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-6-change-log)
 
@@ -4123,6 +4131,8 @@ subcollection: satellite
     * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-1-change-log)
 
 * [Version 4.12](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-change-log)
+
+    * [Revision 10, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-10-change-log)
 
     * [Revision 9, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-9-change-log)
 
@@ -4143,6 +4153,8 @@ subcollection: satellite
     * [Revision 1, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-1-change-log)
 
 * [Version 4.11](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-change-log)
+
+    * [Revision 14, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-14-change-log)
 
     * [Revision 13, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-13-change-log)
 
@@ -4230,9 +4242,13 @@ subcollection: satellite
 
 * [Version 4.14](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-change-log)
 
+    * [Revision 2, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-2-change-log)
+
     * [Revision 1, released 02 February 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-1-change-log)
 
 * [Version 4.13](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-change-log)
+
+    * [Revision 7, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-7-change-log)
 
     * [Revision 6, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-6-change-log)
 
@@ -4247,6 +4263,8 @@ subcollection: satellite
     * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-1-change-log)
 
 * [Version 4.12](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-change-log)
+
+    * [Revision 10, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-10-change-log)
 
     * [Revision 9, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-9-change-log)
 
@@ -4267,6 +4285,8 @@ subcollection: satellite
     * [Revision 1, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-1-change-log)
 
 * [Version 4.11](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-change-log)
+
+    * [Revision 14, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-14-change-log)
 
     * [Revision 13, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-13-change-log)
 
