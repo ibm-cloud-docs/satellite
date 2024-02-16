@@ -198,6 +198,10 @@ subcollection: satellite
 
 * [February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb24)
 
+    * [16 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1624)
+
+        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
+
     * [12 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1224)
 
         * You can now enable automatic patch updates for your {{site.data.keyword.satelliteshort}} storage assignments and configurations.
