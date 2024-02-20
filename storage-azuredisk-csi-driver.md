@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-12"
+lastupdated: "2024-02-20"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -373,7 +373,7 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     {: pre}
 
 {{site.data.content.configuration-upgrade-manual-cli}}
-{{site.data.content.configuration-upgrade-console2}}
+{{site.data.content.configuration-upgrade-console}}
 
 ## Removing Azure Disk storage from your apps
 {: #azure-disk-rm}

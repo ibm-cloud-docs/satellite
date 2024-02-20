@@ -198,6 +198,12 @@ subcollection: satellite
 
 * [February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb24)
 
+    * [19 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1924)
+
+        * Connector agent for Windows version `1.1.1`.
+
+        * Connector agent image version `1.1.4`.
+
     * [16 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1624)
 
         * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
@@ -1707,7 +1713,7 @@ subcollection: satellite
 
 * [Creating a Connector in the console](/docs/satellite?topic=satellite-create-connector&interface=ui#create-connector-console)
 
-* [Prerequisites](/docs/satellite?topic=satellite-create-connector&interface=cli#create-connector-prereqs)
+* [Prerequisites for creating a Connector](/docs/satellite?topic=satellite-create-connector&interface=cli#create-connector-prereqs)
 
 * [Creating a Connector in the CLI](/docs/satellite?topic=satellite-create-connector&interface=cli#create-connector-cli)
 
@@ -2060,7 +2066,7 @@ subcollection: satellite
 
 * [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#storage-aws-ebs-csi-driver-include-configuration-upgrade-manual-cli)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#storage-aws-ebs-csi-driver-include-configuration-upgrade-console2)
+* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#storage-aws-ebs-csi-driver-include-configuration-upgrade-console)
 
 * [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#aws-ebs-rm)
 
@@ -2163,7 +2169,7 @@ subcollection: satellite
 
 * [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#storage-azuredisk-csi-driver-include-configuration-upgrade-manual-cli)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#storage-azuredisk-csi-driver-include-configuration-upgrade-console2)
+* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#storage-azuredisk-csi-driver-include-configuration-upgrade-console)
 
 * [Removing Azure Disk storage from your apps](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#azure-disk-rm)
 
@@ -2442,7 +2448,7 @@ subcollection: satellite
 
 * [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident&interface=cli#storage-netapp-trident-include-configuration-upgrade-manual-cli)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident&interface=ui#storage-netapp-trident-include-configuration-upgrade-console2)
+* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident&interface=ui#storage-netapp-trident-include-configuration-upgrade-console)
 
 * [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-trident&interface=ui#sat-trident-support)
 
@@ -2581,7 +2587,7 @@ subcollection: satellite
 
 * [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-storage&interface=cli#storage-local-storage-include-configuration-upgrade-manual-cli)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage&interface=ui#storage-local-storage-include-configuration-upgrade-console2)
+* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage&interface=ui#storage-local-storage-include-configuration-upgrade-console)
 
 * [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-local-storage&interface=ui#storage-local-storage-include-configuration-remove-console)
 
@@ -2675,7 +2681,7 @@ subcollection: satellite
 
 * [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file&interface=cli#storage-local-volume-file-include-configuration-upgrade-manual-cli)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#storage-local-volume-file-include-configuration-upgrade-console2)
+* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#storage-local-volume-file-include-configuration-upgrade-console)
 
 * [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#sat-storage-remove-local-file-config)
 

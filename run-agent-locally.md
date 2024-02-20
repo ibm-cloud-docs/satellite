@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-19"
+lastupdated: "2024-02-20"
 
 keywords: satellite, connector, agent, windows
 
@@ -87,6 +87,7 @@ The file names shown in the following steps are examples and can be tailored for
     {: pre}
 
 1. Complete the steps in the following section to pull the agent image.
+
 
 ### Step 2: Pulling the agent image
 {: #pull-agent-image}
@@ -174,6 +175,7 @@ The file names shown in the following steps are examples and can be tailored for
     ```
     {: screen}
 
+
 After setting up an agent, you can create Endpoints and ACLs to manage access to those endpoints. For more information, see [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints).
 
 
@@ -186,7 +188,7 @@ Connector agent for Windows supports Windows 10 and later or Windows Server 2016
 ### Step 1: Downloading the Connector agent files from the CLI
 {: #windows-agent-download}
 
-The {{site.data.keyword.satelliteshort}} Connector Agent CLI commands are in the `ibmcloud sat experimental` command group, but are fully functional and availabe for use in production. The commands move out the experimental group and become `ibmcloud sat connector agent` on 13 April 2024.
+The {{site.data.keyword.satelliteshort}} Connector Agent CLI commands are in the `ibmcloud sat experimental` command group, but are fully functional and available for use in production. The commands move out the experimental group and become `ibmcloud sat connector agent` on 13 April 2024.
 {: note}
 
 
@@ -291,6 +293,7 @@ Configuration information is provided to the agent through the following environ
     ```
     {: codeblock}
 
+
 After setting up an agent, you can create Endpoints and ACLs to manage access to those endpoints. For more information, see [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints).
 
 
@@ -299,8 +302,7 @@ After setting up an agent, you can create Endpoints and ACLs to manage access to
 
 You can use the `update` command to apply configuration changes to your agent. When you run the command, the agent is stopped, uninstalled, and reinstalled. Complete the following steps to update your agent.
 
-1. Before updating, review the changes in the [Connector Windows agent change log
-](/docs/satellite?topic=satellite-cl-connector-windows-agent).
+1. Before updating, review the changes in the [Connector Windows agent change log](/docs/satellite?topic=satellite-cl-connector-windows-agent).
 
 1. Modify the configuration parameters in the `config.json` file.
 
