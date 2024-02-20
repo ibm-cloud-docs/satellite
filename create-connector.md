@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-02"
+lastupdated: "2024-02-20"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -43,7 +43,7 @@ A Connector provides a secure connection between a specific remote location and 
 
 
 
-## Prerequisites
+## Prerequisites for creating a Connector
 {: #create-connector-prereqs}
 {: cli}
 
@@ -70,7 +70,7 @@ A Connector provides a secure connection between a specific remote location and 
 {: #create-connector-cli}
 {: cli}
 
-The {{site.data.keyword.satelliteshort}} Connector CLI commands are in the `ibmcloud sat experimental` command group, but are fully functional and availabe for use in production. The commands move out the experimental group and become `ibmcloud sat connector` on 05 March 2024.
+The {{site.data.keyword.satelliteshort}} Connector CLI commands are in the `ibmcloud sat experimental` command group, but are fully functional and available for use in production. The commands move out the experimental group and become `ibmcloud sat connector` on 05 March 2024.
 {: note}
 
 1. Review the command parameters by running the following command or reviewing the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create).
