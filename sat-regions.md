@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-02-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -14,7 +14,7 @@ subcollection: satellite
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Supported {{site.data.keyword.cloud_notm}} regions
+# Regions
 {: #sat-regions}
 
 Review the {{site.data.keyword.cloud}} regions that you can choose from to manage your {{site.data.keyword.satelliteshort}} location. The hosts that you want to attach to the {{site.data.keyword.satelliteshort}} location control plane must have a low latency connection of less than or equal to 200 milliseconds (`<= 200ms`) round trip time (RTT) to the {{site.data.keyword.cloud_notm}} region that your {{site.data.keyword.satelliteshort}} location is managed from. As latency increases, you might see impacts to performance, including {{site.data.keyword.satelliteshort}} Link throughput, {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} service provisioning time, host failure recovery time, and in extreme cases, the availability of resources that run in the {{site.data.keyword.satelliteshort}} location control plane, such as {{site.data.keyword.redhat_openshift_notm}} cluster masters. For more information, see [Testing the latency between {{site.data.keyword.cloud_notm}} and the {{site.data.keyword.satelliteshort}} location control plane hosts](/docs/satellite?topic=satellite-host-latency-test#host-latency-mzr).

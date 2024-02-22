@@ -288,6 +288,7 @@ toc:
         - pricing.md
         - responsibilities.md
         - ha.md
+        - ts-recover-location.md
         - disconnected-use.md
         - sat-notices.md
         - topicgroup:
@@ -324,7 +325,7 @@ toc:
         - faqs.md
         - get-help.md
         - topicgroup:
-            label: Troubleshooting errors
+            label: Troubleshooting
             topics:
               - include: ../get-support/ViewStatus.md
               - ts-locations-debug.md

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-22"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3587,11 +3587,11 @@ subcollection: satellite
 * [{{site.data.keyword.cloud_notm}} services](/docs/satellite?topic=satellite-requirements#reqs-services)
 
 
-## Supported {{site.data.keyword.cloud_notm}} regions
-{: #sitemap_supported_regions}
+## Regions
+{: #sitemap_regions}
 
 
-[Supported {{site.data.keyword.cloud_notm}} regions](/docs/satellite?topic=satellite-sat-regions#sat-regions)
+[Regions](/docs/satellite?topic=satellite-sat-regions#sat-regions)
 
 * [{{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}} FAQs](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions)
 
@@ -3663,6 +3663,13 @@ subcollection: satellite
     * [Example high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
 
     * [Example high availability setup in a public cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
+
+
+## Recovering your location
+{: #sitemap_recovering_your_location}
+
+
+[Recovering your location](/docs/satellite?topic=satellite-ts-recover-location#ts-recover-location)
 
 
 ## Disconnected use for Satellite components
@@ -4455,8 +4462,8 @@ subcollection: satellite
 * [Opting in to receive email notifications](/docs/satellite?topic=satellite-get-help#opt-in-email)
 
 
-## Troubleshooting errors
-{: #sitemap_troubleshooting_errors}
+## Troubleshooting
+{: #sitemap_troubleshooting}
 
 
 [Viewing cloud status](/docs/satellite?topic=satellite-viewing-cloud-status#viewing-cloud-status)
