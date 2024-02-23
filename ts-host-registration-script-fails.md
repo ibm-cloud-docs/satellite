@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-23"
 
 keywords: satellite, hybrid, multicloud, registration script, registration script fails
 
@@ -30,16 +30,6 @@ Error: Nothing to do
 
 Your machine does not meet the minimum requirements to become a {{site.data.keyword.satelliteshort}} host. In particular, you must have the following packages installed on your RHEL 7 or 8 machine.
 {: tsCauses}
-
-For RHEL 7
-```sh
-Repository 'rhel-server-rhscl-7-rpms' is enabled for this system.
-Repository 'rhel-7-server-optional-rpms' is enabled for this system.
-Repository 'rhel-7-server-rh-common-rpms' is enabled for this system.
-Repository 'rhel-7-server-supplementary-rpms' is enabled for this system.
-Repository 'rhel-7-server-extras-rpms' is enabled for this system.
-```
-{: screen}
 
 For RHEL 8
 ```sh

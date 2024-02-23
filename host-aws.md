@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-23"
 
 keywords: satellite, hybrid, multicloud, aws, amazon web services, satellite location
 
@@ -37,7 +37,7 @@ Not sure how many hosts to attach to your location? See [Sizing your {{site.data
 You can create your {{site.data.keyword.satellitelong_notm}} location by using hosts that you added from Amazon Web Services (AWS) cloud.
 {: shortdesc}
 
-All hosts that you want to add must meet the general host requirements, such as the RHEL 7 or 8 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
+All hosts that you want to add must meet the general host requirements, such as the RHEL 8 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
 
@@ -71,7 +71,7 @@ Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs
     {: tip}
 
     1. Enter a name for your launch template.
-    2. In the **Amazon machine image (AMI)** section, make sure to select a supported Red Hat Enterprise Linux 7 or 8 operating system that you can find by entering the AMI ID. You can match AMI IDs and the proper Red Hat Enterprise Linux version by referring to the [Red Hat Enterprise Linux AMI Available on Amazon Web Services documentation](https://access.redhat.com/solutions/15356){: external}. If you are creating an Red Hat CoreOS host, you must provide the image to AWS. For more information, see [Importing a VM as an image using](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html){: external}.
+    2. In the **Amazon machine image (AMI)** section, make sure to select a supported Red Hat Enterprise Linux 8 operating system that you can find by entering the AMI ID. You can match AMI IDs and the proper Red Hat Enterprise Linux version by referring to the [Red Hat Enterprise Linux AMI Available on Amazon Web Services documentation](https://access.redhat.com/solutions/15356){: external}. If you are creating an Red Hat CoreOS host, you must provide the image to AWS. For more information, see [Importing a VM as an image using](https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html){: external}.
     3. From the **Instance type** section, select one of the [supported AWS instance types](#aws-instance-types).
     4. From the **Key pair (login)** section, select the `.pem` key that you want to use to log in to your machines later. If you do not have a `.pem` key, create one.
     5. In the **Network settings**, select **Virtual Private Cloud (VPC)** and an existing subnet and a security group that allows network traffic as defined in [Security group settings](#aws-reqs-secgroup). If you do not have a subnet or security group that you want to use, create one.

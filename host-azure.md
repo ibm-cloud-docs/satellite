@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-02-23"
 
 keywords: satellite, hybrid, multicloud, microsoft azure, azure, azure host
 
@@ -42,7 +42,7 @@ If you want to use Red Hat CoreOS (RHCOS) hosts in your location, provide your R
 {: important}
 
 
-All hosts that you want to add must meet the general host requirements, such as the RHEL 7 or 8 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
+All hosts that you want to add must meet the general host requirements, such as the RHEL 8 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
 Before you begin

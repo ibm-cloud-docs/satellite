@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-19"
+lastupdated: "2024-02-23"
 
 keywords: satellite, hybrid, multicloud, alibaba, alibaba hosts, alibaba cloud
 
@@ -21,7 +21,7 @@ subcollection: satellite
 You can add hosts from Alibaba Cloud to {{site.data.keyword.satelliteshort}}.
 {: shortdesc}
 
-All hosts that you want to add must meet the host requirements, such as the RHEL 7 or 8 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
+All hosts that you want to add must meet the host requirements, such as the RHEL 8 packages and networking setup. For more information, see [Host requirements](/docs/satellite?topic=satellite-host-reqs).
 {: note}
 
 Before you begin, [create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations). Note that your location displays `Action required` until you add hosts and create the control plane.
