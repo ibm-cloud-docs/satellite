@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-27"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,6 +24,14 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 
 ## February 2024
 {: #satellite-feb24}
+
+### 27 February 2024
+{: #satellite-feb2724}
+{: release-note}
+
+CLI version `1.0.597` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
 
 ### 19 February 2024
 {: #satellite-feb1924}
