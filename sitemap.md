@@ -3665,22 +3665,6 @@ subcollection: satellite
     * [Example high availability setup in a public cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
 
 
-## Recovering your location
-{: #sitemap_recovering_your_location}
-
-
-[Recovering your location](/docs/satellite?topic=satellite-ts-recover-location#ts-recover-location)
-
-
-## Checking cluster health after recovery
-{: #sitemap_checking_cluster_health_after_recovery}
-
-
-[Checking cluster health after recovery](/docs/satellite?topic=satellite-ts-recovery-validation#ts-recovery-validation)
-
-* [Running the cluster debug script](/docs/satellite?topic=satellite-ts-recovery-validation#ts-cluster-debug-script)
-
-
 ## Disconnected use for Satellite components
 {: #sitemap_disconnected_use_for_satellite_components}
 
@@ -4546,6 +4530,12 @@ subcollection: satellite
 * [R0060: Outbound traffic to LaunchDarkly is failing.](/docs/satellite?topic=satellite-ts-locations-debug#R0060)
 
 * [R0061: A Satellite cluster API server is unreachable from IBM Cloud.](/docs/satellite?topic=satellite-ts-locations-debug#R0061)
+
+[Recovering your location](/docs/satellite?topic=satellite-ts-recover-location#ts-recover-location)
+
+[Checking cluster health after recovery](/docs/satellite?topic=satellite-ts-recovery-validation#ts-recovery-validation)
+
+* [Running the cluster debug script](/docs/satellite?topic=satellite-ts-recovery-validation#ts-cluster-debug-script)
 
 
 ### Locations
