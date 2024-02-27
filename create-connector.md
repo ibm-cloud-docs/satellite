@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-27"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -70,25 +70,22 @@ A Connector provides a secure connection between a specific remote location and 
 {: #create-connector-cli}
 {: cli}
 
-The {{site.data.keyword.satelliteshort}} Connector CLI commands are in the `ibmcloud sat experimental` command group, but are fully functional and available for use in production. The commands move out the experimental group and become `ibmcloud sat connector` on 05 March 2024.
-{: note}
-
-1. Review the command parameters by running the following command or reviewing the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create).
+1. Review the command parameters by running the following command or reviewing the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-cli).
     ```sh
-    ibmcloud sat experimental connector create --help
+    ibmcloud sat connector create --help
     ```
     {: pre}
 
 1. Run the following command to create a Connector.
 
     ```sh
-    ibmcloud sat experimental connector create --name NAME --region REGION
+    ibmcloud sat connector create --name NAME --region REGION
     ```
     {: pre}
 
     Example command to create a Connector called `my-connector` in `us-south`.
     ```sh
-    ibmcloud sat experimental connector create --name my-connector --region us-south
+    ibmcloud sat connector create --name my-connector --region us-south
     ```
     {: pre}
 
@@ -103,7 +100,7 @@ The {{site.data.keyword.satelliteshort}} Connector CLI commands are in the `ibmc
 1. Verify your Connector was created by listing the Connectors in your account.
 
     ```sh
-    ibmcloud sat experimental connector ls
+    ibmcloud sat connector ls
     ```
     {: pre}
 

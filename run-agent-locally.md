@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-27"
 
 keywords: satellite, connector, agent, windows
 
@@ -188,14 +188,10 @@ Connector agent for Windows supports Windows 10 and later or Windows Server 2016
 ### Step 1: Downloading the Connector agent files from the CLI
 {: #windows-agent-download}
 
-The {{site.data.keyword.satelliteshort}} Connector Agent CLI commands are in the `ibmcloud sat experimental` command group, but are fully functional and available for use in production. The commands move out the experimental group and become `ibmcloud sat connector agent` on 13 April 2024.
-{: note}
-
-
 1. From the CLI, run the following command to download the agent `.zip` file.
 
     ```sh
-    ibmcloud sat experimental connector agent --platform windows
+    ibmcloud sat connector agent --platform windows
     ```
     {: codeblock}
 
