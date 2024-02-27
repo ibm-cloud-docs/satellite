@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-02-27"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3670,6 +3670,15 @@ subcollection: satellite
 
 
 [Recovering your location](/docs/satellite?topic=satellite-ts-recover-location#ts-recover-location)
+
+
+## Checking cluster health after recovery
+{: #sitemap_checking_cluster_health_after_recovery}
+
+
+[Checking cluster health after recovery](/docs/satellite?topic=satellite-ts-recovery-validation#ts-recovery-validation)
+
+* [Running the cluster debug script](/docs/satellite?topic=satellite-ts-recovery-validation#ts-cluster-debug-script)
 
 
 ## Disconnected use for Satellite components

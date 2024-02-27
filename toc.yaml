@@ -289,6 +289,7 @@ toc:
         - responsibilities.md
         - ha.md
         - ts-recover-location.md
+        - ts-recovery-validation.md
         - disconnected-use.md
         - sat-notices.md
         - topicgroup:
