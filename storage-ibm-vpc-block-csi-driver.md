@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-16"
+lastupdated: "2024-02-27"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -153,6 +153,7 @@ There is currently an issue with autocomplete in some browsers. If you don't see
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-autopatch-cli}}
 {{site.data.content.assignment-upgrade-api}}
 {{site.data.content.assignment-autopatch-api}}
 

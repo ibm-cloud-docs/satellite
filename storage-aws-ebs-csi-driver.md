@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-27"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -192,6 +192,7 @@ To use the AWS EBS storage template, complete the following tasks:
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-autopatch-cli}}
 {{site.data.content.assignment-upgrade-api}}
 {{site.data.content.assignment-autopatch-api}}
 

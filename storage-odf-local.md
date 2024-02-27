@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-13"
+lastupdated: "2024-02-27"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -437,6 +437,7 @@ When you create your ODF configuration, you must specify the device paths of the
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-autopatch-cli}}
 {{site.data.content.assignment-upgrade-api}}
 {{site.data.content.assignment-autopatch-api}}
 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-12"
+lastupdated: "2024-02-27"
 
 keywords: satellite storage, satellite config, satellite configurations, 
 
@@ -187,6 +187,7 @@ Be sure to complete all prerequisite and installation steps before assigning hos
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-autopatch-cli}}
 {{site.data.content.assignment-upgrade-api}}
 {{site.data.content.assignment-autopatch-api}}
 

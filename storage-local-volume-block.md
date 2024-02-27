@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-12"
+lastupdated: "2024-02-27"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -317,6 +317,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 {{site.data.content.assignment-create-cli}}
 {{site.data.content.assignment-create-api}}
 {{site.data.content.assignment-upgrade-cli}}
+{{site.data.content.assignment-autopatch-cli}}
 {{site.data.content.assignment-upgrade-api}}
 
 ## Deploying an app that uses local block storage

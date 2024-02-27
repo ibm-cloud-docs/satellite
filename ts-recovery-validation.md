@@ -20,6 +20,12 @@ Complete the following steps to debug your cluster state after an infrastructure
 You can complete these steps in order, or you can run the [cluster debug script](#ts-cluster-debug-script). The following steps are compiled into the debug script for you.
 {: tip}
 
+## Checking cluster health
+{: #check-health}
+
+### Step 1: Check worker node health
+{: #node-health-1}
+
 1. Check node health and ensure all nodes are `Ready`.
 
     ```sh
@@ -29,6 +35,9 @@ You can complete these steps in order, or you can run the [cluster debug script]
     
     If there are any nodes that are not ready, remove and replace them with `ibmcloud worker rm` and `ibmcloud sat host assign`.
 
+### Step 2: Check Calico components
+{: #calico-health-2}
+
 1. Check that the Calico components are running.
     ```sh
     kubectl get pods -n calico-system | grep -v "1/1.*Running"
@@ -36,6 +45,9 @@ You can complete these steps in order, or you can run the [cluster debug script]
     {: pre}
 
     Restart any unhealthy pods by deleting them and allowing them to get re-created. If the pods are still not in the `Ready` state after deleting and re-creating them, remove and replace the infrastructure hosts that the unhealthy pods are on with `ibmcloud worker rm` and `ibmcloud sat host assign`.
+
+### Step 3: Check the `openshift-kube-proxy`
+{: #osproxy-health-3}
 
 1. Check that all `openshift-kube-proxy` pods are healthy.
     ```sh
@@ -45,6 +57,9 @@ You can complete these steps in order, or you can run the [cluster debug script]
     
     Restart any unhealthy pods by deleting them and allowing them to get re-created. If the pods are still not in the `Ready` state after deleting and re-creating them, remove and replace the infrastructure hosts that the unhealthy pods are on with `ibmcloud worker rm` and `ibmcloud sat host assign`.
 
+### Step 4: Check the OpenShift DNS
+{: #dns-health-4}
+
 1. Check that the OpenShift DNS pods are running.
 
     ```sh
@@ -53,6 +68,9 @@ You can complete these steps in order, or you can run the [cluster debug script]
     {: pre}
 
     Restart any unhealthy pods by deleting them and allowing them to get re-created. If the pods are still not in the `Ready` state after deleting and re-creating them, remove and replace the infrastructure hosts that the unhealthy pods are on with `ibmcloud worker rm` and `ibmcloud sat host assign`.
+
+### Step 5: Check the Ingress status
+{: #ingress-health-5}   
 
 1. Check that Ingress pods are running.
     ```sh
