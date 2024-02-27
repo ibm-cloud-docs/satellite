@@ -288,7 +288,6 @@ toc:
         - pricing.md
         - responsibilities.md
         - ha.md
-        - ts-recover-location.md
         - disconnected-use.md
         - sat-notices.md
         - topicgroup:
@@ -329,6 +328,8 @@ toc:
             topics:
               - include: ../get-support/ViewStatus.md
               - ts-locations-debug.md
+              - ts-recover-location.md
+              - ts-recovery-validation.md
               - topicgroup:
                   label: Locations
                   topics:

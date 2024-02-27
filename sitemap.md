@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-02-27"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -197,6 +197,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb24)
+
+    * [27 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb2724)
+
+        * CLI version `1.0.597` is available.
 
     * [19 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1924)
 
@@ -3109,6 +3113,8 @@ subcollection: satellite
 
 * [config commands](/docs/satellite?topic=satellite-icsat_map#icks_map_config)
 
+* [connector commands](/docs/satellite?topic=satellite-icsat_map#icks_map_connector)
+
 * [endpoint commands](/docs/satellite?topic=satellite-icsat_map#icks_map_endpoint)
 
 * [group commands](/docs/satellite?topic=satellite-icsat_map#icks_map_group)
@@ -3180,6 +3186,26 @@ subcollection: satellite
 * [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-options)
+
+* [`ibmcloud sat connector agent`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-agent-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-agent-options)
+
+* [`ibmcloud sat connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-options)
+
+* [`ibmcloud sat connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get-options)
+
+* [`ibmcloud sat connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls-options)
+
+* [`ibmcloud sat connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-options)
 
 * [`ibmcloud sat endpoint create`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-cli)
 
@@ -3408,16 +3434,6 @@ subcollection: satellite
 * [`ibmcloud sat subscription update`](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#subscription-update-options)
-
-    * [`ibmcloud sat experimental connector agent`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-agent)
-
-    * [`ibmcloud sat experimental connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create)
-
-    * [`ibmcloud sat experimental connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get)
-
-    * [`ibmcloud sat experimental connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls)
-
-    * [`ibmcloud sat experimental connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm)
 
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
@@ -3663,13 +3679,6 @@ subcollection: satellite
     * [Example high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
 
     * [Example high availability setup in a public cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
-
-
-## Recovering your location
-{: #sitemap_recovering_your_location}
-
-
-[Recovering your location](/docs/satellite?topic=satellite-ts-recover-location#ts-recover-location)
 
 
 ## Disconnected use for Satellite components
@@ -4537,6 +4546,12 @@ subcollection: satellite
 * [R0060: Outbound traffic to LaunchDarkly is failing.](/docs/satellite?topic=satellite-ts-locations-debug#R0060)
 
 * [R0061: A Satellite cluster API server is unreachable from IBM Cloud.](/docs/satellite?topic=satellite-ts-locations-debug#R0061)
+
+[Recovering your location](/docs/satellite?topic=satellite-ts-recover-location#ts-recover-location)
+
+[Checking cluster health after recovery](/docs/satellite?topic=satellite-ts-recovery-validation#ts-recovery-validation)
+
+* [Running the cluster debug script](/docs/satellite?topic=satellite-ts-recovery-validation#ts-cluster-debug-script)
 
 
 ### Locations

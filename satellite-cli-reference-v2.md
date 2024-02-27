@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-08"
+lastupdated: "2024-02-27"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -351,6 +351,122 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 `--version VERSION`
 :    Indicate the name or ID of the Satellite configuration version. To list versions, run `ibmcloud sat config get --config <configuration_name_or_ID>`.
 {: #config-version-rm-options-dl}
+
+
+## `ibmcloud sat connector agent`
+{: #connector-agent-cli}
+
+Get a Satellite Connector agent for a specific platform.
+
+```txt
+ibmcloud sat connector agent --platform PLATFORM [-q]
+```
+{: pre}
+{: #connector-agent-usage}
+
+### Command options
+{: #connector-agent-options}
+
+`--platform PLATFORM`
+:    The platform for the Satellite connector agent. For more information about Docker, see documentation at https://ibm.biz/satconagent Available options: windows, docker
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #connector-agent-options-dl}
+
+
+## `ibmcloud sat connector create`
+{: #connector-create-cli}
+
+Create a Satellite connector.
+
+```txt
+ibmcloud sat connector create --name NAME --region REGION [-q]
+```
+{: pre}
+{: #connector-create-usage}
+
+### Command options
+{: #connector-create-options}
+
+`--name NAME`
+:    The name for the Satellite connector.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--region REGION`
+:    The IBM Cloud region to manage your Satellite connector.
+{: #connector-create-options-dl}
+
+
+## `ibmcloud sat connector get`
+{: #connector-get-cli}
+
+View the details of a Satellite Connector.
+
+```txt
+ibmcloud sat connector get --connector-id ID [-q]
+```
+{: pre}
+{: #connector-get-usage}
+
+### Command options
+{: #connector-get-options}
+
+`--connector-id ID`
+:    The ID of a Satellite connector.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #connector-get-options-dl}
+
+
+## `ibmcloud sat connector ls`
+{: #connector-ls-cli}
+
+List all Satellite connectors in your IBM Cloud account.
+
+```txt
+ibmcloud sat connector ls [-q] [--region REGION]
+```
+{: pre}
+{: #connector-ls-usage}
+
+### Command options
+{: #connector-ls-options}
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--region REGION`
+:    List only Satellite connectors in the specified IBM Cloud region.
+{: #connector-ls-options-dl}
+
+
+## `ibmcloud sat connector rm`
+{: #connector-rm-cli}
+
+Delete a Satellite connector.
+
+```txt
+ibmcloud sat connector rm --connector-id ID [-f] [-q]
+```
+{: pre}
+{: #connector-rm-usage}
+
+### Command options
+{: #connector-rm-options}
+
+`--connector-id ID`
+:    The ID of Satellite connector.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #connector-rm-options-dl}
 
 
 ## `ibmcloud sat endpoint create`
@@ -2011,156 +2127,4 @@ ibmcloud sat subscription update --subscription SUBSCRIPTION [-f] [--group GROUP
 :    Indicate the existing configuration version to use for the Satellite subscription. Strategy: Direct Upload.
 {: #subscription-update-options-dl}
 
-  
-
-The `ibmcloud sat experimental connector` commands are an experimental feature that are available for evaluation and testing purposes and might change without notice.
-{: experimental}
-
-
-### `ibmcloud sat experimental connector agent`
-{: #connector-agent}
-
-Get a {{site.data.keyword.satelliteshort}} Connector agent for a specific platform. 
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental connector agent --platform PLATFORM [-q]
-```
-{: pre}
-
-#### Command options
-{: #connector-agent-command-options}
-
-`--platform PLATFORM`
-:    Required. The platform for the Satellite Connector agent. Available options: windows, docker.
-
-`-q`
-:    Optional. Do not show the message of the day or update reminders.
-
-#### Example
-{: #connector-agent-example}
-
-```sh
-ibmcloud sat experimental connector agent --platform docker
-```
-{: pre}
-
-
-### `ibmcloud sat experimental connector create`
-{: #connector-create}
-
-Create a {{site.data.keyword.satelliteshort}} Connector. 
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental connector create --name NAME --region REGION --resource-group GROUP [-q]
-```
-{: pre}
-
-#### Command options
-{: #connector-create-command-options}
-
-`--name NAME`
-:    Required. Enter a name for your Connector. 
-
-`--region REGION`
-:    Required. Enter the IBM Cloud region to manage your Satellite Connector. 
-
-`--resource-group GROUP`
-:    Required. Enter the ID of the resource group. 
-
-`-q`
-:    Optional. Do not show the message of the day or update reminders.
-
-#### Example
-{: #connector-create-example}
-
-```sh
-ibmcloud sat experimental connector create --name myconnector --region us-south --resource-group myadmins
-```
-{: pre}
-
-### `ibmcloud sat experimental connector get`
-{: #connector-get}
-
-View the details of a {{site.data.keyword.satelliteshort}} Connector.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental connector get --connector-id ID [-q]
-```
-{: pre}
-
-#### Command options
-{: #connector-get-command-options}
-
-`--connector-id ID`
-:    Required. Enter the ID for your Connector to view. 
-
-`-q`
-:    Optional. Do not show the message of the day or update reminders.
-
-#### Example
-{: #connector-get-example}
-
-```sh
-ibmcloud sat experimental connector get --connector-id myconnector01
-```
-{: pre}
-
-### `ibmcloud sat experimental connector ls`
-{: #connector-ls}
-
-List all {{site.data.keyword.satelliteshort}} Connectors in your IBM Cloud account with or without region.
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental connector ls [-q] [--region REGION]
-```
-{: pre}
-
-#### Command options
-{: #connector-ls-command-options}
-
-`--region REGION`
-:    Optional. Enter the region to list Connectors for. 
-
-`-q`
-:    Optional. Do not show the message of the day or update reminders.
-
-#### Example
-{: #connector-ls-example}
-
-```sh
-ibmcloud sat experimental connector ls --region us-south
-```
-{: pre}
-
-### `ibmcloud sat experimental connector rm`
-{: #connector-rm}
-
-Delete a {{site.data.keyword.satelliteshort}} Connector. 
-{: shortdesc}
-
-```sh
-ibmcloud sat experimental connector rm --connector-id ID [-q]
-```
-{: pre}
-
-#### Command options
-{: #connector-rm-command-options}
-
-`--connector-id ID`
-:    Required. Enter the ID of the Connector to delete. 
-
-`-q`
-:    Optional. Do not show the message of the day or update reminders.
-
-#### Example
-{: #connector-rm-example}
-
-```sh
-ibmcloud sat experimental connector rm --connector-id myconnector
-```
-{: pre}
   
