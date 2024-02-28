@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-02-28"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3861,6 +3861,8 @@ subcollection: satellite
 [`ibm-object-storage-plugin` change log](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#cl-ibm-object-storage-plugin)
 
 * [Version 2.2](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-change-log)
+
+    * [Revision 19, released 29 February 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-19-change-log)
 
     * [Revision 18, released 02 February 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-18-change-log)
 
