@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-22"
+lastupdated: "2024-02-28"
 
 keywords: satellite, hybrid, multicloud
 
@@ -263,21 +263,24 @@ You can use the `sat storage assignment autopatch enable` CLI to enable automati
 
 
 
-## Updating storage configurations and assignments in the console
+## Updating storage assignments in the console
 {: #configuration-upgrade-console}
 {: ui}
 
-You can use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to apply the latest patch updates to your configurations and assignments.
+You can use the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} to apply the latest patch updates to your assignments.
 
 1. From the **Locations** page in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, select your location.
 
 1. Click the **Storage** tab to view your configurations.
 
-1. You can apply the latest template patch to your configurations and assignments by clicking the information **Information** (i) icon.
+1. Click the configuration you want to update.
 
-You can also enable automatic patch updates for you storage assignments. Enabling automatic patch updates ensures that your assignments always have the latest storage template revision applied to your clusters. Enabling automatic patch updates applies the latest storage template revisions (patches) automatically. You must still apply major updates manually.
-{: tip}
+1. Click information **Information** (i) icon to apply the latest revision or patch.
 
+1. **Optional**: Enable automatic patch updates for your storage assignment. Enabling automatic patch updates ensures that your assignment always has the latest security fixes.
+
+If you enable automatic patch updates, you must still apply major updates manually.
+{: note}
 
 
     

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-02-28"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2058,7 +2058,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=api#storage-aws-ebs-csi-driver-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#storage-aws-ebs-csi-driver-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#storage-aws-ebs-csi-driver-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#storage-aws-ebs-csi-driver-include-assignment-upgrade-cli)
 
@@ -2072,7 +2072,7 @@ subcollection: satellite
 
 * [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#storage-aws-ebs-csi-driver-include-configuration-upgrade-manual-cli)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#storage-aws-ebs-csi-driver-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#storage-aws-ebs-csi-driver-include-configuration-upgrade-console)
 
 * [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#aws-ebs-rm)
 
@@ -2110,7 +2110,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=api#storage-aws-efs-csi-driver-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=ui#storage-aws-efs-csi-driver-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=ui#storage-aws-efs-csi-driver-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#storage-aws-efs-csi-driver-include-assignment-upgrade-cli)
 
@@ -2165,7 +2165,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=api#storage-azuredisk-csi-driver-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#storage-azuredisk-csi-driver-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#storage-azuredisk-csi-driver-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#storage-azuredisk-csi-driver-include-assignment-upgrade-cli)
 
@@ -2179,7 +2179,7 @@ subcollection: satellite
 
 * [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#storage-azuredisk-csi-driver-include-configuration-upgrade-manual-cli)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#storage-azuredisk-csi-driver-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#storage-azuredisk-csi-driver-include-configuration-upgrade-console)
 
 * [Removing Azure Disk storage from your apps](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#azure-disk-rm)
 
@@ -2219,7 +2219,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=api#storage-azurefile-csi-driver-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=ui#storage-azurefile-csi-driver-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=ui#storage-azurefile-csi-driver-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-azurefile-csi-driver&interface=cli#storage-azurefile-csi-driver-include-assignment-upgrade-cli)
 
@@ -2272,7 +2272,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=api#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=ui#storage-gcp-compute-persistent-disk-csi-driver-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=ui#storage-gcp-compute-persistent-disk-csi-driver-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver&interface=cli#storage-gcp-compute-persistent-disk-csi-driver-include-assignment-upgrade-cli)
 
@@ -2325,7 +2325,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=api#storage-ibm-system-storage-block-csi-driver-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=ui#storage-ibm-system-storage-block-csi-driver-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=ui#storage-ibm-system-storage-block-csi-driver-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver&interface=cli#storage-ibm-system-storage-block-csi-driver-include-assignment-upgrade-cli)
 
@@ -2365,7 +2365,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin&interface=api#storage-ibm-object-storage-plugin-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin&interface=ui#storage-ibm-object-storage-plugin-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin&interface=ui#storage-ibm-object-storage-plugin-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin&interface=cli#storage-ibm-object-storage-plugin-include-assignment-upgrade-cli)
 
@@ -2405,7 +2405,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=api#storage-ibm-vpc-block-csi-driver-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=ui#storage-ibm-vpc-block-csi-driver-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=ui#storage-ibm-vpc-block-csi-driver-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver&interface=cli#storage-ibm-vpc-block-csi-driver-include-assignment-upgrade-cli)
 
@@ -2454,7 +2454,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-netapp-trident&interface=api#storage-netapp-trident-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident&interface=ui#storage-netapp-trident-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident&interface=ui#storage-netapp-trident-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident&interface=cli#storage-netapp-trident-include-assignment-upgrade-cli)
 
@@ -2470,7 +2470,7 @@ subcollection: satellite
 
 * [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident&interface=cli#storage-netapp-trident-include-configuration-upgrade-manual-cli)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident&interface=ui#storage-netapp-trident-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident&interface=ui#storage-netapp-trident-include-configuration-upgrade-console)
 
 * [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-trident&interface=ui#sat-trident-support)
 
@@ -2490,7 +2490,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=api#storage-netapp-ontap-nas-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#storage-netapp-ontap-nas-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#storage-netapp-ontap-nas-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=cli#storage-netapp-ontap-nas-include-assignment-upgrade-cli)
 
@@ -2534,7 +2534,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#storage-netapp-ontap-san-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=ui#storage-netapp-ontap-san-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=ui#storage-netapp-ontap-san-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=cli#storage-netapp-ontap-san-include-assignment-upgrade-cli)
 
@@ -2573,7 +2573,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-storage-operator&interface=api#storage-local-storage-operator-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage-operator&interface=ui#storage-local-storage-operator-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-local-storage-operator&interface=ui#storage-local-storage-operator-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-local-storage-operator&interface=cli#storage-local-storage-operator-include-assignment-upgrade-cli)
 
@@ -2603,7 +2603,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-storage&interface=api#storage-local-storage-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage&interface=ui#storage-local-storage-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-local-storage&interface=ui#storage-local-storage-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-local-storage&interface=cli#storage-local-storage-include-assignment-upgrade-cli)
 
@@ -2617,7 +2617,7 @@ subcollection: satellite
 
 * [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-storage&interface=cli#storage-local-storage-include-configuration-upgrade-manual-cli)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-storage&interface=ui#storage-local-storage-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-local-storage&interface=ui#storage-local-storage-include-configuration-upgrade-console)
 
 * [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-local-storage&interface=ui#storage-local-storage-include-configuration-remove-console)
 
@@ -2657,7 +2657,7 @@ subcollection: satellite
 
 * [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-volume-block&interface=cli#storage-local-volume-block-include-configuration-upgrade-manual-cli)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-block&interface=ui#storage-local-volume-block-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-block&interface=ui#storage-local-volume-block-include-configuration-upgrade-console)
 
 * [Removing the local block storage configuration from your cluster](/docs/satellite?topic=satellite-storage-local-volume-block&interface=ui#sat-storage-remove-local-block-config)
 
@@ -2701,7 +2701,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-local-volume-file&interface=api#storage-local-volume-file-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#storage-local-volume-file-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#storage-local-volume-file-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file&interface=cli#storage-local-volume-file-include-assignment-upgrade-cli)
 
@@ -2715,7 +2715,7 @@ subcollection: satellite
 
 * [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file&interface=cli#storage-local-volume-file-include-configuration-upgrade-manual-cli)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#storage-local-volume-file-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#storage-local-volume-file-include-configuration-upgrade-console)
 
 * [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#sat-storage-remove-local-file-config)
 
@@ -2761,7 +2761,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-odf-local&interface=api#storage-odf-local-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-odf-local&interface=ui#storage-odf-local-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-odf-local&interface=ui#storage-odf-local-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#storage-odf-local-include-assignment-upgrade-cli)
 
@@ -2815,7 +2815,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-odf-remote&interface=api#storage-odf-remote-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-odf-remote&interface=ui#storage-odf-remote-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-odf-remote&interface=ui#storage-odf-remote-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#storage-odf-remote-include-assignment-upgrade-cli)
 
@@ -2904,7 +2904,7 @@ subcollection: satellite
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=api#storage-vsphere-csi-driver-include-assignment-create-api)
 
-* [Updating storage configurations and assignments in the console](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=ui#storage-vsphere-csi-driver-include-configuration-upgrade-console)
+* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=ui#storage-vsphere-csi-driver-include-configuration-upgrade-console)
 
 * [Manually upgrading assignments in the CLI](/docs/satellite?topic=satellite-storage-vsphere-csi-driver&interface=cli#storage-vsphere-csi-driver-include-assignment-upgrade-cli)
 
@@ -3861,6 +3861,8 @@ subcollection: satellite
 [`ibm-object-storage-plugin` change log](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#cl-ibm-object-storage-plugin)
 
 * [Version 2.2](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-change-log)
+
+    * [Revision 19, released 29 February 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-19-change-log)
 
     * [Revision 18, released 02 February 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-18-change-log)
 

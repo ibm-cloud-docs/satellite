@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-02-28"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -94,7 +94,7 @@ If your agent container is listed in the Active Agents tab on the console, follo
   
 1. Review the error messages.
   
-    After the tunnel is established, any errors will be located in both the {{site.data.keyword.la_full_notm}} instance and in the agent’s container platform logs.  Most errors will now be those trying to access an endpoint from within {{site.data.keyword.cloud_notm}} to an application running on-prem over the tunnel. When accessing an endpoint, at the start of the connection a `flowlog` entry is written to the logging instance. For example:
+    After the tunnel is established, any errors will be located in both the {{site.data.keyword.la_full_notm}} instance and in the agent’s container platform logs. Most errors will now be those trying to access an endpoint from within {{site.data.keyword.cloud_notm}} to an application running on-prem over the tunnel. When accessing an endpoint, at the start of the connection a `flowlog` entry is written to the logging instance. For example:
     ```sh
     flowlog: start for client 10.249.96.47:1206 connect to postgres.apps.wdc6.toddjohn.net:5432, conn_type: location
     ```
