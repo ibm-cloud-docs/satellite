@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-02-16"
+lastupdated: "2024-03-08"
 
 
 keywords: satellite storage, change log, version history, odf local
@@ -23,6 +23,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.14
 {: #odf-local-4.14-change-log}
 
+
+### Revision 3, released 07 March 2024
+{: #odf-local-4.14-rev-3-change-log}
+
+
+- Resolves the following CVEs: [CVE-2019-13224](https://nvd.nist.gov/vuln/detail/CVE-2019-13224){: external} [CVE-2019-16163](https://nvd.nist.gov/vuln/detail/CVE-2019-16163){: external} [CVE-2019-19012](https://nvd.nist.gov/vuln/detail/CVE-2019-19012){: external} [CVE-2019-19203](https://nvd.nist.gov/vuln/detail/CVE-2019-19203){: external} [CVE-2019-19204](https://nvd.nist.gov/vuln/detail/CVE-2019-19204){: external} 
+- Updates Go to version `1.21.7`.
+- Added LSO Tolerations and taint node fix 
 
 ### Revision 2, released 16 February 2024
 {: #odf-local-4.14-rev-2-change-log}
@@ -44,6 +52,14 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.13
 {: #odf-local-4.13-change-log}
 
+
+### Revision 8, released 07 March 2024
+{: #odf-local-4.13-rev-8-change-log}
+
+
+- Resolves the following CVEs: [CVE-2019-13224](https://nvd.nist.gov/vuln/detail/CVE-2019-13224){: external} [CVE-2019-16163](https://nvd.nist.gov/vuln/detail/CVE-2019-16163){: external} [CVE-2019-19012](https://nvd.nist.gov/vuln/detail/CVE-2019-19012){: external} [CVE-2019-19203](https://nvd.nist.gov/vuln/detail/CVE-2019-19203){: external} [CVE-2019-19204](https://nvd.nist.gov/vuln/detail/CVE-2019-19204){: external} 
+- Updates Go to version `1.21.7`.
+- Taint node fix 
 
 ### Revision 7, released 16 February 2024
 {: #odf-local-4.13-rev-7-change-log}
@@ -107,6 +123,13 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.12
 {: #odf-local-4.12-change-log}
 
+
+### Revision 11, released 07 March 2024
+{: #odf-local-4.12-rev-11-change-log}
+
+
+- Resolves the following CVEs: [CVE-2019-13224](https://nvd.nist.gov/vuln/detail/CVE-2019-13224){: external} [CVE-2019-16163](https://nvd.nist.gov/vuln/detail/CVE-2019-16163){: external} [CVE-2019-19012](https://nvd.nist.gov/vuln/detail/CVE-2019-19012){: external} [CVE-2019-19203](https://nvd.nist.gov/vuln/detail/CVE-2019-19203){: external} [CVE-2019-19204](https://nvd.nist.gov/vuln/detail/CVE-2019-19204){: external} 
+- Updates Go to version `1.21.7`.
 
 ### Revision 10, released 16 February 2024
 {: #odf-local-4.12-rev-10-change-log}
@@ -194,6 +217,13 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.11
 {: #odf-local-4.11-change-log}
 
+
+### Revision 15, released 07 March 2024
+{: #odf-local-4.11-rev-15-change-log}
+
+
+- Resolves the following CVEs: [CVE-2019-13224](https://nvd.nist.gov/vuln/detail/CVE-2019-13224){: external} [CVE-2019-16163](https://nvd.nist.gov/vuln/detail/CVE-2019-16163){: external} [CVE-2019-19012](https://nvd.nist.gov/vuln/detail/CVE-2019-19012){: external} [CVE-2019-19203](https://nvd.nist.gov/vuln/detail/CVE-2019-19203){: external} [CVE-2019-19204](https://nvd.nist.gov/vuln/detail/CVE-2019-19204){: external} 
+- Updates Go to version `1.21.7`.
 
 ### Revision 14, released 16 February 2024
 {: #odf-local-4.11-rev-14-change-log}
