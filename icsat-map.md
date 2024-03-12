@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-03-12"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -48,19 +48,6 @@ View and manage Satellite Configuration.
     * [`ibmcloud sat config version create`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-create-cli)
     * [`ibmcloud sat config version get`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-get-cli)
     * [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-cli)
-
-
-## connector commands
-{: #icks_map_connector}
-
-Create, view, and modify Satellite connectors. Acquire connector agents.
-{: shortdesc}
-
-* [`ibmcloud sat connector agent`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-agent-cli)
-* [`ibmcloud sat connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-cli)
-* [`ibmcloud sat connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-get-cli)
-* [`ibmcloud sat connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-ls-cli)
-* [`ibmcloud sat connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#connector-rm-cli)
 
 
 ## endpoint commands
