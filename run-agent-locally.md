@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-03-12"
 
 keywords: satellite, connector, agent, windows
 
@@ -38,7 +38,7 @@ Configuration information is provided to the agent through the following environ
 
 | Environment variable | Required | Description |
 | --- | --- | --- |
-| `SATELLITE_CONNECTOR_ID` | Yes | The ID of the Satellite Connector that the agent is bound to. You can find your Connector ID in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} or by running the `ibmcloud sat connector ls` command. |
+| `SATELLITE_CONNECTOR_ID` | Yes | The ID of the Satellite Connector that the agent is bound to. You can find your Connector ID in the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} or by running the `ibmcloud sat experimental connector ls` command. |
 | `SATELLITE_CONNECTOR_IAM_APIKEY` | Yes |Your IAM API key. For security purposes, consider storing your IAM API key in a file and then providing the file for this value. **Note**: In Windows environments, you must escape the slash in the file path. |
 | `SATELLITE_CONNECTOR_TAGS` | No | A user defined string that can be helpful to identify your agent. This string can be any value that you find useful. The value must be less than or equal to 256 characters and is truncated if over 256 characters. The following characters are removed: `<>/{}%[]?,;@$&`. |
 | `LOG_LEVEL` | No | Set the level of logging detail you want to receive for your agent. You can specify one of `fatal`, `error`, `warn`, `debug`, `info`, or `trace`. The default level is `info`. Typically, the `debug` and `trace` levels are used only when debugging. |
@@ -191,7 +191,7 @@ Connector agent for Windows supports Windows 10 and later or Windows Server 2016
 1. From the CLI, run the following command to download the agent `.zip` file.
 
     ```sh
-    ibmcloud sat connector agent --platform windows
+    ibmcloud sat experimental connector agent --platform windows
     ```
     {: codeblock}
 

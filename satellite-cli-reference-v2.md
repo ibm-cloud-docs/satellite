@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-03-12"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -351,122 +351,6 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 `--version VERSION`
 :    Indicate the name or ID of the Satellite configuration version. To list versions, run `ibmcloud sat config get --config <configuration_name_or_ID>`.
 {: #config-version-rm-options-dl}
-
-
-## `ibmcloud sat connector agent`
-{: #connector-agent-cli}
-
-Get a Satellite Connector agent for a specific platform.
-
-```txt
-ibmcloud sat connector agent --platform PLATFORM [-q]
-```
-{: pre}
-{: #connector-agent-usage}
-
-### Command options
-{: #connector-agent-options}
-
-`--platform PLATFORM`
-:    The platform for the Satellite connector agent. For more information about Docker, see documentation at https://ibm.biz/satconagent Available options: windows, docker
-
-`-q`
-:    Do not show the message of the day or update reminders.
-{: #connector-agent-options-dl}
-
-
-## `ibmcloud sat connector create`
-{: #connector-create-cli}
-
-Create a Satellite connector.
-
-```txt
-ibmcloud sat connector create --name NAME --region REGION [-q]
-```
-{: pre}
-{: #connector-create-usage}
-
-### Command options
-{: #connector-create-options}
-
-`--name NAME`
-:    The name for the Satellite connector.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--region REGION`
-:    The IBM Cloud region to manage your Satellite connector.
-{: #connector-create-options-dl}
-
-
-## `ibmcloud sat connector get`
-{: #connector-get-cli}
-
-View the details of a Satellite Connector.
-
-```txt
-ibmcloud sat connector get --connector-id ID [-q]
-```
-{: pre}
-{: #connector-get-usage}
-
-### Command options
-{: #connector-get-options}
-
-`--connector-id ID`
-:    The ID of a Satellite connector.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-{: #connector-get-options-dl}
-
-
-## `ibmcloud sat connector ls`
-{: #connector-ls-cli}
-
-List all Satellite connectors in your IBM Cloud account.
-
-```txt
-ibmcloud sat connector ls [-q] [--region REGION]
-```
-{: pre}
-{: #connector-ls-usage}
-
-### Command options
-{: #connector-ls-options}
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--region REGION`
-:    List only Satellite connectors in the specified IBM Cloud region.
-{: #connector-ls-options-dl}
-
-
-## `ibmcloud sat connector rm`
-{: #connector-rm-cli}
-
-Delete a Satellite connector.
-
-```txt
-ibmcloud sat connector rm --connector-id ID [-f] [-q]
-```
-{: pre}
-{: #connector-rm-usage}
-
-### Command options
-{: #connector-rm-options}
-
-`--connector-id ID`
-:    The ID of Satellite connector.
-
-`-f`
-:    Force the command to run without user prompts.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-{: #connector-rm-options-dl}
 
 
 ## `ibmcloud sat endpoint create`
