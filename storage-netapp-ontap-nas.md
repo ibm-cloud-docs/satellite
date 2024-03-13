@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-03-13"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations, netapp nas trident
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # NetApp ONTAP-NAS
 {: #storage-netapp-ontap-nas}
 
-Set up [NetApp ONTAP-NAS storage](https://netapp-trident.readthedocs.io/en/stable-v21.04/){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [NetApp ONTAP-NAS storage](https://docs.netapp.com/us-en/netapp-solutions/containers/rh-os-n_trident_ontap_nfs.html){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 Before you can create storage configurations by using the NetApp NAS template, you must deploy the [NetApp ONTAP-NAS template](/docs/satellite?topic=satellite-storage-netapp-trident) which installs the required operator.
@@ -44,7 +44,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 
 1. [Create a {{site.data.keyword.satelliteshort}} cluster](/docs/openshift?topic=openshift-satellite-clusters).
     - Make sure that you select the **Enable cluster admin access for {{site.data.keyword.satelliteshort}} Config** option when you create the cluster. If you don't enable Administrator (admin) access for {{site.data.keyword.satelliteshort}} Config when creating your cluster, you must re-create your cluster and enable admin access before you can deploy storage.
-    - Your cluster must meet the requirements for ONTAP-NAS. For more information, see the [NetApp documentation](https://netapp-trident.readthedocs.io/en/stable-v21.04/support/requirements.html).
+    - Your cluster must meet the requirements for ONTAP-NAS. For more information, see the [NetApp documentation](https://docs.netapp.com/us-en/netapp-solutions/containers/rh-os-n_trident_ontap_nfs.html).
     - Your hosts must meet the [{{site.data.keyword.satelliteshort}} host requirements](/docs/satellite?topic=satellite-host-reqs) in addition to the requirements for ONTAP-NAS.
 1. [Add your {{site.data.keyword.satelliteshort}} to a cluster group](/docs/satellite?topic=satellite-setup-clusters-satconfig-groups).
 
@@ -509,5 +509,5 @@ Review the {{site.data.keyword.satelliteshort}} storage classes for NetApp ONTAP
 ## Getting help and support for NetApp ONTAP-NAS
 {: #sat-nas-2104-support}
 
-If you run into an issue with NetApp Trident, you can visit the [NetApp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 
+If you run into an issue with NetApp Trident, you can visit the [NetApp support page](https://mysupport.netapp.com/site/){: external}. 
 

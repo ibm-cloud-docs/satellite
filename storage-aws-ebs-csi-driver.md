@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-03-13"
 
 keywords: satellite storage, satellite config, satellite configurations, aws, ebs, block storage, storage configuration
 
@@ -213,7 +213,7 @@ You can use the `ebs-csi-driver` to dynamically provision AWS EBS storage for th
     To see details for a storage class, use the `oc describe sc <sc-name>` command or review the [storage class reference](#sat-ebs-sc-reference).
     {: tip}
 
-2. Create a PVC that provisions an AWS EBS storage instance with the characteristics that are described in the storage class that you selected. The following example uses the `sat-aws-block-bronze` storage class to create an `st1` HDD AWS EBS storage instance with a size of 125 GB. For more information about this volume type, see [Hard disk drives (HDD)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#hard-disk-drives){: external}.
+2. Create a PVC that provisions an AWS EBS storage instance with the characteristics that are described in the storage class that you selected. The following example uses the `sat-aws-block-bronze` storage class to create an `st1` HDD AWS EBS storage instance with a size of 125 GB. For more information about this volume type, see [Hard disk drives (HDD)](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html#hard-disk-drives){: external}.
     ```yaml
     apiVersion: v1
     kind: PersistentVolumeClaim
@@ -535,17 +535,17 @@ Note that you must delete your storage assignments before you can successfully d
 ## Storage class reference for AWS EBS
 {: #sat-ebs-sc-reference}
 
-Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. Note that data volumes are automatically encrypted by an AWS managed default key. For more information, see [Default KMS key for EBS encryption](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_key_mgmt){: external}. For more information on AWS EBS encryption, see [How AWS EBS encryption works](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#how-ebs-encryption-works){: external}.
+Review the {{site.data.keyword.satelliteshort}} storage classes for AWS EBS. You can describe storage classes in the command line with the `oc describe sc <storage-class-name>` command. Note that data volumes are automatically encrypted by an AWS managed default key. For more information, see [Default KMS key for EBS encryption](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html#EBSEncryption_key_mgmt){: external}. For more information on AWS EBS encryption, see [How AWS EBS encryption works](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html#how-ebs-encryption-works){: external}.
 {: shortdesc}
 
 | Storage class name | EBS volume type | File system type | Provisioner | Default IOPS per GB | Size range | Hard disk | Encrypted? | Volume binding mode | Reclaim policy | More info | 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `sat-aws-block-gold` **Default** | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 6.25 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external}
-| `sat-aws-block-silver` | gp3 | ext4 | `ebs.csi.aws.com` | N/A | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external} |
-| `sat-aws-block-bronze` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#hard-disk-drives){: external} |
-| `sat-aws-block-bronze-metro` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#hard-disk-drives){: external} |
-| `sat-aws-block-silver-metro` | gp3 | ext4 | `ebs.csi.aws.com` | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external} |
-| `sat-aws-block-gold-metro` | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 6.25 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#solid-state-drives){: external}
+| `sat-aws-block-gold` **Default** | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 6.25 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html#solid-state-drives){: external}
+| `sat-aws-block-silver` | gp3 | ext4 | `ebs.csi.aws.com` | N/A | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html#solid-state-drives){: external} |
+| `sat-aws-block-bronze` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html#hard-disk-drives){: external} |
+| `sat-aws-block-bronze-metro` | st1 | ext4 | `ebs.csi.aws.com` | N/A | 125 GiB - 16 TiB | HDD | True |  WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html#hard-disk-drives){: external} |
+| `sat-aws-block-silver-metro` | gp3 | ext4 | `ebs.csi.aws.com` | 1 GiB - 16 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html#solid-state-drives){: external} |
+| `sat-aws-block-gold-metro` | io2 | ext4 | `ebs.csi.aws.com` | 10 | 10 GiB - 6.25 TiB | SSD | True | WaitforFirstConsumer | Delete | [Link](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html#solid-state-drives){: external}
 {: caption="Table 2. AWS EBS storage class reference." caption-side="bottom"}
 
 
