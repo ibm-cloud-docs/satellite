@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-12"
+lastupdated: "2024-03-13"
 
 keywords: satellite, hybrid, multicloud, connector, create connector
 
@@ -70,7 +70,7 @@ A Connector provides a secure connection between a specific remote location and 
 {: #create-connector-cli}
 {: cli}
 
-1. Review the command parameters by running the following command or reviewing the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#connector-create-cli).
+1. Review the command parameters by running the following command.
     ```sh
     ibmcloud sat experimental connector create --help
     ```

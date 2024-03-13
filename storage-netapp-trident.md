@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-03-13"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -14,7 +14,7 @@ subcollection: satellite
 # NetApp Trident Operator
 {: #storage-netapp-trident}
 
-Set up [NetApp Trident storage](https://netapp-trident.readthedocs.io/en/stable-v20.07/){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
+Set up [NetApp Trident storage](https://docs.netapp.com/us-en/netapp-solutions/containers/rh-os-n_overview_trident.html){: external} for {{site.data.keyword.satellitelong}} clusters. You can use {{site.data.keyword.satelliteshort}} storage templates to create storage configurations. When you assign a storage configuration to your clusters, the storage drivers of the selected storage provider are installed in your cluster.
 {: shortdesc}
 
 You must deploy the NetApp Trident template to your clusters before you can create configurations with the NetApp ONTAP-NAS or NetApp ONTAP-SAN templates.
@@ -194,7 +194,7 @@ Use the CLI to remove a storage assignment and storage configuration.
     ```
     {: pre}
 
-    If the `trident` namespace is stuck in `Terminating` status, follow the steps to [remove the namespace](/docs/satellite?topic=satellite-storage-namespace-terminating). Alternatively, you can follow the NetApp documentation for [uninstalling the Trident operator](https://netapp-trident.readthedocs.io/en/stable-v20.07/kubernetes/operations/tasks/managing.html#uninstalling-with-the-trident-operator){: external}
+    If the `trident` namespace is stuck in `Terminating` status, follow the steps to [remove the namespace](/docs/satellite?topic=satellite-storage-namespace-terminating). Alternatively, you can follow the NetApp documentation for [uninstalling the Trident operator](https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html){: external}
     {: note}
 
 5. **Optional**: List your storage configurations and remove your Trident configuration.
@@ -214,6 +214,6 @@ Use the CLI to remove a storage assignment and storage configuration.
 ## Getting help and support for NetApp Trident
 {: #sat-trident-support}
 
-If you run into an issue with NetApp Trident, you can visit the [NetApp support page](https://netapp-trident.readthedocs.io/en/stable-v20.04/support/support.html){: external}. 
+If you run into an issue with NetApp Trident, you can visit the [NetApp support page](https://mysupport.netapp.com/site/){: external}. 
 
 
