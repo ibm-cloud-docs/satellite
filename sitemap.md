@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-03-13"
+lastupdated: "2024-03-15"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -196,7 +196,7 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
-* [March 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb24)
+* [March 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar24)
 
     * [7 March 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar724)
 
