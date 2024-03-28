@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-03-28"
 
 keywords: satellite, connector
 
@@ -61,7 +61,7 @@ In this example, use a simple Nginx container.
   
 1. Run the Nginx container.
     ```sh  
-    docker run -d -v ~/agent/nginx/etc/nginx:/etc/nginx:ro -v ~/agent/nginx/www/data:/www/data:ro nginx
+    docker run -d -p 80:80 -v ~/agent/nginx/etc/nginx:/etc/nginx:ro -v ~/agent/nginx/www/data:/www/data:ro nginx
     ```
     {: pre} 
 
