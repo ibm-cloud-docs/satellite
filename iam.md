@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-11"
 
 keywords: satellite, hybrid, multicloud, access, manage access
 
@@ -24,7 +24,7 @@ The name for the {{site.data.keyword.satellitelong_notm}} service in IAM is
 - **{{site.data.keyword.satellitelong_notm}}** in the UI
 - **satellite** in the API and CLI
 
-Keep in mind that you need permissions to {{site.data.keyword.cloud_notm}} services if you use the services with {{site.data.keyword.satelliteshort}}. For example, to create and manage clusters in your {{site.data.keyword.satelliteshort}} location, you must have the [appropriate permissions to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-access_reference) in IAM (**Kubernetes Service** in the UI, **containers-kubernetes** in the API and CLI).
+Keep in mind that you need permissions to {{site.data.keyword.cloud_notm}} services if you use the services with {{site.data.keyword.satelliteshort}}. For example, to create and manage clusters in your {{site.data.keyword.satelliteshort}} location, you must have the [appropriate permissions to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-iam-platform-access-roles) in IAM (**Kubernetes Service** in the UI, **containers-kubernetes** in the API and CLI).
 {: note}
 
 
@@ -113,8 +113,8 @@ Resource type, IAM role, and scope of access policies
 :    You do not assign access policies for {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satelliteshort}}. Instead, access to clusters is assigned in {{site.data.keyword.cloud_notm}} IAM through {{site.data.keyword.openshiftlong_notm}} (**Kubernetes Service** in the console or `containers-kubernetes` in the API or CLI). For more information, see [Platform and service roles for {{site.data.keyword.redhat_openshift_notm}} clusters](#iam-roles-clusters).
 
 :    If you have access to a {{site.data.keyword.satelliteshort}} location or configuration, you can view the clusters that are attached to the location or configuration. However, you might not be able to access the clusters if you do not have the appropriate roles to those clusters. For example, if you have the appropriate access to a {{site.data.keyword.satelliteshort}} configuration, you might be able to list all the Kubernetes resources that run in registered clusters through the {{site.data.keyword.satelliteshort}} Config API. However, without an access policy to the individual clusters, you cannot log in to the individual clusters and use {{site.data.keyword.redhat_openshift_notm}} APIs to list Kubernetes resources. For more information, see the following topics.
-    - [Reference documentation](/docs/openshift?topic=openshift-access_reference) for user access permissions, including [platform](/docs/openshift?topic=openshift-access_reference) and [service](/docs/openshift?topic=openshift-access_reference) roles.
-    - [Assigning access to clusters](/docs/openshift?topic=openshift-users), such as setting up the API key for underlying infrastructure permissions and granting users access with {{site.data.keyword.cloud_notm}} IAM.
+    - [Reference documentation](/docs/openshift?topic=openshift-iam-platform-access-roles) for user access permissions, including platform and service roles.
+    - [Set the cluster credentials](/docs/openshift?topic=openshift-access-creds), such as setting up the API key for underlying infrastructure permissions and granting users access with {{site.data.keyword.cloud_notm}} IAM.
     - [Accessing clusters](/docs/openshift?topic=openshift-access_cluster) on the public or private service endpoints, or by using an {{site.data.keyword.cloud_notm}} IAM API key such as for automation purposes.
 
 Other managed services
@@ -131,8 +131,8 @@ Other managed services
 If you create {{site.data.keyword.openshiftlong_notm}} clusters to use in your {{site.data.keyword.redhat_openshift_notm}} locations, you manage access to these clusters in IAM for the {{site.data.keyword.redhat_openshift_notm}} service, not for {{site.data.keyword.redhat_openshift_notm}}. Review the following information to manage IAM access to {{site.data.keyword.redhat_openshift_notm}} clusters.
 {: shortdesc}
 
-- [Reference documentation](/docs/openshift?topic=openshift-access_reference) for user access permissions, including [platform](/docs/openshift?topic=openshift-access_reference) and [service](/docs/openshift?topic=openshift-access_reference) roles.
-- [Assigning access to clusters](/docs/openshift?topic=openshift-users), such as setting up the API key for underlying infrastructure permissions and granting users access with {{site.data.keyword.cloud_notm}} IAM.
+- [Reference documentation](/docs/openshift?topic=openshift-iam-platform-access-roles) for user access permissions, including platform and service roles.
+- [Set the cluster credentials](/docs/openshift?topic=openshift-access-creds), such as setting up the API key for underlying infrastructure permissions and granting users access with {{site.data.keyword.cloud_notm}} IAM.
 - [Accessing clusters](/docs/openshift?topic=openshift-access_cluster) on the public or private service endpoints, or by using an {{site.data.keyword.cloud_notm}} IAM API key such as for automation purposes.
 
 ## Common use cases and roles in {{site.data.keyword.cloud_notm}}
@@ -143,7 +143,7 @@ Wondering which access roles to assign to your {{site.data.keyword.satelliteshor
 
 | Use case | Example roles and scope |
 | --- | --- |
-| Creating a location | The user and the [API key that is set for the region and resource group](/docs/satellite?topic=satellite-iam-api-key) require the following permissions. **Administrator** platform role for all {{site.data.keyword.satelliteshort}} locations. The custom **{{site.data.keyword.satelliteshort}} Link Administrator** service role for {{site.data.keyword.satelliteshort}} Link. **Manager** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. To use automated templates such as to add hosts from AWS or Azure, the **Administrator** platform role for {{site.data.keyword.bplong_notm}} and **Administrator** platform role for Kubernetes Service. For other permissions to set up the location control plane, see [Permissions to create a cluster](/docs/openshift?topic=openshift-access_reference#cluster_create_permissions). |
+| Creating a location | The user and the [API key that is set for the region and resource group](/docs/satellite?topic=satellite-iam-api-key) require the following permissions. **Administrator** platform role for all {{site.data.keyword.satelliteshort}} locations. The custom **{{site.data.keyword.satelliteshort}} Link Administrator** service role for {{site.data.keyword.satelliteshort}} Link. **Manager** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. To use automated templates such as to add hosts from AWS or Azure, the **Administrator** platform role for {{site.data.keyword.bplong_notm}} and **Administrator** platform role for Kubernetes Service. For other permissions to set up the location control plane, see [Permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#cluster-create-permissions). |
 | Creating a cluster in a location | See [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters). |
 | Location auditor | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location and link endpoints. **Reader** service role for the configuration resources in the location. **Reader** service role to the {{site.data.keyword.cos_full_notm}} instance that backs up the location control plane data. |
 | App developers | **Viewer** platform role for the {{site.data.keyword.satelliteshort}} location. **Writer** or **Deployer** service access role for the configuration resources. **Editor** platform role and **Writer** service role to {{site.data.keyword.redhat_openshift_notm}} clusters or particular projects in a cluster.|
