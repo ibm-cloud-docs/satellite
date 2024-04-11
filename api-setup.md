@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-02-05"
+lastupdated: "2024-04-11"
 
 keywords: satellite, api, iam, tokens, refresh
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Setting up the API
 {: #api_setup}
 
-{{site.data.keyword.satellitelong_notm}} shares the samae application programming interface (API) as {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.openshiftlong_notm}}, so that you can use the same methods to consistently create and manage your {{site.data.keyword.satelliteshort}} resources.
+{{site.data.keyword.satellitelong_notm}} shares the same application programming interface (API) as {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.openshiftlong_notm}}, so that you can use the same methods to consistently create and manage your {{site.data.keyword.satelliteshort}} resources.
 
 
 ## About the API
@@ -62,3 +62,4 @@ Cluster, worker node, and worker-pool responses
 
 
 {{../account/iam-apikeys_services.md#apikey_auth}}
+
