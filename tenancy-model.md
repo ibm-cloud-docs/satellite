@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-11"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -251,7 +251,7 @@ Follow the steps to [create an API that can be used in your client account](/doc
 ### Setting up cluster admin and developer roles
 {: #create-roles-tenancy}
 
-Follow the steps to set up the [cluster roles your client needs](/docs/openshift?topic=openshift-users#example-iam).
+Follow the steps to set up the [cluster roles your client needs](/docs/openshift?topic=openshift-iam-platform-access-roles#example-iam).
 
 
 

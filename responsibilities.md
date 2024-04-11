@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-29"
+lastupdated: "2024-04-11"
 
 keywords: satellite, hybrid, multicloud, RACI, responsibilities, shared responsibilities
 
@@ -108,7 +108,7 @@ Identity and access management includes tasks such as authentication, authorizat
 | Task | {{site.data.keyword.IBM_notm}} responsibilities | Your responsibilities |
 |----------|-----------------------|--------|
 |{{site.data.keyword.satelliteshort}} Location | - Provide an interface to assign access control to locations via IAM. | - Use the provided tools to [manage authentication, authorization, and access control policies](/docs/satellite?topic=satellite-iam). |
-| {{site.data.keyword.satelliteshort}} Host | - Disable the ability to SSH into hosts after you assign the hosts to a location control plane or cluster, to enhance security. | - [Add](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts) hosts to a cluster. After assigning the host, SSH access is disabled and access to the host is controlled via [{{site.data.keyword.cloud_notm}} IAM access](/docs/openshift?topic=openshift-users). |
+| {{site.data.keyword.satelliteshort}} Host | - Disable the ability to SSH into hosts after you assign the hosts to a location control plane or cluster, to enhance security. | - [Add](/docs/satellite?topic=satellite-attach-hosts) and [assign](/docs/satellite?topic=satellite-assigning-hosts) hosts to a cluster. After assigning the host, SSH access is disabled and access to the host is controlled via [{{site.data.keyword.cloud_notm}} IAM access](/docs/openshift?topic=openshift-iam-platform-access-roles). |
 |{{site.data.keyword.satelliteshort}} Config| - Provide an interface to assign access control to configurations via IAM. | - Use the provided tools to [manage authentication, authorization, and access control policies](/docs/satellite?topic=satellite-iam) to use {{site.data.keyword.satelliteshort}} configurations and subscriptions to create, update, and delete Kubernetes resources. Note that access in IAM to {{site.data.keyword.satelliteshort}} Config does not give users access to the clusters, nor the ability to log in and manage the Kubernetes resources from the cluster. Users with access to a cluster might log in and manually change the Kubernetes resources. |
 |{{site.data.keyword.satelliteshort}} Link | - Provide an interface to assign access control to endpoints via IAM. | - Use the provided tools to [manage authentication, authorization, and access control policies](/docs/satellite?topic=satellite-iam). |
 | {{site.data.keyword.satelliteshort}} Storage | N/A | - Decide and configure read and write access to storage for your apps by using persistent volumes and persistent volume claims.  |

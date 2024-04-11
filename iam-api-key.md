@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-11"
 
 keywords: satellite, hybrid, multicloud
 
@@ -38,7 +38,7 @@ This API key is used to authorize actions to various {{site.data.keyword.cloud_n
 - {{site.data.keyword.registrylong_notm}} for images.
 - Service-to-service authorization in IAM for any {{site.data.keyword.satelliteshort}}-enabled {{site.data.keyword.cloud_notm}} services that you add to your location.
 
-For more information, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-access-creds#api_key_about).
+For more information, see the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-access-creds).
 
 ## Infrastructure provider credentials
 {: #api-keys-templates}
