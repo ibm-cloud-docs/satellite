@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-03-13"
+lastupdated: "2024-04-15"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -393,7 +393,7 @@ ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-ty
 :    Do not show the message of the day or update reminders.
 
 `--sni SNI`
-:    Specify the server name indicator, if you specify a `tls` or [https](https) source protocol and want a separate hostname to be added to the TLS handshake.
+:    Specify the server name indicator, if you specify a `tls` or `https` source protocol and want a separate hostname to be added to the TLS handshake.
 
 `--source-protocol PROTOCOL`
 :    Provide the protocol that the source uses to connect the destination resource. See [http://ibm.biz/endpoint-protocols](http://ibm.biz/endpoint-protocols). Available options: TCP, TLS, HTTP, HTTPS, HTTP-tunnel
@@ -517,7 +517,7 @@ ibmcloud sat endpoint update --endpoint ENDPOINT --location LOCATION [--dest-hos
 :    Do not show the message of the day or update reminders.
 
 `--sni SNI`
-:    Specify the server name indicator, if you specify a `tls` or [https](https) source protocol and want a separate hostname to be added to the TLS handshake.
+:    Specify the server name indicator, if you specify a `tls` or `https` source protocol and want a separate hostname to be added to the TLS handshake.
 
 `--source-protocol PROTOCOL`
 :    Provide the protocol that the source uses to connect the destination resource. See [http://ibm.biz/endpoint-protocols](http://ibm.biz/endpoint-protocols). Accepted values: `TCP`, `TLS`, `HTTP`, `HTTPS`, `HTTP-tunnel`
