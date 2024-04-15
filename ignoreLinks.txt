@@ -3,3 +3,4 @@ https://test.cloud.ibm.com/conapi
 https://cloud.ibm.com/conapi
 https://config.satellite.test.cloud.ibm.com/
 https://ibm.box.com/s/dhnhu2yymbdjtq5xsnystz199lt0ya02
+https://containers.cloud.ibm.com/global/swagger-global-api
