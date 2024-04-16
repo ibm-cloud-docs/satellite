@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-04-12"
 
 keywords: satellite storage, csi, satellite configurations, block storage,
 
@@ -167,17 +167,17 @@ You can use the `ibm-vpc-block-csi-driver` to create PVCs that you can use in yo
 1. Create a PVC that references a VPC storage class that you created earlier.
 
     ```yaml
-        apiVersion: v1
-        kind: PersistentVolumeClaim
-        metadata:
-        name: my-pvc
-        spec:
-        storageClassName: ibmc-vpc-block-5iops-tier
-        accessModes:
-            - ReadWriteOnce
-        resources:
-            requests:
-            storage: 10Gi
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: my-pvc
+    spec:
+      storageClassName: ibmc-vpc-block-5iops-tier
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
 
     ```
     {: codeblock}
@@ -192,25 +192,25 @@ You can use the `ibm-vpc-block-csi-driver` to create PVCs that you can use in yo
 1. Create a YAML configuration file for a pod that mounts the PVC that you created. 
 
     ```yaml
-        apiVersion: apps/v1
-        kind: Deployment
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: my-deployment
+      labels:
+        app: my-app
+    spec:
+      replicas: 1
+      selector:
+        matchLabels: 
+        app: my-app
+      template:
         metadata:
-        name: my-deployment
-        labels: null
-        app: my-app
-        spec: null
-        replicas: 1
-        selector:
-        matchLabels: null
-        app: my-app
-        template:
-        metadata: null
         labels:
             app: my-app
-        spec: null
-        containers: null
-        name: my-container
-        image: ngnix
+        spec:
+        containers:
+        - name: my-container
+            image: ngnix
         volumeMounts:
             name: my-volume
             mountPath: /mount-path

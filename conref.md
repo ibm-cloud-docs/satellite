@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-28"
+lastupdated: "2024-04-12"
 
 keywords: satellite, hybrid, multicloud
 
@@ -55,7 +55,6 @@ If you didn't assign your configuration to a cluster or service when you created
 1. On the **Configuration details** page, click **Create storage assignment**.
 1. In the **Create an assignment** pane, enter a name for your assignment.
 1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
-1. From the **Cluster group** drop-down list, select the cluster group that you want to assign to the storage configuration. Note that the clusters in your cluster group where you want to assign storage must all be in the same {{site.data.keyword.satelliteshort}} location.
 1. Click **Create** to create the assignment.
 1. Verify that your storage configuration is deployed to your cluster. 
     1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to your Location and select **Storage**
