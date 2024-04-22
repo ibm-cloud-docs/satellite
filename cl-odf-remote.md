@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-03-08"
+lastupdated: "2024-04-22"
 
 
 keywords: satellite storage, change log, version history, odf remote
@@ -23,6 +23,16 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.14
 {: #odf-remote-4.14-change-log}
 
+
+### Revision 4, released 19 April 2024
+{: #odf-remote-4.14-rev-4-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/CVE-2023-28322){: external} [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/CVE-2023-38546){: external} [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/CVE-2023-46218){: external} 
+- Updates Go to version `1.21.9`.
+- OOM issue fixed 
+- Node watcher added 
+- Support for workerpool to deploy ODF
 
 ### Revision 3, released 07 March 2024
 {: #odf-remote-4.14-rev-3-change-log}
@@ -53,6 +63,15 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.13
 {: #odf-remote-4.13-change-log}
 
+
+### Revision 9, released 19 April 2024
+{: #odf-remote-4.13-rev-9-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/CVE-2023-28322){: external} [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/CVE-2023-38546){: external} [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/CVE-2023-46218){: external} 
+- Updates Go to version `1.21.9`.
+- OOM issue fixed 
+- Node watcher added 
 
 ### Revision 8, released 07 March 2024
 {: #odf-remote-4.13-rev-8-change-log}
@@ -125,6 +144,14 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.12
 {: #odf-remote-4.12-change-log}
 
+
+### Revision 12, released 19 April 2024
+{: #odf-remote-4.12-rev-12-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/CVE-2023-28322){: external} [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/CVE-2023-38546){: external} [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/CVE-2023-46218){: external} 
+- Updates Go to version `1.21.9`.
+- Node watcher added 
 
 ### Revision 11, released 07 March 2024
 {: #odf-remote-4.12-rev-11-change-log}
