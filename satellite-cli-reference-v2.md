@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-04-15"
+lastupdated: "2024-04-22"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1052,7 +1052,7 @@ ibmcloud sat location dns register --ip IP [--ip IP ...] --location LOCATION [--
 {: #location-dns-register-options}
 
 `--ip IP`
-:    Specify the IP address for each control plane host, in the format `--ip x.x.x.1 --ip x.x.x.2 --ip x.x.x.3`. For multizone clusters, use one IP address from each zone. To find the IP address, run `ibmcloud sat host ls --location <location_ID_or_name>` and look for `Worker IP` for hosts labelled `infrastructure`.
+:    Specify the IP address for each control plane host, in the format `--ip x.x.x.1 --ip x.x.x.2 --ip x.x.x.3`. For multizone clusters, use one IP address from each zone. To find the IP address, run `ibmcloud sat host ls --location <location_ID_or_name>` and look for `Worker IP` for hosts labeled `infrastructure`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
