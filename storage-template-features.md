@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-16"
+lastupdated: "2024-04-22"
 
 
 keywords: satellite storage, features, overview
@@ -56,11 +56,9 @@ subcollection: satellite
 | NetApp Ontap-NAS Driver | 22.10 | AWS,Azure,IBM | True | True | True | Zonal | True |
 | NetApp Ontap-SAN Driver | 22.04 | AWS,Azure,IBM | True | True | True | Zonal | True |
 | NetApp Ontap-SAN Driver | 22.10 | AWS,Azure,IBM | True | True | True | Zonal | True |
-| OpenShift Data Foundation for local devices | 4.11 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.12 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.13 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for local devices | 4.14 | OpenShift Container Platform | True | True | False | Regional | True |
-| OpenShift Data Foundation for remote storage | 4.11 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.12 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.13 | OpenShift Container Platform | True | True | False | Regional | True |
 | OpenShift Data Foundation for remote storage | 4.14 | OpenShift Container Platform | True | True | False | Regional | True |

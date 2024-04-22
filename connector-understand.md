@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-04-22"
 
 keywords: satellite, connector, agent
 
@@ -48,11 +48,11 @@ These minimum requirements are for running the agent image only and exclude what
 {: note}
   
 To run the {{site.data.keyword.satelliteshort}} Connector agent image, your computing environment must meet the following minimum requirements.
+
 - CPU: 0.40
 - Memory: 500M
 - Container platform must be on x86 architecture.
 - The Connector agent image is for x86 architecture and only runs on x86 hardware or hardware that can emulate x86. If you are on a Mac with Apple Silicon (arm64), the image works if Rosetta is installed. If Rosetta is not installed on your Mac, you can install it via the `softwareupdate --install-rosetta` command.
-- The Connector agent for Windows supports Windows 10 and Windows Server 2016.
 
 ## Network requirements
 {: #network-requirements}
