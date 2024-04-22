@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-12"
+lastupdated: "2024-04-22"
 
 keywords: satellite, connector, agent, windows
 
@@ -182,8 +182,16 @@ After setting up an agent, you can create Endpoints and ACLs to manage access to
 ## Running the agent on Windows
 {: #run-agent-windows}
 
-Connector agent for Windows supports Windows 10 and later or Windows Server 2016 and later.
-{: note}
+Review the following steps to run a Connector agent on Windows.
+
+
+### Prerequisites and notes
+{: #windows-agent-prereqs}
+
+- Connector agent for Windows supports Windows 10 and later or Windows Server 2016 and later.
+- The Windows server where you run your Connector agent must have at least 4 cores and 4GB memory.
+- For high availability, plan to deploy 1 agent per host and at least 6 agents.
+
 
 ### Step 1: Downloading the Connector agent files from the CLI
 {: #windows-agent-download}

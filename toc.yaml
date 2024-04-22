@@ -25,7 +25,7 @@ toc:
       - topicgroup:
           label: Understanding Satellite Connector
           topics:
-            - understand-connectors.md
+            - connector-understand.md
             - connector-and-secure-gateway.md
             - connector-faq.md
       - managed-services.md

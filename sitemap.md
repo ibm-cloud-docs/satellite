@@ -1745,6 +1745,8 @@ subcollection: satellite
 
 * [Running the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally#run-agent-windows)
 
+    * [Prerequisites and notes](/docs/satellite?topic=satellite-run-agent-locally#windows-agent-prereqs)
+
     * [Step 1: Downloading the Connector agent files from the CLI](/docs/satellite?topic=satellite-run-agent-locally#windows-agent-download)
 
     * [Step 2: Updating the `config.json` file](/docs/satellite?topic=satellite-run-agent-locally#windows-agent-parameters)
