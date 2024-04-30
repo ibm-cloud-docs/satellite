@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: "2024-03-13"
+lastupdated: "2024-04-30"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -128,6 +128,14 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
     {: pre}
 
 
+    Example command to create a version 24.02 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-ontap-san --template-version 24.02 --param "managementLIF=MANAGEMENTLIF"  --param "dataLIF=DATALIF"  --param "svm=SVM"  --param "username=USERNAME"  --param "password=PASSWORD"  --param "limitVolumeSize=LIMITVOLUMESIZE"  --param "limitAggregateUsage=LIMITAGGREGATEUSAGE" 
+    ```
+    {: pre}
+
+
 
 1. Customize the command based on the settings that you want to use.
 
@@ -163,6 +171,14 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 
     ```sh
     curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-ontap-san\", \"storage-template-version\": \"22.10\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MANAGEMENTLIF\", { \"entry.name\": \"DATALIF\", { \"entry.name\": \"SVM\", { \"entry.name\": \"LIMITVOLUMESIZE\", { \"entry.name\": \"LIMITAGGREGATEUSAGE\",\"user-secret-parameters\": { \"entry.name\": \"USERNAME\",{ \"entry.name\": \"PASSWORD\",}
+    ```
+    {: pre}
+
+
+    Example request to create a version 24.02 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-ontap-san\", \"storage-template-version\": \"24.02\", \"update-assignments\": true, \"user-config-parameters\": { \"entry.name\": \"MANAGEMENTLIF\", { \"entry.name\": \"DATALIF\", { \"entry.name\": \"SVM\", { \"entry.name\": \"LIMITVOLUMESIZE\", { \"entry.name\": \"LIMITAGGREGATEUSAGE\",\"user-secret-parameters\": { \"entry.name\": \"USERNAME\",{ \"entry.name\": \"PASSWORD\",}
     ```
     {: pre}
 
@@ -219,6 +235,21 @@ Review the following prerequisites before you deploy the NetApp ONTAP-SAN driver
 | Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
 | Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | true | `80%` |
 {: caption="Table 2. 22.10 parameter reference" caption-side="bottom"}
+
+
+### 24.02 parameter reference
+{: #netapp-ontap-san-24.02-parameters}
+
+| Display name | CLI option | Type | Description | Required? | Default value | 
+| --- | --- | --- | --- | --- | --- |
+| Management LIF | `managementLIF` | Config | The IP address of the Management LIF. | true | N/A |
+| Data LIF | `dataLIF` | Config | The IP address of the Data LIF. | true | N/A |
+| SVM | `svm` | Config | The name of the SVM. | true | N/A |
+| User Name | `username` | Secret | The username to connect to the storage device. | true | N/A |
+| User Password | `password` | Secret | The password to connect to the storage device. | true | N/A |
+| Limit Volume Size | `limitVolumeSize` | Config | The maximum volume size (in Gibibytes) that can be requested and the qtree parent volume size. | true | `50Gi` |
+| Limit AggregateUsage | `limitAggregateUsage` | Config | Provisioning fails if usage is greater than this percentage. | true | `80%` |
+{: caption="Table 3. 24.02 parameter reference" caption-side="bottom"}
 
 
 ## Storage class reference for NetApp ONTAP-SAN

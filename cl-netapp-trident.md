@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-01-19"
+lastupdated: "2024-04-30"
 
 
 keywords: satellite storage, change log, version history, netapp trident
@@ -19,6 +19,17 @@ subcollection: satellite
 
 Review the version history for the `netapp-trident` {{site.data.keyword.satelliteshort}} storage template.
 {: shortdesc}
+
+## Version 24.02
+{: #netapp-trident-24.02-change-log}
+
+
+### Revision 1, released 29 April 2024
+{: #netapp-trident-24.02-rev-1-change-log}
+
+
+- Initial Release
+
 
 ## Version 22.10
 {: #netapp-trident-22.10-change-log}
