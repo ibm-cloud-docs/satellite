@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-30"
 
 keywords: satellite, hybrid, multicloud
 
@@ -41,12 +41,12 @@ After deploying a [Connector agent](/docs/satellite?topic=satellite-run-agent-lo
     - If you selected the **TLS** or **HTTPS** protocols and want to allow a separate hostname to be provided to the TLS handshake of the resource connection, enter the server name indicator (SNI).
 1. On the **Access control lists** page, click **Create rule**.
 
-1. On the ACL rule page, enter a **Rule name** and enter the IBM Cloud private **IP addresses** of the clients that will be allowed to connect to the endpoint. This value can be a single IP address, a CIDR block, or a comma-separated list. The value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+1. **Optional**: On the **ACL rule** page, enter a **Rule name** and enter the IBM Cloud private **IP addresses** of the clients that will be allowed to connect to the endpoint. This value can be a single IP address, a CIDR block, or a comma-separated list. The value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 
     If no rules are selected, any client that is connected to the IBM Cloud private network can use the endpoint to connect to the destination resource that runs in your location.
     {: important}
 
-1. On the **Connection settings** page, set an inactivity timeout.
+1. On the **Connection settings** page, set an inactivity timeout between 1 and 600.
 1. Click **Create endpoint**.
 
 

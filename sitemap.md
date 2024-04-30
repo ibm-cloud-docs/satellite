@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-22"
+lastupdated: "2024-04-30"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2522,6 +2522,8 @@ subcollection: satellite
 
     * [22.10 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#netapp-ontap-nas-22.10-parameters)
 
+    * [24.02 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#netapp-ontap-nas-24.02-parameters)
+
 * [Storage class reference for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#netapp-sc-reference-nas-2104)
 
 * [Getting help and support for NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas&interface=ui#sat-nas-2104-support)
@@ -2557,6 +2559,8 @@ subcollection: satellite
     * [22.04 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#netapp-ontap-san-22.04-parameters)
 
     * [22.10 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#netapp-ontap-san-22.10-parameters)
+
+    * [24.02 parameter reference](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#netapp-ontap-san-24.02-parameters)
 
 * [Storage class reference for NetApp ONTAP-SAN](/docs/satellite?topic=satellite-storage-netapp-ontap-san&interface=api#netapp-sc-reference-san-2104)
 
@@ -3457,6 +3461,8 @@ subcollection: satellite
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
 
+* [Version v1.0.617](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010617)
+
 * [Version v1.0.613](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010613)
 
 * [Version v1.0.601](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010601)
@@ -3848,6 +3854,8 @@ subcollection: satellite
 
 * [Version 2.2](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-change-log)
 
+    * [Revision 20, released 29 April 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-20-change-log)
+
     * [Revision 19, released 29 February 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-19-change-log)
 
     * [Revision 18, released 02 February 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-18-change-log)
@@ -3996,6 +4004,10 @@ subcollection: satellite
 
 [`netapp-ontap-nas` change log](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#cl-netapp-ontap-nas)
 
+* [Version 24.02](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-24.02-change-log)
+
+    * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-24.02-rev-1-change-log)
+
 * [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-change-log)
 
     * [Revision 12, released 25 January 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-12-change-log)
@@ -4072,6 +4084,10 @@ subcollection: satellite
 
 [`netapp-ontap-san` change log](/docs/satellite?topic=satellite-cl-netapp-ontap-san#cl-netapp-ontap-san)
 
+* [Version 24.02](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-24.02-change-log)
+
+    * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-24.02-rev-1-change-log)
+
 * [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-change-log)
 
     * [Revision 12, released 25 January 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-12-change-log)
@@ -4147,6 +4163,10 @@ subcollection: satellite
     * [Revision 17, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-17-change-log)
 
 [`netapp-trident` change log](/docs/satellite?topic=satellite-cl-netapp-trident#cl-netapp-trident)
+
+* [Version 24.02](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-24.02-change-log)
+
+    * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-24.02-rev-1-change-log)
 
 * [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-22.10-change-log)
 

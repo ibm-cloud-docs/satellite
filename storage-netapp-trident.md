@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: "2024-03-13"
+lastupdated: "2024-04-30"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -102,6 +102,13 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
     ```
     {: pre}
 
+    Example command to create a version 24.02 configuration.
+
+    ```sh
+    ibmcloud sat storage config create --location LOCATION --name NAME --template-name netapp-trident --template-version 24.02
+    ```
+    {: pre}
+
 
 1. Customize the command based on the settings that you want to use.
 
@@ -133,6 +140,13 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 
     ```sh
     curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-trident\", \"storage-template-version\": \"22.10\", \"update-assignments\": true}
+    ```
+    {: pre}
+
+    Example request to create a version 24.02 configuration.
+
+    ```sh
+    curl -X POST "https://containers.cloud.ibm.com/global/v2/storage/satellite/createStorageConfigurationByController" -H "accept: application/json" -H "Authorization: TOKEN" -H "Content-Type: application/json" -d "{ \"config-name\": \"string\", \"controller\": \"string\", \"storage-class-parameters\": [ { \"additionalProp1\": \"string\", \"additionalProp2\": \"string\", \"additionalProp3\": \"string\" } ], \"storage-template-name\": \"netapp-trident\", \"storage-template-version\": \"24.02\", \"update-assignments\": true}
     ```
     {: pre}
 

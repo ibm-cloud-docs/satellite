@@ -2,8 +2,7 @@
 
 copyright:
   years: 2020, 2024
-
-lastupdated: "2024-01-19"
+lastupdated: "2024-04-30"
 
 
 keywords: satellite storage, change log, version history, vsphere csi driver
