@@ -172,6 +172,7 @@ toc:
               - run-agent-locally.md
               - run-agent-swarm.md
               - end-to-end.md
+              - connector-create-from-sg.md
               - connector-proxy.md
               - connector-create-endpoints.md
         - topicgroup:

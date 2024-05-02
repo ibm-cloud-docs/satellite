@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-30"
+lastupdated: "2024-05-01"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1766,6 +1766,16 @@ subcollection: satellite
 * [Creating your Link endpoint](/docs/satellite?topic=satellite-end-to-end#create-link-endpoint)
 
 * [Adding TLS support](/docs/satellite?topic=satellite-end-to-end#add-tls)
+
+[Migrating resources from {{site.data.keyword.SecureGateway}} to {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-connector-create-from-sg#connector-create-from-sg)
+
+* [Prerequisites](/docs/satellite?topic=satellite-connector-create-from-sg#sg-migrate-connector-prereqs)
+
+* [Migrating a Gateway to a Connector](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-destination-to-endpoint)
+
+* [Migrating {{site.data.keyword.SecureGateway}} Destinations to Connector endpoints](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-destination-to-endpoint)
+
+* [Example migration requests](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-examples)
 
 [Configuring a proxy for your {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-config-connector-proxy#config-connector-proxy)
 
