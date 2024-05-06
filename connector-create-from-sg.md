@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-05-01"
+lastupdated: "2024-05-06"
 
 keywords: satellite, connector, migration, endpoints, destinations
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Migrating resources from {{site.data.keyword.SecureGateway}} to {{site.data.keyword.satelliteshort}} Connector
 {: #connector-create-from-sg}
 
-You can use the {{site.data.keyword.SecureGateway}} API to migrate your Gateways and Destinations to {{site.data.keyword.satelliteshort}} Connectors and Conenctor endpoints
+You can use the {{site.data.keyword.SecureGateway}} API to migrate your Gateways and Destinations to {{site.data.keyword.satelliteshort}} Connectors and Connector endpoints
 {: shortdesc}
 
 ## Prerequisites
@@ -27,7 +27,7 @@ You can use the {{site.data.keyword.SecureGateway}} API to migrate your Gateways
 ## Migrating a Gateway to a Connector
 {: #migrate-destination-to-endpoint}
 
-1. Migrate your Gateway to a Connector by using the `migrate2connector` API. For more infrmation, see the [Migrate a Gateway to Satellite Connector](/apidocs/secure-gateway-v2#migratetoconnector) API reference.
+1. Migrate your Gateway to a Connector by using the `migrate2connector` API. For more information, see the [Migrate a Gateway to Satellite Connector](/apidocs/secure-gateway-v2#migratetoconnector) API reference.
     ```sh
     curl -X PUT -H 'Authorization: Bearer <IAM token>' -H 'Content-Type: application/json' -d '{ "connector_id": "A2FbRFtwNfatanQRLjrujBKmVmfOk7NjXYZIWAoVLNfd1PTXJ93aH3J", "token" : "iam_token" }' 'https://sgmanager.us-south.securegateway.cloud.ibm.com/v1/sgconfig/{gateway_id}/migrate2connector'
     ```
@@ -39,7 +39,7 @@ You can use the {{site.data.keyword.SecureGateway}} API to migrate your Gateways
 ## Migrating {{site.data.keyword.SecureGateway}} Destinations to Connector endpoints
 {: #migrate-destination-to-endpoint}
 
-You can migrate of all of the destinations under a Gateway to multiple Connector endpoints or an individual destination to a Connector endpoint.
+You can migrate all the destinations under a Gateway to multiple Connector endpoints or an individual destination to a Connector endpoint.
 
 If your Secure Gateway Destination name doesn't comply to the Connector endpoint naming policy, you can force rename the destination during migration, by using the `force=true` option. You can check the endpoint name used by running the API without the `force=true` option.
 
