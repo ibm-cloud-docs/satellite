@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-06"
+lastupdated: "2024-05-07"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1771,7 +1771,7 @@ subcollection: satellite
 
 * [Prerequisites](/docs/satellite?topic=satellite-connector-create-from-sg#sg-migrate-connector-prereqs)
 
-* [Migrating a Gateway to a Connector](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-destination-to-endpoint)
+* [Migrating a Gateway to a Connector](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-gateway-to-endpoint)
 
 * [Migrating {{site.data.keyword.SecureGateway}} Destinations to Connector endpoints](/docs/satellite?topic=satellite-connector-create-from-sg#migrate-destination-to-endpoint)
 
