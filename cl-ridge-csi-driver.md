@@ -2,7 +2,8 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-30"
+
+lastupdated: "2024-05-08"
 
 
 keywords: satellite storage, change log, version history, ridge csi driver
