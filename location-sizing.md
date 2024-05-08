@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-06"
+lastupdated: "2024-05-07"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -28,6 +28,7 @@ High availability
 
 Compute capacity
 :   {{site.data.keyword.satelliteshort}} monitors the available compute capacity of your location. When the location reaches 70% capacity, you see a warning status to notify you to attach more hosts to the location. If the location reaches 80% capacity, the status changes to **critical** and you see another warning that tells you to attach more hosts to the location.
+
     
 Plan to keep **at least 3 extra hosts** attached and unassigned to your location. When you have extra hosts, then {{site.data.keyword.IBM_notm}} can assign the hosts to your {{site.data.keyword.satelliteshort}} location control plane automatically when the location reaches the warning capacity threshold or an unhealthy host needs to be replaced.
 {: note}
@@ -36,7 +37,8 @@ Plan to keep **at least 3 extra hosts** attached and unassigned to your location
 ## Location size for non Red Hat CoreOS enabled location
 {: #control-plane-how-many-clusters-rhel}
 
-The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a non Red Hat CoreOS enabled location. These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
+The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a non Red Hat CoreOS enabled location. These sizings are for reference only.  Your sizing requirements can change depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase). 
+
 
 
 
@@ -65,7 +67,8 @@ The following tables show sizing guidance for the number of hosts that the {{sit
 ## Location size for Red Hat CoreOS (RHCOS) enabled location
 {: #control-plane-how-many-clusters-rhcos}
 
-The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a Red Hat CoreOS enabled location. These sizings are for reference only. Your sizing requirements can increase depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
+The following tables show sizing guidance for the number of hosts that the {{site.data.keyword.satelliteshort}} location control plane requires to run the master components for various combinations of clusters and worker nodes in a Red Hat CoreOS enabled location. These sizings are for reference only.  Your sizing requirements can change depending on the amount of workload running in a cluster. For more information, see [What types of changes can increase my location sizing requirements?](#types-changes-sizing-increase).
+
 
 
 

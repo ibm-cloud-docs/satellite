@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-05-06"
+lastupdated: "2024-05-07"
 
 keywords: satellite, connector, migration, endpoints, destinations
 
@@ -25,7 +25,7 @@ You can use the {{site.data.keyword.SecureGateway}} API to migrate your Gateways
 [Get the details of your Gateways and Destinations](/docs/SecureGateway?topic=SecureGateway-dep-gather-sg-details).
 
 ## Migrating a Gateway to a Connector
-{: #migrate-destination-to-endpoint}
+{: #migrate-gateway-to-endpoint}
 
 1. Migrate your Gateway to a Connector by using the `migrate2connector` API. For more information, see the [Migrate a Gateway to Satellite Connector](/apidocs/secure-gateway-v2#migratetoconnector) API reference.
     ```sh
