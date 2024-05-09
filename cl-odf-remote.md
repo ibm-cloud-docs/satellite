@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-05-08"
+lastupdated: "2024-05-09"
 
 
 keywords: satellite storage, change log, version history, odf remote
@@ -19,6 +19,18 @@ subcollection: satellite
 
 Review the version history for the `odf-remote` {{site.data.keyword.satelliteshort}} storage template.
 {: shortdesc}
+
+## Version 4.15
+{: #odf-remote-4.15-change-log}
+
+
+### Revision 1, released 09 May 2024
+{: #odf-remote-4.15-rev-1-change-log}
+
+
+- Updates Go to version `1.21.9`.
+- Initial Release
+
 
 ## Version 4.14
 {: #odf-remote-4.14-change-log}
