@@ -196,6 +196,18 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may24)
+
+    * [9 May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may924)
+
+        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
+
+    * [6 May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may624)
+
+        * Connector agent for Windows version `1.1.3`.
+
+        * Connector agent image version `1.1.5`.
+
 * [March 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar24)
 
     * [7 March 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar724)
@@ -210,7 +222,7 @@ subcollection: satellite
 
     * [19 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1924)
 
-        * Connector agent for Windows version `1.1.1`.
+        * Connector agent for Windows version `1.1.3`.
 
         * Connector agent image version `1.1.4`.
 
