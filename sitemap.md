@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-05-09"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -196,6 +196,18 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may24)
+
+    * [9 May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may924)
+
+        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
+
+    * [6 May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may624)
+
+        * Connector agent for Windows version `1.1.3`.
+
+        * Connector agent image version `1.1.5`.
+
 * [March 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar24)
 
     * [7 March 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-mar724)
@@ -210,7 +222,7 @@ subcollection: satellite
 
     * [19 February 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-feb1924)
 
-        * Connector agent for Windows version `1.1.1`.
+        * Connector agent for Windows version `1.1.3`.
 
         * Connector agent image version `1.1.4`.
 
@@ -2813,6 +2825,8 @@ subcollection: satellite
 
     * [4.14 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.14-parameters)
 
+    * [4.15 parameter reference](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#odf-local-4.15-parameters)
+
 * [Storage class reference for ODF](/docs/satellite?topic=satellite-storage-odf-local&interface=cli#sat-storage-odf-local-sc-ref)
 
 [OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote#storage-odf-remote)
@@ -2862,6 +2876,8 @@ subcollection: satellite
     * [4.13 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.13-parameters)
 
     * [4.14 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.14-parameters)
+
+    * [4.15 parameter reference](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#odf-remote-4.15-parameters)
 
 * [Storage class reference for OpenShift Data Foundation for remote devices](/docs/satellite?topic=satellite-storage-odf-remote&interface=cli#sat-storage-odf-remote-sc-ref)
 
@@ -3785,6 +3801,10 @@ subcollection: satellite
 
 * [Version 1.1](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1-change-log)
 
+    * [Version 1.1.3, released 06 May 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.3-change-log)
+
+    * [Version 1.1.2, released 02 Apr 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.2-change-log)
+
     * [Version 1.1.1, released 19 Feb 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.1-change-log)
 
     * [Version 1.1.0, released 30 Jan 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.0-change-log)
@@ -4196,6 +4216,10 @@ subcollection: satellite
 
 [`odf-local` change log](/docs/satellite?topic=satellite-cl-odf-local#cl-odf-local)
 
+* [Version 4.15](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-change-log)
+
+    * [Revision 1, released 09 May 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-1-change-log)
+
 * [Version 4.14](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-change-log)
 
     * [Revision 4, released 19 April 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-4-change-log)
@@ -4341,6 +4365,10 @@ subcollection: satellite
     * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.7-rev-19-change-log)
 
 [`odf-remote` change log](/docs/satellite?topic=satellite-cl-odf-remote#cl-odf-remote)
+
+* [Version 4.15](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-change-log)
+
+    * [Revision 1, released 09 May 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-1-change-log)
 
 * [Version 4.14](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-change-log)
 
@@ -4495,6 +4523,8 @@ subcollection: satellite
 [`vsphere-csi-driver` change log](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#cl-vsphere-csi-driver)
 
 * [Version 2.7.0](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.7.0-change-log)
+
+    * [Revision 3, released 9 May 2024](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.7.0-rev-3-change-log)
 
     * [Revision 2, released 18 October 2023](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.7.0-rev-2-change-log)
 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-05-09"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -21,6 +21,26 @@ content-type: release-note
 
 Review the latest changes to the {{site.data.keyword.satellitelong}} documentation.
 {: shortdesc}
+
+## May 2024
+{: #satellite-may24}
+
+### 9 May 2024
+{: #satellite-may924}
+{: release-note}
+
+{{site.data.keyword.satelliteshort}} storage template patch updates are available.
+:   You can update your {{site.data.keyword.satelliteshort}} storage configurations and assignments to the latest patch from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running the `ibmcloud sat storage config patch` command. For more information, see [Which storage templates are available?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers) and the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
+
+### 6 May 2024
+{: #satellite-may624}
+{: release-note}
+
+Connector agent for Windows version `1.1.3`.
+:   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-windows-agent) and [Updating the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally#update-agent-windows).
+
+Connector agent image version `1.1.5`.
+:   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image) and [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
 
 ## March 2024
 {: #satellite-mar24}
@@ -48,7 +68,7 @@ CLI version `1.0.597` is available.
 {: #satellite-feb1924}
 {: release-note}
 
-Connector agent for Windows version `1.1.1`.
+Connector agent for Windows version `1.1.3`.
 :   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-windows-agent) and [Updating the agent on Windows](/docs/satellite?topic=satellite-run-agent-locally#update-agent-windows).
 
 
