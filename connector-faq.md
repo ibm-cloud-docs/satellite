@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-26"
+lastupdated: "2024-05-10"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -55,6 +55,6 @@ As a best practice, run no more than 6 agents per Connector.
 ## Can I deploy {{site.data.keyword.satelliteshort}} Connectors within {{site.data.keyword.cloud_notm}}?
 {: #connector-ibm-cloud}
 
-Connectors are generally not recommended for use within {{site.data.keyword.cloud_notm}} except for specific use cases. Please contact your IBM account team if you believe you need this support for your solution.
+Connectors are generally not recommended for use within {{site.data.keyword.cloud_notm}} except for specific use cases. Contact your IBM account team if you believe you need this support for your solution.
 
 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-09"
+lastupdated: "2024-05-10"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -711,7 +711,7 @@ New! Check your host setup before attaching hosts to your location.
 {: release-note}
 
 {{site.data.keyword.IBM_notm}} Spectrum Scale template
-:   The {{site.data.keyword.IBM_notm}} Spectrum Scale driver is now deprecated. Please reach out to `scale@us.ibm.com` for further compatibility details and options.
+:   The {{site.data.keyword.IBM_notm}} Spectrum Scale driver is now deprecated. Reach out to `scale@us.ibm.com` for further compatibility details and options.
 
 ## March 2022
 {: #satellite-mar22}
