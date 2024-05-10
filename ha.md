@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-09"
+lastupdated: "2024-05-10"
 
 keywords: satellite, hybrid, multicloud
 
@@ -137,4 +137,14 @@ The following image shows a highly available setup for compute hosts that are in
 
 
 ![High-availability setup with compute hosts that are in a public cloud provider.](/images/sat_control_plane_to_cloud_ha.svg){: caption="Figure 4. High availability setup with compute hosts that are at a public cloud provider" caption-side="bottom"}
+
+
+    
+### Example high availability setup that uses OpenShift APIs for Data Protection
+{: #example-ha-oadp}
+
+In this example scenario, two {{site.data.keyword.satelliteshort}} locations, one primary and one failover, are using the OpenShift Data Foundation storage solution and leveraging the [OpenShift APIs for Data Protection](https://docs.openshift.com/container-platform/4.13/backup_and_restore/application_backup_and_restore/oadp-intro.html){: external} (OADP) to backup data to an {{site.data.keyword.cos_full_notm}} instance.
+
+![High availability setup with two locations that use OADP to back up data to Cloud Object Storage](/images/oadp-ha.svg){: caption="Figure 5. High availability setup with two locations that use OADP to back up data to Cloud Object Storage" caption-side="bottom"}
+
 

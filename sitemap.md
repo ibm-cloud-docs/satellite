@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-09"
+lastupdated: "2024-05-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3737,6 +3737,8 @@ subcollection: satellite
     * [Example high availability setup in an on-premises data center](/docs/satellite?topic=satellite-ha#example-ha-onprem)
 
     * [Example high availability setup in a public cloud provider](/docs/satellite?topic=satellite-ha#example-ha-cloudprovider)
+
+    * [Example high availability setup that uses OpenShift APIs for Data Protection](/docs/satellite?topic=satellite-ha#example-ha-oadp)
 
 
 ## Disconnected use for Satellite components

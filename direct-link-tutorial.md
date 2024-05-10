@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-05-10"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -163,7 +163,7 @@ VPC clusters considerations for this scenario:
 - Spread the default worker pool across zones to increase the availability of your classic or VPC cluster.
 - Ensure that at least 2 worker nodes exist in each zone, so that the private ALBs that you configure in subsequent steps are highly available and can properly receive version updates.
 
-In the following example, we create a private-only VPC cluster and use the private Ingress controller that is created by default. However, you can also use a {{site.data.keyword.redhat_openshift_notm}} cluster with a public cloud service endpoint enabled, but in this case your cluster is created with only a public Ingress controller by default. If you want to set up your relay by using a cluster with a public service endpoint, you must first enable the private Ingress controller and register it with a subdomain and certificate by following the steps in [Setting up Ingress](/docs/openshift?topic=openshift-ingress-roks4).
+In the following example, a private-only VPC cluster and private Ingress controller are created by default. However, you can also use a {{site.data.keyword.redhat_openshift_notm}} cluster with a public cloud service endpoint enabled, but in this case your cluster is created with only a public Ingress controller by default. If you want to set up your relay by using a cluster with a public service endpoint, you must first enable the private Ingress controller and register it with a subdomain and certificate by following the steps in [Setting up Ingress](/docs/openshift?topic=openshift-ingress-roks4).
 {: note}
 
 1. Create a private-only {{site.data.keyword.redhat_openshift_notm}} cluster on VPC. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui). 

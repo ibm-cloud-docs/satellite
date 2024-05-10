@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-05-10"
 
 keywords: satellite, connector
 
@@ -143,7 +143,7 @@ This section modifies the previous example to add support for TLS to Nginx.
 1. Create another Location type link endpoint as you did in the previous section that uses the following settings. 
     - Use a different name such as `MyNginx-ssl`.
     - For destination port specify `443`.
-    - Keep the **Source protocol** as `TCP` as we are expecting SSL termination to be done at the nginx server.
+    - Keep the **Source protocol** as `TCP` as SSL termination is done at the nginx server.
 
 1. Now if you select this endpoint, you see an Endpoint Address that refers to a CSE endpoint that is accessible from within the {{site.data.keyword.cloud_notm}} network. So if you run a VSI instance or use the VPC VPN, you can curl your Nginx endpoint. As  the target endpoint is using SSL, make sure to specify `https` in the curl command. Also, because a self-signed certificate is used, specify the `-k` option. For example:
     ```sh
