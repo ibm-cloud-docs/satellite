@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-30"
+lastupdated: "2024-05-13"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -37,7 +37,7 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
     ```
     {: screen}
 
-2. Find the details for your location, and review the **Message**. From the console, you can click the location and hover over the tooltip in the title with the location name and health.
+2. Find the details for your location, and review the **State**, **Ready for deployment** and **Message** sections. From the console, you can click the location and hover over the tooltip in the title with the location name and health.
     ```sh
     ibmcloud sat location get --location <location_name_or_ID>
     ```
@@ -58,7 +58,9 @@ By default, {{site.data.keyword.satellitelong_notm}} monitors the health of your
 
 3. Find more details about the error message and affected components by [setting up {{site.data.keyword.la_short}} to review {{site.data.keyword.satelliteshort}} location logs](/docs/satellite?topic=satellite-get-help#review-logs).
 
-4. Review the following common location messages for steps to resolve the issue.
+4. Review the location state and message for steps to resolve the issue. For a description of the location state, see [Cluster States](/docs/openshift?topic=openshift-cluster-states-reference) in the {{site.data.keyword.openshiftshort}} documentation. For a description of the location message, review the following sections. If your location state is `warning` or `critical` **and** the location is ready for deployments, [open a support ticket](/docs/satellite?topic=satellite-get-help#help-support). 
+
+
 
 ## R0001: Ready location
 {: #R0001}

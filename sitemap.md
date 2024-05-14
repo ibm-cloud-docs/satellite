@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-13"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3945,6 +3945,8 @@ subcollection: satellite
 [`ibm-vpc-block-csi-driver` change log](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#cl-ibm-vpc-block-csi-driver)
 
 * [Version 5.1](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-change-log)
+
+    * [Revision 5, released 14 May 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-5-change-log)
 
     * [Revision 4, released 7 March 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-4-change-log)
 

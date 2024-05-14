@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-03-08"
+lastupdated: "2024-05-13"
 
 
 keywords: satellite storage, change log, version history, ibm vpc block csi driver
@@ -23,6 +23,13 @@ Review the version history for the `ibm-vpc-block-csi-driver` {{site.data.keywor
 ## Version 5.1
 {: #ibm-vpc-block-csi-driver-5.1-change-log}
 
+
+### Revision 5, released 14 May 2024
+{: #ibm-vpc-block-csi-driver-5.1-rev-5-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/CVE-2023-28322){: external} [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/CVE-2023-38546){: external} [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/CVE-2023-46218){: external} [CVE-2024-24786](https://nvd.nist.gov/vuln/detail/CVE-2024-24786){: external} 
+- Updates Go to version `1.21.9`.
 
 ### Revision 4, released 7 March 2024
 {: #ibm-vpc-block-csi-driver-5.1-rev-4-change-log}
