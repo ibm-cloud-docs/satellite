@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-05-14"
 
 keywords: satellite, hybrid, multicloud, location, locations, control plane, sizing
 
@@ -121,6 +121,7 @@ For a non-RHCOS enabled location, your hosts must have at least 4 vCPU and 16 GB
 {: tab-title="RHCOS enabled location"}
 {: tab-group="loc-demo"}
 {: caption="Sizing guidance for demonstrations" caption-side="bottom"}
+
 
 
 ## FAQs about location sizing
