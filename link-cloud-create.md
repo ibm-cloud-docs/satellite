@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-30"
+lastupdated: "2024-05-22"
 
 keywords: satellite, hybrid, multicloud
 
@@ -39,6 +39,7 @@ Permissions
 
 ### Creating cloud endpoints by using the console
 {: #link-cloud-ui}
+{: ui}
 
 Use the console to create a cloud endpoint so that sources in your {{site.data.keyword.satelliteshort}} location can connect to a service, server, or app that runs outside of the location.
 {: shortdesc}
@@ -59,6 +60,7 @@ Use the console to create a cloud endpoint so that sources in your {{site.data.k
 
 ### Creating cloud endpoints with the CLI
 {: #link-cloud-cli}
+{: cli}
 
 Use the CLI to create an endpoint so that sources in your {{site.data.keyword.satelliteshort}} location can connect to a service, server, or app that runs outside of the location.
 {: shortdesc}
@@ -224,6 +226,7 @@ Permissions
 
 ### Creating location endpoints by using the console
 {: #link-location-ui}
+{: ui}
 
 Use the console to create an endpoint so that sources that are connected to the {{site.data.keyword.cloud_notm}} private network can connect to a service, server, or app in your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
@@ -248,6 +251,7 @@ Use the console to create an endpoint so that sources that are connected to the 
 
 ### Creating location endpoints by using the CLI
 {: #link-location-cli}
+{: cli}
 
 Use the CLI to create an endpoint so that sources that are connected to the {{site.data.keyword.cloud_notm}} private network can connect to a service, server, or app in your {{site.data.keyword.satelliteshort}} location.
 {: shortdesc}
