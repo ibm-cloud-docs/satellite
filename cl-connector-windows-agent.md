@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-05-09"
+lastupdated: "2024-05-23"
 
 
 keywords: satellite, connector, agent, windows, change log, version history
@@ -26,6 +26,12 @@ Only the most recent version of the Connector Windows agent is supported and has
 
 ## Version 1.1
 {: #connector-windows-agent-1.1-change-log}
+
+### Version 1.1.4, released 22 May 2024
+{: #connector-windows-agent-1.1.4-change-log}
+
+- Fixes security vulnerabilities.
+- sha512sum: b4df90789f2614a176aae4ff3c9a8f8012aa3dd58674eafdb78f08004fb3e7011f10cea9cfb7462782459cc0c9e9b53058ecd8460f694a3423649753e39af6cd
 
 ### Version 1.1.3, released 06 May 2024
 {: #connector-windows-agent-1.1.3-change-log}
