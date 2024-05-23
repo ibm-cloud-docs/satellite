@@ -25,8 +25,8 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 ## May 2024
 {: #satellite-may24}
 
-### 23 May 2024
-{: #satellite-may2324}
+### 22 May 2024
+{: #satellite-may2224}
 {: release-note}
 
 Connector agent for Windows version `1.1.4`.

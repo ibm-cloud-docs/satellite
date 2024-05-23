@@ -198,7 +198,7 @@ subcollection: satellite
 
 * [May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may24)
 
-    * [23 May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may2324)
+    * [22 May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may2224)
 
         * Connector agent for Windows version `1.1.4`.
 
