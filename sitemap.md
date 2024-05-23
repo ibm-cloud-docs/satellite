@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-13"
+lastupdated: "2024-05-23"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -197,6 +197,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may24)
+
+    * [22 May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may2224)
+
+        * Connector agent for Windows version `1.1.4`.
 
     * [9 May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may924)
 
@@ -1943,25 +1947,25 @@ subcollection: satellite
 
 * [Creating `cloud` endpoints to connect to resources outside of the location](/docs/satellite?topic=satellite-link-cloud-create#link-cloud)
 
-    * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-cloud-create#link-cloud-ui)
+    * [Creating cloud endpoints by using the console](/docs/satellite?topic=satellite-link-cloud-create&interface=ui#link-cloud-ui)
 
-    * [Creating cloud endpoints with the CLI](/docs/satellite?topic=satellite-link-cloud-create#link-cloud-cli)
+    * [Creating cloud endpoints with the CLI](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-cloud-cli)
 
-* [Testing connections through cloud endpoints](/docs/satellite?topic=satellite-link-cloud-create#link-cloud-test)
+* [Testing connections through cloud endpoints](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-cloud-test)
 
-    * [Example for testing the connection from an unassigned host](/docs/satellite?topic=satellite-link-cloud-create#link-example-unassigned-host)
+    * [Example for testing the connection from an unassigned host](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-example-unassigned-host)
 
-    * [Example for testing the connection from a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=satellite-link-cloud-create#link-example-connection-cluster)
+    * [Example for testing the connection from a {{site.data.keyword.satelliteshort}} cluster](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-example-connection-cluster)
 
-* [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-cloud-create#link-location)
+* [Creating `location` endpoints to connect to resources in a location](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-location)
 
-    * [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-cloud-create#link-location-ui)
+    * [Creating location endpoints by using the console](/docs/satellite?topic=satellite-link-cloud-create&interface=ui#link-location-ui)
 
-    * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-cloud-create#link-location-cli)
+    * [Creating location endpoints by using the CLI](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-location-cli)
 
-    * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-cloud-create#link-sources)
+    * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-sources)
 
-* [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-cloud-create#enable_disable_endpoint)
+* [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#enable_disable_endpoint)
 
 [Accessing your {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoints](/docs/satellite?topic=satellite-link-endpoint-secure#link-endpoint-secure)
 
@@ -3802,6 +3806,8 @@ subcollection: satellite
 [Connector Windows agent change log](/docs/satellite?topic=satellite-cl-connector-windows-agent#cl-connector-windows-agent)
 
 * [Version 1.1](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1-change-log)
+
+    * [Version 1.1.4, released 22 May 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.4-change-log)
 
     * [Version 1.1.3, released 06 May 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.3-change-log)
 

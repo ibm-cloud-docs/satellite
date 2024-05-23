@@ -360,13 +360,16 @@ ibmcloud sat config version rm --config CONFIG --version VERSION [-f] [-q]
 Create an endpoint.
 
 ```txt
-ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-type TYPE --location LOCATION --name NAME --source-protocol PROTOCOL [--dest-protocol PROTOCOL] [--output OUTPUT] [-q] [--sni SNI]
+ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-type TYPE --name NAME --source-protocol PROTOCOL [--dest-protocol PROTOCOL] [--output OUTPUT] [-q] [--sni SNI] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
 {: #endpoint-create-usage}
 
 ### Command options
 {: #endpoint-create-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
 
 `--dest-hostname HOSTNAME`
 :    Indicate the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to. For `cloud` endpoints, this value must resolve to a public IP address or to a private IP address that is accessible within IBM Cloud such as a private cloud service endpoint. For `location` endpoints, this value must resolve from and be reachable from the control plane hosts for Satellite locations or where the agent runs for Satellite Connector.
@@ -406,13 +409,16 @@ ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-ty
 View the details of an endpoint.
 
 ```txt
-ibmcloud sat endpoint get --endpoint ENDPOINT --location LOCATION [--output OUTPUT] [-q]
+ibmcloud sat endpoint get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
 {: #endpoint-get-usage}
 
 ### Command options
 {: #endpoint-get-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
 
 `--endpoint ENDPOINT`
 :    Specify the name or ID of the endpoint. To find a list of all endpoints, run `ibmcloud sat endpoint ls`.
@@ -434,13 +440,16 @@ ibmcloud sat endpoint get --endpoint ENDPOINT --location LOCATION [--output OUTP
 List all endpoints in a Satellite location.
 
 ```txt
-ibmcloud sat endpoint ls --location LOCATION [--output OUTPUT] [-q]
+ibmcloud sat endpoint ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
 {: #endpoint-ls-usage}
 
 ### Command options
 {: #endpoint-ls-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -459,13 +468,16 @@ ibmcloud sat endpoint ls --location LOCATION [--output OUTPUT] [-q]
 Delete an endpoint.
 
 ```txt
-ibmcloud sat endpoint rm --endpoint ENDPOINT --location LOCATION [-q]
+ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
 {: #endpoint-rm-usage}
 
 ### Command options
 {: #endpoint-rm-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
 
 `--endpoint ENDPOINT`
 :    Specify the name or ID of the endpoint. To find a list of all endpoints, run `ibmcloud sat endpoint ls`.
@@ -484,13 +496,16 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT --location LOCATION [-q]
 Update an endpoint. Only the options that you specify are updated.
 
 ```txt
-ibmcloud sat endpoint update --endpoint ENDPOINT --location LOCATION [--dest-hostname HOSTNAME] [--dest-port PORT] [--dest-protocol PROTOCOL] [--dest-type TYPE] [--name NAME] [-q] [--sni SNI] [--source-protocol PROTOCOL]
+ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--dest-port PORT] [--dest-protocol PROTOCOL] [--dest-type TYPE] [--name NAME] [-q] [--sni SNI] [--source-protocol PROTOCOL] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
 {: #endpoint-update-usage}
 
 ### Command options
 {: #endpoint-update-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
 
 `--dest-hostname HOSTNAME`
 :    Indicate the fully qualified domain name (FQDN) or the externally accessible IP address of the destination that you want to connect to. For `cloud` endpoints, this value must resolve to a public IP address or to a private IP address that is accessible within IBM Cloud such as a private cloud service endpoint. For `location` endpoints, this value must resolve from and be reachable from the control plane hosts for Satellite locations or where the agent runs for Satellite Connector.
