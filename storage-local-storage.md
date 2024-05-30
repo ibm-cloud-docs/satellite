@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-05-30"
 
 keywords: satellite storage, local file storage, satellite config, satellite configurations,
 
@@ -251,6 +251,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
 {{site.data.content.assignment-autopatch-cli}}
+{{site.data.content.configuration-upgrade-manual-cli}}
 {{site.data.content.assignment-upgrade-api}}
 {{site.data.content.assignment-autopatch-api}}
 
@@ -398,9 +399,6 @@ You can map your PVCs to specific persistent volumes by adding labels to your pe
     oc delete pod <pod_name>
     ```
     {: pre}
-
-{{site.data.content.configuration-upgrade-manual-cli}}
-{{site.data.content.configuration-upgrade-console}}
 
 
 {{site.data.content.configuration-remove-console}}

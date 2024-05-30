@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-30"
+lastupdated: "2024-05-30"
 
 keywords: satellite storage, netapp, trident, ontap, satellite config, satellite configurations,
 
@@ -162,6 +162,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
 {{site.data.content.assignment-autopatch-cli}}
+{{site.data.content.configuration-upgrade-manual-cli}}
 {{site.data.content.assignment-upgrade-api}}
 {{site.data.content.assignment-autopatch-api}}
 
@@ -221,9 +222,6 @@ Use the CLI to remove a storage assignment and storage configuration.
     ibmcloud sat storage config rm --config <config_name>
     ```
     {: pre}
-
-{{site.data.content.configuration-upgrade-manual-cli}}
-{{site.data.content.configuration-upgrade-console}}
 
 ## Getting help and support for NetApp Trident
 {: #sat-trident-support}
