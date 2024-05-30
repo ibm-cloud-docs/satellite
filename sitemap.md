@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-24"
+lastupdated: "2024-05-30"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -2098,19 +2098,17 @@ subcollection: satellite
 
 * [Enabling automatic patch updates for configurations and assignments in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#storage-aws-ebs-csi-driver-include-assignment-autopatch-cli)
 
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#storage-aws-ebs-csi-driver-include-configuration-upgrade-manual-cli)
+
 * [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=api#storage-aws-ebs-csi-driver-include-assignment-upgrade-api)
 
 * [Enabling automatic patch updates for assignments in the API](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=api#storage-aws-ebs-csi-driver-include-assignment-autopatch-api)
 
 * [Deploying an app that uses AWS EBS storage](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=api#sat-storage-ebs-deploy)
 
-* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=cli#storage-aws-ebs-csi-driver-include-configuration-upgrade-manual-cli)
+* [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=api#aws-ebs-rm)
 
-* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#storage-aws-ebs-csi-driver-include-configuration-upgrade-console)
-
-* [Removing AWS EBS storage from your apps](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#aws-ebs-rm)
-
-* [Removing the AWS EBS storage configuration from your cluster](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#aws-ebs-template-rm)
+* [Removing the AWS EBS storage configuration from your cluster](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=api#aws-ebs-template-rm)
 
 * [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver&interface=ui#storage-aws-ebs-csi-driver-include-configuration-remove-console)
 
@@ -2205,19 +2203,17 @@ subcollection: satellite
 
 * [Enabling automatic patch updates for configurations and assignments in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#storage-azuredisk-csi-driver-include-assignment-autopatch-cli)
 
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#storage-azuredisk-csi-driver-include-configuration-upgrade-manual-cli)
+
 * [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=api#storage-azuredisk-csi-driver-include-assignment-upgrade-api)
 
 * [Enabling automatic patch updates for assignments in the API](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=api#storage-azuredisk-csi-driver-include-assignment-autopatch-api)
 
 * [Deploying an app that uses your Azure Disk storage](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=api#storage-azure-csi-app-deploy)
 
-* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=cli#storage-azuredisk-csi-driver-include-configuration-upgrade-manual-cli)
+* [Removing Azure Disk storage from your apps](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=api#azure-disk-rm)
 
-* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#storage-azuredisk-csi-driver-include-configuration-upgrade-console)
-
-* [Removing Azure Disk storage from your apps](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#azure-disk-rm)
-
-* [Removing the Azure Disk storage configuration from your cluster](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#azure-disk-template-rm)
+* [Removing the Azure Disk storage configuration from your cluster](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=api#azure-disk-template-rm)
 
     * [Removing the Azure Disk storage configuration from the console](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver&interface=ui#azure-disk-template-rm-ui)
 
@@ -2494,6 +2490,8 @@ subcollection: satellite
 
 * [Enabling automatic patch updates for configurations and assignments in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident&interface=cli#storage-netapp-trident-include-assignment-autopatch-cli)
 
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident&interface=cli#storage-netapp-trident-include-configuration-upgrade-manual-cli)
+
 * [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-netapp-trident&interface=api#storage-netapp-trident-include-assignment-upgrade-api)
 
 * [Enabling automatic patch updates for assignments in the API](/docs/satellite?topic=satellite-storage-netapp-trident&interface=api#storage-netapp-trident-include-assignment-autopatch-api)
@@ -2502,11 +2500,7 @@ subcollection: satellite
 
     * [Removing the NetApp Trident storage assignment and configuration from the CLI](/docs/satellite?topic=satellite-storage-netapp-trident&interface=cli#netapp-trident-template-rm-cli)
 
-* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-netapp-trident&interface=cli#storage-netapp-trident-include-configuration-upgrade-manual-cli)
-
-* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-netapp-trident&interface=ui#storage-netapp-trident-include-configuration-upgrade-console)
-
-* [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-trident&interface=ui#sat-trident-support)
+* [Getting help and support for NetApp Trident](/docs/satellite?topic=satellite-storage-netapp-trident&interface=cli#sat-trident-support)
 
 [NetApp ONTAP-NAS](/docs/satellite?topic=satellite-storage-netapp-ontap-nas#storage-netapp-ontap-nas)
 
@@ -2647,15 +2641,13 @@ subcollection: satellite
 
 * [Enabling automatic patch updates for configurations and assignments in the CLI](/docs/satellite?topic=satellite-storage-local-storage&interface=cli#storage-local-storage-include-assignment-autopatch-cli)
 
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-storage&interface=cli#storage-local-storage-include-configuration-upgrade-manual-cli)
+
 * [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-local-storage&interface=api#storage-local-storage-include-assignment-upgrade-api)
 
 * [Enabling automatic patch updates for assignments in the API](/docs/satellite?topic=satellite-storage-local-storage&interface=api#storage-local-storage-include-assignment-autopatch-api)
 
 * [Deploying an app that uses local storage](/docs/satellite?topic=satellite-storage-local-storage&interface=api#deploy-app-local)
-
-* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-storage&interface=cli#storage-local-storage-include-configuration-upgrade-manual-cli)
-
-* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-local-storage&interface=ui#storage-local-storage-include-configuration-upgrade-console)
 
 * [Removing a storage configuration from the console](/docs/satellite?topic=satellite-storage-local-storage&interface=ui#storage-local-storage-include-configuration-remove-console)
 
@@ -2745,17 +2737,15 @@ subcollection: satellite
 
 * [Enabling automatic patch updates for configurations and assignments in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file&interface=cli#storage-local-volume-file-include-assignment-autopatch-cli)
 
+* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file&interface=cli#storage-local-volume-file-include-configuration-upgrade-manual-cli)
+
 * [Upgrading a configuration and assignments in the API](/docs/satellite?topic=satellite-storage-local-volume-file&interface=api#storage-local-volume-file-include-assignment-upgrade-api)
 
 * [Enabling automatic patch updates for assignments in the API](/docs/satellite?topic=satellite-storage-local-volume-file&interface=api#storage-local-volume-file-include-assignment-autopatch-api)
 
 * [Deploying an app that uses your local file storage](/docs/satellite?topic=satellite-storage-local-volume-file&interface=api#deploy-app-local-file)
 
-* [Manually upgrading configurations in the CLI](/docs/satellite?topic=satellite-storage-local-volume-file&interface=cli#storage-local-volume-file-include-configuration-upgrade-manual-cli)
-
-* [Updating storage assignments in the console](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#storage-local-volume-file-include-configuration-upgrade-console)
-
-* [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#sat-storage-remove-local-file-config)
+* [Removing the local file storage configuration from your cluster](/docs/satellite?topic=satellite-storage-local-volume-file&interface=api#sat-storage-remove-local-file-config)
 
     * [Remove the local file storage configuration from the console](/docs/satellite?topic=satellite-storage-local-volume-file&interface=ui#sat-storage-rm-local-file-ui)
 

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-05-30"
 
 keywords: azure storage, satellite storage, satellite config, satellite configurations, azure disk csi, azure disk
 
@@ -230,6 +230,7 @@ If you manually assigned your Azure hosts to your Location and did not use the S
 {{site.data.content.configuration-upgrade-console}}
 {{site.data.content.assignment-upgrade-cli}}
 {{site.data.content.assignment-autopatch-cli}}
+{{site.data.content.configuration-upgrade-manual-cli}}
 {{site.data.content.assignment-upgrade-api}}
 {{site.data.content.assignment-autopatch-api}}
 
@@ -373,8 +374,6 @@ You can use the Azure Disk driver to create PVCs that you can use in your cluste
     ```
     {: pre}
 
-{{site.data.content.configuration-upgrade-manual-cli}}
-{{site.data.content.configuration-upgrade-console}}
 
 ## Removing Azure Disk storage from your apps
 {: #azure-disk-rm}
