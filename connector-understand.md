@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-22"
+lastupdated: "2024-06-06"
 
 keywords: satellite, connector, agent
 
@@ -78,6 +78,11 @@ London
 :    * Destination IP addresses: 158.175.130.138, 141.125.87.226, 158.176.74.242
      * Destination hostnames: `c-01-ws.eu-gb.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
      * Protocol and ports: HTTPS 443
+
+Madrid
+:   * Destination IP addresses: `13.120.67.106`, `13.121.67.82`, `13.122.67.186`
+    * Destination hostnames: `c-01-ws.eu-es.link.satellite.cloud.ibm.com`, `api.link.satellite.cloud.ibm.com`
+    * Protocol and ports: HTTPS 443
      
 Osaka
 :    * Destination IP addresses: 163.68.78.234, 163.69.70.106, 163.73.70.50
