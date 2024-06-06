@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-05-09"
+lastupdated: "2024-06-06"
 
 
 keywords: satellite storage, change log, version history, odf local
@@ -24,6 +24,13 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 {: #odf-local-4.15-change-log}
 
 
+### Revision 2, released 05 June 2024
+{: #odf-local-4.15-rev-2-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external} [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external} [CVE-2023-7008](https://nvd.nist.gov/vuln/detail/CVE-2023-7008){: external} [CVE-2023-6004](https://nvd.nist.gov/vuln/detail/CVE-2023-6004){: external} [CVE-2024-26458](https://nvd.nist.gov/vuln/detail/CVE-2024-26458){: external} [CVE-2024-26461](https://nvd.nist.gov/vuln/detail/CVE-2024-26461){: external} [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external} [CVE-2023-6918](https://nvd.nist.gov/vuln/detail/CVE-2023-6918){: external} [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external} [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external} 
+- Updates Go to version `1.21.10`.
+
 ### Revision 1, released 09 May 2024
 {: #odf-local-4.15-rev-1-change-log}
 
@@ -35,6 +42,13 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.14
 {: #odf-local-4.14-change-log}
 
+
+### Revision 5, released 05 June 2024
+{: #odf-local-4.14-rev-5-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external} [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external} [CVE-2023-7008](https://nvd.nist.gov/vuln/detail/CVE-2023-7008){: external} [CVE-2023-6004](https://nvd.nist.gov/vuln/detail/CVE-2023-6004){: external} [CVE-2024-26458](https://nvd.nist.gov/vuln/detail/CVE-2024-26458){: external} [CVE-2024-26461](https://nvd.nist.gov/vuln/detail/CVE-2024-26461){: external} [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external} [CVE-2023-6918](https://nvd.nist.gov/vuln/detail/CVE-2023-6918){: external} [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external} [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external} 
+- Updates Go to version `1.21.10`.
 
 ### Revision 4, released 19 April 2024
 {: #odf-local-4.14-rev-4-change-log}
@@ -74,6 +88,13 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.13
 {: #odf-local-4.13-change-log}
 
+
+### Revision 10, released 05 June 2024
+{: #odf-local-4.13-rev-10-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external} [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external} [CVE-2023-7008](https://nvd.nist.gov/vuln/detail/CVE-2023-7008){: external} [CVE-2023-6004](https://nvd.nist.gov/vuln/detail/CVE-2023-6004){: external} [CVE-2024-26458](https://nvd.nist.gov/vuln/detail/CVE-2024-26458){: external} [CVE-2024-26461](https://nvd.nist.gov/vuln/detail/CVE-2024-26461){: external} [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external} [CVE-2023-6918](https://nvd.nist.gov/vuln/detail/CVE-2023-6918){: external} [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external} [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external} 
+- Updates Go to version `1.21.10`.
 
 ### Revision 9, released 19 April 2024
 {: #odf-local-4.13-rev-9-change-log}
@@ -154,6 +175,13 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.12
 {: #odf-local-4.12-change-log}
 
+
+### Revision 13, released 05 June 2024
+{: #odf-local-4.12-rev-13-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external} [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external} [CVE-2024-26458](https://nvd.nist.gov/vuln/detail/CVE-2024-26458){: external} [CVE-2023-7008](https://nvd.nist.gov/vuln/detail/CVE-2023-7008){: external} [CVE-2023-6004](https://nvd.nist.gov/vuln/detail/CVE-2023-6004){: external} [CVE-2023-6918](https://nvd.nist.gov/vuln/detail/CVE-2023-6918){: external} [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external} [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external} [CVE-2024-26461](https://nvd.nist.gov/vuln/detail/CVE-2024-26461){: external} [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external} 
+- Updates Go to version `1.21.10`.
 
 ### Revision 12, released 19 April 2024
 {: #odf-local-4.12-rev-12-change-log}

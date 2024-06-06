@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-04-30"
+lastupdated: "2024-06-06"
 
 
 keywords: satellite storage, change log, version history, netapp ontap san
@@ -24,6 +24,12 @@ Review the version history for the `netapp-ontap-san` {{site.data.keyword.satell
 {: #netapp-ontap-san-24.02-change-log}
 
 
+### Revision 2, released 05 June 2024
+{: #netapp-ontap-san-24.02-rev-2-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external} 
+
 ### Revision 1, released 29 April 2024
 {: #netapp-ontap-san-24.02-rev-1-change-log}
 
@@ -34,6 +40,12 @@ Review the version history for the `netapp-ontap-san` {{site.data.keyword.satell
 ## Version 22.10
 {: #netapp-ontap-san-22.10-change-log}
 
+
+### Revision 13, released 05 June 2024
+{: #netapp-ontap-san-22.10-rev-13-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external} 
 
 ### Revision 12, released 25 January 2024
 {: #netapp-ontap-san-22.10-rev-12-change-log}
@@ -127,6 +139,12 @@ Review the version history for the `netapp-ontap-san` {{site.data.keyword.satell
 ## Version 22.04
 {: #netapp-ontap-san-22.04-change-log}
 
+
+### Revision 26, released 05 June 2024
+{: #netapp-ontap-san-22.04-rev-26-change-log}
+
+
+- Resolves the following CVEs: [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external} 
 
 ### Revision 25, released 25 January 2024
 {: #netapp-ontap-san-22.04-rev-25-change-log}

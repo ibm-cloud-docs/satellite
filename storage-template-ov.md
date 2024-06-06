@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-13"
+lastupdated: "2024-06-06"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -119,9 +119,10 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 
 | Template name | Template CLI name | Version, Patch | Supported status | Change log |
 | --- | --- | --- | --- | --- |
-| [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.1.0, Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver) 
-| [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.5.1, Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver) 
-| [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.12.0 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver) 
+| [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.1.0, Patch: 5 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver) 
+| [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.5.1, Patch: 5 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver) 
+| [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.12.0 (Default), Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver) 
+| [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.31.0, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver) 
 | [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 1.3.1, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
 | [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 1.3.7, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
 | [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 1.4.2 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
@@ -134,7 +135,7 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | Version: 1.0.4, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver) 
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | Version: 1.7.1, Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver) 
 | [GCP Compute Persistent Disk CSI Driver](/docs/satellite?topic=satellite-storage-gcp-compute-persistent-disk-csi-driver) | `gcp-compute-persistent-disk-csi-driver` | Version: 1.8.0 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver) 
-| [IBM Object Storage Plugin](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin) | `ibm-object-storage-plugin` | Version: 2.2 (Default), Patch: 20 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin) 
+| [IBM Object Storage Plugin](/docs/satellite?topic=satellite-storage-ibm-object-storage-plugin) | `ibm-object-storage-plugin` | Version: 2.2 (Default), Patch: 21 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin) 
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.10.0, Patch: 1 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver) 
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.11.1 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver) 
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.11.2, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver) 
@@ -151,23 +152,23 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [Local Storage Operator - File](/docs/satellite?topic=satellite-storage-local-volume-file) | `local-volume-file` | Version: 4.11, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-local-volume-file) 
 | [Local Storage Operator - File](/docs/satellite?topic=satellite-storage-local-volume-file) | `local-volume-file` | Version: 4.12, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-local-volume-file) 
 | [Local Storage Operator - File](/docs/satellite?topic=satellite-storage-local-volume-file) | `local-volume-file` | Version: 4.13 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-local-volume-file) 
-| [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 22.04, Patch: 25 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-nas) 
-| [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 22.10, Patch: 12 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-nas) 
-| [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 24.02 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-nas) 
-| [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 22.04, Patch: 25 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-san) 
-| [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 22.10, Patch: 12 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-san) 
-| [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 24.02 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-san) 
+| [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 22.04, Patch: 26 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-nas) 
+| [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 22.10, Patch: 13 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-nas) 
+| [NetApp Ontap-NAS Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-nas) | `netapp-ontap-nas` | Version: 24.02 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-nas) 
+| [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 22.04, Patch: 26 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-san) 
+| [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 22.10, Patch: 13 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-san) 
+| [NetApp Ontap-SAN Driver](/docs/satellite?topic=satellite-storage-netapp-ontap-san) | `netapp-ontap-san` | Version: 24.02 (Default), Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-ontap-san) 
 | [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 22.04, Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-trident) 
 | [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 22.10, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-trident) 
 | [NetApp Trident Operator](/docs/satellite?topic=satellite-storage-netapp-trident) | `netapp-trident` | Version: 24.02 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-netapp-trident) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.12, Patch: 12 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.13 (Default), Patch: 9 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.14, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-local) 
-| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.15, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-local) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.12, Patch: 12 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.13 (Default), Patch: 9 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.14, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-remote) 
-| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.15, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-remote) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.12, Patch: 13 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.13, Patch: 10 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.14 (Default), Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-local) 
+| [OpenShift Data Foundation for local devices](/docs/satellite?topic=satellite-storage-odf-local) | `odf-local` | Version: 4.15, Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-local) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.12, Patch: 13 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.13, Patch: 10 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.14 (Default), Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-remote) 
+| [OpenShift Data Foundation for remote storage](/docs/satellite?topic=satellite-storage-odf-remote) | `odf-remote` | Version: 4.15, Patch: 2 | Supported | [Change log](/docs/satellite?topic=satellite-cl-odf-remote) 
 | [VMware CSI Driver](/docs/satellite?topic=satellite-storage-vsphere-csi-driver) | `vsphere-csi-driver` | Version: 2.5.1, Patch: 6 | Supported | [Change log](/docs/satellite?topic=satellite-cl-vsphere-csi-driver) 
 | [VMware CSI Driver](/docs/satellite?topic=satellite-storage-vsphere-csi-driver) | `vsphere-csi-driver` | Version: 2.7.0 (Default), Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-vsphere-csi-driver) 
 {: caption="Storage template versions" caption-side="bottom"}

@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-04-30"
+lastupdated: "2024-06-06"
 
 
 keywords: satellite storage, change log, version history, ibm object storage plugin
@@ -23,6 +23,14 @@ Review the version history for the `ibm-object-storage-plugin` {{site.data.keywo
 ## Version 2.2
 {: #ibm-object-storage-plugin-2.2-change-log}
 
+
+### Revision 21, released 05 June 2024
+{: #ibm-object-storage-plugin-2.2-rev-21-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-7008](https://nvd.nist.gov/vuln/detail/CVE-2023-7008){: external} [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external} [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external} [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external} [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external} [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external} 
+- Updates Go to version `1.21.10`.
+- HPCS support for cos s3fs plugin 
 
 ### Revision 20, released 29 April 2024
 {: #ibm-object-storage-plugin-2.2-rev-20-change-log}
