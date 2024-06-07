@@ -330,7 +330,7 @@
   </g>
   <g id="Text">
     <text class="cls-18" transform="translate(844.23 130.84)"><tspan x="0" y="0">Location</tspan></text>
-    <text class="cls-18" transform="translate(195.79 129.14)"><tspan x="0" y="0">IBM Cloud region us-east</tspan></text>
+    <text class="cls-18" transform="translate(231.9 129.14)"><tspan x="0" y="0">IBM Cloud region</tspan></text>
     <text class="cls-18" transform="translate(826.22 39.14)"><tspan x="0" y="0">Customer managed</tspan></text>
     <text class="cls-18" transform="translate(250.33 39.14)"><tspan x="0" y="0">IBM managed</tspan></text>
     <text class="cls-19" transform="translate(801.65 197.58)"><tspan x="0" y="0">Satellite control plane </tspan><tspan x="31.85" y="20.4">worker nodes</tspan></text>
