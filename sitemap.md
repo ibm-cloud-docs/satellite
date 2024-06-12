@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-12"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1796,6 +1796,10 @@ subcollection: satellite
 [Configuring a proxy for your {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-config-connector-proxy#config-connector-proxy)
 
 [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints#connector-create-endpoints)
+
+* [Creating endpoints from the CLI](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-endpoint-cli)
+
+    * [Example commands for creating endpoints](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-endpoints-comm)
 
 * [Creating endpoints from the console](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-endpoint-console)
 
