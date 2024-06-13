@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-06-13"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3185,6 +3185,8 @@ subcollection: satellite
 
 * [endpoint commands](/docs/satellite?topic=satellite-icsat_map#icks_map_endpoint)
 
+* [experimental commands](/docs/satellite?topic=satellite-icsat_map#icks_map_experimental)
+
 * [group commands](/docs/satellite?topic=satellite-icsat_map#icks_map_group)
 
 * [host commands](/docs/satellite?topic=satellite-icsat_map#icks_map_host)
@@ -3274,6 +3276,34 @@ subcollection: satellite
 * [`ibmcloud sat endpoint update`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-options)
+
+* [`ibmcloud sat experimental connector agent`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-agent-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-agent-options)
+
+* [`ibmcloud sat experimental connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-options)
+
+* [`ibmcloud sat experimental connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-options)
+
+* [`ibmcloud sat experimental connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-options)
+
+* [`ibmcloud sat experimental connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-rm-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-rm-options)
+
+* [`ibmcloud sat experimental endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-options)
+
+* [`ibmcloud sat experimental endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-options)
 
 * [`ibmcloud sat group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#group-attach-cli)
 
