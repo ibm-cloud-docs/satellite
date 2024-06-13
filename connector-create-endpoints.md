@@ -68,7 +68,7 @@ After deploying a [Connector agent](/docs/satellite?topic=satellite-run-agent-lo
 ### Example commands for creating endpoints
 {: #create-connector-endpoints-comm}
 
-Example command to create an endpoint using HTTPS source and destination protocols and specifying an SNI. (ASK GERALD do you need hostname AND SNI?)
+Example command to create an endpoint using HTTPS source and destination protocols and specifying an SNI.gera
 
 ```sh
 ibmcloud sat endpoint create --dest-hostname server1.mydomain.com --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI --dest-type location --dest-port 443  --name myendpoint --source-protocol HTTPS --dest-protocol HTTPS --sni SNI mydomain.com
