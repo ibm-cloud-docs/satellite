@@ -3835,6 +3835,8 @@ subcollection: satellite
 
 * [Version 1.1](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1-change-log)
 
+    * [Version 1.1.5, released 12 Jun 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.5-change-log)
+
     * [Version 1.1.4, released 22 May 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.4-change-log)
 
     * [Version 1.1.3, released 06 May 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.3-change-log)
