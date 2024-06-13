@@ -1803,10 +1803,6 @@ subcollection: satellite
 
 [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints#connector-create-endpoints)
 
-* [Creating endpoints from the CLI](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-endpoint-cli)
-
-    * [Example commands for creating endpoints](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-endpoints-comm)
-
 * [Creating endpoints from the console](/docs/satellite?topic=satellite-connector-create-endpoints&interface=ui#create-connector-endpoint-console)
 
 * [Creating an access control list rule for your endpoint](/docs/satellite?topic=satellite-connector-create-endpoints&interface=ui#create-connector-rule-console)
