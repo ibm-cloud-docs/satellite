@@ -196,6 +196,12 @@ subcollection: satellite
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
+* [June 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june24)
+
+    * [12 June 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1224)
+
+        * Connector agent for Windows version `1.1.5`.
+
 * [May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may24)
 
     * [22 May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may2224)
@@ -1797,13 +1803,13 @@ subcollection: satellite
 
 [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints#connector-create-endpoints)
 
-* [Creating endpoints from the CLI](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-endpoint-cli)
+* [Creating endpoints from the CLI](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-endpoint-cli)
 
-    * [Example commands for creating endpoints](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-endpoints-comm)
+    * [Example commands for creating endpoints](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-endpoints-comm)
 
-* [Creating endpoints from the console](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-endpoint-console)
+* [Creating endpoints from the console](/docs/satellite?topic=satellite-connector-create-endpoints&interface=ui#create-connector-endpoint-console)
 
-* [Creating an access control list rule for your endpoint](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-rule-console)
+* [Creating an access control list rule for your endpoint](/docs/satellite?topic=satellite-connector-create-endpoints&interface=ui#create-connector-rule-console)
 
 
 ## Managing apps with Satellite Config
