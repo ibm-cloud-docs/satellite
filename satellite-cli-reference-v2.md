@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-06-13"
+lastupdated: "2024-06-14"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -670,7 +670,7 @@ ibmcloud sat experimental connector rm --connector-id ID [-f] [-q]
 ## `ibmcloud sat experimental endpoint authn rotate`
 {: #experimental-endpoint-authn-rotate-cli}
 
-[2024-09-01] Replace existing authentication certificates with new ones. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Only the certificates that you specify are replaced.
+[2024-09-01] Replace existing authentication certificates with new ones. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `dest` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Only the certificates that you specify are replaced.
 
 ```txt
 ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] (--connector-id ID | --location LOCATION)
@@ -716,7 +716,7 @@ ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-c
 ## `ibmcloud sat experimental endpoint authn set`
 {: #experimental-endpoint-authn-set-cli}
 
-[2024-09-01] Set authentication settings for an endpoint. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `destination` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unsepecified settings are set to their default values.
+[2024-09-01] Set authentication settings for an endpoint. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `dest` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unsepecified settings are set to their default values.
 
 ```txt
 ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [--dest-tls-mode MODE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] [--source-tls-mode MODE] (--connector-id ID | --location LOCATION)
