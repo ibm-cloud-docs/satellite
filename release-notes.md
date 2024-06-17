@@ -33,7 +33,7 @@ Connector agent image version `1.1.5`.
 :   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image) and [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
 
 CLI version `1.0.628` is available.
-:   For more information, see [Updating the CLI](/docs/{[subcollection]}?topic={[subcollection]}-cli-update) and the [CLI change log](/docs/{[subcollection]}?topic={[subcollection]}-cs_cli_changelog).
+:   For more information, see [Updating the CLI](/docs/satellite?topic=satellite-cli-update) and the [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog).
 
 
 
