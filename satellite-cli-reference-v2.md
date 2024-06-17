@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-06-11"
+lastupdated: "2024-06-14"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -543,6 +543,226 @@ ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--d
 `--source-protocol PROTOCOL`
 :    Provide the protocol that the source uses to connect the destination resource. See [http://ibm.biz/endpoint-protocols](http://ibm.biz/endpoint-protocols). Accepted values: `TCP`, `TLS`, `HTTP`, `HTTPS`, `HTTP-tunnel`
 {: #endpoint-update-options-dl}
+
+
+## `ibmcloud sat experimental connector agent`
+{: #experimental-connector-agent-cli}
+
+[2024-09-01] Get a Satellite Connector agent for a specific platform.
+
+```txt
+ibmcloud sat experimental connector agent --platform PLATFORM [-q]
+```
+{: pre}
+{: #experimental-connector-agent-usage}
+
+### Command options
+{: #experimental-connector-agent-options}
+
+`--platform PLATFORM`
+:    The platform for the Satellite connector agent. For more information about Docker, see documentation at https://ibm.biz/satconagent Available options: windows, docker
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-connector-agent-options-dl}
+
+
+## `ibmcloud sat experimental connector create`
+{: #experimental-connector-create-cli}
+
+[2024-09-01] Create a Satellite connector.
+
+```txt
+ibmcloud sat experimental connector create --name NAME --region REGION [-q]
+```
+{: pre}
+{: #experimental-connector-create-usage}
+
+### Command options
+{: #experimental-connector-create-options}
+
+`--name NAME`
+:    The name for the Satellite connector.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--region REGION`
+:    The IBM Cloud region to manage your Satellite connector.
+{: #experimental-connector-create-options-dl}
+
+
+## `ibmcloud sat experimental connector get`
+{: #experimental-connector-get-cli}
+
+[2024-09-01] View the details of a Satellite Connector.
+
+```txt
+ibmcloud sat experimental connector get --connector-id ID [--output OUTPUT] [-q]
+```
+{: pre}
+{: #experimental-connector-get-usage}
+
+### Command options
+{: #experimental-connector-get-options}
+
+`--connector-id ID`
+:    The ID of a Satellite connector.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-connector-get-options-dl}
+
+
+## `ibmcloud sat experimental connector ls`
+{: #experimental-connector-ls-cli}
+
+[2024-09-01] List all Satellite connectors in your IBM Cloud account.
+
+```txt
+ibmcloud sat experimental connector ls [--output OUTPUT] [-q] [--region REGION]
+```
+{: pre}
+{: #experimental-connector-ls-usage}
+
+### Command options
+{: #experimental-connector-ls-options}
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--region REGION`
+:    List only Satellite connectors in the specified IBM Cloud region.
+{: #experimental-connector-ls-options-dl}
+
+
+## `ibmcloud sat experimental connector rm`
+{: #experimental-connector-rm-cli}
+
+[2024-09-01] Delete a Satellite connector.
+
+```txt
+ibmcloud sat experimental connector rm --connector-id ID [-f] [-q]
+```
+{: pre}
+{: #experimental-connector-rm-usage}
+
+### Command options
+{: #experimental-connector-rm-options}
+
+`--connector-id ID`
+:    The ID of Satellite connector.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-connector-rm-options-dl}
+
+
+## `ibmcloud sat experimental endpoint authn rotate`
+{: #experimental-endpoint-authn-rotate-cli}
+
+[2024-09-01] Replace existing authentication certificates with new ones. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `dest` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Only the certificates that you specify are replaced.
+
+```txt
+ibmcloud sat experimental endpoint authn rotate --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-endpoint-authn-rotate-usage}
+
+### Command options
+{: #experimental-endpoint-authn-rotate-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--dest-ca-cert-file FILE`
+:    Trusted CA certificate or chain used to validate the destination server's certificate. For example `myCA.pem`.
+
+`--dest-cert-file FILE`
+:    The client certificate used to authenticate with the destination server. For example `myCert.pem`.
+
+`--dest-key-file FILE`
+:    The client private key used to encrypt the client certificate. For example `myKey.pem`.
+
+`--endpoint ENDPOINT`
+:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls`.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--source-ca-cert-file FILE`
+:    Trusted CA certificate or chain used to validate the source client's certificate when source-tls-mode is mutual. For example `myCA.pem`.
+
+`--source-cert-file FILE`
+:    The server certificate to present to the source client. For example `myCert.pem`.
+
+`--source-key-file FILE`
+:    The server private key used to encrypt the server certificate. For example `myKey.pem`.
+{: #experimental-endpoint-authn-rotate-options-dl}
+
+
+## `ibmcloud sat experimental endpoint authn set`
+{: #experimental-endpoint-authn-set-cli}
+
+[2024-09-01] Set authentication settings for an endpoint. There are two TLS connections in the request flow. The `source` options refer to the TLS handshake between the source and the Connector service. The `dest` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unsepecified settings are set to their default values.
+
+```txt
+ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert-file FILE] [--dest-cert-file FILE] [--dest-key-file FILE] [--dest-tls-mode MODE] [-q] [--source-ca-cert-file FILE] [--source-cert-file FILE] [--source-key-file FILE] [--source-tls-mode MODE] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-endpoint-authn-set-usage}
+
+### Command options
+{: #experimental-endpoint-authn-set-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--dest-ca-cert-file FILE`
+:    Trusted CA certificate or chain used to validate the destination server's certificate. For example `myCA.pem`.
+
+`--dest-cert-file FILE`
+:    The client certificate used to authenticate with the destination server. For example `myCert.pem`.
+
+`--dest-key-file FILE`
+:    The client private key used to encrypt the client certificate. For example `myKey.pem`.
+
+`--dest-tls-mode MODE`
+:    The destination TLS mode. Accepted values: `simple`, `mutual`
+
+`--endpoint ENDPOINT`
+:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls`.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--source-ca-cert-file FILE`
+:    Trusted CA certificate or chain used to validate the source client's certificate when source-tls-mode is mutual. For example `myCA.pem`.
+
+`--source-cert-file FILE`
+:    The server certificate to present to the source client. For example `myCert.pem`.
+
+`--source-key-file FILE`
+:    The server private key used to encrypt the server certificate. For example `myKey.pem`.
+
+`--source-tls-mode MODE`
+:    The source TLS mode. Accepted values: `simple`, `mutual`
+{: #experimental-endpoint-authn-set-options-dl}
 
 
 ## `ibmcloud sat group attach`

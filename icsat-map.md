@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-03-12"
+lastupdated: "2024-06-13"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -61,6 +61,23 @@ View and manage Satellite endpoints.
 * [`ibmcloud sat endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-ls-cli)
 * [`ibmcloud sat endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-rm-cli)
 * [`ibmcloud sat endpoint update`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-cli)
+
+
+## experimental commands
+{: #icks_map_experimental}
+
+[2024-09-01] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
+{: shortdesc}
+
+* **`experimental connector`**: [2024-09-01] Create, view, and modify Satellite connectors. Acquire connector agents.
+    * [`ibmcloud sat experimental connector agent`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-agent-cli)
+    * [`ibmcloud sat experimental connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-cli)
+    * [`ibmcloud sat experimental connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-cli)
+    * [`ibmcloud sat experimental connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-cli)
+    * [`ibmcloud sat experimental connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-rm-cli)
+* **`experimental endpoint`**: [2024-09-01] View and manage Satellite endpoints.
+    * [`ibmcloud sat experimental endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-cli)
+    * [`ibmcloud sat experimental endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-cli)
 
 
 ## group commands

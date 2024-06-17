@@ -1,11 +1,11 @@
 
 {
     "title": "Satellite",
-    "lastupdated": "2024-05-22",
+    "lastupdated": "2024-06-17",
     "introduction": "Explore the capabilities of IBM Cloud Satellite and discover the tools to manage your locations, hosts, and app workloads. ",
     "section_devtools": {
-      "api": "https://containers.cloud.ibm.com/global/swagger-global-api/", 
-      "cli": "/docs/satellite?topic=satellite-cli-install", 
+      "api": "/apidocs/kubernetes/containers-v1-v2", 
+      "cli": "/docs/satellite?topic=satellite-icsat_map", 
       "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/satellite_cluster"
     },
     "section_recommended": [

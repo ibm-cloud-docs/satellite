@@ -175,6 +175,7 @@ toc:
               - connector-create-from-sg.md
               - connector-proxy.md
               - connector-create-endpoints.md
+              - connector_endpoint_auth.md
         - topicgroup:
             label: Managing apps with Satellite Config
             topics:
@@ -200,6 +201,7 @@ toc:
               - link-location-cloud.md
               - default-link-endpoints.md
               - link-cloud-create.md
+              - location_endpoint_auth.md
               - link-endpoint-secure.md
               - link-cloud-monitor.md
         - topicgroup:

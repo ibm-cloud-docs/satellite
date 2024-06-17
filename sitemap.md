@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-17"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -195,6 +195,18 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [June 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june24)
+
+    * [17 June 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1724)
+
+        * Connector agent image version `1.1.5`.
+
+        * CLI version `1.0.628` is available.
+
+    * [12 June 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1224)
+
+        * Connector agent for Windows version `1.1.5`.
 
 * [May 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-may24)
 
@@ -1797,9 +1809,25 @@ subcollection: satellite
 
 [Creating and managing Connector endpoints](/docs/satellite?topic=satellite-connector-create-endpoints#connector-create-endpoints)
 
-* [Creating endpoints from the console](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-endpoint-console)
+* [Creating endpoints from the CLI](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-endpoint-cli)
 
-* [Creating an access control list rule for your endpoint](/docs/satellite?topic=satellite-connector-create-endpoints#create-connector-rule-console)
+    * [Example commands for creating endpoints](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-endpoints-comm)
+
+* [Creating endpoints from the console](/docs/satellite?topic=satellite-connector-create-endpoints&interface=ui#create-connector-endpoint-console)
+
+* [Creating an access control list rule for your endpoint](/docs/satellite?topic=satellite-connector-create-endpoints&interface=ui#create-connector-rule-console)
+
+[Authenticating Connector endpoint traffic](/docs/satellite?topic=satellite-connector_endpoint_auth#connector_endpoint_auth)
+
+* [Setting up authentication in the CLI](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-cli-loc)
+
+    * [Simple authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#simple-auth-source-loc)
+
+    * [Mutual authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-destination-loc)
+
+    * [Mutual authentication between the source and the Connector service](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-source-loc)
+
+    * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-both-loc)
 
 
 ## Managing apps with Satellite Config
@@ -1966,6 +1994,18 @@ subcollection: satellite
     * [Setting up source lists to limit access to endpoints](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#link-sources)
 
 * [Enabling and disabling endpoints](/docs/satellite?topic=satellite-link-cloud-create&interface=cli#enable_disable_endpoint)
+
+[Authenticating Location endpoint traffic](/docs/satellite?topic=satellite-location_endpoint_auth#location_endpoint_auth)
+
+* [Setting up authentication in the CLI](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-cli-loc)
+
+    * [Simple authentication between the Location service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#simple-auth-source-loc)
+
+    * [Mutual authentication between the Location service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-destination-loc)
+
+    * [Mutual authentication between the source and the Location service](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-source-loc)
+
+    * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-both-loc)
 
 [Accessing your {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoints](/docs/satellite?topic=satellite-link-endpoint-secure#link-endpoint-secure)
 
@@ -3181,6 +3221,8 @@ subcollection: satellite
 
 * [endpoint commands](/docs/satellite?topic=satellite-icsat_map#icks_map_endpoint)
 
+* [experimental commands](/docs/satellite?topic=satellite-icsat_map#icks_map_experimental)
+
 * [group commands](/docs/satellite?topic=satellite-icsat_map#icks_map_group)
 
 * [host commands](/docs/satellite?topic=satellite-icsat_map#icks_map_host)
@@ -3270,6 +3312,34 @@ subcollection: satellite
 * [`ibmcloud sat endpoint update`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-options)
+
+* [`ibmcloud sat experimental connector agent`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-agent-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-agent-options)
+
+* [`ibmcloud sat experimental connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-options)
+
+* [`ibmcloud sat experimental connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-options)
+
+* [`ibmcloud sat experimental connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-options)
+
+* [`ibmcloud sat experimental connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-rm-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-rm-options)
+
+* [`ibmcloud sat experimental endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-options)
+
+* [`ibmcloud sat experimental endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-options)
 
 * [`ibmcloud sat group attach`](/docs/satellite?topic=satellite-satellite-cli-reference#group-attach-cli)
 
@@ -3783,6 +3853,8 @@ subcollection: satellite
 
 * [Version 1.1](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1-change-log)
 
+    * [Version 1.1.7, released 14 Jun 2024](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.7-change-log)
+
     * [Version 1.1.6, released 21 May 2024](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.6-change-log)
 
     * [Version 1.1.5, released 06 May 2024](/docs/satellite?topic=satellite-cl-connector-agent-image#connector-agent-1.1.5-change-log)
@@ -3800,6 +3872,8 @@ subcollection: satellite
 [Connector Windows agent change log](/docs/satellite?topic=satellite-cl-connector-windows-agent#cl-connector-windows-agent)
 
 * [Version 1.1](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1-change-log)
+
+    * [Version 1.1.5, released 12 Jun 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.5-change-log)
 
     * [Version 1.1.4, released 22 May 2024](/docs/satellite?topic=satellite-cl-connector-windows-agent#connector-windows-agent-1.1.4-change-log)
 
