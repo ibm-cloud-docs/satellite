@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-13"
+lastupdated: "2024-06-17"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -24,6 +24,18 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 
 ## June 2024
 {: #satellite-june24}
+
+### 17 June 2024
+{: #satellite-june1724}
+{: release-note}
+
+Connector agent image version `1.1.5`.
+:   For more information, see the [change log](/docs/satellite?topic=satellite-cl-connector-agent-image) and [Running a Connector agent](/docs/satellite?topic=satellite-run-agent-locally#pull-agent-image).
+
+CLI version `1.0.628` is available.
+:   For more information, see [Updating the CLI](/docs/{[subcollection]}?topic={[subcollection]}-cli-update) and the [CLI change log](/docs/{[subcollection]}?topic={[subcollection]}-cs_cli_changelog).
+
+
 
 ### 12 June 2024
 {: #satellite-june1224}

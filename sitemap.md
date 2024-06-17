@@ -198,6 +198,12 @@ subcollection: satellite
 
 * [June 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june24)
 
+    * [17 June 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1724)
+
+        * Connector agent image version `1.1.5`.
+
+        * CLI version `1.0.628` is available.
+
     * [12 June 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1224)
 
         * Connector agent for Windows version `1.1.5`.
