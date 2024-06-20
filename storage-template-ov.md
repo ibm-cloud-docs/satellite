@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-20"
 
 keywords: satellite storage, storage template, satellite config, block, file, ocs
 
@@ -123,9 +123,10 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.5.1, Patch: 5 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver) 
 | [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.12.0 (Default), Patch: 3 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver) 
 | [AWS EBS CSI Driver](/docs/satellite?topic=satellite-storage-aws-ebs-csi-driver) | `aws-ebs-csi-driver` | Version: 1.31.0, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver) 
-| [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 1.3.1, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
-| [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 1.3.7, Patch: 4 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
+| [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 1.3.1, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
+| [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 1.3.7, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
 | [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 1.4.2 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
+| [AWS EFS CSI Driver](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver) | `aws-efs-csi-driver` | Version: 2.0.3, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver) 
 | [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.4.0, Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver) 
 | [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.18.0, Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver) 
 | [Azure Disk CSI Driver](/docs/satellite?topic=satellite-storage-azuredisk-csi-driver) | `azuredisk-csi-driver` | Version: 1.23.0 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver) 
@@ -139,7 +140,7 @@ You can create a {{site.data.keyword.satelliteshort}} storage configuration by u
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.10.0, Patch: 1 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver) 
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.11.1 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver) 
 | [IBM System Storage Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-system-storage-block-csi-driver) | `ibm-system-storage-block-csi-driver` | Version: 1.11.2, Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver) 
-| [[Beta] IBM VPC Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver) | `ibm-vpc-block-csi-driver` | Version: 5.1 (Default), Patch: 5 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver) 
+| [[Beta] IBM VPC Block CSI driver](/docs/satellite?topic=satellite-storage-ibm-vpc-block-csi-driver) | `ibm-vpc-block-csi-driver` | Version: 5.1 (Default), Patch: 6 | Supported | [Change log](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver) 
 | [[Beta] Local Storage File and/or Block](/docs/satellite?topic=satellite-storage-local-storage) | `local-storage` | Version: 1.0.0 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-local-storage) 
 | [Local Storage Operator](/docs/satellite?topic=satellite-storage-local-storage-operator) | `local-storage-operator` | Version: 1.0.0 (Default), Patch: 1 | Supported | [Change log](/docs/satellite?topic=satellite-cl-local-storage-operator) 
 | [Local Storage Operator - Block](/docs/satellite?topic=satellite-storage-local-volume-block) | `local-volume-block` | Version: 4.9, Patch: 4 | Deprecated | [Change log](/docs/satellite?topic=satellite-cl-local-volume-block) 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-20"
 
 
 keywords: satellite storage, features, overview
@@ -28,6 +28,7 @@ subcollection: satellite
 | AWS EFS CSI Driver | 1.3.1 | AWS | True | True | False | Regional | False |
 | AWS EFS CSI Driver | 1.3.7 | AWS | True | True | False | Regional | False |
 | AWS EFS CSI Driver | 1.4.2 | AWS | True | True | False | Regional | False |
+| AWS EFS CSI Driver | 2.0.3 | AWS | True | True | False | Regional | False |
 | Azure Disk CSI Driver | 1.4.0 | Azure | True | True | False | Zonal | False |
 | Azure Disk CSI Driver | 1.18.0 | Azure | True | True | False | Zonal | False |
 | Azure Disk CSI Driver | 1.23.0 | Azure | True | True | False | Zonal | False |

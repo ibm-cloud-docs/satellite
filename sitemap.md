@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-17"
+lastupdated: "2024-06-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -197,6 +197,10 @@ subcollection: satellite
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
 
 * [June 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june24)
+
+    * [20 June 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june2024)
+
+        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
 
     * [17 June 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-june1724)
 
@@ -2178,8 +2182,6 @@ subcollection: satellite
 
 * [Creating a configuration in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=api#aws-efs-csi-driver-config-create-api)
 
-* [Creating a storage assignment in the console](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=ui#storage-aws-efs-csi-driver-include-assignment-create-console)
-
 * [Creating an assignment in the CLI](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#storage-aws-efs-csi-driver-include-assignment-create-cli)
 
 * [Creating a storage assignment in the API](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=api#storage-aws-efs-csi-driver-include-assignment-create-api)
@@ -2213,6 +2215,8 @@ subcollection: satellite
     * [1.3.7 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#aws-efs-csi-driver-1.3.7-parameters)
 
     * [1.4.2 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#aws-efs-csi-driver-1.4.2-parameters)
+
+    * [2.0.3 parameter reference](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#aws-efs-csi-driver-2.0.3-parameters)
 
 * [Getting help and support for AWS EFS](/docs/satellite?topic=satellite-storage-aws-efs-csi-driver&interface=cli#sat-efs-support)
 
@@ -3553,6 +3557,8 @@ subcollection: satellite
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
 
+* [Version v1.0.628](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010628)
+
 * [Version v1.0.618](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010618)
 
 * [Version v1.0.617](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010617)
@@ -3912,6 +3918,10 @@ subcollection: satellite
 
 [`aws-efs-csi-driver` change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#cl-aws-efs-csi-driver)
 
+* [Version 2.0.3](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-2.0.3-change-log)
+
+    * [Revision 1, released 20 June 2024](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-2.0.3-rev-1-change-log)
+
 * [Version 1.4.2](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-1.4.2-change-log)
 
     * [Revision 1, released 07 November 2022](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-1.4.2-rev-1-change-log)
@@ -4027,6 +4037,8 @@ subcollection: satellite
 [`ibm-vpc-block-csi-driver` change log](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#cl-ibm-vpc-block-csi-driver)
 
 * [Version 5.1](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-change-log)
+
+    * [Revision 6, released 20 June 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-6-change-log)
 
     * [Revision 5, released 14 May 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-5-change-log)
 
