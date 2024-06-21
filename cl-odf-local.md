@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-21"
 
 
 keywords: satellite storage, change log, version history, odf local
@@ -24,6 +24,13 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 {: #odf-local-4.15-change-log}
 
 
+### Revision 3, released 21 June 2024
+{: #odf-local-4.15-rev-3-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external} 
+- Updates Go to version `1.21.11`.
+
 ### Revision 2, released 05 June 2024
 {: #odf-local-4.15-rev-2-change-log}
 
@@ -42,6 +49,13 @@ Review the version history for the `odf-local` {{site.data.keyword.satelliteshor
 ## Version 4.14
 {: #odf-local-4.14-change-log}
 
+
+### Revision 6, released 21 June 2024
+{: #odf-local-4.14-rev-6-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external} 
+- Updates Go to version `1.21.11`.
 
 ### Revision 5, released 05 June 2024
 {: #odf-local-4.14-rev-5-change-log}

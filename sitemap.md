@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-06-21"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -4328,11 +4328,15 @@ subcollection: satellite
 
 * [Version 4.15](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-change-log)
 
+    * [Revision 3, released 21 June 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-3-change-log)
+
     * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-2-change-log)
 
     * [Revision 1, released 09 May 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-1-change-log)
 
 * [Version 4.14](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-change-log)
+
+    * [Revision 6, released 21 June 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-6-change-log)
 
     * [Revision 5, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-5-change-log)
 
@@ -4486,11 +4490,15 @@ subcollection: satellite
 
 * [Version 4.15](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-change-log)
 
+    * [Revision 3, released 21 June 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-3-change-log)
+
     * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-2-change-log)
 
     * [Revision 1, released 09 May 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-1-change-log)
 
 * [Version 4.14](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-change-log)
+
+    * [Revision 6, released 21 June 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-6-change-log)
 
     * [Revision 5, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-5-change-log)
 
