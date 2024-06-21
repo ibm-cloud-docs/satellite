@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-06-21"
 
 keywords: satellite, endpoints, authentication
 
@@ -54,6 +54,7 @@ The `source` options refer to the TLS handshake between the source and the Conne
 
 Review the following example scenarios.
 
+
 ### Simple authentication between the Connector service and the destination
 {: #simple-auth-source-loc}
 
@@ -63,7 +64,7 @@ Review the following example scenarios.
     ibmcloud sat endpoint create 
       --connector-id myConnectorID \
       --name myEndpoint \
-      --dest-host example.com \
+      --dest-hostname example.com \
       --dest-port 443 \
       --source-protocol HTTPS \
       --dest-type location
@@ -98,7 +99,7 @@ Review the following example scenarios.
     ibmcloud sat endpoint create \
       --connector-id myConnectorID \
       --name myEndpoint \
-      --dest-host example.com \
+      --dest-hostname example.com \
       --dest-port 443 \
       --dest-protocol TLS\
       --source-protocol HTTP \
@@ -142,7 +143,7 @@ Review the following example scenarios.
     ibmcloud sat endpoint create \
       --connector-id myConnectorID \
       --name myEndpoint \
-      --dest-host example.com \
+      --dest-hostname example.com \
       --dest-port 80 \
       --dest-protocol TCP \
       --source-protocol HTTPS \
@@ -173,8 +174,12 @@ Review the following example scenarios.
     {: pre}
 
 
+
+
 ### Mutual authentication at both the source and destination
 {: #mutual-auth-both-loc}
+
+
 
 1. Create an HTTPS endpoint to an HTTPS server.
 
@@ -182,7 +187,7 @@ Review the following example scenarios.
     ibmcloud sat endpoint create \
       --connector-id myConnectorID \
       --name myEndpoint \
-      --dest-host example.com \
+      --dest-hostname example.com \
       --dest-port 443 \
       --source-protocol HTTPS \
       --dest-type location
