@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-06-27"
 
 keywords: satellite, hybrid, multicloud, tenancy, resellers, satellite reseller, satellite use case
 
@@ -122,7 +122,8 @@ Getting started options
 {{site.data.keyword.satelliteshort}} location options
 :    The following options define your location.
 :    - **Name**: The {{site.data.keyword.satelliteshort}} location name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Do not reuse the same name for multiple locations, even if you deleted another location with the same name.
-:    - **Resource group**: Resource groups organize your account resources in customizable groupings so that you can quickly assign users access to more than one resource at a time. This value is set to `default` by default.  
+:    - **Resource group**: Resource groups organize your account resources in customizable groupings so that you can quickly assign users access to more than one resource at a time. This value is set to `default` by default.
+:    - **Physical address**: For on-premises Locations, add a physical address to help associate your on-premises resources with your {{site.data.keyword.satelliteshort}} Location.
 :    - **Description** and **Tags**: Descriptions and tags help you organize your {{site.data.keyword.cloud_notm}} resources.
 :    - **Managed from**: The {{site.data.keyword.cloud_notm}} region that you want to use to manage your location. For more information about why you must select an {{site.data.keyword.cloud_notm}} region, see [About {{site.data.keyword.cloud_notm}} regions for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-sat-regions#understand-supported-regions). Make sure to select the region that is closest to where your host machines physically reside that you plan to attach to your {{site.data.keyword.satelliteshort}} location to ensure low network latency between your {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.cloud_notm}}.
 :    - **Zones**: The names of the zones **must match exactly** the names of the corresponding zones in your infrastructure provider where you plan to create hosts, such as a cloud provider zone or on-prem rack. To retrieve the name of the zone for other cloud providers, consult your infrastructure provider.

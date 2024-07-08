@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-06-28"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -499,7 +499,7 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] (--connector-id ID | --locatio
 Update an endpoint. Only the options that you specify are updated.
 
 ```txt
-ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--dest-port PORT] [--dest-protocol PROTOCOL] [--dest-type TYPE] [--idle-timeout-seconds SECONDS] [--name NAME] [-q] [--sni SNI] [--source-protocol PROTOCOL] (--connector-id ID | --location LOCATION)
+ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--dest-port PORT] [--dest-protocol PROTOCOL] [--idle-timeout-seconds SECONDS] [--name NAME] [-q] [--sni SNI] [--source-protocol PROTOCOL] (--connector-id ID | --location LOCATION)
 ```
 {: pre}
 {: #endpoint-update-usage}
@@ -518,9 +518,6 @@ ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--d
 
 `--dest-protocol PROTOCOL`
 :    Specify the destination's protocol. If you do not specify this option, the destination protocol is inherited from the source protocol. Accepted values: `TCP`, `TLS`
-
-`--dest-type TYPE`
-:    Specify where the destination resource runs, either in IBM Cloud (`cloud`) or your Satellite location (`location`). Accepted values: `location`, `cloud`
 
 `--endpoint ENDPOINT`
 :    Specify the name or ID of the endpoint. To find a list of all endpoints, run `ibmcloud sat endpoint ls`.
