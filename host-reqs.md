@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-07-09"
 
 keywords: satellite, hybrid, multicloud, endpoint capacity, endpoint limits, location endpoint limits, location endpoints, cloud endpoints
 
@@ -32,7 +32,8 @@ You can verify your host setup with the `satellite-host-check` script. For more 
 ## Computing characteristics
 {: #reqs-host-compute}
 
-- Hosts must run the latest Red Hat Enterprise Linux 8, or the latest Red Hat CoreOS on x86 architecture with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
+- Hosts must support x86-64-v2 architecture.
+- Hosts must run the latest Red Hat Enterprise Linux 8, or the latest Red Hat CoreOS with the kernel that is distributed with those versions. Other operating systems, such as Windows; other mainframe systems, such as IBM Z or IBM Power; and other kernel versions are not supported.
     - For the latest RHEL 8 version information, see [Red Hat Enterprise Linux Release Dates](https://access.redhat.com/articles/3078#RHEL8){: external}.
     - For the latest Red Hat CoreOS version information, see [Red Hat CoreOS mirrors](https://mirror.openshift.com/pub/openshift-v4/x86_64/dependencies/rhcos/){: external}.
 - Make sure that you use minimal RHEL images. Do not install the LAMP stack. Do not install virtualization technologies on the hosts, including `libvirtd` or `docker`. Note that support for RHEL 7 hosts in your control plane ends on March 2nd, 2023. [Follow the steps](/docs/satellite?topic=satellite-host-update-location#migrate-cp-rhel8) to migrate your hosts to RHEL 8.
