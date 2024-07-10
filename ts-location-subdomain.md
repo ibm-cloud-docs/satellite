@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-07-09"
 
 keywords: satellite, hybrid, multicloud
 
@@ -58,7 +58,7 @@ Follow these steps to resolve your issue
         ```
         {: pre}
 
-    3. Use `netcat` on each location subdomain on port 30000 to test host connectivity. If any subdomain's `netcat` operation times out, ensure that your hosts meet the [host network requirements](/docs/satellite?topic=satellite-reqs-host-network).
+    3. Use `netcat` on each location subdomain on port 30000 to test host connectivity. If any subdomain's `netcat` operation times out or the connection is refused, ensure that your hosts meet the [host network requirements](/docs/satellite?topic=satellite-reqs-host-network).
         ```sh
         nc -zv <subdomain> 30000
         ```
@@ -67,7 +67,7 @@ Follow these steps to resolve your issue
         Successful output:
         ```sh
         Ncat: Version 7.50 ( https://nmap.org/ncat )
-        Ncat: Connection refused.
+        Ncat: Connected to 10.X.X.X:30000.
         ```
         {: screen}
 
