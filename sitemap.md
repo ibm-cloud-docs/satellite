@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-09"
+lastupdated: "2024-07-10"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3327,6 +3327,46 @@ subcollection: satellite
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-update-options)
 
+* [`ibmcloud sat experimental acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-create-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-create-options)
+
+* [`ibmcloud sat experimental acl endpoint add`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-add-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-add-options)
+
+* [`ibmcloud sat experimental acl endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-ls-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-ls-options)
+
+* [`ibmcloud sat experimental acl endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-rm-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-rm-options)
+
+* [`ibmcloud sat experimental acl get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-get-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-get-options)
+
+* [`ibmcloud sat experimental acl ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-ls-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-ls-options)
+
+* [`ibmcloud sat experimental acl rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-rm-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-rm-options)
+
+* [`ibmcloud sat experimental acl subnet add`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-add-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-add-options)
+
+* [`ibmcloud sat experimental acl subnet rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-rm-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-rm-options)
+
+* [`ibmcloud sat experimental acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-update-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-update-options)
+
 * [`ibmcloud sat experimental connector agent`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-agent-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-agent-options)
@@ -3566,6 +3606,10 @@ subcollection: satellite
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.635](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010635)
+
+* [Version v1.0.632](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010632)
 
 * [Version v1.0.630](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010630)
 

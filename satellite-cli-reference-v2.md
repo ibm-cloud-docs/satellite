@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-10"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -540,6 +540,313 @@ ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--d
 `--source-protocol PROTOCOL`
 :    Provide the protocol that the source uses to connect the destination resource. See [http://ibm.biz/endpoint-protocols](http://ibm.biz/endpoint-protocols). Accepted values: `TCP`, `TLS`, `HTTP`, `HTTPS`, `HTTP-tunnel`
 {: #endpoint-update-options-dl}
+
+
+## `ibmcloud sat experimental acl create`
+{: #experimental-acl-create-cli}
+
+[2024-09-01] Create an ACL.
+
+```txt
+ibmcloud sat experimental acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-acl-create-usage}
+
+### Command options
+{: #experimental-acl-create-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--endpoint ENDPOINT`
+:    A name or ID of an endpoint to enable for this ACL.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`--name NAME`
+:    The name for the ACL.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--subnet SUBNET`
+:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the follwowing CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+{: #experimental-acl-create-options-dl}
+
+
+## `ibmcloud sat experimental acl endpoint add`
+{: #experimental-acl-endpoint-add-cli}
+
+[2024-09-01] Add one or more enabled endpoints to an ACL.
+
+```txt
+ibmcloud sat experimental acl endpoint add --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-acl-endpoint-add-usage}
+
+### Command options
+{: #experimental-acl-endpoint-add-options}
+
+`--acl-id ID`
+:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat experimental acl ls`.
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--endpoint ENDPOINT`
+:    A name or ID of an endpoint to enable for this ACL.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-acl-endpoint-add-options-dl}
+
+
+## `ibmcloud sat experimental acl endpoint ls`
+{: #experimental-acl-endpoint-ls-cli}
+
+[2024-09-01] List all enabled endpoints for an ACL.
+
+```txt
+ibmcloud sat experimental acl endpoint ls --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-acl-endpoint-ls-usage}
+
+### Command options
+{: #experimental-acl-endpoint-ls-options}
+
+`--acl-id ID`
+:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat experimental acl ls`.
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-acl-endpoint-ls-options-dl}
+
+
+## `ibmcloud sat experimental acl endpoint rm`
+{: #experimental-acl-endpoint-rm-cli}
+
+[2024-09-01] Remove one or more enabled endpoints from an ACL.
+
+```txt
+ibmcloud sat experimental acl endpoint rm --acl-id ID --endpoint ENDPOINT [--endpoint ENDPOINT ...] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-acl-endpoint-rm-usage}
+
+### Command options
+{: #experimental-acl-endpoint-rm-options}
+
+`--acl-id ID`
+:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat experimental acl ls`.
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--endpoint ENDPOINT`
+:    A name or ID of an endpoint to disable for this ACL.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-acl-endpoint-rm-options-dl}
+
+
+## `ibmcloud sat experimental acl get`
+{: #experimental-acl-get-cli}
+
+[2024-09-01] View the details of an ACL.
+
+```txt
+ibmcloud sat experimental acl get --acl-id ID [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-acl-get-usage}
+
+### Command options
+{: #experimental-acl-get-options}
+
+`--acl-id ID`
+:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat experimental acl ls`.
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-acl-get-options-dl}
+
+
+## `ibmcloud sat experimental acl ls`
+{: #experimental-acl-ls-cli}
+
+[2024-09-01] List all ACLs for a Satellite connector or location.
+
+```txt
+ibmcloud sat experimental acl ls [--output OUTPUT] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-acl-ls-usage}
+
+### Command options
+{: #experimental-acl-ls-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-acl-ls-options-dl}
+
+
+## `ibmcloud sat experimental acl rm`
+{: #experimental-acl-rm-cli}
+
+[2024-09-01] Delete an ACL.
+
+```txt
+ibmcloud sat experimental acl rm --acl-id ID [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-acl-rm-usage}
+
+### Command options
+{: #experimental-acl-rm-options}
+
+`--acl-id ID`
+:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat experimental acl ls`.
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-acl-rm-options-dl}
+
+
+## `ibmcloud sat experimental acl subnet add`
+{: #experimental-acl-subnet-add-cli}
+
+[2024-09-01] Add one or more subnets to an ACL.
+
+```txt
+ibmcloud sat experimental acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-acl-subnet-add-usage}
+
+### Command options
+{: #experimental-acl-subnet-add-options}
+
+`--acl-id ID`
+:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat experimental acl ls`.
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--subnet SUBNET`
+:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the follwowing CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+{: #experimental-acl-subnet-add-options-dl}
+
+
+## `ibmcloud sat experimental acl subnet rm`
+{: #experimental-acl-subnet-rm-cli}
+
+[2024-09-01] Remove one or more subnets from an ACL.
+
+```txt
+ibmcloud sat experimental acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-acl-subnet-rm-usage}
+
+### Command options
+{: #experimental-acl-subnet-rm-options}
+
+`--acl-id ID`
+:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat experimental acl ls`.
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--subnet SUBNET`
+:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the follwowing CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+{: #experimental-acl-subnet-rm-options-dl}
+
+
+## `ibmcloud sat experimental acl update`
+{: #experimental-acl-update-cli}
+
+[2024-09-01] Update the name of an ACL.
+
+```txt
+ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #experimental-acl-update-usage}
+
+### Command options
+{: #experimental-acl-update-options}
+
+`--acl-id ID`
+:    Specify the ID of the ACL. To list all ACLs, run `ibmcloud sat experimental acl ls`.
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`--name NAME`
+:    The new name for the ACL.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-acl-update-options-dl}
 
 
 ## `ibmcloud sat experimental connector agent`
