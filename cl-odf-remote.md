@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-06-21"
+lastupdated: "2024-07-15"
 
 
 keywords: satellite storage, change log, version history, odf remote
@@ -23,6 +23,13 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.15
 {: #odf-remote-4.15-change-log}
 
+
+### Revision 4, released 12 July 2024
+{: #odf-remote-4.15-rev-4-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external} [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} 
+- Updates Go to version `1.21.12`.
 
 ### Revision 3, released 21 June 2024
 {: #odf-remote-4.15-rev-3-change-log}
@@ -49,6 +56,13 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.14
 {: #odf-remote-4.14-change-log}
 
+
+### Revision 7, released 12 July 2024
+{: #odf-remote-4.14-rev-7-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external} [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} 
+- Updates Go to version `1.21.12`.
 
 ### Revision 6, released 21 June 2024
 {: #odf-remote-4.14-rev-6-change-log}
@@ -103,6 +117,14 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.13
 {: #odf-remote-4.13-change-log}
 
+
+### Revision 11, released 12 July 2024
+{: #odf-remote-4.13-rev-11-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external} [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} 
+- Updates Go to version `1.21.12`.
+- Addded taint ODF nodes
 
 ### Revision 10, released 05 June 2024
 {: #odf-remote-4.13-rev-10-change-log}
@@ -191,6 +213,13 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 ## Version 4.12
 {: #odf-remote-4.12-change-log}
 
+
+### Revision 14, released 12 July 2024
+{: #odf-remote-4.12-rev-14-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external} [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} 
+- Updates Go to version `1.21.12`.
 
 ### Revision 13, released 05 June 2024
 {: #odf-remote-4.12-rev-13-change-log}
