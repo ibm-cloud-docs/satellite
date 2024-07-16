@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-07-16"
 
 keywords: satellite, hybrid, multicloud, bare metal, coreos, rhcos, virtualization
 
@@ -194,7 +194,7 @@ After you deploy OpenShift Data Foundation, you can use the `sat-ocs-ceprbd-gold
     kind: DataVolume
     metadata:
       name: fedora-1
-      namespace: openshift-cnv
+      namespace: default
     spec:
       source:
         registry:
@@ -219,7 +219,7 @@ After you deploy OpenShift Data Foundation, you can use the `sat-ocs-ceprbd-gold
     
 1. Verify that the data volume and corresponding PVC were created.
     ```sh
-    oc get dv,pvc -n openshift-cnv
+    oc get dv,pvc -n default
     ```
     {: pre}
     
@@ -244,7 +244,7 @@ After you deploy OpenShift Data Foundation, you can use the `sat-ocs-ceprbd-gold
       labels:
         app: fedora-1
       name: fedora-1
-      namespace: openshift-cnv
+      namespace: default
     spec:
       running: false
       template:
@@ -304,13 +304,13 @@ After you deploy OpenShift Data Foundation, you can use the `sat-ocs-ceprbd-gold
     
 1. Start the virtual machine.
     ```sh
-    virtctl start fedora-1 -n openshift-cnv
+    virtctl start fedora-1 -n default
     ```
     {: pre}
     
 1. Verify that the virtual machine is running.
     ```sh
-    oc get vm -n openshift-cnv
+    oc get vm -n default
     ```
     {: pre}
     
