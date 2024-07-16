@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-07-16"
 
 keywords: ocs, satellite storage, satellite config, satellite configurations, container storage, remote devices, odf, openshift data foundation
 
@@ -74,7 +74,8 @@ Create an instance of {{site.data.keyword.cos_full_notm}} for the backing store 
     ```
     {: pre}
 
-
+Want to use Terraform to deploy OpenShift Data Foundation? For more infromation, see the examples in the [IBM-Cloud repo](https://github.com/IBM-Cloud/terraform-provider-ibm/tree/master/examples/openshift-data-foundation){: external}.
+{: tip}
 
 
 
