@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-06-06"
+lastupdated: "2024-07-18"
 
 
 keywords: satellite storage, change log, version history, ibm object storage plugin
@@ -23,6 +23,13 @@ Review the version history for the `ibm-object-storage-plugin` {{site.data.keywo
 ## Version 2.2
 {: #ibm-object-storage-plugin-2.2-change-log}
 
+
+### Revision 22, released 17 July 2024
+{: #ibm-object-storage-plugin-2.2-rev-22-change-log}
+
+
+- Resolves the following CVEs: [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external} [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} 
+- Updates Go to version `1.21.12`.
 
 ### Revision 21, released 05 June 2024
 {: #ibm-object-storage-plugin-2.2-rev-21-change-log}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-10"
+lastupdated: "2024-07-18"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -1044,7 +1044,7 @@ ibmcloud sat experimental endpoint authn set --endpoint ENDPOINT [--dest-ca-cert
 :    The client private key used to encrypt the client certificate. For example `myKey.pem`.
 
 `--dest-tls-mode MODE`
-:    The destination TLS mode. Accepted values: `simple`, `mutual`
+:    The destination TLS mode. Accepted values: `simple`, `mutual`, `none`
 
 `--endpoint ENDPOINT`
 :    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls`.
