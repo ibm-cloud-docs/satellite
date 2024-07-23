@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-06-21"
+lastupdated: "2024-07-22"
 
 keywords: satellite, endpoints, authentication
 
@@ -25,25 +25,27 @@ This is an experimental feature that is available for evaluation and testing pur
 Review the following authentication options.
 
 Default authentication settings
-:   If you don't provide your own certificates for mutual authentication, endpoint traffic is still encrypted, but Connector acts as a transit service only.
+:   If you don't configure any endpoint authentication settings, endpoint traffic is still encrypted, but Connector acts as a transit service only. This applies even to endpoints using the TCP or HTTP protocol. For endpoints with protocol TLS or HTTPS, traffic through the Connector will attempt to use simple authentication by default, relying on its well known built-in certificates, which may or may not be sufficient.
 
 Simple authentication with the Connector service.
-:   To set up simple authentication with the Connector service, you must set the endpoint's source protocol to TLS or HTTPS. You can optionally provide a server certificate and key that the Connector service can use to authenticate with the source.
-
-Simple authentication with the destination server.
-:   To set up simple authentication on the destination, create an endpoint with a destination protocol of TLS. You can then optionally provide a trusted CA certificate or chain to validate the destination server's certificate.
+:   The Connector server authenticates itself to the source. To set up simple authentication with the Connector service, you must set the endpoint's source protocol to TLS or HTTPS. Certificate configuration then depends on the endpoint's destination type.
+:   For endpoints with destination type 'cloud', you need to provide a server certificate and key that the Connector service will use to authenticate with the source. Note that if your server certificate is not signed by a well-known signing athority, you will also need to install a CA root certificate in your source environment.
+:   For endpoints with destination type 'location', you do not need to configure any Connector server certificates because Connector uses its own certificate signed by [DigiCert](https://www.digicert.com/). DigiCert certificates are [compatible](https://knowledge.digicert.com/general-information/compatibility-of-digicert-trusted-root-certificates) with all modern browsers and platforms but if your source has no root CA certificate, you will need to [download](https://www.digicert.com/kb/digicert-root-certificates.htm) one from DigiCert and install it in your source environment.
 
 Mutual authentication between the source and Connector service.
-:   Requests from the source to the Connector service are authenticated using the certificates you provide. A TLS handshake verifies the request before traffic is allowed. To set up mutual authentication between the source and Connector service, create an endpoint with a source protocol of TLS or HTTPS, then optionally provide a server certificate, a server private key, and a trusted CA certificate.
+:   With mutual authentication, the Connector service authenticates itself to the source and the source must authenticate itself to the Connector service. To set up mutual authentication between the source and Connector service, you need to configure the Connector server authentication the same way as in the simple source authentication case, above, but you also need to configure a CA certificate that the Connector service will use to validate the source's client certificate.
+
+Simple authentication with the destination server.
+:   The destination server authenticates itself with the Connector service. To set up simple authentication with the destination, your endpoint must have a destination protocol of TLS. If the destination's server certificate is not signed by a well-known certificate authority (or self-signed), you will need to configure a trusted CA certificate or chain to validate the destination's server certificate.
 
 Mutual authentication between Connector and the destination server.
-:   Requests to the destination are authenticated using the certificates you provide. A TLS handshake verifies the request before traffic is allowed. To set up mutual authentication between Connector and the destination server, create an endpoint with a destination protocol of TLS, then optionally provide a client certificate, a client private key, and trusted CA certificate.
+:    With mutual authentication, the destination server authenticates itself to the Connector service and the Connector service must authenticate itself to the destination. To set up mutual authentication between the Connector service and the destination server, you need to configure the Connector service authentication the same way as in the simple destination authentication case, above, but you will also need to provide a client certificate and key that the Connector service will use to authenticate with the destination.
 
 Mutual authentication between the source and the Connector service as well as Connector and the destination server.
-:   Requests to both the Connector service and the destination server are authenticated. Two TLS handshakes must be verified before traffic is allowed. For this setup, create an endpoint with a source protocol of TLS or HTTPS. Then, to set up authentication with the Connector service, provide a source certificate, a source key to encrypt the source certificate, and trusted CA certificate. For authentication with the destination server, provide a client certificate, a client private key to encrypt the client certificate, and trusted CA certificate.
+:   Requests to both the Connector service and the destination server are authenticated. Two TLS handshakes must be verified before traffic is allowed. For this setup, create an endpoint with a source protocol of TLS or HTTPS and a destination protocol of TLS. Then, provide all of the certificates needed for both the source and destination mutual authentication cases, as described above.
 
 If you choose to provide your own certificates for endpoint authentication, you are responsible for rotating the certificates and managing expiration dates. If your certificate expires, you might experience disrupted traffic.
-{: note}
+{: important}
 
 
 ## Setting up authentication in the CLI
@@ -51,6 +53,8 @@ If you choose to provide your own certificates for endpoint authentication, you 
 
 The `source` options refer to the TLS handshake between the source and the Connector service. The `dest` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
 
+The `ibmcloud sat experimental endpoint authn` command is only used to set certificates for the Connector service, acting as a server on the source side and as a client on the destination side. You may also need to configure certificates for the source (client) and/or destination (server) in their corresponding application environments.
+{: note}
 
 Review the following example scenarios.
 
@@ -62,7 +66,7 @@ Review the following example scenarios.
 
     ```sh
     ibmcloud sat endpoint create 
-      --connector-id myConnectorID \
+      --connector-id ID \
       --name myEndpoint \
       --dest-hostname example.com \
       --dest-port 443 \
@@ -75,7 +79,7 @@ Review the following example scenarios.
 
     ```sh
     ibmcloud sat experimental endpoint authn set \
-      --connector-id myConnectorID \
+      --connector-id ID \
       --endpoint myEndpoint \
       --dest-tls-mode simple
       --dest-ca-cert-file /path/to/serverCACerts.pem
@@ -86,6 +90,8 @@ Review the following example scenarios.
 
     ```sh
     ibmcloud sat experimental endpoint authn rotate \
+      --connector-id ID \
+      --endpoint myEndpoint \
       --dest-ca-cert-file /path/to/serverCACerts.pem
     ```
     {: pre}
@@ -97,7 +103,7 @@ Review the following example scenarios.
 
     ```sh
     ibmcloud sat endpoint create \
-      --connector-id myConnectorID \
+      --connector-id ID \
       --name myEndpoint \
       --dest-hostname example.com \
       --dest-port 443 \
@@ -113,7 +119,7 @@ Review the following example scenarios.
 
     ```sh
     ibmcloud sat experimental endpoint authn set \
-      --connector-id myConnectorID \
+      --connector-id ID \
       --endpoint myEndpoint \
       --dest-tls-mode mutual \
       --dest-cert-file /path/to/clientCertificate.pem \
@@ -126,6 +132,8 @@ Review the following example scenarios.
 
     ```sh
     ibmcloud sat experimental endpoint authn rotate \
+      --connector-id ID \
+      --endpoint myEndpoint \
       --dest-cert-file /path/to/clientCertificate.pem \
       --dest-key-file /path/to/clientKey.pem \
       --dest-ca-cert-file /path/to/serverCACerts.pem
@@ -137,17 +145,20 @@ Review the following example scenarios.
 ### Mutual authentication between the source and the Connector service
 {: #mutual-auth-source-loc}
 
+Unlike the other examples, which can work with an endpoint `--dest-type` of either `location` or `cloud`, this one must use `--dest-type cloud` because setting source certificates for location destination endpoints is not supported.
+{: exception}
+
 1. Create an HTTPS endpoint to an HTTP server with source mutual authentication.
 
     ```sh
     ibmcloud sat endpoint create \
-      --connector-id myConnectorID \
+      --connector-id ID \
       --name myEndpoint \
       --dest-hostname example.com \
       --dest-port 80 \
       --dest-protocol TCP \
       --source-protocol HTTPS \
-      --dest-type location
+      --dest-type cloud
     ```
     {: pre}
 
@@ -156,7 +167,7 @@ Review the following example scenarios.
     This example provides the certificate of the trusted CA to validate the source's client certificate.
     ```sh
     ibmcloud sat experimental endpoint authn set \
-      --connector-id myConnectorID \
+      --connector-id ID \
       --endpoint myEndpoint \
       --source-tls-mode mutual \
       --source-cert-file /path/to/serverCertificate.pem \
@@ -169,6 +180,10 @@ Review the following example scenarios.
 
     ```sh
     ibmcloud sat experimental endpoint authn rotate \
+      --connector-id ID \
+      --endpoint myEndpoint \
+      --source-cert-file /path/to/serverCertificate.pem \
+      --source-key-file /path/to/serverKey.pem \
       --source-ca-cert-file /path/to/clientCACerts.pem
     ```
     {: pre}
@@ -185,7 +200,7 @@ Review the following example scenarios.
 
     ```sh
     ibmcloud sat endpoint create \
-      --connector-id myConnectorID \
+      --connector-id ID \
       --name myEndpoint \
       --dest-hostname example.com \
       --dest-port 443 \
@@ -200,7 +215,7 @@ Review the following example scenarios.
 
     ```sh
     ibmcloud sat experimental endpoint authn set \
-      --connector-id myConnectorID \
+      --connector-id ID \
       --endpoint myEndpoint \
       --source-tls-mode mutual \
       --source-ca-cert-file /path/to/clientCACerts.pem \
@@ -215,10 +230,12 @@ Review the following example scenarios.
 
     ```sh
     ibmcloud sat experimental endpoint authn rotate \
-    --source-ca-cert-file /path/to/clientCACerts.pem \
-    --dest-cert-file /path/to/clientCertificate.pem \
-    --dest-key-file /path/to/clientKey.pem \
-    --dest-ca-cert-file /path/to/serverCACerts.pem
+      --connector-id ID \
+      --endpoint myEndpoint \
+      --source-ca-cert-file /path/to/clientCACerts.pem \
+      --dest-cert-file /path/to/clientCertificate.pem \
+      --dest-key-file /path/to/clientKey.pem \
+      --dest-ca-cert-file /path/to/serverCACerts.pem
     ```
     {: pre}
 
