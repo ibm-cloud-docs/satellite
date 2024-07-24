@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-07-24"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -35,7 +35,7 @@ Make sure you apply the ACL to the endpoint you want to use it against.
 ## What IAM permissions do I need for Connectors?
 {: #conector-faq-permissions}
 
-To create a Connector, you need **Administrator** Platform role for {{site.data.keyword.satelliteshort}}. To connect an Agent to an existing Connector, you need **Viewer** Platform role or **Reader** Service role for {{site.data.keyword.satelliteshort}}.
+To create a Connector, you need **Administrator** Platform role for {{site.data.keyword.satelliteshort}}. To connect an Agent to an existing Connector, you need **Viewer** Platform role for {{site.data.keyword.satelliteshort}}.
 
 ## How many Connectors are supported per account per region?
 {: #connector-faq-con-per-region}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-22"
+lastupdated: "2024-07-24"
 
 keywords: satellite, connector, agent, windows
 
@@ -25,7 +25,7 @@ After you [create a {{site.data.keyword.satelliteshort}} Connector](/docs/satell
 - [Create a {{site.data.keyword.satelliteshort}} Connector](/docs/satellite?topic=satellite-create-connector).
 - [Install the CLI](/docs/openshift?topic=openshift-cli-install&interface=cli).
 - **Optional**: [Create a Service ID](https://cloud.ibm.com/iam/serviceids). Service IDs are recommended over using individual user credentials.
-- Make sure the user or Service ID that runs agent has the  **Viewer** Platform role or **Reader** Service role for {{site.data.keyword.satelliteshort}} in IAM.
+- Make sure the user or Service ID that runs agent has the  **Viewer** Platform role {{site.data.keyword.satelliteshort}} in IAM.
 - [Create an API key](https://cloud.ibm.com/iam/apikeys) either by using your own login or your service ID. This API key is used by your Connector agent.
 - Make sure your computing environment meets the [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors&interface=ui#min-requirements) for running the agent image.
 - [Review the agent parameters](#review-parameters).
