@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-07-26"
 
 keywords: satellite, endpoints, authentication
 
@@ -63,7 +63,7 @@ Review the following example scenarios.
     ibmcloud sat endpoint create 
       --location myLocationID \
       --name myEndpoint \
-      --dest-host example.com \
+      --dest-hostname example.com \
       --dest-port 443 \
       --source-protocol HTTPS \
       --dest-type location
@@ -98,7 +98,7 @@ Review the following example scenarios.
     ibmcloud sat endpoint create \
       --location myLocationID \
       --name myEndpoint \
-      --dest-host example.com \
+      --dest-hostname example.com \
       --dest-port 443 \
       --dest-protocol TLS\
       --source-protocol HTTP \
@@ -142,7 +142,7 @@ Review the following example scenarios.
     ibmcloud sat endpoint create \
       --location myLocationID \
       --name myEndpoint \
-      --dest-host example.com \
+      --dest-hostname example.com \
       --dest-port 80 \
       --dest-protocol TCP \
       --source-protocol HTTPS \
@@ -182,7 +182,7 @@ Review the following example scenarios.
     ibmcloud sat endpoint create \
       --location myLocationID \
       --name myEndpoint \
-      --dest-host example.com \
+      --dest-hostname example.com \
       --dest-port 443 \
       --source-protocol HTTPS \
       --dest-type location

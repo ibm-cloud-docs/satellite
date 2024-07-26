@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-07-26"
 
 keywords: block storage, satellite storage, local block storage, satellite config, satellite configurations,
 
@@ -313,7 +313,7 @@ After you have [retrieved the device paths for the disks that you want to use in
 
 
 
-{{site.data.content.assignment-create-console}}
+
 {{site.data.content.assignment-create-cli}}
 {{site.data.content.assignment-create-api}}
 {{site.data.content.assignment-upgrade-cli}}

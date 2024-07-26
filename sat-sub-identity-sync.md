@@ -3,7 +3,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-07-26"
 
 keywords: satellite, subscription, identity, satellite config, satellite configuration
 
@@ -13,36 +13,37 @@ subcollection: satellite
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Syncing subscription identity
-{: #sat-sync-sub-identity}
+# {{site.data.keyword.satelliteshort}} Config subscription identity and authorization
+{: #sat-config-subid}
 
-After you create a {{site.data.keyword.satelliteshort}} configuration, you might need to sync the subscription identify for the rollout to be successful.  The subscription identity is the user or service ID that is used by the subscription.
+When you use {{site.data.keyword.satelliteshort}} Config to apply Kubernetes resources to a managed cluster or cluster group, the resources are applied according to the permissions available to the subscription identity. 
 {: shortdesc}
+
+## Subscription identity
+{: #sat-config-subid-exp}
+
+The subscription identity is the user ID or service ID that creates the subscription. When a user creates a subscription to apply Kubernetes resources, the **Location clusters** resources are applied on each cluster as that user and according to that user's permissions.
 
 When Kubernetes resources are applied by {{site.data.keyword.satelliteshort}} Config to managed clusters, they are applied by a different identity depending on how the cluster was attached.
 
 - For clusters that are manually registered with {{site.data.keyword.satelliteshort}} Config, Kubernetes resources are always applied to the cluster by the `razeedeploy-sa` service account.
-- Clusters in a {{site.data.keyword.satelliteshort}} Location are automatically configured for use by {{site.data.keyword.satelliteshort}} Config. Kubernetes resources are applied to the cluster by the identity (user or service ID) that created the Subscription.
 
-In short, if a user creates a subscription to apply Kubernetes resources, the **Location clusters** resources are applied as that user and following that user's permissions on each cluster. If that user does not have permissions to create certain resources in certain namespaces, the rollout might fail.
+- Clusters in a {{site.data.keyword.satelliteshort}} Location are automatically configured for use by {{site.data.keyword.satelliteshort}} Config. Kubernetes resources are applied to the cluster by the identity (user or service ID) that created the subscription.
 
-The subscription identity is shown in the **Subscription details** page in the UI and is also retrievable through the CLI by using the `**ibmcloud sat subscription get`** command.
+If the subscription identity uses a user ID that does not have permissions to create certain resources in certain namespaces, the rollout might fail. Additionally, if the subscription owner loses access to a cluster, such as by leaving the organization, the Satellite Config operators still attempt to apply or delete child resources as that user. These actions fail with a `403 not authorized` error. For steps to resolve this issue, see [Why does my {{site.data.keyword.satelliteshort}} Config rollout fail and result in a `not authorized` error?](/docs/satellite?topic=satellite-ts-satconfig-subid-perms).
+{: important}
 
-Identity sync is triggered and usually happens automatically.
+### Viewing the cluster's subscription identity
+{: #sat-config-subid-view}
 
-- When a user creates a subscription, all the clusters in the subscription's groups automatically sync.
-- When a user modifies the membership of a cluster group and that user's identity is used by any subscriptions that are applied to the group, all the clusters in that group sync automatically.
-- When a user logs into the cluster by running `ibmcloud ks cluster config` or by launching the cluster dashboard from the IBM Cloud UI, that cluster does not sync automatically.
+You can view a cluster's subscription identity by navigating to the **Subscription details** page in the UI or by running **`ibmcloud sat subscription get`** in the CLI. 
 
-Automatic identity sync can only be performed by the user or service ID being synced. If the user whose identity is used by the subscription makes a change, their identity syncs automatically to affected clusters. If a user different from the subscription identity makes a change, the subscription identity cannot sync automatically.
-{: note}
+## Syncing the subscription identity with the cluster
+{: #sat-config-subid-sync}
 
-As a result, sometimes the identities that are synced to each cluster might become incorrect.
+The subscription identity syncs to a cluster so that the cluster recognizes the associated user ID or service ID and the permissions assigned to the ID. When an ID is synced to every cluster in a cluster group, the {{site.data.keyword.satelliteshort}} Config rollout can complete successfully across all clusters because the user has the same permissions for each cluster. 
 
-- If a different user or service ID modifies the subscription's cluster groups, the subscription's identity cannot automatically sync to any new clusters.
-- If a different user changes the membership of the cluster groups, the subscription's identity cannot sync automatically to any new clusters.
+The subscription identity can sync automatically with each cluster when a user completes certain actions. However, other actions can prevent identity syncing from occuring automatically in certain clusters. Generally, actions that result in automatic syncing are those that involve a subscription, and actions that prevent automatic syncing are those that affect the cluster group membership *and* are made by a user whose ID is not used as the subscription ID. For example, creating a new subscription or editing an existing subscription updates the subscription identity and syncs it to all clusters. However if a user whose ID is not used as the subscription ID makes a change to the cluster group, such as adding or removing a cluster from the group, then the subscription identity cannot automatically sync to any new clusters that are later added to the group. This can result in some clusters not syncing with the correct subscription identity.  
 
-If the identity used is not available on the Location cluster, potentially causing rollout failure, you can resolve this problem in three ways:
-1. The user associated with the subscription can explicitly request re-sync of their identity. This sync can be done from the {{site.data.keyword.cloud_notm}} console (a subscription action) or CLI (**`ibmcloud sat subscription identity set`**).
-2. A different user can edit the Subscription to use their identity, also triggering the sync of their identity to appropriate clusters. This sync can be done from the {{site.data.keyword.cloud_notm}} console (a subscription action) or CLI (**`ic sat subscription identity set`**).
-3. The user associated with the subscription can trigger sync of their identity to a single cluster by running **`ibmcloud ks cluster config`** or connecting to the cluster's dashboard from the {{site.data.keyword.cloud_notm}} console.
+When clusters are not correctly synced, the {{site.data.keyword.satelliteshort}} Config rollout cannot complete successfully because not all clusters can read the permissions available to the subscription identity (the ID of the user who created or edited the subscription). You can check for this scenario by running **`ibmcloud sat subscription get`** to check the subscription identity for each cluster. For steps to resolve this issue, see [Why does my {{site.data.keyword.satelliteshort}} Config rollout fail and result in a `not authorized` error?](/docs/satellite?topic=satellite-ts-satconfig-subid-perms).
+
