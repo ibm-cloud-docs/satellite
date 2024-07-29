@@ -1831,9 +1831,13 @@ subcollection: satellite
 
     * [Example commands for creating endpoints](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-endpoints-comm)
 
+* [Creating an access control list (ACL) rule from the CLI](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-rule-cli)
+
+    * [Example commands for creating ACLs](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-acls-comm)
+
 * [Creating endpoints from the console](/docs/satellite?topic=satellite-connector-create-endpoints&interface=ui#create-connector-endpoint-console)
 
-* [Creating an access control list rule for your endpoint](/docs/satellite?topic=satellite-connector-create-endpoints&interface=ui#create-connector-rule-console)
+* [Creating an access control list (ACL) rule for your endpoint](/docs/satellite?topic=satellite-connector-create-endpoints&interface=ui#create-connector-rule-console)
 
 [Authenticating Connector endpoint traffic](/docs/satellite?topic=satellite-connector_endpoint_auth#connector_endpoint_auth)
 
