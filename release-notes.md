@@ -25,15 +25,6 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 ## July 2024
 {: #satellite-july24}
 
-### 29 July 2024
-{: #satellite-july2924}
-{: release-note}
-
-{{site.data.keyword.satelliteshort}} storage template patch updates are available.
-:   You can update your {{site.data.keyword.satelliteshort}} storage configurations and assignments to the latest patch from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running the `ibmcloud sat storage config patch` command. For more information, see [Which storage templates are available?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers) and the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
-
-
-
 ### 12 July 2024
 {: #satellite-july1224}
 {: release-note}
