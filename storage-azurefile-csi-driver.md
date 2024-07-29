@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-07-26"
 
 keywords: azure, azure storage, satellite storage, satellite, config, configurations, file, azure file
 
@@ -224,7 +224,7 @@ If you manually assigned your Azure hosts to your location and did not use an au
 
 
 
-{{site.data.content.assignment-create-console}}
+
 {{site.data.content.assignment-create-cli}}
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-07-26"
 
 keywords: satellite, hybrid, multicloud
 
@@ -40,28 +40,6 @@ Keep in mind that some charges are not reflected in the estimate, such as the co
  
 
 See [View your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage) and [Set spending notifications](/docs/billing-usage?topic=billing-usage-spending) for general {{site.data.keyword.cloud_notm}} account guidance.
-
-
-## Creating a storage assignment in the console
-{: #assignment-create-console}
-{: ui}
-
-If you didn't assign your configuration to a cluster or service when you created it, you can create an assignment by completing the following steps.
-
-1. Open the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external} in your browser.
-1. Select the location where you created your storage configuration.
-1. Click the **Locations** tab, then click **Storage**.
-1. Click the storage configuration that you want to assign to a cluster group.
-1. On the **Configuration details** page, click **Create storage assignment**.
-1. In the **Create an assignment** pane, enter a name for your assignment.
-1. From the **Version** drop-down list, select the storage configuration version that you want to assign.
-1. Click **Create** to create the assignment.
-1. Verify that your storage configuration is deployed to your cluster. 
-    1. From the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, navigate to your Location and select **Storage**
-    1. Click the storage configuration that you created and review the **Assignments** tab.
-    1. Click the **Assignment** that you created and review the **Rollout status** for your configuration.
-
-
 
 
 ## Creating an assignment in the CLI

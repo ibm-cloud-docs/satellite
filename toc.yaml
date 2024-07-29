@@ -387,4 +387,8 @@ toc:
                     - ts-storage-namespace-terminating.md
                     - ts-authentication-failure.md
                     - ts-node-register-failure.md
+              - topicgroup:
+                  label: Satellite Config
+                  topics:
+                    - ts-satconfig-subid-perms.md                  
         - sitemap.md

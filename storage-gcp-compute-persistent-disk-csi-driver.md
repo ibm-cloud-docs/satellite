@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-02-27"
+lastupdated: "2024-07-26"
 
 keywords: satellite storage, google, csi, gcp, satellite configurations, google storage, gce, compute engine
 
@@ -173,7 +173,7 @@ You cannot scope {{site.data.keyword.satelliteshort}} storage service to resourc
 
 
 
-{{site.data.content.assignment-create-console}}
+
 {{site.data.content.assignment-create-cli}}
 {{site.data.content.assignment-create-api}}
 {{site.data.content.configuration-upgrade-console}}
