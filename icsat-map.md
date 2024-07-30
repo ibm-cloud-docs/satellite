@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-10"
+lastupdated: "2024-07-30"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -57,6 +57,8 @@ View and manage Satellite endpoints.
 {: shortdesc}
 
 * [`ibmcloud sat endpoint create`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-cli)
+* [`ibmcloud sat endpoint disable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-disable-cli)
+* [`ibmcloud sat endpoint enable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-enable-cli)
 * [`ibmcloud sat endpoint get`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-get-cli)
 * [`ibmcloud sat endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-ls-cli)
 * [`ibmcloud sat endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-rm-cli)

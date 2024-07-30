@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-07-30"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3290,6 +3290,14 @@ subcollection: satellite
 * [`ibmcloud sat endpoint create`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-options)
+
+* [`ibmcloud sat endpoint disable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-disable-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-disable-options)
+
+* [`ibmcloud sat endpoint enable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-enable-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-enable-options)
 
 * [`ibmcloud sat endpoint get`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-get-cli)
 
