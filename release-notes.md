@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-07-31"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -508,7 +508,7 @@ Create {{site.data.keyword.satelliteshort}} storage configurations from the cons
 {: release-note}
 
 Subscription identity sync
-:   After you create a subscription, you might need to [sync subscription identity](/docs/satellite?topic=satellite-sat-sync-sub-identity) for your rollout to be successful.
+:   After you create a subscription, you might need to [sync subscription identity](/docs/satellite?topic=satellite-sat-config-subid-sync) for your rollout to be successful.
 
 Apply updates your worker nodes in place
 :   You can apply updates to your worker nodes without detaching them. You can update your worker nodes individually or perform rolling by using a ConfigMap to define update parameters for all worker nodes in a cluster. See [Apply version updates to worker node hosts without detaching them](/docs/satellite?topic=satellite-host-update-workers#host-update-workers-inplace).

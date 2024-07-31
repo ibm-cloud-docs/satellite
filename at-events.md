@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-07-31"
 
 keywords: satellite, satellite at events, satellite activity tracker, satconfig events, satlink events, events for satellite config, events for satellite link, events for satellite location, events for satellite host
 
@@ -27,7 +27,7 @@ As a security officer, auditor, or manager, you can use {{site.data.keyword.at_f
 ## Events for {{site.data.keyword.satelliteshort}} clusters
 {: #at_actions_clusters}
 
-See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-at_events).
+See the [{{site.data.keyword.openshiftlong_notm}} documentation](/docs/openshift?topic=openshift-at_events_ref).
 {: shortdesc}
 
 ## Events for the {{site.data.keyword.satelliteshort}} Link component
