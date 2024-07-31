@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-07-30"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -406,6 +406,68 @@ ibmcloud sat endpoint create --dest-hostname HOSTNAME --dest-port PORT --dest-ty
 {: #endpoint-create-options-dl}
 
 
+## `ibmcloud sat endpoint disable`
+{: #endpoint-disable-cli}
+
+Disable an endpoint.
+
+```txt
+ibmcloud sat endpoint disable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #endpoint-disable-usage}
+
+### Command options
+{: #endpoint-disable-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--endpoint ENDPOINT`
+:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #endpoint-disable-options-dl}
+
+
+## `ibmcloud sat endpoint enable`
+{: #endpoint-enable-cli}
+
+Enable an endpoint.
+
+```txt
+ibmcloud sat endpoint enable --endpoint ENDPOINT [-f] [-q] (--connector-id ID | --location LOCATION)
+```
+{: pre}
+{: #endpoint-enable-usage}
+
+### Command options
+{: #endpoint-enable-options}
+
+`--connector-id ID`
+:    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
+
+`--endpoint ENDPOINT`
+:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`--location LOCATION`
+:    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #endpoint-enable-options-dl}
+
+
 ## `ibmcloud sat endpoint get`
 {: #endpoint-get-cli}
 
@@ -424,7 +486,7 @@ ibmcloud sat endpoint get --endpoint ENDPOINT [--output OUTPUT] [-q] (--connecto
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
 
 `--endpoint ENDPOINT`
-:    Specify the name or ID of the endpoint. To find a list of all endpoints, run `ibmcloud sat endpoint ls`.
+:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -483,7 +545,7 @@ ibmcloud sat endpoint rm --endpoint ENDPOINT [-q] (--connector-id ID | --locatio
 :    The ID of the Satellite connector. To find the connector ID, run `ibmcloud sat experimental connector ls`.
 
 `--endpoint ENDPOINT`
-:    Specify the name or ID of the endpoint. To find a list of all endpoints, run `ibmcloud sat endpoint ls`.
+:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
 
 `--location LOCATION`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
@@ -520,7 +582,7 @@ ibmcloud sat endpoint update --endpoint ENDPOINT [--dest-hostname HOSTNAME] [--d
 :    Specify the destination's protocol. If you do not specify this option, the destination protocol is inherited from the source protocol. Accepted values: `TCP`, `TLS`
 
 `--endpoint ENDPOINT`
-:    Specify the name or ID of the endpoint. To find a list of all endpoints, run `ibmcloud sat endpoint ls`.
+:    Specify the name or ID of the endpoint. To list all endpoints, run `ibmcloud sat endpoint ls (--connector-id ID | --location LOCATION)`.
 
 `--idle-timeout-seconds SECONDS`
 :    Specify the timeout interval in seconds for active connections to the destination. Make sure your timeout is compatible with the destination service and protocol `keep-alive` settings.

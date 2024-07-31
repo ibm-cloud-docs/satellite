@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-07-31"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1841,15 +1841,15 @@ subcollection: satellite
 
 [Authenticating Connector endpoint traffic](/docs/satellite?topic=satellite-connector_endpoint_auth#connector_endpoint_auth)
 
-* [Setting up authentication in the CLI](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-cli-loc)
+* [Setting up authentication in the CLI](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-cli-loc-conn)
 
-    * [Simple authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#simple-auth-source-loc)
+    * [Simple authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#simple-auth-source-loc-conn)
 
-    * [Mutual authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-destination-loc)
+    * [Mutual authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-destination-loc-conn)
 
-    * [Mutual authentication between the source and the Connector service](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-source-loc)
+    * [Mutual authentication between the source and the Connector service](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-source-loc-conn)
 
-    * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-both-loc)
+    * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-both-loc-conn)
 
 
 ## Managing apps with Satellite Config
@@ -3291,6 +3291,14 @@ subcollection: satellite
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-options)
 
+* [`ibmcloud sat endpoint disable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-disable-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-disable-options)
+
+* [`ibmcloud sat endpoint enable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-enable-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-enable-options)
+
 * [`ibmcloud sat endpoint get`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-get-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-get-options)
@@ -3738,18 +3746,6 @@ subcollection: satellite
 * [Version 1.0.15](/docs/satellite?topic=satellite-cs_cli_changelog#cli-1015)
 
 * [Version 1.0.0](/docs/satellite?topic=satellite-cs_cli_changelog#cli-100)
-
-* [Deprecated versions](/docs/satellite?topic=satellite-cs_cli_changelog#deprecated)
-
-    * [Updating to version 1.0 of the plug-in](/docs/satellite?topic=satellite-cs_cli_changelog#changelog_beta)
-
-    * [Version 0.4](/docs/satellite?topic=satellite-cs_cli_changelog#04)
-
-    * [Version 0.3](/docs/satellite?topic=satellite-cs_cli_changelog#03)
-
-    * [Version 0.2](/docs/satellite?topic=satellite-cs_cli_changelog#02)
-
-    * [Version 0.1](/docs/satellite?topic=satellite-cs_cli_changelog#01)
 
 
 ## Limitations, default settings, and usage requirements

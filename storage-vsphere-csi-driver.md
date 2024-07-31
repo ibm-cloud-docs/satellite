@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2020, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-07-31"
 
 keywords: satellite storage, VMware, satellite config, satellite configurations, vsphere
 
@@ -463,7 +463,7 @@ Removing the storage configuration removes the driver from all assigned clusters
 ## Getting help and support for VMWare
 {: #sat-vmware-csi-support}
 
-If you run into an issue with VMware submit a support request with [VMware Support](https://www.vmware.com/support/contacts.html){: external}.
+If you run into an issue with VMware submit a support request with [VMware Support](https://www.vmware.com/){: external}.
 
 
 

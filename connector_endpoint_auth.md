@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-07-22"
+lastupdated: "2024-07-31"
 
 keywords: satellite, endpoints, authentication
 
@@ -49,7 +49,7 @@ If you choose to provide your own certificates for endpoint authentication, you 
 
 
 ## Setting up authentication in the CLI
-{: #mutual-auth-cli-loc}
+{: #mutual-auth-cli-loc-conn}
 
 The `source` options refer to the TLS handshake between the source and the Connector service. The `dest` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
 
@@ -60,7 +60,7 @@ Review the following example scenarios.
 
 
 ### Simple authentication between the Connector service and the destination
-{: #simple-auth-source-loc}
+{: #simple-auth-source-loc-conn}
 
 1. Create an HTTPS endpoint to an HTTPS server with destination certificate verification. 
 
@@ -97,7 +97,7 @@ Review the following example scenarios.
     {: pre}
 
 ### Mutual authentication between the Connector service and the destination
-{: #mutual-auth-destination-loc}
+{: #mutual-auth-destination-loc-conn}
 
 1. Create an HTTP endpoint to an HTTPS server.
 
@@ -143,7 +143,7 @@ Review the following example scenarios.
 
 
 ### Mutual authentication between the source and the Connector service
-{: #mutual-auth-source-loc}
+{: #mutual-auth-source-loc-conn}
 
 Unlike the other examples, which can work with an endpoint `--dest-type` of either `location` or `cloud`, this one must use `--dest-type cloud` because setting source certificates for location destination endpoints is not supported.
 {: exception}
@@ -192,7 +192,7 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
 
 
 ### Mutual authentication at both the source and destination
-{: #mutual-auth-both-loc}
+{: #mutual-auth-both-loc-conn}
 
 
 
@@ -238,5 +238,6 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
       --dest-ca-cert-file /path/to/serverCACerts.pem
     ```
     {: pre}
+
 
 
