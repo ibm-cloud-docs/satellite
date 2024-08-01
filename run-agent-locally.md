@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-01"
 
 keywords: satellite, connector, agent, windows
 
@@ -45,9 +45,10 @@ Configuration information is provided to the agent through the following environ
 {: caption="Table 1. Environment variables for configuration" caption-side="bottom"}
 
 ## Running the agent on your container platform
-{: #connector-agent-mac}
+{: #connector-agent-container-platform}
 
 Before you begin, review the [Minimum requirements](/docs/satellite?topic=satellite-understand-connectors#min-requirements).
+
   
 ### Step 1: Creating the local configuration files
 {: #create-config-file}
@@ -195,7 +196,7 @@ Before you begin, review the [Minimum requirements](/docs/satellite?topic=satell
 1. From the CLI, run the following command to download the agent `.zip` file.
 
     ```sh
-    ibmcloud sat experimental connector agent --platform windows
+    ibmcloud sat experimental agent attach --platform windows
     ```
     {: codeblock}
 

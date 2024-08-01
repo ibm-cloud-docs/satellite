@@ -1781,7 +1781,7 @@ subcollection: satellite
 
 * [Reviewing the agent parameters](/docs/satellite?topic=satellite-run-agent-locally#review-parameters)
 
-* [Running the agent on your container platform](/docs/satellite?topic=satellite-run-agent-locally#connector-agent-mac)
+* [Running the agent on your container platform](/docs/satellite?topic=satellite-run-agent-locally#connector-agent-container-platform)
 
     * [Step 1: Creating the local configuration files](/docs/satellite?topic=satellite-run-agent-locally#create-config-file)
 
