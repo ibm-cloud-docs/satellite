@@ -45,7 +45,11 @@ You can have a maximum of 25 Connectors per account per region.
 ## How many endpoints are supported per Connector?
 {: #connector-faq-endpoints-per-conn}
 
-You can have a maximum of 25 endpoints per Connector.
+`cloud` endpoints
+:   1000 total. For example, you might create up to 650 TLS endpoints and 350 HTTP endpoints through which clients in your location can connect to resources outside of the location network.
+
+`location` endpoints
+:   25 total. For example, you might create up to 20 TLS endpoints and 5 HTTP endpoints through which clients outside of your location network can connect to resources inside the location.
 
 ## How many instances of Connector agent can I run?
 {: #connector-faq-instance-limits}
