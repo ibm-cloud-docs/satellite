@@ -3353,9 +3353,13 @@ subcollection: satellite
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-update-options)
 
-* [`ibmcloud sat experimental connector agent`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-agent-cli)
+* [`ibmcloud sat experimental agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-attach-cli)
 
-    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-agent-options)
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-attach-options)
+
+* [`ibmcloud sat experimental agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-ls-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-ls-options)
 
 * [`ibmcloud sat experimental connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-cli)
 
