@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-07-30"
+lastupdated: "2024-08-01"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -911,26 +911,51 @@ ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] (--connector-i
 {: #experimental-acl-update-options-dl}
 
 
-## `ibmcloud sat experimental connector agent`
-{: #experimental-connector-agent-cli}
+## `ibmcloud sat experimental agent attach`
+{: #experimental-agent-attach-cli}
 
-[2024-09-01] Get a Satellite Connector agent for a specific platform.
+[2024-09-01] Get a Satellite Connector Agent for a specific platform. Download the Agent `.zip` for Windows or get a link to the documentation for Docker environments.
 
 ```txt
-ibmcloud sat experimental connector agent --platform PLATFORM [-q]
+ibmcloud sat experimental agent attach --platform PLATFORM [-q]
 ```
 {: pre}
-{: #experimental-connector-agent-usage}
+{: #experimental-agent-attach-usage}
 
 ### Command options
-{: #experimental-connector-agent-options}
+{: #experimental-agent-attach-options}
 
 `--platform PLATFORM`
-:    The platform for the Satellite connector agent. For more information about Docker, see documentation at https://ibm.biz/satconagent Available options: windows, docker
+:    The platform for the Satellite Connector Agent. For more information about Docker, see the documentation at https://ibm.biz/satconagent Available options: windows, docker
 
 `-q`
 :    Do not show the message of the day or update reminders.
-{: #experimental-connector-agent-options-dl}
+{: #experimental-agent-attach-options-dl}
+
+
+## `ibmcloud sat experimental agent ls`
+{: #experimental-agent-ls-cli}
+
+[2024-09-01] List all Agents for a Satellite Connector.
+
+```txt
+ibmcloud sat experimental agent ls --connector-id ID [--output OUTPUT] [-q]
+```
+{: pre}
+{: #experimental-agent-ls-usage}
+
+### Command options
+{: #experimental-agent-ls-options}
+
+`--connector-id ID`
+:    The ID of a Satellite connector.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-agent-ls-options-dl}
 
 
 ## `ibmcloud sat experimental connector create`
@@ -1023,7 +1048,7 @@ ibmcloud sat experimental connector rm --connector-id ID [-f] [-q]
 {: #experimental-connector-rm-options}
 
 `--connector-id ID`
-:    The ID of Satellite connector.
+:    The ID of a Satellite connector.
 
 `-f`
 :    Force the command to run without user prompts.

@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-07-30"
+lastupdated: "2024-08-01"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -82,8 +82,10 @@ View and manage Satellite endpoints.
     * [`ibmcloud sat experimental acl subnet add`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-add-cli)
     * [`ibmcloud sat experimental acl subnet rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-rm-cli)
     * [`ibmcloud sat experimental acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-update-cli)
-* **`experimental connector`**: [2024-09-01] Create, view, and modify Satellite connectors. Acquire connector agents.
-    * [`ibmcloud sat experimental connector agent`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-agent-cli)
+* **`experimental agent`**: [2024-09-01] Attach or view Satellite Connector Agents.
+    * [`ibmcloud sat experimental agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-attach-cli)
+    * [`ibmcloud sat experimental agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-ls-cli)
+* **`experimental connector`**: [2024-09-01] Create, view, and modify Satellite connectors.
     * [`ibmcloud sat experimental connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-cli)
     * [`ibmcloud sat experimental connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-cli)
     * [`ibmcloud sat experimental connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-cli)
