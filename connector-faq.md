@@ -20,7 +20,7 @@ subcollection: satellite
 ## Does {{site.data.keyword.satelliteshort}} Connector support Cloud Endpoints?
 {: #connector-faq-endpoints}
 
-Yes, {{site.data.keyword.satelliteshort}} Connector supports both Location and Cloud endpoints.
+Yes, {{site.data.keyword.satelliteshort}} Connector supports both Location and Cloud endpoints. For more information, see [Creating Connector endpoints in the CLI](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli).
   
 ## How can I restrict access to my endpoints?
 {: #connector-faq-restrict}
