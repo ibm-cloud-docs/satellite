@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-08-01"
 
 keywords: satellite, connector, migration, endpoints, destinations
 
@@ -86,13 +86,6 @@ $ curl --silent --request PUT --header "Content-Type: application/json" --data "
       "id": "5B9oNcWGY67_nfTP5",
       "description": "endpoint 1",
       "new_endpoint_name": "endpoint-1"
-    }
-  ],
-  "failed": [
-    {
-      "id": "5B9oNcWGY67_TBGie",
-      "description": " cloud endpoint",
-      "reason": "Connector does not support cloud type endpoint."
     }
   ]
 }

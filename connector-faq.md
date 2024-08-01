@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-08-01"
 
 keywords: satellite, connector, faq, frequently asked questions
 
@@ -20,7 +20,7 @@ subcollection: satellite
 ## Does {{site.data.keyword.satelliteshort}} Connector support Cloud Endpoints?
 {: #connector-faq-endpoints}
 
-At this time, {{site.data.keyword.satelliteshort}} Connector only supports On Location endpoints to access your resources on-prem from {{site.data.keyword.cloud_notm}}.
+Yes, {{site.data.keyword.satelliteshort}} Connector supports both Location and Cloud endpoints.
   
 ## How can I restrict access to my endpoints?
 {: #connector-faq-restrict}
