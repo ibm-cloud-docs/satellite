@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-08-05"
 
 keywords: satellite config, subscription, id, permissions, not authorized
 
@@ -32,7 +32,7 @@ Change the subscription identity to use a different user ID. That user becomes t
     {: tip}
 
     ```sh
-    {[kubectl]} get rr -n razeedeploy <subscription-name> -o yaml
+    oc get rr -n razeedeploy <subscription-name> -o yaml
     ```
     {: pre}
 
