@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-13"
+lastupdated: "2024-08-13"
 
 keywords: satellite, hybrid, multicloud, location error messages, location messages, location errors
 
@@ -239,6 +239,7 @@ Steps to resolve
          - Across all hosts in a zone, at least 4 GB memory total must be available.
      2. [Attach 3 more hosts to the location](/docs/satellite?topic=satellite-attach-hosts).
      3. [Assign](/docs/satellite?topic=satellite-setup-control-plane) at least one host to each of the three zones to add capacity for control plane operations. Keep in mind that when you scale up the location control plane, scale evenly in multiples of 3, and assign the hosts evenly across zones.
+     4. Refresh the cluster by running the `ibmcloud ks cluster master refresh --cluster <cluster-id>` command.
 
 ## R0036: Location subdomain traffic routing
 {: #R0036}
