@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-14"
 
 keywords: satellite, endpoints, authentication
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Authenticating Connector endpoint traffic
 {: #connector_endpoint_auth}
 
-All endpoint traffic is encrypted by default. However, you can choose to provide your own certificates to implement source and destination authentication. There are two TLS connections in the endpoint request flow. The first TLS handshake is between the source and the Connector service. The second TLS handshake is between the Connector service and your destination or target server. You can provide certificates for one or both of these connections.
+All endpoint traffic is encrypted by default. However, you can choose to provide your own certificates to implement source and destination authentication. For TLS or HTTPS endpoints, there are two TLS connections in the endpoint request flow that you might need to configure. The first TLS handshake is between the source and the Connector service. The second TLS handshake is between the Connector service and your destination or target server. You can provide certificates for one or both of these connections.
 {: shortdesc}
 
 This is an experimental feature that is available for evaluation and testing purposes and might change without notice.
