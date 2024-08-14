@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-14"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 

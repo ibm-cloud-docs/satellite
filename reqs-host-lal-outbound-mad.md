@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-08-14"
 
 keywords: satellite, requirements, outbound, network, allowlist, connectivity, firewall, rhcos, madrid
 
@@ -44,7 +44,3 @@ Optional:  Allow hosts to connect to HPCS for encrypting cluster secrets.
 :    If you have a preconfigured set of instances, you can find the assigned port to your instance in the overview page and allowlist just that port on the domain.
 
 For access to services such as {{site.data.keyword.loganalysislong_notm}} or {{site.data.keyword.monitoringlong_notm}}, you must add the outbound access for them. For more information, see [RHCOS enabled locations in Madrid](/docs/satellite?topic=satellite-reqs-host-rhcos-outbound-mad).
-
-
-
-
