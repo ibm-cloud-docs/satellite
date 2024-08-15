@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-08-15"
 
 keywords: satellite, hybrid, multicloud
 
@@ -63,7 +63,9 @@ After creating a [Connector](/docs/satellite?topic=satellite-create-connector&in
     `--source-protocol PROTOCOL`
     :    Provide the protocol that the source uses to connect the destination resource. For more information, see [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). Available options: `TCP`, `TLS`, `HTTP`, `HTTPS`, `HTTP-tunnel`.
 
-1. Verify that the endpoint is created.
+
+
+4. Verify that the endpoint is created.
 
     ```sh
     ibmcloud sat endpoint ls --connector-id ID
@@ -87,6 +89,7 @@ Example command to create an endpoint that uses TCP protocol.
 ibmcloud sat endpoint create --dest-hostname server1.mydomain.com --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI --dest-type location --dest-port 443 --name myendpoint --source-protocol TCP --dest-protocol TCP
 ```
 {: pre}
+
 
 
 ## Creating an access control list (ACL) rule from the CLI
