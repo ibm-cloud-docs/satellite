@@ -144,7 +144,7 @@ For container platforms such as Docker or Rancher, this requires you to map the 
     :   The name for the ACL.
 
     `--subnet SUBNET`
-    :   An IP or CIDR block allowed by this ACL. Value must be fully contained in the follwowing CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+    :   An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 
     `--endpoint ENDPOINT`
     :   A name or ID of an endpoint to enable for this ACL.

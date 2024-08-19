@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-19"
 
 keywords: odf, satellite storage, satellite config, satellite configurations, container storage, local storage, OpenShift Data Foundation
 
@@ -166,7 +166,7 @@ When you create your ODF configuration, you must specify the device paths of the
 
 1. Repeat the previous steps for each worker node that you want to use for your ODF configuration.
 
-Want to use Terraform to deploy OpenShift Data Foundation? For more infromation, see the examples in the [IBM-Cloud repo](https://github.com/IBM-Cloud/terraform-provider-ibm/tree/master/examples/openshift-data-foundation){: external}.
+Want to use Terraform to deploy OpenShift Data Foundation? For more information, see the examples in the [IBM-Cloud repo](https://github.com/IBM-Cloud/terraform-provider-ibm/tree/master/examples/openshift-data-foundation){: external}.
 {: tip}
     
 
