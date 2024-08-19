@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-19"
 
 keywords: satellite, endpoints, authentication
 
@@ -16,7 +16,7 @@ subcollection: satellite
 # Authenticating Connector endpoint traffic
 {: #connector_endpoint_auth}
 
-All endpoint traffic is encrypted by default. However, you can choose to provide your own certificates to implement source and destination authentication. There are two TLS connections in the endpoint request flow. The first TLS handshake is between the source and the Connector service. The second TLS handshake is between the Connector service and your destination or target server. You can provide certificates for one or both of these connections.
+All endpoint traffic is encrypted by default. However, you can choose to provide your own certificates to implement source and destination authentication. For TLS or HTTPS endpoints, there are two TLS connections in the endpoint request flow that you might need to configure. The first TLS handshake is between the source and the Connector service. The second TLS handshake is between the Connector service and your destination or target server. You can provide certificates for one or both of these connections.
 {: shortdesc}
 
 This is an experimental feature that is available for evaluation and testing purposes and might change without notice.
@@ -29,7 +29,7 @@ Default authentication settings
 
 Simple authentication with the Connector service.
 :   The Connector server authenticates itself to the source. To set up simple authentication with the Connector service, you must set the endpoint's source protocol to TLS or HTTPS. Certificate configuration then depends on the endpoint's destination type.
-:   For endpoints with destination type 'cloud', you need to provide a server certificate and key that the Connector service will use to authenticate with the source. Note that if your server certificate is not signed by a well-known signing athority, you will also need to install a CA root certificate in your source environment.
+:   For endpoints with destination type 'cloud', you need to provide a server certificate and key that the Connector service will use to authenticate with the source. Note that if your server certificate is not signed by a well-known signing authority, you will also need to install a CA root certificate in your source environment.
 :   For endpoints with destination type 'location', you do not need to configure any Connector server certificates because Connector uses its own certificate signed by [DigiCert](https://www.digicert.com/). DigiCert certificates are [compatible](https://knowledge.digicert.com/general-information/compatibility-of-digicert-trusted-root-certificates) with all modern browsers and platforms but if your source has no root CA certificate, you will need to [download](https://www.digicert.com/kb/digicert-root-certificates.htm) one from DigiCert and install it in your source environment.
 
 Mutual authentication between the source and Connector service.

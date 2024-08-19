@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-08-19"
 
 keywords: satellite, hybrid, multicloud
 
@@ -63,12 +63,15 @@ After creating a [Connector](/docs/satellite?topic=satellite-create-connector&in
     `--source-protocol PROTOCOL`
     :    Provide the protocol that the source uses to connect the destination resource. For more information, see [Encryption protocols](/docs/satellite?topic=satellite-link-location-cloud#link-protocols). Available options: `TCP`, `TLS`, `HTTP`, `HTTPS`, `HTTP-tunnel`.
 
-1. Verify that the endpoint is created.
+3. Verify that the endpoint is created.
 
     ```sh
     ibmcloud sat endpoint ls --connector-id ID
     ```
     {: pre}
+
+
+4. If you are creating an on-cloud endpoint by specifying `--dest-type=cloud`, you must configure your location's Connector agent to expose the target port to requests from the source application. Follow the steps in [Configuring the agent port for on-cloud endpoints](#configure-connector-oncloud-port).
 
 
 ### Example commands for creating endpoints
@@ -88,6 +91,40 @@ ibmcloud sat endpoint create --dest-hostname server1.mydomain.com --connector-id
 ```
 {: pre}
 
+### Configuring the agent port for on-cloud endpoints
+{: #configure-connector-oncloud-port}
+
+On-cloud endpoints allow you to access {{site.data.keyword.cloud_notm}} resources outside of your {{site.data.keyword.satelliteshort}} location network. This includes any public or private service that is accessible from your {{site.data.keyword.satelliteshort}} account, such as an endpoint for {{site.data.keyword.cloud_notm}} IAM or a private {{site.data.keyword.cos_full_notm}} bucket.
+
+Calls to an on-cloud endpoint from your source application are first directed to the local Connector agent running on your location. Before your source application can access the endpoint, however, you must ensure that the endpoint's target port, which the agent is listening on, is accessible to your source application.
+For container platforms such as Docker or Rancher, this requires you to map the endpoint's target port to an appropriate port that is accessible to clients from outside of the container that the agent is running in. Follow the steps to complete this requirement.
+
+1. Run the command to get the target port. In the output, find the port number listed in the **Address** column. 
+
+    ```sh
+    ibmcloud sat endpoints --connector-id <connector ID>
+    ```
+    {: pre}
+
+    Example output. In this example, the target port number is `29998`.
+
+    ```
+    OK
+    ID                                                              Name      Destination Type   Address      Status
+    A1A1AAaaaAAaA11AAAAAaA11aaaAaaaAaA_aaaaa                        test123   cloud              TCP :29998   enabled
+    ```
+    {: screen}
+
+2. Map the target port to the container using the steps appropriate for your container platform. For most platforms, including Docker and Rancher, you can use the `-p LISTENPORT:CONTAINERPORT` option when starting your Connector agent.
+
+    For example, using Docker, the following command exposes port `8443` for the endpoint's container-internal target port `29998`.
+
+    ```sh
+    docker run -d --network host --platform linux/amd64 --env-file ~/agent/env-files/env.txt -v ~/agent/env-files:/agent-env-files icr.io/ibm/satellite-connector/satellite-connector-agent:latest -p 8443:29998
+    ```
+    {: pre}
+
+    You may also need to work with your container platform and operating system to allow outside traffic into your chosen `LISTENPORT`. In the previous example, the `LISTENPORT` is `8443`.
 
 ## Creating an access control list (ACL) rule from the CLI
 {: #create-connector-rule-cli}
@@ -107,7 +144,7 @@ ibmcloud sat endpoint create --dest-hostname server1.mydomain.com --connector-id
     :   The name for the ACL.
 
     `--subnet SUBNET`
-    :   An IP or CIDR block allowed by this ACL. Value must be fully contained in the follwowing CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+    :   An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 
     `--endpoint ENDPOINT`
     :   A name or ID of an endpoint to enable for this ACL.

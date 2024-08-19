@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-13"
+lastupdated: "2024-08-19"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1829,6 +1829,8 @@ subcollection: satellite
 
     * [Example commands for creating endpoints](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-endpoints-comm)
 
+    * [Configuring the agent port for on-cloud endpoints](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#configure-connector-oncloud-port)
+
 * [Creating an access control list (ACL) rule from the CLI](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-rule-cli)
 
     * [Example commands for creating ACLs](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-acls-comm)
@@ -2023,15 +2025,15 @@ subcollection: satellite
 
 [Authenticating Location endpoint traffic](/docs/satellite?topic=satellite-location_endpoint_auth#location_endpoint_auth)
 
-* [Setting up authentication in the CLI](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-cli-loc)
+* [Setting up authentication in the CLI](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-cli-loc-loc)
 
-    * [Simple authentication between the Location service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#simple-auth-source-loc)
+    * [Simple authentication between the Satellite Link service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#simple-auth-source-loc-loc)
 
-    * [Mutual authentication between the Location service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-destination-loc)
+    * [Mutual authentication between the Satellite Link service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-destination-loc-loc)
 
-    * [Mutual authentication between the source and the Location service](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-source-loc)
+    * [Mutual authentication between the source and the Satellite Link service](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-source-loc-loc)
 
-    * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-both-loc)
+    * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-both-loc-loc)
 
 [Accessing your {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoints](/docs/satellite?topic=satellite-link-endpoint-secure#link-endpoint-secure)
 

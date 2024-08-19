@@ -3,7 +3,7 @@
 copyright:
   years: 2020, 2024
 
-lastupdated: "2024-07-15"
+lastupdated: "2024-08-19"
 
 
 keywords: satellite storage, change log, version history, odf remote
@@ -124,7 +124,7 @@ Review the version history for the `odf-remote` {{site.data.keyword.satellitesho
 
 - Resolves the following CVEs: [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external} [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} 
 - Updates Go to version `1.21.12`.
-- Addded taint ODF nodes
+- Added taint ODF nodes
 
 ### Revision 10, released 05 June 2024
 {: #odf-remote-4.13-rev-10-change-log}
