@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-15"
+lastupdated: "2024-08-19"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -1828,6 +1828,8 @@ subcollection: satellite
 * [Creating endpoints from the CLI](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-endpoint-cli)
 
     * [Example commands for creating endpoints](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-endpoints-comm)
+
+    * [Configuring the agent port for on-cloud endpoints](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#configure-connector-oncloud-port)
 
 * [Creating an access control list (ACL) rule from the CLI](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#create-connector-rule-cli)
 
