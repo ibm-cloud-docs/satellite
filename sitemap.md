@@ -1847,15 +1847,15 @@ subcollection: satellite
 
 [Authenticating Connector endpoint traffic](/docs/satellite?topic=satellite-connector_endpoint_auth#connector_endpoint_auth)
 
-* [Setting up authentication in the CLI](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-cli-loc-conn)
+* [Setting up authentication in the CLI](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-cli-conn)
 
-    * [Simple authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#simple-auth-source-loc-conn)
+    * [Simple authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#simple-auth-source-conn)
 
-    * [Mutual authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-destination-loc-conn)
+    * [Mutual authentication between the Connector service and the destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-destination-conn)
 
-    * [Mutual authentication between the source and the Connector service](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-source-loc-conn)
+    * [Mutual authentication between the source and the Connector service](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-source-conn)
 
-    * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-both-loc-conn)
+    * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-connector_endpoint_auth#mutual-auth-both-conn)
 
 
 ## Managing apps with Satellite Config
@@ -2031,15 +2031,15 @@ subcollection: satellite
 
 [Authenticating Location endpoint traffic](/docs/satellite?topic=satellite-location_endpoint_auth#location_endpoint_auth)
 
-* [Setting up authentication in the CLI](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-cli-loc-loc)
+* [Setting up authentication in the CLI](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-cli-loc)
 
-    * [Simple authentication between the Satellite Link service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#simple-auth-source-loc-loc)
+    * [Simple authentication between the Satellite Link service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#simple-auth-source-loc)
 
-    * [Mutual authentication between the Satellite Link service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-destination-loc-loc)
+    * [Mutual authentication between the Satellite Link service and the destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-destination-loc)
 
-    * [Mutual authentication between the source and the Satellite Link service](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-source-loc-loc)
+    * [Mutual authentication between the source and the Satellite Link service](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-source-loc)
 
-    * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-both-loc-loc)
+    * [Mutual authentication at both the source and destination](/docs/satellite?topic=satellite-location_endpoint_auth#mutual-auth-both-loc)
 
 [Accessing your {{site.data.keyword.redhat_openshift_notm}} API Satellite link endpoints](/docs/satellite?topic=satellite-link-endpoint-secure#link-endpoint-secure)
 
@@ -3654,6 +3654,8 @@ subcollection: satellite
 [CLI change log](/docs/satellite?topic=satellite-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
+
+* [Version v1.0.651](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010651)
 
 * [Version v1.0.640](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010640)
 
