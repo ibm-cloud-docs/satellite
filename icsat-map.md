@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-20"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -19,6 +19,26 @@ subcollection: satellite
 
 This page lists all `ibmcloud sat` commands as they are structured in the CLI. For more information about a specific command, click on the command or see the [{{site.data.keyword.satellitelong_notm}} CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference).
 
+
+
+## acl commands
+{: #icks_map_acl}
+
+View and manage Satellite access control lists (ACLs).
+{: shortdesc}
+
+* [`ibmcloud sat acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-create-cli)
+* **`acl endpoint`**: Configure endpoints for an ACL.
+    * [`ibmcloud sat acl endpoint add`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-add-cli)
+    * [`ibmcloud sat acl endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-ls-cli)
+    * [`ibmcloud sat acl endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-rm-cli)
+* [`ibmcloud sat acl get`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-get-cli)
+* [`ibmcloud sat acl ls`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-ls-cli)
+* [`ibmcloud sat acl rm`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-rm-cli)
+* **`acl subnet`**: Configure subnets for an ACL.
+    * [`ibmcloud sat acl subnet add`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-add-cli)
+    * [`ibmcloud sat acl subnet rm`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-rm-cli)
+* [`ibmcloud sat acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-cli)
 
 
 ## cluster commands
@@ -56,6 +76,9 @@ View and manage Satellite Configuration.
 View and manage Satellite endpoints.
 {: shortdesc}
 
+* **`endpoint authn`**: Configure authentication settings for an endpoint.
+    * [`ibmcloud sat endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-rotate-cli)
+    * [`ibmcloud sat endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-set-cli)
 * [`ibmcloud sat endpoint create`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-cli)
 * [`ibmcloud sat endpoint disable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-disable-cli)
 * [`ibmcloud sat endpoint enable`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-enable-cli)
@@ -68,10 +91,10 @@ View and manage Satellite endpoints.
 ## experimental commands
 {: #icks_map_experimental}
 
-[2024-09-01] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
+[Expires on 2024-11-18] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
 {: shortdesc}
 
-* **`experimental acl`**: [2024-09-01] View and manage Satellite access control lists (ACLs).
+* **`experimental acl`**: [Expires on 2024-10-01. Use `ibmcloud sat acl` instead] View and manage Satellite access control lists (ACLs).
     * [`ibmcloud sat experimental acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-create-cli)
     * [`ibmcloud sat experimental acl endpoint add`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-add-cli)
     * [`ibmcloud sat experimental acl endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-endpoint-ls-cli)
@@ -82,15 +105,15 @@ View and manage Satellite endpoints.
     * [`ibmcloud sat experimental acl subnet add`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-add-cli)
     * [`ibmcloud sat experimental acl subnet rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-rm-cli)
     * [`ibmcloud sat experimental acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-update-cli)
-* **`experimental agent`**: [2024-09-01] Attach or view Satellite Connector Agents.
+* **`experimental agent`**: [Expires on 2024-09-01] Attach or view Satellite Connector Agents.
     * [`ibmcloud sat experimental agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-attach-cli)
     * [`ibmcloud sat experimental agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-ls-cli)
-* **`experimental connector`**: [2024-09-01] Create, view, and modify Satellite connectors.
+* **`experimental connector`**: [Expires on 2024-11-18] Create, view, and modify Satellite connectors.
     * [`ibmcloud sat experimental connector create`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-create-cli)
     * [`ibmcloud sat experimental connector get`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-get-cli)
     * [`ibmcloud sat experimental connector ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-ls-cli)
     * [`ibmcloud sat experimental connector rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-connector-rm-cli)
-* **`experimental endpoint`**: [2024-09-01] View and manage Satellite endpoints.
+* **`experimental endpoint`**: [Expires on 2024-10-01] View and manage Satellite endpoints.
     * [`ibmcloud sat experimental endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-rotate-cli)
     * [`ibmcloud sat experimental endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-endpoint-authn-set-cli)
 
