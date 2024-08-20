@@ -63,7 +63,7 @@ ibmcloud sat acl create --name NAME --subnet SUBNET [--subnet SUBNET ...] [--end
 :    Do not show the message of the day or update reminders.
 
 `--subnet SUBNET`
-:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the follwowing CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 {: #acl-create-options-dl}
 
 
@@ -274,7 +274,7 @@ ibmcloud sat acl subnet add --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-
 :    Do not show the message of the day or update reminders.
 
 `--subnet SUBNET`
-:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the follwowing CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 {: #acl-subnet-add-options-dl}
 
 
@@ -305,7 +305,7 @@ ibmcloud sat acl subnet rm --acl-id ID --subnet SUBNET [--subnet SUBNET ...] [-q
 :    Do not show the message of the day or update reminders.
 
 `--subnet SUBNET`
-:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the follwowing CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 {: #acl-subnet-rm-options-dl}
 
 
@@ -1039,7 +1039,7 @@ ibmcloud sat experimental acl create --name NAME --subnet SUBNET [--subnet SUBNE
 :    Do not show the message of the day or update reminders.
 
 `--subnet SUBNET`
-:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the follwowing CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 {: #experimental-acl-create-options-dl}
 
 
@@ -1250,7 +1250,7 @@ ibmcloud sat experimental acl subnet add --acl-id ID --subnet SUBNET [--subnet S
 :    Do not show the message of the day or update reminders.
 
 `--subnet SUBNET`
-:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the follwowing CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 {: #experimental-acl-subnet-add-options-dl}
 
 
@@ -1281,7 +1281,7 @@ ibmcloud sat experimental acl subnet rm --acl-id ID --subnet SUBNET [--subnet SU
 :    Do not show the message of the day or update reminders.
 
 `--subnet SUBNET`
-:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the follwowing CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
+:    An IP or CIDR block allowed by this ACL. Value must be fully contained in the following CIDRs: 10.0.0.0/8, 161.26.0.0/16, 166.8.0.0/14, 172.16.0.0/12.
 {: #experimental-acl-subnet-rm-options-dl}
 
 
