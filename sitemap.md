@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-08-20"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -195,6 +195,12 @@ subcollection: satellite
 
 
 [Release notes](/docs/satellite?topic=satellite-satellite-relnotes#satellite-relnotes)
+
+* [August 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-august24)
+
+    * [20 August 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-august2024)
+
+        * CLI version `1.0.651` is available.
 
 * [July 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july24)
 
@@ -3209,6 +3215,8 @@ subcollection: satellite
 
 [{{site.data.keyword.satellitelong_notm}} CLI map](/docs/satellite?topic=satellite-icsat_map#icsat_map)
 
+* [acl commands](/docs/satellite?topic=satellite-icsat_map#icks_map_acl)
+
 * [cluster commands](/docs/satellite?topic=satellite-icsat_map#icks_map_cluster)
 
 * [config commands](/docs/satellite?topic=satellite-icsat_map#icks_map_config)
@@ -3238,6 +3246,46 @@ subcollection: satellite
 [CLI reference for {{site.data.keyword.satelliteshort}} commands](/docs/satellite?topic=satellite-satellite-cli-reference#satellite-cli-reference)
 
 * [ibmcloud sat commands](/docs/satellite?topic=satellite-satellite-cli-reference#cli_commands)
+
+* [`ibmcloud sat acl create`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-create-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-create-options)
+
+* [`ibmcloud sat acl endpoint add`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-add-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-add-options)
+
+* [`ibmcloud sat acl endpoint ls`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-ls-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-ls-options)
+
+* [`ibmcloud sat acl endpoint rm`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-rm-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-endpoint-rm-options)
+
+* [`ibmcloud sat acl get`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-get-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-get-options)
+
+* [`ibmcloud sat acl ls`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-ls-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-ls-options)
+
+* [`ibmcloud sat acl rm`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-rm-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-rm-options)
+
+* [`ibmcloud sat acl subnet add`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-add-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-add-options)
+
+* [`ibmcloud sat acl subnet rm`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-rm-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-rm-options)
+
+* [`ibmcloud sat acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-options)
 
 * [`ibmcloud sat cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-get-cli)
 
@@ -3286,6 +3334,14 @@ subcollection: satellite
 * [`ibmcloud sat config version rm`](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#config-version-rm-options)
+
+* [`ibmcloud sat endpoint authn rotate`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-rotate-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-rotate-options)
+
+* [`ibmcloud sat endpoint authn set`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-set-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-authn-set-options)
 
 * [`ibmcloud sat endpoint create`](/docs/satellite?topic=satellite-satellite-cli-reference#endpoint-create-cli)
 

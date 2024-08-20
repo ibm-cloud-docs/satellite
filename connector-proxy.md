@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-08-20"
 
 keywords: satellite, http proxy, http, proxy, connector
 
@@ -24,7 +24,7 @@ There are various ways to setup a proxy. These instructions assume that you have
 
 1. Create a Connector.
 
-1. On the Connector agent, ensure that your Docker runtime is using the proxy so that you can log in and pull images from `icr.io`. For more information, see [Configure the Docker daemon to use a proxy server](https://docs.docker.com/config/daemon/proxy/#httphttps-proxy){: external}. 
+1. On the Connector agent, ensure that your Docker runtime is using the proxy so that you can log in and pull images from `icr.io`. For more information, see [Configure the Docker daemon to use a proxy server](https://docs.docker.com/engine/daemon/proxy/#httphttps-proxy){: external}. 
 
 1. In your environment variable file for the Connector agent (`~/agent/env-files/env.txt` from the previous example), add the following environment variables with your proxy information.
     ```txt  
