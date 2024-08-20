@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-08-20"
 
 keywords: satellite, endpoints, authentication
 
@@ -29,17 +29,17 @@ Default authentication settings
 
 Simple authentication with the Connector service.
 :   The Connector server authenticates itself to the source. To set up simple authentication with the Connector service, you must set the endpoint's source protocol to TLS or HTTPS. Certificate configuration then depends on the endpoint's destination type.
-:   For endpoints with destination type 'cloud', you need to provide a server certificate and key that the Connector service will use to authenticate with the source. Note that if your server certificate is not signed by a well-known signing authority, you will also need to install a CA root certificate in your source environment.
-:   For endpoints with destination type 'location', you do not need to configure any Connector server certificates because Connector uses its own certificate signed by [DigiCert](https://www.digicert.com/). DigiCert certificates are [compatible](https://knowledge.digicert.com/general-information/compatibility-of-digicert-trusted-root-certificates) with all modern browsers and platforms but if your source has no root CA certificate, you will need to [download](https://www.digicert.com/kb/digicert-root-certificates.htm) one from DigiCert and install it in your source environment.
+:   For endpoints with destination type 'cloud', you must provide a server certificate and key that the Connector service will use to authenticate with the source. Note that if your server certificate is not signed by a well-known signing authority, you must also install a CA root certificate in your source environment.
+:   For endpoints with destination type 'location', you do not need to configure any Connector server certificates because Connector uses its own certificate signed by [DigiCert](https://www.digicert.com/){: external}. DigiCert certificates are [compatible](https://knowledge.digicert.com/general-information/compatibility-of-digicert-trusted-root-certificates){: external} with all modern browsers and platforms but if your source has no root CA certificate, you will need to [download](https://www.digicert.com/kb/digicert-root-certificates.htm){: external} one from DigiCert and install it in your source environment.
 
 Mutual authentication between the source and Connector service.
-:   With mutual authentication, the Connector service authenticates itself to the source and the source must authenticate itself to the Connector service. To set up mutual authentication between the source and Connector service, you need to configure the Connector server authentication the same way as in the simple source authentication case, above, but you also need to configure a CA certificate that the Connector service will use to validate the source's client certificate.
+:   With mutual authentication, the Connector service authenticates itself to the source and the source must authenticate itself to the Connector service. To set up mutual authentication between the source and Connector service, you must configure the Connector server authentication the same way as in the simple source authentication case. However, you also need to configure a CA certificate that the Connector service uses to validate the source's client certificate.
 
 Simple authentication with the destination server.
-:   The destination server authenticates itself with the Connector service. To set up simple authentication with the destination, your endpoint must have a destination protocol of TLS. If the destination's server certificate is not signed by a well-known certificate authority (or self-signed), you will need to configure a trusted CA certificate or chain to validate the destination's server certificate.
+:   The destination server authenticates itself with the Connector service. To set up simple authentication with the destination, your endpoint must have a destination protocol of TLS. If the destination's server certificate is not signed by a well-known certificate authority or is not self-signed, you will need to configure a trusted CA certificate or chain to validate the destination's server certificate.
 
 Mutual authentication between Connector and the destination server.
-:    With mutual authentication, the destination server authenticates itself to the Connector service and the Connector service must authenticate itself to the destination. To set up mutual authentication between the Connector service and the destination server, you need to configure the Connector service authentication the same way as in the simple destination authentication case, above, but you will also need to provide a client certificate and key that the Connector service will use to authenticate with the destination.
+:    With mutual authentication, the destination server authenticates itself to the Connector service and the Connector service must authenticate itself to the destination. To set up mutual authentication between the Connector service and the destination server, you need to configure the Connector service authentication the same way as in the simple destination authentication case. However, you will also need to provide a client certificate and key that the Connector service uses to authenticate with the destination.
 
 Mutual authentication between the source and the Connector service as well as Connector and the destination server.
 :   Requests to both the Connector service and the destination server are authenticated. Two TLS handshakes must be verified before traffic is allowed. For this setup, create an endpoint with a source protocol of TLS or HTTPS and a destination protocol of TLS. Then, provide all of the certificates needed for both the source and destination mutual authentication cases, as described above.
@@ -49,7 +49,7 @@ If you choose to provide your own certificates for endpoint authentication, you 
 
 
 ## Setting up authentication in the CLI
-{: #mutual-auth-cli-loc-conn}
+{: #mutual-auth-cli-conn}
 
 The `source` options refer to the TLS handshake between the source and the Connector service. The `dest` options refer to the TLS handshake between the Connector service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
 
@@ -60,7 +60,7 @@ Review the following example scenarios.
 
 
 ### Simple authentication between the Connector service and the destination
-{: #simple-auth-source-loc-conn}
+{: #simple-auth-source-conn}
 
 1. Create an HTTPS endpoint to an HTTPS server with destination certificate verification. 
 
@@ -97,7 +97,7 @@ Review the following example scenarios.
     {: pre}
 
 ### Mutual authentication between the Connector service and the destination
-{: #mutual-auth-destination-loc-conn}
+{: #mutual-auth-destination-conn}
 
 1. Create an HTTP endpoint to an HTTPS server.
 
@@ -143,7 +143,7 @@ Review the following example scenarios.
 
 
 ### Mutual authentication between the source and the Connector service
-{: #mutual-auth-source-loc-conn}
+{: #mutual-auth-source-conn}
 
 Unlike the other examples, which can work with an endpoint `--dest-type` of either `location` or `cloud`, this one must use `--dest-type cloud` because setting source certificates for location destination endpoints is not supported.
 {: exception}
@@ -192,7 +192,7 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
 
 
 ### Mutual authentication at both the source and destination
-{: #mutual-auth-both-loc-conn}
+{: #mutual-auth-both-conn}
 
 
 

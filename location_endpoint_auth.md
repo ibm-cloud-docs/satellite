@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-08-14"
+lastupdated: "2024-08-20"
 
 keywords: satellite, endpoints, authentication
 
@@ -39,7 +39,7 @@ Simple authentication with the destination server.
 :   The destination server authenticates itself with the Satellite Link service. To set up simple authentication with the destination, your endpoint must have a destination protocol of TLS. If the destination's server certificate is not signed by a well-known certificate authority or is not self-signed, you will need to configure a trusted CA certificate or chain to validate the destination's server certificate.
 
 Mutual authentication between Satellite Link and the destination server.
-:    With mutual authentication, the destination server authenticates itself to the Satellite Link service and the Satellite Link service must authenticate itself to the destination. To set up mutual authentication between the Satellite Link service and the destination server, you need to configure the Satellite Link service authentication the same way as in the simple destination authentication case. However you will also need to provide a client certificate and key that the Satellite Link service uses to authenticate with the destination.
+:    With mutual authentication, the destination server authenticates itself to the Satellite Link service and the Satellite Link service must authenticate itself to the destination. To set up mutual authentication between the Satellite Link service and the destination server, you need to configure the Satellite Link service authentication the same way as in the simple destination authentication case. However, you will also need to provide a client certificate and key that the Satellite Link service uses to authenticate with the destination.
 
 Mutual authentication between the source and the Satellite Link service as well as Satellite Link and the destination server.
 :   Requests to both the Satellite Link service and the destination server are authenticated. Two TLS handshakes must be verified before traffic is allowed. For this setup, create an endpoint with a source protocol of TLS or HTTPS and a destination protocol of TLS. Then, provide all of the certificates needed for both the source and destination mutual authentication cases, as described above.
@@ -49,7 +49,7 @@ If you choose to provide your own certificates for endpoint authentication, you 
 
 
 ## Setting up authentication in the CLI
-{: #mutual-auth-cli-loc-loc}
+{: #mutual-auth-cli-loc}
 
 The `source` options refer to the TLS handshake between the source and the Satellite Link service. The `dest` options refer to the TLS handshake between the Satellite Link service and your destination or target server. You can provide certificates for one or both of these connections. Unspecified settings are set to their default values.
 
@@ -60,7 +60,7 @@ Review the following example scenarios.
 
 
 ### Simple authentication between the Satellite Link service and the destination
-{: #simple-auth-source-loc-loc}
+{: #simple-auth-source-loc}
 
 1. Create an HTTPS endpoint to an HTTPS server with destination certificate verification. 
 
@@ -97,7 +97,7 @@ Review the following example scenarios.
     {: pre}
 
 ### Mutual authentication between the Satellite Link service and the destination
-{: #mutual-auth-destination-loc-loc}
+{: #mutual-auth-destination-loc}
 
 1. Create an HTTP endpoint to an HTTPS server.
 
@@ -143,7 +143,7 @@ Review the following example scenarios.
 
 
 ### Mutual authentication between the source and the Satellite Link service
-{: #mutual-auth-source-loc-loc}
+{: #mutual-auth-source-loc}
 
 Unlike the other examples, which can work with an endpoint `--dest-type` of either `location` or `cloud`, this one must use `--dest-type cloud` because setting source certificates for location destination endpoints is not supported.
 {: exception}
@@ -192,7 +192,7 @@ Unlike the other examples, which can work with an endpoint `--dest-type` of eith
 
 
 ### Mutual authentication at both the source and destination
-{: #mutual-auth-both-loc-loc}
+{: #mutual-auth-both-loc}
 
 
 
