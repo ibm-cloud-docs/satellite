@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-08-21"
 
 keywords: satellite cli map, satellite commands, satellite cli, satellite reference
 
@@ -39,6 +39,16 @@ View and manage Satellite access control lists (ACLs).
     * [`ibmcloud sat acl subnet add`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-add-cli)
     * [`ibmcloud sat acl subnet rm`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-subnet-rm-cli)
 * [`ibmcloud sat acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-cli)
+
+
+## agent commands
+{: #icks_map_agent}
+
+Attach or view Satellite Connector Agents.
+{: shortdesc}
+
+* [`ibmcloud sat agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#agent-attach-cli)
+* [`ibmcloud sat agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#agent-ls-cli)
 
 
 ## cluster commands
@@ -105,7 +115,7 @@ View and manage Satellite endpoints.
     * [`ibmcloud sat experimental acl subnet add`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-add-cli)
     * [`ibmcloud sat experimental acl subnet rm`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-subnet-rm-cli)
     * [`ibmcloud sat experimental acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-acl-update-cli)
-* **`experimental agent`**: [Expires on 2024-09-01] Attach or view Satellite Connector Agents.
+* **`experimental agent`**: [Expires on 2024-09-01. Use `ibmcloud sat agent` instead] Attach or view Satellite Connector Agents.
     * [`ibmcloud sat experimental agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-attach-cli)
     * [`ibmcloud sat experimental agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#experimental-agent-ls-cli)
 * **`experimental connector`**: [Expires on 2024-11-18] Create, view, and modify Satellite connectors.
