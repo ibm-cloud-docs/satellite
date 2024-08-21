@@ -3,7 +3,7 @@
 
 copyright:
   years: 2019, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-08-21"
 
 keywords: satellite cli reference, satellite commands, satellite cli, satellite reference
 
@@ -338,6 +338,53 @@ ibmcloud sat acl update --acl-id ID --name NAME [-q] (--connector-id ID | --loca
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #acl-update-options-dl}
+
+
+## `ibmcloud sat agent attach`
+{: #agent-attach-cli}
+
+Get a Satellite Connector Agent for a specific platform. Download the Agent `.zip` for Windows or get a link to the documentation for Docker environments.
+
+```txt
+ibmcloud sat agent attach --platform PLATFORM [-q]
+```
+{: pre}
+{: #agent-attach-usage}
+
+### Command options
+{: #agent-attach-options}
+
+`--platform PLATFORM`
+:    The platform for the Satellite Connector Agent. For more information about Docker, see the documentation at https://ibm.biz/satconagent Available options: windows, docker
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #agent-attach-options-dl}
+
+
+## `ibmcloud sat agent ls`
+{: #agent-ls-cli}
+
+List all Agents for a Satellite Connector.
+
+```txt
+ibmcloud sat agent ls --connector-id ID [--output OUTPUT] [-q]
+```
+{: pre}
+{: #agent-ls-usage}
+
+### Command options
+{: #agent-ls-options}
+
+`--connector-id ID`
+:    The ID of a Satellite connector.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #agent-ls-options-dl}
 
 
 ## `ibmcloud sat cluster get`
@@ -1319,7 +1366,7 @@ ibmcloud sat experimental acl update --acl-id ID --name NAME [-q] (--connector-i
 ## `ibmcloud sat experimental agent attach`
 {: #experimental-agent-attach-cli}
 
-[Expires on 2024-09-01] Get a Satellite Connector Agent for a specific platform. Download the Agent `.zip` for Windows or get a link to the documentation for Docker environments.
+[Expires on 2024-09-01. Use `ibmcloud sat agent attach` instead] Get a Satellite Connector Agent for a specific platform. Download the Agent `.zip` for Windows or get a link to the documentation for Docker environments.
 
 ```txt
 ibmcloud sat experimental agent attach --platform PLATFORM [-q]
@@ -1341,7 +1388,7 @@ ibmcloud sat experimental agent attach --platform PLATFORM [-q]
 ## `ibmcloud sat experimental agent ls`
 {: #experimental-agent-ls-cli}
 
-[Expires on 2024-09-01] List all Agents for a Satellite Connector.
+[Expires on 2024-09-01. Use `ibmcloud sat agent ls` instead] List all Agents for a Satellite Connector.
 
 ```txt
 ibmcloud sat experimental agent ls --connector-id ID [--output OUTPUT] [-q]

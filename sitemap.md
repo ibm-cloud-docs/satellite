@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-08-21"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3217,6 +3217,8 @@ subcollection: satellite
 
 * [acl commands](/docs/satellite?topic=satellite-icsat_map#icks_map_acl)
 
+* [agent commands](/docs/satellite?topic=satellite-icsat_map#icks_map_agent)
+
 * [cluster commands](/docs/satellite?topic=satellite-icsat_map#icks_map_cluster)
 
 * [config commands](/docs/satellite?topic=satellite-icsat_map#icks_map_config)
@@ -3286,6 +3288,14 @@ subcollection: satellite
 * [`ibmcloud sat acl update`](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-cli)
 
     * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#acl-update-options)
+
+* [`ibmcloud sat agent attach`](/docs/satellite?topic=satellite-satellite-cli-reference#agent-attach-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#agent-attach-options)
+
+* [`ibmcloud sat agent ls`](/docs/satellite?topic=satellite-satellite-cli-reference#agent-ls-cli)
+
+    * [Command options](/docs/satellite?topic=satellite-satellite-cli-reference#agent-ls-options)
 
 * [`ibmcloud sat cluster get`](/docs/satellite?topic=satellite-satellite-cli-reference#cluster-get-cli)
 
