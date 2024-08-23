@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-21"
+lastupdated: "2024-08-23"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -198,9 +198,11 @@ subcollection: satellite
 
 * [August 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-august24)
 
-    * [20 August 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-august2024)
+    * [23 August 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-august2324)
 
-        * CLI version `1.0.651` is available.
+        * CLI version `1.0.652` is available.
+
+        * New docs for configuring the agent port for on-cloud endpoints
 
 * [July 2024](/docs/satellite?topic=satellite-satellite-relnotes#satellite-july24)
 

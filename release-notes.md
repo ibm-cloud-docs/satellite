@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-08-23"
 
 keywords: satellite, hybrid, multicloud, release notes, changes
 
@@ -25,12 +25,15 @@ Review the latest changes to the {{site.data.keyword.satellitelong}} documentati
 ## August 2024
 {: #satellite-august24}
 
-### 20 August 2024
-{: #satellite-august2024}
+### 23 August 2024
+{: #satellite-august2324}
 {: release-note}
 
-CLI version `1.0.651` is available.
+CLI version `1.0.652` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+New docs for configuring the agent port for on-cloud endpoints
+:   Calls to an on-cloud endpoint from your source application are first directed to the local Connector agent. Before your source application can access the endpoint, however, you must ensure that the endpoint's target port, which the agent is listening on, is accessible to your source application. For more information, see [Configuring the agent port for on-cloud endpoints](/docs/satellite?topic=satellite-connector-create-endpoints&interface=cli#configure-connector-oncloud-port).
 
 ## July 2024
 {: #satellite-july24}
