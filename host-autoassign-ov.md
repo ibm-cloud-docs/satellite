@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-08-23"
 
 keywords: satellite, hybrid, multicloud, assigning hosts, host auto assignment, host auto assignment, host labels
 
@@ -133,3 +133,5 @@ If you [disabled host auto assignment](#host-autoassign-disable), you can re-ena
 1. Make sure that you have [available hosts with labels that match the host labels of the worker pool](#host-autoassign).
 2. [Resize the worker pool](/docs/openshift?topic=openshift-satellite-clusters) to set the requested size per zone, rebalance the worker pool, and enable auto assignment again.
 
+For Satellite clusters, do not use the `ibmcloud oc worker-pool rebalance` command if you have manually assigned worker nodes to your worker pool. Rebalancing a pool with manually assigned worker nodes might remove more than the expected number of worker nodes. 
+{: important}
