@@ -3,7 +3,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-08-23"
 
 keywords: satellite, hybrid, multicloud
 
@@ -108,7 +108,7 @@ For container platforms such as Docker or Rancher, this requires you to map the 
 
     Example output. In this example, the target port number is `29998`.
 
-    ```
+    ```sh
     OK
     ID                                                              Name      Destination Type   Address      Status
     A1A1AAaaaAAaA11AAAAAaA11aaaAaaaAaA_aaaaa                        test123   cloud              TCP :29998   enabled
@@ -178,7 +178,7 @@ ibmcloud sat experimental acl create --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJj
 
 This will produce output similar to the following.
 
-```
+```sh
 OK
 ACL created with ID A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI-Source-vbfea
 ```
@@ -198,7 +198,7 @@ ibmcloud sat experimental acl ls --connector-id A1B0CDefgHilQ11ubmVjdG1yOiJjb11h
 ```
 {: pre}
 
-```
+```sh
 OK
 ID                                                                      Name        Subnets                             Created
 A1B0CDefgHilQ11ubmVjdG1yOiJjb11hnTdlWSRE1dnZla1szbDBsZyI-Source-vbfea   myrule      10.123.76.192/26,10.194.127.64/26   11 minutes ago
