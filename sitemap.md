@@ -3,7 +3,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-23"
+lastupdated: "2024-08-26"
 
 keywords: satellite, sitemap
 subcollection: satellite
@@ -3667,7 +3667,7 @@ subcollection: satellite
 
 * [Version 1.0](/docs/satellite?topic=satellite-cs_cli_changelog#10)
 
-* [Version v1.0.651](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010651)
+* [Version v1.0.652](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010652)
 
 * [Version v1.0.640](/docs/satellite?topic=satellite-cs_cli_changelog#cli-010640)
 
