@@ -3,7 +3,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-08-28"
 
 keywords: satellite, hybrid, multicloud, direct link, secure direct link
 
@@ -172,7 +172,7 @@ In the following example, a private-only VPC cluster and private Ingress control
     There are many ways to expose apps in {{site.data.keyword.redhat_openshift_notm}} cluster in a VPC. In this example, the app will be privately exposed with private endpoints only, which is the most common use case for {{site.data.keyword.dl_short}} customers. {{site.data.keyword.redhat_openshift_notm}} clusters that are privately exposed with private endpoints only come with default private name and certificate. They will be used in this example to expose the NGINX reverse proxy pods. You can use the default ones or bring your custom host name and certificate. For more details, see [Privately exposing apps in VPC clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-ingress-private-expose#priv-se-priv-controller).
     {: note}
     
-1. Create a Secretes Manager instance and register it to the {{site.data.keyword.redhat_openshift_notm}} cluster that was created in the previous step. For more information, see [Creating a Secrets Manager service instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui).
+1. Create a Secret Manager instance and register it to the {{site.data.keyword.redhat_openshift_notm}} cluster that was created in the previous step. For more information, see [Creating a Secrets Manager service instance](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=ui).
 
 1. Get the Ingress details from {{site.data.keyword.dl_short}}.
     ```sh
@@ -190,7 +190,7 @@ In the following example, a private-only VPC cluster and private Ingress control
     In this scenario, if you run the **`nslookup`** command to the Ingress Subdomain, it resolves to IBM service private IP address (`10.0.0.0/8`). Adding routes to make the Ingress IP address (`10.0.0.0/8`) reachable from customer on-prem is not covered in this document. You are responsible for facilitating routing between on-prem and the Ingress relay on {{site.data.keyword.cloud_notm}}.
     {: note}
 
-1. Get the secrete CRN.
+1. Get the secret CRN.
     ```sh
     ibmcloud oc ingress secret get -c CLUSTER --name SECRET_NAME --namespace openshift-ingress
     ```
@@ -616,6 +616,3 @@ Now the relay is ready and incoming traffic to the relay can be proxied to the t
 
 Now you have the script. Depending on your infrastructure, you can create your Red Hat CoreOS Location.
  
-
-
-
