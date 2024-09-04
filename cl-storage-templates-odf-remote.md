@@ -24,6 +24,12 @@ Review the version history for `odf-remote`.
 {: #cl-storage-templates-odf-remote-4.15}
 
 
+### Revision 5, released 04 September 2024
+{: #cl-storage-templates-odf-remote-4.15-5}
+
+- Resolves the following CVEs: [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, and [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
+- Updates Go to version `1.21.13`.
+
 ### Revision 4, released 12 July 2024
 {: #cl-storage-templates-odf-remote-4.15-4}
 
@@ -52,6 +58,12 @@ Review the version history for `odf-remote`.
 ## Version 4.14
 {: #cl-storage-templates-odf-remote-4.14}
 
+
+### Revision 8, released 04 September 2024
+{: #cl-storage-templates-odf-remote-4.14-8}
+
+- Resolves the following CVEs: [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, and [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
+- Updates Go to version `1.21.13`.
 
 ### Revision 7, released 12 July 2024
 {: #cl-storage-templates-odf-remote-4.14-7}
@@ -106,6 +118,12 @@ Review the version history for `odf-remote`.
 ## Version 4.13
 {: #cl-storage-templates-odf-remote-4.13}
 
+
+### Revision 12, released 04 September 2024
+{: #cl-storage-templates-odf-remote-4.13-12}
+
+- Resolves the following CVEs: [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, and [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
+- Updates Go to version `1.21.13`.
 
 ### Revision 11, released 12 July 2024
 {: #cl-storage-templates-odf-remote-4.13-11}
@@ -191,6 +209,12 @@ Review the version history for `odf-remote`.
 ## Version 4.12
 {: #cl-storage-templates-odf-remote-4.12}
 
+
+### Revision 15, released 04 September 2024
+{: #cl-storage-templates-odf-remote-4.12-15}
+
+- Resolves the following CVEs: [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, and [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
+- Updates Go to version `1.21.13`.
 
 ### Revision 14, released 12 July 2024
 {: #cl-storage-templates-odf-remote-4.12-14}
@@ -595,4 +619,3 @@ Review the version history for `odf-remote`.
 - Resolves the following CVEs: [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
 - Updates the UBI to version `8.7-1049.1675784874`.
 - Updates Go to version `1.18.9`.
-
