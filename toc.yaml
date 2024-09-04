@@ -301,26 +301,26 @@ toc:
               - topicgroup:
                   label: Storage template version history
                   topics:
-                    - cl-aws-ebs-csi-driver.md
-                    - cl-aws-efs-csi-driver.md
-                    - cl-azuredisk-csi-driver.md
-                    - cl-azurefile-csi-driver.md
-                    - cl-gcp-compute-persistent-disk-csi-driver.md
-                    - cl-ibm-object-storage-plugin.md
-                    - cl-ibm-spectrum-fusion.md
-                    - cl-ibm-system-storage-block-csi-driver.md
-                    - cl-ibm-vpc-block-csi-driver.md
-                    - cl-local-storage-operator.md
-                    - cl-local-storage.md
-                    - cl-local-volume-block.md
-                    - cl-local-volume-file.md
-                    - cl-netapp-ontap-nas.md
-                    - cl-netapp-ontap-san.md
-                    - cl-netapp-trident.md
-                    - cl-odf-local.md
-                    - cl-odf-remote.md
-                    - cl-ridge-csi-driver.md
-                    - cl-vsphere-csi-driver.md
+                    - cl-storage-templates-aws-ebs-csi-driver.md
+                    - cl-storage-templates-aws-efs-csi-driver.md
+                    - cl-storage-templates-azuredisk-csi-driver.md
+                    - cl-storage-templates-azurefile-csi-driver.md
+                    - cl-storage-templates-gcp-compute-persistent-disk-csi-driver.md
+                    - cl-storage-templates-ibm-object-storage-plugin.md
+                    - cl-storage-templates-ibm-spectrum-fusion.md
+                    - cl-storage-templates-ibm-system-storage-block-csi-driver.md
+                    - cl-storage-templates-ibm-vpc-block-csi-driver.md
+                    - cl-storage-templates-local-storage-operator.md
+                    - cl-storage-templates-local-storage.md
+                    - cl-storage-templates-local-volume-block.md
+                    - cl-storage-templates-local-volume-file.md
+                    - cl-storage-templates-netapp-ontap-nas.md
+                    - cl-storage-templates-netapp-ontap-san.md
+                    - cl-storage-templates-netapp-trident.md
+                    - cl-storage-templates-odf-local.md
+                    - cl-storage-templates-odf-remote.md
+                    - cl-storage-templates-ridge-csi-driver.md
+                    - cl-storage-templates-vsphere-csi-driver.md
   - navgroup:
       id: help
       topics:

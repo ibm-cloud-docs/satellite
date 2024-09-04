@@ -4006,815 +4006,797 @@ subcollection: satellite
 {: #sitemap_storage_template_version_history}
 
 
-[`aws-ebs-csi-driver` change log](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#cl-aws-ebs-csi-driver)
+[`aws-ebs-csi-driver` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver#cl-storage-templates-aws-ebs-csi-driver)
 
-* [Version 1.31.0](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.31.0-change-log)
+* [Version 1.31.0](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver#cl-storage-templates-aws-ebs-csi-driver-1.31.0)
 
-    * [Revision 1, released 05 June 2024](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.31.0-rev-1-change-log)
+    * [Revision 1, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver#cl-storage-templates-aws-ebs-csi-driver-1.31.0-1)
 
-* [Version 1.12.0](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.12.0-change-log)
+* [Version 1.12.0](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver#cl-storage-templates-aws-ebs-csi-driver-1.12.0)
 
-    * [Revision 3, released 05 June 2024](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.12.0-rev-3-change-log)
+    * [Revision 3, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver#cl-storage-templates-aws-ebs-csi-driver-1.12.0-3)
 
-    * [Revision 2, released 16 January 2023](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.12.0-rev-2-change-log)
+    * [Revision 2, released 16 January 2023](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver#cl-storage-templates-aws-ebs-csi-driver-1.12.0-2)
 
-* [Version 1.5.1](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.5.1-change-log)
+* [Version 1.5.1](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver#cl-storage-templates-aws-ebs-csi-driver-1.5.1)
 
-    * [Revision 5, released 16 January 2023](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.5.1-rev-5-change-log)
+    * [Revision 5, released 16 January 2023](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver#cl-storage-templates-aws-ebs-csi-driver-1.5.1-5)
 
-* [Version 1.1.0](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.1.0-change-log)
+* [Version 1.1.0](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver#cl-storage-templates-aws-ebs-csi-driver-1.1.0)
 
-    * [Revision 5, released 16 January 2023](/docs/satellite?topic=satellite-cl-aws-ebs-csi-driver#aws-ebs-csi-driver-1.1.0-rev-5-change-log)
+    * [Revision 5, released 16 January 2023](/docs/satellite?topic=satellite-cl-storage-templates-aws-ebs-csi-driver#cl-storage-templates-aws-ebs-csi-driver-1.1.0-5)
 
-[`aws-efs-csi-driver` change log](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#cl-aws-efs-csi-driver)
+[`aws-efs-csi-driver` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver#cl-storage-templates-aws-efs-csi-driver)
 
-* [Version 2.0.3](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-2.0.3-change-log)
+* [Version 2.0.3](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver#cl-storage-templates-aws-efs-csi-driver-2.0.3)
 
-    * [Revision 1, released 20 June 2024](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-2.0.3-rev-1-change-log)
+    * [Revision 1, released 20 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver#cl-storage-templates-aws-efs-csi-driver-2.0.3-1)
 
-* [Version 1.4.2](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-1.4.2-change-log)
+* [Version 1.4.2](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver#cl-storage-templates-aws-efs-csi-driver-1.4.2)
 
-    * [Revision 1, released 07 November 2022](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-1.4.2-rev-1-change-log)
+    * [Revision 1, released 07 November 2022](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver#cl-storage-templates-aws-efs-csi-driver-1.4.2-1)
 
-* [Version 1.3.7](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-1.3.7-change-log)
+* [Version 1.3.7](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver#cl-storage-templates-aws-efs-csi-driver-1.3.7)
 
-    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-1.3.7-rev-4-change-log)
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver#cl-storage-templates-aws-efs-csi-driver-1.3.7-4)
 
-* [Version 1.3.1](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-1.3.1-change-log)
+* [Version 1.3.1](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver#cl-storage-templates-aws-efs-csi-driver-1.3.1)
 
-    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-aws-efs-csi-driver#aws-efs-csi-driver-1.3.1-rev-4-change-log)
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-aws-efs-csi-driver#cl-storage-templates-aws-efs-csi-driver-1.3.1-4)
 
-[`azuredisk-csi-driver` change log](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#cl-azuredisk-csi-driver)
+[`azuredisk-csi-driver` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-azuredisk-csi-driver#cl-storage-templates-azuredisk-csi-driver)
 
-* [Version 1.23.0](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#azuredisk-csi-driver-1.23.0-change-log)
+* [Version 1.23.0](/docs/satellite?topic=satellite-cl-storage-templates-azuredisk-csi-driver#cl-storage-templates-azuredisk-csi-driver-1.23.0)
 
-    * [Revision 1, released 26 October 2022](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#azuredisk-csi-driver-1.23.0-rev-1-change-log)
+    * [Revision 1, released 26 October 2022](/docs/satellite?topic=satellite-cl-storage-templates-azuredisk-csi-driver#cl-storage-templates-azuredisk-csi-driver-1.23.0-1)
 
-* [Version 1.18.0](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#azuredisk-csi-driver-1.18.0-change-log)
+* [Version 1.18.0](/docs/satellite?topic=satellite-cl-storage-templates-azuredisk-csi-driver#cl-storage-templates-azuredisk-csi-driver-1.18.0)
 
-    * [Revision 5, released 29 July 2022](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#azuredisk-csi-driver-1.18.0-rev-5-change-log)
+    * [Revision 5, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-azuredisk-csi-driver#cl-storage-templates-azuredisk-csi-driver-1.18.0-5)
 
-* [Version 1.4.0](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#azuredisk-csi-driver-1.4.0-change-log)
+* [Version 1.4.0](/docs/satellite?topic=satellite-cl-storage-templates-azuredisk-csi-driver#cl-storage-templates-azuredisk-csi-driver-1.4.0)
 
-    * [Revision 5, released 29 July 2022](/docs/satellite?topic=satellite-cl-azuredisk-csi-driver#azuredisk-csi-driver-1.4.0-rev-5-change-log)
+    * [Revision 5, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-azuredisk-csi-driver#cl-storage-templates-azuredisk-csi-driver-1.4.0-5)
 
-[`azurefile-csi-driver` change log](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#cl-azurefile-csi-driver)
+[`azurefile-csi-driver` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-azurefile-csi-driver#cl-storage-templates-azurefile-csi-driver)
 
-* [Version 1.22.0](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#azurefile-csi-driver-1.22.0-change-log)
+* [Version 1.22.0](/docs/satellite?topic=satellite-cl-storage-templates-azurefile-csi-driver#cl-storage-templates-azurefile-csi-driver-1.22.0)
 
-    * [Revision 1, released 26 October 2022](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#azurefile-csi-driver-1.22.0-rev-1-change-log)
+    * [Revision 1, released 26 October 2022](/docs/satellite?topic=satellite-cl-storage-templates-azurefile-csi-driver#cl-storage-templates-azurefile-csi-driver-1.22.0-1)
 
-* [Version 1.18.0](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#azurefile-csi-driver-1.18.0-change-log)
+* [Version 1.18.0](/docs/satellite?topic=satellite-cl-storage-templates-azurefile-csi-driver#cl-storage-templates-azurefile-csi-driver-1.18.0)
 
-    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#azurefile-csi-driver-1.18.0-rev-4-change-log)
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-azurefile-csi-driver#cl-storage-templates-azurefile-csi-driver-1.18.0-4)
 
-* [Version 1.9.0](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#azurefile-csi-driver-1.9.0-change-log)
+* [Version 1.9.0](/docs/satellite?topic=satellite-cl-storage-templates-azurefile-csi-driver#cl-storage-templates-azurefile-csi-driver-1.9.0)
 
-    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-azurefile-csi-driver#azurefile-csi-driver-1.9.0-rev-4-change-log)
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-azurefile-csi-driver#cl-storage-templates-azurefile-csi-driver-1.9.0-4)
 
-[`gcp-compute-persistent-disk-csi-driver` change log](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#cl-gcp-compute-persistent-disk-csi-driver)
+[`gcp-compute-persistent-disk-csi-driver` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver#cl-storage-templates-gcp-compute-persistent-disk-csi-driver)
 
-* [Version 1.8.0](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.8.0-change-log)
+* [Version 1.8.0](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver#cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.8.0)
 
-    * [Revision 2, released 23 January 2023](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.8.0-rev-2-change-log)
+    * [Revision 2, released 23 January 2023](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver#cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.8.0-2)
 
-* [Version 1.7.1](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.7.1-change-log)
+* [Version 1.7.1](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver#cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.7.1)
 
-    * [Revision 5, released 23 January 2023](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.7.1-rev-5-change-log)
+    * [Revision 5, released 23 January 2023](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver#cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.7.1-5)
 
-* [Version 1.0.4](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.0.4-change-log)
+* [Version 1.0.4](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver#cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.0.4)
 
-    * [Revision 4, released 23 January 2023](/docs/satellite?topic=satellite-cl-gcp-compute-persistent-disk-csi-driver#gcp-compute-persistent-disk-csi-driver-1.0.4-rev-4-change-log)
+    * [Revision 4, released 23 January 2023](/docs/satellite?topic=satellite-cl-storage-templates-gcp-compute-persistent-disk-csi-driver#cl-storage-templates-gcp-compute-persistent-disk-csi-driver-1.0.4-4)
 
-[`ibm-object-storage-plugin` change log](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#cl-ibm-object-storage-plugin)
+[`ibm-object-storage-plugin` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin)
 
-* [Version 2.2](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-change-log)
+* [Version 2.2](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2)
 
-    * [Revision 23, released 04 September 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-23-change-log)
+    * [Revision 22, released 17 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-22)
 
-    * [Revision 22, released 17 July 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-22-change-log)
+    * [Revision 21, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-21)
 
-    * [Revision 21, released 05 June 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-21-change-log)
+    * [Revision 20, released 29 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-20)
 
-    * [Revision 20, released 29 April 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-20-change-log)
+    * [Revision 19, released 29 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-19)
 
-    * [Revision 19, released 29 February 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-19-change-log)
+    * [Revision 18, released 02 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-18)
 
-    * [Revision 18, released 02 February 2024](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-18-change-log)
+    * [Revision 17, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-17)
 
-    * [Revision 17, released 27 November 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-17-change-log)
+    * [Revision 16, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-16)
 
-    * [Revision 16, released 30 October 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-16-change-log)
+    * [Revision 15, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-15)
 
-    * [Revision 15, released 18 October 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-15-change-log)
+    * [Revision 14, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-14)
 
-    * [Revision 14, released 19 September 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-14-change-log)
+    * [Revision 11, released 04 May 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-11)
 
-    * [Revision 11, released 04 May 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-11-change-log)
+    * [Revision 10, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-10)
 
-    * [Revision 10, released 04 April 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-10-change-log)
+    * [Revision 9, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-9)
 
-    * [Revision 9, released 21 March 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-9-change-log)
+    * [Revision 8, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-8)
 
-    * [Revision 8, released 06 March 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-8-change-log)
+    * [Revision 7, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-object-storage-plugin#cl-storage-templates-ibm-object-storage-plugin-2.2-7)
 
-    * [Revision 7, released 20 February 2023](/docs/satellite?topic=satellite-cl-ibm-object-storage-plugin#ibm-object-storage-plugin-2.2-rev-7-change-log)
+[`ibm-spectrum-fusion` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-spectrum-fusion#cl-storage-templates-ibm-spectrum-fusion)
 
-[`ibm-spectrum-fusion` change log](/docs/satellite?topic=satellite-cl-ibm-spectrum-fusion#cl-ibm-spectrum-fusion)
+* [Version 2.4.0](/docs/satellite?topic=satellite-cl-storage-templates-ibm-spectrum-fusion#cl-storage-templates-ibm-spectrum-fusion-2.4.0)
 
-* [Version 2.4.0](/docs/satellite?topic=satellite-cl-ibm-spectrum-fusion#ibm-spectrum-fusion-2.4.0-change-log)
+    * [Revision 1, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-ibm-spectrum-fusion#cl-storage-templates-ibm-spectrum-fusion-2.4.0-1)
 
-    * [Revision 1, released 29 July 2022](/docs/satellite?topic=satellite-cl-ibm-spectrum-fusion#ibm-spectrum-fusion-2.4.0-rev-1-change-log)
+[`ibm-system-storage-block-csi-driver` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver)
 
-[`ibm-system-storage-block-csi-driver` change log](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#cl-ibm-system-storage-block-csi-driver)
+* [Version 1.11.2](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver-1.11.2)
 
-* [Version 1.11.2](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.11.2-change-log)
+    * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver-1.11.2-1)
 
-    * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.11.2-rev-1-change-log)
+* [Version 1.11.1](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver-1.11.1)
 
-* [Version 1.11.1](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.11.1-change-log)
+    * [Revision 1, released 17 May 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver-1.11.1-1)
 
-    * [Revision 1, released 17 May 2023](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.11.1-rev-1-change-log)
+* [Version 1.10.0](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver-1.10.0)
 
-* [Version 1.10.0](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.10.0-change-log)
+    * [Revision 1, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver-1.10.0-1)
 
-    * [Revision 1, released 29 July 2022](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.10.0-rev-1-change-log)
+* [Version 1.5.0](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver-1.5.0)
 
-* [Version 1.5.0](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.5.0-change-log)
+    * [Revision 2, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver-1.5.0-2)
 
-    * [Revision 2, released 29 July 2022](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.5.0-rev-2-change-log)
+* [Version 1.4.0](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver-1.4.0)
 
-* [Version 1.4.0](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.4.0-change-log)
+    * [Revision 2, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-ibm-system-storage-block-csi-driver#cl-storage-templates-ibm-system-storage-block-csi-driver-1.4.0-2)
 
-    * [Revision 2, released 29 July 2022](/docs/satellite?topic=satellite-cl-ibm-system-storage-block-csi-driver#ibm-system-storage-block-csi-driver-1.4.0-rev-2-change-log)
+[`ibm-vpc-block-csi-driver` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver)
 
-[`ibm-vpc-block-csi-driver` change log](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#cl-ibm-vpc-block-csi-driver)
+* [Version 5.1](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1)
 
-* [Version 5.1](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-change-log)
+    * [Revision 7, released 12 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1-7)
 
-    * [Revision 7, released 12 July 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-7-change-log)
+    * [Revision 6, released 20 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1-6)
 
-    * [Revision 6, released 20 June 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-6-change-log)
+    * [Revision 5, released 14 May 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1-5)
 
-    * [Revision 5, released 14 May 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-5-change-log)
+    * [Revision 4, released 07 March 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1-4)
 
-    * [Revision 4, released 7 March 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-4-change-log)
+    * [Revision 3, released 16 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1-3)
 
-    * [Revision 3, released 16 February 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-3-change-log)
+    * [Revision 2, released 25 January 2024](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1-2)
 
-    * [Revision 2, released 25 January 2024](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-2-change-log)
+    * [Revision 1, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.1-1)
 
-    * [Revision 1, released 27 November 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.1-rev-1-change-log)
+* [Version 5.0](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0)
 
-* [Version 5.0](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-change-log)
+    * [Revision 15, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-15)
 
-    * [Revision 15, released 27 November 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-15-change-log)
+    * [Revision 14, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-14)
 
-    * [Revision 14, released 30 October 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-14-change-log)
+    * [Revision 13, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-13)
 
-    * [Revision 13, released 19 September 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-13-change-log)
+    * [Revision 12, released 01 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-12)
 
-    * [Revision 12, released 01 August 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-12-change-log)
+    * [Revision 11, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-11)
 
-    * [Revision 11, released 19 June 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-11-change-log)
+    * [Revision 10, released 04 May 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-10)
 
-    * [Revision 10, released 04 May 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-10-change-log)
+    * [Revision 9, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-9)
 
-    * [Revision 9, released 04 April 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-9-change-log)
+    * [Revision 8, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-8)
 
-    * [Revision 8, released 21 March 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-8-change-log)
+    * [Revision 7, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-ibm-vpc-block-csi-driver#cl-storage-templates-ibm-vpc-block-csi-driver-5.0-7)
 
-    * [Revision 7, released 06 March 2023](/docs/satellite?topic=satellite-cl-ibm-vpc-block-csi-driver#ibm-vpc-block-csi-driver-5.0-rev-7-change-log)
+[`local-storage-operator` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-local-storage-operator#cl-storage-templates-local-storage-operator)
 
-[`local-storage-operator` change log](/docs/satellite?topic=satellite-cl-local-storage-operator#cl-local-storage-operator)
+* [Version 1.0.0](/docs/satellite?topic=satellite-cl-storage-templates-local-storage-operator#cl-storage-templates-local-storage-operator-1.0.0)
 
-* [Version 1.0.0](/docs/satellite?topic=satellite-cl-local-storage-operator#local-storage-operator-1.0.0-change-log)
+    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-local-storage-operator#cl-storage-templates-local-storage-operator-1.0.0-1)
 
-    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-local-storage-operator#local-storage-operator-1.0.0-rev-1-change-log)
+[`local-storage` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-local-storage#cl-storage-templates-local-storage)
 
-[`local-storage` change log](/docs/satellite?topic=satellite-cl-local-storage#cl-local-storage)
+* [Version 1.0.0](/docs/satellite?topic=satellite-cl-storage-templates-local-storage#cl-storage-templates-local-storage-1.0.0)
 
-* [Version 1.0.0](/docs/satellite?topic=satellite-cl-local-storage#local-storage-1.0.0-change-log)
+    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-local-storage#cl-storage-templates-local-storage-1.0.0-1)
 
-    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-local-storage#local-storage-1.0.0-rev-1-change-log)
+[`local-volume-block` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block)
 
-[`local-volume-block` change log](/docs/satellite?topic=satellite-cl-local-volume-block#cl-local-volume-block)
+* [Version 4.13](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.13)
 
-* [Version 4.13](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.13-change-log)
+    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.13-1)
 
-    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.13-rev-1-change-log)
+* [Version 4.12](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.12)
 
-* [Version 4.12](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.12-change-log)
+    * [Revision 1, released 23 January 2023](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.12-1)
 
-    * [Revision 1, released 23 January 2023](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.12-rev-1-change-log)
+* [Version 4.11](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.11)
 
-* [Version 4.11](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.11-change-log)
+    * [Revision 1, released 07 November 2022](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.11-1)
 
-    * [Revision 1, released 07 November 2022](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.11-rev-1-change-log)
+* [Version 4.10](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.10)
 
-* [Version 4.10](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.10-change-log)
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.10-4)
 
-    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.10-rev-4-change-log)
+* [Version 4.9](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.9)
 
-* [Version 4.9](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.9-change-log)
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.9-4)
 
-    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.9-rev-4-change-log)
+* [Version 4.8](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.8)
 
-* [Version 4.8](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.8-change-log)
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-block#cl-storage-templates-local-volume-block-4.8-4)
 
-    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-block#local-volume-block-4.8-rev-4-change-log)
+[`local-volume-file` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file)
 
-[`local-volume-file` change log](/docs/satellite?topic=satellite-cl-local-volume-file#cl-local-volume-file)
+* [Version 4.13](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.13)
 
-* [Version 4.13](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.13-change-log)
+    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.13-1)
 
-    * [Revision 1, released 18 October 2023](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.13-rev-1-change-log)
+* [Version 4.12](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.12)
 
-* [Version 4.12](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.12-change-log)
+    * [Revision 1, released 23 January 2023](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.12-1)
 
-    * [Revision 1, released 23 January 2023](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.12-rev-1-change-log)
+* [Version 4.11](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.11)
 
-* [Version 4.11](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.11-change-log)
+    * [Revision 1, released 07 November 2022](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.11-1)
 
-    * [Revision 1, released 07 November 2022](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.11-rev-1-change-log)
+* [Version 4.10](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.10)
 
-* [Version 4.10](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.10-change-log)
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.10-4)
 
-    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.10-rev-4-change-log)
+* [Version 4.9](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.9)
 
-* [Version 4.9](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.9-change-log)
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.9-4)
 
-    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.9-rev-4-change-log)
+* [Version 4.8](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.8)
 
-* [Version 4.8](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.8-change-log)
+    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-storage-templates-local-volume-file#cl-storage-templates-local-volume-file-4.8-4)
 
-    * [Revision 4, released 29 July 2022](/docs/satellite?topic=satellite-cl-local-volume-file#local-volume-file-4.8-rev-4-change-log)
+[`netapp-ontap-nas` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas)
 
-[`netapp-ontap-nas` change log](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#cl-netapp-ontap-nas)
+* [Version 24.02](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-24.02)
 
-* [Version 24.02](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-24.02-change-log)
+    * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-24.02-2)
 
-    * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-24.02-rev-2-change-log)
+    * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-24.02-1)
 
-    * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-24.02-rev-1-change-log)
+* [Version 22.10](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10)
 
-* [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-change-log)
+    * [Revision 13, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-13)
 
-    * [Revision 13, released 05 June 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-13-change-log)
+    * [Revision 12, released 25 January 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-12)
 
-    * [Revision 12, released 25 January 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-12-change-log)
+    * [Revision 11, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-11)
 
-    * [Revision 11, released 27 November 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-11-change-log)
+    * [Revision 10, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-10)
 
-    * [Revision 10, released 30 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-10-change-log)
+    * [Revision 9, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-9)
 
-    * [Revision 9, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-9-change-log)
+    * [Revision 8, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-8)
 
-    * [Revision 8, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-8-change-log)
+    * [Revision 7, released 24 July 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-7)
 
-    * [Revision 7, released 24 July 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-7-change-log)
+    * [Revision 6, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-6)
 
-    * [Revision 6, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-6-change-log)
+    * [Revision 5, released 21 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-5)
 
-    * [Revision 5, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-5-change-log)
+    * [Revision 4, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-4)
 
-    * [Revision 4, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-4-change-log)
+    * [Revision 3, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-3)
 
-    * [Revision 3, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-3-change-log)
+    * [Revision 2, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-2)
 
-    * [Revision 2, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-2-change-log)
+    * [Revision 1, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.10-1)
 
-    * [Revision 1, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.10-rev-1-change-log)
+* [Version 22.04](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04)
 
-* [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-change-log)
+    * [Revision 26, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-26)
 
-    * [Revision 26, released 05 June 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-26-change-log)
+    * [Revision 25, released 25 January 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-25)
 
-    * [Revision 25, released 25 January 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-25-change-log)
+    * [Revision 24, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-24)
 
-    * [Revision 24, released 27 November 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-24-change-log)
+    * [Revision 23, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-23)
 
-    * [Revision 23, released 30 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-23-change-log)
+    * [Revision 22, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-22)
 
-    * [Revision 22, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-22-change-log)
+    * [Revision 21, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-21)
 
-    * [Revision 21, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-21-change-log)
+    * [Revision 20, released 24 July 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-20)
 
-    * [Revision 20, released 24 July 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-20-change-log)
+    * [Revision 19, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-19)
 
-    * [Revision 19, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-19-change-log)
+    * [Revision 18, released 21 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-18)
 
-    * [Revision 18, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-18-change-log)
+    * [Revision 17, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-17)
 
-    * [Revision 17, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-17-change-log)
+    * [Revision 16, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-16)
 
-    * [Revision 16, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-16-change-log)
+    * [Revision 15, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-15)
 
-    * [Revision 15, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-15-change-log)
+    * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-22.04-14)
 
-    * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-22.04-rev-14-change-log)
+* [Version 21.04](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04)
 
-* [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-change-log)
+    * [Revision 25, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04-25)
 
-    * [Revision 25, released 30 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-25-change-log)
+    * [Revision 24, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04-24)
 
-    * [Revision 24, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-24-change-log)
+    * [Revision 23, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04-23)
 
-    * [Revision 23, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-23-change-log)
+    * [Revision 22, released 24 July 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04-22)
 
-    * [Revision 22, released 24 July 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-22-change-log)
+    * [Revision 21, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04-21)
 
-    * [Revision 21, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-21-change-log)
+    * [Revision 20, released 21 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04-20)
 
-    * [Revision 20, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-20-change-log)
+    * [Revision 19, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04-19)
 
-    * [Revision 19, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-19-change-log)
+    * [Revision 18, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04-18)
 
-    * [Revision 18, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-18-change-log)
+    * [Revision 17, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04-17)
 
-    * [Revision 17, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-17-change-log)
+    * [Revision 16, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-nas#cl-storage-templates-netapp-ontap-nas-21.04-16)
 
-    * [Revision 16, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-nas#netapp-ontap-nas-21.04-rev-16-change-log)
+[`netapp-ontap-san` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san)
 
-[`netapp-ontap-san` change log](/docs/satellite?topic=satellite-cl-netapp-ontap-san#cl-netapp-ontap-san)
+* [Version 24.02](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-24.02)
 
-* [Version 24.02](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-24.02-change-log)
+    * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-24.02-2)
 
-    * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-24.02-rev-2-change-log)
+    * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-24.02-1)
 
-    * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-24.02-rev-1-change-log)
+* [Version 22.10](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10)
 
-* [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-change-log)
+    * [Revision 13, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-13)
 
-    * [Revision 13, released 05 June 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-13-change-log)
+    * [Revision 12, released 25 January 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-12)
 
-    * [Revision 12, released 25 January 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-12-change-log)
+    * [Revision 11, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-11)
 
-    * [Revision 11, released 27 November 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-11-change-log)
+    * [Revision 10, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-10)
 
-    * [Revision 10, released 30 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-10-change-log)
+    * [Revision 9, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-9)
 
-    * [Revision 9, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-9-change-log)
+    * [Revision 8, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-8)
 
-    * [Revision 8, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-8-change-log)
+    * [Revision 7, released 24 July 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-7)
 
-    * [Revision 7, released 24 July 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-7-change-log)
+    * [Revision 6, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-6)
 
-    * [Revision 6, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-6-change-log)
+    * [Revision 5, released 21 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-5)
 
-    * [Revision 5, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-5-change-log)
+    * [Revision 4, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-4)
 
-    * [Revision 4, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-4-change-log)
+    * [Revision 3, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-3)
 
-    * [Revision 3, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-3-change-log)
+    * [Revision 2, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-2)
 
-    * [Revision 2, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-2-change-log)
+    * [Revision 1, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.10-1)
 
-    * [Revision 1, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.10-rev-1-change-log)
+* [Version 22.04](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04)
 
-* [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-change-log)
+    * [Revision 26, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-26)
 
-    * [Revision 26, released 05 June 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-26-change-log)
+    * [Revision 25, released 25 January 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-25)
 
-    * [Revision 25, released 25 January 2024](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-25-change-log)
+    * [Revision 24, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-24)
 
-    * [Revision 24, released 27 November 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-24-change-log)
+    * [Revision 23, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-23)
 
-    * [Revision 23, released 30 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-23-change-log)
+    * [Revision 22, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-22)
 
-    * [Revision 22, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-22-change-log)
+    * [Revision 21, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-21)
 
-    * [Revision 21, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-21-change-log)
+    * [Revision 20, released 24 July 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-20)
 
-    * [Revision 20, released 24 July 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-20-change-log)
+    * [Revision 19, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-19)
 
-    * [Revision 19, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-19-change-log)
+    * [Revision 18, released 21 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-18)
 
-    * [Revision 18, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-18-change-log)
+    * [Revision 17, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-17)
 
-    * [Revision 17, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-17-change-log)
+    * [Revision 16, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-16)
 
-    * [Revision 16, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-16-change-log)
+    * [Revision 15, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-15)
 
-    * [Revision 15, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-15-change-log)
+    * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-22.04-14)
 
-    * [Revision 14, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-22.04-rev-14-change-log)
+* [Version 21.04](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04)
 
-* [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-change-log)
+    * [Revision 26, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04-26)
 
-    * [Revision 26, released 30 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-26-change-log)
+    * [Revision 25, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04-25)
 
-    * [Revision 25, released 18 October 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-25-change-log)
+    * [Revision 24, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04-24)
 
-    * [Revision 24, released 19 September 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-24-change-log)
+    * [Revision 23, released 24 July 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04-23)
 
-    * [Revision 23, released 24 July 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-23-change-log)
+    * [Revision 22, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04-22)
 
-    * [Revision 22, released 19 June 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-22-change-log)
+    * [Revision 21, released 21 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04-21)
 
-    * [Revision 21, released 21 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-21-change-log)
+    * [Revision 20, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04-20)
 
-    * [Revision 20, released 4 April 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-20-change-log)
+    * [Revision 19, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04-19)
 
-    * [Revision 19, released 21 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-19-change-log)
+    * [Revision 18, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04-18)
 
-    * [Revision 18, released 6 March 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-18-change-log)
+    * [Revision 17, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-ontap-san#cl-storage-templates-netapp-ontap-san-21.04-17)
 
-    * [Revision 17, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-ontap-san#netapp-ontap-san-21.04-rev-17-change-log)
+[`netapp-trident` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident)
 
-[`netapp-trident` change log](/docs/satellite?topic=satellite-cl-netapp-trident#cl-netapp-trident)
+* [Version 24.02](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-24.02)
 
-* [Version 24.02](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-24.02-change-log)
+    * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-24.02-1)
 
-    * [Revision 1, released 29 April 2024](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-24.02-rev-1-change-log)
+* [Version 22.10](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-22.10)
 
-* [Version 22.10](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-22.10-change-log)
+    * [Revision 1, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-22.10-1)
 
-    * [Revision 1, released 20 February 2023](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-22.10-rev-1-change-log)
+* [Version 22.04](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-22.04)
 
-* [Version 22.04](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-22.04-change-log)
+    * [Revision 3, released 23 January 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-22.04-3)
 
-    * [Revision 3, released 23 January 2023](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-22.04-rev-3-change-log)
+* [Version 21.04](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-21.04)
 
-* [Version 21.04](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-21.04-change-log)
+    * [Revision 4, released 23 January 2023](/docs/satellite?topic=satellite-cl-storage-templates-netapp-trident#cl-storage-templates-netapp-trident-21.04-4)
 
-    * [Revision 4, released 23 January 2023](/docs/satellite?topic=satellite-cl-netapp-trident#netapp-trident-21.04-rev-4-change-log)
+[`odf-local` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local)
 
-[`odf-local` change log](/docs/satellite?topic=satellite-cl-odf-local#cl-odf-local)
+* [Version 4.15](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.15)
 
-* [Version 4.15](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-change-log)
+    * [Revision 4, released 12 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.15-4)
 
-    * [Revision 5, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-5-change-log)
+    * [Revision 3, released 21 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.15-3)
 
-    * [Revision 4, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-4-change-log)
+    * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.15-2)
 
-    * [Revision 3, released 21 June 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-3-change-log)
+    * [Revision 1, released 09 May 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.15-1)
 
-    * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-2-change-log)
+* [Version 4.14](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.14)
 
-    * [Revision 1, released 09 May 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.15-rev-1-change-log)
+    * [Revision 7, released 12 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.14-7)
 
-* [Version 4.14](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-change-log)
+    * [Revision 6, released 21 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.14-6)
 
-    * [Revision 8, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-8-change-log)
+    * [Revision 5, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.14-5)
 
-    * [Revision 7, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-7-change-log)
+    * [Revision 4, released 19 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.14-4)
 
-    * [Revision 6, released 21 June 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-6-change-log)
+    * [Revision 3, released 07 March 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.14-3)
 
-    * [Revision 5, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-5-change-log)
+    * [Revision 2, released 16 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.14-2)
 
-    * [Revision 4, released 19 April 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-4-change-log)
+    * [Revision 1, released 02 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.14-1)
 
-    * [Revision 3, released 07 March 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-3-change-log)
+* [Version 4.13](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13)
 
-    * [Revision 2, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-2-change-log)
+    * [Revision 11, released 12 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-11)
 
-    * [Revision 1, released 02 February 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.14-rev-1-change-log)
+    * [Revision 10, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-10)
 
-* [Version 4.13](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-change-log)
+    * [Revision 9, released 19 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-9)
 
-    * [Revision 12, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-12-change-log)
+    * [Revision 8, released 07 March 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-8)
 
-    * [Revision 11, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-11-change-log)
+    * [Revision 7, released 16 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-7)
 
-    * [Revision 10, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-10-change-log)
+    * [Revision 6, released 25 January 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-6)
 
-    * [Revision 9, released 19 April 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-9-change-log)
+    * [Revision 5, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-5)
 
-    * [Revision 8, released 07 March 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-8-change-log)
+    * [Revision 4, released 19 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-4)
 
-    * [Revision 7, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-7-change-log)
+    * [Revision 3, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-3)
 
-    * [Revision 6, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-6-change-log)
+    * [Revision 2, released 03 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-2)
 
-    * [Revision 5, released 30 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-5-change-log)
+    * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.13-1)
 
-    * [Revision 4, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-4-change-log)
+* [Version 4.12](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12)
 
-    * [Revision 3, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-3-change-log)
+    * [Revision 14, released 12 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-14)
 
-    * [Revision 2, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-2-change-log)
+    * [Revision 13, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-13)
 
-    * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.13-rev-1-change-log)
+    * [Revision 12, released 19 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-12)
 
-* [Version 4.12](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-change-log)
+    * [Revision 11, released 07 March 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-11)
 
-    * [Revision 15, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-15-change-log)
+    * [Revision 10, released 16 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-10)
 
-    * [Revision 14, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-14-change-log)
+    * [Revision 9, released 25 January 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-9)
 
-    * [Revision 13, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-13-change-log)
+    * [Revision 8, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-8)
 
-    * [Revision 12, released 19 April 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-12-change-log)
+    * [Revision 7, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-7)
 
-    * [Revision 11, released 07 March 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-11-change-log)
+    * [Revision 6, released 19 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-6)
 
-    * [Revision 10, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-10-change-log)
+    * [Revision 5, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-5)
 
-    * [Revision 9, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-9-change-log)
+    * [Revision 4, released 03 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-4)
 
-    * [Revision 8, released 27 November 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-8-change-log)
+    * [Revision 3, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-3)
 
-    * [Revision 7, released 30 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-7-change-log)
+    * [Revision 2, released 04 May 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-2)
 
-    * [Revision 6, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-6-change-log)
+    * [Revision 1, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.12-1)
 
-    * [Revision 5, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-5-change-log)
+* [Version 4.11](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11)
 
-    * [Revision 4, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-4-change-log)
+    * [Revision 15, released 07 March 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-15)
 
-    * [Revision 3, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-3-change-log)
+    * [Revision 14, released 16 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-14)
 
-    * [Revision 2, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-2-change-log)
+    * [Revision 13, released 25 January 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-13)
 
-    * [Revision 1, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.12-rev-1-change-log)
+    * [Revision 12, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-12)
 
-* [Version 4.11](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-change-log)
+    * [Revision 11, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-11)
 
-    * [Revision 15, released 07 March 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-15-change-log)
+    * [Revision 10, released 19 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-10)
 
-    * [Revision 14, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-14-change-log)
+    * [Revision 9, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-9)
 
-    * [Revision 13, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-13-change-log)
+    * [Revision 8, released 03 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-8)
 
-    * [Revision 12, released 27 November 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-12-change-log)
+    * [Revision 7, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-7)
 
-    * [Revision 11, released 30 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-11-change-log)
+    * [Revision 6, released 04 May 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-6)
 
-    * [Revision 10, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-10-change-log)
+    * [Revision 5, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-5)
 
-    * [Revision 9, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-9-change-log)
+    * [Revision 4, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-4)
 
-    * [Revision 8, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-8-change-log)
+    * [Revision 3, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-3)
 
-    * [Revision 7, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-7-change-log)
+    * [Revision 2, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.11-2)
 
-    * [Revision 6, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-6-change-log)
+* [Version 4.10](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10)
 
-    * [Revision 5, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-5-change-log)
+    * [Revision 23, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-23)
 
-    * [Revision 4, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-4-change-log)
+    * [Revision 22, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-22)
 
-    * [Revision 3, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-3-change-log)
+    * [Revision 21, released 19 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-21)
 
-    * [Revision 2, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.11-rev-2-change-log)
+    * [Revision 20, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-20)
 
-* [Version 4.10](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-change-log)
+    * [Revision 19, released 03 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-19)
 
-    * [Revision 23, released 27 November 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-23-change-log)
+    * [Revision 18, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-18)
 
-    * [Revision 22, released 30 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-22-change-log)
+    * [Revision 17, released 04 May 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-17)
 
-    * [Revision 21, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-21-change-log)
+    * [Revision 16, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-16)
 
-    * [Revision 20, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-20-change-log)
+    * [Revision 15, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-15)
 
-    * [Revision 19, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-19-change-log)
+    * [Revision 14, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-14)
 
-    * [Revision 18, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-18-change-log)
+    * [Revision 13, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.10-13)
 
-    * [Revision 17, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-17-change-log)
+* [Version 4.9](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.9)
 
-    * [Revision 16, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-16-change-log)
+    * [Revision 26, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.9-26)
 
-    * [Revision 15, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-15-change-log)
+    * [Revision 25, released 03 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.9-25)
 
-    * [Revision 14, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-14-change-log)
+    * [Revision 24, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.9-24)
 
-    * [Revision 13, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.10-rev-13-change-log)
+    * [Revision 23, released 04 May 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.9-23)
 
-* [Version 4.9](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-change-log)
+    * [Revision 22, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.9-22)
 
-    * [Revision 26, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-26-change-log)
+    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.9-21)
 
-    * [Revision 25, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-25-change-log)
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.9-20)
 
-    * [Revision 24, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-24-change-log)
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.9-19)
 
-    * [Revision 23, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-23-change-log)
+* [Version 4.8](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.8)
 
-    * [Revision 22, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-22-change-log)
+    * [Revision 22, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.8-22)
 
-    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-21-change-log)
+    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.8-21)
 
-    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-20-change-log)
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.8-20)
 
-    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.9-rev-19-change-log)
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.8-19)
 
-* [Version 4.8](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.8-change-log)
+* [Version 4.7](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.7)
 
-    * [Revision 22, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.8-rev-22-change-log)
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.7-20)
 
-    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.8-rev-21-change-log)
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-local#cl-storage-templates-odf-local-4.7-19)
 
-    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.8-rev-20-change-log)
+[`odf-remote` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote)
 
-    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.8-rev-19-change-log)
+* [Version 4.15](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.15)
 
-* [Version 4.7](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.7-change-log)
+    * [Revision 4, released 12 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.15-4)
 
-    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.7-rev-20-change-log)
+    * [Revision 3, released 21 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.15-3)
 
-    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-local#odf-local-4.7-rev-19-change-log)
+    * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.15-2)
 
-[`odf-remote` change log](/docs/satellite?topic=satellite-cl-odf-remote#cl-odf-remote)
+    * [Revision 1, released 09 May 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.15-1)
 
-* [Version 4.15](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-change-log)
+* [Version 4.14](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.14)
 
-    * [Revision 5, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-5-change-log)
+    * [Revision 7, released 12 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.14-7)
 
-    * [Revision 4, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-4-change-log)
+    * [Revision 6, released 21 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.14-6)
 
-    * [Revision 3, released 21 June 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-3-change-log)
+    * [Revision 5, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.14-5)
 
-    * [Revision 2, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-2-change-log)
+    * [Revision 4, released 19 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.14-4)
 
-    * [Revision 1, released 09 May 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.15-rev-1-change-log)
+    * [Revision 3, released 07 March 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.14-3)
 
-* [Version 4.14](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-change-log)
+    * [Revision 2, released 16 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.14-2)
 
-    * [Revision 8, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-8-change-log)
+    * [Revision 1, released 02 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.14-1)
 
-    * [Revision 7, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-7-change-log)
+* [Version 4.13](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13)
 
-    * [Revision 6, released 21 June 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-6-change-log)
+    * [Revision 11, released 12 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-11)
 
-    * [Revision 5, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-5-change-log)
+    * [Revision 10, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-10)
 
-    * [Revision 4, released 19 April 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-4-change-log)
+    * [Revision 9, released 19 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-9)
 
-    * [Revision 3, released 07 March 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-3-change-log)
+    * [Revision 8, released 07 March 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-8)
 
-    * [Revision 2, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-2-change-log)
+    * [Revision 7, released 16 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-7)
 
-    * [Revision 1, released 02 February 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.14-rev-1-change-log)
+    * [Revision 6, released 25 January 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-6)
 
-* [Version 4.13](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-change-log)
+    * [Revision 5, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-5)
 
-    * [Revision 12, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-12-change-log)
+    * [Revision 4, released 19 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-4)
 
-    * [Revision 11, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-11-change-log)
+    * [Revision 3, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-3)
 
-    * [Revision 10, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-10-change-log)
+    * [Revision 2, released 03 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-2)
 
-    * [Revision 9, released 19 April 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-9-change-log)
+    * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.13-1)
 
-    * [Revision 8, released 07 March 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-8-change-log)
+* [Version 4.12](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12)
 
-    * [Revision 7, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-7-change-log)
+    * [Revision 14, released 12 July 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-14)
 
-    * [Revision 6, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-6-change-log)
+    * [Revision 13, released 05 June 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-13)
 
-    * [Revision 5, released 30 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-5-change-log)
+    * [Revision 12, released 19 April 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-12)
 
-    * [Revision 4, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-4-change-log)
+    * [Revision 11, released 07 March 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-11)
 
-    * [Revision 3, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-3-change-log)
+    * [Revision 10, released 16 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-10)
 
-    * [Revision 2, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-2-change-log)
+    * [Revision 9, released 25 January 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-9)
 
-    * [Revision 1, released 24 July 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.13-rev-1-change-log)
+    * [Revision 8, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-8)
 
-* [Version 4.12](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-change-log)
+    * [Revision 7, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-7)
 
-    * [Revision 15, released 04 September 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-15-change-log)
+    * [Revision 6, released 19 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-6)
 
-    * [Revision 14, released 12 July 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-14-change-log)
+    * [Revision 5, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-5)
 
-    * [Revision 13, released 05 June 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-13-change-log)
+    * [Revision 4, released 03 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-4)
 
-    * [Revision 12, released 19 April 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-12-change-log)
+    * [Revision 3, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-3)
 
-    * [Revision 11, released 07 March 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-11-change-log)
+    * [Revision 2, released 04 May 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-2)
 
-    * [Revision 10, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-10-change-log)
+    * [Revision 1, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.12-1)
 
-    * [Revision 9, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-9-change-log)
+* [Version 4.11](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11)
 
-    * [Revision 8, released 27 November 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-8-change-log)
+    * [Revision 15, released 07 March 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-15)
 
-    * [Revision 7, released 30 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-7-change-log)
+    * [Revision 14, released 16 February 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-14)
 
-    * [Revision 6, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-6-change-log)
+    * [Revision 13, released 25 January 2024](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-13)
 
-    * [Revision 5, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-5-change-log)
+    * [Revision 12, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-12)
 
-    * [Revision 4, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-4-change-log)
+    * [Revision 11, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-11)
 
-    * [Revision 3, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-3-change-log)
+    * [Revision 10, released 19 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-10)
 
-    * [Revision 2, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-2-change-log)
+    * [Revision 9, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-9)
 
-    * [Revision 1, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.12-rev-1-change-log)
+    * [Revision 8, released 03 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-8)
 
-* [Version 4.11](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-change-log)
+    * [Revision 7, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-7)
 
-    * [Revision 15, released 07 March 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-15-change-log)
+    * [Revision 6, released 04 May 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-6)
 
-    * [Revision 14, released 16 February 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-14-change-log)
+    * [Revision 5, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-5)
 
-    * [Revision 13, released 25 January 2024](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-13-change-log)
+    * [Revision 4, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-4)
 
-    * [Revision 12, released 27 November 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-12-change-log)
+    * [Revision 3, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-3)
 
-    * [Revision 11, released 30 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-11-change-log)
+    * [Revision 2, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.11-2)
 
-    * [Revision 10, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-10-change-log)
+* [Version 4.10](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10)
 
-    * [Revision 9, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-9-change-log)
+    * [Revision 23, released 27 November 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-23)
 
-    * [Revision 8, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-8-change-log)
+    * [Revision 22, released 30 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-22)
 
-    * [Revision 7, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-7-change-log)
+    * [Revision 21, released 19 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-21)
 
-    * [Revision 6, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-6-change-log)
+    * [Revision 20, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-20)
 
-    * [Revision 5, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-5-change-log)
+    * [Revision 19, released 03 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-19)
 
-    * [Revision 4, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-4-change-log)
+    * [Revision 18, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-18)
 
-    * [Revision 3, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-3-change-log)
+    * [Revision 17, released 04 May 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-17)
 
-    * [Revision 2, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.11-rev-2-change-log)
+    * [Revision 16, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-16)
 
-* [Version 4.10](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-change-log)
+    * [Revision 15, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-15)
 
-    * [Revision 23, released 27 November 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-23-change-log)
+    * [Revision 14, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-14)
 
-    * [Revision 22, released 30 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-22-change-log)
+    * [Revision 13, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.10-13)
 
-    * [Revision 21, released 19 October 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-21-change-log)
+* [Version 4.9](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.9)
 
-    * [Revision 20, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-20-change-log)
+    * [Revision 26, released 19 September 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.9-26)
 
-    * [Revision 19, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-19-change-log)
+    * [Revision 25, released 03 August 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.9-25)
 
-    * [Revision 18, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-18-change-log)
+    * [Revision 24, released 19 June 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.9-24)
 
-    * [Revision 17, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-17-change-log)
+    * [Revision 23, released 04 May 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.9-23)
 
-    * [Revision 16, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-16-change-log)
+    * [Revision 22, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.9-22)
 
-    * [Revision 15, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-15-change-log)
+    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.9-21)
 
-    * [Revision 14, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-14-change-log)
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.9-20)
 
-    * [Revision 13, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.10-rev-13-change-log)
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.9-19)
 
-* [Version 4.9](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-change-log)
+* [Version 4.8](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.8)
 
-    * [Revision 26, released 19 September 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-26-change-log)
+    * [Revision 22, released 04 April 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.8-22)
 
-    * [Revision 25, released 03 August 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-25-change-log)
+    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.8-21)
 
-    * [Revision 24, released 19 June 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-24-change-log)
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.8-20)
 
-    * [Revision 23, released 04 May 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-23-change-log)
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.8-19)
 
-    * [Revision 22, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-22-change-log)
+* [Version 4.7](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.7)
 
-    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-21-change-log)
+    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.7-20)
 
-    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-20-change-log)
+    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-odf-remote#cl-storage-templates-odf-remote-4.7-19)
 
-    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.9-rev-19-change-log)
+[`ridge-csi-driver` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-ridge-csi-driver#cl-storage-templates-ridge-csi-driver)
 
-* [Version 4.8](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.8-change-log)
+* [Version 1.0.0](/docs/satellite?topic=satellite-cl-storage-templates-ridge-csi-driver#cl-storage-templates-ridge-csi-driver-1.0.0)
 
-    * [Revision 22, released 04 April 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.8-rev-22-change-log)
+    * [Revision 1, released 11 October 2022](/docs/satellite?topic=satellite-cl-storage-templates-ridge-csi-driver#cl-storage-templates-ridge-csi-driver-1.0.0-1)
 
-    * [Revision 21, released 21 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.8-rev-21-change-log)
+[`vsphere-csi-driver` storage template version change log](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver#cl-storage-templates-vsphere-csi-driver)
 
-    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.8-rev-20-change-log)
+* [Version 2.7.0](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver#cl-storage-templates-vsphere-csi-driver-2.7.0)
 
-    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.8-rev-19-change-log)
+    * [Revision 3, released 09 May 2024](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver#cl-storage-templates-vsphere-csi-driver-2.7.0-3)
 
-* [Version 4.7](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.7-change-log)
+    * [Revision 2, released 18 October 2023](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver#cl-storage-templates-vsphere-csi-driver-2.7.0-2)
 
-    * [Revision 20, released 06 March 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.7-rev-20-change-log)
+    * [Revision 1, released 31 July 2023](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver#cl-storage-templates-vsphere-csi-driver-2.7.0-1)
 
-    * [Revision 19, released 20 February 2023](/docs/satellite?topic=satellite-cl-odf-remote#odf-remote-4.7-rev-19-change-log)
+* [Version 2.5.1](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver#cl-storage-templates-vsphere-csi-driver-2.5.1)
 
-[`ridge-csi-driver` change log](/docs/satellite?topic=satellite-cl-ridge-csi-driver#cl-ridge-csi-driver)
-
-* [Version 1.0.0](/docs/satellite?topic=satellite-cl-ridge-csi-driver#ridge-csi-driver-1.0.0-change-log)
-
-    * [Revision 1, released 11 October 2022](/docs/satellite?topic=satellite-cl-ridge-csi-driver#ridge-csi-driver-1.0.0-rev-1-change-log)
-
-[`vsphere-csi-driver` change log](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#cl-vsphere-csi-driver)
-
-* [Version 2.7.0](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.7.0-change-log)
-
-    * [Revision 3, released 9 May 2024](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.7.0-rev-3-change-log)
-
-    * [Revision 2, released 18 October 2023](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.7.0-rev-2-change-log)
-
-    * [Revision 1, released 31 July 2023](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.7.0-rev-1-change-log)
-
-* [Version 2.5.1](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.5.1-change-log)
-
-    * [Revision 6, released 20 February 2023](/docs/satellite?topic=satellite-cl-vsphere-csi-driver#vsphere-csi-driver-2.5.1-rev-6-change-log)
+    * [Revision 6, released 20 February 2023](/docs/satellite?topic=satellite-cl-storage-templates-vsphere-csi-driver#cl-storage-templates-vsphere-csi-driver-2.5.1-6)
 
 
 ## FAQs
