@@ -3,7 +3,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-08-29"
+lastupdated: "2024-09-04"
 
 keywords: satellite, connector, agent, windows
 
@@ -209,7 +209,7 @@ Before you begin, review the [Minimum requirements](/docs/satellite?topic=satell
     ```
     {: codeblock}
 
-1. **Optional**: Verify the `sha512sum` of the `.zip` by running the following command in PowerShell.
+1. Verify the `sha512sum` of the `.zip` by running the following command in PowerShell.
     ```txt
     Get-FileHash -Algorithm SHA512 -Path c:\windows_satellite_connector_1420916628.zip
     ```
@@ -269,11 +269,14 @@ Configuration information is provided to the agent through the following environ
 {: #windows-agent-run}
 
 
-1. Start the agent by running the `install` command in PowerShell.
+1. Start the agent by running the `install` command in PowerShell. 
     ```txt
     .\install
     ```
     {: codeblock}
+
+    If you start the agent and receive a Windows `Microsoft Defender SmartScreen` error, make sure you completed the step to verify the `sha512sum` after you [downloaded the agent](#windows-agent-download). Complete the verification step and try again. 
+    {: tip}
     
 
 1. Verify the agent is running by run the `Get-Service` command in PowerShell.
